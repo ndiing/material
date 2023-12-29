@@ -1,5 +1,9 @@
 /**
- * Class representing a Router for handling routing in a web application.
+ * A simple router implementation for managing routes.
+ * @class
+ * @name Router
+ * @description This class manages route configurations and navigation within a web application.
+ * @author Ridho Prasetya
  */
 class Router {
     /**
