@@ -8,27 +8,27 @@
 class Router {
     /**
      * Represents a route configuration object.
-     * @typedef {Object} RouteObject
+     * @typedef {Object} Route
      * @property {string} path - Represents the path of the route.
      * @property {HTMLElement} component - Represents the component associated with the route.
      * @property {function} load - Function to load the route's content.
      * @property {function} beforeLoad - Function executed before loading the route's content.
-     * @property {RouteObject[]} children - Represents any child routes associated with this route.
+     * @property {Route[]} children - Represents any child routes associated with this route.
      * @property {string} redirect - Represents the redirect path if needed.
      */
 
     /**
      * Represents an array of route configuration objects.
-     * @type {RouteObject[]}
+     * @type {Route[]}
      */
 
     /**
      * Add routes to the router configuration.
      * @private
-     * @param {Array<Object>} routes - Array of route objects.
+     * @param {Route[] routes - Array of route objects.
      * @param {string} pattern - URL pattern for the routes.
      * @param {Object|null} parent - Parent route object.
-     * @returns {Array<Object>} - Updated routes array.
+     * @returns {Route[]} - Updated routes array.
      */
     static addRoutes(routes = [], pattern = "", parent = null) {
         return routes.reduce((prev, curr) => {

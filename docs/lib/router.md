@@ -8,7 +8,7 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#RouteObject">RouteObject</a> : <code>Object</code></dt>
+<dt><a href="#Route">Route</a> : <code>Object</code></dt>
 <dd><p>Represents a route configuration object.</p>
 </dd>
 </dl>
@@ -60,9 +60,9 @@ Initialize the router with provided routes.
 | --- | --- | --- |
 | routes | <code>Array.&lt;Object&gt;</code> | Array of route objects. |
 
-<a name="RouteObject"></a>
+<a name="Route"></a>
 
-## RouteObject : <code>Object</code>
+## Route : <code>Object</code>
 Represents a route configuration object.
 
 **Kind**: global typedef  
@@ -74,6 +74,6 @@ Represents a route configuration object.
 | component | <code>HTMLElement</code> | Represents the component associated with the route. |
 | load | <code>function</code> | Function to load the route's content. |
 | beforeLoad | <code>function</code> | Function executed before loading the route's content. |
-| children | [<code>Array.&lt;RouteObject&gt;</code>](#RouteObject) | Represents any child routes associated with this route. |
+| children | [<code>Array.&lt;Route&gt;</code>](#Route) | Represents any child routes associated with this route. |
 | redirect | <code>string</code> | Represents the redirect path if needed. |
 
