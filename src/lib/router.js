@@ -13,22 +13,22 @@ class Router {
      * @property {HTMLElement} component - Represents the component associated with the route.
      * @property {function} load - Function to load the route's content.
      * @property {function} beforeLoad - Function executed before loading the route's content.
-     * @property {Route[]} children - Represents any child routes associated with this route.
+     * @property {Route<Array>} children - Represents any child routes associated with this route.
      * @property {string} redirect - Represents the redirect path if needed.
      */
 
     /**
      * Represents an array of route configuration objects.
-     * @type {Route[]}
+     * @type {Route<Array>}
      */
 
     /**
      * Add routes to the router configuration.
      * @private
-     * @param {Route[] routes - Array of route objects.
+     * @param {Route<Array>} routes - Array of route objects.
      * @param {string} pattern - URL pattern for the routes.
      * @param {Object|null} parent - Parent route object.
-     * @returns {Route[]} - Updated routes array.
+     * @returns {Route<Array>} - Updated routes array.
      */
     static addRoutes(routes = [], pattern = "", parent = null) {
         return routes.reduce((prev, curr) => {
@@ -54,8 +54,8 @@ class Router {
     /**
      * Get all routes starting from the provided route.
      * @private
-     * @param {Object} route - Route object.
-     * @returns {Array<Object>} - All routes from the provided route upwards.
+     * @param {Route<Object>} route - Route object.
+     * @returns {Route<Array>} - All routes from the provided route upwards.
      */
     static getRoutes(route) {
         // Reduce the given route and its parent routes into a flattened array
@@ -85,7 +85,7 @@ class Router {
     /**
      * Get the matching route based on the current URL.
      * @private
-     * @returns {Object|null} - Matching route object or null if not found.
+     * @returns {Route<Object>} - Matching route object or null if not found.
      */
     static getRoute() {
         // Find a route that matches the current path
@@ -117,7 +117,7 @@ class Router {
     /**
      * Get the DOM outlet element for a route.
      * @private
-     * @param {Object} route - Route object.
+     * @param {Route<Object>} route - Route object.
      * @returns {Promise<HTMLElement>} - Promise resolving to the outlet element.
      */
     static async getOutlet(route) {
@@ -299,7 +299,7 @@ class Router {
 
     /**
      * Initialize the router with provided routes.
-     * @param {Route[]} routes - Array of route objects.
+     * @param {Route<Array>} routes - Array of route objects.
      */
     static init(routes = []) {
         // Add the provided routes to the router

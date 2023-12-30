@@ -58,7 +58,7 @@ Initialize the router with provided routes.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| routes | [<code>Array.&lt;Route&gt;</code>](#Route) | Array of route objects. |
+| routes | <code>Route.&lt;Array&gt;</code> | Array of route objects. |
 
 <a name="Route"></a>
 
@@ -74,6 +74,6 @@ Represents a route configuration object.
 | component | <code>HTMLElement</code> | Represents the component associated with the route. |
 | load | <code>function</code> | Function to load the route's content. |
 | beforeLoad | <code>function</code> | Function executed before loading the route's content. |
-| children | [<code>Array.&lt;Route&gt;</code>](#Route) | Represents any child routes associated with this route. |
+| children | <code>Route.&lt;Array&gt;</code> | Represents any child routes associated with this route. |
 | redirect | <code>string</code> | Represents the redirect path if needed. |
 
