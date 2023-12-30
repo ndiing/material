@@ -179,7 +179,7 @@ class Router {
      * Manages the control and abort functionality for ongoing operations.
      * @type {AbortController|null} An AbortController instance used for controlling ongoing operations.
      */
-    static controller = undefined;
+    static controller = new AbortController();
 
     /**
      * Handle navigation events.
