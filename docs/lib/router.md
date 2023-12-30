@@ -1,11 +1,11 @@
 <a name="Router"></a>
 
 ## Router
-Class representing a Router for handling routing in a web application.
-
 **Kind**: global class  
+**Author**: Ridho Prasetya  
 
 * [Router](#Router)
+    * [new Router()](#new_Router_new)
     * [.detail](#Router.detail) ⇒ <code>Object</code>
     * [.addRoutes(routes, pattern, parent)](#Router.addRoutes) ⇒ <code>Array.&lt;Object&gt;</code>
     * [.getRoutes(route)](#Router.getRoutes) ⇒ <code>Array.&lt;Object&gt;</code>
@@ -17,6 +17,11 @@ Class representing a Router for handling routing in a web application.
     * [.navigate(url)](#Router.navigate)
     * [.requestNavigation(event)](#Router.requestNavigation)
     * [.init(routes)](#Router.init)
+
+<a name="new_Router_new"></a>
+
+### new Router()
+This class manages route configurations and navigation within a web application.
 
 <a name="Router.detail"></a>
 
