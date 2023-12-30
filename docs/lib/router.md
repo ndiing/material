@@ -58,7 +58,7 @@ Initialize the router with provided routes.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| routes | <code>Array.&lt;Object&gt;</code> | Array of route objects. |
+| routes | [<code>Array.&lt;Route&gt;</code>](#Route) | Array of route objects. |
 
 <a name="Route"></a>
 

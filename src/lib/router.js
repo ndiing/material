@@ -299,7 +299,7 @@ class Router {
 
     /**
      * Initialize the router with provided routes.
-     * @param {Array<Object>} routes - Array of route objects.
+     * @param {Route[]} routes - Array of route objects.
      */
     static init(routes = []) {
         // Add the provided routes to the router
