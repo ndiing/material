@@ -10,6 +10,7 @@ import { LitElement } from "lit";
 class MdElement extends LitElement {
     /**
      * Overrides LitElement's createRenderRoot to use the element itself as the render root.
+     * @private
      * @returns {this} The instance of MdElement.
      */
     createRenderRoot() {
