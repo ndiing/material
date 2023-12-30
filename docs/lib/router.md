@@ -5,14 +5,6 @@
 <dd></dd>
 </dl>
 
-## Constants
-
-<dl>
-<dt><a href="#routes">routes</a> : <code><a href="#RouteObject">Array.&lt;RouteObject&gt;</a></code></dt>
-<dd><p>Represents an array of route configuration objects.</p>
-</dd>
-</dl>
-
 ## Typedefs
 
 <dl>
@@ -29,14 +21,23 @@
 
 * [Router](#Router)
     * [new Router()](#new_Router_new)
-    * [.navigate(url)](#Router.navigate)
-    * [.init(routes)](#Router.init)
+    * _instance_
+        * [.controller](#Router+controller) : <code>AbortController</code> \| <code>null</code>
+    * _static_
+        * [.navigate(url)](#Router.navigate)
+        * [.init(routes)](#Router.init)
 
 <a name="new_Router_new"></a>
 
 ### new Router()
 This class manages route configurations and navigation within a web application.
 
+<a name="Router+controller"></a>
+
+### router.controller : <code>AbortController</code> \| <code>null</code>
+Manages the control and abort functionality for ongoing operations.
+
+**Kind**: instance property of [<code>Router</code>](#Router)  
 <a name="Router.navigate"></a>
 
 ### Router.navigate(url)
@@ -59,12 +60,6 @@ Initialize the router with provided routes.
 | --- | --- | --- |
 | routes | <code>Array.&lt;Object&gt;</code> | Array of route objects. |
 
-<a name="routes"></a>
-
-## routes : [<code>Array.&lt;RouteObject&gt;</code>](#RouteObject)
-Represents an array of route configuration objects.
-
-**Kind**: global constant  
 <a name="RouteObject"></a>
 
 ## RouteObject : <code>Object</code>

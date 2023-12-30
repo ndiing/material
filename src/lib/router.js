@@ -1,29 +1,4 @@
 /**
- * Represents a route configuration object.
- * @typedef {Object} RouteObject
- * @property {string} path - Represents the path of the route.
- * @property {HTMLElement} component - Represents the component associated with the route.
- * @property {function} load - Function to load the route's content.
- * @property {function} beforeLoad - Function executed before loading the route's content.
- * @property {RouteObject[]} children - Represents any child routes associated with this route.
- * @property {string} redirect - Represents the redirect path if needed.
- */
-const route = {
-    path: String,
-    compoennt: HTMLElement,
-    load: () => {},
-    beforeLoad: () => {},
-    children: [],
-    redirect: String,
-};
-
-/**
- * Represents an array of route configuration objects.
- * @type {RouteObject[]}
- */
-const routes = [route];
-
-/**
  * A simple router implementation for managing routes.
  * @class
  * @name Router
@@ -31,6 +6,22 @@ const routes = [route];
  * @author Ridho Prasetya
  */
 class Router {
+    /**
+     * Represents a route configuration object.
+     * @typedef {Object} RouteObject
+     * @property {string} path - Represents the path of the route.
+     * @property {HTMLElement} component - Represents the component associated with the route.
+     * @property {function} load - Function to load the route's content.
+     * @property {function} beforeLoad - Function executed before loading the route's content.
+     * @property {RouteObject[]} children - Represents any child routes associated with this route.
+     * @property {string} redirect - Represents the redirect path if needed.
+     */
+
+    /**
+     * Represents an array of route configuration objects.
+     * @type {RouteObject[]}
+     */
+
     /**
      * Add routes to the router configuration.
      * @private
@@ -186,6 +177,12 @@ class Router {
         // Create and return a new object containing properties from the current Router instance
         return { ...this };
     }
+
+    /**
+     * Manages the control and abort functionality for ongoing operations.
+     * @type {AbortController|null} An AbortController instance used for controlling ongoing operations.
+     */
+    static controller = undefined;
 
     /**
      * Handle navigation events.
