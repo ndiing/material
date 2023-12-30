@@ -8,6 +8,7 @@
 class Router {
     /**
      * Add routes to the router configuration.
+     * @private
      * @param {Array<Object>} routes - Array of route objects.
      * @param {string} pattern - URL pattern for the routes.
      * @param {Object|null} parent - Parent route object.
@@ -36,6 +37,7 @@ class Router {
 
     /**
      * Get all routes starting from the provided route.
+     * @private
      * @param {Object} route - Route object.
      * @returns {Array<Object>} - All routes from the provided route upwards.
      */
@@ -56,6 +58,7 @@ class Router {
 
     /**
      * Get query parameters from the URL.
+     * @private
      * @returns {Object} - Query parameters object.
      */
     static getQuery() {
@@ -65,6 +68,7 @@ class Router {
 
     /**
      * Get the matching route based on the current URL.
+     * @private
      * @returns {Object|null} - Matching route object or null if not found.
      */
     static getRoute() {
@@ -96,6 +100,7 @@ class Router {
 
     /**
      * Get the DOM outlet element for a route.
+     * @private
      * @param {Object} route - Route object.
      * @returns {Promise<HTMLElement>} - Promise resolving to the outlet element.
      */
@@ -131,6 +136,7 @@ class Router {
 
     /**
      * Emit a custom event.
+     * @private
      * @param {string} type - Event type.
      * @param {any} detail - Event detail.
      */
@@ -148,6 +154,7 @@ class Router {
 
     /**
      * Get details of the current router state.
+     * @private
      * @returns {Object} - Router details.
      */
     static get detail() {
@@ -157,6 +164,7 @@ class Router {
 
     /**
      * Handle navigation events.
+     * @private
      * @param {Event} event - Navigation event.
      */
     static async handleNavigation(event) {
@@ -250,6 +258,7 @@ class Router {
 
     /**
      * Request navigation based on a triggered event.
+     * @private
      * @param {Event} event - Click event triggering navigation.
      */
     static requestNavigation(event) {
