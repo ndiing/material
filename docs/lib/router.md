@@ -30,7 +30,7 @@
 <a name="new_Router_new"></a>
 
 ### new Router()
-This class manages route configurations and navigation within a web application.
+A simple router implementation for managing routes.
 
 <a name="Router+controller"></a>
 
