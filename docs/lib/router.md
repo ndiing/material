@@ -2,7 +2,8 @@
 
 <dl>
 <dt><a href="#Router">Router</a></dt>
-<dd></dd>
+<dd><p>A simple router implementation for managing routes.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -16,21 +17,17 @@
 <a name="Router"></a>
 
 ## Router
+A simple router implementation for managing routes.
+
 **Kind**: global class  
 **Author**: Ridho Prasetya  
 
 * [Router](#Router)
-    * [new Router()](#new_Router_new)
     * _instance_
         * [.controller](#Router+controller) : <code>AbortController</code> \| <code>null</code>
     * _static_
         * [.navigate(url)](#Router.navigate)
         * [.init(routes)](#Router.init)
-
-<a name="new_Router_new"></a>
-
-### new Router()
-A simple router implementation for managing routes.
 
 <a name="Router+controller"></a>
 

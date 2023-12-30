@@ -1,7 +1,5 @@
 /**
  * A simple router implementation for managing routes.
- * @class
- * @name Router
  * @author Ridho Prasetya
  */
 class Router {
