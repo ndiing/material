@@ -3,6 +3,7 @@ import "./md.js";
 
 // dev
 
+// import { VirualScroll } from "./lib/virual-scroll.js";
 import { Router } from "./lib/router.js";
 
 import AppMain from "./dev/main.js";
