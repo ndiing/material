@@ -10,7 +10,7 @@
 
 <dl>
 <dt><a href="#Route">Route</a> : <code>Object</code></dt>
-<dd><p>Represents a route configuration object.</p>
+<dd><p>Object representing a route configuration.</p>
 </dd>
 </dl>
 
@@ -60,17 +60,18 @@ Initialize the router with provided routes.
 <a name="Route"></a>
 
 ## Route : <code>Object</code>
-Represents a route configuration object.
+Object representing a route configuration.
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| path | <code>string</code> | Represents the path of the route. |
-| component | <code>HTMLElement</code> | Represents the component associated with the route. |
-| load | <code>function</code> | Function to load the route's content. |
-| beforeLoad | <code>function</code> | Function executed before loading the route's content. |
-| children | <code>Route.&lt;Array&gt;</code> | Represents any child routes associated with this route. |
-| redirect | <code>string</code> | Represents the redirect path if needed. |
+| path | <code>string</code> | The URL path for the route. |
+| component | <code>HTMLElement</code> | The component associated with the route. |
+| load | <code>function</code> | Asynchronous function that loads the component. |
+| beforeLoad | <code>function</code> | Action(s) to execute before loading the route. |
+| children | [<code>Array.&lt;Route&gt;</code>](#Route) | Child routes associated with this route. |
+| redirect | <code>string</code> | Redirect path if this route is accessed. |
+| title | <code>string</code> | Title associated with the route. |
 

@@ -1,0 +1,19 @@
+.md-virtual-scroll {
+    position: relative;
+    overflow: auto;
+    height: 480px;
+}
+.md-virtual-scroll__scrollbar {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.md-virtual-scroll__container {
+    transform: translateY(0);
+}
+.md-virtual-scroll__content {
+    height: 48px;
+    line-height: 48px;
+}

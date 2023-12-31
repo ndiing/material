@@ -1,17 +1,28 @@
+// const route={
+//     path:'',
+//     component:document.createElement('div'),
+//     load:() => import('../dev/main.js').then(m=>m.default),
+//     beforeLoad:(resolve,reject) => resolve(),
+//     children:[],
+//     redirect:'/login',
+//     title:'Welcome'
+// }
+
 /**
  * A simple router implementation for managing routes.
  * @author Ridho Prasetya
  */
 class Router {
     /**
-     * Represents a route configuration object.
+     * Object representing a route configuration.
      * @typedef {Object} Route
-     * @property {string} path - Represents the path of the route.
-     * @property {HTMLElement} component - Represents the component associated with the route.
-     * @property {function} load - Function to load the route's content.
-     * @property {function} beforeLoad - Function executed before loading the route's content.
-     * @property {Route<Array>} children - Represents any child routes associated with this route.
-     * @property {string} redirect - Represents the redirect path if needed.
+     * @property {string} path - The URL path for the route.
+     * @property {HTMLElement} component - The component associated with the route.
+     * @property {Function} load - Asynchronous function that loads the component.
+     * @property {Function} beforeLoad - Action(s) to execute before loading the route.
+     * @property {Route[]} children - Child routes associated with this route.
+     * @property {string} redirect - Redirect path if this route is accessed.
+     * @property {string} title - Title associated with the route.
      */
 
     /**
@@ -210,6 +221,9 @@ class Router {
         if (!this.controller || (this.controller && this.controller.signal.aborted)) {
             this.controller = new AbortController();
         }
+
+        // Set the document title based on the current route
+        document.title = this.route.title;
 
         // Loop through the routes
         for (const route of this.routes) {
