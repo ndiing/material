@@ -6,4 +6,4 @@ Implementasi [Material Design](https://m3.material.io/)
 
 -   [Element](./docs/lib/element.md)
 -   [Router](./docs/lib/router.md)
--   [Vitual Scroll](./docs/lib/vitual-scroll.md)
+-   [Virtual Scroll](./docs/lib/virtual-scroll.md)
