@@ -314,6 +314,10 @@ class Router {
     /**
      * Initialize the router with provided routes.
      * @param {Route<Array>} routes - Array of route objects.
+     * @fires window#onNavigationStart
+     * @fires window#onNavigation
+     * @fires window#onNavigationCancel
+     * @fires window#onNavigationEnd
      * @example
      * import { Router } from "./lib/router.js";
      *

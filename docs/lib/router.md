@@ -56,6 +56,7 @@ Router.navigate('/users?age_gte=17')
 Initialize the router with provided routes.
 
 **Kind**: static method of [<code>Router</code>](#Router)  
+**Emits**: <code>window#event:onNavigationStart</code>, <code>window#event:onNavigation</code>, <code>window#event:onNavigationCancel</code>, <code>window#event:onNavigationEnd</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
