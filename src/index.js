@@ -3,13 +3,12 @@ import "./md.js";
 
 // dev
 
-// import { VirualScroll } from "./lib/virual-scroll.js";
 import { Router } from "./lib/router.js";
 
-import AppMain from "./dev/main.js";
-import AppUsers from "./dev/users.js";
-import AppUser from "./dev/user.js";
-import AppError from "./dev/error.js";
+import AppMain from "./dev/router/main.js";
+import AppUsers from "./dev/router/users.js";
+import AppUser from "./dev/router/user.js";
+import AppError from "./dev/router/error.js";
 
 const beforeLoad = async (resolve, reject) => {
     if (localStorage.isAuthenticated==="1") resolve()
@@ -25,11 +24,11 @@ Router.init([
         {path:'users',beforeLoad,title:'Users',component:AppUsers,children:[
             {path:':_id',title:'User',component:AppUser,children:[]},
         ]},
-        {path:'blogs',title:'Blogs',load:() => import("./dev/blogs.js").then(m=>m.default),children:[
-            {path:':_id',title:'Blog',load:() => import("./dev/blog.js").then(m=>m.default),children:[]},
+        {path:'blogs',title:'Blogs',load:() => import("./dev/router/blogs.js").then(m=>m.default),children:[
+            {path:':_id',title:'Blog',load:() => import("./dev/router/blog.js").then(m=>m.default),children:[]},
         ]},
     ]},
-    {path:'/login',title:'Login',load:() => import("./dev/login.js").then(m=>m.default),children:[]},
+    {path:'/login',title:'Login',load:() => import("./dev/router/login.js").then(m=>m.default),children:[]},
     {path:'*',title:'Error',component:AppError,children:[]},
 ]);
 

@@ -27,6 +27,16 @@ class MdElement extends LitElement {
     }
 
     /**
+     * Removes an event listener from the element.
+     * @param {string} type - The type of event to remove the listener from.
+     * @param {Function} listener - The callback function previously added.
+     * @returns {void}
+     */
+    off(type, listener) {
+        this.removeEventListener(type, listener);
+    }
+
+    /**
      * Dispatches a custom event from the element with the given type and detail.
      * @param {string} type - The type of event to dispatch.
      * @param {*} detail - Additional information to include with the event.
