@@ -7,6 +7,7 @@
 * [MdElement](#MdElement)
     * [new MdElement()](#new_MdElement_new)
     * [.on(type, listener)](#MdElement+on)
+    * [.off(type, listener)](#MdElement+off) ⇒ <code>void</code>
     * [.emit(type, detail)](#MdElement+emit)
 
 <a name="new_MdElement_new"></a>
@@ -25,6 +26,18 @@ Attaches an event listener to the element.
 | --- | --- | --- |
 | type | <code>string</code> | The type of event to listen for. |
 | listener | <code>function</code> | The callback function to execute when the event occurs. |
+
+<a name="MdElement+off"></a>
+
+### mdElement.off(type, listener) ⇒ <code>void</code>
+Removes an event listener from the element.
+
+**Kind**: instance method of [<code>MdElement</code>](#MdElement)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to remove the listener from. |
+| listener | <code>function</code> | The callback function previously added. |
 
 <a name="MdElement+emit"></a>
 
