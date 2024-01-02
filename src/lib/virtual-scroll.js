@@ -3,7 +3,6 @@ import { Library } from "./library.js";
 /**
  * A utility class extending Library for implementing virtual scrolling functionality.
  * @extends Library
- * @fires VirtualScroll#onScroll
  * @author Ridho Prasetya
  */
 class VirtualScroll extends Library {
@@ -18,6 +17,7 @@ class VirtualScroll extends Library {
      * @param {HTMLElement} [options.scrollbar] - The scrollbar element.
      * @param {HTMLElement} [options.container] - The container element.
      * @param {number} [options.threshold=2] - The threshold value for optimization.
+     * @fires root#onScroll
      */
     constructor(root = null, options = {}) {
         super(root, options);

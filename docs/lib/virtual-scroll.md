@@ -5,7 +5,7 @@ A utility class extending Library for implementing virtual scrolling functionali
 
 **Kind**: global class  
 **Extends**: <code>Library</code>  
-**Emits**: <code>VirtualScroll#event:onScroll</code>  
+**Emits**: <code>root#event:onScroll</code>  
 **Author**: Ridho Prasetya  
 
 * [VirtualScroll](#VirtualScroll) ⇐ <code>Library</code>
