@@ -29,6 +29,7 @@ class VirtualScroll extends Library {
      */
     init() {
         this.handleScroll = this.handleScroll.bind(this);
+        this.requestUpdate = this.handleScroll.bind(this);
 
         this.on("scroll", this.handleScroll);
     }
