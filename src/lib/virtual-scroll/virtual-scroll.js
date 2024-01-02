@@ -1,69 +1,20 @@
+import { Library } from "../library/library.js";
+
 /**
- * Class representing a virtual scroll.
+ * Class representing a virtual scroll functionality that extends a Library.
+ * @extends Library
  * @author Ridho Prasetya
  */
-class VirtualScroll {
-    /**
-     * Creates an instance of VirtualScroll.
-     * @constructor
-     * @param {HTMLElement} [root=null] - The root element to attach events to.
-     * @param {Object} [options={}] - The options for the virtual scroll.
-     */
-    constructor(root = null, options = {}) {
-        /**
-         * The root element to attach events to.
-         * @type {HTMLElement}
-         */
-        this.root = root;
-
-        /**
-         * Options for the virtual scroll.
-         * @type {Object}
-         */
-        this.options = options;
-
-        this.init();
-    }
-
-    /**
-     * Attach an event listener to the root element.
-     * @private
-     * @param {string} type - The type of event to listen for.
-     * @param {EventListener} listener - The callback function to execute when the event is triggered.
-     */
-    on(type, listener) {
-        this.root.addEventListener(type, listener);
-    }
-
-    /**
-     * Remove an event listener from the root element.
-     * @private
-     * @param {string} type - The type of event to remove the listener from.
-     * @param {EventListener} listener - The callback function that was registered.
-     */
-    off(type, listener) {
-        this.root.removeEventListener(type, listener);
-    }
-
-    /**
-     * Emit a custom event on the root element.
-     * @private
-     * @param {string} type - The type of event to emit.
-     * @param {*} detail - Additional information to pass along with the event.
-     */
-    emit(type, detail) {
-        const event = new CustomEvent(type, {
-            bubbles: true,
-            cancelable: true,
-            detail,
-        });
-        this.root.dispatchEvent(event);
-    }
-
+class VirtualScroll extends Library {
     /**
      * Initializes the virtual scroll by attaching the scroll event handler.
      */
     init() {
+        /**
+         * Event handler for scroll events.
+         * @type {EventListener}
+         * @private
+         */
         this.handleScroll = this.handleScroll.bind(this);
         this.on("scroll", this.handleScroll);
     }
@@ -96,7 +47,7 @@ class VirtualScroll {
         const translateY = start * contentHeight;
 
         /**
-         * Scroll event data.
+         * Data emitted on the 'onScroll' event.
          * @typedef {Object} ScrollEventData
          * @property {number} scrollbarHeight - Height of the scrollbar.
          * @property {number} start - Starting index of the visible items.
@@ -107,7 +58,8 @@ class VirtualScroll {
         // Emit 'onScroll' event with scroll data
         this.emit(
             "onScroll",
-            /** @type {ScrollEventData} */ ({
+            /** @type {ScrollEventData} */
+            ({
                 scrollbarHeight,
                 start,
                 limit,
