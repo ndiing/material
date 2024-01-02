@@ -28,6 +28,7 @@ class Library {
 
     /**
      * Attach an event listener to the root element.
+     * @private
      * @param {string} type - The type of event to listen for.
      * @param {EventListener} listener - The callback function to execute when the event is triggered.
      */
@@ -37,6 +38,7 @@ class Library {
 
     /**
      * Remove an event listener from the root element.
+     * @private
      * @param {string} type - The type of event to remove the listener from.
      * @param {EventListener} listener - The callback function that was registered.
      */
@@ -46,6 +48,7 @@ class Library {
 
     /**
      * Emit a custom event on the root element.
+     * @private
      * @param {string} type - The type of event to emit.
      * @param {*} detail - Additional information to pass along with the event.
      */

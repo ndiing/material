@@ -26,9 +26,6 @@ Class representing a virtual scroll.
     * [new VirtualScroll([root], [options])](#new_VirtualScroll_new)
     * [.root](#VirtualScroll+root) : <code>HTMLElement</code>
     * [.options](#VirtualScroll+options) : <code>Object</code>
-    * [.on(type, listener)](#VirtualScroll+on)
-    * [.off(type, listener)](#VirtualScroll+off)
-    * [.emit(type, detail)](#VirtualScroll+emit)
     * [.init()](#VirtualScroll+init)
     * [.destroy()](#VirtualScroll+destroy)
     * [.handleScroll(event)](#VirtualScroll+handleScroll)
@@ -56,42 +53,6 @@ The root element to attach events to.
 Options for the virtual scroll.
 
 **Kind**: instance property of [<code>VirtualScroll</code>](#VirtualScroll)  
-<a name="VirtualScroll+on"></a>
-
-### virtualScroll.on(type, listener)
-Attach an event listener to the root element.
-
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListener</code> | The callback function to execute when the event is triggered. |
-
-<a name="VirtualScroll+off"></a>
-
-### virtualScroll.off(type, listener)
-Remove an event listener from the root element.
-
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListener</code> | The callback function that was registered. |
-
-<a name="VirtualScroll+emit"></a>
-
-### virtualScroll.emit(type, detail)
-Emit a custom event on the root element.
-
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of event to emit. |
-| detail | <code>\*</code> | Additional information to pass along with the event. |
-
 <a name="VirtualScroll+init"></a>
 
 ### virtualScroll.init()
