@@ -56,44 +56,34 @@ class AppUsers extends LitElement {
 
         await this.updateComplete;
 
-        // prettier-ignore
-
-        this.virtualScroll=
-        new VirtualScroll(this.viewport,{
+        this.virtualScroll = new VirtualScroll(this.viewport, {
             total: this.store.getAll().total,
             contentHeight: 48,
             threshold: 2,
-        })
+        });
 
-        this.handleScroll=
-        this.handleScroll.bind(this)
+        this.handleScroll = this.handleScroll.bind(this);
 
-        this.viewport.addEventListener('onScroll',this.handleScroll)
+        this.viewport.addEventListener("onScroll", this.handleScroll);
 
-        this.virtualScroll.handleScroll()
+        this.virtualScroll.handleScroll();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.viewport.remveEventListener('onScroll',this.handleScroll)
-
+        this.viewport.removeEventListener("onScroll", this.handleScroll);
     }
 
-    handleScroll(event){
-        const {
-            scrollbarHeight,
-            translateY,
-            start,
-            limit,
-        }=event.detail
-        
-        this.scrollbar.style.height=scrollbarHeight+'px'
-        this.container.style.transform='translateY('+translateY+'px)'
+    handleScroll(event) {
+        const { scrollbarHeight, translateY, start, limit } = event.detail;
 
-        this.store.slice(start,start+limit)
-        this.docs=this.store.getAll().data
-        this.requestUpdate()
+        this.scrollbar.style.height = scrollbarHeight + "px";
+        this.container.style.transform = "translateY(" + translateY + "px)";
+
+        this.store.slice(start, start + limit);
+        this.docs = this.store.getAll().data;
+        this.requestUpdate();
     }
 }
 
