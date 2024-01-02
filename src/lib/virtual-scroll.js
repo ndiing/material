@@ -1,78 +1,64 @@
-import { Library } from "./library.js";
+import { Library } from './library';
 
 /**
- * A utility class extending Library for implementing virtual scrolling functionality.
+ * Class representing a virtual scroll.
  * @extends Library
  * @author Ridho Prasetya
  */
 class VirtualScroll extends Library {
-    /**
-     * Creates an instance of VirtualScroll.
-     * @constructor
-     * @param {HTMLElement} [root=null] - The root element for the virtual scroll.
-     * @param {Object} [options={}] - Options for configuring the virtual scrolling.
-     * @param {HTMLElement} options.viewport - The viewport element.
-     * @param {number} [options.total] - Total number of items.
-     * @param {HTMLElement} [options.content] - The content element.
-     * @param {HTMLElement} [options.scrollbar] - The scrollbar element.
-     * @param {HTMLElement} [options.container] - The container element.
-     * @param {number} [options.threshold=2] - The threshold value for optimization.
-     * @fires root#onScroll
-     */
-    constructor(root = null, options = {}) {
-        super(root, options);
-    }
+  /**
+   * Initializes the virtual scroll.
+   */
+  init() {
+    this.handleScroll = this.handleScroll.bind(this);
+    this.on('scroll', this.handleScroll);
+  }
+
+  /**
+   * Destroys the virtual scroll.
+   */
+  destroy() {
+    this.off('scroll', this.handleScroll);
+  }
+
+  /**
+   * Handles the scroll event.
+   * @param {Event} event - The scroll event.
+   * @fires root#onScroll
+   */
+  handleScroll(event) {
+    const total = this.options.total; // Total number of items
+    const contentHeight = this.options.contentHeight; // Height of each item
+    const scrollTop = this.root.scrollTop; // Scroll position
+    const threshold = this.options.threshold; // Threshold value
+    const viewportHeight = this.root.clientHeight; // Height of the viewport
+
+    const scrollbarHeight = total * contentHeight;
+
+    let start = Math.floor(scrollTop / contentHeight) - threshold;
+    start = Math.max(0, start);
+
+    let limit = Math.ceil(viewportHeight / contentHeight) + 2 * threshold;
+    limit = Math.min(total - start, limit);
+
+    const translateY = start * contentHeight;
 
     /**
-     * Initializes the virtual scrolling by attaching scroll event listener.
-     * @override
+     * Scroll event data.
+     * @typedef {Object} ScrollEventData
+     * @property {number} scrollbarHeight - Height of the scrollbar.
+     * @property {number} start - Starting index of the visible items.
+     * @property {number} limit - Number of items visible in the viewport.
+     * @property {number} translateY - Translation value based on scroll.
      */
-    init() {
-        this.handleScroll = this.handleScroll.bind(this);
-        this.requestUpdate = this.handleScroll.bind(this);
 
-        this.on("scroll", this.handleScroll);
-    }
-
-    /**
-     * Destroys the virtual scrolling by removing scroll event listener.
-     * @override
-     */
-    destroy() {
-        this.off("scroll", this.handleScroll);
-    }
-
-    /**
-     * Handles the scroll event and performs virtual scrolling calculations.
-     * @private
-     * @param {Event} event - The scroll event object.
-     */
-    handleScroll(event) {
-        const { total, content, threshold = 2, scrollbar, container } = this.options;
-        const contentHeight = content?.clientHeight ?? 48;
-        const scrollTop = this.root.scrollTop;
-        const viewportHeight = this.root.clientHeight;
-
-        const scrollbarHeight = total * contentHeight;
-
-        let start = Math.floor(scrollTop / contentHeight) - threshold;
-        start = Math.max(0, start);
-
-        let limit = Math.ceil(viewportHeight / contentHeight) + 2 * threshold;
-        limit = Math.min(total - start, limit);
-
-        const translateY = start * contentHeight;
-
-        scrollbar.style.height = scrollbarHeight + "px";
-        container.style.transform = "translateY(" + translateY + "px)";
-
-        this.emit("onScroll", {
-            scrollbarHeight,
-            start,
-            limit,
-            translateY,
-        });
-    }
+    this.emit('onScroll', /** @type {ScrollEventData} */ ({
+      scrollbarHeight,
+      start,
+      limit,
+      translateY,
+    }));
+  }
 }
 
 export { VirtualScroll };

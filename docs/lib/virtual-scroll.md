@@ -1,44 +1,69 @@
+## Classes
+
+<dl>
+<dt><a href="#VirtualScroll">VirtualScroll</a> ⇐ <code>Library</code></dt>
+<dd><p>Class representing a virtual scroll.</p>
+</dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#ScrollEventData">ScrollEventData</a> : <code>Object</code></dt>
+<dd><p>Scroll event data.</p>
+</dd>
+</dl>
+
 <a name="VirtualScroll"></a>
 
 ## VirtualScroll ⇐ <code>Library</code>
-A utility class extending Library for implementing virtual scrolling functionality.
+Class representing a virtual scroll.
 
 **Kind**: global class  
 **Extends**: <code>Library</code>  
-**Emits**: <code>root#event:onScroll</code>  
 **Author**: Ridho Prasetya  
 
 * [VirtualScroll](#VirtualScroll) ⇐ <code>Library</code>
-    * [new VirtualScroll([root], [options])](#new_VirtualScroll_new)
     * [.init()](#VirtualScroll+init)
     * [.destroy()](#VirtualScroll+destroy)
-
-<a name="new_VirtualScroll_new"></a>
-
-### new VirtualScroll([root], [options])
-Creates an instance of VirtualScroll.
-
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| [root] | <code>HTMLElement</code> | <code></code> | The root element for the virtual scroll. |
-| [options] | <code>Object</code> | <code>{}</code> | Options for configuring the virtual scrolling. |
-| options.viewport | <code>HTMLElement</code> |  | The viewport element. |
-| [options.total] | <code>number</code> |  | Total number of items. |
-| [options.content] | <code>HTMLElement</code> |  | The content element. |
-| [options.scrollbar] | <code>HTMLElement</code> |  | The scrollbar element. |
-| [options.container] | <code>HTMLElement</code> |  | The container element. |
-| [options.threshold] | <code>number</code> | <code>2</code> | The threshold value for optimization. |
+    * [.handleScroll(event)](#VirtualScroll+handleScroll)
 
 <a name="VirtualScroll+init"></a>
 
 ### virtualScroll.init()
-Initializes the virtual scrolling by attaching scroll event listener.
+Initializes the virtual scroll.
 
 **Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
 <a name="VirtualScroll+destroy"></a>
 
 ### virtualScroll.destroy()
-Destroys the virtual scrolling by removing scroll event listener.
+Destroys the virtual scroll.
 
 **Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
+<a name="VirtualScroll+handleScroll"></a>
+
+### virtualScroll.handleScroll(event)
+Handles the scroll event.
+
+**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
+**Emits**: <code>root#event:onScroll</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The scroll event. |
+
+<a name="ScrollEventData"></a>
+
+## ScrollEventData : <code>Object</code>
+Scroll event data.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| scrollbarHeight | <code>number</code> | Height of the scrollbar. |
+| start | <code>number</code> | Starting index of the visible items. |
+| limit | <code>number</code> | Number of items visible in the viewport. |
+| translateY | <code>number</code> | Translation value based on scroll. |
+
