@@ -1,7 +1,7 @@
 ## Classes
 
 <dl>
-<dt><a href="#VirtualScroll">VirtualScroll</a> ⇐ <code>Library</code></dt>
+<dt><a href="#VirtualScroll">VirtualScroll</a></dt>
 <dd><p>Class representing a virtual scroll.</p>
 </dd>
 </dl>
@@ -16,37 +16,101 @@
 
 <a name="VirtualScroll"></a>
 
-## VirtualScroll ⇐ <code>Library</code>
+## VirtualScroll
 Class representing a virtual scroll.
 
 **Kind**: global class  
-**Extends**: <code>Library</code>  
 **Author**: Ridho Prasetya  
 
-* [VirtualScroll](#VirtualScroll) ⇐ <code>Library</code>
+* [VirtualScroll](#VirtualScroll)
+    * [new VirtualScroll([root], [options])](#new_VirtualScroll_new)
+    * [.root](#VirtualScroll+root) : <code>HTMLElement</code>
+    * [.options](#VirtualScroll+options) : <code>Object</code>
+    * [.on(type, listener)](#VirtualScroll+on)
+    * [.off(type, listener)](#VirtualScroll+off)
+    * [.emit(type, detail)](#VirtualScroll+emit)
     * [.init()](#VirtualScroll+init)
     * [.destroy()](#VirtualScroll+destroy)
     * [.handleScroll(event)](#VirtualScroll+handleScroll)
 
+<a name="new_VirtualScroll_new"></a>
+
+### new VirtualScroll([root], [options])
+Creates an instance of VirtualScroll.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [root] | <code>HTMLElement</code> | <code></code> | The root element to attach events to. |
+| [options] | <code>Object</code> | <code>{}</code> | The options for the virtual scroll. |
+
+<a name="VirtualScroll+root"></a>
+
+### virtualScroll.root : <code>HTMLElement</code>
+The root element to attach events to.
+
+**Kind**: instance property of [<code>VirtualScroll</code>](#VirtualScroll)  
+<a name="VirtualScroll+options"></a>
+
+### virtualScroll.options : <code>Object</code>
+Options for the virtual scroll.
+
+**Kind**: instance property of [<code>VirtualScroll</code>](#VirtualScroll)  
+<a name="VirtualScroll+on"></a>
+
+### virtualScroll.on(type, listener)
+Attach an event listener to the root element.
+
+**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to listen for. |
+| listener | <code>EventListener</code> | The callback function to execute when the event is triggered. |
+
+<a name="VirtualScroll+off"></a>
+
+### virtualScroll.off(type, listener)
+Remove an event listener from the root element.
+
+**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to remove the listener from. |
+| listener | <code>EventListener</code> | The callback function that was registered. |
+
+<a name="VirtualScroll+emit"></a>
+
+### virtualScroll.emit(type, detail)
+Emit a custom event on the root element.
+
+**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to emit. |
+| detail | <code>\*</code> | Additional information to pass along with the event. |
+
 <a name="VirtualScroll+init"></a>
 
 ### virtualScroll.init()
-Initializes the virtual scroll.
+Initializes the virtual scroll by attaching the scroll event handler.
 
 **Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
 <a name="VirtualScroll+destroy"></a>
 
 ### virtualScroll.destroy()
-Destroys the virtual scroll.
+Destroys the virtual scroll by removing the scroll event handler.
 
 **Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
 <a name="VirtualScroll+handleScroll"></a>
 
 ### virtualScroll.handleScroll(event)
-Handles the scroll event.
+Handles the scroll event and emits 'onScroll' event with relevant scroll data.
 
 **Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-**Emits**: <code>root#event:onScroll</code>  
+**Emits**: <code>VirtualScroll#event:onScroll</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |

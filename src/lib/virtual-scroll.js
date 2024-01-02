@@ -1,13 +1,64 @@
-import { Library } from "./library";
-
 /**
  * Class representing a virtual scroll.
- * @extends Library
  * @author Ridho Prasetya
  */
-class VirtualScroll extends Library {
+class VirtualScroll {
     /**
-     * Initializes the virtual scroll.
+     * Creates an instance of VirtualScroll.
+     * @constructor
+     * @param {HTMLElement} [root=null] - The root element to attach events to.
+     * @param {Object} [options={}] - The options for the virtual scroll.
+     */
+    constructor(root = null, options = {}) {
+        /**
+         * The root element to attach events to.
+         * @type {HTMLElement}
+         */
+        this.root = root;
+
+        /**
+         * Options for the virtual scroll.
+         * @type {Object}
+         */
+        this.options = options;
+
+        this.init();
+    }
+
+    /**
+     * Attach an event listener to the root element.
+     * @param {string} type - The type of event to listen for.
+     * @param {EventListener} listener - The callback function to execute when the event is triggered.
+     */
+    on(type, listener) {
+        this.root.addEventListener(type, listener);
+    }
+
+    /**
+     * Remove an event listener from the root element.
+     * @param {string} type - The type of event to remove the listener from.
+     * @param {EventListener} listener - The callback function that was registered.
+     */
+    off(type, listener) {
+        this.root.removeEventListener(type, listener);
+    }
+
+    /**
+     * Emit a custom event on the root element.
+     * @param {string} type - The type of event to emit.
+     * @param {*} detail - Additional information to pass along with the event.
+     */
+    emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+        this.root.dispatchEvent(event);
+    }
+
+    /**
+     * Initializes the virtual scroll by attaching the scroll event handler.
      */
     init() {
         this.handleScroll = this.handleScroll.bind(this);
@@ -15,32 +66,30 @@ class VirtualScroll extends Library {
     }
 
     /**
-     * Destroys the virtual scroll.
+     * Destroys the virtual scroll by removing the scroll event handler.
      */
     destroy() {
         this.off("scroll", this.handleScroll);
     }
 
     /**
-     * Handles the scroll event.
+     * Handles the scroll event and emits 'onScroll' event with relevant scroll data.
      * @param {Event} event - The scroll event.
-     * @fires root#onScroll
+     * @fires VirtualScroll#onScroll
      */
     handleScroll(event) {
-        const total = this.options.total; // Total number of items
-        const contentHeight = this.options.contentHeight; // Height of each item
-        const scrollTop = this.root.scrollTop; // Scroll position
-        const threshold = this.options.threshold; // Threshold value
-        const viewportHeight = this.root.clientHeight; // Height of the viewport
+        // Retrieve necessary parameters
+        const { total, contentHeight, threshold } = this.options;
+        const { scrollTop, clientHeight } = this.root;
 
+        // Calculate scrollbar height
         const scrollbarHeight = total * contentHeight;
 
-        let start = Math.floor(scrollTop / contentHeight) - threshold;
-        start = Math.max(0, start);
+        // Calculate start and limit for visible items
+        let start = Math.max(0, Math.floor(scrollTop / contentHeight) - threshold);
+        let limit = Math.min(total - start, Math.ceil(clientHeight / contentHeight) + 2 * threshold);
 
-        let limit = Math.ceil(viewportHeight / contentHeight) + 2 * threshold;
-        limit = Math.min(total - start, limit);
-
+        // Calculate translateY for the scroll
         const translateY = start * contentHeight;
 
         /**
@@ -52,6 +101,7 @@ class VirtualScroll extends Library {
          * @property {number} translateY - Translation value based on scroll.
          */
 
+        // Emit 'onScroll' event with scroll data
         this.emit(
             "onScroll",
             /** @type {ScrollEventData} */ ({
