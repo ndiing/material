@@ -1,14 +1,22 @@
 /**
  * Library class for handling events on a root element.
+ * @class
  * @author Ridho Prasetya
  */
 class Library {
     /**
      * Creates an instance of Library.
+     * @constructor
+     * @param {HTMLElement} [root=null] - The root element to attach events to.
      * @param {Object} [options={}] - The options for the library.
-     * @param {HTMLElement} [options.root] - The root element to attach events to.
      */
-    constructor(options = {}) {
+    constructor(root = null, options = {}) {
+        /**
+         * The root element to attach events to.
+         * @type {HTMLElement}
+         */
+        this.root = root;
+
         /**
          * Options for the library.
          * @type {Object}
@@ -24,7 +32,7 @@ class Library {
      * @param {EventListener} listener - The callback function to execute when the event is triggered.
      */
     on(type, listener) {
-        this.options.root.addEventListener(type, listener);
+        this.root.addEventListener(type, listener);
     }
 
     /**
@@ -33,7 +41,7 @@ class Library {
      * @param {EventListener} listener - The callback function that was registered.
      */
     off(type, listener) {
-        this.options.root.removeEventListener(type, listener);
+        this.root.removeEventListener(type, listener);
     }
 
     /**
@@ -47,11 +55,12 @@ class Library {
             cancelable: true,
             detail,
         });
-        this.options.root.dispatchEvent(event);
+        this.root.dispatchEvent(event);
     }
 
     /**
      * Initializes the Library instance.
+     * @private
      */
     init() {
         // Perform initialization tasks
@@ -60,6 +69,7 @@ class Library {
 
     /**
      * Cleans up and destroys the Library instance.
+     * @public
      */
     destroy() {
         // Perform cleanup tasks

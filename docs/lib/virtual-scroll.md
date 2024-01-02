@@ -1,25 +1,27 @@
 <a name="VirtualScroll"></a>
 
-## VirtualScroll
-A utility class for implementing virtual scrolling functionality.
+## VirtualScroll ⇐ <code>Library</code>
+A utility class extending Library for implementing virtual scrolling functionality.
 
 **Kind**: global class  
-**Emits**: <code>options.viewport#event:onScroll</code>  
+**Extends**: <code>Library</code>  
+**Emits**: <code>VirtualScroll#event:onScroll</code>  
 **Author**: Ridho Prasetya  
 
-* [VirtualScroll](#VirtualScroll)
-    * [new VirtualScroll([options])](#new_VirtualScroll_new)
+* [VirtualScroll](#VirtualScroll) ⇐ <code>Library</code>
+    * [new VirtualScroll([root], [options])](#new_VirtualScroll_new)
     * [.init()](#VirtualScroll+init)
     * [.destroy()](#VirtualScroll+destroy)
 
 <a name="new_VirtualScroll_new"></a>
 
-### new VirtualScroll([options])
+### new VirtualScroll([root], [options])
 Creates an instance of VirtualScroll.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
+| [root] | <code>HTMLElement</code> | <code></code> | The root element for the virtual scroll. |
 | [options] | <code>Object</code> | <code>{}</code> | Options for configuring the virtual scrolling. |
 | options.viewport | <code>HTMLElement</code> |  | The viewport element. |
 | [options.total] | <code>number</code> |  | Total number of items. |

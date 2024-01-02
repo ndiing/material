@@ -1,10 +1,16 @@
+import { Library } from "./library.js";
+
 /**
- * A utility class for implementing virtual scrolling functionality.
+ * A utility class extending Library for implementing virtual scrolling functionality.
+ * @extends Library
+ * @fires VirtualScroll#onScroll
  * @author Ridho Prasetya
  */
-class VirtualScroll {
+class VirtualScroll extends Library {
     /**
      * Creates an instance of VirtualScroll.
+     * @constructor
+     * @param {HTMLElement} [root=null] - The root element for the virtual scroll.
      * @param {Object} [options={}] - Options for configuring the virtual scrolling.
      * @param {HTMLElement} options.viewport - The viewport element.
      * @param {number} [options.total] - Total number of items.
@@ -12,64 +18,27 @@ class VirtualScroll {
      * @param {HTMLElement} [options.scrollbar] - The scrollbar element.
      * @param {HTMLElement} [options.container] - The container element.
      * @param {number} [options.threshold=2] - The threshold value for optimization.
-     * @fires options.viewport#onScroll
      */
-    constructor(options = {}) {
-        this.options = options;
-
-        this.handleScroll = this.handleScroll.bind(this);
-        this.requestUpdate = this.handleScroll.bind(this);
-
-        this.init();
+    constructor(root = null, options = {}) {
+        super(root, options);
     }
 
     /**
      * Initializes the virtual scrolling by attaching scroll event listener.
+     * @override
      */
     init() {
+        this.handleScroll = this.handleScroll.bind(this);
+
         this.on("scroll", this.handleScroll);
     }
 
     /**
      * Destroys the virtual scrolling by removing scroll event listener.
+     * @override
      */
     destroy() {
         this.off("scroll", this.handleScroll);
-    }
-
-    /**
-     * Adds an event listener to the specified type on the viewport element.
-     * @private
-     * @param {string} type - The type of event.
-     * @param {Function} listener - The event listener function.
-     */
-    on(type, listener) {
-        this.options.viewport.addEventListener(type, listener);
-    }
-
-    /**
-     * Removes an event listener from the specified type on the viewport element.
-     * @private
-     * @param {string} type - The type of event.
-     * @param {Function} listener - The event listener function.
-     */
-    off(type, listener) {
-        this.options.viewport.removeEventListener(type, listener);
-    }
-
-    /**
-     * Emits a custom event on the viewport element.
-     * @private
-     * @param {string} type - The type of event.
-     * @param {Object} detail - Details to be included in the event.
-     */
-    emit(type, detail) {
-        const event = new CustomEvent(type, {
-            bubbles: true,
-            cancelable: true,
-            detail,
-        });
-        this.options.viewport.dispatchEvent(event);
     }
 
     /**
@@ -78,10 +47,10 @@ class VirtualScroll {
      * @param {Event} event - The scroll event object.
      */
     handleScroll(event) {
-        const { total, content, viewport, threshold = 2, scrollbar, container } = this.options;
+        const { total, content, threshold = 2, scrollbar, container } = this.options;
         const contentHeight = content?.clientHeight ?? 48;
-        const scrollTop = viewport.scrollTop;
-        const viewportHeight = viewport.clientHeight;
+        const scrollTop = this.root.scrollTop;
+        const viewportHeight = this.root.clientHeight;
 
         const scrollbarHeight = total * contentHeight;
 
