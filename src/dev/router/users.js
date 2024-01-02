@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
-import { VirtualScroll } from "../../lib/virtual-scroll.js";
-import { Store } from "../../lib/store.js";
-import { Router } from "../../lib/router.js";
+import { VirtualScroll } from "../../lib/virtual-scroll/virtual-scroll.js";
+import { Store } from "../../lib/store/store.js";
+import { Router } from "../../lib/router/router.js";
 
 class AppUsers extends LitElement {
     createRenderRoot() {

@@ -3,7 +3,7 @@ import "./md.js";
 
 // dev
 
-import { Router } from "./lib/router.js";
+import { Router } from "./lib/router/router.js";
 
 import AppMain from "./dev/router/main.js";
 import AppUsers from "./dev/router/users.js";

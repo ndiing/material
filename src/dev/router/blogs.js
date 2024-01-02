@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit";
-import { Router } from "../../lib/router";
+import { Router } from "../../lib/router/router.js";
 
 class AppBlogs extends LitElement {
     createRenderRoot() {

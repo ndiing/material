@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { MdElement } from "../../lib/element.js";
+import { MdElement } from "../../lib/element/element.js";
 
 class MdButton extends MdElement {
     // prettier-ignore
