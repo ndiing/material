@@ -154,12 +154,6 @@ Class representing an MdRipple instance.
     * [.options](#MdLibrary+options) : <code>Object</code>
     * [.init()](#MdRipple+init)
     * [.destory()](#MdRipple+destory)
-    * [.handlePointerenter(event)](#MdRipple+handlePointerenter)
-    * [.handlePointerleave(event)](#MdRipple+handlePointerleave)
-    * [.handlePointerdown(event)](#MdRipple+handlePointerdown)
-    * [.handlePointerup(event)](#MdRipple+handlePointerup)
-    * [.handleFocus(event)](#MdRipple+handleFocus)
-    * [.handleBlur(event)](#MdRipple+handleBlur)
     * [.destroy()](#MdLibrary+destroy)
 
 <a name="MdLibrary+root"></a>
@@ -187,72 +181,6 @@ Initializes MdRipple.
 Destroys MdRipple by removing event listeners.
 
 **Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-<a name="MdRipple+handlePointerenter"></a>
-
-### mdRipple.handlePointerenter(event)
-Handles pointer entering the element.
-
-**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>PointerEvent</code> | The PointerEvent object. |
-
-<a name="MdRipple+handlePointerleave"></a>
-
-### mdRipple.handlePointerleave(event)
-Handles pointer leaving the element.
-
-**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>PointerEvent</code> | The PointerEvent object. |
-
-<a name="MdRipple+handlePointerdown"></a>
-
-### mdRipple.handlePointerdown(event)
-Handles pointer down event on the element.
-
-**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>PointerEvent</code> | The PointerEvent object. |
-
-<a name="MdRipple+handlePointerup"></a>
-
-### mdRipple.handlePointerup(event)
-Handles pointer up event on the element.
-
-**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>PointerEvent</code> | The PointerEvent object. |
-
-<a name="MdRipple+handleFocus"></a>
-
-### mdRipple.handleFocus(event)
-Handles focus event on the element.
-
-**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>FocusEvent</code> | The FocusEvent object. |
-
-<a name="MdRipple+handleBlur"></a>
-
-### mdRipple.handleBlur(event)
-Handles blur event on the element.
-
-**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>FocusEvent</code> | The FocusEvent object. |
-
 <a name="MdLibrary+destroy"></a>
 
 ### mdRipple.destroy()

@@ -56,6 +56,7 @@ class MdRipple extends MdLibrary {
     // Event handler methods with JSDoc comments
     /**
      * Handles pointer entering the element.
+     * @private
      * @param {PointerEvent} event - The PointerEvent object.
      */
     handlePointerenter(event) {
@@ -64,6 +65,7 @@ class MdRipple extends MdLibrary {
 
     /**
      * Handles pointer leaving the element.
+     * @private
      * @param {PointerEvent} event - The PointerEvent object.
      */
     handlePointerleave(event) {
@@ -72,6 +74,7 @@ class MdRipple extends MdLibrary {
 
     /**
      * Handles pointer down event on the element.
+     * @private
      * @param {PointerEvent} event - The PointerEvent object.
      */
     handlePointerdown(event) {
@@ -105,6 +108,7 @@ class MdRipple extends MdLibrary {
 
     /**
      * Handles pointer up event on the element.
+     * @private
      * @param {PointerEvent} event - The PointerEvent object.
      */
     handlePointerup(event) {
@@ -114,6 +118,7 @@ class MdRipple extends MdLibrary {
 
     /**
      * Handles focus event on the element.
+     * @private
      * @param {FocusEvent} event - The FocusEvent object.
      */
     handleFocus(event) {
@@ -122,6 +127,7 @@ class MdRipple extends MdLibrary {
 
     /**
      * Handles blur event on the element.
+     * @private
      * @param {FocusEvent} event - The FocusEvent object.
      */
     handleBlur(event) {
