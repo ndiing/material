@@ -3,6 +3,9 @@ import { MdLibrary } from "../library/library.js";
 /**
  * Class representing an MdRipple instance.
  * @extends MdLibrary
+ * @class
+ * @classdesc Creates a material design ripple effect on an element.
+ * @augments MdLibrary
  * @author Ridho Prasetya
  * @email ndiing.inc@gmail.com
  */
@@ -24,7 +27,7 @@ class MdRipple extends MdLibrary {
      * Initializes MdRipple.
      */
     init() {
-        // Adding classes and attributes
+        // Adding classes and attributes for ripple effect
         this.root.classList.add("md-ripple");
 
         if (this.options.bounded !== false) this.root.classList.add("md-ripple--bounded");
@@ -33,7 +36,7 @@ class MdRipple extends MdLibrary {
         this.trigger.classList.add("md-ripple--trigger");
         this.trigger.setAttribute("tabIndex", 0);
 
-        // Calculating diameter and setting CSS property
+        // Calculating diameter and setting CSS property for ripple effect
         const rect = this.root.getBoundingClientRect();
         const max = Math.max(rect.width, rect.height);
         const min = Math.min(rect.width, rect.height);
@@ -48,7 +51,7 @@ class MdRipple extends MdLibrary {
         this.handleFocus = this.handleFocus.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
 
-        // Adding event listeners
+        // Adding event listeners for different pointer and focus events
         this.trigger.addEventListener("pointerenter", this.handlePointerenter);
         this.trigger.addEventListener("pointerleave", this.handlePointerleave);
         this.trigger.addEventListener("pointerdown", this.handlePointerdown);
@@ -101,9 +104,10 @@ class MdRipple extends MdLibrary {
         this.root.classList.add("md-ripple--pressed");
         this.root.style.setProperty("--md-ripple-animation", "none");
 
+        const rect = this.root.getBoundingClientRect();
+
         if (this.options.centered !== true) {
             // Calculating ripple properties based on pointer coordinates
-            const rect = this.root.getBoundingClientRect();
             const max = Math.max(rect.width, rect.height);
             const min = Math.min(rect.width, rect.height);
             const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / min) * 100;

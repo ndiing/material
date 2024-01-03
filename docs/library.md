@@ -7,7 +7,7 @@
 <dd><p>MdLibrary class for handling events on a root element.</p>
 </dd>
 <dt><a href="#MdRipple">MdRipple</a> ⇐ <code><a href="#MdLibrary">MdLibrary</a></code></dt>
-<dd><p>Class representing an MdRipple instance.</p>
+<dd><p>Creates a material design ripple effect on an element.</p>
 </dd>
 <dt><a href="#MdRouter">MdRouter</a></dt>
 <dd><p>A simple router implementation for managing routes.</p>
@@ -142,10 +142,10 @@ Cleans up and destroys the MdLibrary instance.
 <a name="MdRipple"></a>
 
 ## MdRipple ⇐ [<code>MdLibrary</code>](#MdLibrary)
-Class representing an MdRipple instance.
+Creates a material design ripple effect on an element.
 
 **Kind**: global class  
-**Extends**: [<code>MdLibrary</code>](#MdLibrary)  
+**Extends**: [<code>MdLibrary</code>](#MdLibrary), [<code>MdLibrary</code>](#MdLibrary)  
 **Email**: ndiing.inc@gmail.com  
 **Author**: Ridho Prasetya  
 
