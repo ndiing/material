@@ -1,11 +1,11 @@
-import { Library } from "../library/library.js";
+import { MdLibrary } from "../library/library.js";
 
 /**
- * Class representing a virtual scroll functionality that extends a Library.
- * @extends Library
+ * Class representing a virtual scroll functionality that extends a MdLibrary.
+ * @extends MdLibrary
  * @author Ridho Prasetya
  */
-class VirtualScroll extends Library {
+class MdVirtualScroll extends MdLibrary {
     /**
      * Initializes the virtual scroll by attaching the scroll event handler.
      */
@@ -29,7 +29,7 @@ class VirtualScroll extends Library {
     /**
      * Handles the scroll event and emits 'onScroll' event with relevant scroll data.
      * @param {Event} event - The scroll event.
-     * @fires VirtualScroll#onScroll
+     * @fires MdVirtualScroll#onScroll
      */
     handleScroll(event) {
         // Retrieve necessary parameters
@@ -69,4 +69,4 @@ class VirtualScroll extends Library {
     }
 }
 
-export { VirtualScroll };
+export { MdVirtualScroll };

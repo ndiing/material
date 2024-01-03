@@ -17,12 +17,12 @@ function notEmpty(value) {
 }
 
 /**
- * Represents a Store for managing and manipulating data.
+ * Represents a MdStore for managing and manipulating data.
  * @author Ridho Prasetya
  */
-class Store {
+class MdStore {
     /**
-     * Initializes the Store with an array of documents.
+     * Initializes the MdStore with an array of documents.
      * @param {Array} [docs=[]] - Array of documents.
      */
     constructor(docs = []) {
@@ -256,7 +256,7 @@ class Store {
     }
 }
 
-export { Store };
+export { MdStore };
 
 // // Usage example
 // const docs = [
@@ -761,7 +761,7 @@ export { Store };
 //         title: "enim repellat iste",
 //     },
 // ];
-// const store = new Store(docs);
+// const store = new MdStore(docs);
 
 // // store.filter("title", "id");
 // // store.filter("title_lte", "id");

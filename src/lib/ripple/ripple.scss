@@ -1,0 +1,62 @@
+@keyframes md-ripple-animation {
+    from {
+        width: 0;
+    }
+}
+
+.md-ripple {
+    position: relative;
+    
+
+    &::after {
+        content: "";
+        width: var(--md-ripple-diameter, 141.4213562373095%);
+        // padding-top: 141.4213562373095%;
+        aspect-ratio: 1/1;
+        position: absolute;
+        left: var(--md-ripple-left, 50%);
+        top: var(--md-ripple-top, 50%);
+        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-ripple-x, 0%), var(--md-ripple-y, 0%), 0);
+        border-radius: 50%;
+        background: #000;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &--bounded {
+        overflow: hidden;
+    }
+
+    &--trigger {
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    &--hovered {
+        &::after {
+            opacity: 8%;
+        }
+    }
+    &--focused {
+        &::after {
+            opacity: 10%;
+            animation: var(--md-ripple-animation, md-ripple-animation) var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-standard);
+        }
+    }
+    &--pressed {
+        &::after {
+            opacity: 10%;
+            // animation: none;
+        }
+    }
+}
+
+// // remove it later
+// button{
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     vertical-align: middle;
+//     height: 48px;
+//     padding: 0px 16px;
+// }

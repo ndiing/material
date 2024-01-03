@@ -1,11 +1,11 @@
 /**
- * Library class for handling events on a root element.
+ * MdLibrary class for handling events on a root element.
  * @class
  * @author Ridho Prasetya
  */
-class Library {
+class MdLibrary {
     /**
-     * Creates an instance of Library.
+     * Creates an instance of MdLibrary.
      * @constructor
      * @param {HTMLElement} [root=null] - The root element to attach events to.
      * @param {Object} [options={}] - The options for the library.
@@ -62,7 +62,7 @@ class Library {
     }
 
     /**
-     * Initializes the Library instance.
+     * Initializes the MdLibrary instance.
      * @private
      */
     init() {
@@ -71,7 +71,7 @@ class Library {
     }
 
     /**
-     * Cleans up and destroys the Library instance.
+     * Cleans up and destroys the MdLibrary instance.
      * @public
      */
     destroy() {
@@ -80,4 +80,4 @@ class Library {
     }
 }
 
-export { Library };
+export { MdLibrary };

@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
-import { VirtualScroll } from "../../lib/virtual-scroll/virtual-scroll.js";
-import { Store } from "../../lib/store/store.js";
-import { Router } from "../../lib/router/router.js";
+import { MdVirtualScroll } from "../../lib/virtual-scroll/virtual-scroll.js";
+import { MdStore } from "../../lib/store/store.js";
+import { MdRouter } from "../../lib/router/router.js";
 
 class AppUsers extends LitElement {
     createRenderRoot() {
@@ -14,7 +14,7 @@ class AppUsers extends LitElement {
 
     constructor() {
         super();
-        this.store = new Store(Array.from({ length: 100 }, (v, k) => ({ label: "Label " + (k + 1) })));
+        this.store = new MdStore(Array.from({ length: 100 }, (v, k) => ({ label: "Label " + (k + 1) })));
         this.docs = [];
     }
 
@@ -56,7 +56,7 @@ class AppUsers extends LitElement {
 
         await this.updateComplete;
 
-        this.virtualScroll = new VirtualScroll(this.viewport, {
+        this.virtualScroll = new MdVirtualScroll(this.viewport, {
             total: this.store.getAll().total,
             contentHeight: 48,
             threshold: 2,

@@ -1,7 +1,7 @@
 import { html } from "lit";
-import { MdElement } from "../../lib/element/element.js";
+import { MdComponent } from "../../lib/component/component.js";
 
-class MdButton extends MdElement {
+class MdButton extends MdComponent {
     static get properties() {
         return {};
     }

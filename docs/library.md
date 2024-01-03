@@ -1,19 +1,22 @@
 ## Classes
 
 <dl>
-<dt><a href="#MdElement">MdElement</a></dt>
+<dt><a href="#MdComponent">MdComponent</a></dt>
 <dd></dd>
-<dt><a href="#Library">Library</a></dt>
-<dd><p>Library class for handling events on a root element.</p>
+<dt><a href="#MdLibrary">MdLibrary</a></dt>
+<dd><p>MdLibrary class for handling events on a root element.</p>
 </dd>
-<dt><a href="#Router">Router</a></dt>
+<dt><a href="#MdRipple">MdRipple</a> ⇐ <code><a href="#MdLibrary">MdLibrary</a></code></dt>
+<dd><p>Class representing an MdRipple instance.</p>
+</dd>
+<dt><a href="#MdRouter">MdRouter</a></dt>
 <dd><p>A simple router implementation for managing routes.</p>
 </dd>
-<dt><a href="#Store">Store</a></dt>
-<dd><p>Represents a Store for managing and manipulating data.</p>
+<dt><a href="#MdStore">MdStore</a></dt>
+<dd><p>Represents a MdStore for managing and manipulating data.</p>
 </dd>
-<dt><a href="#VirtualScroll">VirtualScroll</a> ⇐ <code><a href="#Library">Library</a></code></dt>
-<dd><p>Class representing a virtual scroll functionality that extends a Library.</p>
+<dt><a href="#MdVirtualScroll">MdVirtualScroll</a> ⇐ <code><a href="#MdLibrary">MdLibrary</a></code></dt>
+<dd><p>Class representing a virtual scroll functionality that extends a MdLibrary.</p>
 </dd>
 </dl>
 
@@ -39,77 +42,77 @@
 </dd>
 </dl>
 
-<a name="MdElement"></a>
+<a name="MdComponent"></a>
 
-## MdElement
+## MdComponent
 **Kind**: global class  
 **Author**: Ridho Prasetya  
 
-* [MdElement](#MdElement)
-    * [new MdElement()](#new_MdElement_new)
-    * [.on(type, listener)](#MdElement+on)
-    * [.off(type, listener)](#MdElement+off) ⇒ <code>void</code>
-    * [.emit(type, detail)](#MdElement+emit)
+* [MdComponent](#MdComponent)
+    * [new MdComponent()](#new_MdComponent_new)
+    * [.on(type, listener)](#MdComponent+on)
+    * [.off(type, listener)](#MdComponent+off) ⇒ <code>void</code>
+    * [.emit(type, detail)](#MdComponent+emit)
 
-<a name="new_MdElement_new"></a>
+<a name="new_MdComponent_new"></a>
 
-### new MdElement()
+### new MdComponent()
 Custom element providing additional functionality on top of LitElement.
 
-<a name="MdElement+on"></a>
+<a name="MdComponent+on"></a>
 
-### mdElement.on(type, listener)
+### mdComponent.on(type, listener)
 Attaches an event listener to the element.
 
-**Kind**: instance method of [<code>MdElement</code>](#MdElement)  
+**Kind**: instance method of [<code>MdComponent</code>](#MdComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>string</code> | The type of event to listen for. |
 | listener | <code>function</code> | The callback function to execute when the event occurs. |
 
-<a name="MdElement+off"></a>
+<a name="MdComponent+off"></a>
 
-### mdElement.off(type, listener) ⇒ <code>void</code>
+### mdComponent.off(type, listener) ⇒ <code>void</code>
 Removes an event listener from the element.
 
-**Kind**: instance method of [<code>MdElement</code>](#MdElement)  
+**Kind**: instance method of [<code>MdComponent</code>](#MdComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>string</code> | The type of event to remove the listener from. |
 | listener | <code>function</code> | The callback function previously added. |
 
-<a name="MdElement+emit"></a>
+<a name="MdComponent+emit"></a>
 
-### mdElement.emit(type, detail)
+### mdComponent.emit(type, detail)
 Dispatches a custom event from the element with the given type and detail.
 
-**Kind**: instance method of [<code>MdElement</code>](#MdElement)  
+**Kind**: instance method of [<code>MdComponent</code>](#MdComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>string</code> | The type of event to dispatch. |
 | detail | <code>\*</code> | Additional information to include with the event. |
 
-<a name="Library"></a>
+<a name="MdLibrary"></a>
 
-## Library
-Library class for handling events on a root element.
+## MdLibrary
+MdLibrary class for handling events on a root element.
 
 **Kind**: global class  
 **Author**: Ridho Prasetya  
 
-* [Library](#Library)
-    * [new Library([root], [options])](#new_Library_new)
-    * [.root](#Library+root) : <code>HTMLElement</code>
-    * [.options](#Library+options) : <code>Object</code>
-    * [.destroy()](#Library+destroy)
+* [MdLibrary](#MdLibrary)
+    * [new MdLibrary([root], [options])](#new_MdLibrary_new)
+    * [.root](#MdLibrary+root) : <code>HTMLElement</code>
+    * [.options](#MdLibrary+options) : <code>Object</code>
+    * [.destroy()](#MdLibrary+destroy)
 
-<a name="new_Library_new"></a>
+<a name="new_MdLibrary_new"></a>
 
-### new Library([root], [options])
-Creates an instance of Library.
+### new MdLibrary([root], [options])
+Creates an instance of MdLibrary.
 
 
 | Param | Type | Default | Description |
@@ -117,52 +120,173 @@ Creates an instance of Library.
 | [root] | <code>HTMLElement</code> | <code></code> | The root element to attach events to. |
 | [options] | <code>Object</code> | <code>{}</code> | The options for the library. |
 
-<a name="Library+root"></a>
+<a name="MdLibrary+root"></a>
 
-### library.root : <code>HTMLElement</code>
+### mdLibrary.root : <code>HTMLElement</code>
 The root element to attach events to.
 
-**Kind**: instance property of [<code>Library</code>](#Library)  
-<a name="Library+options"></a>
+**Kind**: instance property of [<code>MdLibrary</code>](#MdLibrary)  
+<a name="MdLibrary+options"></a>
 
-### library.options : <code>Object</code>
+### mdLibrary.options : <code>Object</code>
 Options for the library.
 
-**Kind**: instance property of [<code>Library</code>](#Library)  
-<a name="Library+destroy"></a>
+**Kind**: instance property of [<code>MdLibrary</code>](#MdLibrary)  
+<a name="MdLibrary+destroy"></a>
 
-### library.destroy()
-Cleans up and destroys the Library instance.
+### mdLibrary.destroy()
+Cleans up and destroys the MdLibrary instance.
 
-**Kind**: instance method of [<code>Library</code>](#Library)  
+**Kind**: instance method of [<code>MdLibrary</code>](#MdLibrary)  
 **Access**: public  
-<a name="Router"></a>
+<a name="MdRipple"></a>
 
-## Router
+## MdRipple ⇐ [<code>MdLibrary</code>](#MdLibrary)
+Class representing an MdRipple instance.
+
+**Kind**: global class  
+**Extends**: [<code>MdLibrary</code>](#MdLibrary)  
+**Email**: ndiing.inc@gmail.com  
+**Author**: Ridho Prasetya  
+
+* [MdRipple](#MdRipple) ⇐ [<code>MdLibrary</code>](#MdLibrary)
+    * [.root](#MdLibrary+root) : <code>HTMLElement</code>
+    * [.options](#MdLibrary+options) : <code>Object</code>
+    * [.init()](#MdRipple+init)
+    * [.destory()](#MdRipple+destory)
+    * [.handlePointerenter(event)](#MdRipple+handlePointerenter)
+    * [.handlePointerleave(event)](#MdRipple+handlePointerleave)
+    * [.handlePointerdown(event)](#MdRipple+handlePointerdown)
+    * [.handlePointerup(event)](#MdRipple+handlePointerup)
+    * [.handleFocus(event)](#MdRipple+handleFocus)
+    * [.handleBlur(event)](#MdRipple+handleBlur)
+    * [.destroy()](#MdLibrary+destroy)
+
+<a name="MdLibrary+root"></a>
+
+### mdRipple.root : <code>HTMLElement</code>
+The root element to attach events to.
+
+**Kind**: instance property of [<code>MdRipple</code>](#MdRipple)  
+<a name="MdLibrary+options"></a>
+
+### mdRipple.options : <code>Object</code>
+Options for the library.
+
+**Kind**: instance property of [<code>MdRipple</code>](#MdRipple)  
+<a name="MdRipple+init"></a>
+
+### mdRipple.init()
+Initializes MdRipple.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+**Overrides**: <code>MdLibrary#init</code>  
+<a name="MdRipple+destory"></a>
+
+### mdRipple.destory()
+Destroys MdRipple by removing event listeners.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+<a name="MdRipple+handlePointerenter"></a>
+
+### mdRipple.handlePointerenter(event)
+Handles pointer entering the element.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The PointerEvent object. |
+
+<a name="MdRipple+handlePointerleave"></a>
+
+### mdRipple.handlePointerleave(event)
+Handles pointer leaving the element.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The PointerEvent object. |
+
+<a name="MdRipple+handlePointerdown"></a>
+
+### mdRipple.handlePointerdown(event)
+Handles pointer down event on the element.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The PointerEvent object. |
+
+<a name="MdRipple+handlePointerup"></a>
+
+### mdRipple.handlePointerup(event)
+Handles pointer up event on the element.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The PointerEvent object. |
+
+<a name="MdRipple+handleFocus"></a>
+
+### mdRipple.handleFocus(event)
+Handles focus event on the element.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>FocusEvent</code> | The FocusEvent object. |
+
+<a name="MdRipple+handleBlur"></a>
+
+### mdRipple.handleBlur(event)
+Handles blur event on the element.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>FocusEvent</code> | The FocusEvent object. |
+
+<a name="MdLibrary+destroy"></a>
+
+### mdRipple.destroy()
+Cleans up and destroys the MdLibrary instance.
+
+**Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+**Access**: public  
+<a name="MdRouter"></a>
+
+## MdRouter
 A simple router implementation for managing routes.
 
 **Kind**: global class  
 **Author**: Ridho Prasetya  
 
-* [Router](#Router)
+* [MdRouter](#MdRouter)
     * _instance_
-        * [.controller](#Router+controller) : <code>AbortController</code> \| <code>null</code>
+        * [.controller](#MdRouter+controller) : <code>AbortController</code> \| <code>null</code>
     * _static_
-        * [.navigate(url)](#Router.navigate)
-        * [.init(routes)](#Router.init)
+        * [.navigate(url)](#MdRouter.navigate)
+        * [.init(routes)](#MdRouter.init)
 
-<a name="Router+controller"></a>
+<a name="MdRouter+controller"></a>
 
-### router.controller : <code>AbortController</code> \| <code>null</code>
+### mdRouter.controller : <code>AbortController</code> \| <code>null</code>
 Manages the control and abort functionality for ongoing operations.
 
-**Kind**: instance property of [<code>Router</code>](#Router)  
-<a name="Router.navigate"></a>
+**Kind**: instance property of [<code>MdRouter</code>](#MdRouter)  
+<a name="MdRouter.navigate"></a>
 
-### Router.navigate(url)
+### MdRouter.navigate(url)
 Navigate to a specified URL.
 
-**Kind**: static method of [<code>Router</code>](#Router)  
+**Kind**: static method of [<code>MdRouter</code>](#MdRouter)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -170,14 +294,14 @@ Navigate to a specified URL.
 
 **Example**  
 ```js
-Router.navigate('/users?age_gte=17')
+MdRouter.navigate('/users?age_gte=17')
 ```
-<a name="Router.init"></a>
+<a name="MdRouter.init"></a>
 
-### Router.init(routes)
+### MdRouter.init(routes)
 Initialize the router with provided routes.
 
-**Kind**: static method of [<code>Router</code>](#Router)  
+**Kind**: static method of [<code>MdRouter</code>](#MdRouter)  
 **Emits**: <code>window#event:onNavigationStart</code>, <code>window#event:onNavigation</code>, <code>window#event:onNavigationCancel</code>, <code>window#event:onNavigationEnd</code>  
 
 | Param | Type | Description |
@@ -186,150 +310,150 @@ Initialize the router with provided routes.
 
 **Example**  
 ```js
-import { Router } from "./lib/router.js";import AppMain from "./dev/main.js";import AppUsers from "./dev/users.js";import AppUser from "./dev/user.js";import AppError from "./dev/error.js";const beforeLoad = async (resolve, reject) => {    if (localStorage.isAuthenticated==="1") resolve()    else {        Router.navigate("/login");        reject();    }};// prettier-ignoreRouter.init([    {path:'',title:'Welcome',component:AppMain,children:[        {path:'users',beforeLoad,title:'Users',component:AppUsers,children:[            {path:':_id',title:'User',component:AppUser,children:[]},        ]},        {path:'blogs',title:'Blogs',load:() => import("./dev/blogs.js").then(m=>m.default),children:[            {path:':_id',title:'Blog',load:() => import("./dev/blog.js").then(m=>m.default),children:[]},        ]},    ]},    {path:'/login',title:'Login',load:() => import("./dev/login.js").then(m=>m.default),children:[]},    {path:'*',title:'Error',component:AppError,children:[]},]);// window.addEventListener("onNavigationStart", console.log);// window.addEventListener("onNavigation", console.log);// window.addEventListener("onNavigationCancel", console.log);// window.addEventListener("onNavigationEnd", console.log);
+import { MdRouter } from "./lib/router.js";import AppMain from "./dev/main.js";import AppUsers from "./dev/users.js";import AppUser from "./dev/user.js";import AppError from "./dev/error.js";const beforeLoad = async (resolve, reject) => {    if (localStorage.isAuthenticated==="1") resolve()    else {        MdRouter.navigate("/login");        reject();    }};// prettier-ignoreMdRouter.init([    {path:'',title:'Welcome',component:AppMain,children:[        {path:'users',beforeLoad,title:'Users',component:AppUsers,children:[            {path:':_id',title:'User',component:AppUser,children:[]},        ]},        {path:'blogs',title:'Blogs',load:() => import("./dev/blogs.js").then(m=>m.default),children:[            {path:':_id',title:'Blog',load:() => import("./dev/blog.js").then(m=>m.default),children:[]},        ]},    ]},    {path:'/login',title:'Login',load:() => import("./dev/login.js").then(m=>m.default),children:[]},    {path:'*',title:'Error',component:AppError,children:[]},]);// window.addEventListener("onNavigationStart", console.log);// window.addEventListener("onNavigation", console.log);// window.addEventListener("onNavigationCancel", console.log);// window.addEventListener("onNavigationEnd", console.log);
 ```
-<a name="Store"></a>
+<a name="MdStore"></a>
 
-## Store
-Represents a Store for managing and manipulating data.
+## MdStore
+Represents a MdStore for managing and manipulating data.
 
 **Kind**: global class  
 **Author**: Ridho Prasetya  
 
-* [Store](#Store)
-    * [new Store([docs])](#new_Store_new)
-    * [.filter(name, value)](#Store+filter) ⇒ <code>void</code>
-    * [.paginate(_page, _limit)](#Store+paginate) ⇒ <code>void</code>
-    * [.sort(_sort, _order)](#Store+sort) ⇒ <code>void</code>
-    * [.slice(_start, _end)](#Store+slice) ⇒ <code>void</code>
-    * [.search(q)](#Store+search) ⇒ <code>void</code>
-    * [.getAll()](#Store+getAll) ⇒ <code>Object</code>
+* [MdStore](#MdStore)
+    * [new MdStore([docs])](#new_MdStore_new)
+    * [.filter(name, value)](#MdStore+filter) ⇒ <code>void</code>
+    * [.paginate(_page, _limit)](#MdStore+paginate) ⇒ <code>void</code>
+    * [.sort(_sort, _order)](#MdStore+sort) ⇒ <code>void</code>
+    * [.slice(_start, _end)](#MdStore+slice) ⇒ <code>void</code>
+    * [.search(q)](#MdStore+search) ⇒ <code>void</code>
+    * [.getAll()](#MdStore+getAll) ⇒ <code>Object</code>
 
-<a name="new_Store_new"></a>
+<a name="new_MdStore_new"></a>
 
-### new Store([docs])
-Initializes the Store with an array of documents.
+### new MdStore([docs])
+Initializes the MdStore with an array of documents.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [docs] | <code>Array</code> | <code>[]</code> | Array of documents. |
 
-<a name="Store+filter"></a>
+<a name="MdStore+filter"></a>
 
-### store.filter(name, value) ⇒ <code>void</code>
+### mdStore.filter(name, value) ⇒ <code>void</code>
 Modifies the URL search parameters by adding or deleting a specific parameter based on the provided name and value.If the name is falsy, it deletes parameters not included in the properties object.
 
-**Kind**: instance method of [<code>Store</code>](#Store)  
+**Kind**: instance method of [<code>MdStore</code>](#MdStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | name | <code>string</code> | The name of the parameter to set or delete. |
 | value | <code>string</code> | The value of the parameter. |
 
-<a name="Store+paginate"></a>
+<a name="MdStore+paginate"></a>
 
-### store.paginate(_page, _limit) ⇒ <code>void</code>
+### mdStore.paginate(_page, _limit) ⇒ <code>void</code>
 Modifies the URL search parameters to set or delete the "_page" and "_limit" parameters based on provided values.
 
-**Kind**: instance method of [<code>Store</code>](#Store)  
+**Kind**: instance method of [<code>MdStore</code>](#MdStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | _page | <code>number</code> | The page number. |
 | _limit | <code>number</code> | The limit of items per page. |
 
-<a name="Store+sort"></a>
+<a name="MdStore+sort"></a>
 
-### store.sort(_sort, _order) ⇒ <code>void</code>
+### mdStore.sort(_sort, _order) ⇒ <code>void</code>
 Modifies the URL search parameters to handle sorting by setting or deleting "_sort" and "_order" parameters.
 
-**Kind**: instance method of [<code>Store</code>](#Store)  
+**Kind**: instance method of [<code>MdStore</code>](#MdStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | _sort | <code>string</code> | The field to sort by. |
 | _order | <code>string</code> | The sorting order ("asc" for ascending, "desc" for descending). |
 
-<a name="Store+slice"></a>
+<a name="MdStore+slice"></a>
 
-### store.slice(_start, _end) ⇒ <code>void</code>
+### mdStore.slice(_start, _end) ⇒ <code>void</code>
 Modifies the URL search parameters to set or delete the "_start" and "_end" parameters based on provided values.
 
-**Kind**: instance method of [<code>Store</code>](#Store)  
+**Kind**: instance method of [<code>MdStore</code>](#MdStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | _start | <code>number</code> | The starting index. |
 | _end | <code>number</code> | The ending index. |
 
-<a name="Store+search"></a>
+<a name="MdStore+search"></a>
 
-### store.search(q) ⇒ <code>void</code>
+### mdStore.search(q) ⇒ <code>void</code>
 Modifies the URL search parameters to set or delete the "q" parameter based on the provided search query.
 
-**Kind**: instance method of [<code>Store</code>](#Store)  
+**Kind**: instance method of [<code>MdStore</code>](#MdStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | q | <code>string</code> | The search query string. |
 
-<a name="Store+getAll"></a>
+<a name="MdStore+getAll"></a>
 
-### store.getAll() ⇒ <code>Object</code>
+### mdStore.getAll() ⇒ <code>Object</code>
 Retrieves filtered and paginated data based on URL parameters.
 
-**Kind**: instance method of [<code>Store</code>](#Store)  
+**Kind**: instance method of [<code>MdStore</code>](#MdStore)  
 **Returns**: <code>Object</code> - - Object containing total count and filtered data.  
-<a name="VirtualScroll"></a>
+<a name="MdVirtualScroll"></a>
 
-## VirtualScroll ⇐ [<code>Library</code>](#Library)
-Class representing a virtual scroll functionality that extends a Library.
+## MdVirtualScroll ⇐ [<code>MdLibrary</code>](#MdLibrary)
+Class representing a virtual scroll functionality that extends a MdLibrary.
 
 **Kind**: global class  
-**Extends**: [<code>Library</code>](#Library)  
+**Extends**: [<code>MdLibrary</code>](#MdLibrary)  
 **Author**: Ridho Prasetya  
 
-* [VirtualScroll](#VirtualScroll) ⇐ [<code>Library</code>](#Library)
-    * [.root](#Library+root) : <code>HTMLElement</code>
-    * [.options](#Library+options) : <code>Object</code>
-    * [.init()](#VirtualScroll+init)
-    * [.destroy()](#VirtualScroll+destroy)
-    * [.handleScroll(event)](#VirtualScroll+handleScroll)
+* [MdVirtualScroll](#MdVirtualScroll) ⇐ [<code>MdLibrary</code>](#MdLibrary)
+    * [.root](#MdLibrary+root) : <code>HTMLElement</code>
+    * [.options](#MdLibrary+options) : <code>Object</code>
+    * [.init()](#MdVirtualScroll+init)
+    * [.destroy()](#MdVirtualScroll+destroy)
+    * [.handleScroll(event)](#MdVirtualScroll+handleScroll)
 
-<a name="Library+root"></a>
+<a name="MdLibrary+root"></a>
 
-### virtualScroll.root : <code>HTMLElement</code>
+### mdVirtualScroll.root : <code>HTMLElement</code>
 The root element to attach events to.
 
-**Kind**: instance property of [<code>VirtualScroll</code>](#VirtualScroll)  
-<a name="Library+options"></a>
+**Kind**: instance property of [<code>MdVirtualScroll</code>](#MdVirtualScroll)  
+<a name="MdLibrary+options"></a>
 
-### virtualScroll.options : <code>Object</code>
+### mdVirtualScroll.options : <code>Object</code>
 Options for the library.
 
-**Kind**: instance property of [<code>VirtualScroll</code>](#VirtualScroll)  
-<a name="VirtualScroll+init"></a>
+**Kind**: instance property of [<code>MdVirtualScroll</code>](#MdVirtualScroll)  
+<a name="MdVirtualScroll+init"></a>
 
-### virtualScroll.init()
+### mdVirtualScroll.init()
 Initializes the virtual scroll by attaching the scroll event handler.
 
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-**Overrides**: <code>Library#init</code>  
-<a name="VirtualScroll+destroy"></a>
+**Kind**: instance method of [<code>MdVirtualScroll</code>](#MdVirtualScroll)  
+**Overrides**: <code>MdLibrary#init</code>  
+<a name="MdVirtualScroll+destroy"></a>
 
-### virtualScroll.destroy()
+### mdVirtualScroll.destroy()
 Destroys the virtual scroll by removing the scroll event handler.
 
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-**Overrides**: [<code>destroy</code>](#Library+destroy)  
-<a name="VirtualScroll+handleScroll"></a>
+**Kind**: instance method of [<code>MdVirtualScroll</code>](#MdVirtualScroll)  
+**Overrides**: [<code>destroy</code>](#MdLibrary+destroy)  
+<a name="MdVirtualScroll+handleScroll"></a>
 
-### virtualScroll.handleScroll(event)
+### mdVirtualScroll.handleScroll(event)
 Handles the scroll event and emits 'onScroll' event with relevant scroll data.
 
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-**Emits**: <code>VirtualScroll#event:onScroll</code>  
+**Kind**: instance method of [<code>MdVirtualScroll</code>](#MdVirtualScroll)  
+**Emits**: <code>MdVirtualScroll#event:onScroll</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |

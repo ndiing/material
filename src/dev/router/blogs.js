@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit";
-import { Router } from "../../lib/router/router.js";
+import { MdRouter } from "../../lib/router/router.js";
+import { MdRipple } from "../../lib/ripple/ripple.js";
 
 class AppBlogs extends LitElement {
     createRenderRoot() {
@@ -10,8 +11,15 @@ class AppBlogs extends LitElement {
         return html`
             <h1>Blogs</h1>
             <input type="search" @search="${this.handleSearch}" placeholder="Search..." />
+            <button id="button">button</button>
             <md-outlet></md-outlet>
         `;
+    }
+
+    firstUpdated() {
+        const button = this.querySelector("#button");
+
+        new MdRipple(button, {});
     }
 
     handleSearch(event) {
@@ -20,10 +28,10 @@ class AppBlogs extends LitElement {
         const searchParams = new URLSearchParams();
         if (event.currentTarget.value) {
             searchParams.set("q", event.currentTarget.value);
-            search='?'+searchParams.toString()
+            search = "?" + searchParams.toString();
         } else searchParams.delete("q");
-        
-        Router.navigate(window.location.pathname + search);
+
+        MdRouter.navigate(window.location.pathname + search);
     }
 }
 

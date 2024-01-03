@@ -13,7 +13,7 @@
  * A simple router implementation for managing routes.
  * @author Ridho Prasetya
  */
-class Router {
+class MdRouter {
     /**
      * Object representing a route configuration.
      * @typedef {Object} Route
@@ -180,10 +180,10 @@ class Router {
     /**
      * Get details of the current router state.
      * @private
-     * @returns {Object} - Router details.
+     * @returns {Object} - MdRouter details.
      */
     static get detail() {
-        // Create and return a new object containing properties from the current Router instance
+        // Create and return a new object containing properties from the current MdRouter instance
         return { ...this };
     }
 
@@ -285,7 +285,7 @@ class Router {
      * Navigate to a specified URL.
      * @param {string} url - URL to navigate to.
      * @example
-     * Router.navigate('/users?age_gte=17')
+     * MdRouter.navigate('/users?age_gte=17')
      */
     static navigate(url) {
         // Pushes a new state to the browser's history with the provided URL
@@ -319,7 +319,7 @@ class Router {
      * @fires window#onNavigationCancel
      * @fires window#onNavigationEnd
      * @example
-     * import { Router } from "./lib/router.js";
+     * import { MdRouter } from "./lib/router.js";
      *
      * import AppMain from "./dev/main.js";
      * import AppUsers from "./dev/users.js";
@@ -329,13 +329,13 @@ class Router {
      * const beforeLoad = async (resolve, reject) => {
      *     if (localStorage.isAuthenticated==="1") resolve()
      *     else {
-     *         Router.navigate("/login");
+     *         MdRouter.navigate("/login");
      *         reject();
      *     }
      * };
      *
      * // prettier-ignore
-     * Router.init([
+     * MdRouter.init([
      *     {path:'',title:'Welcome',component:AppMain,children:[
      *         {path:'users',beforeLoad,title:'Users',component:AppUsers,children:[
      *             {path:':_id',title:'User',component:AppUser,children:[]},
@@ -369,8 +369,8 @@ class Router {
             // Call the original pushState function
             pushState.apply(this, arguments);
 
-            // Emit the custom "popstate" event through the Router
-            Router.emit("popstate");
+            // Emit the custom "popstate" event through the MdRouter
+            MdRouter.emit("popstate");
         };
 
         // Listen for click events globally and trigger the requestNavigation method
@@ -378,4 +378,4 @@ class Router {
     }
 }
 
-export { Router };
+export { MdRouter };

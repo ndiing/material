@@ -3,15 +3,15 @@ import { LitElement } from "lit";
 /**
  * Represents a custom element that extends LitElement and provides additional methods.
  * @class
- * @name MdElement
+ * @name MdComponent
  * @description Custom element providing additional functionality on top of LitElement.
  * @author Ridho Prasetya
  */
-class MdElement extends LitElement {
+class MdComponent extends LitElement {
     /**
      * Overrides LitElement's createRenderRoot to use the element itself as the render root.
      * @private
-     * @returns {this} The instance of MdElement.
+     * @returns {this} The instance of MdComponent.
      */
     createRenderRoot() {
         return this;
@@ -51,4 +51,4 @@ class MdElement extends LitElement {
     }
 }
 
-export { MdElement };
+export { MdComponent };

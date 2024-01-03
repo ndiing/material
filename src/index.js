@@ -3,7 +3,7 @@ import "./md.js";
 
 // dev
 
-import { Router } from "./lib/router/router.js";
+import { MdRouter } from "./lib/router/router.js";
 
 import AppMain from "./dev/router/main.js";
 import AppUsers from "./dev/router/users.js";
@@ -13,13 +13,13 @@ import AppError from "./dev/router/error.js";
 const beforeLoad = async (resolve, reject) => {
     if (localStorage.isAuthenticated==="1") resolve()
     else {
-        Router.navigate("/login");
+        MdRouter.navigate("/login");
         reject();
     }
 };
 
 // prettier-ignore
-Router.init([
+MdRouter.init([
     {path:'',title:'Welcome',component:AppMain,children:[
         {path:'users',beforeLoad,title:'Users',component:AppUsers,children:[
             {path:':_id',title:'User',component:AppUser,children:[]},
