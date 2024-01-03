@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    "src/material"
+  ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js"
+  }

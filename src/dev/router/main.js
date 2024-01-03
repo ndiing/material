@@ -1,63 +1,41 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
+import { MDComponent } from "../../material/foundation/component";
+import { MDRouter } from "../../material/foundation/router";
 
-class AppMain extends LitElement{
-    createRenderRoot(){return this}
-
+class DevMainComponent extends MDComponent{
+    static get properties(){
+        return {
+            isAuthenticated:{type:Boolean}
+        }
+    }
+    
     render(){
         return html`
-            <div class="md-layout">
-                <div class="md-layout__grid">
-                    <div class="md-layout__column md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
-                        <div>
-                            <div routerLink="/">/</div>
-                            <div routerLink="/users">/users</div>
-                            <div routerLink="/users/ndiing">/users/ndiing</div>
-                            <div routerLink="/blogs">/blogs</div>
-                            <div routerLink="/blogs/welcome">/blogs/welcome</div>
-                            <div routerLink="/error">/error</div>
-                        </div>
-                    </div>
-                    <div class="md-layout__column md-layout__column--expanded10 md-layout__column--medium4 md-layout__column--compact4">
-                        <h1>Main</h1>
-                        <md-outlet></md-outlet>
-                    </div>
-                </div>
+            <h1>Main</h1>
+            <div>
+                <div routerLink="/">/</div>
+                <div routerLink="/users">/users</div>
+                <div routerLink="/users/ndiing">/users/ndiing</div>
+                <div routerLink="/blogs">/blogs</div>
+                <div routerLink="/blogs/ndiing">/blogs/ndiing</div>
+                <div routerLink="/error">/error</div>
+                ${localStorage.isAuthenticated==='1'?html`<div @click="${this.handleLogout}">/logout</div>`:``}
             </div>
-
-            <!-- <div class="md-layout">
-                <div class="md-layout__grid">
-                    <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">4</div>
-                    <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">4</div>
-                    <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">4</div>
-                </div>
-            </div> -->
-
-            <!-- <div class="md-layout">
-                <div class="md-layout__grid">
-                    <div class="
-                        md-layout__column 
-                        md-layout__column--expanded4 
-                        md-layout__column--medium4 
-                        md-layout__column--compact4"
-                    >4</div>
-                    <div class="
-                        md-layout__column 
-                        md-layout__column--expanded4 
-                        md-layout__column--medium4 
-                        md-layout__column--compact4"
-                    >4</div>
-                    <div class="
-                        md-layout__column 
-                        md-layout__column--expanded4 
-                        md-layout__column--medium4 
-                        md-layout__column--compact4"
-                    >4</div>
-                </div>
-            </div> -->
+            <md-outlet></md-outlet>
         `
+    }
+
+    connectedCallback(){
+        super.connectedCallback()
+        this.isAuthenticated=localStorage.isAuthenticated
+    }
+
+    handleLogout(){
+        localStorage.isAuthenticated=0
+        MDRouter.navigate('/login')
     }
 }
 
-customElements.define('app-main',AppMain)
+customElements.define('dev-main',DevMainComponent)
 
-export default document.createElement('app-main')
+export default document.createElement('dev-main')

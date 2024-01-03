@@ -1,27 +1,18 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
+import { MDComponent } from "../../material/foundation/component";
 
-class AppLogin extends LitElement{
-    createRenderRoot(){return this}
-
+class DevLoginComponent extends MDComponent{
     render(){
         return html`
-            <div class="md-layout">
-                <div class="md-layout__grid">
-                    <div class="md-layout__column md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
-                        <div>
-                            <div routerLink="/">/</div>
-                        </div>
-                    </div>
-                    <div class="md-layout__column md-layout__column--expanded10 md-layout__column--medium4 md-layout__column--compact4">
-                        <h1>Login</h1>
-                        <md-outlet></md-outlet>
-                    </div>
-                </div>
+            <h1>Login</h1>
+            <div>
+                <div routerLink="/">/</div>
             </div>
+            <md-outlet></md-outlet>
         `
     }
 }
 
-customElements.define('app-login',AppLogin)
+customElements.define('dev-login',DevLoginComponent)
 
-export default document.createElement('app-login')
+export default document.createElement('dev-login')

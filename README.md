@@ -1,11 +1,15 @@
-# Material
+# 🚀 Welcome to your new awesome project!
 
-Implementasi [Material Design](https://m3.material.io/)
+This project has been created using **webpack-cli**, you can now run
 
-## Docs
+```
+npm run build
+```
 
--   [library](./docs/library.md)
+or
 
-<!-- 
-jsdoc2md src/lib/component/component.js src/lib/library/library.js src/lib/ripple/ripple.js src/lib/router/router.js src/lib/store/store.js src/lib/string/string.js src/lib/virtual-scroll/virtual-scroll.js > docs/library.md
- -->
+```
+yarn build
+```
+
+to bundle your application

@@ -1,8 +1,7 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
+import { MDComponent } from "../../material/foundation/component";
 
-class AppUser extends LitElement{
-    createRenderRoot(){return this}
-
+class DevUserComponent extends MDComponent{
     render(){
         return html`
             <h1>User</h1>
@@ -11,6 +10,6 @@ class AppUser extends LitElement{
     }
 }
 
-customElements.define('app-user',AppUser)
+customElements.define('dev-user',DevUserComponent)
 
-export default document.createElement('app-user')
+export default document.createElement('dev-user')

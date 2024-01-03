@@ -1,27 +1,18 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
+import { MDComponent } from "../../material/foundation/component";
 
-class AppError extends LitElement{
-    createRenderRoot(){return this}
-
+class DevErrorComponent extends MDComponent{
     render(){
         return html`
-            <div class="md-layout">
-                <div class="md-layout__grid">
-                    <div class="md-layout__column md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
-                        <div>
-                            <div routerLink="/">/</div>
-                        </div>
-                    </div>
-                    <div class="md-layout__column md-layout__column--expanded10 md-layout__column--medium4 md-layout__column--compact4">
-                        <h1>Error</h1>
-                        <md-outlet></md-outlet>
-                    </div>
-                </div>
+            <h1>Error</h1>
+            <div>
+                <div routerLink="/">/</div>
             </div>
+            <md-outlet></md-outlet>
         `
     }
 }
 
-customElements.define('app-error',AppError)
+customElements.define('dev-error',DevErrorComponent)
 
-export default document.createElement('app-error')
+export default document.createElement('dev-error')
