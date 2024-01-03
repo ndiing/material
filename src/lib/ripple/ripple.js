@@ -7,15 +7,31 @@ import { MdLibrary } from "../library/library.js";
  * @email ndiing.inc@gmail.com
  */
 class MdRipple extends MdLibrary {
+     /**
+     * Creates an MdRipple instance.
+     * @param {HTMLElement|null} root - The root element for MdRipple.
+     * @param {Object} [options] - The options for MdRipple.
+     * @param {boolean} [options.bounded=true] - Indicates whether the ripple effect is bounded within the element.
+     * @param {HTMLElement|null} [options.trigger=null] - The element that triggers the ripple effect.
+     *   If not provided, defaults to the root element.
+     * @param {boolean} [options.centered=false] - Indicates whether the ripple effect is centered around the pointer coordinates.
+     */
+    constructor(...args){
+        super(...args)
+    }
+
     /**
      * Initializes MdRipple.
      */
     init() {
         // Adding classes and attributes
         this.root.classList.add("md-ripple");
-        this.root.classList.add("md-ripple--trigger");
-        this.root.setAttribute("tabIndex", 0);
-        this.root.classList.add("md-ripple--bounded");
+
+        if (this.options.bounded !== false) this.root.classList.add("md-ripple--bounded");
+
+        this.trigger = this.options.trigger ?? this.root;
+        this.trigger.classList.add("md-ripple--trigger");
+        this.trigger.setAttribute("tabIndex", 0);
 
         // Calculating diameter and setting CSS property
         const rect = this.root.getBoundingClientRect();
@@ -33,24 +49,24 @@ class MdRipple extends MdLibrary {
         this.handleBlur = this.handleBlur.bind(this);
 
         // Adding event listeners
-        this.on("pointerenter", this.handlePointerenter);
-        this.on("pointerleave", this.handlePointerleave);
-        this.on("pointerdown", this.handlePointerdown);
-        // this.on("pointerup", this.handlePointerup); // This line is commented out in the original code
-        this.on("focus", this.handleFocus);
-        this.on("blur", this.handleBlur);
+        this.trigger.addEventListener("pointerenter", this.handlePointerenter);
+        this.trigger.addEventListener("pointerleave", this.handlePointerleave);
+        this.trigger.addEventListener("pointerdown", this.handlePointerdown);
+        // this.trigger.addEventListener("pointerup", this.handlePointerup); // This line is commented out in the original code
+        this.trigger.addEventListener("focus", this.handleFocus);
+        this.trigger.addEventListener("blur", this.handleBlur);
     }
 
     /**
      * Destroys MdRipple by removing event listeners.
      */
     destory() {
-        this.off("pointerenter", this.handlePointerenter);
-        this.off("pointerleave", this.handlePointerleave);
-        this.off("pointerdown", this.handlePointerdown);
-        // this.off("pointerup", this.handlePointerup); // This line is commented out in the original code
-        this.off("focus", this.handleFocus);
-        this.off("blur", this.handleBlur);
+        this.trigger.removeEventListener("pointerenter", this.handlePointerenter);
+        this.trigger.removeEventListener("pointerleave", this.handlePointerleave);
+        this.trigger.removeEventListener("pointerdown", this.handlePointerdown);
+        // this.trigger.removeEventListener("pointerup", this.handlePointerup); // This line is commented out in the original code
+        this.trigger.removeEventListener("focus", this.handleFocus);
+        this.trigger.removeEventListener("blur", this.handleBlur);
     }
 
     // Event handler methods with JSDoc comments
@@ -85,22 +101,24 @@ class MdRipple extends MdLibrary {
         this.root.classList.add("md-ripple--pressed");
         this.root.style.setProperty("--md-ripple-animation", "none");
 
-        // Calculating ripple properties based on pointer coordinates
-        const rect = this.root.getBoundingClientRect();
-        const max = Math.max(rect.width, rect.height);
-        const min = Math.min(rect.width, rect.height);
-        const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / min) * 100;
-        const left = (event.clientX - rect.left) / rect.width;
-        const top = (event.clientY - rect.top) / rect.height;
-        const x = (0.5 - left) * (100 / diameter);
-        const y = (0.5 - top) * ((100 / diameter) * (max / min));
+        if (this.options.centered !== true) {
+            // Calculating ripple properties based on pointer coordinates
+            const rect = this.root.getBoundingClientRect();
+            const max = Math.max(rect.width, rect.height);
+            const min = Math.min(rect.width, rect.height);
+            const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / min) * 100;
+            const left = (event.clientX - rect.left) / rect.width;
+            const top = (event.clientY - rect.top) / rect.height;
+            const x = (0.5 - left) * (100 / diameter);
+            const y = (0.5 - top) * ((100 / diameter) * (max / min));
 
-        // Setting ripple properties
-        this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
-        this.root.style.setProperty("--md-ripple-left", left * 100 + "%");
-        this.root.style.setProperty("--md-ripple-top", top * 100 + "%");
-        this.root.style.setProperty("--md-ripple-x", x * 100 + "%");
-        this.root.style.setProperty("--md-ripple-y", y * 100 + "%");
+            // Setting ripple properties
+            this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
+            this.root.style.setProperty("--md-ripple-left", left * 100 + "%");
+            this.root.style.setProperty("--md-ripple-top", top * 100 + "%");
+            this.root.style.setProperty("--md-ripple-x", x * 100 + "%");
+            this.root.style.setProperty("--md-ripple-y", y * 100 + "%");
+        }
 
         // Removing animation property
         this.root.style.removeProperty("--md-ripple-animation");

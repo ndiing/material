@@ -150,11 +150,26 @@ Class representing an MdRipple instance.
 **Author**: Ridho Prasetya  
 
 * [MdRipple](#MdRipple) ⇐ [<code>MdLibrary</code>](#MdLibrary)
+    * [new MdRipple(root, [options])](#new_MdRipple_new)
     * [.root](#MdLibrary+root) : <code>HTMLElement</code>
     * [.options](#MdLibrary+options) : <code>Object</code>
     * [.init()](#MdRipple+init)
     * [.destory()](#MdRipple+destory)
     * [.destroy()](#MdLibrary+destroy)
+
+<a name="new_MdRipple_new"></a>
+
+### new MdRipple(root, [options])
+Creates an MdRipple instance.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| root | <code>HTMLElement</code> \| <code>null</code> |  | The root element for MdRipple. |
+| [options] | <code>Object</code> |  | The options for MdRipple. |
+| [options.bounded] | <code>boolean</code> | <code>true</code> | Indicates whether the ripple effect is bounded within the element. |
+| [options.trigger] | <code>HTMLElement</code> \| <code>null</code> | <code></code> | The element that triggers the ripple effect.   If not provided, defaults to the root element. |
+| [options.centered] | <code>boolean</code> | <code>false</code> | Indicates whether the ripple effect is centered around the pointer coordinates. |
 
 <a name="MdLibrary+root"></a>
 
@@ -162,12 +177,14 @@ Class representing an MdRipple instance.
 The root element to attach events to.
 
 **Kind**: instance property of [<code>MdRipple</code>](#MdRipple)  
+**Overrides**: [<code>root</code>](#MdLibrary+root)  
 <a name="MdLibrary+options"></a>
 
 ### mdRipple.options : <code>Object</code>
 Options for the library.
 
 **Kind**: instance property of [<code>MdRipple</code>](#MdRipple)  
+**Overrides**: [<code>options</code>](#MdLibrary+options)  
 <a name="MdRipple+init"></a>
 
 ### mdRipple.init()
@@ -187,6 +204,7 @@ Destroys MdRipple by removing event listeners.
 Cleans up and destroys the MdLibrary instance.
 
 **Kind**: instance method of [<code>MdRipple</code>](#MdRipple)  
+**Overrides**: [<code>destroy</code>](#MdLibrary+destroy)  
 **Access**: public  
 <a name="MdRouter"></a>
 
