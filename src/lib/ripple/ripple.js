@@ -5,9 +5,7 @@ import { MdLibrary } from "../library/library.js";
  * @extends MdLibrary
  * @class
  * @classdesc Creates a material design ripple effect on an element.
- * @augments MdLibrary
  * @author Ridho Prasetya
- * @email ndiing.inc@gmail.com
  */
 class MdRipple extends MdLibrary {
      /**

@@ -145,8 +145,7 @@ Cleans up and destroys the MdLibrary instance.
 Creates a material design ripple effect on an element.
 
 **Kind**: global class  
-**Extends**: [<code>MdLibrary</code>](#MdLibrary), [<code>MdLibrary</code>](#MdLibrary)  
-**Email**: ndiing.inc@gmail.com  
+**Extends**: [<code>MdLibrary</code>](#MdLibrary)  
 **Author**: Ridho Prasetya  
 
 * [MdRipple](#MdRipple) ⇐ [<code>MdLibrary</code>](#MdLibrary)
