@@ -18,6 +18,10 @@ Extends MDComponent class.</p>
 <dt><a href="#MDStore">MDStore</a></dt>
 <dd><p>Manages data filtering, sorting, and pagination via URL parameters.</p>
 </dd>
+<dt><a href="#MDVirtualScroll">MDVirtualScroll</a></dt>
+<dd><p>Represents a virtual scrolling functionality using Material Design components.
+Extends <a href="#MDCDK">MDCDK</a>.</p>
+</dd>
 </dl>
 
 ## Functions
@@ -297,6 +301,19 @@ Retrieves all data based on applied filters, sorting, and pagination.
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
 **Returns**: <code>Object</code> - Returns an object containing total count and filtered data.  
+<a name="MDVirtualScroll"></a>
+
+## MDVirtualScroll
+Represents a virtual scrolling functionality using Material Design components.Extends [MDCDK](#MDCDK).
+
+**Kind**: global class  
+<a name="MDVirtualScroll+calculate"></a>
+
+### mdVirtualScroll.calculate() ⇒ <code>Object</code>
+Calculates the parameters required for virtual scrolling.
+
+**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Returns**: <code>Object</code> - Detail object containing calculated parameters:- totalContentHeight: Total height of the scrollable content.- startNode: Index of the first visible node in the viewport.- visibleNodesCount: Number of visible nodes in the viewport.- offsetY: Offset of the first visible node from the top of the viewport.  
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>

@@ -1,11 +1,11 @@
-const route = {
-    path: String,
-    component: HTMLElement,
-    load: () => import("../../dev/router/main").then((m) => m.default),
-    beforeLoad: (resolve, reject) => resolve(),
-    children: [],
-};
-const routes = [route, route, route];
+// const route = {
+//     path: String,
+//     component: HTMLElement,
+//     load: () => import("../../dev/router/main").then((m) => m.default),
+//     beforeLoad: (resolve, reject) => resolve(),
+//     children: [],
+// };
+// const routes = [route, route, route];
 
 /**
  * Class representing a simple router.
