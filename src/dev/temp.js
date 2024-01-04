@@ -1,37 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-function toPascalCase(string){
-    return string
-    .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g,($,$1,$2)=>$2.toUpperCase())
-    .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g,'')
-}
-function toCamelCase(string){
-    return string
-    .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g,($,$1,$2,$i)=>$i===0?$2.toLowerCase():$2.toUpperCase())
-    .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g,'')
-}
-function toSnakeCase(string){
-    return string
-    .replace(/([a-z])([A-Z])/g,($,$1,$2)=>$1+'_'+$2)
-    .replace(/[^a-zA-Z0-9]/g,() => '_')
-    .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g,'')
-    .toLowerCase()
-}
-function toKebabCase(string){
-    return string
-    .replace(/([a-z])([A-Z])/g,($,$1,$2)=>$1+'-'+$2)
-    .replace(/[^a-zA-Z0-9]/g,() => '-')
-    .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g,'')
-    .toLowerCase()
-}
-function toTitleCase(string){
-    return string
-    .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g,($,$1,$2)=>$2.toUpperCase())
-    .replace(/([a-z])([A-Z])/g,($,$1,$2)=>$1+' '+$2.toUpperCase())
-    .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g,'')
-}
-
 const list = [
     // "src/material/material.scss",
 

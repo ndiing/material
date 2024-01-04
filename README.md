@@ -38,6 +38,21 @@ Extends MDComponent class.</p>
 <dt><a href="#parseNumber">parseNumber(value)</a> ⇒ <code>number</code></dt>
 <dd><p>Attempts to parse the value into an integer.</p>
 </dd>
+<dt><a href="#toPascalCase">toPascalCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a string to PascalCase.</p>
+</dd>
+<dt><a href="#toCamelCase">toCamelCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a string to camelCase.</p>
+</dd>
+<dt><a href="#toSnakeCase">toSnakeCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a string to snake_case.</p>
+</dd>
+<dt><a href="#toKebabCase">toKebabCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a string to kebab-case.</p>
+</dd>
+<dt><a href="#toTitleCase">toTitleCase(string)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a string to Title Case.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -508,6 +523,66 @@ Attempts to parse the value into an integer.
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>\*</code> | The value to parse. |
+
+<a name="toPascalCase"></a>
+
+## toPascalCase(string) ⇒ <code>string</code>
+Converts a string to PascalCase.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Returns the string converted to PascalCase.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | The string to convert. |
+
+<a name="toCamelCase"></a>
+
+## toCamelCase(string) ⇒ <code>string</code>
+Converts a string to camelCase.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Returns the string converted to camelCase.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | The string to convert. |
+
+<a name="toSnakeCase"></a>
+
+## toSnakeCase(string) ⇒ <code>string</code>
+Converts a string to snake_case.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Returns the string converted to snake_case.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | The string to convert. |
+
+<a name="toKebabCase"></a>
+
+## toKebabCase(string) ⇒ <code>string</code>
+Converts a string to kebab-case.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Returns the string converted to kebab-case.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | The string to convert. |
+
+<a name="toTitleCase"></a>
+
+## toTitleCase(string) ⇒ <code>string</code>
+Converts a string to Title Case.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Returns the string converted to Title Case.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | The string to convert. |
 
 <a name="Route"></a>
 

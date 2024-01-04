@@ -1,30 +1,4 @@
-/**
- * Checks if the given value is not undefined or null.
- * @param {*} value - The value to check.
- * @returns {boolean} Returns true if the value is not undefined or null, otherwise false.
- */
-function notNull(value) {
-    return value !== undefined && value !== null;
-}
-
-/**
- * Checks if the given value is not empty.
- * @param {*} value - The value to check.
- * @returns {boolean} Returns true if the value is not null, undefined, or an empty string, otherwise false.
- */
-function notEmpty(value) {
-    return notNull(value) && value !== "";
-}
-
-/**
- * Attempts to parse the value into an integer.
- * @param {*} value - The value to parse.
- * @returns {?number} Returns the parsed integer if successful, otherwise null.
- */
-function parseNumber(value) {
-    value = parseInt(value);
-    return isNaN(value) ? null : value;
-}
+import { parseNumber, notEmpty, notNull } from "./helper";
 
 /**
  * Manages data filtering, sorting, and pagination via URL parameters.
