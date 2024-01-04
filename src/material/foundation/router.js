@@ -174,13 +174,8 @@ class MDRouter {
      */
 
     /**
-     * An array of route objects representing the application routes.
-     * @type {Route[]}
-     */
-
-    /**
      * Initializes the router with provided routes.
-     * @param {Array} routes - The routes to initialize the router with.
+     * @param {Route[]} routes - An array of route objects representing the application routes.
      */
     static init(routes = []) {
         const pushState = window.history.pushState;

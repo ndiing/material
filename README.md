@@ -202,7 +202,7 @@ Initializes the router with provided routes.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| routes | <code>Array</code> | The routes to initialize the router with. |
+| routes | [<code>Array.&lt;Route&gt;</code>](#Route) | An array of route objects representing the application routes. |
 
 <a name="MDStore"></a>
 
