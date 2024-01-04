@@ -1,0 +1,68 @@
+@keyframes md-ripple-animation {
+    from {
+        width: 0;
+    }
+}
+
+.md-ripple {
+    position: relative;
+
+    &::after {
+        content: "";
+        width: var(--md-ripple-diameter,100%);
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: #000;
+        opacity: 0;
+        position: absolute;
+        left: var(--md-ripple-left,50%);
+        top: var(--md-ripple-top,50%);
+        transform: 
+        translate3d(-50%,-50%,0)
+        translate3d(var(--md-ripple-x,0%), var(--md-ripple-y,0%), 0);
+        pointer-events: none;
+    }
+    &--bounded {
+        overflow: hidden;
+    }
+    &--trigger {
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    &--hover {
+        &::after {
+            opacity: 8%;
+        }
+    }
+    &--focused {
+        &::after {
+            animation: var(--md-ripple-animation,md-ripple-animation) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate) ;
+            opacity: 10%;
+        }
+    }
+    &--activated {
+        &::after {
+            opacity: 10%;
+        }
+    }
+    &--pressed {
+        &::after {
+            opacity: 10%;
+        }
+    }
+    &--disabled {
+        opacity: 38%;
+        pointer-events: none;
+    }
+}
+
+//
+// .md-ripple {
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 8px 16px;
+//     padding: 48px 16px;
+//     margin: 64px;
+// }

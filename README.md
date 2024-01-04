@@ -12,6 +12,9 @@ Extends LitElement class.</p>
 <dd><p>Represents an outlet component to manage content rendering within a router.
 Extends MDComponent class.</p>
 </dd>
+<dt><a href="#MDRipple">MDRipple</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
+<dd><p>Represents a Material Design Ripple effect applied to an element.</p>
+</dd>
 <dt><a href="#MDRouter">MDRouter</a></dt>
 <dd><p>Class representing a simple router.</p>
 </dd>
@@ -176,6 +179,89 @@ Emits a custom event from the component.
 Represents an outlet component to manage content rendering within a router.Extends MDComponent class.
 
 **Kind**: global class  
+<a name="MDRipple"></a>
+
+## MDRipple ⇐ [<code>MDCDK</code>](#MDCDK)
+Represents a Material Design Ripple effect applied to an element.
+
+**Kind**: global class  
+**Extends**: [<code>MDCDK</code>](#MDCDK)  
+
+* [MDRipple](#MDRipple) ⇐ [<code>MDCDK</code>](#MDCDK)
+    * [new MDRipple(root, [options])](#new_MDRipple_new)
+    * [.init()](#MDRipple+init)
+    * [.destroy()](#MDRipple+destroy)
+    * [.on(type, listener)](#MDCDK+on)
+    * [.off(type, listener)](#MDCDK+off)
+    * [.emit(type, detail)](#MDCDK+emit)
+
+<a name="new_MDRipple_new"></a>
+
+### new MDRipple(root, [options])
+Creates an instance of MDRipple.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| root | <code>HTMLElement</code> |  | The root element to apply the ripple effect. |
+| [options] | <code>Object</code> | <code>{}</code> | Additional options for the ripple effect. |
+| [options.bounded] | <code>boolean</code> | <code>true</code> | Whether the ripple effect is bounded. |
+| [options.centered] | <code>boolean</code> | <code>false</code> | Whether the ripple effect is centered. |
+| [options.trigger] | <code>HTMLElement</code> |  | The element triggering the ripple effect. |
+
+<a name="MDRipple+init"></a>
+
+### mdRipple.init()
+Initializes the ripple effect.
+
+**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
+**Overrides**: [<code>init</code>](#MDCDK+init)  
+<a name="MDRipple+destroy"></a>
+
+### mdRipple.destroy()
+Destroys the ripple effect and removes event listeners.
+
+**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
+**Overrides**: [<code>destroy</code>](#MDCDK+destroy)  
+<a name="MDCDK+on"></a>
+
+### mdRipple.on(type, listener)
+Attaches an event listener to the root element.
+
+**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
+**Overrides**: [<code>on</code>](#MDCDK+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to listen for. |
+| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+
+<a name="MDCDK+off"></a>
+
+### mdRipple.off(type, listener)
+Removes an event listener from the root element.
+
+**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
+**Overrides**: [<code>off</code>](#MDCDK+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to remove the listener from. |
+| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+
+<a name="MDCDK+emit"></a>
+
+### mdRipple.emit(type, detail)
+Emits a custom event from the root element.
+
+**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
+**Overrides**: [<code>emit</code>](#MDCDK+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of the custom event to be dispatched. |
+| detail | <code>any</code> | Optional detail to be included in the event. |
+
 <a name="MDRouter"></a>
 
 ## MDRouter
