@@ -314,8 +314,6 @@ Represents a virtual scrolling functionality using Material Design components.E
 * [MDVirtualScroll](#MDVirtualScroll)
     * [.init()](#MDVirtualScroll+init)
     * [.destroy()](#MDVirtualScroll+destroy)
-    * [.handleScroll()](#MDVirtualScroll+handleScroll)
-    * ["onScroll"](#MDVirtualScroll+event_onScroll)
 
 <a name="MDVirtualScroll+init"></a>
 
@@ -329,19 +327,6 @@ Initializes the MDVirtualScroll instance.Binds the scroll event handler and set
 Destroys the MDVirtualScroll instance.Removes the scroll event listener.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
-<a name="MDVirtualScroll+handleScroll"></a>
-
-### mdVirtualScroll.handleScroll()
-Handles the scroll event and calculates parameters for virtual scrolling.Emits the "onScroll" event with calculated parameters.
-
-**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
-**Emits**: [<code>onScroll</code>](#MDVirtualScroll+event_onScroll)  
-<a name="MDVirtualScroll+event_onScroll"></a>
-
-### "onScroll"
-Emitted when scrolling occurs, providing details of the scroll event.
-
-**Kind**: event emitted by [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>

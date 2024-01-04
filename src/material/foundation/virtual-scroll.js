@@ -25,6 +25,7 @@ class MDVirtualScroll extends MDCDK {
     /**
      * Handles the scroll event and calculates parameters for virtual scrolling.
      * Emits the "onScroll" event with calculated parameters.
+     * @private
      * @fires MDVirtualScroll#onScroll
      */
     handleScroll() {
@@ -63,7 +64,7 @@ class MDVirtualScroll extends MDCDK {
 
         /**
          * Emitted when scrolling occurs, providing details of the scroll event.
-         * @event MDVirtualScroll#onScroll
+         * @event this.root#onScroll
          * @type {ScrollDetail}
          */
         this.emit("onScroll", detail);
