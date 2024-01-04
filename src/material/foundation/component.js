@@ -7,6 +7,7 @@ const { LitElement } = require("lit");
 class MDComponent extends LitElement {
     /**
      * Overrides LitElement's default render root creation method.
+     * @private
      * @returns {this} - The instance of the component.
      */
     createRenderRoot() {

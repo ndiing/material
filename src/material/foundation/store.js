@@ -41,6 +41,7 @@ class MDStore {
 
     /**
      * Contains comparison operators used for filtering.
+     * @private
      */
     get operators() {
         return {
@@ -56,6 +57,7 @@ class MDStore {
 
     /**
      * Contains properties and their associated types or parsing functions.
+     * @private
      */
     get properties() {
         return {
@@ -161,6 +163,7 @@ class MDStore {
 
     /**
      * Sorts the data based on specified sorters.
+     * @private
      * @param {Array<Object>} data - The array of objects to be sorted.
      * @param {Object} sorters - An object containing sorting criteria.
      * @returns {Array<Object>} Returns the sorted data array.
@@ -184,6 +187,7 @@ class MDStore {
 
     /**
      * Searches the data for occurrences of a specified string.
+     * @private
      * @param {Array<Object>} data - The array of objects to search through.
      * @param {string} search - The string to search for.
      * @returns {Array<Object>} Returns an array of objects that match the search criteria.
@@ -203,6 +207,7 @@ class MDStore {
 
     /**
      * Filters the data based on specified filters.
+     * @private
      * @param {Array<Object>} data - The array of objects to be filtered.
      * @param {Array<Object>} filters - An array of filter objects containing 'name', 'operator', and 'value'.
      * @returns {Array<Object>} Returns the filtered data array.

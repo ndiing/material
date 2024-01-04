@@ -116,18 +116,10 @@ Represents a component for the MD framework.Extends LitElement class.
 **Kind**: global class  
 
 * [MDComponent](#MDComponent)
-    * [.createRenderRoot()](#MDComponent+createRenderRoot) ⇒ <code>this</code>
     * [.on(type, listener)](#MDComponent+on)
     * [.off(type, listener)](#MDComponent+off)
     * [.emit(type, detail)](#MDComponent+emit)
 
-<a name="MDComponent+createRenderRoot"></a>
-
-### mdComponent.createRenderRoot() ⇒ <code>this</code>
-Overrides LitElement's default render root creation method.
-
-**Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
-**Returns**: <code>this</code> - - The instance of the component.  
 <a name="MDComponent+on"></a>
 
 ### mdComponent.on(type, listener)
@@ -213,16 +205,11 @@ Manages data filtering, sorting, and pagination via URL parameters.
 
 * [MDStore](#MDStore)
     * [new MDStore([docs])](#new_MDStore_new)
-    * [.operators](#MDStore+operators)
-    * [.properties](#MDStore+properties)
     * [.filter(name, value, [operator])](#MDStore+filter)
     * [.paginate(_page, _limit)](#MDStore+paginate)
     * [.sort(_sort, _order)](#MDStore+sort)
     * [.slice(_start, _end)](#MDStore+slice)
     * [.search(q)](#MDStore+search)
-    * [.sortData(data, sorters)](#MDStore+sortData) ⇒ <code>Array.&lt;Object&gt;</code>
-    * [.searchData(data, search)](#MDStore+searchData) ⇒ <code>Array.&lt;Object&gt;</code>
-    * [.filterData(data, filters)](#MDStore+filterData) ⇒ <code>Array.&lt;Object&gt;</code>
     * [.getAll()](#MDStore+getAll) ⇒ <code>Object</code>
 
 <a name="new_MDStore_new"></a>
@@ -235,18 +222,6 @@ Constructs an MDStore instance.
 | --- | --- | --- | --- |
 | [docs] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> | An array of documents. |
 
-<a name="MDStore+operators"></a>
-
-### mdStore.operators
-Contains comparison operators used for filtering.
-
-**Kind**: instance property of [<code>MDStore</code>](#MDStore)  
-<a name="MDStore+properties"></a>
-
-### mdStore.properties
-Contains properties and their associated types or parsing functions.
-
-**Kind**: instance property of [<code>MDStore</code>](#MDStore)  
 <a name="MDStore+filter"></a>
 
 ### mdStore.filter(name, value, [operator])
@@ -306,45 +281,6 @@ Searches data by setting or deleting the 'q' (query) URL search parameter.
 | Param | Type | Description |
 | --- | --- | --- |
 | q | <code>string</code> | The search query. |
-
-<a name="MDStore+sortData"></a>
-
-### mdStore.sortData(data, sorters) ⇒ <code>Array.&lt;Object&gt;</code>
-Sorts the data based on specified sorters.
-
-**Kind**: instance method of [<code>MDStore</code>](#MDStore)  
-**Returns**: <code>Array.&lt;Object&gt;</code> - Returns the sorted data array.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Array.&lt;Object&gt;</code> | The array of objects to be sorted. |
-| sorters | <code>Object</code> | An object containing sorting criteria. |
-
-<a name="MDStore+searchData"></a>
-
-### mdStore.searchData(data, search) ⇒ <code>Array.&lt;Object&gt;</code>
-Searches the data for occurrences of a specified string.
-
-**Kind**: instance method of [<code>MDStore</code>](#MDStore)  
-**Returns**: <code>Array.&lt;Object&gt;</code> - Returns an array of objects that match the search criteria.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Array.&lt;Object&gt;</code> | The array of objects to search through. |
-| search | <code>string</code> | The string to search for. |
-
-<a name="MDStore+filterData"></a>
-
-### mdStore.filterData(data, filters) ⇒ <code>Array.&lt;Object&gt;</code>
-Filters the data based on specified filters.
-
-**Kind**: instance method of [<code>MDStore</code>](#MDStore)  
-**Returns**: <code>Array.&lt;Object&gt;</code> - Returns the filtered data array.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Array.&lt;Object&gt;</code> | The array of objects to be filtered. |
-| filters | <code>Array.&lt;Object&gt;</code> | An array of filter objects containing 'name', 'operator', and 'value'. |
 
 <a name="MDStore+getAll"></a>
 
