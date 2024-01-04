@@ -34,6 +34,14 @@ Extends MDComponent class.</p>
 </dd>
 </dl>
 
+## Typedefs
+
+<dl>
+<dt><a href="#Route">Route</a> : <code>Object</code></dt>
+<dd><p>Represents a route object used in the routing system.</p>
+</dd>
+</dl>
+
 <a name="MDCDK"></a>
 
 ## MDCDK
@@ -324,4 +332,20 @@ Attempts to parse the value into an integer.
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>\*</code> | The value to parse. |
+
+<a name="Route"></a>
+
+## Route : <code>Object</code>
+Represents a route object used in the routing system.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| path | <code>string</code> | The path for the route. |
+| component | <code>HTMLElement</code> | The HTML element associated with the route. |
+| load | <code>Promise.&lt;Object&gt;</code> | A function that returns a Promise, typically used to dynamically import a module. |
+| beforeLoad | <code>Promise.&lt;Object&gt;</code> | A function that runs before loading the route, typically used for resolving or rejecting promises. |
+| children | [<code>Array.&lt;Route&gt;</code>](#Route) | An array containing child routes. |
 

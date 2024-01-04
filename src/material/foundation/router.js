@@ -1,3 +1,12 @@
+const route = {
+    path: String,
+    component: HTMLElement,
+    load: () => import("../../dev/router/main").then((m) => m.default),
+    beforeLoad: (resolve, reject) => resolve(),
+    children: [],
+};
+const routes = [route, route, route];
+
 /**
  * Class representing a simple router.
  * @fires window#onCurrentEntryChange - Triggered when the current entry changes.
@@ -153,6 +162,21 @@ class MDRouter {
             this.navigate(url);
         }
     }
+
+    /**
+     * Represents a route object used in the routing system.
+     * @typedef {Object} Route
+     * @property {string} path - The path for the route.
+     * @property {HTMLElement} component - The HTML element associated with the route.
+     * @property {Promise<Object>} load - A function that returns a Promise, typically used to dynamically import a module.
+     * @property {Promise<Object>} beforeLoad - A function that runs before loading the route, typically used for resolving or rejecting promises.
+     * @property {Route[]} children - An array containing child routes.
+     */
+
+    /**
+     * An array of route objects representing the application routes.
+     * @type {Route[]}
+     */
 
     /**
      * Initializes the router with provided routes.
