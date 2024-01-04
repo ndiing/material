@@ -44,6 +44,9 @@ Extends <a href="#MDCDK">MDCDK</a>.</p>
 <dt><a href="#Route">Route</a> : <code>Object</code></dt>
 <dd><p>Represents a route object used in the routing system.</p>
 </dd>
+<dt><a href="#ScrollDetail">ScrollDetail</a> : <code>Object</code></dt>
+<dd><p>Represents the scroll event details.</p>
+</dd>
 </dl>
 
 <a name="MDCDK"></a>
@@ -307,13 +310,38 @@ Retrieves all data based on applied filters, sorting, and pagination.
 Represents a virtual scrolling functionality using Material Design components.Extends [MDCDK](#MDCDK).
 
 **Kind**: global class  
-<a name="MDVirtualScroll+calculate"></a>
 
-### mdVirtualScroll.calculate() ⇒ <code>Object</code>
-Calculates the parameters required for virtual scrolling.
+* [MDVirtualScroll](#MDVirtualScroll)
+    * [.init()](#MDVirtualScroll+init)
+    * [.destroy()](#MDVirtualScroll+destroy)
+    * [.handleScroll()](#MDVirtualScroll+handleScroll)
+    * ["onScroll"](#MDVirtualScroll+event_onScroll)
+
+<a name="MDVirtualScroll+init"></a>
+
+### mdVirtualScroll.init()
+Initializes the MDVirtualScroll instance.Binds the scroll event handler and sets up required parameters.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
-**Returns**: <code>Object</code> - Detail object containing calculated parameters:- totalContentHeight: Total height of the scrollable content.- startNode: Index of the first visible node in the viewport.- visibleNodesCount: Number of visible nodes in the viewport.- offsetY: Offset of the first visible node from the top of the viewport.  
+<a name="MDVirtualScroll+destroy"></a>
+
+### mdVirtualScroll.destroy()
+Destroys the MDVirtualScroll instance.Removes the scroll event listener.
+
+**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+<a name="MDVirtualScroll+handleScroll"></a>
+
+### mdVirtualScroll.handleScroll()
+Handles the scroll event and calculates parameters for virtual scrolling.Emits the "onScroll" event with calculated parameters.
+
+**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Emits**: [<code>onScroll</code>](#MDVirtualScroll+event_onScroll)  
+<a name="MDVirtualScroll+event_onScroll"></a>
+
+### "onScroll"
+Emitted when scrolling occurs, providing details of the scroll event.
+
+**Kind**: event emitted by [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>
@@ -365,4 +393,19 @@ Represents a route object used in the routing system.
 | load | <code>Promise.&lt;Object&gt;</code> | A function that returns a Promise, typically used to dynamically import a module. |
 | beforeLoad | <code>Promise.&lt;Object&gt;</code> | A function that runs before loading the route, typically used for resolving or rejecting promises. |
 | children | [<code>Array.&lt;Route&gt;</code>](#Route) | An array containing child routes. |
+
+<a name="ScrollDetail"></a>
+
+## ScrollDetail : <code>Object</code>
+Represents the scroll event details.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| scrollbarHeight | <code>number</code> | Total height of the scrollable content. |
+| start | <code>number</code> | Index of the first visible node in the viewport. |
+| limit | <code>number</code> | Number of visible nodes in the viewport. |
+| translateY | <code>number</code> | Offset of the first visible node from the top of the viewport. |
 

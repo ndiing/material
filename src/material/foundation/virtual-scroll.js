@@ -6,38 +6,67 @@ import { MDCDK } from "./cdk";
  */
 class MDVirtualScroll extends MDCDK {
     /**
-     * Calculates the parameters required for virtual scrolling.
-     * @returns {Object} Detail object containing calculated parameters:
-     * - totalContentHeight: Total height of the scrollable content.
-     * - startNode: Index of the first visible node in the viewport.
-     * - visibleNodesCount: Number of visible nodes in the viewport.
-     * - offsetY: Offset of the first visible node from the top of the viewport.
+     * Initializes the MDVirtualScroll instance.
+     * Binds the scroll event handler and sets up required parameters.
      */
-    calculate() {
-        const itemCount = 100;
-        const rowHeight = 48;
-        const scrollTop = 0;
-        const nodePadding = 2;
-        const viewportHeight = 480;
+    init() {
+        this.handleScroll = this.handleScroll.bind(this);
+        this.on("scroll", this.handleScroll);
+    }
 
-        const totalContentHeight = itemCount * rowHeight;
+    /**
+     * Destroys the MDVirtualScroll instance.
+     * Removes the scroll event listener.
+     */
+    destroy() {
+        this.off("scroll", this.handleScroll);
+    }
 
-        let startNode = Math.floor(scrollTop / rowHeight) - nodePadding;
-        startNode = Math.max(0, startNode);
+    /**
+     * Handles the scroll event and calculates parameters for virtual scrolling.
+     * Emits the "onScroll" event with calculated parameters.
+     * @fires MDVirtualScroll#onScroll
+     */
+    handleScroll() {
+        const total = this.options.total;
+        const contentHeight = this.options.contentHeight ?? 48;
+        const scrollTop = this.root.scrollTop;
+        const threshold = this.options.threshold ?? 2;
+        const viewportHeight = this.root.clientHeight;
 
-        let visibleNodesCount = Math.ceil(viewportHeight / rowHeight) + 2 * nodePadding;
-        visibleNodesCount = Math.min(itemCount - startNode, visibleNodesCount);
+        const scrollbarHeight = total * contentHeight;
 
-        const offsetY = startNode * rowHeight;
+        let start = Math.floor(scrollTop / contentHeight) - threshold;
+        start = Math.max(0, start);
 
+        let limit = Math.ceil(viewportHeight / contentHeight) + 2 * threshold;
+        limit = Math.min(total - start, limit);
+
+        const translateY = start * contentHeight;
+
+        /**
+         * Represents the scroll event details.
+         * @typedef {Object} ScrollDetail
+         * @property {number} scrollbarHeight - Total height of the scrollable content.
+         * @property {number} start - Index of the first visible node in the viewport.
+         * @property {number} limit - Number of visible nodes in the viewport.
+         * @property {number} translateY - Offset of the first visible node from the top of the viewport.
+         */
+
+        /** @type {ScrollDetail} */
         const detail = {
-            totalContentHeight,
-            startNode,
-            visibleNodesCount,
-            offsetY,
+            scrollbarHeight,
+            start,
+            limit,
+            translateY,
         };
 
-        return detail;
+        /**
+         * Emitted when scrolling occurs, providing details of the scroll event.
+         * @event MDVirtualScroll#onScroll
+         * @type {ScrollDetail}
+         */
+        this.emit("onScroll", detail);
     }
 }
 
