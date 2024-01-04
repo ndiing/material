@@ -43,7 +43,7 @@ Extends MDComponent class.</p>
 <dt><a href="#Route">Route</a> : <code>Object</code></dt>
 <dd><p>Represents a route object used in the routing system.</p>
 </dd>
-<dt><a href="#ScrollDetail">ScrollDetail</a> : <code>Object</code></dt>
+<dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
 <dd><p>Represents the details of the scroll event.</p>
 </dd>
 </dl>
@@ -439,9 +439,9 @@ Represents a route object used in the routing system.
 | beforeLoad | <code>Promise.&lt;Object&gt;</code> | A function that runs before loading the route, typically used for resolving or rejecting promises. |
 | children | [<code>Array.&lt;Route&gt;</code>](#Route) | An array containing child routes. |
 
-<a name="ScrollDetail"></a>
+<a name="Scroll"></a>
 
-## ScrollDetail : <code>Object</code>
+## Scroll : <code>Object</code>
 Represents the details of the scroll event.
 
 **Kind**: global typedef  

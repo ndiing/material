@@ -56,9 +56,12 @@ const list = [
     // store
     // "src/material/foundation/store.scss",
     // "src/material/foundation/store.js",
-    // virtual-scroll
-    "src/material/foundation/virtual-scroll.scss",
-    "src/material/foundation/virtual-scroll.js",
+    // ripple
+    "src/material/foundation/ripple.scss",
+    "src/material/foundation/ripple.js",
+    // // virtual-scroll
+    // "src/material/foundation/virtual-scroll.scss",
+    // "src/material/foundation/virtual-scroll.js",
     // // cdk (component dev kit)
     // "src/material/foundation/cdk.scss",
     // "src/material/foundation/cdk.js",

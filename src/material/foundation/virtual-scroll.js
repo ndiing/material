@@ -6,7 +6,7 @@ import { MDCDK } from "./cdk";
  */
 class MDVirtualScroll extends MDCDK {
     /**
-     * @typedef {Object} ScrollDetail - Represents the details of the scroll event.
+     * @typedef {Object} Scroll - Represents the details of the scroll event.
      * @property {number} scrollbarHeight - Total height of the scrollable content.
      * @property {number} start - Index of the first visible node in the viewport.
      * @property {number} limit - Number of visible nodes in the viewport.
@@ -67,6 +67,9 @@ class MDVirtualScroll extends MDCDK {
 
         const translateY = start * contentHeight;
 
+        /**
+         * @type {Scroll}
+         */
         const detail = {
             scrollbarHeight,
             start,
