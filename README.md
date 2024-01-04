@@ -18,9 +18,8 @@ Extends MDComponent class.</p>
 <dt><a href="#MDStore">MDStore</a></dt>
 <dd><p>Manages data filtering, sorting, and pagination via URL parameters.</p>
 </dd>
-<dt><a href="#MDVirtualScroll">MDVirtualScroll</a></dt>
-<dd><p>Represents a virtual scrolling functionality using Material Design components.
-Extends <a href="#MDCDK">MDCDK</a>.</p>
+<dt><a href="#MDVirtualScroll">MDVirtualScroll</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
+<dd><p>Represents a virtual scrolling functionality using Material Design components.</p>
 </dd>
 </dl>
 
@@ -45,7 +44,7 @@ Extends <a href="#MDCDK">MDCDK</a>.</p>
 <dd><p>Represents a route object used in the routing system.</p>
 </dd>
 <dt><a href="#ScrollDetail">ScrollDetail</a> : <code>Object</code></dt>
-<dd><p>Represents the scroll event details.</p>
+<dd><p>Represents the details of the scroll event.</p>
 </dd>
 </dl>
 
@@ -306,14 +305,34 @@ Retrieves all data based on applied filters, sorting, and pagination.
 **Returns**: <code>Object</code> - Returns an object containing total count and filtered data.  
 <a name="MDVirtualScroll"></a>
 
-## MDVirtualScroll
-Represents a virtual scrolling functionality using Material Design components.Extends [MDCDK](#MDCDK).
+## MDVirtualScroll ⇐ [<code>MDCDK</code>](#MDCDK)
+Represents a virtual scrolling functionality using Material Design components.
 
 **Kind**: global class  
+**Extends**: [<code>MDCDK</code>](#MDCDK)  
+**Emits**: <code>root#event:onScroll</code>  
 
-* [MDVirtualScroll](#MDVirtualScroll)
+* [MDVirtualScroll](#MDVirtualScroll) ⇐ [<code>MDCDK</code>](#MDCDK)
+    * [new MDVirtualScroll(root, [options])](#new_MDVirtualScroll_new)
     * [.init()](#MDVirtualScroll+init)
     * [.destroy()](#MDVirtualScroll+destroy)
+    * [.on(type, listener)](#MDCDK+on)
+    * [.off(type, listener)](#MDCDK+off)
+    * [.emit(type, detail)](#MDCDK+emit)
+
+<a name="new_MDVirtualScroll_new"></a>
+
+### new MDVirtualScroll(root, [options])
+Creates an instance of MDVirtualScroll.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| root | <code>HTMLElement</code> |  | The root element to apply virtual scrolling. |
+| [options] | <code>Object</code> | <code>{}</code> | Additional options for virtual scrolling. |
+| [options.total] | <code>number</code> | <code>0</code> | Total number of items. |
+| [options.contentHeight] | <code>number</code> | <code>48</code> | Height of each item. |
+| [options.threshold] | <code>number</code> | <code>2</code> | Threshold for preloading items. |
 
 <a name="MDVirtualScroll+init"></a>
 
@@ -321,12 +340,53 @@ Represents a virtual scrolling functionality using Material Design components.E
 Initializes the MDVirtualScroll instance.Binds the scroll event handler and sets up required parameters.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Overrides**: [<code>init</code>](#MDCDK+init)  
 <a name="MDVirtualScroll+destroy"></a>
 
 ### mdVirtualScroll.destroy()
 Destroys the MDVirtualScroll instance.Removes the scroll event listener.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Overrides**: [<code>destroy</code>](#MDCDK+destroy)  
+<a name="MDCDK+on"></a>
+
+### mdVirtualScroll.on(type, listener)
+Attaches an event listener to the root element.
+
+**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Overrides**: [<code>on</code>](#MDCDK+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to listen for. |
+| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+
+<a name="MDCDK+off"></a>
+
+### mdVirtualScroll.off(type, listener)
+Removes an event listener from the root element.
+
+**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Overrides**: [<code>off</code>](#MDCDK+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to remove the listener from. |
+| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+
+<a name="MDCDK+emit"></a>
+
+### mdVirtualScroll.emit(type, detail)
+Emits a custom event from the root element.
+
+**Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
+**Overrides**: [<code>emit</code>](#MDCDK+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of the custom event to be dispatched. |
+| detail | <code>any</code> | Optional detail to be included in the event. |
+
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>
@@ -382,7 +442,7 @@ Represents a route object used in the routing system.
 <a name="ScrollDetail"></a>
 
 ## ScrollDetail : <code>Object</code>
-Represents the scroll event details.
+Represents the details of the scroll event.
 
 **Kind**: global typedef  
 **Properties**
