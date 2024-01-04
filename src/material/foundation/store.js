@@ -41,14 +41,6 @@ class MDStore {
 
     /**
      * Contains comparison operators used for filtering.
-     * @typedef {Object} Operators
-     * @property {(a: any, b: any) => boolean} _lt - Less than operator.
-     * @property {(a: any, b: any) => boolean} _gt - Greater than operator.
-     * @property {(a: any, b: any) => boolean} _lte - Less than or equal to operator.
-     * @property {(a: any, b: any) => boolean} _gte - Greater than or equal to operator.
-     * @property {(a: string, b: string) => boolean} _eq - Equality operator for strings (case insensitive).
-     * @property {(a: string, b: string) => boolean} _ne - Inequality operator for strings (case insensitive).
-     * @property {(a: string, b: string) => boolean} _like - Pattern matching operator for strings (case insensitive).
      */
     get operators() {
         return {
@@ -64,14 +56,6 @@ class MDStore {
 
     /**
      * Contains properties and their associated types or parsing functions.
-     * @typedef {Object} Properties
-     * @property {Function} _page - Parses the value into a number for pagination.
-     * @property {Function} _limit - Parses the value into a number for limiting results.
-     * @property {string} _sort - Sort criteria represented as a string.
-     * @property {string} _order - Sorting order represented as a string.
-     * @property {Function} _start - Parses the value into a number representing the starting point.
-     * @property {Function} _end - Parses the value into a number representing the ending point.
-     * @property {string} q - Represents a search query as a string.
      */
     get properties() {
         return {
