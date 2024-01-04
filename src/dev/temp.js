@@ -53,106 +53,109 @@ const list = [
     // // component
     // "src/material/foundation/component.scss",
     // "src/material/foundation/component.js",
+    // store
+    "src/material/foundation/store.scss",
+    "src/material/foundation/store.js",
     // // cdk (component dev kit)
     // "src/material/foundation/cdk.scss",
     // "src/material/foundation/cdk.js",
 
     // components
-    "src/material/bottom-app-bar/bottom-app-bar.scss",
-    "src/material/bottom-app-bar/bottom-app-bar.js",
+    // "src/material/bottom-app-bar/bottom-app-bar.scss",
+    // "src/material/bottom-app-bar/bottom-app-bar.js",
 
-    "src/material/top-app-bar/top-app-bar.scss",
-    "src/material/top-app-bar/top-app-bar.js",
+    // "src/material/top-app-bar/top-app-bar.scss",
+    // "src/material/top-app-bar/top-app-bar.js",
 
-    "src/material/badge/badge.scss",
-    "src/material/badge/badge.js",
+    // "src/material/badge/badge.scss",
+    // "src/material/badge/badge.js",
 
     // "src/material/button/button.scss",
     // "src/material/button/button.js",
 
-    "src/material/fab/fab.scss",
-    "src/material/fab/fab.js",
+    // "src/material/fab/fab.scss",
+    // "src/material/fab/fab.js",
 
-    "src/material/extended-fab/extended-fab.scss",
-    "src/material/extended-fab/extended-fab.js",
+    // "src/material/extended-fab/extended-fab.scss",
+    // "src/material/extended-fab/extended-fab.js",
 
-    "src/material/icon-button/icon-button.scss",
-    "src/material/icon-button/icon-button.js",
+    // "src/material/icon-button/icon-button.scss",
+    // "src/material/icon-button/icon-button.js",
 
-    "src/material/segmented-button/segmented-button.scss",
-    "src/material/segmented-button/segmented-button.js",
+    // "src/material/segmented-button/segmented-button.scss",
+    // "src/material/segmented-button/segmented-button.js",
 
-    "src/material/card/card.scss",
-    "src/material/card/card.js",
+    // "src/material/card/card.scss",
+    // "src/material/card/card.js",
 
-    "src/material/carousel/carousel.scss",
-    "src/material/carousel/carousel.js",
+    // "src/material/carousel/carousel.scss",
+    // "src/material/carousel/carousel.js",
 
-    "src/material/checkbox/checkbox.scss",
-    "src/material/checkbox/checkbox.js",
+    // "src/material/checkbox/checkbox.scss",
+    // "src/material/checkbox/checkbox.js",
 
-    "src/material/chip/chip.scss",
-    "src/material/chip/chip.js",
+    // "src/material/chip/chip.scss",
+    // "src/material/chip/chip.js",
 
-    "src/material/date-picker/date-picker.scss",
-    "src/material/date-picker/date-picker.js",
+    // "src/material/date-picker/date-picker.scss",
+    // "src/material/date-picker/date-picker.js",
 
-    "src/material/dialog/dialog.scss",
-    "src/material/dialog/dialog.js",
+    // "src/material/dialog/dialog.scss",
+    // "src/material/dialog/dialog.js",
 
-    "src/material/divider/divider.scss",
-    "src/material/divider/divider.js",
+    // "src/material/divider/divider.scss",
+    // "src/material/divider/divider.js",
 
-    "src/material/list/list.scss",
-    "src/material/list/list.js",
+    // "src/material/list/list.scss",
+    // "src/material/list/list.js",
 
-    "src/material/menu/menu.scss",
-    "src/material/menu/menu.js",
+    // "src/material/menu/menu.scss",
+    // "src/material/menu/menu.js",
 
-    "src/material/navigation-bar/navigation-bar.scss",
-    "src/material/navigation-bar/navigation-bar.js",
+    // "src/material/navigation-bar/navigation-bar.scss",
+    // "src/material/navigation-bar/navigation-bar.js",
 
-    "src/material/navigation-drawer/navigation-drawer.scss",
-    "src/material/navigation-drawer/navigation-drawer.js",
+    // "src/material/navigation-drawer/navigation-drawer.scss",
+    // "src/material/navigation-drawer/navigation-drawer.js",
 
-    "src/material/navigation-rail/navigation-rail.scss",
-    "src/material/navigation-rail/navigation-rail.js",
+    // "src/material/navigation-rail/navigation-rail.scss",
+    // "src/material/navigation-rail/navigation-rail.js",
 
-    "src/material/progress-indicator/progress-indicator.scss",
-    "src/material/progress-indicator/progress-indicator.js",
+    // "src/material/progress-indicator/progress-indicator.scss",
+    // "src/material/progress-indicator/progress-indicator.js",
 
-    "src/material/radio-button/radio-button.scss",
-    "src/material/radio-button/radio-button.js",
+    // "src/material/radio-button/radio-button.scss",
+    // "src/material/radio-button/radio-button.js",
 
-    "src/material/search/search.scss",
-    "src/material/search/search.js",
+    // "src/material/search/search.scss",
+    // "src/material/search/search.js",
 
-    "src/material/bottom-sheet/bottom-sheet.scss",
-    "src/material/bottom-sheet/bottom-sheet.js",
+    // "src/material/bottom-sheet/bottom-sheet.scss",
+    // "src/material/bottom-sheet/bottom-sheet.js",
 
-    "src/material/side-sheet/side-sheet.scss",
-    "src/material/side-sheet/side-sheet.js",
+    // "src/material/side-sheet/side-sheet.scss",
+    // "src/material/side-sheet/side-sheet.js",
 
-    "src/material/slider/slider.scss",
-    "src/material/slider/slider.js",
+    // "src/material/slider/slider.scss",
+    // "src/material/slider/slider.js",
 
-    "src/material/snackbar/snackbar.scss",
-    "src/material/snackbar/snackbar.js",
+    // "src/material/snackbar/snackbar.scss",
+    // "src/material/snackbar/snackbar.js",
 
-    "src/material/switch/switch.scss",
-    "src/material/switch/switch.js",
+    // "src/material/switch/switch.scss",
+    // "src/material/switch/switch.js",
 
-    "src/material/tab/tab.scss",
-    "src/material/tab/tab.js",
+    // "src/material/tab/tab.scss",
+    // "src/material/tab/tab.js",
 
-    "src/material/text-field/text-field.scss",
-    "src/material/text-field/text-field.js",
+    // "src/material/text-field/text-field.scss",
+    // "src/material/text-field/text-field.js",
 
-    "src/material/time-picker/time-picker.scss",
-    "src/material/time-picker/time-picker.js",
+    // "src/material/time-picker/time-picker.scss",
+    // "src/material/time-picker/time-picker.js",
 
-    "src/material/tooltip/tooltip.scss",
-    "src/material/tooltip/tooltip.js",
+    // "src/material/tooltip/tooltip.scss",
+    // "src/material/tooltip/tooltip.js",
 ];
 
 const remove_list = [];
@@ -196,7 +199,7 @@ function init() {
     for (const item of list) {
         // const exist=fs.existsSync(path.join(cwd, item))
         // if(!exist){
-        // write(path.join(cwd, item), "");
+        write(path.join(cwd, item), "");
         // }
 
         const item2 = item.replace(/src\/[^/]+\//, "");
@@ -211,7 +214,7 @@ function init() {
             let code = read(path.join(cwd,'src/material/button/button.scss'))
             code=code.replaceAll('button',toKebabCase(item3))
 
-            write(path.join(cwd, item), code);
+            // write(path.join(cwd, item), code);
         }
         if (item2.endsWith(".js")) {
             js_code += `import "./${item2}";\r\n`;
@@ -220,10 +223,10 @@ function init() {
             code=code.replaceAll('button',toKebabCase(item3))
             code=code.replaceAll('Button',toPascalCase(item3))
 
-            write(path.join(cwd, item), code);
+            // write(path.join(cwd, item), code);
         }
     }
-    // if(overwrite)
+    // // if(overwrite)
     // write(path.join(cwd, list[0]), scss_code);
     // write(path.join(cwd, list[0].replace(/\.scss$/, ".js")), js_code);
 }

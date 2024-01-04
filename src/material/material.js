@@ -2,6 +2,7 @@ import "./foundation/router.js";
 import "./foundation/outlet.js";
 import "./foundation/component.js";
 import "./foundation/cdk.js";
+import "./foundation/store.js";
 
 import "./bottom-app-bar/bottom-app-bar.js";
 import "./top-app-bar/top-app-bar.js";
