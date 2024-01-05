@@ -1,6 +1,9 @@
 ## Classes
 
 <dl>
+<dt><a href="#MDButtonComponent">MDButtonComponent</a></dt>
+<dd><p>Custom button component extending MDComponent.</p>
+</dd>
 <dt><a href="#MDCDK">MDCDK</a></dt>
 <dd><p>Represents a Custom Development Kit for MD Framework.</p>
 </dd>
@@ -69,6 +72,83 @@ Extends MDComponent class.</p>
 </dd>
 </dl>
 
+<a name="MDButtonComponent"></a>
+
+## MDButtonComponent
+Custom button component extending MDComponent.
+
+**Kind**: global class  
+
+* [MDButtonComponent](#MDButtonComponent)
+    * [new MDButtonComponent()](#new_MDButtonComponent_new)
+    * _instance_
+        * [.native](#MDButtonComponent+native) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MDButtonComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDButtonComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDButtonComponent+updated)
+    * _static_
+        * [.properties](#MDButtonComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDButtonComponent_new"></a>
+
+### new MDButtonComponent()
+Constructor for MDButtonComponent.
+
+<a name="MDButtonComponent+native"></a>
+
+### mdButtonComponent.native ⇒ <code>HTMLElement</code>
+Retrieves the native button element.
+
+**Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The native button element.  
+<a name="MDButtonComponent+render"></a>
+
+### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDButtonComponent.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template result.  
+<a name="MDButtonComponent+connectedCallback"></a>
+
+### mdButtonComponent.connectedCallback()
+Lifecycle method called when the element is attached to the DOM.Initializes the button component and its ripple effect.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+<a name="MDButtonComponent+disconnectedCallback"></a>
+
+### mdButtonComponent.disconnectedCallback()
+Lifecycle method called when the element is detached from the DOM.Performs cleanup or tasks when the button is removed.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+<a name="MDButtonComponent+firstUpdated"></a>
+
+### mdButtonComponent.firstUpdated(changedProperties)
+Lifecycle method called when the element's properties have been updated.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MDButtonComponent+updated"></a>
+
+### mdButtonComponent.updated(changedProperties)
+Lifecycle method called when the element's properties have been updated.Updates button styles based on property changes.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MDButtonComponent.properties"></a>
+
+### MDButtonComponent.properties ⇒ <code>Object</code>
+**Kind**: static property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Returns**: <code>Object</code> - Properties for the MDButtonComponent.  
 <a name="MDCDK"></a>
 
 ## MDCDK

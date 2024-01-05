@@ -2,7 +2,14 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
+/**
+ * Custom button component extending MDComponent.
+ */
 class MDButtonComponent extends MDComponent {
+    /**
+     * @returns {Object}
+     * Properties for the MDButtonComponent.
+     */
     static get properties() {
         return {
             icon: { type: String },
@@ -15,25 +22,39 @@ class MDButtonComponent extends MDComponent {
         };
     }
 
+    /**
+     * Constructor for MDButtonComponent.
+     */
     constructor() {
         super();
-
         this.type = "button";
     }
 
+    /**
+     * Retrieves the native button element.
+     * @returns {HTMLElement} The native button element.
+     */
     get native() {
         return this.querySelector(".md-button__native");
     }
 
+    /**
+     * Renders the MDButtonComponent.
+     * @returns {TemplateResult} The rendered template result.
+     */
     render() {
         // prettier-ignore
         return html`
-            ${this.icon?html`<div class="md-button__icon">${this.icon}</div>`:nothing}
-            ${this.label?html`<div class="md-button__label">${this.label}</div>`:nothing}
+            ${this.icon ? html`<div class="md-button__icon">${this.icon}</div>` : nothing}
+            ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
             <button class="md-button__native" .type="${this.type}"></button>
-        `
+        `;
     }
 
+    /**
+     * Lifecycle method called when the element is attached to the DOM.
+     * Initializes the button component and its ripple effect.
+     */
     async connectedCallback() {
         super.connectedCallback();
         await this.updateComplete;
@@ -43,25 +64,36 @@ class MDButtonComponent extends MDComponent {
         });
     }
 
+    /**
+     * Lifecycle method called when the element is detached from the DOM.
+     * Performs cleanup or tasks when the button is removed.
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
 
-    firstUpdated(changedProperties) {}
+    /**
+     * Lifecycle method called when the element's properties have been updated.
+     * @param {Map} changedProperties - The properties that have changed.
+     */
+    firstUpdated(changedProperties) {
+        // Additional logic if needed for first update
+    }
 
+    /**
+     * Lifecycle method called when the element's properties have been updated.
+     * Updates button styles based on property changes.
+     * @param {Map} changedProperties - The properties that have changed.
+     */
     updated(changedProperties) {
         if (changedProperties.has("elevated"))
-            if (this.elevated) this.classList.add("md-button--elevated");
-            else this.classList.remove("md-button--elevated");
+            this.elevated ? this.classList.add("md-button--elevated") : this.classList.remove("md-button--elevated");
         if (changedProperties.has("filled"))
-            if (this.filled) this.classList.add("md-button--filled");
-            else this.classList.remove("md-button--filled");
+            this.filled ? this.classList.add("md-button--filled") : this.classList.remove("md-button--filled");
         if (changedProperties.has("tonal"))
-            if (this.tonal) this.classList.add("md-button--tonal");
-            else this.classList.remove("md-button--tonal");
+            this.tonal ? this.classList.add("md-button--tonal") : this.classList.remove("md-button--tonal");
         if (changedProperties.has("outlined"))
-            if (this.outlined) this.classList.add("md-button--outlined");
-            else this.classList.remove("md-button--outlined");
+            this.outlined ? this.classList.add("md-button--outlined") : this.classList.remove("md-button--outlined");
     }
 }
 
