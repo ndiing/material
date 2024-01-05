@@ -1,6 +1,11 @@
-@keyframes md-ripple-animation {
+@keyframes md-ripple {
     from {
         width: 0;
+    }
+}
+@keyframes md-ripple-fadeout {
+    to {
+        opacity: 0;
     }
 }
 
@@ -9,17 +14,15 @@
 
     &::after {
         content: "";
-        width: var(--md-ripple-diameter,100%);
+        width: var(--md-ripple-diameter, 100%);
         aspect-ratio: 1/1;
         border-radius: 50%;
         background: #000;
         opacity: 0;
         position: absolute;
-        left: var(--md-ripple-left,50%);
-        top: var(--md-ripple-top,50%);
-        transform: 
-        translate3d(-50%,-50%,0)
-        translate3d(var(--md-ripple-x,0%), var(--md-ripple-y,0%), 0);
+        left: var(--md-ripple-left, 50%);
+        top: var(--md-ripple-top, 50%);
+        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-ripple-x, 0%), var(--md-ripple-y, 0%), 0);
         pointer-events: none;
     }
     &--bounded {
@@ -30,6 +33,7 @@
         user-select: none;
         -webkit-tap-highlight-color: transparent;
     }
+
     &--hover {
         &::after {
             opacity: 8%;
@@ -37,23 +41,45 @@
     }
     &--focused {
         &::after {
-            animation: var(--md-ripple-animation,md-ripple-animation) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate) ;
+            animation: var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate);
             opacity: 10%;
         }
     }
-    &--activated {
+
+    &--fadeout {
+        &::after {
+            animation:
+                var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
+                var(--md-ripple-fadeout, md-ripple-fadeout) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate) var(--md-sys-motion-duration-short4) forwards;
+        }
+    }
+
+    &[activated] {
+        // color: var(--md-sys-color-primary);
+        // background: var(--md-sys-color-secondary-container);
+        // color: var(--md-sys-color-on-secondary-container);
         &::after {
             opacity: 10%;
         }
     }
+
+    &[selected] {
+        // color: var(--md-sys-color-primary);
+        // background: var(--md-sys-color-secondary-container);
+        // color: var(--md-sys-color-on-secondary-container);
+        &::after {
+            opacity: 10%;
+        }
+    }
+
     &--pressed {
         &::after {
             opacity: 10%;
         }
     }
-    &--disabled {
+
+    &[disabled] {
         opacity: 38%;
         pointer-events: none;
     }
 }
-

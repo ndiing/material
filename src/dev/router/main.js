@@ -39,7 +39,7 @@ class DevMainComponent extends MDComponent{
                             <div routerLink="/date-picker">date-picker</div>
                             <div routerLink="/dialog">dialog</div>
                             <div routerLink="/divider">divider</div>
-                            <div routerLink="/extended-fab">extended-fab</div>
+                            <!-- <div routerLink="/extended-fab">extended-fab</div> -->
                             <div routerLink="/fab">fab</div>
                             <div routerLink="/icon-button">icon-button</div>
                             <div routerLink="/list">list</div>
@@ -49,7 +49,7 @@ class DevMainComponent extends MDComponent{
                             <div routerLink="/navigation-rail">navigation-rail</div>
                             <div routerLink="/progress-indicator">progress-indicator</div>
                             <div routerLink="/radio-button">radio-button</div>
-                            <div routerLink="/router">router</div>
+                            <!-- <div routerLink="/router">router</div> -->
                             <div routerLink="/search">search</div>
                             <div routerLink="/segmented-button">segmented-button</div>
                             <div routerLink="/side-sheet">side-sheet</div>

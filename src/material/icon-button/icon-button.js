@@ -1,29 +1,33 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../foundation/component";
+import { MDRipple } from "../foundation/ripple";
 
 class MDIconButtonComponent extends MDComponent{
     static get properties(){
         return {
-            label:{type:String}
         }
     }
 
     constructor(){
         super()
 
-        this.label='Label'
     }
 
     render(){
         // prettier-ignore
-        return html`
-            ${this.label?html`<div class="md-icon-button__label">${this.label}</div>`:nothing}
-        `
+        return html``
     }
 
-    connectedCallback(){
+    async connectedCallback(){
         super.connectedCallback()
+        await this.updateComplete
         this.classList.add('md-icon-button')
+        new MDRipple(this,{
+            bounded:false,
+            diameter:40/24*100,
+            centered:true,
+            fadeout:true
+        })
     }
 
     disconnectedCallback(){

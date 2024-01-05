@@ -12,7 +12,8 @@ class DevIconButton extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <md-icon-button></md-icon-button>
+                        <md-icon-button>image</md-icon-button>
+                        <md-icon-button toggle activated>image</md-icon-button>
                     </div>
                     <div class="
                         md-layout__column

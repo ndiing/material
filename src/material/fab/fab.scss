@@ -4,10 +4,9 @@
     justify-content: center;
     vertical-align: middle;
     height: 56px;
+    border-radius: 16px;
     width: 56px;
     padding: 16px;
-    gap: 8px;
-    border-radius: var(--md-sys-shape-corner-large);
     background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     box-shadow: var(--md-sys-elevation-level1);
@@ -31,25 +30,26 @@
 
 .md-fab--small {
     height: 40px;
+    border-radius: 12px;
     width: 40px;
     padding: 8px;
-    border-radius: var(--md-sys-shape-corner-medium);
 }
 .md-fab--large {
     height: 96px;
+    border-radius: 28px;
     width: 96px;
     padding: 30px;
-    border-radius: var(--md-sys-shape-corner-extra-large);
     .md-fab__icon {
         font-size: 36px;
     }
 }
 .md-fab--extended {
     height: 56px;
-    min-width: 56px;
     width: auto;
+    // min-width: 80px;
+    border-radius: 16px;
     padding: 16px;
-    border-radius: var(--md-sys-shape-corner-large);
+    gap: 0 8px;
     .md-fab__icon {
         font-size: 24px;
     }

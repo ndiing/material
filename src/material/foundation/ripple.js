@@ -5,30 +5,44 @@ import { MDCDK } from "./cdk";
  * @extends MDCDK
  */
 class MDRipple extends MDCDK {
-    /**
+  /**
      * Creates an instance of MDRipple.
      * @param {HTMLElement} root - The root element to apply the ripple effect.
      * @param {Object} [options={}] - Additional options for the ripple effect.
      * @param {boolean} [options.bounded=true] - Whether the ripple effect is bounded.
      * @param {boolean} [options.centered=false] - Whether the ripple effect is centered.
      * @param {HTMLElement} [options.trigger] - The element triggering the ripple effect.
+     * @param {number} [options.diameter] - The diameter of the ripple effect.
+     * @param {boolean} [options.fadeout] - Whether to apply a fade-out effect.
      */
-    constructor(root,options={}){
-        super(root,options)
+    constructor(root, options = {}) {
+        super(root, options);
+    }
+
+     /**
+     * Calculates the diameter for the ripple effect.
+     * @private
+     * @returns {number} The calculated diameter.
+     */
+    get diameter() {
+        const rect = this.root.getBoundingClientRect();
+        const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
+        return diameter;
     }
 
     /**
      * Initializes the ripple effect.
      */
     init() {
+        this.options.diameter = this.options.diameter ?? this.diameter;
+
         this.root.classList.add("md-ripple");
 
         if (this.options.bounded !== false) this.root.classList.add("md-ripple--bounded");
 
-        const rect = this.root.getBoundingClientRect();
-        const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
+        if (this.options.fadeout) this.root.classList.add("md-ripple--fadeout");
 
-        this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
+        this.root.style.setProperty("--md-ripple-diameter", this.options.diameter + "%");
 
         this.trigger = this.options.trigger ?? this.root;
         this.trigger.classList.add("md-ripple--trigger");
@@ -93,30 +107,30 @@ class MDRipple extends MDCDK {
      * @param {MouseEvent} event - The mousedown event.
      */
     handleMousedown(event) {
-        window.addEventListener("mouseup", this.handleMouseup)
+        window.addEventListener("mouseup", this.handleMouseup);
 
         this.root.classList.add("md-ripple--pressed");
 
-        this.root.style.setProperty("--md-ripple-animation", "none");
+        this.root.style.setProperty("--md-ripple", "none");
+        this.root.style.setProperty("--md-ripple-fadeout", "none");
 
         const rect = this.root.getBoundingClientRect();
 
         if (!this.options.centered) {
-            const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
-
             const left = (event.clientX - rect.left) / rect.width;
             const top = (event.clientY - rect.top) / rect.height;
-            const x = (0.5 - left) * (100 / diameter);
-            const y = (0.5 - top) * ((100 / diameter) * (rect.height / rect.width));
+            const x = (0.5 - left) * (100 / this.options.diameter);
+            const y = (0.5 - top) * ((100 / this.options.diameter) * (rect.height / rect.width));
 
-            this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
+            this.root.style.setProperty("--md-ripple-diameter", this.options.diameter + "%");
             this.root.style.setProperty("--md-ripple-left", left * 100 + "%");
             this.root.style.setProperty("--md-ripple-top", top * 100 + "%");
             this.root.style.setProperty("--md-ripple-x", x * 100 + "%");
             this.root.style.setProperty("--md-ripple-y", y * 100 + "%");
         }
 
-        this.root.style.removeProperty("--md-ripple-animation");
+        this.root.style.removeProperty("--md-ripple");
+        this.root.style.removeProperty("--md-ripple-fadeout");
     }
 
     /**
@@ -126,7 +140,7 @@ class MDRipple extends MDCDK {
      */
     handleMouseup(event) {
         this.root.classList.remove("md-ripple--pressed");
-        window.removeEventListener("mouseup", this.handleMouseup)
+        window.removeEventListener("mouseup", this.handleMouseup);
     }
 
     /**

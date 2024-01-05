@@ -516,6 +516,8 @@ Creates an instance of MDRipple.
 | [options.bounded] | <code>boolean</code> | <code>true</code> | Whether the ripple effect is bounded. |
 | [options.centered] | <code>boolean</code> | <code>false</code> | Whether the ripple effect is centered. |
 | [options.trigger] | <code>HTMLElement</code> |  | The element triggering the ripple effect. |
+| [options.diameter] | <code>number</code> |  | The diameter of the ripple effect. |
+| [options.fadeout] | <code>boolean</code> |  | Whether to apply a fade-out effect. |
 
 <a name="MDRipple+init"></a>
 
