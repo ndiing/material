@@ -23,6 +23,7 @@ class MDSegmentedButtonComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-segmented-button')
     }
 
     disconnectedCallback(){

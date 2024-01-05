@@ -23,6 +23,7 @@ class MDChipComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-chip')
     }
 
     disconnectedCallback(){

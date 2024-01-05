@@ -23,6 +23,7 @@ class MDProgressIndicatorComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-progress-indicator')
     }
 
     disconnectedCallback(){

@@ -23,6 +23,7 @@ class MDDialogComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-dialog')
     }
 
     disconnectedCallback(){

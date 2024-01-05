@@ -23,6 +23,7 @@ class MDBottomAppBarComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-bottom-app-bar')
     }
 
     disconnectedCallback(){

@@ -23,6 +23,7 @@ class MDBottomSheetComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-bottom-sheet')
     }
 
     disconnectedCallback(){

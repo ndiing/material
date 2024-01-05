@@ -23,6 +23,7 @@ class MDCheckboxComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-checkbox')
     }
 
     disconnectedCallback(){

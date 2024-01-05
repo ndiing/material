@@ -23,6 +23,7 @@ class MDListComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-list')
     }
 
     disconnectedCallback(){

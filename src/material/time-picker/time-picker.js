@@ -23,6 +23,7 @@ class MDTimePickerComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-time-picker')
     }
 
     disconnectedCallback(){

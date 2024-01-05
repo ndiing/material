@@ -23,6 +23,7 @@ class MDDatePickerComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-date-picker')
     }
 
     disconnectedCallback(){

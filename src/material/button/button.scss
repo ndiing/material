@@ -1,3 +1,77 @@
-.md-button{
-    color: red;
+.md-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height: 40px;
+    padding: 0 12px;
+    gap: 8px;
+    border-radius: 20px;
+    // border: 0;
+    color: var(--md-sys-color-primary);
+    // box-shadow: none;
+    position: relative;
+}
+.md-button__icon {
+    @extend .md-icon;
+    font-size: 18px;
+    margin: 0 0px 0 0px;
+}
+.md-button__label {
+    @extend .md-typography--label-large;
+    margin: 0 4px 0 0;
+}
+.md-button__native {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+}
+
+.md-button--elevated {
+    padding: 0 24px;
+    background: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-primary);
+    box-shadow: var(--md-sys-elevation-level1);
+    .md-button__icon {
+        margin: 0 0px 0 -8px;
+    }
+    .md-button__label {
+        margin: 0;
+    }
+}
+.md-button--filled {
+    padding: 0 24px;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    .md-button__icon {
+        margin: 0 0px 0 -8px;
+    }
+    .md-button__label {
+        margin: 0;
+    }
+}
+.md-button--tonal {
+    padding: 0 24px;
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    .md-button__icon {
+        margin: 0 0px 0 -8px;
+    }
+    .md-button__label {
+        margin: 0;
+    }
+}
+.md-button--outlined {
+    padding: 0 24px;
+    border: 1px solid var(--md-sys-color-outline);
+    .md-button__icon {
+        margin: 0 0px 0 -8px;
+    }
+    .md-button__label {
+        margin: 0;
+    }
 }

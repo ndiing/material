@@ -23,6 +23,7 @@ class MDTextFieldComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-text-field')
     }
 
     disconnectedCallback(){

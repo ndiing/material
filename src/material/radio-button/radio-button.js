@@ -23,6 +23,7 @@ class MDRadioButtonComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-radio-button')
     }
 
     disconnectedCallback(){

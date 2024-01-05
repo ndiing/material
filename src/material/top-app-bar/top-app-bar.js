@@ -23,6 +23,7 @@ class MDTopAppBarComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-top-app-bar')
     }
 
     disconnectedCallback(){

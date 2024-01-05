@@ -23,6 +23,7 @@ class MDNavigationBarComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-navigation-bar')
     }
 
     disconnectedCallback(){

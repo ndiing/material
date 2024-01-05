@@ -23,6 +23,7 @@ class MDExtendedFabComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-extended-fab')
     }
 
     disconnectedCallback(){

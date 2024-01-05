@@ -23,6 +23,7 @@ class MDSearchComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-search')
     }
 
     disconnectedCallback(){

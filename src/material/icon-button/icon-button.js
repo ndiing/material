@@ -23,6 +23,7 @@ class MDIconButtonComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-icon-button')
     }
 
     disconnectedCallback(){

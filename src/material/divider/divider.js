@@ -23,6 +23,7 @@ class MDDividerComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-divider')
     }
 
     disconnectedCallback(){

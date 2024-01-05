@@ -23,6 +23,7 @@ class MDMenuComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-menu')
     }
 
     disconnectedCallback(){

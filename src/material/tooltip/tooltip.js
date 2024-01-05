@@ -23,6 +23,7 @@ class MDTooltipComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-tooltip')
     }
 
     disconnectedCallback(){

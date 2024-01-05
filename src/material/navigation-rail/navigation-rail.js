@@ -23,6 +23,7 @@ class MDNavigationRailComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-navigation-rail')
     }
 
     disconnectedCallback(){

@@ -23,6 +23,7 @@ class MDBadgeComponent extends MDComponent{
 
     connectedCallback(){
         super.connectedCallback()
+        this.classList.add('md-badge')
     }
 
     disconnectedCallback(){
