@@ -4,7 +4,6 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Custom fab component extending MDComponent.
- * @fires fab-click - Triggered when the fab is clicked.
  */
 class MDFabComponent extends MDComponent {
     /**

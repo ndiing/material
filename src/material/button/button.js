@@ -4,7 +4,6 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Custom button component extending MDComponent.
- * @fires button-click - Triggered when the button is clicked.
  */
 class MDButtonComponent extends MDComponent {
     /**

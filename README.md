@@ -81,7 +81,6 @@ Extends MDComponent class.</p>
 Custom button component extending MDComponent.
 
 **Kind**: global class  
-**Emits**: <code>event:button-click - Triggered when the button is clicked.</code>  
 
 * [MDButtonComponent](#MDButtonComponent)
     * [new MDButtonComponent()](#new_MDButtonComponent_new)
@@ -173,7 +172,6 @@ Properties for the MDButtonComponent.
 Custom fab component extending MDComponent.
 
 **Kind**: global class  
-**Emits**: <code>event:fab-click - Triggered when the fab is clicked.</code>  
 
 * [MDFabComponent](#MDFabComponent)
     * [new MDFabComponent()](#new_MDFabComponent_new)
