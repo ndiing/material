@@ -4,10 +4,11 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Custom button component extending MDComponent.
+ * @fires button-click - Triggered when the button is clicked.
  */
 class MDButtonComponent extends MDComponent {
     /**
-     * Properties for the MDButtonComponent
+     * Properties for the MDButtonComponent.
      * @property {string} icon - The icon displayed within the button.
      * @property {string} label - The label or text displayed within the button.
      * @property {string} type - The type of the button (e.g., "button", "submit", "reset").
@@ -33,6 +34,7 @@ class MDButtonComponent extends MDComponent {
      */
     constructor() {
         super();
+        // Default button type
         this.type = "button";
     }
 
@@ -60,11 +62,13 @@ class MDButtonComponent extends MDComponent {
     /**
      * Lifecycle method called when the element is attached to the DOM.
      * Initializes the button component and its ripple effect.
+     * @returns {Promise<void>} A Promise that resolves when initialization is complete.
      */
     async connectedCallback() {
         super.connectedCallback();
         await this.updateComplete;
         this.classList.add("md-button");
+        // Initialize ripple effect for the button
         this.mdripple = new MDRipple(this, {
             trigger: this.native,
         });
@@ -76,14 +80,15 @@ class MDButtonComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+        // Clean up resources if needed
     }
 
     /**
-     * Lifecycle method called when the element's properties have been updated.
+     * Lifecycle method called when the element's properties have been updated for the first time.
      * @param {Map} changedProperties - The properties that have changed.
      */
     firstUpdated(changedProperties) {
-        // Additional logic if needed for first update
+        // Additional logic if needed for the first update
     }
 
     /**
@@ -92,17 +97,22 @@ class MDButtonComponent extends MDComponent {
      * @param {Map} changedProperties - The properties that have changed.
      */
     updated(changedProperties) {
-        if (changedProperties.has("elevated"))
+        if (changedProperties.has("elevated")) {
             this.elevated ? this.classList.add("md-button--elevated") : this.classList.remove("md-button--elevated");
-        if (changedProperties.has("filled"))
+        }
+        if (changedProperties.has("filled")) {
             this.filled ? this.classList.add("md-button--filled") : this.classList.remove("md-button--filled");
-        if (changedProperties.has("tonal"))
+        }
+        if (changedProperties.has("tonal")) {
             this.tonal ? this.classList.add("md-button--tonal") : this.classList.remove("md-button--tonal");
-        if (changedProperties.has("outlined"))
+        }
+        if (changedProperties.has("outlined")) {
             this.outlined ? this.classList.add("md-button--outlined") : this.classList.remove("md-button--outlined");
+        }
     }
 }
 
+// Define the custom element "md-button"
 customElements.define("md-button", MDButtonComponent);
 
 export { MDButtonComponent };

@@ -78,13 +78,14 @@ Extends MDComponent class.</p>
 Custom button component extending MDComponent.
 
 **Kind**: global class  
+**Emits**: <code>event:button-click - Triggered when the button is clicked.</code>  
 
 * [MDButtonComponent](#MDButtonComponent)
     * [new MDButtonComponent()](#new_MDButtonComponent_new)
     * _instance_
         * [.native](#MDButtonComponent+native) ⇒ <code>HTMLElement</code>
         * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
-        * [.connectedCallback()](#MDButtonComponent+connectedCallback)
+        * [.connectedCallback()](#MDButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.disconnectedCallback()](#MDButtonComponent+disconnectedCallback)
         * [.firstUpdated(changedProperties)](#MDButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDButtonComponent+updated)
@@ -112,10 +113,11 @@ Renders the MDButtonComponent.
 **Returns**: <code>TemplateResult</code> - The rendered template result.  
 <a name="MDButtonComponent+connectedCallback"></a>
 
-### mdButtonComponent.connectedCallback()
+### mdButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
 Lifecycle method called when the element is attached to the DOM.Initializes the button component and its ripple effect.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
 <a name="MDButtonComponent+disconnectedCallback"></a>
 
 ### mdButtonComponent.disconnectedCallback()
@@ -125,7 +127,7 @@ Lifecycle method called when the element is detached from the DOM.Performs clea
 <a name="MDButtonComponent+firstUpdated"></a>
 
 ### mdButtonComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's properties have been updated.
+Lifecycle method called when the element's properties have been updated for the first time.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 
@@ -147,7 +149,7 @@ Lifecycle method called when the element's properties have been updated.Updates
 <a name="MDButtonComponent.properties"></a>
 
 ### MDButtonComponent.properties
-Properties for the MDButtonComponent
+Properties for the MDButtonComponent.
 
 **Kind**: static property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 **Properties**
