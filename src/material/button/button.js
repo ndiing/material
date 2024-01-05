@@ -7,8 +7,18 @@ import { MDRipple } from "../foundation/ripple";
  */
 class MDButtonComponent extends MDComponent {
     /**
-     * @returns {Object}
-     * Properties for the MDButtonComponent.
+     * @typedef {Object} MDButtonProperties
+     * @property {string} icon - The icon displayed within the button.
+     * @property {string} label - The label or text displayed within the button.
+     * @property {string} type - The type of the button (e.g., "button", "submit", "reset").
+     * @property {boolean} elevated - Determines whether the button has an elevated appearance.
+     * @property {boolean} filled - Determines whether the button has a filled appearance.
+     * @property {boolean} tonal - Determines whether the button has a tonal appearance.
+     * @property {boolean} outlined - Determines whether the button has an outlined appearance.
+     */
+
+    /**
+     * @returns {MDButtonProperties} Properties for the MDButtonComponent.
      */
     static get properties() {
         return {
