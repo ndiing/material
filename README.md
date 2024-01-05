@@ -64,8 +64,6 @@ Extends MDComponent class.</p>
 ## Typedefs
 
 <dl>
-<dt><a href="#MDButtonProperties">MDButtonProperties</a> : <code>Object</code></dt>
-<dd></dd>
 <dt><a href="#Route">Route</a> : <code>Object</code></dt>
 <dd><p>Represents a route object used in the routing system.</p>
 </dd>
@@ -91,7 +89,7 @@ Custom button component extending MDComponent.
         * [.firstUpdated(changedProperties)](#MDButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDButtonComponent+updated)
     * _static_
-        * [.properties](#MDButtonComponent.properties) ⇒ [<code>MDButtonProperties</code>](#MDButtonProperties)
+        * [.properties](#MDButtonComponent.properties)
 
 <a name="new_MDButtonComponent_new"></a>
 
@@ -148,9 +146,22 @@ Lifecycle method called when the element's properties have been updated.Updates
 
 <a name="MDButtonComponent.properties"></a>
 
-### MDButtonComponent.properties ⇒ [<code>MDButtonProperties</code>](#MDButtonProperties)
+### MDButtonComponent.properties
+Properties for the MDButtonComponent
+
 **Kind**: static property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: [<code>MDButtonProperties</code>](#MDButtonProperties) - Properties for the MDButtonComponent.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| icon | <code>string</code> | The icon displayed within the button. |
+| label | <code>string</code> | The label or text displayed within the button. |
+| type | <code>string</code> | The type of the button (e.g., "button", "submit", "reset"). |
+| elevated | <code>boolean</code> | Determines whether the button has an elevated appearance. |
+| filled | <code>boolean</code> | Determines whether the button has a filled appearance. |
+| tonal | <code>boolean</code> | Determines whether the button has a tonal appearance. |
+| outlined | <code>boolean</code> | Determines whether the button has an outlined appearance. |
+
 <a name="MDCDK"></a>
 
 ## MDCDK
@@ -771,22 +782,6 @@ Converts a string to Title Case.
 | Param | Type | Description |
 | --- | --- | --- |
 | string | <code>string</code> | The string to convert. |
-
-<a name="MDButtonProperties"></a>
-
-## MDButtonProperties : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| icon | <code>string</code> | The icon displayed within the button. |
-| label | <code>string</code> | The label or text displayed within the button. |
-| type | <code>string</code> | The type of the button (e.g., "button", "submit", "reset"). |
-| elevated | <code>boolean</code> | Determines whether the button has an elevated appearance. |
-| filled | <code>boolean</code> | Determines whether the button has a filled appearance. |
-| tonal | <code>boolean</code> | Determines whether the button has a tonal appearance. |
-| outlined | <code>boolean</code> | Determines whether the button has an outlined appearance. |
 
 <a name="Route"></a>
 
