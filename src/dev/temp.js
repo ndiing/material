@@ -110,8 +110,8 @@ const list = [
     // "src/material/foundation/store.scss",
     // "src/material/foundation/store.js",
     // popover
-    "src/material/foundation/popover.scss",
-    "src/material/foundation/popover.js",
+    // "src/material/foundation/popover.scss",
+    // "src/material/foundation/popover.js",
     // // ripple
     // "src/material/foundation/ripple.scss",
     // "src/material/foundation/ripple.js",
@@ -262,7 +262,7 @@ function init() {
         // const exist=fs.existsSync(path.join(cwd, item))
         // if(!exist){
             // console.log(path.join(cwd, item))
-        write(path.join(cwd, item), "");
+        // write(path.join(cwd, item), "");
         // }
 
         const item2 = item.replace(/src\/[^/]+\//, "");
@@ -274,19 +274,19 @@ function init() {
         if (item2.endsWith(".scss")) {
             scss_code += `@import "./${item2}";\r\n`;
 
-            let code = read(path.join(cwd,'src/material/button/button.scss'))
+            let code = read(path.join(cwd,'src/dev/button/button.scss'))
             code=code.replaceAll('button',toKebabCase(item3))
 
-            // write(path.join(cwd, item), code);
+            write(path.join(cwd, item.replace('/material/','/dev/')), code);
         }
         if (item2.endsWith(".js")) {
             js_code += `import "./${item2}";\r\n`;
 
-            let code = read(path.join(cwd,'src/material/button/button.js'))
+            let code = read(path.join(cwd,'src/dev/button/button.js'))
             code=code.replaceAll('button',toKebabCase(item3))
             code=code.replaceAll('Button',toPascalCase(item3))
 
-            // write(path.join(cwd, item), code);
+            write(path.join(cwd, item.replace('/material/','/dev/')), code);
         }
     }
     // // if(overwrite)
