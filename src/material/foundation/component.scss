@@ -13,8 +13,19 @@
     }
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    overflow: hidden;
+}
+
 // base
 body {
+    overflow: auto;
     @extend .md-typography--body-medium;
     background: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);

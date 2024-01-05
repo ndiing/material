@@ -12,6 +12,9 @@ Extends LitElement class.</p>
 <dd><p>Represents an outlet component to manage content rendering within a router.
 Extends MDComponent class.</p>
 </dd>
+<dt><a href="#MDPopover">MDPopover</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
+<dd><p>Represents a popover functionality based on Material Design components.</p>
+</dd>
 <dt><a href="#MDRipple">MDRipple</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
 <dd><p>Represents a Material Design Ripple effect applied to an element.</p>
 </dd>
@@ -194,6 +197,109 @@ Emits a custom event from the component.
 Represents an outlet component to manage content rendering within a router.Extends MDComponent class.
 
 **Kind**: global class  
+<a name="MDPopover"></a>
+
+## MDPopover ⇐ [<code>MDCDK</code>](#MDCDK)
+Represents a popover functionality based on Material Design components.
+
+**Kind**: global class  
+**Extends**: [<code>MDCDK</code>](#MDCDK)  
+
+* [MDPopover](#MDPopover) ⇐ [<code>MDCDK</code>](#MDCDK)
+    * [new MDPopover(root, [options])](#new_MDPopover_new)
+    * [.init()](#MDPopover+init)
+    * [.destroy()](#MDPopover+destroy)
+    * [.setPlacement()](#MDPopover+setPlacement)
+    * [.getPlacement(placement)](#MDPopover+getPlacement) ⇒ <code>Object</code>
+    * [.on(type, listener)](#MDCDK+on)
+    * [.off(type, listener)](#MDCDK+off)
+    * [.emit(type, detail)](#MDCDK+emit)
+
+<a name="new_MDPopover_new"></a>
+
+### new MDPopover(root, [options])
+Creates an instance of MDPopover.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| root | <code>HTMLElement</code> |  | The root element for the popover. |
+| [options] | <code>Object</code> | <code>{}</code> | Additional options for the popover. |
+| [options.placement] | <code>string</code> | <code>&quot;\&quot;bottom-start\&quot;&quot;</code> | The placement of the popover. |
+| [options.offset] | <code>number</code> | <code>0</code> | The offset value for positioning the popover. |
+| [options.shift] | <code>boolean</code> | <code>false</code> | Whether to shift the popover to stay within the viewport. |
+
+<a name="MDPopover+init"></a>
+
+### mdPopover.init()
+Initializes the popover.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+**Overrides**: [<code>init</code>](#MDCDK+init)  
+<a name="MDPopover+destroy"></a>
+
+### mdPopover.destroy()
+Destroys the popover.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+**Overrides**: [<code>destroy</code>](#MDCDK+destroy)  
+<a name="MDPopover+setPlacement"></a>
+
+### mdPopover.setPlacement()
+Sets the placement of the popover based on the specified options.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+<a name="MDPopover+getPlacement"></a>
+
+### mdPopover.getPlacement(placement) ⇒ <code>Object</code>
+Calculates the placement of the popover based on the specified placement option.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+**Returns**: <code>Object</code> - Returns an object with left and top positions for the popover.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| placement | <code>string</code> | The placement option for the popover. |
+
+<a name="MDCDK+on"></a>
+
+### mdPopover.on(type, listener)
+Attaches an event listener to the root element.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+**Overrides**: [<code>on</code>](#MDCDK+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to listen for. |
+| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+
+<a name="MDCDK+off"></a>
+
+### mdPopover.off(type, listener)
+Removes an event listener from the root element.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+**Overrides**: [<code>off</code>](#MDCDK+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of event to remove the listener from. |
+| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+
+<a name="MDCDK+emit"></a>
+
+### mdPopover.emit(type, detail)
+Emits a custom event from the root element.
+
+**Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
+**Overrides**: [<code>emit</code>](#MDCDK+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of the custom event to be dispatched. |
+| detail | <code>any</code> | Optional detail to be included in the event. |
+
 <a name="MDRipple"></a>
 
 ## MDRipple ⇐ [<code>MDCDK</code>](#MDCDK)

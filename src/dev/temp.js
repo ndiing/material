@@ -1,5 +1,89 @@
 const fs = require("fs");
 const path = require("path");
+/**
+ * Checks if the given value is not undefined or null.
+ * @param {*} value - The value to check.
+ * @returns {boolean} Returns true if the value is not undefined or null, otherwise false.
+ */
+function notNull(value) {
+    return value !== undefined && value !== null;
+}
+
+/**
+ * Checks if the given value is not empty.
+ * @param {*} value - The value to check.
+ * @returns {boolean} Returns true if the value is not null, undefined, or an empty string, otherwise false.
+ */
+ function notEmpty(value) {
+    return notNull(value) && value !== "";
+}
+
+/**
+ * Attempts to parse the value into an integer.
+ * @param {*} value - The value to parse.
+ * @returns {?number} Returns the parsed integer if successful, otherwise null.
+ */
+ function parseNumber(value) {
+    value = parseInt(value);
+    return isNaN(value) ? null : value;
+}
+
+/**
+ * Converts a string to PascalCase.
+ * @param {string} string - The string to convert.
+ * @returns {string} Returns the string converted to PascalCase.
+ */
+ function toPascalCase(string) {
+    return string.replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g, ($, $1, $2) => $2.toUpperCase()).replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
+}
+
+/**
+ * Converts a string to camelCase.
+ * @param {string} string - The string to convert.
+ * @returns {string} Returns the string converted to camelCase.
+ */
+ function toCamelCase(string) {
+    return string.replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g, ($, $1, $2, $i) => ($i === 0 ? $2.toLowerCase() : $2.toUpperCase())).replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
+}
+
+/**
+ * Converts a string to snake_case.
+ * @param {string} string - The string to convert.
+ * @returns {string} Returns the string converted to snake_case.
+ */
+ function toSnakeCase(string) {
+    return string
+        .replace(/([a-z])([A-Z])/g, ($, $1, $2) => $1 + "_" + $2)
+        .replace(/[^a-zA-Z0-9]/g, () => "_")
+        .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "")
+        .toLowerCase();
+}
+
+/**
+ * Converts a string to kebab-case.
+ * @param {string} string - The string to convert.
+ * @returns {string} Returns the string converted to kebab-case.
+ */
+ function toKebabCase(string) {
+    return string
+        .replace(/([a-z])([A-Z])/g, ($, $1, $2) => $1 + "-" + $2)
+        .replace(/[^a-zA-Z0-9]/g, () => "-")
+        .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "")
+        .toLowerCase();
+}
+
+/**
+ * Converts a string to Title Case.
+ * @param {string} string - The string to convert.
+ * @returns {string} Returns the string converted to Title Case.
+ */
+ function toTitleCase(string) {
+    return string
+        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g, ($, $1, $2) => $2.toUpperCase())
+        .replace(/([a-z])([A-Z])/g, ($, $1, $2) => $1 + " " + $2.toUpperCase())
+        .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
+}
+
 
 const list = [
     // "src/material/material.scss",
@@ -25,9 +109,12 @@ const list = [
     // store
     // "src/material/foundation/store.scss",
     // "src/material/foundation/store.js",
-    // ripple
-    "src/material/foundation/ripple.scss",
-    "src/material/foundation/ripple.js",
+    // popover
+    "src/material/foundation/popover.scss",
+    "src/material/foundation/popover.js",
+    // // ripple
+    // "src/material/foundation/ripple.scss",
+    // "src/material/foundation/ripple.js",
     // // virtual-scroll
     // "src/material/foundation/virtual-scroll.scss",
     // "src/material/foundation/virtual-scroll.js",
@@ -174,6 +261,7 @@ function init() {
     for (const item of list) {
         // const exist=fs.existsSync(path.join(cwd, item))
         // if(!exist){
+            // console.log(path.join(cwd, item))
         write(path.join(cwd, item), "");
         // }
 
