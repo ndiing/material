@@ -1,1 +1,56 @@
-.md-fab{}
+.md-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height: 56px;
+    width: 56px;
+    padding: 16px;
+    gap: 8px;
+    border-radius: var(--md-sys-shape-corner-large);
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    box-shadow: var(--md-sys-elevation-level1);
+    position: relative;
+}
+.md-fab__icon {
+    @extend .md-icon;
+}
+.md-fab__label {
+    @extend .md-typography--label-large;
+}
+.md-fab__native {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+}
+
+.md-fab--small {
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    border-radius: var(--md-sys-shape-corner-medium);
+}
+.md-fab--large {
+    height: 96px;
+    width: 96px;
+    padding: 30px;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    .md-fab__icon {
+        font-size: 36px;
+    }
+}
+.md-fab--extended {
+    height: 56px;
+    min-width: 56px;
+    width: auto;
+    padding: 16px;
+    border-radius: var(--md-sys-shape-corner-large);
+    .md-fab__icon {
+        font-size: 24px;
+    }
+}

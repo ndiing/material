@@ -4,6 +4,9 @@
 <dt><a href="#MDButtonComponent">MDButtonComponent</a></dt>
 <dd><p>Custom button component extending MDComponent.</p>
 </dd>
+<dt><a href="#MDFabComponent">MDFabComponent</a></dt>
+<dd><p>Custom fab component extending MDComponent.</p>
+</dd>
 <dt><a href="#MDCDK">MDCDK</a></dt>
 <dd><p>Represents a Custom Development Kit for MD Framework.</p>
 </dd>
@@ -163,6 +166,97 @@ Properties for the MDButtonComponent.
 | filled | <code>boolean</code> | Determines whether the button has a filled appearance. |
 | tonal | <code>boolean</code> | Determines whether the button has a tonal appearance. |
 | outlined | <code>boolean</code> | Determines whether the button has an outlined appearance. |
+
+<a name="MDFabComponent"></a>
+
+## MDFabComponent
+Custom fab component extending MDComponent.
+
+**Kind**: global class  
+**Emits**: <code>event:fab-click - Triggered when the fab is clicked.</code>  
+
+* [MDFabComponent](#MDFabComponent)
+    * [new MDFabComponent()](#new_MDFabComponent_new)
+    * _instance_
+        * [.native](#MDFabComponent+native) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDFabComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDFabComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDFabComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDFabComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDFabComponent+updated)
+    * _static_
+        * [.properties](#MDFabComponent.properties)
+
+<a name="new_MDFabComponent_new"></a>
+
+### new MDFabComponent()
+Constructor for MDFabComponent.
+
+<a name="MDFabComponent+native"></a>
+
+### mdFabComponent.native ⇒ <code>HTMLElement</code>
+Retrieves the native fab element.
+
+**Kind**: instance property of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Returns**: <code>HTMLElement</code> - The native fab element.  
+<a name="MDFabComponent+render"></a>
+
+### mdFabComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDFabComponent.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template result.  
+<a name="MDFabComponent+connectedCallback"></a>
+
+### mdFabComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle method called when the element is attached to the DOM.Initializes the fab component and its ripple effect.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+<a name="MDFabComponent+disconnectedCallback"></a>
+
+### mdFabComponent.disconnectedCallback()
+Lifecycle method called when the element is detached from the DOM.Performs cleanup or tasks when the fab is removed.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+<a name="MDFabComponent+firstUpdated"></a>
+
+### mdFabComponent.firstUpdated(changedProperties)
+Lifecycle method called when the element's properties have been updated for the first time.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MDFabComponent+updated"></a>
+
+### mdFabComponent.updated(changedProperties)
+Lifecycle method called when the element's properties have been updated.Updates fab styles based on property changes.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MDFabComponent.properties"></a>
+
+### MDFabComponent.properties
+Properties for the MDFabComponent.
+
+**Kind**: static property of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| icon | <code>string</code> | The icon displayed within the fab. |
+| label | <code>string</code> | The label or text displayed within the fab. |
+| type | <code>string</code> | The type of the fab (e.g., "fab", "submit", "reset"). |
+| small | <code>boolean</code> | Determines whether the fab has a small size. |
+| large | <code>boolean</code> | Determines whether the fab has a large size. |
+| extended | <code>boolean</code> | Determines whether the fab is extended. |
 
 <a name="MDCDK"></a>
 
