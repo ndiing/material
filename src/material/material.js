@@ -1,10 +1,10 @@
-import "./foundation/router.js";
-import "./foundation/outlet.js";
-import "./foundation/component.js";
-import "./foundation/cdk.js";
-import "./foundation/store.js";
-import "./foundation/virtual-scroll.js";
-import "./foundation/ripple.js";
+// import "./foundation/router.js";
+// import "./foundation/outlet.js";
+// import "./foundation/component.js";
+// import "./foundation/cdk.js";
+// import "./foundation/store.js";
+// import "./foundation/virtual-scroll.js";
+// import "./foundation/ripple.js";
 // import "./foundation/popover.js";
 
 import "./bottom-app-bar/bottom-app-bar.js";
