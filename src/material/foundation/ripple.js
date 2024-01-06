@@ -129,8 +129,10 @@ class MDRipple extends MDCDK {
             this.root.style.setProperty("--md-ripple-y", y * 100 + "%");
         }
 
-        this.root.style.removeProperty("--md-ripple");
-        this.root.style.removeProperty("--md-ripple-fadeout");
+        // this.root.style.removeProperty("--md-ripple");
+        // this.root.style.removeProperty("--md-ripple-fadeout");
+        this.root.style.setProperty("--md-ripple",'md-ripple');
+        this.root.style.setProperty("--md-ripple-fadeout",'md-ripple-fadeout');
     }
 
     /**

@@ -44,7 +44,7 @@
     }
     &--focused {
         &::after {
-            animation: var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate);
+            animation: var(--md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate);
             opacity: 10%;
         }
     }
@@ -78,8 +78,8 @@
         &[activated]{
             &::after {
                 animation:
-                    var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
-                    var(--md-ripple-fadeout, md-ripple-fadeout) var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard-accelerate);
+                    var(--md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
+                    var(--md-ripple-fadeout) var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard-accelerate);
                 opacity: 0;
             }
         }
