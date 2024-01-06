@@ -57,10 +57,7 @@ class MDSegmentedButtonComponent extends MDComponent {
         super.connectedCallback();
         await this.updateComplete;
         this.classList.add("md-segmented-button");
-        const properties = Object.keys(MDButtonComponent.properties);
-        const children = Array.from(this.children);
-        this.data = children.map((child) => properties.reduce((p, c) => ({ ...p, [c]: child.getAttribute(c) }), {}));
-        children.forEach((child) => child.remove());
+        
     }
 
     /**
@@ -76,7 +73,10 @@ class MDSegmentedButtonComponent extends MDComponent {
      * @param {Map<string, unknown>} changedProperties - The properties that have changed.
      */
     firstUpdated(changedProperties) {
-        // Logic to handle the first update of the component can be added here.
+        const properties = Object.keys(MDButtonComponent.properties);
+        const children = Array.from(this.children);
+        this.data = children.map((child) => properties.reduce((p, c) => ({ ...p, [c]: child.getAttribute(c) }), {}));
+        children.forEach((child) => child.remove());
     }
 
     /**
