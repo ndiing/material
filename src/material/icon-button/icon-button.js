@@ -25,15 +25,6 @@ class MDIconButtonComponent extends MDComponent {
         };
     }
 
-    /**
-     * Checks if the button has a container appearance.
-     * @private
-     * @returns {boolean} True if the button has a container appearance, otherwise false.
-     */
-    get isContained() {
-        return this.filled || this.tonal || this.outlined;
-    }
-
     constructor() {
         super();
     }
@@ -57,7 +48,7 @@ class MDIconButtonComponent extends MDComponent {
         this.classList.add("md-icon-button");
         new MDRipple(this, {
             bounded: false,
-            diameter: this.isContained ? (40 / 40) * 100 : (40 / 24) * 100,
+            diameter: this.appearance ? (40 / 40) * 100 : (40 / 24) * 100,
             centered: true,
             fadeout: true,
         });
