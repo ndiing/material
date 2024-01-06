@@ -16,17 +16,17 @@ class DevIconButton extends MDComponent{
                         <md-icon-button toggle>image</md-icon-button>
                         <md-icon-button toggle activated>image</md-icon-button>
                         <br><br>
-                        <md-icon-button filled>image</md-icon-button>
-                        <md-icon-button filled toggle>image</md-icon-button>
-                        <md-icon-button filled toggle activated>image</md-icon-button>
+                        <md-icon-button appearance="filled">image</md-icon-button>
+                        <md-icon-button appearance="filled" toggle>image</md-icon-button>
+                        <md-icon-button appearance="filled" toggle activated>image</md-icon-button>
                         <br><br>
-                        <md-icon-button tonal>image</md-icon-button>
-                        <md-icon-button tonal toggle>image</md-icon-button>
-                        <md-icon-button tonal toggle activated>image</md-icon-button>
+                        <md-icon-button appearance="tonal">image</md-icon-button>
+                        <md-icon-button appearance="tonal" toggle>image</md-icon-button>
+                        <md-icon-button appearance="tonal" toggle activated>image</md-icon-button>
                         <br><br>
-                        <md-icon-button outlined>image</md-icon-button>
-                        <md-icon-button outlined toggle>image</md-icon-button>
-                        <md-icon-button outlined toggle activated>image</md-icon-button>
+                        <md-icon-button appearance="outlined">image</md-icon-button>
+                        <md-icon-button appearance="outlined" toggle>image</md-icon-button>
+                        <md-icon-button appearance="outlined" toggle activated>image</md-icon-button>
                         <br><br>
                     </div>
                     <div class="

@@ -16,20 +16,20 @@ class DevButton extends MDComponent{
                         <md-button icon="image" label="Label"></md-button>
                         <br>
                         <br>
-                        <md-button elevated label="Label"></md-button>
-                        <md-button elevated icon="image" label="Label"></md-button>
+                        <md-button appearance="elevated" label="Label"></md-button>
+                        <md-button appearance="elevated" icon="image" label="Label"></md-button>
                         <br>
                         <br>
-                        <md-button filled label="Label"></md-button>
-                        <md-button filled icon="image" label="Label"></md-button>
+                        <md-button appearance="filled" label="Label"></md-button>
+                        <md-button appearance="filled" icon="image" label="Label"></md-button>
                         <br>
                         <br>
-                        <md-button tonal label="Label"></md-button>
-                        <md-button tonal icon="image" label="Label"></md-button>
+                        <md-button appearance="tonal" label="Label"></md-button>
+                        <md-button appearance="tonal" icon="image" label="Label"></md-button>
                         <br>
                         <br>
-                        <md-button outlined label="Label"></md-button>
-                        <md-button outlined icon="image" label="Label"></md-button>
+                        <md-button appearance="outlined" label="Label"></md-button>
+                        <md-button appearance="outlined" icon="image" label="Label"></md-button>
                         <br>
                         <br>
                     </div>

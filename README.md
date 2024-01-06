@@ -76,6 +76,8 @@ Extends MDComponent class.</p>
 <dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
 <dd><p>Represents the details of the scroll event.</p>
 </dd>
+<dt><a href="#MDIconButtonProperties">MDIconButtonProperties</a> : <code>Object</code></dt>
+<dd></dd>
 </dl>
 
 <a name="MDButtonComponent"></a>
@@ -91,8 +93,6 @@ Custom button component extending MDComponent.
         * [.native](#MDButtonComponent+native) ⇒ <code>HTMLElement</code>
         * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
-        * [.disconnectedCallback()](#MDButtonComponent+disconnectedCallback)
-        * [.firstUpdated(changedProperties)](#MDButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDButtonComponent+updated)
     * _static_
         * [.properties](#MDButtonComponent.properties)
@@ -123,23 +123,6 @@ Lifecycle method called when the element is attached to the DOM.Initializes the
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 **Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
-<a name="MDButtonComponent+disconnectedCallback"></a>
-
-### mdButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is detached from the DOM.Performs cleanup or tasks when the button is removed.
-
-**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-<a name="MDButtonComponent+firstUpdated"></a>
-
-### mdButtonComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's properties have been updated for the first time.
-
-**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Map</code> | The properties that have changed. |
-
 <a name="MDButtonComponent+updated"></a>
 
 ### mdButtonComponent.updated(changedProperties)
@@ -164,10 +147,7 @@ Properties for the MDButtonComponent.
 | icon | <code>string</code> | The icon displayed within the button. |
 | label | <code>string</code> | The label or text displayed within the button. |
 | type | <code>string</code> | The type of the button (e.g., "button", "submit", "reset"). |
-| elevated | <code>boolean</code> | Determines whether the button has an elevated appearance. |
-| filled | <code>boolean</code> | Determines whether the button has a filled appearance. |
-| tonal | <code>boolean</code> | Determines whether the button has a tonal appearance. |
-| outlined | <code>boolean</code> | Determines whether the button has an outlined appearance. |
+| appearance | <code>string</code> | The appearance style of the button ("elevated", "filled", "tonal", "outlined"). |
 
 <a name="MDFabComponent"></a>
 
@@ -182,8 +162,6 @@ Custom fab component extending MDComponent.
         * [.native](#MDFabComponent+native) ⇒ <code>HTMLElement</code>
         * [.render()](#MDFabComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDFabComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
-        * [.disconnectedCallback()](#MDFabComponent+disconnectedCallback)
-        * [.firstUpdated(changedProperties)](#MDFabComponent+firstUpdated)
         * [.updated(changedProperties)](#MDFabComponent+updated)
     * _static_
         * [.properties](#MDFabComponent.properties)
@@ -214,23 +192,6 @@ Lifecycle method called when the element is attached to the DOM.Initializes the
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
 **Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
-<a name="MDFabComponent+disconnectedCallback"></a>
-
-### mdFabComponent.disconnectedCallback()
-Lifecycle method called when the element is detached from the DOM.Performs cleanup or tasks when the fab is removed.
-
-**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
-<a name="MDFabComponent+firstUpdated"></a>
-
-### mdFabComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's properties have been updated for the first time.
-
-**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Map</code> | The properties that have changed. |
-
 <a name="MDFabComponent+updated"></a>
 
 ### mdFabComponent.updated(changedProperties)
@@ -254,10 +215,9 @@ Properties for the MDFabComponent.
 | --- | --- | --- |
 | icon | <code>string</code> | The icon displayed within the fab. |
 | label | <code>string</code> | The label or text displayed within the fab. |
-| type | <code>string</code> | The type of the fab (e.g., "fab", "submit", "reset"). |
-| small | <code>boolean</code> | Determines whether the fab has a small size. |
-| large | <code>boolean</code> | Determines whether the fab has a large size. |
-| extended | <code>boolean</code> | Determines whether the fab is extended. |
+| type | <code>string</code> | The type of the fab (e.g., "button", "submit", "reset"). |
+| appearance | <code>string</code> | The appearance style of the fab ("extended"). |
+| size | <code>string</code> | The size style of the fab ("small", "large"). |
 
 <a name="MDCDK"></a>
 
@@ -800,7 +760,7 @@ Custom icon button component extending MDComponent.
         * [.firstUpdated(changedProperties)](#MDIconButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDIconButtonComponent+updated)
     * _static_
-        * [.properties](#MDIconButtonComponent.properties)
+        * [.properties](#MDIconButtonComponent.properties) : [<code>MDIconButtonProperties</code>](#MDIconButtonProperties)
 
 <a name="MDIconButtonComponent+connectedCallback"></a>
 
@@ -838,20 +798,10 @@ Lifecycle method called when the element's properties have been updated.
 
 <a name="MDIconButtonComponent.properties"></a>
 
-### MDIconButtonComponent.properties
+### MDIconButtonComponent.properties : [<code>MDIconButtonProperties</code>](#MDIconButtonProperties)
 Properties for the MDIconButtonComponent.
 
 **Kind**: static property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
-| activated | <code>boolean</code> | Indicates whether the button is activated. |
-| filled | <code>boolean</code> | Determines whether the button has a filled appearance. |
-| tonal | <code>boolean</code> | Determines whether the button has a tonal appearance. |
-| outlined | <code>boolean</code> | Determines whether the button has an outlined appearance. |
-
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>
@@ -978,4 +928,16 @@ Represents the details of the scroll event.
 | start | <code>number</code> | Index of the first visible node in the viewport. |
 | limit | <code>number</code> | Number of visible nodes in the viewport. |
 | translateY | <code>number</code> | Offset of the first visible node from the top of the viewport. |
+
+<a name="MDIconButtonProperties"></a>
+
+## MDIconButtonProperties : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
+| activated | <code>boolean</code> | Indicates whether the button is activated. |
+| appearance | <code>string</code> | The appearance of the button. Possible values: "filled", "tonal", "outlined". |
 

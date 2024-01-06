@@ -11,20 +11,14 @@ class MDButtonComponent extends MDComponent {
      * @property {string} icon - The icon displayed within the button.
      * @property {string} label - The label or text displayed within the button.
      * @property {string} type - The type of the button (e.g., "button", "submit", "reset").
-     * @property {boolean} elevated - Determines whether the button has an elevated appearance.
-     * @property {boolean} filled - Determines whether the button has a filled appearance.
-     * @property {boolean} tonal - Determines whether the button has a tonal appearance.
-     * @property {boolean} outlined - Determines whether the button has an outlined appearance.
+     * @property {string} appearance - The appearance style of the button ("elevated", "filled", "tonal", "outlined").
      */
     static get properties() {
         return {
             icon: { type: String },
             label: { type: String },
             type: { type: String },
-            elevated: { type: Boolean },
-            filled: { type: Boolean },
-            tonal: { type: Boolean },
-            outlined: { type: Boolean },
+            appearance: { type: String },
         };
     }
 
@@ -74,39 +68,20 @@ class MDButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is detached from the DOM.
-     * Performs cleanup or tasks when the button is removed.
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        // Clean up resources if needed
-    }
-
-    /**
-     * Lifecycle method called when the element's properties have been updated for the first time.
-     * @param {Map} changedProperties - The properties that have changed.
-     */
-    firstUpdated(changedProperties) {
-        // Additional logic if needed for the first update
-    }
-
-    /**
      * Lifecycle method called when the element's properties have been updated.
      * Updates button styles based on property changes.
      * @param {Map} changedProperties - The properties that have changed.
      */
     updated(changedProperties) {
-        if (changedProperties.has("elevated")) {
-            this.elevated ? this.classList.add("md-button--elevated") : this.classList.remove("md-button--elevated");
-        }
-        if (changedProperties.has("filled")) {
-            this.filled ? this.classList.add("md-button--filled") : this.classList.remove("md-button--filled");
-        }
-        if (changedProperties.has("tonal")) {
-            this.tonal ? this.classList.add("md-button--tonal") : this.classList.remove("md-button--tonal");
-        }
-        if (changedProperties.has("outlined")) {
-            this.outlined ? this.classList.add("md-button--outlined") : this.classList.remove("md-button--outlined");
+        if (changedProperties.has("appearance")) {
+            const validAppearances = ["elevated", "filled", "tonal", "outlined"];
+            const { appearance } = this;
+            if (validAppearances.includes(appearance)) {
+                validAppearances.forEach((validAppearance) => {
+                    this.classList.remove(`md-button--${validAppearance}`);
+                });
+                this.classList.add(`md-button--${appearance}`);
+            }
         }
     }
 }

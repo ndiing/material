@@ -12,7 +12,11 @@ class DevSegmentedButton extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <md-segmented-button></md-segmented-button>
+                        <md-segmented-button>
+                            <md-button label="Label" outlined></md-button>
+                            <md-button label="Label" outlined></md-button>
+                            <md-button label="Label" outlined></md-button>
+                        </md-segmented-button>
                     </div>
                     <div class="
                         md-layout__column

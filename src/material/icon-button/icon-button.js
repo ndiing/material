@@ -7,20 +7,21 @@ import { MDRipple } from "../foundation/ripple";
  */
 class MDIconButtonComponent extends MDComponent {
     /**
-     * Properties for the MDIconButtonComponent.
+     * @typedef {Object} MDIconButtonProperties
      * @property {boolean} toggle - Indicates whether the button behaves as a toggle.
      * @property {boolean} activated - Indicates whether the button is activated.
-     * @property {boolean} filled - Determines whether the button has a filled appearance.
-     * @property {boolean} tonal - Determines whether the button has a tonal appearance.
-     * @property {boolean} outlined - Determines whether the button has an outlined appearance.
+     * @property {string} appearance - The appearance of the button. Possible values: "filled", "tonal", "outlined".
+     */
+
+    /**
+     * @description Properties for the MDIconButtonComponent.
+     * @type {MDIconButtonProperties}
      */
     static get properties() {
         return {
             toggle: { type: Boolean },
             activated: { type: Boolean, reflect: true },
-            filled: { type: Boolean },
-            tonal: { type: Boolean },
-            outlined: { type: Boolean },
+            appearance: { type: String },
         };
     }
 
@@ -29,7 +30,7 @@ class MDIconButtonComponent extends MDComponent {
      * @private
      * @returns {boolean} True if the button has a container appearance, otherwise false.
      */
-    get hasContainer() {
+    get isContained() {
         return this.filled || this.tonal || this.outlined;
     }
 
@@ -56,7 +57,7 @@ class MDIconButtonComponent extends MDComponent {
         this.classList.add("md-icon-button");
         new MDRipple(this, {
             bounded: false,
-            diameter: this.hasContainer ? (40 / 40) * 100 : (40 / 24) * 100,
+            diameter: this.isContained ? (40 / 40) * 100 : (40 / 24) * 100,
             centered: true,
             fadeout: true,
         });
@@ -88,14 +89,19 @@ class MDIconButtonComponent extends MDComponent {
         if (changedProperties.has("activated")) {
             this.activated ? this.classList.add("md-icon-button--activated") : this.classList.remove("md-icon-button--activated");
         }
-        if (changedProperties.has("filled")) {
-            this.filled ? this.classList.add("md-icon-button--filled") : this.classList.remove("md-icon-button--filled");
-        }
-        if (changedProperties.has("tonal")) {
-            this.tonal ? this.classList.add("md-icon-button--tonal") : this.classList.remove("md-icon-button--tonal");
-        }
-        if (changedProperties.has("outlined")) {
-            this.outlined ? this.classList.add("md-icon-button--outlined") : this.classList.remove("md-icon-button--outlined");
+        if (changedProperties.has("appearance")) {
+            const validAppearances = [
+                'filled',
+                'tonal',
+                'outlined',
+            ];
+            const { appearance } = this;
+            if (validAppearances.includes(appearance)) {
+                validAppearances.forEach((validAppearance) => {
+                    this.classList.remove(`md-icon-button--${validAppearance}`);
+                });
+                this.classList.add(`md-icon-button--${appearance}`);
+            }
         }
     }
 

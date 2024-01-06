@@ -10,19 +10,17 @@ class MDFabComponent extends MDComponent {
      * Properties for the MDFabComponent.
      * @property {string} icon - The icon displayed within the fab.
      * @property {string} label - The label or text displayed within the fab.
-     * @property {string} type - The type of the fab (e.g., "fab", "submit", "reset").
-     * @property {boolean} small - Determines whether the fab has a small size.
-     * @property {boolean} large - Determines whether the fab has a large size.
-     * @property {boolean} extended - Determines whether the fab is extended.
+     * @property {string} type - The type of the fab (e.g., "button", "submit", "reset").
+     * @property {string} appearance - The appearance style of the fab ("extended").
+     * @property {string} size - The size style of the fab ("small", "large").
      */
     static get properties() {
         return {
             icon: { type: String },
             label: { type: String },
             type: { type: String },
-            small: { type: Boolean },
-            large: { type: Boolean },
-            extended: { type: Boolean },
+            appearance: { type: String },
+            size: { type: String },
         };
     }
 
@@ -32,7 +30,7 @@ class MDFabComponent extends MDComponent {
     constructor() {
         super();
         // Default fab type
-        this.type = "fab";
+        this.type = "button";
     }
 
     /**
@@ -72,36 +70,30 @@ class MDFabComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is detached from the DOM.
-     * Performs cleanup or tasks when the fab is removed.
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        // Clean up resources if needed
-    }
-
-    /**
-     * Lifecycle method called when the element's properties have been updated for the first time.
-     * @param {Map} changedProperties - The properties that have changed.
-     */
-    firstUpdated(changedProperties) {
-        // Additional logic if needed for the first update
-    }
-
-    /**
      * Lifecycle method called when the element's properties have been updated.
      * Updates fab styles based on property changes.
      * @param {Map} changedProperties - The properties that have changed.
      */
     updated(changedProperties) {
-        if (changedProperties.has("small")) {
-            this.small ? this.classList.add("md-fab--small") : this.classList.remove("md-fab--small");
+        if (changedProperties.has("appearance")) {
+            const validAppearances = ["extended"];
+            const { appearance } = this;
+            if (validAppearances.includes(appearance)) {
+                validAppearances.forEach((validAppearance) => {
+                    this.classList.remove(`md-fab--${validAppearance}`);
+                });
+                this.classList.add(`md-fab--${appearance}`);
+            }
         }
-        if (changedProperties.has("large")) {
-            this.large ? this.classList.add("md-fab--large") : this.classList.remove("md-fab--large");
-        }
-        if (changedProperties.has("extended")) {
-            this.extended ? this.classList.add("md-fab--extended") : this.classList.remove("md-fab--extended");
+        if (changedProperties.has("size")) {
+            const validSizes = ["small", "large"];
+            const { size } = this;
+            if (validSizes.includes(size)) {
+                validSizes.forEach((validSize) => {
+                    this.classList.remove(`md-fab--${validSize}`);
+                });
+                this.classList.add(`md-fab--${size}`);
+            }
         }
     }
 }

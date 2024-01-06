@@ -14,15 +14,15 @@ class DevFab extends MDComponent{
                     ">
                         <md-fab icon="image"></md-fab>
                         <br><br>
-                        <md-fab small icon="image"></md-fab>
+                        <md-fab size="small" icon="image"></md-fab>
                         <br><br>
-                        <md-fab large icon="image"></md-fab>
+                        <md-fab size="large" icon="image"></md-fab>
                         <br><br>
-                        <md-fab extended icon="image"></md-fab>
+                        <md-fab appearance="extended" icon="image"></md-fab>
                         <br><br>
-                        <md-fab extended label="Label" icon="image"></md-fab>
+                        <md-fab appearance="extended" label="Label" icon="image"></md-fab>
                         <br><br>
-                        <md-fab extended label="Label"></md-fab>
+                        <md-fab appearance="extended" label="Label"></md-fab>
                         <br><br>
                     </div>
                     <div class="
