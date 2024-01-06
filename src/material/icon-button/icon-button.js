@@ -7,15 +7,10 @@ import { MDRipple } from "../foundation/ripple";
  */
 class MDIconButtonComponent extends MDComponent {
     /**
-     * @typedef {Object} MDIconButtonProperties
+     * Properties for the MDIconButtonComponent.
      * @property {boolean} toggle - Indicates whether the button behaves as a toggle.
      * @property {boolean} activated - Indicates whether the button is activated.
      * @property {string} appearance - The appearance of the button. Possible values: "filled", "tonal", "outlined".
-     */
-
-    /**
-     * @description Properties for the MDIconButtonComponent.
-     * @type {MDIconButtonProperties}
      */
     static get properties() {
         return {

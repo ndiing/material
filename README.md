@@ -79,8 +79,6 @@ Extends MDComponent class.</p>
 <dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
 <dd><p>Represents the details of the scroll event.</p>
 </dd>
-<dt><a href="#MDIconButtonProperties">MDIconButtonProperties</a> : <code>Object</code></dt>
-<dd></dd>
 </dl>
 
 <a name="MDButtonComponent"></a>
@@ -764,7 +762,7 @@ Custom icon button component extending MDComponent.
         * [.firstUpdated(changedProperties)](#MDIconButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDIconButtonComponent+updated)
     * _static_
-        * [.properties](#MDIconButtonComponent.properties) : [<code>MDIconButtonProperties</code>](#MDIconButtonProperties)
+        * [.properties](#MDIconButtonComponent.properties)
 
 <a name="MDIconButtonComponent+connectedCallback"></a>
 
@@ -802,10 +800,18 @@ Lifecycle method called when the element's properties have been updated.
 
 <a name="MDIconButtonComponent.properties"></a>
 
-### MDIconButtonComponent.properties : [<code>MDIconButtonProperties</code>](#MDIconButtonProperties)
+### MDIconButtonComponent.properties
 Properties for the MDIconButtonComponent.
 
 **Kind**: static property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
+| activated | <code>boolean</code> | Indicates whether the button is activated. |
+| appearance | <code>string</code> | The appearance of the button. Possible values: "filled", "tonal", "outlined". |
+
 <a name="MDSegmentedButtonComponent"></a>
 
 ## MDSegmentedButtonComponent
@@ -1022,16 +1028,4 @@ Represents the details of the scroll event.
 | start | <code>number</code> | Index of the first visible node in the viewport. |
 | limit | <code>number</code> | Number of visible nodes in the viewport. |
 | translateY | <code>number</code> | Offset of the first visible node from the top of the viewport. |
-
-<a name="MDIconButtonProperties"></a>
-
-## MDIconButtonProperties : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
-| activated | <code>boolean</code> | Indicates whether the button is activated. |
-| appearance | <code>string</code> | The appearance of the button. Possible values: "filled", "tonal", "outlined". |
 
