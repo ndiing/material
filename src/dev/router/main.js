@@ -34,7 +34,7 @@ class DevMainComponent extends MDComponent{
                             <div routerLink="/button">button</div>
                             <!-- <div routerLink="/card">card</div> -->
                             <!-- <div routerLink="/carousel">carousel</div> -->
-                            <!-- <div routerLink="/checkbox">checkbox</div> -->
+                            <div routerLink="/checkbox">checkbox</div>
                             <!-- <div routerLink="/chip">chip</div> -->
                             <!-- <div routerLink="/date-picker">date-picker</div> -->
                             <!-- <div routerLink="/dialog">dialog</div> -->
@@ -48,14 +48,14 @@ class DevMainComponent extends MDComponent{
                             <!-- <div routerLink="/navigation-drawer">navigation-drawer</div> -->
                             <!-- <div routerLink="/navigation-rail">navigation-rail</div> -->
                             <!-- <div routerLink="/progress-indicator">progress-indicator</div> -->
-                            <!-- <div routerLink="/radio-button">radio-button</div> -->
+                            <div routerLink="/radio-button">radio-button</div>
                             <!-- <div routerLink="/router">router</div> -->
                             <!-- <div routerLink="/search">search</div> -->
                             <div routerLink="/segmented-button">segmented-button</div>
                             <!-- <div routerLink="/side-sheet">side-sheet</div> -->
                             <!-- <div routerLink="/slider">slider</div> -->
                             <!-- <div routerLink="/snackbar">snackbar</div> -->
-                            <!-- <div routerLink="/switch">switch</div> -->
+                            <div routerLink="/switch">switch</div>
                             <!-- <div routerLink="/tab">tab</div> -->
                             <!-- <div routerLink="/text-field">text-field</div> -->
                             <!-- <div routerLink="/time-picker">time-picker</div> -->

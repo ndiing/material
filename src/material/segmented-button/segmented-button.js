@@ -3,6 +3,7 @@ import { MDComponent } from "../foundation/component";
 
 /**
  * Custom segmented button component extending MDComponent.
+ * @fires MDSegmentedButtonComponent#onButtonClick - Indicates that a button within the segmented component was clicked.
  */
 class MDSegmentedButtonComponent extends MDComponent {
     /**
@@ -91,6 +92,7 @@ class MDSegmentedButtonComponent extends MDComponent {
             this.data.forEach((doc) => (doc.activated = doc === button.doc));
         }
         this.requestUpdate();
+        this.emit('onButtonClick',{event,button})
     }
 }
 

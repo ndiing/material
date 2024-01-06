@@ -4,6 +4,9 @@
 <dt><a href="#MDButtonComponent">MDButtonComponent</a></dt>
 <dd><p>Custom button component extending MDComponent.</p>
 </dd>
+<dt><a href="#MDCheckboxComponent">MDCheckboxComponent</a></dt>
+<dd><p>Custom checkbox component extending MDComponent.</p>
+</dd>
 <dt><a href="#MDFabComponent">MDFabComponent</a></dt>
 <dd><p>Custom fab component extending MDComponent.</p>
 </dd>
@@ -150,6 +153,122 @@ Properties for the MDButtonComponent.
 | type | <code>string</code> | The type of the button (e.g., "button", "submit", "reset"). |
 | appearance | <code>string</code> | The appearance style of the button ("elevated", "filled", "tonal", "outlined"). |
 | activated | <code>boolean</code> | Represents whether the button is activated or not. |
+
+<a name="MDCheckboxComponent"></a>
+
+## MDCheckboxComponent
+Custom checkbox component extending MDComponent.
+
+**Kind**: global class  
+**Emits**: <code>MDCheckboxComponent#event:onCheckboxNativeInput - Indicates the native checkbox input event.</code>  
+
+* [MDCheckboxComponent](#MDCheckboxComponent)
+    * [new MDCheckboxComponent()](#new_MDCheckboxComponent_new)
+    * _instance_
+        * [.native](#MDCheckboxComponent+native) ⇒ <code>HTMLInputElement</code>
+        * [.track](#MDCheckboxComponent+track) ⇒ <code>HTMLElement</code>
+        * [.thumb](#MDCheckboxComponent+thumb) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDCheckboxComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDCheckboxComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDCheckboxComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDCheckboxComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDCheckboxComponent+updated)
+        * [.handleCheckboxNativeInput(event)](#MDCheckboxComponent+handleCheckboxNativeInput)
+    * _static_
+        * [.properties](#MDCheckboxComponent.properties)
+
+<a name="new_MDCheckboxComponent_new"></a>
+
+### new MDCheckboxComponent()
+Constructor for MDCheckboxComponent.
+
+<a name="MDCheckboxComponent+native"></a>
+
+### mdCheckboxComponent.native ⇒ <code>HTMLInputElement</code>
+Retrieves the native checkbox element.
+
+**Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>HTMLInputElement</code> - The native checkbox element.  
+<a name="MDCheckboxComponent+track"></a>
+
+### mdCheckboxComponent.track ⇒ <code>HTMLElement</code>
+Retrieves the track element of the checkbox.
+
+**Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>HTMLElement</code> - The track element of the checkbox.  
+<a name="MDCheckboxComponent+thumb"></a>
+
+### mdCheckboxComponent.thumb ⇒ <code>HTMLElement</code>
+Retrieves the thumb element of the checkbox.
+
+**Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>HTMLElement</code> - The thumb element of the checkbox.  
+<a name="MDCheckboxComponent+render"></a>
+
+### mdCheckboxComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDCheckboxComponent.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template result.  
+<a name="MDCheckboxComponent+connectedCallback"></a>
+
+### mdCheckboxComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle method called when the element is attached to the DOM.Initializes the checkbox component.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+<a name="MDCheckboxComponent+disconnectedCallback"></a>
+
+### mdCheckboxComponent.disconnectedCallback()
+Lifecycle method called when the element is disconnected from the DOM.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+<a name="MDCheckboxComponent+firstUpdated"></a>
+
+### mdCheckboxComponent.firstUpdated(changedProperties)
+Lifecycle method called when the element's first update happens.Initializes the ripple effect for the checkbox.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+
+<a name="MDCheckboxComponent+updated"></a>
+
+### mdCheckboxComponent.updated(changedProperties)
+Lifecycle method called when the element's properties have been updated.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+
+<a name="MDCheckboxComponent+handleCheckboxNativeInput"></a>
+
+### mdCheckboxComponent.handleCheckboxNativeInput(event)
+Handles the checkbox's native input event.Emits an event when the native checkbox input occurs.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MDCheckboxComponent.properties"></a>
+
+### MDCheckboxComponent.properties
+Properties for the MDCheckboxComponent.
+
+**Kind**: static property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The name of the checkbox. |
+| checked | <code>boolean</code> | Represents whether the checkbox is checked or not. |
+| indeterminate | <code>boolean</code> | Indicates if the checkbox is in an indeterminate state. |
 
 <a name="MDFabComponent"></a>
 
@@ -818,6 +937,7 @@ Properties for the MDIconButtonComponent.
 Custom segmented button component extending MDComponent.
 
 **Kind**: global class  
+**Emits**: <code>MDSegmentedButtonComponent#event:onButtonClick - Indicates that a button within the segmented component was clicked.</code>  
 
 * [MDSegmentedButtonComponent](#MDSegmentedButtonComponent)
     * [new MDSegmentedButtonComponent()](#new_MDSegmentedButtonComponent_new)
