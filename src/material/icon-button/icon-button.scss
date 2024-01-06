@@ -1,12 +1,66 @@
 .md-icon-button {
     @extend .md-icon;
 
-    &[activated] {
-        font-variation-settings:
-        "FILL" 1,
-        "wght" 400,
-        "GRAD" 0,
-        "opsz" 24;
+    &.md-icon-button--toggle {
+        &[activated] {
+            font-variation-settings:
+                "FILL" 1,
+                "wght" 400,
+                "GRAD" 0,
+                "opsz" 24;
+            color: var(--md-sys-color-primary);
+        }
+    }
+}
+
+.md-icon-button--filled {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+
+    &.md-icon-button--toggle {
+        background: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-primary);
+
+        &[activated] {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+    }
+}
+.md-icon-button--tonal {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+
+    &.md-icon-button--toggle {
+        background: var(--md-sys-color-surface-variant);
+        color: var(--md-sys-color-on-surface-variant);
+
+        &[activated] {
+            background: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
+    }
+}
+.md-icon-button--outlined {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--md-sys-color-outline);
+
+    &.md-icon-button--toggle {
+        // background: var(--md-sys-color-surface-variant);
+        // color: var(--md-sys-color-on-surface-variant);
+
+        &[activated] {
+            background: var(--md-sys-color-inverse-surface);
+            color: var(--md-sys-color-inverse-on-surface);
+            border: 1px solid var(--md-sys-color-inverse-surface);
+        }
     }
 }

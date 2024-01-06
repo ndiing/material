@@ -33,6 +33,9 @@ Extends MDComponent class.</p>
 <dt><a href="#MDVirtualScroll">MDVirtualScroll</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
 <dd><p>Represents a virtual scrolling functionality using Material Design components.</p>
 </dd>
+<dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
+<dd><p>Custom icon button component extending MDComponent.</p>
+</dd>
 </dl>
 
 ## Functions
@@ -782,6 +785,72 @@ Emits a custom event from the root element.
 | --- | --- | --- |
 | type | <code>string</code> | The type of the custom event to be dispatched. |
 | detail | <code>any</code> | Optional detail to be included in the event. |
+
+<a name="MDIconButtonComponent"></a>
+
+## MDIconButtonComponent
+Custom icon button component extending MDComponent.
+
+**Kind**: global class  
+
+* [MDIconButtonComponent](#MDIconButtonComponent)
+    * _instance_
+        * [.connectedCallback()](#MDIconButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MDIconButtonComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDIconButtonComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDIconButtonComponent+updated)
+    * _static_
+        * [.properties](#MDIconButtonComponent.properties)
+
+<a name="MDIconButtonComponent+connectedCallback"></a>
+
+### mdIconButtonComponent.connectedCallback()
+Lifecycle method called when the element is attached to the DOM.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+<a name="MDIconButtonComponent+disconnectedCallback"></a>
+
+### mdIconButtonComponent.disconnectedCallback()
+Lifecycle method called when the element is detached from the DOM.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+<a name="MDIconButtonComponent+firstUpdated"></a>
+
+### mdIconButtonComponent.firstUpdated(changedProperties)
+Lifecycle method called when the element's properties have been updated for the first time.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MDIconButtonComponent+updated"></a>
+
+### mdIconButtonComponent.updated(changedProperties)
+Lifecycle method called when the element's properties have been updated.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MDIconButtonComponent.properties"></a>
+
+### MDIconButtonComponent.properties
+Properties for the MDIconButtonComponent.
+
+**Kind**: static property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
+| activated | <code>boolean</code> | Indicates whether the button is activated. |
+| filled | <code>boolean</code> | Determines whether the button has a filled appearance. |
+| tonal | <code>boolean</code> | Determines whether the button has a tonal appearance. |
+| outlined | <code>boolean</code> | Determines whether the button has an outlined appearance. |
 
 <a name="notNull"></a>
 
