@@ -59,10 +59,14 @@ class MDFabComponent extends MDComponent {
      * Initializes the fab component and its ripple effect.
      * @returns {Promise<void>} A Promise that resolves when initialization is complete.
      */
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
-        await this.updateComplete;
         this.classList.add("md-fab");
+        
+    }
+
+    async firstUpdated(){
+        await this.updateComplete;
         // Initialize ripple effect for the fab
         this.mdripple = new MDRipple(this, {
             trigger: this.native,

@@ -37,16 +37,9 @@ class MDIconButtonComponent extends MDComponent {
     /**
      * Lifecycle method called when the element is attached to the DOM.
      */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-        await this.updateComplete;
         this.classList.add("md-icon-button");
-        new MDRipple(this, {
-            bounded: false,
-            diameter: this.appearance ? (40 / 40) * 100 : (40 / 24) * 100,
-            centered: true,
-            fadeout: true,
-        });
         this.addEventListener("click", this.handleClick);
     }
 
@@ -62,7 +55,15 @@ class MDIconButtonComponent extends MDComponent {
      * Lifecycle method called when the element's properties have been updated for the first time.
      * @param {Map} changedProperties - The properties that have changed.
      */
-    firstUpdated(changedProperties) {}
+    async firstUpdated(changedProperties) {
+        await this.updateComplete;
+        new MDRipple(this, {
+            bounded: false,
+            diameter: this.appearance ? (40 / 40) * 100 : (40 / 24) * 100,
+            centered: true,
+            fadeout: true,
+        });
+    }
 
     /**
      * Lifecycle method called when the element's properties have been updated.

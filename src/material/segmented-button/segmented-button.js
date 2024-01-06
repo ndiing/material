@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../foundation/component";
-import { MDButtonComponent } from "../button/button";
 
 /**
  * Custom segmented button component extending MDComponent.
@@ -53,11 +52,9 @@ class MDSegmentedButtonComponent extends MDComponent {
      * Initializes the segmented button component.
      * @returns {Promise<void>} A Promise that resolves when initialization is complete.
      */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-        await this.updateComplete;
         this.classList.add("md-segmented-button");
-        
     }
 
     /**
@@ -72,11 +69,17 @@ class MDSegmentedButtonComponent extends MDComponent {
      * Lifecycle method called when the element's first update happens.
      * @param {Map<string, unknown>} changedProperties - The properties that have changed.
      */
-    firstUpdated(changedProperties) {
-        const properties = Object.keys(MDButtonComponent.properties);
+    async firstUpdated(changedProperties) {
+        await this.updateComplete
         const children = Array.from(this.children);
-        this.data = children.map((child) => properties.reduce((p, c) => ({ ...p, [c]: child.getAttribute(c) }), {}));
-        children.forEach((child) => child.remove());
+        this.data = children.map((children) => ({
+            icon: children.getAttribute("icon"),
+            label: children.getAttribute("label"),
+            type: children.getAttribute("type"),
+            appearance: children.getAttribute("appearance"),
+            activated: children.hasAttribute("activated"),
+        }));
+        children.forEach((children) => children.remove());
     }
 
     /**

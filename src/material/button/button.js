@@ -59,10 +59,14 @@ class MDButtonComponent extends MDComponent {
      * Initializes the button component and its ripple effect.
      * @returns {Promise<void>} A Promise that resolves when initialization is complete.
      */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-        await this.updateComplete;
         this.classList.add("md-button");
+        
+    }
+    
+    async firstUpdated(){
+        await this.updateComplete;
         // Initialize ripple effect for the button
         this.mdripple = new MDRipple(this, {
             trigger: this.native,
