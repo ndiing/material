@@ -12,6 +12,7 @@ class MDButtonComponent extends MDComponent {
      * @property {string} label - The label or text displayed within the button.
      * @property {string} type - The type of the button (e.g., "button", "submit", "reset").
      * @property {string} appearance - The appearance style of the button ("elevated", "filled", "tonal", "outlined").
+     * @property {boolean} activated - Represents whether the button is activated or not.
      */
     static get properties() {
         return {
@@ -19,6 +20,7 @@ class MDButtonComponent extends MDComponent {
             label: { type: String },
             type: { type: String },
             appearance: { type: String },
+            activated: { type: Boolean, reflect: true },
         };
     }
 
@@ -33,7 +35,7 @@ class MDButtonComponent extends MDComponent {
 
     /**
      * Retrieves the native button element.
-     * @returns {HTMLElement} The native button element.
+     * @returns {HTMLButtonElement} The native button element.
      */
     get native() {
         return this.querySelector(".md-button__native");
@@ -70,7 +72,7 @@ class MDButtonComponent extends MDComponent {
     /**
      * Lifecycle method called when the element's properties have been updated.
      * Updates button styles based on property changes.
-     * @param {Map} changedProperties - The properties that have changed.
+     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
      */
     updated(changedProperties) {
         if (changedProperties.has("appearance")) {

@@ -36,6 +36,9 @@ Extends MDComponent class.</p>
 <dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
 <dd><p>Custom icon button component extending MDComponent.</p>
 </dd>
+<dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
+<dd><p>Custom segmented button component extending MDComponent.</p>
+</dd>
 </dl>
 
 ## Functions
@@ -90,7 +93,7 @@ Custom button component extending MDComponent.
 * [MDButtonComponent](#MDButtonComponent)
     * [new MDButtonComponent()](#new_MDButtonComponent_new)
     * _instance_
-        * [.native](#MDButtonComponent+native) ⇒ <code>HTMLElement</code>
+        * [.native](#MDButtonComponent+native) ⇒ <code>HTMLButtonElement</code>
         * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.updated(changedProperties)](#MDButtonComponent+updated)
@@ -104,11 +107,11 @@ Constructor for MDButtonComponent.
 
 <a name="MDButtonComponent+native"></a>
 
-### mdButtonComponent.native ⇒ <code>HTMLElement</code>
+### mdButtonComponent.native ⇒ <code>HTMLButtonElement</code>
 Retrieves the native button element.
 
 **Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>HTMLElement</code> - The native button element.  
+**Returns**: <code>HTMLButtonElement</code> - The native button element.  
 <a name="MDButtonComponent+render"></a>
 
 ### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
@@ -132,7 +135,7 @@ Lifecycle method called when the element's properties have been updated.Updates
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
 
 <a name="MDButtonComponent.properties"></a>
 
@@ -148,6 +151,7 @@ Properties for the MDButtonComponent.
 | label | <code>string</code> | The label or text displayed within the button. |
 | type | <code>string</code> | The type of the button (e.g., "button", "submit", "reset"). |
 | appearance | <code>string</code> | The appearance style of the button ("elevated", "filled", "tonal", "outlined"). |
+| activated | <code>boolean</code> | Represents whether the button is activated or not. |
 
 <a name="MDFabComponent"></a>
 
@@ -802,6 +806,96 @@ Lifecycle method called when the element's properties have been updated.
 Properties for the MDIconButtonComponent.
 
 **Kind**: static property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+<a name="MDSegmentedButtonComponent"></a>
+
+## MDSegmentedButtonComponent
+Custom segmented button component extending MDComponent.
+
+**Kind**: global class  
+
+* [MDSegmentedButtonComponent](#MDSegmentedButtonComponent)
+    * [new MDSegmentedButtonComponent()](#new_MDSegmentedButtonComponent_new)
+    * _instance_
+        * [.render()](#MDSegmentedButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDSegmentedButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDSegmentedButtonComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDSegmentedButtonComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDSegmentedButtonComponent+updated)
+        * [.handleButtonClick(event)](#MDSegmentedButtonComponent+handleButtonClick)
+    * _static_
+        * [.properties](#MDSegmentedButtonComponent.properties)
+
+<a name="new_MDSegmentedButtonComponent_new"></a>
+
+### new MDSegmentedButtonComponent()
+Constructor for MDSegmentedButtonComponent.
+
+<a name="MDSegmentedButtonComponent+render"></a>
+
+### mdSegmentedButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDSegmentedButtonComponent.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template result.  
+<a name="MDSegmentedButtonComponent+connectedCallback"></a>
+
+### mdSegmentedButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle method called when the element is attached to the DOM.Initializes the segmented button component.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+<a name="MDSegmentedButtonComponent+disconnectedCallback"></a>
+
+### mdSegmentedButtonComponent.disconnectedCallback()
+Lifecycle method called when the element is disconnected from the DOM.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+<a name="MDSegmentedButtonComponent+firstUpdated"></a>
+
+### mdSegmentedButtonComponent.firstUpdated(changedProperties)
+Lifecycle method called when the element's first update happens.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+
+<a name="MDSegmentedButtonComponent+updated"></a>
+
+### mdSegmentedButtonComponent.updated(changedProperties)
+Lifecycle method called when the element's properties have been updated.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+
+<a name="MDSegmentedButtonComponent+handleButtonClick"></a>
+
+### mdSegmentedButtonComponent.handleButtonClick(event)
+Handles the click event on the segmented button.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MDSegmentedButtonComponent.properties"></a>
+
+### MDSegmentedButtonComponent.properties
+Properties for the MDSegmentedButtonComponent.
+
+**Kind**: static property of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| data | <code>Array</code> | The array of data used to populate segmented buttons. |
+| type | <code>string</code> | The type of the segmented button ("single-select" or "multi-select"). |
+
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>

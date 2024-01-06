@@ -81,11 +81,7 @@ class MDIconButtonComponent extends MDComponent {
             this.activated ? this.classList.add("md-icon-button--activated") : this.classList.remove("md-icon-button--activated");
         }
         if (changedProperties.has("appearance")) {
-            const validAppearances = [
-                'filled',
-                'tonal',
-                'outlined',
-            ];
+            const validAppearances = ["filled", "tonal", "outlined"];
             const { appearance } = this;
             if (validAppearances.includes(appearance)) {
                 validAppearances.forEach((validAppearance) => {

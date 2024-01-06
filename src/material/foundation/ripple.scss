@@ -56,8 +56,8 @@
 
     &[activated] {
         // color: var(--md-sys-color-primary);
-        // background: var(--md-sys-color-secondary-container);
-        // color: var(--md-sys-color-on-secondary-container);
+        background: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
         &::after {
             opacity: 10%;
         }
