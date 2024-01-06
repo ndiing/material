@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const {default:fetch} = require("C:/Users/Ndiing/Documents/ndiing/aws/src/lib/fetch.js");
+// const {default:fetch} = require("C:/Users/Ndiing/Documents/ndiing/aws/src/lib/fetch.js");
 /**
  * Checks if the given value is not undefined or null.
  * @param {*} value - The value to check.

@@ -34,7 +34,10 @@ class DevIconButton extends MDComponent{
                         md-layout__column--expanded4
                         md-layout__column--medium4
                         md-layout__column--compact4
-                    "></div>
+                    ">
+                        <md-icon>image</md-icon>
+                        <md-emoji>image</md-emoji>
+                    </div>
                     <div class="
                         md-layout__column
                         md-layout__column--expanded4
