@@ -4,9 +4,12 @@
     }
 }
 @keyframes md-ripple-fadeout {
-    to {
-        opacity: 0;
+    from {
+        opacity: 10%;
     }
+    // to {
+    //     opacity: 0;
+    // }
 }
 
 .md-ripple {
@@ -46,14 +49,6 @@
         }
     }
 
-    &--fadeout {
-        &::after {
-            animation:
-                var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
-                var(--md-ripple-fadeout, md-ripple-fadeout) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate) var(--md-sys-motion-duration-short4) forwards;
-        }
-    }
-
     &[activated] {
         // color: var(--md-sys-color-primary);
         background: var(--md-sys-color-secondary-container);
@@ -75,6 +70,18 @@
     &--pressed {
         &::after {
             opacity: 10%;
+        }
+    }
+
+    &--fadeout {
+        &,
+        &[activated]{
+            &::after {
+                animation:
+                    var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
+                    var(--md-ripple-fadeout, md-ripple-fadeout) var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard-accelerate);
+                opacity: 0;
+            }
         }
     }
 
