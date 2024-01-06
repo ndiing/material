@@ -1,6 +1,54 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
+const data1=[
+    {
+        "icon": null,
+        "label": "Label",
+        "type": null,
+        "appearance": "outlined",
+        "activated": true
+    },
+    {
+        "icon": null,
+        "label": "Label",
+        "type": null,
+        "appearance": "outlined",
+        "activated": false
+    },
+    {
+        "icon": null,
+        "label": "Label",
+        "type": null,
+        "appearance": "outlined",
+        "activated": false
+    }
+]
+
+const data2=[
+    {
+        "icon": null,
+        "label": "Label",
+        "type": null,
+        "appearance": "outlined",
+        "activated": true
+    },
+    {
+        "icon": null,
+        "label": "Label",
+        "type": null,
+        "appearance": "outlined",
+        "activated": true
+    },
+    {
+        "icon": null,
+        "label": "Label",
+        "type": null,
+        "appearance": "outlined",
+        "activated": false
+    }
+]
+
 class DevSegmentedButton extends MDComponent{
     render(){
         return html`
@@ -12,18 +60,10 @@ class DevSegmentedButton extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <md-segmented-button>
-                            <md-button appearance="outlined" label="Label" activated></md-button>
-                            <md-button appearance="outlined" label="Label"></md-button>
-                            <md-button appearance="outlined" label="Label"></md-button>
-                        </md-segmented-button>
+                        <md-segmented-button .data="${data1}"></md-segmented-button>
                         <br>
                         <br>
-                        <md-segmented-button type="multi-select">
-                            <md-button appearance="outlined" label="Label" activated></md-button>
-                            <md-button appearance="outlined" label="Label" activated></md-button>
-                            <md-button appearance="outlined" label="Label"></md-button>
-                        </md-segmented-button>
+                        <md-segmented-button type="multi-select" .data="${data2}"></md-segmented-button>
                     </div>
                     <div class="
                         md-layout__column

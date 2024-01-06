@@ -69,18 +69,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      * Lifecycle method called when the element's first update happens.
      * @param {Map<string, unknown>} changedProperties - The properties that have changed.
      */
-    async firstUpdated(changedProperties) {
-        await this.updateComplete
-        const children = Array.from(this.children);
-        this.data = children.map((children) => ({
-            icon: children.getAttribute("icon"),
-            label: children.getAttribute("label"),
-            type: children.getAttribute("type"),
-            appearance: children.getAttribute("appearance"),
-            activated: children.hasAttribute("activated"),
-        }));
-        children.forEach((children) => children.remove());
-    }
+    firstUpdated(changedProperties) {}
 
     /**
      * Lifecycle method called when the element's properties have been updated.
