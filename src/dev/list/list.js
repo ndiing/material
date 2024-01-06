@@ -12,7 +12,11 @@ class DevList extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <md-list></md-list>
+                        <md-list>
+                            <md-list-row>
+                                <md-list-item></md-list-item>
+                            </md-list-row>
+                        </md-list>
                     </div>
                     <div class="
                         md-layout__column
