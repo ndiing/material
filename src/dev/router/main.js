@@ -11,7 +11,7 @@ class DevMainComponent extends MDComponent{
     
     render(){
         return html`
-            <!-- <div class="md-layout"> -->
+            <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="
                         md-layout__column
@@ -72,7 +72,7 @@ class DevMainComponent extends MDComponent{
                         <md-outlet></md-outlet>
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
         `
     }
 
