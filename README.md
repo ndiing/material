@@ -80,7 +80,7 @@ Memperluas kelas MDComponent.</p>
 
 <dl>
 <dt><a href="#Route">Route</a> : <code>Object</code></dt>
-<dd><p>Represents a route configuration object.</p>
+<dd><p>Representasi objek konfigurasi suatu rute.</p>
 </dd>
 <dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
 <dd><p>Mewakili detail dari peristiwa gulir.</p>
@@ -1244,18 +1244,18 @@ Mengonversi string menjadi Title Case.
 <a name="Route"></a>
 
 ## Route : <code>Object</code>
-Represents a route configuration object.
+Representasi objek konfigurasi suatu rute.
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| path | <code>String</code> | The path for the route. |
-| component | <code>HTMLElement</code> | The component associated with the route. |
-| load | <code>function</code> | The function to load the route. |
-| [beforeLoad] | <code>function</code> | The function executed before loading the route. |
-| [children] | [<code>Array.&lt;Route&gt;</code>](#Route) | An array of child routes. |
+| path | <code>String</code> | Path untuk rute tersebut. |
+| component | <code>HTMLElement</code> | Komponen yang terkait dengan rute tersebut. |
+| load | <code>function</code> | Fungsi untuk memuat rute tersebut. |
+| [beforeLoad] | <code>function</code> | Fungsi yang dieksekusi sebelum memuat rute tersebut. |
+| [children] | [<code>Array.&lt;Route&gt;</code>](#Route) | Array dari rute anak. |
 
 <a name="Scroll"></a>
 

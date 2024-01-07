@@ -167,13 +167,13 @@ class MDRouter {
     }
 
     /**
-     * Represents a route configuration object.
+     * Representasi objek konfigurasi suatu rute.
      * @typedef {Object} Route
-     * @property {String} path - The path for the route.
-     * @property {HTMLElement} component - The component associated with the route.
-     * @property {Function} load - The function to load the route.
-     * @property {Function} [beforeLoad] - The function executed before loading the route.
-     * @property {Array<Route>} [children] - An array of child routes.
+     * @property {String} path - Path untuk rute tersebut.
+     * @property {HTMLElement} component - Komponen yang terkait dengan rute tersebut.
+     * @property {Function} load - Fungsi untuk memuat rute tersebut.
+     * @property {Function} [beforeLoad] - Fungsi yang dieksekusi sebelum memuat rute tersebut.
+     * @property {Array<Route>} [children] - Array dari rute anak.
      */
 
     /**
