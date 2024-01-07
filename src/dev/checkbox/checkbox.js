@@ -13,14 +13,8 @@ class DevCheckbox extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-checkbox></md-checkbox>
-                        <br>
-                        <br>
                         <md-checkbox checked></md-checkbox>
-                        <br>
-                        <br>
                         <md-checkbox indeterminate></md-checkbox>
-                        <br>
-                        <br>
                     </div>
                     <div class="
                         md-layout__column

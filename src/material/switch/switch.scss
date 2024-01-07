@@ -74,6 +74,8 @@
     transition-timing-function: var(--md-sys-motion-easing-standard-accelerate);
 }
 .md-switch__thumb {
+    @extend .md-icon;
+    font-size: 16px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -89,4 +91,11 @@
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: var(--md-sys-motion-easing-standard-accelerate);
     --md-ripple-diameter: 250%;
+    
+    &:not(:empty){
+        width: 24px;
+        height: 24px;
+        left: 2px;
+        --md-ripple-diameter: 166.66666666666669%;
+    }
 }

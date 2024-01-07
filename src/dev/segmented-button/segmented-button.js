@@ -61,8 +61,7 @@ class DevSegmentedButton extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-segmented-button .data="${data1}"></md-segmented-button>
-                        <br>
-                        <br>
+                        <br><br>
                         <md-segmented-button type="multi-select" .data="${data2}"></md-segmented-button>
                     </div>
                     <div class="

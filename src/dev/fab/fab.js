@@ -13,17 +13,12 @@ class DevFab extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-fab icon="image"></md-fab>
-                        <br><br>
                         <md-fab size="small" icon="image"></md-fab>
-                        <br><br>
                         <md-fab size="large" icon="image"></md-fab>
                         <br><br>
                         <md-fab appearance="extended" icon="image"></md-fab>
-                        <br><br>
                         <md-fab appearance="extended" label="Label" icon="image"></md-fab>
-                        <br><br>
                         <md-fab appearance="extended" label="Label"></md-fab>
-                        <br><br>
                     </div>
                     <div class="
                         md-layout__column

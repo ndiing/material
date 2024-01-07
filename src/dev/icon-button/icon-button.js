@@ -13,21 +13,19 @@ class DevIconButton extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-icon-button>image</md-icon-button>
-                        <md-icon-button toggle>image</md-icon-button>
-                        <md-icon-button toggle activated>image</md-icon-button>
-                        <br><br>
                         <md-icon-button appearance="filled">image</md-icon-button>
-                        <md-icon-button appearance="filled" toggle>image</md-icon-button>
-                        <md-icon-button appearance="filled" toggle activated>image</md-icon-button>
-                        <br><br>
                         <md-icon-button appearance="tonal">image</md-icon-button>
-                        <md-icon-button appearance="tonal" toggle>image</md-icon-button>
-                        <md-icon-button appearance="tonal" toggle activated>image</md-icon-button>
-                        <br><br>
                         <md-icon-button appearance="outlined">image</md-icon-button>
-                        <md-icon-button appearance="outlined" toggle>image</md-icon-button>
-                        <md-icon-button appearance="outlined" toggle activated>image</md-icon-button>
                         <br><br>
+                        <md-icon-button toggle>image</md-icon-button>
+                        <md-icon-button appearance="filled" toggle>image</md-icon-button>
+                        <md-icon-button appearance="tonal" toggle>image</md-icon-button>
+                        <md-icon-button appearance="outlined" toggle>image</md-icon-button>
+                        <br><br>
+                        <md-icon-button toggle activated>image</md-icon-button>
+                        <md-icon-button appearance="filled" toggle activated>image</md-icon-button>
+                        <md-icon-button appearance="tonal" toggle activated>image</md-icon-button>
+                        <md-icon-button appearance="outlined" toggle activated>image</md-icon-button>
                     </div>
                     <div class="
                         md-layout__column
@@ -35,8 +33,6 @@ class DevIconButton extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <div class="md-icon">image</div>
-                        <div class="md-emoji">🥳</div>
                     </div>
                     <div class="
                         md-layout__column

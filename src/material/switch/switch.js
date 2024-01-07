@@ -13,12 +13,14 @@ class MDSwitchComponent extends MDComponent {
      * @property {string} name - Nama dari switch.
      * @property {boolean} checked - Mewakili apakah switch dicentang atau tidak.
      * @property {boolean} indeterminate - Menunjukkan apakah switch berada dalam keadaan tidak pasti.
+     * @property {Array} icons - Array ikon untuk switch.
      */
     static get properties() {
         return {
             name: { type: String },
             checked: { type: Boolean },
             indeterminate: { type: Boolean },
+            icons: { type: Array },
         };
     }
 
@@ -27,6 +29,7 @@ class MDSwitchComponent extends MDComponent {
      */
     constructor() {
         super();
+        this.icons=[]
     }
 
     /**
@@ -69,7 +72,7 @@ class MDSwitchComponent extends MDComponent {
                 @input="${this.handleSwitchNativeInput}"
             >
             <div class="md-switch__track">
-                <div class="md-switch__thumb"></div>
+                <div class="md-switch__thumb">${this.icons[~~this.checked]}</div>
             </div>
         `;
     }
@@ -106,6 +109,7 @@ class MDSwitchComponent extends MDComponent {
             centered: true,
             fadeout: true,
         });
+
     }
 
     /**

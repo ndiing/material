@@ -13,25 +13,17 @@ class DevButton extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-button label="Label"></md-button>
-                        <md-button icon="image" label="Label"></md-button>
-                        <br>
-                        <br>
                         <md-button appearance="elevated" label="Label"></md-button>
-                        <md-button appearance="elevated" icon="image" label="Label"></md-button>
-                        <br>
-                        <br>
                         <md-button appearance="filled" label="Label"></md-button>
-                        <md-button appearance="filled" icon="image" label="Label"></md-button>
-                        <br>
-                        <br>
                         <md-button appearance="tonal" label="Label"></md-button>
-                        <md-button appearance="tonal" icon="image" label="Label"></md-button>
-                        <br>
-                        <br>
                         <md-button appearance="outlined" label="Label"></md-button>
+                        <br>
+                        <br>
+                        <md-button icon="image" label="Label"></md-button>
+                        <md-button appearance="elevated" icon="image" label="Label"></md-button>
+                        <md-button appearance="filled" icon="image" label="Label"></md-button>
+                        <md-button appearance="tonal" icon="image" label="Label"></md-button>
                         <md-button appearance="outlined" icon="image" label="Label"></md-button>
-                        <br>
-                        <br>
                     </div>
                     <div class="
                         md-layout__column

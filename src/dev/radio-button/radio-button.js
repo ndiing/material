@@ -13,8 +13,6 @@ class DevRadioButton extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-radio-button name="radio-button"></md-radio-button>
-                        <br>
-                        <br>
                         <md-radio-button checked name="radio-button"></md-radio-button>
                     </div>
                     <div class="

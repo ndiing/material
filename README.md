@@ -1263,6 +1263,7 @@ Properti untuk MDSwitchComponent.
 | name | <code>string</code> | Nama dari switch. |
 | checked | <code>boolean</code> | Mewakili apakah switch dicentang atau tidak. |
 | indeterminate | <code>boolean</code> | Menunjukkan apakah switch berada dalam keadaan tidak pasti. |
+| icons | <code>Array</code> | Array ikon untuk switch. |
 
 <a name="notNull"></a>
 

@@ -17,10 +17,11 @@ class DevSwitch extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <md-switch></md-switch><br><br>
-                        <md-switch checked></md-switch><br><br>
-                        <md-switch icons="${icons}"></md-switch><br><br>
-                        <md-switch icons="${icons}" checked></md-switch><br><br>
+                        <md-switch></md-switch>
+                        <md-switch checked></md-switch>
+                        <br><br>
+                        <md-switch .icons="${icons}"></md-switch>
+                        <md-switch .icons="${icons}" checked></md-switch>
                     </div>
                     <div class="
                         md-layout__column
