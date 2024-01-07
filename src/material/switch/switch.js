@@ -1,4 +1,5 @@
 import { html } from "lit";
+import { ifDefined } from "lit/directives/if-defined";
 import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
@@ -62,9 +63,9 @@ class MDSwitchComponent extends MDComponent {
             <input 
                 type="checkbox" 
                 class="md-switch__native"
-                .name="${this.name}"
-                .checked="${this.checked}"
-                .indeterminate="${this.indeterminate}"
+                .name="${ifDefined(this.name)}"
+                .checked="${ifDefined(this.checked)}"
+                .indeterminate="${ifDefined(this.indeterminate)}"
                 @input="${this.handleSwitchNativeInput}"
             >
             <div class="md-switch__track">
