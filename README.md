@@ -79,9 +79,6 @@ Extends MDComponent class.</p>
 ## Typedefs
 
 <dl>
-<dt><a href="#Route">Route</a> : <code>Object</code></dt>
-<dd><p>Represents a route object used in the routing system.</p>
-</dd>
 <dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
 <dd><p>Represents the details of the scroll event.</p>
 </dd>
@@ -691,7 +688,17 @@ Initializes the router with provided routes.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| routes | [<code>Array.&lt;Route&gt;</code>](#Route) | An array of route objects representing the application routes. |
+| routes | <code>Array.&lt;Route&gt;</code> | An array of route objects representing the application routes. |
+
+**Properties**
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| [routes[0].path] | <code>string</code> | <code>&quot;String&quot;</code> | The path for the route. |
+| [routes[0].component] | <code>HTMLElement</code> | <code>HTMLElement</code> | The HTML element associated with the route. |
+| [routes[0].load] | <code>Promise.&lt;Object&gt;</code> | <code>Promise</code> | A function that returns a Promise, typically used to dynamically import a module. |
+| [routes[0].beforeLoad] | <code>Promise.&lt;Object&gt;</code> | <code>Promise</code> | A function that runs before loading the route, typically used for resolving or rejecting promises. |
+| [routes[0].children] | <code>Array.&lt;Route&gt;</code> | <code>[Route]</code> | An array containing child routes. |
 
 <a name="MDStore"></a>
 
@@ -1236,22 +1243,6 @@ Converts a string to Title Case.
 | Param | Type | Description |
 | --- | --- | --- |
 | string | <code>string</code> | The string to convert. |
-
-<a name="Route"></a>
-
-## Route : <code>Object</code>
-Represents a route object used in the routing system.
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| path | <code>string</code> | The path for the route. |
-| component | <code>HTMLElement</code> | The HTML element associated with the route. |
-| load | <code>Promise.&lt;Object&gt;</code> | A function that returns a Promise, typically used to dynamically import a module. |
-| beforeLoad | <code>Promise.&lt;Object&gt;</code> | A function that runs before loading the route, typically used for resolving or rejecting promises. |
-| children | [<code>Array.&lt;Route&gt;</code>](#Route) | An array containing child routes. |
 
 <a name="Scroll"></a>
 
