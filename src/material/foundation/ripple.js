@@ -39,8 +39,12 @@ class MDRipple extends MDCDK {
         let diameter = parseFloat(window.getComputedStyle(this.root).getPropertyValue("--md-ripple-diameter"));
 
         if (isNaN(diameter)) {
-            const rect = this.root.getBoundingClientRect();
-            diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
+            diameter = this.options.diameter;
+
+            if (!diameter) {
+                const rect = this.root.getBoundingClientRect();
+                diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
+            }
 
             this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
         }
