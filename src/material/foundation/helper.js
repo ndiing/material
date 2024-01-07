@@ -1,25 +1,25 @@
 /**
- * Checks if the given value is not undefined or null.
- * @param {*} value - The value to check.
- * @returns {boolean} Returns true if the value is not undefined or null, otherwise false.
+ * Memeriksa apakah nilai yang diberikan tidak undefined atau null.
+ * @param {*} value - Nilai yang akan diperiksa.
+ * @returns {boolean} Mengembalikan true jika nilai tidak undefined atau null, jika tidak false.
  */
 export function notNull(value) {
     return value !== undefined && value !== null;
 }
 
 /**
- * Checks if the given value is not empty.
- * @param {*} value - The value to check.
- * @returns {boolean} Returns true if the value is not null, undefined, or an empty string, otherwise false.
+ * Memeriksa apakah nilai yang diberikan tidak kosong.
+ * @param {*} value - Nilai yang akan diperiksa.
+ * @returns {boolean} Mengembalikan true jika nilai tidak null, undefined, atau string kosong, jika tidak false.
  */
 export function notEmpty(value) {
     return notNull(value) && value !== "";
 }
 
 /**
- * Attempts to parse the value into an integer.
- * @param {*} value - The value to parse.
- * @returns {?number} Returns the parsed integer if successful, otherwise null.
+ * Mencoba untuk mengonversi nilai menjadi integer.
+ * @param {*} value - Nilai yang akan di-parse.
+ * @returns {?number} Mengembalikan integer yang di-parse jika berhasil, jika tidak null.
  */
 export function parseNumber(value) {
     value = parseInt(value);
@@ -27,27 +27,27 @@ export function parseNumber(value) {
 }
 
 /**
- * Converts a string to PascalCase.
- * @param {string} string - The string to convert.
- * @returns {string} Returns the string converted to PascalCase.
+ * Mengonversi string menjadi PascalCase.
+ * @param {string} string - String yang akan dikonversi.
+ * @returns {string} Mengembalikan string yang dikonversi menjadi PascalCase.
  */
 export function toPascalCase(string) {
     return string.replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g, ($, $1, $2) => $2.toUpperCase()).replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
 /**
- * Converts a string to camelCase.
- * @param {string} string - The string to convert.
- * @returns {string} Returns the string converted to camelCase.
+ * Mengonversi string menjadi camelCase.
+ * @param {string} string - String yang akan dikonversi.
+ * @returns {string} Mengembalikan string yang dikonversi menjadi camelCase.
  */
 export function toCamelCase(string) {
     return string.replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z0-9])/g, ($, $1, $2, $i) => ($i === 0 ? $2.toLowerCase() : $2.toUpperCase())).replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
 /**
- * Converts a string to snake_case.
- * @param {string} string - The string to convert.
- * @returns {string} Returns the string converted to snake_case.
+ * Mengonversi string menjadi snake_case.
+ * @param {string} string - String yang akan dikonversi.
+ * @returns {string} Mengembalikan string yang dikonversi menjadi snake_case.
  */
 export function toSnakeCase(string) {
     return string
@@ -58,9 +58,9 @@ export function toSnakeCase(string) {
 }
 
 /**
- * Converts a string to kebab-case.
- * @param {string} string - The string to convert.
- * @returns {string} Returns the string converted to kebab-case.
+ * Mengonversi string menjadi kebab-case.
+ * @param {string} string - String yang akan dikonversi.
+ * @returns {string} Mengembalikan string yang dikonversi menjadi kebab-case.
  */
 export function toKebabCase(string) {
     return string
@@ -71,9 +71,9 @@ export function toKebabCase(string) {
 }
 
 /**
- * Converts a string to Title Case.
- * @param {string} string - The string to convert.
- * @returns {string} Returns the string converted to Title Case.
+ * Mengonversi string menjadi Title Case.
+ * @param {string} string - String yang akan dikonversi.
+ * @returns {string} Mengembalikan string yang dikonversi menjadi Title Case.
  */
 export function toTitleCase(string) {
     return string

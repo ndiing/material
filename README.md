@@ -2,48 +2,48 @@
 
 <dl>
 <dt><a href="#MDButtonComponent">MDButtonComponent</a></dt>
-<dd><p>Custom button component extending MDComponent.</p>
+<dd><p>Komponen tombol kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDCheckboxComponent">MDCheckboxComponent</a></dt>
-<dd><p>Custom checkbox component extending MDComponent.</p>
+<dd><p>Komponen checkbox kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDFabComponent">MDFabComponent</a></dt>
-<dd><p>Custom fab component extending MDComponent.</p>
+<dd><p>Komponen fab kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDCDK">MDCDK</a></dt>
 <dd><p>Mewakili sebuah Custom Development Kit untuk MD Framework.</p>
 </dd>
 <dt><a href="#MDComponent">MDComponent</a></dt>
-<dd><p>Represents a component for the MD framework.
-Extends LitElement class.</p>
+<dd><p>Mewakili sebuah komponen untuk framework MD.
+Memperluas kelas LitElement.</p>
 </dd>
 <dt><a href="#MDOutletComponent">MDOutletComponent</a></dt>
-<dd><p>Represents an outlet component to manage content rendering within a router.
-Extends MDComponent class.</p>
+<dd><p>Mewakili komponen outlet untuk mengelola rendering konten dalam sebuah router.
+Memperluas kelas MDComponent.</p>
 </dd>
 <dt><a href="#MDPopover">MDPopover</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
-<dd><p>Represents a popover functionality based on Material Design components.</p>
+<dd><p>Mewakili fungsionalitas popover berdasarkan komponen Material Design.</p>
 </dd>
 <dt><a href="#MDRipple">MDRipple</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
-<dd><p>Represents a Material Design Ripple effect applied to an element.</p>
+<dd><p>Mewakili efek Ripple Material Design yang diterapkan pada sebuah elemen.</p>
 </dd>
 <dt><a href="#MDRouter">MDRouter</a></dt>
-<dd><p>Class representing a simple router.</p>
+<dd><p>Class yang mewakili router sederhana.</p>
 </dd>
 <dt><a href="#MDStore">MDStore</a></dt>
-<dd><p>Manages data filtering, sorting, and pagination via URL parameters.</p>
+<dd><p>Mengelola penyaringan data, pengurutan, dan paginasi melalui parameter URL.</p>
 </dd>
 <dt><a href="#MDVirtualScroll">MDVirtualScroll</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
-<dd><p>Represents a virtual scrolling functionality using Material Design components.</p>
+<dd><p>Mewakili fungsionalitas gulir virtual menggunakan komponen Material Design.</p>
 </dd>
 <dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
-<dd><p>Custom icon button component extending MDComponent.</p>
+<dd><p>Komponen tombol ikon kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a></dt>
-<dd><p>Custom radio-button component extending MDComponent.</p>
+<dd><p>Komponen radio-button kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
-<dd><p>Custom segmented button component extending MDComponent.</p>
+<dd><p>Komponen tombol segmen kustom yang memperluas MDComponent.</p>
 </dd>
 </dl>
 
@@ -51,28 +51,28 @@ Extends MDComponent class.</p>
 
 <dl>
 <dt><a href="#notNull">notNull(value)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Checks if the given value is not undefined or null.</p>
+<dd><p>Memeriksa apakah nilai yang diberikan tidak undefined atau null.</p>
 </dd>
 <dt><a href="#notEmpty">notEmpty(value)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Checks if the given value is not empty.</p>
+<dd><p>Memeriksa apakah nilai yang diberikan tidak kosong.</p>
 </dd>
 <dt><a href="#parseNumber">parseNumber(value)</a> ⇒ <code>number</code></dt>
-<dd><p>Attempts to parse the value into an integer.</p>
+<dd><p>Mencoba untuk mengonversi nilai menjadi integer.</p>
 </dd>
 <dt><a href="#toPascalCase">toPascalCase(string)</a> ⇒ <code>string</code></dt>
-<dd><p>Converts a string to PascalCase.</p>
+<dd><p>Mengonversi string menjadi PascalCase.</p>
 </dd>
 <dt><a href="#toCamelCase">toCamelCase(string)</a> ⇒ <code>string</code></dt>
-<dd><p>Converts a string to camelCase.</p>
+<dd><p>Mengonversi string menjadi camelCase.</p>
 </dd>
 <dt><a href="#toSnakeCase">toSnakeCase(string)</a> ⇒ <code>string</code></dt>
-<dd><p>Converts a string to snake_case.</p>
+<dd><p>Mengonversi string menjadi snake_case.</p>
 </dd>
 <dt><a href="#toKebabCase">toKebabCase(string)</a> ⇒ <code>string</code></dt>
-<dd><p>Converts a string to kebab-case.</p>
+<dd><p>Mengonversi string menjadi kebab-case.</p>
 </dd>
 <dt><a href="#toTitleCase">toTitleCase(string)</a> ⇒ <code>string</code></dt>
-<dd><p>Converts a string to Title Case.</p>
+<dd><p>Mengonversi string menjadi Title Case.</p>
 </dd>
 </dl>
 
@@ -83,14 +83,14 @@ Extends MDComponent class.</p>
 <dd><p>Represents a route configuration object.</p>
 </dd>
 <dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
-<dd><p>Represents the details of the scroll event.</p>
+<dd><p>Mewakili detail dari peristiwa gulir.</p>
 </dd>
 </dl>
 
 <a name="MDButtonComponent"></a>
 
 ## MDButtonComponent
-Custom button component extending MDComponent.
+Komponen tombol kustom yang memperluas MDComponent.
 
 **Kind**: global class  
 
@@ -107,63 +107,63 @@ Custom button component extending MDComponent.
 <a name="new_MDButtonComponent_new"></a>
 
 ### new MDButtonComponent()
-Constructor for MDButtonComponent.
+Konstruktor untuk MDButtonComponent.
 
 <a name="MDButtonComponent+native"></a>
 
 ### mdButtonComponent.native ⇒ <code>HTMLButtonElement</code>
-Retrieves the native button element.
+Mengambil elemen tombol asli.
 
 **Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>HTMLButtonElement</code> - The native button element.  
+**Returns**: <code>HTMLButtonElement</code> - Elemen tombol asli.  
 <a name="MDButtonComponent+render"></a>
 
 ### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
-Renders the MDButtonComponent.
+Merender MDButtonComponent.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>TemplateResult</code> - The rendered template result.  
+**Returns**: <code>TemplateResult</code> - Hasil template yang dirender.  
 <a name="MDButtonComponent+connectedCallback"></a>
 
 ### mdButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is attached to the DOM.Initializes the button component and its ripple effect.
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.Menginisialisasi komponen tombol dan efek riaknya.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - Promise yang menyelesaikan inisialisasi.  
 <a name="MDButtonComponent+updated"></a>
 
 ### mdButtonComponent.updated(changedProperties)
-Lifecycle method called when the element's properties have been updated.Updates button styles based on property changes.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.Memperbarui gaya tombol berdasarkan perubahan properti.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDButtonComponent.properties"></a>
 
 ### MDButtonComponent.properties
-Properties for the MDButtonComponent.
+Properti untuk MDButtonComponent.
 
 **Kind**: static property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| icon | <code>string</code> | The icon displayed within the button. |
-| label | <code>string</code> | The label or text displayed within the button. |
-| type | <code>string</code> | The type of the button (e.g., "button", "submit", "reset"). |
-| appearance | <code>string</code> | The appearance style of the button ("elevated", "filled", "tonal", "outlined"). |
-| activated | <code>boolean</code> | Represents whether the button is activated or not. |
+| icon | <code>string</code> | Ikon yang ditampilkan di dalam tombol. |
+| label | <code>string</code> | Label atau teks yang ditampilkan di dalam tombol. |
+| type | <code>string</code> | Tipe dari tombol (misalnya, "button", "submit", "reset"). |
+| appearance | <code>string</code> | Gaya penampilan dari tombol ("elevated", "filled", "tonal", "outlined"). |
+| activated | <code>boolean</code> | Mewakili apakah tombol telah diaktifkan atau tidak. |
 
 <a name="MDCheckboxComponent"></a>
 
 ## MDCheckboxComponent
-Custom checkbox component extending MDComponent.
+Komponen checkbox kustom yang memperluas MDComponent.
 
 **Kind**: global class  
-**Emits**: <code>MDCheckboxComponent#event:onCheckboxNativeInput - Indicates the native checkbox input event.</code>  
+**Emits**: <code>MDCheckboxComponent#event:onCheckboxNativeInput - Menunjukkan acara input checkbox asli.</code>  
 
 * [MDCheckboxComponent](#MDCheckboxComponent)
     * [new MDCheckboxComponent()](#new_MDCheckboxComponent_new)
@@ -183,100 +183,100 @@ Custom checkbox component extending MDComponent.
 <a name="new_MDCheckboxComponent_new"></a>
 
 ### new MDCheckboxComponent()
-Constructor for MDCheckboxComponent.
+Konstruktor untuk MDCheckboxComponent.
 
 <a name="MDCheckboxComponent+native"></a>
 
 ### mdCheckboxComponent.native ⇒ <code>HTMLInputElement</code>
-Retrieves the native checkbox element.
+Mendapatkan elemen checkbox asli.
 
 **Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
-**Returns**: <code>HTMLInputElement</code> - The native checkbox element.  
+**Returns**: <code>HTMLInputElement</code> - Elemen checkbox asli.  
 <a name="MDCheckboxComponent+track"></a>
 
 ### mdCheckboxComponent.track ⇒ <code>HTMLElement</code>
-Retrieves the track element of the checkbox.
+Mendapatkan elemen track dari checkbox.
 
 **Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
-**Returns**: <code>HTMLElement</code> - The track element of the checkbox.  
+**Returns**: <code>HTMLElement</code> - Elemen track dari checkbox.  
 <a name="MDCheckboxComponent+thumb"></a>
 
 ### mdCheckboxComponent.thumb ⇒ <code>HTMLElement</code>
-Retrieves the thumb element of the checkbox.
+Mendapatkan elemen thumb dari checkbox.
 
 **Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
-**Returns**: <code>HTMLElement</code> - The thumb element of the checkbox.  
+**Returns**: <code>HTMLElement</code> - Elemen thumb dari checkbox.  
 <a name="MDCheckboxComponent+render"></a>
 
 ### mdCheckboxComponent.render() ⇒ <code>TemplateResult</code>
-Renders the MDCheckboxComponent.
+Merender MDCheckboxComponent.
 
 **Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
-**Returns**: <code>TemplateResult</code> - The rendered template result.  
+**Returns**: <code>TemplateResult</code> - Hasil template yang dirender.  
 <a name="MDCheckboxComponent+connectedCallback"></a>
 
 ### mdCheckboxComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is attached to the DOM.Initializes the checkbox component.
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.Menginisialisasi komponen checkbox.
 
 **Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - Sebuah Promise yang diselesaikan ketika inisialisasi selesai.  
 <a name="MDCheckboxComponent+disconnectedCallback"></a>
 
 ### mdCheckboxComponent.disconnectedCallback()
-Lifecycle method called when the element is disconnected from the DOM.
+Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
 
 **Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
 <a name="MDCheckboxComponent+firstUpdated"></a>
 
 ### mdCheckboxComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's first update happens.Initializes the ripple effect for the checkbox.
+Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.Menginisialisasi efek riak untuk checkbox.
 
 **Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDCheckboxComponent+updated"></a>
 
 ### mdCheckboxComponent.updated(changedProperties)
-Lifecycle method called when the element's properties have been updated.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
 
 **Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDCheckboxComponent+handleCheckboxNativeInput"></a>
 
 ### mdCheckboxComponent.handleCheckboxNativeInput(event)
-Handles the checkbox's native input event.Emits an event when the native checkbox input occurs.
+Menangani acara input checkbox asli.Memancarkan sebuah acara saat input checkbox asli terjadi.
 
 **Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| event | <code>Event</code> | The input event. |
+| event | <code>Event</code> | Acara input. |
 
 <a name="MDCheckboxComponent.properties"></a>
 
 ### MDCheckboxComponent.properties
-Properties for the MDCheckboxComponent.
+Properti untuk MDCheckboxComponent.
 
 **Kind**: static property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| name | <code>string</code> | The name of the checkbox. |
-| checked | <code>boolean</code> | Represents whether the checkbox is checked or not. |
-| indeterminate | <code>boolean</code> | Indicates if the checkbox is in an indeterminate state. |
+| name | <code>string</code> | Nama dari checkbox. |
+| checked | <code>boolean</code> | Mewakili apakah checkbox dicentang atau tidak. |
+| indeterminate | <code>boolean</code> | Menunjukkan apakah checkbox berada dalam keadaan tidak pasti. |
 
 <a name="MDFabComponent"></a>
 
 ## MDFabComponent
-Custom fab component extending MDComponent.
+Komponen fab kustom yang memperluas MDComponent.
 
 **Kind**: global class  
 
@@ -293,55 +293,55 @@ Custom fab component extending MDComponent.
 <a name="new_MDFabComponent_new"></a>
 
 ### new MDFabComponent()
-Constructor for MDFabComponent.
+Konstruktor untuk MDFabComponent.
 
 <a name="MDFabComponent+native"></a>
 
 ### mdFabComponent.native ⇒ <code>HTMLElement</code>
-Retrieves the native fab element.
+Mengambil elemen fab asli.
 
 **Kind**: instance property of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>HTMLElement</code> - The native fab element.  
+**Returns**: <code>HTMLElement</code> - Elemen fab asli.  
 <a name="MDFabComponent+render"></a>
 
 ### mdFabComponent.render() ⇒ <code>TemplateResult</code>
-Renders the MDFabComponent.
+Merender MDFabComponent.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>TemplateResult</code> - The rendered template result.  
+**Returns**: <code>TemplateResult</code> - Hasil template yang dirender.  
 <a name="MDFabComponent+connectedCallback"></a>
 
 ### mdFabComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is attached to the DOM.Initializes the fab component and its ripple effect.
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.Menginisialisasi komponen fab dan efek riaknya.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - Promise yang menyelesaikan inisialisasi.  
 <a name="MDFabComponent+updated"></a>
 
 ### mdFabComponent.updated(changedProperties)
-Lifecycle method called when the element's properties have been updated.Updates fab styles based on property changes.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.Memperbarui gaya fab berdasarkan perubahan properti.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map</code> | The properties that have changed. |
+| changedProperties | <code>Map</code> | Properti yang telah berubah. |
 
 <a name="MDFabComponent.properties"></a>
 
 ### MDFabComponent.properties
-Properties for the MDFabComponent.
+Properti untuk MDFabComponent.
 
 **Kind**: static property of [<code>MDFabComponent</code>](#MDFabComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| icon | <code>string</code> | The icon displayed within the fab. |
-| label | <code>string</code> | The label or text displayed within the fab. |
-| type | <code>string</code> | The type of the fab (e.g., "button", "submit", "reset"). |
-| appearance | <code>string</code> | The appearance style of the fab ("extended"). |
-| size | <code>string</code> | The size style of the fab ("small", "large"). |
+| icon | <code>string</code> | Ikon yang ditampilkan di dalam fab. |
+| label | <code>string</code> | Label atau teks yang ditampilkan di dalam fab. |
+| type | <code>string</code> | Tipe dari fab (misalnya, "button", "submit", "reset"). |
+| appearance | <code>string</code> | Gaya penampilan dari fab ("extended"). |
+| size | <code>string</code> | Gaya ukuran dari fab ("small", "large"). |
 
 <a name="MDCDK"></a>
 
@@ -420,7 +420,7 @@ Memancarkan sebuah event kustom dari elemen root.
 <a name="MDComponent"></a>
 
 ## MDComponent
-Represents a component for the MD framework.Extends LitElement class.
+Mewakili sebuah komponen untuk framework MD.Memperluas kelas LitElement.
 
 **Kind**: global class  
 
@@ -432,49 +432,49 @@ Represents a component for the MD framework.Extends LitElement class.
 <a name="MDComponent+on"></a>
 
 ### mdComponent.on(type, listener)
-Attaches an event listener to the component.
+Melampirkan event listener ke komponen.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
 
 <a name="MDComponent+off"></a>
 
 ### mdComponent.off(type, listener)
-Removes an event listener from the component.
+Menghapus event listener dari komponen.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
 
 <a name="MDComponent+emit"></a>
 
 ### mdComponent.emit(type, detail)
-Emits a custom event from the component.
+Memancarkan sebuah event kustom dari komponen.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of the custom event to be dispatched. |
-| detail | <code>any</code> | Optional detail to be included in the event. |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDOutletComponent"></a>
 
 ## MDOutletComponent
-Represents an outlet component to manage content rendering within a router.Extends MDComponent class.
+Mewakili komponen outlet untuk mengelola rendering konten dalam sebuah router.Memperluas kelas MDComponent.
 
 **Kind**: global class  
 <a name="MDPopover"></a>
 
 ## MDPopover ⇐ [<code>MDCDK</code>](#MDCDK)
-Represents a popover functionality based on Material Design components.
+Mewakili fungsionalitas popover berdasarkan komponen Material Design.
 
 **Kind**: global class  
 **Extends**: [<code>MDCDK</code>](#MDCDK)  
@@ -492,48 +492,48 @@ Represents a popover functionality based on Material Design components.
 <a name="new_MDPopover_new"></a>
 
 ### new MDPopover(root, [options])
-Creates an instance of MDPopover.
+Membuat sebuah instance dari MDPopover.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| root | <code>HTMLElement</code> |  | The root element for the popover. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the popover. |
-| [options.placement] | <code>string</code> | <code>&quot;\&quot;bottom-start\&quot;&quot;</code> | The placement of the popover. |
-| [options.offset] | <code>number</code> | <code>0</code> | The offset value for positioning the popover. |
-| [options.shift] | <code>boolean</code> | <code>false</code> | Whether to shift the popover to stay within the viewport. |
+| root | <code>HTMLElement</code> |  | Elemen root untuk popover. |
+| [options] | <code>Object</code> | <code>{}</code> | Opsi tambahan untuk popover. |
+| [options.placement] | <code>string</code> | <code>&quot;\&quot;bottom-start\&quot;&quot;</code> | Penempatan dari popover. |
+| [options.offset] | <code>number</code> | <code>0</code> | Nilai offset untuk penempatan popover. |
+| [options.shift] | <code>boolean</code> | <code>false</code> | Apakah untuk memindahkan popover agar tetap dalam viewport. |
 
 <a name="MDPopover+init"></a>
 
 ### mdPopover.init()
-Initializes the popover.
+Menginisialisasi popover.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
 **Overrides**: [<code>init</code>](#MDCDK+init)  
 <a name="MDPopover+destroy"></a>
 
 ### mdPopover.destroy()
-Destroys the popover.
+Menghancurkan popover.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
 **Overrides**: [<code>destroy</code>](#MDCDK+destroy)  
 <a name="MDPopover+setPlacement"></a>
 
 ### mdPopover.setPlacement()
-Sets the placement of the popover based on the specified options.
+Mengatur penempatan dari popover berdasarkan opsi yang ditentukan.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
 <a name="MDPopover+getPlacement"></a>
 
 ### mdPopover.getPlacement(placement) ⇒ <code>Object</code>
-Calculates the placement of the popover based on the specified placement option.
+Menghitung penempatan dari popover berdasarkan opsi penempatan yang ditentukan.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
-**Returns**: <code>Object</code> - Returns an object with left and top positions for the popover.  
+**Returns**: <code>Object</code> - Mengembalikan objek dengan posisi left dan top untuk popover.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| placement | <code>string</code> | The placement option for the popover. |
+| placement | <code>string</code> | Opsi penempatan untuk popover. |
 
 <a name="MDCDK+on"></a>
 
@@ -577,7 +577,7 @@ Memancarkan sebuah event kustom dari elemen root.
 <a name="MDRipple"></a>
 
 ## MDRipple ⇐ [<code>MDCDK</code>](#MDCDK)
-Represents a Material Design Ripple effect applied to an element.
+Mewakili efek Ripple Material Design yang diterapkan pada sebuah elemen.
 
 **Kind**: global class  
 **Extends**: [<code>MDCDK</code>](#MDCDK)  
@@ -593,30 +593,30 @@ Represents a Material Design Ripple effect applied to an element.
 <a name="new_MDRipple_new"></a>
 
 ### new MDRipple(root, [options])
-Creates an instance of MDRipple.
+Membuat sebuah instance dari MDRipple.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| root | <code>HTMLElement</code> |  | The root element to apply the ripple effect. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the ripple effect. |
-| [options.bounded] | <code>boolean</code> | <code>true</code> | Whether the ripple effect is bounded. |
-| [options.centered] | <code>boolean</code> | <code>false</code> | Whether the ripple effect is centered. |
-| [options.trigger] | <code>HTMLElement</code> |  | The element triggering the ripple effect. |
-| [options.diameter] | <code>number</code> |  | The diameter of the ripple effect. |
-| [options.fadeout] | <code>boolean</code> |  | Whether to apply a fade-out effect. |
+| root | <code>HTMLElement</code> |  | Elemen root untuk menerapkan efek ripple. |
+| [options] | <code>Object</code> | <code>{}</code> | Opsi tambahan untuk efek ripple. |
+| [options.bounded] | <code>boolean</code> | <code>true</code> | Apakah efek ripple dibatasi. |
+| [options.centered] | <code>boolean</code> | <code>false</code> | Apakah efek ripple berada di tengah. |
+| [options.trigger] | <code>HTMLElement</code> |  | Elemen yang memicu efek ripple. |
+| [options.diameter] | <code>number</code> |  | Diameter dari efek ripple. |
+| [options.fadeout] | <code>boolean</code> |  | Apakah menerapkan efek fade-out. |
 
 <a name="MDRipple+init"></a>
 
 ### mdRipple.init()
-Initializes the ripple effect.
+Menginisialisasi efek ripple.
 
 **Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
 **Overrides**: [<code>init</code>](#MDCDK+init)  
 <a name="MDRipple+destroy"></a>
 
 ### mdRipple.destroy()
-Destroys the ripple effect and removes event listeners.
+Menghancurkan efek ripple dan menghapus event listener.
 
 **Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
 **Overrides**: [<code>destroy</code>](#MDCDK+destroy)  
@@ -662,10 +662,10 @@ Memancarkan sebuah event kustom dari elemen root.
 <a name="MDRouter"></a>
 
 ## MDRouter
-Class representing a simple router.
+Class yang mewakili router sederhana.
 
 **Kind**: global class  
-**Emits**: <code>window#event:onCurrentEntryChange - Triggered when the current entry changes.</code>, <code>window#event:onNavigate - Triggered when navigation starts.</code>, <code>window#event:onNavigateError - Triggered when there&#x27;s an error during navigation.</code>, <code>window#event:onNavigateSuccess - Triggered when navigation is successful.</code>  
+**Emits**: <code>window#event:onCurrentEntryChange - Dipicu ketika entri saat ini berubah.</code>, <code>window#event:onNavigate - Dipicu saat navigasi dimulai.</code>, <code>window#event:onNavigateError - Dipicu saat terjadi kesalahan selama navigasi.</code>, <code>window#event:onNavigateSuccess - Dipicu saat navigasi berhasil.</code>  
 
 * [MDRouter](#MDRouter)
     * [.navigate(url)](#MDRouter.navigate)
@@ -674,33 +674,33 @@ Class representing a simple router.
 <a name="MDRouter.navigate"></a>
 
 ### MDRouter.navigate(url)
-Navigates to a specified URL.
+Menavigasi ke URL tertentu.
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| url | <code>string</code> | The URL to navigate to. |
+| url | <code>string</code> | URL yang akan dituju. |
 
 **Example**  
 ```js
-// Navigate to the '/about' routeMDRouter.navigate('/about');
+// Navigasi ke rute '/about'MDRouter.navigate('/about');
 ```
 <a name="MDRouter.init"></a>
 
 ### MDRouter.init([routes])
-Initializes the router with provided routes.
+Menginisialisasi router dengan rute yang diberikan.
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [routes] | [<code>Array.&lt;Route&gt;</code>](#Route) | <code>[]</code> | An array of route configurations. |
+| [routes] | [<code>Array.&lt;Route&gt;</code>](#Route) | <code>[]</code> | Array konfigurasi rute. |
 
 <a name="MDStore"></a>
 
 ## MDStore
-Manages data filtering, sorting, and pagination via URL parameters.
+Mengelola penyaringan data, pengurutan, dan paginasi melalui parameter URL.
 
 **Kind**: global class  
 
@@ -716,84 +716,84 @@ Manages data filtering, sorting, and pagination via URL parameters.
 <a name="new_MDStore_new"></a>
 
 ### new MDStore([docs])
-Constructs an MDStore instance.
+Membuat instance MDStore.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [docs] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> | An array of documents. |
+| [docs] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> | Sebuah array dokumen. |
 
 <a name="MDStore+filter"></a>
 
 ### mdStore.filter(name, value, [operator])
-Filters the URL search parameters based on name, value, and operator.
+Menyaring parameter pencarian URL berdasarkan nama, nilai, dan operator.
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| name | <code>string</code> |  | The name of the parameter. |
-| value | <code>string</code> |  | The value of the parameter. |
-| [operator] | <code>string</code> | <code>&quot;_eq&quot;</code> | The operator for filtering (default is '_eq' for equality). |
+| name | <code>string</code> |  | Nama parameter. |
+| value | <code>string</code> |  | Nilai parameter. |
+| [operator] | <code>string</code> | <code>&quot;_eq&quot;</code> | Operator untuk penyaringan (default: '_eq' untuk kesetaraan). |
 
 <a name="MDStore+paginate"></a>
 
 ### mdStore.paginate(_page, _limit)
-Paginates the data by setting or deleting the '_page' and '_limit' URL search parameters.
+Melakukan paginasi data dengan menetapkan atau menghapus parameter pencarian URL '_page' dan '_limit'.
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _page | <code>number</code> | The page number. |
-| _limit | <code>number</code> | The limit per page. |
+| _page | <code>number</code> | Nomor halaman. |
+| _limit | <code>number</code> | Batasan data per halaman. |
 
 <a name="MDStore+sort"></a>
 
 ### mdStore.sort(_sort, _order)
-Sorts the data by setting or deleting the '_sort' and '_order' URL search parameters.
+Mengurutkan data dengan menetapkan atau menghapus parameter pencarian URL '_sort' dan '_order'.
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _sort | <code>string</code> | The field to sort by. |
-| _order | <code>string</code> | The sorting order ('asc' or 'desc'). |
+| _sort | <code>string</code> | Bidang yang digunakan untuk pengurutan. |
+| _order | <code>string</code> | Urutan pengurutan ('asc' atau 'desc'). |
 
 <a name="MDStore+slice"></a>
 
 ### mdStore.slice(_start, _end)
-Slices the data by setting or deleting the '_start' and '_end' URL search parameters.
+Memotong data dengan menetapkan atau menghapus parameter pencarian URL '_start' dan '_end'.
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _start | <code>number</code> | The starting index. |
-| _end | <code>number</code> | The ending index. |
+| _start | <code>number</code> | Indeks awal. |
+| _end | <code>number</code> | Indeks akhir. |
 
 <a name="MDStore+search"></a>
 
 ### mdStore.search(q)
-Searches data by setting or deleting the 'q' (query) URL search parameter.
+Mencari data dengan menetapkan atau menghapus parameter pencarian URL 'q' (query).
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| q | <code>string</code> | The search query. |
+| q | <code>string</code> | Query pencarian. |
 
 <a name="MDStore+getAll"></a>
 
 ### mdStore.getAll() ⇒ <code>Object</code>
-Retrieves all data based on applied filters, sorting, and pagination.
+Mengambil semua data berdasarkan filter yang diterapkan, sorting, dan pagination.
 
 **Kind**: instance method of [<code>MDStore</code>](#MDStore)  
-**Returns**: <code>Object</code> - Returns an object containing total count and filtered data.  
+**Returns**: <code>Object</code> - - Objek yang berisi total jumlah dan data yang difilter.  
 <a name="MDVirtualScroll"></a>
 
 ## MDVirtualScroll ⇐ [<code>MDCDK</code>](#MDCDK)
-Represents a virtual scrolling functionality using Material Design components.
+Mewakili fungsionalitas gulir virtual menggunakan komponen Material Design.
 
 **Kind**: global class  
 **Extends**: [<code>MDCDK</code>](#MDCDK)  
@@ -810,28 +810,28 @@ Represents a virtual scrolling functionality using Material Design components.
 <a name="new_MDVirtualScroll_new"></a>
 
 ### new MDVirtualScroll(root, [options])
-Creates an instance of MDVirtualScroll.
+Membuat instance dari MDVirtualScroll.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| root | <code>HTMLElement</code> |  | The root element to apply virtual scrolling. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for virtual scrolling. |
-| [options.total] | <code>number</code> | <code>0</code> | Total number of items. |
-| [options.contentHeight] | <code>number</code> | <code>48</code> | Height of each item. |
-| [options.threshold] | <code>number</code> | <code>2</code> | Threshold for preloading items. |
+| root | <code>HTMLElement</code> |  | Elemen root untuk menerapkan gulir virtual. |
+| [options] | <code>Object</code> | <code>{}</code> | Opsi tambahan untuk gulir virtual. |
+| [options.total] | <code>number</code> | <code>0</code> | Jumlah total item. |
+| [options.contentHeight] | <code>number</code> | <code>48</code> | Tinggi setiap item. |
+| [options.threshold] | <code>number</code> | <code>2</code> | Ambang untuk memuat pra-item. |
 
 <a name="MDVirtualScroll+init"></a>
 
 ### mdVirtualScroll.init()
-Initializes the MDVirtualScroll instance.Binds the scroll event handler and sets up required parameters.
+Menginisialisasi instance MDVirtualScroll.Mengikat penangan peristiwa gulir dan menyiapkan parameter yang diperlukan.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 **Overrides**: [<code>init</code>](#MDCDK+init)  
 <a name="MDVirtualScroll+destroy"></a>
 
 ### mdVirtualScroll.destroy()
-Destroys the MDVirtualScroll instance.Removes the scroll event listener.
+Menghancurkan instance MDVirtualScroll.Menghapus penyetel peristiwa gulir.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 **Overrides**: [<code>destroy</code>](#MDCDK+destroy)  
@@ -877,7 +877,7 @@ Memancarkan sebuah event kustom dari elemen root.
 <a name="MDIconButtonComponent"></a>
 
 ## MDIconButtonComponent
-Custom icon button component extending MDComponent.
+Komponen tombol ikon kustom yang memperluas MDComponent.
 
 **Kind**: global class  
 
@@ -893,58 +893,58 @@ Custom icon button component extending MDComponent.
 <a name="MDIconButtonComponent+connectedCallback"></a>
 
 ### mdIconButtonComponent.connectedCallback()
-Lifecycle method called when the element is attached to the DOM.
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 <a name="MDIconButtonComponent+disconnectedCallback"></a>
 
 ### mdIconButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is detached from the DOM.
+Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 <a name="MDIconButtonComponent+firstUpdated"></a>
 
 ### mdIconButtonComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's properties have been updated for the first time.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui untuk pertama kalinya.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map</code> | The properties that have changed. |
+| changedProperties | <code>Map</code> | Properti yang telah berubah. |
 
 <a name="MDIconButtonComponent+updated"></a>
 
 ### mdIconButtonComponent.updated(changedProperties)
-Lifecycle method called when the element's properties have been updated.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map</code> | The properties that have changed. |
+| changedProperties | <code>Map</code> | Properti yang telah berubah. |
 
 <a name="MDIconButtonComponent.properties"></a>
 
 ### MDIconButtonComponent.properties
-Properties for the MDIconButtonComponent.
+Properti untuk MDIconButtonComponent.
 
 **Kind**: static property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
-| activated | <code>boolean</code> | Indicates whether the button is activated. |
-| appearance | <code>string</code> | The appearance of the button. Possible values: "filled", "tonal", "outlined". |
+| toggle | <code>boolean</code> | Menunjukkan apakah tombol berperilaku sebagai toggle. |
+| activated | <code>boolean</code> | Menunjukkan apakah tombol diaktifkan. |
+| appearance | <code>string</code> | Penampilan tombol. Nilai yang mungkin: "filled", "tonal", "outlined". |
 
 <a name="MDRadioButtonComponent"></a>
 
 ## MDRadioButtonComponent
-Custom radio-button component extending MDComponent.
+Komponen radio-button kustom yang memperluas MDComponent.
 
 **Kind**: global class  
-**Emits**: <code>MDRadioButtonComponent#event:onRadioButtonNativeInput - Indicates the native radio-button input event.</code>  
+**Emits**: <code>MDRadioButtonComponent#event:onRadioButtonNativeInput - Menunjukkan acara input radio-button asli.</code>  
 
 * [MDRadioButtonComponent](#MDRadioButtonComponent)
     * [new MDRadioButtonComponent()](#new_MDRadioButtonComponent_new)
@@ -964,103 +964,103 @@ Custom radio-button component extending MDComponent.
 <a name="new_MDRadioButtonComponent_new"></a>
 
 ### new MDRadioButtonComponent()
-Constructor for MDRadioButtonComponent.
+Konstruktor untuk MDRadioButtonComponent.
 
 <a name="MDRadioButtonComponent+native"></a>
 
 ### mdRadioButtonComponent.native ⇒ <code>HTMLInputElement</code>
-Retrieves the native radio-button element.
+Mengambil elemen radio-button asli.
 
 **Kind**: instance property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
-**Returns**: <code>HTMLInputElement</code> - The native radio-button element.  
+**Returns**: <code>HTMLInputElement</code> - Elemen radio-button asli.  
 <a name="MDRadioButtonComponent+track"></a>
 
 ### mdRadioButtonComponent.track ⇒ <code>HTMLElement</code>
-Retrieves the track element of the radio-button.
+Mengambil elemen track dari radio-button.
 
 **Kind**: instance property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
-**Returns**: <code>HTMLElement</code> - The track element of the radio-button.  
+**Returns**: <code>HTMLElement</code> - Elemen track dari radio-button.  
 <a name="MDRadioButtonComponent+thumb"></a>
 
 ### mdRadioButtonComponent.thumb ⇒ <code>HTMLElement</code>
-Retrieves the thumb element of the radio-button.
+Mengambil elemen thumb dari radio-button.
 
 **Kind**: instance property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
-**Returns**: <code>HTMLElement</code> - The thumb element of the radio-button.  
+**Returns**: <code>HTMLElement</code> - Elemen thumb dari radio-button.  
 <a name="MDRadioButtonComponent+render"></a>
 
 ### mdRadioButtonComponent.render() ⇒ <code>TemplateResult</code>
-Renders the MDRadioButtonComponent.
+Merender MDRadioButtonComponent.
 
 **Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
-**Returns**: <code>TemplateResult</code> - The rendered template result.  
+**Returns**: <code>TemplateResult</code> - Hasil template yang dirender.  
 <a name="MDRadioButtonComponent+connectedCallback"></a>
 
 ### mdRadioButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is attached to the DOM.Initializes the radio-button component.
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.Menginisialisasi komponen radio-button.
 
 **Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - Sebuah Promise yang diselesaikan ketika inisialisasi selesai.  
 <a name="MDRadioButtonComponent+disconnectedCallback"></a>
 
 ### mdRadioButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is disconnected from the DOM.
+Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
 
 **Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
 <a name="MDRadioButtonComponent+firstUpdated"></a>
 
 ### mdRadioButtonComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's first update happens.Initializes the ripple effect for the radio-button.
+Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.Menginisialisasi efek ripple untuk radio-button.
 
 **Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDRadioButtonComponent+updated"></a>
 
 ### mdRadioButtonComponent.updated(changedProperties)
-Lifecycle method called when the element's properties have been updated.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
 
 **Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDRadioButtonComponent+handleRadioButtonNativeInput"></a>
 
 ### mdRadioButtonComponent.handleRadioButtonNativeInput(event)
-Handles the radio-button's native input event.Emits an event when the native radio-button input occurs.
+Menangani acara input radio-button asli.Memancarkan suatu acara ketika input radio-button asli terjadi.
 
 **Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| event | <code>Event</code> | The input event. |
+| event | <code>Event</code> | Acara input. |
 
 <a name="MDRadioButtonComponent.properties"></a>
 
 ### MDRadioButtonComponent.properties
-Properties for the MDRadioButtonComponent.
+Properti untuk MDRadioButtonComponent.
 
 **Kind**: static property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| name | <code>string</code> | The name of the radio-button. |
-| checked | <code>boolean</code> | Represents whether the radio-button is checked or not. |
-| indeterminate | <code>boolean</code> | Indicates if the radio-button is in an indeterminate state. |
+| name | <code>string</code> | Nama dari radio-button. |
+| checked | <code>boolean</code> | Mengindikasikan apakah radio-button diceklis atau tidak. |
+| indeterminate | <code>boolean</code> | Menunjukkan jika radio-button dalam keadaan indeterminate. |
 
 <a name="MDSegmentedButtonComponent"></a>
 
 ## MDSegmentedButtonComponent
-Custom segmented button component extending MDComponent.
+Komponen tombol segmen kustom yang memperluas MDComponent.
 
 **Kind**: global class  
-**Emits**: <code>MDSegmentedButtonComponent#event:onButtonClick - Indicates that a button within the segmented component was clicked.</code>  
+**Emits**: <code>MDSegmentedButtonComponent#event:onButtonClick - Menunjukkan bahwa tombol dalam komponen segmen telah diklik.</code>  
 
 * [MDSegmentedButtonComponent](#MDSegmentedButtonComponent)
     * [new MDSegmentedButtonComponent()](#new_MDSegmentedButtonComponent_new)
@@ -1077,169 +1077,169 @@ Custom segmented button component extending MDComponent.
 <a name="new_MDSegmentedButtonComponent_new"></a>
 
 ### new MDSegmentedButtonComponent()
-Constructor for MDSegmentedButtonComponent.
+Konstruktor untuk MDSegmentedButtonComponent.
 
 <a name="MDSegmentedButtonComponent+render"></a>
 
 ### mdSegmentedButtonComponent.render() ⇒ <code>TemplateResult</code>
-Renders the MDSegmentedButtonComponent.
+Merender MDSegmentedButtonComponent.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
-**Returns**: <code>TemplateResult</code> - The rendered template result.  
+**Returns**: <code>TemplateResult</code> - Hasil template yang dirender.  
 <a name="MDSegmentedButtonComponent+connectedCallback"></a>
 
 ### mdSegmentedButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is attached to the DOM.Initializes the segmented button component.
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.Menginisialisasi komponen tombol segmen.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - Sebuah Promise yang diselesaikan ketika inisialisasi selesai.  
 <a name="MDSegmentedButtonComponent+disconnectedCallback"></a>
 
 ### mdSegmentedButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is disconnected from the DOM.
+Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 <a name="MDSegmentedButtonComponent+firstUpdated"></a>
 
 ### mdSegmentedButtonComponent.firstUpdated(changedProperties)
-Lifecycle method called when the element's first update happens.
+Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDSegmentedButtonComponent+updated"></a>
 
 ### mdSegmentedButtonComponent.updated(changedProperties)
-Lifecycle method called when the element's properties have been updated.
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
 <a name="MDSegmentedButtonComponent+handleButtonClick"></a>
 
 ### mdSegmentedButtonComponent.handleButtonClick(event)
-Handles the click event on the segmented button.
+Menangani acara klik pada tombol segmen.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| event | <code>Event</code> | The click event. |
+| event | <code>Event</code> | Acara klik. |
 
 <a name="MDSegmentedButtonComponent.properties"></a>
 
 ### MDSegmentedButtonComponent.properties
-Properties for the MDSegmentedButtonComponent.
+Properti untuk MDSegmentedButtonComponent.
 
 **Kind**: static property of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| data | <code>Array</code> | The array of data used to populate segmented buttons. |
-| type | <code>string</code> | The type of the segmented button ("single-select" or "multi-select"). |
+| data | <code>Array</code> | Array data yang digunakan untuk mengisi tombol segmen. |
+| type | <code>string</code> | Jenis tombol segmen ("single-select" atau "multi-select"). |
 
 <a name="notNull"></a>
 
 ## notNull(value) ⇒ <code>boolean</code>
-Checks if the given value is not undefined or null.
+Memeriksa apakah nilai yang diberikan tidak undefined atau null.
 
 **Kind**: global function  
-**Returns**: <code>boolean</code> - Returns true if the value is not undefined or null, otherwise false.  
+**Returns**: <code>boolean</code> - Mengembalikan true jika nilai tidak undefined atau null, jika tidak false.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | The value to check. |
+| value | <code>\*</code> | Nilai yang akan diperiksa. |
 
 <a name="notEmpty"></a>
 
 ## notEmpty(value) ⇒ <code>boolean</code>
-Checks if the given value is not empty.
+Memeriksa apakah nilai yang diberikan tidak kosong.
 
 **Kind**: global function  
-**Returns**: <code>boolean</code> - Returns true if the value is not null, undefined, or an empty string, otherwise false.  
+**Returns**: <code>boolean</code> - Mengembalikan true jika nilai tidak null, undefined, atau string kosong, jika tidak false.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | The value to check. |
+| value | <code>\*</code> | Nilai yang akan diperiksa. |
 
 <a name="parseNumber"></a>
 
 ## parseNumber(value) ⇒ <code>number</code>
-Attempts to parse the value into an integer.
+Mencoba untuk mengonversi nilai menjadi integer.
 
 **Kind**: global function  
-**Returns**: <code>number</code> - Returns the parsed integer if successful, otherwise null.  
+**Returns**: <code>number</code> - Mengembalikan integer yang di-parse jika berhasil, jika tidak null.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | The value to parse. |
+| value | <code>\*</code> | Nilai yang akan di-parse. |
 
 <a name="toPascalCase"></a>
 
 ## toPascalCase(string) ⇒ <code>string</code>
-Converts a string to PascalCase.
+Mengonversi string menjadi PascalCase.
 
 **Kind**: global function  
-**Returns**: <code>string</code> - Returns the string converted to PascalCase.  
+**Returns**: <code>string</code> - Mengembalikan string yang dikonversi menjadi PascalCase.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| string | <code>string</code> | The string to convert. |
+| string | <code>string</code> | String yang akan dikonversi. |
 
 <a name="toCamelCase"></a>
 
 ## toCamelCase(string) ⇒ <code>string</code>
-Converts a string to camelCase.
+Mengonversi string menjadi camelCase.
 
 **Kind**: global function  
-**Returns**: <code>string</code> - Returns the string converted to camelCase.  
+**Returns**: <code>string</code> - Mengembalikan string yang dikonversi menjadi camelCase.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| string | <code>string</code> | The string to convert. |
+| string | <code>string</code> | String yang akan dikonversi. |
 
 <a name="toSnakeCase"></a>
 
 ## toSnakeCase(string) ⇒ <code>string</code>
-Converts a string to snake_case.
+Mengonversi string menjadi snake_case.
 
 **Kind**: global function  
-**Returns**: <code>string</code> - Returns the string converted to snake_case.  
+**Returns**: <code>string</code> - Mengembalikan string yang dikonversi menjadi snake_case.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| string | <code>string</code> | The string to convert. |
+| string | <code>string</code> | String yang akan dikonversi. |
 
 <a name="toKebabCase"></a>
 
 ## toKebabCase(string) ⇒ <code>string</code>
-Converts a string to kebab-case.
+Mengonversi string menjadi kebab-case.
 
 **Kind**: global function  
-**Returns**: <code>string</code> - Returns the string converted to kebab-case.  
+**Returns**: <code>string</code> - Mengembalikan string yang dikonversi menjadi kebab-case.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| string | <code>string</code> | The string to convert. |
+| string | <code>string</code> | String yang akan dikonversi. |
 
 <a name="toTitleCase"></a>
 
 ## toTitleCase(string) ⇒ <code>string</code>
-Converts a string to Title Case.
+Mengonversi string menjadi Title Case.
 
 **Kind**: global function  
-**Returns**: <code>string</code> - Returns the string converted to Title Case.  
+**Returns**: <code>string</code> - Mengembalikan string yang dikonversi menjadi Title Case.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| string | <code>string</code> | The string to convert. |
+| string | <code>string</code> | String yang akan dikonversi. |
 
 <a name="Route"></a>
 
@@ -1260,15 +1260,15 @@ Represents a route configuration object.
 <a name="Scroll"></a>
 
 ## Scroll : <code>Object</code>
-Represents the details of the scroll event.
+Mewakili detail dari peristiwa gulir.
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| scrollbarHeight | <code>number</code> | Total height of the scrollable content. |
-| start | <code>number</code> | Index of the first visible node in the viewport. |
-| limit | <code>number</code> | Number of visible nodes in the viewport. |
-| translateY | <code>number</code> | Offset of the first visible node from the top of the viewport. |
+| scrollbarHeight | <code>number</code> | Total tinggi dari konten yang dapat digulir. |
+| start | <code>number</code> | Indeks dari node yang pertama terlihat di dalam viewport. |
+| limit | <code>number</code> | Jumlah node yang terlihat di dalam viewport. |
+| translateY | <code>number</code> | Perpindahan dari node yang pertama terlihat dari bagian atas viewport. |
 

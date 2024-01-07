@@ -1,15 +1,15 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 
 /**
- * Custom segmented button component extending MDComponent.
- * @fires MDSegmentedButtonComponent#onButtonClick - Indicates that a button within the segmented component was clicked.
+ * Komponen tombol segmen kustom yang memperluas MDComponent.
+ * @fires MDSegmentedButtonComponent#onButtonClick - Menunjukkan bahwa tombol dalam komponen segmen telah diklik.
  */
 class MDSegmentedButtonComponent extends MDComponent {
     /**
-     * Properties for the MDSegmentedButtonComponent.
-     * @property {Array} data - The array of data used to populate segmented buttons.
-     * @property {string} type - The type of the segmented button ("single-select" or "multi-select").
+     * Properti untuk MDSegmentedButtonComponent.
+     * @property {Array} data - Array data yang digunakan untuk mengisi tombol segmen.
+     * @property {string} type - Jenis tombol segmen ("single-select" atau "multi-select").
      */
     static get properties() {
         return {
@@ -19,7 +19,7 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
-     * Constructor for MDSegmentedButtonComponent.
+     * Konstruktor untuk MDSegmentedButtonComponent.
      */
     constructor() {
         super();
@@ -28,8 +28,8 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
-     * Renders the MDSegmentedButtonComponent.
-     * @returns {TemplateResult} The rendered template result.
+     * Merender MDSegmentedButtonComponent.
+     * @returns {TemplateResult} Hasil template yang dirender.
      */
     render() {
         // prettier-ignore
@@ -49,9 +49,9 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is attached to the DOM.
-     * Initializes the segmented button component.
-     * @returns {Promise<void>} A Promise that resolves when initialization is complete.
+     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
+     * Menginisialisasi komponen tombol segmen.
+     * @returns {Promise<void>} Sebuah Promise yang diselesaikan ketika inisialisasi selesai.
      */
     connectedCallback() {
         super.connectedCallback();
@@ -59,30 +59,30 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is disconnected from the DOM.
+     * Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        // Any additional cleanup logic can be added here if needed.
+        // Logika pembersihan tambahan dapat ditambahkan di sini jika diperlukan.
     }
 
     /**
-     * Lifecycle method called when the element's first update happens.
-     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.
+     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
      */
     firstUpdated(changedProperties) {}
 
     /**
-     * Lifecycle method called when the element's properties have been updated.
-     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
+     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
      */
     updated(changedProperties) {
-        // Logic to handle updates to the component's properties can be added here.
+        // Logika untuk menangani pembaruan properti komponen dapat ditambahkan di sini.
     }
 
     /**
-     * Handles the click event on the segmented button.
-     * @param {Event} event - The click event.
+     * Menangani acara klik pada tombol segmen.
+     * @param {Event} event - Acara klik.
      */
     handleButtonClick(event) {
         const button = event.currentTarget;
@@ -97,7 +97,7 @@ class MDSegmentedButtonComponent extends MDComponent {
 }
 
 /**
- * Define the custom element "md-segmented-button".
+ * Mendefinisikan elemen kustom "md-segmented-button".
  */
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
 

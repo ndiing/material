@@ -1,17 +1,17 @@
 import { MDCDK } from "./cdk";
 
 /**
- * Represents a popover functionality based on Material Design components.
+ * Mewakili fungsionalitas popover berdasarkan komponen Material Design.
  * @extends MDCDK
  */
 class MDPopover extends MDCDK {
     /**
-     * Creates an instance of MDPopover.
-     * @param {HTMLElement} root - The root element for the popover.
-     * @param {Object} [options={}] - Additional options for the popover.
-     * @param {string} [options.placement="bottom-start"] - The placement of the popover.
-     * @param {number} [options.offset=0] - The offset value for positioning the popover.
-     * @param {boolean} [options.shift=false] - Whether to shift the popover to stay within the viewport.
+     * Membuat sebuah instance dari MDPopover.
+     * @param {HTMLElement} root - Elemen root untuk popover.
+     * @param {Object} [options={}] - Opsi tambahan untuk popover.
+     * @param {string} [options.placement="bottom-start"] - Penempatan dari popover.
+     * @param {number} [options.offset=0] - Nilai offset untuk penempatan popover.
+     * @param {boolean} [options.shift=false] - Apakah untuk memindahkan popover agar tetap dalam viewport.
      */
     constructor(root, options = {}) {
         super(root, {
@@ -23,7 +23,7 @@ class MDPopover extends MDCDK {
     }
 
     /**
-     * Initializes the popover.
+     * Menginisialisasi popover.
      */
     init() {
         this.root.classList.add("md-popover");
@@ -32,14 +32,14 @@ class MDPopover extends MDCDK {
     }
 
     /**
-     * Destroys the popover.
+     * Menghancurkan popover.
      */
     destroy() {
         this.root.classList.remove("md-popover");
     }
 
     /**
-     * Sets the placement of the popover based on the specified options.
+     * Mengatur penempatan dari popover berdasarkan opsi yang ditentukan.
      */
     setPlacement() {
         const placement = this.getPlacement(this.options.placement);
@@ -48,9 +48,9 @@ class MDPopover extends MDCDK {
     }
 
     /**
-     * Calculates the placement of the popover based on the specified placement option.
-     * @param {string} placement - The placement option for the popover.
-     * @returns {{left: number, top: number}} Returns an object with left and top positions for the popover.
+     * Menghitung penempatan dari popover berdasarkan opsi penempatan yang ditentukan.
+     * @param {string} placement - Opsi penempatan untuk popover.
+     * @returns {{left: number, top: number}} Mengembalikan objek dengan posisi left dan top untuk popover.
      */
     getPlacement(placement) {
         const rootRect = this.root.getBoundingClientRect();

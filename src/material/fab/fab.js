@@ -3,16 +3,16 @@ import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
 /**
- * Custom fab component extending MDComponent.
+ * Komponen fab kustom yang memperluas MDComponent.
  */
 class MDFabComponent extends MDComponent {
     /**
-     * Properties for the MDFabComponent.
-     * @property {string} icon - The icon displayed within the fab.
-     * @property {string} label - The label or text displayed within the fab.
-     * @property {string} type - The type of the fab (e.g., "button", "submit", "reset").
-     * @property {string} appearance - The appearance style of the fab ("extended").
-     * @property {string} size - The size style of the fab ("small", "large").
+     * Properti untuk MDFabComponent.
+     * @property {string} icon - Ikon yang ditampilkan di dalam fab.
+     * @property {string} label - Label atau teks yang ditampilkan di dalam fab.
+     * @property {string} type - Tipe dari fab (misalnya, "button", "submit", "reset").
+     * @property {string} appearance - Gaya penampilan dari fab ("extended").
+     * @property {string} size - Gaya ukuran dari fab ("small", "large").
      */
     static get properties() {
         return {
@@ -25,25 +25,25 @@ class MDFabComponent extends MDComponent {
     }
 
     /**
-     * Constructor for MDFabComponent.
+     * Konstruktor untuk MDFabComponent.
      */
     constructor() {
         super();
-        // Default fab type
+        // Tipe fab default
         this.type = "button";
     }
 
     /**
-     * Retrieves the native fab element.
-     * @returns {HTMLElement} The native fab element.
+     * Mengambil elemen fab asli.
+     * @returns {HTMLElement} Elemen fab asli.
      */
     get native() {
         return this.querySelector(".md-fab__native");
     }
 
     /**
-     * Renders the MDFabComponent.
-     * @returns {TemplateResult} The rendered template result.
+     * Merender MDFabComponent.
+     * @returns {TemplateResult} Hasil template yang dirender.
      */
     render() {
         // prettier-ignore
@@ -55,9 +55,9 @@ class MDFabComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is attached to the DOM.
-     * Initializes the fab component and its ripple effect.
-     * @returns {Promise<void>} A Promise that resolves when initialization is complete.
+     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
+     * Menginisialisasi komponen fab dan efek riaknya.
+     * @returns {Promise<void>} Promise yang menyelesaikan inisialisasi.
      */
      connectedCallback() {
         super.connectedCallback();
@@ -67,16 +67,16 @@ class MDFabComponent extends MDComponent {
 
     async firstUpdated(){
         await this.updateComplete;
-        // Initialize ripple effect for the fab
+        // Inisialisasi efek riak untuk fab
         this.mdripple = new MDRipple(this, {
             trigger: this.native,
         });
     }
 
     /**
-     * Lifecycle method called when the element's properties have been updated.
-     * Updates fab styles based on property changes.
-     * @param {Map} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
+     * Memperbarui gaya fab berdasarkan perubahan properti.
+     * @param {Map} changedProperties - Properti yang telah berubah.
      */
     updated(changedProperties) {
         if (changedProperties.has("appearance")) {
@@ -102,7 +102,7 @@ class MDFabComponent extends MDComponent {
     }
 }
 
-// Define the custom element "md-fab"
+// Tentukan elemen kustom "md-fab"
 customElements.define("md-fab", MDFabComponent);
 
 export { MDFabComponent };

@@ -1,17 +1,17 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
 /**
- * Custom checkbox component extending MDComponent.
- * @fires MDCheckboxComponent#onCheckboxNativeInput - Indicates the native checkbox input event.
+ * Komponen checkbox kustom yang memperluas MDComponent.
+ * @fires MDCheckboxComponent#onCheckboxNativeInput - Menunjukkan acara input checkbox asli.
  */
 class MDCheckboxComponent extends MDComponent {
     /**
-     * Properties for the MDCheckboxComponent.
-     * @property {string} name - The name of the checkbox.
-     * @property {boolean} checked - Represents whether the checkbox is checked or not.
-     * @property {boolean} indeterminate - Indicates if the checkbox is in an indeterminate state.
+     * Properti untuk MDCheckboxComponent.
+     * @property {string} name - Nama dari checkbox.
+     * @property {boolean} checked - Mewakili apakah checkbox dicentang atau tidak.
+     * @property {boolean} indeterminate - Menunjukkan apakah checkbox berada dalam keadaan tidak pasti.
      */
     static get properties() {
         return {
@@ -22,39 +22,39 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
-     * Constructor for MDCheckboxComponent.
+     * Konstruktor untuk MDCheckboxComponent.
      */
     constructor() {
         super();
     }
 
     /**
-     * Retrieves the native checkbox element.
-     * @returns {HTMLInputElement} The native checkbox element.
+     * Mendapatkan elemen checkbox asli.
+     * @returns {HTMLInputElement} Elemen checkbox asli.
      */
     get native() {
         return this.querySelector('.md-checkbox__native');
     }
 
     /**
-     * Retrieves the track element of the checkbox.
-     * @returns {HTMLElement} The track element of the checkbox.
+     * Mendapatkan elemen track dari checkbox.
+     * @returns {HTMLElement} Elemen track dari checkbox.
      */
     get track() {
         return this.querySelector('.md-checkbox__track');
     }
 
     /**
-     * Retrieves the thumb element of the checkbox.
-     * @returns {HTMLElement} The thumb element of the checkbox.
+     * Mendapatkan elemen thumb dari checkbox.
+     * @returns {HTMLElement} Elemen thumb dari checkbox.
      */
     get thumb() {
         return this.querySelector('.md-checkbox__thumb');
     }
 
     /**
-     * Renders the MDCheckboxComponent.
-     * @returns {TemplateResult} The rendered template result.
+     * Merender MDCheckboxComponent.
+     * @returns {TemplateResult} Hasil template yang dirender.
      */
     render() {
         // prettier-ignore
@@ -74,9 +74,9 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is attached to the DOM.
-     * Initializes the checkbox component.
-     * @returns {Promise<void>} A Promise that resolves when initialization is complete.
+     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
+     * Menginisialisasi komponen checkbox.
+     * @returns {Promise<void>} Sebuah Promise yang diselesaikan ketika inisialisasi selesai.
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -84,16 +84,16 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is disconnected from the DOM.
+     * Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
 
     /**
-     * Lifecycle method called when the element's first update happens.
-     * Initializes the ripple effect for the checkbox.
-     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.
+     * Menginisialisasi efek riak untuk checkbox.
+     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
      */
     async firstUpdated(changedProperties) {
         await this.updateComplete;
@@ -107,16 +107,16 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element's properties have been updated.
-     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
+     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
      */
     updated(changedProperties) {
     }
 
     /**
-     * Handles the checkbox's native input event.
-     * Emits an event when the native checkbox input occurs.
-     * @param {Event} event - The input event.
+     * Menangani acara input checkbox asli.
+     * Memancarkan sebuah acara saat input checkbox asli terjadi.
+     * @param {Event} event - Acara input.
      */
     handleCheckboxNativeInput(event) {
         const input = event.currentTarget;
@@ -126,7 +126,7 @@ class MDCheckboxComponent extends MDComponent {
     }
 }
 
-// Define the custom element "md-checkbox"
+// Tentukan elemen kustom "md-checkbox"
 customElements.define('md-checkbox', MDCheckboxComponent);
 
 export { MDCheckboxComponent };

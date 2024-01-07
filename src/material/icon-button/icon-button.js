@@ -3,14 +3,14 @@ import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
 /**
- * Custom icon button component extending MDComponent.
+ * Komponen tombol ikon kustom yang memperluas MDComponent.
  */
 class MDIconButtonComponent extends MDComponent {
     /**
-     * Properties for the MDIconButtonComponent.
-     * @property {boolean} toggle - Indicates whether the button behaves as a toggle.
-     * @property {boolean} activated - Indicates whether the button is activated.
-     * @property {string} appearance - The appearance of the button. Possible values: "filled", "tonal", "outlined".
+     * Properti untuk MDIconButtonComponent.
+     * @property {boolean} toggle - Menunjukkan apakah tombol berperilaku sebagai toggle.
+     * @property {boolean} activated - Menunjukkan apakah tombol diaktifkan.
+     * @property {string} appearance - Penampilan tombol. Nilai yang mungkin: "filled", "tonal", "outlined".
      */
     static get properties() {
         return {
@@ -25,9 +25,9 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
-     * Renders the MDIconButtonComponent.
+     * Merender MDIconButtonComponent.
      * @private
-     * @returns {TemplateResult} The rendered template result.
+     * @returns {TemplateResult} Hasil template yang dirender.
      */
     render() {
         // prettier-ignore
@@ -35,7 +35,7 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is attached to the DOM.
+     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
      */
     connectedCallback() {
         super.connectedCallback();
@@ -44,7 +44,7 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is detached from the DOM.
+     * Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -52,8 +52,8 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element's properties have been updated for the first time.
-     * @param {Map} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui untuk pertama kalinya.
+     * @param {Map} changedProperties - Properti yang telah berubah.
      */
     async firstUpdated(changedProperties) {
         await this.updateComplete;
@@ -66,8 +66,8 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element's properties have been updated.
-     * @param {Map} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
+     * @param {Map} changedProperties - Properti yang telah berubah.
      */
     updated(changedProperties) {
         if (changedProperties.has("toggle")) {
@@ -89,9 +89,9 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
-     * Handles the click event on the icon button.
+     * Menangani acara klik pada tombol ikon.
      * @private
-     * @param {Event} event - The click event.
+     * @param {Event} event - Acara klik.
      */
     handleClick(event) {
         if (this.toggle) this.activated = !this.activated;

@@ -1,17 +1,17 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
 /**
- * Custom radio-button component extending MDComponent.
- * @fires MDRadioButtonComponent#onRadioButtonNativeInput - Indicates the native radio-button input event.
+ * Komponen radio-button kustom yang memperluas MDComponent.
+ * @fires MDRadioButtonComponent#onRadioButtonNativeInput - Menunjukkan acara input radio-button asli.
  */
 class MDRadioButtonComponent extends MDComponent {
     /**
-     * Properties for the MDRadioButtonComponent.
-     * @property {string} name - The name of the radio-button.
-     * @property {boolean} checked - Represents whether the radio-button is checked or not.
-     * @property {boolean} indeterminate - Indicates if the radio-button is in an indeterminate state.
+     * Properti untuk MDRadioButtonComponent.
+     * @property {string} name - Nama dari radio-button.
+     * @property {boolean} checked - Mengindikasikan apakah radio-button diceklis atau tidak.
+     * @property {boolean} indeterminate - Menunjukkan jika radio-button dalam keadaan indeterminate.
      */
     static get properties() {
         return {
@@ -22,39 +22,39 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Constructor for MDRadioButtonComponent.
+     * Konstruktor untuk MDRadioButtonComponent.
      */
     constructor() {
         super();
     }
 
     /**
-     * Retrieves the native radio-button element.
-     * @returns {HTMLInputElement} The native radio-button element.
+     * Mengambil elemen radio-button asli.
+     * @returns {HTMLInputElement} Elemen radio-button asli.
      */
     get native() {
         return this.querySelector('.md-radio-button__native');
     }
 
     /**
-     * Retrieves the track element of the radio-button.
-     * @returns {HTMLElement} The track element of the radio-button.
+     * Mengambil elemen track dari radio-button.
+     * @returns {HTMLElement} Elemen track dari radio-button.
      */
     get track() {
         return this.querySelector('.md-radio-button__track');
     }
 
     /**
-     * Retrieves the thumb element of the radio-button.
-     * @returns {HTMLElement} The thumb element of the radio-button.
+     * Mengambil elemen thumb dari radio-button.
+     * @returns {HTMLElement} Elemen thumb dari radio-button.
      */
     get thumb() {
         return this.querySelector('.md-radio-button__thumb');
     }
 
     /**
-     * Renders the MDRadioButtonComponent.
-     * @returns {TemplateResult} The rendered template result.
+     * Merender MDRadioButtonComponent.
+     * @returns {TemplateResult} Hasil template yang dirender.
      */
     render() {
         // prettier-ignore
@@ -74,9 +74,9 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is attached to the DOM.
-     * Initializes the radio-button component.
-     * @returns {Promise<void>} A Promise that resolves when initialization is complete.
+     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
+     * Menginisialisasi komponen radio-button.
+     * @returns {Promise<void>} Sebuah Promise yang diselesaikan ketika inisialisasi selesai.
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -84,16 +84,16 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is disconnected from the DOM.
+     * Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
 
     /**
-     * Lifecycle method called when the element's first update happens.
-     * Initializes the ripple effect for the radio-button.
-     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.
+     * Menginisialisasi efek ripple untuk radio-button.
+     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
      */
     async firstUpdated(changedProperties) {
         await this.updateComplete;
@@ -107,16 +107,16 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element's properties have been updated.
-     * @param {Map<string, unknown>} changedProperties - The properties that have changed.
+     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
+     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
      */
     updated(changedProperties) {
     }
 
     /**
-     * Handles the radio-button's native input event.
-     * Emits an event when the native radio-button input occurs.
-     * @param {Event} event - The input event.
+     * Menangani acara input radio-button asli.
+     * Memancarkan suatu acara ketika input radio-button asli terjadi.
+     * @param {Event} event - Acara input.
      */
     handleRadioButtonNativeInput(event) {
         const input = event.currentTarget;
@@ -127,7 +127,7 @@ class MDRadioButtonComponent extends MDComponent {
 }
 
 /**
- * Define the custom element "md-radio-button".
+ * Mendefinisikan elemen kustom "md-radio-button".
  */
 customElements.define('md-radio-button', MDRadioButtonComponent);
 

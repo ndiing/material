@@ -1,28 +1,28 @@
 import { MDCDK } from "./cdk";
 
 /**
- * Represents a Material Design Ripple effect applied to an element.
+ * Mewakili efek Ripple Material Design yang diterapkan pada sebuah elemen.
  * @extends MDCDK
  */
 class MDRipple extends MDCDK {
-    /**
-     * Creates an instance of MDRipple.
-     * @param {HTMLElement} root - The root element to apply the ripple effect.
-     * @param {Object} [options={}] - Additional options for the ripple effect.
-     * @param {boolean} [options.bounded=true] - Whether the ripple effect is bounded.
-     * @param {boolean} [options.centered=false] - Whether the ripple effect is centered.
-     * @param {HTMLElement} [options.trigger] - The element triggering the ripple effect.
-     * @param {number} [options.diameter] - The diameter of the ripple effect.
-     * @param {boolean} [options.fadeout] - Whether to apply a fade-out effect.
+     /**
+     * Membuat sebuah instance dari MDRipple.
+     * @param {HTMLElement} root - Elemen root untuk menerapkan efek ripple.
+     * @param {Object} [options={}] - Opsi tambahan untuk efek ripple.
+     * @param {boolean} [options.bounded=true] - Apakah efek ripple dibatasi.
+     * @param {boolean} [options.centered=false] - Apakah efek ripple berada di tengah.
+     * @param {HTMLElement} [options.trigger] - Elemen yang memicu efek ripple.
+     * @param {number} [options.diameter] - Diameter dari efek ripple.
+     * @param {boolean} [options.fadeout] - Apakah menerapkan efek fade-out.
      */
     constructor(root, options = {}) {
         super(root, options);
     }
 
     /**
-     * Calculates the diameter for the ripple effect.
+     * Menghitung diameter untuk efek ripple.
      * @private
-     * @returns {number} The calculated diameter.
+     * @returns {number} Diameter yang dihitung.
      */
     get diameter() {
         const rect = this.root.getBoundingClientRect();
@@ -31,7 +31,7 @@ class MDRipple extends MDCDK {
     }
 
     /**
-     * Initializes the ripple effect.
+     * Menginisialisasi efek ripple.
      */
     init() {
         this.options.diameter = this.options.diameter ?? this.diameter;
@@ -65,7 +65,7 @@ class MDRipple extends MDCDK {
     }
 
     /**
-     * Destroys the ripple effect and removes event listeners.
+     * Menghancurkan efek ripple dan menghapus event listener.
      */
     destroy() {
         this.root.style.removeProperty("md-ripple");

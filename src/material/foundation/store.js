@@ -1,20 +1,20 @@
 import { parseNumber, notEmpty, notNull } from "./helper";
 
 /**
- * Manages data filtering, sorting, and pagination via URL parameters.
+ * Mengelola penyaringan data, pengurutan, dan paginasi melalui parameter URL.
  */
 class MDStore {
     /**
-     * Constructs an MDStore instance.
-     * @param {Array<Object>} [docs=[]] - An array of documents.
+     * Membuat instance MDStore.
+     * @param {Array<Object>} [docs=[]] - Sebuah array dokumen.
      */
     constructor(docs = []) {
         this.docs = docs;
         this.url = new URL(window.location.href);
     }
 
-    /**
-     * Contains comparison operators used for filtering.
+     /**
+     * Berisi operator perbandingan yang digunakan untuk penyaringan.
      * @private
      */
     get operators() {
@@ -30,7 +30,7 @@ class MDStore {
     }
 
     /**
-     * Contains properties and their associated types or parsing functions.
+     * Berisi properti dan tipe data atau fungsi parsing yang terkait.
      * @private
      */
     get properties() {
@@ -46,10 +46,10 @@ class MDStore {
     }
 
     /**
-     * Filters the URL search parameters based on name, value, and operator.
-     * @param {string} name - The name of the parameter.
-     * @param {string} value - The value of the parameter.
-     * @param {string} [operator=_eq] - The operator for filtering (default is '_eq' for equality).
+     * Menyaring parameter pencarian URL berdasarkan nama, nilai, dan operator.
+     * @param {string} name - Nama parameter.
+     * @param {string} value - Nilai parameter.
+     * @param {string} [operator=_eq] - Operator untuk penyaringan (default: '_eq' untuk kesetaraan).
      */
     filter(name, value, operator = "_eq") {
         if (name)
@@ -65,10 +65,10 @@ class MDStore {
         }
     }
 
-    /**
-     * Paginates the data by setting or deleting the '_page' and '_limit' URL search parameters.
-     * @param {number} _page - The page number.
-     * @param {number} _limit - The limit per page.
+     /**
+     * Melakukan paginasi data dengan menetapkan atau menghapus parameter pencarian URL '_page' dan '_limit'.
+     * @param {number} _page - Nomor halaman.
+     * @param {number} _limit - Batasan data per halaman.
      */
     paginate(_page, _limit) {
         if (notEmpty(_page)) this.url.searchParams.set("_page", _page);
@@ -78,9 +78,9 @@ class MDStore {
     }
 
     /**
-     * Sorts the data by setting or deleting the '_sort' and '_order' URL search parameters.
-     * @param {string} _sort - The field to sort by.
-     * @param {string} _order - The sorting order ('asc' or 'desc').
+     * Mengurutkan data dengan menetapkan atau menghapus parameter pencarian URL '_sort' dan '_order'.
+     * @param {string} _sort - Bidang yang digunakan untuk pengurutan.
+     * @param {string} _order - Urutan pengurutan ('asc' atau 'desc').
      */
     sort(_sort, _order) {
         if (_sort) {
@@ -115,9 +115,9 @@ class MDStore {
     }
 
     /**
-     * Slices the data by setting or deleting the '_start' and '_end' URL search parameters.
-     * @param {number} _start - The starting index.
-     * @param {number} _end - The ending index.
+     * Memotong data dengan menetapkan atau menghapus parameter pencarian URL '_start' dan '_end'.
+     * @param {number} _start - Indeks awal.
+     * @param {number} _end - Indeks akhir.
      */
     slice(_start, _end) {
         if (notEmpty(_start)) this.url.searchParams.set("_start", _start);
@@ -127,8 +127,8 @@ class MDStore {
     }
 
     /**
-     * Searches data by setting or deleting the 'q' (query) URL search parameter.
-     * @param {string} q - The search query.
+     * Mencari data dengan menetapkan atau menghapus parameter pencarian URL 'q' (query).
+     * @param {string} q - Query pencarian.
      */
     search(q) {
         if (q) this.url.searchParams.set("q", q);
@@ -195,9 +195,9 @@ class MDStore {
         });
     }
 
-    /**
-     * Retrieves all data based on applied filters, sorting, and pagination.
-     * @returns {Object} Returns an object containing total count and filtered data.
+     /**
+     * Mengambil semua data berdasarkan filter yang diterapkan, sorting, dan pagination.
+     * @returns {Object} - Objek yang berisi total jumlah dan data yang difilter.
      */
     getAll() {
         let data = this.docs.slice();

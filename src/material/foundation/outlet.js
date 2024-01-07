@@ -1,11 +1,11 @@
 import { MDComponent } from "./component";
 
 /**
- * Represents an outlet component to manage content rendering within a router.
- * Extends MDComponent class.
+ * Mewakili komponen outlet untuk mengelola rendering konten dalam sebuah router.
+ * Memperluas kelas MDComponent.
  */
 class MDOutletComponent extends MDComponent {
-    // Inherits from MDComponent class, no additional implementation for now.
+    // Diwarisi dari kelas MDComponent, tidak ada implementasi tambahan untuk saat ini.
 }
 
 export { MDOutletComponent };

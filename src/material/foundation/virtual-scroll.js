@@ -1,26 +1,25 @@
 import { MDCDK } from "./cdk";
 
 /**
- * Represents a virtual scrolling functionality using Material Design components.
+ * Mewakili fungsionalitas gulir virtual menggunakan komponen Material Design.
  * @extends MDCDK
  */
 class MDVirtualScroll extends MDCDK {
-    /**
-     * @typedef {Object} Scroll - Represents the details of the scroll event.
-     * @property {number} scrollbarHeight - Total height of the scrollable content.
-     * @property {number} start - Index of the first visible node in the viewport.
-     * @property {number} limit - Number of visible nodes in the viewport.
-     * @property {number} translateY - Offset of the first visible node from the top of the viewport.
-
+     /**
+     * @typedef {Object} Scroll - Mewakili detail dari peristiwa gulir.
+     * @property {number} scrollbarHeight - Total tinggi dari konten yang dapat digulir.
+     * @property {number} start - Indeks dari node yang pertama terlihat di dalam viewport.
+     * @property {number} limit - Jumlah node yang terlihat di dalam viewport.
+     * @property {number} translateY - Perpindahan dari node yang pertama terlihat dari bagian atas viewport.
      */
 
     /**
-     * Creates an instance of MDVirtualScroll.
-     * @param {HTMLElement} root - The root element to apply virtual scrolling.
-     * @param {Object} [options={}] - Additional options for virtual scrolling.
-     * @param {number} [options.total=0] - Total number of items.
-     * @param {number} [options.contentHeight=48] - Height of each item.
-     * @param {number} [options.threshold=2] - Threshold for preloading items.
+     * Membuat instance dari MDVirtualScroll.
+     * @param {HTMLElement} root - Elemen root untuk menerapkan gulir virtual.
+     * @param {Object} [options={}] - Opsi tambahan untuk gulir virtual.
+     * @param {number} [options.total=0] - Jumlah total item.
+     * @param {number} [options.contentHeight=48] - Tinggi setiap item.
+     * @param {number} [options.threshold=2] - Ambang untuk memuat pra-item.
      * @fires root#onScroll
      */
     constructor(root, options = {}) {
@@ -28,8 +27,8 @@ class MDVirtualScroll extends MDCDK {
     }
 
     /**
-     * Initializes the MDVirtualScroll instance.
-     * Binds the scroll event handler and sets up required parameters.
+     * Menginisialisasi instance MDVirtualScroll.
+     * Mengikat penangan peristiwa gulir dan menyiapkan parameter yang diperlukan.
      */
     init() {
         this.handleScroll = this.handleScroll.bind(this);
@@ -37,16 +36,16 @@ class MDVirtualScroll extends MDCDK {
     }
 
     /**
-     * Destroys the MDVirtualScroll instance.
-     * Removes the scroll event listener.
+     * Menghancurkan instance MDVirtualScroll.
+     * Menghapus penyetel peristiwa gulir.
      */
     destroy() {
         this.off("scroll", this.handleScroll);
     }
 
     /**
-     * Handles the scroll event and calculates parameters for virtual scrolling.
-     * Emits the "onScroll" event with calculated parameters.
+     * Menangani peristiwa gulir dan menghitung parameter untuk gulir virtual.
+     * Memancarkan peristiwa "onScroll" dengan parameter yang dihitung.
      * @private
      * @fires MDVirtualScroll#onScroll
      */

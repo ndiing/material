@@ -8,19 +8,19 @@
 // const routes = [route, route, route];
 
 /**
- * Class representing a simple router.
- * @fires window#onCurrentEntryChange - Triggered when the current entry changes.
- * @fires window#onNavigate - Triggered when navigation starts.
- * @fires window#onNavigateError - Triggered when there's an error during navigation.
- * @fires window#onNavigateSuccess - Triggered when navigation is successful.
+ * Class yang mewakili router sederhana.
+ * @fires window#onCurrentEntryChange - Dipicu ketika entri saat ini berubah.
+ * @fires window#onNavigate - Dipicu saat navigasi dimulai.
+ * @fires window#onNavigateError - Dipicu saat terjadi kesalahan selama navigasi.
+ * @fires window#onNavigateSuccess - Dipicu saat navigasi berhasil.
  */
 class MDRouter {
     /**
-     * Emits a custom event.
+     * Memancarkan event kustom.
      * @private
-     * @param {string} type - The type of the event.
-     * @param {Object} [detail=this] - Additional details to include in the event.
-     * @fires window#event - Custom event dispatched to the window.
+     * @param {string} type - Tipe dari event.
+     * @param {Object} [detail=this] - Detail tambahan yang akan disertakan dalam event.
+     * @fires window#event - Event kustom yang dipancarkan ke window.
      */
     static emit(type, detail = { ...this }) {
         const event = new CustomEvent(type, {
@@ -143,10 +143,10 @@ class MDRouter {
     }
 
     /**
-     * Navigates to a specified URL.
-     * @param {string} url - The URL to navigate to.
+     * Menavigasi ke URL tertentu.
+     * @param {string} url - URL yang akan dituju.
      * @example
-     * // Navigate to the '/about' route
+     * // Navigasi ke rute '/about'
      * MDRouter.navigate('/about');
      */
     static navigate(url) {
@@ -177,8 +177,8 @@ class MDRouter {
      */
 
     /**
-     * Initializes the router with provided routes.
-     * @param {Array<Route>} [routes=[]] - An array of route configurations.
+     * Menginisialisasi router dengan rute yang diberikan.
+     * @param {Array<Route>} [routes=[]] - Array konfigurasi rute.
      */
     static init(routes = []) {
         const pushState = window.history.pushState;

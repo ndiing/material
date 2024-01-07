@@ -1,41 +1,41 @@
 const { LitElement } = require("lit");
 
 /**
- * Represents a component for the MD framework.
- * Extends LitElement class.
+ * Mewakili sebuah komponen untuk framework MD.
+ * Memperluas kelas LitElement.
  */
 class MDComponent extends LitElement {
     /**
-     * Overrides LitElement's default render root creation method.
+     * Melakukan override terhadap metode pembuatan root render default dari LitElement.
      * @private
-     * @returns {this} - The instance of the component.
+     * @returns {this} - Instance dari komponen.
      */
     createRenderRoot() {
         return this;
     }
 
     /**
-     * Attaches an event listener to the component.
-     * @param {string} type - The type of event to listen for.
-     * @param {EventListenerOrEventListenerObject} listener - The event listener function to be called when the event occurs.
+     * Melampirkan event listener ke komponen.
+     * @param {string} type - Jenis dari event yang akan didengarkan.
+     * @param {EventListenerOrEventListenerObject} listener - Fungsi event listener yang akan dipanggil ketika event terjadi.
      */
     on(type, listener) {
         this.addEventListener(type, listener);
     }
 
     /**
-     * Removes an event listener from the component.
-     * @param {string} type - The type of event to remove the listener from.
-     * @param {EventListenerOrEventListenerObject} listener - The event listener function to be removed.
+     * Menghapus event listener dari komponen.
+     * @param {string} type - Jenis dari event untuk menghapus event listener.
+     * @param {EventListenerOrEventListenerObject} listener - Fungsi event listener yang akan dihapus.
      */
     off(type, listener) {
         this.removeEventListener(type, listener);
     }
 
     /**
-     * Emits a custom event from the component.
-     * @param {string} type - The type of the custom event to be dispatched.
-     * @param {any} detail - Optional detail to be included in the event.
+     * Memancarkan sebuah event kustom dari komponen.
+     * @param {string} type - Jenis dari event kustom yang akan di-dispatch.
+     * @param {any} detail - Detail opsional yang akan disertakan dalam event.
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
