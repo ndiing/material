@@ -11,7 +11,7 @@
 <dd><p>Custom fab component extending MDComponent.</p>
 </dd>
 <dt><a href="#MDCDK">MDCDK</a></dt>
-<dd><p>Represents a Custom Development Kit for MD Framework.</p>
+<dd><p>Mewakili sebuah Custom Development Kit untuk MD Framework.</p>
 </dd>
 <dt><a href="#MDComponent">MDComponent</a></dt>
 <dd><p>Represents a component for the MD framework.
@@ -346,7 +346,7 @@ Properties for the MDFabComponent.
 <a name="MDCDK"></a>
 
 ## MDCDK
-Represents a Custom Development Kit for MD Framework.
+Mewakili sebuah Custom Development Kit untuk MD Framework.
 
 **Kind**: global class  
 
@@ -361,61 +361,61 @@ Represents a Custom Development Kit for MD Framework.
 <a name="new_MDCDK_new"></a>
 
 ### new MDCDK(root, [options])
-Creates an instance of MDCDK.
+Membuat sebuah instance dari MDCDK.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| root | <code>HTMLElement</code> |  | The root HTML element to bind events to. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for MDCDK. |
+| root | <code>HTMLElement</code> |  | Elemen HTML root untuk mengikat event kepadanya. |
+| [options] | <code>Object</code> | <code>{}</code> | Opsi tambahan untuk MDCDK. |
 
 <a name="MDCDK+init"></a>
 
 ### mdcdK.init()
-Initializes the MDCDK instance.
+Menginisialisasi instance MDCDK.
 
 **Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
 <a name="MDCDK+destroy"></a>
 
 ### mdcdK.destroy()
-Destroys the MDCDK instance.
+Menghancurkan instance MDCDK.
 
 **Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
 <a name="MDCDK+on"></a>
 
 ### mdcdK.on(type, listener)
-Attaches an event listener to the root element.
+Melampirkan event listener ke elemen root.
 
 **Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+| type | <code>string</code> | Jenis event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
 
 <a name="MDCDK+off"></a>
 
 ### mdcdK.off(type, listener)
-Removes an event listener from the root element.
+Menghapus event listener dari elemen root.
 
 **Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+| type | <code>string</code> | Jenis event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
 
 <a name="MDCDK+emit"></a>
 
 ### mdcdK.emit(type, detail)
-Emits a custom event from the root element.
+Memancarkan sebuah event kustom dari elemen root.
 
 **Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of the custom event to be dispatched. |
-| detail | <code>any</code> | Optional detail to be included in the event. |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDComponent"></a>
 
@@ -538,41 +538,41 @@ Calculates the placement of the popover based on the specified placement option.
 <a name="MDCDK+on"></a>
 
 ### mdPopover.on(type, listener)
-Attaches an event listener to the root element.
+Melampirkan event listener ke elemen root.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
 **Overrides**: [<code>on</code>](#MDCDK+on)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+| type | <code>string</code> | Jenis event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
 
 <a name="MDCDK+off"></a>
 
 ### mdPopover.off(type, listener)
-Removes an event listener from the root element.
+Menghapus event listener dari elemen root.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
 **Overrides**: [<code>off</code>](#MDCDK+off)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+| type | <code>string</code> | Jenis event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
 
 <a name="MDCDK+emit"></a>
 
 ### mdPopover.emit(type, detail)
-Emits a custom event from the root element.
+Memancarkan sebuah event kustom dari elemen root.
 
 **Kind**: instance method of [<code>MDPopover</code>](#MDPopover)  
 **Overrides**: [<code>emit</code>](#MDCDK+emit)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of the custom event to be dispatched. |
-| detail | <code>any</code> | Optional detail to be included in the event. |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDRipple"></a>
 
@@ -623,41 +623,41 @@ Destroys the ripple effect and removes event listeners.
 <a name="MDCDK+on"></a>
 
 ### mdRipple.on(type, listener)
-Attaches an event listener to the root element.
+Melampirkan event listener ke elemen root.
 
 **Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
 **Overrides**: [<code>on</code>](#MDCDK+on)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+| type | <code>string</code> | Jenis event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
 
 <a name="MDCDK+off"></a>
 
 ### mdRipple.off(type, listener)
-Removes an event listener from the root element.
+Menghapus event listener dari elemen root.
 
 **Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
 **Overrides**: [<code>off</code>](#MDCDK+off)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+| type | <code>string</code> | Jenis event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
 
 <a name="MDCDK+emit"></a>
 
 ### mdRipple.emit(type, detail)
-Emits a custom event from the root element.
+Memancarkan sebuah event kustom dari elemen root.
 
 **Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
 **Overrides**: [<code>emit</code>](#MDCDK+emit)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of the custom event to be dispatched. |
-| detail | <code>any</code> | Optional detail to be included in the event. |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDRouter"></a>
 
@@ -838,41 +838,41 @@ Destroys the MDVirtualScroll instance.Removes the scroll event listener.
 <a name="MDCDK+on"></a>
 
 ### mdVirtualScroll.on(type, listener)
-Attaches an event listener to the root element.
+Melampirkan event listener ke elemen root.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 **Overrides**: [<code>on</code>](#MDCDK+on)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be called when the event occurs. |
+| type | <code>string</code> | Jenis event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
 
 <a name="MDCDK+off"></a>
 
 ### mdVirtualScroll.off(type, listener)
-Removes an event listener from the root element.
+Menghapus event listener dari elemen root.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 **Overrides**: [<code>off</code>](#MDCDK+off)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function to be removed. |
+| type | <code>string</code> | Jenis event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
 
 <a name="MDCDK+emit"></a>
 
 ### mdVirtualScroll.emit(type, detail)
-Emits a custom event from the root element.
+Memancarkan sebuah event kustom dari elemen root.
 
 **Kind**: instance method of [<code>MDVirtualScroll</code>](#MDVirtualScroll)  
 **Overrides**: [<code>emit</code>](#MDCDK+emit)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of the custom event to be dispatched. |
-| detail | <code>any</code> | Optional detail to be included in the event. |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDIconButtonComponent"></a>
 

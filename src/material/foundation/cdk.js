@@ -1,11 +1,11 @@
 /**
- * Represents a Custom Development Kit for MD Framework.
+ * Mewakili sebuah Custom Development Kit untuk MD Framework.
  */
 class MDCDK {
     /**
-     * Creates an instance of MDCDK.
-     * @param {HTMLElement} root - The root HTML element to bind events to.
-     * @param {Object} [options={}] - Additional options for MDCDK.
+     * Membuat sebuah instance dari MDCDK.
+     * @param {HTMLElement} root - Elemen HTML root untuk mengikat event kepadanya.
+     * @param {Object} [options={}] - Opsi tambahan untuk MDCDK.
      */
     constructor(root, options = {}) {
         this.root = root;
@@ -15,43 +15,43 @@ class MDCDK {
     }
 
     /**
-     * Initializes the MDCDK instance.
+     * Menginisialisasi instance MDCDK.
      */
     init() {
-        // Initialization code goes here
-        // Example: this.on('click', listener)
+        // Kode inisialisasi diletakkan di sini
+        // Contoh: this.on('click', listener)
     }
 
     /**
-     * Destroys the MDCDK instance.
+     * Menghancurkan instance MDCDK.
      */
     destroy() {
-        // Destruction code goes here
-        // Example: this.off('click', listener)
+        // Kode penghancuran diletakkan di sini
+        // Contoh: this.off('click', listener)
     }
 
     /**
-     * Attaches an event listener to the root element.
-     * @param {string} type - The type of event to listen for.
-     * @param {EventListenerOrEventListenerObject} listener - The event listener function to be called when the event occurs.
+     * Melampirkan event listener ke elemen root.
+     * @param {string} type - Jenis event yang akan didengarkan.
+     * @param {EventListenerOrEventListenerObject} listener - Fungsi event listener yang akan dipanggil ketika event terjadi.
      */
     on(type, listener) {
         this.root.addEventListener(type, listener);
     }
 
     /**
-     * Removes an event listener from the root element.
-     * @param {string} type - The type of event to remove the listener from.
-     * @param {EventListenerOrEventListenerObject} listener - The event listener function to be removed.
+     * Menghapus event listener dari elemen root.
+     * @param {string} type - Jenis event untuk menghapus event listener.
+     * @param {EventListenerOrEventListenerObject} listener - Fungsi event listener yang akan dihapus.
      */
     off(type, listener) {
         this.root.removeEventListener(type, listener);
     }
 
     /**
-     * Emits a custom event from the root element.
-     * @param {string} type - The type of the custom event to be dispatched.
-     * @param {any} detail - Optional detail to be included in the event.
+     * Memancarkan sebuah event kustom dari elemen root.
+     * @param {string} type - Jenis dari event kustom yang akan di-dispatch.
+     * @param {any} detail - Detail opsional yang akan disertakan dalam event.
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
