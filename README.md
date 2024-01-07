@@ -79,6 +79,9 @@ Extends MDComponent class.</p>
 ## Typedefs
 
 <dl>
+<dt><a href="#Route">Route</a> : <code>Object</code></dt>
+<dd><p>Represents a route configuration object.</p>
+</dd>
 <dt><a href="#Scroll">Scroll</a> : <code>Object</code></dt>
 <dd><p>Represents the details of the scroll event.</p>
 </dd>
@@ -666,7 +669,7 @@ Class representing a simple router.
 
 * [MDRouter](#MDRouter)
     * [.navigate(url)](#MDRouter.navigate)
-    * [.init(routes)](#MDRouter.init)
+    * [.init()](#MDRouter.init) : [<code>Array.&lt;Route&gt;</code>](#Route)
 
 <a name="MDRouter.navigate"></a>
 
@@ -681,25 +684,10 @@ Navigates to a specified URL.
 
 <a name="MDRouter.init"></a>
 
-### MDRouter.init(routes)
-Initializes the router with provided routes.
+### MDRouter.init() : [<code>Array.&lt;Route&gt;</code>](#Route)
+An array of route configurations.
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| routes | <code>Array.&lt;Route&gt;</code> | An array of route objects representing the application routes. |
-
-**Properties**
-
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| [routes[0].path] | <code>string</code> | <code>&quot;String&quot;</code> | The path for the route. |
-| [routes[0].component] | <code>HTMLElement</code> | <code>HTMLElement</code> | The HTML element associated with the route. |
-| [routes[0].load] | <code>Promise.&lt;Object&gt;</code> | <code>Promise</code> | A function that returns a Promise, typically used to dynamically import a module. |
-| [routes[0].beforeLoad] | <code>Promise.&lt;Object&gt;</code> | <code>Promise</code> | A function that runs before loading the route, typically used for resolving or rejecting promises. |
-| [routes[0].children] | <code>Array.&lt;Route&gt;</code> | <code>[Route]</code> | An array containing child routes. |
-
 <a name="MDStore"></a>
 
 ## MDStore
@@ -1243,6 +1231,22 @@ Converts a string to Title Case.
 | Param | Type | Description |
 | --- | --- | --- |
 | string | <code>string</code> | The string to convert. |
+
+<a name="Route"></a>
+
+## Route : <code>Object</code>
+Represents a route configuration object.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| path | <code>String</code> | The path for the route. |
+| component | <code>HTMLElement</code> | The component associated with the route. |
+| load | <code>function</code> | The function to load the route. |
+| beforeLoad | <code>function</code> | The function executed before loading the route. |
+| children | [<code>Array.&lt;Route&gt;</code>](#Route) | An array of child routes. |
 
 <a name="Scroll"></a>
 

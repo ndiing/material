@@ -164,13 +164,18 @@ class MDRouter {
     }
 
     /**
-     * Initializes the router with provided routes.
-     * @param {Route[]} routes - An array of route objects representing the application routes.
-     * @property {string} [routes[0].path=String] - The path for the route.
-     * @property {HTMLElement} [routes[0].component=HTMLElement] - The HTML element associated with the route.
-     * @property {Promise<Object>} [routes[0].load=Promise] - A function that returns a Promise, typically used to dynamically import a module.
-     * @property {Promise<Object>} [routes[0].beforeLoad=Promise] - A function that runs before loading the route, typically used for resolving or rejecting promises.
-     * @property {Route[]} [routes[0].children=[Route]] - An array containing child routes.
+     * Represents a route configuration object.
+     * @typedef {Object} Route
+     * @property {String} path - The path for the route.
+     * @property {HTMLElement} component - The component associated with the route.
+     * @property {Function} load - The function to load the route.
+     * @property {Function} beforeLoad - The function executed before loading the route.
+     * @property {Array<Route>} children - An array of child routes.
+     */
+
+    /**
+     * An array of route configurations.
+     * @type {Array<Route>}
      */
     static init(routes = []) {
         const pushState = window.history.pushState;
