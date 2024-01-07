@@ -669,7 +669,7 @@ Class representing a simple router.
 
 * [MDRouter](#MDRouter)
     * [.navigate(url)](#MDRouter.navigate)
-    * [.init()](#MDRouter.init) : [<code>Array.&lt;Route&gt;</code>](#Route)
+    * [.init([routes])](#MDRouter.init)
 
 <a name="MDRouter.navigate"></a>
 
@@ -682,12 +682,21 @@ Navigates to a specified URL.
 | --- | --- | --- |
 | url | <code>string</code> | The URL to navigate to. |
 
+**Example**  
+```js
+// Navigate to the '/about' routeMDRouter.navigate('/about');
+```
 <a name="MDRouter.init"></a>
 
-### MDRouter.init() : [<code>Array.&lt;Route&gt;</code>](#Route)
-An array of route configurations.
+### MDRouter.init([routes])
+Initializes the router with provided routes.
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [routes] | [<code>Array.&lt;Route&gt;</code>](#Route) | <code>[]</code> | An array of route configurations. |
+
 <a name="MDStore"></a>
 
 ## MDStore
@@ -1245,8 +1254,8 @@ Represents a route configuration object.
 | path | <code>String</code> | The path for the route. |
 | component | <code>HTMLElement</code> | The component associated with the route. |
 | load | <code>function</code> | The function to load the route. |
-| beforeLoad | <code>function</code> | The function executed before loading the route. |
-| children | [<code>Array.&lt;Route&gt;</code>](#Route) | An array of child routes. |
+| [beforeLoad] | <code>function</code> | The function executed before loading the route. |
+| [children] | [<code>Array.&lt;Route&gt;</code>](#Route) | An array of child routes. |
 
 <a name="Scroll"></a>
 

@@ -19,8 +19,8 @@ class MDRouter {
      * Emits a custom event.
      * @private
      * @param {string} type - The type of the event.
-     * @param {Object} [detail={ ...this }] - Additional details to include in the event.
-     *                                      Defaults to the current instance of the class.
+     * @param {Object} [detail=this] - Additional details to include in the event.
+     * @fires window#event - Custom event dispatched to the window.
      */
     static emit(type, detail = { ...this }) {
         const event = new CustomEvent(type, {
@@ -34,9 +34,9 @@ class MDRouter {
     /**
      * Recursively adds routes to the router.
      * @private
-     * @param {Array} routes - The routes to be added.
+     * @param {Array<Route>} routes - The routes to be added.
      * @param {Object} [parent=null] - The parent route object.
-     * @returns {Array} - The modified routes array.
+     * @returns {Array<Route>} - The modified routes array.
      */
     static addRoutes(routes = [], parent = null) {
         return routes.reduce((p, c) => {
@@ -54,7 +54,7 @@ class MDRouter {
      * Retrieves the stack of routes.
      * @private
      * @param {Object} route - The route object.
-     * @returns {Array} - The stack of routes.
+     * @returns {Array<Object>} - The stack of routes.
      */
     static getStack(route) {
         return [route].reduce((p, c) => {
@@ -145,6 +145,9 @@ class MDRouter {
     /**
      * Navigates to a specified URL.
      * @param {string} url - The URL to navigate to.
+     * @example
+     * // Navigate to the '/about' route
+     * MDRouter.navigate('/about');
      */
     static navigate(url) {
         window.history.pushState({}, null, url);
@@ -169,13 +172,13 @@ class MDRouter {
      * @property {String} path - The path for the route.
      * @property {HTMLElement} component - The component associated with the route.
      * @property {Function} load - The function to load the route.
-     * @property {Function} beforeLoad - The function executed before loading the route.
-     * @property {Array<Route>} children - An array of child routes.
+     * @property {Function} [beforeLoad] - The function executed before loading the route.
+     * @property {Array<Route>} [children] - An array of child routes.
      */
 
     /**
-     * An array of route configurations.
-     * @type {Array<Route>}
+     * Initializes the router with provided routes.
+     * @param {Array<Route>} [routes=[]] - An array of route configurations.
      */
     static init(routes = []) {
         const pushState = window.history.pushState;
