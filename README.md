@@ -39,6 +39,9 @@ Extends MDComponent class.</p>
 <dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
 <dd><p>Custom icon button component extending MDComponent.</p>
 </dd>
+<dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a></dt>
+<dd><p>Custom radio-button component extending MDComponent.</p>
+</dd>
 <dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
 <dd><p>Custom segmented button component extending MDComponent.</p>
 </dd>
@@ -930,6 +933,122 @@ Properties for the MDIconButtonComponent.
 | toggle | <code>boolean</code> | Indicates whether the button behaves as a toggle. |
 | activated | <code>boolean</code> | Indicates whether the button is activated. |
 | appearance | <code>string</code> | The appearance of the button. Possible values: "filled", "tonal", "outlined". |
+
+<a name="MDRadioButtonComponent"></a>
+
+## MDRadioButtonComponent
+Custom radio-button component extending MDComponent.
+
+**Kind**: global class  
+**Emits**: <code>MDRadioButtonComponent#event:onRadioButtonNativeInput - Indicates the native radio-button input event.</code>  
+
+* [MDRadioButtonComponent](#MDRadioButtonComponent)
+    * [new MDRadioButtonComponent()](#new_MDRadioButtonComponent_new)
+    * _instance_
+        * [.native](#MDRadioButtonComponent+native) ⇒ <code>HTMLInputElement</code>
+        * [.track](#MDRadioButtonComponent+track) ⇒ <code>HTMLElement</code>
+        * [.thumb](#MDRadioButtonComponent+thumb) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDRadioButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDRadioButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDRadioButtonComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDRadioButtonComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDRadioButtonComponent+updated)
+        * [.handleRadioButtonNativeInput(event)](#MDRadioButtonComponent+handleRadioButtonNativeInput)
+    * _static_
+        * [.properties](#MDRadioButtonComponent.properties)
+
+<a name="new_MDRadioButtonComponent_new"></a>
+
+### new MDRadioButtonComponent()
+Constructor for MDRadioButtonComponent.
+
+<a name="MDRadioButtonComponent+native"></a>
+
+### mdRadioButtonComponent.native ⇒ <code>HTMLInputElement</code>
+Retrieves the native radio-button element.
+
+**Kind**: instance property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>HTMLInputElement</code> - The native radio-button element.  
+<a name="MDRadioButtonComponent+track"></a>
+
+### mdRadioButtonComponent.track ⇒ <code>HTMLElement</code>
+Retrieves the track element of the radio-button.
+
+**Kind**: instance property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The track element of the radio-button.  
+<a name="MDRadioButtonComponent+thumb"></a>
+
+### mdRadioButtonComponent.thumb ⇒ <code>HTMLElement</code>
+Retrieves the thumb element of the radio-button.
+
+**Kind**: instance property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The thumb element of the radio-button.  
+<a name="MDRadioButtonComponent+render"></a>
+
+### mdRadioButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDRadioButtonComponent.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template result.  
+<a name="MDRadioButtonComponent+connectedCallback"></a>
+
+### mdRadioButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle method called when the element is attached to the DOM.Initializes the radio-button component.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when initialization is complete.  
+<a name="MDRadioButtonComponent+disconnectedCallback"></a>
+
+### mdRadioButtonComponent.disconnectedCallback()
+Lifecycle method called when the element is disconnected from the DOM.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+<a name="MDRadioButtonComponent+firstUpdated"></a>
+
+### mdRadioButtonComponent.firstUpdated(changedProperties)
+Lifecycle method called when the element's first update happens.Initializes the ripple effect for the radio-button.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+
+<a name="MDRadioButtonComponent+updated"></a>
+
+### mdRadioButtonComponent.updated(changedProperties)
+Lifecycle method called when the element's properties have been updated.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | The properties that have changed. |
+
+<a name="MDRadioButtonComponent+handleRadioButtonNativeInput"></a>
+
+### mdRadioButtonComponent.handleRadioButtonNativeInput(event)
+Handles the radio-button's native input event.Emits an event when the native radio-button input occurs.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MDRadioButtonComponent.properties"></a>
+
+### MDRadioButtonComponent.properties
+Properties for the MDRadioButtonComponent.
+
+**Kind**: static property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The name of the radio-button. |
+| checked | <code>boolean</code> | Represents whether the radio-button is checked or not. |
+| indeterminate | <code>boolean</code> | Indicates if the radio-button is in an indeterminate state. |
 
 <a name="MDSegmentedButtonComponent"></a>
 
