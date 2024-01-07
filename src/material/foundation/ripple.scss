@@ -27,6 +27,10 @@
         top: var(--md-ripple-top, 50%);
         transform: translate3d(-50%, -50%, 0) translate3d(var(--md-ripple-x, 0%), var(--md-ripple-y, 0%), 0);
         pointer-events: none;
+
+        transition-property: width;
+        transition-duration: var(--md-sys-motion-duration-short4);
+        transition-timing-function: var(--md-sys-motion-easing-standard-accelerate);
     }
     &--bounded {
         overflow: hidden;
@@ -75,7 +79,7 @@
 
     &--fadeout {
         &,
-        &[activated]{
+        &[activated] {
             &::after {
                 animation:
                     var(--md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),

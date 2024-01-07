@@ -45,6 +45,9 @@ Memperluas kelas MDComponent.</p>
 <dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
 <dd><p>Komponen tombol segmen kustom yang memperluas MDComponent.</p>
 </dd>
+<dt><a href="#MDSwitchComponent">MDSwitchComponent</a></dt>
+<dd><p>Komponen switch kustom yang memperluas MDComponent.</p>
+</dd>
 </dl>
 
 ## Functions
@@ -1144,6 +1147,122 @@ Properti untuk MDSegmentedButtonComponent.
 | --- | --- | --- |
 | data | <code>Array</code> | Array data yang digunakan untuk mengisi tombol segmen. |
 | type | <code>string</code> | Jenis tombol segmen ("single-select" atau "multi-select"). |
+
+<a name="MDSwitchComponent"></a>
+
+## MDSwitchComponent
+Komponen switch kustom yang memperluas MDComponent.
+
+**Kind**: global class  
+**Emits**: <code>MDSwitchComponent#event:onSwitchNativeInput - Menunjukkan acara input switch asli.</code>  
+
+* [MDSwitchComponent](#MDSwitchComponent)
+    * [new MDSwitchComponent()](#new_MDSwitchComponent_new)
+    * _instance_
+        * [.native](#MDSwitchComponent+native) ⇒ <code>HTMLInputElement</code>
+        * [.track](#MDSwitchComponent+track) ⇒ <code>HTMLElement</code>
+        * [.thumb](#MDSwitchComponent+thumb) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDSwitchComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDSwitchComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDSwitchComponent+disconnectedCallback)
+        * [.firstUpdated(changedProperties)](#MDSwitchComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDSwitchComponent+updated)
+        * [.handleSwitchNativeInput(event)](#MDSwitchComponent+handleSwitchNativeInput)
+    * _static_
+        * [.properties](#MDSwitchComponent.properties)
+
+<a name="new_MDSwitchComponent_new"></a>
+
+### new MDSwitchComponent()
+Konstruktor untuk MDSwitchComponent.
+
+<a name="MDSwitchComponent+native"></a>
+
+### mdSwitchComponent.native ⇒ <code>HTMLInputElement</code>
+Mendapatkan elemen switch asli.
+
+**Kind**: instance property of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>HTMLInputElement</code> - Elemen switch asli.  
+<a name="MDSwitchComponent+track"></a>
+
+### mdSwitchComponent.track ⇒ <code>HTMLElement</code>
+Mendapatkan elemen track dari switch.
+
+**Kind**: instance property of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>HTMLElement</code> - Elemen track dari switch.  
+<a name="MDSwitchComponent+thumb"></a>
+
+### mdSwitchComponent.thumb ⇒ <code>HTMLElement</code>
+Mendapatkan elemen thumb dari switch.
+
+**Kind**: instance property of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>HTMLElement</code> - Elemen thumb dari switch.  
+<a name="MDSwitchComponent+render"></a>
+
+### mdSwitchComponent.render() ⇒ <code>TemplateResult</code>
+Merender MDSwitchComponent.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>TemplateResult</code> - Hasil template yang dirender.  
+<a name="MDSwitchComponent+connectedCallback"></a>
+
+### mdSwitchComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.Menginisialisasi komponen switch.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - Sebuah Promise yang diselesaikan ketika inisialisasi selesai.  
+<a name="MDSwitchComponent+disconnectedCallback"></a>
+
+### mdSwitchComponent.disconnectedCallback()
+Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+<a name="MDSwitchComponent+firstUpdated"></a>
+
+### mdSwitchComponent.firstUpdated(changedProperties)
+Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.Menginisialisasi efek riak untuk switch.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
+
+<a name="MDSwitchComponent+updated"></a>
+
+### mdSwitchComponent.updated(changedProperties)
+Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
+
+<a name="MDSwitchComponent+handleSwitchNativeInput"></a>
+
+### mdSwitchComponent.handleSwitchNativeInput(event)
+Menangani acara input switch asli.Memancarkan sebuah acara saat input switch asli terjadi.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | Acara input. |
+
+<a name="MDSwitchComponent.properties"></a>
+
+### MDSwitchComponent.properties
+Properti untuk MDSwitchComponent.
+
+**Kind**: static property of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | Nama dari switch. |
+| checked | <code>boolean</code> | Mewakili apakah switch dicentang atau tidak. |
+| indeterminate | <code>boolean</code> | Menunjukkan apakah switch berada dalam keadaan tidak pasti. |
 
 <a name="notNull"></a>
 

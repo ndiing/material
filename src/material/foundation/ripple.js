@@ -5,7 +5,7 @@ import { MDCDK } from "./cdk";
  * @extends MDCDK
  */
 class MDRipple extends MDCDK {
-     /**
+    /**
      * Membuat sebuah instance dari MDRipple.
      * @param {HTMLElement} root - Elemen root untuk menerapkan efek ripple.
      * @param {Object} [options={}] - Opsi tambahan untuk efek ripple.
@@ -19,30 +19,33 @@ class MDRipple extends MDCDK {
         super(root, options);
     }
 
-    /**
-     * Menghitung diameter untuk efek ripple.
-     * @private
-     * @returns {number} Diameter yang dihitung.
-     */
     get diameter() {
-        const rect = this.root.getBoundingClientRect();
-        const diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
-        return diameter;
+        return this._diameter;
+    }
+    set diameter(value) {
+        this._diameter = value;
     }
 
     /**
      * Menginisialisasi efek ripple.
      */
     init() {
-        this.options.diameter = this.options.diameter ?? this.diameter;
-
         this.root.classList.add("md-ripple");
 
         if (this.options.bounded !== false) this.root.classList.add("md-ripple--bounded");
-        
+
         if (this.options.fadeout) this.root.classList.add("md-ripple--fadeout");
 
-        this.root.style.setProperty("--md-ripple-diameter", this.options.diameter + "%");
+        let diameter = parseFloat(window.getComputedStyle(this.root).getPropertyValue("--md-ripple-diameter"));
+
+        if (isNaN(diameter)) {
+            const rect = this.root.getBoundingClientRect();
+            diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
+
+            this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
+        }
+
+        this.diameter = diameter;
 
         this.trigger = this.options.trigger ?? this.root;
         this.trigger.classList.add("md-ripple--trigger");
@@ -123,13 +126,14 @@ class MDRipple extends MDCDK {
 
         const rect = this.root.getBoundingClientRect();
 
+        // this.root.style.setProperty("--md-ripple-diameter", this.diameter + "%");
+
         if (!this.options.centered) {
             const left = (event.clientX - rect.left) / rect.width;
             const top = (event.clientY - rect.top) / rect.height;
-            const x = (0.5 - left) * (100 / this.options.diameter);
-            const y = (0.5 - top) * ((100 / this.options.diameter) * (rect.height / rect.width));
+            const x = (0.5 - left) * (100 / this.diameter);
+            const y = (0.5 - top) * ((100 / this.diameter) * (rect.height / rect.width));
 
-            this.root.style.setProperty("--md-ripple-diameter", this.options.diameter + "%");
             this.root.style.setProperty("--md-ripple-left", left * 100 + "%");
             this.root.style.setProperty("--md-ripple-top", top * 100 + "%");
             this.root.style.setProperty("--md-ripple-x", x * 100 + "%");

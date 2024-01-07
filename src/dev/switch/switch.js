@@ -1,6 +1,11 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
+const icons=[
+    'close',
+    'check',
+]
+
 class DevSwitch extends MDComponent{
     render(){
         return html`
@@ -12,7 +17,10 @@ class DevSwitch extends MDComponent{
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
-                        <md-switch></md-switch>
+                        <md-switch></md-switch><br><br>
+                        <md-switch checked></md-switch><br><br>
+                        <md-switch icons="${icons}"></md-switch><br><br>
+                        <md-switch icons="${icons}" checked></md-switch><br><br>
                     </div>
                     <div class="
                         md-layout__column
