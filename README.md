@@ -42,7 +42,7 @@ Memperluas kelas MDComponent.</p>
 <dt><a href="#MDVirtualScroll">MDVirtualScroll</a> ⇐ <code><a href="#MDCDK">MDCDK</a></code></dt>
 <dd><p>Mewakili fungsionalitas gulir virtual menggunakan komponen Material Design.</p>
 </dd>
-<dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
+<dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen tombol ikon kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
@@ -1221,17 +1221,21 @@ Memancarkan sebuah event kustom dari elemen root.
 
 <a name="MDIconButtonComponent"></a>
 
-## MDIconButtonComponent
+## MDIconButtonComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen tombol ikon kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 
-* [MDIconButtonComponent](#MDIconButtonComponent)
+* [MDIconButtonComponent](#MDIconButtonComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * _instance_
         * [.connectedCallback()](#MDIconButtonComponent+connectedCallback)
         * [.disconnectedCallback()](#MDIconButtonComponent+disconnectedCallback)
         * [.firstUpdated(changedProperties)](#MDIconButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDIconButtonComponent+updated)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDIconButtonComponent.properties)
 
@@ -1268,6 +1272,45 @@ Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
 | Param | Type | Description |
 | --- | --- | --- |
 | changedProperties | <code>Map</code> | Properti yang telah berubah. |
+
+<a name="MDComponent+on"></a>
+
+### mdIconButtonComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdIconButtonComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdIconButtonComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDIconButtonComponent.properties"></a>
 
