@@ -5,6 +5,14 @@ const data1=[
     { label:'Label' },
 ]
 
+// avatar
+// image
+// video
+// icon
+// checkbox
+// radio
+// switch
+
 class DevList extends MDComponent{
     render(){
         return html`

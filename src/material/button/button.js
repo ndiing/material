@@ -4,6 +4,7 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Komponen tombol kustom yang memperluas MDComponent.
+ * @extends MDComponent
  */
 class MDButtonComponent extends MDComponent {
     /**

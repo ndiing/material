@@ -5,6 +5,7 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Komponen switch kustom yang memperluas MDComponent.
+ * @extends MDComponent
  * @fires MDSwitchComponent#onSwitchNativeInput - Menunjukkan acara input switch asli.
  */
 class MDSwitchComponent extends MDComponent {

@@ -4,6 +4,7 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Komponen fab kustom yang memperluas MDComponent.
+ * @extends MDComponent
  */
 class MDFabComponent extends MDComponent {
     /**

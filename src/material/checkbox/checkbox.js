@@ -5,6 +5,7 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Komponen checkbox kustom yang memperluas MDComponent.
+ * @extends MDComponent
  * @fires MDCheckboxComponent#onCheckboxNativeInput - Menunjukkan acara input checkbox asli.
  */
 class MDCheckboxComponent extends MDComponent {

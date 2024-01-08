@@ -42,7 +42,7 @@ class DevMainComponent extends MDComponent{
                             <!-- <div routerLink="/extended-fab">extended-fab</div> -->
                             <div routerLink="/fab">fab</div>
                             <div routerLink="/icon-button">icon-button</div>
-                            <!-- <div routerLink="/list">list</div> -->
+                            <div routerLink="/list">list</div>
                             <!-- <div routerLink="/menu">menu</div> -->
                             <!-- <div routerLink="/navigation-bar">navigation-bar</div> -->
                             <!-- <div routerLink="/navigation-drawer">navigation-drawer</div> -->

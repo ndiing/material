@@ -1,3 +1,10 @@
+// import "./foundation/color.js";
+// import "./foundation/elevation.js";
+import "./foundation/icon.js";
+// import "./foundation/motion.js";
+// import "./foundation/shape.js";
+// import "./foundation/typography.js";
+// import "./foundation/layout.js";
 // import "./foundation/router.js";
 // import "./foundation/outlet.js";
 // import "./foundation/component.js";
@@ -6,6 +13,7 @@
 // import "./foundation/virtual-scroll.js";
 // import "./foundation/ripple.js";
 // import "./foundation/popover.js";
+import "./foundation/image.js";
 
 import "./bottom-app-bar/bottom-app-bar.js";
 import "./top-app-bar/top-app-bar.js";

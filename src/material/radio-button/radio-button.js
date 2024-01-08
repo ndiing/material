@@ -5,6 +5,7 @@ import { MDRipple } from "../foundation/ripple";
 
 /**
  * Komponen radio-button kustom yang memperluas MDComponent.
+ * @extends MDComponent
  * @fires MDRadioButtonComponent#onRadioButtonNativeInput - Menunjukkan acara input radio-button asli.
  */
 class MDRadioButtonComponent extends MDComponent {

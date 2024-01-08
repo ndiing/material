@@ -1,13 +1,13 @@
 ## Classes
 
 <dl>
-<dt><a href="#MDButtonComponent">MDButtonComponent</a></dt>
+<dt><a href="#MDButtonComponent">MDButtonComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen tombol kustom yang memperluas MDComponent.</p>
 </dd>
-<dt><a href="#MDCheckboxComponent">MDCheckboxComponent</a></dt>
+<dt><a href="#MDCheckboxComponent">MDCheckboxComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen checkbox kustom yang memperluas MDComponent.</p>
 </dd>
-<dt><a href="#MDFabComponent">MDFabComponent</a></dt>
+<dt><a href="#MDFabComponent">MDFabComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen fab kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDCDK">MDCDK</a></dt>
@@ -17,7 +17,13 @@
 <dd><p>Mewakili sebuah komponen untuk framework MD.
 Memperluas kelas LitElement.</p>
 </dd>
-<dt><a href="#MDOutletComponent">MDOutletComponent</a></dt>
+<dt><a href="#MDIconComponent">MDIconComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
+<dd><p>Kelas untuk komponen ikon kustom.</p>
+</dd>
+<dt><a href="#MDImageComponent">MDImageComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
+<dd><p>Komponen gambar kustom yang memperluas MDComponent.</p>
+</dd>
+<dt><a href="#MDOutletComponent">MDOutletComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Mewakili komponen outlet untuk mengelola rendering konten dalam sebuah router.
 Memperluas kelas MDComponent.</p>
 </dd>
@@ -39,13 +45,13 @@ Memperluas kelas MDComponent.</p>
 <dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
 <dd><p>Komponen tombol ikon kustom yang memperluas MDComponent.</p>
 </dd>
-<dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a></dt>
+<dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen radio-button kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
 <dd><p>Komponen tombol segmen kustom yang memperluas MDComponent.</p>
 </dd>
-<dt><a href="#MDSwitchComponent">MDSwitchComponent</a></dt>
+<dt><a href="#MDSwitchComponent">MDSwitchComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen switch kustom yang memperluas MDComponent.</p>
 </dd>
 </dl>
@@ -92,18 +98,22 @@ Memperluas kelas MDComponent.</p>
 
 <a name="MDButtonComponent"></a>
 
-## MDButtonComponent
+## MDButtonComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen tombol kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 
-* [MDButtonComponent](#MDButtonComponent)
+* [MDButtonComponent](#MDButtonComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * [new MDButtonComponent()](#new_MDButtonComponent_new)
     * _instance_
         * [.native](#MDButtonComponent+native) ⇒ <code>HTMLButtonElement</code>
         * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.updated(changedProperties)](#MDButtonComponent+updated)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDButtonComponent.properties)
 
@@ -144,6 +154,45 @@ Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.Memper
 | --- | --- | --- |
 | changedProperties | <code>Map.&lt;string, unknown&gt;</code> | Properti yang telah berubah. |
 
+<a name="MDComponent+on"></a>
+
+### mdButtonComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdButtonComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdButtonComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
+
 <a name="MDButtonComponent.properties"></a>
 
 ### MDButtonComponent.properties
@@ -162,13 +211,14 @@ Properti untuk MDButtonComponent.
 
 <a name="MDCheckboxComponent"></a>
 
-## MDCheckboxComponent
+## MDCheckboxComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen checkbox kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 **Emits**: <code>MDCheckboxComponent#event:onCheckboxNativeInput - Menunjukkan acara input checkbox asli.</code>  
 
-* [MDCheckboxComponent](#MDCheckboxComponent)
+* [MDCheckboxComponent](#MDCheckboxComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * [new MDCheckboxComponent()](#new_MDCheckboxComponent_new)
     * _instance_
         * [.native](#MDCheckboxComponent+native) ⇒ <code>HTMLInputElement</code>
@@ -180,6 +230,9 @@ Komponen checkbox kustom yang memperluas MDComponent.
         * [.firstUpdated(changedProperties)](#MDCheckboxComponent+firstUpdated)
         * [.updated(changedProperties)](#MDCheckboxComponent+updated)
         * [.handleCheckboxNativeInput(event)](#MDCheckboxComponent+handleCheckboxNativeInput)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDCheckboxComponent.properties)
 
@@ -262,6 +315,45 @@ Menangani acara input checkbox asli.Memancarkan sebuah acara saat input checkbo
 | --- | --- | --- |
 | event | <code>Event</code> | Acara input. |
 
+<a name="MDComponent+on"></a>
+
+### mdCheckboxComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdCheckboxComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdCheckboxComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
+
 <a name="MDCheckboxComponent.properties"></a>
 
 ### MDCheckboxComponent.properties
@@ -278,18 +370,22 @@ Properti untuk MDCheckboxComponent.
 
 <a name="MDFabComponent"></a>
 
-## MDFabComponent
+## MDFabComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen fab kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 
-* [MDFabComponent](#MDFabComponent)
+* [MDFabComponent](#MDFabComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * [new MDFabComponent()](#new_MDFabComponent_new)
     * _instance_
         * [.native](#MDFabComponent+native) ⇒ <code>HTMLElement</code>
         * [.render()](#MDFabComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDFabComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.updated(changedProperties)](#MDFabComponent+updated)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDFabComponent.properties)
 
@@ -329,6 +425,45 @@ Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.Memper
 | Param | Type | Description |
 | --- | --- | --- |
 | changedProperties | <code>Map</code> | Properti yang telah berubah. |
+
+<a name="MDComponent+on"></a>
+
+### mdFabComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdFabComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdFabComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDFabComponent.properties"></a>
 
@@ -468,12 +603,219 @@ Memancarkan sebuah event kustom dari komponen.
 | type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
 | detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
+<a name="MDIconComponent"></a>
+
+## MDIconComponent ⇐ [<code>MDComponent</code>](#MDComponent)
+Kelas untuk komponen ikon kustom.
+
+**Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
+
+* [MDIconComponent](#MDIconComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
+    * _instance_
+        * [.render()](#MDIconComponent+render) ⇒ <code>TemplateResult</code>
+        * [.firstUpdated(changedProperties)](#MDIconComponent+firstUpdated)
+        * [.updated(changedProperties)](#MDIconComponent+updated)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
+    * _static_
+        * [.properties](#MDIconComponent.properties) ⇒ <code>Object</code>
+
+<a name="MDIconComponent+render"></a>
+
+### mdIconComponent.render() ⇒ <code>TemplateResult</code>
+Mengembalikan tampilan komponen ikon.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Returns**: <code>TemplateResult</code> - Tampilan komponen ikon.  
+<a name="MDIconComponent+firstUpdated"></a>
+
+### mdIconComponent.firstUpdated(changedProperties)
+Dipanggil ketika komponen telah diperbarui untuk pertama kalinya.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | Properti yang berubah. |
+
+<a name="MDIconComponent+updated"></a>
+
+### mdIconComponent.updated(changedProperties)
+Dipanggil ketika komponen telah diperbarui.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| changedProperties | <code>Map</code> | Properti yang berubah. |
+
+<a name="MDComponent+on"></a>
+
+### mdIconComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdIconComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdIconComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
+
+<a name="MDIconComponent.properties"></a>
+
+### MDIconComponent.properties ⇒ <code>Object</code>
+Mendefinisikan properti-properti komponen.
+
+**Kind**: static property of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Returns**: <code>Object</code> - Properti-properti komponen.  
+<a name="MDImageComponent"></a>
+
+## MDImageComponent ⇐ [<code>MDComponent</code>](#MDComponent)
+Komponen gambar kustom yang memperluas MDComponent.
+
+**Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
+
+* [MDImageComponent](#MDImageComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
+    * _instance_
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
+    * _static_
+        * [.properties](#MDImageComponent.properties)
+
+<a name="MDComponent+on"></a>
+
+### mdImageComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdImageComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdImageComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
+
+<a name="MDImageComponent.properties"></a>
+
+### MDImageComponent.properties
+Properti untuk MDImageComponent.
+
+**Kind**: static property of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| src | <code>string</code> | Sumber dari gambar. |
+| alt | <code>string</code> | Teks alternatif untuk gambar. |
+| ratio | <code>string</code> | Rasio aspek gambar. |
+| rounded | <code>boolean</code> | Menentukan apakah gambar diberi border-radius bulat atau tidak. |
+
 <a name="MDOutletComponent"></a>
 
-## MDOutletComponent
+## MDOutletComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Mewakili komponen outlet untuk mengelola rendering konten dalam sebuah router.Memperluas kelas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
+
+* [MDOutletComponent](#MDOutletComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
+    * [.on(type, listener)](#MDComponent+on)
+    * [.off(type, listener)](#MDComponent+off)
+    * [.emit(type, detail)](#MDComponent+emit)
+
+<a name="MDComponent+on"></a>
+
+### mdOutletComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDOutletComponent</code>](#MDOutletComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdOutletComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDOutletComponent</code>](#MDOutletComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdOutletComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDOutletComponent</code>](#MDOutletComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
+
 <a name="MDPopover"></a>
 
 ## MDPopover ⇐ [<code>MDCDK</code>](#MDCDK)
@@ -943,13 +1285,14 @@ Properti untuk MDIconButtonComponent.
 
 <a name="MDRadioButtonComponent"></a>
 
-## MDRadioButtonComponent
+## MDRadioButtonComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen radio-button kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 **Emits**: <code>MDRadioButtonComponent#event:onRadioButtonNativeInput - Menunjukkan acara input radio-button asli.</code>  
 
-* [MDRadioButtonComponent](#MDRadioButtonComponent)
+* [MDRadioButtonComponent](#MDRadioButtonComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * [new MDRadioButtonComponent()](#new_MDRadioButtonComponent_new)
     * _instance_
         * [.native](#MDRadioButtonComponent+native) ⇒ <code>HTMLInputElement</code>
@@ -961,6 +1304,9 @@ Komponen radio-button kustom yang memperluas MDComponent.
         * [.firstUpdated(changedProperties)](#MDRadioButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDRadioButtonComponent+updated)
         * [.handleRadioButtonNativeInput(event)](#MDRadioButtonComponent+handleRadioButtonNativeInput)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDRadioButtonComponent.properties)
 
@@ -1042,6 +1388,45 @@ Menangani acara input radio-button asli.Memancarkan suatu acara ketika input ra
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>Event</code> | Acara input. |
+
+<a name="MDComponent+on"></a>
+
+### mdRadioButtonComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdRadioButtonComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdRadioButtonComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDRadioButtonComponent.properties"></a>
 
@@ -1150,13 +1535,14 @@ Properti untuk MDSegmentedButtonComponent.
 
 <a name="MDSwitchComponent"></a>
 
-## MDSwitchComponent
+## MDSwitchComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen switch kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 **Emits**: <code>MDSwitchComponent#event:onSwitchNativeInput - Menunjukkan acara input switch asli.</code>  
 
-* [MDSwitchComponent](#MDSwitchComponent)
+* [MDSwitchComponent](#MDSwitchComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * [new MDSwitchComponent()](#new_MDSwitchComponent_new)
     * _instance_
         * [.native](#MDSwitchComponent+native) ⇒ <code>HTMLInputElement</code>
@@ -1168,6 +1554,9 @@ Komponen switch kustom yang memperluas MDComponent.
         * [.firstUpdated(changedProperties)](#MDSwitchComponent+firstUpdated)
         * [.updated(changedProperties)](#MDSwitchComponent+updated)
         * [.handleSwitchNativeInput(event)](#MDSwitchComponent+handleSwitchNativeInput)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDSwitchComponent.properties)
 
@@ -1249,6 +1638,45 @@ Menangani acara input switch asli.Memancarkan sebuah acara saat input switch as
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>Event</code> | Acara input. |
+
+<a name="MDComponent+on"></a>
+
+### mdSwitchComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdSwitchComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdSwitchComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDSwitchComponent.properties"></a>
 

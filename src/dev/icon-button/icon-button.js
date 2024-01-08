@@ -8,7 +8,41 @@ class DevIconButton extends MDComponent{
                 <div class="md-layout__grid">
                     <div class="
                         md-layout__column
-                        md-layout__column--expanded4
+                        md-layout__column--expanded12
+                        md-layout__column--medium4
+                        md-layout__column--compact4
+                    ">
+                        <md-icon>image</md-icon>
+                    </div>
+                    <div class="
+                        md-layout__column
+                        md-layout__column--expanded12
+                        md-layout__column--medium4
+                        md-layout__column--compact4
+                    ">
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="16/9" style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="3/2" style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="4/3" style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="1/1" style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="3/4" style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="2/3" style="width:64px;"></md-image>
+                    </div>
+                    <div class="
+                        md-layout__column
+                        md-layout__column--expanded12
+                        md-layout__column--medium4
+                        md-layout__column--compact4
+                    ">
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="16/9" rounded style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="3/2" rounded style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="4/3" rounded style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="1/1" rounded style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="3/4" rounded style="width:64px;"></md-image>
+                        <md-image src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pumpkin" ratio="2/3" rounded style="width:64px;"></md-image>
+                    </div>
+                    <div class="
+                        md-layout__column
+                        md-layout__column--expanded12
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
@@ -27,16 +61,10 @@ class DevIconButton extends MDComponent{
                         <md-icon-button appearance="tonal" toggle activated>image</md-icon-button>
                         <md-icon-button appearance="outlined" toggle activated>image</md-icon-button>
                     </div>
+                    
                     <div class="
                         md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
-                    </div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
+                        md-layout__column--expanded12
                         md-layout__column--medium4
                         md-layout__column--compact4
                     "></div>
