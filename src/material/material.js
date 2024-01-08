@@ -13,7 +13,7 @@ import "./foundation/icon.js";
 // import "./foundation/virtual-scroll.js";
 // import "./foundation/ripple.js";
 // import "./foundation/popover.js";
-import "./foundation/image.js";
+// import "./foundation/image.js";
 
 import "./bottom-app-bar/bottom-app-bar.js";
 import "./top-app-bar/top-app-bar.js";

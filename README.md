@@ -20,9 +20,6 @@ Memperluas kelas LitElement.</p>
 <dt><a href="#MDIconComponent">MDIconComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Kelas untuk komponen ikon kustom.</p>
 </dd>
-<dt><a href="#MDImageComponent">MDImageComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
-<dd><p>Komponen gambar kustom yang memperluas MDComponent.</p>
-</dd>
 <dt><a href="#MDOutletComponent">MDOutletComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Mewakili komponen outlet untuk mengelola rendering konten dalam sebuah router.
 Memperluas kelas MDComponent.</p>
@@ -697,76 +694,6 @@ Mendefinisikan properti-properti komponen.
 
 **Kind**: static property of [<code>MDIconComponent</code>](#MDIconComponent)  
 **Returns**: <code>Object</code> - Properti-properti komponen.  
-<a name="MDImageComponent"></a>
-
-## MDImageComponent ⇐ [<code>MDComponent</code>](#MDComponent)
-Komponen gambar kustom yang memperluas MDComponent.
-
-**Kind**: global class  
-**Extends**: [<code>MDComponent</code>](#MDComponent)  
-
-* [MDImageComponent](#MDImageComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
-    * _instance_
-        * [.on(type, listener)](#MDComponent+on)
-        * [.off(type, listener)](#MDComponent+off)
-        * [.emit(type, detail)](#MDComponent+emit)
-    * _static_
-        * [.properties](#MDImageComponent.properties)
-
-<a name="MDComponent+on"></a>
-
-### mdImageComponent.on(type, listener)
-Melampirkan event listener ke komponen.
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-**Overrides**: [<code>on</code>](#MDComponent+on)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
-| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
-
-<a name="MDComponent+off"></a>
-
-### mdImageComponent.off(type, listener)
-Menghapus event listener dari komponen.
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-**Overrides**: [<code>off</code>](#MDComponent+off)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
-| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
-
-<a name="MDComponent+emit"></a>
-
-### mdImageComponent.emit(type, detail)
-Memancarkan sebuah event kustom dari komponen.
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-**Overrides**: [<code>emit</code>](#MDComponent+emit)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
-| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
-
-<a name="MDImageComponent.properties"></a>
-
-### MDImageComponent.properties
-Properti untuk MDImageComponent.
-
-**Kind**: static property of [<code>MDImageComponent</code>](#MDImageComponent)  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| src | <code>string</code> | Sumber dari gambar. |
-| alt | <code>string</code> | Teks alternatif untuk gambar. |
-| ratio | <code>string</code> | Rasio aspek gambar. |
-| rounded | <code>boolean</code> | Menentukan apakah gambar diberi border-radius bulat atau tidak. |
-
 <a name="MDOutletComponent"></a>
 
 ## MDOutletComponent ⇐ [<code>MDComponent</code>](#MDComponent)

@@ -8,7 +8,7 @@ class DevButton extends MDComponent{
                 <div class="md-layout__grid">
                     <div class="
                         md-layout__column
-                        md-layout__column--expanded4
+                        md-layout__column--expanded12
                         md-layout__column--medium4
                         md-layout__column--compact4
                     ">
@@ -17,23 +17,28 @@ class DevButton extends MDComponent{
                         <md-button appearance="filled" label="Label"></md-button>
                         <md-button appearance="tonal" label="Label"></md-button>
                         <md-button appearance="outlined" label="Label"></md-button>
-                        <br>
-                        <br>
-                        <md-button icon="image" label="Label"></md-button>
-                        <md-button appearance="elevated" icon="image" label="Label"></md-button>
-                        <md-button appearance="filled" icon="image" label="Label"></md-button>
-                        <md-button appearance="tonal" icon="image" label="Label"></md-button>
-                        <md-button appearance="outlined" icon="image" label="Label"></md-button>
                     </div>
                     <div class="
                         md-layout__column
-                        md-layout__column--expanded4
+                        md-layout__column--expanded12
+                        md-layout__column--medium4
+                        md-layout__column--compact4
+                    ">
+                        <md-button icon="image" label="Label"></md-button>
+                        <md-button icon="image" appearance="elevated" label="Label"></md-button>
+                        <md-button icon="image" appearance="filled" label="Label"></md-button>
+                        <md-button icon="image" appearance="tonal" label="Label"></md-button>
+                        <md-button icon="image" appearance="outlined" label="Label"></md-button>
+                    </div>
+                    <div class="
+                        md-layout__column
+                        md-layout__column--expanded12
                         md-layout__column--medium4
                         md-layout__column--compact4
                     "></div>
                     <div class="
                         md-layout__column
-                        md-layout__column--expanded4
+                        md-layout__column--expanded12
                         md-layout__column--medium4
                         md-layout__column--compact4
                     "></div>

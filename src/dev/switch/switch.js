@@ -18,10 +18,10 @@ class DevSwitch extends MDComponent{
                         md-layout__column--compact4
                     ">
                         <md-switch></md-switch>
-                        <md-switch checked></md-switch>
-                        <br><br>
+                        <md-switch .icons="${['','check']}" checked></md-switch>
+                        <!-- <br><br>
                         <md-switch .icons="${icons}"></md-switch>
-                        <md-switch .icons="${icons}" checked></md-switch>
+                        <md-switch .icons="${icons}" checked></md-switch> -->
                     </div>
                     <div class="
                         md-layout__column
