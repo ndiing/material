@@ -48,7 +48,7 @@ Memperluas kelas MDComponent.</p>
 <dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen radio-button kustom yang memperluas MDComponent.</p>
 </dd>
-<dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
+<dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
 <dd><p>Komponen tombol segmen kustom yang memperluas MDComponent.</p>
 </dd>
 <dt><a href="#MDSwitchComponent">MDSwitchComponent</a> ⇐ <code><a href="#MDComponent">MDComponent</a></code></dt>
@@ -1487,13 +1487,14 @@ Properti untuk MDRadioButtonComponent.
 
 <a name="MDSegmentedButtonComponent"></a>
 
-## MDSegmentedButtonComponent
+## MDSegmentedButtonComponent ⇐ [<code>MDComponent</code>](#MDComponent)
 Komponen tombol segmen kustom yang memperluas MDComponent.
 
 **Kind**: global class  
+**Extends**: [<code>MDComponent</code>](#MDComponent)  
 **Emits**: <code>MDSegmentedButtonComponent#event:onButtonClick - Menunjukkan bahwa tombol dalam komponen segmen telah diklik.</code>  
 
-* [MDSegmentedButtonComponent](#MDSegmentedButtonComponent)
+* [MDSegmentedButtonComponent](#MDSegmentedButtonComponent) ⇐ [<code>MDComponent</code>](#MDComponent)
     * [new MDSegmentedButtonComponent()](#new_MDSegmentedButtonComponent_new)
     * _instance_
         * [.render()](#MDSegmentedButtonComponent+render) ⇒ <code>TemplateResult</code>
@@ -1502,6 +1503,9 @@ Komponen tombol segmen kustom yang memperluas MDComponent.
         * [.firstUpdated(changedProperties)](#MDSegmentedButtonComponent+firstUpdated)
         * [.updated(changedProperties)](#MDSegmentedButtonComponent+updated)
         * [.handleButtonClick(event)](#MDSegmentedButtonComponent+handleButtonClick)
+        * [.on(type, listener)](#MDComponent+on)
+        * [.off(type, listener)](#MDComponent+off)
+        * [.emit(type, detail)](#MDComponent+emit)
     * _static_
         * [.properties](#MDSegmentedButtonComponent.properties)
 
@@ -1562,6 +1566,45 @@ Menangani acara klik pada tombol segmen.
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>Event</code> | Acara klik. |
+
+<a name="MDComponent+on"></a>
+
+### mdSegmentedButtonComponent.on(type, listener)
+Melampirkan event listener ke komponen.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Overrides**: [<code>on</code>](#MDComponent+on)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event yang akan didengarkan. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dipanggil ketika event terjadi. |
+
+<a name="MDComponent+off"></a>
+
+### mdSegmentedButtonComponent.off(type, listener)
+Menghapus event listener dari komponen.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Overrides**: [<code>off</code>](#MDComponent+off)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event untuk menghapus event listener. |
+| listener | <code>EventListenerOrEventListenerObject</code> | Fungsi event listener yang akan dihapus. |
+
+<a name="MDComponent+emit"></a>
+
+### mdSegmentedButtonComponent.emit(type, detail)
+Memancarkan sebuah event kustom dari komponen.
+
+**Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Overrides**: [<code>emit</code>](#MDComponent+emit)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Jenis dari event kustom yang akan di-dispatch. |
+| detail | <code>any</code> | Detail opsional yang akan disertakan dalam event. |
 
 <a name="MDSegmentedButtonComponent.properties"></a>
 

@@ -3,6 +3,7 @@ import { MDComponent } from "../foundation/component";
 
 /**
  * Komponen tombol segmen kustom yang memperluas MDComponent.
+ * @extends MDComponent
  * @fires MDSegmentedButtonComponent#onButtonClick - Menunjukkan bahwa tombol dalam komponen segmen telah diklik.
  */
 class MDSegmentedButtonComponent extends MDComponent {
