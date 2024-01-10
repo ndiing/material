@@ -37,7 +37,7 @@ class MDRipple extends MDCDK {
         // this.trigger.addEventListener("mouseup", this.handleMouseup);
         this.trigger.addEventListener("focus", this.handleFocus);
         this.trigger.addEventListener("blur", this.handleBlur);
-        this.root.addEventListener("animationend", this.handleAnimationend);
+        
     }
 
     /**
@@ -60,7 +60,7 @@ class MDRipple extends MDCDK {
         // this.trigger.removeEventListener("mouseup", this.handleMouseup);
         this.trigger.removeEventListener("focus", this.handleFocus);
         this.trigger.removeEventListener("blur", this.handleBlur);
-        this.root.removeEventListener("animationend", this.handleAnimationend);
+        
     }
 
     /**
@@ -84,6 +84,8 @@ class MDRipple extends MDCDK {
      * @param {MouseEvent} event - The mouse event triggering the action.
      */
     handleMousedown(event) {
+        this.root.addEventListener("animationend", this.handleAnimationend);
+
         window.addEventListener("mouseup", this.handleMouseup);
         
         this.root.classList.add("md-ripple--pressed");
@@ -149,6 +151,8 @@ class MDRipple extends MDCDK {
             this.root.style.removeProperty('--md-ripple-y')
             this.root.style.removeProperty('--md-ripple')
             this.root.style.removeProperty('--md-ripple-fadeout')
+
+            this.root.removeEventListener("animationend", this.handleAnimationend);
         }
         
     }
