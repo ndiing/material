@@ -35,7 +35,7 @@ class MainComponent extends MDComponent{
                             <!-- <div href="/icon">Icon</div> -->
                             <!-- <div href="/motion">Motion</div> -->
                             <!-- <div href="/shape">Shape</div> -->
-                            <!-- <div href="/typography">Typography</div> -->
+                            <div href="/typography">Typography</div>
                             <!-- <div href="/bottom-app-bar">Bottom App Bar</div> -->
                             <!-- <div href="/top-app-bar">Top App Bar</div> -->
                             <!-- <div href="/badge">Badge</div> -->
