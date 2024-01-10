@@ -1,26 +1,21 @@
-// import "./foundation/color.js";
-// import "./foundation/elevation.js";
-import "./foundation/icon.js";
-// import "./foundation/motion.js";
-// import "./foundation/shape.js";
-// import "./foundation/typography.js";
-// import "./foundation/layout.js";
-// import "./foundation/router.js";
-// import "./foundation/outlet.js";
-// import "./foundation/component.js";
-// import "./foundation/cdk.js";
-// import "./foundation/store.js";
-// import "./foundation/virtual-scroll.js";
-// import "./foundation/ripple.js";
-// import "./foundation/popover.js";
-// import "./foundation/image.js";
+import "./foundation/component.js";
+import "./foundation/cdk.js";
+import "./foundation/layout.js";
+import "./foundation/router.js";
+import "./foundation/outlet.js";
+import "./foundation/ripple.js";
+import "./foundation/store.js";
+import "./foundation/scroll.js";
+import "./foundation/popover.js";
+import "./foundation/moveable.js";
+
+import "./style/style.js";
 
 import "./bottom-app-bar/bottom-app-bar.js";
 import "./top-app-bar/top-app-bar.js";
 import "./badge/badge.js";
 import "./button/button.js";
 import "./fab/fab.js";
-import "./extended-fab/extended-fab.js";
 import "./icon-button/icon-button.js";
 import "./segmented-button/segmented-button.js";
 import "./card/card.js";

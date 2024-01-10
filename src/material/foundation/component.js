@@ -1,41 +1,39 @@
-const { LitElement } = require("lit");
+import { LitElement } from "lit";
 
 /**
- * Mewakili sebuah komponen untuk framework MD.
- * Memperluas kelas LitElement.
+ * Custom component based on LitElement.
  */
 class MDComponent extends LitElement {
     /**
-     * Melakukan override terhadap metode pembuatan root render default dari LitElement.
-     * @private
-     * @returns {this} - Instance dari komponen.
+     * Overrides the createRenderRoot method to return 'this'.
+     * @returns {this} The current element instance.
      */
     createRenderRoot() {
         return this;
     }
 
     /**
-     * Melampirkan event listener ke komponen.
-     * @param {string} type - Jenis dari event yang akan didengarkan.
-     * @param {EventListenerOrEventListenerObject} listener - Fungsi event listener yang akan dipanggil ketika event terjadi.
+     * Adds an event listener to the element.
+     * @param {string} type - The type of event to listen for.
+     * @param {Function} listener - The callback function to execute when the event is triggered.
      */
     on(type, listener) {
         this.addEventListener(type, listener);
     }
 
     /**
-     * Menghapus event listener dari komponen.
-     * @param {string} type - Jenis dari event untuk menghapus event listener.
-     * @param {EventListenerOrEventListenerObject} listener - Fungsi event listener yang akan dihapus.
+     * Removes an event listener from the element.
+     * @param {string} type - The type of event to remove the listener from.
+     * @param {Function} listener - The callback function previously registered.
      */
     off(type, listener) {
         this.removeEventListener(type, listener);
     }
 
     /**
-     * Memancarkan sebuah event kustom dari komponen.
-     * @param {string} type - Jenis dari event kustom yang akan di-dispatch.
-     * @param {any} detail - Detail opsional yang akan disertakan dalam event.
+     * Emits a custom event from the element.
+     * @param {string} type - The type of the custom event.
+     * @param {*} detail - Any data to be sent as the event's `detail` property.
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

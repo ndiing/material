@@ -1,25 +1,27 @@
-.md-segmented-button{
+.md-segmented-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
 
-    .md-button{
-        &:first-child{
+    > .md-button {
+        flex: 1;
+
+        &:first-child {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-        &:last-child{
+
+        &:last-child {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-        &:not(:first-child):not(:last-child){
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+        
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
         }
-        +.md-button{
+
+        + .md-button {
             margin-left: -1px;
         }
     }

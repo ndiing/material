@@ -1,23 +1,45 @@
 .md-icon-button {
-    @extend .md-icon;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
 
     &.md-icon-button--toggle {
         &[activated] {
-            font-variation-settings:
-                "FILL" 1,
-                "wght" 400,
-                "GRAD" 0,
-                "opsz" 24;
             background: transparent;
             color: var(--md-sys-color-primary);
+
+            .md-icon-button__icon {
+                font-variation-settings:
+                    "FILL" 1,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
         }
     }
 }
 
+.md-icon-button__native {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    color: transparent;
+}
+
+.md-icon-button__icon {
+    @extend .md-icon;
+}
+
 .md-icon-button--filled {
-    width: 40px;
     height: 40px;
-    border-radius: 50%;
+    width: 40px;
+    border-radius: calc(40px / 2);
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
 
@@ -31,10 +53,10 @@
         }
     }
 }
-.md-icon-button--tonal {
-    width: 40px;
+.md-icon-button--filled-tonal {
     height: 40px;
-    border-radius: 50%;
+    width: 40px;
+    border-radius: calc(40px / 2);
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 
@@ -49,19 +71,19 @@
     }
 }
 .md-icon-button--outlined {
-    width: 40px;
     height: 40px;
-    border-radius: 50%;
+    width: 40px;
+    border-radius: calc(40px / 2);
+    color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 
     &.md-icon-button--toggle {
-        // background: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-on-surface-variant);
-
+        
         &[activated] {
             background: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);
-            border: 1px solid var(--md-sys-color-inverse-surface);
+            border-color: var(--md-sys-color-inverse-surface);
         }
     }
 }

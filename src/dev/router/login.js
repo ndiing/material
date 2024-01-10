@@ -1,18 +1,24 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
-class DevLoginComponent extends MDComponent{
+class LoginComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
-            <h1>Login</h1>
-            <div>
-                <div routerLink="/">/</div>
+            <div class="md-layout">
+                <div class="md-layout__grid">
+                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4 ">
+                        <h1>Login</h1>
+                        <md-outlet></md-outlet>
+                    </div>
+                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4 "></div>
+                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4 "></div>
+                </div>
             </div>
-            <md-outlet></md-outlet>
         `
     }
 }
 
-customElements.define('dev-login',DevLoginComponent)
+customElements.define('login-component',LoginComponent)
 
-export default document.createElement('dev-login')
+export default document.createElement('login-component')

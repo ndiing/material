@@ -1,109 +1,109 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
 /**
- * Komponen fab kustom yang memperluas MDComponent.
- * @extends MDComponent
+ * MDFabComponent represents a floating action button (FAB) element with customizable appearance and ripple effect.
  */
 class MDFabComponent extends MDComponent {
     /**
-     * Properti untuk MDFabComponent.
-     * @property {string} icon - Ikon yang ditampilkan di dalam fab.
-     * @property {string} label - Label atau teks yang ditampilkan di dalam fab.
-     * @property {string} type - Tipe dari fab (misalnya, "button", "submit", "reset").
-     * @property {string} appearance - Gaya penampilan dari fab ("extended").
-     * @property {string} size - Gaya ukuran dari fab ("small", "large").
+     * Defines the properties and their types for MDFabComponent.
+     * @property {String} size - The size of the FAB. Can be 'small' or 'large'.
+     * @property {String} appearance - The appearance/style of the FAB. Currently supports 'extended'.
+     * @property {String} type - The type of the button.
+     * @property {String} icon - The icon displayed in the FAB.
+     * @property {String} label - The label or text content of the FAB.
+     * @returns {Object} An object containing property definitions.
      */
     static get properties() {
         return {
+            size: { type: String },
+            appearance: { type: String },
+            type: { type: String },
             icon: { type: String },
             label: { type: String },
-            type: { type: String },
-            appearance: { type: String },
-            size: { type: String },
         };
     }
 
     /**
-     * Konstruktor untuk MDFabComponent.
+     * Constructor for MDFabComponent setting default 'type' to "button".
      */
     constructor() {
         super();
-        // Tipe fab default
         this.type = "button";
     }
 
     /**
-     * Mengambil elemen fab asli.
-     * @returns {HTMLElement} Elemen fab asli.
+     * Returns the native button element inside the MDFabComponent.
+     * @returns {HTMLElement} The native button element.
      */
-    get native() {
+    get fabNative() {
         return this.querySelector(".md-fab__native");
     }
 
     /**
-     * Merender MDFabComponent.
-     * @returns {TemplateResult} Hasil template yang dirender.
+     * Renders the HTML template for the MDFabComponent.
+     * @returns {HTMLElement} A template result representing the rendered HTML.
      */
     render() {
         // prettier-ignore
         return html`
-            ${this.icon ? html`<div class="md-fab__icon">${this.icon}</div>` : nothing}
-            ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing}
             <button class="md-fab__native" .type="${this.type}"></button>
+            ${this.icon ? html`<div class="md-fab__icon">${this.icon}</div>` : ``}
+            ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : ``}
         `;
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
-     * Menginisialisasi komponen fab dan efek riaknya.
-     * @returns {Promise<void>} Promise yang menyelesaikan inisialisasi.
+     * Lifecycle method called when the element is added to the DOM.
+     * Initializes the component and attaches MDRipple effect to the button.
+     * @returns {Promise<void>} A promise resolving when initialization is complete.
      */
-     connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-fab");
-        
-    }
-
-    async firstUpdated(){
         await this.updateComplete;
-        // Inisialisasi efek riak untuk fab
-        this.mdripple = new MDRipple(this, {
-            trigger: this.native,
+        this.classList.add("md-fab");
+        this.mdRipple = new MDRipple(this, {
+            trigger: this.fabNative,
         });
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
-     * Memperbarui gaya fab berdasarkan perubahan properti.
-     * @param {Map} changedProperties - Properti yang telah berubah.
+     * Lifecycle method called when the element is removed from the DOM.
+     * Cleans up the component, removing added classes and destroying the ripple effect.
      */
-    updated(changedProperties) {
-        if (changedProperties.has("appearance")) {
-            const validAppearances = ["extended"];
-            const { appearance } = this;
-            if (validAppearances.includes(appearance)) {
-                validAppearances.forEach((validAppearance) => {
-                    this.classList.remove(`md-fab--${validAppearance}`);
-                });
-                this.classList.add(`md-fab--${appearance}`);
-            }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-fab");
+        this.mdRipple.destroy();
+    }
+
+    /**
+     * Lifecycle method called after the first update of the element.
+     * @param {Map<any, any>} _changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(_changedProperties) {
+        // Implementation specific to first update (not provided in the snippet)
+    }
+
+    /**
+     * Lifecycle method called when properties are updated.
+     * Updates the size-related and appearance-related classes based on their respective properties.
+     * @param {Map<any, any>} _changedProperties - A Map of properties that have changed.
+     */
+    updated(_changedProperties) {
+        if (_changedProperties.has("size")) {
+            ["small", "large"].forEach((size) => this.classList.remove("md-fab--" + size));
+            if (this.size) this.classList.add("md-fab--" + this.size);
         }
-        if (changedProperties.has("size")) {
-            const validSizes = ["small", "large"];
-            const { size } = this;
-            if (validSizes.includes(size)) {
-                validSizes.forEach((validSize) => {
-                    this.classList.remove(`md-fab--${validSize}`);
-                });
-                this.classList.add(`md-fab--${size}`);
-            }
+        if (_changedProperties.has("appearance")) {
+            ["extended"].forEach((appearance) => this.classList.remove("md-fab--" + appearance));
+            if (this.appearance) this.classList.add("md-fab--" + this.appearance);
         }
     }
 }
 
-// Tentukan elemen kustom "md-fab"
+// Registers the MDFabComponent custom element
 customElements.define("md-fab", MDFabComponent);
 
 export { MDFabComponent };

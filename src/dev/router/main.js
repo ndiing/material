@@ -1,92 +1,85 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
-import { MDRouter } from "../../material/foundation/router";
 
-class DevMainComponent extends MDComponent{
-    static get properties(){
-        return {
-            isAuthenticated:{type:Boolean}
-        }
-    }
-    
+class MainComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded2
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
+                    <div class="md-layout__column--expanded2 md-layout__column--medium8 md-layout__column--compact4">
                         <div>
-                            <!-- <div routerLink="/">/</div>
-                            <div routerLink="/users">/users</div>
-                            <div routerLink="/users/ndiing">/users/ndiing</div>
-                            <div routerLink="/blogs">/blogs</div>
-                            <div routerLink="/blogs/ndiing">/blogs/ndiing</div>
-                            <div routerLink="/error">/error</div>
-                            ${localStorage.isAuthenticated==='1'?html`<div @click="${this.handleLogout}">/logout</div>`:``} -->
+                            <!-- <div href="/">/</div> -->
+                            
+                            <!-- <div href="/users">/users</div> -->
+                            <!-- <div href="/users?user=name&pass=word">/users?user=name&pass=word</div> -->
+                            <!-- <div href="/users/1">/users/1</div> -->
 
-                            <!-- <div routerLink="/badge">badge</div> -->
-                            <!-- <div routerLink="/bottom-app-bar">bottom-app-bar</div> -->
-                            <!-- <div routerLink="/bottom-sheet">bottom-sheet</div> -->
-                            <div routerLink="/button">button</div>
-                            <!-- <div routerLink="/card">card</div> -->
-                            <!-- <div routerLink="/carousel">carousel</div> -->
-                            <div routerLink="/checkbox">checkbox</div>
-                            <!-- <div routerLink="/chip">chip</div> -->
-                            <!-- <div routerLink="/date-picker">date-picker</div> -->
-                            <!-- <div routerLink="/dialog">dialog</div> -->
-                            <!-- <div routerLink="/divider">divider</div> -->
-                            <!-- <div routerLink="/extended-fab">extended-fab</div> -->
-                            <div routerLink="/fab">fab</div>
-                            <div routerLink="/icon-button">icon-button</div>
-                            <div routerLink="/list">list</div>
-                            <!-- <div routerLink="/menu">menu</div> -->
-                            <!-- <div routerLink="/navigation-bar">navigation-bar</div> -->
-                            <!-- <div routerLink="/navigation-drawer">navigation-drawer</div> -->
-                            <!-- <div routerLink="/navigation-rail">navigation-rail</div> -->
-                            <!-- <div routerLink="/progress-indicator">progress-indicator</div> -->
-                            <div routerLink="/radio-button">radio-button</div>
-                            <!-- <div routerLink="/router">router</div> -->
-                            <!-- <div routerLink="/search">search</div> -->
-                            <div routerLink="/segmented-button">segmented-button</div>
-                            <!-- <div routerLink="/side-sheet">side-sheet</div> -->
-                            <!-- <div routerLink="/slider">slider</div> -->
-                            <!-- <div routerLink="/snackbar">snackbar</div> -->
-                            <div routerLink="/switch">switch</div>
-                            <!-- <div routerLink="/tab">tab</div> -->
-                            <!-- <div routerLink="/text-field">text-field</div> -->
-                            <!-- <div routerLink="/time-picker">time-picker</div> -->
-                            <!-- <div routerLink="/tooltip">tooltip</div> -->
-                            <!-- <div routerLink="/top-app-bar">top-app-bar</div> -->
+                            <!-- <div href="/blogs">/blogs</div> -->
+                            <!-- <div href="/blogs?user=name&pass=word">/blogs?user=name&pass=word</div> -->
+                            <!-- <div href="/blogs/1">/blogs/1</div> -->
+                            
+                            <!-- <div href="/login">/login</div> -->
+                            <!-- <div href="/error">/error</div> -->
+
+                            <!-- <div href="/example">/example</div> -->
+
+                            <!-- <div href="/layout">Layout</div> -->
+                            <!-- <div href="/ripple">Ripple</div> -->
+                            <!-- <div href="/store">Store</div> -->
+                            <!-- <div href="/scroll">Scroll</div> -->
+                            <!-- <div href="/popover">Popover</div> -->
+                            <!-- <div href="/moveable">Moveable</div> -->
+                            <!-- <div href="/color">Color</div> -->
+                            <!-- <div href="/elevation">Elevation</div> -->
+                            <!-- <div href="/icon">Icon</div> -->
+                            <!-- <div href="/motion">Motion</div> -->
+                            <!-- <div href="/shape">Shape</div> -->
+                            <!-- <div href="/typography">Typography</div> -->
+                            <!-- <div href="/bottom-app-bar">Bottom App Bar</div> -->
+                            <!-- <div href="/top-app-bar">Top App Bar</div> -->
+                            <!-- <div href="/badge">Badge</div> -->
+                            <div href="/button">Button</div>
+                            <div href="/fab">Fab</div>
+                            <div href="/icon-button">Icon Button</div>
+                            <div href="/segmented-button">Segmented Button</div>
+                            <!-- <div href="/card">Card</div> -->
+                            <!-- <div href="/carousel">Carousel</div> -->
+                            <!-- <div href="/checkbox">Checkbox</div> -->
+                            <!-- <div href="/chip">Chip</div> -->
+                            <!-- <div href="/date-picker">Date Picker</div> -->
+                            <!-- <div href="/dialog">Dialog</div> -->
+                            <!-- <div href="/divider">Divider</div> -->
+                            <!-- <div href="/list">List</div> -->
+                            <!-- <div href="/menu">Menu</div> -->
+                            <!-- <div href="/navigation-bar">Navigation Bar</div> -->
+                            <!-- <div href="/navigation-drawer">Navigation Drawer</div> -->
+                            <!-- <div href="/navigation-rail">Navigation Rail</div> -->
+                            <!-- <div href="/progress-indicator">Progress Indicator</div> -->
+                            <!-- <div href="/radio-button">Radio Button</div> -->
+                            <!-- <div href="/search">Search</div> -->
+                            <!-- <div href="/bottom-sheet">Bottom Sheet</div> -->
+                            <!-- <div href="/side-sheet">Side Sheet</div> -->
+                            <!-- <div href="/slider">Slider</div> -->
+                            <!-- <div href="/snackbar">Snackbar</div> -->
+                            <!-- <div href="/switch">Switch</div> -->
+                            <!-- <div href="/tab">Tab</div> -->
+                            <!-- <div href="/text-field">Text Field</div> -->
+                            <!-- <div href="/time-picker">Time Picker</div> -->
+                            <!-- <div href="/tooltip">Tooltip</div> -->
                         </div>
                     </div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded10
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
+                    <div class="md-layout__column--expanded10 md-layout__column--medium8 md-layout__column--compact4">
+                        <!-- <h1>Main</h1> -->
                         <md-outlet></md-outlet>
                     </div>
+                    <div class="md-layout__column--expanded10 md-layout__column--medium8 md-layout__column--compact4"></div>
                 </div>
-            </div>
+            </div>            
         `
-    }
-
-    connectedCallback(){
-        super.connectedCallback()
-        this.isAuthenticated=localStorage.isAuthenticated
-    }
-
-    handleLogout(){
-        localStorage.isAuthenticated=0
-        MDRouter.navigate('/login')
     }
 }
 
-customElements.define('dev-main',DevMainComponent)
+customElements.define('main-component',MainComponent)
 
-export default document.createElement('dev-main')
+export default document.createElement('main-component')

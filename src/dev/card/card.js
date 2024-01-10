@@ -1,37 +1,23 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
-class DevCard extends MDComponent{
+class CardComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
             <!-- <div class="md-layout"> -->
                 <div class="md-layout__grid">
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-card></md-card>
                     </div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
                 </div>
             <!-- </div> -->
         `
     }
 }
 
-customElements.define('dev-card',DevCard)
+customElements.define('card-component',CardComponent)
 
-export default document.createElement('dev-card')
+export default document.createElement('card-component')

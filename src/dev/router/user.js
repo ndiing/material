@@ -1,9 +1,9 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
-import { MDRipple } from "../../material/foundation/ripple";
 
-class DevUserComponent extends MDComponent{
+class UserComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
             <h1>User</h1>
             <md-outlet></md-outlet>
@@ -11,6 +11,6 @@ class DevUserComponent extends MDComponent{
     }
 }
 
-customElements.define('dev-user',DevUserComponent)
+customElements.define('user-component',UserComponent)
 
-export default document.createElement('dev-user')
+export default document.createElement('user-component')

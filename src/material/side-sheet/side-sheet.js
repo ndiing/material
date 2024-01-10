@@ -1,24 +1,19 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 
 class MDSideSheetComponent extends MDComponent{
     static get properties(){
         return {
-            label:{type:String}
         }
     }
 
     constructor(){
         super()
-
-        this.label='Label'
     }
 
     render(){
         // prettier-ignore
-        return html`
-            ${this.label?html`<div class="md-side-sheet__label">${this.label}</div>`:nothing}
-        `
+        return html``
     }
 
     connectedCallback(){
@@ -28,15 +23,16 @@ class MDSideSheetComponent extends MDComponent{
 
     disconnectedCallback(){
         super.disconnectedCallback()
+        this.classList.remove('md-side-sheet')
     }
 
-    firstUpdated(changedProperties){
-    }
+    firstUpdated(_changedProperties){}
 
-    updated(changedProperties){
-    }
+    updated(_changedProperties){}
 }
 
 customElements.define('md-side-sheet',MDSideSheetComponent)
 
-export{MDSideSheetComponent}
+export {
+    MDSideSheetComponent
+}

@@ -1,24 +1,19 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 
 class MDTabComponent extends MDComponent{
     static get properties(){
         return {
-            label:{type:String}
         }
     }
 
     constructor(){
         super()
-
-        this.label='Label'
     }
 
     render(){
         // prettier-ignore
-        return html`
-            ${this.label?html`<div class="md-tab__label">${this.label}</div>`:nothing}
-        `
+        return html``
     }
 
     connectedCallback(){
@@ -28,15 +23,16 @@ class MDTabComponent extends MDComponent{
 
     disconnectedCallback(){
         super.disconnectedCallback()
+        this.classList.remove('md-tab')
     }
 
-    firstUpdated(changedProperties){
-    }
+    firstUpdated(_changedProperties){}
 
-    updated(changedProperties){
-    }
+    updated(_changedProperties){}
 }
 
 customElements.define('md-tab',MDTabComponent)
 
-export{MDTabComponent}
+export {
+    MDTabComponent
+}

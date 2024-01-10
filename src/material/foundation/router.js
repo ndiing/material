@@ -1,28 +1,13 @@
-// const route = {
-//     path: String,
-//     component: HTMLElement,
-//     load: () => import("../../dev/router/main").then((m) => m.default),
-//     beforeLoad: (resolve, reject) => resolve(),
-//     children: [],
-// };
-// const routes = [route, route, route];
-
 /**
- * Class yang mewakili router sederhana.
- * @fires window#onCurrentEntryChange - Dipicu ketika entri saat ini berubah.
- * @fires window#onNavigate - Dipicu saat navigasi dimulai.
- * @fires window#onNavigateError - Dipicu saat terjadi kesalahan selama navigasi.
- * @fires window#onNavigateSuccess - Dipicu saat navigasi berhasil.
+ * MDRouter is a class for managing routing and navigation within the application.
  */
 class MDRouter {
     /**
-     * Memancarkan event kustom.
-     * @private
-     * @param {string} type - Tipe dari event.
-     * @param {Object} [detail=this] - Detail tambahan yang akan disertakan dalam event.
-     * @fires window#event - Event kustom yang dipancarkan ke window.
+     * Emits a custom event from the window object.
+     * @param {string} type - The type of the custom event.
+     * @param {*} detail - Any data to be sent as the event's `detail` property.
      */
-    static emit(type, detail = { ...this }) {
+    static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,
@@ -32,49 +17,35 @@ class MDRouter {
     }
 
     /**
-     * Recursively adds routes to the router.
-     * @private
-     * @param {Array<Route>} routes - The routes to be added.
+     * Sets routes recursively for the application.
+     * @param {Array<Object>} routes - The array of route objects.
      * @param {Object} [parent=null] - The parent route object.
-     * @returns {Array<Route>} - The modified routes array.
+     * @returns {Array<Object>} An array of all route objects.
      */
-    static addRoutes(routes = [], parent = null) {
+    static setRoutes(routes = [], parent = null) {
         return routes.reduce((p, c) => {
             c.parent = parent;
             c.pattern = [c.parent?.pattern ?? "", c.path].join("/").replace(/\/+/g, "/");
             p = p.concat(c);
-            if (c.children) {
-                p = p.concat(this.addRoutes(c.children, c));
-            }
+            if (c.children && c.children.length) p = p.concat(this.setRoutes(c.children, c));
             return p;
         }, []);
     }
 
     /**
-     * Retrieves the stack of routes.
-     * @private
-     * @param {Object} route - The route object.
-     * @returns {Array<Object>} - The stack of routes.
+     * Retrieves the query parameters from the URL.
+     * @returns {Object} An object containing the query parameters.
      */
-    static getStack(route) {
-        return [route].reduce((p, c) => {
-            if (c.parent) p = p.concat(this.getStack(c.parent));
-            p = p.concat(c);
-            return p;
-        }, []);
+    static getQuery() {
+        return Object.fromEntries(new URLSearchParams(window.location.search).entries());
     }
 
-    /**
-     * Handles the loading of routes and manages the navigation lifecycle.
-     * @private
-     * @param {Event} event - The load event.
+     /**
+     * Retrieves the matching route based on the URL path.
+     * @returns {Object} The matched route object.
      */
-    static async handleLoad(event) {
-        this.emit("onCurrentEntryChange");
-
-        this.path = window.location.pathname;
-        this.params = {};
-        this.route = this.routes.find((route) => {
+    static getRoute() {
+        return this.routes.find((route) => {
             const regexp = new RegExp("^" + route.pattern.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)", "i");
             const matches = this.path.match(regexp);
             if (matches) {
@@ -83,15 +54,62 @@ class MDRouter {
             }
             return null;
         });
-        this.query = Object.fromEntries(new URLSearchParams(window.location.search).entries());
-        this.stack = this.getStack(this.route);
+    }
 
-        if (this.controller) this.controller.abort();
+    /**
+     * Retrieves all routes including parent routes recursively.
+     * @param {Object} route - The route object to start the recursive search from.
+     * @returns {Array<Object>} An array containing all route objects.
+     */
+    static getRoutes(route) {
+        return [route].reduce((p, c) => {
+            if (c.parent) p = p.concat(this.getRoutes(c.parent));
+            p = p.concat(c);
+            return p;
+        }, []);
+    }
+
+     /**
+     * Asynchronously retrieves the outlet element for a given route.
+     * @param {Object} route - The route object for which the outlet element is retrieved.
+     * @returns {Promise<HTMLElement>} A promise that resolves to the outlet HTMLElement.
+     */
+    static async getOutlet(route) {
+        return await new Promise((resolve) => {
+            let outlet;
+            let observer;
+            const callback = () => {
+                outlet = route.container.querySelector("md-outlet");
+                if (outlet) {
+                    if (observer) observer.disconnect();
+                    resolve(outlet);
+                }
+            };
+            callback();
+            if (!outlet) {
+                observer = new MutationObserver(callback);
+                observer.observe(route.container, {
+                    childList: true,
+                    subtree: true,
+                });
+            }
+        });
+    }
+
+    /**
+     * Handles the loading of routes, components, and their placement within the application.
+     * @param {Event} event - The event that triggers the route handling (e.g., 'popstate').
+     */
+    static async handleLoad(event) {
+        if (this.controller && !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
+        this.path = window.location.pathname;
+        this.query = this.getQuery();
+        this.params = {};
+        this.route = this.getRoute();
+        this.entries = this.getRoutes(this.route);
 
-        for (const route of this.stack) {
-            this.emit("onNavigate");
-
+        for (const route of this.entries) {
             if (!route.beforeLoad) route.beforeLoad = (resolve) => resolve();
             try {
                 await new Promise((resolve, reject) => {
@@ -99,101 +117,67 @@ class MDRouter {
                     route.beforeLoad(resolve, reject);
                 });
             } catch (error) {
-                this.emit("onNavigateError");
-
                 break;
             }
-
             if (!route.component) route.component = await route.load();
             if (!route.container) route.container = route.parent?.component ?? document.body;
 
-            const outlet = await new Promise((resolve) => {
-                let observer;
-                let outlet;
-                const callback = () => {
-                    outlet = route.container.querySelector("md-outlet");
-                    if (outlet) {
-                        if (observer) observer.disconnect();
-                        resolve(outlet);
-                    }
-                };
-                callback();
-                if (!outlet) {
-                    observer = new MutationObserver(callback);
-                    observer.observe(route.container, {
-                        childList: true,
-                        subtree: true,
-                    });
-                }
-            });
+            const outlet = await this.getOutlet(route);
 
             if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
 
-            const outlets = document.body.querySelectorAll("md-outlet");
+            const outlets = document.querySelectorAll("md-outlet");
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
                 while (nextElement) {
-                    let component = this.stack.find((route) => route.component === nextElement);
-                    if (!component) nextElement.remove();
+                    if (!this.entries.find((route) => route.component === nextElement)) nextElement.remove();
                     nextElement = nextElement.nextElementSibling;
                 }
             }
         }
-        this.emit("onNavigateSuccess");
     }
 
     /**
-     * Menavigasi ke URL tertentu.
-     * @param {string} url - URL yang akan dituju.
-     * @example
-     * // Navigasi ke rute '/about'
-     * MDRouter.navigate('/about');
+     * Navigates to a specified URL using HTML5 History API.
+     * @param {string} url - The URL to navigate to.
      */
     static navigate(url) {
         window.history.pushState({}, null, url);
     }
 
     /**
-     * Handles click events for navigation.
-     * @private
-     * @param {Event} event - The click event.
+     * Handles click events on anchor elements and navigates to their respective URLs.
+     * @param {MouseEvent} event - The click event triggered by the user.
      */
     static handleClick(event) {
-        const routerLink = event.target.closest("[routerLink]");
-        if (routerLink) {
-            const url = routerLink.getAttribute("routerLink");
+        const anchor = event.target.closest("[href]");
+        if (anchor) {
+            event.preventDefault();
+            const url = anchor.getAttribute("href");
             this.navigate(url);
         }
     }
 
     /**
-     * Representasi objek konfigurasi suatu rute.
-     * @typedef {Object} Route
-     * @property {String} path - Path untuk rute tersebut.
-     * @property {HTMLElement} component - Komponen yang terkait dengan rute tersebut.
-     * @property {Function} load - Fungsi untuk memuat rute tersebut.
-     * @property {Function} [beforeLoad] - Fungsi yang dieksekusi sebelum memuat rute tersebut.
-     * @property {Array<Route>} [children] - Array dari rute anak.
-     */
-
-    /**
-     * Menginisialisasi router dengan rute yang diberikan.
-     * @param {Array<Route>} [routes=[]] - Array konfigurasi rute.
+     * Initializes the router with provided routes.
+     * @param {Array<Object>} routes - The array of route objects.
      */
     static init(routes = []) {
         const pushState = window.history.pushState;
         window.history.pushState = function () {
             pushState.apply(this, arguments);
-
             MDRouter.emit("popstate");
         };
 
-        this.routes = this.addRoutes(routes);
+        this.routes = this.setRoutes(routes);
 
-        window.addEventListener("DOMContentLoaded", this.handleLoad.bind(this));
-        window.addEventListener("popstate", this.handleLoad.bind(this));
+        this.handleLoad = this.handleLoad.bind(this);
 
-        window.addEventListener("click", this.handleClick.bind(this));
+        window.addEventListener("DOMContentLoaded", this.handleLoad);
+        window.addEventListener("popstate", this.handleLoad);
+
+        this.handleClick = this.handleClick.bind(this);
+        window.addEventListener("click", this.handleClick);
     }
 }
 

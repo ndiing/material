@@ -1,37 +1,24 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
-import { MDRipple } from "../../material/foundation/ripple";
-import { MDPopover } from "../../material/foundation/popover";
 
-class DevBlogsComponent extends MDComponent {
-    render() {
+class BlogsComponent extends MDComponent{
+    render(){
+        // prettier-ignore
         return html`
-            <h1>Blogs</h1>
-            <button style="background:#ffffff;">ripple</button>
-            <menu style="list-style:none;background:#ffffff;">
-                <li><a>Lorem, ipsum.</a></li>
-                <li><a>Repudiandae, error.</a></li>
-                <li><a>At, odit.</a></li>
-                <li><a>In, reprehenderit.</a></li>
-                <li><a>Quia, cumque?</a></li>
-            </menu>
-            <md-outlet></md-outlet>
-        `;
-    }
-    async connectedCallback() {
-        super.connectedCallback();
-        await this.updateComplete;
-
-        const button = this.querySelector("button");
-        new MDRipple(button);
-
-        const menu = this.querySelector("menu");
-        this.mdpopover = new MDPopover(menu, {
-            trigger: button,
-        });
+            <!-- <div class="md-layout"> -->
+                <div class="md-layout__grid">
+                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4 ">
+                        <h1>Blogs</h1>
+                        <md-outlet></md-outlet>
+                    </div>
+                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4 "></div>
+                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4 "></div>
+                </div>
+            <!-- </div> -->
+        `
     }
 }
 
-customElements.define("dev-blogs", DevBlogsComponent);
+customElements.define('blogs-component',BlogsComponent)
 
-export default document.createElement("dev-blogs");
+export default document.createElement('blogs-component')

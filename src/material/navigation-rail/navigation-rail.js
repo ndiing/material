@@ -1,24 +1,19 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 
 class MDNavigationRailComponent extends MDComponent{
     static get properties(){
         return {
-            label:{type:String}
         }
     }
 
     constructor(){
         super()
-
-        this.label='Label'
     }
 
     render(){
         // prettier-ignore
-        return html`
-            ${this.label?html`<div class="md-navigation-rail__label">${this.label}</div>`:nothing}
-        `
+        return html``
     }
 
     connectedCallback(){
@@ -28,15 +23,16 @@ class MDNavigationRailComponent extends MDComponent{
 
     disconnectedCallback(){
         super.disconnectedCallback()
+        this.classList.remove('md-navigation-rail')
     }
 
-    firstUpdated(changedProperties){
-    }
+    firstUpdated(_changedProperties){}
 
-    updated(changedProperties){
-    }
+    updated(_changedProperties){}
 }
 
 customElements.define('md-navigation-rail',MDNavigationRailComponent)
 
-export{MDNavigationRailComponent}
+export {
+    MDNavigationRailComponent
+}

@@ -2,35 +2,35 @@ import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 
 /**
- * Komponen tombol segmen kustom yang memperluas MDComponent.
- * @extends MDComponent
- * @fires MDSegmentedButtonComponent#onButtonClick - Menunjukkan bahwa tombol dalam komponen segmen telah diklik.
+ * MDSegmentedButtonComponent represents a segmented button element that renders multiple md-button elements.
+ * @fires MDSegmentedButtonComponent#onButtonClick - Fires when a button in the segmented button is clicked.
  */
 class MDSegmentedButtonComponent extends MDComponent {
     /**
-     * Properti untuk MDSegmentedButtonComponent.
-     * @property {Array} data - Array data yang digunakan untuk mengisi tombol segmen.
-     * @property {string} type - Jenis tombol segmen ("single-select" atau "multi-select").
+     * Defines the properties and their types for MDSegmentedButtonComponent.
+     * @property {String} type - The type of segmented button (single-select or multi-select).
+     * @property {Array} data - The data array to render buttons.
+     * @returns {Object} An object containing property definitions.
      */
     static get properties() {
         return {
-            data: { type: Array },
             type: { type: String },
+            data: { type: Array },
         };
     }
 
     /**
-     * Konstruktor untuk MDSegmentedButtonComponent.
+     * Constructor for MDSegmentedButtonComponent setting default values for 'type' and 'data'.
      */
     constructor() {
         super();
-        this.data = [];
         this.type = "single-select";
+        this.data = [];
     }
 
     /**
-     * Merender MDSegmentedButtonComponent.
-     * @returns {TemplateResult} Hasil template yang dirender.
+     * Renders the HTML template for the MDSegmentedButtonComponent using md-button elements.
+     * @returns {HTMLElement} A template result representing the rendered HTML.
      */
     render() {
         // prettier-ignore
@@ -38,21 +38,20 @@ class MDSegmentedButtonComponent extends MDComponent {
             ${this.data.map(doc => html`
                 <md-button
                     .doc="${doc}"
+                    .appearance="${"outlined"}"
+                    .type="${doc.type}"
                     .icon="${doc.icon}"
                     .label="${doc.label}"
-                    .type="${doc.type}"
                     .activated="${doc.activated}"
-                    .appearance="${doc.appearance}"
                     @click="${this.handleButtonClick}"
                 ></md-button>
             `)}
-        `;
+        `
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
-     * Menginisialisasi komponen tombol segmen.
-     * @returns {Promise<void>} Sebuah Promise yang diselesaikan ketika inisialisasi selesai.
+     * Lifecycle method called when the element is added to the DOM.
+     * Adds the 'md-segmented-button' class to the component.
      */
     connectedCallback() {
         super.connectedCallback();
@@ -60,46 +59,59 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat elemen dilepas dari DOM.
+     * Lifecycle method called when the element is removed from the DOM.
+     * Removes the 'md-segmented-button' class from the component.
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        // Logika pembersihan tambahan dapat ditambahkan di sini jika diperlukan.
+        this.classList.remove("md-segmented-button");
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat pembaruan pertama elemen terjadi.
-     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
+     * Lifecycle method called after the first update of the element.
+     * @param {Map<any, any>} _changedProperties - A Map of properties that have changed.
      */
-    firstUpdated(changedProperties) {}
-
-    /**
-     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
-     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
-     */
-    updated(changedProperties) {
-        // Logika untuk menangani pembaruan properti komponen dapat ditambahkan di sini.
+    firstUpdated(_changedProperties) {
+        // Implementation specific to first update (if any)
     }
 
     /**
-     * Menangani acara klik pada tombol segmen.
-     * @param {Event} event - Acara klik.
+     * Lifecycle method called when properties are updated.
+     * @param {Map<any, any>} _changedProperties - A Map of properties that have changed.
+     */
+    updated(_changedProperties) {
+        // Implementation specific to property updates (if any)
+    }
+
+    /**
+     * Handles the click event on a button in the segmented button.
+     * Toggles activation for multi-select or selects a single button for single-select.
+     * @param {Event} event - The click event on the button.
      */
     handleButtonClick(event) {
         const button = event.currentTarget;
+
         if (this.type === "multi-select") {
             button.doc.activated = !button.doc.activated;
         } else {
-            this.data.forEach((doc) => (doc.activated = doc === button.doc));
+            for (const doc of this.data) {
+                doc.activated = doc === button.doc;
+            }
         }
+
         this.requestUpdate();
-        this.emit('onButtonClick',{event,button})
+
+        /**
+         * Event fired when a button in the segmented button is clicked.
+         * @event MDSegmentedButtonComponent#onButtonClick
+         * @type {object}
+         * @property {Event} event - The original click event.
+         * @property {HTMLElement} button - The button element that was clicked.
+         */
+        this.emit("onButtonClick", { event, button });
     }
 }
 
-/**
- * Mendefinisikan elemen kustom "md-segmented-button".
- */
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
 
 export { MDSegmentedButtonComponent };

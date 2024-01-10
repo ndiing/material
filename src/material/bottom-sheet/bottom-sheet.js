@@ -1,24 +1,19 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 
 class MDBottomSheetComponent extends MDComponent{
     static get properties(){
         return {
-            label:{type:String}
         }
     }
 
     constructor(){
         super()
-
-        this.label='Label'
     }
 
     render(){
         // prettier-ignore
-        return html`
-            ${this.label?html`<div class="md-bottom-sheet__label">${this.label}</div>`:nothing}
-        `
+        return html``
     }
 
     connectedCallback(){
@@ -28,15 +23,16 @@ class MDBottomSheetComponent extends MDComponent{
 
     disconnectedCallback(){
         super.disconnectedCallback()
+        this.classList.remove('md-bottom-sheet')
     }
 
-    firstUpdated(changedProperties){
-    }
+    firstUpdated(_changedProperties){}
 
-    updated(changedProperties){
-    }
+    updated(_changedProperties){}
 }
 
 customElements.define('md-bottom-sheet',MDBottomSheetComponent)
 
-export{MDBottomSheetComponent}
+export {
+    MDBottomSheetComponent
+}

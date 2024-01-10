@@ -1,37 +1,23 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
-class DevMenu extends MDComponent{
+class MenuComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
             <!-- <div class="md-layout"> -->
                 <div class="md-layout__grid">
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-menu></md-menu>
                     </div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
                 </div>
             <!-- </div> -->
         `
     }
 }
 
-customElements.define('dev-menu',DevMenu)
+customElements.define('menu-component',MenuComponent)
 
-export default document.createElement('dev-menu')
+export default document.createElement('menu-component')

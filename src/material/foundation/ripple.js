@@ -1,56 +1,24 @@
 import { MDCDK } from "./cdk";
 
 /**
- * Mewakili efek Ripple Material Design yang diterapkan pada sebuah elemen.
- * @extends MDCDK
+ * MDRipple is a class that manages ripple effect functionality based on MDCDK.
  */
 class MDRipple extends MDCDK {
     /**
-     * Membuat sebuah instance dari MDRipple.
-     * @param {HTMLElement} root - Elemen root untuk menerapkan efek ripple.
-     * @param {Object} [options={}] - Opsi tambahan untuk efek ripple.
-     * @param {boolean} [options.bounded=true] - Apakah efek ripple dibatasi.
-     * @param {boolean} [options.centered=false] - Apakah efek ripple berada di tengah.
-     * @param {HTMLElement} [options.trigger] - Elemen yang memicu efek ripple.
-     * @param {number} [options.diameter] - Diameter dari efek ripple.
-     * @param {boolean} [options.fadeout] - Apakah menerapkan efek fade-out.
-     */
-    constructor(root, options = {}) {
-        super(root, options);
-    }
-
-    get diameter() {
-        return this._diameter;
-    }
-    set diameter(value) {
-        this._diameter = value;
-    }
-
-    /**
-     * Menginisialisasi efek ripple.
+     * Initializes the ripple effect and sets up event listeners.
      */
     init() {
         this.root.classList.add("md-ripple");
 
+        const rect = this.root.getBoundingClientRect();
+        this.diameter = this.options.diameter??(Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
+
+        this.root.style.setProperty("--md-ripple-diameter", this.diameter + "%");
+
         if (this.options.bounded !== false) this.root.classList.add("md-ripple--bounded");
-
         if (this.options.fadeout) this.root.classList.add("md-ripple--fadeout");
-
-        let diameter = parseFloat(window.getComputedStyle(this.root).getPropertyValue("--md-ripple-diameter"));
-
-        if (isNaN(diameter)) {
-            diameter = this.options.diameter;
-
-            if (!diameter) {
-                const rect = this.root.getBoundingClientRect();
-                diameter = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
-            }
-
-            this.root.style.setProperty("--md-ripple-diameter", diameter + "%");
-        }
-
-        this.diameter = diameter;
-
+        if (this.options.inverted) this.root.classList.add("md-ripple--inverted");
+        
         this.trigger = this.options.trigger ?? this.root;
         this.trigger.classList.add("md-ripple--trigger");
         this.trigger.setAttribute("tabIndex", 0);
@@ -69,22 +37,21 @@ class MDRipple extends MDCDK {
         // this.trigger.addEventListener("mouseup", this.handleMouseup);
         this.trigger.addEventListener("focus", this.handleFocus);
         this.trigger.addEventListener("blur", this.handleBlur);
+        this.root.addEventListener("animationend", this.handleAnimationend);
     }
 
     /**
-     * Menghancurkan efek ripple dan menghapus event listener.
+     * Cleans up and removes the ripple effect and event listeners.
      */
     destroy() {
-        this.root.style.removeProperty("md-ripple");
-        this.root.style.removeProperty("md-ripple--bounded");
-        this.root.style.removeProperty("md-ripple--fadeout");
+        this.root.classList.remove("md-ripple");
 
-        this.root.style.removeProperty("--md-ripple-left");
-        this.root.style.removeProperty("--md-ripple-top");
-        this.root.style.removeProperty("--md-ripple-x");
-        this.root.style.removeProperty("--md-ripple-y");
+        this.root.style.removeProperty("--md-ripple-diameter");
 
-        this.trigger.style.removeProperty("md-ripple--trigger");
+        this.root.classList.remove("md-ripple--bounded");
+        this.root.classList.remove('md-ripple--fadeout')
+
+        this.trigger.classList.remove("md-ripple--trigger");
         this.trigger.removeAttribute("tabIndex");
 
         this.trigger.removeEventListener("mouseenter", this.handleMouseenter);
@@ -93,44 +60,37 @@ class MDRipple extends MDCDK {
         // this.trigger.removeEventListener("mouseup", this.handleMouseup);
         this.trigger.removeEventListener("focus", this.handleFocus);
         this.trigger.removeEventListener("blur", this.handleBlur);
+        this.root.removeEventListener("animationend", this.handleAnimationend);
     }
 
     /**
-     * Handles the mouseenter event to add the "md-ripple--hover" class.
-     * @private
-     * @param {MouseEvent} event - The mouseenter event.
+     * Handles mouse enter event to add ripple hover effect.
+     * @param {MouseEvent} event - The mouse event triggering the action.
      */
     handleMouseenter(event) {
         this.root.classList.add("md-ripple--hover");
     }
 
     /**
-     * Handles the mouseleave event to remove the "md-ripple--hover" class.
-     * @private
-     * @param {MouseEvent} event - The mouseleave event.
+     * Handles mouse leave event to remove ripple hover effect.
+     * @param {MouseEvent} event - The mouse event triggering the action.
      */
     handleMouseleave(event) {
         this.root.classList.remove("md-ripple--hover");
     }
 
     /**
-     * Handles the mousedown event to trigger the ripple effect.
-     * @private
-     * @param {MouseEvent} event - The mousedown event.
+     * Handles mouse down event to display the ripple effect.
+     * @param {MouseEvent} event - The mouse event triggering the action.
      */
     handleMousedown(event) {
-        this.root.addEventListener("animationend", this.handleAnimationend);
-
         window.addEventListener("mouseup", this.handleMouseup);
-
+        
         this.root.classList.add("md-ripple--pressed");
-
         this.root.style.setProperty("--md-ripple", "none");
         this.root.style.setProperty("--md-ripple-fadeout", "none");
 
         const rect = this.root.getBoundingClientRect();
-
-        // this.root.style.setProperty("--md-ripple-diameter", this.diameter + "%");
 
         if (!this.options.centered) {
             const left = (event.clientX - rect.left) / rect.width;
@@ -138,6 +98,7 @@ class MDRipple extends MDCDK {
             const x = (0.5 - left) * (100 / this.diameter);
             const y = (0.5 - top) * ((100 / this.diameter) * (rect.height / rect.width));
 
+            // this.root.style.setProperty("--md-ripple-diameter", this.diameter + "%");
             this.root.style.setProperty("--md-ripple-left", left * 100 + "%");
             this.root.style.setProperty("--md-ripple-top", top * 100 + "%");
             this.root.style.setProperty("--md-ripple-x", x * 100 + "%");
@@ -149,51 +110,47 @@ class MDRipple extends MDCDK {
     }
 
     /**
-     * Handles the mouseup event to finish the ripple effect.
-     * @private
-     * @param {MouseEvent} event - The mouseup event.
+     * Handles mouse up event to remove the pressed state.
+     * @param {MouseEvent} event - The mouse event triggering the action.
      */
     handleMouseup(event) {
         this.root.classList.remove("md-ripple--pressed");
-
         window.removeEventListener("mouseup", this.handleMouseup);
     }
 
     /**
-     * Handles the focus event to add the "md-ripple--focused" class.
-     * @private
-     * @param {FocusEvent} event - The focus event.
+     * Handles focus event to add the ripple focus effect.
+     * @param {FocusEvent} event - The focus event triggering the action.
      */
     handleFocus(event) {
         this.root.classList.add("md-ripple--focused");
     }
 
     /**
-     * Handles the blur event to remove the "md-ripple--focused" class.
-     * @private
-     * @param {FocusEvent} event - The blur event.
+     * Handles blur event to remove the ripple focus effect.
+     * @param {FocusEvent} event - The blur event triggering the action.
      */
     handleBlur(event) {
         this.root.classList.remove("md-ripple--focused");
     }
 
     /**
-     * Handles the animationend event to clean up after the ripple effect.
-     * @private
-     * @param {AnimationEvent} event - The animationend event.
+     * Handles animation end event to clean up after ripple animation.
+     * @param {AnimationEvent} event - The animation event triggering the action.
      */
-    handleAnimationend(event) {
-        const animationName = this.options.fadeout ? "md-ripple-fadeout" : "md-ripple";
-        if (event.animationName === animationName) {
-            this.root.style.removeProperty("--md-ripple");
-            this.root.style.removeProperty("--md-ripple-fadeout");
-            this.root.style.removeProperty("--md-ripple-left");
-            this.root.style.removeProperty("--md-ripple-top");
-            this.root.style.removeProperty("--md-ripple-x");
-            this.root.style.removeProperty("--md-ripple-y");
-
-            this.root.removeEventListener("animationend", this.handleAnimationend);
+    handleAnimationend(event){
+        const animationend=
+        this.options.fadeout?'md-ripple-fadeout':'md-ripple'
+        if(event.animationName===animationend){
+            // this.root.style.removeProperty('--md-ripple-diameter')
+            this.root.style.removeProperty('--md-ripple-left')
+            this.root.style.removeProperty('--md-ripple-top')
+            this.root.style.removeProperty('--md-ripple-x')
+            this.root.style.removeProperty('--md-ripple-y')
+            this.root.style.removeProperty('--md-ripple')
+            this.root.style.removeProperty('--md-ripple-fadeout')
         }
+        
     }
 }
 

@@ -1,37 +1,23 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
-class DevTimePicker extends MDComponent{
+class TimePickerComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
             <!-- <div class="md-layout"> -->
                 <div class="md-layout__grid">
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-time-picker></md-time-picker>
                     </div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
                 </div>
             <!-- </div> -->
         `
     }
 }
 
-customElements.define('dev-time-picker',DevTimePicker)
+customElements.define('time-picker-component',TimePickerComponent)
 
-export default document.createElement('dev-time-picker')
+export default document.createElement('time-picker-component')

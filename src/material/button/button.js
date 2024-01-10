@@ -1,98 +1,108 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../foundation/component";
 import { MDRipple } from "../foundation/ripple";
 
 /**
- * Komponen tombol kustom yang memperluas MDComponent.
- * @extends MDComponent
+ * MDButtonComponent represents a button element with customizable appearance and ripple effect.
  */
 class MDButtonComponent extends MDComponent {
     /**
-     * Properti untuk MDButtonComponent.
-     * @property {string} icon - Ikon yang ditampilkan di dalam tombol.
-     * @property {string} label - Label atau teks yang ditampilkan di dalam tombol.
-     * @property {string} type - Tipe dari tombol (misalnya, "button", "submit", "reset").
-     * @property {string} appearance - Gaya penampilan dari tombol ("elevated", "filled", "tonal", "outlined").
-     * @property {boolean} activated - Mewakili apakah tombol telah diaktifkan atau tidak.
+     * Defines the properties and their types for MDButtonComponent.
+     * @property {String} appearance - The appearance/style of the button.
+     * @property {String} type - The type of the button element.
+     * @property {String} icon - The icon displayed in the button.
+     * @property {String} label - The label or text content of the button.
+     * @property {Boolean} activated - Reflects whether the button is activated or not.
+     * @returns {Object} An object containing property definitions.
      */
     static get properties() {
         return {
+            appearance: { type: String },
+            type: { type: String },
             icon: { type: String },
             label: { type: String },
-            type: { type: String },
-            appearance: { type: String },
             activated: { type: Boolean, reflect: true },
         };
     }
 
     /**
-     * Konstruktor untuk MDButtonComponent.
+     * Constructor for MDButtonComponent setting default 'type' to "button".
      */
     constructor() {
         super();
-        // Tipe tombol default
         this.type = "button";
     }
 
     /**
-     * Mengambil elemen tombol asli.
-     * @returns {HTMLButtonElement} Elemen tombol asli.
+     * Returns the native button element inside the MDButtonComponent.
+     * @returns {HTMLElement} The native button element.
      */
-    get native() {
+    get buttonNative() {
         return this.querySelector(".md-button__native");
     }
 
     /**
-     * Merender MDButtonComponent.
-     * @returns {TemplateResult} Hasil template yang dirender.
+     * Renders the HTML template for the MDButtonComponent.
+     * @returns {HTMLElement} A template result representing the rendered HTML.
      */
     render() {
         // prettier-ignore
         return html`
-            ${this.icon ? html`<div class="md-button__icon">${this.icon}</div>` : nothing}
-            ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
             <button class="md-button__native" .type="${this.type}"></button>
+            ${this.icon ? html`<div class="md-button__icon">${this.icon}</div>` : ``}
+            ${this.label ? html`<div class="md-button__label">${this.label}</div>` : ``}
         `;
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat elemen terpasang ke DOM.
-     * Menginisialisasi komponen tombol dan efek riaknya.
-     * @returns {Promise<void>} Promise yang menyelesaikan inisialisasi.
+     * Lifecycle method called when the element is added to the DOM.
+     * Initializes the component and attaches MDRipple effect to the button.
+     * @returns {Promise<void>} A promise resolving when initialization is complete.
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-button");
-    }
-    
-    async firstUpdated() {
         await this.updateComplete;
-        // Inisialisasi efek riak untuk tombol
-        this.mdripple = new MDRipple(this, {
-            trigger: this.native,
+        this.classList.add("md-button");
+        this.mdRipple = new MDRipple(this, {
+            trigger: this.buttonNative,
+            inverted: this.appearance === "filled",
         });
     }
 
     /**
-     * Metode siklus hidup yang dipanggil saat properti elemen telah diperbarui.
-     * Memperbarui gaya tombol berdasarkan perubahan properti.
-     * @param {Map<string, unknown>} changedProperties - Properti yang telah berubah.
+     * Lifecycle method called when the element is removed from the DOM.
+     * Cleans up the component, removing added classes and destroying the ripple effect.
      */
-    updated(changedProperties) {
-        if (changedProperties.has("appearance")) {
-            const validAppearances = ["elevated", "filled", "tonal", "outlined"];
-            const { appearance } = this;
-            if (validAppearances.includes(appearance)) {
-                validAppearances.forEach((validAppearance) => {
-                    this.classList.remove(`md-button--${validAppearance}`);
-                });
-                this.classList.add(`md-button--${appearance}`);
-            }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-button");
+        this.mdRipple.destroy();
+    }
+
+    /**
+     * Lifecycle method called after the first update of the element.
+     * @param {Map<any, any>} _changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(_changedProperties) {
+        // Implementation specific to first update (not provided in the snippet)
+    }
+
+    /**
+     * Lifecycle method called when properties are updated.
+     * Updates the appearance-related classes based on the 'appearance' property.
+     * @param {Map<any, any>} _changedProperties - A Map of properties that have changed.
+     */
+    updated(_changedProperties) {
+        if (_changedProperties.has("appearance")) {
+            ["elevated", "filled", "filled-tonal", "outlined"].forEach((appearance) =>
+                this.classList.remove("md-button--" + appearance)
+            );
+            if (this.appearance) this.classList.add("md-button--" + this.appearance);
         }
     }
 }
 
-// Tentukan elemen kustom "md-button"
+// Registers the MDButtonComponent custom element
 customElements.define("md-button", MDButtonComponent);
 
 export { MDButtonComponent };

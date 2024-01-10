@@ -1,37 +1,23 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
 
-class DevSideSheet extends MDComponent{
+class SideSheetComponent extends MDComponent{
     render(){
+        // prettier-ignore
         return html`
             <!-- <div class="md-layout"> -->
                 <div class="md-layout__grid">
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    ">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-side-sheet></md-side-sheet>
                     </div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
-                    <div class="
-                        md-layout__column
-                        md-layout__column--expanded4
-                        md-layout__column--medium4
-                        md-layout__column--compact4
-                    "></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"></div>
                 </div>
             <!-- </div> -->
         `
     }
 }
 
-customElements.define('dev-side-sheet',DevSideSheet)
+customElements.define('side-sheet-component',SideSheetComponent)
 
-export default document.createElement('dev-side-sheet')
+export default document.createElement('side-sheet-component')

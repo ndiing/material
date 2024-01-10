@@ -13,12 +13,12 @@ const stylesHandler = 'style-loader';
 const config = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'docs'),
+        path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
         open: true,
         host: 'localhost',
-        historyApiFallback :true
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({

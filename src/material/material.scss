@@ -1,26 +1,21 @@
-@import "./foundation/color.scss";
-@import "./foundation/elevation.scss";
-@import "./foundation/icon.scss";
-@import "./foundation/motion.scss";
-@import "./foundation/shape.scss";
-@import "./foundation/typography.scss";
+@import "./foundation/component.scss";
+@import "./foundation/cdk.scss";
 @import "./foundation/layout.scss";
 @import "./foundation/router.scss";
 @import "./foundation/outlet.scss";
-@import "./foundation/component.scss";
-@import "./foundation/cdk.scss";
-@import "./foundation/store.scss";
-@import "./foundation/virtual-scroll.scss";
 @import "./foundation/ripple.scss";
+@import "./foundation/store.scss";
+@import "./foundation/scroll.scss";
 @import "./foundation/popover.scss";
-// @import "./foundation/image.scss";
+@import "./foundation/moveable.scss";
+
+@import "./style/style.scss";
 
 @import "./bottom-app-bar/bottom-app-bar.scss";
 @import "./top-app-bar/top-app-bar.scss";
 @import "./badge/badge.scss";
 @import "./button/button.scss";
 @import "./fab/fab.scss";
-@import "./extended-fab/extended-fab.scss";
 @import "./icon-button/icon-button.scss";
 @import "./segmented-button/segmented-button.scss";
 @import "./card/card.scss";
