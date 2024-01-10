@@ -461,7 +461,7 @@ MDRouter is a class for managing routing and navigation within the application.
     * [.handleLoad(event)](#MDRouter.handleLoad)
     * [.navigate(url)](#MDRouter.navigate)
     * [.handleClick(event)](#MDRouter.handleClick)
-    * [.init(routes)](#MDRouter.init)
+    * [.init()](#MDRouter.init) : <code>Array.&lt;Object&gt;</code>
 
 <a name="MDRouter.emit"></a>
 
@@ -469,6 +469,7 @@ MDRouter is a class for managing routing and navigation within the application.
 Emits a custom event from the window object.
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
+**Emits**: <code>MDRouter#event:popstate - When navigating through history.</code>, <code>MDRouter#event:onCurrententrychange - When the current entry changes.</code>, <code>MDRouter#event:onNavigate - When navigation begins.</code>, <code>MDRouter#event:onNavigateerror - When an error occurs during navigation.</code>, <code>MDRouter#event:onNavigatesuccess - When navigation is successful.</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -561,14 +562,19 @@ Handles click events on anchor elements and navigates to their respective URLs.
 
 <a name="MDRouter.init"></a>
 
-### MDRouter.init(routes)
+### MDRouter.init() : <code>Array.&lt;Object&gt;</code>
 Initializes the router with provided routes.
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
+**Properties**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | --- | --- | --- |
-| routes | <code>Array.&lt;Object&gt;</code> | The array of route objects. |
+| path | <code>string</code> | The path of the route. |
+| component | <code>HTMLElement</code> | The component to render for the route. |
+| children | <code>Array.&lt;Object&gt;</code> | Child routes. |
+| load | <code>function</code> | Function to lazy-load the route component. |
+| beforeLoad | <code>function</code> | Function to execute before loading the route component. |
 
 <a name="MDIconButtonComponent"></a>
 
