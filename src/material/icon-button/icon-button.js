@@ -68,6 +68,7 @@ class MDIconButtonComponent extends MDComponent {
             inverted: this.appearance === "filled",
             bounded: false,
             diameter: this.appearance ? (40 / 40) * 100 : (40 / 24) * 100,
+            fadeout: true,
         });
     }
 

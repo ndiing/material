@@ -3,6 +3,7 @@
         width: 0;
     }
 }
+
 @keyframes md-ripple-fadeout {
     from {
         opacity: 10%;
@@ -28,7 +29,7 @@
 }
 
 .md-ripple--inverted {
-    &::after{
+    &::after {
         background: var(--md-sys-color-background);
     }
 }
@@ -36,14 +37,7 @@
 .md-ripple--bounded {
     overflow: hidden;
 }
-.md-ripple--fadeout {
-    &::after {
-        opacity: 0%;
-        animation:
-            var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
-            var(--md-ripple-fadeout, md-ripple-fadeout) var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard-accelerate);
-    }
-}
+
 .md-ripple--trigger {
     cursor: pointer;
     user-select: none;
@@ -54,6 +48,7 @@
 .md-ripple--selected {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
+
     &::after {
         opacity: 0%;
     }
@@ -63,6 +58,7 @@
 .md-ripple--activated {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
+
     &::after {
         opacity: 0%;
     }
@@ -74,20 +70,32 @@
         animation: var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate);
     }
 }
+
 .md-ripple--pressed {
     &::after {
         opacity: 10%;
     }
 }
+
 .md-ripple--hover {
     &::after {
         opacity: 10%;
     }
 }
 
+.md-ripple--fadeout {
+    &::after {
+        opacity: 0%;
+        animation:
+            var(--md-ripple, md-ripple) var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard-accelerate),
+            var(--md-ripple-fadeout, md-ripple-fadeout) var(--md-sys-motion-duration-long4) var(--md-sys-motion-easing-standard-accelerate);
+    }
+}
+
 [disabled],
 .md-ripple--disabled {
     opacity: 38%;
+
     &::after {
         opacity: 0%;
     }
