@@ -417,7 +417,6 @@ MDIconButtonComponent represents an icon button element with customizable appear
         * [.firstUpdated(_changedProperties)](#MDIconButtonComponent+firstUpdated)
         * [.updated(_changedProperties)](#MDIconButtonComponent+updated)
         * [.handleIconButtonNativeClick(event)](#MDIconButtonComponent+handleIconButtonNativeClick)
-        * ["onIconButtonNativeClick"](#MDIconButtonComponent+event_onIconButtonNativeClick)
     * _static_
         * [.properties](#MDIconButtonComponent.properties) ⇒ <code>Object</code>
 
@@ -481,18 +480,12 @@ Lifecycle method called when properties are updated.Updates classes based on th
 Handles the click event on the native icon button element.Toggles activation if 'toggle' property is enabled and emits a custom event.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Emits**: [<code>onIconButtonNativeClick</code>](#MDIconButtonComponent+event_onIconButtonNativeClick)  
+**Emits**: <code>MDIconButtonComponent#event:onIconButtonNativeClick</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>Event</code> | The click event on the icon button. |
 
-<a name="MDIconButtonComponent+event_onIconButtonNativeClick"></a>
-
-### "onIconButtonNativeClick"
-Event fired when the native icon button is clicked.
-
-**Kind**: event emitted by [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 <a name="MDIconButtonComponent.properties"></a>
 
 ### MDIconButtonComponent.properties ⇒ <code>Object</code>
