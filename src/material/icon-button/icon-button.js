@@ -121,6 +121,10 @@ class MDIconButtonComponent extends MDComponent {
     handleIconButtonNativeClick(event) {
         if (this.toggle) this.activated = !this.activated;
 
+        /**
+         * Event fired when the native icon button is clicked.
+         * @event MDIconButtonComponent#onIconButtonNativeClick
+         */
         this.emit("onIconButtonNativeClick");
     }
 }
