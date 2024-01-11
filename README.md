@@ -347,13 +347,6 @@ MDRipple is a class that manages ripple effect functionality based on MDCDK.
 * [MDRipple](#MDRipple)
     * [.init()](#MDRipple+init)
     * [.destroy()](#MDRipple+destroy)
-    * [.handleMouseenter(event)](#MDRipple+handleMouseenter)
-    * [.handleMouseleave(event)](#MDRipple+handleMouseleave)
-    * [.handleMousedown(event)](#MDRipple+handleMousedown)
-    * [.handleMouseup(event)](#MDRipple+handleMouseup)
-    * [.handleFocus(event)](#MDRipple+handleFocus)
-    * [.handleBlur(event)](#MDRipple+handleBlur)
-    * [.handleAnimationend(event)](#MDRipple+handleAnimationend)
 
 <a name="MDRipple+init"></a>
 
@@ -367,176 +360,17 @@ Initializes the ripple effect and sets up event listeners.
 Cleans up and removes the ripple effect and event listeners.
 
 **Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-<a name="MDRipple+handleMouseenter"></a>
-
-### mdRipple.handleMouseenter(event)
-Handles mouse enter event to add ripple hover effect.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>MouseEvent</code> | The mouse event triggering the action. |
-
-<a name="MDRipple+handleMouseleave"></a>
-
-### mdRipple.handleMouseleave(event)
-Handles mouse leave event to remove ripple hover effect.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>MouseEvent</code> | The mouse event triggering the action. |
-
-<a name="MDRipple+handleMousedown"></a>
-
-### mdRipple.handleMousedown(event)
-Handles mouse down event to display the ripple effect.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>MouseEvent</code> | The mouse event triggering the action. |
-
-<a name="MDRipple+handleMouseup"></a>
-
-### mdRipple.handleMouseup(event)
-Handles mouse up event to remove the pressed state.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>MouseEvent</code> | The mouse event triggering the action. |
-
-<a name="MDRipple+handleFocus"></a>
-
-### mdRipple.handleFocus(event)
-Handles focus event to add the ripple focus effect.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>FocusEvent</code> | The focus event triggering the action. |
-
-<a name="MDRipple+handleBlur"></a>
-
-### mdRipple.handleBlur(event)
-Handles blur event to remove the ripple focus effect.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>FocusEvent</code> | The blur event triggering the action. |
-
-<a name="MDRipple+handleAnimationend"></a>
-
-### mdRipple.handleAnimationend(event)
-Handles animation end event to clean up after ripple animation.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>AnimationEvent</code> | The animation event triggering the action. |
-
 <a name="MDRouter"></a>
 
 ## MDRouter
 MDRouter is a class for managing routing and navigation within the application.
 
 **Kind**: global class  
-
-* [MDRouter](#MDRouter)
-    * [.emit(type, detail)](#MDRouter.emit)
-    * [.setRoutes(routes, [parent])](#MDRouter.setRoutes) ⇒ <code>Array.&lt;Object&gt;</code>
-    * [.getQuery()](#MDRouter.getQuery) ⇒ <code>Object</code>
-    * [.getRoute()](#MDRouter.getRoute) ⇒ <code>Object</code>
-    * [.getRoutes(route)](#MDRouter.getRoutes) ⇒ <code>Array.&lt;Object&gt;</code>
-    * [.getOutlet(route)](#MDRouter.getOutlet) ⇒ <code>Promise.&lt;HTMLElement&gt;</code>
-    * [.handleLoad(event)](#MDRouter.handleLoad)
-    * [.navigate(url)](#MDRouter.navigate)
-    * [.handleClick(event)](#MDRouter.handleClick)
-    * [.init()](#MDRouter.init) : <code>Array.&lt;Object&gt;</code>
-
-<a name="MDRouter.emit"></a>
-
-### MDRouter.emit(type, detail)
-Emits a custom event from the window object.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 **Emits**: <code>MDRouter#event:popstate - When navigating through history.</code>, <code>MDRouter#event:onCurrententrychange - When the current entry changes.</code>, <code>MDRouter#event:onNavigate - When navigation begins.</code>, <code>MDRouter#event:onNavigateerror - When an error occurs during navigation.</code>, <code>MDRouter#event:onNavigatesuccess - When navigation is successful.</code>  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of the custom event. |
-| detail | <code>\*</code> | Any data to be sent as the event's `detail` property. |
-
-<a name="MDRouter.setRoutes"></a>
-
-### MDRouter.setRoutes(routes, [parent]) ⇒ <code>Array.&lt;Object&gt;</code>
-Sets routes recursively for the application.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Array.&lt;Object&gt;</code> - An array of all route objects.  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| routes | <code>Array.&lt;Object&gt;</code> |  | The array of route objects. |
-| [parent] | <code>Object</code> | <code></code> | The parent route object. |
-
-<a name="MDRouter.getQuery"></a>
-
-### MDRouter.getQuery() ⇒ <code>Object</code>
-Retrieves the query parameters from the URL.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Object</code> - An object containing the query parameters.  
-<a name="MDRouter.getRoute"></a>
-
-### MDRouter.getRoute() ⇒ <code>Object</code>
-Retrieves the matching route based on the URL path.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Object</code> - The matched route object.  
-<a name="MDRouter.getRoutes"></a>
-
-### MDRouter.getRoutes(route) ⇒ <code>Array.&lt;Object&gt;</code>
-Retrieves all routes including parent routes recursively.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Array.&lt;Object&gt;</code> - An array containing all route objects.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| route | <code>Object</code> | The route object to start the recursive search from. |
-
-<a name="MDRouter.getOutlet"></a>
-
-### MDRouter.getOutlet(route) ⇒ <code>Promise.&lt;HTMLElement&gt;</code>
-Asynchronously retrieves the outlet element for a given route.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Promise.&lt;HTMLElement&gt;</code> - A promise that resolves to the outlet HTMLElement.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| route | <code>Object</code> | The route object for which the outlet element is retrieved. |
-
-<a name="MDRouter.handleLoad"></a>
-
-### MDRouter.handleLoad(event)
-Handles the loading of routes, components, and their placement within the application.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Event</code> | The event that triggers the route handling (e.g., 'popstate'). |
+* [MDRouter](#MDRouter)
+    * [.navigate(url)](#MDRouter.navigate)
+    * [.init()](#MDRouter.init) : <code>Array.&lt;Object&gt;</code>
 
 <a name="MDRouter.navigate"></a>
 
@@ -548,17 +382,6 @@ Navigates to a specified URL using HTML5 History API.
 | Param | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | The URL to navigate to. |
-
-<a name="MDRouter.handleClick"></a>
-
-### MDRouter.handleClick(event)
-Handles click events on anchor elements and navigates to their respective URLs.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>MouseEvent</code> | The click event triggered by the user. |
 
 <a name="MDRouter.init"></a>
 

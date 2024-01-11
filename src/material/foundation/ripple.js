@@ -63,6 +63,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles mouse enter event to add ripple hover effect.
      * @param {MouseEvent} event - The mouse event triggering the action.
+     * @private
      */
     handleMouseenter(event) {
         this.root.classList.add("md-ripple--hover");
@@ -71,6 +72,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles mouse leave event to remove ripple hover effect.
      * @param {MouseEvent} event - The mouse event triggering the action.
+     * @private
      */
     handleMouseleave(event) {
         this.root.classList.remove("md-ripple--hover");
@@ -79,6 +81,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles mouse down event to display the ripple effect.
      * @param {MouseEvent} event - The mouse event triggering the action.
+     * @private
      */
     handleMousedown(event) {
         this.root.addEventListener("animationend", this.handleAnimationend);
@@ -110,6 +113,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles mouse up event to remove the pressed state.
      * @param {MouseEvent} event - The mouse event triggering the action.
+     * @private
      */
     handleMouseup(event) {
         this.root.classList.remove("md-ripple--pressed");
@@ -119,6 +123,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles focus event to add the ripple focus effect.
      * @param {FocusEvent} event - The focus event triggering the action.
+     * @private
      */
     handleFocus(event) {
         this.root.classList.add("md-ripple--focused");
@@ -127,6 +132,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles blur event to remove the ripple focus effect.
      * @param {FocusEvent} event - The blur event triggering the action.
+     * @private
      */
     handleBlur(event) {
         this.root.classList.remove("md-ripple--focused");
@@ -135,6 +141,7 @@ class MDRipple extends MDCDK {
     /**
      * Handles animation end event to clean up after ripple animation.
      * @param {AnimationEvent} event - The animation event triggering the action.
+     * @private
      */
     handleAnimationend(event) {
         const animationend = this.options.fadeout ? "md-ripple-fadeout" : "md-ripple";
