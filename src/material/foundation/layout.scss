@@ -3,11 +3,13 @@
         @content;
     }
 }
+
 @mixin md-layout-medium() {
     @media (min-width: 600px) and (max-width: 839px) {
         @content;
     }
 }
+
 @mixin md-layout-compact() {
     @media (max-width: 599px) {
         @content;
@@ -19,6 +21,7 @@
     --md-sys-layout-columns: 12;
     --md-sys-layout-gap: 24px;
 }
+
 @include md-layout-expanded {
     :root {
         --md-sys-layout-margin: 24px;
@@ -26,6 +29,7 @@
         --md-sys-layout-gap: 24px;
     }
 }
+
 @include md-layout-medium {
     :root {
         --md-sys-layout-margin: 24px;
@@ -33,6 +37,7 @@
         --md-sys-layout-gap: 24px;
     }
 }
+
 @include md-layout-compact {
     :root {
         --md-sys-layout-margin: 16px;
@@ -44,11 +49,13 @@
 .md-layout {
     margin: 24px;
 }
+
 .md-layout__grid {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-gap: 24px;
 }
+
 .md-layout__column {
     grid-column-end: span 4;
 }
@@ -58,6 +65,7 @@
         grid-column-end: span $i;
     }
 }
+
 @include md-layout-expanded {
     @for $i from 1 through 12 {
         .md-layout__column--expanded#{$i} {
@@ -65,6 +73,7 @@
         }
     }
 }
+
 @include md-layout-medium {
     @for $i from 1 through 8 {
         .md-layout__column--medium#{$i} {
@@ -72,6 +81,7 @@
         }
     }
 }
+
 @include md-layout-compact {
     @for $i from 1 through 4 {
         .md-layout__column--compact#{$i} {

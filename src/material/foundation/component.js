@@ -44,5 +44,4 @@ class MDComponent extends LitElement {
         this.dispatchEvent(event);
     }
 }
-
 export { MDComponent };

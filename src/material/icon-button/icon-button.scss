@@ -53,6 +53,7 @@
         }
     }
 }
+
 .md-icon-button--filled-tonal {
     height: 40px;
     width: 40px;
@@ -70,6 +71,7 @@
         }
     }
 }
+
 .md-icon-button--outlined {
     height: 40px;
     width: 40px;
@@ -79,7 +81,7 @@
 
     &.md-icon-button--toggle {
         color: var(--md-sys-color-on-surface-variant);
-        
+
         &[activated] {
             background: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);

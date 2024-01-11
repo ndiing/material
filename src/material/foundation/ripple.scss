@@ -43,7 +43,6 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 [selected],
 .md-ripple--selected {
     background: var(--md-sys-color-secondary-container);
@@ -53,7 +52,6 @@
         opacity: 0%;
     }
 }
-
 [activated],
 .md-ripple--activated {
     background: var(--md-sys-color-secondary-container);
@@ -91,7 +89,6 @@
         opacity: 10%;
     }
 }
-
 [disabled],
 .md-ripple--disabled {
     opacity: 38%;

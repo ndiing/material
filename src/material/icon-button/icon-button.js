@@ -61,8 +61,11 @@ class MDIconButtonComponent extends MDComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        
         await this.updateComplete;
+        
         this.classList.add("md-icon-button");
+        
         this.mdRipple = new MDRipple(this, {
             trigger: this.iconButtonNative,
             inverted: this.appearance === "filled",
@@ -78,7 +81,9 @@ class MDIconButtonComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+        
         this.classList.remove("md-icon-button");
+        
         this.mdRipple.destroy();
     }
 
@@ -100,6 +105,7 @@ class MDIconButtonComponent extends MDComponent {
             ["filled", "filled-tonal", "outlined"].forEach((appearance) => this.classList.remove("md-icon-button--" + appearance));
             if (this.appearance) this.classList.add("md-icon-button--" + this.appearance);
         }
+        
         if (_changedProperties.has("toggle")) {
             if (this.toggle) this.classList.add("md-icon-button--toggle");
             else this.classList.remove("md-icon-button--toggle");
@@ -114,6 +120,7 @@ class MDIconButtonComponent extends MDComponent {
      */
     handleIconButtonNativeClick(event) {
         if (this.toggle) this.activated = !this.activated;
+
         /**
          * Event fired when the native icon button is clicked.
          * @event MDIconButtonComponent#onIconButtonNativeClick
@@ -121,8 +128,6 @@ class MDIconButtonComponent extends MDComponent {
         this.emit("onIconButtonNativeClick");
     }
 }
-
 // Registers the MDIconButtonComponent custom element
 customElements.define("md-icon-button", MDIconButtonComponent);
-
 export { MDIconButtonComponent };

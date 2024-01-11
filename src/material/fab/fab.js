@@ -62,7 +62,9 @@ class MDFabComponent extends MDComponent {
     async connectedCallback() {
         super.connectedCallback();
         await this.updateComplete;
+        
         this.classList.add("md-fab");
+        
         this.mdRipple = new MDRipple(this, {
             trigger: this.fabNative,
         });
@@ -74,7 +76,9 @@ class MDFabComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+        
         this.classList.remove("md-fab");
+        
         this.mdRipple.destroy();
     }
 
@@ -96,14 +100,13 @@ class MDFabComponent extends MDComponent {
             ["small", "large"].forEach((size) => this.classList.remove("md-fab--" + size));
             if (this.size) this.classList.add("md-fab--" + this.size);
         }
+        
         if (_changedProperties.has("appearance")) {
             ["extended"].forEach((appearance) => this.classList.remove("md-fab--" + appearance));
             if (this.appearance) this.classList.add("md-fab--" + this.appearance);
         }
     }
 }
-
 // Registers the MDFabComponent custom element
 customElements.define("md-fab", MDFabComponent);
-
 export { MDFabComponent };

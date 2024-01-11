@@ -42,7 +42,7 @@
  * ]);
  */
 class MDRouter {
-/**
+    /**
      * Emits a custom event from the window object.
      * @param {string} type - The type of the custom event.
      * @param {*} detail - Any data to be sent as the event's `detail` property.
@@ -58,6 +58,7 @@ class MDRouter {
             cancelable: true,
             detail,
         });
+        
         window.dispatchEvent(event);
     }
 
@@ -69,10 +70,15 @@ class MDRouter {
      */
     static setRoutes(routes = [], parent = null) {
         return routes.reduce((p, c) => {
+            // Set parent and pattern properties for each route
             c.parent = parent;
             c.pattern = [c.parent?.pattern ?? "", c.path].join("/").replace(/\/+/g, "/");
+            
             p = p.concat(c);
+            
+            // Recursively set routes for children
             if (c.children && c.children.length) p = p.concat(this.setRoutes(c.children, c));
+            
             return p;
         }, []);
     }
@@ -91,12 +97,15 @@ class MDRouter {
      */
     static getRoute() {
         return this.routes.find((route) => {
+            // Create a regular expression for matching the route pattern
             const regexp = new RegExp("^" + route.pattern.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)", "i");
+            
             const matches = this.path.match(regexp);
             if (matches) {
                 this.params = { ...matches?.groups };
                 return matches;
             }
+            
             return null;
         });
     }
@@ -108,6 +117,7 @@ class MDRouter {
      */
     static getRoutes(route) {
         return [route].reduce((p, c) => {
+            // Recursively get routes including parent routes
             if (c.parent) p = p.concat(this.getRoutes(c.parent));
             p = p.concat(c);
             return p;
@@ -123,6 +133,7 @@ class MDRouter {
         return await new Promise((resolve) => {
             let outlet;
             let observer;
+            
             const callback = () => {
                 outlet = route.container.querySelector("md-outlet");
                 if (outlet) {
@@ -130,8 +141,11 @@ class MDRouter {
                     resolve(outlet);
                 }
             };
+            
             callback();
+            
             if (!outlet) {
+                // Set up a MutationObserver to observe changes in the DOM
                 observer = new MutationObserver(callback);
                 observer.observe(route.container, {
                     childList: true,
@@ -147,18 +161,19 @@ class MDRouter {
      */
     static async handleLoad(event) {
         this.emit("onCurrententrychange");
-
+        
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
+        
         this.path = window.location.pathname;
         this.query = this.getQuery();
         this.params = {};
         this.route = this.getRoute();
         this.entries = this.getRoutes(this.route);
-
+        
         for (const route of this.entries) {
             this.emit("onNavigate");
-
+            
             if (!route.beforeLoad) route.beforeLoad = (resolve) => resolve();
             try {
                 await new Promise((resolve, reject) => {
@@ -167,16 +182,17 @@ class MDRouter {
                 });
             } catch (error) {
                 this.emit("onNavigateerror");
-
                 break;
             }
+            
             if (!route.component) route.component = await route.load();
+            
             if (!route.container) route.container = route.parent?.component ?? document.body;
-
+            
             const outlet = await this.getOutlet(route);
-
+            
             if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
-
+            
             const outlets = document.querySelectorAll("md-outlet");
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
@@ -186,7 +202,6 @@ class MDRouter {
                 }
             }
         }
-
         this.emit("onNavigatesuccess");
     }
 
@@ -221,6 +236,7 @@ class MDRouter {
      * @property {Function} beforeLoad - Function to execute before loading the route component.
      */
     static init(routes = []) {
+        // Override pushState to trigger 'popstate' event
         const pushState = window.history.pushState;
         window.history.pushState = function () {
             pushState.apply(this, arguments);
@@ -230,7 +246,6 @@ class MDRouter {
         this.routes = this.setRoutes(routes);
 
         this.handleLoad = this.handleLoad.bind(this);
-
         window.addEventListener("DOMContentLoaded", this.handleLoad);
         window.addEventListener("popstate", this.handleLoad);
 
@@ -238,5 +253,4 @@ class MDRouter {
         window.addEventListener("click", this.handleClick);
     }
 }
-
 export { MDRouter };

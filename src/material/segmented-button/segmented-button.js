@@ -55,6 +55,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+        
         this.classList.add("md-segmented-button");
     }
 
@@ -64,6 +65,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+        
         this.classList.remove("md-segmented-button");
     }
 
@@ -90,7 +92,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     handleButtonClick(event) {
         const button = event.currentTarget;
-
+        
         if (this.type === "multi-select") {
             button.doc.activated = !button.doc.activated;
         } else {
@@ -98,7 +100,7 @@ class MDSegmentedButtonComponent extends MDComponent {
                 doc.activated = doc === button.doc;
             }
         }
-
+        
         this.requestUpdate();
 
         /**
@@ -111,7 +113,5 @@ class MDSegmentedButtonComponent extends MDComponent {
         this.emit("onButtonClick", { event, button });
     }
 }
-
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
-
 export { MDSegmentedButtonComponent };

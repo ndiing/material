@@ -10,7 +10,6 @@ class MDCDK {
     constructor(root, options = {}) {
         this.root = root;
         this.options = options;
-
         this.init();
     }
 
@@ -60,5 +59,4 @@ class MDCDK {
         this.root.dispatchEvent(event);
     }
 }
-
 export { MDCDK };

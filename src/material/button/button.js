@@ -61,8 +61,11 @@ class MDButtonComponent extends MDComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        
         await this.updateComplete;
+        
         this.classList.add("md-button");
+        
         this.mdRipple = new MDRipple(this, {
             trigger: this.buttonNative,
             inverted: this.appearance === "filled",
@@ -75,7 +78,9 @@ class MDButtonComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+        
         this.classList.remove("md-button");
+        
         this.mdRipple.destroy();
     }
 
@@ -94,15 +99,11 @@ class MDButtonComponent extends MDComponent {
      */
     updated(_changedProperties) {
         if (_changedProperties.has("appearance")) {
-            ["elevated", "filled", "filled-tonal", "outlined"].forEach((appearance) =>
-                this.classList.remove("md-button--" + appearance)
-            );
+            ["elevated", "filled", "filled-tonal", "outlined"].forEach((appearance) => this.classList.remove("md-button--" + appearance));
             if (this.appearance) this.classList.add("md-button--" + this.appearance);
         }
     }
 }
-
 // Registers the MDButtonComponent custom element
 customElements.define("md-button", MDButtonComponent);
-
 export { MDButtonComponent };
