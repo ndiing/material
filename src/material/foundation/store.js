@@ -1,5 +1,0 @@
-class MDStore{}
-
-export{
-    MDStore
-}

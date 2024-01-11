@@ -4,25 +4,23 @@
     justify-content: center;
     vertical-align: middle;
 
-    > .md-button {
+    .md-button {
         flex: 1;
+
+        +.md-button{
+            margin-left: -1px;
+        }
 
         &:first-child {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-
         &:last-child {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-
         &:not(:first-child):not(:last-child) {
             border-radius: 0;
-        }
-
-        + .md-button {
-            margin-left: -1px;
         }
     }
 }

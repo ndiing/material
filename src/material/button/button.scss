@@ -1,21 +1,15 @@
-:root {
-    --md-button-density: 0;
-    --md-button-height: calc(40px + (4px * var(--md-button-density)));
-}
-
 .md-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    position: relative;
-    height: var(--md-button-height);
-    border-radius: calc(var(--md-button-height) / 2);
+    height: 40px;
+    border-radius: 20px;
+    // min-width: 48px;
     padding: 0 12px;
     gap: 0 8px;
-    color: var(--md-sys-color-primary);
+    position: relative;
 }
-
 .md-button__native {
     appearance: none;
     width: 100%;
@@ -26,7 +20,6 @@
     background: transparent;
     color: transparent;
 }
-
 .md-button__icon {
     @extend .md-icon;
     font-size: 18px;
@@ -35,59 +28,36 @@
         margin-right: 4px;
     }
 }
-
 .md-button__label {
     @extend .md-typography--label-large;
 }
 
 .md-button--elevated {
-    padding: 0 24px;
-    background: var(--md-sys-color-surface);
+    background: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
-
-    .md-button__icon {
-        margin-left: -8px;
-
-        + .md-button__label {
-            margin-right: 0;
-        }
-    }
 }
 
 .md-button--filled {
-    padding: 0 24px;
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-
-    .md-button__icon {
-        margin-left: -8px;
-
-        + .md-button__label {
-            margin-right: 0;
-        }
-    }
 }
 
 .md-button--filled-tonal {
-    padding: 0 24px;
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-
-    .md-button__icon {
-        margin-left: -8px;
-
-        + .md-button__label {
-            margin-right: 0;
-        }
-    }
 }
 
 .md-button--outlined {
-    padding: 0 24px;
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
+}
 
+.md-button--elevated,
+.md-button--filled,
+.md-button--filled-tonal,
+.md-button--outlined {
+    padding: 0 24px;
     .md-button__icon {
         margin-left: -8px;
 

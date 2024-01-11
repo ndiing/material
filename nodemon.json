@@ -1,6 +1,5 @@
 {
     "ignore": [
-      "src/dev/**"
     ],
     "env": {
       "NODE_ENV": "development"

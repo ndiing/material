@@ -5,22 +5,17 @@
     vertical-align: middle;
     position: relative;
 
+    &[activated] {
+        background: inherit;
+        color: inherit;
+    }
+
     &.md-icon-button--toggle {
         &[activated] {
-            background: transparent;
             color: var(--md-sys-color-primary);
-
-            .md-icon-button__icon {
-                font-variation-settings:
-                    "FILL" 1,
-                    "wght" 400,
-                    "GRAD" 0,
-                    "opsz" 24;
-            }
         }
     }
 }
-
 .md-icon-button__native {
     appearance: none;
     width: 100%;
@@ -31,15 +26,11 @@
     background: transparent;
     color: transparent;
 }
-
 .md-icon-button__icon {
     @extend .md-icon;
 }
 
 .md-icon-button--filled {
-    height: 40px;
-    width: 40px;
-    border-radius: calc(40px / 2);
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
 
@@ -55,9 +46,6 @@
 }
 
 .md-icon-button--filled-tonal {
-    height: 40px;
-    width: 40px;
-    border-radius: calc(40px / 2);
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 
@@ -73,9 +61,6 @@
 }
 
 .md-icon-button--outlined {
-    height: 40px;
-    width: 40px;
-    border-radius: calc(40px / 2);
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 
@@ -88,4 +73,12 @@
             border-color: var(--md-sys-color-inverse-surface);
         }
     }
+}
+
+.md-icon-button--filled,
+.md-icon-button--filled-tonal,
+.md-icon-button--outlined {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
 }

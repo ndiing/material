@@ -1,44 +1,138 @@
 ## Classes
 
 <dl>
-<dt><a href="#MDButtonComponent">MDButtonComponent</a></dt>
-<dd><p>MDButtonComponent represents a button element with customizable appearance and ripple effect.</p>
+<dt><a href="#MDBadgeComponent">MDBadgeComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDBadge.</p>
 </dd>
-<dt><a href="#MDFabComponent">MDFabComponent</a></dt>
-<dd><p>MDFabComponent represents a floating action button (FAB) element with customizable appearance and ripple effect.</p>
+<dt><a href="#MDButtonComponent">MDButtonComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDButton.</p>
 </dd>
-<dt><a href="#MDCDK">MDCDK</a></dt>
-<dd><p>MDCDK class for handling custom events and initialization.</p>
+<dt><a href="#MDCheckboxComponent">MDCheckboxComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDCheckbox.</p>
 </dd>
-<dt><a href="#MDComponent">MDComponent</a></dt>
-<dd><p>Custom component based on LitElement.</p>
+<dt><a href="#MDFabComponent">MDFabComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDFab.</p>
 </dd>
-<dt><a href="#MDRipple">MDRipple</a></dt>
-<dd><p>MDRipple is a class that manages ripple effect functionality based on MDCDK.</p>
+<dt><a href="#MDNavigation">MDNavigation</a></dt>
+<dd><p>MDNavigation class for managing client-side navigation.</p>
 </dd>
-<dt><a href="#MDRouter">MDRouter</a></dt>
-<dd><p>MDRouter is a class for managing routing and navigation within the application.</p>
+<dt><a href="#MDState">MDState</a> ⇐ <code>MDCDK</code></dt>
+<dd><p>Represents a stateful UI element with interactive behaviors.</p>
 </dd>
-<dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a></dt>
-<dd><p>MDIconButtonComponent represents an icon button element with customizable appearance and ripple effect.</p>
+<dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDIconButton.</p>
 </dd>
-<dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a></dt>
-<dd><p>MDSegmentedButtonComponent represents a segmented button element that renders multiple md-button elements.</p>
+<dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDRadioButton.</p>
+</dd>
+<dt><a href="#MDSegmentedButtonComponent">MDSegmentedButtonComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDSegmentedButton.</p>
+</dd>
+<dt><a href="#MDSwitchComponent">MDSwitchComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDSwitch.</p>
 </dd>
 </dl>
 
-<a name="MDButtonComponent"></a>
+## Functions
 
-## MDButtonComponent
-MDButtonComponent represents a button element with customizable appearance and ripple effect.
+<dl>
+<dt><a href="#pushStateOverride">pushStateOverride(...args)</a> ⇒ <code>void</code></dt>
+<dd><p>Overrides the window.history.pushState method to dispatch a &quot;popstate&quot; event after pushing a state.</p>
+</dd>
+</dl>
+
+<a name="MDBadgeComponent"></a>
+
+## MDBadgeComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDBadge.
 
 **Kind**: global class  
+**Extends**: <code>MDComponent</code>  
 
-* [MDButtonComponent](#MDButtonComponent)
+* [MDBadgeComponent](#MDBadgeComponent) ⇐ <code>MDComponent</code>
+    * [new MDBadgeComponent()](#new_MDBadgeComponent_new)
+    * _instance_
+        * [.render()](#MDBadgeComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDBadgeComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDBadgeComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDBadgeComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDBadgeComponent+updated)
+    * _static_
+        * [.properties](#MDBadgeComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDBadgeComponent_new"></a>
+
+### new MDBadgeComponent()
+Constructor for MDBadgeComponent.
+
+<a name="MDBadgeComponent+render"></a>
+
+### mdBadgeComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDBadgeComponent template using Lit.
+
+**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDBadgeComponent+connectedCallback"></a>
+
+### mdBadgeComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDBadgeComponent+disconnectedCallback"></a>
+
+### mdBadgeComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
+<a name="MDBadgeComponent+firstUpdated"></a>
+
+### mdBadgeComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDBadgeComponent+updated"></a>
+
+### mdBadgeComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDBadgeComponent.properties"></a>
+
+### MDBadgeComponent.properties ⇒ <code>Object</code>
+Properties for the MDBadgeComponent.
+
+**Kind**: static property of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| limit | <code>Number</code> | The maximum value for the badge label. |
+| label | <code>Number</code> | The label for the badge. |
+
+<a name="MDButtonComponent"></a>
+
+## MDButtonComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDButton.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDButtonComponent](#MDButtonComponent) ⇐ <code>MDComponent</code>
     * [new MDButtonComponent()](#new_MDButtonComponent_new)
     * _instance_
-        * [.buttonNative](#MDButtonComponent+buttonNative) ⇒ <code>HTMLElement</code>
-        * [.render()](#MDButtonComponent+render) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.disconnectedCallback()](#MDButtonComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDButtonComponent+firstUpdated)
@@ -49,86 +143,160 @@ MDButtonComponent represents a button element with customizable appearance and r
 <a name="new_MDButtonComponent_new"></a>
 
 ### new MDButtonComponent()
-Constructor for MDButtonComponent setting default 'type' to "button".
+Constructor for MDButtonComponent.
 
-<a name="MDButtonComponent+buttonNative"></a>
-
-### mdButtonComponent.buttonNative ⇒ <code>HTMLElement</code>
-Returns the native button element inside the MDButtonComponent.
-
-**Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>HTMLElement</code> - The native button element.  
 <a name="MDButtonComponent+render"></a>
 
-### mdButtonComponent.render() ⇒ <code>HTMLElement</code>
-Renders the HTML template for the MDButtonComponent.
+### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDButtonComponent template using Lit.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>HTMLElement</code> - A template result representing the rendered HTML.  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
 <a name="MDButtonComponent+connectedCallback"></a>
 
 ### mdButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is added to the DOM.Initializes the component and attaches MDRipple effect to the button.
+Lifecycle callback called when the element is added to the DOM.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A promise resolving when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
 <a name="MDButtonComponent+disconnectedCallback"></a>
 
 ### mdButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is removed from the DOM.Cleans up the component, removing added classes and destroying the ripple effect.
+Lifecycle callback called when the element is removed from the DOM.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 <a name="MDButtonComponent+firstUpdated"></a>
 
 ### mdButtonComponent.firstUpdated(_changedProperties)
-Lifecycle method called after the first update of the element.
+Lifecycle callback called after the first render and element is added to the DOM.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDButtonComponent+updated"></a>
 
 ### mdButtonComponent.updated(_changedProperties)
-Lifecycle method called when properties are updated.Updates the appearance-related classes based on the 'appearance' property.
+Lifecycle callback called when properties are updated.
 
 **Kind**: instance method of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDButtonComponent.properties"></a>
 
 ### MDButtonComponent.properties ⇒ <code>Object</code>
-Defines the properties and their types for MDButtonComponent.
+Properties for the MDButtonComponent.
 
 **Kind**: static property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Returns**: <code>Object</code> - An object containing property definitions.  
+**Returns**: <code>Object</code> - Property configuration.  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| appearance | <code>String</code> | The appearance/style of the button. |
-| type | <code>String</code> | The type of the button element. |
-| icon | <code>String</code> | The icon displayed in the button. |
-| label | <code>String</code> | The label or text content of the button. |
-| activated | <code>Boolean</code> | Reflects whether the button is activated or not. |
+| appearance | <code>String</code> | The appearance style of the button ("elevated", "filled", "filled-tonal", "outlined"). |
+| type | <code>String</code> | The type of the native button element ("button" by default). |
+| icon | <code>String</code> | The icon for the button. |
+| label | <code>String</code> | The label for the button. |
+| activated | <code>Boolean</code> | A boolean reflecting the activated state of the button. |
+
+<a name="MDCheckboxComponent"></a>
+
+## MDCheckboxComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDCheckbox.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDCheckboxComponent](#MDCheckboxComponent) ⇐ <code>MDComponent</code>
+    * [new MDCheckboxComponent()](#new_MDCheckboxComponent_new)
+    * _instance_
+        * [.render()](#MDCheckboxComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDCheckboxComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDCheckboxComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDCheckboxComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDCheckboxComponent+updated)
+    * _static_
+        * [.properties](#MDCheckboxComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDCheckboxComponent_new"></a>
+
+### new MDCheckboxComponent()
+Constructor for MDCheckboxComponent.
+
+<a name="MDCheckboxComponent+render"></a>
+
+### mdCheckboxComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDCheckboxComponent template using Lit.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDCheckboxComponent+connectedCallback"></a>
+
+### mdCheckboxComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDCheckboxComponent+disconnectedCallback"></a>
+
+### mdCheckboxComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+<a name="MDCheckboxComponent+firstUpdated"></a>
+
+### mdCheckboxComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDCheckboxComponent+updated"></a>
+
+### mdCheckboxComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDCheckboxComponent.properties"></a>
+
+### MDCheckboxComponent.properties ⇒ <code>Object</code>
+Properties for the MDCheckboxComponent.
+
+**Kind**: static property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name attribute for the checkbox. |
+| indeterminate | <code>Boolean</code> | A boolean indicating whether the checkbox is in an indeterminate state. |
+| checked | <code>Boolean</code> | A boolean indicating whether the checkbox is checked. |
 
 <a name="MDFabComponent"></a>
 
-## MDFabComponent
-MDFabComponent represents a floating action button (FAB) element with customizable appearance and ripple effect.
+## MDFabComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDFab.
 
 **Kind**: global class  
+**Extends**: <code>MDComponent</code>  
 
-* [MDFabComponent](#MDFabComponent)
+* [MDFabComponent](#MDFabComponent) ⇐ <code>MDComponent</code>
     * [new MDFabComponent()](#new_MDFabComponent_new)
     * _instance_
-        * [.fabNative](#MDFabComponent+fabNative) ⇒ <code>HTMLElement</code>
-        * [.render()](#MDFabComponent+render) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDFabComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDFabComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.disconnectedCallback()](#MDFabComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDFabComponent+firstUpdated)
@@ -139,479 +307,498 @@ MDFabComponent represents a floating action button (FAB) element with customizab
 <a name="new_MDFabComponent_new"></a>
 
 ### new MDFabComponent()
-Constructor for MDFabComponent setting default 'type' to "button".
+Constructor for MDFabComponent.
 
-<a name="MDFabComponent+fabNative"></a>
-
-### mdFabComponent.fabNative ⇒ <code>HTMLElement</code>
-Returns the native button element inside the MDFabComponent.
-
-**Kind**: instance property of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>HTMLElement</code> - The native button element.  
 <a name="MDFabComponent+render"></a>
 
-### mdFabComponent.render() ⇒ <code>HTMLElement</code>
-Renders the HTML template for the MDFabComponent.
+### mdFabComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDFabComponent template using Lit.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>HTMLElement</code> - A template result representing the rendered HTML.  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
 <a name="MDFabComponent+connectedCallback"></a>
 
 ### mdFabComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is added to the DOM.Initializes the component and attaches MDRipple effect to the button.
+Lifecycle callback called when the element is added to the DOM.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A promise resolving when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
 <a name="MDFabComponent+disconnectedCallback"></a>
 
 ### mdFabComponent.disconnectedCallback()
-Lifecycle method called when the element is removed from the DOM.Cleans up the component, removing added classes and destroying the ripple effect.
+Lifecycle callback called when the element is removed from the DOM.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
 <a name="MDFabComponent+firstUpdated"></a>
 
 ### mdFabComponent.firstUpdated(_changedProperties)
-Lifecycle method called after the first update of the element.
+Lifecycle callback called after the first render and element is added to the DOM.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDFabComponent+updated"></a>
 
 ### mdFabComponent.updated(_changedProperties)
-Lifecycle method called when properties are updated.Updates the size-related and appearance-related classes based on their respective properties.
+Lifecycle callback called when properties are updated.
 
 **Kind**: instance method of [<code>MDFabComponent</code>](#MDFabComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDFabComponent.properties"></a>
 
 ### MDFabComponent.properties ⇒ <code>Object</code>
-Defines the properties and their types for MDFabComponent.
+Properties for the MDFabComponent.
 
 **Kind**: static property of [<code>MDFabComponent</code>](#MDFabComponent)  
-**Returns**: <code>Object</code> - An object containing property definitions.  
+**Returns**: <code>Object</code> - Property configuration.  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| size | <code>String</code> | The size of the FAB. Can be 'small' or 'large'. |
-| appearance | <code>String</code> | The appearance/style of the FAB. Currently supports 'extended'. |
-| type | <code>String</code> | The type of the button. |
-| icon | <code>String</code> | The icon displayed in the FAB. |
-| label | <code>String</code> | The label or text content of the FAB. |
+| appearance | <code>String</code> | The appearance style of the fab ("extended"). |
+| size | <code>String</code> | The size of the fab ("small" or "large"). |
+| type | <code>String</code> | The type of the native button element ("button" by default). |
+| icon | <code>String</code> | The icon for the fab. |
+| label | <code>String</code> | The label for the fab. |
 
-<a name="MDCDK"></a>
+<a name="MDNavigation"></a>
 
-## MDCDK
-MDCDK class for handling custom events and initialization.
-
-**Kind**: global class  
-
-* [MDCDK](#MDCDK)
-    * [new MDCDK(root, [options])](#new_MDCDK_new)
-    * [.init()](#MDCDK+init)
-    * [.destroy()](#MDCDK+destroy)
-    * [.on(type, listener)](#MDCDK+on)
-    * [.off(type, listener)](#MDCDK+off)
-    * [.emit(type, detail)](#MDCDK+emit)
-
-<a name="new_MDCDK_new"></a>
-
-### new MDCDK(root, [options])
-Creates an instance of MDCDK.
-
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| root | <code>HTMLElement</code> |  | The root element for the MDCDK instance. |
-| [options] | <code>Object</code> | <code>{}</code> | Optional configuration options for MDCDK. |
-
-<a name="MDCDK+init"></a>
-
-### mdcdK.init()
-Initializes the MDCDK instance.
-
-**Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
-<a name="MDCDK+destroy"></a>
-
-### mdcdK.destroy()
-Destroys the MDCDK instance.
-
-**Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
-<a name="MDCDK+on"></a>
-
-### mdcdK.on(type, listener)
-Adds an event listener to the root element.
-
-**Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function or object. |
-
-<a name="MDCDK+off"></a>
-
-### mdcdK.off(type, listener)
-Removes an event listener from the root element.
-
-**Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>EventListenerOrEventListenerObject</code> | The event listener function or object. |
-
-<a name="MDCDK+emit"></a>
-
-### mdcdK.emit(type, detail)
-Emits a custom event from the root element.
-
-**Kind**: instance method of [<code>MDCDK</code>](#MDCDK)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of the custom event. |
-| detail | <code>\*</code> | Any data to be sent as the event's `detail` property. |
-
-<a name="MDComponent"></a>
-
-## MDComponent
-Custom component based on LitElement.
+## MDNavigation
+MDNavigation class for managing client-side navigation.
 
 **Kind**: global class  
+**Emits**: <code>MDNavigation#event:onCurrententrychange</code>, <code>MDNavigation#event:onNavigate</code>, <code>MDNavigation#event:onNavigateerror</code>, <code>MDNavigation#event:onNavigatesuccess</code>  
 
-* [MDComponent](#MDComponent)
-    * [.createRenderRoot()](#MDComponent+createRenderRoot) ⇒ <code>this</code>
-    * [.on(type, listener)](#MDComponent+on)
-    * [.off(type, listener)](#MDComponent+off)
-    * [.emit(type, detail)](#MDComponent+emit)
+* [MDNavigation](#MDNavigation)
+    * [.navigate(url)](#MDNavigation.navigate) ⇒ <code>void</code>
+    * [.load(entries)](#MDNavigation.load) ⇒ <code>void</code>
 
-<a name="MDComponent+createRenderRoot"></a>
+<a name="MDNavigation.navigate"></a>
 
-### mdComponent.createRenderRoot() ⇒ <code>this</code>
-Overrides the createRenderRoot method to return 'this'.
+### MDNavigation.navigate(url) ⇒ <code>void</code>
+Navigates to the specified URL.
 
-**Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
-**Returns**: <code>this</code> - The current element instance.  
-<a name="MDComponent+on"></a>
-
-### mdComponent.on(type, listener)
-Adds an event listener to the element.
-
-**Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
+**Kind**: static method of [<code>MDNavigation</code>](#MDNavigation)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of event to listen for. |
-| listener | <code>function</code> | The callback function to execute when the event is triggered. |
+| url | <code>string</code> | URL to navigate to. |
 
-<a name="MDComponent+off"></a>
+<a name="MDNavigation.load"></a>
 
-### mdComponent.off(type, listener)
-Removes an event listener from the element.
+### MDNavigation.load(entries) ⇒ <code>void</code>
+Initializes the MDNavigation class with the provided entries.
 
-**Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | The type of event to remove the listener from. |
-| listener | <code>function</code> | The callback function previously registered. |
-
-<a name="MDComponent+emit"></a>
-
-### mdComponent.emit(type, detail)
-Emits a custom event from the element.
-
-**Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
+**Kind**: static method of [<code>MDNavigation</code>](#MDNavigation)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | The type of the custom event. |
-| detail | <code>\*</code> | Any data to be sent as the event's `detail` property. |
+| entries | <code>Array</code> | Array of navigation entries. |
 
-<a name="MDRipple"></a>
-
-## MDRipple
-MDRipple is a class that manages ripple effect functionality based on MDCDK.
-
-**Kind**: global class  
-
-* [MDRipple](#MDRipple)
-    * [.init()](#MDRipple+init)
-    * [.destroy()](#MDRipple+destroy)
-
-<a name="MDRipple+init"></a>
-
-### mdRipple.init()
-Initializes the ripple effect and sets up event listeners.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-<a name="MDRipple+destroy"></a>
-
-### mdRipple.destroy()
-Cleans up and removes the ripple effect and event listeners.
-
-**Kind**: instance method of [<code>MDRipple</code>](#MDRipple)  
-<a name="MDRouter"></a>
-
-## MDRouter
-MDRouter is a class for managing routing and navigation within the application.
-
-**Kind**: global class  
-**Emits**: <code>MDRouter#event:popstate - When navigating through history.</code>, <code>MDRouter#event:onCurrententrychange - When the current entry changes.</code>, <code>MDRouter#event:onNavigate - When navigation begins.</code>, <code>MDRouter#event:onNavigateerror - When an error occurs during navigation.</code>, <code>MDRouter#event:onNavigatesuccess - When navigation is successful.</code>  
-
-* [MDRouter](#MDRouter)
-    * [.navigate(url)](#MDRouter.navigate)
-    * [.init()](#MDRouter.init) : <code>Array.&lt;Object&gt;</code>
-
-<a name="MDRouter.navigate"></a>
-
-### MDRouter.navigate(url)
-Navigates to a specified URL using HTML5 History API.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | The URL to navigate to. |
-
-<a name="MDRouter.init"></a>
-
-### MDRouter.init() : <code>Array.&lt;Object&gt;</code>
-Initializes the router with provided routes.
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| path | <code>string</code> | The path of the route. |
-| component | <code>HTMLElement</code> | The component to render for the route. |
-| children | <code>Array.&lt;Object&gt;</code> | Child routes. |
-| load | <code>function</code> | Function to lazy-load the route component. |
-| beforeLoad | <code>function</code> | Function to execute before loading the route component. |
+| path | <code>string</code> | The URL path for the navigation entry. |
+| component | <code>Element</code> | The component associated with the navigation entry. |
+| children | <code>Array.&lt;NavigationEntry&gt;</code> | An array of child navigation entries. |
+| load | <code>function</code> | A function to load the component associated with the entry. |
+| beforeLoad | <code>function</code> | A function called before loading the entry, with resolve and reject parameters. |
 
+**Example**  
+```js
+MDNavigation.load([  {path:'',component:MainComponent,children:[      {path:'users',beforeLoad,load:() => import("./navigation/users.js").then(m=>m.default),children:[          {path:':_id',load:() => import("./navigation/user.js").then(m=>m.default),children:[]},      ]},      {path:'blogs',load:() => import("./navigation/blogs.js").then(m=>m.default),children:[          {path:':_id',load:() => import("./navigation/blog.js").then(m=>m.default),children:[]},      ]},  ]},  {path:'login',component:LoginComponent,children:[]},  {path:'*',component:ErrorComponent,children:[]},])
+```
+<a name="MDState"></a>
+
+## MDState ⇐ <code>MDCDK</code>
+Represents a stateful UI element with interactive behaviors.
+
+**Kind**: global class  
+**Extends**: <code>MDCDK</code>  
+
+* [MDState](#MDState) ⇐ <code>MDCDK</code>
+    * [.init()](#MDState+init)
+    * [.destroy()](#MDState+destroy)
+
+<a name="MDState+init"></a>
+
+### mdState.init()
+Initializes the MDState instance.
+
+**Kind**: instance method of [<code>MDState</code>](#MDState)  
+**Access**: public  
+<a name="MDState+destroy"></a>
+
+### mdState.destroy()
+Destroys the MDState instance.
+
+**Kind**: instance method of [<code>MDState</code>](#MDState)  
+**Access**: public  
 <a name="MDIconButtonComponent"></a>
 
-## MDIconButtonComponent
-MDIconButtonComponent represents an icon button element with customizable appearance and ripple effect.
+## MDIconButtonComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDIconButton.
 
 **Kind**: global class  
-**Emits**: <code>MDIconButtonComponent#event:onIconButtonNativeClick - Fires when the native icon button is clicked.</code>  
+**Extends**: <code>MDComponent</code>  
 
-* [MDIconButtonComponent](#MDIconButtonComponent)
+* [MDIconButtonComponent](#MDIconButtonComponent) ⇐ <code>MDComponent</code>
     * [new MDIconButtonComponent()](#new_MDIconButtonComponent_new)
     * _instance_
-        * [.iconButtonNative](#MDIconButtonComponent+iconButtonNative) ⇒ <code>HTMLElement</code>
-        * [.render()](#MDIconButtonComponent+render) ⇒ <code>HTMLElement</code>
+        * [.render()](#MDIconButtonComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDIconButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.disconnectedCallback()](#MDIconButtonComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDIconButtonComponent+firstUpdated)
         * [.updated(_changedProperties)](#MDIconButtonComponent+updated)
         * [.handleIconButtonNativeClick(event)](#MDIconButtonComponent+handleIconButtonNativeClick)
-        * ["onIconButtonNativeClick"](#MDIconButtonComponent+event_onIconButtonNativeClick)
     * _static_
         * [.properties](#MDIconButtonComponent.properties) ⇒ <code>Object</code>
 
 <a name="new_MDIconButtonComponent_new"></a>
 
 ### new MDIconButtonComponent()
-Constructor for MDIconButtonComponent setting default 'type' to "button".
+Constructor for MDIconButtonComponent.
 
-<a name="MDIconButtonComponent+iconButtonNative"></a>
-
-### mdIconButtonComponent.iconButtonNative ⇒ <code>HTMLElement</code>
-Returns the native icon button element inside the MDIconButtonComponent.
-
-**Kind**: instance property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Returns**: <code>HTMLElement</code> - The native icon button element.  
 <a name="MDIconButtonComponent+render"></a>
 
-### mdIconButtonComponent.render() ⇒ <code>HTMLElement</code>
-Renders the HTML template for the MDIconButtonComponent.
+### mdIconButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDIconButtonComponent template using Lit.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Returns**: <code>HTMLElement</code> - A template result representing the rendered HTML.  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
 <a name="MDIconButtonComponent+connectedCallback"></a>
 
 ### mdIconButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
-Lifecycle method called when the element is added to the DOM.Initializes the component and attaches MDRipple effect to the icon button.
+Lifecycle callback called when the element is added to the DOM.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Returns**: <code>Promise.&lt;void&gt;</code> - A promise resolving when initialization is complete.  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
 <a name="MDIconButtonComponent+disconnectedCallback"></a>
 
 ### mdIconButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is removed from the DOM.Cleans up the component, removing added classes and destroying the ripple effect.
+Lifecycle callback called when the element is removed from the DOM.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 <a name="MDIconButtonComponent+firstUpdated"></a>
 
 ### mdIconButtonComponent.firstUpdated(_changedProperties)
-Lifecycle method called after the first update of the element.
+Lifecycle callback called after the first render and element is added to the DOM.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDIconButtonComponent+updated"></a>
 
 ### mdIconButtonComponent.updated(_changedProperties)
-Lifecycle method called when properties are updated.Updates classes based on the 'appearance' and 'toggle' properties.
+Lifecycle callback called when properties are updated.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDIconButtonComponent+handleIconButtonNativeClick"></a>
 
 ### mdIconButtonComponent.handleIconButtonNativeClick(event)
-Handles the click event on the native icon button element.Toggles activation if 'toggle' property is enabled and emits a custom event.
+Handles the click event on the native button element.Toggles the activated state and emits the 'onIconButtonNativeClick' event.
 
 **Kind**: instance method of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Emits**: [<code>onIconButtonNativeClick</code>](#MDIconButtonComponent+event_onIconButtonNativeClick)  
+**Emits**: <code>MDIconButtonComponent#event:onIconButtonNativeClick</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| event | <code>Event</code> | The click event on the icon button. |
+| event | <code>Event</code> | The click event. |
 
-<a name="MDIconButtonComponent+event_onIconButtonNativeClick"></a>
-
-### "onIconButtonNativeClick"
-Event fired when the native icon button is clicked.
-
-**Kind**: event emitted by [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
 <a name="MDIconButtonComponent.properties"></a>
 
 ### MDIconButtonComponent.properties ⇒ <code>Object</code>
-Defines the properties and their types for MDIconButtonComponent.
+Properties for the MDIconButtonComponent.
 
 **Kind**: static property of [<code>MDIconButtonComponent</code>](#MDIconButtonComponent)  
-**Returns**: <code>Object</code> - An object containing property definitions.  
+**Returns**: <code>Object</code> - Property configuration.  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| appearance | <code>String</code> | The appearance/style of the icon button. |
-| type | <code>String</code> | The type of the button. |
-| icon | <code>String</code> | The icon displayed in the button. |
-| toggle | <code>Boolean</code> | Indicates if the icon button is toggleable. |
-| activated | <code>Boolean</code> | Reflects whether the icon button is activated or not. |
+| appearance | <code>String</code> | The appearance style of the icon-button ("filled", "filled-tonal", "outlined"). |
+| type | <code>String</code> | The type of the native button element ("button" by default). |
+| icon | <code>String</code> | The icon for the icon-button. |
+| toggle | <code>Boolean</code> | A boolean indicating whether the icon-button is toggleable. |
+| activated | <code>Boolean</code> | A boolean reflecting the activated state of the icon-button. |
+
+<a name="MDRadioButtonComponent"></a>
+
+## MDRadioButtonComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDRadioButton.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDRadioButtonComponent](#MDRadioButtonComponent) ⇐ <code>MDComponent</code>
+    * [new MDRadioButtonComponent()](#new_MDRadioButtonComponent_new)
+    * _instance_
+        * [.render()](#MDRadioButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDRadioButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDRadioButtonComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDRadioButtonComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDRadioButtonComponent+updated)
+    * _static_
+        * [.properties](#MDRadioButtonComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDRadioButtonComponent_new"></a>
+
+### new MDRadioButtonComponent()
+Constructor for MDRadioButtonComponent.
+
+<a name="MDRadioButtonComponent+render"></a>
+
+### mdRadioButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDRadioButtonComponent template using Lit.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDRadioButtonComponent+connectedCallback"></a>
+
+### mdRadioButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDRadioButtonComponent+disconnectedCallback"></a>
+
+### mdRadioButtonComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+<a name="MDRadioButtonComponent+firstUpdated"></a>
+
+### mdRadioButtonComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDRadioButtonComponent+updated"></a>
+
+### mdRadioButtonComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDRadioButtonComponent.properties"></a>
+
+### MDRadioButtonComponent.properties ⇒ <code>Object</code>
+Properties for the MDRadioButtonComponent.
+
+**Kind**: static property of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name attribute for the radio-button. |
+| checked | <code>Boolean</code> | A boolean indicating whether the radio-button is checked. |
 
 <a name="MDSegmentedButtonComponent"></a>
 
-## MDSegmentedButtonComponent
-MDSegmentedButtonComponent represents a segmented button element that renders multiple md-button elements.
+## MDSegmentedButtonComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDSegmentedButton.
 
 **Kind**: global class  
-**Emits**: <code>MDSegmentedButtonComponent#event:onButtonClick - Fires when a button in the segmented button is clicked.</code>  
+**Extends**: <code>MDComponent</code>  
 
-* [MDSegmentedButtonComponent](#MDSegmentedButtonComponent)
+* [MDSegmentedButtonComponent](#MDSegmentedButtonComponent) ⇐ <code>MDComponent</code>
     * [new MDSegmentedButtonComponent()](#new_MDSegmentedButtonComponent_new)
     * _instance_
-        * [.render()](#MDSegmentedButtonComponent+render) ⇒ <code>HTMLElement</code>
-        * [.connectedCallback()](#MDSegmentedButtonComponent+connectedCallback)
+        * [.render()](#MDSegmentedButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDSegmentedButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.disconnectedCallback()](#MDSegmentedButtonComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDSegmentedButtonComponent+firstUpdated)
         * [.updated(_changedProperties)](#MDSegmentedButtonComponent+updated)
-        * [.handleButtonClick(event)](#MDSegmentedButtonComponent+handleButtonClick)
-        * ["onButtonClick"](#MDSegmentedButtonComponent+event_onButtonClick)
+        * [.handleSegmentedButtonClick(event)](#MDSegmentedButtonComponent+handleSegmentedButtonClick)
     * _static_
         * [.properties](#MDSegmentedButtonComponent.properties) ⇒ <code>Object</code>
 
 <a name="new_MDSegmentedButtonComponent_new"></a>
 
 ### new MDSegmentedButtonComponent()
-Constructor for MDSegmentedButtonComponent setting default values for 'type' and 'data'.
+Constructor for MDSegmentedButtonComponent.
 
 <a name="MDSegmentedButtonComponent+render"></a>
 
-### mdSegmentedButtonComponent.render() ⇒ <code>HTMLElement</code>
-Renders the HTML template for the MDSegmentedButtonComponent using md-button elements.
+### mdSegmentedButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDSegmentedButtonComponent template using Lit.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
-**Returns**: <code>HTMLElement</code> - A template result representing the rendered HTML.  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
 <a name="MDSegmentedButtonComponent+connectedCallback"></a>
 
-### mdSegmentedButtonComponent.connectedCallback()
-Lifecycle method called when the element is added to the DOM.Adds the 'md-segmented-button' class to the component.
+### mdSegmentedButtonComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
 <a name="MDSegmentedButtonComponent+disconnectedCallback"></a>
 
 ### mdSegmentedButtonComponent.disconnectedCallback()
-Lifecycle method called when the element is removed from the DOM.Removes the 'md-segmented-button' class from the component.
+Lifecycle callback called when the element is removed from the DOM.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 <a name="MDSegmentedButtonComponent+firstUpdated"></a>
 
 ### mdSegmentedButtonComponent.firstUpdated(_changedProperties)
-Lifecycle method called after the first update of the element.
+Lifecycle callback called after the first render and element is added to the DOM.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
 <a name="MDSegmentedButtonComponent+updated"></a>
 
 ### mdSegmentedButtonComponent.updated(_changedProperties)
-Lifecycle method called when properties are updated.
+Lifecycle callback called when properties are updated.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| _changedProperties | <code>Map.&lt;any, any&gt;</code> | A Map of properties that have changed. |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
 
-<a name="MDSegmentedButtonComponent+handleButtonClick"></a>
+<a name="MDSegmentedButtonComponent+handleSegmentedButtonClick"></a>
 
-### mdSegmentedButtonComponent.handleButtonClick(event)
-Handles the click event on a button in the segmented button.Toggles activation for multi-select or selects a single button for single-select.
+### mdSegmentedButtonComponent.handleSegmentedButtonClick(event)
+Handles the click event on the segmented button.Toggles the activation state of the buttons based on the type ("single-select" or "multi-select").Emits the 'onSegmentedButtonClick' event.
 
 **Kind**: instance method of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
+**Emits**: <code>MDSegmentedButtonComponent#event:onSegmentedButtonClick</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| event | <code>Event</code> | The click event on the button. |
-
-<a name="MDSegmentedButtonComponent+event_onButtonClick"></a>
-
-### "onButtonClick"
-Event fired when a button in the segmented button is clicked.
-
-**Kind**: event emitted by [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| event | <code>Event</code> | The original click event. |
-| button | <code>HTMLElement</code> | The button element that was clicked. |
+| event | <code>Event</code> | The click event. |
 
 <a name="MDSegmentedButtonComponent.properties"></a>
 
 ### MDSegmentedButtonComponent.properties ⇒ <code>Object</code>
-Defines the properties and their types for MDSegmentedButtonComponent.
+Properties for the MDSegmentedButtonComponent.
 
 **Kind**: static property of [<code>MDSegmentedButtonComponent</code>](#MDSegmentedButtonComponent)  
-**Returns**: <code>Object</code> - An object containing property definitions.  
+**Returns**: <code>Object</code> - Property configuration.  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| type | <code>String</code> | The type of segmented button (single-select or multi-select). |
-| data | <code>Array</code> | The data array to render buttons. |
+| type | <code>String</code> | The type of the native segmented-button element ("single-select" or "multi-select" by default). |
+| items | <code>Array</code> | An array of items representing the buttons in the segmented button. Each item should be an object with properties like "type", "icon", "label", and "activated". |
+
+<a name="MDSwitchComponent"></a>
+
+## MDSwitchComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDSwitch.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDSwitchComponent](#MDSwitchComponent) ⇐ <code>MDComponent</code>
+    * [new MDSwitchComponent()](#new_MDSwitchComponent_new)
+    * _instance_
+        * [.render()](#MDSwitchComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDSwitchComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDSwitchComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDSwitchComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDSwitchComponent+updated)
+    * _static_
+        * [.properties](#MDSwitchComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDSwitchComponent_new"></a>
+
+### new MDSwitchComponent()
+Constructor for MDSwitchComponent.
+
+<a name="MDSwitchComponent+render"></a>
+
+### mdSwitchComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDSwitchComponent template using Lit.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDSwitchComponent+connectedCallback"></a>
+
+### mdSwitchComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDSwitchComponent+disconnectedCallback"></a>
+
+### mdSwitchComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+<a name="MDSwitchComponent+firstUpdated"></a>
+
+### mdSwitchComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDSwitchComponent+updated"></a>
+
+### mdSwitchComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDSwitchComponent.properties"></a>
+
+### MDSwitchComponent.properties ⇒ <code>Object</code>
+Properties for the MDSwitchComponent.
+
+**Kind**: static property of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name attribute for the switch. |
+| checked | <code>Boolean</code> | A boolean indicating whether the switch is checked. |
+
+<a name="pushStateOverride"></a>
+
+## pushStateOverride(...args) ⇒ <code>void</code>
+Overrides the window.history.pushState method to dispatch a "popstate" event after pushing a state.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| ...args | <code>\*</code> | Arguments to be passed to the original pushState method. |
 
