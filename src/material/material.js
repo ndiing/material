@@ -3,6 +3,8 @@ import "./foundation/cdk.js";
 import "./foundation/navigation.js";
 import "./foundation/state.js";
 
+import "./icon/icon.js";
+import "./emoji/emoji.js";
 import "./button/button.js";
 import "./fab/fab.js";
 import "./icon-button/icon-button.js";

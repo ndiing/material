@@ -1,13 +1,68 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
+import icons from "./icons.json";
+import emojis from "./emojis.json";
 
-class ExampleComponent extends MDComponent{
-    render(){
+class ExampleComponent extends MDComponent {
+    render() {
         // prettier-ignore
         return html`
             <!-- <div class="md-layout"> -->
-                <!--  -->
                 <div class="md-layout__grid">
+                    <!--  -->
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                        ${icons.slice(0, 1).map(icon=>html`
+                            <h1>${icon.category}</h1>
+                            ${icon.children.map(icon=>html`
+                                <md-icon>${icon.icon}</md-icon>
+                            `)}
+                        `)}
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                        ${emojis.slice(0, 1).map(emoji=>html`
+                            <h1>${emoji.category}</h1>
+                            ${emoji.children.map(emoji=>html`
+                                <md-emoji>${emoji.emoji}</md-emoji>
+                            `)}
+                        `)}
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                        <div class="md-typography--display-large">Display Large</div>
+                        <div class="md-typography--display-small">Display Small</div>
+                        <div class="md-typography--headline-large">Headline Large</div>
+                        <div class="md-typography--headline-medium">Headline Medium</div>
+                        <div class="md-typography--headline-small">Headline Small</div>
+                        <div class="md-typography--title-large">Title Large</div>
+                        <div class="md-typography--title-medium">Title Medium</div>
+                        <div class="md-typography--title-small">Title Small</div>
+                        <div class="md-typography--body-large">Body Large</div>
+                        <div class="md-typography--body-medium">Body Medium</div>
+                        <div class="md-typography--body-small">Body Small</div>
+                        <div class="md-typography--label-large">Label Large</div>
+                        <div class="md-typography--label-medium">Label Medium</div>
+                        <div class="md-typography--label-small">Label Small</div>
+                        <div class="md-typography--body-large">Body Large</div>
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-button appearance="elevated" label="Label"></md-button>
@@ -26,6 +81,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-fab size="small" icon="image"></md-fab>
@@ -39,6 +95,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-icon-button appearance="filled" icon="image"></md-icon-button>
@@ -59,6 +116,7 @@ class ExampleComponent extends MDComponent{
                         <md-icon-button toggle activated icon="image"></md-icon-button>
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-segmented-button type="single-select" .items="${[
@@ -77,6 +135,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-checkbox></md-checkbox>
@@ -88,6 +147,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-radio-button name="radio-button"></md-radio-button>
@@ -98,6 +158,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-switch></md-switch>
@@ -108,6 +169,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-badge></md-badge>
@@ -119,6 +181,7 @@ class ExampleComponent extends MDComponent{
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
@@ -128,12 +191,11 @@ class ExampleComponent extends MDComponent{
                     </div>
                     <!--  -->
                 </div>
-                <!--  -->
             <!-- </div> -->
         `
     }
 }
 
-customElements.define('example-component',ExampleComponent)
+customElements.define("example-component", ExampleComponent);
 
-export default document.createElement('example-component')
+export default document.createElement("example-component");
