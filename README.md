@@ -42,14 +42,6 @@
 </dd>
 </dl>
 
-## Functions
-
-<dl>
-<dt><a href="#pushStateOverride">pushStateOverride(...args)</a> ⇒ <code>void</code></dt>
-<dd><p>Overrides the window.history.pushState method to dispatch a &quot;popstate&quot; event after pushing a state.</p>
-</dd>
-</dl>
-
 <a name="MDBadgeComponent"></a>
 
 ## MDBadgeComponent ⇐ <code>MDComponent</code>
@@ -1027,15 +1019,4 @@ Properties for the MDSwitchComponent.
 | --- | --- | --- |
 | name | <code>String</code> | The name attribute for the switch. |
 | checked | <code>Boolean</code> | A boolean indicating whether the switch is checked. |
-
-<a name="pushStateOverride"></a>
-
-## pushStateOverride(...args) ⇒ <code>void</code>
-Overrides the window.history.pushState method to dispatch a "popstate" event after pushing a state.
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| ...args | <code>\*</code> | Arguments to be passed to the original pushState method. |
 

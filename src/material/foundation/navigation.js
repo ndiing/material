@@ -1,17 +1,4 @@
 /**
- * Overrides the window.history.pushState method to dispatch a "popstate" event after pushing a state.
- * @function
- * @name pushStateOverride
- * @param {...*} args - Arguments to be passed to the original pushState method.
- * @returns {void}
- */
-const pushState = window.history.pushState;
-window.history.pushState = function () {
-    pushState.apply(this, arguments);
-    window.dispatchEvent(new CustomEvent("popstate"));
-};
-
-/**
  * MDNavigation class for managing client-side navigation.
  * @class
  * @fires MDNavigation#onCurrententrychange
@@ -243,6 +230,12 @@ class MDNavigation {
      * ])
      */
     static load(entries = []) {
+        const pushState = window.history.pushState;
+        window.history.pushState = function () {
+            pushState.apply(this, arguments);
+            window.dispatchEvent(new CustomEvent("popstate"));
+        };
+
         this.entries = this.setEntries(entries);
 
         window.addEventListener("DOMContentLoaded", this.render.bind(this));
