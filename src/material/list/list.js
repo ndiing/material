@@ -44,9 +44,9 @@ class MDListItemComponent extends MDComponent {
             ['image',() => html`<md-image class="md-list__image" .src="${item.src}" .alt="${item.alt}"></md-image>`], // image
             ['video',() => html`<md-image class="md-list__video" .src="${item.src}" .alt="${item.alt}" .ratio="${"16/9"}"></md-image>`], // video
             ['icon',() => html`<md-icon class="md-list__icon">${item.icon}</md-icon>`],
-            ['checkbox',() => html`<md-checkbox class="md-list__checkbox" .name="${item.name}" .checked="${item.checked}"></md-checkbox>`],
-            ['radio-button',() => html`<md-radio-button class="md-list__radio-button" .name="${item.name}" .checked="${item.checked}"></md-radio-button>`],
-            ['switch',() => html`<md-switch class="md-list__switch" .name="${item.name}" .checked="${item.checked}"></md-switch>`],
+            ['checkbox',() => html`<md-checkbox class="md-list__checkbox" .name="${item.name}" .checked="${item.checked??this.activated}"></md-checkbox>`],
+            ['radio-button',() => html`<md-radio-button class="md-list__radio-button" .name="${item.name}" .checked="${item.checked??this.activated}"></md-radio-button>`],
+            ['switch',() => html`<md-switch class="md-list__switch" .name="${item.name}" .checked="${item.checked??this.activated}"></md-switch>`],
             ['supporting-text',() => html`<div class="md-list__supporting-text">${item.supportingText}</div>`],
         ],() => nothing)
     }
@@ -276,11 +276,19 @@ class MDListComponent extends MDComponent {
     handleListItemClick(event) {
         const listItem = event.currentTarget;
 
+        // const classNames=[
+        //     'md-list__checkbox',
+        //     'md-list__radio-button',
+        //     'md-list__switch',
+        // ]
+        // const isAction = classNames.some(className => event.target.closest('.'+className))
+
         if (this.activatable) {
             if (this.type === "multi-select") listItem.item.activated = !listItem.item.activated;
             else for (const item of this.items) item.activated = item === listItem.item;
             this.requestUpdate();
         }
+
 
         this.emit("handleListItemClick", { event, listItem });
     }

@@ -205,7 +205,7 @@ class ExampleComponent extends MDComponent {
 
                     <!--  -->
                     <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-list activatable type="multi-select" size="three-line" .items="${[
+                        <md-list size="three-line" .items="${[
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
 
@@ -233,7 +233,7 @@ class ExampleComponent extends MDComponent {
                         ]}"></md-list>
                     </div>
                     <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-list activatable type="multi-select" size="two-line" .items="${[
+                        <md-list size="two-line" .items="${[
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
 
@@ -261,7 +261,7 @@ class ExampleComponent extends MDComponent {
                         ]}"></md-list>
                     </div>
                     <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-list activatable type="multi-select" .items="${[
+                        <md-list .items="${[
                             { label:'Headline', supportingText:'', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
                             { label:'Headline', supportingText:'', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
 
@@ -286,6 +286,28 @@ class ExampleComponent extends MDComponent {
                             { label:'Headline', supportingText:'', leadingItems:[], trailingItems:[{component:'switch'}] },
                             { label:'Headline', supportingText:'', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
 
+                        ]}"></md-list>
+                    </div>
+
+                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-list activatable type="single-select" .items="${[
+                            {label:"Label 1", trailingItems:[{component:'radio-button',name:'radio-button'}]},
+                            {label:"Label 2", trailingItems:[{component:'radio-button',name:'radio-button'}]},
+                            {label:"Label 3", trailingItems:[{component:'radio-button',name:'radio-button'}]},
+                        ]}"></md-list>
+                    </div>
+                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-list activatable type="multi-select" .items="${[
+                            {label:"Label 1", trailingItems:[{component:'checkbox',}]},
+                            {label:"Label 2", trailingItems:[{component:'checkbox',}]},
+                            {label:"Label 3", trailingItems:[{component:'checkbox',}]},
+                        ]}"></md-list>
+                    </div>
+                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-list activatable type="multi-select" .items="${[
+                            {label:"Label 1", trailingItems:[{component:'switch',}]},
+                            {label:"Label 2", trailingItems:[{component:'switch',}]},
+                            {label:"Label 3", trailingItems:[{component:'switch',}]},
                         ]}"></md-list>
                     </div>
                     <!--  -->
