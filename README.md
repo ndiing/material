@@ -31,6 +31,15 @@
 <dt><a href="#MDImageComponent">MDImageComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDImage.</p>
 </dd>
+<dt><a href="#MDListItemComponent">MDListItemComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDListItem.</p>
+</dd>
+<dt><a href="#MDListRowComponent">MDListRowComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDListRow.</p>
+</dd>
+<dt><a href="#MDListComponent">MDListComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDList.</p>
+</dd>
 <dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDRadioButton.</p>
 </dd>
@@ -766,6 +775,257 @@ Properties for the MDImageComponent.
 | alt | <code>String</code> | The alternative text for the image. |
 | ratio | <code>String</code> | The aspect ratio of the image. For example, "16/9". |
 | shape | <code>Boolean</code> | Indicates whether the image should be displayed in a circular shape. |
+
+<a name="MDListItemComponent"></a>
+
+## MDListItemComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDListItem.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDListItemComponent](#MDListItemComponent) ⇐ <code>MDComponent</code>
+    * [new MDListItemComponent()](#new_MDListItemComponent_new)
+    * _instance_
+        * [.render()](#MDListItemComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDListItemComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDListItemComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDListItemComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDListItemComponent+updated)
+    * _static_
+        * [.properties](#MDListItemComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDListItemComponent_new"></a>
+
+### new MDListItemComponent()
+Constructor for MDListItemComponent.
+
+<a name="MDListItemComponent+render"></a>
+
+### mdListItemComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDListItemComponent template using Lit.
+
+**Kind**: instance method of [<code>MDListItemComponent</code>](#MDListItemComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDListItemComponent+connectedCallback"></a>
+
+### mdListItemComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDListItemComponent</code>](#MDListItemComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDListItemComponent+disconnectedCallback"></a>
+
+### mdListItemComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDListItemComponent</code>](#MDListItemComponent)  
+<a name="MDListItemComponent+firstUpdated"></a>
+
+### mdListItemComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDListItemComponent</code>](#MDListItemComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDListItemComponent+updated"></a>
+
+### mdListItemComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDListItemComponent</code>](#MDListItemComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDListItemComponent.properties"></a>
+
+### MDListItemComponent.properties ⇒ <code>Object</code>
+Properties for the MDListItemComponent.
+
+**Kind**: static property of [<code>MDListItemComponent</code>](#MDListItemComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The main label for the list item. |
+| supportingText | <code>String</code> | Additional text to support the main label. |
+| leadingItems | <code>Array</code> | An array of leading items (e.g., icons, avatars). |
+| trailingItems | <code>Array</code> | An array of trailing items (e.g., icons, checkboxes). |
+| activated | <code>Boolean</code> | A boolean reflecting the activated state of the list item. |
+
+<a name="MDListRowComponent"></a>
+
+## MDListRowComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDListRow.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDListRowComponent](#MDListRowComponent) ⇐ <code>MDComponent</code>
+    * [new MDListRowComponent()](#new_MDListRowComponent_new)
+    * _instance_
+        * [.render()](#MDListRowComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDListRowComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDListRowComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDListRowComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDListRowComponent+updated)
+    * _static_
+        * [.properties](#MDListRowComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDListRowComponent_new"></a>
+
+### new MDListRowComponent()
+Constructor for MDListRowComponent.
+
+<a name="MDListRowComponent+render"></a>
+
+### mdListRowComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDListRowComponent template using Lit.
+
+**Kind**: instance method of [<code>MDListRowComponent</code>](#MDListRowComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDListRowComponent+connectedCallback"></a>
+
+### mdListRowComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDListRowComponent</code>](#MDListRowComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDListRowComponent+disconnectedCallback"></a>
+
+### mdListRowComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDListRowComponent</code>](#MDListRowComponent)  
+<a name="MDListRowComponent+firstUpdated"></a>
+
+### mdListRowComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDListRowComponent</code>](#MDListRowComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDListRowComponent+updated"></a>
+
+### mdListRowComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDListRowComponent</code>](#MDListRowComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDListRowComponent.properties"></a>
+
+### MDListRowComponent.properties ⇒ <code>Object</code>
+Properties for the MDListRowComponent.
+
+**Kind**: static property of [<code>MDListRowComponent</code>](#MDListRowComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+<a name="MDListComponent"></a>
+
+## MDListComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDList.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDListComponent](#MDListComponent) ⇐ <code>MDComponent</code>
+    * [new MDListComponent()](#new_MDListComponent_new)
+    * _instance_
+        * [.render()](#MDListComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDListComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDListComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDListComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDListComponent+updated)
+        * [.handleListItemClick(event)](#MDListComponent+handleListItemClick)
+    * _static_
+        * [.properties](#MDListComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDListComponent_new"></a>
+
+### new MDListComponent()
+Constructor for MDListComponent.
+
+<a name="MDListComponent+render"></a>
+
+### mdListComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDListComponent template using Lit.
+
+**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDListComponent+connectedCallback"></a>
+
+### mdListComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDListComponent+disconnectedCallback"></a>
+
+### mdListComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+<a name="MDListComponent+firstUpdated"></a>
+
+### mdListComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDListComponent+updated"></a>
+
+### mdListComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDListComponent+handleListItemClick"></a>
+
+### mdListComponent.handleListItemClick(event)
+Handles the click event on a list item.
+
+**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+**Emits**: <code>MDListItemComponent#event:handleListItemClick</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MDListComponent.properties"></a>
+
+### MDListComponent.properties ⇒ <code>Object</code>
+Properties for the MDListComponent.
+
+**Kind**: static property of [<code>MDListComponent</code>](#MDListComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| items | <code>Array</code> | An array of items to be displayed in the list. |
+| size | <code>String</code> | The size style of the list ("one-line", "two-line", "three-line"). |
+| type | <code>String</code> | The type of the list ("single-select", "multi-select"). |
+| activatable | <code>Boolean</code> | Indicates whether the list items are activatable. |
 
 <a name="MDRadioButtonComponent"></a>
 

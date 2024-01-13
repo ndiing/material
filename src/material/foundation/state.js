@@ -14,16 +14,12 @@ class MDState extends MDCDK {
     init() {
         this.root.classList.add("md-state");
 
-        let size = parseFloat(window.getComputedStyle(this.root).getPropertyValue("--md-state-size"));
-        if (isNaN(size)) {
-            size = this.options.size;
-            if (!size) {
-                const rect = this.root.getBoundingClientRect();
-                size = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
-            }
-            this.root.style.setProperty("--md-state-size", size + "%");
+        this.size = this.options.size;
+        if (!this.size) {
+            const rect = this.root.getBoundingClientRect();
+            this.size = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
         }
-        this.size = size;
+        this.root.style.setProperty("--md-state-size", this.size + "%");
 
         if (this.options.inverted) this.root.classList.add("md-state--inverted");
         else this.root.classList.remove("md-state--inverted");

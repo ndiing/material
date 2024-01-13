@@ -11,6 +11,14 @@
 }
 
 .md-state {
+    --md-state:none;
+    --md-state-fadeout:none;
+    --md-state-size: 100%;
+    --md-state-left: 50%;
+    --md-state-top: 50%;
+    --md-state-x: 0%;
+    --md-state-y: 0%;
+    
     position: relative;
 
     &::after {

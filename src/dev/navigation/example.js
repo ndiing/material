@@ -205,7 +205,7 @@ class ExampleComponent extends MDComponent {
 
                     <!--  -->
                     <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-list size="three-line" .items="${[
+                        <md-list activatable type="multi-select" size="three-line" .items="${[
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
 
@@ -224,8 +224,8 @@ class ExampleComponent extends MDComponent {
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'checkbox'}], trailingItems:[] },
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'checkbox'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
 
-                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'radio-button'}], trailingItems:[] },
-                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'radio-button'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'radio-button',name:'radio-button-1'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'radio-button',name:'radio-button-1'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
 
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[], trailingItems:[{component:'switch'}] },
                             { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
@@ -233,7 +233,7 @@ class ExampleComponent extends MDComponent {
                         ]}"></md-list>
                     </div>
                     <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-list size="two-line" .items="${[
+                        <md-list activatable type="multi-select" size="two-line" .items="${[
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
 
@@ -252,8 +252,8 @@ class ExampleComponent extends MDComponent {
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'checkbox'}], trailingItems:[] },
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'checkbox'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
 
-                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'radio-button'}], trailingItems:[] },
-                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'radio-button'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'radio-button',name:'radio-button-2'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'radio-button',name:'radio-button-2'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
 
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[], trailingItems:[{component:'switch'}] },
                             { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
@@ -261,7 +261,7 @@ class ExampleComponent extends MDComponent {
                         ]}"></md-list>
                     </div>
                     <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-list .items="${[
+                        <md-list activatable type="multi-select" .items="${[
                             { label:'Headline', supportingText:'', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
                             { label:'Headline', supportingText:'', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
 
@@ -280,8 +280,8 @@ class ExampleComponent extends MDComponent {
                             { label:'Headline', supportingText:'', leadingItems:[{component:'checkbox'}], trailingItems:[] },
                             { label:'Headline', supportingText:'', leadingItems:[{component:'checkbox'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
 
-                            { label:'Headline', supportingText:'', leadingItems:[{component:'radio-button'}], trailingItems:[] },
-                            { label:'Headline', supportingText:'', leadingItems:[{component:'radio-button'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'radio-button',name:'radio-button-3'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'radio-button',name:'radio-button-3'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
 
                             { label:'Headline', supportingText:'', leadingItems:[], trailingItems:[{component:'switch'}] },
                             { label:'Headline', supportingText:'', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
