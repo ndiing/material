@@ -10,6 +10,9 @@
 <dt><a href="#MDCheckboxComponent">MDCheckboxComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDCheckbox.</p>
 </dd>
+<dt><a href="#MDEmojiComponent">MDEmojiComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDEmoji.</p>
+</dd>
 <dt><a href="#MDFabComponent">MDFabComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDFab.</p>
 </dd>
@@ -21,6 +24,12 @@
 </dd>
 <dt><a href="#MDIconButtonComponent">MDIconButtonComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDIconButton.</p>
+</dd>
+<dt><a href="#MDIconComponent">MDIconComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDIcon.</p>
+</dd>
+<dt><a href="#MDImageComponent">MDImageComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDImage.</p>
 </dd>
 <dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDRadioButton.</p>
@@ -285,6 +294,79 @@ Properties for the MDCheckboxComponent.
 | indeterminate | <code>Boolean</code> | A boolean indicating whether the checkbox is in an indeterminate state. |
 | checked | <code>Boolean</code> | A boolean indicating whether the checkbox is checked. |
 
+<a name="MDEmojiComponent"></a>
+
+## MDEmojiComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDEmoji.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDEmojiComponent](#MDEmojiComponent) ⇐ <code>MDComponent</code>
+    * [new MDEmojiComponent()](#new_MDEmojiComponent_new)
+    * _instance_
+        * [.render()](#MDEmojiComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDEmojiComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDEmojiComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDEmojiComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDEmojiComponent+updated)
+    * _static_
+        * [.properties](#MDEmojiComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDEmojiComponent_new"></a>
+
+### new MDEmojiComponent()
+Constructor for MDEmojiComponent.
+
+<a name="MDEmojiComponent+render"></a>
+
+### mdEmojiComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDEmojiComponent template using Lit.
+
+**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDEmojiComponent+connectedCallback"></a>
+
+### mdEmojiComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDEmojiComponent+disconnectedCallback"></a>
+
+### mdEmojiComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
+<a name="MDEmojiComponent+firstUpdated"></a>
+
+### mdEmojiComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDEmojiComponent+updated"></a>
+
+### mdEmojiComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDEmojiComponent.properties"></a>
+
+### MDEmojiComponent.properties ⇒ <code>Object</code>
+Properties for the MDEmojiComponent.
+
+**Kind**: static property of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
 <a name="MDFabComponent"></a>
 
 ## MDFabComponent ⇐ <code>MDComponent</code>
@@ -537,6 +619,161 @@ Properties for the MDIconButtonComponent.
 | icon | <code>String</code> | The icon for the icon-button. |
 | toggle | <code>Boolean</code> | A boolean indicating whether the icon-button is toggleable. |
 | activated | <code>Boolean</code> | A boolean reflecting the activated state of the icon-button. |
+
+<a name="MDIconComponent"></a>
+
+## MDIconComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDIcon.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDIconComponent](#MDIconComponent) ⇐ <code>MDComponent</code>
+    * [new MDIconComponent()](#new_MDIconComponent_new)
+    * _instance_
+        * [.render()](#MDIconComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDIconComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDIconComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDIconComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDIconComponent+updated)
+    * _static_
+        * [.properties](#MDIconComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDIconComponent_new"></a>
+
+### new MDIconComponent()
+Constructor for MDIconComponent.
+
+<a name="MDIconComponent+render"></a>
+
+### mdIconComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDIconComponent template using Lit.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDIconComponent+connectedCallback"></a>
+
+### mdIconComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDIconComponent+disconnectedCallback"></a>
+
+### mdIconComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+<a name="MDIconComponent+firstUpdated"></a>
+
+### mdIconComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDIconComponent+updated"></a>
+
+### mdIconComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDIconComponent</code>](#MDIconComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDIconComponent.properties"></a>
+
+### MDIconComponent.properties ⇒ <code>Object</code>
+Properties for the MDIconComponent.
+
+**Kind**: static property of [<code>MDIconComponent</code>](#MDIconComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+<a name="MDImageComponent"></a>
+
+## MDImageComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDImage.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDImageComponent](#MDImageComponent) ⇐ <code>MDComponent</code>
+    * [new MDImageComponent()](#new_MDImageComponent_new)
+    * _instance_
+        * [.render()](#MDImageComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDImageComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDImageComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDImageComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDImageComponent+updated)
+    * _static_
+        * [.properties](#MDImageComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDImageComponent_new"></a>
+
+### new MDImageComponent()
+Constructor for MDImageComponent.
+
+<a name="MDImageComponent+render"></a>
+
+### mdImageComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDImageComponent template using Lit.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDImageComponent+connectedCallback"></a>
+
+### mdImageComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDImageComponent+disconnectedCallback"></a>
+
+### mdImageComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+<a name="MDImageComponent+firstUpdated"></a>
+
+### mdImageComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDImageComponent+updated"></a>
+
+### mdImageComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDImageComponent.properties"></a>
+
+### MDImageComponent.properties ⇒ <code>Object</code>
+Properties for the MDImageComponent.
+
+**Kind**: static property of [<code>MDImageComponent</code>](#MDImageComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| src | <code>String</code> | The source URL of the image. |
+| alt | <code>String</code> | The alternative text for the image. |
+| ratio | <code>String</code> | The aspect ratio of the image. For example, "16:9". |
+| shape | <code>Boolean</code> | Indicates whether the image should be displayed in a circular shape. |
 
 <a name="MDRadioButtonComponent"></a>
 
