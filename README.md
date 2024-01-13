@@ -772,7 +772,7 @@ Properties for the MDImageComponent.
 | --- | --- | --- |
 | src | <code>String</code> | The source URL of the image. |
 | alt | <code>String</code> | The alternative text for the image. |
-| ratio | <code>String</code> | The aspect ratio of the image. For example, "16:9". |
+| ratio | <code>String</code> | The aspect ratio of the image. For example, "16/9". |
 | shape | <code>Boolean</code> | Indicates whether the image should be displayed in a circular shape. |
 
 <a name="MDRadioButtonComponent"></a>

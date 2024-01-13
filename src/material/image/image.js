@@ -13,7 +13,7 @@ class MDImageComponent extends MDComponent {
      * @returns {Object} Property configuration.
      * @property {String} src - The source URL of the image.
      * @property {String} alt - The alternative text for the image.
-     * @property {String} ratio - The aspect ratio of the image. For example, "16:9".
+     * @property {String} ratio - The aspect ratio of the image. For example, "16/9".
      * @property {Boolean} shape - Indicates whether the image should be displayed in a circular shape.
      */
     static get properties() {
