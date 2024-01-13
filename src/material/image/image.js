@@ -6,6 +6,10 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDImage.
  * @extends MDComponent
+ * @fires {CustomEvent} ratio-change - Fired when the `ratio` property changes.
+ * @example
+ * // Example usage:
+ * // <md-image style="width:113.77777777777777px;" ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50"></md-image>
  */
 class MDImageComponent extends MDComponent {
     /**

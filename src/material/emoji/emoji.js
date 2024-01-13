@@ -5,6 +5,9 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDEmoji.
  * @extends MDComponent
+ * @example
+ * // Example usage:
+ * // <md-emoji>😀</md-emoji>
  */
 class MDEmojiComponent extends MDComponent {
     /**

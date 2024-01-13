@@ -5,6 +5,10 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDIconButton.
  * @extends MDComponent
+ * @fires MDIconButtonComponent#onIconButtonNativeClick
+ * @example
+ * // Example usage:
+ * // <md-icon-button appearance="filled" icon="image"></md-icon-button>
  */
 class MDIconButtonComponent extends MDComponent {
     /**

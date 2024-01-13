@@ -5,6 +5,9 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDFab.
  * @extends MDComponent
+ * @example
+ * // Example usage:
+ * // <md-fab size="small" icon="image"></md-fab>
  */
 class MDFabComponent extends MDComponent {
     /**

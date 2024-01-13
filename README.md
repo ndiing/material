@@ -155,6 +155,10 @@ Custom Lit web component representing an MDButton.
 ### new MDButtonComponent()
 Constructor for MDButtonComponent.
 
+**Example**  
+```js
+// Example usage:// <md-button appearance="elevated" label="Label"></md-button>
+```
 <a name="MDButtonComponent+render"></a>
 
 ### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
@@ -319,6 +323,10 @@ Custom Lit web component representing an MDEmoji.
 ### new MDEmojiComponent()
 Constructor for MDEmojiComponent.
 
+**Example**  
+```js
+// Example usage:// <md-emoji>😀</md-emoji>
+```
 <a name="MDEmojiComponent+render"></a>
 
 ### mdEmojiComponent.render() ⇒ <code>TemplateResult</code>
@@ -392,6 +400,10 @@ Custom Lit web component representing an MDFab.
 ### new MDFabComponent()
 Constructor for MDFabComponent.
 
+**Example**  
+```js
+// Example usage:// <md-fab size="small" icon="image"></md-fab>
+```
 <a name="MDFabComponent+render"></a>
 
 ### mdFabComponent.render() ⇒ <code>TemplateResult</code>
@@ -532,6 +544,7 @@ Custom Lit web component representing an MDIconButton.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
+**Emits**: <code>MDIconButtonComponent#event:onIconButtonNativeClick</code>  
 
 * [MDIconButtonComponent](#MDIconButtonComponent) ⇐ <code>MDComponent</code>
     * [new MDIconButtonComponent()](#new_MDIconButtonComponent_new)
@@ -550,6 +563,10 @@ Custom Lit web component representing an MDIconButton.
 ### new MDIconButtonComponent()
 Constructor for MDIconButtonComponent.
 
+**Example**  
+```js
+// Example usage:// <md-icon-button appearance="filled" icon="image"></md-icon-button>
+```
 <a name="MDIconButtonComponent+render"></a>
 
 ### mdIconButtonComponent.render() ⇒ <code>TemplateResult</code>
@@ -645,6 +662,10 @@ Custom Lit web component representing an MDIcon.
 ### new MDIconComponent()
 Constructor for MDIconComponent.
 
+**Example**  
+```js
+// Example usage:// <md-icon>image</md-icon>
+```
 <a name="MDIconComponent+render"></a>
 
 ### mdIconComponent.render() ⇒ <code>TemplateResult</code>
@@ -701,6 +722,7 @@ Custom Lit web component representing an MDImage.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
+**Emits**: <code>event:{CustomEvent} ratio-change - Fired when the &#x60;ratio&#x60; property changes.</code>  
 
 * [MDImageComponent](#MDImageComponent) ⇐ <code>MDComponent</code>
     * [new MDImageComponent()](#new_MDImageComponent_new)
@@ -718,6 +740,10 @@ Custom Lit web component representing an MDImage.
 ### new MDImageComponent()
 Constructor for MDImageComponent.
 
+**Example**  
+```js
+// Example usage:// <md-image style="width:113.77777777777777px;" ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50"></md-image>
+```
 <a name="MDImageComponent+render"></a>
 
 ### mdImageComponent.render() ⇒ <code>TemplateResult</code>

@@ -5,6 +5,9 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDIcon.
  * @extends MDComponent
+ * @example
+ * // Example usage:
+ * // <md-icon>image</md-icon>
  */
 class MDIconComponent extends MDComponent {
     /**

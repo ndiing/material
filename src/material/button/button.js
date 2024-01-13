@@ -5,6 +5,9 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDButton.
  * @extends MDComponent
+ * @example
+ * // Example usage:
+ * // <md-button appearance="elevated" label="Label"></md-button>
  */
 class MDButtonComponent extends MDComponent {
     /**
