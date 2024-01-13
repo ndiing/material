@@ -49,8 +49,8 @@ class MDSwitchComponent extends MDComponent {
                 type="checkbox" 
                 class="md-switch__native"
                 .name="${ifDefined(this.name)}"
-                .indeterminate="${ifDefined(this.indeterminate)}"
                 .checked="${ifDefined(this.checked)}"
+                @input="${this.handleSwitchNativeInput}"
             >
             <div class="md-switch__track">
                 <div class="md-switch__thumb"></div>
@@ -100,6 +100,20 @@ class MDSwitchComponent extends MDComponent {
      * @param {Map} _changedProperties - A map of changed properties.
      */
     updated(_changedProperties) {}
+
+    /**
+     * Handles the 'input' event from the native switch.
+     * Updates the component's state based on the native switch input.
+     * @param {Event} event - The 'input' event.
+     * @fires MDSwitchComponent#onSwitchNativeInput
+     */
+    handleSwitchNativeInput(event) {
+        const input = event.currentTarget;
+        // Remove the following line if 'indeterminate' is not defined in properties.
+        // this.indeterminate = input.indeterminate;
+        this.checked = input.checked;
+        this.emit("onSwitchNativeInput", { event, input });
+    }
 }
 
 customElements.define("md-switch", MDSwitchComponent);

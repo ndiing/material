@@ -53,6 +53,7 @@ class MDCheckboxComponent extends MDComponent {
                 .name="${ifDefined(this.name)}"
                 .indeterminate="${ifDefined(this.indeterminate)}"
                 .checked="${ifDefined(this.checked)}"
+                @input="${this.handleCheckboxNativeInput}"
             >
             <div class="md-checkbox__track">
                 <div class="md-checkbox__thumb"></div>
@@ -102,6 +103,19 @@ class MDCheckboxComponent extends MDComponent {
      * @param {Map} _changedProperties - A map of changed properties.
      */
     updated(_changedProperties) {}
+
+    /**
+     * Handles the 'input' event from the native checkbox.
+     * Updates the component's state based on the native checkbox input.
+     * @param {Event} event - The 'input' event.
+     * @fires MDCheckboxComponent#onCheckboxNativeInput
+     */
+    handleCheckboxNativeInput(event) {
+        const input = event.currentTarget;
+        this.indeterminate = input.indeterminate;
+        this.checked = input.checked;
+        this.emit("onCheckboxNativeInput", { event, input });
+    }
 }
 
 customElements.define("md-checkbox", MDCheckboxComponent);

@@ -234,6 +234,7 @@ Custom Lit web component representing an MDCheckbox.
         * [.disconnectedCallback()](#MDCheckboxComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDCheckboxComponent+firstUpdated)
         * [.updated(_changedProperties)](#MDCheckboxComponent+updated)
+        * [.handleCheckboxNativeInput(event)](#MDCheckboxComponent+handleCheckboxNativeInput)
     * _static_
         * [.properties](#MDCheckboxComponent.properties) ⇒ <code>Object</code>
 
@@ -283,6 +284,18 @@ Lifecycle callback called when properties are updated.
 | Param | Type | Description |
 | --- | --- | --- |
 | _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDCheckboxComponent+handleCheckboxNativeInput"></a>
+
+### mdCheckboxComponent.handleCheckboxNativeInput(event)
+Handles the 'input' event from the native checkbox.Updates the component's state based on the native checkbox input.
+
+**Kind**: instance method of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+**Emits**: <code>MDCheckboxComponent#event:onCheckboxNativeInput</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The 'input' event. |
 
 <a name="MDCheckboxComponent.properties"></a>
 
@@ -1069,6 +1082,7 @@ Custom Lit web component representing an MDRadioButton.
         * [.disconnectedCallback()](#MDRadioButtonComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDRadioButtonComponent+firstUpdated)
         * [.updated(_changedProperties)](#MDRadioButtonComponent+updated)
+        * [.handleRadioButtonNativeInput(event)](#MDRadioButtonComponent+handleRadioButtonNativeInput)
     * _static_
         * [.properties](#MDRadioButtonComponent.properties) ⇒ <code>Object</code>
 
@@ -1118,6 +1132,18 @@ Lifecycle callback called when properties are updated.
 | Param | Type | Description |
 | --- | --- | --- |
 | _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDRadioButtonComponent+handleRadioButtonNativeInput"></a>
+
+### mdRadioButtonComponent.handleRadioButtonNativeInput(event)
+Handles the 'input' event from the native radio button.Updates the component's state based on the native radio button input.
+
+**Kind**: instance method of [<code>MDRadioButtonComponent</code>](#MDRadioButtonComponent)  
+**Emits**: <code>MDRadioButtonComponent#event:onRadioButtonNativeInput</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The 'input' event. |
 
 <a name="MDRadioButtonComponent.properties"></a>
 
@@ -1247,6 +1273,7 @@ Custom Lit web component representing an MDSwitch.
         * [.disconnectedCallback()](#MDSwitchComponent+disconnectedCallback)
         * [.firstUpdated(_changedProperties)](#MDSwitchComponent+firstUpdated)
         * [.updated(_changedProperties)](#MDSwitchComponent+updated)
+        * [.handleSwitchNativeInput(event)](#MDSwitchComponent+handleSwitchNativeInput)
     * _static_
         * [.properties](#MDSwitchComponent.properties) ⇒ <code>Object</code>
 
@@ -1296,6 +1323,18 @@ Lifecycle callback called when properties are updated.
 | Param | Type | Description |
 | --- | --- | --- |
 | _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDSwitchComponent+handleSwitchNativeInput"></a>
+
+### mdSwitchComponent.handleSwitchNativeInput(event)
+Handles the 'input' event from the native switch.Updates the component's state based on the native switch input.
+
+**Kind**: instance method of [<code>MDSwitchComponent</code>](#MDSwitchComponent)  
+**Emits**: <code>MDSwitchComponent#event:onSwitchNativeInput</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The 'input' event. |
 
 <a name="MDSwitchComponent.properties"></a>
 

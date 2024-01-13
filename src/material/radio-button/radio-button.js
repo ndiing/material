@@ -49,8 +49,8 @@ class MDRadioButtonComponent extends MDComponent {
                 type="radio" 
                 class="md-radio-button__native"
                 .name="${ifDefined(this.name)}"
-                .indeterminate="${ifDefined(this.indeterminate)}"
                 .checked="${ifDefined(this.checked)}"
+                @input="${this.handleRadioButtonNativeInput}"
             >
             <div class="md-radio-button__track">
                 <div class="md-radio-button__thumb"></div>
@@ -100,6 +100,20 @@ class MDRadioButtonComponent extends MDComponent {
      * @param {Map} _changedProperties - A map of changed properties.
      */
     updated(_changedProperties) {}
+
+    /**
+     * Handles the 'input' event from the native radio button.
+     * Updates the component's state based on the native radio button input.
+     * @param {Event} event - The 'input' event.
+     * @fires MDRadioButtonComponent#onRadioButtonNativeInput
+     */
+    handleRadioButtonNativeInput(event) {
+        const input = event.currentTarget;
+        // Remove the following line if 'indeterminate' is not defined in properties.
+        // this.indeterminate = input.indeterminate;
+        this.checked = input.checked;
+        this.emit("onRadioButtonNativeInput", { event, input });
+    }
 }
 
 customElements.define("md-radio-button", MDRadioButtonComponent);
