@@ -65,20 +65,20 @@ class ExampleComponent extends MDComponent {
 
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-image style="width:96px;" ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50"></md-image>
-                        <md-image style="width:96px;" ratio="3/2" src="https://api.dicebear.com/7.x/icons/svg?seed=2&&scale=50"></md-image>
-                        <md-image style="width:96px;" ratio="4/3" src="https://api.dicebear.com/7.x/icons/svg?seed=3&&scale=50"></md-image>
-                        <md-image style="width:96px;" ratio="1/1" src="https://api.dicebear.com/7.x/icons/svg?seed=4&&scale=50"></md-image>
-                        <md-image style="width:96px;" ratio="3/4" src="https://api.dicebear.com/7.x/icons/svg?seed=5&&scale=50"></md-image>
-                        <md-image style="width:96px;" ratio="2/3" src="https://api.dicebear.com/7.x/icons/svg?seed=6&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" ratio="3/2" src="https://api.dicebear.com/7.x/icons/svg?seed=2&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" ratio="4/3" src="https://api.dicebear.com/7.x/icons/svg?seed=3&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" ratio="1/1" src="https://api.dicebear.com/7.x/icons/svg?seed=4&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" ratio="3/4" src="https://api.dicebear.com/7.x/icons/svg?seed=5&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" ratio="2/3" src="https://api.dicebear.com/7.x/icons/svg?seed=6&&scale=50"></md-image>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
-                        <md-image style="width:96px;" shape ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=7&&scale=50"></md-image>
-                        <md-image style="width:96px;" shape ratio="3/2" src="https://api.dicebear.com/7.x/icons/svg?seed=8&&scale=50"></md-image>
-                        <md-image style="width:96px;" shape ratio="4/3" src="https://api.dicebear.com/7.x/icons/svg?seed=9&&scale=50"></md-image>
-                        <md-image style="width:96px;" shape ratio="1/1" src="https://api.dicebear.com/7.x/icons/svg?seed=10&&scale=50"></md-image>
-                        <md-image style="width:96px;" shape ratio="3/4" src="https://api.dicebear.com/7.x/icons/svg?seed=11&&scale=50"></md-image>
-                        <md-image style="width:96px;" shape ratio="2/3" src="https://api.dicebear.com/7.x/icons/svg?seed=12&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" shape ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=7&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" shape ratio="3/2" src="https://api.dicebear.com/7.x/icons/svg?seed=8&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" shape ratio="4/3" src="https://api.dicebear.com/7.x/icons/svg?seed=9&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" shape ratio="1/1" src="https://api.dicebear.com/7.x/icons/svg?seed=10&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" shape ratio="3/4" src="https://api.dicebear.com/7.x/icons/svg?seed=11&&scale=50"></md-image>
+                        <md-image style="width:113.77777777777777px;" shape ratio="2/3" src="https://api.dicebear.com/7.x/icons/svg?seed=12&&scale=50"></md-image>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
@@ -204,11 +204,89 @@ class ExampleComponent extends MDComponent {
                     <!--  -->
 
                     <!--  -->
-                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-list size="three-line" .items="${[
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'image', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'image', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'video', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'video', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'checkbox'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'checkbox'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'radio-button'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'radio-button'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[], trailingItems:[{component:'switch'}] },
+                            { label:'Headline', supportingText:'Supporting text that is long enough to fill up multiple lines', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
+
+                        ]}"></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-list size="two-line" .items="${[
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'image', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'image', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'video', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'video', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'checkbox'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'checkbox'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'radio-button'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'radio-button'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[], trailingItems:[{component:'switch'}] },
+                            { label:'Headline', supportingText:'Supporting text', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
+
+                        ]}"></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-list .items="${[
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'avatar', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'image', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'image', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'video', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'video', src:'https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[], trailingItems:[{component:'checkbox'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'checkbox'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'checkbox'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'radio-button'}], trailingItems:[] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'radio-button'}], trailingItems:[{component:'supporting-text',supportingText:'100+'}] },
+
+                            { label:'Headline', supportingText:'', leadingItems:[], trailingItems:[{component:'switch'}] },
+                            { label:'Headline', supportingText:'', leadingItems:[{component:'icon', icon:'image'}], trailingItems:[{component:'switch'}] },
+
+                        ]}"></md-list>
                     </div>
                     <!--  -->
 

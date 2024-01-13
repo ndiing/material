@@ -30,6 +30,7 @@ class MDImageComponent extends MDComponent {
      */
     constructor() {
         super();
+        this.ratio='1/1'
     }
 
     /**
@@ -84,8 +85,7 @@ class MDImageComponent extends MDComponent {
         }
         if (_changedProperties.has("shape")) {
             if (this.shape) {
-                let radius = 100;
-                if (this.ratio) radius = eval(this.ratio) * 100;
+                let radius = eval(this.ratio) * 100;
                 this.style.setProperty("border-radius", `100% / ${radius}%`);
             } else this.style.removeProperty("border-radius");
         }
