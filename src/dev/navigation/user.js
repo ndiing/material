@@ -14,3 +14,5 @@ class UserComponent extends MDComponent{
 customElements.define('user-component',UserComponent)
 
 export default document.createElement('user-component')
+
+// <user-component></user-component>

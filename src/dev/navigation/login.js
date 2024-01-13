@@ -1,5 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/foundation/component";
+import { MDNavigation } from "../../material/foundation/navigation";
 
 class LoginComponent extends MDComponent{
     render(){
@@ -8,6 +9,14 @@ class LoginComponent extends MDComponent{
             <h1>Login</h1>
             <md-placeholder></md-placeholder>
         `
+    }
+
+    // 
+    connectedCallback(){
+        super.connectedCallback()
+
+        if(window.localStorage.access_token)
+        MDNavigation.navigate('/')
     }
 }
 

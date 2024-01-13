@@ -320,6 +320,15 @@ class ExampleComponent extends MDComponent {
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <!--  -->
+
+                    <!--  -->
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <!--  -->
                 </div>
             <!-- </div> -->
         `
