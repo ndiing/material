@@ -289,7 +289,7 @@ class ExampleComponent extends MDComponent {
                         ]}"></md-list>
                     </div>
 
-                    <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                    <!-- <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                         <md-list activatable type="single-select" .items="${[
                             {label:"Label 1", trailingItems:[{component:'radio-button',name:'radio-button'}]},
                             {label:"Label 2", trailingItems:[{component:'radio-button',name:'radio-button'}]},
@@ -309,7 +309,7 @@ class ExampleComponent extends MDComponent {
                             {label:"Label 2", trailingItems:[{component:'switch',}]},
                             {label:"Label 3", trailingItems:[{component:'switch',}]},
                         ]}"></md-list>
-                    </div>
+                    </div> -->
                     <!--  -->
 
                     <!--  -->

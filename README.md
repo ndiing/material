@@ -40,6 +40,9 @@
 <dt><a href="#MDListComponent">MDListComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDList.</p>
 </dd>
+<dt><a href="#MDPanelComponent">MDPanelComponent</a> ⇐ <code>MDComponent</code></dt>
+<dd><p>Custom Lit web component representing an MDPanel.</p>
+</dd>
 <dt><a href="#MDRadioButtonComponent">MDRadioButtonComponent</a> ⇐ <code>MDComponent</code></dt>
 <dd><p>Custom Lit web component representing an MDRadioButton.</p>
 </dd>
@@ -142,6 +145,7 @@ Custom Lit web component representing an MDButton.
 * [MDButtonComponent](#MDButtonComponent) ⇐ <code>MDComponent</code>
     * [new MDButtonComponent()](#new_MDButtonComponent_new)
     * _instance_
+        * [.buttonNative](#MDButtonComponent+buttonNative) : <code>HTMLButtonElement</code>
         * [.render()](#MDButtonComponent+render) ⇒ <code>TemplateResult</code>
         * [.connectedCallback()](#MDButtonComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
         * [.disconnectedCallback()](#MDButtonComponent+disconnectedCallback)
@@ -159,6 +163,12 @@ Constructor for MDButtonComponent.
 ```js
 // Example usage:// <md-button appearance="elevated" label="Label"></md-button>
 ```
+<a name="MDButtonComponent+buttonNative"></a>
+
+### mdButtonComponent.buttonNative : <code>HTMLButtonElement</code>
+Gets the native button element.
+
+**Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
 <a name="MDButtonComponent+render"></a>
 
 ### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
@@ -1066,6 +1076,79 @@ Properties for the MDListComponent.
 | type | <code>String</code> | The type of the list ("single-select", "multi-select"). |
 | activatable | <code>Boolean</code> | Indicates whether the list items are activatable. |
 
+<a name="MDPanelComponent"></a>
+
+## MDPanelComponent ⇐ <code>MDComponent</code>
+Custom Lit web component representing an MDPanel.
+
+**Kind**: global class  
+**Extends**: <code>MDComponent</code>  
+
+* [MDPanelComponent](#MDPanelComponent) ⇐ <code>MDComponent</code>
+    * [new MDPanelComponent()](#new_MDPanelComponent_new)
+    * _instance_
+        * [.render()](#MDPanelComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MDPanelComponent+connectedCallback) ⇒ <code>Promise.&lt;void&gt;</code>
+        * [.disconnectedCallback()](#MDPanelComponent+disconnectedCallback)
+        * [.firstUpdated(_changedProperties)](#MDPanelComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MDPanelComponent+updated)
+    * _static_
+        * [.properties](#MDPanelComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MDPanelComponent_new"></a>
+
+### new MDPanelComponent()
+Constructor for MDPanelComponent.
+
+<a name="MDPanelComponent+render"></a>
+
+### mdPanelComponent.render() ⇒ <code>TemplateResult</code>
+Renders the MDPanelComponent template using Lit.
+
+**Kind**: instance method of [<code>MDPanelComponent</code>](#MDPanelComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MDPanelComponent+connectedCallback"></a>
+
+### mdPanelComponent.connectedCallback() ⇒ <code>Promise.&lt;void&gt;</code>
+Lifecycle callback called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MDPanelComponent</code>](#MDPanelComponent)  
+**Returns**: <code>Promise.&lt;void&gt;</code> - A Promise that resolves when rendering is complete.  
+<a name="MDPanelComponent+disconnectedCallback"></a>
+
+### mdPanelComponent.disconnectedCallback()
+Lifecycle callback called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MDPanelComponent</code>](#MDPanelComponent)  
+<a name="MDPanelComponent+firstUpdated"></a>
+
+### mdPanelComponent.firstUpdated(_changedProperties)
+Lifecycle callback called after the first render and element is added to the DOM.
+
+**Kind**: instance method of [<code>MDPanelComponent</code>](#MDPanelComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDPanelComponent+updated"></a>
+
+### mdPanelComponent.updated(_changedProperties)
+Lifecycle callback called when properties are updated.
+
+**Kind**: instance method of [<code>MDPanelComponent</code>](#MDPanelComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MDPanelComponent.properties"></a>
+
+### MDPanelComponent.properties ⇒ <code>Object</code>
+Properties for the MDPanelComponent.
+
+**Kind**: static property of [<code>MDPanelComponent</code>](#MDPanelComponent)  
+**Returns**: <code>Object</code> - Property configuration.  
 <a name="MDRadioButtonComponent"></a>
 
 ## MDRadioButtonComponent ⇐ <code>MDComponent</code>

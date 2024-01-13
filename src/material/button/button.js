@@ -37,6 +37,10 @@ class MDButtonComponent extends MDComponent {
         this.type = "button";
     }
 
+    /**
+     * Gets the native button element.
+     * @type {HTMLButtonElement}
+     */
     get buttonNative() {
         return this.querySelector(".md-button__native");
     }
