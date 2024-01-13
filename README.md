@@ -1140,6 +1140,7 @@ Custom Lit web component representing an MDSegmentedButton.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
+**Emits**: <code>MDSegmentedButtonComponent#event:onSegmentedButtonClick</code>  
 
 * [MDSegmentedButtonComponent](#MDSegmentedButtonComponent) ⇐ <code>MDComponent</code>
     * [new MDSegmentedButtonComponent()](#new_MDSegmentedButtonComponent_new)
@@ -1158,6 +1159,10 @@ Custom Lit web component representing an MDSegmentedButton.
 ### new MDSegmentedButtonComponent()
 Constructor for MDSegmentedButtonComponent.
 
+**Example**  
+```js
+// Example usage:// <md-segmented-button type="single-select" .items="${[//     {label:"Label 1", activated:true},//     {label:"Label 2"},//     {label:"Label 3"},// ]}"></md-segmented-button>
+```
 <a name="MDSegmentedButtonComponent+render"></a>
 
 ### mdSegmentedButtonComponent.render() ⇒ <code>TemplateResult</code>

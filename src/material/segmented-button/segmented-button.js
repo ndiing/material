@@ -5,6 +5,14 @@ import { MDState } from "../foundation/state";
 /**
  * Custom Lit web component representing an MDSegmentedButton.
  * @extends MDComponent
+ * @fires MDSegmentedButtonComponent#onSegmentedButtonClick
+ * @example
+ * // Example usage:
+ * // <md-segmented-button type="single-select" .items="${[
+ * //     {label:"Label 1", activated:true},
+ * //     {label:"Label 2"},
+ * //     {label:"Label 3"},
+ * // ]}"></md-segmented-button>
  */
 class MDSegmentedButtonComponent extends MDComponent {
 /**
