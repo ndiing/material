@@ -65,6 +65,27 @@ class ExampleComponent extends MDComponent {
 
                     <!--  -->
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-image style="width:96px;" ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=1&&scale=50"></md-image>
+                        <md-image style="width:96px;" ratio="3/2" src="https://api.dicebear.com/7.x/icons/svg?seed=2&&scale=50"></md-image>
+                        <md-image style="width:96px;" ratio="4/3" src="https://api.dicebear.com/7.x/icons/svg?seed=3&&scale=50"></md-image>
+                        <md-image style="width:96px;" ratio="1/1" src="https://api.dicebear.com/7.x/icons/svg?seed=4&&scale=50"></md-image>
+                        <md-image style="width:96px;" ratio="3/4" src="https://api.dicebear.com/7.x/icons/svg?seed=5&&scale=50"></md-image>
+                        <md-image style="width:96px;" ratio="2/3" src="https://api.dicebear.com/7.x/icons/svg?seed=6&&scale=50"></md-image>
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                        <md-image style="width:96px;" shape ratio="16/9" src="https://api.dicebear.com/7.x/icons/svg?seed=7&&scale=50"></md-image>
+                        <md-image style="width:96px;" shape ratio="3/2" src="https://api.dicebear.com/7.x/icons/svg?seed=8&&scale=50"></md-image>
+                        <md-image style="width:96px;" shape ratio="4/3" src="https://api.dicebear.com/7.x/icons/svg?seed=9&&scale=50"></md-image>
+                        <md-image style="width:96px;" shape ratio="1/1" src="https://api.dicebear.com/7.x/icons/svg?seed=10&&scale=50"></md-image>
+                        <md-image style="width:96px;" shape ratio="3/4" src="https://api.dicebear.com/7.x/icons/svg?seed=11&&scale=50"></md-image>
+                        <md-image style="width:96px;" shape ratio="2/3" src="https://api.dicebear.com/7.x/icons/svg?seed=12&&scale=50"></md-image>
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                         <md-button appearance="elevated" label="Label"></md-button>
                         <md-button appearance="filled" label="Label"></md-button>
                         <md-button appearance="filled-tonal" label="Label"></md-button>
@@ -175,6 +196,15 @@ class ExampleComponent extends MDComponent {
                         <md-badge></md-badge>
                         <md-badge label="1"></md-badge>
                         <md-badge label="1000"></md-badge>
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     </div>
