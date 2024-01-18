@@ -1,3 +1,14 @@
+## Classes
+
+<dl>
+<dt><a href="#MdBadgeComponent">MdBadgeComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for displaying a badge.</p>
+</dd>
+<dt><a href="#MdBaseComponent">MdBaseComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Base class for Material Design components.</p>
+</dd>
+</dl>
+
 <a name="MdBadgeComponent"></a>
 
 ## MdBadgeComponent ⇐ <code>LitElement</code>
@@ -72,4 +83,93 @@ Static properties for the component.
 | --- | --- | --- |
 | label | <code>number</code> | The label to be displayed on the badge. |
 | limit | <code>number</code> | The limit for the badge label. |
+
+<a name="MdBaseComponent"></a>
+
+## MdBaseComponent ⇐ <code>LitElement</code>
+Base class for Material Design components.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdBaseComponent](#MdBaseComponent) ⇐ <code>LitElement</code>
+    * [new MdBaseComponent()](#new_MdBaseComponent_new)
+    * _instance_
+        * [.createRenderRoot()](#MdBaseComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.render()](#MdBaseComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdBaseComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdBaseComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdBaseComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdBaseComponent+updated)
+        * ["change"](#MdBaseComponent+event_change)
+    * _static_
+        * [.properties](#MdBaseComponent.properties)
+
+<a name="new_MdBaseComponent_new"></a>
+
+### new MdBaseComponent()
+Constructor for MdBaseComponent.
+
+<a name="MdBaseComponent+createRenderRoot"></a>
+
+### mdBaseComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default render root to use the component itself.
+
+**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+**Returns**: <code>this</code> - The instance of the element.  
+<a name="MdBaseComponent+render"></a>
+
+### mdBaseComponent.render() ⇒ <code>TemplateResult</code>
+Renders the component template.
+
+**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template.  
+<a name="MdBaseComponent+connectedCallback"></a>
+
+### mdBaseComponent.connectedCallback()
+Lifecycle callback when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+<a name="MdBaseComponent+disconnectedCallback"></a>
+
+### mdBaseComponent.disconnectedCallback()
+Lifecycle callback when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+<a name="MdBaseComponent+firstUpdated"></a>
+
+### mdBaseComponent.firstUpdated()
+Lifecycle callback when the element's first update occurs.
+
+**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+<a name="MdBaseComponent+updated"></a>
+
+### mdBaseComponent.updated(_changedProperties)
+Lifecycle callback when the element is updated.
+
+**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of changed properties. |
+
+<a name="MdBaseComponent+event_change"></a>
+
+### "change"
+Event fired when a change occurs.
+
+**Kind**: event emitted by [<code>MdBaseComponent</code>](#MdBaseComponent)  
+<a name="MdBaseComponent.properties"></a>
+
+### MdBaseComponent.properties
+Static getter for defining properties on the class.
+
+**Kind**: static property of [<code>MdBaseComponent</code>](#MdBaseComponent)  
+**Read only**: true  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| properties | <code>Object</code> | The properties object. |
+| properties.label | <code>String</code> | The label for the component. |
 
