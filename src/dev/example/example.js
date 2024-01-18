@@ -137,6 +137,18 @@ class ExampleComponent extends LitElement{
                 <!--  -->
 
                 <!--  -->
+                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    <md-badge></md-badge>
+                    <md-badge label="1"></md-badge>
+                    <md-badge label="1000"></md-badge>
+                </div>
+                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
+                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
+                <!--  -->
+
+                <!--  -->
                 <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list .items="${[
                         {label:'Label',supportingText:'',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=2&scale=50'}],trailingItems:[]},

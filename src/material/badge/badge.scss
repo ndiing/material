@@ -1,0 +1,22 @@
+.md-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height: 16px;
+    border-radius: 8px;
+    min-width: 16px;
+    padding: 0 4px;
+    background: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+
+    &:empty {
+        height: 6px;
+        border-radius: 3px;
+        min-width: 6px;
+        padding: 0;
+    }
+}
+.md-badge__label {
+    @extend .md-typography--label-small;
+}

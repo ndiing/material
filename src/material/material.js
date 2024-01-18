@@ -11,4 +11,6 @@ import "./segmented-button/segmented-button.js";
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
+import "./badge/badge.js";
 import "./list/list.js";
+import "./panel/panel.js";
