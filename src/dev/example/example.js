@@ -235,6 +235,37 @@ class ExampleComponent extends LitElement{
 
                 <!--  -->
                 <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                    <div class="md-panel">
+                        <div class="md-panel__container">
+                            <div class="md-panel__header">
+                                <div class="md-panel__start">
+                                    <md-icon-button icon="image"></md-icon-button>
+                                </div>
+                                <div class="md-panel__center">
+                                    <div class="md-panel__label">Label</div>
+                                    <!-- <div class="md-panel__supporting-text">Label</div> -->
+                                </div>
+                                <div class="md-panel__end">
+                                    <md-icon-button icon="image"></md-icon-button>
+                                </div>
+                            </div>
+                            <div class="md-panel__body"></div>
+                            <div class="md-panel__footer">
+                                <md-button ui="filled" label="Label"></md-button>
+                                <md-button ui="outlined" label="Label"></md-button>
+                            </div>
+                        </div>
+                        <div class="md-panel__scrim"></div>
+                    </div>
+                </div>
+                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
+                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
+                <!--  -->
+
+                <!--  -->
+                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                 </div>
                 <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                 </div>
