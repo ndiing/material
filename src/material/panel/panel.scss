@@ -1,0 +1,45 @@
+.md-panel {
+}
+
+.md-panel__container {
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+}
+
+.md-panel__header {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    gap: 0 8px;
+}
+.md-panel__body {
+    flex: 1;
+    padding: 24px;
+}
+.md-panel__footer {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    gap: 0 8px;
+}
+
+.md-panel__start {
+}
+.md-panel__center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.md-panel__end {
+}
+
+.md-panel__label {
+    @extend .md-typography--title-large;
+}
+.md-panel__supporting-text {
+    @extend .md-typography--body-medium;
+}
+
+.md-panel__scrim {
+}

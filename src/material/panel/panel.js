@@ -4,13 +4,11 @@ import { MdStateController } from "../state/state";
 class MdPanelComponent extends LitElement {
     static get properties() {
         return {
-            label: { type: String },
         };
     }
 
     constructor() {
         super();
-        this.label = "Label";
     }
 
     createRenderRoot() {
@@ -20,7 +18,6 @@ class MdPanelComponent extends LitElement {
     render() {
         // prettier-ignore
         return html`
-            ${this.label?html`<div class="md-panel__label">${this.label}</div>`:nothing}
         `
     }
 
