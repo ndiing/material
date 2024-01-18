@@ -7,11 +7,10 @@
     border-radius: 16px;
     width: 56px;
     padding: 0 16px;
-    gap: 0 8px;
-    position: relative;
     background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     box-shadow: var(--md-sys-elevation-level1);
+    position: relative;
 }
 .md-fab__native {
     appearance: none;
@@ -35,13 +34,12 @@
     border-radius: 12px;
     width: 40px;
 }
-
 .md-fab--large {
     height: 96px;
     border-radius: 28px;
     width: 96px;
 
-    .md-fab__icon{
+    .md-fab__icon {
         font-size: 36px;
     }
 }
@@ -50,10 +48,10 @@
     height: 56px;
     border-radius: 16px;
     width: auto;
+    padding: 0 16px;
+    gap: 0 8px;
 
-    .md-fab__icon{
+    .md-fab__icon {
         font-size: 24px;
     }
 }
-
-

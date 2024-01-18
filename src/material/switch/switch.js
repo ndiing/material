@@ -1,47 +1,23 @@
-import { html, nothing } from "lit";
+import { LitElement, html, nothing } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { MDComponent } from "../foundation/component";
-import { MDState } from "../foundation/state";
+import { MdStateController } from "../state/state";
 
-/**
- * Custom Lit web component representing an MDSwitch.
- * @extends MDComponent
- */
-class MDSwitchComponent extends MDComponent {
-    /**
-     * Properties for the MDSwitchComponent.
-     * @returns {Object} Property configuration.
-     * @property {String} name - The name attribute for the switch.
-     * @property {Boolean} checked - A boolean indicating whether the switch is checked.
-     */
+class MdSwitchComponent extends LitElement {
     static get properties() {
         return {
-            name: { type: String },
-            checked: { type: Boolean },
+            name:{type:String},
+            checked:{type:Boolean},
         };
     }
 
-    /**
-     * Constructor for MDSwitchComponent.
-     */
     constructor() {
         super();
     }
 
-    get switchNative() {
-        return this.querySelector(".md-switch__native");
-    }
-    get switchTrack() {
-        return this.querySelector(".md-switch__track");
-    }
-    get switchThumb() {
-        return this.querySelector(".md-switch__thumb");
+    createRenderRoot() {
+        return this;
     }
 
-    /**
-     * Renders the MDSwitchComponent template using Lit.
-     * @returns {TemplateResult} The rendered template.
-     */
     render() {
         // prettier-ignore
         return html`
@@ -50,7 +26,7 @@ class MDSwitchComponent extends MDComponent {
                 class="md-switch__native"
                 .name="${ifDefined(this.name)}"
                 .checked="${ifDefined(this.checked)}"
-                @input="${this.handleSwitchNativeInput}"
+                @input="${this.onSwitchNativeInput}"
             >
             <div class="md-switch__track">
                 <div class="md-switch__thumb"></div>
@@ -58,64 +34,44 @@ class MDSwitchComponent extends MDComponent {
         `
     }
 
-    /**
-     * Lifecycle callback called when the element is added to the DOM.
-     * @async
-     * @returns {Promise<void>} A Promise that resolves when rendering is complete.
-     */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-
-        await this.updateComplete;
-
         this.classList.add("md-switch");
-
-        this.mdState = new MDState(this.switchThumb, {
-            trigger: this.switchNative,
-            bounded: false,
-            fadeout: true,
-            centered: true,
-        });
     }
 
-    /**
-     * Lifecycle callback called when the element is removed from the DOM.
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-switch");
-
-        this.mdState.destroy();
     }
 
-    /**
-     * Lifecycle callback called after the first render and element is added to the DOM.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    firstUpdated(_changedProperties) {}
+    get switchNative(){return this.querySelector('.md-switch__native')}
+    get switchTrack(){return this.querySelector('.md-switch__track')}
+    get switchThumb(){return this.querySelector('.md-switch__thumb')}
 
-    /**
-     * Lifecycle callback called when properties are updated.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    updated(_changedProperties) {}
+    firstUpdated() {
+        this.state=new MdStateController(this,{
+            container:this.switchThumb,
+            button:this.switchNative,
+            containment: false,
+            fadeout: true,
+            centered: true,
+        })
+    }
 
-    /**
-     * Handles the 'input' event from the native switch.
-     * Updates the component's state based on the native switch input.
-     * @param {Event} event - The 'input' event.
-     * @fires MDSwitchComponent#onSwitchNativeInput
-     */
-    handleSwitchNativeInput(event) {
-        const input = event.currentTarget;
-        // Remove the following line if 'indeterminate' is not defined in properties.
-        // this.indeterminate = input.indeterminate;
-        this.checked = input.checked;
-        this.emit("onSwitchNativeInput", { event, input });
+    updated(_changedProperties) {
+    }
+
+    
+    onSwitchNativeInput(event) {
+        this.checked=event.currentTarget.checked
+        this.dispatchEvent(new CustomEvent('onSwitchNativeInput',{
+            bubbles:true,
+            cancelable:true,
+            detail:{event}
+        }))
     }
 }
 
-customElements.define("md-switch", MDSwitchComponent);
+customElements.define("md-switch", MdSwitchComponent);
 
-export { MDSwitchComponent };
+export { MdSwitchComponent };

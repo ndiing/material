@@ -5,13 +5,9 @@
     vertical-align: middle;
     position: relative;
 
-    &[activated] {
-        background: inherit;
-        color: inherit;
-    }
-
     &.md-icon-button--toggle {
         &[activated] {
+            background: transparent;
             color: var(--md-sys-color-primary);
         }
     }
@@ -30,6 +26,14 @@
     @extend .md-icon;
 }
 
+.md-icon-button--filled,
+.md-icon-button--filled-tonal,
+.md-icon-button--outlined {
+    height: 40px;
+    border-radius: 20px;
+    width: 40px;
+}
+
 .md-icon-button--filled {
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
@@ -44,7 +48,6 @@
         }
     }
 }
-
 .md-icon-button--filled-tonal {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
@@ -59,26 +62,18 @@
         }
     }
 }
-
 .md-icon-button--outlined {
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 
     &.md-icon-button--toggle {
+        background: transparent;
         color: var(--md-sys-color-on-surface-variant);
 
         &[activated] {
             background: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);
-            border-color: var(--md-sys-color-inverse-surface);
+            border: 1px solid var(--md-sys-color-inverse-surface);
         }
     }
-}
-
-.md-icon-button--filled,
-.md-icon-button--filled-tonal,
-.md-icon-button--outlined {
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
 }

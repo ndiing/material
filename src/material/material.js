@@ -1,7 +1,5 @@
-import "./foundation/component.js";
-import "./foundation/cdk.js";
-import "./foundation/navigation.js";
-import "./foundation/state.js";
+import "./navigation/navigation.js";
+import "./state/state.js";
 
 import "./icon/icon.js";
 import "./emoji/emoji.js";
@@ -13,6 +11,4 @@ import "./segmented-button/segmented-button.js";
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
-import "./badge/badge.js";
 import "./list/list.js";
-import "./panel/panel.js";

@@ -5,9 +5,9 @@
     vertical-align: middle;
     height: 40px;
     border-radius: 20px;
-    // min-width: 48px;
     padding: 0 12px;
     gap: 0 8px;
+
     position: relative;
 }
 .md-button__native {
@@ -32,32 +32,12 @@
     @extend .md-typography--label-large;
 }
 
-.md-button--elevated {
-    background: var(--md-sys-color-surface-container-low);
-    color: var(--md-sys-color-primary);
-    box-shadow: var(--md-sys-elevation-level1);
-}
-
-.md-button--filled {
-    background: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-}
-
-.md-button--filled-tonal {
-    background: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-}
-
-.md-button--outlined {
-    color: var(--md-sys-color-primary);
-    border: 1px solid var(--md-sys-color-outline);
-}
-
 .md-button--elevated,
 .md-button--filled,
 .md-button--filled-tonal,
 .md-button--outlined {
     padding: 0 24px;
+
     .md-button__icon {
         margin-left: -8px;
 
@@ -65,4 +45,22 @@
             margin-right: 0;
         }
     }
+}
+
+.md-button--elevated {
+    background: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-primary);
+    box-shadow: var(--md-sys-elevation-level1);
+}
+.md-button--filled {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+.md-button--filled-tonal {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+.md-button--outlined {
+    color: var(--md-sys-color-primary);
+    border: 1px solid var(--md-sys-color-outline);
 }

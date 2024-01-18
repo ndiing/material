@@ -14,18 +14,17 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
     background: transparent;
     color: transparent;
+    z-index: 1;
 
     &:checked {
         + .md-radio-button__track {
             border-color: var(--md-sys-color-primary);
-            
             .md-radio-button__thumb {
                 height: 10px;
-                width: 10px;
                 border-radius: 5px;
+                width: 10px;
                 background: var(--md-sys-color-primary);
             }
         }
@@ -37,13 +36,7 @@
     justify-content: center;
     vertical-align: middle;
     height: 20px;
-    width: 20px;
     border-radius: 10px;
-    border: 2px solid var(--md-sys-color-on-surface-variant);
+    width: 20px;
+    border: 2px solid var(--md-sys-color-outline);
 }
-// .md-radio-button__thumb {
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     vertical-align: middle;
-// }

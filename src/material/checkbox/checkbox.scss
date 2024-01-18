@@ -14,15 +14,14 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
     background: transparent;
     color: transparent;
+    z-index: 1;
 
     &:indeterminate {
         + .md-checkbox__track {
             background: var(--md-sys-color-primary);
             border-color: var(--md-sys-color-primary);
-
             .md-checkbox__thumb {
                 height: 2px;
                 width: 10px;
@@ -30,12 +29,10 @@
             }
         }
     }
-
     &:checked {
         + .md-checkbox__track {
             background: var(--md-sys-color-primary);
             border-color: var(--md-sys-color-primary);
-
             .md-checkbox__thumb {
                 height: 5px;
                 width: 10px;
@@ -53,13 +50,7 @@
     justify-content: center;
     vertical-align: middle;
     height: 18px;
-    width: 18px;
     border-radius: 2px;
-    border: 2px solid var(--md-sys-color-on-surface-variant);
+    width: 18px;
+    border: 2px solid var(--md-sys-color-outline);
 }
-// .md-checkbox__thumb {
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     vertical-align: middle;
-// }

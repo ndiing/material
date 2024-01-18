@@ -1,7 +1,7 @@
-@import "./foundation/layout.scss";
-@import "./foundation/state.scss";
-@import "./foundation/fonts.scss";
-@import "./foundation/style.scss";
+@import "./style.scss";
+
+@import "./navigation/navigation.scss";
+@import "./state/state.scss";
 
 @import "./icon/icon.scss";
 @import "./emoji/emoji.scss";
@@ -13,6 +13,4 @@
 @import "./checkbox/checkbox.scss";
 @import "./radio-button/radio-button.scss";
 @import "./switch/switch.scss";
-@import "./badge/badge.scss";
 @import "./list/list.scss";
-@import "./panel/panel.scss";

@@ -1,112 +1,74 @@
-import { html, nothing } from "lit";
-import { MDComponent } from "../foundation/component";
-import { MDState } from "../foundation/state";
+import { LitElement, html, nothing } from "lit";
+import { MdStateController } from "../state/state";
 
-/**
- * Custom Lit web component representing an MDButton.
- * @extends MDComponent
- * @example
- * // Example usage:
- * // <md-button appearance="elevated" label="Label"></md-button>
- */
-class MDButtonComponent extends MDComponent {
-    /**
-     * Properties for the MDButtonComponent.
-     * @returns {Object} Property configuration.
-     * @property {String} appearance - The appearance style of the button ("elevated", "filled", "filled-tonal", "outlined").
-     * @property {String} type - The type of the native button element ("button" by default).
-     * @property {String} icon - The icon for the button.
-     * @property {String} label - The label for the button.
-     * @property {Boolean} activated - A boolean reflecting the activated state of the button.
-     */
+class MdButtonComponent extends LitElement {
     static get properties() {
         return {
-            appearance: { type: String },
             type: { type: String },
-            icon: { type: String },
             label: { type: String },
-            activated: { type: Boolean, reflect:true },
+            icon: { type: String },
+            ui: { type: String },
+            activated: { type: Boolean, reflect: true },
         };
     }
 
-    /**
-     * Constructor for MDButtonComponent.
-     */
     constructor() {
         super();
         this.type = "button";
     }
 
-    /**
-     * Gets the native button element.
-     * @type {HTMLButtonElement}
-     */
-    get buttonNative() {
-        return this.querySelector(".md-button__native");
+    createRenderRoot() {
+        return this;
     }
 
-    /**
-     * Renders the MDButtonComponent template using Lit.
-     * @returns {TemplateResult} The rendered template.
-     */
     render() {
         // prettier-ignore
         return html`
-            <button class="md-button__native" .type="${this.type}"></button>
+            <button class="md-button__native"
+                .type="${this.type}"
+            ></button>
             ${this.icon?html`<div class="md-button__icon">${this.icon}</div>`:nothing}
             ${this.label?html`<div class="md-button__label">${this.label}</div>`:nothing}
         `
     }
 
-    /**
-     * Lifecycle callback called when the element is added to the DOM.
-     * @async
-     * @returns {Promise<void>} A Promise that resolves when rendering is complete.
-     */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-
-        await this.updateComplete;
-
         this.classList.add("md-button");
-
-        this.mdState = new MDState(this, {
-            trigger: this.buttonNative,
-            inverted: this.appearance === "filled",
-        });
     }
 
-    /**
-     * Lifecycle callback called when the element is removed from the DOM.
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-button");
-
-        this.mdState.destroy();
     }
 
-    /**
-     * Lifecycle callback called after the first render and element is added to the DOM.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    firstUpdated(_changedProperties) {}
+    get buttonNative() {
+        return this.querySelector(".md-button__native");
+    }
 
-    /**
-     * Lifecycle callback called when properties are updated.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
+    firstUpdated() {
+        this.state = new MdStateController(this, {
+            button: this.buttonNative,
+            inverted:this.ui==='filled'
+        });
+
+        // this.state.options.inverted = this.ui === "filled";
+        // this.state.options.size = this.ui ? (40 / 40) * 100 : (40 / 24) * 100;
+        // this.requestUpdate();
+    }
+
     updated(_changedProperties) {
-        if (_changedProperties.has("appearance")) {
-            ["elevated", "filled", "filled-tonal", "outlined"].forEach((appearance) => {
-                this.classList.remove("md-button--" + appearance);
+        if (_changedProperties.has("ui")) {
+            ["elevated", "filled", "filled-tonal", "outlined"].forEach((ui) => {
+                this.classList.remove("md-button--" + ui);
             });
-            if (this.appearance) this.classList.add("md-button--" + this.appearance);
+            if (this.ui) {
+                this.classList.add("md-button--" + this.ui);
+            }
         }
     }
 }
 
-customElements.define("md-button", MDButtonComponent);
+customElements.define("md-button", MdButtonComponent);
 
-export { MDButtonComponent };
+export { MdButtonComponent };

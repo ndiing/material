@@ -1,34 +1,37 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
 
-class MdIconComponent extends LitElement {
+class MdBaseComponent extends LitElement {
     static get properties() {
         return {
+            label: { type: String },
         };
     }
 
     constructor() {
         super();
+        this.label = "Label";
     }
 
     createRenderRoot() {
         return this;
     }
 
-    // render() {
-    //     // prettier-ignore
-    //     return html`
-    //     `
-    // }
+    render() {
+        // prettier-ignore
+        return html`
+            ${this.label?html`<div class="md-base__label">${this.label}</div>`:nothing}
+        `
+    }
 
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-icon");
+        this.classList.add("md-base");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.classList.remove("md-icon");
+        this.classList.remove("md-base");
     }
 
     firstUpdated() {
@@ -38,6 +41,6 @@ class MdIconComponent extends LitElement {
     }
 }
 
-customElements.define("md-icon", MdIconComponent);
+customElements.define("md-base", MdBaseComponent);
 
-export { MdIconComponent };
+export { MdBaseComponent };

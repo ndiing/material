@@ -1,47 +1,23 @@
-import { html, nothing } from "lit";
+import { LitElement, html, nothing } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { MDComponent } from "../foundation/component";
-import { MDState } from "../foundation/state";
+import { MdStateController } from "../state/state";
 
-/**
- * Custom Lit web component representing an MDRadioButton.
- * @extends MDComponent
- */
-class MDRadioButtonComponent extends MDComponent {
-    /**
-     * Properties for the MDRadioButtonComponent.
-     * @returns {Object} Property configuration.
-     * @property {String} name - The name attribute for the radio-button.
-     * @property {Boolean} checked - A boolean indicating whether the radio-button is checked.
-     */
+class MdRadioButtonComponent extends LitElement {
     static get properties() {
         return {
-            name: { type: String },
-            checked: { type: Boolean },
+            name:{type:String},
+            checked:{type:Boolean},
         };
     }
 
-    /**
-     * Constructor for MDRadioButtonComponent.
-     */
     constructor() {
         super();
     }
 
-    get radioButtonNative() {
-        return this.querySelector(".md-radio-button__native");
-    }
-    get radioButtonTrack() {
-        return this.querySelector(".md-radio-button__track");
-    }
-    get radioButtonThumb() {
-        return this.querySelector(".md-radio-button__thumb");
+    createRenderRoot() {
+        return this;
     }
 
-    /**
-     * Renders the MDRadioButtonComponent template using Lit.
-     * @returns {TemplateResult} The rendered template.
-     */
     render() {
         // prettier-ignore
         return html`
@@ -50,7 +26,7 @@ class MDRadioButtonComponent extends MDComponent {
                 class="md-radio-button__native"
                 .name="${ifDefined(this.name)}"
                 .checked="${ifDefined(this.checked)}"
-                @input="${this.handleRadioButtonNativeInput}"
+                @input="${this.onRadioButtonNativeInput}"
             >
             <div class="md-radio-button__track">
                 <div class="md-radio-button__thumb"></div>
@@ -58,64 +34,44 @@ class MDRadioButtonComponent extends MDComponent {
         `
     }
 
-    /**
-     * Lifecycle callback called when the element is added to the DOM.
-     * @async
-     * @returns {Promise<void>} A Promise that resolves when rendering is complete.
-     */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-
-        await this.updateComplete;
-
         this.classList.add("md-radio-button");
-
-        this.mdState = new MDState(this.radioButtonTrack, {
-            trigger: this.radioButtonNative,
-            bounded: false,
-            size: (40 / 16) * 100,
-            fadeout: true,
-        });
     }
 
-    /**
-     * Lifecycle callback called when the element is removed from the DOM.
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-radio-button");
-
-        this.mdState.destroy();
     }
 
-    /**
-     * Lifecycle callback called after the first render and element is added to the DOM.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    firstUpdated(_changedProperties) {}
+    get radioButtonNative(){return this.querySelector('.md-radio-button__native')}
+    get radioButtonTrack(){return this.querySelector('.md-radio-button__track')}
+    get radioButtonThumb(){return this.querySelector('.md-radio-button__thumb')}
 
-    /**
-     * Lifecycle callback called when properties are updated.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    updated(_changedProperties) {}
+    firstUpdated() {
+        this.state=new MdStateController(this,{
+            container:this.radioButtonTrack,
+            button:this.radioButtonNative,
+            containment: false,
+            fadeout: true,
+            size:40/16*100
+        })
+    }
 
-    /**
-     * Handles the 'input' event from the native radio button.
-     * Updates the component's state based on the native radio button input.
-     * @param {Event} event - The 'input' event.
-     * @fires MDRadioButtonComponent#onRadioButtonNativeInput
-     */
-    handleRadioButtonNativeInput(event) {
-        const input = event.currentTarget;
-        // Remove the following line if 'indeterminate' is not defined in properties.
-        // this.indeterminate = input.indeterminate;
-        this.checked = input.checked;
-        this.emit("onRadioButtonNativeInput", { event, input });
+    updated(_changedProperties) {
+    }
+
+    
+    onRadioButtonNativeInput(event) {
+        this.checked=event.currentTarget.checked
+        this.dispatchEvent(new CustomEvent('onRadioButtonNativeInput',{
+            bubbles:true,
+            cancelable:true,
+            detail:{event}
+        }))
     }
 }
 
-customElements.define("md-radio-button", MDRadioButtonComponent);
+customElements.define("md-radio-button", MdRadioButtonComponent);
 
-export { MDRadioButtonComponent };
+export { MdRadioButtonComponent };

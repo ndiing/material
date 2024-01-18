@@ -1,131 +1,98 @@
-import { html, nothing } from "lit";
-import { MDComponent } from "../foundation/component";
-import { MDState } from "../foundation/state";
+import { LitElement, html, nothing } from "lit";
+import { MdStateController } from "../state/state";
 
-/**
- * Custom Lit web component representing an MDIconButton.
- * @extends MDComponent
- * @fires MDIconButtonComponent#onIconButtonNativeClick
- * @example
- * // Example usage:
- * // <md-icon-button appearance="filled" icon="image"></md-icon-button>
- */
-class MDIconButtonComponent extends MDComponent {
-    /**
-     * Properties for the MDIconButtonComponent.
-     * @returns {Object} Property configuration.
-     * @property {String} appearance - The appearance style of the icon-button ("filled", "filled-tonal", "outlined").
-     * @property {String} type - The type of the native button element ("button" by default).
-     * @property {String} icon - The icon for the icon-button.
-     * @property {Boolean} toggle - A boolean indicating whether the icon-button is toggleable.
-     * @property {Boolean} activated - A boolean reflecting the activated state of the icon-button.
-     */
+class MdIconButtonComponent extends LitElement {
     static get properties() {
         return {
-            appearance: { type: String },
             type: { type: String },
             icon: { type: String },
+            ui: { type: String },
             toggle: { type: Boolean },
             activated: { type: Boolean, reflect: true },
         };
     }
 
-    /**
-     * Constructor for MDIconButtonComponent.
-     */
     constructor() {
         super();
         this.type = "button";
+    }
+
+    createRenderRoot() {
+        return this;
+    }
+
+    render() {
+        // prettier-ignore
+        return html`
+            <button class="md-icon-button__native"
+                .type="${this.type}"
+                @click="${this.onIconButtonClick}"
+            ></button>
+            ${this.icon?html`<div class="md-icon-button__icon">${this.icon}</div>`:nothing}
+        `
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-icon-button");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-icon-button");
     }
 
     get iconButtonNative() {
         return this.querySelector(".md-icon-button__native");
     }
 
-    /**
-     * Renders the MDIconButtonComponent template using Lit.
-     * @returns {TemplateResult} The rendered template.
-     */
-    render() {
-        // prettier-ignore
-        return html`
-            <button 
-                class="md-icon-button__native" 
-                .type="${this.type}"
-                @click="${this.handleIconButtonNativeClick}"
-            ></button>
-            ${this.icon?html`<div class="md-icon-button__icon">${this.icon}</div>`:nothing}
-        `
-    }
-
-    /**
-     * Lifecycle callback called when the element is added to the DOM.
-     * @async
-     * @returns {Promise<void>} A Promise that resolves when rendering is complete.
-     */
-    async connectedCallback() {
-        super.connectedCallback();
-
-        await this.updateComplete;
-
-        this.classList.add("md-icon-button");
-
-        this.mdState = new MDState(this, {
-            trigger: this.iconButtonNative,
-            inverted: this.appearance === "filled",
-            size: this.appearance ? (40 / 40) * 100 : (40 / 24) * 100,
-            bounded: false,
-            centered: true,
+    firstUpdated() {
+        this.state = new MdStateController(this, {
+            button: this.iconButtonNative,
+            // inverted:this.ui==='filled',
+            containment: false,
+            size: this.ui ? (40 / 40) * 100 : (40 / 24) * 100,
             fadeout: true,
         });
+
+        // this.state.options.inverted = this.ui === "filled";
+        // this.state.options.size = this.ui ? (40 / 40) * 100 : (40 / 24) * 100;
+        // this.requestUpdate();
     }
 
-    /**
-     * Lifecycle callback called when the element is removed from the DOM.
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-
-        this.classList.remove("md-icon-button");
-
-        this.mdState.destroy();
-    }
-
-    /**
-     * Lifecycle callback called after the first render and element is added to the DOM.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    firstUpdated(_changedProperties) {}
-
-    /**
-     * Lifecycle callback called when properties are updated.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
     updated(_changedProperties) {
-        if (_changedProperties.has("appearance")) {
-            ["filled", "filled-tonal", "outlined"].forEach((appearance) => {
-                this.classList.remove("md-icon-button--" + appearance);
+        if (_changedProperties.has("ui")) {
+            ["filled", "filled-tonal", "outlined"].forEach((ui) => {
+                this.classList.remove("md-icon-button--" + ui);
             });
-            if (this.appearance) this.classList.add("md-icon-button--" + this.appearance);
+            if (this.ui) {
+                this.classList.add("md-icon-button--" + this.ui);
+            }
         }
+
         if (_changedProperties.has("toggle")) {
-            if (this.toggle) this.classList.add("md-icon-button--toggle");
-            else this.classList.remove("md-icon-button--toggle");
+            if (this.toggle) {
+                this.classList.add("md-icon-button--toggle");
+            } else {
+                this.classList.remove("md-icon-button--toggle");
+            }
         }
     }
 
-    /**
-     * Handles the click event on the native button element.
-     * Toggles the activated state and emits the 'onIconButtonNativeClick' event.
-     * @param {Event} event - The click event.
-     * @fires MDIconButtonComponent#onIconButtonNativeClick
-     */
-    handleIconButtonNativeClick(event) {
-        if (this.toggle) this.activated = !this.activated;
-        this.emit("onIconButtonNativeClick", { event });
+    onIconButtonClick(event) {
+        if (this.toggle) {
+            this.activated = !this.activated;
+        }
+        this.dispatchEvent(
+            new CustomEvent("onIconButtonClick", {
+                bubbles: true,
+                cancelable: true,
+                detail: { event },
+            })
+        );
     }
 }
 
-customElements.define("md-icon-button", MDIconButtonComponent);
+customElements.define("md-icon-button", MdIconButtonComponent);
 
-export { MDIconButtonComponent };
+export { MdIconButtonComponent };

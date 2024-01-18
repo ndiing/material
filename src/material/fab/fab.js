@@ -1,113 +1,80 @@
-import { html, nothing } from "lit";
-import { MDComponent } from "../foundation/component";
-import { MDState } from "../foundation/state";
+import { LitElement, html, nothing } from "lit";
+import { MdStateController } from "../state/state";
 
-/**
- * Custom Lit web component representing an MDFab.
- * @extends MDComponent
- * @example
- * // Example usage:
- * // <md-fab size="small" icon="image"></md-fab>
- */
-class MDFabComponent extends MDComponent {
-    /**
-     * Properties for the MDFabComponent.
-     * @returns {Object} Property configuration.
-     * @property {String} appearance - The appearance style of the fab ("extended").
-     * @property {String} size - The size of the fab ("small" or "large").
-     * @property {String} type - The type of the native button element ("button" by default).
-     * @property {String} icon - The icon for the fab.
-     * @property {String} label - The label for the fab.
-     */
+class MdFabComponent extends LitElement {
     static get properties() {
         return {
-            appearance: { type: String },
-            size: { type: String },
             type: { type: String },
-            icon: { type: String },
             label: { type: String },
+            icon: { type: String },
+            size: { type: String },
+            extended: { type: Boolean },
         };
     }
 
-    /**
-     * Constructor for MDFabComponent.
-     */
     constructor() {
         super();
         this.type = "button";
+    }
+
+    createRenderRoot() {
+        return this;
+    }
+
+    render() {
+        // prettier-ignore
+        return html`
+            <button class="md-fab__native"
+                .type="${this.type}"
+            ></button>
+            ${this.icon?html`<div class="md-fab__icon">${this.icon}</div>`:nothing}
+            ${this.label?html`<div class="md-fab__label">${this.label}</div>`:nothing}
+        `
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-fab");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-fab");
     }
 
     get fabNative() {
         return this.querySelector(".md-fab__native");
     }
 
-    /**
-     * Renders the MDFabComponent template using Lit.
-     * @returns {TemplateResult} The rendered template.
-     */
-    render() {
-        // prettier-ignore
-        return html`
-            <button class="md-fab__native" .type="${this.type}"></button>
-            ${this.icon?html`<div class="md-fab__icon">${this.icon}</div>`:nothing}
-            ${this.label?html`<div class="md-fab__label">${this.label}</div>`:nothing}
-        `
-    }
-
-    /**
-     * Lifecycle callback called when the element is added to the DOM.
-     * @async
-     * @returns {Promise<void>} A Promise that resolves when rendering is complete.
-     */
-    async connectedCallback() {
-        super.connectedCallback();
-
-        await this.updateComplete;
-
-        this.classList.add("md-fab");
-
-        this.mdState = new MDState(this, {
-            trigger: this.fabNative,
+    firstUpdated() {
+        this.state = new MdStateController(this, {
+            button: this.fabNative,
         });
+
+        // this.state.options.inverted = this.ui === "filled";
+        // this.state.options.size = this.ui ? (40 / 40) * 100 : (40 / 24) * 100;
+        // this.requestUpdate();
     }
 
-    /**
-     * Lifecycle callback called when the element is removed from the DOM.
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-
-        this.classList.remove("md-fab");
-
-        this.mdState.destroy();
-    }
-
-    /**
-     * Lifecycle callback called after the first render and element is added to the DOM.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
-    firstUpdated(_changedProperties) {}
-
-    /**
-     * Lifecycle callback called when properties are updated.
-     * @param {Map} _changedProperties - A map of changed properties.
-     */
     updated(_changedProperties) {
         if (_changedProperties.has("size")) {
             ["small", "large"].forEach((size) => {
                 this.classList.remove("md-fab--" + size);
             });
-            if (this.size) this.classList.add("md-fab--" + this.size);
+            if (this.size) {
+                this.classList.add("md-fab--" + this.size);
+            }
         }
-        if (_changedProperties.has("appearance")) {
-            ["extended"].forEach((appearance) => {
-                this.classList.remove("md-fab--" + appearance);
-            });
-            if (this.appearance) this.classList.add("md-fab--" + this.appearance);
+        if (_changedProperties.has("extended")) {
+            if (this.extended) {
+                this.classList.add("md-fab--extended");
+            } else {
+                this.classList.remove("md-fab--extended");
+            }
         }
     }
 }
 
-customElements.define("md-fab", MDFabComponent);
+customElements.define("md-fab", MdFabComponent);
 
-export { MDFabComponent };
+export { MdFabComponent };
