@@ -1,31 +1,7 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
 
-/**
- * Custom button component for Material Design.
- *
- * This component provides a Material Design-styled button with various UI styles.
- *
- * @element md-button
- *
- * @example
- * // Example usage of md-button component:
- * <md-button ui="elevated" icon="image" label="Label"></md-button>
- * <md-button ui="filled" icon="image" label="Label"></md-button>
- * <md-button ui="filled-tonal" icon="image" label="Label"></md-button>
- * <md-button ui="outlined" icon="image" label="Label"></md-button>
- * <md-button icon="image" label="Label"></md-button>
- */
 class MdButtonComponent extends LitElement {
-    /**
-     * Properties of the component.
-     *
-     * @property {String} type - The type of the button (e.g., "button", "submit", "reset").
-     * @property {String} label - The label text for the button.
-     * @property {String} icon - The icon HTML content for the button.
-     * @property {String} ui - The UI style for the button ("elevated", "filled", "filled-tonal", "outlined").
-     * @property {Boolean} activated - Indicates whether the button is activated or not.
-     */
     static get properties() {
         return {
             type: { type: String },
@@ -36,11 +12,6 @@ class MdButtonComponent extends LitElement {
         };
     }
 
-    /**
-     * Returns the native button element inside the component.
-     *
-     * @returns {HTMLButtonElement} The native button element.
-     */
     get buttonNative() {
         return this.querySelector(".md-button__native");
     }
