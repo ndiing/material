@@ -4,11 +4,12 @@
     justify-content: center;
     vertical-align: middle;
     overflow: hidden;
-}
-.md-image__native {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
 
-// .md-image--shape{}
+    &__native {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    // .md-image--shape{}
+}

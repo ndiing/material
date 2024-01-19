@@ -7,59 +7,64 @@
     border-radius: 20px;
     padding: 0 12px;
     gap: 0 8px;
-
     position: relative;
-}
-.md-button__native {
-    appearance: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: transparent;
-    color: transparent;
-}
-.md-button__icon {
-    @extend .md-icon;
-    font-size: 18px;
 
-    + .md-button__label {
-        margin-right: 4px;
+    &__native {
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: transparent;
+        color: transparent;
     }
-}
-.md-button__label {
-    @extend .md-typography--label-large;
-}
 
-.md-button--elevated,
-.md-button--filled,
-.md-button--filled-tonal,
-.md-button--outlined {
-    padding: 0 24px;
-
-    .md-button__icon {
-        margin-left: -8px;
+    &__icon {
+        @extend .md-icon;
+        font-size: 18px;
 
         + .md-button__label {
-            margin-right: 0;
+            margin-right: 4px;
         }
     }
-}
 
-.md-button--elevated {
-    background: var(--md-sys-color-surface-container-low);
-    color: var(--md-sys-color-primary);
-}
-.md-button--filled {
-    background: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-}
-.md-button--filled-tonal {
-    background: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-}
-.md-button--outlined {
-    color: var(--md-sys-color-primary);
-    border: 1px solid var(--md-sys-color-outline);
+    &__label {
+        @extend .md-typography--label-large;
+    }
+
+    &--elevated,
+    &--filled,
+    &--filled-tonal,
+    &--outlined {
+        padding: 0 24px;
+
+        .md-button__icon {
+            margin-left: -8px;
+
+            + .md-button__label {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &--elevated {
+        background: var(--md-sys-color-surface-container-low);
+        color: var(--md-sys-color-primary);
+    }
+
+    &--filled {
+        background: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+    }
+
+    &--filled-tonal {
+        background: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
+    }
+
+    &--outlined {
+        color: var(--md-sys-color-primary);
+        border: 1px solid var(--md-sys-color-outline);
+    }
 }

@@ -7,6 +7,7 @@
     width: 52px;
     position: relative;
 }
+
 .md-switch__native {
     appearance: none;
     width: 100%;
@@ -22,6 +23,7 @@
         + .md-switch__track {
             background: var(--md-sys-color-primary);
             border-color: var(--md-sys-color-primary);
+
             .md-switch__thumb {
                 height: 24px;
                 border-radius: 12px;
@@ -30,11 +32,11 @@
                 background: var(--md-sys-color-on-primary);
 
                 .md-state__layer {
-                    width: 166.66666666666669% !important;
                     width: 40px !important;
                 }
             }
         }
+
         &:active {
             + .md-switch__track {
                 .md-switch__thumb {
@@ -43,22 +45,23 @@
             }
         }
     }
+
     &:active {
         + .md-switch__track {
             .md-switch__thumb {
                 height: 28px;
                 border-radius: 14px;
                 width: 28px;
-                left: 0px;
+                left: 0;
 
                 .md-state__layer {
-                    width: 142.85714285714286% !important;
                     width: 40px !important;
                 }
             }
         }
     }
 }
+
 .md-switch__track {
     display: inline-flex;
     align-items: center;
@@ -73,6 +76,7 @@
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
+
 .md-switch__thumb {
     display: inline-flex;
     align-items: center;
@@ -89,10 +93,6 @@
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 
     .md-state__layer {
-        width: 250% !important;
         width: 40px !important;
-        transition-property: all;
-        transition-duration: var(--md-sys-motion-duration-short2);
-        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     }
 }

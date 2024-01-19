@@ -7,6 +7,7 @@
     width: 24px;
     position: relative;
 }
+
 .md-radio-button__native {
     appearance: none;
     width: 100%;
@@ -21,6 +22,7 @@
     &:checked {
         + .md-radio-button__track {
             border-color: var(--md-sys-color-primary);
+
             .md-radio-button__thumb {
                 height: 10px;
                 border-radius: 5px;
@@ -30,6 +32,7 @@
         }
     }
 }
+
 .md-radio-button__track {
     display: inline-flex;
     align-items: center;

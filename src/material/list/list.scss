@@ -8,12 +8,14 @@
     display: flex;
     flex-direction: column;
 }
+
 .md-list__item {
     display: flex;
     align-items: center;
     padding: 8px 16px;
     gap: 0 16px;
 }
+
 .md-list__divider {
     margin-top: 8px;
     margin-bottom: 7px;
@@ -25,6 +27,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .md-list__end {
     .md-list__supporting-text {
         @extend .md-typography--label-small;
@@ -34,6 +37,7 @@
 .md-list__label {
     @extend .md-typography--body-large;
 }
+
 .md-list__supporting-text {
     @extend .md-typography--body-medium;
     overflow: hidden;
@@ -42,9 +46,11 @@
 .md-list__avatar {
     height: 40px;
 }
+
 .md-list__image {
     height: 56px;
 }
+
 .md-list__video {
     height: 64px;
     margin: 4px 0;
@@ -56,11 +62,13 @@
         min-height: 56px;
     }
 }
+
 .md-list--two-line {
     .md-list__item {
         min-height: 72px;
     }
 }
+
 .md-list--three-line {
     .md-list__item {
         align-items: start;
@@ -68,11 +76,13 @@
         padding-top: 12px;
         padding-bottom: 12px;
     }
+
     .md-list__end {
         .md-list__supporting-text {
             height: auto;
         }
     }
+
     .md-list__supporting-text {
         height: 40px;
     }
@@ -89,11 +99,13 @@
         padding: 0 12px;
         gap: 0 12px;
     }
+
     .md-list__end {
         .md-list__supporting-text {
             @extend .md-typography--label-large;
         }
     }
+
     .md-list__label {
         @extend .md-typography--label-large;
     }
@@ -107,9 +119,11 @@
 
 .md-navigation-bar__list {
     flex-direction: row;
+
     .md-list__row {
         flex: 1;
     }
+
     .md-list__item {
         flex-direction: column;
         justify-content: center;
@@ -129,10 +143,12 @@
             }
         }
     }
+
     .md-list__label {
         @extend .md-typography--label-medium;
         margin-bottom: 4px;
     }
+
     .md-list__icon {
         height: 32px;
         border-radius: 16px;
