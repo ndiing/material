@@ -1,24 +1,31 @@
 # Material Components
 
-This repository contains various Material Components for your project. Each component has its documentation in Markdown format.
+Welcome to the Material Components repository, a collection of versatile components designed for seamless integration into your projects. Each component comes with comprehensive documentation in Markdown format.
 
--   **[navigation](./src/material/navigation/navigation.md)**
--   **[state](./src/material/state/state.md)**
--   **[Icon](./src/material/icon/icon.md)**
--   **[Emoji](./src/material/emoji/emoji.md)**
--   **[Image](./src/material/image/image.md)**
--   **[Button](./src/material/button/button.md)**
--   **[Floating Action Button (FAB)](./src/material/fab/fab.md)**
--   **[Icon Button](./src/material/icon-button/icon-button.md)**
--   **[Segmented Button](./src/material/segmented-button/segmented-button.md)**
--   **[Checkbox](./src/material/checkbox/checkbox.md)**
--   **[Radio Button](./src/material/radio-button/radio-button.md)**
--   **[Switch](./src/material/switch/switch.md)**
--   **[Badge](./src/material/badge/badge.md)**
--   **[List](./src/material/list/list.md)**
--   **[Panel](./src/material/panel/panel.md)**
+## Foundations
 
-Feel free to explore each component's documentation for detailed information on usage and customization.
+-   [Navigation](./src/material/navigation/navigation.md)
+-   [State](./src/material/state/state.md)
+
+## Components
+
+-   [Icon](./src/material/icon/icon.md)
+-   [Emoji](./src/material/emoji/emoji.md)
+-   [Image](./src/material/image/image.md)
+-   [Button](./src/material/button/button.md)
+-   [Floating Action Button (FAB)](./src/material/fab/fab.md)
+-   [Icon Button](./src/material/icon-button/icon-button.md)
+-   [Segmented Button](./src/material/segmented-button/segmented-button.md)
+-   [Checkbox](./src/material/checkbox/checkbox.md)
+-   [Radio Button](./src/material/radio-button/radio-button.md)
+-   [Switch](./src/material/switch/switch.md)
+-   [Badge](./src/material/badge/badge.md)
+-   [List](./src/material/list/list.md)
+-   [Panel](./src/material/panel/panel.md)
+
+Explore the documentation for each component to gain a deeper understanding of their usage and customization options.
+
+Feel free to contribute, report issues, or suggest improvements. We appreciate your collaboration in making these components even more robust and user-friendly.
 
 <!--
 generate docs with markdown formated file
