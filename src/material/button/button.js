@@ -18,46 +18,27 @@ class MdButtonComponent extends LitElement {
         };
     }
 
-    /**
-     *
-     */
     constructor() {
         super();
         this.type = "button";
     }
 
-    /**
-     *
-     */
     createRenderRoot() {
         return this;
     }
 
-    /**
-     *
-     */
     render() {
-        /* prettier-ignore */
         return html`
-            <button class="md-button__native"
-                .type="${this.type}"
-            ></button>
-            ${this.icon ? html`<div class="md-button__icon">${this.icon}</div>` : nothing}
-            ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
+            <button class="md-button__native" .type="${this.type}"></button>
+            ${this.icon ? html`<div class="md-button__icon">${this.icon}</div>` : nothing} ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
         `;
     }
 
-    /**
-     *
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
     }
 
-    /**
-     *
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-button");
@@ -70,9 +51,6 @@ class MdButtonComponent extends LitElement {
         return this.querySelector(".md-button__native");
     }
 
-    /**
-     *
-     */
     firstUpdated() {
         this.state = new MdStateController(this, {
             button: this.buttonNative,
