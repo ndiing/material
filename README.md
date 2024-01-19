@@ -27,6 +27,9 @@
 <dt><a href="#MdFabComponent">MdFabComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element for a Material Design Floating Action Button (FAB).</p>
 </dd>
+<dt><a href="#MdIconComponent">MdIconComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Represents an icon component.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -570,6 +573,80 @@ Dispatched when a specific event occurs.
 | icon | <code>String</code> | The icon for the FAB. |
 | size | <code>String</code> | The size of the FAB. Can be "small" or "large". |
 | extended | <code>Boolean</code> | Indicates whether the FAB is in extended mode. |
+
+<a name="MdIconComponent"></a>
+
+## MdIconComponent ⇐ <code>LitElement</code>
+Represents an icon component.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdIconComponent](#MdIconComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.createRenderRoot()](#MdIconComponent+createRenderRoot) ⇒ [<code>MdIconComponent</code>](#MdIconComponent)
+        * [.connectedCallback()](#MdIconComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdIconComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdIconComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdIconComponent+updated)
+        * [.dispatchCustomEvent()](#MdIconComponent+dispatchCustomEvent)
+    * _static_
+        * [.properties](#MdIconComponent.properties)
+
+<a name="MdIconComponent+createRenderRoot"></a>
+
+### mdIconComponent.createRenderRoot() ⇒ [<code>MdIconComponent</code>](#MdIconComponent)
+Creates the render root for the element.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+**Returns**: [<code>MdIconComponent</code>](#MdIconComponent) - - The render root.  
+<a name="MdIconComponent+connectedCallback"></a>
+
+### mdIconComponent.connectedCallback()
+Connected callback. Adds "md-icon" class when connected.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+<a name="MdIconComponent+disconnectedCallback"></a>
+
+### mdIconComponent.disconnectedCallback()
+Disconnected callback. Removes "md-icon" class when disconnected.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+<a name="MdIconComponent+firstUpdated"></a>
+
+### mdIconComponent.firstUpdated()
+First updated callback.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+<a name="MdIconComponent+updated"></a>
+
+### mdIconComponent.updated(_changedProperties)
+Updated callback.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdIconComponent+dispatchCustomEvent"></a>
+
+### mdIconComponent.dispatchCustomEvent()
+Dispatches a custom event.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+**Emits**: <code>MdIconComponent#event:custom-event</code>  
+<a name="MdIconComponent.properties"></a>
+
+### MdIconComponent.properties
+A static property that defines the properties for MdIconComponent.
+
+**Kind**: static property of [<code>MdIconComponent</code>](#MdIconComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| properties | <code>Object</code> | The properties object. |
 
 <a name="md-emoji"></a>
 
