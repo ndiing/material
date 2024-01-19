@@ -27,7 +27,7 @@ MdNavigation.load([
     { path: "*", component: ErrorComponent, children: [] },
 ]);
 
-window.addEventListener('onCurrententrychange',console.log)
-window.addEventListener('onNavigate',console.log)
-window.addEventListener('onNavigateerror',console.log)
-window.addEventListener('onNavigatesuccess',console.log)
+// window.addEventListener('onCurrententrychange',console.log)
+// window.addEventListener('onNavigate',console.log)
+// window.addEventListener('onNavigateerror',console.log)
+// window.addEventListener('onNavigatesuccess',console.log)

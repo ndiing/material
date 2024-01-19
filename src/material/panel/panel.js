@@ -3,64 +3,47 @@ import { MdStateController } from "../state/state";
 
 class MdPanelScrimComponent extends LitElement {
     static get properties() {
-        return {
-            label: { type: String },
-        };
+        return {};
     }
 
     constructor() {
         super();
-        this.label = "Label";
     }
 
     createRenderRoot() {
         return this;
     }
 
-    render() {
-        // prettier-ignore
-        return html`
-            ${this.label?html`<div class="md-panel-scrim__label">${this.label}</div>`:nothing}
-        `
-    }
+    // render() {
+    //     // prettier-ignore
+    //     return html``;
+    // }
 
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-panel__scrim");
-        // this.onPanelScrimClick=
-        // this.onPanelScrimClick.bind(this)
-        // this.addEventListener('click',this.onPanelScrimClick)
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-panel__scrim");
-        // this.addEventListener('click',this.onPanelScrimClick)
     }
 
-    firstUpdated() {
-    }
+    firstUpdated() {}
 
-    updated(_changedProperties) {
-    }
-
-    // onPanelScrimClick(event) {
-    //     this.dispatchEvent(new CustomEvent('onPanelScrimClick',{
-    //         bubbles:true,
-    //         cancelable:true,
-    //         detail:{event}
-    //     }))
-    // }
+    updated(_changedProperties) {}
 }
 
 customElements.define("md-panel-scrim", MdPanelScrimComponent);
 
 export { MdPanelScrimComponent };
 
-
 class MdPanelComponent extends LitElement {
     static get properties() {
         return {
+            open:{type:Boolean},
+            type:{type:String},
+            position:{type:String},
         };
     }
 
@@ -77,24 +60,26 @@ class MdPanelComponent extends LitElement {
         return html`
             <!-- <div class="md-panel__header">
                 <div class="md-panel__start">
-                    <md-icon-button icon="image"></md-icon-button>
+                    <md-icon-button icon="arrow_back"></md-icon-button>
                 </div>
                 <div class="md-panel__center">
                     <div class="md-panel__label">Label</div>
-                    <div class="md-panel__supporting-text">Label</div>
+                    <div class="md-panel__supporting-text">Supporting text</div>
                 </div>
                 <div class="md-panel__end">
-                    <md-icon-button icon="image"></md-icon-button>
+                    <md-icon-button icon="close"></md-icon-button>
                 </div>
             </div> -->
             <div class="md-panel__body">
-                Lorem ipsum dolor sit amet.
+                A dialog is a type of modal window that
+                appears in front of app content to provide
+                critical information, or ask for decision.
             </div>
             <!-- <div class="md-panel__footer">
-                <md-button ui="filled" label="Label"></md-button>
-                <md-button ui="outlined" label="Label"></md-button>
+                <md-button label="Enabled"></md-button>
+                <md-button label="Enabled"></md-button>
             </div> -->
-        `
+        `;
     }
 
     connectedCallback() {
@@ -107,27 +92,72 @@ class MdPanelComponent extends LitElement {
         this.classList.remove("md-panel");
     }
 
-    async firstUpdated() {
-        const rect=(this.getBoundingClientRect())
-        // document.body.style.setProperty('--md-layout-padding-left',rect.width+'px')
-        // document.body.style.setProperty('--md-layout-padding-right',rect.width+'px')
-        // document.body.style.setProperty('--md-layout-padding-top',rect.height+'px')
-        // document.body.style.setProperty('--md-layout-padding-bottom',rect.height+'px')
-
-        this.panelScrim=document.createElement('md-panel-scrim')
-        this.onPanelScrimClick=this.onPanelScrimClick.bind(this)
-        this.panelScrim.addEventListener('click',this.onPanelScrimClick)
-        document.body.append(this.panelScrim)
-
-        this.panelScrim.removeEventListener('click',this.onPanelScrimClick)
-        this.panelScrim.remove()
+    firstUpdated() {
+        // this.panelScrim = document.createElement("md-panel-scrim");
+        // this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
+        // this.panelScrim.addEventListener("click", this.onPanelScrimClick);
+        // document.body.append(this.panelScrim);
+        
+        // this.panelScrim.removeEventListener("click", this.onPanelScrimClick);
+        // this.panelScrim.remove()
     }
 
     updated(_changedProperties) {
+        if(_changedProperties.has('open')){
+            if(this.open){
+                this.classList.add('md-panel--open')
+            }else{
+                this.classList.remove('md-panel--open')
+            }
+        }
+        if(_changedProperties.has('type')){
+            [
+                'dialog',
+                'drawer',
+            ].forEach(type=>{
+                this.classList.remove('md-panel--'+type)
+            })
+            if(this.type){
+                this.classList.add('md-panel--'+this.type)
+            }
+        }
+        if(_changedProperties.has('position')){
+            [
+                'top',
+                'right',
+                'bottom',
+                'left',
+            ].forEach(position=>{
+                this.classList.remove('md-panel--'+position)
+            })
+            if(this.position){
+                this.classList.add('md-panel--'+this.position)
+            }
+        }
+    }
+
+    show(){
+        this.open=true
+    }
+
+    close(){
+        this.open=false
+    }
+
+    toggle(){
+        // this.open=!this.open
+        if(this.open){this.close()}
+        else{this.show()}
     }
 
     onPanelScrimClick(event) {
+        this.close()
 
+        this.dispatchEvent(new CustomEvent('onPanelScrimClick', {
+            bubbles:true,
+            cancelable:true,
+            detail:{event}
+        }))
     }
 }
 
