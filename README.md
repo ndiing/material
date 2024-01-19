@@ -27,6 +27,8 @@
 <dt><a href="#MdFabComponent">MdFabComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element for a Material Design Floating Action Button (FAB).</p>
 </dd>
+<dt><a href="#MdIconButtonComponent">MdIconButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd></dd>
 <dt><a href="#MdIconComponent">MdIconComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Represents an icon component.</p>
 </dd>
@@ -573,6 +575,87 @@ Dispatched when a specific event occurs.
 | icon | <code>String</code> | The icon for the FAB. |
 | size | <code>String</code> | The size of the FAB. Can be "small" or "large". |
 | extended | <code>Boolean</code> | Indicates whether the FAB is in extended mode. |
+
+<a name="MdIconButtonComponent"></a>
+
+## MdIconButtonComponent ⇐ <code>LitElement</code>
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdIconButtonComponent](#MdIconButtonComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.iconButtonNative](#MdIconButtonComponent+iconButtonNative) : <code>Element</code>
+        * [.createRenderRoot()](#MdIconButtonComponent+createRenderRoot) ⇒ <code>Element</code>
+        * [.render()](#MdIconButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdIconButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdIconButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdIconButtonComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdIconButtonComponent+updated)
+        * [.onIconButtonClick(event)](#MdIconButtonComponent+onIconButtonClick)
+    * _static_
+        * [.properties](#MdIconButtonComponent.properties)
+
+<a name="MdIconButtonComponent+iconButtonNative"></a>
+
+### mdIconButtonComponent.iconButtonNative : <code>Element</code>
+Returns the native button element.
+
+**Kind**: instance property of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+createRenderRoot"></a>
+
+### mdIconButtonComponent.createRenderRoot() ⇒ <code>Element</code>
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+**Returns**: <code>Element</code> - - The element to use as the render root.  
+<a name="MdIconButtonComponent+render"></a>
+
+### mdIconButtonComponent.render() ⇒ <code>TemplateResult</code>
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+**Returns**: <code>TemplateResult</code> - - The rendered HTML template.  
+<a name="MdIconButtonComponent+connectedCallback"></a>
+
+### mdIconButtonComponent.connectedCallback()
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+disconnectedCallback"></a>
+
+### mdIconButtonComponent.disconnectedCallback()
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+firstUpdated"></a>
+
+### mdIconButtonComponent.firstUpdated()
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+updated"></a>
+
+### mdIconButtonComponent.updated(_changedProperties)
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of changed properties. |
+
+<a name="MdIconButtonComponent+onIconButtonClick"></a>
+
+### mdIconButtonComponent.onIconButtonClick(event)
+Handles the click event on the icon button.
+
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdIconButtonComponent.properties"></a>
+
+### MdIconButtonComponent.properties
+**Kind**: static property of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | Type of the button. |
+| icon | <code>String</code> | Icon to be displayed inside the button. |
+| ui | <code>String</code> | UI style of the button. |
+| toggle | <code>Boolean</code> | Indicates whether the button is in toggle mode. |
+| activated | <code>Boolean</code> | Indicates whether the button is activated (only applicable in toggle mode). |
 
 <a name="MdIconComponent"></a>
 
