@@ -1,0 +1,13 @@
+-   **[icon](./src/material/icon/icon.md)**
+-   **[emoji](./src/material/emoji/emoji.md)**
+-   **[image](./src/material/image/image.md)**
+-   **[button](./src/material/button/button.md)**
+-   **[fab](./src/material/fab/fab.md)**
+-   **[icon-button](./src/material/icon-button/icon-button.md)**
+-   **[segmented-button](./src/material/segmented-button/segmented-button.md)**
+-   **[checkbox](./src/material/checkbox/checkbox.md)**
+-   **[radio-button](./src/material/radio-button/radio-button.md)**
+-   **[switch](./src/material/switch/switch.md)**
+-   **[badge](./src/material/badge/badge.md)**
+-   **[list](./src/material/list/list.md)**
+-   **[panel](./src/material/panel/panel.md)**
