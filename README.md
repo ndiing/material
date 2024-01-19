@@ -41,6 +41,9 @@
 <dt><a href="#MdListComponent">MdListComponent</a></dt>
 <dd><p>Custom element representing a list.</p>
 </dd>
+<dt><a href="#MdNavigation">MdNavigation</a></dt>
+<dd><p>Represents a navigation utility.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -808,6 +811,119 @@ Handles the click event on a list item.
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>Event</code> | The click event. |
+
+<a name="MdNavigation"></a>
+
+## MdNavigation
+Represents a navigation utility.
+
+**Kind**: global class  
+
+* [MdNavigation](#MdNavigation)
+    * [.setEntries(entries, parent)](#MdNavigation.setEntries) ⇒ <code>Array</code>
+    * [.getEntry()](#MdNavigation.getEntry) ⇒ <code>Object</code>
+    * [.getEntries(entry)](#MdNavigation.getEntries) ⇒ <code>Array</code>
+    * [.handlePopstate(event)](#MdNavigation.handlePopstate)
+    * [.emit(type, detail)](#MdNavigation.emit)
+    * [.navigate(url)](#MdNavigation.navigate)
+    * [.handleClick(event)](#MdNavigation.handleClick)
+    * [.load(entries)](#MdNavigation.load)
+
+<a name="MdNavigation.setEntries"></a>
+
+### MdNavigation.setEntries(entries, parent) ⇒ <code>Array</code>
+Sets entries for navigation.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Returns**: <code>Array</code> - - The modified array of entries.  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| entries | <code>Array</code> |  | An array of navigation entries. |
+| parent | <code>Object</code> | <code></code> | The parent entry. |
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| pattern | <code>Array</code> | The pattern generated based on the entry's path. |
+| parent | <code>Object</code> | The parent entry. |
+
+<a name="MdNavigation.getEntry"></a>
+
+### MdNavigation.getEntry() ⇒ <code>Object</code>
+Gets the current entry based on the path.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Returns**: <code>Object</code> - - The current navigation entry.  
+<a name="MdNavigation.getEntries"></a>
+
+### MdNavigation.getEntries(entry) ⇒ <code>Array</code>
+Gets all entries, including parent entries, for a given entry.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Returns**: <code>Array</code> - - An array of all entries.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entry | <code>Object</code> | The entry to retrieve all entries for. |
+
+<a name="MdNavigation.handlePopstate"></a>
+
+### MdNavigation.handlePopstate(event)
+Handles the popstate event.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Emits**: <code>event:onCurrententrychange</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The popstate event. |
+
+<a name="MdNavigation.emit"></a>
+
+### MdNavigation.emit(type, detail)
+Emits a custom event with the specified type and detail.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of the custom event. |
+| detail | <code>Object</code> | Additional details for the event. |
+
+<a name="MdNavigation.navigate"></a>
+
+### MdNavigation.navigate(url)
+Navigates to the specified URL using the pushState method.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | The URL to navigate to. |
+
+<a name="MdNavigation.handleClick"></a>
+
+### MdNavigation.handleClick(event)
+Handles click events for navigation elements.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdNavigation.load"></a>
+
+### MdNavigation.load(entries)
+Loads navigation entries and sets up event listeners.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entries | <code>Array</code> | An array of navigation entries. |
 
 <a name="md-emoji"></a>
 
