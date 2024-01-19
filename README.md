@@ -28,6 +28,10 @@ Custom button component that extends LitElement.
 ### new MdButtonComponent()
 Default constructor for MdButtonComponent.
 
+**Example**  
+```js
+// Example usage of MdButtonComponent:// Elevated button<md-button ui="elevated" label="Elevated Button"></md-button>// Filled button<md-button ui="filled" label="Filled Button"></md-button>// Filled-tonal button<md-button ui="filled-tonal" label="Filled Tonal Button"></md-button>// Outlined button<md-button ui="outlined" label="Outlined Button"></md-button>// Default button<md-button label="Default Button"></md-button>
+```
 <a name="MdButtonComponent+buttonNative"></a>
 
 ### mdButtonComponent.buttonNative ⇒ <code>HTMLButtonElement</code>

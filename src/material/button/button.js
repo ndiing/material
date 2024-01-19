@@ -9,6 +9,23 @@ import { MdStateController } from "../state/state";
  *
  * @cssproperty --md-button-color - Color of the button.
  * @cssproperty --md-button-background - Background color of the button.
+ *
+ * @example
+ * // Example usage of MdButtonComponent:
+ * // Elevated button
+ * <md-button ui="elevated" label="Elevated Button"></md-button>
+ *
+ * // Filled button
+ * <md-button ui="filled" label="Filled Button"></md-button>
+ *
+ * // Filled-tonal button
+ * <md-button ui="filled-tonal" label="Filled Tonal Button"></md-button>
+ *
+ * // Outlined button
+ * <md-button ui="outlined" label="Outlined Button"></md-button>
+ *
+ * // Default button
+ * <md-button label="Default Button"></md-button>
  */
 class MdButtonComponent extends LitElement {
     /**
@@ -129,14 +146,3 @@ class MdButtonComponent extends LitElement {
 customElements.define("md-button", MdButtonComponent);
 
 export { MdButtonComponent };
-
-/**
- * Example usage of md-button element.
- *
- * @example
- * <md-button ui="elevated" label="Label"></md-button>
- * <md-button ui="filled" label="Label"></md-button>
- * <md-button ui="filled-tonal" label="Label"></md-button>
- * <md-button ui="outlined" label="Label"></md-button>
- * <md-button label="Label"></md-button>
- */
