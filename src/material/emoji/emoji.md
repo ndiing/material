@@ -1,23 +1,22 @@
 # MdEmojiComponent
 
-`MdEmojiComponent` is a custom LitElement representing a Material Design emoji.
+`MdEmojiComponent` is a custom LitElement representing a material design emoji.
 
 ## Properties
 
-This component does not have any specific properties.
+No properties are defined in this component.
 
-## Methods
+## Instance Methods
 
--   **dispatchCustomEvent()**: Dispatches a custom event named "customEvent" with the detail "Event detail."
+-   `dispatchCustomEvent()`: Dispatches a custom event named "customEvent" with the detail "Event detail".
 
-## Lifecycle Methods
+## Events
 
--   **connectedCallback()**: Adds the "md-emoji" class when the element is connected.
--   **disconnectedCallback()**: Removes the "md-emoji" class when the element is disconnected.
--   **firstUpdated()**: No specific logic implemented in the `firstUpdated` lifecycle method.
--   **updated(\_changedProperties)**: No specific logic implemented in the `updated` lifecycle method.
+-   `customEvent`: A custom event dispatched by the component. It includes a detail property with the value "Event detail".
 
-## Usage
+## Examples
+
+### Basic Usage
 
 ```html
 <md-emoji></md-emoji>

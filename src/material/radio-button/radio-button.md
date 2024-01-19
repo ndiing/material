@@ -1,27 +1,22 @@
 # MdRadioButtonComponent
 
-`MdRadioButtonComponent` is a custom LitElement representing a Material Design radio button.
+`MdRadioButtonComponent` is a custom LitElement representing a material design radio button.
 
 ## Properties
 
--   **name** (_String_): The name attribute of the radio button.
--   **checked** (_Boolean_): Reflects whether the radio button is checked.
+-   `name` (String): The name attribute for the radio button.
+-   `checked` (Boolean): Reflects whether the radio button is checked.
 
-## Methods
+## Instance Methods
 
--   **radioButtonNative()**: Returns the native radio button input element.
--   **radioButtonTrack()**: Returns the track element of the radio button.
--   **radioButtonThumb()**: Returns the thumb element of the radio button.
--   **onRadioButtonNativeInput(event)**: Event handler for the radio button input. Updates properties based on the input event.
+-   `radioButtonNative`: Returns the native radio button input element.
+-   `radioButtonTrack`: Returns the track element of the radio button.
+-   `radioButtonThumb`: Returns the thumb element of the radio button.
 
-## Lifecycle Methods
+## Examples
 
--   **connectedCallback()**: Adds the "md-radio-button" class when the element is connected.
--   **disconnectedCallback()**: Removes the "md-radio-button" class when the element is disconnected.
--   **firstUpdated()**: Initializes the `MdStateController` with specific properties.
-
-## Usage
+### Basic Usage
 
 ```html
-<md-radio-button name="radioGroupName" .checked="${true}"></md-radio-button>
+<md-radio-button></md-radio-button>
 ```

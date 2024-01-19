@@ -1,57 +1,27 @@
 # MdButtonComponent
 
-`MdButtonComponent` is a custom web component that extends `LitElement` and represents a button.
+`MdButtonComponent` is a custom LitElement representing a material design button.
 
 ## Properties
 
--   `type` (Type: String): Specifies the type of the button (default is "button").
--   `label` (Type: String): The label text displayed on the button.
--   `icon` (Type: String): The icon to be displayed on the button.
--   `ui` (Type: String): The UI style of the button ("elevated", "filled", "filled-tonal", "outlined").
--   `activated` (Type: Boolean, Reflect: true): Reflects the activation state of the button.
+-   `type` (String): Specifies the type of the button. Default value is "button".
+-   `label` (String): The label text for the button.
+-   `icon` (String): The icon to be displayed within the button.
+-   `ui` (String): The UI style of the button. Possible values are "elevated", "filled", "filled-tonal", "outlined".
+-   `activated` (Boolean, reflected): Reflects whether the button is activated.
 
 ## Instance Methods
 
-### `buttonNative`
-
--   Returns the native button element within the component.
-
-### `constructor()`
-
--   Initializes the component. Sets the default value for the `type` property to "button".
-
-### `createRenderRoot()`
-
--   Overrides the `LitElement` method to return `this`, making the component's own shadow DOM the render root.
-
-### `render()`
-
--   Overrides the `LitElement` method to define the component's HTML structure based on its properties.
-
-### `connectedCallback()`
-
--   Overrides the `LitElement` method to add the class "md-button" to the component when it is connected to the DOM.
-
-### `disconnectedCallback()`
-
--   Overrides the `LitElement` method to remove the class "md-button" from the component when it is disconnected from the DOM.
-
-### `firstUpdated()`
-
--   Overrides the `LitElement` method. Initializes the state using `MdStateController` and binds it to the native button element.
-
-### `updated(_changedProperties)`
-
--   Overrides the `LitElement` method. Updates the component's UI style based on changes to the `ui` property.
+-   `buttonNative`: Returns the native button element.
 
 ## Events
 
--   None
+No custom events are defined in this component.
 
 ## Examples
 
-### Creating an `MdButtonComponent` in HTML:
+### Basic Usage
 
 ```html
-<md-button label="Click me" icon="check" ui="filled"></md-button>
+<md-button label="Click me"></md-button>
 ```

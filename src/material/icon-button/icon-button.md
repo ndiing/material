@@ -1,29 +1,23 @@
 # MdIconButtonComponent
 
-`MdIconButtonComponent` is a custom LitElement representing a Material Design icon button.
+`MdIconButtonComponent` is a custom LitElement representing a material design icon button.
 
 ## Properties
 
--   **type** (_String_): The type of the button (default is "button").
--   **icon** (_String_): The icon content for the button.
--   **ui** (_String_): The UI style of the button (`filled`, `filled-tonal`, `outlined`).
--   **toggle** (_Boolean_): Reflects whether the button is in toggle mode.
--   **activated** (_Boolean_): Reflects whether the button is activated.
+-   `type` (String): Specifies the type of the button. Default value is "button".
+-   `icon` (String): The icon to be displayed within the button.
+-   `ui` (String): The UI style of the button. Possible values are "filled", "filled-tonal", "outlined".
+-   `toggle` (Boolean): Indicates whether the button is in a toggle state.
+-   `activated` (Boolean, reflected): Reflects whether the button is activated.
 
-## Methods
+## Instance Methods
 
--   **iconButtonNative()**: Returns the native button element.
--   **onIconButtonClick(event)**: Event handler for the button click. Toggles activation if in toggle mode and dispatches a custom event.
+-   `iconButtonNative`: Returns the native button element.
 
-## Lifecycle Methods
+## Examples
 
--   **connectedCallback()**: Adds the "md-icon-button" class when the element is connected.
--   **disconnectedCallback()**: Removes the "md-icon-button" class when the element is disconnected.
--   **firstUpdated()**: Initializes the `MdStateController` with specific properties.
--   **updated(\_changedProperties)**: Updates the UI style and toggle mode based on property changes.
-
-## Usage
+### Basic Usage
 
 ```html
-<md-icon-button type="button" icon="icon-name" ui="filled" toggle activated></md-icon-button>
+<md-icon-button icon="favorite"></md-icon-button>
 ```

@@ -1,23 +1,20 @@
 # MdSegmentedButtonComponent
 
-`MdSegmentedButtonComponent` is a custom LitElement representing a Material Design segmented button.
+`MdSegmentedButtonComponent` is a custom LitElement representing a material design segmented button.
 
 ## Properties
 
--   **items** (_Array_): An array of objects representing individual segmented button items.
--   **type** (_String_): The type of segmented button (`multi-select` for multiple selections).
+-   `items` (Array): An array of items to be displayed in the segmented button.
+-   `type` (String): The type of the segmented button. Possible values are "multi-select" or not specified.
 
-## Methods
+## Instance Methods
 
--   **onSegmentedButtonClick(event)**: Event handler for the segmented button click. Toggles activation based on the button type.
+-   `onSegmentedButtonClick(event)`: Event handler for the segmented button click event. Toggles the activation state of the button(s) based on the type of segmented button.
 
-## Lifecycle Methods
+## Examples
 
--   **connectedCallback()**: Adds the "md-segmented-button" class when the element is connected.
--   **disconnectedCallback()**: Removes the "md-segmented-button" class when the element is disconnected.
-
-## Usage
+### Basic Usage
 
 ```html
-<md-segmented-button type="multi-select" .items="${segmentedButtonItems}"></md-segmented-button>
+<md-segmented-button .items="${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}"></md-segmented-button>
 ```

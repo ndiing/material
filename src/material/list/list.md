@@ -1,121 +1,59 @@
 # MdListItemComponent
 
-`MdListItemComponent` is a custom web component that extends `LitElement` and represents a list item.
+`MdListItemComponent` is a custom LitElement representing a material design list item.
 
 ## Properties
 
--   `label` (Type: String): The label text displayed on the list item.
--   `supportingText` (Type: String): Additional supporting text for the list item.
--   `badge` (Type: String): The badge text displayed on the list item.
--   `leadingItems` (Type: Array): An array of leading items to be displayed before the label.
--   `trailingItems` (Type: Array): An array of trailing items to be displayed after the label.
--   `activated` (Type: Boolean, Reflect: true): Reflects the activation state of the list item.
+-   `label` (String): The label for the list item.
+-   `supportingText` (String): Supporting text for additional information.
+-   `badge` (String): Badge to be displayed on the list item.
+-   `leadingItems` (Array): Leading items to be displayed before the label.
+-   `trailingItems` (Array): Trailing items to be displayed after the label.
+-   `activated` (Boolean): Reflects whether the list item is activated.
 
-## Instance Methods
+## Examples
 
-### `renderItem(item)`
+### Basic Usage
 
--   Renders an item based on the provided configuration.
+```html
+<md-list-item label="Item 1" supportingText="Additional information"></md-list-item>
+```
 
-### `render()`
+### MdListRowComponent
 
--   Overrides the `LitElement` method to define the HTML structure of the list item based on its properties.
+MdListRowComponent
 
-### `connectedCallback()`
-
--   Overrides the `LitElement` method to add the class "md-list\_\_item" to the list item when it is connected to the DOM.
-
-### `disconnectedCallback()`
-
--   Overrides the `LitElement` method to remove the class "md-list\_\_item" from the list item when it is disconnected from the DOM.
-
-### `firstUpdated()`
-
--   Overrides the `LitElement` method. Initializes the state using `MdStateController` and updates the label-related CSS class.
-
-### `updated(_changedProperties)`
-
--   Overrides the `LitElement` method. No specific updates for this method.
-
-# MdListRowComponent
-
-`MdListRowComponent` is a custom web component that extends `LitElement` and represents a row in a list.
+`MdListRowComponent` is a custom LitElement representing a row within a material design list.
 
 ## Properties
 
--   None
+-   No specific properties are defined.
 
-## Instance Methods
+## Examples
 
-### `render()`
+### Basic Usage
 
--   Overrides the `LitElement` method to define the HTML structure of the list row.
+```html
+<md-list-row></md-list-row>
+```
 
-### `connectedCallback()`
-
--   Overrides the `LitElement` method to add the class "md-list\_\_row" to the list row when it is connected to the DOM.
-
-### `disconnectedCallback()`
-
--   Overrides the `LitElement` method to remove the class "md-list\_\_row" from the list row when it is disconnected from the DOM.
-
-### `firstUpdated()`
-
--   Overrides the `LitElement` method. No specific updates for this method.
-
-### `updated(_changedProperties)`
-
--   Overrides the `LitElement` method. No specific updates for this method.
+### MdListComponent
 
 # MdListComponent
 
-`MdListComponent` is a custom web component that extends `LitElement` and represents a list.
+`MdListComponent` is a custom LitElement representing a material design list.
 
 ## Properties
 
--   `items` (Type: Array): An array of items to be rendered in the list.
--   `ui` (Type: String): The UI style of the list ("one-line", "two-line", "three-line").
--   `type` (Type: String): The type of the list ("multi-select" for multi-selection).
--   `activatable` (Type: Boolean): Indicates whether the list items are activatable.
+-   `items` (Array): The array of items to be displayed in the list.
+-   `ui` (String): The UI style for the list (one-line, two-line, three-line).
+-   `type` (String): The type of list (single-select, multi-select).
+-   `activatable` (Boolean): Reflects whether list items are activatable.
 
-## Instance Methods
+## Examples
 
-### `hasListItem(item)`
-
--   Checks if a given item has content to be displayed in the list.
-
-### `render()`
-
--   Overrides the `LitElement` method to define the HTML structure of the list based on its properties.
-
-### `connectedCallback()`
-
--   Overrides the `LitElement` method to add the class "md-list" to the list when it is connected to the DOM.
-
-### `disconnectedCallback()`
-
--   Overrides the `LitElement` method to remove the class "md-list" from the list when it is disconnected from the DOM.
-
-### `firstUpdated()`
-
--   Overrides the `LitElement` method. No specific updates for this method.
-
-### `updated(_changedProperties)`
-
--   Overrides the `LitElement` method. Updates the list's UI style based on changes to the `ui` property.
-
-### `onListItemClick(event)`
-
--   Handles the click event on a list item. Activates the clicked item and dispatches a custom event.
-
-## Events
-
--   `onListItemClick`: Dispatched when a list item is clicked. Event details include the original event and the clicked list item.
-
-# Examples
-
-### Creating a simple list:
+### Basic Usage
 
 ```html
-<md-list .items="${[{ label: 'Item 1' }, { label: 'Item 2' }, { label: 'Item 3' }]}"></md-list>
+<md-list .items="${[{ label: 'Item 1' }, { label: 'Item 2' }]}"></md-list>
 ```
