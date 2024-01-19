@@ -20,8 +20,8 @@ class MdCheckboxComponent extends LitElement {
     }
 
     render() {
-        /*prettier-ignore*/() {
-                return html`
+        /*prettier-ignore*/
+        return html`
             <input 
                 type="checkbox" 
                 class="md-checkbox__native"

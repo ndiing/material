@@ -19,8 +19,8 @@ class MdSwitchComponent extends LitElement {
     }
 
     render() {
-        /*prettier-ignore*/() {
-                return html`
+        /*prettier-ignore*/
+        return html`
             <input 
                 type="checkbox" 
                 class="md-switch__native"

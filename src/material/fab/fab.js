@@ -22,8 +22,8 @@ class MdFabComponent extends LitElement {
     }
 
     render() {
-        /*prettier-ignore*/() {
-                return html`
+        /*prettier-ignore*/
+        return html`
             <button class="md-fab__native"
                 .type="${this.type}"
             ></button>

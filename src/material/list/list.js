@@ -32,9 +32,9 @@ class MdListItemComponent extends LitElement {
         return this;
     }
 
-    render() {
-        /*prettier-ignore*/Item(item = {}) {
-                return choose(
+    renderItem(item = {}) {
+        /*prettier-ignore*/
+        return choose(
             item.item,
             [
                 ["md-avatar", () => html`<md-image class="md-list__avatar" .src="${item.src}" .alt="${item.alt}" .ratio="${item.ratio}" .shape="${true}"></md-image>`],
@@ -51,8 +51,18 @@ class MdListItemComponent extends LitElement {
     }
 
     render() {
-        /*prettier-ignore*/() {
-        return html` ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} ${this.label || this.supportingText ? html` <div class="md-list__center">${this.label ? html`<div class="md-list__label">${this.label}</div>` : nothing} ${this.supportingText ? html`<div class="md-list__supporting-text">${this.supportingText}</div>` : nothing}</div> ` : nothing} ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} `;
+        /*prettier-ignore*/
+        return html`
+            ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
+            ${this.label || this.supportingText ? html`
+                <div class="md-list__center">
+                    ${this.label ? html`<div class="md-list__label">${this.label}</div>` : nothing} 
+                    ${this.supportingText ? html`<div class="md-list__supporting-text">${this.supportingText}</div>` : nothing}
+                </div>
+            ` : nothing} 
+            ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
+            ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
+        `;
     }
 
     connectedCallback() {
@@ -134,8 +144,8 @@ class MdListComponent extends LitElement {
     }
 
     render() {
-        /*prettier-ignore*/() {
-                return this.items.map((item) => html`
+        /*prettier-ignore*/
+        return this.items.map((item) => html`
             <md-list-row>
                 ${this.hasListItem(item) ? html`
                     <md-list-item 

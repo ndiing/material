@@ -19,8 +19,8 @@ class MdBadgeComponent extends LitElement {
     }
 
     render() {
-        /*prettier-ignore*/() {
-                return html`${this.label ? html`<div class="md-badge__label">${this.label > this.limit ? this.limit + '+' : this.label}</div>` : nothing}`;
+        /*prettier-ignore*/
+        return html`${this.label ? html`<div class="md-badge__label">${this.label > this.limit ? this.limit + '+' : this.label}</div>` : nothing}`;
     }
 
     connectedCallback() {
