@@ -21,6 +21,17 @@
 <dt><a href="#MdCheckboxComponent">MdCheckboxComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Checkbox component for Material Design.</p>
 </dd>
+<dt><a href="#MdEmojiComponent">MdEmojiComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Represents the MdEmojiComponent custom element.</p>
+</dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#md-emoji">md-emoji</a> : <code><a href="#MdEmojiComponent">MdEmojiComponent</a></code></dt>
+<dd><p>A custom element for displaying emoji.</p>
+</dd>
 </dl>
 
 <a name="module_{MdButtonComponent}"></a>
@@ -407,3 +418,91 @@ Static property definitions for the component.
 | indeterminate | <code>Boolean</code> | Indicates whether the checkbox is in an indeterminate state. |
 | checked | <code>Boolean</code> | Indicates whether the checkbox is checked. |
 
+<a name="MdEmojiComponent"></a>
+
+## MdEmojiComponent ⇐ <code>LitElement</code>
+Represents the MdEmojiComponent custom element.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdEmojiComponent](#MdEmojiComponent) ⇐ <code>LitElement</code>
+    * [new MdEmojiComponent()](#new_MdEmojiComponent_new)
+    * _instance_
+        * [.createRenderRoot()](#MdEmojiComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.connectedCallback()](#MdEmojiComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdEmojiComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdEmojiComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdEmojiComponent+updated)
+        * [.dispatchCustomEvent()](#MdEmojiComponent+dispatchCustomEvent)
+    * _static_
+        * [.properties](#MdEmojiComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MdEmojiComponent_new"></a>
+
+### new MdEmojiComponent()
+Constructs an instance of MdEmojiComponent.
+
+<a name="MdEmojiComponent+createRenderRoot"></a>
+
+### mdEmojiComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default render root to be the component itself.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+**Returns**: <code>this</code> - The rendered root.  
+<a name="MdEmojiComponent+connectedCallback"></a>
+
+### mdEmojiComponent.connectedCallback()
+Adds the "md-emoji" class when the component is connected.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+<a name="MdEmojiComponent+disconnectedCallback"></a>
+
+### mdEmojiComponent.disconnectedCallback()
+Removes the "md-emoji" class when the component is disconnected.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+<a name="MdEmojiComponent+firstUpdated"></a>
+
+### mdEmojiComponent.firstUpdated()
+Lifecycle callback invoked once when the element is first updated.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+<a name="MdEmojiComponent+updated"></a>
+
+### mdEmojiComponent.updated(_changedProperties)
+Lifecycle callback invoked whenever the element is updated.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdEmojiComponent+dispatchCustomEvent"></a>
+
+### mdEmojiComponent.dispatchCustomEvent()
+Dispatches a custom event.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+**Emits**: <code>MdEmojiComponent#event:customEvent</code>  
+<a name="MdEmojiComponent.properties"></a>
+
+### MdEmojiComponent.properties ⇒ <code>Object</code>
+The properties for MdEmojiComponent.
+
+**Kind**: static property of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+**Returns**: <code>Object</code> - The properties object.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| properties | <code>Object</code> | The properties object. |
+| properties.exampleProperty | <code>string</code> | An example property. |
+
+<a name="md-emoji"></a>
+
+## md-emoji : [<code>MdEmojiComponent</code>](#MdEmojiComponent)
+A custom element for displaying emoji.
+
+**Kind**: global typedef  
