@@ -44,6 +44,9 @@
 <dt><a href="#MdNavigation">MdNavigation</a></dt>
 <dd><p>Represents a navigation utility.</p>
 </dd>
+<dt><a href="#MdRadioButtonComponent">MdRadioButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for a radio button.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -924,6 +927,124 @@ Loads navigation entries and sets up event listeners.
 | Param | Type | Description |
 | --- | --- | --- |
 | entries | <code>Array</code> | An array of navigation entries. |
+
+<a name="MdRadioButtonComponent"></a>
+
+## MdRadioButtonComponent ⇐ <code>LitElement</code>
+Custom element for a radio button.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdRadioButtonComponent](#MdRadioButtonComponent) ⇐ <code>LitElement</code>
+    * [new MdRadioButtonComponent()](#new_MdRadioButtonComponent_new)
+    * _instance_
+        * [.radioButtonNative](#MdRadioButtonComponent+radioButtonNative) ⇒ <code>HTMLElement</code>
+        * [.radioButtonTrack](#MdRadioButtonComponent+radioButtonTrack) ⇒ <code>HTMLElement</code>
+        * [.radioButtonThumb](#MdRadioButtonComponent+radioButtonThumb) ⇒ <code>HTMLElement</code>
+        * [.createRenderRoot()](#MdRadioButtonComponent+createRenderRoot) ⇒ [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)
+        * [.render()](#MdRadioButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdRadioButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdRadioButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdRadioButtonComponent+firstUpdated)
+        * [.onRadioButtonNativeInput(event)](#MdRadioButtonComponent+onRadioButtonNativeInput)
+        * ["onRadioButtonNativeInput"](#MdRadioButtonComponent+event_onRadioButtonNativeInput)
+    * _static_
+        * [.properties](#MdRadioButtonComponent.properties)
+
+<a name="new_MdRadioButtonComponent_new"></a>
+
+### new MdRadioButtonComponent()
+Constructor for MdRadioButtonComponent.
+
+<a name="MdRadioButtonComponent+radioButtonNative"></a>
+
+### mdRadioButtonComponent.radioButtonNative ⇒ <code>HTMLElement</code>
+Returns the native radio button element.
+
+**Kind**: instance property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The native radio button element.  
+<a name="MdRadioButtonComponent+radioButtonTrack"></a>
+
+### mdRadioButtonComponent.radioButtonTrack ⇒ <code>HTMLElement</code>
+Returns the track element of the radio button.
+
+**Kind**: instance property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The track element.  
+<a name="MdRadioButtonComponent+radioButtonThumb"></a>
+
+### mdRadioButtonComponent.radioButtonThumb ⇒ <code>HTMLElement</code>
+Returns the thumb element of the radio button.
+
+**Kind**: instance property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The thumb element.  
+<a name="MdRadioButtonComponent+createRenderRoot"></a>
+
+### mdRadioButtonComponent.createRenderRoot() ⇒ [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)
+Overrides the default render root to use the element itself.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent) - The current instance.  
+<a name="MdRadioButtonComponent+render"></a>
+
+### mdRadioButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the radio button element.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template result.  
+<a name="MdRadioButtonComponent+connectedCallback"></a>
+
+### mdRadioButtonComponent.connectedCallback()
+Adds the "md-radio-button" class when the component is connected.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+<a name="MdRadioButtonComponent+disconnectedCallback"></a>
+
+### mdRadioButtonComponent.disconnectedCallback()
+Removes the "md-radio-button" class when the component is disconnected.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+<a name="MdRadioButtonComponent+firstUpdated"></a>
+
+### mdRadioButtonComponent.firstUpdated()
+Initializes the state controller after the first update.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+<a name="MdRadioButtonComponent+onRadioButtonNativeInput"></a>
+
+### mdRadioButtonComponent.onRadioButtonNativeInput(event)
+Handles the input event on the native radio button.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MdRadioButtonComponent+event_onRadioButtonNativeInput"></a>
+
+### "onRadioButtonNativeInput"
+Dispatched when the native radio button is input.
+
+**Kind**: event emitted by [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail.event | <code>Event</code> | The input event. |
+
+<a name="MdRadioButtonComponent.properties"></a>
+
+### MdRadioButtonComponent.properties
+Properties for the MdRadioButtonComponent.
+
+**Kind**: static property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name attribute for the radio button. |
+| checked | <code>Boolean</code> | The checked attribute for the radio button. |
 
 <a name="md-emoji"></a>
 
