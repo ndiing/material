@@ -2,7 +2,7 @@ class MdNavigation {
     static setEntries(entries = [], parent = null) {
         return entries.reduce((p, c) => {
             c.parent = parent;
-            c.pattern = [c.path].join("/").replace(/\/+/g, "/");
+            c.pattern = [c.parent?.pattern ?? "", c.path].join("/").replace(/\/+/g, "/");
             p = p.concat(c);
             if (c.children && c.children.length) {
                 p = p.concat(this.setEntries(c.children, c));
