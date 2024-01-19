@@ -50,6 +50,9 @@
 <dt><a href="#MdSegmentedButtonComponent">MdSegmentedButtonComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element for a segmented button.</p>
 </dd>
+<dt><a href="#MdStateController">MdStateController</a></dt>
+<dd><p>Controller class for managing the state of an element.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -1120,6 +1123,186 @@ Handles the click event on a segmented button.
 | items | <code>Array</code> | An array of items for the segmented button. |
 | type | <code>String</code> | The type of the segmented button (e.g., "single-select" or "multi-select"). |
 
+<a name="MdStateController"></a>
+
+## MdStateController
+Controller class for managing the state of an element.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| options.container | <code>HTMLElement</code> | The container element for the state. |
+| options.containment | <code>boolean</code> | Whether the state is contained. |
+| options.fadeout | <code>boolean</code> \| <code>undefined</code> | Whether to apply fadeout effect. |
+| options.inverted | <code>boolean</code> \| <code>undefined</code> | Whether the state is inverted. |
+| options.button | <code>string</code> \| <code>undefined</code> | The button element selector. |
+| options.size | <code>number</code> \| <code>undefined</code> | The size of the state. |
+
+
+* [MdStateController](#MdStateController)
+    * [new MdStateController(host, [options])](#new_MdStateController_new)
+    * [.button](#MdStateController+button) : <code>HTMLElement</code>
+    * [.layer](#MdStateController+layer) : <code>HTMLElement</code>
+    * [.hostConnected()](#MdStateController+hostConnected)
+    * [.handlePointerenter(event)](#MdStateController+handlePointerenter)
+    * [.handlePointerleave(event)](#MdStateController+handlePointerleave)
+    * [.handlePointerdown(event)](#MdStateController+handlePointerdown)
+    * [.handlePointerup(event)](#MdStateController+handlePointerup)
+    * [.handleFocus(event)](#MdStateController+handleFocus)
+    * [.handleBlur(event)](#MdStateController+handleBlur)
+    * [.hostDisconnected()](#MdStateController+hostDisconnected)
+    * ["pointerenter"](#MdStateController+event_pointerenter)
+    * ["pointerleave"](#MdStateController+event_pointerleave)
+    * ["pointerdown"](#MdStateController+event_pointerdown)
+    * ["pointerup"](#MdStateController+event_pointerup)
+    * ["focus"](#MdStateController+event_focus)
+    * ["blur"](#MdStateController+event_blur)
+
+<a name="new_MdStateController_new"></a>
+
+### new MdStateController(host, [options])
+Creates an instance of MdStateController.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| host | <code>HTMLElement</code> |  | The host element. |
+| [options] | <code>Object</code> | <code>{}</code> | Additional options for the controller. |
+
+<a name="MdStateController+button"></a>
+
+### mdStateController.button : <code>HTMLElement</code>
+The button element associated with the state.
+
+**Kind**: instance property of [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+layer"></a>
+
+### mdStateController.layer : <code>HTMLElement</code>
+The layer element for the state.
+
+**Kind**: instance property of [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+hostConnected"></a>
+
+### mdStateController.hostConnected()
+Callback when the host element is connected to the DOM.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+handlePointerenter"></a>
+
+### mdStateController.handlePointerenter(event)
+Event handler for pointer enter.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+**Emits**: [<code>pointerenter</code>](#MdStateController+event_pointerenter)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The pointer enter event. |
+
+<a name="MdStateController+handlePointerleave"></a>
+
+### mdStateController.handlePointerleave(event)
+Event handler for pointer leave.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+**Emits**: [<code>pointerleave</code>](#MdStateController+event_pointerleave)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The pointer leave event. |
+
+<a name="MdStateController+handlePointerdown"></a>
+
+### mdStateController.handlePointerdown(event)
+Event handler for pointer down.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+**Emits**: [<code>pointerdown</code>](#MdStateController+event_pointerdown)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The pointer down event. |
+
+<a name="MdStateController+handlePointerup"></a>
+
+### mdStateController.handlePointerup(event)
+Event handler for pointer up.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+**Emits**: [<code>pointerup</code>](#MdStateController+event_pointerup)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>PointerEvent</code> | The pointer up event. |
+
+<a name="MdStateController+handleFocus"></a>
+
+### mdStateController.handleFocus(event)
+Event handler for focus.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+**Emits**: [<code>focus</code>](#MdStateController+event_focus)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>FocusEvent</code> | The focus event. |
+
+<a name="MdStateController+handleBlur"></a>
+
+### mdStateController.handleBlur(event)
+Event handler for blur.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+**Emits**: [<code>blur</code>](#MdStateController+event_blur)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>FocusEvent</code> | The blur event. |
+
+<a name="MdStateController+hostDisconnected"></a>
+
+### mdStateController.hostDisconnected()
+Callback when the host element is disconnected from the DOM.
+
+**Kind**: instance method of [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+event_pointerenter"></a>
+
+### "pointerenter"
+Event triggered when the pointer enters the state.
+
+**Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+event_pointerleave"></a>
+
+### "pointerleave"
+Event triggered when the pointer leaves the state.
+
+**Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+event_pointerdown"></a>
+
+### "pointerdown"
+Event triggered when the pointer is pressed down on the state.
+
+**Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+event_pointerup"></a>
+
+### "pointerup"
+Event triggered when the pointer is released.
+
+**Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+event_focus"></a>
+
+### "focus"
+Event triggered when the state gains focus.
+
+**Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
+<a name="MdStateController+event_blur"></a>
+
+### "blur"
+Event triggered when the state loses focus.
+
+**Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
 <a name="md-emoji"></a>
 
 ## md-emoji : [<code>MdEmojiComponent</code>](#MdEmojiComponent)
