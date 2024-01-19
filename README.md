@@ -24,6 +24,9 @@
 <dt><a href="#MdEmojiComponent">MdEmojiComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Represents the MdEmojiComponent custom element.</p>
 </dd>
+<dt><a href="#MdFabComponent">MdFabComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for a Material Design Floating Action Button (FAB).</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -499,6 +502,74 @@ The properties for MdEmojiComponent.
 | --- | --- | --- |
 | properties | <code>Object</code> | The properties object. |
 | properties.exampleProperty | <code>string</code> | An example property. |
+
+<a name="MdFabComponent"></a>
+
+## MdFabComponent ⇐ <code>LitElement</code>
+Custom element for a Material Design Floating Action Button (FAB).
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdFabComponent](#MdFabComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.fabNative](#MdFabComponent+fabNative) ⇒ <code>HTMLButtonElement</code>
+        * [.firstUpdated()](#MdFabComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdFabComponent+updated)
+        * ["custom-event"](#MdFabComponent+event_custom-event)
+    * _static_
+        * [.properties](#MdFabComponent.properties)
+
+<a name="MdFabComponent+fabNative"></a>
+
+### mdFabComponent.fabNative ⇒ <code>HTMLButtonElement</code>
+Returns the native button element of the FAB.
+
+**Kind**: instance property of [<code>MdFabComponent</code>](#MdFabComponent)  
+**Returns**: <code>HTMLButtonElement</code> - The native button element.  
+**Read only**: true  
+<a name="MdFabComponent+firstUpdated"></a>
+
+### mdFabComponent.firstUpdated()
+Called after the element's first update. Initializes the state controller.
+
+**Kind**: instance method of [<code>MdFabComponent</code>](#MdFabComponent)  
+<a name="MdFabComponent+updated"></a>
+
+### mdFabComponent.updated(_changedProperties)
+Called when the element is updated. Handles size and extended property changes.
+
+**Kind**: instance method of [<code>MdFabComponent</code>](#MdFabComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of changed properties. |
+
+<a name="MdFabComponent+event_custom-event"></a>
+
+### "custom-event"
+Dispatched when a specific event occurs.
+
+**Kind**: event emitted by [<code>MdFabComponent</code>](#MdFabComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail | <code>String</code> | Event details. |
+
+<a name="MdFabComponent.properties"></a>
+
+### MdFabComponent.properties
+**Kind**: static property of [<code>MdFabComponent</code>](#MdFabComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | The type of the button. |
+| label | <code>String</code> | The label text for the FAB. |
+| icon | <code>String</code> | The icon for the FAB. |
+| size | <code>String</code> | The size of the FAB. Can be "small" or "large". |
+| extended | <code>Boolean</code> | Indicates whether the FAB is in extended mode. |
 
 <a name="md-emoji"></a>
 
