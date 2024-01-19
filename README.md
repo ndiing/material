@@ -1,37 +1,44 @@
 <a name="MdButtonComponent"></a>
 
 ## MdButtonComponent
-Custom button component that extends LitElement.
-
 **Kind**: global class  
-**Element**: md-button  
 
 * [MdButtonComponent](#MdButtonComponent)
-    * [new MdButtonComponent()](#new_MdButtonComponent_new)
-    * [.properties](#MdButtonComponent.properties) : <code>Object</code>
+    * _instance_
+        * [.buttonNative](#MdButtonComponent+buttonNative)
+        * [.createRenderRoot()](#MdButtonComponent+createRenderRoot)
+        * [.render()](#MdButtonComponent+render)
+        * [.connectedCallback()](#MdButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdButtonComponent+firstUpdated)
+    * _static_
+        * [.properties](#MdButtonComponent.properties)
 
-<a name="new_MdButtonComponent_new"></a>
+<a name="MdButtonComponent+buttonNative"></a>
 
-### new MdButtonComponent()
-Default constructor for MdButtonComponent.
+### mdButtonComponent.buttonNative
+**Kind**: instance property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+createRenderRoot"></a>
 
-**Example**  
-```js
-// Example usage of MdButtonComponent:// Elevated button<md-button ui="elevated" label="Elevated Button"></md-button>// Filled button<md-button ui="filled" label="Filled Button"></md-button>// Filled-tonal button<md-button ui="filled-tonal" label="Filled Tonal Button"></md-button>// Outlined button<md-button ui="outlined" label="Outlined Button"></md-button>// Default button<md-button label="Default Button"></md-button>
-```
+### mdButtonComponent.createRenderRoot()
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+render"></a>
+
+### mdButtonComponent.render()
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+connectedCallback"></a>
+
+### mdButtonComponent.connectedCallback()
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+disconnectedCallback"></a>
+
+### mdButtonComponent.disconnectedCallback()
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+firstUpdated"></a>
+
+### mdButtonComponent.firstUpdated()
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
 <a name="MdButtonComponent.properties"></a>
 
-### MdButtonComponent.properties : <code>Object</code>
-Properties of the custom button component.
-
+### MdButtonComponent.properties
 **Kind**: static property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| type | <code>String</code> | The type of the button. |
-| label | <code>String</code> | The label text of the button. |
-| icon | <code>String</code> | The icon of the button. |
-| ui | <code>String</code> | The UI style of the button. |
-| activated | <code>Boolean</code> | Reflects whether the button is activated. |
-
