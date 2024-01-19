@@ -149,7 +149,7 @@ class ExampleComponent extends LitElement{
                 <!--  -->
 
                 <!--  -->
-                <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list .items="${[
                         {label:'Label',supportingText:'',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=2&scale=50'}],trailingItems:[]},
                         {label:'Label',supportingText:'',leadingItems:[{item:'md-image',src:'https://api.dicebear.com/7.x/icons/svg?seed=3&scale=50'}],trailingItems:[]},
@@ -161,7 +161,7 @@ class ExampleComponent extends LitElement{
                         {label:'Label',supportingText:'',leadingItems:[],trailingItems:[{item:'md-switch'}]},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list .items="${[
                         {label:'Label',supportingText:'',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=5&scale=50'}],trailingItems:[{item:'md-checkbox'}]},
                         {label:'Label',supportingText:'',leadingItems:[{item:'md-image',src:'https://api.dicebear.com/7.x/icons/svg?seed=6&scale=50'}],trailingItems:[{item:'md-checkbox'}]},
@@ -173,11 +173,11 @@ class ExampleComponent extends LitElement{
                         {label:'Label',supportingText:'',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-switch'}]},
                     ]}"></md-list>
                 </div>
-                <!-- <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
-                </div> -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
                 <!--  -->
                 <!--  -->
-                <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list ui="two-line" .items="${[
                         {label:'Label',supportingText:'Supporting text',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=8&scale=50'}],trailingItems:[]},
                         {label:'Label',supportingText:'Supporting text',leadingItems:[{item:'md-image',src:'https://api.dicebear.com/7.x/icons/svg?seed=9&scale=50'}],trailingItems:[]},
@@ -189,7 +189,7 @@ class ExampleComponent extends LitElement{
                         {label:'Label',supportingText:'Supporting text',leadingItems:[],trailingItems:[{item:'md-switch'}]},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list ui="two-line" .items="${[
                         {label:'Label',supportingText:'Supporting text',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=11&scale=50'}],trailingItems:[{item:'md-checkbox'}]},
                         {label:'Label',supportingText:'Supporting text',leadingItems:[{item:'md-image',src:'https://api.dicebear.com/7.x/icons/svg?seed=12&scale=50'}],trailingItems:[{item:'md-checkbox'}]},
@@ -201,11 +201,11 @@ class ExampleComponent extends LitElement{
                         {label:'Label',supportingText:'Supporting text',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-switch'}]},
                     ]}"></md-list>
                 </div>
-                <!-- <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
-                </div> -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
                 <!--  -->
                 <!--  -->
-                <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list ui="three-line" .items="${[
                         {label:'Label',supportingText:'Supporting text that is long enough to fill up multiple lines',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=14&scale=50'}],trailingItems:[]},
                         {label:'Label',supportingText:'Supporting text that is long enough to fill up multiple lines',leadingItems:[{item:'md-image',src:'https://api.dicebear.com/7.x/icons/svg?seed=15&scale=50'}],trailingItems:[]},
@@ -217,7 +217,7 @@ class ExampleComponent extends LitElement{
                         {label:'Label',supportingText:'Supporting text that is long enough to fill up multiple lines',leadingItems:[],trailingItems:[{item:'md-switch'}]},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
                     <md-list ui="three-line" .items="${[
                         {label:'Label',supportingText:'Supporting text that is long enough to fill up multiple lines',leadingItems:[{item:'md-avatar',src:'https://api.dicebear.com/7.x/icons/svg?seed=0&scale=50'}],trailingItems:[{item:'md-checkbox'}]},
                         {label:'Label',supportingText:'Supporting text that is long enough to fill up multiple lines',leadingItems:[{item:'md-image',src:'https://api.dicebear.com/7.x/icons/svg?seed=18&scale=50'}],trailingItems:[{item:'md-checkbox'}]},
@@ -229,8 +229,24 @@ class ExampleComponent extends LitElement{
                         {label:'Label',supportingText:'Supporting text that is long enough to fill up multiple lines',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-switch'}]},
                     ]}"></md-list>
                 </div>
-                <!-- <div class="md-layout__column--expanded3 md-layout__column--medium8 md-layout__column--compact4">
-                </div> -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
+                <!--  -->
+
+                <!--  -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                    <md-list class="md-menu__list" .items="${[
+                        {label:'Label',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-supporting-text',supportingText:'A'}]},
+                        {label:'Label',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-supporting-text',supportingText:'A'}]},
+                        {label:'Label',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-supporting-text',supportingText:'A'}]},
+                        {divider:true},
+                        {label:'Label',leadingItems:[{item:'md-icon',icon:'image'}],trailingItems:[{item:'md-supporting-text',supportingText:'A'}]},
+                    ]}"></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium8 md-layout__column--compact4">
+                </div>
                 <!--  -->
 
                 <!--  -->

@@ -231,19 +231,29 @@ class MdListComponent extends LitElement {
     return this;
   }
 
+  hasListItem(item={}){
+    return (item.label||
+    item.supportingText||
+    item.leadingItems?.length||
+    item.trailingItems?.length)
+  }
+
   render() {
     return this.items.map(
       (item) => html`
         <md-list-row>
-          <md-list-item
-            .item="${item}"
-            .label="${item.label}"
-            .supportingText="${item.supportingText}"
-            .leadingItems="${item.leadingItems}"
-            .trailingItems="${item.trailingItems}"
-            .activated="${item.activated}"
-            @click="${this.onListItemClick}"
-          ></md-list-item>
+          ${this.hasListItem(item)?html`
+            <md-list-item
+              .item="${item}"
+              .label="${item.label}"
+              .supportingText="${item.supportingText}"
+              .leadingItems="${item.leadingItems}"
+              .trailingItems="${item.trailingItems}"
+              .activated="${item.activated}"
+              @click="${this.onListItemClick}"
+            ></md-list-item>
+          `:nothing}
+          ${item.divider?html`<div class="md-list__divider"></div>`:nothing}
         </md-list-row>
       `
     );
