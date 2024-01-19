@@ -99,6 +99,12 @@
     }
 }
 
+@keyframes md-navigation-bar-list-active-indicator {
+    from {
+        width: 32px;
+    }
+}
+
 .md-navigation-bar__list {
     flex-direction: row;
     .md-list__row {
@@ -119,6 +125,7 @@
             .md-list__icon {
                 background: var(--md-sys-color-secondary-container);
                 color: var(--md-sys-color-on-secondary-container);
+                animation: md-navigation-bar-list-active-indicator var(--md-sys-motion-duration-short4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
             }
         }
     }
