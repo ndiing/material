@@ -1,23 +1,44 @@
 # MdIconComponent
 
-`MdIconComponent` is a custom LitElement representing a Material Design icon.
+`MdIconComponent` is a custom web component that extends `LitElement` and represents an icon.
 
 ## Properties
 
-This component does not have any specific properties.
+-   No properties are defined for this component.
 
-## Methods
+## Instance Methods
 
--   **dispatchCustomEvent()**: Dispatches a custom event named "custom-event."
+### `createRenderRoot()`
 
-## Lifecycle Methods
+Overrides the `LitElement` method to return `this`, making the component's own shadow DOM the render root.
 
--   **connectedCallback()**: Adds the "md-icon" class when the element is connected.
--   **disconnectedCallback()**: Removes the "md-icon" class when the element is disconnected.
--   **firstUpdated()**: No specific logic implemented in the `firstUpdated` lifecycle method.
--   **updated(\_changedProperties)**: No specific logic implemented in the `updated` lifecycle method.
+### `connectedCallback()`
 
-## Usage
+Overrides the `LitElement` method to add the class "md-icon" to the component when it is connected to the DOM.
+
+### `disconnectedCallback()`
+
+Overrides the `LitElement` method to remove the class "md-icon" from the component when it is disconnected from the DOM.
+
+### `firstUpdated()`
+
+Overrides the `LitElement` method. This method is called once after the first update/render of the component.
+
+### `updated(_changedProperties)`
+
+Overrides the `LitElement` method. This method is called whenever the element is updated.
+
+### `dispatchCustomEvent()`
+
+Dispatches a custom event named "custom-event" from the component.
+
+## Events
+
+-   `custom-event`: Triggered by the `dispatchCustomEvent` method.
+
+## Examples
+
+### Creating an `MdIconComponent` in HTML:
 
 ```html
 <md-icon></md-icon>
