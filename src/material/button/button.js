@@ -4,12 +4,6 @@ import { MdStateController } from "../state/state";
 /**
  * Custom button component that extends LitElement.
  * @element md-button
- *
- * @fires MdButtonComponent#custom-event - Fired when a custom event occurs.
- *
- * @cssproperty --md-button-color - Color of the button.
- * @cssproperty --md-button-background - Background color of the button.
- *
  * @example
  * // Example usage of MdButtonComponent:
  * // Elevated button
@@ -142,13 +136,6 @@ class MdButtonComponent extends LitElement {
         }
     }
 }
-
-/**
- * Custom event fired by MdButtonComponent.
- * @event MdButtonComponent#custom-event
- * @type {Object}
- * @property {String} detail - Details about the custom event.
- */
 
 customElements.define("md-button", MdButtonComponent);
 
