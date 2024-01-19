@@ -1,96 +1,197 @@
-import { LitElement, html, nothing } from 'lit';
-import { choose } from 'lit/directives/choose.js';
-import { MdStateController } from '../state/state';
+import { LitElement, html, nothing } from "lit";
+import { choose } from "lit/directives/choose.js";
+import { MdStateController } from "../state/state";
 
-/**
- * Represents a Material Design list item.
- *
- * @extends LitElement
- */
 class MdListItemComponent extends LitElement {
-  /**
-   * @property {String} label - The label of the list item.
-   * @property {String} supportingText - The supporting text of the list item.
-   * @property {Array} leadingItems - An array of leading items for the list item.
-   * @property {Array} trailingItems - An array of trailing items for the list item.
-   * @property {Boolean} activated - Indicates whether the list item is activated.
-   */
-  static get properties() {
-    return {
-      label: { type: String },
-      supportingText: { type: String },
-      leadingItems: { type: Array },
-      trailingItems: { type: Array },
-      activated: { type: Boolean, reflect: true },
-    };
-  }
+    static get properties() {
+        return {
+            label: { type: String },
+            supportingText: { type: String },
+            leadingItems: { type: Array },
+            trailingItems: { type: Array },
+            activated: { type: Boolean,reflect:true },
+        };
+    }
 
-  constructor() {
-    super();
-    this.leadingItems = [];
-    this.trailingItems = [];
-  }
+    constructor() {
+        super();
+        this.leadingItems = [];
+        this.trailingItems = [];
+    }
 
-  createRenderRoot() {
-    return this;
-  }
+    createRenderRoot() {
+        return this;
+    }
 
-  /**
-   * Renders an individual item based on its type.
-   *
-   * @param {Object} item - The item to render.
-   * @returns {TemplateResult} The HTML template for the rendered item.
-   */
-  renderItem(item = {}) {
-    // prettier-ignore
-    return choose(item.item, [
-            // ... (existing code remains unchanged)
-        ], () => nothing);
-  }
+    renderItem(item = {}) {
+        // prettier-ignore
+        return choose(item.item,[
+            ['md-avatar', () => html`<md-image class="md-list__avatar" .src="${item.src}" .alt="${item.alt}" .ratio="${item.ratio}" .shape="${true}"></md-image>`],
+            ['md-image', () => html`<md-image class="md-list__image" .src="${item.src}" .alt="${item.alt}" .ratio="${item.ratio}" .shape="${item.shape}"></md-image>`],
+            ['md-video', () => html`<md-image class="md-list__video" .src="${item.src}" .alt="${item.alt}" .ratio="${"16/9"}" .shape="${item.shape}"></md-image>`],
+            ['md-icon', () => html`<md-icon class="md-list__icon">${item.icon}</md-icon>`],
+            ['md-checkbox', () => html`<md-checkbox class="md-list__checkbox" .checked="${item.checked??this.activated}"></md-checkbox>`],
+            ['md-radio-button', () => html`<md-radio-button class="md-list__radio-button" .checked="${item.checked??this.activated}"></md-radio-button>`],
+            ['md-switch', () => html`<md-switch class="md-list__switch" .checked="${item.checked??this.activated}"></md-switch>`],
+            ['md-supporting-text', () => html`<div class="md-list__supporting-text">${item.supportingText}</div>`],
+        ],() => nothing)
+    }
 
-  render() {
-    // prettier-ignore
-    return html`
-            ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map(item => this.renderItem(item))}</div>` : nothing}
-            ${this.label || this.supportingText ? html`
+    render() {
+        // prettier-ignore
+        return html`
+            ${this.leadingItems?.length?html`<div class="md-list__start">${this.leadingItems.map(item=>this.renderItem(item))}</div>`:nothing}
+            ${this.label||this.supportingText?html`
                 <div class="md-list__center">
-                    ${this.label ? html`<div class="md-list__label">${this.label}</div>` : nothing}
-                    ${this.supportingText ? html`<div class="md-list__supporting-text">${this.supportingText}</div>` : nothing}
+                    ${this.label?html`<div class="md-list__label">${this.label}</div>`:nothing}
+                    ${this.supportingText?html`<div class="md-list__supporting-text">${this.supportingText}</div>`:nothing}
                 </div>
-            ` : nothing}
-            ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map(item => this.renderItem(item))}</div>` : nothing}
-        `;
-  }
+            `:nothing}
+            ${this.trailingItems?.length?html`<div class="md-list__end">${this.trailingItems.map(item=>this.renderItem(item))}</div>`:nothing}
+        `
+    }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.classList.add('md-list__item');
-  }
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-list__item");
+    }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.classList.remove('md-list__item');
-  }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-list__item");
+    }
 
-  /**
-   * Initializes the state controller when the element is first updated.
-   */
-  firstUpdated() {
-    this.state = new MdStateController(this, {});
-  }
+    firstUpdated() {
+        this.state=new MdStateController(this,{
 
-  /**
-   * Handles updates to the element.
-   *
-   * @param {Map} _changedProperties - The changed properties.
-   */
-  updated(_changedProperties) {
-    // ... (existing code remains unchanged)
-  }
+        })
+    }
+
+    updated(_changedProperties) {}
 }
 
-customElements.define('md-list-item', MdListItemComponent);
+customElements.define("md-list-item", MdListItemComponent);
 
-// ... (MdListRowComponent and MdListComponent remain unchanged)
+class MdListRowComponent extends LitElement {
+    static get properties() {
+        return {};
+    }
+
+    constructor() {
+        super();
+    }
+
+    createRenderRoot() {
+        return this;
+    }
+
+    // render() {
+    //     // prettier-ignore
+    //     return html`
+    //     `
+    // }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-list__row");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-list__row");
+    }
+
+    firstUpdated() {}
+
+    updated(_changedProperties) {}
+}
+
+customElements.define("md-list-row", MdListRowComponent);
+
+class MdListComponent extends LitElement {
+    static get properties() {
+        return {
+            items: { type: Array },
+            ui: { type: String },
+            type: { type: String },
+            activatable: { type: Boolean },
+        };
+    }
+
+    constructor() {
+        super();
+        this.items = [];
+    }
+
+    createRenderRoot() {
+        return this;
+    }
+
+    render() {
+        // prettier-ignore
+        return this.items.map(item=>html`
+            <md-list-row>
+                <md-list-item
+                    .item="${item}"
+                    .label="${item.label}"
+                    .supportingText="${item.supportingText}"
+                    .leadingItems="${item.leadingItems}"
+                    .trailingItems="${item.trailingItems}"
+                    .activated="${item.activated}"
+                    @click="${this.onListItemClick}"
+                ></md-list-item>
+            </md-list-row>
+        `)
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-list");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-list");
+    }
+
+    firstUpdated() {}
+
+    updated(_changedProperties) {
+        
+
+        if (_changedProperties.has("ui")) {
+            [
+                'one-line',
+                'two-line',
+                'three-line',
+            ].forEach((ui) => {
+                this.classList.remove("md-list--" + ui);
+            });
+            if (this.ui) {
+                this.classList.add("md-list--" + this.ui);
+            }
+        }
+    }
+
+
+    onListItemClick(event) {
+        const listItem = event.currentTarget;
+        if(this.activatable){
+
+            // listItem.item
+            if (this.type === "multi-select") {
+                listItem.item.activated = !listItem.item.activated;
+            } else {
+                for (const item of this.items) {
+                    item.activated = item === listItem.item;
+                }
+            }
+            this.requestUpdate();
+        }
+        this.dispatchEvent(new CustomEvent("onListItemClick", { bubbles: true, cancelable: true, detail: { event, listItem } }));
+    }
+}
+
+customElements.define("md-list", MdListComponent);
 
 export { MdListItemComponent, MdListRowComponent, MdListComponent };
