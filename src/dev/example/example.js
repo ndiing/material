@@ -234,7 +234,7 @@ class ExampleComponent extends LitElement{
                 <!--  -->
 
                 <!--  -->
-                <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
+                <!-- <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                     <md-panel type="dialog"></md-panel>
                     <md-panel type="drawer" position="top"></md-panel>
                     <md-panel type="drawer" position="right"></md-panel>
@@ -244,7 +244,7 @@ class ExampleComponent extends LitElement{
                 <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
                 </div>
                 <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">
-                </div>
+                </div> -->
                 <!--  -->
 
                 <!--  -->
