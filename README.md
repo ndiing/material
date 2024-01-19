@@ -1,13 +1,19 @@
--   **[icon](./src/material/icon/icon.md)**
--   **[emoji](./src/material/emoji/emoji.md)**
--   **[image](./src/material/image/image.md)**
--   **[button](./src/material/button/button.md)**
--   **[fab](./src/material/fab/fab.md)**
--   **[icon-button](./src/material/icon-button/icon-button.md)**
--   **[segmented-button](./src/material/segmented-button/segmented-button.md)**
--   **[checkbox](./src/material/checkbox/checkbox.md)**
--   **[radio-button](./src/material/radio-button/radio-button.md)**
--   **[switch](./src/material/switch/switch.md)**
--   **[badge](./src/material/badge/badge.md)**
--   **[list](./src/material/list/list.md)**
--   **[panel](./src/material/panel/panel.md)**
+# Material Components
+
+This repository contains various Material Components for your project. Each component has its documentation in Markdown format.
+
+-   **[Icon](./src/material/icon/icon.md)**
+-   **[Emoji](./src/material/emoji/emoji.md)**
+-   **[Image](./src/material/image/image.md)**
+-   **[Button](./src/material/button/button.md)**
+-   **[Floating Action Button (FAB)](./src/material/fab/fab.md)**
+-   **[Icon Button](./src/material/icon-button/icon-button.md)**
+-   **[Segmented Button](./src/material/segmented-button/segmented-button.md)**
+-   **[Checkbox](./src/material/checkbox/checkbox.md)**
+-   **[Radio Button](./src/material/radio-button/radio-button.md)**
+-   **[Switch](./src/material/switch/switch.md)**
+-   **[Badge](./src/material/badge/badge.md)**
+-   **[List](./src/material/list/list.md)**
+-   **[Panel](./src/material/panel/panel.md)**
+
+Feel free to explore each component's documentation for detailed information on usage and customization.
