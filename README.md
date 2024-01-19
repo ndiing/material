@@ -1,7 +1,7 @@
 <a name="MdButtonComponent"></a>
 
 ## MdButtonComponent
-Custom button component for Material Design.This component provides a Material Design-styled button with various UI styles.
+Custom button component for Material Design.
 
 **Kind**: global class  
 **Element**: md-button  
@@ -15,14 +15,15 @@ Custom button component for Material Design.This component provides a Material
 <a name="MdButtonComponent+buttonNative"></a>
 
 ### mdButtonComponent.buttonNative ⇒ <code>HTMLButtonElement</code>
-Returns the native button element inside the component.
+Returns the native button element within the md-button.
 
 **Kind**: instance property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
 **Returns**: <code>HTMLButtonElement</code> - The native button element.  
+**Read only**: true  
 <a name="MdButtonComponent.properties"></a>
 
 ### MdButtonComponent.properties
-Properties of the component.
+Properties that can be set on the md-button component.
 
 **Kind**: static property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
 **Properties**
@@ -31,7 +32,7 @@ Properties of the component.
 | --- | --- | --- |
 | type | <code>String</code> | The type of the button (e.g., "button", "submit", "reset"). |
 | label | <code>String</code> | The label text for the button. |
-| icon | <code>String</code> | The icon HTML content for the button. |
-| ui | <code>String</code> | The UI style for the button ("elevated", "filled", "filled-tonal", "outlined"). |
-| activated | <code>Boolean</code> | Indicates whether the button is activated or not. |
+| icon | <code>String</code> | The icon to be displayed on the button. |
+| ui | <code>String</code> | The UI style of the button ("elevated", "filled", "filled-tonal", "outlined"). |
+| activated | <code>Boolean</code> | Indicates whether the button is in an activated state. |
 
