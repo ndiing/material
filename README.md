@@ -12,9 +12,6 @@
 <dt><a href="#MdBadgeComponent">MdBadgeComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element for displaying a badge.</p>
 </dd>
-<dt><a href="#MdBaseComponent">MdBaseComponent</a> ⇐ <code>LitElement</code></dt>
-<dd><p>Base class for Material Design components.</p>
-</dd>
 <dt><a href="#MdButtonComponent">MdButtonComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element representing a material design button.</p>
 </dd>
@@ -35,8 +32,14 @@
 <dt><a href="#MdImageComponent">MdImageComponent</a></dt>
 <dd><p>Custom element representing an image with additional features.</p>
 </dd>
-<dt><a href="#MdListItemComponent">MdListItemComponent</a> ⇐ <code>LitElement</code></dt>
-<dd><p>Represents a Material Design list item.</p>
+<dt><a href="#MdListItemComponent">MdListItemComponent</a></dt>
+<dd><p>Custom element representing a list item.</p>
+</dd>
+<dt><a href="#MdListRowComponent">MdListRowComponent</a></dt>
+<dd><p>Custom element representing a list row.</p>
+</dd>
+<dt><a href="#MdListComponent">MdListComponent</a></dt>
+<dd><p>Custom element representing a list.</p>
 </dd>
 </dl>
 
@@ -127,95 +130,6 @@ Static properties for the component.
 | --- | --- | --- |
 | label | <code>number</code> | The label to be displayed on the badge. |
 | limit | <code>number</code> | The limit for the badge label. |
-
-<a name="MdBaseComponent"></a>
-
-## MdBaseComponent ⇐ <code>LitElement</code>
-Base class for Material Design components.
-
-**Kind**: global class  
-**Extends**: <code>LitElement</code>  
-
-* [MdBaseComponent](#MdBaseComponent) ⇐ <code>LitElement</code>
-    * [new MdBaseComponent()](#new_MdBaseComponent_new)
-    * _instance_
-        * [.createRenderRoot()](#MdBaseComponent+createRenderRoot) ⇒ <code>this</code>
-        * [.render()](#MdBaseComponent+render) ⇒ <code>TemplateResult</code>
-        * [.connectedCallback()](#MdBaseComponent+connectedCallback)
-        * [.disconnectedCallback()](#MdBaseComponent+disconnectedCallback)
-        * [.firstUpdated()](#MdBaseComponent+firstUpdated)
-        * [.updated(_changedProperties)](#MdBaseComponent+updated)
-        * ["change"](#MdBaseComponent+event_change)
-    * _static_
-        * [.properties](#MdBaseComponent.properties)
-
-<a name="new_MdBaseComponent_new"></a>
-
-### new MdBaseComponent()
-Constructor for MdBaseComponent.
-
-<a name="MdBaseComponent+createRenderRoot"></a>
-
-### mdBaseComponent.createRenderRoot() ⇒ <code>this</code>
-Overrides the default render root to use the component itself.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-**Returns**: <code>this</code> - The instance of the element.  
-<a name="MdBaseComponent+render"></a>
-
-### mdBaseComponent.render() ⇒ <code>TemplateResult</code>
-Renders the component template.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-**Returns**: <code>TemplateResult</code> - The HTML template.  
-<a name="MdBaseComponent+connectedCallback"></a>
-
-### mdBaseComponent.connectedCallback()
-Lifecycle callback when the element is added to the DOM.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent+disconnectedCallback"></a>
-
-### mdBaseComponent.disconnectedCallback()
-Lifecycle callback when the element is removed from the DOM.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent+firstUpdated"></a>
-
-### mdBaseComponent.firstUpdated()
-Lifecycle callback when the element's first update occurs.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent+updated"></a>
-
-### mdBaseComponent.updated(_changedProperties)
-Lifecycle callback when the element is updated.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| _changedProperties | <code>Map</code> | Map of changed properties. |
-
-<a name="MdBaseComponent+event_change"></a>
-
-### "change"
-Event fired when a change occurs.
-
-**Kind**: event emitted by [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent.properties"></a>
-
-### MdBaseComponent.properties
-Static getter for defining properties on the class.
-
-**Kind**: static property of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-**Read only**: true  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| properties | <code>Object</code> | The properties object. |
-| properties.label | <code>String</code> | The label for the component. |
 
 <a name="MdButtonComponent"></a>
 
@@ -833,53 +747,12 @@ Defines the properties of the MdImageComponent.
 
 <a name="MdListItemComponent"></a>
 
-## MdListItemComponent ⇐ <code>LitElement</code>
-Represents a Material Design list item.
+## MdListItemComponent
+Custom element representing a list item.
 
 **Kind**: global class  
-**Extends**: <code>LitElement</code>  
-
-* [MdListItemComponent](#MdListItemComponent) ⇐ <code>LitElement</code>
-    * _instance_
-        * [.renderItem(item)](#MdListItemComponent+renderItem) ⇒ <code>TemplateResult</code>
-        * [.firstUpdated()](#MdListItemComponent+firstUpdated)
-        * [.updated(_changedProperties)](#MdListItemComponent+updated)
-    * _static_
-        * [.properties](#MdListItemComponent.properties)
-
-<a name="MdListItemComponent+renderItem"></a>
-
-### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
-Renders an individual item based on its type.
-
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-**Returns**: <code>TemplateResult</code> - The HTML template for the rendered item.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>Object</code> | The item to render. |
-
-<a name="MdListItemComponent+firstUpdated"></a>
-
-### mdListItemComponent.firstUpdated()
-Initializes the state controller when the element is first updated.
-
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-<a name="MdListItemComponent+updated"></a>
-
-### mdListItemComponent.updated(_changedProperties)
-Handles updates to the element.
-
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| _changedProperties | <code>Map</code> | The changed properties. |
-
-<a name="MdListItemComponent.properties"></a>
-
-### MdListItemComponent.properties
-**Kind**: static property of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Emits**: <code>event:onListItemClick - Fired when the list item is clicked.</code>  
+**Element**: md-list-item  
 **Properties**
 
 | Name | Type | Description |
@@ -889,6 +762,52 @@ Handles updates to the element.
 | leadingItems | <code>Array</code> | An array of leading items for the list item. |
 | trailingItems | <code>Array</code> | An array of trailing items for the list item. |
 | activated | <code>Boolean</code> | Indicates whether the list item is activated. |
+
+<a name="MdListItemComponent+renderItem"></a>
+
+### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
+Renders an individual item based on its type.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered item.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>Object</code> | The item to render. |
+
+<a name="MdListRowComponent"></a>
+
+## MdListRowComponent
+Custom element representing a list row.
+
+**Kind**: global class  
+**Element**: md-list-row  
+<a name="MdListComponent"></a>
+
+## MdListComponent
+Custom element representing a list.
+
+**Kind**: global class  
+**Element**: md-list  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| items | <code>Array</code> | The array of items in the list. |
+| ui | <code>String</code> | The UI style of the list. |
+| type | <code>String</code> | The type of the list. |
+| activatable | <code>Boolean</code> | Indicates whether the list is activatable. |
+
+<a name="MdListComponent+onListItemClick"></a>
+
+### mdListComponent.onListItemClick(event)
+Handles the click event on a list item.
+
+**Kind**: instance method of [<code>MdListComponent</code>](#MdListComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
 
 <a name="md-emoji"></a>
 
