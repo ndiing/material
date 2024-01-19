@@ -12,9 +12,6 @@
 <dt><a href="#MdBadgeComponent">MdBadgeComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element for displaying a badge.</p>
 </dd>
-<dt><a href="#MdBaseComponent">MdBaseComponent</a> ⇐ <code>LitElement</code></dt>
-<dd><p>Base class for Material Design components.</p>
-</dd>
 <dt><a href="#MdButtonComponent">MdButtonComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element representing a material design button.</p>
 </dd>
@@ -35,8 +32,23 @@
 <dt><a href="#MdImageComponent">MdImageComponent</a></dt>
 <dd><p>Custom element representing an image with additional features.</p>
 </dd>
-<dt><a href="#MdListItemComponent">MdListItemComponent</a> ⇐ <code>LitElement</code></dt>
-<dd><p>Represents a Material Design list item.</p>
+<dt><a href="#MdListItemComponent">MdListItemComponent</a></dt>
+<dd><p>Custom element representing a list item.</p>
+</dd>
+<dt><a href="#MdListRowComponent">MdListRowComponent</a></dt>
+<dd><p>Custom element representing a list row.</p>
+</dd>
+<dt><a href="#MdListComponent">MdListComponent</a></dt>
+<dd><p>Custom element representing a list.</p>
+</dd>
+<dt><a href="#MdNavigation">MdNavigation</a></dt>
+<dd><p>Represents a navigation utility.</p>
+</dd>
+<dt><a href="#MdRadioButtonComponent">MdRadioButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for a radio button.</p>
+</dd>
+<dt><a href="#MdSegmentedButtonComponent">MdSegmentedButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for a segmented button.</p>
 </dd>
 </dl>
 
@@ -127,95 +139,6 @@ Static properties for the component.
 | --- | --- | --- |
 | label | <code>number</code> | The label to be displayed on the badge. |
 | limit | <code>number</code> | The limit for the badge label. |
-
-<a name="MdBaseComponent"></a>
-
-## MdBaseComponent ⇐ <code>LitElement</code>
-Base class for Material Design components.
-
-**Kind**: global class  
-**Extends**: <code>LitElement</code>  
-
-* [MdBaseComponent](#MdBaseComponent) ⇐ <code>LitElement</code>
-    * [new MdBaseComponent()](#new_MdBaseComponent_new)
-    * _instance_
-        * [.createRenderRoot()](#MdBaseComponent+createRenderRoot) ⇒ <code>this</code>
-        * [.render()](#MdBaseComponent+render) ⇒ <code>TemplateResult</code>
-        * [.connectedCallback()](#MdBaseComponent+connectedCallback)
-        * [.disconnectedCallback()](#MdBaseComponent+disconnectedCallback)
-        * [.firstUpdated()](#MdBaseComponent+firstUpdated)
-        * [.updated(_changedProperties)](#MdBaseComponent+updated)
-        * ["change"](#MdBaseComponent+event_change)
-    * _static_
-        * [.properties](#MdBaseComponent.properties)
-
-<a name="new_MdBaseComponent_new"></a>
-
-### new MdBaseComponent()
-Constructor for MdBaseComponent.
-
-<a name="MdBaseComponent+createRenderRoot"></a>
-
-### mdBaseComponent.createRenderRoot() ⇒ <code>this</code>
-Overrides the default render root to use the component itself.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-**Returns**: <code>this</code> - The instance of the element.  
-<a name="MdBaseComponent+render"></a>
-
-### mdBaseComponent.render() ⇒ <code>TemplateResult</code>
-Renders the component template.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-**Returns**: <code>TemplateResult</code> - The HTML template.  
-<a name="MdBaseComponent+connectedCallback"></a>
-
-### mdBaseComponent.connectedCallback()
-Lifecycle callback when the element is added to the DOM.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent+disconnectedCallback"></a>
-
-### mdBaseComponent.disconnectedCallback()
-Lifecycle callback when the element is removed from the DOM.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent+firstUpdated"></a>
-
-### mdBaseComponent.firstUpdated()
-Lifecycle callback when the element's first update occurs.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent+updated"></a>
-
-### mdBaseComponent.updated(_changedProperties)
-Lifecycle callback when the element is updated.
-
-**Kind**: instance method of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| _changedProperties | <code>Map</code> | Map of changed properties. |
-
-<a name="MdBaseComponent+event_change"></a>
-
-### "change"
-Event fired when a change occurs.
-
-**Kind**: event emitted by [<code>MdBaseComponent</code>](#MdBaseComponent)  
-<a name="MdBaseComponent.properties"></a>
-
-### MdBaseComponent.properties
-Static getter for defining properties on the class.
-
-**Kind**: static property of [<code>MdBaseComponent</code>](#MdBaseComponent)  
-**Read only**: true  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| properties | <code>Object</code> | The properties object. |
-| properties.label | <code>String</code> | The label for the component. |
 
 <a name="MdButtonComponent"></a>
 
@@ -833,53 +756,12 @@ Defines the properties of the MdImageComponent.
 
 <a name="MdListItemComponent"></a>
 
-## MdListItemComponent ⇐ <code>LitElement</code>
-Represents a Material Design list item.
+## MdListItemComponent
+Custom element representing a list item.
 
 **Kind**: global class  
-**Extends**: <code>LitElement</code>  
-
-* [MdListItemComponent](#MdListItemComponent) ⇐ <code>LitElement</code>
-    * _instance_
-        * [.renderItem(item)](#MdListItemComponent+renderItem) ⇒ <code>TemplateResult</code>
-        * [.firstUpdated()](#MdListItemComponent+firstUpdated)
-        * [.updated(_changedProperties)](#MdListItemComponent+updated)
-    * _static_
-        * [.properties](#MdListItemComponent.properties)
-
-<a name="MdListItemComponent+renderItem"></a>
-
-### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
-Renders an individual item based on its type.
-
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-**Returns**: <code>TemplateResult</code> - The HTML template for the rendered item.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>Object</code> | The item to render. |
-
-<a name="MdListItemComponent+firstUpdated"></a>
-
-### mdListItemComponent.firstUpdated()
-Initializes the state controller when the element is first updated.
-
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-<a name="MdListItemComponent+updated"></a>
-
-### mdListItemComponent.updated(_changedProperties)
-Handles updates to the element.
-
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| _changedProperties | <code>Map</code> | The changed properties. |
-
-<a name="MdListItemComponent.properties"></a>
-
-### MdListItemComponent.properties
-**Kind**: static property of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Emits**: <code>event:onListItemClick - Fired when the list item is clicked.</code>  
+**Element**: md-list-item  
 **Properties**
 
 | Name | Type | Description |
@@ -889,6 +771,354 @@ Handles updates to the element.
 | leadingItems | <code>Array</code> | An array of leading items for the list item. |
 | trailingItems | <code>Array</code> | An array of trailing items for the list item. |
 | activated | <code>Boolean</code> | Indicates whether the list item is activated. |
+
+<a name="MdListItemComponent+renderItem"></a>
+
+### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
+Renders an individual item based on its type.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered item.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>Object</code> | The item to render. |
+
+<a name="MdListRowComponent"></a>
+
+## MdListRowComponent
+Custom element representing a list row.
+
+**Kind**: global class  
+**Element**: md-list-row  
+<a name="MdListComponent"></a>
+
+## MdListComponent
+Custom element representing a list.
+
+**Kind**: global class  
+**Element**: md-list  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| items | <code>Array</code> | The array of items in the list. |
+| ui | <code>String</code> | The UI style of the list. |
+| type | <code>String</code> | The type of the list. |
+| activatable | <code>Boolean</code> | Indicates whether the list is activatable. |
+
+<a name="MdListComponent+onListItemClick"></a>
+
+### mdListComponent.onListItemClick(event)
+Handles the click event on a list item.
+
+**Kind**: instance method of [<code>MdListComponent</code>](#MdListComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdNavigation"></a>
+
+## MdNavigation
+Represents a navigation utility.
+
+**Kind**: global class  
+
+* [MdNavigation](#MdNavigation)
+    * [.setEntries(entries, parent)](#MdNavigation.setEntries) ⇒ <code>Array</code>
+    * [.getEntry()](#MdNavigation.getEntry) ⇒ <code>Object</code>
+    * [.getEntries(entry)](#MdNavigation.getEntries) ⇒ <code>Array</code>
+    * [.handlePopstate(event)](#MdNavigation.handlePopstate)
+    * [.emit(type, detail)](#MdNavigation.emit)
+    * [.navigate(url)](#MdNavigation.navigate)
+    * [.handleClick(event)](#MdNavigation.handleClick)
+    * [.load(entries)](#MdNavigation.load)
+
+<a name="MdNavigation.setEntries"></a>
+
+### MdNavigation.setEntries(entries, parent) ⇒ <code>Array</code>
+Sets entries for navigation.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Returns**: <code>Array</code> - - The modified array of entries.  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| entries | <code>Array</code> |  | An array of navigation entries. |
+| parent | <code>Object</code> | <code></code> | The parent entry. |
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| pattern | <code>Array</code> | The pattern generated based on the entry's path. |
+| parent | <code>Object</code> | The parent entry. |
+
+<a name="MdNavigation.getEntry"></a>
+
+### MdNavigation.getEntry() ⇒ <code>Object</code>
+Gets the current entry based on the path.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Returns**: <code>Object</code> - - The current navigation entry.  
+<a name="MdNavigation.getEntries"></a>
+
+### MdNavigation.getEntries(entry) ⇒ <code>Array</code>
+Gets all entries, including parent entries, for a given entry.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Returns**: <code>Array</code> - - An array of all entries.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entry | <code>Object</code> | The entry to retrieve all entries for. |
+
+<a name="MdNavigation.handlePopstate"></a>
+
+### MdNavigation.handlePopstate(event)
+Handles the popstate event.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+**Emits**: <code>event:onCurrententrychange</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The popstate event. |
+
+<a name="MdNavigation.emit"></a>
+
+### MdNavigation.emit(type, detail)
+Emits a custom event with the specified type and detail.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | The type of the custom event. |
+| detail | <code>Object</code> | Additional details for the event. |
+
+<a name="MdNavigation.navigate"></a>
+
+### MdNavigation.navigate(url)
+Navigates to the specified URL using the pushState method.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | The URL to navigate to. |
+
+<a name="MdNavigation.handleClick"></a>
+
+### MdNavigation.handleClick(event)
+Handles click events for navigation elements.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdNavigation.load"></a>
+
+### MdNavigation.load(entries)
+Loads navigation entries and sets up event listeners.
+
+**Kind**: static method of [<code>MdNavigation</code>](#MdNavigation)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entries | <code>Array</code> | An array of navigation entries. |
+
+<a name="MdRadioButtonComponent"></a>
+
+## MdRadioButtonComponent ⇐ <code>LitElement</code>
+Custom element for a radio button.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdRadioButtonComponent](#MdRadioButtonComponent) ⇐ <code>LitElement</code>
+    * [new MdRadioButtonComponent()](#new_MdRadioButtonComponent_new)
+    * _instance_
+        * [.radioButtonNative](#MdRadioButtonComponent+radioButtonNative) ⇒ <code>HTMLElement</code>
+        * [.radioButtonTrack](#MdRadioButtonComponent+radioButtonTrack) ⇒ <code>HTMLElement</code>
+        * [.radioButtonThumb](#MdRadioButtonComponent+radioButtonThumb) ⇒ <code>HTMLElement</code>
+        * [.createRenderRoot()](#MdRadioButtonComponent+createRenderRoot) ⇒ [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)
+        * [.render()](#MdRadioButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdRadioButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdRadioButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdRadioButtonComponent+firstUpdated)
+        * [.onRadioButtonNativeInput(event)](#MdRadioButtonComponent+onRadioButtonNativeInput)
+        * ["onRadioButtonNativeInput"](#MdRadioButtonComponent+event_onRadioButtonNativeInput)
+    * _static_
+        * [.properties](#MdRadioButtonComponent.properties)
+
+<a name="new_MdRadioButtonComponent_new"></a>
+
+### new MdRadioButtonComponent()
+Constructor for MdRadioButtonComponent.
+
+<a name="MdRadioButtonComponent+radioButtonNative"></a>
+
+### mdRadioButtonComponent.radioButtonNative ⇒ <code>HTMLElement</code>
+Returns the native radio button element.
+
+**Kind**: instance property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The native radio button element.  
+<a name="MdRadioButtonComponent+radioButtonTrack"></a>
+
+### mdRadioButtonComponent.radioButtonTrack ⇒ <code>HTMLElement</code>
+Returns the track element of the radio button.
+
+**Kind**: instance property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The track element.  
+<a name="MdRadioButtonComponent+radioButtonThumb"></a>
+
+### mdRadioButtonComponent.radioButtonThumb ⇒ <code>HTMLElement</code>
+Returns the thumb element of the radio button.
+
+**Kind**: instance property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>HTMLElement</code> - The thumb element.  
+<a name="MdRadioButtonComponent+createRenderRoot"></a>
+
+### mdRadioButtonComponent.createRenderRoot() ⇒ [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)
+Overrides the default render root to use the element itself.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent) - The current instance.  
+<a name="MdRadioButtonComponent+render"></a>
+
+### mdRadioButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the radio button element.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template result.  
+<a name="MdRadioButtonComponent+connectedCallback"></a>
+
+### mdRadioButtonComponent.connectedCallback()
+Adds the "md-radio-button" class when the component is connected.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+<a name="MdRadioButtonComponent+disconnectedCallback"></a>
+
+### mdRadioButtonComponent.disconnectedCallback()
+Removes the "md-radio-button" class when the component is disconnected.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+<a name="MdRadioButtonComponent+firstUpdated"></a>
+
+### mdRadioButtonComponent.firstUpdated()
+Initializes the state controller after the first update.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+<a name="MdRadioButtonComponent+onRadioButtonNativeInput"></a>
+
+### mdRadioButtonComponent.onRadioButtonNativeInput(event)
+Handles the input event on the native radio button.
+
+**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MdRadioButtonComponent+event_onRadioButtonNativeInput"></a>
+
+### "onRadioButtonNativeInput"
+Dispatched when the native radio button is input.
+
+**Kind**: event emitted by [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail.event | <code>Event</code> | The input event. |
+
+<a name="MdRadioButtonComponent.properties"></a>
+
+### MdRadioButtonComponent.properties
+Properties for the MdRadioButtonComponent.
+
+**Kind**: static property of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name attribute for the radio button. |
+| checked | <code>Boolean</code> | The checked attribute for the radio button. |
+
+<a name="MdSegmentedButtonComponent"></a>
+
+## MdSegmentedButtonComponent ⇐ <code>LitElement</code>
+Custom element for a segmented button.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdSegmentedButtonComponent](#MdSegmentedButtonComponent) ⇐ <code>LitElement</code>
+    * [new MdSegmentedButtonComponent()](#new_MdSegmentedButtonComponent_new)
+    * _instance_
+        * [.createRenderRoot()](#MdSegmentedButtonComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.render()](#MdSegmentedButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdSegmentedButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdSegmentedButtonComponent+disconnectedCallback)
+        * [.onSegmentedButtonClick(event)](#MdSegmentedButtonComponent+onSegmentedButtonClick)
+    * _static_
+        * [.properties](#MdSegmentedButtonComponent.properties)
+
+<a name="new_MdSegmentedButtonComponent_new"></a>
+
+### new MdSegmentedButtonComponent()
+Constructor for MdSegmentedButtonComponent.
+
+<a name="MdSegmentedButtonComponent+createRenderRoot"></a>
+
+### mdSegmentedButtonComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default render root to be the component itself.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+<a name="MdSegmentedButtonComponent+render"></a>
+
+### mdSegmentedButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the segmented button based on the provided items.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered HTML template.  
+<a name="MdSegmentedButtonComponent+connectedCallback"></a>
+
+### mdSegmentedButtonComponent.connectedCallback()
+Adds the "md-segmented-button" class when connected to the DOM.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+<a name="MdSegmentedButtonComponent+disconnectedCallback"></a>
+
+### mdSegmentedButtonComponent.disconnectedCallback()
+Removes the "md-segmented-button" class when disconnected from the DOM.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+<a name="MdSegmentedButtonComponent+onSegmentedButtonClick"></a>
+
+### mdSegmentedButtonComponent.onSegmentedButtonClick(event)
+Handles the click event on a segmented button.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdSegmentedButtonComponent.properties"></a>
+
+### MdSegmentedButtonComponent.properties
+**Kind**: static property of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| items | <code>Array</code> | An array of items for the segmented button. |
+| type | <code>String</code> | The type of the segmented button (e.g., "single-select" or "multi-select"). |
 
 <a name="md-emoji"></a>
 
