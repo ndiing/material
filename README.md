@@ -2,6 +2,8 @@
 
 This repository contains various Material Components for your project. Each component has its documentation in Markdown format.
 
+-   **[navigation](./src/material/navigation/navigation.md)**
+-   **[state](./src/material/state/state.md)**
 -   **[Icon](./src/material/icon/icon.md)**
 -   **[Emoji](./src/material/emoji/emoji.md)**
 -   **[Image](./src/material/image/image.md)**
@@ -17,3 +19,10 @@ This repository contains various Material Components for your project. Each comp
 -   **[Panel](./src/material/panel/panel.md)**
 
 Feel free to explore each component's documentation for detailed information on usage and customization.
+
+<!--
+generate docs with markdown formated file
+get information for Instance properties,Instance methods(without lifecycle hooks),and Events
+and add usage example
+from this code
+ -->
