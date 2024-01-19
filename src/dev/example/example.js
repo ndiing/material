@@ -248,6 +248,27 @@ class ExampleComponent extends LitElement{
                 <!--  -->
 
                 <!--  -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list class="md-navigation-bar__list" activatable .items="${[
+                        {label:'Label',activated:true,leadingItems:[{item:'md-icon',icon:'image'}]},
+                        {label:'Label',leadingItems:[{item:'md-icon',icon:'image'}]},
+                        {label:'Label',badge:1,leadingItems:[{item:'md-icon',icon:'image'}]},
+                        {label:'Label',badge:'',leadingItems:[{item:'md-icon',icon:'image'}]},
+                    ]}"></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list class="md-navigation-bar__list" activatable .items="${[
+                        {activated:true,leadingItems:[{item:'md-icon',icon:'image'}]},
+                        {leadingItems:[{item:'md-icon',icon:'image'}]},
+                        {badge:1,leadingItems:[{item:'md-icon',icon:'image'}]},
+                        {badge:'',leadingItems:[{item:'md-icon',icon:'image'}]},
+                    ]}"></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                </div>
+                <!--  -->
+
+                <!--  -->
                 <!-- <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                     <md-panel type="dialog"></md-panel>
                     <md-panel type="drawer" position="top"></md-panel>

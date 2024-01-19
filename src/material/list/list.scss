@@ -15,7 +15,7 @@
     padding: 8px 16px;
     gap: 0 16px;
 }
-.md-list__divider{
+.md-list__divider {
     margin-top: 8px;
     margin-bottom: 7px;
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
@@ -65,18 +65,18 @@
 //     @extend .md-typography--label-small;
 // }
 
-.md-list{
-    .md-list__item{
+.md-list {
+    .md-list__item {
         min-height: 56px;
     }
 }
-.md-list--two-line{
-    .md-list__item{
+.md-list--two-line {
+    .md-list__item {
         min-height: 72px;
     }
 }
-.md-list--three-line{
-    .md-list__item{
+.md-list--three-line {
+    .md-list__item {
         align-items: start;
         min-height: 88px;
         padding-top: 12px;
@@ -90,7 +90,6 @@
     .md-list__supporting-text {
         height: 40px;
     }
-    
 
     .md-list__video {
         margin-top: 0;
@@ -99,18 +98,70 @@
 }
 
 // menu
-.md-menu__list{
-    .md-list__item{
+.md-menu__list {
+    .md-list__item {
         min-height: 48px;
         padding: 0 12px;
         gap: 0 12px;
     }
-    .md-list__end{
-        .md-list__supporting-text{
+    .md-list__end {
+        .md-list__supporting-text {
             @extend .md-typography--label-large;
         }
     }
-    .md-list__label{
+    .md-list__label {
         @extend .md-typography--label-large;
+    }
+}
+
+// navigation bar
+.md-navigation-bar__list {
+    flex-direction: row;
+    .md-list__row {
+        flex: 1;
+    }
+    .md-list__item {
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80px;
+        padding-top: 12px;
+        // padding-bottom: 16px;
+        padding-bottom: 12px;
+        row-gap: 4px;
+
+        &.md-state[activated] {
+            background: inherit;
+            color: inherit;
+
+            .md-list__icon {
+                background: var(--md-sys-color-secondary-container);
+                color: var(--md-sys-color-on-secondary-container);
+            }
+        }
+    }
+    .md-list__label {
+        @extend .md-typography--label-medium;
+        margin-bottom: 4px;
+    }
+    .md-list__icon {
+        height: 32px;
+        border-radius: 16px;
+        width: 64px;
+    }
+
+    .md-list__badge {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        margin-top: -20px;
+        margin-left: 8px;
+    }
+
+    .md-list__item--no-label {
+        .md-list__badge {
+            margin-top: -8px;
+            margin-left: 8px;
+        }
     }
 }

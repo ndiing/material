@@ -2,6 +2,14 @@ import { LitElement, html, nothing } from 'lit';
 import { choose } from 'lit/directives/choose.js';
 import { MdStateController } from '../state/state';
 
+function notNull(value){
+  return value!==undefined&&value!==null
+}
+
+function notEmpty(value){
+  return notNull(value)&&value!==''
+}
+
 /**
  * Custom element representing a list item.
  *
@@ -20,6 +28,7 @@ class MdListItemComponent extends LitElement {
     return {
       label: { type: String },
       supportingText: { type: String },
+      badge: { type: String },
       leadingItems: { type: Array },
       trailingItems: { type: Array },
       activated: { type: Boolean, reflect: true },
@@ -145,6 +154,7 @@ class MdListItemComponent extends LitElement {
             ${this.trailingItems.map((item) => this.renderItem(item))}
           </div>`
         : nothing}
+        ${notNull(this.badge)?html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>`:nothing}
     `;
   }
 
@@ -160,9 +170,17 @@ class MdListItemComponent extends LitElement {
 
   firstUpdated() {
     this.state = new MdStateController(this, {});
+
+    if(this.label){
+      this.classList.remove('md-list__item--no-label')
+    }else{
+      this.classList.add('md-list__item--no-label')
+
+    }
   }
 
-  updated(_changedProperties) {}
+  updated(_changedProperties) {
+  }
 }
 
 customElements.define('md-list-item', MdListItemComponent);
@@ -247,6 +265,7 @@ class MdListComponent extends LitElement {
               .item="${item}"
               .label="${item.label}"
               .supportingText="${item.supportingText}"
+              .badge="${item.badge}"
               .leadingItems="${item.leadingItems}"
               .trailingItems="${item.trailingItems}"
               .activated="${item.activated}"
