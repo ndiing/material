@@ -18,6 +18,9 @@
 <dt><a href="#MdButtonComponent">MdButtonComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element representing a material design button.</p>
 </dd>
+<dt><a href="#MdCheckboxComponent">MdCheckboxComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Checkbox component for Material Design.</p>
+</dd>
 </dl>
 
 <a name="module_{MdButtonComponent}"></a>
@@ -285,4 +288,122 @@ Properties for the MdButtonComponent.
 | icon | <code>String</code> | The icon content for the button. |
 | ui | <code>String</code> | The UI style for the button ("elevated", "filled", "filled-tonal", "outlined"). |
 | activated | <code>Boolean</code> | Reflects whether the button is activated or not. |
+
+<a name="MdCheckboxComponent"></a>
+
+## MdCheckboxComponent ⇐ <code>LitElement</code>
+Checkbox component for Material Design.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdCheckboxComponent](#MdCheckboxComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.checkboxNative](#MdCheckboxComponent+checkboxNative)
+        * [.checkboxTrack](#MdCheckboxComponent+checkboxTrack)
+        * [.checkboxThumb](#MdCheckboxComponent+checkboxThumb)
+        * [.render()](#MdCheckboxComponent+render) ⇒ <code>TemplateResult</code>
+        * [.firstUpdated()](#MdCheckboxComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdCheckboxComponent+updated)
+        * [.onCheckboxNativeInput(event)](#MdCheckboxComponent+onCheckboxNativeInput)
+        * ["onCheckboxNativeInput"](#MdCheckboxComponent+event_onCheckboxNativeInput)
+    * _static_
+        * [.properties](#MdCheckboxComponent.properties)
+
+<a name="MdCheckboxComponent+checkboxNative"></a>
+
+### mdCheckboxComponent.checkboxNative
+Returns the checkbox native element.
+
+**Kind**: instance property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| checkboxNative | <code>HTMLElement</code> | The checkbox native element. |
+
+<a name="MdCheckboxComponent+checkboxTrack"></a>
+
+### mdCheckboxComponent.checkboxTrack
+Returns the checkbox track element.
+
+**Kind**: instance property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| checkboxTrack | <code>HTMLElement</code> | The checkbox track element. |
+
+<a name="MdCheckboxComponent+checkboxThumb"></a>
+
+### mdCheckboxComponent.checkboxThumb
+Returns the checkbox thumb element.
+
+**Kind**: instance property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| checkboxThumb | <code>HTMLElement</code> | The checkbox thumb element. |
+
+<a name="MdCheckboxComponent+render"></a>
+
+### mdCheckboxComponent.render() ⇒ <code>TemplateResult</code>
+Renders the checkbox component.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template result.  
+<a name="MdCheckboxComponent+firstUpdated"></a>
+
+### mdCheckboxComponent.firstUpdated()
+Called after the element's first update.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+<a name="MdCheckboxComponent+updated"></a>
+
+### mdCheckboxComponent.updated(_changedProperties)
+Called when the element has been updated.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdCheckboxComponent+onCheckboxNativeInput"></a>
+
+### mdCheckboxComponent.onCheckboxNativeInput(event)
+Handles the input event on the checkbox native element.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MdCheckboxComponent+event_onCheckboxNativeInput"></a>
+
+### "onCheckboxNativeInput"
+Dispatched when the checkbox native input event occurs.
+
+**Kind**: event emitted by [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail.event | <code>Event</code> | The original input event. |
+
+<a name="MdCheckboxComponent.properties"></a>
+
+### MdCheckboxComponent.properties
+Static property definitions for the component.
+
+**Kind**: static property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name of the checkbox. |
+| indeterminate | <code>Boolean</code> | Indicates whether the checkbox is in an indeterminate state. |
+| checked | <code>Boolean</code> | Indicates whether the checkbox is checked. |
 
