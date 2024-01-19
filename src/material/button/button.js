@@ -1,28 +1,22 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
-
 /**
- * Custom button component with Material Design styling.
+ * Custom element representing a material design button.
  *
  * @element md-button
  *
- * @example
- * <md-button ui="elevated" icon="image" label="Label"></md-button>
- * <md-button ui="filled" icon="image" label="Label"></md-button>
- * <md-button ui="filled-tonal" icon="image" label="Label"></md-button>
- * <md-button ui="outlined" icon="image" label="Label"></md-button>
- * <md-button icon="image" label="Label"></md-button>
+ * @cssprop {String} --md-button-color - Color of the button.
+ * @cssprop {String} --md-button-background - Background color of the button.
+ *
+ * @fires {CustomEvent} md-button-click - Dispatched when the button is clicked.
+ *
+ * @prop {String} type - The type of the button (e.g., "button", "submit").
+ * @prop {String} label - The label text of the button.
+ * @prop {String} icon - The icon content of the button.
+ * @prop {String} ui - The UI style of the button ("elevated", "filled", "filled-tonal", "outlined").
+ * @prop {Boolean} activated - Indicates whether the button is activated.
  */
 class MdButtonComponent extends LitElement {
-    /**
-     * Properties of the `md-button` element.
-     *
-     * @property {String} type - The type of the button.
-     * @property {String} label - The label text of the button.
-     * @property {String} icon - The icon to be displayed in the button.
-     * @property {String} ui - The UI style of the button (e.g., "elevated", "filled", "filled-tonal", "outlined").
-     * @property {Boolean} activated - Indicates whether the button is activated or not.
-     */
     static get properties() {
         return {
             type: { type: String },
@@ -33,28 +27,15 @@ class MdButtonComponent extends LitElement {
         };
     }
 
-    /**
-     * Constructor for the `md-button` element.
-     */
     constructor() {
         super();
         this.type = "button";
     }
 
-    /**
-     * Overrides the default render root to use the element itself.
-     *
-     * @returns {this} The element itself as the render root.
-     */
     createRenderRoot() {
         return this;
     }
 
-    /**
-     * Renders the button element with optional icon and label.
-     *
-     * @returns {TemplateResult} The rendered HTML template.
-     */
     render() {
         /* prettier-ignore */
         return html`
@@ -64,34 +45,20 @@ class MdButtonComponent extends LitElement {
         `;
     }
 
-    /**
-     * Callback when the element is connected to the DOM.
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
     }
 
-    /**
-     * Callback when the element is disconnected from the DOM.
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-button");
     }
 
-    /**
-     * Returns the native button element inside the component.
-     *
-     * @returns {HTMLButtonElement} The native button element.
-     */
     get buttonNative() {
         return this.querySelector(".md-button__native");
     }
 
-    /**
-     * Callback when the element is first updated.
-     */
     firstUpdated() {
         this.state = new MdStateController(this, {
             button: this.buttonNative,
@@ -99,11 +66,6 @@ class MdButtonComponent extends LitElement {
         });
     }
 
-    /**
-     * Callback when the element is updated.
-     *
-     * @param {Map} _changedProperties - Map of changed properties.
-     */
     updated(_changedProperties) {
         if (_changedProperties.has("ui")) {
             ["elevated", "filled", "filled-tonal", "outlined"].forEach((ui) => {
