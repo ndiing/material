@@ -47,6 +47,9 @@
 <dt><a href="#MdRadioButtonComponent">MdRadioButtonComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Custom element for a radio button.</p>
 </dd>
+<dt><a href="#MdSegmentedButtonComponent">MdSegmentedButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for a segmented button.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -1045,6 +1048,77 @@ Properties for the MdRadioButtonComponent.
 | --- | --- | --- |
 | name | <code>String</code> | The name attribute for the radio button. |
 | checked | <code>Boolean</code> | The checked attribute for the radio button. |
+
+<a name="MdSegmentedButtonComponent"></a>
+
+## MdSegmentedButtonComponent ⇐ <code>LitElement</code>
+Custom element for a segmented button.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdSegmentedButtonComponent](#MdSegmentedButtonComponent) ⇐ <code>LitElement</code>
+    * [new MdSegmentedButtonComponent()](#new_MdSegmentedButtonComponent_new)
+    * _instance_
+        * [.createRenderRoot()](#MdSegmentedButtonComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.render()](#MdSegmentedButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdSegmentedButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdSegmentedButtonComponent+disconnectedCallback)
+        * [.onSegmentedButtonClick(event)](#MdSegmentedButtonComponent+onSegmentedButtonClick)
+    * _static_
+        * [.properties](#MdSegmentedButtonComponent.properties)
+
+<a name="new_MdSegmentedButtonComponent_new"></a>
+
+### new MdSegmentedButtonComponent()
+Constructor for MdSegmentedButtonComponent.
+
+<a name="MdSegmentedButtonComponent+createRenderRoot"></a>
+
+### mdSegmentedButtonComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default render root to be the component itself.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+<a name="MdSegmentedButtonComponent+render"></a>
+
+### mdSegmentedButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the segmented button based on the provided items.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered HTML template.  
+<a name="MdSegmentedButtonComponent+connectedCallback"></a>
+
+### mdSegmentedButtonComponent.connectedCallback()
+Adds the "md-segmented-button" class when connected to the DOM.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+<a name="MdSegmentedButtonComponent+disconnectedCallback"></a>
+
+### mdSegmentedButtonComponent.disconnectedCallback()
+Removes the "md-segmented-button" class when disconnected from the DOM.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+<a name="MdSegmentedButtonComponent+onSegmentedButtonClick"></a>
+
+### mdSegmentedButtonComponent.onSegmentedButtonClick(event)
+Handles the click event on a segmented button.
+
+**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdSegmentedButtonComponent.properties"></a>
+
+### MdSegmentedButtonComponent.properties
+**Kind**: static property of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| items | <code>Array</code> | An array of items for the segmented button. |
+| type | <code>String</code> | The type of the segmented button (e.g., "single-select" or "multi-select"). |
 
 <a name="md-emoji"></a>
 
