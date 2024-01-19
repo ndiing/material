@@ -36,7 +36,7 @@
 }
 
 .md-state--inverted {
-    >.md-state__layer {
+    > .md-state__layer {
         background: var(--md-sys-color-surface);
     }
 }
@@ -44,27 +44,22 @@
 .md-state[activated] {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-
-    // .md-state__layer {
-    //     opacity: 0%;
-    // }
 }
 
 .md-state--focused {
-    >.md-state__layer {
+    > .md-state__layer {
         opacity: 10%;
     }
 }
 
 .md-state--pressed {
-    >.md-state__layer {
+    > .md-state__layer {
         opacity: 10%;
     }
 }
 
-
 .md-state--fadeout {
-    >.md-state__layer {
+    > .md-state__layer {
         opacity: 0;
         animation:
             none var(--md-sys-motion-duration-short4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate)),
@@ -73,7 +68,7 @@
 }
 
 .md-state--hover {
-    >.md-state__layer {
+    > .md-state__layer {
         opacity: 8%;
     }
 }
@@ -82,7 +77,7 @@
     opacity: 38%;
     pointer-events: none;
 
-    >.md-state__layer {
+    > .md-state__layer {
         opacity: 0%;
     }
 }

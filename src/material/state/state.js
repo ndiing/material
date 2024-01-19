@@ -1,18 +1,4 @@
-/**
- * Controller class for managing the state of an element.
- */
 class MdStateController {
-    /**
-     * Creates an instance of MdStateController.
-     * @param {HTMLElement} host - The host element.
-     * @param {Object} [options={}] - Additional options for the controller.
-     * @property {HTMLElement} options.container - The container element for the state.
-     * @property {boolean} options.containment - Whether the state is contained.
-     * @property {boolean|undefined} options.fadeout - Whether to apply fadeout effect.
-     * @property {boolean|undefined} options.inverted - Whether the state is inverted.
-     * @property {string|undefined} options.button - The button element selector.
-     * @property {number|undefined} options.size - The size of the state.
-     */
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
@@ -27,9 +13,6 @@ class MdStateController {
         this.host.addController(this);
     }
 
-    /**
-     * Callback when the host element is connected to the DOM.
-     */
     hostConnected() {
         this.options.container.classList.add("md-state");
 
@@ -51,43 +34,10 @@ class MdStateController {
             this.options.container.classList.remove("md-state--inverted");
         }
 
-        // this.button = this.options.container;
-        // if (this.options.button) {
-        //     this.button = await new Promise((resolve) => {
-        //         let button;
-        //         let observer;
-        //         const callback = () => {
-        //             button = this.options.container.querySelector(this.options.button);
-        //             if (button) {
-        //                 if (observer) {
-        //                     observer.disconnect();
-        //                 }
-        //                 resolve(button);
-        //             }
-        //         };
-        //         callback();
-        //         if (!button) {
-        //             observer = new MutationObserver(callback);
-        //             observer.observe(this.options.container, {
-        //                 childList: true,
-        //                 subtree: true,
-        //             });
-        //         }
-        //     });
-        // }
-
-        /**
-         * The button element associated with the state.
-         * @type {HTMLElement}
-         */
         this.button = this.options.button || this.options.container;
         this.button.classList.add("md-state--button");
         this.button.setAttribute("tabIndex", 0);
 
-        /**
-         * The layer element for the state.
-         * @type {HTMLElement}
-         */
         this.layer = document.createElement("span");
         this.layer.classList.add("md-state__layer");
         this.options.container.append(this.layer);
@@ -96,7 +46,6 @@ class MdStateController {
         if (!this.options.size) {
             this.options.size = (Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2)) / rect.width) * 100;
         }
-        // console.log(this.options.size)
         this.layer.style.setProperty("width", this.options.size + "%");
 
         this.handlePointerenter = this.handlePointerenter.bind(this);
@@ -113,29 +62,14 @@ class MdStateController {
         this.button.addEventListener("blur", this.handleBlur);
     }
 
-    /**
-     * Event handler for pointer enter.
-     * @param {PointerEvent} event - The pointer enter event.
-     * @fires MdStateController#pointerenter
-     */
     handlePointerenter(event) {
         this.options.container.classList.add("md-state--hover");
     }
 
-    /**
-     * Event handler for pointer leave.
-     * @param {PointerEvent} event - The pointer leave event.
-     * @fires MdStateController#pointerleave
-     */
     handlePointerleave(event) {
         this.options.container.classList.remove("md-state--hover");
     }
 
-    /**
-     * Event handler for pointer down.
-     * @param {PointerEvent} event - The pointer down event.
-     * @fires MdStateController#pointerdown
-     */
     handlePointerdown(event) {
         window.addEventListener("pointerup", this.handlePointerup);
 
@@ -165,41 +99,19 @@ class MdStateController {
         this.options.container.classList.add("md-state--pressed");
     }
 
-    /**
-     * Event handler for pointer up.
-     * @param {PointerEvent} event - The pointer up event.
-     * @fires MdStateController#pointerup
-     */
     handlePointerup(event) {
         this.options.container.classList.remove("md-state--pressed");
         window.removeEventListener("pointerup", this.handlePointerup);
     }
 
-    /**
-     * Event handler for focus.
-     * @param {FocusEvent} event - The focus event.
-     * @fires MdStateController#focus
-     */
     handleFocus(event) {
         this.options.container.classList.add("md-state--focused");
     }
 
-    /**
-     * Event handler for blur.
-     * @param {FocusEvent} event - The blur event.
-     * @fires MdStateController#blur
-     */
     handleBlur(event) {
         this.options.container.classList.remove("md-state--focused");
     }
 
-    // hostUpdate() {}
-
-    // hostUpdated() {}
-
-    /**
-     * Callback when the host element is disconnected from the DOM.
-     */
     hostDisconnected() {
         this.options.container.classList.remove("md-state");
 
@@ -222,41 +134,5 @@ class MdStateController {
         this.button.removeEventListener("blur", this.handleBlur);
     }
 }
-
-/**
- * Event triggered when the pointer enters the state.
- * @event MdStateController#pointerenter
- * @type {PointerEvent}
- */
-
-/**
- * Event triggered when the pointer leaves the state.
- * @event MdStateController#pointerleave
- * @type {PointerEvent}
- */
-
-/**
- * Event triggered when the pointer is pressed down on the state.
- * @event MdStateController#pointerdown
- * @type {PointerEvent}
- */
-
-/**
- * Event triggered when the pointer is released.
- * @event MdStateController#pointerup
- * @type {PointerEvent}
- */
-
-/**
- * Event triggered when the state gains focus.
- * @event MdStateController#focus
- * @type {FocusEvent}
- */
-
-/**
- * Event triggered when the state loses focus.
- * @event MdStateController#blur
- * @type {FocusEvent}
- */
 
 export { MdStateController };

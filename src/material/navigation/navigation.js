@@ -1,28 +1,8 @@
-/**
- * @class
- * Represents a navigation utility.
- */
 class MdNavigation {
-    /**
-     * Sets entries for navigation.
-     *
-     * @static
-     * @param {Array} entries - An array of navigation entries.
-     * @param {Object} parent - The parent entry.
-     * @returns {Array} - The modified array of entries.
-     * @property {Array} pattern - The pattern generated based on the entry's path.
-     * @property {Object} parent - The parent entry.
-     */
     static setEntries(entries = [], parent = null) {
         return entries.reduce((p, c) => {
             c.parent = parent;
-            c.pattern = [
-                //
-                c.parent?.pattern ?? "",
-                c.path,
-            ]
-                .join("/")
-                .replace(/\/+/g, "/");
+            c.pattern = [c.path].join("/").replace(/\/+/g, "/");
             p = p.concat(c);
             if (c.children && c.children.length) {
                 p = p.concat(this.setEntries(c.children, c));
@@ -31,12 +11,6 @@ class MdNavigation {
         }, []);
     }
 
-    /**
-     * Gets the current entry based on the path.
-     *
-     * @static
-     * @returns {Object} - The current navigation entry.
-     */
     static getEntry() {
         return this.entries.find((entry) => {
             const pattern = "^" + entry.pattern.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)";
@@ -50,13 +24,6 @@ class MdNavigation {
         });
     }
 
-    /**
-     * Gets all entries, including parent entries, for a given entry.
-     *
-     * @static
-     * @param {Object} entry - The entry to retrieve all entries for.
-     * @returns {Array} - An array of all entries.
-     */
     static getEntries(entry) {
         return [entry].reduce((p, c) => {
             if (c.parent) p = p.concat(this.getEntries(c.parent));
@@ -65,13 +32,6 @@ class MdNavigation {
         }, []);
     }
 
-    /**
-     * Handles the popstate event.
-     *
-     * @static
-     * @param {Event} event - The popstate event.
-     * @fires onCurrententrychange
-     */
     static async handlePopstate(event) {
         this.emit("onCurrententrychange");
 
@@ -154,13 +114,6 @@ class MdNavigation {
         this.emit("onNavigatesuccess");
     }
 
-    /**
-     * Emits a custom event with the specified type and detail.
-     *
-     * @static
-     * @param {string} type - The type of the custom event.
-     * @param {Object} detail - Additional details for the event.
-     */
     static emit(type, detail = {}) {
         window.dispatchEvent(
             new CustomEvent(type, {
@@ -171,22 +124,10 @@ class MdNavigation {
         );
     }
 
-    /**
-     * Navigates to the specified URL using the pushState method.
-     *
-     * @static
-     * @param {string} url - The URL to navigate to.
-     */
     static navigate(url) {
         window.history.pushState({}, null, url);
     }
 
-    /**
-     * Handles click events for navigation elements.
-     *
-     * @static
-     * @param {Event} event - The click event.
-     */
     static handleClick(event) {
         const navigate = event.target.closest("[navigate]");
         if (navigate) {
@@ -195,12 +136,6 @@ class MdNavigation {
         }
     }
 
-    /**
-     * Loads navigation entries and sets up event listeners.
-     *
-     * @static
-     * @param {Array} entries - An array of navigation entries.
-     */
     static load(entries = []) {
         this.entries = this.setEntries(entries);
 

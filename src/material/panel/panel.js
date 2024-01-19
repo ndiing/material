@@ -14,11 +14,6 @@ class MdPanelScrimComponent extends LitElement {
         return this;
     }
 
-    // render() {
-    //     // prettier-ignore
-    //     return html``;
-    // }
-
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-panel__scrim");
@@ -41,9 +36,9 @@ export { MdPanelScrimComponent };
 class MdPanelComponent extends LitElement {
     static get properties() {
         return {
-            open:{type:Boolean},
-            type:{type:String},
-            position:{type:String},
+            open: { type: Boolean },
+            type: { type: String },
+            position: { type: String },
         };
     }
 
@@ -55,9 +50,9 @@ class MdPanelComponent extends LitElement {
         return this;
     }
 
+    /*prettier-ignore*/
     render() {
-        // prettier-ignore
-        return html`
+                return html`
             <div class="md-panel__header">
                 <div class="md-panel__start">
                     <md-icon-button icon="arrow_back"></md-icon-button>
@@ -97,67 +92,63 @@ class MdPanelComponent extends LitElement {
         this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
         this.panelScrim.addEventListener("click", this.onPanelScrimClick);
         document.body.append(this.panelScrim);
-        
+
         this.panelScrim.removeEventListener("click", this.onPanelScrimClick);
-        this.panelScrim.remove()
+        this.panelScrim.remove();
     }
 
     updated(_changedProperties) {
-        if(_changedProperties.has('open')){
-            if(this.open){
-                this.classList.add('md-panel--open')
-            }else{
-                this.classList.remove('md-panel--open')
+        if (_changedProperties.has("open")) {
+            if (this.open) {
+                this.classList.add("md-panel--open");
+            } else {
+                this.classList.remove("md-panel--open");
             }
         }
-        if(_changedProperties.has('type')){
-            [
-                'dialog',
-                'drawer',
-            ].forEach(type=>{
-                this.classList.remove('md-panel--'+type)
-            })
-            if(this.type){
-                this.classList.add('md-panel--'+this.type)
+        if (_changedProperties.has("type")) {
+            ["dialog", "drawer"].forEach((type) => {
+                this.classList.remove("md-panel--" + type);
+            });
+            if (this.type) {
+                this.classList.add("md-panel--" + this.type);
             }
         }
-        if(_changedProperties.has('position')){
-            [
-                'top',
-                'right',
-                'bottom',
-                'left',
-            ].forEach(position=>{
-                this.classList.remove('md-panel--'+position)
-            })
-            if(this.position){
-                this.classList.add('md-panel--'+this.position)
+        if (_changedProperties.has("position")) {
+            ["top", "right", "bottom", "left"].forEach((position) => {
+                this.classList.remove("md-panel--" + position);
+            });
+            if (this.position) {
+                this.classList.add("md-panel--" + this.position);
             }
         }
     }
 
-    show(){
-        this.open=true
+    show() {
+        this.open = true;
     }
 
-    close(){
-        this.open=false
+    close() {
+        this.open = false;
     }
 
-    toggle(){
-        // this.open=!this.open
-        if(this.open){this.close()}
-        else{this.show()}
+    toggle() {
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     onPanelScrimClick(event) {
-        this.close()
+        this.close();
 
-        this.dispatchEvent(new CustomEvent('onPanelScrimClick', {
-            bubbles:true,
-            cancelable:true,
-            detail:{event}
-        }))
+        this.dispatchEvent(
+            new CustomEvent("onPanelScrimClick", {
+                bubbles: true,
+                cancelable: true,
+                detail: { event },
+            })
+        );
     }
 }
 

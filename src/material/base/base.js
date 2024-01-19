@@ -17,9 +17,9 @@ class MdBaseComponent extends LitElement {
         return this;
     }
 
-    render() {
-        // prettier-ignore
-        return html`
+   /*prettier-ignore*/
+ render() {
+                return html`
             ${this.label ? html`<div class="md-base__label">${this.label}</div>` : nothing}
         `;
     }

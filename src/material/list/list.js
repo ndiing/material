@@ -10,20 +10,7 @@ function notEmpty(value) {
     return notNull(value) && value !== "";
 }
 
-/**
- * `MdListItemComponent` is a custom LitElement representing a list item.
- *
- * @extends LitElement
- */
-
 class MdListItemComponent extends LitElement {
-    /**
-     * @property {String} label - The label for the list item.
-     * @property {String} supportingText - The supporting text for the list item.
-     * @property {Array} leadingItems - An array of leading items.
-     * @property {Array} trailingItems - An array of trailing items.
-     * @property {Boolean} activated - Indicates whether the list item is activated.
-     */
     static get properties() {
         return {
             label: { type: String },
@@ -45,9 +32,9 @@ class MdListItemComponent extends LitElement {
         return this;
     }
 
+    /*prettier-ignore*/
     renderItem(item = {}) {
-        // prettier-ignore
-        return choose(
+                return choose(
             item.item,
             [
                 ["md-avatar", () => html`<md-image class="md-list__avatar" .src="${item.src}" .alt="${item.alt}" .ratio="${item.ratio}" .shape="${true}"></md-image>`],
@@ -63,6 +50,7 @@ class MdListItemComponent extends LitElement {
         );
     }
 
+    /*prettier-ignore*/
     render() {
         return html` ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} ${this.label || this.supportingText ? html` <div class="md-list__center">${this.label ? html`<div class="md-list__label">${this.label}</div>` : nothing} ${this.supportingText ? html`<div class="md-list__supporting-text">${this.supportingText}</div>` : nothing}</div> ` : nothing} ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} `;
     }
@@ -92,11 +80,6 @@ class MdListItemComponent extends LitElement {
 
 customElements.define("md-list-item", MdListItemComponent);
 
-/**
- * `MdListRowComponent` is a custom LitElement representing a list row.
- *
- * @extends LitElement
- */
 class MdListRowComponent extends LitElement {
     static get properties() {
         return {};
@@ -127,18 +110,7 @@ class MdListRowComponent extends LitElement {
 
 customElements.define("md-list-row", MdListRowComponent);
 
-/**
- * `MdListComponent` is a custom LitElement representing a list.
- *
- * @extends LitElement
- */
 class MdListComponent extends LitElement {
-    /**
-     * @property {Array} items - An array of items to be displayed in the list.
-     * @property {String} ui - The UI style of the list ('one-line', 'two-line', 'three-line').
-     * @property {String} type - The type of the list ('multi-select', etc.).
-     * @property {Boolean} activatable - Indicates whether list items are activatable.
-     */
     static get properties() {
         return {
             items: { type: Array },
@@ -161,9 +133,9 @@ class MdListComponent extends LitElement {
         return item.label || item.supportingText || item.leadingItems?.length || item.trailingItems?.length;
     }
 
+    /*prettier-ignore*/
     render() {
-        // prettier-ignore
-        return this.items.map((item) => html`
+                return this.items.map((item) => html`
             <md-list-row>
                 ${this.hasListItem(item) ? html`
                     <md-list-item 
@@ -204,14 +176,6 @@ class MdListComponent extends LitElement {
         }
     }
 
-    /**
-     * Dispatched when a list item is clicked.
-     *
-     * @event MdListItemComponent#onListItemClick
-     * @type {CustomEvent}
-     * @property {Event} event - The click event.
-     * @property {HTMLElement} listItem - The clicked list item.
-     */
     onListItemClick(event) {
         const listItem = event.currentTarget;
         if (this.activatable) {
