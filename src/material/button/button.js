@@ -57,6 +57,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Overrides the default render root to use the custom element itself.
      * @override
      * @returns {Element} - The render root of the component.
@@ -66,6 +67,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Renders the custom button component.
      * @override
      * @returns {TemplateResult} - The rendered HTML template.
@@ -82,6 +84,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Adds the "md-button" class when the component is connected to the DOM.
      * @override
      */
@@ -91,6 +94,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Removes the "md-button" class when the component is disconnected from the DOM.
      * @override
      */
@@ -100,6 +104,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Returns the native button element inside the component.
      * @returns {HTMLButtonElement} - The native button element.
      */
@@ -108,6 +113,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Initializes the state controller when the component is first updated.
      * @override
      */
@@ -119,6 +125,7 @@ class MdButtonComponent extends LitElement {
     }
 
     /**
+     * @private
      * Handles updates to the "ui" property and adjusts the component's class accordingly.
      * @override
      * @param {Map} _changedProperties - The properties that have changed.

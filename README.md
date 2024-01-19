@@ -12,13 +12,6 @@ Custom button component that extends LitElement.
 * [MdButtonComponent](#MdButtonComponent)
     * [new MdButtonComponent()](#new_MdButtonComponent_new)
     * _instance_
-        * [.buttonNative](#MdButtonComponent+buttonNative) ⇒ <code>HTMLButtonElement</code>
-        * [.createRenderRoot()](#MdButtonComponent+createRenderRoot) ⇒ <code>Element</code>
-        * [.render()](#MdButtonComponent+render) ⇒ <code>TemplateResult</code>
-        * [.connectedCallback()](#MdButtonComponent+connectedCallback)
-        * [.disconnectedCallback()](#MdButtonComponent+disconnectedCallback)
-        * [.firstUpdated()](#MdButtonComponent+firstUpdated)
-        * [.updated(_changedProperties)](#MdButtonComponent+updated)
         * ["custom-event"](#MdButtonComponent+event_custom-event)
     * _static_
         * [.properties](#MdButtonComponent.properties) : <code>Object</code>
@@ -32,56 +25,6 @@ Default constructor for MdButtonComponent.
 ```js
 // Example usage of MdButtonComponent:// Elevated button<md-button ui="elevated" label="Elevated Button"></md-button>// Filled button<md-button ui="filled" label="Filled Button"></md-button>// Filled-tonal button<md-button ui="filled-tonal" label="Filled Tonal Button"></md-button>// Outlined button<md-button ui="outlined" label="Outlined Button"></md-button>// Default button<md-button label="Default Button"></md-button>
 ```
-<a name="MdButtonComponent+buttonNative"></a>
-
-### mdButtonComponent.buttonNative ⇒ <code>HTMLButtonElement</code>
-Returns the native button element inside the component.
-
-**Kind**: instance property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-**Returns**: <code>HTMLButtonElement</code> - - The native button element.  
-<a name="MdButtonComponent+createRenderRoot"></a>
-
-### mdButtonComponent.createRenderRoot() ⇒ <code>Element</code>
-Overrides the default render root to use the custom element itself.
-
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-**Returns**: <code>Element</code> - - The render root of the component.  
-<a name="MdButtonComponent+render"></a>
-
-### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
-Renders the custom button component.
-
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-**Returns**: <code>TemplateResult</code> - - The rendered HTML template.  
-<a name="MdButtonComponent+connectedCallback"></a>
-
-### mdButtonComponent.connectedCallback()
-Adds the "md-button" class when the component is connected to the DOM.
-
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-<a name="MdButtonComponent+disconnectedCallback"></a>
-
-### mdButtonComponent.disconnectedCallback()
-Removes the "md-button" class when the component is disconnected from the DOM.
-
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-<a name="MdButtonComponent+firstUpdated"></a>
-
-### mdButtonComponent.firstUpdated()
-Initializes the state controller when the component is first updated.
-
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-<a name="MdButtonComponent+updated"></a>
-
-### mdButtonComponent.updated(_changedProperties)
-Handles updates to the "ui" property and adjusts the component's class accordingly.
-
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| _changedProperties | <code>Map</code> | The properties that have changed. |
-
 <a name="MdButtonComponent+event_custom-event"></a>
 
 ### "custom-event"
