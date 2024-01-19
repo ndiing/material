@@ -3,19 +3,19 @@ import { choose } from 'lit/directives/choose.js';
 import { MdStateController } from '../state/state';
 
 /**
- * Custom element representing a list item.
+ * `MdListItemComponent` is a custom LitElement representing a list item.
  *
- * @element md-list-item
- *
- * @fires onListItemClick - Fired when the list item is clicked.
- *
- * @property {String} label - The label of the list item.
- * @property {String} supportingText - The supporting text of the list item.
- * @property {Array} leadingItems - An array of leading items for the list item.
- * @property {Array} trailingItems - An array of trailing items for the list item.
- * @property {Boolean} activated - Indicates whether the list item is activated.
+ * @extends LitElement
  */
+
 class MdListItemComponent extends LitElement {
+  /**
+   * @property {String} label - The label for the list item.
+   * @property {String} supportingText - The supporting text for the list item.
+   * @property {Array} leadingItems - An array of leading items.
+   * @property {Array} trailingItems - An array of trailing items.
+   * @property {Boolean} activated - Indicates whether the list item is activated.
+   */
   static get properties() {
     return {
       label: { type: String },
@@ -36,12 +36,6 @@ class MdListItemComponent extends LitElement {
     return this;
   }
 
-  /**
-   * Renders an individual item based on its type.
-   *
-   * @param {Object} item - The item to render.
-   * @returns {TemplateResult} The rendered item.
-   */
   renderItem(item = {}) {
     return choose(
       item.item,
@@ -168,9 +162,9 @@ class MdListItemComponent extends LitElement {
 customElements.define('md-list-item', MdListItemComponent);
 
 /**
- * Custom element representing a list row.
+ * `MdListRowComponent` is a custom LitElement representing a list row.
  *
- * @element md-list-row
+ * @extends LitElement
  */
 class MdListRowComponent extends LitElement {
   static get properties() {
@@ -203,16 +197,17 @@ class MdListRowComponent extends LitElement {
 customElements.define('md-list-row', MdListRowComponent);
 
 /**
- * Custom element representing a list.
+ * `MdListComponent` is a custom LitElement representing a list.
  *
- * @element md-list
- *
- * @property {Array} items - The array of items in the list.
- * @property {String} ui - The UI style of the list.
- * @property {String} type - The type of the list.
- * @property {Boolean} activatable - Indicates whether the list is activatable.
+ * @extends LitElement
  */
 class MdListComponent extends LitElement {
+  /**
+   * @property {Array} items - An array of items to be displayed in the list.
+   * @property {String} ui - The UI style of the list ('one-line', 'two-line', 'three-line').
+   * @property {String} type - The type of the list ('multi-select', etc.).
+   * @property {Boolean} activatable - Indicates whether list items are activatable.
+   */
   static get properties() {
     return {
       items: { type: Array },
@@ -231,29 +226,33 @@ class MdListComponent extends LitElement {
     return this;
   }
 
-  hasListItem(item={}){
-    return (item.label||
-    item.supportingText||
-    item.leadingItems?.length||
-    item.trailingItems?.length)
+  hasListItem(item = {}) {
+    return (
+      item.label ||
+      item.supportingText ||
+      item.leadingItems?.length ||
+      item.trailingItems?.length
+    );
   }
 
   render() {
     return this.items.map(
       (item) => html`
         <md-list-row>
-          ${this.hasListItem(item)?html`
-            <md-list-item
-              .item="${item}"
-              .label="${item.label}"
-              .supportingText="${item.supportingText}"
-              .leadingItems="${item.leadingItems}"
-              .trailingItems="${item.trailingItems}"
-              .activated="${item.activated}"
-              @click="${this.onListItemClick}"
-            ></md-list-item>
-          `:nothing}
-          ${item.divider?html`<div class="md-list__divider"></div>`:nothing}
+          ${this.hasListItem(item)
+            ? html`
+                <md-list-item
+                  .item="${item}"
+                  .label="${item.label}"
+                  .supportingText="${item.supportingText}"
+                  .leadingItems="${item.leadingItems}"
+                  .trailingItems="${item.trailingItems}"
+                  .activated="${item.activated}"
+                  @click="${this.onListItemClick}"
+                ></md-list-item>
+              `
+            : nothing}
+          ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
         </md-list-row>
       `
     );
@@ -283,9 +282,12 @@ class MdListComponent extends LitElement {
   }
 
   /**
-   * Handles the click event on a list item.
+   * Dispatched when a list item is clicked.
    *
-   * @param {Event} event - The click event.
+   * @event MdListItemComponent#onListItemClick
+   * @type {CustomEvent}
+   * @property {Event} event - The click event.
+   * @property {HTMLElement} listItem - The clicked list item.
    */
   onListItemClick(event) {
     const listItem = event.currentTarget;
