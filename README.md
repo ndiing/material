@@ -32,14 +32,14 @@
 <dt><a href="#MdImageComponent">MdImageComponent</a></dt>
 <dd><p>Custom element representing an image with additional features.</p>
 </dd>
-<dt><a href="#MdListItemComponent">MdListItemComponent</a></dt>
-<dd><p>Custom element representing a list item.</p>
+<dt><a href="#MdListItemComponent">MdListItemComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p><code>MdListItemComponent</code> is a custom LitElement representing a list item.</p>
 </dd>
-<dt><a href="#MdListRowComponent">MdListRowComponent</a></dt>
-<dd><p>Custom element representing a list row.</p>
+<dt><a href="#MdListRowComponent">MdListRowComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p><code>MdListRowComponent</code> is a custom LitElement representing a list row.</p>
 </dd>
-<dt><a href="#MdListComponent">MdListComponent</a></dt>
-<dd><p>Custom element representing a list.</p>
+<dt><a href="#MdListComponent">MdListComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p><code>MdListComponent</code> is a custom LitElement representing a list.</p>
 </dd>
 <dt><a href="#MdNavigation">MdNavigation</a></dt>
 <dd><p>Represents a navigation utility.</p>
@@ -762,67 +762,71 @@ Defines the properties of the MdImageComponent.
 
 <a name="MdListItemComponent"></a>
 
-## MdListItemComponent
-Custom element representing a list item.
+## MdListItemComponent ⇐ <code>LitElement</code>
+`MdListItemComponent` is a custom LitElement representing a list item.
 
 **Kind**: global class  
-**Emits**: <code>event:onListItemClick - Fired when the list item is clicked.</code>  
-**Element**: md-list-item  
+**Extends**: <code>LitElement</code>  
+
+* [MdListItemComponent](#MdListItemComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * ["onListItemClick"](#MdListItemComponent+event_onListItemClick)
+    * _static_
+        * [.properties](#MdListItemComponent.properties)
+
+<a name="MdListItemComponent+event_onListItemClick"></a>
+
+### "onListItemClick"
+Dispatched when a list item is clicked.
+
+**Kind**: event emitted by [<code>MdListItemComponent</code>](#MdListItemComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| label | <code>String</code> | The label of the list item. |
-| supportingText | <code>String</code> | The supporting text of the list item. |
-| leadingItems | <code>Array</code> | An array of leading items for the list item. |
-| trailingItems | <code>Array</code> | An array of trailing items for the list item. |
-| activated | <code>Boolean</code> | Indicates whether the list item is activated. |
+| event | <code>Event</code> | The click event. |
+| listItem | <code>HTMLElement</code> | The clicked list item. |
 
-<a name="MdListItemComponent+renderItem"></a>
+<a name="MdListItemComponent.properties"></a>
 
-### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
-Renders an individual item based on its type.
+### MdListItemComponent.properties
+**Kind**: static property of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Properties**
 
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-**Returns**: <code>TemplateResult</code> - The rendered item.  
-
-| Param | Type | Description |
+| Name | Type | Description |
 | --- | --- | --- |
-| item | <code>Object</code> | The item to render. |
+| label | <code>String</code> | The label for the list item. |
+| supportingText | <code>String</code> | The supporting text for the list item. |
+| leadingItems | <code>Array</code> | An array of leading items. |
+| trailingItems | <code>Array</code> | An array of trailing items. |
+| activated | <code>Boolean</code> | Indicates whether the list item is activated. |
 
 <a name="MdListRowComponent"></a>
 
-## MdListRowComponent
-Custom element representing a list row.
+## MdListRowComponent ⇐ <code>LitElement</code>
+`MdListRowComponent` is a custom LitElement representing a list row.
 
 **Kind**: global class  
-**Element**: md-list-row  
+**Extends**: <code>LitElement</code>  
 <a name="MdListComponent"></a>
 
-## MdListComponent
-Custom element representing a list.
+## MdListComponent ⇐ <code>LitElement</code>
+`MdListComponent` is a custom LitElement representing a list.
 
 **Kind**: global class  
-**Element**: md-list  
+**Extends**: <code>LitElement</code>  
+<a name="MdListComponent.properties"></a>
+
+### MdListComponent.properties
+**Kind**: static property of [<code>MdListComponent</code>](#MdListComponent)  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| items | <code>Array</code> | The array of items in the list. |
-| ui | <code>String</code> | The UI style of the list. |
-| type | <code>String</code> | The type of the list. |
-| activatable | <code>Boolean</code> | Indicates whether the list is activatable. |
-
-<a name="MdListComponent+onListItemClick"></a>
-
-### mdListComponent.onListItemClick(event)
-Handles the click event on a list item.
-
-**Kind**: instance method of [<code>MdListComponent</code>](#MdListComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Event</code> | The click event. |
+| items | <code>Array</code> | An array of items to be displayed in the list. |
+| ui | <code>String</code> | The UI style of the list ('one-line', 'two-line', 'three-line'). |
+| type | <code>String</code> | The type of the list ('multi-select', etc.). |
+| activatable | <code>Boolean</code> | Indicates whether list items are activatable. |
 
 <a name="MdNavigation"></a>
 
