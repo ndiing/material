@@ -32,6 +32,9 @@
 <dt><a href="#MdIconComponent">MdIconComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Represents an icon component.</p>
 </dd>
+<dt><a href="#MdImageComponent">MdImageComponent</a></dt>
+<dd><p>Custom element representing an image with additional features.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -730,6 +733,100 @@ A static property that defines the properties for MdIconComponent.
 | Name | Type | Description |
 | --- | --- | --- |
 | properties | <code>Object</code> | The properties object. |
+
+<a name="MdImageComponent"></a>
+
+## MdImageComponent
+Custom element representing an image with additional features.
+
+**Kind**: global class  
+**Emits**: <code>MdImageComponent#event:onImageNativeError</code>, <code>MdImageComponent#event:onImageNativeLoad</code>  
+
+* [MdImageComponent](#MdImageComponent)
+    * _instance_
+        * [.createRenderRoot()](#MdImageComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.render()](#MdImageComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdImageComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdImageComponent+disconnectedCallback)
+        * [.updated(_changedProperties)](#MdImageComponent+updated)
+        * [.onImageNativeError(event)](#MdImageComponent+onImageNativeError)
+        * [.onImageNativeLoad(event)](#MdImageComponent+onImageNativeLoad)
+    * _static_
+        * [.properties](#MdImageComponent.properties)
+
+<a name="MdImageComponent+createRenderRoot"></a>
+
+### mdImageComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default rendering behavior to create a render root.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+render"></a>
+
+### mdImageComponent.render() ⇒ <code>TemplateResult</code>
+Renders the image element based on the provided properties.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+connectedCallback"></a>
+
+### mdImageComponent.connectedCallback()
+Called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+disconnectedCallback"></a>
+
+### mdImageComponent.disconnectedCallback()
+Called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+updated"></a>
+
+### mdImageComponent.updated(_changedProperties)
+Called after the element's DOM has been updated.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of properties that have changed. |
+
+<a name="MdImageComponent+onImageNativeError"></a>
+
+### mdImageComponent.onImageNativeError(event)
+Handles the 'error' event of the native image element.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+**Emits**: <code>MdImageComponent#event:onImageNativeError</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The error event. |
+
+<a name="MdImageComponent+onImageNativeLoad"></a>
+
+### mdImageComponent.onImageNativeLoad(event)
+Handles the 'load' event of the native image element.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+**Emits**: <code>MdImageComponent#event:onImageNativeLoad</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The load event. |
+
+<a name="MdImageComponent.properties"></a>
+
+### MdImageComponent.properties
+Defines the properties of the MdImageComponent.
+
+**Kind**: static property of [<code>MdImageComponent</code>](#MdImageComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| src | <code>String</code> | The source URL of the image. |
+| alt | <code>String</code> | The alternative text for the image. |
+| ratio | <code>String</code> | The aspect ratio of the image (default is '1/1'). |
+| shape | <code>Boolean</code> | Indicates whether the image should have a circular shape. |
 
 <a name="md-emoji"></a>
 
