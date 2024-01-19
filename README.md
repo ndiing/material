@@ -4,6 +4,15 @@
 <dt><a href="#module_{MdButtonComponent}">{MdButtonComponent}</a></dt>
 <dd><p>Exports MdButtonComponent for external use.</p>
 </dd>
+<dt><a href="#module_{MdEmojiComponent}">{MdEmojiComponent}</a></dt>
+<dd><p>Exports MdEmojiComponent for external use.</p>
+</dd>
+<dt><a href="#module_{MdIconComponent}">{MdIconComponent}</a></dt>
+<dd><p>Exports MdIconComponent for external use.</p>
+</dd>
+<dt><a href="#module_{MdImageComponent}">{MdImageComponent}</a></dt>
+<dd><p>Exports MdImageComponent for external use.</p>
+</dd>
 </dl>
 
 ## Classes
@@ -70,6 +79,21 @@
 
 ## {MdButtonComponent}
 Exports MdButtonComponent for external use.
+
+<a name="module_{MdEmojiComponent}"></a>
+
+## {MdEmojiComponent}
+Exports MdEmojiComponent for external use.
+
+<a name="module_{MdIconComponent}"></a>
+
+## {MdIconComponent}
+Exports MdIconComponent for external use.
+
+<a name="module_{MdImageComponent}"></a>
+
+## {MdImageComponent}
+Exports MdImageComponent for external use.
 
 <a name="MdBadgeComponent"></a>
 

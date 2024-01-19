@@ -74,5 +74,9 @@ class MdIconComponent extends LitElement {
  * Custom element definition for MdIconComponent.
  */
 customElements.define("md-icon", MdIconComponent);
-
+/**
+ * Exports MdIconComponent for external use.
+ *
+ * @exports {MdIconComponent}
+ */
 export { MdIconComponent };

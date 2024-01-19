@@ -129,5 +129,9 @@ class MdImageComponent extends LitElement {
 }
 
 customElements.define("md-image", MdImageComponent);
-
+/**
+ * Exports MdImageComponent for external use.
+ *
+ * @exports {MdImageComponent}
+ */
 export { MdImageComponent };

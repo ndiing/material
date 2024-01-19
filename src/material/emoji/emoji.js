@@ -85,5 +85,9 @@ class MdEmojiComponent extends LitElement {
  * @typedef {MdEmojiComponent} md-emoji
  */
 customElements.define("md-emoji", MdEmojiComponent);
-
+/**
+ * Exports MdEmojiComponent for external use.
+ *
+ * @exports {MdEmojiComponent}
+ */
 export { MdEmojiComponent };
