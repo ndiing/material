@@ -8,13 +8,6 @@ import { MdStateController } from "../state/state";
  *
  * @element md-button
  *
- * @fires {CustomEvent} md-button-click - Dispatched when the button is clicked.
- *
- * @cssprop {String} --md-button-color - The color of the button.
- * @cssprop {String} --md-button-background-color - The background color of the button.
- *
- * @extends LitElement
- *
  * @example
  * // Example usage of md-button component:
  * <md-button ui="elevated" icon="image" label="Label"></md-button>

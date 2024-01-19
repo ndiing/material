@@ -1,16 +1,12 @@
 <a name="MdButtonComponent"></a>
 
-## MdButtonComponent ⇐ <code>LitElement</code>
+## MdButtonComponent
 Custom button component for Material Design.This component provides a Material Design-styled button with various UI styles.
 
 **Kind**: global class  
-**Extends**: <code>LitElement</code>  
-**Emits**: <code>event:{CustomEvent} md-button-click - Dispatched when the button is clicked.</code>  
 **Element**: md-button  
-**Cssprop**: <code>String</code> --md-button-color - The color of the button.  
-**Cssprop**: <code>String</code> --md-button-background-color - The background color of the button.  
 
-* [MdButtonComponent](#MdButtonComponent) ⇐ <code>LitElement</code>
+* [MdButtonComponent](#MdButtonComponent)
     * _instance_
         * [.buttonNative](#MdButtonComponent+buttonNative) ⇒ <code>HTMLButtonElement</code>
     * _static_
