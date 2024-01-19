@@ -35,14 +35,6 @@
     animation: none var(--md-sys-motion-duration-short4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
 
-.md-state--fadeout {
-    >.md-state__layer {
-        animation:
-            none var(--md-sys-motion-duration-short4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate)),
-            none var(--md-sys-motion-duration-long4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    }
-}
-
 .md-state--inverted {
     >.md-state__layer {
         background: var(--md-sys-color-surface);
@@ -63,11 +55,23 @@
         opacity: 10%;
     }
 }
+
 .md-state--pressed {
     >.md-state__layer {
         opacity: 10%;
     }
 }
+
+
+.md-state--fadeout {
+    >.md-state__layer {
+        opacity: 0;
+        animation:
+            none var(--md-sys-motion-duration-short4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate)),
+            none var(--md-sys-motion-duration-long4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    }
+}
+
 .md-state--hover {
     >.md-state__layer {
         opacity: 8%;
