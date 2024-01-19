@@ -1,46 +1,82 @@
-import { LitElement, html, nothing } from "lit";
-import { MdStateController } from "../state/state";
+import { LitElement, html, nothing } from 'lit';
+import { MdStateController } from '../state/state';
 
+/**
+ * Custom element for displaying a badge.
+ *
+ * @extends LitElement
+ */
 class MdBadgeComponent extends LitElement {
-    static get properties() {
-        return {
-            label: { type: Number },
-            limit: { type: Number },
-        };
-    }
+  /**
+   * Static properties for the component.
+   *
+   * @property {number} label - The label to be displayed on the badge.
+   * @property {number} limit - The limit for the badge label.
+   */
+  static get properties() {
+    return {
+      label: { type: Number },
+      limit: { type: Number },
+    };
+  }
 
-    constructor() {
-        super();
-        // this.label = ;
-        this.limit=999
-    }
+  constructor() {
+    super();
+    // this.label = ;
+    this.limit = 999;
+  }
 
-    createRenderRoot() {
-        return this;
-    }
+  /**
+   * Overrides the default render root to be the element itself.
+   *
+   * @returns {this} The current instance for chaining.
+   */
+  createRenderRoot() {
+    return this;
+  }
 
-    render() {
-        // prettier-ignore
-        return html`${this.label?html`<div class="md-badge__label">${this.label>this.limit?this.limit+'+':this.label}</div>`:nothing}`
-    }
+  /**
+   * Renders the badge based on the label and limit.
+   *
+   * @returns {TemplateResult} The HTML template result.
+   */
+  render() {
+    // prettier-ignore
+    return html`${this.label ? html`<div class="md-badge__label">${this.label > this.limit ? this.limit + '+' : this.label}</div>` : nothing}`;
+  }
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-badge");
-    }
+  /**
+   * Adds the "md-badge" class when connected to the DOM.
+   */
+  connectedCallback() {
+    super.connectedCallback();
+    this.classList.add('md-badge');
+  }
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-badge");
-    }
+  /**
+   * Removes the "md-badge" class when disconnected from the DOM.
+   */
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.classList.remove('md-badge');
+  }
 
-    firstUpdated() {
-    }
+  /**
+   * Lifecycle method called after the element's first update.
+   */
+  firstUpdated() {}
 
-    updated(_changedProperties) {
-    }
+  /**
+   * Lifecycle method called when the element is updated.
+   *
+   * @param {Map} _changedProperties - A map of changed properties.
+   */
+  updated(_changedProperties) {}
 }
 
-customElements.define("md-badge", MdBadgeComponent);
+/**
+ * Define the custom element "md-badge".
+ */
+customElements.define('md-badge', MdBadgeComponent);
 
 export { MdBadgeComponent };
