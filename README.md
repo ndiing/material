@@ -1,3 +1,11 @@
+## Modules
+
+<dl>
+<dt><a href="#module_{MdButtonComponent}">{MdButtonComponent}</a></dt>
+<dd><p>Exports MdButtonComponent for external use.</p>
+</dd>
+</dl>
+
 ## Classes
 
 <dl>
@@ -7,7 +15,15 @@
 <dt><a href="#MdBaseComponent">MdBaseComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Base class for Material Design components.</p>
 </dd>
+<dt><a href="#MdButtonComponent">MdButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element representing a material design button.</p>
+</dd>
 </dl>
+
+<a name="module_{MdButtonComponent}"></a>
+
+## {MdButtonComponent}
+Exports MdButtonComponent for external use.
 
 <a name="MdBadgeComponent"></a>
 
@@ -172,4 +188,101 @@ Static getter for defining properties on the class.
 | --- | --- | --- |
 | properties | <code>Object</code> | The properties object. |
 | properties.label | <code>String</code> | The label for the component. |
+
+<a name="MdButtonComponent"></a>
+
+## MdButtonComponent ⇐ <code>LitElement</code>
+Custom element representing a material design button.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdButtonComponent](#MdButtonComponent) ⇐ <code>LitElement</code>
+    * [new MdButtonComponent()](#new_MdButtonComponent_new)
+    * _instance_
+        * [.buttonNative](#MdButtonComponent+buttonNative)
+        * [.createRenderRoot()](#MdButtonComponent+createRenderRoot) ⇒ [<code>MdButtonComponent</code>](#MdButtonComponent)
+        * [.render()](#MdButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdButtonComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdButtonComponent+updated)
+    * _static_
+        * [.properties](#MdButtonComponent.properties)
+
+<a name="new_MdButtonComponent_new"></a>
+
+### new MdButtonComponent()
+Constructor for MdButtonComponent.
+
+<a name="MdButtonComponent+buttonNative"></a>
+
+### mdButtonComponent.buttonNative
+Gets the native button element inside the component.
+
+**Kind**: instance property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| buttonNative | <code>HTMLElement</code> | The native button element. |
+
+<a name="MdButtonComponent+createRenderRoot"></a>
+
+### mdButtonComponent.createRenderRoot() ⇒ [<code>MdButtonComponent</code>](#MdButtonComponent)
+Overrides the default render root to be the element itself.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Returns**: [<code>MdButtonComponent</code>](#MdButtonComponent) - The instance of MdButtonComponent.  
+<a name="MdButtonComponent+render"></a>
+
+### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the HTML template for the MdButtonComponent.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template for the component.  
+<a name="MdButtonComponent+connectedCallback"></a>
+
+### mdButtonComponent.connectedCallback()
+Adds "md-button" class to the element when connected to the DOM.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+disconnectedCallback"></a>
+
+### mdButtonComponent.disconnectedCallback()
+Removes "md-button" class when disconnected from the DOM.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+firstUpdated"></a>
+
+### mdButtonComponent.firstUpdated()
+Initializes the MdStateController when the component is first updated.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+updated"></a>
+
+### mdButtonComponent.updated(_changedProperties)
+Handles updates to the "ui" property and updates the component's class accordingly.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MdButtonComponent.properties"></a>
+
+### MdButtonComponent.properties
+Properties for the MdButtonComponent.
+
+**Kind**: static property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | The type of the button (e.g., "button", "submit", "reset"). |
+| label | <code>String</code> | The label text for the button. |
+| icon | <code>String</code> | The icon content for the button. |
+| ui | <code>String</code> | The UI style for the button ("elevated", "filled", "filled-tonal", "outlined"). |
+| activated | <code>Boolean</code> | Reflects whether the button is activated or not. |
 
