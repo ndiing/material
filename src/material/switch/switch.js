@@ -1,26 +1,50 @@
-import { LitElement, html, nothing } from "lit";
-import { ifDefined } from "lit/directives/if-defined.js";
-import { MdStateController } from "../state/state";
+import { LitElement, html, nothing } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { MdStateController } from '../state/state';
 
+/**
+ * A custom switch component built using LitElement.
+ *
+ * @extends LitElement
+ */
 class MdSwitchComponent extends LitElement {
-    static get properties() {
-        return {
-            name:{type:String},
-            checked:{type:Boolean},
-        };
-    }
+  /**
+   * Static getter for defining properties of the element.
+   *
+   * @property {String} name - The name attribute of the switch.
+   * @property {Boolean} checked - The checked state of the switch.
+   */
+  static get properties() {
+    return {
+      name: { type: String },
+      checked: { type: Boolean },
+    };
+  }
 
-    constructor() {
-        super();
-    }
+  /**
+   * Constructor for MdSwitchComponent.
+   */
+  constructor() {
+    super();
+  }
 
-    createRenderRoot() {
-        return this;
-    }
+  /**
+   * Overrides LitElement's createRenderRoot method.
+   *
+   * @returns {this} The instance of the element.
+   */
+  createRenderRoot() {
+    return this;
+  }
 
-    render() {
-        // prettier-ignore
-        return html`
+  /**
+   * Renders the switch component using LitElement's html template.
+   *
+   * @returns {TemplateResult} The rendered template.
+   */
+  render() {
+    // prettier-ignore
+    return html`
             <input 
                 type="checkbox" 
                 class="md-switch__native"
@@ -32,46 +56,96 @@ class MdSwitchComponent extends LitElement {
                 <div class="md-switch__thumb"></div>
             </div>
         `
-    }
+  }
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-switch");
-    }
+  /**
+   * Lifecycle callback when the element is connected to the DOM.
+   */
+  connectedCallback() {
+    super.connectedCallback();
+    this.classList.add('md-switch');
+  }
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-switch");
-    }
+  /**
+   * Lifecycle callback when the element is disconnected from the DOM.
+   */
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.classList.remove('md-switch');
+  }
 
-    get switchNative(){return this.querySelector('.md-switch__native')}
-    get switchTrack(){return this.querySelector('.md-switch__track')}
-    get switchThumb(){return this.querySelector('.md-switch__thumb')}
+  /**
+   * Returns the native switch element.
+   *
+   * @returns {HTMLElement} The native switch element.
+   */
+  get switchNative() {
+    return this.querySelector('.md-switch__native');
+  }
 
-    firstUpdated() {
-        this.state=new MdStateController(this,{
-            container:this.switchThumb,
-            button:this.switchNative,
-            containment: false,
-            fadeout: true,
-            centered: true,
-        })
-    }
+  /**
+   * Returns the switch track element.
+   *
+   * @returns {HTMLElement} The switch track element.
+   */
+  get switchTrack() {
+    return this.querySelector('.md-switch__track');
+  }
 
-    updated(_changedProperties) {
-    }
+  /**
+   * Returns the switch thumb element.
+   *
+   * @returns {HTMLElement} The switch thumb element.
+   */
+  get switchThumb() {
+    return this.querySelector('.md-switch__thumb');
+  }
 
-    
-    onSwitchNativeInput(event) {
-        this.checked=event.currentTarget.checked
-        this.dispatchEvent(new CustomEvent('onSwitchNativeInput',{
-            bubbles:true,
-            cancelable:true,
-            detail:{event}
-        }))
-    }
+  /**
+   * Lifecycle callback when the element is first updated.
+   */
+  firstUpdated() {
+    this.state = new MdStateController(this, {
+      container: this.switchThumb,
+      button: this.switchNative,
+      containment: false,
+      fadeout: true,
+      centered: true,
+    });
+  }
+
+  /**
+   * Lifecycle callback when the element is updated.
+   *
+   * @param {Map} _changedProperties - A map of changed properties.
+   */
+  updated(_changedProperties) {}
+
+  /**
+   * Event handler for the native switch input event.
+   *
+   * @param {Event} event - The input event.
+   */
+  onSwitchNativeInput(event) {
+    this.checked = event.currentTarget.checked;
+    /**
+     * Fired when the native switch input event occurs.
+     *
+     * @event MdSwitchComponent#onSwitchNativeInput
+     * @type {CustomEvent}
+     * @property {Event} detail.event - The input event detail.
+     */
+    this.dispatchEvent(
+      new CustomEvent('onSwitchNativeInput', {
+        bubbles: true,
+        cancelable: true,
+        detail: { event },
+      })
+    );
+  }
 }
 
-customElements.define("md-switch", MdSwitchComponent);
+// Define the custom element.
+customElements.define('md-switch', MdSwitchComponent);
 
 export { MdSwitchComponent };
