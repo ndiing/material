@@ -53,6 +53,9 @@
 <dt><a href="#MdStateController">MdStateController</a></dt>
 <dd><p>Controller class for managing the state of an element.</p>
 </dd>
+<dt><a href="#MdSwitchComponent">MdSwitchComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>A custom switch component built using LitElement.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -1303,6 +1306,136 @@ Event triggered when the state gains focus.
 Event triggered when the state loses focus.
 
 **Kind**: event emitted by [<code>MdStateController</code>](#MdStateController)  
+<a name="MdSwitchComponent"></a>
+
+## MdSwitchComponent ⇐ <code>LitElement</code>
+A custom switch component built using LitElement.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdSwitchComponent](#MdSwitchComponent) ⇐ <code>LitElement</code>
+    * [new MdSwitchComponent()](#new_MdSwitchComponent_new)
+    * _instance_
+        * [.switchNative](#MdSwitchComponent+switchNative) ⇒ <code>HTMLElement</code>
+        * [.switchTrack](#MdSwitchComponent+switchTrack) ⇒ <code>HTMLElement</code>
+        * [.switchThumb](#MdSwitchComponent+switchThumb) ⇒ <code>HTMLElement</code>
+        * [.createRenderRoot()](#MdSwitchComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.render()](#MdSwitchComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdSwitchComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdSwitchComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdSwitchComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdSwitchComponent+updated)
+        * [.onSwitchNativeInput(event)](#MdSwitchComponent+onSwitchNativeInput)
+        * ["onSwitchNativeInput"](#MdSwitchComponent+event_onSwitchNativeInput)
+    * _static_
+        * [.properties](#MdSwitchComponent.properties)
+
+<a name="new_MdSwitchComponent_new"></a>
+
+### new MdSwitchComponent()
+Constructor for MdSwitchComponent.
+
+<a name="MdSwitchComponent+switchNative"></a>
+
+### mdSwitchComponent.switchNative ⇒ <code>HTMLElement</code>
+Returns the native switch element.
+
+**Kind**: instance property of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Returns**: <code>HTMLElement</code> - The native switch element.  
+<a name="MdSwitchComponent+switchTrack"></a>
+
+### mdSwitchComponent.switchTrack ⇒ <code>HTMLElement</code>
+Returns the switch track element.
+
+**Kind**: instance property of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Returns**: <code>HTMLElement</code> - The switch track element.  
+<a name="MdSwitchComponent+switchThumb"></a>
+
+### mdSwitchComponent.switchThumb ⇒ <code>HTMLElement</code>
+Returns the switch thumb element.
+
+**Kind**: instance property of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Returns**: <code>HTMLElement</code> - The switch thumb element.  
+<a name="MdSwitchComponent+createRenderRoot"></a>
+
+### mdSwitchComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides LitElement's createRenderRoot method.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Returns**: <code>this</code> - The instance of the element.  
+<a name="MdSwitchComponent+render"></a>
+
+### mdSwitchComponent.render() ⇒ <code>TemplateResult</code>
+Renders the switch component using LitElement's html template.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Returns**: <code>TemplateResult</code> - The rendered template.  
+<a name="MdSwitchComponent+connectedCallback"></a>
+
+### mdSwitchComponent.connectedCallback()
+Lifecycle callback when the element is connected to the DOM.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+<a name="MdSwitchComponent+disconnectedCallback"></a>
+
+### mdSwitchComponent.disconnectedCallback()
+Lifecycle callback when the element is disconnected from the DOM.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+<a name="MdSwitchComponent+firstUpdated"></a>
+
+### mdSwitchComponent.firstUpdated()
+Lifecycle callback when the element is first updated.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+<a name="MdSwitchComponent+updated"></a>
+
+### mdSwitchComponent.updated(_changedProperties)
+Lifecycle callback when the element is updated.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | A map of changed properties. |
+
+<a name="MdSwitchComponent+onSwitchNativeInput"></a>
+
+### mdSwitchComponent.onSwitchNativeInput(event)
+Event handler for the native switch input event.
+
+**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MdSwitchComponent+event_onSwitchNativeInput"></a>
+
+### "onSwitchNativeInput"
+Fired when the native switch input event occurs.
+
+**Kind**: event emitted by [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail.event | <code>Event</code> | The input event detail. |
+
+<a name="MdSwitchComponent.properties"></a>
+
+### MdSwitchComponent.properties
+Static getter for defining properties of the element.
+
+**Kind**: static property of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name attribute of the switch. |
+| checked | <code>Boolean</code> | The checked state of the switch. |
+
 <a name="md-emoji"></a>
 
 ## md-emoji : [<code>MdEmojiComponent</code>](#MdEmojiComponent)
