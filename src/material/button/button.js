@@ -1,22 +1,38 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+
 /**
- * Custom element representing a material design button.
+ * Custom button component for Material Design.
+ *
+ * This component provides a Material Design-styled button with various UI styles.
  *
  * @element md-button
  *
- * @cssprop {String} --md-button-color - Color of the button.
- * @cssprop {String} --md-button-background - Background color of the button.
- *
  * @fires {CustomEvent} md-button-click - Dispatched when the button is clicked.
  *
- * @prop {String} type - The type of the button (e.g., "button", "submit").
- * @prop {String} label - The label text of the button.
- * @prop {String} icon - The icon content of the button.
- * @prop {String} ui - The UI style of the button ("elevated", "filled", "filled-tonal", "outlined").
- * @prop {Boolean} activated - Indicates whether the button is activated.
+ * @cssprop {String} --md-button-color - The color of the button.
+ * @cssprop {String} --md-button-background-color - The background color of the button.
+ *
+ * @extends LitElement
+ *
+ * @example
+ * // Example usage of md-button component:
+ * <md-button ui="elevated" icon="image" label="Label"></md-button>
+ * <md-button ui="filled" icon="image" label="Label"></md-button>
+ * <md-button ui="filled-tonal" icon="image" label="Label"></md-button>
+ * <md-button ui="outlined" icon="image" label="Label"></md-button>
+ * <md-button icon="image" label="Label"></md-button>
  */
 class MdButtonComponent extends LitElement {
+    /**
+     * Properties of the component.
+     *
+     * @property {String} type - The type of the button (e.g., "button", "submit", "reset").
+     * @property {String} label - The label text for the button.
+     * @property {String} icon - The icon HTML content for the button.
+     * @property {String} ui - The UI style for the button ("elevated", "filled", "filled-tonal", "outlined").
+     * @property {Boolean} activated - Indicates whether the button is activated or not.
+     */
     static get properties() {
         return {
             type: { type: String },
@@ -25,6 +41,15 @@ class MdButtonComponent extends LitElement {
             ui: { type: String },
             activated: { type: Boolean, reflect: true },
         };
+    }
+
+    /**
+     * Returns the native button element inside the component.
+     *
+     * @returns {HTMLButtonElement} The native button element.
+     */
+    get buttonNative() {
+        return this.querySelector(".md-button__native");
     }
 
     constructor() {
@@ -53,10 +78,6 @@ class MdButtonComponent extends LitElement {
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-button");
-    }
-
-    get buttonNative() {
-        return this.querySelector(".md-button__native");
     }
 
     firstUpdated() {
