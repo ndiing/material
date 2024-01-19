@@ -1,3 +1,11 @@
+## Modules
+
+<dl>
+<dt><a href="#module_{MdButtonComponent}">{MdButtonComponent}</a></dt>
+<dd><p>Exports MdButtonComponent for external use.</p>
+</dd>
+</dl>
+
 ## Classes
 
 <dl>
@@ -7,7 +15,43 @@
 <dt><a href="#MdBaseComponent">MdBaseComponent</a> ⇐ <code>LitElement</code></dt>
 <dd><p>Base class for Material Design components.</p>
 </dd>
+<dt><a href="#MdButtonComponent">MdButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element representing a material design button.</p>
+</dd>
+<dt><a href="#MdCheckboxComponent">MdCheckboxComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Checkbox component for Material Design.</p>
+</dd>
+<dt><a href="#MdEmojiComponent">MdEmojiComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Represents the MdEmojiComponent custom element.</p>
+</dd>
+<dt><a href="#MdFabComponent">MdFabComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Custom element for a Material Design Floating Action Button (FAB).</p>
+</dd>
+<dt><a href="#MdIconButtonComponent">MdIconButtonComponent</a> ⇐ <code>LitElement</code></dt>
+<dd></dd>
+<dt><a href="#MdIconComponent">MdIconComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Represents an icon component.</p>
+</dd>
+<dt><a href="#MdImageComponent">MdImageComponent</a></dt>
+<dd><p>Custom element representing an image with additional features.</p>
+</dd>
+<dt><a href="#MdListItemComponent">MdListItemComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Represents a Material Design list item.</p>
+</dd>
 </dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#md-emoji">md-emoji</a> : <code><a href="#MdEmojiComponent">MdEmojiComponent</a></code></dt>
+<dd><p>A custom element for displaying emoji.</p>
+</dd>
+</dl>
+
+<a name="module_{MdButtonComponent}"></a>
+
+## {MdButtonComponent}
+Exports MdButtonComponent for external use.
 
 <a name="MdBadgeComponent"></a>
 
@@ -173,3 +217,682 @@ Static getter for defining properties on the class.
 | properties | <code>Object</code> | The properties object. |
 | properties.label | <code>String</code> | The label for the component. |
 
+<a name="MdButtonComponent"></a>
+
+## MdButtonComponent ⇐ <code>LitElement</code>
+Custom element representing a material design button.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdButtonComponent](#MdButtonComponent) ⇐ <code>LitElement</code>
+    * [new MdButtonComponent()](#new_MdButtonComponent_new)
+    * _instance_
+        * [.buttonNative](#MdButtonComponent+buttonNative)
+        * [.createRenderRoot()](#MdButtonComponent+createRenderRoot) ⇒ [<code>MdButtonComponent</code>](#MdButtonComponent)
+        * [.render()](#MdButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdButtonComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdButtonComponent+updated)
+    * _static_
+        * [.properties](#MdButtonComponent.properties)
+
+<a name="new_MdButtonComponent_new"></a>
+
+### new MdButtonComponent()
+Constructor for MdButtonComponent.
+
+<a name="MdButtonComponent+buttonNative"></a>
+
+### mdButtonComponent.buttonNative
+Gets the native button element inside the component.
+
+**Kind**: instance property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| buttonNative | <code>HTMLElement</code> | The native button element. |
+
+<a name="MdButtonComponent+createRenderRoot"></a>
+
+### mdButtonComponent.createRenderRoot() ⇒ [<code>MdButtonComponent</code>](#MdButtonComponent)
+Overrides the default render root to be the element itself.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Returns**: [<code>MdButtonComponent</code>](#MdButtonComponent) - The instance of MdButtonComponent.  
+<a name="MdButtonComponent+render"></a>
+
+### mdButtonComponent.render() ⇒ <code>TemplateResult</code>
+Renders the HTML template for the MdButtonComponent.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template for the component.  
+<a name="MdButtonComponent+connectedCallback"></a>
+
+### mdButtonComponent.connectedCallback()
+Adds "md-button" class to the element when connected to the DOM.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+disconnectedCallback"></a>
+
+### mdButtonComponent.disconnectedCallback()
+Removes "md-button" class when disconnected from the DOM.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+firstUpdated"></a>
+
+### mdButtonComponent.firstUpdated()
+Initializes the MdStateController when the component is first updated.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+<a name="MdButtonComponent+updated"></a>
+
+### mdButtonComponent.updated(_changedProperties)
+Handles updates to the "ui" property and updates the component's class accordingly.
+
+**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The properties that have changed. |
+
+<a name="MdButtonComponent.properties"></a>
+
+### MdButtonComponent.properties
+Properties for the MdButtonComponent.
+
+**Kind**: static property of [<code>MdButtonComponent</code>](#MdButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | The type of the button (e.g., "button", "submit", "reset"). |
+| label | <code>String</code> | The label text for the button. |
+| icon | <code>String</code> | The icon content for the button. |
+| ui | <code>String</code> | The UI style for the button ("elevated", "filled", "filled-tonal", "outlined"). |
+| activated | <code>Boolean</code> | Reflects whether the button is activated or not. |
+
+<a name="MdCheckboxComponent"></a>
+
+## MdCheckboxComponent ⇐ <code>LitElement</code>
+Checkbox component for Material Design.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdCheckboxComponent](#MdCheckboxComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.checkboxNative](#MdCheckboxComponent+checkboxNative)
+        * [.checkboxTrack](#MdCheckboxComponent+checkboxTrack)
+        * [.checkboxThumb](#MdCheckboxComponent+checkboxThumb)
+        * [.render()](#MdCheckboxComponent+render) ⇒ <code>TemplateResult</code>
+        * [.firstUpdated()](#MdCheckboxComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdCheckboxComponent+updated)
+        * [.onCheckboxNativeInput(event)](#MdCheckboxComponent+onCheckboxNativeInput)
+        * ["onCheckboxNativeInput"](#MdCheckboxComponent+event_onCheckboxNativeInput)
+    * _static_
+        * [.properties](#MdCheckboxComponent.properties)
+
+<a name="MdCheckboxComponent+checkboxNative"></a>
+
+### mdCheckboxComponent.checkboxNative
+Returns the checkbox native element.
+
+**Kind**: instance property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| checkboxNative | <code>HTMLElement</code> | The checkbox native element. |
+
+<a name="MdCheckboxComponent+checkboxTrack"></a>
+
+### mdCheckboxComponent.checkboxTrack
+Returns the checkbox track element.
+
+**Kind**: instance property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| checkboxTrack | <code>HTMLElement</code> | The checkbox track element. |
+
+<a name="MdCheckboxComponent+checkboxThumb"></a>
+
+### mdCheckboxComponent.checkboxThumb
+Returns the checkbox thumb element.
+
+**Kind**: instance property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| checkboxThumb | <code>HTMLElement</code> | The checkbox thumb element. |
+
+<a name="MdCheckboxComponent+render"></a>
+
+### mdCheckboxComponent.render() ⇒ <code>TemplateResult</code>
+Renders the checkbox component.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template result.  
+<a name="MdCheckboxComponent+firstUpdated"></a>
+
+### mdCheckboxComponent.firstUpdated()
+Called after the element's first update.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+<a name="MdCheckboxComponent+updated"></a>
+
+### mdCheckboxComponent.updated(_changedProperties)
+Called when the element has been updated.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdCheckboxComponent+onCheckboxNativeInput"></a>
+
+### mdCheckboxComponent.onCheckboxNativeInput(event)
+Handles the input event on the checkbox native element.
+
+**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The input event. |
+
+<a name="MdCheckboxComponent+event_onCheckboxNativeInput"></a>
+
+### "onCheckboxNativeInput"
+Dispatched when the checkbox native input event occurs.
+
+**Kind**: event emitted by [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail.event | <code>Event</code> | The original input event. |
+
+<a name="MdCheckboxComponent.properties"></a>
+
+### MdCheckboxComponent.properties
+Static property definitions for the component.
+
+**Kind**: static property of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | The name of the checkbox. |
+| indeterminate | <code>Boolean</code> | Indicates whether the checkbox is in an indeterminate state. |
+| checked | <code>Boolean</code> | Indicates whether the checkbox is checked. |
+
+<a name="MdEmojiComponent"></a>
+
+## MdEmojiComponent ⇐ <code>LitElement</code>
+Represents the MdEmojiComponent custom element.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdEmojiComponent](#MdEmojiComponent) ⇐ <code>LitElement</code>
+    * [new MdEmojiComponent()](#new_MdEmojiComponent_new)
+    * _instance_
+        * [.createRenderRoot()](#MdEmojiComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.connectedCallback()](#MdEmojiComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdEmojiComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdEmojiComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdEmojiComponent+updated)
+        * [.dispatchCustomEvent()](#MdEmojiComponent+dispatchCustomEvent)
+    * _static_
+        * [.properties](#MdEmojiComponent.properties) ⇒ <code>Object</code>
+
+<a name="new_MdEmojiComponent_new"></a>
+
+### new MdEmojiComponent()
+Constructs an instance of MdEmojiComponent.
+
+<a name="MdEmojiComponent+createRenderRoot"></a>
+
+### mdEmojiComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default render root to be the component itself.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+**Returns**: <code>this</code> - The rendered root.  
+<a name="MdEmojiComponent+connectedCallback"></a>
+
+### mdEmojiComponent.connectedCallback()
+Adds the "md-emoji" class when the component is connected.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+<a name="MdEmojiComponent+disconnectedCallback"></a>
+
+### mdEmojiComponent.disconnectedCallback()
+Removes the "md-emoji" class when the component is disconnected.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+<a name="MdEmojiComponent+firstUpdated"></a>
+
+### mdEmojiComponent.firstUpdated()
+Lifecycle callback invoked once when the element is first updated.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+<a name="MdEmojiComponent+updated"></a>
+
+### mdEmojiComponent.updated(_changedProperties)
+Lifecycle callback invoked whenever the element is updated.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdEmojiComponent+dispatchCustomEvent"></a>
+
+### mdEmojiComponent.dispatchCustomEvent()
+Dispatches a custom event.
+
+**Kind**: instance method of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+**Emits**: <code>MdEmojiComponent#event:customEvent</code>  
+<a name="MdEmojiComponent.properties"></a>
+
+### MdEmojiComponent.properties ⇒ <code>Object</code>
+The properties for MdEmojiComponent.
+
+**Kind**: static property of [<code>MdEmojiComponent</code>](#MdEmojiComponent)  
+**Returns**: <code>Object</code> - The properties object.  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| properties | <code>Object</code> | The properties object. |
+| properties.exampleProperty | <code>string</code> | An example property. |
+
+<a name="MdFabComponent"></a>
+
+## MdFabComponent ⇐ <code>LitElement</code>
+Custom element for a Material Design Floating Action Button (FAB).
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdFabComponent](#MdFabComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.fabNative](#MdFabComponent+fabNative) ⇒ <code>HTMLButtonElement</code>
+        * [.firstUpdated()](#MdFabComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdFabComponent+updated)
+        * ["custom-event"](#MdFabComponent+event_custom-event)
+    * _static_
+        * [.properties](#MdFabComponent.properties)
+
+<a name="MdFabComponent+fabNative"></a>
+
+### mdFabComponent.fabNative ⇒ <code>HTMLButtonElement</code>
+Returns the native button element of the FAB.
+
+**Kind**: instance property of [<code>MdFabComponent</code>](#MdFabComponent)  
+**Returns**: <code>HTMLButtonElement</code> - The native button element.  
+**Read only**: true  
+<a name="MdFabComponent+firstUpdated"></a>
+
+### mdFabComponent.firstUpdated()
+Called after the element's first update. Initializes the state controller.
+
+**Kind**: instance method of [<code>MdFabComponent</code>](#MdFabComponent)  
+<a name="MdFabComponent+updated"></a>
+
+### mdFabComponent.updated(_changedProperties)
+Called when the element is updated. Handles size and extended property changes.
+
+**Kind**: instance method of [<code>MdFabComponent</code>](#MdFabComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of changed properties. |
+
+<a name="MdFabComponent+event_custom-event"></a>
+
+### "custom-event"
+Dispatched when a specific event occurs.
+
+**Kind**: event emitted by [<code>MdFabComponent</code>](#MdFabComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| detail | <code>String</code> | Event details. |
+
+<a name="MdFabComponent.properties"></a>
+
+### MdFabComponent.properties
+**Kind**: static property of [<code>MdFabComponent</code>](#MdFabComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | The type of the button. |
+| label | <code>String</code> | The label text for the FAB. |
+| icon | <code>String</code> | The icon for the FAB. |
+| size | <code>String</code> | The size of the FAB. Can be "small" or "large". |
+| extended | <code>Boolean</code> | Indicates whether the FAB is in extended mode. |
+
+<a name="MdIconButtonComponent"></a>
+
+## MdIconButtonComponent ⇐ <code>LitElement</code>
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdIconButtonComponent](#MdIconButtonComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.iconButtonNative](#MdIconButtonComponent+iconButtonNative) : <code>Element</code>
+        * [.createRenderRoot()](#MdIconButtonComponent+createRenderRoot) ⇒ <code>Element</code>
+        * [.render()](#MdIconButtonComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdIconButtonComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdIconButtonComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdIconButtonComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdIconButtonComponent+updated)
+        * [.onIconButtonClick(event)](#MdIconButtonComponent+onIconButtonClick)
+    * _static_
+        * [.properties](#MdIconButtonComponent.properties)
+
+<a name="MdIconButtonComponent+iconButtonNative"></a>
+
+### mdIconButtonComponent.iconButtonNative : <code>Element</code>
+Returns the native button element.
+
+**Kind**: instance property of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+createRenderRoot"></a>
+
+### mdIconButtonComponent.createRenderRoot() ⇒ <code>Element</code>
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+**Returns**: <code>Element</code> - - The element to use as the render root.  
+<a name="MdIconButtonComponent+render"></a>
+
+### mdIconButtonComponent.render() ⇒ <code>TemplateResult</code>
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+**Returns**: <code>TemplateResult</code> - - The rendered HTML template.  
+<a name="MdIconButtonComponent+connectedCallback"></a>
+
+### mdIconButtonComponent.connectedCallback()
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+disconnectedCallback"></a>
+
+### mdIconButtonComponent.disconnectedCallback()
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+firstUpdated"></a>
+
+### mdIconButtonComponent.firstUpdated()
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+<a name="MdIconButtonComponent+updated"></a>
+
+### mdIconButtonComponent.updated(_changedProperties)
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of changed properties. |
+
+<a name="MdIconButtonComponent+onIconButtonClick"></a>
+
+### mdIconButtonComponent.onIconButtonClick(event)
+Handles the click event on the icon button.
+
+**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The click event. |
+
+<a name="MdIconButtonComponent.properties"></a>
+
+### MdIconButtonComponent.properties
+**Kind**: static property of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | Type of the button. |
+| icon | <code>String</code> | Icon to be displayed inside the button. |
+| ui | <code>String</code> | UI style of the button. |
+| toggle | <code>Boolean</code> | Indicates whether the button is in toggle mode. |
+| activated | <code>Boolean</code> | Indicates whether the button is activated (only applicable in toggle mode). |
+
+<a name="MdIconComponent"></a>
+
+## MdIconComponent ⇐ <code>LitElement</code>
+Represents an icon component.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdIconComponent](#MdIconComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.createRenderRoot()](#MdIconComponent+createRenderRoot) ⇒ [<code>MdIconComponent</code>](#MdIconComponent)
+        * [.connectedCallback()](#MdIconComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdIconComponent+disconnectedCallback)
+        * [.firstUpdated()](#MdIconComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdIconComponent+updated)
+        * [.dispatchCustomEvent()](#MdIconComponent+dispatchCustomEvent)
+    * _static_
+        * [.properties](#MdIconComponent.properties)
+
+<a name="MdIconComponent+createRenderRoot"></a>
+
+### mdIconComponent.createRenderRoot() ⇒ [<code>MdIconComponent</code>](#MdIconComponent)
+Creates the render root for the element.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+**Returns**: [<code>MdIconComponent</code>](#MdIconComponent) - - The render root.  
+<a name="MdIconComponent+connectedCallback"></a>
+
+### mdIconComponent.connectedCallback()
+Connected callback. Adds "md-icon" class when connected.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+<a name="MdIconComponent+disconnectedCallback"></a>
+
+### mdIconComponent.disconnectedCallback()
+Disconnected callback. Removes "md-icon" class when disconnected.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+<a name="MdIconComponent+firstUpdated"></a>
+
+### mdIconComponent.firstUpdated()
+First updated callback.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+<a name="MdIconComponent+updated"></a>
+
+### mdIconComponent.updated(_changedProperties)
+Updated callback.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdIconComponent+dispatchCustomEvent"></a>
+
+### mdIconComponent.dispatchCustomEvent()
+Dispatches a custom event.
+
+**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
+**Emits**: <code>MdIconComponent#event:custom-event</code>  
+<a name="MdIconComponent.properties"></a>
+
+### MdIconComponent.properties
+A static property that defines the properties for MdIconComponent.
+
+**Kind**: static property of [<code>MdIconComponent</code>](#MdIconComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| properties | <code>Object</code> | The properties object. |
+
+<a name="MdImageComponent"></a>
+
+## MdImageComponent
+Custom element representing an image with additional features.
+
+**Kind**: global class  
+**Emits**: <code>MdImageComponent#event:onImageNativeError</code>, <code>MdImageComponent#event:onImageNativeLoad</code>  
+
+* [MdImageComponent](#MdImageComponent)
+    * _instance_
+        * [.createRenderRoot()](#MdImageComponent+createRenderRoot) ⇒ <code>this</code>
+        * [.render()](#MdImageComponent+render) ⇒ <code>TemplateResult</code>
+        * [.connectedCallback()](#MdImageComponent+connectedCallback)
+        * [.disconnectedCallback()](#MdImageComponent+disconnectedCallback)
+        * [.updated(_changedProperties)](#MdImageComponent+updated)
+        * [.onImageNativeError(event)](#MdImageComponent+onImageNativeError)
+        * [.onImageNativeLoad(event)](#MdImageComponent+onImageNativeLoad)
+    * _static_
+        * [.properties](#MdImageComponent.properties)
+
+<a name="MdImageComponent+createRenderRoot"></a>
+
+### mdImageComponent.createRenderRoot() ⇒ <code>this</code>
+Overrides the default rendering behavior to create a render root.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+render"></a>
+
+### mdImageComponent.render() ⇒ <code>TemplateResult</code>
+Renders the image element based on the provided properties.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+connectedCallback"></a>
+
+### mdImageComponent.connectedCallback()
+Called when the element is added to the DOM.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+disconnectedCallback"></a>
+
+### mdImageComponent.disconnectedCallback()
+Called when the element is removed from the DOM.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+<a name="MdImageComponent+updated"></a>
+
+### mdImageComponent.updated(_changedProperties)
+Called after the element's DOM has been updated.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | Map of properties that have changed. |
+
+<a name="MdImageComponent+onImageNativeError"></a>
+
+### mdImageComponent.onImageNativeError(event)
+Handles the 'error' event of the native image element.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+**Emits**: <code>MdImageComponent#event:onImageNativeError</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The error event. |
+
+<a name="MdImageComponent+onImageNativeLoad"></a>
+
+### mdImageComponent.onImageNativeLoad(event)
+Handles the 'load' event of the native image element.
+
+**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
+**Emits**: <code>MdImageComponent#event:onImageNativeLoad</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The load event. |
+
+<a name="MdImageComponent.properties"></a>
+
+### MdImageComponent.properties
+Defines the properties of the MdImageComponent.
+
+**Kind**: static property of [<code>MdImageComponent</code>](#MdImageComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| src | <code>String</code> | The source URL of the image. |
+| alt | <code>String</code> | The alternative text for the image. |
+| ratio | <code>String</code> | The aspect ratio of the image (default is '1/1'). |
+| shape | <code>Boolean</code> | Indicates whether the image should have a circular shape. |
+
+<a name="MdListItemComponent"></a>
+
+## MdListItemComponent ⇐ <code>LitElement</code>
+Represents a Material Design list item.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdListItemComponent](#MdListItemComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.renderItem(item)](#MdListItemComponent+renderItem) ⇒ <code>TemplateResult</code>
+        * [.firstUpdated()](#MdListItemComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdListItemComponent+updated)
+    * _static_
+        * [.properties](#MdListItemComponent.properties)
+
+<a name="MdListItemComponent+renderItem"></a>
+
+### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
+Renders an individual item based on its type.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template for the rendered item.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>Object</code> | The item to render. |
+
+<a name="MdListItemComponent+firstUpdated"></a>
+
+### mdListItemComponent.firstUpdated()
+Initializes the state controller when the element is first updated.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+<a name="MdListItemComponent+updated"></a>
+
+### mdListItemComponent.updated(_changedProperties)
+Handles updates to the element.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdListItemComponent.properties"></a>
+
+### MdListItemComponent.properties
+**Kind**: static property of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The label of the list item. |
+| supportingText | <code>String</code> | The supporting text of the list item. |
+| leadingItems | <code>Array</code> | An array of leading items for the list item. |
+| trailingItems | <code>Array</code> | An array of trailing items for the list item. |
+| activated | <code>Boolean</code> | Indicates whether the list item is activated. |
+
+<a name="md-emoji"></a>
+
+## md-emoji : [<code>MdEmojiComponent</code>](#MdEmojiComponent)
+A custom element for displaying emoji.
+
+**Kind**: global typedef  
