@@ -15,6 +15,11 @@
     padding: 8px 16px;
     gap: 0 16px;
 }
+.md-list__divider{
+    margin-top: 8px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
 
 // .md-list__start {
 // }
@@ -90,5 +95,22 @@
     .md-list__video {
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+// menu
+.md-menu__list{
+    .md-list__item{
+        min-height: 48px;
+        padding: 0 12px;
+        gap: 0 12px;
+    }
+    .md-list__end{
+        .md-list__supporting-text{
+            @extend .md-typography--label-large;
+        }
+    }
+    .md-list__label{
+        @extend .md-typography--label-large;
     }
 }

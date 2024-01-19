@@ -423,11 +423,11 @@ html,
 body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 body {
-    overflow: auto;
+    // overflow: auto;
     @extend .md-typography--body-large;
     background: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
