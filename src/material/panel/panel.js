@@ -58,7 +58,7 @@ class MdPanelComponent extends LitElement {
     render() {
         // prettier-ignore
         return html`
-            <!-- <div class="md-panel__header">
+            <div class="md-panel__header">
                 <div class="md-panel__start">
                     <md-icon-button icon="arrow_back"></md-icon-button>
                 </div>
@@ -69,12 +69,12 @@ class MdPanelComponent extends LitElement {
                 <div class="md-panel__end">
                     <md-icon-button icon="close"></md-icon-button>
                 </div>
-            </div> -->
-            <div class="md-panel__body">
+            </div>
+            <!-- <div class="md-panel__body">
                 A dialog is a type of modal window that
                 appears in front of app content to provide
                 critical information, or ask for decision.
-            </div>
+            </div> -->
             <!-- <div class="md-panel__footer">
                 <md-button label="Enabled"></md-button>
                 <md-button label="Enabled"></md-button>
@@ -93,13 +93,13 @@ class MdPanelComponent extends LitElement {
     }
 
     firstUpdated() {
-        // this.panelScrim = document.createElement("md-panel-scrim");
-        // this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
-        // this.panelScrim.addEventListener("click", this.onPanelScrimClick);
-        // document.body.append(this.panelScrim);
+        this.panelScrim = document.createElement("md-panel-scrim");
+        this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
+        this.panelScrim.addEventListener("click", this.onPanelScrimClick);
+        document.body.append(this.panelScrim);
         
-        // this.panelScrim.removeEventListener("click", this.onPanelScrimClick);
-        // this.panelScrim.remove()
+        this.panelScrim.removeEventListener("click", this.onPanelScrimClick);
+        this.panelScrim.remove()
     }
 
     updated(_changedProperties) {

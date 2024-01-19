@@ -95,6 +95,21 @@ class MdIconButtonComponent extends LitElement {
   updated(_changedProperties) {
     // ... (existing code)
     // Additional code for handling "ui" and "toggle" property changes.
+    if (_changedProperties.has('ui')) {
+      ['filled', 'filled-tonal', 'outlined'].forEach((ui) => {
+        this.classList.remove('md-icon-button--' + ui);
+      });
+      if (this.ui) {
+        this.classList.add('md-icon-button--' + this.ui);
+      }
+    }
+    if (_changedProperties.has('toggle')) {
+      if (this.toggle) {
+        this.classList.add('md-icon-button--toggle');
+      }else{
+        this.classList.remove('md-icon-button--toggle');
+      }
+    }
   }
 
   /**

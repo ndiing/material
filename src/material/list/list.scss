@@ -34,6 +34,7 @@
 }
 .md-list__supporting-text {
     @extend .md-typography--body-medium;
+    overflow: hidden;
 }
 
 .md-list__avatar {
