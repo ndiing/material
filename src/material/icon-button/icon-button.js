@@ -93,8 +93,6 @@ class MdIconButtonComponent extends LitElement {
    * @param {Map} _changedProperties - Map of changed properties.
    */
   updated(_changedProperties) {
-    // ... (existing code)
-    // Additional code for handling "ui" and "toggle" property changes.
     if (_changedProperties.has('ui')) {
       ['filled', 'filled-tonal', 'outlined'].forEach((ui) => {
         this.classList.remove('md-icon-button--' + ui);
