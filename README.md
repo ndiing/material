@@ -35,6 +35,9 @@
 <dt><a href="#MdImageComponent">MdImageComponent</a></dt>
 <dd><p>Custom element representing an image with additional features.</p>
 </dd>
+<dt><a href="#MdListItemComponent">MdListItemComponent</a> ⇐ <code>LitElement</code></dt>
+<dd><p>Represents a Material Design list item.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -827,6 +830,65 @@ Defines the properties of the MdImageComponent.
 | alt | <code>String</code> | The alternative text for the image. |
 | ratio | <code>String</code> | The aspect ratio of the image (default is '1/1'). |
 | shape | <code>Boolean</code> | Indicates whether the image should have a circular shape. |
+
+<a name="MdListItemComponent"></a>
+
+## MdListItemComponent ⇐ <code>LitElement</code>
+Represents a Material Design list item.
+
+**Kind**: global class  
+**Extends**: <code>LitElement</code>  
+
+* [MdListItemComponent](#MdListItemComponent) ⇐ <code>LitElement</code>
+    * _instance_
+        * [.renderItem(item)](#MdListItemComponent+renderItem) ⇒ <code>TemplateResult</code>
+        * [.firstUpdated()](#MdListItemComponent+firstUpdated)
+        * [.updated(_changedProperties)](#MdListItemComponent+updated)
+    * _static_
+        * [.properties](#MdListItemComponent.properties)
+
+<a name="MdListItemComponent+renderItem"></a>
+
+### mdListItemComponent.renderItem(item) ⇒ <code>TemplateResult</code>
+Renders an individual item based on its type.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Returns**: <code>TemplateResult</code> - The HTML template for the rendered item.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>Object</code> | The item to render. |
+
+<a name="MdListItemComponent+firstUpdated"></a>
+
+### mdListItemComponent.firstUpdated()
+Initializes the state controller when the element is first updated.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+<a name="MdListItemComponent+updated"></a>
+
+### mdListItemComponent.updated(_changedProperties)
+Handles updates to the element.
+
+**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _changedProperties | <code>Map</code> | The changed properties. |
+
+<a name="MdListItemComponent.properties"></a>
+
+### MdListItemComponent.properties
+**Kind**: static property of [<code>MdListItemComponent</code>](#MdListItemComponent)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The label of the list item. |
+| supportingText | <code>String</code> | The supporting text of the list item. |
+| leadingItems | <code>Array</code> | An array of leading items for the list item. |
+| trailingItems | <code>Array</code> | An array of trailing items for the list item. |
+| activated | <code>Boolean</code> | Indicates whether the list item is activated. |
 
 <a name="md-emoji"></a>
 
