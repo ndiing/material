@@ -120,9 +120,4 @@ class MdButtonComponent extends LitElement {
  */
 customElements.define("md-button", MdButtonComponent);
 
-/**
- * Exports MdButtonComponent for external use.
- *
- * @exports {MdButtonComponent}
- */
 export { MdButtonComponent };
