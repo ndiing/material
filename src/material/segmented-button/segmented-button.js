@@ -18,8 +18,8 @@ class MdSegmentedButtonComponent extends LitElement {
         return this;
     }
 
-    /*prettier-ignore*/
     render() {
+        /*prettier-ignore*/() {
                 return this.items.map(item=>html`
             <md-button
                 .item="${item}"

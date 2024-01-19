@@ -21,9 +21,9 @@ class MdButtonComponent extends LitElement {
         return this;
     }
 
-    /*prettier-ignore*/
     render() {
-                return html`
+        /*prettier-ignore*/
+        return html`
             <button class="md-button__native"
                 .type="${this.type}"
             ></button>

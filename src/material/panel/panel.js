@@ -50,8 +50,8 @@ class MdPanelComponent extends LitElement {
         return this;
     }
 
-    /*prettier-ignore*/
     render() {
+        /*prettier-ignore*/() {
                 return html`
             <div class="md-panel__header">
                 <div class="md-panel__start">

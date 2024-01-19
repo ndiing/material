@@ -32,8 +32,8 @@ class MdListItemComponent extends LitElement {
         return this;
     }
 
-    /*prettier-ignore*/
-    renderItem(item = {}) {
+    render() {
+        /*prettier-ignore*/Item(item = {}) {
                 return choose(
             item.item,
             [
@@ -50,8 +50,8 @@ class MdListItemComponent extends LitElement {
         );
     }
 
-    /*prettier-ignore*/
     render() {
+        /*prettier-ignore*/() {
         return html` ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} ${this.label || this.supportingText ? html` <div class="md-list__center">${this.label ? html`<div class="md-list__label">${this.label}</div>` : nothing} ${this.supportingText ? html`<div class="md-list__supporting-text">${this.supportingText}</div>` : nothing}</div> ` : nothing} ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} `;
     }
 
@@ -133,8 +133,8 @@ class MdListComponent extends LitElement {
         return item.label || item.supportingText || item.leadingItems?.length || item.trailingItems?.length;
     }
 
-    /*prettier-ignore*/
     render() {
+        /*prettier-ignore*/() {
                 return this.items.map((item) => html`
             <md-list-row>
                 ${this.hasListItem(item) ? html`

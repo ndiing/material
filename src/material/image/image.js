@@ -20,8 +20,8 @@ class MdImageComponent extends LitElement {
         return this;
     }
 
-    /*prettier-ignore*/
     render() {
+        /*prettier-ignore*/() {
                 return html`
             <img 
                 .src="${this.src}" 

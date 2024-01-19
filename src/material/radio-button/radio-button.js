@@ -18,8 +18,8 @@ class MdRadioButtonComponent extends LitElement {
         return this;
     }
 
-    /*prettier-ignore*/
     render() {
+        /*prettier-ignore*/() {
                 return html`
             <input 
                 type="radio" 
