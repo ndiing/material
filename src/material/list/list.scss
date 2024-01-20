@@ -30,6 +30,8 @@
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
 }
 
+// .md-list__start{}
+
 .md-list__center {
     flex: 1;
     display: flex;
@@ -70,6 +72,10 @@
     width: 24px;
 }
 
+// .md-list__checkbox{}
+// .md-list__radio-button{}
+// .md-list__switch{}
+
 .md-list {
     .md-list__item {
         min-height: 56px;
@@ -106,6 +112,7 @@
     }
 }
 
+// menu
 .md-menu__list {
     .md-list__item {
         min-height: 48px;
@@ -124,6 +131,7 @@
     }
 }
 
+// navigation-bar
 @keyframes md-navigation-bar-list-active-indicator {
     from {
         height: 32px;
@@ -191,6 +199,7 @@
     }
 }
 
+// navigation-drawer
 .md-navigation-drawer__list {
     .md-list__row {
         padding: 0 12px;
@@ -209,6 +218,7 @@
     }
 }
 
+// navigation-rail
 .md-navigation-rail__list {
     display: inline-flex;
 
@@ -266,6 +276,7 @@
     }
 }
 
+// tree
 .md-tree__list {
     .md-list__children {
         padding: 0;

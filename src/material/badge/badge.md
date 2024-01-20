@@ -1,16 +1,24 @@
 # MdBadgeComponent
 
-`MdBadgeComponent` is a custom LitElement representing a material design badge.
+`MdBadgeComponent` is a LitElement for displaying a badge with a numeric label.
 
-## Properties
+## Instance Properties
 
--   `label` (Number): The numeric value to be displayed on the badge.
--   `limit` (Number): The limit for displaying the badge value. If the `label` exceeds this limit, it will be displayed as "limit+".
+| Property | Type   | Default | Description                                      |
+| -------- | ------ | ------- | ------------------------------------------------ |
+| `label`  | Number | -       | The numeric label to be displayed on the badge.  |
+| `limit`  | Number | 999     | The limit for displaying the label on the badge. |
 
-## Examples
+## Instance Methods
 
-### Basic Usage
+None
+
+## Events
+
+None
+
+## Usage Example
 
 ```html
-<md-badge label="42"></md-badge>
+<md-badge label="42" limit="99"></md-badge>
 ```
