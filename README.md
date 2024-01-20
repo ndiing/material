@@ -34,3 +34,27 @@ get information for Instance properties,Instance methods(without lifecycle hooks
 and add usage example
 from this code
  -->
+
+ <!-- 
+(with default properties format table)
+generate docs with markdown formated file
+get information for Instance properties(with table, add default if exists),Instance methods(without lifecycle hooks),and Events
+and add usage example
+from this code
+  -->
+
+<!--
+template docs
+#Md..
+
+## Usage
+
+## Properties
+
+## Instance Methods
+
+## Events
+
+## Example
+
+ -->
