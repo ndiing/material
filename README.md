@@ -4,24 +4,25 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 ## Foundations
 
--   [Navigation](./src/material/navigation/navigation.md)
--   [State](./src/material/state/state.md)
+- [Navigation](./src/material/navigation/navigation.md)
+- [State](./src/material/state/state.md)
 
 ## Components
 
--   [Icon](./src/material/icon/icon.md)
--   [Emoji](./src/material/emoji/emoji.md)
--   [Image](./src/material/image/image.md)
--   [Button](./src/material/button/button.md)
--   [Floating Action Button (FAB)](./src/material/fab/fab.md)
--   [Icon Button](./src/material/icon-button/icon-button.md)
--   [Segmented Button](./src/material/segmented-button/segmented-button.md)
--   [Checkbox](./src/material/checkbox/checkbox.md)
--   [Radio Button](./src/material/radio-button/radio-button.md)
--   [Switch](./src/material/switch/switch.md)
--   [Badge](./src/material/badge/badge.md)
--   [List](./src/material/list/list.md)
--   [Panel](./src/material/panel/panel.md)
+- [Badge](./src/material/badge/badge.md)
+- [Button](./src/material/button/button.md)
+- [Checkbox](./src/material/checkbox/checkbox.md)
+- [Icon](./src/material/icon/icon.md)
+- [Emoji](./src/material/emoji/emoji.md)
+- [Floating Action Button (FAB)](./src/material/fab/fab.md)
+- [Icon Button](./src/material/icon-button/icon-button.md)
+- [Image](./src/material/image/image.md)
+- [List](./src/material/list/list.md)
+- [Panel](./src/material/panel/panel.md)
+- [Radio Button](./src/material/radio-button/radio-button.md)
+- [Segmented Button](./src/material/segmented-button/segmented-button.md)
+- [State](./src/material/state/state.md)
+- [Switch](./src/material/switch/switch.md)
 
 Explore the documentation for each component to gain a deeper understanding of their usage and customization options.
 
