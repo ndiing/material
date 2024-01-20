@@ -19,7 +19,7 @@ class MdListItemComponent extends LitElement {
             leadingItems: { type: Array },
             trailingItems: { type: Array },
             activated: { type: Boolean, reflect: true },
-            tree: { type: Boolean },
+            view: { type: String },
             items: { type: Array },
             level: { type: Number },
             expanded: { type: Boolean, reflect: true },
@@ -58,7 +58,7 @@ class MdListItemComponent extends LitElement {
     render() {
         /*prettier-ignore*/
         return html`
-            ${this.tree?Array.from({length:this.level+2},(v,k) => this.renderItem({item:'md-icon',...(k===this.level&&{icon:this.items?.length?this.expanded?'arrow_drop_down':'arrow_right':nothing}),...(k===this.level+1&&{icon:this.items?.length?this.expanded?'folder_open':'folder':'draft'})})):nothing}
+            ${this.view?Array.from({length:this.level+2},(v,k) => this.renderItem({item:'md-icon',...(k===this.level&&{icon:this.items?.length?this.expanded?'arrow_drop_down':'arrow_right':nothing}),...(k===this.level+1&&{icon:this.items?.length?this.expanded?'folder_open':'folder':'draft'})})):nothing}
             ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
             ${this.label || this.supportingText ? html`
                 <div class="md-list__center">
@@ -133,7 +133,7 @@ class MdListComponent extends LitElement {
             ui: { type: String },
             type: { type: String },
             activatable: { type: Boolean },
-            tree: { type: Boolean },
+            view: { type: String },
         };
     }
 
@@ -165,7 +165,7 @@ class MdListComponent extends LitElement {
                         .leadingItems="${item.leadingItems}" 
                         .trailingItems="${item.trailingItems}" 
                         .activated="${item.activated}"
-                        .tree="${this.tree}"
+                        .view="${this.view}"
                         .items="${item.children}"
                         .level="${this.level}"
                         .expanded="${item.expanded}"
@@ -175,7 +175,7 @@ class MdListComponent extends LitElement {
                 ${item.children?.length&&item.expanded ? html`<md-list 
                     class="md-list__children"
                     .activatable="${this.activatable}"
-                    .tree="${this.tree}"
+                    .view="${this.view}"
                     .items="${item.children}"
                     .level="${this.level+1}"></md-list>` : nothing}
             </md-list-row>

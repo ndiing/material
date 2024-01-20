@@ -349,7 +349,7 @@ class ExampleComponent extends LitElement {
                     <md-list
                         class="md-tree__list"
                         activatable
-                        tree
+                        view="tree"
                         .items="${[
                             //
                             {
