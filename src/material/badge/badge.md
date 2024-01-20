@@ -36,7 +36,7 @@ None
 
 1. Small badge
 
-A small badge is a simple circle, used to indicate an unread notification.
+- A small badge is a simple circle, used to indicate an unread notification.
 
 ```html
 <md-badge></md-badge>
@@ -44,7 +44,7 @@ A small badge is a simple circle, used to indicate an unread notification.
 
 2. Large badge
 
-A large badge contains label text communicating item count information.
+- A large badge contains label text communicating item count information.
 
 ```html
 <md-badge label="42" limit="99"></md-badge>
