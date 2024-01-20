@@ -16,6 +16,14 @@
     gap: 0 16px;
 }
 
+.md-list__headline {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0 16px;
+    @extend .md-typography--title-small;
+}
+
 .md-list__divider {
     margin-top: 8px;
     margin-bottom: 7px;
@@ -113,6 +121,7 @@
 
 @keyframes md-navigation-bar-list-active-indicator {
     from {
+        height: 32px;
         width: 32px;
     }
 }
@@ -127,7 +136,7 @@
     .md-list__item {
         flex-direction: column;
         justify-content: center;
-        min-height: 80px;
+        height: 80px;
         padding-top: 12px;
         padding-bottom: 12px;
         row-gap: 4px;
@@ -165,6 +174,86 @@
     }
 
     .md-list__item--no-label {
+        // .md-list__icon {
+        //     height: 64px;
+        //     border-radius: 32px;
+        // }
+
+        .md-list__badge {
+            margin-top: -8px;
+            margin-left: 8px;
+        }
+    }
+}
+
+.md-navigation-drawer__list {
+    .md-list__row {
+        padding: 0 12px;
+    }
+    .md-list__item {
+        border-radius: 28px;
+        gap: 0 12px;
+    }
+    .md-list__end {
+        .md-list__supporting-text {
+            @extend .md-typography--label-large;
+        }
+    }
+    .md-list__label {
+        @extend .md-typography--label-large;
+    }
+}
+
+.md-navigation-rail__list {
+    display: inline-flex;
+
+    .md-list__item {
+        flex-direction: column;
+        justify-content: center;
+        width: 80px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+        row-gap: 4px;
+
+        &.md-state[activated] {
+            background: inherit;
+            color: inherit;
+
+            .md-list__icon {
+                background: var(--md-sys-color-secondary-container);
+                color: var(--md-sys-color-on-secondary-container);
+                animation: md-navigation-bar-list-active-indicator var(--md-sys-motion-duration-short4) cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            }
+        }
+    }
+
+    .md-list__label {
+        @extend .md-typography--label-medium;
+    }
+
+    .md-list__icon {
+        height: 32px;
+        border-radius: 16px;
+        width: 56px;
+    }
+
+    .md-list__badge {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        margin-top: -20px;
+        margin-left: 8px;
+    }
+
+    .md-list__item--no-label {
+        .md-list__icon {
+            height: 56px;
+            border-radius: 28px;
+        }
+
         .md-list__badge {
             margin-top: -8px;
             margin-left: 8px;

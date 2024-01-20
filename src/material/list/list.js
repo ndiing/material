@@ -147,6 +147,7 @@ class MdListComponent extends LitElement {
         /*prettier-ignore*/
         return this.items.map((item) => html`
             <md-list-row>
+                ${item.headline ? html`<div class="md-list__headline">${item.headline}</div>` : nothing}
                 ${this.hasListItem(item) ? html`
                     <md-list-item 
                         .item="${item}" 

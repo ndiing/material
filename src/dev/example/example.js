@@ -259,7 +259,87 @@ class ExampleComponent extends LitElement {
                     ></md-list>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list class="md-navigation-bar__list" activatable .items="${[{ activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] }, { leadingItems: [{ item: "md-icon", icon: "image" }] }, { badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] }, { badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] }]}"></md-list>
+                    <md-list
+                        class="md-navigation-bar__list"
+                        activatable
+                        .items="${[
+                            //
+                            { activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                        ]}"
+                    ></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
+                <!--  -->
+
+                <!--  -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-navigation-drawer__list"
+                        activatable
+                        .items="${[
+                            //
+                            { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }], trailingItems: [{ item: "md-supporting-text", supportingText: "24" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { divider: true },
+                            { headline: "Label" },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                        ]}"
+                    ></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-navigation-drawer__list"
+                        activatable
+                        .items="${[
+                            //
+                            { headline: "Label" },
+                            { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }], trailingItems: [{ item: "md-supporting-text", supportingText: "24" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { divider: true },
+                            { headline: "Label" },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                        ]}"
+                    ></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
+                <!--  -->
+
+                <!--  -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-navigation-rail__list"
+                        activatable
+                        .items="${[
+                            { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { label: "Label", badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                        ]}"
+                    ></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-navigation-rail__list"
+                        activatable
+                        .items="${[
+                            //
+                            { activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
+                            { badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
+                        ]}"
+                    ></md-list>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
                 <!--  -->
