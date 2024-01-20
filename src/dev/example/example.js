@@ -345,6 +345,90 @@ class ExampleComponent extends LitElement {
                 <!--  -->
 
                 <!--  -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-tree__list"
+                        activatable
+                        .items="${[
+                            //
+                            {
+                                label: "Label",
+                                children: [
+                                    //
+                                    {
+                                        label: "Label",
+                                        children: [
+                                            //
+                                            {
+                                                label: "Label",
+                                                children: [
+                                                    //
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                ],
+                                            },
+                                            {
+                                                label: "Label",
+                                                children: [
+                                                    //
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                ],
+                                            },
+                                            {
+                                                label: "Label",
+                                                children: [
+                                                    //
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Label",
+                                        children: [
+                                            //
+                                            { label: "Label" },
+                                            { label: "Label" },
+                                            { label: "Label" },
+                                        ],
+                                    },
+                                    {
+                                        label: "Label",
+                                        children: [
+                                            //
+                                            { label: "Label" },
+                                            { label: "Label" },
+                                            { label: "Label" },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                label: "Label",
+                                children: [
+                                    //
+                                    { label: "Label" },
+                                    { label: "Label" },
+                                    { label: "Label" },
+                                ],
+                            },
+                            {
+                                label: "Label",
+                                children: [],
+                            },
+                        ]}"
+                    ></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
+                <!--  -->
+
+                <!--  -->
                 <!-- <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                     <md-panel type="dialog"></md-panel>
                     <md-panel type="drawer" position="top"></md-panel>

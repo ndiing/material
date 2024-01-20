@@ -65,6 +65,11 @@
     margin-left: -16px;
 }
 
+.md-list__icon {
+    height: 24px;
+    width: 24px;
+}
+
 .md-list {
     .md-list__item {
         min-height: 56px;
@@ -258,5 +263,30 @@
             margin-top: -8px;
             margin-left: 8px;
         }
+    }
+}
+
+.md-tree__list {
+    .md-list__children {
+        padding: 0;
+        .md-list__row {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .md-list__row {
+        padding: 0 12px;
+    }
+    .md-list__item {
+        border-radius: 28px;
+        gap: 0 12px;
+    }
+    .md-list__end {
+        .md-list__supporting-text {
+            @extend .md-typography--label-large;
+        }
+    }
+    .md-list__label {
+        @extend .md-typography--label-large;
     }
 }
