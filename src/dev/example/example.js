@@ -345,20 +345,53 @@ class ExampleComponent extends LitElement {
                 <!--  -->
 
                 <!--  -->
-                <!-- <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                     <md-list
                         class="md-tree__list"
                         activatable
+                        tree
                         .items="${[
-                    //
-                    { label: "Label" },
-                    { label: "Label" },
-                    { label: "Label" },
-                ]}"
+                            //
+                            {
+                                label: "Label",
+                                children: [
+                                    //
+                                    {
+                                        label: "Label",
+                                        children: [
+                                            //
+                                            {
+                                                label: "Label",
+                                                children: [
+                                                    //
+                                                    {
+                                                        label: "Label",
+                                                        children: [
+                                                            //
+                                                            { label: "Label" },
+                                                            { label: "Label" },
+                                                            { label: "Label" },
+                                                        ],
+                                                    },
+                                                    { label: "Label" },
+                                                    { label: "Label" },
+                                                ],
+                                            },
+                                            { label: "Label" },
+                                            { label: "Label" },
+                                        ],
+                                    },
+                                    { label: "Label" },
+                                    { label: "Label" },
+                                ],
+                            },
+                            { label: "Label" },
+                            { label: "Label" },
+                        ]}"
                     ></md-list>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
-                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div> -->
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
                 <!--  -->
 
                 <!--  -->

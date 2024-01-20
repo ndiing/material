@@ -19,6 +19,10 @@ class MdListItemComponent extends LitElement {
             leadingItems: { type: Array },
             trailingItems: { type: Array },
             activated: { type: Boolean, reflect: true },
+            tree: { type: Boolean },
+            items: { type: Array },
+            level: { type: Number },
+            expanded: { type: Boolean, reflect: true },
         };
     }
 
@@ -26,6 +30,7 @@ class MdListItemComponent extends LitElement {
         super();
         this.leadingItems = [];
         this.trailingItems = [];
+        this.items = [];
     }
 
     createRenderRoot() {
@@ -53,6 +58,7 @@ class MdListItemComponent extends LitElement {
     render() {
         /*prettier-ignore*/
         return html`
+            ${this.tree?Array.from({length:this.level+2},(v,k) => this.renderItem({item:'md-icon',...(k===this.level&&{icon:this.items?.length?this.expanded?'arrow_drop_down':'arrow_right':nothing}),...(k===this.level+1&&{icon:this.items?.length?this.expanded?'folder_open':'folder':'draft'})})):nothing}
             ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
             ${this.label || this.supportingText ? html`
                 <div class="md-list__center">
@@ -127,12 +133,14 @@ class MdListComponent extends LitElement {
             ui: { type: String },
             type: { type: String },
             activatable: { type: Boolean },
+            tree: { type: Boolean },
         };
     }
 
     constructor() {
         super();
         this.items = [];
+        this.level = 0;
     }
 
     createRenderRoot() {
@@ -157,9 +165,19 @@ class MdListComponent extends LitElement {
                         .leadingItems="${item.leadingItems}" 
                         .trailingItems="${item.trailingItems}" 
                         .activated="${item.activated}"
+                        .tree="${this.tree}"
+                        .items="${item.children}"
+                        .level="${this.level}"
+                        .expanded="${item.expanded}"
                         @click="${this.onListItemClick}"></md-list-item>
                 ` : nothing}
                 ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
+                ${item.children?.length&&item.expanded ? html`<md-list 
+                    class="md-list__children"
+                    .activatable="${this.activatable}"
+                    .tree="${this.tree}"
+                    .items="${item.children}"
+                    .level="${this.level+1}"></md-list>` : nothing}
             </md-list-row>
         `);
     }
@@ -187,17 +205,37 @@ class MdListComponent extends LitElement {
         }
     }
 
+    get listLevel0() {
+        let el = this.closest(".md-list");
+        do {
+            if (el.level === 0) return el;
+            el = el.parentElement || el.parentNode;
+        } while (el !== null && el.nodeType === 1);
+        return null;
+    }
+
     onListItemClick(event) {
         const listItem = event.currentTarget;
         if (this.activatable) {
             if (this.type === "multi-select") {
                 listItem.item.activated = !listItem.item.activated;
             } else {
-                for (const item of this.items) {
-                    item.activated = item === listItem.item;
-                }
+                listItem.item.expanded = !listItem.item.expanded;
+
+                const activatedListItem = (items) => {
+                    for (const item of items) {
+                        item.activated = item === listItem.item;
+                        if (item.children?.length) {
+                            activatedListItem(item.children);
+                            item.children = [...item.children];
+                        }
+                    }
+                };
+
+                activatedListItem(this.listLevel0.items);
+                this.listLevel0.items = [...this.listLevel0.items];
             }
-            this.requestUpdate();
+            this.listLevel0.requestUpdate();
         }
         this.dispatchEvent(
             new CustomEvent("onListItemClick", {
