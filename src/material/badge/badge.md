@@ -1,6 +1,7 @@
 # MdBadgeComponent
 
 `MdBadgeComponent` is a LitElement for displaying a badge with a numeric label.
+_Badges show notifications, counts, or status information on navigation items and icons_
 
 - Can contain labels or numbers
 - Two types: small and large
