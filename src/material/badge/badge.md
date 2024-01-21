@@ -37,6 +37,7 @@ None
 ## Example
 
 1. Small badge
+
    A small badge is a simple circle, used to indicate an unread notification.
 
 - Small badge:
@@ -46,6 +47,7 @@ None
 ```
 
 2. Large badge
+
    A large badge contains label text communicating item count information.
 
 - Large badge:
