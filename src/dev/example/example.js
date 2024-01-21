@@ -349,49 +349,137 @@ class ExampleComponent extends LitElement {
                     <md-list
                         class="md-tree__list"
                         activatable
+                        view=""
+                        .items="${[
+                            //
+                            {
+                                label: "Label 1",
+                                children: [
+                                    //
+                                    {
+                                        label: "Label 1.1",
+                                        children: [
+                                            //
+                                            {
+                                                label: "Label 1.1.1",
+                                                children: [
+                                                    //
+                                                    {
+                                                        label: "Label 1.1.1.1",
+                                                        children: [
+                                                            //
+                                                            { label: "Label 1.1.1.1.1" },
+                                                            { label: "Label 1.1.1.1.2" },
+                                                            { label: "Label 1.1.1.1.3" },
+                                                        ],
+                                                    },
+                                                    { label: "Label 1.1.1.2" },
+                                                    { label: "Label 1.1.1.3" },
+                                                ],
+                                            },
+                                            { label: "Label 1.1.2" },
+                                            { label: "Label 1.1.3" },
+                                        ],
+                                    },
+                                    { label: "Label 1.2" },
+                                    { label: "Label 1.3" },
+                                ],
+                            },
+                            { label: "Label 2" },
+                            { label: "Label 3" },
+                        ]}"
+                    ></md-list>
+                </div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-tree__list"
+                        activatable
                         view="tree"
                         .items="${[
                             //
                             {
-                                label: "Label",
+                                label: "Label 1",
                                 children: [
                                     //
                                     {
-                                        label: "Label",
+                                        label: "Label 1.1",
                                         children: [
                                             //
                                             {
-                                                label: "Label",
+                                                label: "Label 1.1.1",
                                                 children: [
                                                     //
                                                     {
-                                                        label: "Label",
+                                                        label: "Label 1.1.1.1",
                                                         children: [
                                                             //
-                                                            { label: "Label" },
-                                                            { label: "Label" },
-                                                            { label: "Label" },
+                                                            { label: "Label 1.1.1.1.1" },
+                                                            { label: "Label 1.1.1.1.2" },
+                                                            { label: "Label 1.1.1.1.3" },
                                                         ],
                                                     },
-                                                    { label: "Label" },
-                                                    { label: "Label" },
+                                                    { label: "Label 1.1.1.2" },
+                                                    { label: "Label 1.1.1.3" },
                                                 ],
                                             },
-                                            { label: "Label" },
-                                            { label: "Label" },
+                                            { label: "Label 1.1.2" },
+                                            { label: "Label 1.1.3" },
                                         ],
                                     },
-                                    { label: "Label" },
-                                    { label: "Label" },
+                                    { label: "Label 1.2" },
+                                    { label: "Label 1.3" },
                                 ],
                             },
-                            { label: "Label" },
-                            { label: "Label" },
+                            { label: "Label 2" },
+                            { label: "Label 3" },
                         ]}"
                     ></md-list>
                 </div>
-                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
-                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
+                <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-list
+                        class="md-tree__list"
+                        activatable
+                        view="level"
+                        .items="${[
+                            //
+                            {
+                                icon:'image',label: "Label 1",
+                                children: [
+                                    //
+                                    {
+                                        label: "Label 1.1",
+                                        children: [
+                                            //
+                                            {
+                                                label: "Label 1.1.1",
+                                                children: [
+                                                    //
+                                                    {
+                                                        label: "Label 1.1.1.1",
+                                                        children: [
+                                                            //
+                                                            { label: "Label 1.1.1.1.1" },
+                                                            { label: "Label 1.1.1.1.2" },
+                                                            { label: "Label 1.1.1.1.3" },
+                                                        ],
+                                                    },
+                                                    { label: "Label 1.1.1.2" },
+                                                    { label: "Label 1.1.1.3" },
+                                                ],
+                                            },
+                                            { label: "Label 1.1.2" },
+                                            { label: "Label 1.1.3" },
+                                        ],
+                                    },
+                                    { label: "Label 1.2" },
+                                    { label: "Label 1.3" },
+                                ],
+                            },
+                            { icon:'image',label: "Label 2" },
+                            { icon:'image',label: "Label 3" },
+                        ]}"
+                    ></md-list>
+                </div>
                 <!--  -->
 
                 <!--  -->
