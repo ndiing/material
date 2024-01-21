@@ -59,7 +59,7 @@ There are 2 styles of Extend FAB:
 
 - `fabNative`: Returns the native button element.
 
-## Event
+## Events
 
 None
 
