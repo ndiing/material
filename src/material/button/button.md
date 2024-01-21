@@ -1,6 +1,7 @@
-# MdButtonComponent
+# MdButtonComponent (Button)
 
 `MdButtonComponent` is a custom LitElement representing a material design button.
+
 _Buttons prompt most actions in a UI_
 
 - Can contain an optional leading icon

@@ -1,6 +1,7 @@
-# MdBadgeComponent
+# MdBadgeComponent (Badge)
 
 `MdBadgeComponent` is a LitElement for displaying a badge with a numeric label.
+
 _Badges show notifications, counts, or status information on navigation items and icons_
 
 - Can contain labels or numbers
@@ -36,18 +37,16 @@ None
 ## Example
 
 1. Small badge
-   A small badge is a simple circle, used to indicate an unread notification.
 
-- Small badge:
+   A small badge is a simple circle, used to indicate an unread notification.
 
 ```html
 <md-badge></md-badge>
 ```
 
 2. Large badge
-   A large badge contains label text communicating item count information.
 
-- Large badge:
+   A large badge contains label text communicating item count information.
 
 ```html
 <md-badge label="42" limit="99"></md-badge>
