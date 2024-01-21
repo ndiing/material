@@ -22,7 +22,7 @@ _Extended floating action buttons (extended FABs) help people take primary actio
 
 ## Usage
 
-#### FAB
+### FAB
 
 Use a FAB for the most important action on a screen. The FAB appears in front of all other content on screen, and is recognizable for its rounded shape and icon in the center.
 
@@ -36,7 +36,7 @@ There are 3 sizes of FAB:
 2.  Small FAB
 3.  Large FAB
 
-#### Extended FAB
+### Extended FAB
 
 Use an extended FAB on screens with long, scrolling views that require persistent access to an action, such as a check-out screen. Do not use an extended FAB in a view that cannot scroll.
 
@@ -65,7 +65,7 @@ None
 
 ## Examples
 
-#### FAB
+### FAB
 
 1. FAB
    Use a FAB to represent the screen’s primary action.
@@ -89,7 +89,7 @@ None
 <md-fab size="large" icon="image"></md-fab>
 ```
 
-#### Extend FAB
+### Extend FAB
 
 1. Extended FAB with both icon and label text
 
