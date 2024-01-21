@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: column;
     padding: 8px 0;
+
+    .md-list{
+        padding: 0;
+        .md-list__row{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 }
 
 .md-list__row {
@@ -277,27 +285,3 @@
 }
 
 // tree
-.md-tree__list {
-    .md-list__children {
-        padding: 0;
-        .md-list__row {
-            padding-right: 0;
-            padding-left: 0;
-        }
-    }
-    .md-list__row {
-        padding: 0 12px;
-    }
-    .md-list__item {
-        border-radius: 28px;
-        gap: 0 12px;
-    }
-    .md-list__end {
-        .md-list__supporting-text {
-            @extend .md-typography--label-large;
-        }
-    }
-    .md-list__label {
-        @extend .md-typography--label-large;
-    }
-}

@@ -347,7 +347,7 @@ class ExampleComponent extends LitElement {
                 <!--  -->
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                     <md-list
-                        class="md-tree__list"
+                        class="md-navigation-drawer__list"
                         activatable
                         view=""
                         .items="${[
@@ -392,7 +392,7 @@ class ExampleComponent extends LitElement {
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                     <md-list
-                        class="md-tree__list"
+                        class="md-navigation-drawer__list"
                         activatable
                         view="tree"
                         .items="${[
@@ -437,7 +437,7 @@ class ExampleComponent extends LitElement {
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                     <md-list
-                        class="md-tree__list"
+                        class="md-navigation-drawer__list"
                         activatable
                         view="level"
                         .items="${[
