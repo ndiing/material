@@ -1,6 +1,7 @@
 # MdCheckboxComponent
 
 `MdCheckboxComponent` is a custom LitElement representing a material design checkbox.
+
 _Checkboxes let users select one or more items from a list, or turn an item on or off_
 
 - Use checkboxes (instead of switches or radio buttons) if multiple options can be selected from a list
