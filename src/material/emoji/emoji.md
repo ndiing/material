@@ -1,4 +1,4 @@
-# MdEmojiComponent
+# MdEmojiComponent (Emoji)
 
 `MdEmojiComponent` is a custom LitElement representing a material design emoji.
 

@@ -1,4 +1,4 @@
-# MdButtonComponent
+# MdButtonComponent (Button)
 
 `MdButtonComponent` is a custom LitElement representing a material design button.
 

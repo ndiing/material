@@ -1,4 +1,4 @@
-# MdBadgeComponent
+# MdBadgeComponent (Badge)
 
 `MdBadgeComponent` is a LitElement for displaying a badge with a numeric label.
 

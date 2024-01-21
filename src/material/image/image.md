@@ -1,4 +1,4 @@
-# MdImageComponent
+# MdImageComponent (Image)
 
 `MdImageComponent` is a custom LitElement representing a material design image.
 

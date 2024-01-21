@@ -1,4 +1,4 @@
-# MdIconComponent
+# MdIconComponent (Icon)
 
 `MdIconComponent` is a custom LitElement representing a material design icon.
 

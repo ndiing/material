@@ -1,4 +1,4 @@
-# MdFabComponent
+# MdFabComponent (Floating Action Buttons (FAB) & Extend FAB)
 
 `MdFabComponent` is a custom LitElement representing a material design floating action button (FAB).
 

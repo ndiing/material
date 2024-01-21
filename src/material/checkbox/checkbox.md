@@ -1,4 +1,4 @@
-# MdCheckboxComponent
+# MdCheckboxComponent (Checkbox)
 
 `MdCheckboxComponent` is a custom LitElement representing a material design checkbox.
 
