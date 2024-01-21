@@ -68,6 +68,7 @@ None
 ### FAB
 
 1. FAB
+
    Use a FAB to represent the screen’s primary action.
 
 ```html
@@ -75,6 +76,7 @@ None
 ```
 
 2. Small FAB
+
    A small FAB is used for a secondary, supporting action, or in place of a default FAB on compact window sizes.
    One or more small FABs can be paired with a default FAB or extended FAB.
 
@@ -83,6 +85,7 @@ None
 ```
 
 3. Large FAB
+
    A large FAB is useful when the layout calls for a clear and prominent primary action, and where a larger footprint would help the user engage. For example, when appearing in a medium window size.
 
 ```html
