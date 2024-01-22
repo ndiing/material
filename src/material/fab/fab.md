@@ -9,7 +9,7 @@ _Floating action buttons (FABs) help people take primary actions_
 - Use a FAB for the most common or important action on a screen
 - Make sure the icon in a FAB is clear and understandable
 - FABs persist on the screen when content is scrolling
-- Three sizes: small FAB, FAB, large FAB
+- Three sizes: FAB, small FAB, large FAB
 
 ## Extended FAB
 
