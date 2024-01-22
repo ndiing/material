@@ -2,7 +2,7 @@
 
 `MdRadioButtonComponent` is a custom LitElement representing a material design radio button.
 
-_Radio buttons let people select one option from a set of options_
+> _Radio buttons let people select one option from a set of options_
 
 - Use radio buttons (not switches) when only one item can be selected from a list
 - Label should be scannable

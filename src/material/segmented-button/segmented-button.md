@@ -2,7 +2,7 @@
 
 `MdSegmentedButtonComponent` is a custom LitElement representing a material design segmented button.
 
-_Segmented button help people select options, switch views, or sort elements_
+> _Segmented button help people select options, switch views, or sort elements_
 
 - Segmented buttons can contain icons, label text, or both
 - Two types: single-select and multi-select

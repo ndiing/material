@@ -2,7 +2,7 @@
 
 `MdIconButtonComponent` is a custom LitElement representing a material design icon button.
 
-_Icon buttons help people take minor actions with one tap_
+> _Icon buttons help people take minor actions with one tap_
 
 - Icon buttons must use a system icon with a clear meaning
 - Two types: standard and contained
