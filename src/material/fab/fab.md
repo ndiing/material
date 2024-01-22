@@ -4,7 +4,7 @@
 
 ## FAB
 
-_Floating action buttons (FABs) help people take primary actions_
+> _Floating action buttons (FABs) help people take primary actions_
 
 - Use a FAB for the most common or important action on a screen
 - Make sure the icon in a FAB is clear and understandable
@@ -13,7 +13,7 @@ _Floating action buttons (FABs) help people take primary actions_
 
 ## Extended FAB
 
-_Extended floating action buttons (extended FABs) help people take primary actions_
+> _Extended floating action buttons (extended FABs) help people take primary actions_
 
 - Use an extended FAB for the most common or important action on a screen
 - Contains both an icon and label text

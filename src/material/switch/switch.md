@@ -2,7 +2,7 @@
 
 `MdSwitchComponent` is a custom LitElement representing a material design switch.
 
-_Switches toggle the selection of an item on or off_
+> _Switches toggle the selection of an item on or off_
 
 - Use switches (not radio buttons) if the items in a list can be independently controlled
 - Switches are the best way to let users adjust settings

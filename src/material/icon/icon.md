@@ -2,7 +2,7 @@
 
 `MdIconComponent` is a custom LitElement representing a material design icon.
 
-_Icons are small symbols for actions or other items_
+> _Icons are small symbols for actions or other items_
 
 - Use the Material Symbols variable font to enable dynamic styling in product
 - You can change the weight, fill, optical size, and grade of variable font icons
