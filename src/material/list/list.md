@@ -50,21 +50,6 @@ None
 ></md-list-item>
 ```
 
-```html
-<md-list
-    .items="${[
-        { label: "Label", supportingText: "", leadingItems: [{ item: "md-avatar", src: "https://api.dicebear.com/7.x/icons/svg?seed=2&scale=50" }], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [{ item: "md-image", src: "https://api.dicebear.com/7.x/icons/svg?seed=3&scale=50" }], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [{ item: "md-video", src: "https://api.dicebear.com/7.x/icons/svg?seed=4&scale=50" }], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [{ item: "md-icon", icon: "image" }], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [{ item: "md-checkbox" }], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [{ item: "md-radio-button" }], trailingItems: [] },
-        { label: "Label", supportingText: "", leadingItems: [], trailingItems: [{ item: "md-switch" }] },
-    ]}"
-></md-list>
-```
-
 <hr>
 
 # MdListRowComponent
@@ -115,5 +100,11 @@ None
 ## Examples
 
 ```html
-<md-list .items="${[{ label: 'Item 1' }, { label: 'Item 2' }]}"></md-list>
+<md-list
+  .items="${[{ label: 'Item 1' }, { label: 'Item 2' }]}"
+  ui="two-line"
+  type="multi-select"
+  activatable
+  @onListItemClick="${handleListItemClick}">
+</md-list
 ```
