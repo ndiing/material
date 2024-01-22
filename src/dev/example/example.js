@@ -351,41 +351,24 @@ class ExampleComponent extends LitElement {
                         activatable
                         view=""
                         .items="${[
-                            //
-                            {
-                                label: "Label 1",
-                                children: [
-                                    //
-                                    {
-                                        label: "Label 1.1",
-                                        children: [
-                                            //
-                                            {
-                                                label: "Label 1.1.1",
-                                                children: [
-                                                    //
-                                                    {
-                                                        label: "Label 1.1.1.1",
-                                                        children: [
-                                                            //
-                                                            { label: "Label 1.1.1.1.1" },
-                                                            { label: "Label 1.1.1.1.2" },
-                                                            { label: "Label 1.1.1.1.3" },
-                                                        ],
-                                                    },
-                                                    { label: "Label 1.1.1.2" },
-                                                    { label: "Label 1.1.1.3" },
-                                                ],
-                                            },
-                                            { label: "Label 1.1.2" },
-                                            { label: "Label 1.1.3" },
-                                        ],
-                                    },
-                                    { label: "Label 1.2" },
-                                    { label: "Label 1.3" },
-                                ],
-                            },
-                            { label: "Label 2" },
+                            { label: "Label 1",children:[
+                                { label: "Label 1.1",children:[
+                                    { label: "Label 1.1.1" },
+                                    { label: "Label 1.1.2" },
+                                    { label: "Label 1.1.3" },
+                                ] },
+                                { label: "Label 1.2" },
+                                { label: "Label 1.3" },
+                            ] },
+                            { label: "Label 2",children:[
+                                { label: "Label 2.1",children:[
+                                    { label: "Label 2.1.1" },
+                                    { label: "Label 2.1.2" },
+                                    { label: "Label 2.1.3" },
+                                ] },
+                                { label: "Label 2.2" },
+                                { label: "Label 2.3" },
+                            ] },
                             { label: "Label 3" },
                         ]}"
                     ></md-list>
@@ -396,41 +379,24 @@ class ExampleComponent extends LitElement {
                         activatable
                         view="tree"
                         .items="${[
-                            //
-                            {
-                                label: "Label 1",
-                                children: [
-                                    //
-                                    {
-                                        label: "Label 1.1",
-                                        children: [
-                                            //
-                                            {
-                                                label: "Label 1.1.1",
-                                                children: [
-                                                    //
-                                                    {
-                                                        label: "Label 1.1.1.1",
-                                                        children: [
-                                                            //
-                                                            { label: "Label 1.1.1.1.1" },
-                                                            { label: "Label 1.1.1.1.2" },
-                                                            { label: "Label 1.1.1.1.3" },
-                                                        ],
-                                                    },
-                                                    { label: "Label 1.1.1.2" },
-                                                    { label: "Label 1.1.1.3" },
-                                                ],
-                                            },
-                                            { label: "Label 1.1.2" },
-                                            { label: "Label 1.1.3" },
-                                        ],
-                                    },
-                                    { label: "Label 1.2" },
-                                    { label: "Label 1.3" },
-                                ],
-                            },
-                            { label: "Label 2" },
+                            { label: "Label 1",children:[
+                                { label: "Label 1.1",children:[
+                                    { label: "Label 1.1.1" },
+                                    { label: "Label 1.1.2" },
+                                    { label: "Label 1.1.3" },
+                                ] },
+                                { label: "Label 1.2" },
+                                { label: "Label 1.3" },
+                            ] },
+                            { label: "Label 2",children:[
+                                { label: "Label 2.1",children:[
+                                    { label: "Label 2.1.1" },
+                                    { label: "Label 2.1.2" },
+                                    { label: "Label 2.1.3" },
+                                ] },
+                                { label: "Label 2.2" },
+                                { label: "Label 2.3" },
+                            ] },
                             { label: "Label 3" },
                         ]}"
                     ></md-list>
@@ -441,42 +407,25 @@ class ExampleComponent extends LitElement {
                         activatable
                         view="level"
                         .items="${[
-                            //
-                            {
-                                icon:'image',label: "Label 1",
-                                children: [
-                                    //
-                                    {
-                                        label: "Label 1.1",
-                                        children: [
-                                            //
-                                            {
-                                                label: "Label 1.1.1",
-                                                children: [
-                                                    //
-                                                    {
-                                                        label: "Label 1.1.1.1",
-                                                        children: [
-                                                            //
-                                                            { label: "Label 1.1.1.1.1" },
-                                                            { label: "Label 1.1.1.1.2" },
-                                                            { label: "Label 1.1.1.1.3" },
-                                                        ],
-                                                    },
-                                                    { label: "Label 1.1.1.2" },
-                                                    { label: "Label 1.1.1.3" },
-                                                ],
-                                            },
-                                            { label: "Label 1.1.2" },
-                                            { label: "Label 1.1.3" },
-                                        ],
-                                    },
-                                    { label: "Label 1.2" },
-                                    { label: "Label 1.3" },
-                                ],
-                            },
-                            { icon:'image',label: "Label 2" },
-                            { icon:'image',label: "Label 3" },
+                            { label: "Label 1",children:[
+                                { label: "Label 1.1",children:[
+                                    { label: "Label 1.1.1" },
+                                    { label: "Label 1.1.2" },
+                                    { label: "Label 1.1.3" },
+                                ] },
+                                { label: "Label 1.2" },
+                                { label: "Label 1.3" },
+                            ] },
+                            { label: "Label 2",children:[
+                                { label: "Label 2.1",children:[
+                                    { label: "Label 2.1.1" },
+                                    { label: "Label 2.1.2" },
+                                    { label: "Label 2.1.3" },
+                                ] },
+                                { label: "Label 2.2" },
+                                { label: "Label 2.3" },
+                            ] },
+                            { label: "Label 3" },
                         ]}"
                     ></md-list>
                 </div>
