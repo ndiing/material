@@ -349,7 +349,7 @@ class ExampleComponent extends LitElement {
                     <md-list
                         class="md-navigation-drawer__list"
                         activatable
-                        view=""
+                        ui=""
                         .items="${[
                             { label: "Label 1",children:[
                                 { label: "Label 1.1",children:[
@@ -377,7 +377,7 @@ class ExampleComponent extends LitElement {
                     <md-list
                         class="md-navigation-drawer__list"
                         activatable
-                        view="tree"
+                        ui="tree"
                         .items="${[
                             { label: "Label 1",children:[
                                 { label: "Label 1.1",children:[
@@ -405,7 +405,7 @@ class ExampleComponent extends LitElement {
                     <md-list
                         class="md-navigation-drawer__list"
                         activatable
-                        view="level"
+                        ui="level"
                         .items="${[
                             { label: "Label 1",children:[
                                 { label: "Label 1.1",children:[

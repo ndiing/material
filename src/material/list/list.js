@@ -12,7 +12,7 @@ class MdListItemComponent extends LitElement {
             leadingItems: { type: Array },
             trailingItems: { type: Array },
             activated: { type: Boolean, reflect: true },
-            view: { type: String },
+            ui: { type: String },
             level: { type: Number },
             expanded: { type: Boolean, reflect: true },
             collapsibleIcons: { type: Array },
@@ -56,7 +56,7 @@ class MdListItemComponent extends LitElement {
         let leadingIcons = [];
         let trailingIcons = [];
 
-        if (this.view === "tree") {
+        if (this.ui === "tree") {
             collapsibleIcons = this.collapsibleIcons ? [].concat(this.collapsibleIcons).filter(Boolean) : ["arrow_right", "arrow_drop_down"];
             nodeIcons = this.nodeIcons ? [].concat(this.nodeIcons).filter(Boolean) : ["folder", "folder_open"];
             leafIcon = this.leafIcon ?? "draft";
@@ -69,7 +69,7 @@ class MdListItemComponent extends LitElement {
                 leadingIcons = leadingIcons.concat({ item: "md-icon", icon: "" });
                 leadingIcons = leadingIcons.concat({ item: "md-icon", icon: leafIcon });
             }
-        } else if (this.view === "level") {
+        } else if (this.ui === "level") {
             collapsibleIcons = this.collapsibleIcons ? [].concat(this.collapsibleIcons).filter(Boolean) : ["arrow_forward", "arrow_back"];
             leafIcon = this.leafIcon ?? "";
 
@@ -124,7 +124,7 @@ class MdListItemComponent extends LitElement {
     }
 
     firstUpdated() {
-        this.state = new MdStateController(this, {});
+        this.state = new MdStateController(this, {fadeout:true});
 
         if (this.label) {
             this.classList.remove("md-list__item--no-label");
@@ -175,14 +175,14 @@ class MdListComponent extends LitElement {
             ui: { type: String },
             type: { type: String },
             activatable: { type: Boolean },
-            view: { type: String },
+            // ui: { type: String },
         };
     }
 
     constructor() {
         super();
         this.items = [];
-        // this.view=''
+        // this.ui=''
         this.level = 0;
     }
 
@@ -212,12 +212,12 @@ class MdListComponent extends LitElement {
                         .collapsibleIcons="${item.collapsibleIcons}"
                         .nodeIcons="${item.nodeIcons}"
                         .leafIcon="${item.leafIcon}"
-                        .view="${this.list.view}"
+                        .ui="${this.list.ui}"
                         .level="${this.level}"
                         @click="${this.onListItemClick}"></md-list-item>
                 ` : nothing}
                 ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
-                ${item.children?.length&&item.expanded&&this.list.view!=='level' ? html`<md-list 
+                ${item.children?.length&&item.expanded&&this.list.ui!=='level' ? html`<md-list 
                     class="md-list__children"
                     .items="${item.children}"
                     .level="${this.level+1}"
@@ -287,7 +287,7 @@ class MdListComponent extends LitElement {
                     this.list._items = this.list.items;
                 }
 
-                if (this.list.view === "level") {
+                if (this.list.ui === "level") {
                     if (listItem.item.parents?.length) {
                         this.list.items = listItem.item.parents;
                         listItem.item.parents = [];
