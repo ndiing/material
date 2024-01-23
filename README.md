@@ -9,21 +9,24 @@ Welcome to the Material Components repository, a collection of versatile compone
 - [Panel](./src/material/panel/panel.md)
 - [State](./src/material/state/state.md)
 
+<hr>
+
 ## Components
 
 - [Badge](./src/material/badge/badge.md)
 - [Button](./src/material/button/button.md)
 - [Checkbox](./src/material/checkbox/checkbox.md)
-- [Icon](./src/material/icon/icon.md)
 - [Emoji](./src/material/emoji/emoji.md)
 - [Floating Action Button (FAB)](./src/material/fab/fab.md)
+- [Icon](./src/material/icon/icon.md)
 - [Icon Button](./src/material/icon-button/icon-button.md)
 - [Image](./src/material/image/image.md)
 - [List](./src/material/list/list.md)
 - [Radio Button](./src/material/radio-button/radio-button.md)
 - [Segmented Button](./src/material/segmented-button/segmented-button.md)
-- [State](./src/material/state/state.md)
 - [Switch](./src/material/switch/switch.md)
+
+<hr>
 
 Explore the documentation for each component to gain a deeper understanding of their usage and customization options.
 
