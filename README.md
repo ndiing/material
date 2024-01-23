@@ -2,14 +2,14 @@
 
 Welcome to the Material Components repository, a collection of versatile components designed for seamless integration into your projects. Each component comes with comprehensive documentation in Markdown format.
 
+<hr>
+
 ## Foundations
 
 - [Layout 📝](#)
 - [Navigation](./src/material/navigation/navigation.md)
 - [Panel](./src/material/panel/panel.md)
 - [State](./src/material/state/state.md)
-
-<hr>
 
 ## Components
 
