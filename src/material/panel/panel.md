@@ -1,4 +1,4 @@
-# MdPanelScrimComponent (Panel)
+# Panel
 
 `MdNavigation` is a utility class for handling placement in a web application.
 
