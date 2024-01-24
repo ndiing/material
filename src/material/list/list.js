@@ -203,6 +203,7 @@ class MdListComponent extends LitElement {
 
     onListItemClick(event) {
         const listItem = event.currentTarget;
+
         if (this.list.activatable) {
             if (this.list.type === "multi-select") {
                 listItem.item.activated = !listItem.item.activated;
@@ -210,21 +211,26 @@ class MdListComponent extends LitElement {
                 if(listItem.item.children?.length){
                     listItem.item.expanded = !listItem.item.expanded;
                 }
+
                 const activateListItem = (items) => {
                     for (const item of items) {
                         if(!listItem.item.children?.length){
                             item.activated = item === listItem.item;
                         }
+                        
                         if(item.children?.length){
                             activateListItem(item.children)
                             item.children=[...item.children]
                         }
                     }
                 }
+
                 activateListItem(this.list.items)
             }
+
             this.list.requestUpdate();
         }
+
         this.dispatchEvent(
             new CustomEvent("onListItemClick", {
                 bubbles: true,
