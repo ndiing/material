@@ -2,14 +2,6 @@ import { LitElement, html, nothing } from "lit";
 import { choose } from "lit/directives/choose.js";
 import { MdStateController } from "../state/state";
 
-function notNull(value) {
-    return value !== undefined && value !== null;
-}
-
-function notEmpty(value) {
-    return notNull(value) && value !== "";
-}
-
 class MdListItemComponent extends LitElement {
     static get properties() {
         return {
@@ -61,7 +53,7 @@ class MdListItemComponent extends LitElement {
                 </div>
             ` : nothing} 
             ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
-            ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
+            ${this.badge !== undefined && this.badge !== null ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
         `;
     }
 
