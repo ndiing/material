@@ -44,8 +44,34 @@ class MdListItemComponent extends LitElement {
     }
 
     render() {
+        let leadingIcons=[]
+        let trailingIcons=[]
+
+        let collapsibleIcons=['arrow_right','arrow_drop_down']
+        let nodeIcons=['folder','folder_open']
+        let leafIcon='draft'
+
+        if(this.ui==='tree'){
+        
+            leadingIcons=leadingIcons.concat(
+                Array.from({length:this.level}, () => ({item:'md-icon'}))
+            )
+    
+            if(this.item.children?.length){
+                leadingIcons=leadingIcons.concat({item:'md-icon',icon:collapsibleIcons[~~this.expanded]})
+                leadingIcons=leadingIcons.concat({item:'md-icon',icon:nodeIcons[~~this.expanded]})
+            }else{
+                leadingIcons=leadingIcons.concat({item:'md-icon',icon:''})
+                leadingIcons=leadingIcons.concat({item:'md-icon',icon:leafIcon})
+            }
+    
+        }
+        else if(this.ui==='level'){}
+        else{}
+
         /*prettier-ignore*/
         return html`
+            ${leadingIcons.map(item=>this.renderItem(item))}
             ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
             ${this.label || this.supportingText ? html`
                 <div class="md-list__center">
@@ -54,6 +80,7 @@ class MdListItemComponent extends LitElement {
                 </div>
             ` : nothing} 
             ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
+            ${trailingIcons.map(item=>this.renderItem(item))}
             ${this.badge !== undefined && this.badge !== null ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
         `;
     }
@@ -154,6 +181,8 @@ class MdListComponent extends LitElement {
                         .trailingItems="${item.trailingItems}" 
                         .activated="${item.activated}"
                         .expanded="${item.expanded}"
+                        .ui="${this.list.ui}"
+                        .level="${this.level}"
                         @click="${this.onListItemClick}"></md-list-item>
                 ` : nothing}
                 ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
@@ -217,7 +246,7 @@ class MdListComponent extends LitElement {
                         if(!listItem.item.children?.length){
                             item.activated = item === listItem.item;
                         }
-                        
+
                         if(item.children?.length){
                             activateListItem(item.children)
                             item.children=[...item.children]
