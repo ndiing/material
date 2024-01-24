@@ -11,6 +11,7 @@ class MdListItemComponent extends LitElement {
             leadingItems: { type: Array },
             trailingItems: { type: Array },
             activated: { type: Boolean, reflect: true },
+            expanded: { type: Boolean, reflect: true },
         };
     }
 
@@ -152,10 +153,11 @@ class MdListComponent extends LitElement {
                         .leadingItems="${item.leadingItems}" 
                         .trailingItems="${item.trailingItems}" 
                         .activated="${item.activated}"
+                        .expanded="${item.expanded}"
                         @click="${this.onListItemClick}"></md-list-item>
                 ` : nothing}
                 ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
-                ${item.children ? html`<md-list 
+                ${item.children?.length&&item.expanded ? html`<md-list 
                     class="md-list__children"
                     .items="${item.children}"
                     .level="${this.level+1}"
@@ -205,6 +207,9 @@ class MdListComponent extends LitElement {
             if (this.list.type === "multi-select") {
                 listItem.item.activated = !listItem.item.activated;
             } else {
+                if(listItem.item.children?.length){
+                    listItem.item.expanded = !listItem.item.expanded;
+                }
                 const activateListItem = (items) => {
                     for (const item of items) {
                         if(!listItem.item.children?.length){
