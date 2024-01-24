@@ -53,7 +53,7 @@ class MdListItemComponent extends LitElement {
                 </div>
             ` : nothing} 
             ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
-            ${this.badge!==null&&this.badge!==undefined ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
+            ${this.badge !== undefined && this.badge !== null ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
         `;
     }
 
@@ -68,9 +68,7 @@ class MdListItemComponent extends LitElement {
     }
 
     firstUpdated() {
-        this.state = new MdStateController(this, {
-            fadeout:true
-        });
+        this.state = new MdStateController(this, {fadeout:true});
 
         if (this.label) {
             this.classList.remove("md-list__item--no-label");

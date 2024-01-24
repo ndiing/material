@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: column;
     padding: 8px 0;
+    background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
 
-    .md-list{
+    .md-list {
         padding: 0;
-        .md-list__row{
+
+        .md-list__row {
             padding-left: 0;
             padding-right: 0;
         }
@@ -284,5 +287,32 @@
     }
 }
 
-// tree
-// level
+// .md-list--tree{
+
+// }
+
+.md-list--level {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .md-list {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        visibility: hidden;
+        padding: 8px 0;
+    }
+    .md-list__row {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .md-list__item {
+        &[expanded] {
+            + .md-list {
+                visibility: visible;
+            }
+        }
+    }
+}
