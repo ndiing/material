@@ -5,12 +5,10 @@
     background: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
 
-    .md-list {
+    .md-list{
         padding: 0;
-
-        .md-list__row {
-            padding-left: 0;
-            padding-right: 0;
+        .md-list__row{
+            padding: 0;
         }
     }
 }
@@ -41,7 +39,7 @@
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
 }
 
-// .md-list__start{}
+// .md-list__start {}
 
 .md-list__center {
     flex: 1;
@@ -83,9 +81,9 @@
     width: 24px;
 }
 
-// .md-list__checkbox{}
-// .md-list__radio-button{}
-// .md-list__switch{}
+// .md-list__checkbox {}
+// .md-list__radio-button {}
+// .md-list__switch {}
 
 .md-list {
     .md-list__item {
@@ -142,7 +140,7 @@
     }
 }
 
-// navigation-bar
+// navigation bar
 @keyframes md-navigation-bar-list-active-indicator {
     from {
         height: 32px;
@@ -152,6 +150,7 @@
 
 .md-navigation-bar__list {
     flex-direction: row;
+    padding: 0;
 
     .md-list__row {
         flex: 1;
@@ -210,8 +209,10 @@
     }
 }
 
-// navigation-drawer
+// navigation drawer
 .md-navigation-drawer__list {
+    padding: 0;
+    
     .md-list__row {
         padding: 0 12px;
     }
@@ -229,9 +230,10 @@
     }
 }
 
-// navigation-rail
+// navigation rail
 .md-navigation-rail__list {
     display: inline-flex;
+    padding: 0;
 
     .md-list__item {
         flex-direction: column;
@@ -287,31 +289,29 @@
     }
 }
 
-// .md-list--tree{
-
+// tree
+// .md-list--tree {
 // }
 
+// level
 .md-list--level {
-    height: 100%;
-    width: 100%;
     position: relative;
-    .md-list {
-        height: 100%;
+    .md-list{
+        height: inherit;
         width: 100%;
         position: absolute;
         left: 0;
         top: 0;
-        visibility: hidden;
-        padding: 8px 0;
+        z-index: -1;
+        .md-list__row{
+            padding-left: 12px;
+            padding-right: 12px;
+        }
     }
-    .md-list__row {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .md-list__item {
-        &[expanded] {
-            + .md-list {
-                visibility: visible;
+    .md-list__item{
+        &[expanded]{
+            +.md-list{
+                z-index: 1;
             }
         }
     }
