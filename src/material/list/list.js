@@ -11,7 +11,6 @@ class MdListItemComponent extends LitElement {
             leadingItems: { type: Array },
             trailingItems: { type: Array },
             activated: { type: Boolean, reflect: true },
-            expanded: { type: Boolean, reflect: true },
         };
     }
 
@@ -44,34 +43,8 @@ class MdListItemComponent extends LitElement {
     }
 
     render() {
-        let leadingIcons=[]
-        let trailingIcons=[]
-
-        let collapsibleIcons=['arrow_right','arrow_drop_down']
-        let nodeIcons=['folder','folder_open']
-        let leafIcon='draft'
-
-        if(this.ui==='tree'){
-        
-            leadingIcons=leadingIcons.concat(
-                Array.from({length:this.level}, () => ({item:'md-icon'}))
-            )
-    
-            if(this.item.children?.length){
-                leadingIcons=leadingIcons.concat({item:'md-icon',icon:collapsibleIcons[~~this.expanded]})
-                leadingIcons=leadingIcons.concat({item:'md-icon',icon:nodeIcons[~~this.expanded]})
-            }else{
-                leadingIcons=leadingIcons.concat({item:'md-icon',icon:''})
-                leadingIcons=leadingIcons.concat({item:'md-icon',icon:leafIcon})
-            }
-    
-        }
-        else if(this.ui==='level'){}
-        else{}
-
         /*prettier-ignore*/
         return html`
-            ${leadingIcons.map(item=>this.renderItem(item))}
             ${this.leadingItems?.length ? html`<div class="md-list__start">${this.leadingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
             ${this.label || this.supportingText ? html`
                 <div class="md-list__center">
@@ -80,8 +53,7 @@ class MdListItemComponent extends LitElement {
                 </div>
             ` : nothing} 
             ${this.trailingItems?.length ? html`<div class="md-list__end">${this.trailingItems.map((item) => this.renderItem(item))}</div>` : nothing} 
-            ${trailingIcons.map(item=>this.renderItem(item))}
-            ${this.badge !== undefined && this.badge !== null ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
+            ${this.badge!==null&&this.badge!==undefined ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing} 
         `;
     }
 
@@ -155,7 +127,6 @@ class MdListComponent extends LitElement {
     constructor() {
         super();
         this.items = [];
-        this.level=0
     }
 
     createRenderRoot() {
@@ -180,17 +151,9 @@ class MdListComponent extends LitElement {
                         .leadingItems="${item.leadingItems}" 
                         .trailingItems="${item.trailingItems}" 
                         .activated="${item.activated}"
-                        .expanded="${item.expanded}"
-                        .ui="${this.list.ui}"
-                        .level="${this.level}"
                         @click="${this.onListItemClick}"></md-list-item>
                 ` : nothing}
                 ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
-                ${item.children?.length&&item.expanded ? html`<md-list 
-                    class="md-list__children"
-                    .items="${item.children}"
-                    .level="${this.level+1}"
-                ></md-list>` : nothing}
             </md-list-row>
         `);
     }
@@ -218,48 +181,18 @@ class MdListComponent extends LitElement {
         }
     }
 
-    get list(){
-        var el = this;
-
-        do {
-            if (el.matches('.md-list')&&el.level===0) return el;
-            el = el.parentElement || el.parentNode;
-        } while (el !== null && el.nodeType === 1);
-        
-        return null;
-
-    }
-
     onListItemClick(event) {
         const listItem = event.currentTarget;
-
-        if (this.list.activatable) {
-            if (this.list.type === "multi-select") {
+        if (this.activatable) {
+            if (this.type === "multi-select") {
                 listItem.item.activated = !listItem.item.activated;
             } else {
-                if(listItem.item.children?.length){
-                    listItem.item.expanded = !listItem.item.expanded;
+                for (const item of this.items) {
+                    item.activated = item === listItem.item;
                 }
-
-                const activateListItem = (items) => {
-                    for (const item of items) {
-                        if(!listItem.item.children?.length){
-                            item.activated = item === listItem.item;
-                        }
-
-                        if(item.children?.length){
-                            activateListItem(item.children)
-                            item.children=[...item.children]
-                        }
-                    }
-                }
-
-                activateListItem(this.list.items)
             }
-
-            this.list.requestUpdate();
+            this.requestUpdate();
         }
-
         this.dispatchEvent(
             new CustomEvent("onListItemClick", {
                 bubbles: true,

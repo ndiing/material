@@ -371,6 +371,7 @@ class ExampleComponent extends LitElement {
                             ] },
                             { label: "Label 3" },
                         ]}"
+                        @onListItemClick="${console.log}"
                     ></md-list>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -399,6 +400,7 @@ class ExampleComponent extends LitElement {
                             ] },
                             { label: "Label 3" },
                         ]}"
+                        @onListItemClick="${console.log}"
                     ></md-list>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -427,6 +429,7 @@ class ExampleComponent extends LitElement {
                             ] },
                             { label: "Label 3" },
                         ]}"
+                        @onListItemClick="${console.log}"
                     ></md-list>
                 </div>
                 <!--  -->
