@@ -127,6 +127,7 @@ class MdListComponent extends LitElement {
     constructor() {
         super();
         this.items = [];
+        this.level=0
     }
 
     createRenderRoot() {
@@ -154,6 +155,11 @@ class MdListComponent extends LitElement {
                         @click="${this.onListItemClick}"></md-list-item>
                 ` : nothing}
                 ${item.divider ? html`<div class="md-list__divider"></div>` : nothing}
+                ${item.children ? html`<md-list 
+                    class="md-list__children"
+                    .items="${item.children}"
+                    .level="${this.level+1}"
+                ></md-list>` : nothing}
             </md-list-row>
         `);
     }
@@ -181,17 +187,38 @@ class MdListComponent extends LitElement {
         }
     }
 
+    get list(){
+        var el = this;
+
+        do {
+            if (el.matches('.md-list')&&el.level===0) return el;
+            el = el.parentElement || el.parentNode;
+        } while (el !== null && el.nodeType === 1);
+        
+        return null;
+
+    }
+
     onListItemClick(event) {
         const listItem = event.currentTarget;
-        if (this.activatable) {
-            if (this.type === "multi-select") {
+        if (this.list.activatable) {
+            if (this.list.type === "multi-select") {
                 listItem.item.activated = !listItem.item.activated;
             } else {
-                for (const item of this.items) {
-                    item.activated = item === listItem.item;
+                const activateListItem = (items) => {
+                    for (const item of items) {
+                        if(!listItem.item.children?.length){
+                            item.activated = item === listItem.item;
+                        }
+                        if(item.children?.length){
+                            activateListItem(item.children)
+                            item.children=[...item.children]
+                        }
+                    }
                 }
+                activateListItem(this.list.items)
             }
-            this.requestUpdate();
+            this.list.requestUpdate();
         }
         this.dispatchEvent(
             new CustomEvent("onListItemClick", {
