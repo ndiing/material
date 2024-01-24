@@ -76,7 +76,9 @@ class MdListItemComponent extends LitElement {
     }
 
     firstUpdated() {
-        this.state = new MdStateController(this, {});
+        this.state = new MdStateController(this, {
+            fadeout:true
+        });
 
         if (this.label) {
             this.classList.remove("md-list__item--no-label");
