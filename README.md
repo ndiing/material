@@ -8,7 +8,7 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 - [Layout 📝](#./src/material/layout/layout.md 'on process')
 - [Navigation](./src/material/navigation/navigation.md)
-- [Panel](./src/material/panel/panel.md)
+- [Panel] ⭐ (./src/material/panel/panel.md)
 - [State](./src/material/state/state.md)
 
 ## Components

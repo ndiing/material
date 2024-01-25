@@ -24,14 +24,18 @@ List items can contain primary and supplemental actions represented by icons and
 
 ## Properties
 
-| Property       | Type    | Default | Description                                         |
-| -------------- | ------- | ------- | --------------------------------------------------- |
-| label          | String  |         | The label text for the list item.                   |
-| supportingText | String  |         | Supporting text for additional information.         |
-| badge          | String  |         | The badge text for the list item.                   |
-| leadingItems   | Array   | [ ]     | An array of leading items for the list item.        |
-| trailingItems  | Array   | [ ]     | Trailing items to be displayed after the label.     |
-| activated      | Boolean | false   | Reflects whether the list item is activated or not. |
+| Property         | Type    | Default | Description                                                                                     |
+| ---------------- | ------- | ------- | ----------------------------------------------------------------------------------------------- |
+| label            | String  |         | The label text for the list item.                                                               |
+| supportingText   | String  |         | Supporting text for additional information.                                                     |
+| badge            | String  |         | The badge text for the list item.                                                               |
+| leadingItems     | Array   | [ ]     | Array of leading items. Each item is an object with properties like `item`, `src`, `alt`, etc.  |
+| trailingItems    | Array   | [ ]     | Array of trailing items. Each item is an object with properties like `item`, `src`, `alt`, etc. |
+| activated        | Boolean | false   | Reflects whether the list item is activated or not.                                             |
+| expanded         | Boolean | -       | Reflects the expansion state of the item.                                                       |
+| collapsibleIcons | Array   | -       | Icons for collapsible items.                                                                    |
+| nodeIcons        | Array   | -       | Icons for tree nodes.                                                                           |
+| leafIcon         | String  | -       | Icon for tree leaves.                                                                           |
 
 ## Instance Methods
 
