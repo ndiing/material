@@ -95,11 +95,11 @@ None
 
 ## Instance Methods
 
-None
+- `hasListItem(item)`: Returns true if the item has content to display in the list row.
 
 ## Events
 
-None
+- `onListItemClick`: Custom event triggered when a list item is clicked.
 
 ## Examples
 
