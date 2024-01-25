@@ -1,19 +1,29 @@
 .md-panel {
     display: flex;
     flex-direction: column;
-    background: var(--md-sys-color-surface-container);
-    color: var(--md-sys-color-on-surface-container);
+    background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    // background: var(--md-sys-color-surface-container-high);
+    // color: var(--md-sys-color-on-surface-container-high);
 }
 .md-panel__header {
     display: flex;
     align-items: center;
     padding: 24px;
     gap: 0 16px;
+    + .md-panel__body {
+        margin-top: 0;
+    }
 }
 .md-panel__body {
     flex: 1;
     overflow: auto;
+    padding: 0 24px;
+    margin: 24px 0;
     @extend .md-typography--body-medium;
+    + .md-panel__footer {
+        margin-top: -24px;
+    }
 }
 .md-panel__footer {
     display: flex;
@@ -22,17 +32,13 @@
     padding: 24px;
     gap: 0 8px;
 }
-
-// .md-panel__start {}
-
+// .md-panel__start{}
 .md-panel__center {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
-// .md-panel__end {}
-
+// .md-panel__end{}
 .md-panel__label {
     @extend .md-typography--title-large;
 }
@@ -40,55 +46,113 @@
     @extend .md-typography--body-medium;
 }
 
-.md-panel--dialog,
-.md-panel--drawer {
-    display: inline-flex;
+.md-panel--transition {
+    transition-property: all;
+    transition-duration: var(--md-sys-motion-duration-short2);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+.md-panel__scrim {
     position: absolute;
-    z-index: 2;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    background: var(--md-sys-color-scrim);
+    opacity: 32%;
 }
 
 .md-panel--dialog {
+    display: inline-flex;
+    // min-width: 280px;
+    // max-width: 560px;
     width: 340px;
+    position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-}
+    z-index: 12;
+    transform: scale(1) translate3d(-50%, -50%, 0);
+    transform-origin: left top;
+    // transition-property: all;
+    // transition-duration: var(--md-sys-motion-duration-short2);
+    // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 
-.md-panel--top {
-    right: 0;
-    left: 0;
-    top: 0;
-    transform: translate3d(0, 0, 0);
+    &:not(.md-panel--open) {
+        transform: scale(0.8) translate3d(-50%, -50%, 0);
+        opacity: 0;
+        pointer-events: none;
+    }
 }
-
-.md-panel--right {
-    bottom: 0;
-    left: 100%;
-    top: 0;
-    transform: translate3d(-100%, 0, 0);
-}
-
-.md-panel--bottom {
-    right: 0;
-    left: 0;
-    top: 100%;
-    transform: translate3d(0%, -100%, 0);
-}
-
-.md-panel--left {
-    bottom: 0;
-    left: 0;
-    top: 0;
-    transform: translate3d(0, 0%, 0);
-}
-
-.md-panel__scrim {
-    height: 100%;
-    width: 100%;
+.md-panel--drawer {
     position: absolute;
+    z-index: 12;
+    // transition-property: all;
+    // transition-duration: var(--md-sys-motion-duration-short2);
+    // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+.md-panel--top {
+    // height: 64px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &:not(.md-panel--open) {
+        transform: translate3d(0, -100%, 0);
+    }
+}
+.md-panel--right {
+    // width: 360px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &:not(.md-panel--open) {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+.md-panel--bottom {
+    // height: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:not(.md-panel--open) {
+        transform: translate3d(0, 100%, 0);
+    }
+}
+.md-panel--left {
+    // width: 256px;
     left: 0;
     top: 0;
-    z-index: 1;
-    background: var(--md-sys-color-scrim);
-    opacity: 32%;
+    bottom: 0;
+
+    &:not(.md-panel--open) {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+.md-layout {
+    padding-left: var(--md-panel-left, 0px);
+    padding-top: var(--md-panel-top, 0px);
+    padding-right: var(--md-panel-right, 0px);
+    padding-bottom: var(--md-panel-bottom, 0px);
+    transition-property: all;
+    transition-duration: var(--md-sys-motion-duration-short2);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+.md-panel--top {
+    left: var(--md-panel-left, 0px);
+    right: var(--md-panel-right, 0px);
+}
+.md-panel--bottom {
+    left: var(--md-panel-left, 0px);
+    right: var(--md-panel-right, 0px);
+}
+// .md-panel--open{}
+// .md-panel--modal{}
+
+// TEMP
+.md-panel--dialog,
+.md-panel--drawer,
+.md-panel__scrim {
+    position: fixed;
 }

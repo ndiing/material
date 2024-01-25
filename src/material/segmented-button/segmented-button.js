@@ -1,7 +1,8 @@
 import { LitElement, html } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdSegmentedButtonComponent extends LitElement {
+class MdSegmentedButtonComponent extends MdComponent {
     static get properties() {
         return {
             items: { type: Array },
@@ -12,10 +13,6 @@ class MdSegmentedButtonComponent extends LitElement {
     constructor() {
         super();
         this.items = [];
-    }
-
-    createRenderRoot() {
-        return this;
     }
 
     render() {
@@ -55,13 +52,7 @@ class MdSegmentedButtonComponent extends LitElement {
 
         this.requestUpdate();
 
-        this.dispatchEvent(
-            new CustomEvent("onSegmentedButtonClick", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event, button },
-            })
-        );
+        this.emit("onSegmentedButtonClick", { event, button });
     }
 }
 

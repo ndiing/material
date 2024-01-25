@@ -1,7 +1,8 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdBadgeComponent extends LitElement {
+class MdBadgeComponent extends MdComponent {
     static get properties() {
         return {
             label: { type: Number },
@@ -12,10 +13,6 @@ class MdBadgeComponent extends LitElement {
     constructor() {
         super();
         this.limit = 999;
-    }
-
-    createRenderRoot() {
-        return this;
     }
 
     render() {
@@ -32,10 +29,6 @@ class MdBadgeComponent extends LitElement {
         super.disconnectedCallback();
         this.classList.remove("md-badge");
     }
-
-    firstUpdated() {}
-
-    updated(_changedProperties) {}
 }
 
 customElements.define("md-badge", MdBadgeComponent);

@@ -1,6 +1,7 @@
 import "./navigation/navigation.js";
 import "./state/state.js";
 
+import "./component/component.js";
 import "./icon/icon.js";
 import "./emoji/emoji.js";
 import "./image/image.js";
@@ -14,3 +15,6 @@ import "./switch/switch.js";
 import "./badge/badge.js";
 import "./list/list.js";
 import "./panel/panel.js";
+import "./navigation-bar/navigation-bar.js";
+import "./navigation-drawer/navigation-drawer.js";
+import "./navigation-rail/navigation-rail.js";

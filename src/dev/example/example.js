@@ -247,21 +247,20 @@ class ExampleComponent extends LitElement {
 
                 <!--  -->
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list
-                        class="md-navigation-bar__list"
-                        activatable
+                    <md-navigation-bar
+                        id="navigationBar1"
                         .items="${[
                             { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
                         ]}"
-                    ></md-list>
+                    ></md-navigation-bar>
+                    <md-button label="navigation bar 1" @click="${() => navigationBar1.toggle()}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list
-                        class="md-navigation-bar__list"
-                        activatable
+                    <md-navigation-bar
+                        id="navigationBar2"
                         .items="${[
                             //
                             { activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
@@ -269,16 +268,16 @@ class ExampleComponent extends LitElement {
                             { badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
                         ]}"
-                    ></md-list>
+                    ></md-navigation-bar>
+                    <md-button label="navigation bar 2" @click="${() => navigationBar2.toggle()}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
                 <!--  -->
 
                 <!--  -->
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list
-                        class="md-navigation-drawer__list"
-                        activatable
+                    <md-navigation-drawer
+                        id="navigationDrawer1"
                         .items="${[
                             //
                             { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }], trailingItems: [{ item: "md-supporting-text", supportingText: "24" }] },
@@ -291,12 +290,12 @@ class ExampleComponent extends LitElement {
                             { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
                         ]}"
-                    ></md-list>
+                    ></md-navigation-drawer>
+                    <md-button label="navigation drawer 1" @click="${() => navigationDrawer1.toggle()}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list
-                        class="md-navigation-drawer__list"
-                        activatable
+                    <md-navigation-drawer
+                        id="navigationDrawer2"
                         .items="${[
                             //
                             { headline: "Label" },
@@ -310,28 +309,28 @@ class ExampleComponent extends LitElement {
                             { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
                         ]}"
-                    ></md-list>
+                    ></md-navigation-drawer>
+                    <md-button label="navigation drawer 2" @click="${() => navigationDrawer2.toggle()}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
                 <!--  -->
 
                 <!--  -->
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list
-                        class="md-navigation-rail__list"
-                        activatable
+                    <md-navigation-rail
+                        id="navigationRail1"
                         .items="${[
                             { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { label: "Label", badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
                         ]}"
-                    ></md-list>
+                    ></md-navigation-rail>
+                    <md-button label="navigation rail 1" @click="${() => navigationRail1.toggle()}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-list
-                        class="md-navigation-rail__list"
-                        activatable
+                    <md-navigation-rail
+                        id="navigationRail2"
                         .items="${[
                             //
                             { activated: true, leadingItems: [{ item: "md-icon", icon: "image" }] },
@@ -339,7 +338,8 @@ class ExampleComponent extends LitElement {
                             { badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
                             { badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
                         ]}"
-                    ></md-list>
+                    ></md-navigation-rail>
+                    <md-button label="navigation rail 2" @click="${() => navigationRail2.toggle()}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
                 <!--  -->
@@ -436,15 +436,104 @@ class ExampleComponent extends LitElement {
 
                 <!--  -->
                 <!-- <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                    <md-panel type="dialog"></md-panel>
-                    <md-panel type="drawer" position="top"></md-panel>
-                    <md-panel type="drawer" position="right"></md-panel>
-                    <md-panel type="drawer" position="bottom"></md-panel>
-                    <md-panel type="drawer" position="left"></md-panel>
+                    <md-panel>
+                        <md-panel-header
+                            .leadingItems="${[{item:'md-icon-button',icon:'arrow_back'}]}"
+                            .label="${"Label"}"
+                            .supportingText="${"Supporting text"}"
+                            .trailingItems="${[{item:'md-icon-button',icon:'close'}]}"
+                        ></md-panel-header>
+                        <md-panel-body>
+                            A dialog is a type of modal window that
+                            appears in front of app content to provide
+                            critical information, or ask for decision.
+                        </md-panel-body>
+                        <md-panel-footer
+                            .items="${[
+                                {item:'md-button',label:'Enabled'},
+                                {item:'md-button',label:'Enabled'},
+                            ]}"
+                        ></md-panel-footer>
+                    </md-panel>
+                    <md-panel id="panel1" type="dialog">
+                        <md-panel-body>
+                            A dialog is a type of modal window that
+                            appears in front of app content to provide
+                            critical information, or ask for decision.
+                        </md-panel-body>
+                    </md-panel>
+                    <md-panel id="panel2" type="drawer" position="top">
+                        <md-panel-body>
+                            A dialog is a type of modal window that
+                            appears in front of app content to provide
+                            critical information, or ask for decision.
+                        </md-panel-body>
+                    </md-panel>
+                    <md-panel id="panel3" type="drawer" position="right">
+                        <md-panel-body>
+                            A dialog is a type of modal window that
+                            appears in front of app content to provide
+                            critical information, or ask for decision.
+                        </md-panel-body>
+                    </md-panel>
+                    <md-panel id="panel4" type="drawer" position="bottom">
+                        <md-panel-body>
+                            A dialog is a type of modal window that
+                            appears in front of app content to provide
+                            critical information, or ask for decision.
+                        </md-panel-body>
+                    </md-panel>
+                    <md-panel id="panel5" type="drawer" position="left">
+                        <md-panel-body>
+                            A dialog is a type of modal window that
+                            appears in front of app content to provide
+                            critical information, or ask for decision.
+                        </md-panel-body>
+                    </md-panel>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-button label="dialog" @click="${() => {
+                        panel1.modal=false
+                        panel1.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer top" @click="${() => {
+                        panel2.modal=false
+                        panel2.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer right" @click="${() => {
+                        panel3.modal=false
+                        panel3.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer bottom" @click="${() => {
+                        panel4.modal=false
+                        panel4.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer left" @click="${() => {
+                        panel5.modal=false
+                        panel5.toggle()
+                    }}"></md-button>
                 </div>
                 <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <md-button label="dialog" @click="${() => {
+                        panel1.modal=true
+                        panel1.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer top" @click="${() => {
+                        panel2.modal=true
+                        panel2.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer right" @click="${() => {
+                        panel3.modal=true
+                        panel3.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer bottom" @click="${() => {
+                        panel4.modal=true
+                        panel4.toggle()
+                    }}"></md-button>
+                    <md-button label="drawer left" @click="${() => {
+                        panel5.modal=true
+                        panel5.toggle()
+                    }}"></md-button>
                 </div> -->
                 <!--  -->
 

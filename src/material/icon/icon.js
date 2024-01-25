@@ -1,15 +1,8 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdIconComponent extends LitElement {
-    static get properties() {
-        return {};
-    }
-
-    createRenderRoot() {
-        return this;
-    }
-
+class MdIconComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon");
@@ -18,14 +11,6 @@ class MdIconComponent extends LitElement {
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-icon");
-    }
-
-    firstUpdated() {}
-
-    updated(_changedProperties) {}
-
-    dispatchCustomEvent() {
-        this.dispatchEvent(new CustomEvent("custom-event"));
     }
 }
 

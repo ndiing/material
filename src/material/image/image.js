@@ -1,7 +1,8 @@
 import { LitElement, html } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdImageComponent extends LitElement {
+class MdImageComponent extends MdComponent {
     static get properties() {
         return {
             src: { type: String },
@@ -14,10 +15,6 @@ class MdImageComponent extends LitElement {
     constructor() {
         super();
         this.ratio = "1/1";
-    }
-
-    createRenderRoot() {
-        return this;
     }
 
     render() {
@@ -50,6 +47,7 @@ class MdImageComponent extends LitElement {
                 this.style.removeProperty("aspect-ratio");
             }
         }
+
         if (_changedProperties.has("shape")) {
             if (this.ratio) {
                 this.style.setProperty("border-radius", `100% / ${eval(this.ratio) * 100}%`);
@@ -61,23 +59,12 @@ class MdImageComponent extends LitElement {
 
     onImageNativeError(event) {
         this.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
-        this.dispatchEvent(
-            new CustomEvent("onImageNativeError", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event },
-            })
-        );
+
+        this.emit("onImageNativeError", { event });
     }
 
     onImageNativeLoad(event) {
-        this.dispatchEvent(
-            new CustomEvent("onImageNativeLoad", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event },
-            })
-        );
+        this.emit("onImageNativeLoad", { event });
     }
 }
 

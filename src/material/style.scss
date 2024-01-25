@@ -394,35 +394,6 @@
     letter-spacing: var(--md-sys-typescale-label-small-tracking);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-
-    &,
-    &::before,
-    &::after {
-        box-sizing: border-box;
-    }
-}
-
-:focus {
-    outline: none;
-}
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    @extend .md-typography--body-large;
-    background: var(--md-sys-color-background);
-    color: var(--md-sys-color-on-background);
-}
-
 @mixin md-layout-expanded() {
     @media (min-width: 840px) {
         @content;
@@ -506,4 +477,35 @@ body {
             grid-column-end: span $i;
         }
     }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+:focus {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;
+}
+
+body {
+    // overflow: auto;
+    @extend .md-typography--body-large;
+    background: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
 }

@@ -1,7 +1,8 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdIconButtonComponent extends LitElement {
+class MdIconButtonComponent extends MdComponent {
     static get properties() {
         return {
             type: { type: String },
@@ -12,13 +13,13 @@ class MdIconButtonComponent extends LitElement {
         };
     }
 
+    get iconButtonNative() {
+        return this.querySelector(".md-icon-button__native");
+    }
+
     constructor() {
         super();
         this.type = "button";
-    }
-
-    createRenderRoot() {
-        return this;
     }
 
     render() {
@@ -42,10 +43,6 @@ class MdIconButtonComponent extends LitElement {
         this.classList.remove("md-icon-button");
     }
 
-    get iconButtonNative() {
-        return this.querySelector(".md-icon-button__native");
-    }
-
     firstUpdated() {
         this.state = new MdStateController(this, {
             button: this.iconButtonNative,
@@ -60,10 +57,12 @@ class MdIconButtonComponent extends LitElement {
             ["filled", "filled-tonal", "outlined"].forEach((ui) => {
                 this.classList.remove("md-icon-button--" + ui);
             });
+
             if (this.ui) {
                 this.classList.add("md-icon-button--" + this.ui);
             }
         }
+
         if (_changedProperties.has("toggle")) {
             if (this.toggle) {
                 this.classList.add("md-icon-button--toggle");
@@ -78,13 +77,7 @@ class MdIconButtonComponent extends LitElement {
             this.activated = !this.activated;
         }
 
-        this.dispatchEvent(
-            new CustomEvent("onIconButtonClick", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event },
-            })
-        );
+        this.emit("onIconButtonClick", { event });
     }
 }
 

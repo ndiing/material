@@ -1,19 +1,122 @@
-import { LitElement, html, nothing } from "lit";
+import { html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { choose } from "lit/directives/choose.js";
+import { MdComponent } from "../component/component";
 
-class MdPanelScrimComponent extends LitElement {
+class MdPanelHeaderComponent extends MdComponent {
     static get properties() {
-        return {};
+        return {
+            label: { type: String },
+            supportingText: { type: String },
+            leadingItems: { type: Array },
+            trailingItems: { type: Array },
+        };
     }
 
     constructor() {
         super();
+        this.leadingItems = [];
+        this.trailingItems = [];
     }
 
-    createRenderRoot() {
-        return this;
+    renderItem(item = {}) {
+        /* prettier-ignore */
+        return choose(item.item,[
+            ['md-icon-button',() => html`<md-icon-button icon="${item.icon}" @click="${this.onPanelItemClick}"></md-icon-button>`]
+        ],() => nothing)
     }
 
+    render() {
+        /* prettier-ignore */
+        return html`
+            ${this.leadingItems?.length?html`<div class="md-panel__start">${this.leadingItems.map(item=>this.renderItem(item))}</div>`:nothing}
+            ${this.label||this.supportingText?html`
+            <div class="md-panel__center">
+                ${this.label?html`<div class="md-panel__label">${this.label}</div>`:nothing}
+                ${this.supportingText?html`<div class="md-panel__supporting-text">${this.supportingText}</div>`:nothing}
+            </div>
+            `:nothing}
+            ${this.trailingItems?.length?html`<div class="md-panel__end">${this.trailingItems.map(item=>this.renderItem(item))}</div>`:nothing}
+        `
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-panel__header");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-panel__header");
+    }
+
+    onPanelItemClick(event) {
+        let item = event.currentTarget;
+
+        this.emit("onPanelItemClick", { event, item });
+    }
+}
+
+customElements.define("md-panel-header", MdPanelHeaderComponent);
+
+class MdPanelBodyComponent extends MdComponent {
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-panel__body");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-panel__body");
+    }
+}
+
+customElements.define("md-panel-body", MdPanelBodyComponent);
+
+class MdPanelFooterComponent extends MdComponent {
+    static get properties() {
+        return {
+            items: { type: Array },
+        };
+    }
+
+    constructor() {
+        super();
+        this.items = [];
+    }
+
+    renderItem(item = {}) {
+        /* prettier-ignore */
+        return choose(item.item,[
+            ['md-button',() => html`<md-button .icon="${item.icon}" .label="${item.label}" @click="${this.onPanelItemClick}"></md-button>`]
+        ],() => nothing)
+    }
+
+    render() {
+        /* prettier-ignore */
+        return this.items.map(item=>this.renderItem(item))
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-panel__footer");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-panel__footer");
+    }
+
+    onPanelItemClick(event) {
+        let item = event.currentTarget;
+
+        this.emit("onPanelItemClick", { event, item });
+    }
+}
+
+customElements.define("md-panel-footer", MdPanelFooterComponent);
+
+class MdPanelScrimComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-panel__scrim");
@@ -23,58 +126,23 @@ class MdPanelScrimComponent extends LitElement {
         super.disconnectedCallback();
         this.classList.remove("md-panel__scrim");
     }
-
-    firstUpdated() {}
-
-    updated(_changedProperties) {}
 }
 
 customElements.define("md-panel-scrim", MdPanelScrimComponent);
 
-export { MdPanelScrimComponent };
-
-class MdPanelComponent extends LitElement {
+class MdPanelComponent extends MdComponent {
     static get properties() {
         return {
             open: { type: Boolean },
             type: { type: String },
             position: { type: String },
+            modal: { type: Boolean },
+            label: { type: String },
+            supportingText: { type: String },
+            leadingItems: { type: Array },
+            trailingItems: { type: Array },
+            buttons: { type: Array },
         };
-    }
-
-    constructor() {
-        super();
-    }
-
-    createRenderRoot() {
-        return this;
-    }
-
-    render() {
-        /*prettier-ignore*/
-        return html`
-            <div class="md-panel__header">
-                <div class="md-panel__start">
-                    <md-icon-button icon="arrow_back"></md-icon-button>
-                </div>
-                <div class="md-panel__center">
-                    <div class="md-panel__label">Label</div>
-                    <div class="md-panel__supporting-text">Supporting text</div>
-                </div>
-                <div class="md-panel__end">
-                    <md-icon-button icon="close"></md-icon-button>
-                </div>
-            </div>
-            <!-- <div class="md-panel__body">
-                A dialog is a type of modal window that
-                appears in front of app content to provide
-                critical information, or ask for decision.
-            </div> -->
-            <!-- <div class="md-panel__footer">
-                <md-button label="Enabled"></md-button>
-                <md-button label="Enabled"></md-button>
-            </div> -->
-        `;
     }
 
     connectedCallback() {
@@ -87,22 +155,51 @@ class MdPanelComponent extends LitElement {
         this.classList.remove("md-panel");
     }
 
-    firstUpdated() {
-        this.panelScrim = document.createElement("md-panel-scrim");
-        this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
-        this.panelScrim.addEventListener("click", this.onPanelScrimClick);
-        document.body.append(this.panelScrim);
-
+    removePanelScrim() {
         this.panelScrim.removeEventListener("click", this.onPanelScrimClick);
         this.panelScrim.remove();
     }
 
+    createPanelScrim() {
+        this.panelScrim = document.createElement("md-panel-scrim");
+        this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
+        this.panelScrim.addEventListener("click", this.onPanelScrimClick);
+        document.body.append(this.panelScrim);
+    }
+
     updated(_changedProperties) {
+        // console.log(this.type,this.modal,this.open)
         if (_changedProperties.has("open")) {
             if (this.open) {
                 this.classList.add("md-panel--open");
+                this.classList.add("md-panel--transition");
+                if (["dialog", "drawer"].includes(this.type) && this.modal) {
+                    this.createPanelScrim();
+                }
             } else {
                 this.classList.remove("md-panel--open");
+                if (["dialog", "drawer"].includes(this.type) && this.modal) {
+                    this.removePanelScrim();
+                }
+            }
+
+            if (this.type === "drawer" && !this.modal) {
+                const mapSize = {
+                    left: "width",
+                    top: "height",
+                    right: "width",
+                    bottom: "height",
+                };
+                const rect = this.getBoundingClientRect();
+                const padding = this.open ? rect[mapSize[this.position]] : 0;
+                document.body.style.setProperty("--md-panel-" + this.position, padding + "px");
+            }
+        }
+        if (_changedProperties.has("modal")) {
+            if (this.modal) {
+                this.classList.add("md-panel--modal");
+            } else {
+                this.classList.remove("md-panel--modal");
             }
         }
         if (_changedProperties.has("type")) {
@@ -142,16 +239,10 @@ class MdPanelComponent extends LitElement {
     onPanelScrimClick(event) {
         this.close();
 
-        this.dispatchEvent(
-            new CustomEvent("onPanelScrimClick", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event },
-            })
-        );
+        this.emit("onPanelScrimClick", { event });
     }
 }
 
 customElements.define("md-panel", MdPanelComponent);
 
-export { MdPanelComponent };
+export { MdPanelHeaderComponent, MdPanelBodyComponent, MdPanelFooterComponent, MdPanelScrimComponent, MdPanelComponent };

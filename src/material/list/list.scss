@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 8px 0;
-    background: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
+
 
     .md-list{
         padding: 0;
@@ -296,6 +295,7 @@
 // level
 .md-list--level {
     position: relative;
+
     .md-list{
         height: inherit;
         width: 100%;
@@ -303,6 +303,8 @@
         left: 0;
         top: 0;
         z-index: -1;
+        background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
         .md-list__row{
             padding-left: 12px;
             padding-right: 12px;

@@ -1,7 +1,8 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdFabComponent extends LitElement {
+class MdFabComponent extends MdComponent {
     static get properties() {
         return {
             type: { type: String },
@@ -12,13 +13,13 @@ class MdFabComponent extends LitElement {
         };
     }
 
+    get fabNative() {
+        return this.querySelector(".md-fab__native");
+    }
+
     constructor() {
         super();
         this.type = "button";
-    }
-
-    createRenderRoot() {
-        return this;
     }
 
     render() {
@@ -42,10 +43,6 @@ class MdFabComponent extends LitElement {
         this.classList.remove("md-fab");
     }
 
-    get fabNative() {
-        return this.querySelector(".md-fab__native");
-    }
-
     firstUpdated() {
         this.state = new MdStateController(this, {
             button: this.fabNative,
@@ -57,10 +54,12 @@ class MdFabComponent extends LitElement {
             ["small", "large"].forEach((size) => {
                 this.classList.remove("md-fab--" + size);
             });
+
             if (this.size) {
                 this.classList.add("md-fab--" + this.size);
             }
         }
+
         if (_changedProperties.has("extended")) {
             if (this.extended) {
                 this.classList.add("md-fab--extended");

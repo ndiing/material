@@ -1,7 +1,8 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdButtonComponent extends LitElement {
+class MdButtonComponent extends MdComponent {
     static get properties() {
         return {
             type: { type: String },
@@ -19,10 +20,6 @@ class MdButtonComponent extends LitElement {
     constructor() {
         super();
         this.type = "button";
-    }
-
-    createRenderRoot() {
-        return this;
     }
 
     render() {

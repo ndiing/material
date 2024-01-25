@@ -1,8 +1,9 @@
 import { LitElement, html, nothing } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdRadioButtonComponent extends LitElement {
+class MdRadioButtonComponent extends MdComponent {
     static get properties() {
         return {
             name: { type: String },
@@ -10,12 +11,16 @@ class MdRadioButtonComponent extends LitElement {
         };
     }
 
-    constructor() {
-        super();
+    get radioButtonNative() {
+        return this.querySelector(".md-radio-button__native");
     }
 
-    createRenderRoot() {
-        return this;
+    get radioButtonTrack() {
+        return this.querySelector(".md-radio-button__track");
+    }
+
+    get radioButtonThumb() {
+        return this.querySelector(".md-radio-button__thumb");
     }
 
     render() {
@@ -44,18 +49,6 @@ class MdRadioButtonComponent extends LitElement {
         this.classList.remove("md-radio-button");
     }
 
-    get radioButtonNative() {
-        return this.querySelector(".md-radio-button__native");
-    }
-
-    get radioButtonTrack() {
-        return this.querySelector(".md-radio-button__track");
-    }
-
-    get radioButtonThumb() {
-        return this.querySelector(".md-radio-button__thumb");
-    }
-
     firstUpdated() {
         this.state = new MdStateController(this, {
             container: this.radioButtonTrack,
@@ -69,13 +62,7 @@ class MdRadioButtonComponent extends LitElement {
     onRadioButtonNativeInput(event) {
         this.checked = event.currentTarget.checked;
 
-        this.dispatchEvent(
-            new CustomEvent("onRadioButtonNativeInput", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event },
-            })
-        );
+        this.emit("onRadioButtonNativeInput", { event });
     }
 }
 

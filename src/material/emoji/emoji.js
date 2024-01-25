@@ -1,19 +1,8 @@
 import { LitElement, html, nothing } from "lit";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdEmojiComponent extends LitElement {
-    static get properties() {
-        return {};
-    }
-
-    constructor() {
-        super();
-    }
-
-    createRenderRoot() {
-        return this;
-    }
-
+class MdEmojiComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-emoji");
@@ -22,14 +11,6 @@ class MdEmojiComponent extends LitElement {
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-emoji");
-    }
-
-    firstUpdated() {}
-
-    updated(_changedProperties) {}
-
-    dispatchCustomEvent() {
-        this.dispatchEvent(new CustomEvent("customEvent", { detail: "Event detail" }));
     }
 }
 

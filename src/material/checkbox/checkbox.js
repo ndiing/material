@@ -1,8 +1,9 @@
 import { LitElement, html, nothing } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdCheckboxComponent extends LitElement {
+class MdCheckboxComponent extends MdComponent {
     static get properties() {
         return {
             name: { type: String },
@@ -11,12 +12,16 @@ class MdCheckboxComponent extends LitElement {
         };
     }
 
-    constructor() {
-        super();
+    get checkboxNative() {
+        return this.querySelector(".md-checkbox__native");
     }
 
-    createRenderRoot() {
-        return this;
+    get checkboxTrack() {
+        return this.querySelector(".md-checkbox__track");
+    }
+
+    get checkboxThumb() {
+        return this.querySelector(".md-checkbox__thumb");
     }
 
     render() {
@@ -46,18 +51,6 @@ class MdCheckboxComponent extends LitElement {
         this.classList.remove("md-checkbox");
     }
 
-    get checkboxNative() {
-        return this.querySelector(".md-checkbox__native");
-    }
-
-    get checkboxTrack() {
-        return this.querySelector(".md-checkbox__track");
-    }
-
-    get checkboxThumb() {
-        return this.querySelector(".md-checkbox__thumb");
-    }
-
     firstUpdated() {
         this.state = new MdStateController(this, {
             container: this.checkboxTrack,
@@ -68,19 +61,11 @@ class MdCheckboxComponent extends LitElement {
         });
     }
 
-    updated(_changedProperties) {}
-
     onCheckboxNativeInput(event) {
         this.indeterminate = event.currentTarget.indeterminate;
         this.checked = event.currentTarget.checked;
 
-        this.dispatchEvent(
-            new CustomEvent("onCheckboxNativeInput", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event },
-            })
-        );
+        this.emit("onCheckboxNativeInput", { event });
     }
 }
 

@@ -1,8 +1,9 @@
-import { LitElement, html, nothing } from "lit";
+import { html, nothing } from "lit";
 import { choose } from "lit/directives/choose.js";
 import { MdStateController } from "../state/state";
+import { MdComponent } from "../component/component";
 
-class MdListItemComponent extends LitElement {
+class MdListItemComponent extends MdComponent {
     static get properties() {
         return {
             label: { type: String },
@@ -24,10 +25,6 @@ class MdListItemComponent extends LitElement {
         this.trailingItems = [];
     }
 
-    createRenderRoot() {
-        return this;
-    }
-
     renderItem(item = {}) {
         /*prettier-ignore*/
         return choose(
@@ -47,67 +44,62 @@ class MdListItemComponent extends LitElement {
     }
 
     render() {
+        let leadingItems = [];
+        let trailingItems = [];
 
-        let leadingItems = []
-        let trailingItems = []
+        let collapsibleIcons = this.collapsibleIcons;
+        let nodeIcons = this.nodeIcons;
+        let leafIcon = this.leafIcon;
 
-        let collapsibleIcons=this.collapsibleIcons
-        let nodeIcons=this.nodeIcons
-        let leafIcon=this.leafIcon
+        if (this.ui === "tree") {
+            collapsibleIcons = collapsibleIcons ?? ["arrow_right", "arrow_drop_down"];
+            nodeIcons = nodeIcons ?? ["folder", "folder_open"];
+            leafIcon = leafIcon ?? "draft";
 
-        if(this.ui==='tree'){
-            collapsibleIcons = collapsibleIcons??['arrow_right','arrow_drop_down']
-            nodeIcons = nodeIcons??['folder','folder_open']
-            leafIcon = leafIcon??'draft'
-
-            leadingItems=leadingItems.concat(Array.from({length:this.level}, () => ({item:'md-icon'})))
-            if(this.item.children?.length){
-                if(collapsibleIcons?.length){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:collapsibleIcons[~~this.expanded]})
+            leadingItems = leadingItems.concat(Array.from({ length: this.level }, () => ({ item: "md-icon" })));
+            if (this.item.children?.length) {
+                if (collapsibleIcons?.length) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: collapsibleIcons[~~this.expanded] });
                 }
-                if(leafIcon&&nodeIcons.length){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:nodeIcons[~~this.expanded]})
+                if (leafIcon && nodeIcons.length) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: nodeIcons[~~this.expanded] });
                 }
-            }
-            else{
-                if(collapsibleIcons?.length){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:''})
+            } else {
+                if (collapsibleIcons?.length) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: "" });
                 }
-                if(leafIcon&&nodeIcons.length){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:leafIcon})
+                if (leafIcon && nodeIcons.length) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: leafIcon });
                 }
             }
-        }
-        else if(this.ui==='level'){
-            collapsibleIcons = collapsibleIcons??['arrow_forward','arrow_back']
-            leafIcon = leafIcon??''
+        } else if (this.ui === "level") {
+            collapsibleIcons = collapsibleIcons ?? ["arrow_forward", "arrow_back"];
+            leafIcon = leafIcon ?? "";
 
-            if(this.item.children?.length){
-                if(this.item.canGoBack){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:collapsibleIcons[~~this.expanded]})
-                }
-                else{
-                    trailingItems=trailingItems.concat({item:'md-icon',icon:collapsibleIcons[~~this.expanded]})
+            if (this.item.children?.length) {
+                if (this.item.canGoBack) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: collapsibleIcons[~~this.expanded] });
+                } else {
+                    trailingItems = trailingItems.concat({ item: "md-icon", icon: collapsibleIcons[~~this.expanded] });
                 }
             }
 
-            if(!this.item.canGoBack){
-                if(leafIcon||this.level>0){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:leafIcon})
+            if (!this.item.canGoBack) {
+                if (leafIcon || this.level > 0) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: leafIcon });
                 }
             }
-        }
-        else {
-            collapsibleIcons = collapsibleIcons??['arrow_drop_down','arrow_drop_up']
-            leafIcon = leafIcon??''
+        } else {
+            collapsibleIcons = collapsibleIcons ?? ["arrow_drop_down", "arrow_drop_up"];
+            leafIcon = leafIcon ?? "";
 
-            if(this.item.children?.length){
-                trailingItems=trailingItems.concat({item:'md-icon',icon:collapsibleIcons[~~this.expanded]})
+            if (this.item.children?.length) {
+                trailingItems = trailingItems.concat({ item: "md-icon", icon: collapsibleIcons[~~this.expanded] });
             }
 
-            if(!this.item.canGoBack){
-                if(leafIcon||this.level>0){
-                    leadingItems=leadingItems.concat({item:'md-icon',icon:leafIcon})
+            if (!this.item.canGoBack) {
+                if (leafIcon || this.level > 0) {
+                    leadingItems = leadingItems.concat({ item: "md-icon", icon: leafIcon });
                 }
             }
         }
@@ -139,7 +131,7 @@ class MdListItemComponent extends LitElement {
     }
 
     firstUpdated() {
-        this.state = new MdStateController(this, {fadeout:true});
+        this.state = new MdStateController(this, { fadeout: true });
 
         if (this.label) {
             this.classList.remove("md-list__item--no-label");
@@ -147,25 +139,11 @@ class MdListItemComponent extends LitElement {
             this.classList.add("md-list__item--no-label");
         }
     }
-
-    updated(_changedProperties) {}
 }
 
 customElements.define("md-list-item", MdListItemComponent);
 
-class MdListRowComponent extends LitElement {
-    static get properties() {
-        return {};
-    }
-
-    constructor() {
-        super();
-    }
-
-    createRenderRoot() {
-        return this;
-    }
-
+class MdListRowComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__row");
@@ -175,15 +153,11 @@ class MdListRowComponent extends LitElement {
         super.disconnectedCallback();
         this.classList.remove("md-list__row");
     }
-
-    firstUpdated() {}
-
-    updated(_changedProperties) {}
 }
 
 customElements.define("md-list-row", MdListRowComponent);
 
-class MdListComponent extends LitElement {
+class MdListComponent extends MdComponent {
     static get properties() {
         return {
             items: { type: Array },
@@ -193,14 +167,21 @@ class MdListComponent extends LitElement {
         };
     }
 
+    get list() {
+        let el = this;
+        do {
+            if (el.closest(".md-list") && el.level === 0) {
+                return el;
+            }
+            el = el.parentElement;
+        } while (el);
+        return null;
+    }
+
     constructor() {
         super();
         this.items = [];
-        this.level=0
-    }
-
-    createRenderRoot() {
-        return this;
+        this.level = 0;
     }
 
     hasListItem(item = {}) {
@@ -252,8 +233,6 @@ class MdListComponent extends LitElement {
         this.classList.remove("md-list");
     }
 
-    firstUpdated() {}
-
     updated(_changedProperties) {
         if (_changedProperties.has("ui")) {
             ["one-line", "two-line", "three-line"].forEach((ui) => {
@@ -265,50 +244,33 @@ class MdListComponent extends LitElement {
         }
     }
 
-    get list(){
-        let el = this
-        do{
-            if(el.closest('.md-list')&&el.level===0){
-                return el
+    activatedListItem(items, currentItem) {
+        for (const item of items) {
+            if (!currentItem.children?.length) {
+                item.activated = item == currentItem;
             }
-            el=el.parentElement
-        }while(el)
-        return null
-    }
-
-    activatedListItem(items,currentItem){
-        for(const item of items){
-            if(!currentItem.children?.length){
-                item.activated=item==currentItem
-            }
-            if(item.children?.length){
-                this.activatedListItem(item.children,currentItem)
-                item.children=[...item.children]
+            if (item.children?.length) {
+                this.activatedListItem(item.children, currentItem);
+                item.children = [...item.children];
             }
         }
     }
 
     onListItemClick(event) {
         const listItem = event.currentTarget;
-        const currentItem = listItem.item
+        const currentItem = listItem.item;
         if (this.list.activatable) {
             if (this.list.type === "multi-select") {
                 currentItem.activated = !currentItem.activated;
             } else {
-                if(currentItem.children?.length){
+                if (currentItem.children?.length) {
                     currentItem.expanded = !currentItem.expanded;
                 }
-                this.list.activatedListItem(this.list.items,currentItem)
+                this.list.activatedListItem(this.list.items, currentItem);
             }
             this.list.requestUpdate();
         }
-        this.list.dispatchEvent(
-            new CustomEvent("onListItemClick", {
-                bubbles: true,
-                cancelable: true,
-                detail: { event, listItem },
-            })
-        );
+        this.list.emit("onListItemClick", { event, listItem });
     }
 }
 
