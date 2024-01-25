@@ -351,11 +351,11 @@ class ExampleComponent extends LitElement {
                         activatable
                         ui=""
                         .items="${[
-                            { label: "Label 1",children:[
-                                { label: "Label 1.1",children:[
+                            { label: "Label 1",expanded:true,children:[
+                                { label: "Label 1.1",expanded:true,children:[
                                     { label: "Label 1.1.1" },
                                     { label: "Label 1.1.2" },
-                                    { label: "Label 1.1.3" },
+                                    { label: "Label 1.1.3",activated:true },
                                 ] },
                                 { label: "Label 1.2" },
                                 { label: "Label 1.3" },
@@ -380,11 +380,11 @@ class ExampleComponent extends LitElement {
                         activatable
                         ui="tree"
                         .items="${[
-                            { label: "Label 1",children:[
-                                { label: "Label 1.1",children:[
+                            { label: "Label 1",expanded:true,children:[
+                                { label: "Label 1.1",expanded:true,children:[
                                     { label: "Label 1.1.1" },
                                     { label: "Label 1.1.2" },
-                                    { label: "Label 1.1.3" },
+                                    { label: "Label 1.1.3",activated:true },
                                 ] },
                                 { label: "Label 1.2" },
                                 { label: "Label 1.3" },
@@ -409,11 +409,11 @@ class ExampleComponent extends LitElement {
                         activatable
                         ui="level"
                         .items="${[
-                            { label: "Label 1",children:[
-                                { label: "Label 1.1",children:[
+                            { label: "Label 1",expanded:true,children:[
+                                { label: "Label 1.1",expanded:true,children:[
                                     { label: "Label 1.1.1" },
                                     { label: "Label 1.1.2" },
-                                    { label: "Label 1.1.3" },
+                                    { label: "Label 1.1.3",activated:true },
                                 ] },
                                 { label: "Label 1.2" },
                                 { label: "Label 1.3" },
