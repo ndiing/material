@@ -23,10 +23,12 @@ There are 5 types of button:
 
 `1` Elevated, `2` Filled, `3` Filled tonal, `4` Outlined, `5` Text buttons
 
-- Button label text
+- Button label text:
+
   ![button-label-text](image1.png)
 
-- Button icon and label text
+- Button icon and label text:
+
   ![button-icon-label-text](image2.png)
 
 ## Properties
