@@ -22,8 +22,9 @@ An image component is a graphical element that serves to convey visual informati
 
 There are 2 styles of Image:
 
-1.  Image
-2.  Image shape
+`1` Image, `2` Image shape
+
+![Alt text](image1.png)
 
 ## Properties
 
