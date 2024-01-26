@@ -26,15 +26,15 @@ There are four styles of icon buttons:
 
 - Default
 
-![Alt text](image1.png)
+  ![Alt text](image1.png)
 
 - With toggle unselect
 
-![Alt text](image2.png)
+  ![Alt text](image2.png)
 
 - With toggle selected
 
-![Alt text](image3.png)
+  ![Alt text](image3.png)
 
 ## Properties
 
