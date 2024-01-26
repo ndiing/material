@@ -7,7 +7,6 @@ Welcome to the Material Components repository, a collection of versatile compone
 ## Foundations
 
 - [Layout 📝](#./src/material/layout/layout.md 'on process')
-- [Navigation](./src/material/navigation/navigation.md)
 - [Panel](./src/material/panel/panel.md)
 - [State](./src/material/state/state.md)
 
@@ -22,6 +21,7 @@ Welcome to the Material Components repository, a collection of versatile compone
 - [Icon Button](./src/material/icon-button/icon-button.md)
 - [Image](./src/material/image/image.md)
 - [List](./src/material/list/list.md)
+- [Navigation](./src/material/navigation/navigation.md)
 - [Radio Button](./src/material/radio-button/radio-button.md)
 - [Segmented Button](./src/material/segmented-button/segmented-button.md)
 - [Switch](./src/material/switch/switch.md)
