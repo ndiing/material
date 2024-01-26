@@ -23,7 +23,7 @@ Welcome to the Material Components repository, a collection of versatile compone
 - [Image](./src/material/image/image.md)
 - [List](./src/material/list/list.md)
 - [Navigation](./src/material/navigation/navigation.md)
-  - [Navigation Bar 📝](# 'on process')
+  - [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
   - [Navigation Drawer 📝](# 'on process')
   - [Navigation Rail 📝](# 'on process')
 - [Radio Button](./src/material/radio-button/radio-button.md)
