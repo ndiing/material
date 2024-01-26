@@ -17,6 +17,10 @@ Use checkboxes to:
 - Turn an item on or off in a desktop environment
 - Visually group similar options together
 
+`1` Unselected, `2` Indeterminate, `3` Selected
+
+![checkbox](image.png)
+
 ## Properties
 
 | Property        | Type    | Default | Description                                         |
