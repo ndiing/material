@@ -16,8 +16,17 @@ Badges are used to indicate a notification, item count, or other information rel
 
 There are 2 types of badges:
 
-1. Small badge
-2. Large badge
+`1` Small badge, `2` Large badge
+
+- A small badge is a simple circle, used to indicate an unread notification.
+
+![small-bagde-notification](image1.png)
+![small-bagde-notification](image2.png)
+
+- A large badge contains label text communicating item count information.
+
+![large-bagde-conatains label](image3.png)
+![large-bagde-conatains label](image4.png)
 
 ## Properties
 
@@ -38,15 +47,11 @@ None
 
 1. Small badge
 
-   A small badge is a simple circle, used to indicate an unread notification.
-
 ```html
 <md-badge></md-badge>
 ```
 
 2. Large badge
-
-   A large badge contains label text communicating item count information.
 
 ```html
 <md-badge label="42" limit="99"></md-badge>
