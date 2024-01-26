@@ -34,7 +34,7 @@ There are two types of navigation drawers:
 
 `1` Standard navigation drawer, `2` Modal navigation drawer
 
-Configurations:
+### Configurations:
 
 ## Properties
 
