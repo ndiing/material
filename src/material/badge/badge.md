@@ -21,11 +21,13 @@ There are 2 types of badges:
 - A small badge is a simple circle, used to indicate an unread notification.
 
 ![small-bagde-notification](image1.png)
+
 ![small-bagde-notification](image2.png)
 
 - A large badge contains label text communicating item count information.
 
 ![large-bagde-conatains label](image3.png)
+
 ![large-bagde-conatains label](image4.png)
 
 ## Properties
