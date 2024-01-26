@@ -19,7 +19,7 @@ Use switches to:
 - Toggle a single item on or off
 - Immediately activate or deactivate something
 
-![switch](image.png)
+  ![switch](image.png)
 
 ## Properties
 
