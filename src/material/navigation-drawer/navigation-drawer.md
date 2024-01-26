@@ -1,5 +1,8 @@
 # MdNavigationDrawer (Navigation Drawer)
 
+`MdNavigationDrawerComponent` is a custom element extending
+`MdPanelComponent` to create a navigation drawer. It provides a panel with a list of items for navigation.
+
 > _Navigation drawers let people switch between UI views on larger devices_
 
 - Use standard navigation drawers in expanded, large, and extra large window sizes
@@ -40,6 +43,8 @@ Configurations:
 | type     | String | "drawer" | Specifies the type of panel (fixed value: "drawer").        |
 | position | String | "left"   | Specifies the position of the drawer (fixed value: "left"). |
 | items    | String |          | Specifies the items for the navigation drawer.              |
+
+_Default values are used if not provided explicitly._
 
 ## Instance Methods
 
