@@ -1,17 +1,17 @@
-# Material Components
+# 🏗️ Material Components
 
 Welcome to the Material Components repository, a collection of versatile components designed for seamless integration into your projects. Each component comes with comprehensive documentation in Markdown format.
 
 <hr>
 
-## Foundations
+## 🧱 Foundations
 
 - [Layout 📝](#./src/material/layout/layout.md 'on process')
 - [Panel](./src/material/panel/panel.md)
 - [Router 📝](# 'on process')
 - [State](./src/material/state/state.md)
 
-## Components
+## 🧩 Components
 
 - [Badge](./src/material/badge/badge.md)
 - [Button](./src/material/button/button.md)
