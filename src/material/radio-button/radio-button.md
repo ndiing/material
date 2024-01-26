@@ -19,6 +19,8 @@ Use radio buttons to:
 - Select a single option from a set
 - Expose all available options
 
+![radio-button](image1.png)
+
 ## Properties
 
 | Property | Type    | Default | Description                                    |
