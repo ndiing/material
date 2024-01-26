@@ -24,7 +24,7 @@ Welcome to the Material Components repository, a collection of versatile compone
 - [List](./src/material/list/list.md)
 - [Navigation](./src/material/navigation/navigation.md)
   - [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
-  - [Navigation Drawer 📝](# 'on progress')
+  - [Navigation Drawer 📝](# 'on progress, configurations')
   - [Navigation Rail 🔎](# 'on process')
 - [Radio Button](./src/material/radio-button/radio-button.md)
 - [Segmented Button](./src/material/segmented-button/segmented-button.md)
