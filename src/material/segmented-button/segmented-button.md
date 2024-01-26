@@ -18,11 +18,11 @@ There are 2 types of segmented buttons:
 
 - Single-select segmented button can only have 1 segment selected
 
-![Alt text](image1.png)
+  ![Alt text](image1.png)
 
 - Multi-select segmented button can have multiple segments selected
 
-![Alt text](image2.png)
+  ![Alt text](image2.png)
 
 ## Properties
 
