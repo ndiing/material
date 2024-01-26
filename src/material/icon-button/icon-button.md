@@ -18,7 +18,23 @@ Icon buttons can be grouped together or they can stand alone.
 There are two types of icon buttons:
 
 1. Standard icon button
-2. Contained icon button
+2. Contained icon button (including filled, filled tonal, and outlined styles)
+
+There are four styles of icon buttons:
+
+`1` Filled icon button, `2` Filled tonal icon button, `3` Outlined icon button, `4` Standard icon button
+
+- Default
+
+![Alt text](image1.png)
+
+- With toggle unselect
+
+![Alt text](image2.png)
+
+- With toggle selected
+
+![Alt text](image3.png)
 
 ## Properties
 
