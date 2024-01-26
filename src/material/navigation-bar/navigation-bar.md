@@ -21,7 +21,7 @@ Navigation bars should be used for:
 - Three to five destinations
 - Compact window sizes
 
-Configurations
+Configurations:
 
 - Label text with icon:
 

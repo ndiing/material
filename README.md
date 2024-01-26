@@ -6,9 +6,9 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 ## 🧱 Foundations
 
-- [Layout 📝](#./src/material/layout/layout.md 'on process')
+- [Layout 🔎](#./src/material/layout/layout.md 'on process')
 - [Panel](./src/material/panel/panel.md)
-- [Router 📝](# 'on process')
+- [Router 🔎](# 'on process')
 - [State](./src/material/state/state.md)
 
 ## 🧩 Components
@@ -24,8 +24,8 @@ Welcome to the Material Components repository, a collection of versatile compone
 - [List](./src/material/list/list.md)
 - [Navigation](./src/material/navigation/navigation.md)
   - [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
-  - [Navigation Drawer 📝](# 'on process')
-  - [Navigation Rail 📝](# 'on process')
+  - [Navigation Drawer 📝](# 'on progress')
+  - [Navigation Rail 🔎](# 'on process')
 - [Radio Button](./src/material/radio-button/radio-button.md)
 - [Segmented Button](./src/material/segmented-button/segmented-button.md)
 - [Switch](./src/material/switch/switch.md)
