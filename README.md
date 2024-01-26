@@ -22,7 +22,7 @@ Welcome to the Material Components repository, a collection of versatile compone
 - [Icon Button](./src/material/icon-button/icon-button.md)
 - [Image](./src/material/image/image.md)
 - [List](./src/material/list/list.md)
-- [Navigation](./src/material/navigation/navigation.md)
+- [Navigation 🔀](#./src/material/navigation/navigation.md 'shuffle')
   - [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
   - [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
   - [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
