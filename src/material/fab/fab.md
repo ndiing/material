@@ -32,9 +32,9 @@ The FAB can be aligned left, center, or right. It can be positioned above the na
 
 There are 3 sizes of FAB:
 
-1.  FAB
-2.  Small FAB
-3.  Large FAB
+`1` FAB, `2` Small FAB, `3` Large FAB
+
+![FAB](image1.png)
 
 ### Extended FAB
 
@@ -42,8 +42,9 @@ Use an extended FAB on screens with long, scrolling views that require persisten
 
 There are 2 styles of Extend FAB:
 
-1. Extended FAB with both icon and label text
-2. Extended FAB without icon
+`1` Extended FAB with both icon and label text, `2` Extended FAB without icon
+
+![extend-FAB](image2.png)
 
 ## Properties
 
