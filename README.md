@@ -4,30 +4,52 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 <hr>
 
-## 🧱 Foundations
+## 🧱Foundations
+
+Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
 
 - [Layout 🔎](#./src/material/layout/layout.md 'on process')
 - [Panel](./src/material/panel/panel.md)
 - [Router 🔎](# 'on process')
 - [State](./src/material/state/state.md)
 
-## 🧩 Components
+## 🎨Style
+
+Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.
+
+- [Emoji](./src/material/emoji/emoji.md)
+- [Icon](./src/material/icon/icon.md)
+- [Shape/Image](./src/material/image/image.md)
+
+## 🧩Components
+
+Components are interactive building blocks for creating a user interface. They can be organized into categories based on their purpose: Action, containment, communication, navigation, selection, and text input
+
+#### Actions:
+
+- [Button](./src/material/button/button.md)
+- [Floating Action Button (FAB)](./src/material/fab/fab.md)
+- [Icon Button](./src/material/icon-button/icon-button.md)
+- [Segmented Button](./src/material/segmented-button/segmented-button.md)
+
+#### Communitcation:
 
 - [Badge](./src/material/badge/badge.md)
-- [Button](./src/material/button/button.md)
-- [Checkbox](./src/material/checkbox/checkbox.md)
-- [Emoji](./src/material/emoji/emoji.md)
-- [Floating Action Button (FAB)](./src/material/fab/fab.md)
-- [Icon](./src/material/icon/icon.md)
-- [Icon Button](./src/material/icon-button/icon-button.md)
-- [Image](./src/material/image/image.md)
+
+#### Containment:
+
 - [List](./src/material/list/list.md)
-- [Navigation 🔀](#./src/material/navigation/navigation.md 'shuffle')
-  - [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
-  - [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
-  - [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
+
+#### [Navigation: 🔀](#./src/material/navigation/navigation.md 'shuffle')
+
+- [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
+- [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
+- [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
+
+#### Selection:
+
+- [Checkbox](./src/material/checkbox/checkbox.md)
 - [Radio Button](./src/material/radio-button/radio-button.md)
-- [Segmented Button](./src/material/segmented-button/segmented-button.md)
 - [Switch](./src/material/switch/switch.md)
 
 <hr>
