@@ -25,28 +25,28 @@ Styles are the visual aspects of a UI that give it a distinct look and feel. The
 
 Components are interactive building blocks for creating a user interface. They can be organized into categories based on their purpose: Action, containment, communication, navigation, selection, and text input
 
-### Actions:
+### Actions
 
 - [Button](./src/material/button/button.md)
 - [Floating Action Button (FAB)](./src/material/fab/fab.md)
 - [Icon Button](./src/material/icon-button/icon-button.md)
 - [Segmented Button](./src/material/segmented-button/segmented-button.md)
 
-### Communitcation:
+### Communitcation
 
 - [Badge](./src/material/badge/badge.md)
 
-### Containment:
+### Containment
 
 - [List](./src/material/list/list.md)
 
-### [Navigation: 🔀](#./src/material/navigation/navigation.md 'shuffle')
+### [Navigation 🔀](#./src/material/navigation/navigation.md 'shuffle')
 
 - [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
 - [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
 - [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
 
-### Selection:
+### Selection
 
 - [Checkbox](./src/material/checkbox/checkbox.md)
 - [Radio Button](./src/material/radio-button/radio-button.md)
