@@ -79,7 +79,8 @@ None
         {leadingIcon:'image',label:"Label"},
         {leadingIcon:'image',label:"Label",},
         {leadingIcon:'image',label:"Label",},
-    ]}"></md-navigation-drawer>
+    ]}">
+</md-navigation-drawer>
 ```
 
 `2` Modal navigation drawer
@@ -101,7 +102,8 @@ None
         {leadingIcon:'image',label:"Label"},
         {leadingIcon:'image',label:"Label",},
         {leadingIcon:'image',label:"Label",},
-    ]}"></md-navigation-drawer>
+    ]}">
+</md-navigation-drawer>
 
 
 ```
