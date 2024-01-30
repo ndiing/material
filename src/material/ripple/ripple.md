@@ -8,6 +8,8 @@ Ripple is a visual form of feedback for touch events providing users a clear sig
 
 A ripple can be applied to a variety of elements to represent interactive surfaces. Several Material components, such as Button, FAB, Checkbox and Radio, also use ripples.
 
+![ripple](ripple.gif)
+
 ## Constructor
 
 ### `constructor(host, options = {})`
