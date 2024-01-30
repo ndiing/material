@@ -15,7 +15,7 @@ Foundations inform the basis of any great user interface, from accessibility sta
 - ##### [Layout 🔎](#./src/material/layout/layout.md 'on process')
 - ##### [Panel](./src/material/panel/panel.md)
 - ##### [Poper 🔎](# 'on process')
-- ##### [Riple 🔎](# 'on process')
+- ##### [Ripple](./src/material/ripple/ripple.md)
 - ##### [Router](./src/material/router/router.md)
 - ##### [State](./src/material/state/state.md)
 
