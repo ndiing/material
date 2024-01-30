@@ -14,6 +14,7 @@ Foundations inform the basis of any great user interface, from accessibility sta
 
 - ##### [Layout 🔎](#./src/material/layout/layout.md 'on process')
 - ##### [Panel](./src/material/panel/panel.md)
+- ##### [Poper 🔎](# 'on process')
 - ##### [Router](./src/material/router/router.md)
 - ##### [State](./src/material/state/state.md)
 
@@ -43,6 +44,7 @@ Components are interactive building blocks for creating a user interface. They c
 ### Communitcation
 
 - ##### [Badge](./src/material/badge/badge.md)
+- ##### [Tooltip](# 'on process')
 
 ### [Navigation 🔀](#./src/material/navigation/navigation.md 'shuffle')
 
@@ -53,6 +55,8 @@ Components are interactive building blocks for creating a user interface. They c
 ### Selection
 
 - ##### [Checkbox](./src/material/checkbox/checkbox.md)
+- ##### [Chip 📝](# 'on process, all docs')
+- ##### [Chip-Set 📝](# 'on process, all docs')
 - ##### [Radio Button](./src/material/radio-button/radio-button.md)
 - ##### [Switch](./src/material/switch/switch.md)
 
