@@ -53,6 +53,5 @@ None
         { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
         { label: "Label", badge: 1, leadingItems: [{ item: "md-icon", icon: "image" }] },
         { label: "Label", badge: "", leadingItems: [{ item: "md-icon", icon: "image" }] },
-    ]}"
-></md-navigation-rail>
+    ]}"></md-navigation-rail>
 ```

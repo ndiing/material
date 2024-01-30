@@ -14,7 +14,9 @@ Foundations inform the basis of any great user interface, from accessibility sta
 
 - ##### [Layout 🔎](#./src/material/layout/layout.md 'on process')
 - ##### [Panel](./src/material/panel/panel.md)
-- ##### [Router 🔎](# 'on process')
+- ##### [Poper 🔎](# 'on process')
+- ##### [Ripple](./src/material/ripple/ripple.md)
+- ##### [Router](./src/material/router/router.md)
 - ##### [State](./src/material/state/state.md)
 
 ## 🎨 Style
@@ -43,16 +45,19 @@ Components are interactive building blocks for creating a user interface. They c
 ### Communitcation
 
 - ##### [Badge](./src/material/badge/badge.md)
+- ##### [Tooltip](# 'on process')
 
-### [Navigation 🔀](#./src/material/navigation/navigation.md 'shuffle')
+### Navigation
 
 - ##### [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
-- ##### [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
+- ##### [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
 - ##### [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
 
 ### Selection
 
 - ##### [Checkbox](./src/material/checkbox/checkbox.md)
+- ##### [Chip 📝](# 'on process, all docs')
+- ##### [Chip-Set 📝](# 'on process, all docs')
 - ##### [Radio Button](./src/material/radio-button/radio-button.md)
 - ##### [Switch](./src/material/switch/switch.md)
 

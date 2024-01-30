@@ -36,6 +36,14 @@ There are two types of navigation drawers:
 
 ### Configurations:
 
+- Standard navigation drawer
+
+  ![standard navigation drawer](image1.png)
+
+- Modal drawer
+
+  ![modal navigation drawer](image2.png)
+
 ## Properties
 
 | Property | Type   | Default  | Description                                                 |
@@ -56,20 +64,44 @@ None
 
 ## Example
 
+`1` Standard navigation drawer
+
 ```html
 <md-navigation-drawer
-    id="navigationDrawer1"
     .items="${[
-        //
-        { label: "Label", activated: true, leadingItems: [{ item: "md-icon", icon: "image" }], trailingItems: [{ item: "md-supporting-text", supportingText: "24" }] },
-        { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
-        { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
-        { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
-        { divider: true },
-        { headline: "Label" },
-        { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
-        { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
-        { label: "Label", leadingItems: [{ item: "md-icon", icon: "image" }] },
-    ]}"
-></md-navigation-drawer>
+        {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
+        {leadingIcon:'image',label:"Label"},
+        {leadingIcon:'image',label:"Label",},
+        {leadingIcon:'image',label:"Label",},
+        {divider:true},
+        {headline:'Label'},
+        {leadingIcon:'image',label:"Label",},
+        {leadingIcon:'image',label:"Label"},
+        {leadingIcon:'image',label:"Label",},
+        {leadingIcon:'image',label:"Label",},
+    ]}"></md-navigation-drawer>
+```
+
+`2` Modal navigation drawer
+
+```html
+
+<md-button ui="filled-tonal" label="drawer modal" @click="${() => {drawer.modal=true;drawer.toggle()}}"></md-button>
+
+<md-navigation-drawer style="width:360px;" id="drawer" ui="drawer" position="left"
+    .items="${[
+        {headline:'Label'},
+        {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
+        {leadingIcon:'image',label:"Label"},
+        {leadingIcon:'image',label:"Label",},
+        {leadingIcon:'image',label:"Label",},
+        {divider:true},
+        {headline:'Label'},
+        {leadingIcon:'image',label:"Label",},
+        {leadingIcon:'image',label:"Label"},
+        {leadingIcon:'image',label:"Label",},
+        {leadingIcon:'image',label:"Label",},
+    ]}"></md-navigation-drawer>
+
+
 ```
