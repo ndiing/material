@@ -1,12 +1,12 @@
 # MDRippleController (Ripple)
 
-`MdStateController` is a utility class for managing the state of a component with various visual effects.
+> _Provides a radial action in the form of a visual ripple expanding outward from the user's touch_
 
-> _States show the interaction status of a component or UI element_
+Ripple is a visual form of feedback for touch events providing users a clear signal that an element is being touched.
 
-- States have two visual indicators to ensure accessibility
-- States can be combined with selection (such as selection and hover)
-- Apply states consistently across components
+## Usage
+
+A ripple can be applied to a variety of elements to represent interactive surfaces. Several Material components, such as Button, FAB, Checkbox and Radio, also use ripples.
 
 ## Constructor
 
@@ -53,13 +53,6 @@ Creates a new instance of `MdStateController`.
 - `handleBlur(event)`: Handles the blur event and removes the "md-state--focused" class from the container.
 
 - `hostDisconnected()`: andles the actions when the host component is disconnected from the DOM.
-
-> - `hostConnected()`: Method called when the host element is connected.
-> - `hostDisconnected()`: Method called when the host element is disconnected.
-> - `handleRipplePointerenter(event)`: Handles pointer enter event for ripple.
-> - `handleRipplePointerleave(event)`: Handles pointer leave event for ripple.
-> - `handleRipplePointerdown(event)`: Handles pointer down event for ripple.
-> - `handleRipplePointerup(event)`: Handles pointer up event for ripple.
 
 ## Event
 
