@@ -31,7 +31,7 @@ class NavigationRailComponent extends MDComponent {
                         {leadingIcon:'image',label:"Label"},
                     ]}"></md-navigation-rail>
                     <md-button ui="filled-tonal" label="rail modal" @click="${() => {rail.modal=true;rail.toggle()}}"></md-button>
-                    <!-- <md-button ui="filled-tonal" label="rail" @click="${() => {rail.modal=false;rail.toggle()}}"></md-button> -->
+                    <md-button ui="filled-tonal" label="rail" @click="${() => {rail.modal=false;rail.toggle()}}"></md-button>
                 </div>
                 <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                 </div>
