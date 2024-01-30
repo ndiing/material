@@ -1,129 +1,136 @@
-# MdNavigation (Navigation)
+# MdRouter (Router)
 
-`MdNavigation` is a utility class for handling navigation in a web application.
-
-> Navigation serves as the route/path manager in the application.
+The `MDRouter` class provides a simple client-side router for managing routes in a web application.
 
 # Usage
 
+Router It allows you to set routes, navigate between them, and handle route changes.
+
 # Properties
 
-| Property     | Type            | Default | Description                                  |
-| ------------ | --------------- | ------- | -------------------------------------------- |
-| `entries`    | Array           | []      | Array of navigation entries.                 |
-| `path`       | String          | ""      | Current window location path.                |
-| `query`      | Object          | {}      | Object containing query parameters.          |
-| `params`     | Object          | {}      | Object containing route parameters.          |
-| `controller` | AbortController | null    | Controller for aborting navigation requests. |
+| Property          | Type            | Default Value | Description                                                    |
+| ----------------- | --------------- | ------------- | -------------------------------------------------------------- |
+| `routes`          | Array           | [ ]           | An array containing the defined routes.                        |
+| `path`            | String          | null          | The current URL path.                                          |
+| `query`           | Object          | { }           | An object representing the URL query parameters.               |
+| `params`          | Object          | { }           | An object representing the matched route parameters.           |
+| `abortController` | AbortController | null          | An AbortController instance for route navigation cancellation. |
 
 ## Instance Methods
 
-### `setEntries(entries = [], parent = null)`
+### `setRoutes(routes = [], parent = null)`
 
-Sets up and returns an array of navigation entries, including their patterns and parent-child relationships.
+Sets the routes for the router. Optionally, a parent route can be specified.
 
-#### `getEntry()`
+#### Parameters
 
-```javascript
-static getEntry() {
-    // Implementation details...
-}
-```
+- `routes` (Array): An array of route configurations.
+- `parent` (Object): Parent route configuration.
 
-Returns the current navigation entry based on the current URL.
+#### Returns
 
-#### `getEntries(entry)`
+- `Array`: An array containing the flattened route configurations.
 
-```javascript
-static getEntries(entry) {
-  // Implementation details...
-}
-```
+### `getRoute()`
 
-Returns an array of navigation entries, starting from the given entry and going up to the root.
+Gets the current matched route based on the URL path.
 
-#### `handlePopstate(event)`
+#### Returns
 
-```javascript
-static async handlePopstate(event) {
-  // Implementation details...
-}
-```
+- `Object`: The matched route configuration.
 
-Handles the popstate event, updating the navigation state and triggering appropriate events.
+### `getRoutes(route)`
 
-#### `emit(type, detail = {})`
+Gets an array of route configurations from the current route up to the root.
 
-```javascript
-static emit(type, detail = {}) {
-  // Implementation details...
-}
-```
+#### Parameters
 
-Emits a custom event with the specified type and optional detail.
+- `route` (Object): The route configuration.
 
-#### `navigate(url)`
+#### Returns
 
-```javascript
-static navigate(url) {
-  // Implementation details...
-}
-```
+- `Array`: An array of route configurations.
+
+### `getOutlet(route)`
+
+Returns a Promise that resolves to the outlet element associated with the route.
+
+#### Parameters
+
+- `route` (Object): The route configuration.
+
+#### Returns
+
+- `Promise`: A Promise resolving to the outlet element.
+
+### `emit(type, detail)`
+
+Emits a custom event with the specified type and detail.
+
+#### Parameters
+
+- `type` (String): The event type.
+- `detail` (Object): The event detail.
+
+### `handlePopstate(event)`
+
+Handles the `popstate` event triggered by browser navigation.
+
+#### Parameters
+
+- `event` (Event): The popstate event.
+
+### `navigate(url)`
 
 Navigates to the specified URL using the browser's history API.
 
-#### `handleClick(event)`
+#### Parameters
 
-```javascript
-static handleClick(event) {
-  // Implementation details...
-}
-```
+- `url` (String): The URL to navigate to.
 
-Handles click events on elements with a `navigate` attribute, triggering navigation to the specified URL.
+### `handleClick(event)`
 
-#### `load(entries = [])`
+Handles the `click` event on elements with the `routerLink` attribute.
 
-```javascript
-static load(entries = []) {
-  // Implementation details...
-}
-```
+#### Parameters
 
-Loads the navigation system with the provided entries, setting up event listeners for popstate and click events.
+- `event` (Event): The click event.
+
+### `register(routes = [])`
+
+Registers the router with the provided routes and sets up event listeners.
+
+#### Parameters
+
+- `routes` (Array): An array of route configurations.
 
 ## Events
 
-- `onCurrententrychange`: Triggered when the current navigation entry changes.
-- `onNavigate`: Triggered when navigation is about to occur.
-- `onNavigateerror`: Triggered when an error occurs during navigation.
-- `onNavigatesuccess`: Triggered after successful navigation.
+- `onRouterChange`: Triggered when the router detects a change in the URL path.
+- `onRouterStart`: Triggered when the router starts navigating to a new route.
+- `onRouterCancel`: Triggered when route navigation is canceled.
+- `onRouterEnd`: Triggered when route navigation is completed.
 
 ## Example
 
-```html
-<!-- Include the MdNavigation class in your HTML file -->
-<script type="module" src="path/to/MdNavigation.js"></script>
+```javascript
+// Import MDRouter
+import { MDRouter } from './path/to/MDRouter';
 
-<!-- Define navigation entries -->
-<script type="module">
-  const entries = [
-    {
-      path: '/',
-      load: async () => import('./home-component.js'),
-    },
-    {
-      path: '/about',
-      load: async () => import('./about-component.js'),
-    },
-    // Add more entries as needed
-  ];
+// Define routes
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  // Add more routes as needed
+];
 
-  // Load MdNavigation with the defined entries
-  MdNavigation.load(entries);
-</script>
+// Register the router with defined routes
+MDRouter.register(routes);
 
-<!-- Use navigation in your application -->
-<a navigate="/about">Go to About</a>
-<button navigate="/">Go Home</button>
+// Additional usage examples:
+// Navigating to a route
+MDRouter.navigate('/about');
+
+// Handling custom events
+MDRouter.emit('customEvent', { data: 'example' });
 ```
