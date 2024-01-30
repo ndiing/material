@@ -239,7 +239,17 @@ class MDPanelComponent extends MDComponent {
     setPanelDrawerPosition() {
         const panelDrawers = document.body.querySelectorAll(".md-panel--drawer:not([modal])[open]");
 
-        const padding = {};
+        const padding = {
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+        };
+
+        for (const name in padding) {
+            const value = padding[name];
+            document.body.style.setProperty(`--md-panel-drawer-${name}`, `${value}px`);
+        }
 
         for (const panelDrawer of panelDrawers) {
             const position = {
@@ -251,13 +261,6 @@ class MDPanelComponent extends MDComponent {
 
             const rect = panelDrawer.getBoundingClientRect();
 
-            if (!padding[panelDrawer.position]) {
-                padding[panelDrawer.position] = 0;
-            }
-
-            // panelDrawer.style.setProperty(panelDrawer.position, padding[panelDrawer.position] + "px");
-            // console.log(panelDrawer.position, padding[panelDrawer.position]);
-
             padding[panelDrawer.position] += rect[position];
         }
 
@@ -265,26 +268,10 @@ class MDPanelComponent extends MDComponent {
             const value = padding[name];
             document.body.style.setProperty(`--md-panel-drawer-${name}`, `${value}px`);
         }
-
-        // if (this.ui === "drawer" && this.position && !this.modal && this.open) {
-        //     const position = {
-        //         top: "height",
-        //         bottom: "height",
-        //         left: "width",
-        //         right: "width",
-        //     }[this.position];
-
-        //     const rect = this.getBoundingClientRect();
-
-        //     document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `${rect[position]}px`);
-        // }
     }
 
     removePanelDrawerPosition() {
         this.setPanelDrawerPosition();
-        // if (this.position) {
-        //     document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `0px`);
-        // }
     }
 
     render() {}
