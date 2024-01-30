@@ -1,4 +1,4 @@
-# MdStateController (State)
+# MDRippleController (Ripple)
 
 `MdStateController` is a utility class for managing the state of a component with various visual effects.
 
@@ -23,62 +23,64 @@ Creates a new instance of `MdStateController`.
   - `button` (default: `undefined`): The button element associated with the state.
   - `size` (default: `undefined`): The size of the state.
 
+## Properties
+
+| Property    | Type    | Default | Description                                      |
+| ----------- | ------- | ------- | ------------------------------------------------ |
+| container   | Element | host    | The container element for the ripple effect.     |
+| button      | Element | host    | The button element triggering the ripple effect. |
+| containment | boolean | true    | Flag indicating if the ripple is contained.      |
+| inverted    | boolean | false   | Flag indicating if the ripple is inverted.       |
+| fadeout     | boolean | false   | Flag indicating if the ripple fades out.         |
+| size        | number  | null    | Size of the ripple effect in percentage.         |
+| centered    | boolean | false   | Flag indicating if the ripple is centered.       |
+| layer       | Element | -       | The layer element for the ripple effect.         |
+
 ## Instance Methods
 
-### `hostConnected()`
+- `hostConnected()`: Handles the actions when the host component is connected to the DOM.
 
-Handles the actions when the host component is connected to the DOM.
+- `handlePointerenter(event)`: Handles the pointerenter event and adds the "md-state--hover" class to the container.
 
-### `handlePointerenter(event)`
+- `handlePointerleave(event)`: Handles the pointerleave event and removes the "md-state--hover" class from the container.
 
-Handles the pointerenter event and adds the "md-state--hover" class to the container.
+- `handlePointerdown(event)`: Handles the pointerdown event and triggers the state transition, including animation.
 
-### `handlePointerleave(event)`
+- `handlePointerup(event)`: Handles the pointerup event and resets the state after the pointer is released.
 
-Handles the pointerleave event and removes the "md-state--hover" class from the container.
+- `handleFocus(event)`: Handles the focus event and adds the "md-state--focused" class to the container.
 
-### `handlePointerdown(event)`
+- `handleBlur(event)`: Handles the blur event and removes the "md-state--focused" class from the container.
 
-Handles the pointerdown event and triggers the state transition, including animation.
+- `hostDisconnected()`: andles the actions when the host component is disconnected from the DOM.
 
-### `handlePointerup(event)`
+> - `hostConnected()`: Method called when the host element is connected.
+> - `hostDisconnected()`: Method called when the host element is disconnected.
+> - `handleRipplePointerenter(event)`: Handles pointer enter event for ripple.
+> - `handleRipplePointerleave(event)`: Handles pointer leave event for ripple.
+> - `handleRipplePointerdown(event)`: Handles pointer down event for ripple.
+> - `handleRipplePointerup(event)`: Handles pointer up event for ripple.
 
-Handles the pointerup event and resets the state after the pointer is released.
+## Event
 
-### `handleFocus(event)`
-
-Handles the focus event and adds the "md-state--focused" class to the container.
-
-### `handleBlur(event)`
-
-Handles the blur event and removes the "md-state--focused" class from the container.
-
-### `hostDisconnected()`
-
-Handles the actions when the host component is disconnected from the DOM.
+None
 
 ## Usage Example
 
 ```javascript
-import { MdStateController } from 'path/to/MdStateController.js';
+import { MDRippleController } from '../base/controller';
 
-class MyComponent extends HTMLElement {
-  constructor() {
-    super();
-    // Initialize MdStateController for this component
-    this.stateController = new MdStateController(this);
+// Create an instance of MDRippleController
+const rippleController = new MDRippleController(
+  document.getElementById('yourHostElement'),
+  {
+    // Specify optional options here
   }
+);
 
-  connectedCallback() {
-    // Perform additional setup when the component is connected to the DOM
-    this.stateController.hostConnected();
-  }
+// Connect the controller when the host element is ready
+rippleController.hostConnected();
 
-  disconnectedCallback() {
-    // Perform cleanup when the component is disconnected from the DOM
-    this.stateController.hostDisconnected();
-  }
-}
-
-customElements.define('my-component', MyComponent);
+// Disconnect the controller when the host element is removed
+rippleController.hostDisconnected();
 ```
