@@ -50,7 +50,7 @@ Components are interactive building blocks for creating a user interface. They c
 ### Navigation
 
 - ##### [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
-- ##### [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
+- ##### [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
 - ##### [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
 
 ### Selection
