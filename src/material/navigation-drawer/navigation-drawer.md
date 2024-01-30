@@ -36,6 +36,14 @@ There are two types of navigation drawers:
 
 ### Configurations:
 
+- Standard navigation drawer
+
+  ![standard navigation drawer](image1.png)
+
+- Modal drawer
+
+  ![modal navigation drawer](image2.png)
+
 ## Properties
 
 | Property | Type   | Default  | Description                                                 |
