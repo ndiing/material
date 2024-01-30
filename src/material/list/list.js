@@ -24,6 +24,7 @@ class MDListContainerComponent extends MDComponent {
         trailingIcon: { type: String },
         activated: { type: Boolean, reflect: true },
         expanded: { type: Boolean, reflect: true },
+        routerLink: { type: String, reflect: true },
         badge: { type: String },
     };
 
@@ -275,6 +276,7 @@ class MDListComponent extends MDComponent {
                             .activated="${item.activated}"
                             .expanded="${item.expanded}"
                             .badge="${item.badge}"
+                            .routerLink="${item.routerLink}"
                             .ui="${this.list.ui}"
                             .level="${this.level}"
                             @click="${this.handleListItemContainerClick}"

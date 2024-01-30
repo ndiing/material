@@ -176,7 +176,7 @@ class MDPanelComponent extends MDComponent {
         ui: { type: String },
         position: { type: String }, // drawer position
         open: { type: Boolean, reflect: true },
-        modal: { type: Boolean },
+        modal: { type: Boolean, reflect: true },
     };
 
     constructor() {
@@ -237,22 +237,54 @@ class MDPanelComponent extends MDComponent {
     }
 
     setPanelDrawerPosition() {
-        if (this.ui === "drawer" && this.position && !this.modal && this.open) {
+        const panelDrawers = document.body.querySelectorAll(".md-panel--drawer:not([modal])[open]");
+
+        const padding = {};
+
+        for (const panelDrawer of panelDrawers) {
             const position = {
                 top: "height",
                 bottom: "height",
                 left: "width",
                 right: "width",
-            }[this.position];
+            }[panelDrawer.position];
 
-            const rect = this.getBoundingClientRect();
+            const rect = panelDrawer.getBoundingClientRect();
 
-            document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `${rect[position]}px`);
+            if (!padding[panelDrawer.position]) {
+                padding[panelDrawer.position] = 0;
+            }
+
+            // panelDrawer.style.setProperty(panelDrawer.position, padding[panelDrawer.position] + "px");
+            // console.log(panelDrawer.position, padding[panelDrawer.position]);
+
+            padding[panelDrawer.position] += rect[position];
         }
+
+        for (const name in padding) {
+            const value = padding[name];
+            document.body.style.setProperty(`--md-panel-drawer-${name}`, `${value}px`);
+        }
+
+        // if (this.ui === "drawer" && this.position && !this.modal && this.open) {
+        //     const position = {
+        //         top: "height",
+        //         bottom: "height",
+        //         left: "width",
+        //         right: "width",
+        //     }[this.position];
+
+        //     const rect = this.getBoundingClientRect();
+
+        //     document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `${rect[position]}px`);
+        // }
     }
 
     removePanelDrawerPosition() {
-        document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `0px`);
+        this.setPanelDrawerPosition();
+        // if (this.position) {
+        //     document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `0px`);
+        // }
     }
 
     render() {}
