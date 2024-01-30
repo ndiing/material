@@ -47,7 +47,7 @@ Components are interactive building blocks for creating a user interface. They c
 - ##### [Badge](./src/material/badge/badge.md)
 - ##### [Tooltip](# 'on process')
 
-### [Navigation 🔀](#./src/material/navigation/navigation.md 'shuffle')
+### Navigation
 
 - ##### [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
 - ##### [Navigation Drawer 📝](./src/material/navigation-drawer/navigation-drawer.md 'on progress, configurations')
