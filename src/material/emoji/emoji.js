@@ -1,19 +1,34 @@
-import { LitElement, html, nothing } from "lit";
-import { MdStateController } from "../state/state";
-import { MdComponent } from "../component/component";
+import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
 
-class MdEmojiComponent extends MdComponent {
+class MDEmojiComponent extends MDComponent {
+    static properties = {};
+
+    constructor() {
+        super();
+
+        // default
+    }
+
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-emoji");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-emoji");
     }
+
+    firstUpdated(changedProperties) {}
+
+    updated(changedProperties) {}
+
+    render() {}
 }
 
-customElements.define("md-emoji", MdEmojiComponent);
+customElements.define("md-emoji", MDEmojiComponent);
 
-export { MdEmojiComponent };
+export { MDEmojiComponent };

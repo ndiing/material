@@ -1,8 +1,9 @@
 {
     "ignore": [
+        "./src/material/**/*.js"
     ],
     "env": {
-      "NODE_ENV": "development"
+        "NODE_ENV": "development"
     },
     "ext": "js"
-  }
+}

@@ -1,222 +1,280 @@
 import { html, nothing } from "lit";
-import { MdStateController } from "../state/state";
-import { choose } from "lit/directives/choose.js";
-import { MdComponent } from "../component/component";
+import { MDComponent } from "../base/component";
+class MDPanelHeaderComponent extends MDComponent {
+    static properties = {
+        leadingIcon: { type: String },
+        trailingIcon: { type: String },
+        label: { type: String },
+        supportingText: { type: String },
+    };
 
-class MdPanelHeaderComponent extends MdComponent {
-    static get properties() {
-        return {
-            label: { type: String },
-            supportingText: { type: String },
-            leadingItems: { type: Array },
-            trailingItems: { type: Array },
-        };
+    get hasLeadingItems() {
+        return this.leadingIcon;
+    }
+    get hasItems() {
+        return this.label || this.supportingText;
+    }
+    get hasTrailingItems() {
+        return this.trailingIcon;
     }
 
     constructor() {
         super();
-        this.leadingItems = [];
-        this.trailingItems = [];
-    }
 
-    renderItem(item = {}) {
-        /* prettier-ignore */
-        return choose(item.item,[
-            ['md-icon-button',() => html`<md-icon-button icon="${item.icon}" @click="${this.onPanelItemClick}"></md-icon-button>`]
-        ],() => nothing)
-    }
-
-    render() {
-        /* prettier-ignore */
-        return html`
-            ${this.leadingItems?.length?html`<div class="md-panel__start">${this.leadingItems.map(item=>this.renderItem(item))}</div>`:nothing}
-            ${this.label||this.supportingText?html`
-            <div class="md-panel__center">
-                ${this.label?html`<div class="md-panel__label">${this.label}</div>`:nothing}
-                ${this.supportingText?html`<div class="md-panel__supporting-text">${this.supportingText}</div>`:nothing}
-            </div>
-            `:nothing}
-            ${this.trailingItems?.length?html`<div class="md-panel__end">${this.trailingItems.map(item=>this.renderItem(item))}</div>`:nothing}
-        `
+        // default
+        // this.label = "Label";
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-panel__header");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-panel__header");
     }
 
-    onPanelItemClick(event) {
-        let item = event.currentTarget;
+    firstUpdated(changedProperties) {}
 
-        this.emit("onPanelItemClick", { event, item });
+    updated(changedProperties) {}
+
+    render() {
+        // prettier-ignore
+        return html`
+            ${this.hasLeadingItems?html`
+                <div class="md-panel__start">
+                    ${this.leadingIcon?html`<md-icon-button class="md-panel__icon" .icon="${this.leadingIcon}" @click="${this.handlePanelIconClick}"></md-icon-button>`:nothing}
+                </div>
+            `:nothing}
+            ${this.hasItems?html`
+                <div class="md-panel__center">
+                    ${this.label?html`<div class="md-panel__label">${this.label}</div>`:nothing}
+                    ${this.supportingText?html`<div class="md-panel__supporting-text">${this.supportingText}</div>`:nothing}
+                </div>
+            `:nothing}
+            ${this.hasTrailingItems?html`
+                <div class="md-panel__end">
+                    ${this.trailingIcon?html`<md-icon-button class="md-panel__icon" .icon="${this.trailingIcon}" @click="${this.handlePanelIconClick}"></md-icon-button>`:nothing}
+                </div>
+            `:nothing}
+            `;
+    }
+
+    handlePanelIconClick(event) {
+        this.emit("onPanelIconClick", { event });
     }
 }
 
-customElements.define("md-panel-header", MdPanelHeaderComponent);
+customElements.define("md-panel-header", MDPanelHeaderComponent);
 
-class MdPanelBodyComponent extends MdComponent {
+export { MDPanelHeaderComponent };
+
+class MDPanelBodyComponent extends MDComponent {
+    static properties = {};
+
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-panel__body");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-panel__body");
     }
+
+    firstUpdated(changedProperties) {}
+
+    updated(changedProperties) {}
+
+    render() {}
 }
 
-customElements.define("md-panel-body", MdPanelBodyComponent);
+customElements.define("md-panel-body", MDPanelBodyComponent);
 
-class MdPanelFooterComponent extends MdComponent {
-    static get properties() {
-        return {
-            items: { type: Array },
-        };
-    }
+export { MDPanelBodyComponent };
+
+class MDPanelFooterComponent extends MDComponent {
+    static properties = {};
 
     constructor() {
         super();
-        this.items = [];
-    }
 
-    renderItem(item = {}) {
-        /* prettier-ignore */
-        return choose(item.item,[
-            ['md-button',() => html`<md-button .icon="${item.icon}" .label="${item.label}" @click="${this.onPanelItemClick}"></md-button>`]
-        ],() => nothing)
-    }
-
-    render() {
-        /* prettier-ignore */
-        return this.items.map(item=>this.renderItem(item))
+        // default
+        // this.label = "Label";
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-panel__footer");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-panel__footer");
     }
 
-    onPanelItemClick(event) {
-        let item = event.currentTarget;
+    firstUpdated(changedProperties) {}
 
-        this.emit("onPanelItemClick", { event, item });
-    }
+    updated(changedProperties) {}
+
+    render() {}
 }
 
-customElements.define("md-panel-footer", MdPanelFooterComponent);
+customElements.define("md-panel-footer", MDPanelFooterComponent);
 
-class MdPanelScrimComponent extends MdComponent {
+export { MDPanelFooterComponent };
+
+class MDPanelScrimComponent extends MDComponent {
+    static properties = {};
+
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-panel__scrim");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-panel__scrim");
     }
+
+    firstUpdated(changedProperties) {}
+
+    updated(changedProperties) {}
+
+    render() {}
 }
 
-customElements.define("md-panel-scrim", MdPanelScrimComponent);
+customElements.define("md-panel-scrim", MDPanelScrimComponent);
 
-class MdPanelComponent extends MdComponent {
-    static get properties() {
-        return {
-            open: { type: Boolean },
-            type: { type: String },
-            position: { type: String },
-            modal: { type: Boolean },
-            label: { type: String },
-            supportingText: { type: String },
-            leadingItems: { type: Array },
-            trailingItems: { type: Array },
-            buttons: { type: Array },
-        };
+export { MDPanelScrimComponent };
+
+class MDPanelComponent extends MDComponent {
+    static properties = {
+        ui: { type: String },
+        position: { type: String }, // drawer position
+        open: { type: Boolean, reflect: true },
+        modal: { type: Boolean },
+    };
+
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-panel");
+
+        this.setPanelDrawerPosition();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-panel");
+
+        this.removePanelDrawerPosition();
+    }
+
+    firstUpdated(changedProperties) {}
+
+    updated(changedProperties) {
+        if (changedProperties.has("ui")) {
+            this.classList.remove(`md-panel--dialog`);
+            this.classList.remove(`md-panel--drawer`);
+
+            if (this.ui) {
+                this.classList.add(`md-panel--${this.ui}`);
+            }
+        }
+
+        if (changedProperties.has("position")) {
+            this.classList.remove(`md-panel--top`);
+            this.classList.remove(`md-panel--right`);
+            this.classList.remove(`md-panel--bottom`);
+            this.classList.remove(`md-panel--left`);
+
+            if (this.position) {
+                this.classList.add(`md-panel--${this.position}`);
+            }
+        }
+
+        if (changedProperties.has("open")) {
+            this.removePanelDrawerPosition();
+            this.setPanelDrawerPosition();
+
+            this.removePanelScrim();
+            this.createPanelScrim();
+
+            this.style.setProperty("transition-property", "all");
+        }
+    }
+
+    setPanelDrawerPosition() {
+        if (this.ui === "drawer" && this.position && !this.modal && this.open) {
+            const position = {
+                top: "height",
+                bottom: "height",
+                left: "width",
+                right: "width",
+            }[this.position];
+
+            const rect = this.getBoundingClientRect();
+
+            document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `${rect[position]}px`);
+        }
+    }
+
+    removePanelDrawerPosition() {
+        document.body.style.setProperty(`--md-panel-drawer-${this.position}`, `0px`);
+    }
+
+    render() {}
+
+    createPanelScrim() {
+        if (this.modal && this.open && !this.panelScrim) {
+            this.panelScrim = document.createElement("md-panel-scrim");
+
+            this.handlePanelScrimClick = this.handlePanelScrimClick.bind(this);
+            this.panelScrim.addEventListener("click", this.handlePanelScrimClick);
+
+            document.body.append(this.panelScrim);
+        }
     }
 
     removePanelScrim() {
-        this.panelScrim.removeEventListener("click", this.onPanelScrimClick);
-        this.panelScrim.remove();
-    }
+        if (this.panelScrim) {
+            this.panelScrim.removeEventListener("click", this.handlePanelScrimClick);
 
-    createPanelScrim() {
-        this.panelScrim = document.createElement("md-panel-scrim");
-        this.onPanelScrimClick = this.onPanelScrimClick.bind(this);
-        this.panelScrim.addEventListener("click", this.onPanelScrimClick);
-        document.body.append(this.panelScrim);
-    }
+            this.panelScrim.remove();
 
-    updated(_changedProperties) {
-        // console.log(this.type,this.modal,this.open)
-        if (_changedProperties.has("open")) {
-            if (this.open) {
-                this.classList.add("md-panel--open");
-                this.classList.add("md-panel--transition");
-                if (["dialog", "drawer"].includes(this.type) && this.modal) {
-                    this.createPanelScrim();
-                }
-            } else {
-                this.classList.remove("md-panel--open");
-                if (["dialog", "drawer"].includes(this.type) && this.modal) {
-                    this.removePanelScrim();
-                }
-            }
-
-            if (this.type === "drawer" && !this.modal) {
-                const mapSize = {
-                    left: "width",
-                    top: "height",
-                    right: "width",
-                    bottom: "height",
-                };
-                const rect = this.getBoundingClientRect();
-                const padding = this.open ? rect[mapSize[this.position]] : 0;
-                document.body.style.setProperty("--md-panel-" + this.position, padding + "px");
-            }
-        }
-        if (_changedProperties.has("modal")) {
-            if (this.modal) {
-                this.classList.add("md-panel--modal");
-            } else {
-                this.classList.remove("md-panel--modal");
-            }
-        }
-        if (_changedProperties.has("type")) {
-            ["dialog", "drawer"].forEach((type) => {
-                this.classList.remove("md-panel--" + type);
-            });
-            if (this.type) {
-                this.classList.add("md-panel--" + this.type);
-            }
-        }
-        if (_changedProperties.has("position")) {
-            ["top", "right", "bottom", "left"].forEach((position) => {
-                this.classList.remove("md-panel--" + position);
-            });
-            if (this.position) {
-                this.classList.add("md-panel--" + this.position);
-            }
+            this.panelScrim = null;
         }
     }
 
@@ -236,13 +294,13 @@ class MdPanelComponent extends MdComponent {
         }
     }
 
-    onPanelScrimClick(event) {
+    handlePanelScrimClick(event) {
         this.close();
 
         this.emit("onPanelScrimClick", { event });
     }
 }
 
-customElements.define("md-panel", MdPanelComponent);
+customElements.define("md-panel", MDPanelComponent);
 
-export { MdPanelHeaderComponent, MdPanelBodyComponent, MdPanelFooterComponent, MdPanelScrimComponent, MdPanelComponent };
+export { MDPanelComponent };

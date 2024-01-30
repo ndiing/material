@@ -1,17 +1,15 @@
-import { LitElement, html, nothing } from "lit";
-import { MdStateController } from "../state/state";
-import { MdComponent } from "../component/component";
+import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
 
-class MdButtonComponent extends MdComponent {
-    static get properties() {
-        return {
-            type: { type: String },
-            label: { type: String },
-            icon: { type: String },
-            ui: { type: String },
-            activated: { type: Boolean, reflect: true },
-        };
-    }
+class MDButtonComponent extends MDComponent {
+    static properties = {
+        icon: { type: String },
+        label: { type: String },
+        activated: { type: Boolean, reflect: true },
+        type: { type: String },
+        ui: { type: String },
+    };
 
     get buttonNative() {
         return this.querySelector(".md-button__native");
@@ -19,48 +17,56 @@ class MdButtonComponent extends MdComponent {
 
     constructor() {
         super();
-        this.type = "button";
-    }
 
-    render() {
-        /* prettier-ignore */
-        return html`
-            <button class="md-button__native" .type="${this.type}"></button>
-            ${this.icon ? html`<div class="md-button__icon">${this.icon}</div>` : nothing} 
-            ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
-        `;
+        // default
+        this.type = "button";
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-button");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-button");
     }
 
-    firstUpdated() {
-        this.state = new MdStateController(this, {
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
             button: this.buttonNative,
             inverted: this.ui === "filled",
         });
     }
 
-    updated(_changedProperties) {
-        if (_changedProperties.has("ui")) {
-            ["elevated", "filled", "filled-tonal", "outlined"].forEach((ui) => {
-                this.classList.remove("md-button--" + ui);
-            });
+    updated(changedProperties) {
+        if (changedProperties.has("ui")) {
+            this.classList.remove("md-button--elevated");
+            this.classList.remove("md-button--filled");
+            this.classList.remove("md-button--filled-tonal");
+            this.classList.remove("md-button--outlined");
 
             if (this.ui) {
-                this.classList.add("md-button--" + this.ui);
+                this.classList.add(`md-button--${this.ui}`);
             }
         }
     }
+
+    render() {
+        // prettier-ignore
+        return html`
+            <button 
+                class="md-button__native"
+                .type="${this.type}"
+            ></button>
+            ${this.icon?html`<div class="md-button__icon">${this.icon}</div>`:nothing}
+            ${this.label?html`<div class="md-button__label">${this.label}</div>`:nothing}
+        `;
+    }
 }
 
-customElements.define("md-button", MdButtonComponent);
+customElements.define("md-button", MDButtonComponent);
 
-export { MdButtonComponent };
+export { MDButtonComponent };

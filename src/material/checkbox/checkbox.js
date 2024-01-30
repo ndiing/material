@@ -1,31 +1,58 @@
-import { LitElement, html, nothing } from "lit";
+import { html, nothing } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { MdStateController } from "../state/state";
-import { MdComponent } from "../component/component";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
 
-class MdCheckboxComponent extends MdComponent {
-    static get properties() {
-        return {
-            name: { type: String },
-            indeterminate: { type: Boolean },
-            checked: { type: Boolean },
-        };
-    }
+class MDCheckboxComponent extends MDComponent {
+    static properties = {
+        name: { type: String },
+        indeterminate: { type: Boolean },
+        checked: { type: Boolean },
+    };
 
     get checkboxNative() {
         return this.querySelector(".md-checkbox__native");
     }
-
     get checkboxTrack() {
         return this.querySelector(".md-checkbox__track");
     }
-
     get checkboxThumb() {
         return this.querySelector(".md-checkbox__thumb");
     }
 
+    constructor() {
+        super();
+
+        // default
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-checkbox");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-checkbox");
+    }
+
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
+            button: this.checkboxNative,
+            container: this.checkboxTrack,
+            size: (40 / 14) * 100,
+            containment: false,
+            fadeout: true,
+            centered: true,
+        });
+    }
+
+    updated(changedProperties) {}
+
     render() {
-        /*prettier-ignore*/
+        // prettier-ignore
         return html`
             <input 
                 type="checkbox" 
@@ -33,7 +60,7 @@ class MdCheckboxComponent extends MdComponent {
                 .name="${ifDefined(this.name)}"
                 .indeterminate="${ifDefined(this.indeterminate)}"
                 .checked="${ifDefined(this.checked)}"
-                @input="${this.onCheckboxNativeInput}"
+                @input="${this.handleChecboxNativeInput}"
             >
             <div class="md-checkbox__track">
                 <div class="md-checkbox__thumb"></div>
@@ -41,34 +68,16 @@ class MdCheckboxComponent extends MdComponent {
         `;
     }
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-checkbox");
-    }
+    handleChecboxNativeInput(event) {
+        const checkboxNative = event.currentTarget;
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-checkbox");
-    }
+        this.indeterminate = checkboxNative.indeterminate;
+        this.checked = checkboxNative.checked;
 
-    firstUpdated() {
-        this.state = new MdStateController(this, {
-            container: this.checkboxTrack,
-            button: this.checkboxNative,
-            containment: false,
-            fadeout: true,
-            size: (40 / 14) * 100,
-        });
-    }
-
-    onCheckboxNativeInput(event) {
-        this.indeterminate = event.currentTarget.indeterminate;
-        this.checked = event.currentTarget.checked;
-
-        this.emit("onCheckboxNativeInput", { event });
+        this.emit("onChecboxNativeInput", { event, checkboxNative });
     }
 }
 
-customElements.define("md-checkbox", MdCheckboxComponent);
+customElements.define("md-checkbox", MDCheckboxComponent);
 
-export { MdCheckboxComponent };
+export { MDCheckboxComponent };

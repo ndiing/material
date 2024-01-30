@@ -1,45 +1,74 @@
-import { LitElement, html, nothing } from "lit";
-import { MdStateController } from "../state/state";
-import { MdPanelComponent } from "../panel/panel";
+import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
+import { MDListComponent } from "../list/list";
+import { MDPanelComponent } from "../panel/panel";
 
-class MdNavigationDrawerComponent extends MdPanelComponent {
-    static get properties() {
-        return Object.assign(MdPanelComponent.properties, {
-            items: { type: String },
-        });
-    }
+class MDNavigationDrawerComponent extends MDPanelComponent {
+    static properties = Object.assign(MDPanelComponent.properties, MDListComponent.properties, {});
 
     constructor() {
         super();
-        this.type = "drawer";
-        this.position = "left";
-        // this.open=true
-    }
 
-    render() {
-        /*prettier-ignore*/
-        return html`
-            <md-panel-body>
-                <md-list
-                    class="md-navigation-drawer__list"
-                    .activatable="${true}"
-                    .items="${this.items}"
-                ></md-list>
-            </md-panel-body>
-        `;
+        // default
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-navigation-drawer");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-navigation-drawer");
     }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+    }
+
+    updated(changedProperties) {
+        super.updated(changedProperties);
+    }
+
+    render() {
+        // prettier-ignore
+        return html`
+            <md-panel-body>
+                <md-list 
+                    .items="${this.items}"
+                    .ui="${this.ui}"
+                    .type="${this.type??'single-select'}"
+                    .selectable="${this.selectable??true}"
+                    class="md-navigation-drawer__list"
+                    @onListItemContainerClick="${this.handleListItemContainerClick}"
+                ></md-list>
+            </md-panel-body>
+        `;
+    }
+
+    handleListItemContainerClick(event) {
+        // this.activatedListItemContainer=event.detail.listItemContainer
+        // if(!this.activatedListItemContainer){return}
+        // this.handleListIconAnimationend=this.handleListIconAnimationend.bind(this)
+        // this.activatedListItemContainer.addEventListener('animationend',this.handleListIconAnimationend)
+        // this.activatedListIcon=this.activatedListItemContainer.querySelector('.md-list__icon')
+        // if(!this.activatedListIcon){return}
+        // this.activatedListIcon.style.setProperty('animation-name','md-navigation-bar-list-item-container-activated')
+    }
+
+    // handleListIconAnimationend(){
+    //     if(!this.activatedListIcon){return}
+    //     this.activatedListIcon.style.removeProperty('animation-name')
+    //     this.activatedListIcon=null
+
+    //     if(!this.activatedListItemContainer){return}
+    //     this.activatedListItemContainer.removeEventListener('animationend',this.handleListIconAnimationend)
+    //     this.activatedListItemContainer=null
+    // }
 }
 
-customElements.define("md-navigation-drawer", MdNavigationDrawerComponent);
+customElements.define("md-navigation-drawer", MDNavigationDrawerComponent);
 
-export { MdNavigationDrawerComponent };
+export { MDNavigationDrawerComponent };

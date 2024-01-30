@@ -1,17 +1,15 @@
-import { LitElement, html, nothing } from "lit";
-import { MdStateController } from "../state/state";
-import { MdComponent } from "../component/component";
+import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
 
-class MdIconButtonComponent extends MdComponent {
-    static get properties() {
-        return {
-            type: { type: String },
-            icon: { type: String },
-            ui: { type: String },
-            toggle: { type: Boolean },
-            activated: { type: Boolean, reflect: true },
-        };
-    }
+class MDIconButtonComponent extends MDComponent {
+    static properties = {
+        icon: { type: String },
+        type: { type: String },
+        ui: { type: String },
+        activated: { type: Boolean, reflect: true },
+        toggle: { type: Boolean },
+    };
 
     get iconButtonNative() {
         return this.querySelector(".md-icon-button__native");
@@ -19,60 +17,68 @@ class MdIconButtonComponent extends MdComponent {
 
     constructor() {
         super();
-        this.type = "button";
-    }
 
-    render() {
-        /*prettier-ignore*/
-        return html`
-            <button class="md-icon-button__native"
-                .type="${this.type}"
-                @click="${this.onIconButtonClick}"
-            ></button>
-            ${this.icon ? html`<div class="md-icon-button__icon">${this.icon}</div>` : nothing}
-        `;
+        // default
+        this.type = "button";
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon-button");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-icon-button");
     }
 
-    firstUpdated() {
-        this.state = new MdStateController(this, {
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
             button: this.iconButtonNative,
-            containment: false,
             size: this.ui ? (40 / 40) * 100 : (40 / 24) * 100,
+            containment: false,
+            centered: true,
             fadeout: true,
+            // inverted:this.ui==='filled'
         });
     }
 
-    updated(_changedProperties) {
-        if (_changedProperties.has("ui")) {
-            ["filled", "filled-tonal", "outlined"].forEach((ui) => {
-                this.classList.remove("md-icon-button--" + ui);
-            });
+    updated(changedProperties) {
+        if (changedProperties.has("ui")) {
+            this.classList.remove("md-icon-button--filled");
+            this.classList.remove("md-icon-button--filled-tonal");
+            this.classList.remove("md-icon-button--outlined");
 
             if (this.ui) {
-                this.classList.add("md-icon-button--" + this.ui);
+                this.classList.add(`md-icon-button--${this.ui}`);
             }
         }
 
-        if (_changedProperties.has("toggle")) {
+        if (changedProperties.has("toggle")) {
+            this.classList.remove("md-icon-button--toggle");
+
             if (this.toggle) {
-                this.classList.add("md-icon-button--toggle");
-            } else {
-                this.classList.remove("md-icon-button--toggle");
+                this.classList.add(`md-icon-button--toggle`);
             }
         }
     }
 
-    onIconButtonClick(event) {
+    render() {
+        // prettier-ignore
+        return html`
+            <button 
+                class="md-icon-button__native"
+                .type="${this.type}"
+                @click="${this.handleIconButtonClick}"
+            ></button>
+            ${this.icon?html`<div class="md-icon-button__icon">${this.icon}</div>`:nothing}
+            ${this.label?html`<div class="md-icon-button__label">${this.label}</div>`:nothing}
+        `;
+    }
+
+    handleIconButtonClick(event) {
         if (this.toggle) {
             this.activated = !this.activated;
         }
@@ -81,6 +87,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 }
 
-customElements.define("md-icon-button", MdIconButtonComponent);
+customElements.define("md-icon-button", MDIconButtonComponent);
 
-export { MdIconButtonComponent };
+export { MDIconButtonComponent };

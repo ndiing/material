@@ -10,14 +10,14 @@
 
 .md-switch__native {
     appearance: none;
-    width: 100%;
     height: 100%;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 1;
     background: transparent;
     color: transparent;
-    z-index: 1;
 
     &:checked {
         + .md-switch__track {
@@ -31,7 +31,8 @@
                 left: 22px;
                 background: var(--md-sys-color-on-primary);
 
-                .md-state__layer {
+                > .md-ripple__layer {
+                    // width: 166.66666666666669% !important;
                     width: 40px !important;
                 }
             }
@@ -41,6 +42,11 @@
             + .md-switch__track {
                 .md-switch__thumb {
                     left: 20px;
+
+                    > .md-ripple__layer {
+                        // width: 142.85714285714286% !important;
+                        width: 40px !important;
+                    }
                 }
             }
         }
@@ -52,9 +58,10 @@
                 height: 28px;
                 border-radius: 14px;
                 width: 28px;
-                left: 0;
+                left: 0px;
 
-                .md-state__layer {
+                > .md-ripple__layer {
+                    // width: 142.85714285714286% !important;
                     width: 40px !important;
                 }
             }
@@ -73,8 +80,8 @@
     border: 2px solid var(--md-sys-color-outline);
     position: relative;
     transition-property: all;
-    transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
 }
 
 .md-switch__thumb {
@@ -89,10 +96,11 @@
     position: absolute;
     left: 6px;
     transition-property: all;
-    transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
 
-    .md-state__layer {
+    > .md-ripple__layer {
+        // width: 250% !important;
         width: 40px !important;
     }
 }

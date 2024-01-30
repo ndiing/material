@@ -3,20 +3,23 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    position: relative;
 
     &.md-icon-button--toggle {
         &[activated] {
-            background: transparent;
-            color: var(--md-sys-color-primary);
+            background: inherit;
+            color: inherit;
+
+            // .md-icon-button__icon{
+            //     color: inherit;
+            // }
         }
     }
 }
 
 .md-icon-button__native {
     appearance: none;
-    width: 100%;
     height: 100%;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -47,6 +50,10 @@
         &[activated] {
             background: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
+
+            .md-icon-button__icon {
+                color: var(--md-sys-color-on-primary);
+            }
         }
     }
 }
@@ -62,22 +69,32 @@
         &[activated] {
             background: var(--md-sys-color-secondary-container);
             color: var(--md-sys-color-on-secondary-container);
+
+            .md-icon-button__icon {
+                color: var(--md-sys-color-on-secondary-container);
+            }
         }
     }
 }
 
 .md-icon-button--outlined {
+    // background: var(--md-sys-color-surface);
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 
     &.md-icon-button--toggle {
-        background: transparent;
+        // background: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface-variant);
+        border: 1px solid var(--md-sys-color-outline);
 
         &[activated] {
             background: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);
             border: 1px solid var(--md-sys-color-inverse-surface);
+
+            .md-icon-button__icon {
+                color: var(--md-sys-color-inverse-on-surface);
+            }
         }
     }
 }

@@ -3,13 +3,15 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+}
+
+.md-image__native {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.md-image--shape {
     overflow: hidden;
-
-    &__native {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    // .md-image--shape{}
+    border-radius: 50%;
 }

@@ -1,0 +1,86 @@
+@keyframes md-ripple-animation {
+    from {
+        width: 0;
+    }
+}
+
+.md-ripple {
+    position: relative;
+}
+
+.md-ripple--containment {
+    overflow: hidden;
+}
+
+.md-ripple--button {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.md-ripple__layer {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
+    background: var(--md-sys-color-on-surface);
+    opacity: 0;
+    pointer-events: none;
+    // animation-name: md-ripple-animation;
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-duration-short4);
+}
+
+.md-ripple--inverted {
+    > .md-ripple__layer {
+        background: var(--md-sys-color-surface);
+    }
+}
+
+[activated],
+.md-ripple[activated],
+.md-ripple--activated {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+
+    // > .md-ripple__layer {
+    //     opacity: 0%;
+    // }
+}
+
+.md-ripple--focused {
+    > .md-ripple__layer {
+        opacity: 10%;
+    }
+}
+
+.md-ripple--pressed {
+    > .md-ripple__layer {
+        opacity: 10%;
+    }
+}
+
+.md-ripple--fadeout {
+    > .md-ripple__layer {
+        opacity: 0;
+    }
+}
+
+.md-ripple--hover {
+    > .md-ripple__layer {
+        opacity: 8%;
+    }
+}
+[disabled],
+.md-ripple[disabled],
+.md-ripple--disabled {
+    opacity: 38%;
+    pointer-events: none;
+
+    > .md-ripple__layer {
+        opacity: 0%;
+    }
+}

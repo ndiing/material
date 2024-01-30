@@ -1,7 +1,24 @@
-.md-navigation-drawer{
-    width: 360px;
-    .md-panel__body{
+.md-navigation-drawer {
+    .md-panel__body {
         padding: 0;
         margin: 0;
+    }
+}
+.md-navigation-drawer__list {
+    padding: 0;
+    .md-list__item {
+        padding: 0 12px;
+    }
+    .md-list__container {
+        border-radius: 28px;
+        gap: 0 12px;
+    }
+    .md-list__end {
+        .md-list__supporting-text {
+            @extend .md-typography--label-large;
+        }
+    }
+    .md-list__label {
+        @extend .md-typography--label-large;
     }
 }

@@ -1,37 +1,64 @@
-import { LitElement, html, nothing } from "lit";
+import { html, nothing } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { MdStateController } from "../state/state";
-import { MdComponent } from "../component/component";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
 
-class MdRadioButtonComponent extends MdComponent {
-    static get properties() {
-        return {
-            name: { type: String },
-            checked: { type: Boolean },
-        };
-    }
+class MDRadioButtonComponent extends MDComponent {
+    static properties = {
+        name: { type: String },
+        checked: { type: Boolean },
+    };
 
     get radioButtonNative() {
         return this.querySelector(".md-radio-button__native");
     }
-
     get radioButtonTrack() {
         return this.querySelector(".md-radio-button__track");
     }
-
     get radioButtonThumb() {
         return this.querySelector(".md-radio-button__thumb");
     }
 
+    constructor() {
+        super();
+
+        // default
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-radio-button");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-radio-button");
+    }
+
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
+            button: this.radioButtonNative,
+            container: this.radioButtonTrack,
+            size: (40 / 16) * 100,
+            containment: false,
+            fadeout: true,
+            centered: true,
+        });
+    }
+
+    updated(changedProperties) {}
+
     render() {
-        /*prettier-ignore*/
+        // prettier-ignore
         return html`
             <input 
                 type="radio" 
                 class="md-radio-button__native"
                 .name="${ifDefined(this.name)}"
                 .checked="${ifDefined(this.checked)}"
-                @input="${this.onRadioButtonNativeInput}"
+                @input="${this.handleRadioButtonNativeInput}"
             >
             <div class="md-radio-button__track">
                 <div class="md-radio-button__thumb"></div>
@@ -39,33 +66,15 @@ class MdRadioButtonComponent extends MdComponent {
         `;
     }
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-radio-button");
-    }
+    handleRadioButtonNativeInput(event) {
+        const radioButtonNative = event.currentTarget;
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-radio-button");
-    }
+        this.checked = radioButtonNative.checked;
 
-    firstUpdated() {
-        this.state = new MdStateController(this, {
-            container: this.radioButtonTrack,
-            button: this.radioButtonNative,
-            containment: false,
-            fadeout: true,
-            size: (40 / 16) * 100,
-        });
-    }
-
-    onRadioButtonNativeInput(event) {
-        this.checked = event.currentTarget.checked;
-
-        this.emit("onRadioButtonNativeInput", { event });
+        this.emit("onRadioButtonNativeInput", { event, radioButtonNative });
     }
 }
 
-customElements.define("md-radio-button", MdRadioButtonComponent);
+customElements.define("md-radio-button", MDRadioButtonComponent);
 
-export { MdRadioButtonComponent };
+export { MDRadioButtonComponent };

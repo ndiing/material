@@ -1,18 +1,24 @@
-import { LitElement, html } from "lit";
+import { html, nothing } from "lit";
+import { MDComponent } from "../../material/base/component";
 
-class UserComponent extends LitElement{
-    createRenderRoot(){
-        return this
-    }
-
-    render(){
+class UserComponent extends MDComponent {
+    render() {
+        // prettier-ignore
         return html`
-            <h1>User</h1>
-            <md-placeholder></md-placeholder>
-        `
+            <div class="md-layout__grid">
+                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <h1>User</h1>
+                    <md-outlet></md-outlet>
+                </div>
+                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                </div>
+                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                </div>
+            </div>
+        `;
     }
 }
 
-customElements.define('user-component',UserComponent)
+customElements.define("user-component", UserComponent);
 
 export default document.createElement('user-component')
