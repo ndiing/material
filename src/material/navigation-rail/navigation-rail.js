@@ -3,69 +3,43 @@ import { MDComponent } from "../base/component";
 import { MDListComponent } from "../list/list";
 import { MDPanelComponent } from "../panel/panel";
 
-/**
- * `MDNavigationRailComponent` is a custom web component representing a navigation rail.
- * @extends MDPanelComponent
- */
+
 class MDNavigationRailComponent extends MDPanelComponent {
-    /**
-     * Properties for MDNavigationRailComponent.
-     * @static
-     * @type {object}
-     * @property {Array} items - An array of items for the navigation rail.
-     * @property {String} ui - The UI style for the navigation rail.
-     * @property {String} type - The type of the list in the navigation rail (e.g., "single-select").
-     * @property {Boolean} selectable - Indicates whether the list items are selectable.
-     */
+    
     static properties = Object.assign(MDPanelComponent.properties, MDListComponent.properties, {});
 
-    /**
-     * Constructs an instance of MDNavigationRailComponent.
-     */
+    
     constructor() {
         super();
 
         // default
     }
 
-    /**
-     * Callback triggered when the element is connected to the DOM.
-     */
+    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-navigation-rail");
     }
 
-    /**
-     * Callback triggered when the element is disconnected from the DOM.
-     */
+    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-navigation-rail");
     }
 
-    /**
-     * Callback triggered after the element's first update.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     firstUpdated(changedProperties) {
         super.firstUpdated(changedProperties);
     }
 
-    /**
-     * Callback triggered after the element has been updated.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
-    /**
-     * Renders the content of the MDNavigationRailComponent.
-     * @returns {TemplateResult} The lit-html template result.
-     */
+    
     render() {
         // prettier-ignore
         return html`
@@ -82,10 +56,7 @@ class MDNavigationRailComponent extends MDPanelComponent {
         `;
     }
 
-    /**
-     * Handles the click event on a list item container in the navigation rail.
-     * @param {CustomEvent} event - The custom event containing the list item container.
-     */
+    
     handleListItemContainerClick(event) {
         this.activatedListItemContainer = event.detail.listItemContainer;
 
@@ -103,9 +74,7 @@ class MDNavigationRailComponent extends MDPanelComponent {
         this.activatedListIcon.style.setProperty("animation-name", "md-navigation-bar-list-item-container-activated");
     }
 
-    /**
-     * Handles the animationend event on the list icon in the navigation rail.
-     */
+    
     handleListIconAnimationend() {
         if (!this.activatedListIcon) {
             return;
@@ -121,9 +90,7 @@ class MDNavigationRailComponent extends MDPanelComponent {
     }
 }
 
-/**
- * Define the custom element "md-navigation-rail" with MDNavigationRailComponent.
- */
+
 customElements.define("md-navigation-rail", MDNavigationRailComponent);
 
 export { MDNavigationRailComponent };

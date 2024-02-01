@@ -1,20 +1,9 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 
-/**
- * `MDPanelHeaderComponent` is a custom web component representing the header of a panel.
- * @extends MDComponent
- */
+
 class MDPanelHeaderComponent extends MDComponent {
-    /**
-     * Properties for MDPanelHeaderComponent.
-     * @static
-     * @type {object}
-     * @property {String} leadingIcon - The leading icon for the panel header.
-     * @property {String} trailingIcon - The trailing icon for the panel header.
-     * @property {String} label - The label for the panel header.
-     * @property {String} supportingText - The supporting text for the panel header.
-     */
+    
     static properties = {
         leadingIcon: { type: String },
         trailingIcon: { type: String },
@@ -22,33 +11,22 @@ class MDPanelHeaderComponent extends MDComponent {
         supportingText: { type: String },
     };
 
-    /**
-     * Checks if there are leading items in the panel header.
-     * @type {boolean}
-     */
+    
     get hasLeadingItems() {
         return this.leadingIcon;
     }
     
-    /**
-     * Checks if there are items in the panel header.
-     * @type {boolean}
-     */
+    
     get hasItems() {
         return this.label || this.supportingText;
     }
     
-    /**
-     * Checks if there are trailing items in the panel header.
-     * @type {boolean}
-     */
+    
     get hasTrailingItems() {
         return this.trailingIcon;
     }
 
-    /**
-     * Constructs an instance of MDPanelHeaderComponent.
-     */
+    
     constructor() {
         super();
 
@@ -56,40 +34,27 @@ class MDPanelHeaderComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    /**
-     * Callback triggered when the element is connected to the DOM.
-     */
+    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__header");
     }
 
-    /**
-     * Callback triggered when the element is disconnected from the DOM.
-     */
+    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__header");
     }
 
-    /**
-     * Callback triggered after the element's first update.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     firstUpdated(changedProperties) {}
 
-    /**
-     * Callback triggered after the element has been updated.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     updated(changedProperties) {}
 
-    /**
-     * Renders the content of the MDPanelHeaderComponent.
-     * @returns {TemplateResult} The lit-html template result.
-     */
+    
     render() {
         // prettier-ignore
         return html`
@@ -112,37 +77,23 @@ class MDPanelHeaderComponent extends MDComponent {
             `;
     }
 
-    /**
-     * Handles the click event on a panel icon.
-     * @param {Event} event - The click event.
-     */
+    
     handlePanelIconClick(event) {
         this.emit("onPanelIconClick", { event });
     }
 }
 
-/**
- * Define the custom element "md-panel-header" with MDPanelHeaderComponent.
- */
+
 customElements.define("md-panel-header", MDPanelHeaderComponent);
 
 export { MDPanelHeaderComponent };
 
-/**
- * `MDPanelBodyComponent` is a custom web component representing the body of a panel.
- * @extends MDComponent
- */
+
 class MDPanelBodyComponent extends MDComponent {
-    /**
-     * Properties for MDPanelBodyComponent.
-     * @static
-     * @type {object}
-     */
+    
     static properties = {};
 
-    /**
-     * Constructs an instance of MDPanelBodyComponent.
-     */
+    
     constructor() {
         super();
 
@@ -150,64 +101,41 @@ class MDPanelBodyComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    /**
-     * Callback triggered when the element is connected to the DOM.
-     */
+    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__body");
     }
 
-    /**
-     * Callback triggered when the element is disconnected from the DOM.
-     */
+    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__body");
     }
 
-    /**
-     * Callback triggered after the element's first update.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     firstUpdated(changedProperties) {}
 
-    /**
-     * Callback triggered after the element has been updated.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     updated(changedProperties) {}
 
-    /**
-     * Renders the content of the MDPanelBodyComponent.
-     */
+    
     render() {}
 }
 
-/**
- * Define the custom element "md-panel-body" with MDPanelBodyComponent.
- */
+
 customElements.define("md-panel-body", MDPanelBodyComponent);
 
 export { MDPanelBodyComponent };
 
-/**
- * `MDPanelFooterComponent` is a custom web component representing the footer of a panel.
- * @extends MDComponent
- */
+
 class MDPanelFooterComponent extends MDComponent {
-    /**
-     * Properties for MDPanelFooterComponent.
-     * @static
-     * @type {object}
-     */
+    
     static properties = {};
 
-    /**
-     * Constructs an instance of MDPanelFooterComponent.
-     */
+    
     constructor() {
         super();
 
@@ -215,64 +143,41 @@ class MDPanelFooterComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    /**
-     * Callback triggered when the element is connected to the DOM.
-     */
+    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__footer");
     }
 
-    /**
-     * Callback triggered when the element is disconnected from the DOM.
-     */
+    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__footer");
     }
 
-    /**
-     * Callback triggered after the element's first update.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     firstUpdated(changedProperties) {}
 
-    /**
-     * Callback triggered after the element has been updated.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     updated(changedProperties) {}
 
-    /**
-     * Renders the content of the MDPanelFooterComponent.
-     */
+    
     render() {}
 }
 
-/**
- * Define the custom element "md-panel-footer" with MDPanelFooterComponent.
- */
+
 customElements.define("md-panel-footer", MDPanelFooterComponent);
 
 export { MDPanelFooterComponent };
 
-/**
- * `MDPanelScrimComponent` is a custom web component representing the scrim of a panel.
- * @extends MDComponent
- */
+
 class MDPanelScrimComponent extends MDComponent {
-    /**
-     * Properties for MDPanelScrimComponent.
-     * @static
-     * @type {object}
-     */
+    
     static properties = {};
 
-    /**
-     * Constructs an instance of MDPanelScrimComponent.
-     */
+    
     constructor() {
         super();
 
@@ -280,63 +185,38 @@ class MDPanelScrimComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    /**
-     * Callback triggered when the element is connected to the DOM.
-     */
+    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__scrim");
     }
 
-    /**
-     * Callback triggered when the element is disconnected from the DOM.
-     */
+    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__scrim");
     }
 
-    /**
-     * Callback triggered after the element's first update.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     firstUpdated(changedProperties) {}
 
-    /**
-     * Callback triggered after the element has been updated.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     updated(changedProperties) {}
 
-    /**
-     * Renders the content of the MDPanelScrimComponent.
-     */
+    
     render() {}
 }
 
-/**
- * Define the custom element "md-panel-scrim" with MDPanelScrimComponent.
- */
+
 customElements.define("md-panel-scrim", MDPanelScrimComponent);
 
 export { MDPanelScrimComponent };
 
-/**
- * `MDPanelComponent` is a custom web component representing a panel.
- * @extends MDComponent
- */
+
 class MDPanelComponent extends MDComponent {
-    /**
-     * Properties for MDPanelComponent.
-     * @static
-     * @type {object}
-     * @property {String} ui - The UI style for the panel.
-     * @property {String} position - The position of the panel (e.g., "top", "right", "bottom", "left").
-     * @property {Boolean} open - Indicates whether the panel is open.
-     * @property {Boolean} modal - Indicates whether the panel is modal.
-     */
+    
     static properties = {
         ui: { type: String },
         position: { type: String }, // drawer position
@@ -344,9 +224,7 @@ class MDPanelComponent extends MDComponent {
         modal: { type: Boolean, reflect: true },
     };
 
-    /**
-     * Constructs an instance of MDPanelComponent.
-     */
+    
     constructor() {
         super();
 
@@ -354,34 +232,24 @@ class MDPanelComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    /**
-     * Callback triggered when the element is connected to the DOM.
-     */
+    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel");
     }
 
-    /**
-     * Callback triggered when the element is disconnected from the DOM.
-     */
+    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel");
     }
 
-    /**
-     * Callback triggered after the element's first update.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     firstUpdated(changedProperties) {}
 
-    /**
-     * Callback triggered after the element has been updated.
-     * @param {Map} changedProperties - A Map of properties that have changed.
-     */
+    
     updated(changedProperties) {
         if (changedProperties.has("ui")) {
             this.classList.remove(`md-panel--dialog`);
@@ -411,14 +279,10 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    /**
-     * Renders the content of the MDPanelComponent.
-     */
+    
     render() {}
 
-    /**
-     * Creates the panel scrim.
-     */
+    
     createPanelScrim() {
         if (!this.panelScrim && this.open && (this.ui === "dialog" || this.ui === "drawer")) {
             this.panelScrim = document.createElement("md-panel-scrim");
@@ -430,9 +294,7 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    /**
-     * Removes the panel scrim.
-     */
+    
     removePanelScrim() {
         if (this.panelScrim) {
             this.panelScrim.removeEventListener("click", this.handlePanelScrimClick);
@@ -443,23 +305,17 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    /**
-     * Shows the panel.
-     */
+    
     show() {
         this.open = true;
     }
 
-    /**
-     * Closes the panel.
-     */
+    
     close() {
         this.open = false;
     }
 
-    /**
-     * Toggles the panel's visibility.
-     */
+    
     toggle() {
         if (this.open) {
             this.close();
@@ -468,10 +324,7 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    /**
-     * Handles the click event on the panel scrim.
-     * @param {Event} event - The click event.
-     */
+    
     handlePanelScrimClick(event) {
         this.close();
 
@@ -479,9 +332,7 @@ class MDPanelComponent extends MDComponent {
     }
 }
 
-/**
- * Define the custom element "md-panel" with MDPanelComponent.
- */
+
 customElements.define("md-panel", MDPanelComponent);
 
 export { MDPanelComponent };

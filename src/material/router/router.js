@@ -1,13 +1,6 @@
-/**
- * MDRouter is a simple router for managing client-side navigation in a web application.
- */
+
 class MDRouter {
-    /**
-     * Set routes recursively for the given routes array.
-     * @param {Object[]} routes - The array of route configurations.
-     * @param {Object} [parent=null] - The parent route.
-     * @returns {Object[]} - The flattened array of route configurations.
-     */
+    
     static setRoutes(routes = [], parent = null) {
         return routes.reduce((prev, curr) => {
             curr.parent = parent;
@@ -23,10 +16,7 @@ class MDRouter {
         }, []);
     }
 
-    /**
-     * Get the current route based on the URL and route patterns.
-     * @returns {Object|null} - The matched route or null if no match is found.
-     */
+    
     static getRoute() {
         return this.routes.find((route) => {
             const pattern = "^" + route.pattern.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)";
@@ -42,11 +32,7 @@ class MDRouter {
         });
     }
 
-    /**
-     * Get all ancestor routes for a given route.
-     * @param {Object} route - The route for which to get ancestors.
-     * @returns {Object[]} - The array of ancestor routes.
-     */
+    
     static getRoutes(route) {
         return [route].reduce((prev, curr) => {
             if (curr.parent) {
@@ -59,11 +45,7 @@ class MDRouter {
         }, []);
     }
 
-    /**
-     * Get the outlet element for a given route, creating it if necessary.
-     * @param {Object} route - The route for which to get the outlet.
-     * @returns {Promise<HTMLElement>} - A promise resolving to the outlet element.
-     */
+    
     static getOutlet(route) {
         return new Promise((resolve) => {
             let outlet;
@@ -100,11 +82,7 @@ class MDRouter {
         });
     }
 
-    /**
-     * Emit a custom event with a specified type and detail.
-     * @param {string} type - The type of the event.
-     * @param {any} detail - The detail object to be included in the event.
-     */
+    
     static emit(type, detail) {
         // console.log(type, detail);
 
@@ -117,10 +95,7 @@ class MDRouter {
         window.dispatchEvent(event);
     }
 
-    /**
-     * Handle the popstate event to update the router state.
-     * @param {Event} event - The popstate event.
-     */
+    
     static async handlePopstate(event) {
         this.path = window.location.pathname;
         this.query = Object.fromEntries(new URLSearchParams(window.location.search).entries());
@@ -189,18 +164,12 @@ class MDRouter {
         this.emit("onRouterEnd");
     }
 
-    /**
-     * Navigate to a new URL using the browser's history API.
-     * @param {string} url - The URL to navigate to.
-     */
+    
     static navigate(url) {
         window.history.pushState({}, null, url);
     }
 
-    /**
-     * Handle click events on elements with the [routerLink] attribute.
-     * @param {Event} event - The click event.
-     */
+    
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
 
@@ -211,16 +180,7 @@ class MDRouter {
         }
     }
 
-    /**
-     * Register the router with the specified routes.
-     * @param {Object[]} routes - The array of route configurations.
-     * @property {String} path - The route path.
-     * @property {HTMLElement} component - The HTML element associated with the route.
-     * @property {RouteConfig[]} children - An array of child route configurations.
-     * @property {Function} load - A function to load the route component dynamically.
-     * @property {Function} beforeLoad - A function to be executed before loading the route.
-     * @property {String} outlet - The name of the outlet where the route component should be rendered.
-     */
+    
     static register(routes = []) {
         const pushState = window.history.pushState;
 

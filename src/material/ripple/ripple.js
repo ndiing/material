@@ -1,20 +1,8 @@
 import { MDController } from "../base/controller";
 
-/**
- * Controller class for managing Material Design ripples.
- * @extends MDController
- */
+
 class MDRippleController extends MDController {
-    /**
-     * Creates an instance of MDRippleController.
-     * @param {HTMLElement} host - The host element.
-     * @param {Object} [options={}] - Configuration options.
-     * @param {boolean} [options.containment=true] - Whether to apply containment class.
-     * @param {boolean} [options.inverted=false] - Whether to apply inverted class.
-     * @param {boolean} [options.fadeout=false] - Whether to apply fadeout class.
-     * @param {number|null} [options.size=null] - Size of the ripple.
-     * @param {boolean} [options.centered=false] - Whether to center the ripple.
-     */
+    
     constructor(host, options = {}) {
         super(host, {
             // default options
@@ -29,9 +17,7 @@ class MDRippleController extends MDController {
         });
     }
 
-    /**
-     * Lifecycle method called when the host element is connected to the DOM.
-     */
+    
     hostConnected() {
         // container
         this.container = this.options.container ?? this.host;
@@ -95,9 +81,7 @@ class MDRippleController extends MDController {
         this.button.addEventListener("blur", this.handleRippleBlur);
     }
 
-    /**
-     * Lifecycle method called when the host element is disconnected from the DOM.
-     */
+    
     hostDisconnected() {
         // unlisten
         this.button.removeEventListener("pointerenter", this.handleRipplePointerenter);
@@ -108,26 +92,17 @@ class MDRippleController extends MDController {
         this.button.removeEventListener("blur", this.handleRippleBlur);
     }
 
-    /**
-     * Event handler for pointerenter event.
-     * @param {PointerEvent} event - The pointerenter event.
-     */
+    
     handleRipplePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
-    /**
-     * Event handler for pointerleave event.
-     * @param {PointerEvent} event - The pointerleave event.
-     */
+    
     handleRipplePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
-    /**
-     * Event handler for pointerdown event.
-     * @param {PointerEvent} event - The pointerdown event.
-     */
+    
     handleRipplePointerdown(event) {
         window.addEventListener("pointerup", this.handleRipplePointerup);
 
@@ -152,28 +127,19 @@ class MDRippleController extends MDController {
         this.layer.style.setProperty(`animation-name`, `md-ripple-animation`);
     }
 
-    /**
-     * Event handler for pointerup event.
-     * @param {PointerEvent} event - The pointerup event.
-     */
+    
     handleRipplePointerup(event) {
         this.container.classList.remove("md-ripple--pressed");
 
         window.removeEventListener("pointerup", this.handleRipplePointerup);
     }
 
-    /**
-     * Event handler for focus event.
-     * @param {FocusEvent} event - The focus event.
-     */
+    
     handleRippleFocus(event) {
         this.container.classList.add("md-ripple--focused");
     }
 
-    /**
-     * Event handler for blur event.
-     * @param {FocusEvent} event - The blur event.
-     */
+    
     handleRippleBlur(event) {
         this.container.classList.remove("md-ripple--focused");
     }
