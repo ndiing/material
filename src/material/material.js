@@ -1,10 +1,12 @@
-import "./poper/poper.js";
-import "./ripple/ripple.js";
-import "./router/router.js";
-import "./base/controller.js";
-import "./base/component.js";
+// import "./poper/poper.js";
+// import "./ripple/ripple.js";
+// import "./router/router.js";
+
+// import "./base/controller.js";
+// import "./base/component.js";
 // import "./base/example-controller.js";
 // import "./base/example-component.js";
+
 import "./layout/layout.js";
 import "./icon/icon.js";
 import "./emoji/emoji.js";
