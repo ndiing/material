@@ -3,43 +3,35 @@ import { MDComponent } from "../base/component";
 import { MDListComponent } from "../list/list";
 import { MDPanelComponent } from "../panel/panel";
 
-
 class MDNavigationBarComponent extends MDPanelComponent {
-    
     static properties = Object.assign(MDPanelComponent.properties, MDListComponent.properties, {});
 
-    
     constructor() {
         super();
 
         // default
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-navigation-bar");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-navigation-bar");
     }
 
-    
     firstUpdated(changedProperties) {
         super.firstUpdated(changedProperties);
     }
 
-    
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -56,7 +48,6 @@ class MDNavigationBarComponent extends MDPanelComponent {
         `;
     }
 
-    
     handleListItemContainerClick(event) {
         this.activatedListItemContainer = event.detail.listItemContainer;
 
@@ -74,7 +65,6 @@ class MDNavigationBarComponent extends MDPanelComponent {
         this.activatedListIcon.style.setProperty("animation-name", "md-navigation-bar-list-item-container-activated");
     }
 
-    
     handleListIconAnimationend() {
         if (!this.activatedListIcon) {
             return;
@@ -89,7 +79,6 @@ class MDNavigationBarComponent extends MDPanelComponent {
         this.activatedListItemContainer = null;
     }
 }
-
 
 customElements.define("md-navigation-bar", MDNavigationBarComponent);
 

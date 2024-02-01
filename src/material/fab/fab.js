@@ -2,9 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 import { MDRippleController } from "../ripple/ripple";
 
-
 class MDFabComponent extends MDComponent {
-    
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -13,12 +11,10 @@ class MDFabComponent extends MDComponent {
         size: { type: String },
     };
 
-    
     get fabNative() {
         return this.querySelector(".md-fab__native");
     }
 
-    
     constructor() {
         super();
 
@@ -26,28 +22,24 @@ class MDFabComponent extends MDComponent {
         this.type = "button";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-fab");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-fab");
     }
 
-    
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
             button: this.fabNative,
         });
     }
 
-    
     updated(changedProperties) {
         if (changedProperties.has("ui")) {
             this.classList.remove("md-fab--extended");
@@ -69,7 +61,6 @@ class MDFabComponent extends MDComponent {
         }
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -82,7 +73,6 @@ class MDFabComponent extends MDComponent {
         `;
     }
 }
-
 
 customElements.define("md-fab", MDFabComponent);
 

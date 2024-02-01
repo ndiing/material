@@ -1,9 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 
-
 class MDPanelHeaderComponent extends MDComponent {
-    
     static properties = {
         leadingIcon: { type: String },
         trailingIcon: { type: String },
@@ -11,22 +9,18 @@ class MDPanelHeaderComponent extends MDComponent {
         supportingText: { type: String },
     };
 
-    
     get hasLeadingItems() {
         return this.leadingIcon;
     }
-    
-    
+
     get hasItems() {
         return this.label || this.supportingText;
     }
-    
-    
+
     get hasTrailingItems() {
         return this.trailingIcon;
     }
 
-    
     constructor() {
         super();
 
@@ -34,27 +28,22 @@ class MDPanelHeaderComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__header");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__header");
     }
 
-    
     firstUpdated(changedProperties) {}
 
-    
     updated(changedProperties) {}
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -77,23 +66,18 @@ class MDPanelHeaderComponent extends MDComponent {
             `;
     }
 
-    
     handlePanelIconClick(event) {
         this.emit("onPanelIconClick", { event });
     }
 }
 
-
 customElements.define("md-panel-header", MDPanelHeaderComponent);
 
 export { MDPanelHeaderComponent };
 
-
 class MDPanelBodyComponent extends MDComponent {
-    
     static properties = {};
 
-    
     constructor() {
         super();
 
@@ -101,41 +85,32 @@ class MDPanelBodyComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__body");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__body");
     }
 
-    
     firstUpdated(changedProperties) {}
 
-    
     updated(changedProperties) {}
 
-    
     render() {}
 }
-
 
 customElements.define("md-panel-body", MDPanelBodyComponent);
 
 export { MDPanelBodyComponent };
 
-
 class MDPanelFooterComponent extends MDComponent {
-    
     static properties = {};
 
-    
     constructor() {
         super();
 
@@ -143,41 +118,32 @@ class MDPanelFooterComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__footer");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__footer");
     }
 
-    
     firstUpdated(changedProperties) {}
 
-    
     updated(changedProperties) {}
 
-    
     render() {}
 }
-
 
 customElements.define("md-panel-footer", MDPanelFooterComponent);
 
 export { MDPanelFooterComponent };
 
-
 class MDPanelScrimComponent extends MDComponent {
-    
     static properties = {};
 
-    
     constructor() {
         super();
 
@@ -185,38 +151,30 @@ class MDPanelScrimComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel__scrim");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel__scrim");
     }
 
-    
     firstUpdated(changedProperties) {}
 
-    
     updated(changedProperties) {}
 
-    
     render() {}
 }
-
 
 customElements.define("md-panel-scrim", MDPanelScrimComponent);
 
 export { MDPanelScrimComponent };
 
-
 class MDPanelComponent extends MDComponent {
-    
     static properties = {
         ui: { type: String },
         position: { type: String }, // drawer position
@@ -224,7 +182,6 @@ class MDPanelComponent extends MDComponent {
         modal: { type: Boolean, reflect: true },
     };
 
-    
     constructor() {
         super();
 
@@ -232,24 +189,20 @@ class MDPanelComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-panel");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel");
     }
 
-    
     firstUpdated(changedProperties) {}
 
-    
     updated(changedProperties) {
         if (changedProperties.has("ui")) {
             this.classList.remove(`md-panel--dialog`);
@@ -279,10 +232,8 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    
     render() {}
 
-    
     createPanelScrim() {
         if (!this.panelScrim && this.open && (this.ui === "dialog" || this.ui === "drawer")) {
             this.panelScrim = document.createElement("md-panel-scrim");
@@ -294,7 +245,6 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    
     removePanelScrim() {
         if (this.panelScrim) {
             this.panelScrim.removeEventListener("click", this.handlePanelScrimClick);
@@ -305,17 +255,14 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    
     show() {
         this.open = true;
     }
 
-    
     close() {
         this.open = false;
     }
 
-    
     toggle() {
         if (this.open) {
             this.close();
@@ -324,14 +271,12 @@ class MDPanelComponent extends MDComponent {
         }
     }
 
-    
     handlePanelScrimClick(event) {
         this.close();
 
         this.emit("onPanelScrimClick", { event });
     }
 }
-
 
 customElements.define("md-panel", MDPanelComponent);
 

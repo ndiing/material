@@ -3,52 +3,43 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDComponent } from "../base/component";
 import { MDRippleController } from "../ripple/ripple";
 
-
 class MDCheckboxComponent extends MDComponent {
-    
     static properties = {
         name: { type: String },
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
     };
 
-    
     get checkboxNative() {
         return this.querySelector(".md-checkbox__native");
     }
 
-    
     get checkboxTrack() {
         return this.querySelector(".md-checkbox__track");
     }
 
-    
     get checkboxThumb() {
         return this.querySelector(".md-checkbox__thumb");
     }
 
-    
     constructor() {
         super();
 
         // default
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-checkbox");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-checkbox");
     }
 
-    
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
             button: this.checkboxNative,
@@ -60,12 +51,10 @@ class MDCheckboxComponent extends MDComponent {
         });
     }
 
-    
     updated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -83,18 +72,15 @@ class MDCheckboxComponent extends MDComponent {
         `;
     }
 
-    
     handleCheckboxNativeInput(event) {
         const checkboxNative = event.currentTarget;
 
         this.indeterminate = checkboxNative.indeterminate;
         this.checked = checkboxNative.checked;
 
-        
         this.emit("onCheckboxNativeInput", { event, checkboxNative });
     }
 }
-
 
 customElements.define("md-checkbox", MDCheckboxComponent);
 

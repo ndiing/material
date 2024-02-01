@@ -1,6 +1,4 @@
-
 class MDRouter {
-    
     static setRoutes(routes = [], parent = null) {
         return routes.reduce((prev, curr) => {
             curr.parent = parent;
@@ -16,7 +14,6 @@ class MDRouter {
         }, []);
     }
 
-    
     static getRoute() {
         return this.routes.find((route) => {
             const pattern = "^" + route.pattern.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)";
@@ -32,7 +29,6 @@ class MDRouter {
         });
     }
 
-    
     static getRoutes(route) {
         return [route].reduce((prev, curr) => {
             if (curr.parent) {
@@ -45,7 +41,6 @@ class MDRouter {
         }, []);
     }
 
-    
     static getOutlet(route) {
         return new Promise((resolve) => {
             let outlet;
@@ -82,7 +77,6 @@ class MDRouter {
         });
     }
 
-    
     static emit(type, detail) {
         // console.log(type, detail);
 
@@ -95,7 +89,6 @@ class MDRouter {
         window.dispatchEvent(event);
     }
 
-    
     static async handlePopstate(event) {
         this.path = window.location.pathname;
         this.query = Object.fromEntries(new URLSearchParams(window.location.search).entries());
@@ -164,12 +157,10 @@ class MDRouter {
         this.emit("onRouterEnd");
     }
 
-    
     static navigate(url) {
         window.history.pushState({}, null, url);
     }
 
-    
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
 
@@ -180,7 +171,6 @@ class MDRouter {
         }
     }
 
-    
     static register(routes = []) {
         const pushState = window.history.pushState;
 

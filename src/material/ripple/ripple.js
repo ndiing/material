@@ -1,8 +1,6 @@
 import { MDController } from "../base/controller";
 
-
 class MDRippleController extends MDController {
-    
     constructor(host, options = {}) {
         super(host, {
             // default options
@@ -17,7 +15,6 @@ class MDRippleController extends MDController {
         });
     }
 
-    
     hostConnected() {
         // container
         this.container = this.options.container ?? this.host;
@@ -81,7 +78,6 @@ class MDRippleController extends MDController {
         this.button.addEventListener("blur", this.handleRippleBlur);
     }
 
-    
     hostDisconnected() {
         // unlisten
         this.button.removeEventListener("pointerenter", this.handleRipplePointerenter);
@@ -92,17 +88,14 @@ class MDRippleController extends MDController {
         this.button.removeEventListener("blur", this.handleRippleBlur);
     }
 
-    
     handleRipplePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
-    
     handleRipplePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
-    
     handleRipplePointerdown(event) {
         window.addEventListener("pointerup", this.handleRipplePointerup);
 
@@ -127,19 +120,16 @@ class MDRippleController extends MDController {
         this.layer.style.setProperty(`animation-name`, `md-ripple-animation`);
     }
 
-    
     handleRipplePointerup(event) {
         this.container.classList.remove("md-ripple--pressed");
 
         window.removeEventListener("pointerup", this.handleRipplePointerup);
     }
 
-    
     handleRippleFocus(event) {
         this.container.classList.add("md-ripple--focused");
     }
 
-    
     handleRippleBlur(event) {
         this.container.classList.remove("md-ripple--focused");
     }

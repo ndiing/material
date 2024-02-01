@@ -6,9 +6,7 @@ function notNull(value) {
     return value !== null && value !== undefined;
 }
 
-
 class MDListContainerComponent extends MDComponent {
-    
     static properties = {
         leadingIcons: { type: Array },
         collapsibleIcons: { type: Array },
@@ -161,7 +159,6 @@ customElements.define("md-list-container", MDListContainerComponent);
 
 export { MDListContainerComponent };
 
-
 class MDListItemComponent extends MDComponent {
     static properties = {};
 
@@ -194,9 +191,7 @@ customElements.define("md-list-item", MDListItemComponent);
 
 export { MDListItemComponent };
 
-
 class MDListComponent extends MDComponent {
-    
     static properties = {
         items: { type: Array },
         size: { type: String },
@@ -205,7 +200,6 @@ class MDListComponent extends MDComponent {
         selectable: { type: Boolean },
     };
 
-    
     get list() {
         var el = this;
 
@@ -314,7 +308,6 @@ class MDListComponent extends MDComponent {
         })
     }
 
-    
     handleListItemContainerClick(event) {
         const listItemContainer = event.currentTarget;
 

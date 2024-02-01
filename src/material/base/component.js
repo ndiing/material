@@ -1,13 +1,10 @@
 import { LitElement } from "lit";
 
-
 class MDComponent extends LitElement {
-    
     createRenderRoot() {
         return this;
     }
 
-    
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

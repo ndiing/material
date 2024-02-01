@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 
-
 class MDLayoutGridItemComponent extends MDComponent {
     static properties = {
         expanded: { type: String },
@@ -63,7 +62,6 @@ customElements.define("md-layout-grid-item", MDLayoutGridItemComponent);
 
 export { MDLayoutGridItemComponent };
 
-
 class MDLayoutGridComponent extends MDComponent {
     static properties = {};
 
@@ -95,7 +93,6 @@ class MDLayoutGridComponent extends MDComponent {
 customElements.define("md-layout-grid", MDLayoutGridComponent);
 
 export { MDLayoutGridComponent };
-
 
 class MDLayoutBorderItemComponent extends MDComponent {
     static properties = {
@@ -160,7 +157,6 @@ customElements.define("md-layout-border-item", MDLayoutBorderItemComponent);
 
 export { MDLayoutBorderItemComponent };
 
-
 class MDLayoutBorderComponent extends MDComponent {
     static properties = {};
 
@@ -192,7 +188,6 @@ class MDLayoutBorderComponent extends MDComponent {
 customElements.define("md-layout-border", MDLayoutBorderComponent);
 
 export { MDLayoutBorderComponent };
-
 
 class MDLayoutComponent extends MDComponent {
     static properties = {};

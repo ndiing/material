@@ -3,51 +3,42 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDComponent } from "../base/component";
 import { MDRippleController } from "../ripple/ripple";
 
-
 class MDSwitchComponent extends MDComponent {
-    
     static properties = {
         name: { type: String },
         checked: { type: Boolean },
     };
 
-    
     get switchNative() {
         return this.querySelector(".md-switch__native");
     }
 
-    
     get switchTrack() {
         return this.querySelector(".md-switch__track");
     }
 
-    
     get switchThumb() {
         return this.querySelector(".md-switch__thumb");
     }
 
-    
     constructor() {
         super();
 
         // default
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-switch");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-switch");
     }
 
-    
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
             button: this.switchNative,
@@ -59,12 +50,10 @@ class MDSwitchComponent extends MDComponent {
         });
     }
 
-    
     updated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -81,17 +70,14 @@ class MDSwitchComponent extends MDComponent {
         `;
     }
 
-    
     handleSwitchNativeInput(event) {
         const switchNative = event.currentTarget;
 
         this.checked = switchNative.checked;
 
-        
         this.emit("onSwitchNativeInput", { event, switchNative });
     }
 }
-
 
 customElements.define("md-switch", MDSwitchComponent);
 

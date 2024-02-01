@@ -1,16 +1,12 @@
 import { html } from "lit";
 import { MDComponent } from "../base/component";
 
-
 class MDSegmentedButtonComponent extends MDComponent {
-    
-
     static properties = {
         items: { type: Array },
         type: { type: String },
     };
 
-    
     constructor() {
         super();
 
@@ -19,31 +15,26 @@ class MDSegmentedButtonComponent extends MDComponent {
         this.type = "single-select";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-segmented-button");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-segmented-button");
     }
 
-    
     firstUpdated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     updated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     renderItem(item = {}) {
         // prettier-ignore
         return html`
@@ -59,13 +50,11 @@ class MDSegmentedButtonComponent extends MDComponent {
         `;
     }
 
-    
     render() {
         // prettier-ignore
         return this.items.map(item => this.renderItem(item));
     }
 
-    
     handleButtonClick(event) {
         const button = event.currentTarget;
 
@@ -81,11 +70,9 @@ class MDSegmentedButtonComponent extends MDComponent {
 
         this.requestUpdate();
 
-        
         this.emit("onButtonClick", { event, button });
     }
 }
-
 
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
 

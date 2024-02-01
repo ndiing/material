@@ -1,15 +1,12 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 
-
 class MDChipSetComponent extends MDComponent {
-    
     static properties = {
         items: { type: Array },
         type: { type: String },
     };
 
-    
     constructor() {
         super();
 
@@ -18,31 +15,26 @@ class MDChipSetComponent extends MDComponent {
         // this.type=""
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-chip-set");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-chip-set");
     }
 
-    
     firstUpdated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     updated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     renderItem(item = {}) {
         // prettier-ignore
         return html`
@@ -58,13 +50,11 @@ class MDChipSetComponent extends MDComponent {
         `;
     }
 
-    
     render() {
         // prettier-ignore
         return this.items.map(item => this.renderItem(item));
     }
 
-    
     handleChipClick(event) {
         const chip = event.currentTarget;
 
@@ -73,11 +63,9 @@ class MDChipSetComponent extends MDComponent {
 
         this.requestUpdate();
 
-        
         this.emit("onChipClick", { event });
     }
 }
-
 
 customElements.define("md-chip-set", MDChipSetComponent);
 

@@ -2,9 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 import { MDRippleController } from "../ripple/ripple";
 
-
 class MDIconButtonComponent extends MDComponent {
-    
     static properties = {
         icon: { type: String },
         type: { type: String },
@@ -13,12 +11,10 @@ class MDIconButtonComponent extends MDComponent {
         toggle: { type: Boolean },
     };
 
-    
     get iconButtonNative() {
         return this.querySelector(".md-icon-button__native");
     }
 
-    
     constructor() {
         super();
 
@@ -26,21 +22,18 @@ class MDIconButtonComponent extends MDComponent {
         this.type = "button";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-icon-button");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-icon-button");
     }
 
-    
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
             button: this.iconButtonNative,
@@ -52,7 +45,6 @@ class MDIconButtonComponent extends MDComponent {
         });
     }
 
-    
     updated(changedProperties) {
         if (changedProperties.has("ui")) {
             this.classList.remove("md-icon-button--filled");
@@ -73,7 +65,6 @@ class MDIconButtonComponent extends MDComponent {
         }
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -87,17 +78,14 @@ class MDIconButtonComponent extends MDComponent {
         `;
     }
 
-    
     handleIconButtonClick(event) {
         if (this.toggle) {
             this.activated = !this.activated;
         }
 
-        
         this.emit("onIconButtonClick", { event });
     }
 }
-
 
 customElements.define("md-icon-button", MDIconButtonComponent);
 

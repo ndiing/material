@@ -2,9 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 import { MDRippleController } from "../ripple/ripple";
 
-
 class MDChipComponent extends MDComponent {
-    
     static properties = {
         leadingIcon: { type: String },
         avatar: { type: String },
@@ -13,7 +11,6 @@ class MDChipComponent extends MDComponent {
         activated: { type: Boolean, reflect: true },
     };
 
-    
     constructor() {
         super();
 
@@ -21,31 +18,26 @@ class MDChipComponent extends MDComponent {
         // this.label = "Label";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-chip");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-chip");
     }
 
-    
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {});
     }
 
-    
     updated(changedProperties) {
         // Implement logic if needed
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -56,7 +48,6 @@ class MDChipComponent extends MDComponent {
         `;
     }
 }
-
 
 customElements.define("md-chip", MDChipComponent);
 

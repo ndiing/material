@@ -3,20 +3,16 @@ import { MDComponent } from "../base/component";
 import { MDPanelComponent } from "../panel/panel";
 import { MDPoperController } from "../poper/poper";
 
-
 class MDTooltipComponent extends MDPanelComponent {
-    
     static properties = Object.assign(MDPanelComponent.properties, {
         type: { type: String },
         button: { type: String },
     });
 
-    
     get tooltipButton() {
         return document.body.querySelector(`#${this.button}`);
     }
 
-    
     constructor() {
         super();
 
@@ -26,21 +22,18 @@ class MDTooltipComponent extends MDPanelComponent {
         // this.type='rich'
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-tooltip");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-tooltip");
     }
 
-    
     firstUpdated(changedProperties) {
         super.firstUpdated(changedProperties);
         this.poper = new MDPoperController(this, {
@@ -51,7 +44,6 @@ class MDTooltipComponent extends MDPanelComponent {
         });
     }
 
-    
     updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -65,23 +57,19 @@ class MDTooltipComponent extends MDPanelComponent {
         }
     }
 
-    
     render() {
         // Implement your rendering logic if needed
     }
 
-    
     show() {
         super.show();
         this.poper.setPlacement();
     }
 
-    
     close() {
         super.close();
     }
 }
-
 
 customElements.define("md-tooltip", MDTooltipComponent);
 

@@ -1,8 +1,6 @@
 import { MDController } from "../base/controller";
 
-
 class MDPoperController extends MDController {
-    
     constructor(host, options = {}) {
         super(host, {
             // default options
@@ -16,7 +14,6 @@ class MDPoperController extends MDController {
         });
     }
 
-     
     hostConnected() {
         this.options.container.classList.add("md-poper");
 
@@ -43,7 +40,6 @@ class MDPoperController extends MDController {
         // this.host.addEventListener("click", this.handlePoperClick);
     }
 
-    
     hostDisconnected() {
         // unlisten
         // this.host.removeEventListener("click", this.handlePoperClick);
@@ -54,7 +50,6 @@ class MDPoperController extends MDController {
     //     this.host.emit("onPoperClick", { event });
     // }
 
-     
     getPlacement(placement = this.options.placement) {
         const containerRect = this.options.container.getBoundingClientRect();
         const buttonRect = this.options.button.getBoundingClientRect();
@@ -107,7 +102,6 @@ class MDPoperController extends MDController {
         return result;
     }
 
-    
     setPlacement() {
         const result = this.getPlacement(this.options.placement);
         let left = result.left;

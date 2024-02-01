@@ -2,9 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 import { MDRippleController } from "../ripple/ripple";
 
-
 class MDButtonComponent extends MDComponent {
-    
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -13,12 +11,10 @@ class MDButtonComponent extends MDComponent {
         ui: { type: String },
     };
 
-    
     get buttonNative() {
         return this.querySelector(".md-button__native");
     }
 
-    
     constructor() {
         super();
 
@@ -26,21 +22,18 @@ class MDButtonComponent extends MDComponent {
         this.type = "button";
     }
 
-    
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-button");
     }
 
-    
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-button");
     }
 
-    
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
             button: this.buttonNative,
@@ -48,7 +41,6 @@ class MDButtonComponent extends MDComponent {
         });
     }
 
-    
     updated(changedProperties) {
         if (changedProperties.has("ui")) {
             this.classList.remove("md-button--elevated");
@@ -62,7 +54,6 @@ class MDButtonComponent extends MDComponent {
         }
     }
 
-    
     render() {
         // prettier-ignore
         return html`
@@ -75,7 +66,6 @@ class MDButtonComponent extends MDComponent {
         `;
     }
 }
-
 
 customElements.define("md-button", MDButtonComponent);
 
