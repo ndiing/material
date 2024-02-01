@@ -1,0 +1,51 @@
+.md-drawer {
+    position: absolute;
+    z-index: 12;
+    transition-property: none;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
+
+    &.md-panel--top {
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: translate3d(0, 0, 0);
+
+        &:not([open]) {
+            transform: translate3d(0%, -100%, 0);
+        }
+    }
+
+    &.md-panel--right {
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: translate3d(0, 0, 0);
+
+        &:not([open]) {
+            transform: translate3d(100%, 0%, 0);
+        }
+    }
+
+    &.md-panel--bottom {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translate3d(0, 0, 0);
+
+        &:not([open]) {
+            transform: translate3d(0%, 100%, 0);
+        }
+    }
+
+    &.md-panel--left {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translate3d(0, 0, 0);
+
+        &:not([open]) {
+            transform: translate3d(-100%, 0%, 0);
+        }
+    }
+}

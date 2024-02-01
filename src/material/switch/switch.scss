@@ -32,7 +32,6 @@
                 background: var(--md-sys-color-on-primary);
 
                 > .md-ripple__layer {
-                    // width: 166.66666666666669% !important;
                     width: 40px !important;
                 }
             }
@@ -44,7 +43,6 @@
                     left: 20px;
 
                     > .md-ripple__layer {
-                        // width: 142.85714285714286% !important;
                         width: 40px !important;
                     }
                 }
@@ -61,7 +59,6 @@
                 left: 0px;
 
                 > .md-ripple__layer {
-                    // width: 142.85714285714286% !important;
                     width: 40px !important;
                 }
             }
@@ -100,7 +97,6 @@
     transition-duration: var(--md-sys-motion-duration-short2);
 
     > .md-ripple__layer {
-        // width: 250% !important;
         width: 40px !important;
     }
 }

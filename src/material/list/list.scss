@@ -20,6 +20,7 @@
     padding: 0 16px;
     @extend .md-typography--title-small;
 }
+
 .md-list__divider {
     margin: 8px 0 7px;
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
@@ -46,21 +47,14 @@
     }
 }
 
-// .md-list__indent{
-//     height: 24px;
-//     width: 24px;
-// }
-
 .md-list__avatar {
     height: 40px;
     width: 40px;
-    // margin: 8px 0;
 }
 
 .md-list__image {
     height: 56px;
     width: 56px;
-    // margin: 8px 0;
 }
 
 .md-list__video {

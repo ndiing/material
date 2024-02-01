@@ -24,6 +24,8 @@ class MainComponent extends MDComponent {
                             {label:'Badge',routerLink:'/badge'},
                             {label:'List',routerLink:'/list'},
                             {label:'Panel',routerLink:'/panel'},
+                            {label:'Dialog',routerLink:'/dialog'},
+                            {label:'Drawer',routerLink:'/drawer'},
                             {label:'Navigation Bar',routerLink:'/navigation-bar'},
                             {label:'Navigation Drawer',routerLink:'/navigation-drawer'},
                             {label:'Navigation Rail',routerLink:'/navigation-rail'},

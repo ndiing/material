@@ -1,6 +1,10 @@
-.md-poper {
+.md-dialog {
     position: absolute;
+    left: 50%;
+    top: 50%;
     z-index: 12;
+    transform: scale(1) translate3d(-50%, -50%, 0);
+    transform-origin: left top;
     pointer-events: all;
     opacity: 1;
     transition-property: none;
@@ -8,7 +12,9 @@
     transition-duration: var(--md-sys-motion-duration-short2);
 
     &:not([open]) {
+        transform: scale(0.88) translate3d(-50%, -50%, 0);
         pointer-events: none;
         opacity: 0;
     }
 }
+

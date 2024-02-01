@@ -1,3 +1,5 @@
+import DrawerComponent from "./drawer/drawer.js";
+import DialogComponent from "./dialog/dialog.js";
 // import LayoutComponent from "./layout/layout.js";
 // import TooltipComponent from "./tooltip/tooltip.js";
 // import BadgeComponent from "./badge/badge.js";
@@ -51,6 +53,8 @@ MDRouter.register([
         {path:'badge',load:() => import("./badge/badge.js").then(m=>m.default),children:[]},
         {path:'list',load:() => import("./list/list.js").then(m=>m.default),children:[]},
         {path:'panel',load:() => import("./panel/panel.js").then(m=>m.default),children:[]},
+        {path:'dialog',load:() => import("./dialog/dialog.js").then(m=>m.default),children:[]},
+        {path:'drawer',load:() => import("./drawer/drawer.js").then(m=>m.default),children:[]},
         {path:'navigation-bar',load:() => import("./navigation-bar/navigation-bar.js").then(m=>m.default),children:[]},
         {path:'navigation-drawer',load:() => import("./navigation-drawer/navigation-drawer.js").then(m=>m.default),children:[]},
         {path:'navigation-rail',load:() => import("./navigation-rail/navigation-rail.js").then(m=>m.default),children:[]},

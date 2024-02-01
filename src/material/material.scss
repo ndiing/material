@@ -1,14 +1,11 @@
 @import "./base/style.scss";
-
 @import "./poper/poper.scss";
 @import "./ripple/ripple.scss";
 @import "./router/router.scss";
-
 // @import "./base/controller.scss";
 // @import "./base/component.scss";
 // @import "./base/example-controller.scss";
 // @import "./base/example-component.scss";
-
 @import "./layout/layout.scss";
 @import "./icon/icon.scss";
 @import "./emoji/emoji.scss";
@@ -25,6 +22,8 @@
 @import "./badge/badge.scss";
 @import "./list/list.scss";
 @import "./panel/panel.scss";
+@import "./dialog/dialog.scss";
+@import "./drawer/drawer.scss";
 @import "./navigation-bar/navigation-bar.scss";
 @import "./navigation-drawer/navigation-drawer.scss";
 @import "./navigation-rail/navigation-rail.scss";

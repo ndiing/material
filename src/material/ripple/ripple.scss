@@ -29,7 +29,7 @@
     background: var(--md-sys-color-on-surface);
     opacity: 0;
     pointer-events: none;
-    // animation-name: md-ripple-animation;
+    animation-name: none;
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short4);
 }
@@ -46,9 +46,6 @@
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 
-    // > .md-ripple__layer {
-    //     opacity: 0%;
-    // }
 }
 
 .md-ripple--focused {
@@ -74,6 +71,8 @@
         opacity: 8%;
     }
 }
+
+// disabled
 [disabled],
 .md-ripple[disabled],
 .md-ripple--disabled {

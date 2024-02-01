@@ -7,14 +7,8 @@
     border-radius: 20px;
     padding: 0 12px;
     gap: 0 8px;
-    // background: var(--md-sys-color-surface-container);
     color: var(--md-sys-color-primary);
     position: relative;
-
-    // &[activated]{
-    //     background: var(--md-sys-color-secondary-container);
-    //     color: var(--md-sys-color-on-secondary-container);
-    // }
 }
 
 .md-button__native {
@@ -30,8 +24,6 @@
 
 .md-button__icon {
     @extend .md-icon;
-    // height: 18px;
-    // width: 18px;
     font-size: 18px;
 
     + .md-button__label {
@@ -43,13 +35,12 @@
     @extend .md-typography--label-large;
 }
 
-//
+
 .md-button--elevated,
 .md-button--filled,
 .md-button--filled-tonal,
 .md-button--outlined {
     padding: 0 24px;
-    // border: 1px solid var(--md-sys-color-outline);
 
     .md-button__icon {
         margin-left: -8px;
@@ -65,16 +56,18 @@
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
 }
+
 .md-button--filled {
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
 }
+
 .md-button--filled-tonal {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 }
+
 .md-button--outlined {
-    // background: var(--md-sys-color-surface);
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 }
