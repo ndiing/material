@@ -12,20 +12,20 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
 
-- ##### [Layout 🔎](#./src/material/layout/layout.md 'on process')
-- ##### [Panel](./src/material/panel/panel.md)
-- ##### [Poper 🔎](# 'on process')
-- ##### [Ripple](./src/material/ripple/ripple.md)
-- ##### [Router](./src/material/router/router.md)
-- ##### [State](./src/material/state/state.md)
+-   ##### [Layout 🔎](#./src/material/layout/layout.md "on process")
+-   ##### [Panel](./src/material/panel/panel.md)
+-   ##### [Poper 🔎](# "on process")
+-   ##### [Ripple](./src/material/ripple/ripple.md)
+-   ##### [Router](./src/material/router/router.md)
+-   ##### [State](./src/material/state/state.md)
 
 ## 🎨 Style
 
 Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.
 
-- ##### [Emoji](./src/material/emoji/emoji.md)
-- ##### [Icon](./src/material/icon/icon.md)
-- ##### [Shape/Image](./src/material/image/image.md)
+-   ##### [Emoji](./src/material/emoji/emoji.md)
+-   ##### [Icon](./src/material/icon/icon.md)
+-   ##### [Shape/Image](./src/material/image/image.md)
 
 ## 🧩 Components
 
@@ -33,33 +33,33 @@ Components are interactive building blocks for creating a user interface. They c
 
 ### Actions
 
-- ##### [Button](./src/material/button/button.md)
-- ##### [Floating Action Button (FAB)](./src/material/fab/fab.md)
-- ##### [Icon Button](./src/material/icon-button/icon-button.md)
-- ##### [Segmented Button](./src/material/segmented-button/segmented-button.md)
+-   ##### [Button](./src/material/button/button.md)
+-   ##### [Floating Action Button (FAB)](./src/material/fab/fab.md)
+-   ##### [Icon Button](./src/material/icon-button/icon-button.md)
+-   ##### [Segmented Button](./src/material/segmented-button/segmented-button.md)
 
 ### Containment
 
-- ##### [List](./src/material/list/list.md)
+-   ##### [List](./src/material/list/list.md)
 
 ### Communitcation
 
-- ##### [Badge](./src/material/badge/badge.md)
-- ##### [Tooltip](# 'on process')
+-   ##### [Badge](./src/material/badge/badge.md)
+-   ##### [Tooltip](# "on process")
 
 ### Navigation
 
-- ##### [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
-- ##### [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
-- ##### [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
+-   ##### [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
+-   ##### [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
+-   ##### [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md "on progress, placement")
 
 ### Selection
 
-- ##### [Checkbox](./src/material/checkbox/checkbox.md)
-- ##### [Chip 📝](# 'on process, all docs')
-- ##### [Chip-Set 📝](# 'on process, all docs')
-- ##### [Radio Button](./src/material/radio-button/radio-button.md)
-- ##### [Switch](./src/material/switch/switch.md)
+-   ##### [Checkbox](./src/material/checkbox/checkbox.md)
+-   ##### [Chip 📝](# "on process, all docs")
+-   ##### [Chip-Set 📝](# "on process, all docs")
+-   ##### [Radio Button](./src/material/radio-button/radio-button.md)
+-   ##### [Switch](./src/material/switch/switch.md)
 
 <hr>
 
@@ -68,32 +68,22 @@ Explore the documentation for each component to gain a deeper understanding of t
 Feel free to contribute, report issues, or suggest improvements. We appreciate your collaboration in making these components even more robust and user-friendly.
 
 <!--
-generate docs with markdown formated file
-get information for Instance properties,Instance methods(without lifecycle hooks),and Events
-and add usage example
-from this code
- -->
+# {{web component name}}
+{{web component description}}
 
- <!-- 
-(with default properties format table)
-generate docs with markdown formated file
-get information for Instance properties(with table, add default if exists),Instance methods(without lifecycle hooks),and Events
-and add usage example
-from this code
-  -->
+## Instance properties
+property name / attribute |type|default|description
+--|--|--|--
 
-<!--
-template docs
-#Md..
-
-## Usage
-
-## Properties
-
-## Instance Methods
+## Instance methods
+method name|description
+--|--
 
 ## Events
+event name|description
+--|--
 
-## Example
+## Inheritance
+{{class extend information}}
 
  -->
