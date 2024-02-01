@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: panel/panel.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: panel/panel.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
+
+/**
+ * `MDPanelHeaderComponent` is a custom web component representing the header of a panel.
+ * @extends MDComponent
+ */
+class MDPanelHeaderComponent extends MDComponent {
+    /**
+     * Properties for MDPanelHeaderComponent.
+     * @static
+     * @type {object}
+     * @property {String} leadingIcon - The leading icon for the panel header.
+     * @property {String} trailingIcon - The trailing icon for the panel header.
+     * @property {String} label - The label for the panel header.
+     * @property {String} supportingText - The supporting text for the panel header.
+     */
+    static properties = {
+        leadingIcon: { type: String },
+        trailingIcon: { type: String },
+        label: { type: String },
+        supportingText: { type: String },
+    };
+
+    /**
+     * Checks if there are leading items in the panel header.
+     * @type {boolean}
+     */
+    get hasLeadingItems() {
+        return this.leadingIcon;
+    }
+    
+    /**
+     * Checks if there are items in the panel header.
+     * @type {boolean}
+     */
+    get hasItems() {
+        return this.label || this.supportingText;
+    }
+    
+    /**
+     * Checks if there are trailing items in the panel header.
+     * @type {boolean}
+     */
+    get hasTrailingItems() {
+        return this.trailingIcon;
+    }
+
+    /**
+     * Constructs an instance of MDPanelHeaderComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-panel__header");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-panel__header");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {}
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {}
+
+    /**
+     * Renders the content of the MDPanelHeaderComponent.
+     * @returns {TemplateResult} The lit-html template result.
+     */
+    render() {
+        // prettier-ignore
+        return html`
+            ${this.hasLeadingItems?html`
+                &lt;div class="md-panel__start">
+                    ${this.leadingIcon?html`&lt;md-icon-button class="md-panel__icon" .icon="${this.leadingIcon}" @click="${this.handlePanelIconClick}">&lt;/md-icon-button>`:nothing}
+                &lt;/div>
+            `:nothing}
+            ${this.hasItems?html`
+                &lt;div class="md-panel__center">
+                    ${this.label?html`&lt;div class="md-panel__label">${this.label}&lt;/div>`:nothing}
+                    ${this.supportingText?html`&lt;div class="md-panel__supporting-text">${this.supportingText}&lt;/div>`:nothing}
+                &lt;/div>
+            `:nothing}
+            ${this.hasTrailingItems?html`
+                &lt;div class="md-panel__end">
+                    ${this.trailingIcon?html`&lt;md-icon-button class="md-panel__icon" .icon="${this.trailingIcon}" @click="${this.handlePanelIconClick}">&lt;/md-icon-button>`:nothing}
+                &lt;/div>
+            `:nothing}
+            `;
+    }
+
+    /**
+     * Handles the click event on a panel icon.
+     * @param {Event} event - The click event.
+     */
+    handlePanelIconClick(event) {
+        this.emit("onPanelIconClick", { event });
+    }
+}
+
+/**
+ * Define the custom element "md-panel-header" with MDPanelHeaderComponent.
+ */
+customElements.define("md-panel-header", MDPanelHeaderComponent);
+
+export { MDPanelHeaderComponent };
+
+/**
+ * `MDPanelBodyComponent` is a custom web component representing the body of a panel.
+ * @extends MDComponent
+ */
+class MDPanelBodyComponent extends MDComponent {
+    /**
+     * Properties for MDPanelBodyComponent.
+     * @static
+     * @type {object}
+     */
+    static properties = {};
+
+    /**
+     * Constructs an instance of MDPanelBodyComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-panel__body");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-panel__body");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {}
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {}
+
+    /**
+     * Renders the content of the MDPanelBodyComponent.
+     */
+    render() {}
+}
+
+/**
+ * Define the custom element "md-panel-body" with MDPanelBodyComponent.
+ */
+customElements.define("md-panel-body", MDPanelBodyComponent);
+
+export { MDPanelBodyComponent };
+
+/**
+ * `MDPanelFooterComponent` is a custom web component representing the footer of a panel.
+ * @extends MDComponent
+ */
+class MDPanelFooterComponent extends MDComponent {
+    /**
+     * Properties for MDPanelFooterComponent.
+     * @static
+     * @type {object}
+     */
+    static properties = {};
+
+    /**
+     * Constructs an instance of MDPanelFooterComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-panel__footer");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-panel__footer");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {}
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {}
+
+    /**
+     * Renders the content of the MDPanelFooterComponent.
+     */
+    render() {}
+}
+
+/**
+ * Define the custom element "md-panel-footer" with MDPanelFooterComponent.
+ */
+customElements.define("md-panel-footer", MDPanelFooterComponent);
+
+export { MDPanelFooterComponent };
+
+/**
+ * `MDPanelScrimComponent` is a custom web component representing the scrim of a panel.
+ * @extends MDComponent
+ */
+class MDPanelScrimComponent extends MDComponent {
+    /**
+     * Properties for MDPanelScrimComponent.
+     * @static
+     * @type {object}
+     */
+    static properties = {};
+
+    /**
+     * Constructs an instance of MDPanelScrimComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-panel__scrim");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-panel__scrim");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {}
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {}
+
+    /**
+     * Renders the content of the MDPanelScrimComponent.
+     */
+    render() {}
+}
+
+/**
+ * Define the custom element "md-panel-scrim" with MDPanelScrimComponent.
+ */
+customElements.define("md-panel-scrim", MDPanelScrimComponent);
+
+export { MDPanelScrimComponent };
+
+/**
+ * `MDPanelComponent` is a custom web component representing a panel.
+ * @extends MDComponent
+ */
+class MDPanelComponent extends MDComponent {
+    /**
+     * Properties for MDPanelComponent.
+     * @static
+     * @type {object}
+     * @property {String} ui - The UI style for the panel.
+     * @property {String} position - The position of the panel (e.g., "top", "right", "bottom", "left").
+     * @property {Boolean} open - Indicates whether the panel is open.
+     * @property {Boolean} modal - Indicates whether the panel is modal.
+     */
+    static properties = {
+        ui: { type: String },
+        position: { type: String }, // drawer position
+        open: { type: Boolean, reflect: true },
+        modal: { type: Boolean, reflect: true },
+    };
+
+    /**
+     * Constructs an instance of MDPanelComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-panel");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-panel");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {}
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {
+        if (changedProperties.has("ui")) {
+            this.classList.remove(`md-panel--dialog`);
+            this.classList.remove(`md-panel--drawer`);
+
+            if (this.ui) {
+                this.classList.add(`md-panel--${this.ui}`);
+            }
+        }
+
+        if (changedProperties.has("position")) {
+            this.classList.remove(`md-panel--top`);
+            this.classList.remove(`md-panel--right`);
+            this.classList.remove(`md-panel--bottom`);
+            this.classList.remove(`md-panel--left`);
+
+            if (this.position) {
+                this.classList.add(`md-panel--${this.position}`);
+            }
+        }
+
+        if (changedProperties.has("open")) {
+            this.removePanelScrim();
+            this.createPanelScrim();
+
+            this.style.setProperty("transition-property", "all");
+        }
+    }
+
+    /**
+     * Renders the content of the MDPanelComponent.
+     */
+    render() {}
+
+    /**
+     * Creates the panel scrim.
+     */
+    createPanelScrim() {
+        if (!this.panelScrim &amp;&amp; this.open &amp;&amp; (this.ui === "dialog" || this.ui === "drawer")) {
+            this.panelScrim = document.createElement("md-panel-scrim");
+
+            this.handlePanelScrimClick = this.handlePanelScrimClick.bind(this);
+            this.panelScrim.addEventListener("click", this.handlePanelScrimClick);
+
+            document.body.append(this.panelScrim);
+        }
+    }
+
+    /**
+     * Removes the panel scrim.
+     */
+    removePanelScrim() {
+        if (this.panelScrim) {
+            this.panelScrim.removeEventListener("click", this.handlePanelScrimClick);
+
+            this.panelScrim.remove();
+
+            this.panelScrim = null;
+        }
+    }
+
+    /**
+     * Shows the panel.
+     */
+    show() {
+        this.open = true;
+    }
+
+    /**
+     * Closes the panel.
+     */
+    close() {
+        this.open = false;
+    }
+
+    /**
+     * Toggles the panel's visibility.
+     */
+    toggle() {
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
+    }
+
+    /**
+     * Handles the click event on the panel scrim.
+     * @param {Event} event - The click event.
+     */
+    handlePanelScrimClick(event) {
+        this.close();
+
+        this.emit("onPanelScrimClick", { event });
+    }
+}
+
+/**
+ * Define the custom element "md-panel" with MDPanelComponent.
+ */
+customElements.define("md-panel", MDPanelComponent);
+
+export { MDPanelComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDComponent.html">MDComponent</a></li><li><a href="MDController.html">MDController</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutBorderComponent.html">MDLayoutBorderComponent</a></li><li><a href="MDLayoutBorderItemComponent.html">MDLayoutBorderItemComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDLayoutGridComponent.html">MDLayoutGridComponent</a></li><li><a href="MDLayoutGridItemComponent.html">MDLayoutGridItemComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListContainerComponent.html">MDListContainerComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDPanelBodyComponent.html">MDPanelBodyComponent</a></li><li><a href="MDPanelComponent.html">MDPanelComponent</a></li><li><a href="MDPanelFooterComponent.html">MDPanelFooterComponent</a></li><li><a href="MDPanelHeaderComponent.html">MDPanelHeaderComponent</a></li><li><a href="MDPanelScrimComponent.html">MDPanelScrimComponent</a></li><li><a href="MDPoperController.html">MDPoperController</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li></ul><h3>Events</h3><ul><li><a href="MDCheckboxComponent.html#event:onCheckboxNativeInput">onCheckboxNativeInput</a></li><li><a href="MDChipSetComponent.html#event:onChipClick">onChipClick</a></li><li><a href="MDIconButtonComponent.html#event:onIconButtonClick">onIconButtonClick</a></li><li><a href="MDRadioButtonComponent.html#event:onRadioButtonNativeInput">onRadioButtonNativeInput</a></li><li><a href="MDSegmentedButtonComponent.html#event:onButtonClick">onButtonClick</a></li><li><a href="MDSwitchComponent.html#event:onSwitchNativeInput">onSwitchNativeInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Feb 02 2024 01:58:03 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

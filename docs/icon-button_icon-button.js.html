@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: icon-button/icon-button.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: icon-button/icon-button.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
+
+/**
+ * `MDIconButtonComponent` is a custom web component representing an icon button.
+ * @extends MDComponent
+ */
+class MDIconButtonComponent extends MDComponent {
+    /**
+     * Properties for MDIconButtonComponent.
+     * @static
+     * @type {object}
+     * @property {String} icon - The icon to be displayed in the button.
+     * @property {String} type - The type attribute of the button (e.g., "button", "submit").
+     * @property {String} ui - The UI style for the button ("filled", "filled-tonal", "outlined").
+     * @property {Boolean} activated - Indicates whether the button is activated or not.
+     * @property {Boolean} toggle - Indicates whether the button should toggle its activated state on click.
+     */
+    static properties = {
+        icon: { type: String },
+        type: { type: String },
+        ui: { type: String },
+        activated: { type: Boolean, reflect: true },
+        toggle: { type: Boolean },
+    };
+
+    /**
+     * Gets the native icon button element.
+     * @returns {HTMLElement} The native icon button element.
+     */
+    get iconButtonNative() {
+        return this.querySelector(".md-icon-button__native");
+    }
+
+    /**
+     * Constructs an instance of MDIconButtonComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        this.type = "button";
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-icon-button");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-icon-button");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
+            button: this.iconButtonNative,
+            size: this.ui ? (40 / 40) * 100 : (40 / 24) * 100,
+            containment: false,
+            centered: true,
+            fadeout: true,
+            // inverted:this.ui==='filled'
+        });
+    }
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {
+        if (changedProperties.has("ui")) {
+            this.classList.remove("md-icon-button--filled");
+            this.classList.remove("md-icon-button--filled-tonal");
+            this.classList.remove("md-icon-button--outlined");
+
+            if (this.ui) {
+                this.classList.add(`md-icon-button--${this.ui}`);
+            }
+        }
+
+        if (changedProperties.has("toggle")) {
+            this.classList.remove("md-icon-button--toggle");
+
+            if (this.toggle) {
+                this.classList.add(`md-icon-button--toggle`);
+            }
+        }
+    }
+
+    /**
+     * Renders the content of the MDIconButtonComponent.
+     * @returns {TemplateResult} The lit-html template result.
+     */
+    render() {
+        // prettier-ignore
+        return html`
+            &lt;button 
+                class="md-icon-button__native"
+                .type="${this.type}"
+                @click="${this.handleIconButtonClick}"
+            >&lt;/button>
+            ${this.icon ? html`&lt;div class="md-icon-button__icon">${this.icon}&lt;/div>` : nothing}
+            ${this.label ? html`&lt;div class="md-icon-button__label">${this.label}&lt;/div>` : nothing}
+        `;
+    }
+
+    /**
+     * Handles the icon button click event.
+     * @param {Event} event - The click event.
+     * @fires MDIconButtonComponent#onIconButtonClick
+     */
+    handleIconButtonClick(event) {
+        if (this.toggle) {
+            this.activated = !this.activated;
+        }
+
+        /**
+         * Emitted when the icon button is clicked.
+         * @event MDIconButtonComponent#onIconButtonClick
+         * @type {object}
+         * @property {Event} event - The original click event.
+         */
+        this.emit("onIconButtonClick", { event });
+    }
+}
+
+/**
+ * Define the custom element "md-icon-button" with MDIconButtonComponent.
+ */
+customElements.define("md-icon-button", MDIconButtonComponent);
+
+export { MDIconButtonComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDComponent.html">MDComponent</a></li><li><a href="MDController.html">MDController</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutBorderComponent.html">MDLayoutBorderComponent</a></li><li><a href="MDLayoutBorderItemComponent.html">MDLayoutBorderItemComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDLayoutGridComponent.html">MDLayoutGridComponent</a></li><li><a href="MDLayoutGridItemComponent.html">MDLayoutGridItemComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListContainerComponent.html">MDListContainerComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDPanelBodyComponent.html">MDPanelBodyComponent</a></li><li><a href="MDPanelComponent.html">MDPanelComponent</a></li><li><a href="MDPanelFooterComponent.html">MDPanelFooterComponent</a></li><li><a href="MDPanelHeaderComponent.html">MDPanelHeaderComponent</a></li><li><a href="MDPanelScrimComponent.html">MDPanelScrimComponent</a></li><li><a href="MDPoperController.html">MDPoperController</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li></ul><h3>Events</h3><ul><li><a href="MDCheckboxComponent.html#event:onCheckboxNativeInput">onCheckboxNativeInput</a></li><li><a href="MDChipSetComponent.html#event:onChipClick">onChipClick</a></li><li><a href="MDIconButtonComponent.html#event:onIconButtonClick">onIconButtonClick</a></li><li><a href="MDRadioButtonComponent.html#event:onRadioButtonNativeInput">onRadioButtonNativeInput</a></li><li><a href="MDSegmentedButtonComponent.html#event:onButtonClick">onButtonClick</a></li><li><a href="MDSwitchComponent.html#event:onSwitchNativeInput">onSwitchNativeInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Feb 02 2024 01:58:03 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

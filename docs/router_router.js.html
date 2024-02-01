@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: router/router.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: router/router.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * MDRouter is a simple router for managing client-side navigation in a web application.
+ */
+class MDRouter {
+    /**
+     * Set routes recursively for the given routes array.
+     * @param {Object[]} routes - The array of route configurations.
+     * @param {Object} [parent=null] - The parent route.
+     * @returns {Object[]} - The flattened array of route configurations.
+     */
+    static setRoutes(routes = [], parent = null) {
+        return routes.reduce((prev, curr) => {
+            curr.parent = parent;
+            curr.pattern = [curr.parent?.pattern ?? "", curr.path].join("/").replace(/\/+/g, "/");
+
+            prev.push(curr);
+
+            if (curr.children?.length) {
+                prev.push(...this.setRoutes(curr.children, curr));
+            }
+
+            return prev;
+        }, []);
+    }
+
+    /**
+     * Get the current route based on the URL and route patterns.
+     * @returns {Object|null} - The matched route or null if no match is found.
+     */
+    static getRoute() {
+        return this.routes.find((route) => {
+            const pattern = "^" + route.pattern.replace(/\:(\w+)/g, "(?&lt;$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)";
+            const regexp = new RegExp(pattern, "i");
+            const matches = this.path.match(regexp);
+
+            if (matches) {
+                this.params = { ...matches?.groups };
+                return matches;
+            }
+
+            return null;
+        });
+    }
+
+    /**
+     * Get all ancestor routes for a given route.
+     * @param {Object} route - The route for which to get ancestors.
+     * @returns {Object[]} - The array of ancestor routes.
+     */
+    static getRoutes(route) {
+        return [route].reduce((prev, curr) => {
+            if (curr.parent) {
+                prev.push(...this.getRoutes(curr.parent));
+            }
+
+            prev.push(curr);
+
+            return prev;
+        }, []);
+    }
+
+    /**
+     * Get the outlet element for a given route, creating it if necessary.
+     * @param {Object} route - The route for which to get the outlet.
+     * @returns {Promise&lt;HTMLElement>} - A promise resolving to the outlet element.
+     */
+    static getOutlet(route) {
+        return new Promise((resolve) => {
+            let outlet;
+            let observer;
+            let target = route.container;
+            let selector = "md-outlet";
+
+            if (route.outlet) {
+                target = document.body;
+                selector = `${selector}[name="${route.outlet}"]`;
+            }
+
+            const callback = () => {
+                outlet = target.querySelector(selector);
+
+                if (outlet) {
+                    if (observer) {
+                        observer.disconnect();
+                    }
+
+                    resolve(outlet);
+                }
+            };
+
+            callback();
+
+            if (!outlet) {
+                observer = new MutationObserver(callback);
+                observer.observe(target, {
+                    childList: true,
+                    subtree: true,
+                });
+            }
+        });
+    }
+
+    /**
+     * Emit a custom event with a specified type and detail.
+     * @param {string} type - The type of the event.
+     * @param {any} detail - The detail object to be included in the event.
+     */
+    static emit(type, detail) {
+        // console.log(type, detail);
+
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+
+        window.dispatchEvent(event);
+    }
+
+    /**
+     * Handle the popstate event to update the router state.
+     * @param {Event} event - The popstate event.
+     */
+    static async handlePopstate(event) {
+        this.path = window.location.pathname;
+        this.query = Object.fromEntries(new URLSearchParams(window.location.search).entries());
+        this.params = {};
+        const route = MDRouter.getRoute();
+        const routes = MDRouter.getRoutes(route);
+
+        this.emit("onRouterChange");
+
+        if (this.abortController &amp;&amp; !this.abortController.signal.aborted) {
+            this.abortController.abort();
+        }
+
+        if (!this.abortController || (this.abortController &amp;&amp; this.abortController.signal.aborted)) {
+            this.abortController = new AbortController();
+        }
+
+        this.emit("onRouterStart");
+
+        for (const route of routes) {
+            if (!route.beforeLoad) {
+                route.beforeLoad = (resolve) => resolve();
+            }
+
+            try {
+                await new Promise((resolve, reject) => {
+                    this.abortController.signal.addEventListener("abort", reject);
+
+                    route.beforeLoad(resolve, reject);
+                });
+            } catch (error) {
+                this.emit("onRouterCancel");
+
+                break;
+            }
+
+            if (!route.component) {
+                route.component = await route.load();
+            }
+
+            if (!route.container) {
+                route.container = route.parent?.component ?? document.body;
+            }
+
+            const outlet = await MDRouter.getOutlet(route);
+
+            if (!route.component.isConnected) {
+                outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
+            }
+
+            const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
+
+            for (const outlet of outlets) {
+                let nextElement = outlet.nextElementSibling;
+
+                while (nextElement) {
+                    if (!routes.find((route) => route.component === nextElement) &amp;&amp; !outlets.find((outlet) => outlet === nextElement)) {
+                        nextElement.remove();
+                    }
+
+                    nextElement = nextElement.nextElementSibling;
+                }
+            }
+        }
+
+        this.emit("onRouterEnd");
+    }
+
+    /**
+     * Navigate to a new URL using the browser's history API.
+     * @param {string} url - The URL to navigate to.
+     */
+    static navigate(url) {
+        window.history.pushState({}, null, url);
+    }
+
+    /**
+     * Handle click events on elements with the [routerLink] attribute.
+     * @param {Event} event - The click event.
+     */
+    static handleClick(event) {
+        const routerLink = event.target.closest("[routerLink]");
+
+        if (routerLink) {
+            const url = routerLink.getAttribute("routerLink");
+
+            MDRouter.navigate(url);
+        }
+    }
+
+    /**
+     * Register the router with the specified routes.
+     * @param {Object[]} routes - The array of route configurations.
+     * @property {String} path - The route path.
+     * @property {HTMLElement} component - The HTML element associated with the route.
+     * @property {RouteConfig[]} children - An array of child route configurations.
+     * @property {Function} load - A function to load the route component dynamically.
+     * @property {Function} beforeLoad - A function to be executed before loading the route.
+     * @property {String} outlet - The name of the outlet where the route component should be rendered.
+     */
+    static register(routes = []) {
+        const pushState = window.history.pushState;
+
+        window.history.pushState = function () {
+            pushState.apply(this, arguments);
+
+            const event = new CustomEvent("popstate", {
+                bubbles: true,
+                cancelable: true,
+                // detail
+            });
+
+            window.dispatchEvent(event);
+        };
+
+        this.routes = this.setRoutes(routes);
+
+        window.addEventListener("DOMContentLoaded", this.handlePopstate.bind(this));
+        window.addEventListener("popstate", this.handlePopstate.bind(this));
+
+        window.addEventListener("click", this.handleClick.bind(this));
+    }
+}
+
+export { MDRouter };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDComponent.html">MDComponent</a></li><li><a href="MDController.html">MDController</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutBorderComponent.html">MDLayoutBorderComponent</a></li><li><a href="MDLayoutBorderItemComponent.html">MDLayoutBorderItemComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDLayoutGridComponent.html">MDLayoutGridComponent</a></li><li><a href="MDLayoutGridItemComponent.html">MDLayoutGridItemComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListContainerComponent.html">MDListContainerComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDPanelBodyComponent.html">MDPanelBodyComponent</a></li><li><a href="MDPanelComponent.html">MDPanelComponent</a></li><li><a href="MDPanelFooterComponent.html">MDPanelFooterComponent</a></li><li><a href="MDPanelHeaderComponent.html">MDPanelHeaderComponent</a></li><li><a href="MDPanelScrimComponent.html">MDPanelScrimComponent</a></li><li><a href="MDPoperController.html">MDPoperController</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li></ul><h3>Events</h3><ul><li><a href="MDCheckboxComponent.html#event:onCheckboxNativeInput">onCheckboxNativeInput</a></li><li><a href="MDChipSetComponent.html#event:onChipClick">onChipClick</a></li><li><a href="MDIconButtonComponent.html#event:onIconButtonClick">onIconButtonClick</a></li><li><a href="MDRadioButtonComponent.html#event:onRadioButtonNativeInput">onRadioButtonNativeInput</a></li><li><a href="MDSegmentedButtonComponent.html#event:onButtonClick">onButtonClick</a></li><li><a href="MDSwitchComponent.html#event:onSwitchNativeInput">onSwitchNativeInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Feb 02 2024 01:58:03 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

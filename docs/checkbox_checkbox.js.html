@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: checkbox/checkbox.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: checkbox/checkbox.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
+
+/**
+ * `MDCheckboxComponent` is a custom web component representing a checkbox.
+ * @extends MDComponent
+ */
+class MDCheckboxComponent extends MDComponent {
+    /**
+     * Properties for MDCheckboxComponent.
+     * @static
+     * @type {object}
+     * @property {String} name - The name attribute of the checkbox.
+     * @property {Boolean} indeterminate - Indicates whether the checkbox is in an indeterminate state.
+     * @property {Boolean} checked - Indicates whether the checkbox is checked.
+     */
+    static properties = {
+        name: { type: String },
+        indeterminate: { type: Boolean },
+        checked: { type: Boolean },
+    };
+
+    /**
+     * Gets the native checkbox element.
+     * @returns {HTMLInputElement} The native checkbox element.
+     */
+    get checkboxNative() {
+        return this.querySelector(".md-checkbox__native");
+    }
+
+    /**
+     * Gets the checkbox track element.
+     * @returns {HTMLDivElement} The checkbox track element.
+     */
+    get checkboxTrack() {
+        return this.querySelector(".md-checkbox__track");
+    }
+
+    /**
+     * Gets the checkbox thumb element.
+     * @returns {HTMLDivElement} The checkbox thumb element.
+     */
+    get checkboxThumb() {
+        return this.querySelector(".md-checkbox__thumb");
+    }
+
+    /**
+     * Constructs an instance of MDCheckboxComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-checkbox");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-checkbox");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
+            button: this.checkboxNative,
+            container: this.checkboxTrack,
+            size: (40 / 14) * 100,
+            containment: false,
+            fadeout: true,
+            centered: true,
+        });
+    }
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {
+        // Implement logic if needed
+    }
+
+    /**
+     * Renders the content of the MDCheckboxComponent.
+     * @returns {TemplateResult} The lit-html template result.
+     */
+    render() {
+        // prettier-ignore
+        return html`
+            &lt;input 
+                type="checkbox" 
+                class="md-checkbox__native"
+                .name="${ifDefined(this.name)}"
+                .indeterminate="${ifDefined(this.indeterminate)}"
+                .checked="${ifDefined(this.checked)}"
+                @input="${this.handleCheckboxNativeInput}"
+            >
+            &lt;div class="md-checkbox__track">
+                &lt;div class="md-checkbox__thumb">&lt;/div>
+            &lt;/div>
+        `;
+    }
+
+    /**
+     * Handles the input event on the native checkbox.
+     * @param {Event} event - The input event.
+     * @fires MDCheckboxComponent#onCheckboxNativeInput
+     */
+    handleCheckboxNativeInput(event) {
+        const checkboxNative = event.currentTarget;
+
+        this.indeterminate = checkboxNative.indeterminate;
+        this.checked = checkboxNative.checked;
+
+        /**
+         * Emitted when the native checkbox input event occurs.
+         * @event MDCheckboxComponent#onCheckboxNativeInput
+         * @type {object}
+         * @property {Event} event - The original input event.
+         * @property {HTMLInputElement} checkboxNative - The native checkbox element.
+         */
+        this.emit("onCheckboxNativeInput", { event, checkboxNative });
+    }
+}
+
+/**
+ * Define the custom element "md-checkbox" with MDCheckboxComponent.
+ */
+customElements.define("md-checkbox", MDCheckboxComponent);
+
+export { MDCheckboxComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDComponent.html">MDComponent</a></li><li><a href="MDController.html">MDController</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutBorderComponent.html">MDLayoutBorderComponent</a></li><li><a href="MDLayoutBorderItemComponent.html">MDLayoutBorderItemComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDLayoutGridComponent.html">MDLayoutGridComponent</a></li><li><a href="MDLayoutGridItemComponent.html">MDLayoutGridItemComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListContainerComponent.html">MDListContainerComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDPanelBodyComponent.html">MDPanelBodyComponent</a></li><li><a href="MDPanelComponent.html">MDPanelComponent</a></li><li><a href="MDPanelFooterComponent.html">MDPanelFooterComponent</a></li><li><a href="MDPanelHeaderComponent.html">MDPanelHeaderComponent</a></li><li><a href="MDPanelScrimComponent.html">MDPanelScrimComponent</a></li><li><a href="MDPoperController.html">MDPoperController</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li></ul><h3>Events</h3><ul><li><a href="MDCheckboxComponent.html#event:onCheckboxNativeInput">onCheckboxNativeInput</a></li><li><a href="MDChipSetComponent.html#event:onChipClick">onChipClick</a></li><li><a href="MDIconButtonComponent.html#event:onIconButtonClick">onIconButtonClick</a></li><li><a href="MDRadioButtonComponent.html#event:onRadioButtonNativeInput">onRadioButtonNativeInput</a></li><li><a href="MDSegmentedButtonComponent.html#event:onButtonClick">onButtonClick</a></li><li><a href="MDSwitchComponent.html#event:onSwitchNativeInput">onSwitchNativeInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Feb 02 2024 01:58:03 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

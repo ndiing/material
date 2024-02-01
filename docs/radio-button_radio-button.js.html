@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: radio-button/radio-button.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: radio-button/radio-button.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { MDComponent } from "../base/component";
+import { MDRippleController } from "../ripple/ripple";
+
+/**
+ * `MDRadioButtonComponent` is a custom web component representing a radio button.
+ * @extends MDComponent
+ */
+class MDRadioButtonComponent extends MDComponent {
+    /**
+     * Properties for MDRadioButtonComponent.
+     * @static
+     * @type {object}
+     * @property {String} name - The name attribute of the radio button.
+     * @property {Boolean} checked - Indicates whether the radio button is checked.
+     */
+    static properties = {
+        name: { type: String },
+        checked: { type: Boolean },
+    };
+
+    /**
+     * Gets the native radio button element.
+     * @returns {HTMLInputElement} The native radio button element.
+     */
+    get radioButtonNative() {
+        return this.querySelector(".md-radio-button__native");
+    }
+
+    /**
+     * Gets the radio button track element.
+     * @returns {HTMLDivElement} The radio button track element.
+     */
+    get radioButtonTrack() {
+        return this.querySelector(".md-radio-button__track");
+    }
+
+    /**
+     * Gets the radio button thumb element.
+     * @returns {HTMLDivElement} The radio button thumb element.
+     */
+    get radioButtonThumb() {
+        return this.querySelector(".md-radio-button__thumb");
+    }
+
+    /**
+     * Constructs an instance of MDRadioButtonComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+    }
+
+    /**
+     * Callback triggered when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-radio-button");
+    }
+
+    /**
+     * Callback triggered when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-radio-button");
+    }
+
+    /**
+     * Callback triggered after the element's first update.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    firstUpdated(changedProperties) {
+        this.ripple = new MDRippleController(this, {
+            button: this.radioButtonNative,
+            container: this.radioButtonTrack,
+            size: (40 / 16) * 100,
+            containment: false,
+            fadeout: true,
+            centered: true,
+        });
+    }
+
+    /**
+     * Callback triggered after the element has been updated.
+     * @param {Map} changedProperties - A Map of properties that have changed.
+     */
+    updated(changedProperties) {
+        // Implement logic if needed
+    }
+
+    /**
+     * Renders the content of the MDRadioButtonComponent.
+     * @returns {TemplateResult} The lit-html template result.
+     */
+    render() {
+        // prettier-ignore
+        return html`
+            &lt;input 
+                type="radio" 
+                class="md-radio-button__native"
+                .name="${ifDefined(this.name)}"
+                .checked="${ifDefined(this.checked)}"
+                @input="${this.handleRadioButtonNativeInput}"
+            >
+            &lt;div class="md-radio-button__track">
+                &lt;div class="md-radio-button__thumb">&lt;/div>
+            &lt;/div>
+        `;
+    }
+
+    /**
+     * Handles the input event on the native radio button.
+     * @param {Event} event - The input event.
+     * @fires MDRadioButtonComponent#onRadioButtonNativeInput
+     */
+    handleRadioButtonNativeInput(event) {
+        const radioButtonNative = event.currentTarget;
+
+        this.checked = radioButtonNative.checked;
+
+        /**
+         * Emitted when the native radio button input event occurs.
+         * @event MDRadioButtonComponent#onRadioButtonNativeInput
+         * @type {object}
+         * @property {Event} event - The original input event.
+         * @property {HTMLInputElement} radioButtonNative - The native radio button element.
+         */
+        this.emit("onRadioButtonNativeInput", { event, radioButtonNative });
+    }
+}
+
+/**
+ * Define the custom element "md-radio-button" with MDRadioButtonComponent.
+ */
+customElements.define("md-radio-button", MDRadioButtonComponent);
+
+export { MDRadioButtonComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDComponent.html">MDComponent</a></li><li><a href="MDController.html">MDController</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutBorderComponent.html">MDLayoutBorderComponent</a></li><li><a href="MDLayoutBorderItemComponent.html">MDLayoutBorderItemComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDLayoutGridComponent.html">MDLayoutGridComponent</a></li><li><a href="MDLayoutGridItemComponent.html">MDLayoutGridItemComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListContainerComponent.html">MDListContainerComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDPanelBodyComponent.html">MDPanelBodyComponent</a></li><li><a href="MDPanelComponent.html">MDPanelComponent</a></li><li><a href="MDPanelFooterComponent.html">MDPanelFooterComponent</a></li><li><a href="MDPanelHeaderComponent.html">MDPanelHeaderComponent</a></li><li><a href="MDPanelScrimComponent.html">MDPanelScrimComponent</a></li><li><a href="MDPoperController.html">MDPoperController</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li></ul><h3>Events</h3><ul><li><a href="MDCheckboxComponent.html#event:onCheckboxNativeInput">onCheckboxNativeInput</a></li><li><a href="MDChipSetComponent.html#event:onChipClick">onChipClick</a></li><li><a href="MDIconButtonComponent.html#event:onIconButtonClick">onIconButtonClick</a></li><li><a href="MDRadioButtonComponent.html#event:onRadioButtonNativeInput">onRadioButtonNativeInput</a></li><li><a href="MDSegmentedButtonComponent.html#event:onButtonClick">onButtonClick</a></li><li><a href="MDSwitchComponent.html#event:onSwitchNativeInput">onSwitchNativeInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Feb 02 2024 01:58:03 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
