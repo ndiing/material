@@ -232,7 +232,7 @@ class MDPanelComponent extends MDComponent {
     render() {}
 
     createPanelScrim() {
-        if (this.modal && this.open && !this.panelScrim) {
+        if (!this.panelScrim && this.open && (this.ui === "dialog" || this.ui === "drawer")) {
             this.panelScrim = document.createElement("md-panel-scrim");
 
             this.handlePanelScrimClick = this.handlePanelScrimClick.bind(this);

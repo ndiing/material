@@ -6,34 +6,34 @@ class MainComponent extends MDComponent {
         // prettier-ignore
         return html`
             <!-- <div class="md-layout"> -->
-                <div class="md-layout__border">
-                    <div class="md-layout__border-item md-layout__border-item--west">
-                        <md-navigation-drawer style="width:360px;" ui="drawer" position="left" open .items="${[
-                            {label:'icon',routerLink:'/icon'},
-                            {label:'emoji',routerLink:'/emoji'},
-                            {label:'image',routerLink:'/image'},
-                            {label:'button',routerLink:'/button'},
-                            {label:'fab',routerLink:'/fab'},
-                            {label:'icon-button',routerLink:'/icon-button'},
-                            {label:'segmented-button',routerLink:'/segmented-button'},
-                            {label:'chip',routerLink:'/chip'},
-                            {label:'chip-set',routerLink:'/chip-set'},
-                            {label:'checkbox',routerLink:'/checkbox'},
-                            {label:'radio-button',routerLink:'/radio-button'},
-                            {label:'switch',routerLink:'/switch'},
-                            {label:'badge',routerLink:'/badge'},
-                            {label:'list',routerLink:'/list'},
-                            {label:'panel',routerLink:'/panel'},
-                            {label:'navigation-bar',routerLink:'/navigation-bar'},
-                            {label:'navigation-drawer',routerLink:'/navigation-drawer'},
-                            {label:'navigation-rail',routerLink:'/navigation-rail'},
-                            {label:'tooltip',routerLink:'/tooltip'},
+                <md-layout-border>
+                    <md-layout-border-item region="west" open>
+                        <md-navigation-drawer style="width:360px;" .items="${[
+                            {label:'Icon',routerLink:'/icon'},
+                            {label:'Emoji',routerLink:'/emoji'},
+                            {label:'Image',routerLink:'/image'},
+                            {label:'Button',routerLink:'/button'},
+                            {label:'Fab',routerLink:'/fab'},
+                            {label:'Icon Button',routerLink:'/icon-button'},
+                            {label:'Segmented Button',routerLink:'/segmented-button'},
+                            {label:'Chip',routerLink:'/chip'},
+                            {label:'Chip Set',routerLink:'/chip-set'},
+                            {label:'Checkbox',routerLink:'/checkbox'},
+                            {label:'Radio Button',routerLink:'/radio-button'},
+                            {label:'Switch',routerLink:'/switch'},
+                            {label:'Badge',routerLink:'/badge'},
+                            {label:'List',routerLink:'/list'},
+                            {label:'Panel',routerLink:'/panel'},
+                            {label:'Navigation Bar',routerLink:'/navigation-bar'},
+                            {label:'Navigation Drawer',routerLink:'/navigation-drawer'},
+                            {label:'Navigation Rail',routerLink:'/navigation-rail'},
+                            {label:'Tooltip',routerLink:'/tooltip'},
                         ]}"></md-navigation-drawer>
-                    </div>
-                    <div class="md-layout__border-item md-layout__border-item--center">
+                    </md-layout-border-item>
+                    <md-layout-border-item region="center" style="padding:24px;">
                         <md-outlet></md-outlet>
-                    </div>
-                </div>
+                    </md-layout-border-item>
+                </md-layout-border>
             <!-- </div> -->
         `;
     }

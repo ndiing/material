@@ -5,6 +5,7 @@
 // import "./base/component.js";
 // import "./base/example-controller.js";
 // import "./base/example-component.js";
+import "./layout/layout.js";
 import "./icon/icon.js";
 import "./emoji/emoji.js";
 import "./image/image.js";

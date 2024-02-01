@@ -30,7 +30,7 @@ class NavigationBarComponent extends MDComponent {
                         {leadingIcon:'image',label:"Label"},
                         {leadingIcon:'image',label:"Label"},
                     ]}"></md-navigation-bar>
-                    <md-button ui="filled-tonal" label="bar modal" @click="${() => {bar.modal=true;bar.toggle()}}"></md-button>
+                    <!-- <md-button ui="filled-tonal" label="bar modal" @click="${() => {bar.modal=true;bar.toggle()}}"></md-button> -->
                     <md-button ui="filled-tonal" label="bar" @click="${() => {bar.modal=false;bar.toggle()}}"></md-button>
                 </div>
                 <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
