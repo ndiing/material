@@ -85,7 +85,7 @@ class MDListContainerComponent extends MDComponent {
 
     // prettier-ignore
     render() {
-        if (this.ui === "tree") {
+        if (this.ui === "tree-view") {
             this.collapsibleIcons = this.collapsibleIcons ?? ["folder", "folder_open"];
             this.leadingIcons = Array.from({ length: this.level });
 
@@ -96,7 +96,7 @@ class MDListContainerComponent extends MDComponent {
                     this.leadingIcon = this.collapsibleIcons[~~this.expanded];
                 }
             }
-        } else if (this.ui === "level") {
+        } else if (this.ui === "level-view") {
             this.collapsibleIcons = this.collapsibleIcons ?? ["arrow_forward", "arrow_back"];
             this.leadingIcon = this.leadingIcon ?? "";
 
@@ -194,6 +194,7 @@ export { MDListItemComponent };
 class MDListComponent extends MDComponent {
     static properties = {
         items: { type: Array },
+        size: { type: String },
         ui: { type: String },
         type: { type: String },
         selectable: { type: Boolean },
@@ -216,7 +217,7 @@ class MDListComponent extends MDComponent {
 
         // default
         this.items = [];
-        this.ui = "one-line";
+        this.size = "one-line";
         this.type = "single-select";
         this.level = 0;
     }
@@ -236,8 +237,20 @@ class MDListComponent extends MDComponent {
     firstUpdated(changedProperties) {}
 
     updated(changedProperties) {
+        if (changedProperties.has("size")) {
+            ["one-line", "two-line", "three-line"].forEach((size) => {
+                this.classList.remove(`md-list--${size}`);
+            });
+
+            if (this.size) {
+                this.size.split(" ").forEach((size) => {
+                    this.classList.add(`md-list--${size}`);
+                });
+            }
+        }
+
         if (changedProperties.has("ui")) {
-            ["one-line", "two-line", "three-line", "tree-view", "level-view"].forEach((ui) => {
+            ["tree-view", "level-view"].forEach((ui) => {
                 this.classList.remove(`md-list--${ui}`);
             });
 
@@ -247,13 +260,14 @@ class MDListComponent extends MDComponent {
                 });
             }
         }
+
     }
 
     render() {
         // prettier-ignore
         return [this.parent]
         .concat(this.items)
-        .filter(item=>item&&(item!==this.parent||this.list.ui==='level'))
+        .filter(item=>item&&(item!==this.parent||this.list.ui==='level-view'))
         .map(item=>{
             item.canGoBack=item===this.parent
             return html`

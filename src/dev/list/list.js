@@ -34,7 +34,7 @@ class ListComponent extends MDComponent {
                     ]}"></md-list>
                 </div>
                 <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-list ui="two-line" .items="${[
+                    <md-list size="two-line" .items="${[
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text'},
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text',trailingCheckbox:''},
 
@@ -61,7 +61,7 @@ class ListComponent extends MDComponent {
                     ]}"></md-list>
                 </div>
                 <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-list ui="three-line" .items="${[
+                    <md-list size="three-line" .items="${[
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text that is long enough to fill up multiple lines'},
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text that is long enough to fill up multiple lines',trailingCheckbox:''},
 
@@ -126,7 +126,7 @@ class ListComponent extends MDComponent {
                     ]}"></md-list>
                 </div>
                 <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-list selectable ui="tree" .items="${[
+                    <md-list selectable ui="tree-view" .items="${[
                         {label:"Label 1",expanded:false,children:[
                             {label:"Label 1.1",expanded:false,children:[
                                 {label:"Label 1.1.1"},
@@ -164,7 +164,7 @@ class ListComponent extends MDComponent {
                     ]}"></md-list>
                 </div>
                 <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-list selectable ui="level" .items="${[
+                    <md-list selectable ui="level-view" .items="${[
                         {label:"Label 1",expanded:false,children:[
                             {label:"Label 1.1",expanded:false,children:[
                                 {label:"Label 1.1.1"},
