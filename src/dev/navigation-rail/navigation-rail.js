@@ -6,7 +6,7 @@ class NavigationRailComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-rail .items="${[
                         {leadingIcon:'image',label:"Label",activated:true},
                         {leadingIcon:'image',label:"Label"},
@@ -15,7 +15,7 @@ class NavigationRailComponent extends MDComponent {
                     ]}"></md-navigation-rail>
                 </div>
 
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-rail .items="${[
                         {leadingIcon:'image',activated:true},
                         {leadingIcon:'image'},
@@ -23,7 +23,7 @@ class NavigationRailComponent extends MDComponent {
                         {leadingIcon:'image',badge:1},
                     ]}"></md-navigation-rail>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-rail style="width:80px;" id="rail" ui="drawer" position="left" .items="${[
                         {leadingIcon:'image',label:"Label",activated:true},
                         {leadingIcon:'image',label:"Label"},
@@ -33,9 +33,9 @@ class NavigationRailComponent extends MDComponent {
                     <md-button ui="filled-tonal" label="rail modal" @click="${() => {rail.modal=true;rail.toggle()}}"></md-button>
                     <md-button ui="filled-tonal" label="rail" @click="${() => {rail.modal=false;rail.toggle()}}"></md-button>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;

@@ -190,16 +190,12 @@ class MDPanelComponent extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-panel");
-
-        this.setPanelDrawerPosition();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-panel");
-
-        this.removePanelDrawerPosition();
     }
 
     firstUpdated(changedProperties) {}
@@ -226,52 +222,11 @@ class MDPanelComponent extends MDComponent {
         }
 
         if (changedProperties.has("open")) {
-            this.removePanelDrawerPosition();
-            this.setPanelDrawerPosition();
-
             this.removePanelScrim();
             this.createPanelScrim();
 
             this.style.setProperty("transition-property", "all");
         }
-    }
-
-    setPanelDrawerPosition() {
-        const panelDrawers = document.body.querySelectorAll(".md-panel--drawer:not([modal])[open]");
-
-        const padding = {
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
-        };
-
-        for (const name in padding) {
-            const value = padding[name];
-            document.body.style.setProperty(`--md-panel-drawer-${name}`, `${value}px`);
-        }
-
-        for (const panelDrawer of panelDrawers) {
-            const position = {
-                top: "height",
-                bottom: "height",
-                left: "width",
-                right: "width",
-            }[panelDrawer.position];
-
-            const rect = panelDrawer.getBoundingClientRect();
-
-            padding[panelDrawer.position] += rect[position];
-        }
-
-        for (const name in padding) {
-            const value = padding[name];
-            document.body.style.setProperty(`--md-panel-drawer-${name}`, `${value}px`);
-        }
-    }
-
-    removePanelDrawerPosition() {
-        this.setPanelDrawerPosition();
     }
 
     render() {}

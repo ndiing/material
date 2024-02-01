@@ -6,7 +6,7 @@ class ChipSetComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip-set type="assist" .items="${[
                         {label:'Chip 1'},
                         {label:'Chip 2'},
@@ -22,7 +22,7 @@ class ChipSetComponent extends MDComponent {
                         {label:'Chip 12'},
                     ]}"></md-chip-set>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip-set type="filter" .items="${[
                         {label:'Chip 1'},
                         {label:'Chip 2'},
@@ -38,7 +38,7 @@ class ChipSetComponent extends MDComponent {
                         {label:'Chip 12'},
                     ]}"></md-chip-set>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip-set type="input" .items="${[
                         {label:'Chip 1'},
                         {label:'Chip 2'},
@@ -54,7 +54,7 @@ class ChipSetComponent extends MDComponent {
                         {label:'Chip 12'},
                     ]}"></md-chip-set>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip-set type="suggestion" .items="${[
                         {label:'Chip 1'},
                         {label:'Chip 2'},
@@ -70,9 +70,9 @@ class ChipSetComponent extends MDComponent {
                         {label:'Chip 12'},
                     ]}"></md-chip-set>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;
@@ -81,4 +81,4 @@ class ChipSetComponent extends MDComponent {
 
 customElements.define("chip-set-component", ChipSetComponent);
 
-export default document.createElement('chip-set-component')
+export default document.createElement("chip-set-component");

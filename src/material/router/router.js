@@ -78,6 +78,8 @@ class MDRouter {
     }
 
     static emit(type, detail) {
+        // console.log(type, detail);
+
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,

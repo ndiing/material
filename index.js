@@ -261,5 +261,6 @@ const cli = {
 const [, , method = "", type = "", name = ""] = process.argv;
 
 if (method && type && name) {
+    console.log("running command", method, type, name);
     cli[type][method](name);
 }

@@ -6,7 +6,7 @@ class ListComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-list .items="${[
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline'},
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',trailingCheckbox:''},
@@ -33,7 +33,7 @@ class ListComponent extends MDComponent {
                         {leadingIcon:'image',label:'Headline',trailingSwitch:''},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-list ui="two-line" .items="${[
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text'},
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text',trailingCheckbox:''},
@@ -60,7 +60,7 @@ class ListComponent extends MDComponent {
                         {leadingIcon:'image',label:'Headline',supportingText:'Supporting text',trailingSwitch:''},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-list ui="three-line" .items="${[
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text that is long enough to fill up multiple lines'},
                         {leadingAvatar:'https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50',label:'Headline',supportingText:'Supporting text that is long enough to fill up multiple lines',trailingCheckbox:''},
@@ -87,7 +87,7 @@ class ListComponent extends MDComponent {
                         {leadingIcon:'image',label:'Headline',supportingText:'Supporting text that is long enough to fill up multiple lines',trailingSwitch:''},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-list selectable .items="${[
                         {label:"Label 1",expanded:false,children:[
                             {label:"Label 1.1",expanded:false,children:[
@@ -125,7 +125,7 @@ class ListComponent extends MDComponent {
                         {label:"Label 4"},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-list selectable ui="tree" .items="${[
                         {label:"Label 1",expanded:false,children:[
                             {label:"Label 1.1",expanded:false,children:[
@@ -163,7 +163,7 @@ class ListComponent extends MDComponent {
                         {label:"Label 4"},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-list selectable ui="level" .items="${[
                         {label:"Label 1",expanded:false,children:[
                             {label:"Label 1.1",expanded:false,children:[
@@ -201,7 +201,7 @@ class ListComponent extends MDComponent {
                         {label:"Label 4"},
                     ]}"></md-list>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;
@@ -210,4 +210,4 @@ class ListComponent extends MDComponent {
 
 customElements.define("list-component", ListComponent);
 
-export default document.createElement('list-component')
+export default document.createElement("list-component");

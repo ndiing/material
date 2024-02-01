@@ -6,12 +6,12 @@ class ImageComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-image src="https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50"></md-image>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;
@@ -20,4 +20,4 @@ class ImageComponent extends MDComponent {
 
 customElements.define("image-component", ImageComponent);
 
-export default document.createElement('image-component')
+export default document.createElement("image-component");

@@ -6,16 +6,16 @@ class ChipComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip label="Label"></md-chip>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip leadingIcon="image" label="Label"></md-chip>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip avatar="https://api.dicebear.com/7.x/icons/svg?seed=Smokey&scale=50" label="Label"></md-chip>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-chip trailingIcon="image" label="Label"></md-chip>
                 </div>
             </div>
@@ -25,4 +25,4 @@ class ChipComponent extends MDComponent {
 
 customElements.define("chip-component", ChipComponent);
 
-export default document.createElement('chip-component')
+export default document.createElement("chip-component");

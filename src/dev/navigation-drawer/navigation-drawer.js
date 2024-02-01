@@ -6,7 +6,7 @@ class NavigationDrawerComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-drawer .items="${[
                         {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
                         {leadingIcon:'image',label:"Label"},
@@ -21,7 +21,7 @@ class NavigationDrawerComponent extends MDComponent {
                     ]}"></md-navigation-drawer>
                 </div>
 
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-drawer .items="${[
                         {headline:'Label'},
                         {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
@@ -36,7 +36,7 @@ class NavigationDrawerComponent extends MDComponent {
                         {leadingIcon:'image',label:"Label",},
                     ]}"></md-navigation-drawer>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-drawer style="width:360px;" id="drawer" ui="drawer" position="left" .items="${[
                         {headline:'Label'},
                         {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
@@ -53,9 +53,9 @@ class NavigationDrawerComponent extends MDComponent {
                     <md-button ui="filled-tonal" label="drawer modal" @click="${() => {drawer.modal=true;drawer.toggle()}}"></md-button>
                     <md-button ui="filled-tonal" label="drawer" @click="${() => {drawer.modal=false;drawer.toggle()}}"></md-button>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;

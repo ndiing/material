@@ -6,7 +6,7 @@ class NavigationBarComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-bar .items="${[
                         {leadingIcon:'image',label:"Label",activated:true},
                         {leadingIcon:'image',label:"Label"},
@@ -15,7 +15,7 @@ class NavigationBarComponent extends MDComponent {
                     ]}"></md-navigation-bar>
                 </div>
 
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-bar .items="${[
                         {leadingIcon:'image',activated:true},
                         {leadingIcon:'image'},
@@ -23,7 +23,7 @@ class NavigationBarComponent extends MDComponent {
                         {leadingIcon:'image',badge:1},
                     ]}"></md-navigation-bar>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-navigation-bar style="height:80px;" id="bar" ui="drawer" position="bottom" .items="${[
                         {leadingIcon:'image',label:"Label",activated:true},
                         {leadingIcon:'image',label:"Label"},
@@ -33,9 +33,9 @@ class NavigationBarComponent extends MDComponent {
                     <md-button ui="filled-tonal" label="bar modal" @click="${() => {bar.modal=true;bar.toggle()}}"></md-button>
                     <md-button ui="filled-tonal" label="bar" @click="${() => {bar.modal=false;bar.toggle()}}"></md-button>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;
@@ -44,4 +44,4 @@ class NavigationBarComponent extends MDComponent {
 
 customElements.define("navigation-bar-component", NavigationBarComponent);
 
-export default document.createElement('navigation-bar-component')
+export default document.createElement("navigation-bar-component");

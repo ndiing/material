@@ -6,27 +6,27 @@ class IconButtonComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout__grid">
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-icon-button ui="filled" icon="image"></md-icon-button>
                     <md-icon-button ui="filled-tonal" icon="image"></md-icon-button>
                     <md-icon-button ui="outlined" icon="image"></md-icon-button>
                     <md-icon-button ui="" icon="image"></md-icon-button>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-icon-button toggle ui="filled" icon="image"></md-icon-button>
                     <md-icon-button toggle ui="filled-tonal" icon="image"></md-icon-button>
                     <md-icon-button toggle ui="outlined" icon="image"></md-icon-button>
                     <md-icon-button toggle ui="" icon="image"></md-icon-button>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                     <md-icon-button toggle activated ui="filled" icon="image"></md-icon-button>
                     <md-icon-button toggle activated ui="filled-tonal" icon="image"></md-icon-button>
                     <md-icon-button toggle activated ui="outlined" icon="image"></md-icon-button>
                     <md-icon-button toggle activated ui="" icon="image"></md-icon-button>
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
-                <div class="md-layout__column md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
                 </div>
             </div>
         `;
@@ -35,4 +35,4 @@ class IconButtonComponent extends MDComponent {
 
 customElements.define("icon-button-component", IconButtonComponent);
 
-export default document.createElement('icon-button-component')
+export default document.createElement("icon-button-component");

@@ -82,17 +82,17 @@
 // drawer
 
 .md-panel--drawer {
-    position: absolute;
-    z-index: 12;
+    // position: absolute;
+    // z-index: 12;
     transition-property: none;
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     transition-duration: var(--md-sys-motion-duration-short2);
 }
 
 .md-panel--top {
-    top: 0;
-    left: 0;
-    right: 0;
+    // top: 0;
+    // left: 0;
+    // right: 0;
     transform: translate3d(0, 0, 0);
 
     &:not([open]) {
@@ -101,9 +101,9 @@
 }
 
 .md-panel--right {
-    right: 0;
-    top: 0;
-    bottom: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
     transform: translate3d(0, 0, 0);
 
     &:not([open]) {
@@ -112,9 +112,9 @@
 }
 
 .md-panel--bottom {
-    bottom: 0;
-    left: 0;
-    right: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
     transform: translate3d(0, 0, 0);
 
     &:not([open]) {
@@ -123,9 +123,9 @@
 }
 
 .md-panel--left {
-    left: 0;
-    top: 0;
-    bottom: 0;
+    // left: 0;
+    // top: 0;
+    // bottom: 0;
     transform: translate3d(0, 0, 0);
 
     &:not([open]) {
@@ -144,19 +144,19 @@
     opacity: 32%;
 }
 
-.md-layout {
-    padding-top: var(--md-panel-drawer-top, 0px);
-    padding-right: var(--md-panel-drawer-right, 0px);
-    padding-bottom: var(--md-panel-drawer-bottom, 0px);
-    padding-left: var(--md-panel-drawer-left, 0px);
-}
+// .md-layout {
+//     padding-top: var(--md-panel-drawer-top, 0px);
+//     padding-right: var(--md-panel-drawer-right, 0px);
+//     padding-bottom: var(--md-panel-drawer-bottom, 0px);
+//     padding-left: var(--md-panel-drawer-left, 0px);
+// }
 
-.md-panel--top {
-    right: var(--md-panel-drawer-right, 0px);
-    left: var(--md-panel-drawer-left, 0px);
-}
+// .md-panel--top {
+//     right: var(--md-panel-drawer-right, 0px);
+//     left: var(--md-panel-drawer-left, 0px);
+// }
 
-.md-panel--bottom {
-    right: var(--md-panel-drawer-right, 0px);
-    left: var(--md-panel-drawer-left, 0px);
-}
+// .md-panel--bottom {
+//     right: var(--md-panel-drawer-right, 0px);
+//     left: var(--md-panel-drawer-left, 0px);
+// }
