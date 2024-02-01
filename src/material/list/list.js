@@ -7,9 +7,32 @@ function notNull(value) {
 }
 
 /**
- * 
+ * Material Design List Container Component that extends MDComponent.
+ * @extends MDComponent
  */
 class MDListContainerComponent extends MDComponent {
+    /**
+     * Properties for MDListContainerComponent.
+     * @type {Object}
+     * @property {Array} leadingIcons - Array of leading icons.
+     * @property {Array} collapsibleIcons - Array of collapsible icons.
+     * @property {String} leadingAvatar - URL of the leading avatar image.
+     * @property {String} leadingImage - URL of the leading image.
+     * @property {String} leadingVideo - URL of the leading video.
+     * @property {String} leadingIcon - Leading icon content.
+     * @property {String} leadingCheckbox - Label for the leading checkbox.
+     * @property {String} leadingRadioButton - Label for the leading radio button.
+     * @property {String} label - Label for the list item.
+     * @property {String} supportingText - Supporting text for the list item.
+     * @property {String} trailingCheckbox - Label for the trailing checkbox.
+     * @property {String} trailingSupportingText - Supporting text for the trailing item.
+     * @property {String} trailingSwitch - Label for the trailing switch.
+     * @property {String} trailingIcon - Trailing icon content.
+     * @property {Boolean} activated - Indicates if the list item is activated.
+     * @property {Boolean} expanded - Indicates if the list item is expanded.
+     * @property {String} routerLink - URL for router navigation.
+     * @property {String} badge - Badge content for the list item.
+     */
     static properties = {
         leadingIcons: { type: Array },
         collapsibleIcons: { type: Array },
@@ -163,7 +186,8 @@ customElements.define("md-list-container", MDListContainerComponent);
 export { MDListContainerComponent };
 
 /**
- * 
+ * Material Design List Item Component that extends MDComponent.
+ * @extends MDComponent
  */
 class MDListItemComponent extends MDComponent {
     static properties = {};
@@ -198,9 +222,19 @@ customElements.define("md-list-item", MDListItemComponent);
 export { MDListItemComponent };
 
 /**
- * 
+ * Material Design List Component that extends MDComponent.
+ * @extends MDComponent
  */
 class MDListComponent extends MDComponent {
+    /**
+     * Properties for MDListComponent.
+     * @type {Object}
+     * @property {Array} items - Array of items to be displayed in the list.
+     * @property {String} size - Size of the list items ("one-line", "two-line", "three-line").
+     * @property {String} ui - UI style of the list ("tree-view", "level-view").
+     * @property {String} type - Selection type of the list ("single-select", "multi-select").
+     * @property {Boolean} selectable - Indicates if the list is selectable.
+     */
     static properties = {
         items: { type: Array },
         size: { type: String },
@@ -209,6 +243,10 @@ class MDListComponent extends MDComponent {
         selectable: { type: Boolean },
     };
 
+    /**
+     * Retrieves the top-level list element.
+     * @returns {HTMLElement|null} The top-level list element or null if not found.
+     */
     get list() {
         var el = this;
 
@@ -317,6 +355,10 @@ class MDListComponent extends MDComponent {
         })
     }
 
+    /**
+     * Handles the click event on a list item container.
+     * @param {Event} event - The click event.
+     */
     handleListItemContainerClick(event) {
         const listItemContainer = event.currentTarget;
 
