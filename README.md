@@ -12,12 +12,12 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
 
-- ##### [Layout 🔎](#./src/material/layout/layout.md 'on process')
-- ##### [Panel](./src/material/panel/panel.md)
-- ##### [Poper 🔎](# 'on process')
-- ##### [Ripple](./src/material/ripple/ripple.md)
-- ##### [Router](./src/material/router/router.md)
-- ##### [State](./src/material/state/state.md)
+- [ ] [Layout 🔎](#./src/material/layout/layout.md 'on process')
+- [x] [Panel](./src/material/panel/panel.md)
+- [ ] [Poper 🔎](# 'on process')
+- [x] [Ripple](./src/material/ripple/ripple.md)
+- [x] [Router](./src/material/router/router.md)
+- [x] [State](./src/material/state/state.md)
 
 ## 🎨 Style
 
