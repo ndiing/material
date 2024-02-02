@@ -12,10 +12,10 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
 
-- [ ] [Breakpoint 🔎](#/src/material/breakpoint/breakpoint.md 'on process')
-- [ ] [Layout 🔎](#./src/material/layout/layout.md 'on process')
+- [ ] [Breakpoint 🔎](#/src/material/breakpoint/breakpoint.md 'on process 86fad9c')
+- [ ] [Layout 🔎](#./src/material/layout/layout.md 'on process 66bf1d7')
 - [x] [Panel](./src/material/panel/panel.md)
-- [ ] [Poper 🔎](# 'on process')
+- [ ] [Poper 🔎](# 'on process 382a73a')
 - [x] [Ripple](./src/material/ripple/ripple.md)
 - [x] [Router](./src/material/router/router.md)
 - [x] [State](./src/material/state/state.md)
@@ -52,7 +52,7 @@ _Containment components hold information and actions – including other compone
 _Communication components provide helpful information._
 
 - [x] [Badge](./src/material/badge/badge.md)
-- [x] [Tooltip](# 'on process')
+- [ ] [Tooltip 📝](#./src/material/tooltip/tooltip.md 'on process 382a73a')
 
 ### Navigation
 
@@ -60,15 +60,15 @@ _Navigation components help people move through the UI._
 
 - [x] [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
 - [x] [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
-- [ ] [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
+- [ ] [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement cb163f9')
 
 ### Selection
 
 _Selection components let people specify choices._
 
 - [x] [Checkbox](./src/material/checkbox/checkbox.md)
-- [ ] [Chip 📝](# 'on process, all docs')
-- [ ] [Chip-Set 📝](# 'on process, all docs')
+- [ ] [Chip 📝](# 'on process, all docs 382a73a')
+- [ ] [Chip-Set 📝](# 'on process, all docs 382a73a')
 - [x] [Radio Button](./src/material/radio-button/radio-button.md)
 - [x] [Switch](./src/material/switch/switch.md)
 
