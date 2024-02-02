@@ -12,20 +12,20 @@ Welcome to the Material Components repository, a collection of versatile compone
 
 Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.
 
--   ##### [Layout 🔎](#./src/material/layout/layout.md "on process")
--   ##### [Panel](./src/material/panel/panel.md)
--   ##### [Poper 🔎](# "on process")
--   ##### [Ripple](./src/material/ripple/ripple.md)
--   ##### [Router](./src/material/router/router.md)
--   ##### [State](./src/material/state/state.md)
+- ##### [Layout 🔎](#./src/material/layout/layout.md 'on process')
+- ##### [Panel](./src/material/panel/panel.md)
+- ##### [Poper 🔎](# 'on process')
+- ##### [Ripple](./src/material/ripple/ripple.md)
+- ##### [Router](./src/material/router/router.md)
+- ##### [State](./src/material/state/state.md)
 
 ## 🎨 Style
 
 Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.
 
--   ##### [Emoji](./src/material/emoji/emoji.md)
--   ##### [Icon](./src/material/icon/icon.md)
--   ##### [Shape/Image](./src/material/image/image.md)
+- [x] [Emoji](./src/material/emoji/emoji.md)
+- [x] [Icon](./src/material/icon/icon.md)
+- [x] [Shape/Image](./src/material/image/image.md)
 
 ## 🧩 Components
 
@@ -33,33 +33,43 @@ Components are interactive building blocks for creating a user interface. They c
 
 ### Actions
 
--   ##### [Button](./src/material/button/button.md)
--   ##### [Floating Action Button (FAB)](./src/material/fab/fab.md)
--   ##### [Icon Button](./src/material/icon-button/icon-button.md)
--   ##### [Segmented Button](./src/material/segmented-button/segmented-button.md)
+_Action components help people achieve an aim._
+
+- [x] [Button](./src/material/button/button.md)
+- [x] [Floating Action Button (FAB)](./src/material/fab/fab.md)
+- [x] [Icon Button](./src/material/icon-button/icon-button.md)
+- [x] [Segmented Button](./src/material/segmented-button/segmented-button.md)
 
 ### Containment
 
--   ##### [List](./src/material/list/list.md)
+_Containment components hold information and actions – including other components like buttons, menus, or chips._
 
-### Communitcation
+- [x] [List](./src/material/list/list.md)
 
--   ##### [Badge](./src/material/badge/badge.md)
--   ##### [Tooltip](# "on process")
+### Communication
+
+_Communication components provide helpful information._
+
+- [x] [Badge](./src/material/badge/badge.md)
+- [x] [Tooltip](# 'on process')
 
 ### Navigation
 
--   ##### [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
--   ##### [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
--   ##### [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md "on progress, placement")
+_Navigation components help people move through the UI._
+
+- [x] [Navigation Bar](./src/material/navigation-bar/navigation-bar.md)
+- [x] [Navigation Drawer](./src/material/navigation-drawer/navigation-drawer.md)
+- [ ] [Navigation Rail 📝](./src/material/navigation-rail/navigation-rail.md 'on progress, placement')
 
 ### Selection
 
--   ##### [Checkbox](./src/material/checkbox/checkbox.md)
--   ##### [Chip 📝](# "on process, all docs")
--   ##### [Chip-Set 📝](# "on process, all docs")
--   ##### [Radio Button](./src/material/radio-button/radio-button.md)
--   ##### [Switch](./src/material/switch/switch.md)
+_Selection components let people specify choices._
+
+- [x] [Checkbox](./src/material/checkbox/checkbox.md)
+- [ ] [Chip 📝](# 'on process, all docs')
+- [ ] [Chip-Set 📝](# 'on process, all docs')
+- [x] [Radio Button](./src/material/radio-button/radio-button.md)
+- [x] [Switch](./src/material/switch/switch.md)
 
 <hr>
 
