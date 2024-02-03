@@ -1,40 +1,42 @@
 # Material Project
 
-Welcome to the Material project, a comprehensive resource designed to enhance your web development experience. This repository provides a fundamental collection of materials, carefully curated to elevate the quality of your projects. Follow the streamlined instructions below to seamlessly integrate the Material project into your web development workflow.
+Welcome to the Material project, a comprehensive resource designed to enhance your web development experience. This repository provides a fundamental collection of materials, carefully curated to elevate the quality of your projects.
 
 ## Getting Started
 
 ### Clone the Project
 
-Begin by cloning the Material project repository to your local machine:
-
-```bash
+<pre>
 git clone https://github.com/ndiing/material.git
-```
+</pre>
 
 ### Navigate to the Project Directory
 
-```bash
+<pre>
 cd material
-```
+</pre>
 
 ### Install Dependencies
 
-```bash
+<pre>
 npm install
-```
+</pre>
+
+## Component API Documentation
+
+Explore the detailed API documentation for the Material project components on [ndiing.github.io/material/](https://ndiing.github.io/material/).
 
 ## Usage Example
 
 Explore the project's core functionality by opening the main JavaScript file in your preferred code editor:
 
-```bash
+<pre>
 src/index.js
-```
+</pre>
 
 ### Effortlessly integrate the Material library into your project:
 
-```javascript
+<pre>
 // src/index.js
 
 // Basic Material library
@@ -44,6 +46,6 @@ import "./material/material.js";
 // Additional styles and scripts for development
 import "./dev/dev.scss";
 import "./dev/dev.js";
-```
+</pre>
 
 Your project is now equipped with a robust foundation. Customize and extend the Material project to suit your unique web development requirements. Happy coding!
