@@ -51,6 +51,7 @@ import "./slider/slider.js";
 import "./snackbar/snackbar.js";
 import "./switch/switch.js";
 import "./tab/tab.js";
+import "./form/form.js";
 import "./text-field/text-field.js";
 import "./time-picker/time-picker.js";
 import "./tooltip/tooltip.js";

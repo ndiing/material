@@ -1,14 +1,171 @@
 .md-text-field {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-}
-
-.md-text-field__icon {
-    @extend .md-icon;
+    display: flex;
+    flex-direction: column;
+    gap: 4px 0;
+    position: relative;
 }
 
 .md-text-field__label {
-    @extend .md-typography--label-large;
+    @extend .md-typography--body-small;
+    padding: 0 4px;
+    margin: 0 12px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
+}
+
+.md-text-field__supporting-text {
+    @extend .md-typography--body-small;
+    padding: 0 16px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
+}
+
+.md-text-field__container {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 16px;
+    gap: 0 16px;
+    border-radius: 4px;
+    background: var(--md-sys-color-surface-container-highest);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
+}
+
+.md-text-field__start {
+    margin-left: -4px;
+}
+
+.md-text-field__center {
+    flex: 1;
+}
+
+.md-text-field__end {
+    margin-right: -4px;
+}
+
+.md-text-field__icon {
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+}
+
+.md-text-field__native {
+    appearance: none;
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    color: inherit;
+    @extend .md-typography--body-large;
+}
+
+.md-text-field--populated {
+}
+
+.md-text-field--focused {
+    .md-text-field__label {
+        color: var(--md-sys-color-primary);
+    }
+}
+
+.md-text-field--error {
+    .md-text-field__label {
+        color: var(--md-sys-color-error);
+    }
+    .md-text-field__supporting-text {
+        color: var(--md-sys-color-error);
+    }
+}
+
+// filled
+
+.md-text-field--filled {
+    .md-text-field__container {
+        border-radius: 4px 4px 0 0;
+        box-shadow: inset 0 -1px 0 0 var(--md-sys-color-on-surface-variant);
+    }
+
+    .md-text-field__label {
+        position: absolute;
+        top: 16px;
+        left: calc(var(--md-text-field-indent) - 16px);
+        pointer-events: none;
+    }
+
+    &:not(.md-text-field--focused):not(.md-text-field--populated) {
+        .md-text-field__label {
+            @extend .md-typography--body-large;
+        }
+    }
+
+    &.md-text-field--focused,
+    &.md-text-field--populated {
+        .md-text-field__label {
+            top: calc(16px - 6px);
+            bottom: calc(16px + 6px);
+        }
+
+        .md-text-field__native {
+            padding-top: calc(16px + 6px);
+            padding-bottom: calc(16px - 6px);
+        }
+    }
+
+    &.md-text-field--focused {
+        .md-text-field__container {
+            box-shadow: inset 0 -2px 0 0 var(--md-sys-color-primary);
+        }
+    }
+
+    &.md-text-field--error {
+        .md-text-field__container {
+            box-shadow: inset 0 -2px 0 0 var(--md-sys-color-error);
+        }
+    }
+}
+
+// outlined
+
+.md-text-field--outlined {
+    .md-text-field__container {
+        background: transparent;
+        box-shadow: inset 0 0 0 1px var(--md-sys-color-on-surface-variant);
+    }
+
+    .md-text-field__label {
+        position: absolute;
+        top: 16px;
+        left: calc(var(--md-text-field-indent) - 16px);
+        pointer-events: none;
+    }
+
+    &:not(.md-text-field--focused):not(.md-text-field--populated) {
+        .md-text-field__label {
+            @extend .md-typography--body-large;
+        }
+    }
+
+    &.md-text-field--focused,
+    &.md-text-field--populated {
+        .md-text-field__label {
+            top: -7px;
+            left: 0;
+            background: var(--md-sys-color-surface);
+        }
+    }
+
+    &.md-text-field--focused {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 2px var(--md-sys-color-primary);
+        }
+    }
+
+    &.md-text-field--error {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 2px var(--md-sys-color-error);
+        }
+    }
 }

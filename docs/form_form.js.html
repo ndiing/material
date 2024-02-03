@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: layout/layout.js</title>
+    <title>JSDoc: Source: form/form.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: layout/layout.js</h1>
+    <h1 class="page-title">Source: form/form.js</h1>
 
     
 
@@ -30,11 +30,11 @@
 import { MDComponent } from "../base/component";
 
 /**
- * MDLayoutComponent represents a layout component.
+ * MDFormComponent represents a material design form.
  *
  * @extends MDComponent
  */
-class MDLayoutComponent extends MDComponent {
+class MDFormComponent extends MDComponent {
     /**
      * Properties of the component.
      *
@@ -43,12 +43,25 @@ class MDLayoutComponent extends MDComponent {
     static properties = {};
 
     /**
-     * Constructor for MDLayoutComponent.
+     * Getter for the native form element.
+     *
+     * @returns {HTMLElement} - The native form element.
+     */
+    get formNative() {
+        return this.querySelector(".md-form__native");
+    }
+
+    /**
+     * Constructor for MDFormComponent.
      */
     constructor() {
         super();
 
         // default
+        // this.label = "Label";
+
+        // Store a reference to the initial children of the form
+        this._children = Array.from(this.children);
     }
 
     /**
@@ -57,7 +70,8 @@ class MDLayoutComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-layout");
+        // Add the 'md-form' class to the component
+        this.classList.add("md-form");
     }
 
     /**
@@ -66,7 +80,8 @@ class MDLayoutComponent extends MDComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.classList.remove("md-layout");
+        // Remove the 'md-form' class from the component
+        this.classList.remove("md-form");
     }
 
     /**
@@ -74,26 +89,115 @@ class MDLayoutComponent extends MDComponent {
      *
      * @param {Map} changedProperties - A Map of changed properties.
      */
-    firstUpdated(changedProperties) {}
+    firstUpdated(changedProperties) {
+        // Additional logic if needed
+    }
 
     /**
      * Lifecycle callback when the element is updated.
      *
      * @param {Map} changedProperties - A Map of changed properties.
      */
-    updated(changedProperties) {}
+    updated(changedProperties) {
+        // Additional logic if needed
+    }
 
     /**
-     * Renders the layout component.
+     * Renders the form component.
+     *
+     * @returns {TemplateResult} - The HTML template result.
      */
     render() {
-        // You may add content here when implementing the rendering logic.
+        // prettier-ignore
+        return html`
+            &lt;form 
+                class="md-form__native"
+                @formdata="${this.handleFormNativeFormdata}"
+                @reset="${this.handleFormNativeReset}"
+                @submit="${this.handleFormNativeSubmit}"
+            >${this._children}&lt;/form>
+        `;
+    }
+
+    /**
+     * Resets the form.
+     */
+    reset() {
+        this.formNative.reset();
+    }
+
+    /**
+     * Submits the form.
+     *
+     * @param {HTMLElement} submitButton - The submit button element.
+     */
+    submit(submitButton) {
+        if (this.formNative.requestSubmit) {
+            if (submitButton) {
+                this.formNative.requestSubmit(submitButton);
+            } else {
+                this.formNative.requestSubmit();
+            }
+        } else {
+            this.formNative.submit();
+        }
+    }
+
+    /**
+     * Event handler for the formdata event on the native form.
+     *
+     * @param {Event} event - The formdata event.
+     * @fires MDFormComponent#onFormNativeFormdata
+     */
+    handleFormNativeFormdata(event) {
+        this.emit("onFormNativeFormdata", { event });
+    }
+
+    /**
+     * Event handler for the reset event on the native form.
+     *
+     * @param {Event} event - The reset event.
+     * @fires MDFormComponent#onFormNativeReset
+     */
+    handleFormNativeReset(event) {
+        // Dispatch a custom event for each text field reset
+        for (const element of this.formNative.elements) {
+            if (!element.matches('.md-text-field__native')) {
+                continue;
+            }
+            const customEvent = new CustomEvent('onTextFieldNativeReset', {
+                bubbles: true,
+                cancelable: true
+            });
+            element.dispatchEvent(customEvent);
+        }
+
+        // Emit a custom event for the form reset
+        this.emit("onFormNativeReset", { event });
+    }
+
+    /**
+     * Event handler for the submit event on the native form.
+     *
+     * @param {Event} event - The submit event.
+     * @fires MDFormComponent#onFormNativeSubmit
+     */
+    handleFormNativeSubmit(event) {
+        event.preventDefault();
+
+        // Create FormData object from the form
+        new FormData(this.formNative);
+
+        // Emit a custom event for the form submission
+        this.emit("onFormNativeSubmit", { event });
     }
 }
 
-customElements.define("md-layout", MDLayoutComponent);
+// Define the custom element
+customElements.define("md-form", MDFormComponent);
 
-export { MDLayoutComponent };
+// Export the component
+export { MDFormComponent };
 </code></pre>
         </article>
     </section>

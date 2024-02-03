@@ -11,7 +11,6 @@ class MDCardBodyComponent extends MDComponent {
      * Properties of the component.
      *
      * @type {Object}
-     * This component does not have specific properties.
      */
 
     /**

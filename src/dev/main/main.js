@@ -32,7 +32,7 @@ const items=[
     { icon:'done', label: "snackbar", routerLink: "/snackbar", },
     { icon:'done_all', label: "switch", routerLink: "/switch", },
     { icon:'done', label: "tab", routerLink: "/tab", },
-    { icon:'done', label: "text-field", routerLink: "/text-field", },
+    { icon:'done_all', label: "text-field", routerLink: "/text-field", },
     { icon:'done', label: "time-picker", routerLink: "/time-picker", },
     { icon:'done', label: "tooltip", routerLink: "/tooltip", },
     { icon:'done_all', label: "top-app-bar", routerLink: "/top-app-bar", },
