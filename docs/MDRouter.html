@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: MDSheetBodyComponent</title>
+    <title>JSDoc: Class: MDRouter</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: MDSheetBodyComponent</h1>
+    <h1 class="page-title">Class: MDRouter</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>MDSheetBodyComponent<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>MDRouter<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">MDSheetBodyComponent represents the body for a material design sheet.</div>
+            <div class="class-description">Class representing a simple client-side router.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="MDSheetBodyComponent"><span class="type-signature"></span>new MDSheetBodyComponent<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MDRouter"><span class="type-signature"></span>new MDRouter<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sheet-body_sheet-body.js.html">sheet-body/sheet-body.js</a>, <a href="sheet-body_sheet-body.js.html#line10">line 10</a>
+        <a href="router_router.js.html">router/router.js</a>, <a href="router_router.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -127,17 +127,6 @@
     </div>
 
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="MDCardBodyComponent.html">MDCardBodyComponent</a></li>
-    </ul>
-
-
-    
 
     
 
@@ -160,7 +149,7 @@
     
 
     
-    <h4 class="name" id="connectedCallback"><span class="type-signature"></span>connectedCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".navigate"><span class="type-signature">(static) </span>navigate<span class="signature">(url)</span><span class="type-signature"></span></h4>
     
 
     
@@ -168,193 +157,7 @@
 
 
 <div class="description">
-    Called when the element is connected to the DOM.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="MDCardBodyComponent.html#connectedCallback">MDCardBodyComponent#connectedCallback</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sheet-body_sheet-body.js.html">sheet-body/sheet-body.js</a>, <a href="sheet-body_sheet-body.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="disconnectedCallback"><span class="type-signature"></span>disconnectedCallback<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Called when the element is disconnected from the DOM.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="MDCardBodyComponent.html#disconnectedCallback">MDCardBodyComponent#disconnectedCallback</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sheet-body_sheet-body.js.html">sheet-body/sheet-body.js</a>, <a href="sheet-body_sheet-body.js.html#line24">line 24</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="firstUpdated"><span class="type-signature"></span>firstUpdated<span class="signature">(changedProperties)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Called after the component's first update.
+    Navigates to the specified URL using the HTML5 History API.
 </div>
 
 
@@ -390,13 +193,13 @@
 
         <tr>
             
-                <td class="name"><code>changedProperties</code></td>
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Map</span>
+<span class="param-type">string</span>
 
 
             
@@ -406,7 +209,7 @@
 
             
 
-            <td class="description last">Map of changed properties.</td>
+            <td class="description last">The URL to navigate to.</td>
         </tr>
 
     
@@ -427,11 +230,6 @@
     
 
     
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="MDCardBodyComponent.html#firstUpdated">MDCardBodyComponent#firstUpdated</a>
-    </li></ul></dd>
-    
 
     
 
@@ -452,7 +250,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sheet-body_sheet-body.js.html">sheet-body/sheet-body.js</a>, <a href="sheet-body_sheet-body.js.html#line36">line 36</a>
+        <a href="router_router.js.html">router/router.js</a>, <a href="router_router.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -488,7 +286,7 @@
     
 
     
-    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">()</span><span class="type-signature"> &rarr; {TemplateResult}</span></h4>
+    <h4 class="name" id=".register"><span class="type-signature">(static) </span>register<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -496,7 +294,7 @@
 
 
 <div class="description">
-    Renders the card body.
+    Registers the router with specified routes.
 </div>
 
 
@@ -511,121 +309,11 @@
 
 
 
-<dl class="details">
+    <h5 class="subsection-title">Properties:</h5>
 
     
 
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="MDCardBodyComponent.html#render">MDCardBodyComponent#render</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-body_card-body.js.html">card-body/card-body.js</a>, <a href="card-body_card-body.js.html#line62">line 62</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The HTML template result.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">TemplateResult</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="updated"><span class="type-signature"></span>updated<span class="signature">(changedProperties)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Called when the component is updated.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="props">
     <thead>
     <tr>
         
@@ -647,13 +335,13 @@
 
         <tr>
             
-                <td class="name"><code>changedProperties</code></td>
+                <td class="name"><code>routes</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Map</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
@@ -663,14 +351,127 @@
 
             
 
-            <td class="description last">Map of changed properties.</td>
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>routes[].path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path of the route.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>routes[].component</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The component associated with the route.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>routes[].load</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to load the component if not already loaded.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>routes[].beforeLoad</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function called before loading the component.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>routes[].children</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of child routes.</td>
         </tr>
 
     
     </tbody>
 </table>
-
-
 
 
 
@@ -683,11 +484,6 @@
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="MDCardBodyComponent.html#updated">MDCardBodyComponent#updated</a>
-    </li></ul></dd>
     
 
     
@@ -709,7 +505,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sheet-body_sheet-body.js.html">sheet-body/sheet-body.js</a>, <a href="sheet-body_sheet-body.js.html#line46">line 46</a>
+        <a href="router_router.js.html">router/router.js</a>, <a href="router_router.js.html#line194">line 194</a>
     </li></ul></dd>
     
 
