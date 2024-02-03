@@ -102,11 +102,6 @@ class MDSwitchComponent extends MDComponent {
         this.checked = input.checked;
 
         // Emit a custom event when the native switch is input
-        /**
-         * @event MDSwitchComponent#onSwitchNativeInput
-         * @type {Object}
-         * @property {Event} event - The input event.
-         */
         this.emit("onSwitchNativeInput", { event });
     }
 }

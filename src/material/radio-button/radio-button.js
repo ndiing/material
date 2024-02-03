@@ -95,11 +95,6 @@ class MDRadioButtonComponent extends MDComponent {
         this.checked = input.checked;
 
         // Emit a custom event when the native radio button is input
-        /**
-         * @event MDRadioButtonComponent#onRadioButtonNativeInput
-         * @type {Object}
-         * @property {Event} event - The input event.
-         */
         this.emit("onRadioButtonNativeInput", { event });
     }
 }
