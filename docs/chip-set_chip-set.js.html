@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: dialog/dialog.js</title>
+    <title>JSDoc: Source: chip-set/chip-set.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: dialog/dialog.js</h1>
+    <h1 class="page-title">Source: chip-set/chip-set.js</h1>
 
     
 
@@ -28,23 +28,35 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
-import { MDCardComponent } from "../card/card.js";
 
 /**
- * MDDialogComponent represents a dialog component.
+ * MDChipSetComponent represents a chip set component.
  *
- * @extends MDCardComponent
+ * @extends MDComponent
  */
-class MDDialogComponent extends MDCardComponent {
+class MDChipSetComponent extends MDComponent {
     /**
      * Properties of the component.
      *
      * @type {Object}
-     * @property {Boolean} open - Indicates whether the dialog is open.
+     * @property {Array} items - The array of items for the chip set.
+     * @property {String} type - The type of the chip set (e.g., "single-select", "multi-select").
      */
-    static properties = Object.assign(MDCardComponent.properties, {
-        open: { type: Boolean, reflect: true },
-    });
+    static properties = {
+        items: { type: Array },
+        type: { type: String },
+    };
+
+    /**
+     * Constructor for MDChipSetComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        this.items = [];
+        this.type = "single-select";
+    }
 
     /**
      * Lifecycle callback when the element is added to the DOM.
@@ -52,7 +64,8 @@ class MDDialogComponent extends MDCardComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-dialog");
+        // Add the 'md-chip-set' class to the component
+        this.classList.add("md-chip-set");
     }
 
     /**
@@ -61,7 +74,8 @@ class MDDialogComponent extends MDCardComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.classList.remove("md-dialog");
+        // Remove the 'md-chip-set' class from the component
+        this.classList.remove("md-chip-set");
     }
 
     /**
@@ -70,7 +84,7 @@ class MDDialogComponent extends MDCardComponent {
      * @param {Map} changedProperties - A Map of changed properties.
      */
     firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+        // Additional logic if needed
     }
 
     /**
@@ -79,87 +93,59 @@ class MDDialogComponent extends MDCardComponent {
      * @param {Map} changedProperties - A Map of changed properties.
      */
     updated(changedProperties) {
-        super.updated(changedProperties);
-
-        if (changedProperties.has("open")) {
-            if (this.open) {
-                this.createDialogScrim();
-            } else {
-                this.removeDialogScrim();
-            }
-        }
+        // Additional logic if needed
     }
 
     /**
-     * Creates the dialog scrim.
+     * Renders the chip set.
      *
-     * @private
+     * @returns {TemplateResult} - The HTML template result.
      */
-    createDialogScrim() {
-        if (!this.dialogScrim) {
-            this.dialogScrim = document.createElement("md-dialog-scrim");
-            this.handleDialogScrimClick = this.handleDialogScrimClick.bind(this);
-            this.dialogScrim.addEventListener("click", this.handleDialogScrimClick);
-            document.body.append(this.dialogScrim);
-        }
+    render() {
+        // prettier-ignore
+        return this.items.map(item => html`
+            &lt;md-chip
+                .item="${item}"
+                .icon="${item.icon}"
+                .avatar="${item.avatar}"
+                .label="${item.label}"
+                .trailingIcon="${item.trailingIcon}"
+                .activated="${item.activated}"
+                @click="${this.handleChipClick}"
+            >&lt;/md-chip>
+        `);
     }
 
     /**
-     * Removes the dialog scrim.
-     *
-     * @private
-     */
-    removeDialogScrim() {
-        if (this.dialogScrim) {
-            this.dialogScrim.removeEventListener("click", this.handleDialogScrimClick);
-            this.dialogScrim.remove();
-            this.dialogScrim = null;
-        }
-    }
-
-    /**
-     * Shows the dialog.
-     */
-    show() {
-        this.open = true;
-    }
-
-    /**
-     * Closes the dialog.
-     */
-    close() {
-        this.open = false;
-    }
-
-    /**
-     * Toggles the dialog's visibility.
-     */
-    toggle() {
-        if (this.open) {
-            this.close();
-        } else {
-            this.show();
-        }
-    }
-
-    /**
-     * Handles the click event on the dialog scrim.
+     * Event handler for set click events.
      *
      * @param {Event} event - The click event.
-     * @fires MDDialogComponent#onDialogScrimClick
-     * @private
+     * @fires MDChipSetComponent#onChipClick
      */
-    handleDialogScrimClick(event) {
-        this.close();
+    handleChipClick(event) {
+        const chip = event.currentTarget;
+        const chipItem = chip.item;
 
-        this.emit("onDialogScrimClick", { event });
+        if (this.type === "single-select") {
+            for (const item of this.items) {
+                item.activated = item === chipItem;
+            }
+        } else if (this.type === "multi-select") {
+            chipItem.activated = !chipItem.activated;
+        }
+
+        this.requestUpdate();
+
+        // Emit a custom event when a chip is clicked
+        this.emit("onChipClick", { event });
     }
 }
 
-// Define the component
-customElements.define("md-dialog", MDDialogComponent);
+// Define the custom element
+customElements.define("md-chip-set", MDChipSetComponent);
 
-export { MDDialogComponent };
+// Export the component
+export { MDChipSetComponent };
 </code></pre>
         </article>
     </section>

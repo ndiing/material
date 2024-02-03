@@ -22,6 +22,7 @@ import "./card/card.js";
 import "./carousel/carousel.js";
 import "./checkbox/checkbox.js";
 import "./chip/chip.js";
+import "./chip-set/chip-set.js";
 import "./date-picker/date-picker.js";
 import "./dialog-header/dialog-header.js";
 import "./dialog-body/dialog-body.js";

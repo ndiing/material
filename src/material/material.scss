@@ -1,6 +1,6 @@
 /* [x] */@import "./base/style.scss";
 /* [x] */@import "./router/router.scss";
-/* [ ] */@import "./ripple/ripple.scss";
+/* [x] */@import "./ripple/ripple.scss";
 /* [x] *///@import "./base/controller.scss";
 /* [x] *///@import "./base/component.scss";
 /* [x] *///@import "./base/example-controller.scss";
@@ -23,6 +23,7 @@
 /* [ ] *///@import "./carousel/carousel.scss";
 /* [x] */@import "./checkbox/checkbox.scss";
 /* [ ] */@import "./chip/chip.scss";
+/* [ ] */@import "./chip-set/chip-set.scss";
 /* [ ] *///@import "./date-picker/date-picker.scss";
 /* [x] *///@import "./dialog-header/dialog-header.scss";
 /* [x] *///@import "./dialog-body/dialog-body.scss";
@@ -55,4 +56,4 @@
 /* [ ] *///@import "./time-picker/time-picker.scss";
 /* [ ] */@import "./tooltip/tooltip.scss";
 // todo 13
-// done 42
+// done 43

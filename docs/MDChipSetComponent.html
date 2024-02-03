@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: MDListComponent</title>
+    <title>JSDoc: Class: MDChipSetComponent</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: MDListComponent</h1>
+    <h1 class="page-title">Class: MDChipSetComponent</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>MDListComponent<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>MDChipSetComponent<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Material Design List Component.</div>
+            <div class="class-description">MDChipSetComponent represents a chip set component.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="MDListComponent"><span class="type-signature"></span>new MDListComponent<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MDChipSetComponent"><span class="type-signature"></span>new MDChipSetComponent<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Constructor for MDListComponent.
+    Constructor for MDChipSetComponent.
 </div>
 
 
@@ -97,7 +97,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line8">line 8</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -158,16 +158,26 @@
 
         
             
-<h4 class="name" id="properties"><span class="type-signature"></span>properties<span class="type-signature"></span></h4>
+<h4 class="name" id="properties"><span class="type-signature"></span>properties<span class="type-signature"> :Object</span></h4>
 
 
 
 
 <div class="description">
-    Properties for the MDListComponent.
+    Properties of the component.
 </div>
 
 
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
 
 
 
@@ -199,29 +209,6 @@
 
         <tr>
             
-                <td class="name"><code>size</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Size of the list items ("one-line", "two-line", "three-line").</td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>items</code></td>
             
 
@@ -238,7 +225,7 @@
 
             
 
-            <td class="description last">Array of items to be rendered in the list.</td>
+            <td class="description last">The array of items for the chip set.</td>
         </tr>
 
     
@@ -261,30 +248,7 @@
 
             
 
-            <td class="description last">Type of list selection ("single-select" or "multi-select").</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>selectable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Flag indicating if list items are selectable.</td>
+            <td class="description last">The type of the chip set (e.g., "single-select", "multi-select").</td>
         </tr>
 
     
@@ -323,7 +287,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line16">line 16</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -359,7 +323,7 @@
 
 
 <div class="description">
-    Callback when the element is connected to the DOM.
+    Lifecycle callback when the element is added to the DOM.
 </div>
 
 
@@ -403,7 +367,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line38">line 38</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -447,7 +411,7 @@
 
 
 <div class="description">
-    Callback when the element is disconnected from the DOM.
+    Lifecycle callback when the element is removed from the DOM.
 </div>
 
 
@@ -491,7 +455,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line47">line 47</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -527,7 +491,7 @@
     
 
     
-    <h4 class="name" id="handleListItemClick"><span class="type-signature"></span>handleListItemClick<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="firstUpdated"><span class="type-signature"></span>firstUpdated<span class="signature">(changedProperties)</span><span class="type-signature"></span></h4>
     
 
     
@@ -535,7 +499,144 @@
 
 
 <div class="description">
-    Event handler for list item click.
+    Lifecycle callback when the element is first updated.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>changedProperties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Map</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A Map of changed properties.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleChipClick"><span class="type-signature"></span>handleChipClick<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Event handler for set click events.
 </div>
 
 
@@ -628,7 +729,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line112">line 112</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line97">line 97</a>
     </li></ul></dd>
     
 
@@ -645,7 +746,7 @@
 
 <h5>Fires:</h5>
 <ul>
-    <li>MDListComponent#event:onListItemClick</li>
+    <li>MDChipSetComponent#event:onChipClick</li>
 </ul>
 
 
@@ -677,7 +778,7 @@
 
 
 <div class="description">
-    Render method for MDListComponent.
+    Renders the chip set.
 </div>
 
 
@@ -721,7 +822,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line74">line 74</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -750,7 +851,7 @@
 
         
 <div class="param-desc">
-    - The rendered HTML template.
+    - The HTML template result.
 </div>
 
 
@@ -787,7 +888,7 @@
 
 
 <div class="description">
-    Callback when the element is updated.
+    Lifecycle callback when the element is updated.
 </div>
 
 
@@ -839,7 +940,7 @@
 
             
 
-            <td class="description last">Map of changed properties.</td>
+            <td class="description last">A Map of changed properties.</td>
         </tr>
 
     
@@ -880,7 +981,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="list_list.js.html">list/list.js</a>, <a href="list_list.js.html#line57">line 57</a>
+        <a href="chip-set_chip-set.js.html">chip-set/chip-set.js</a>, <a href="chip-set_chip-set.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -932,7 +1033,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Feb 04 2024 03:13:21 GMT+0700 (Western Indonesia Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Feb 04 2024 03:13:20 GMT+0700 (Western Indonesia Time)
 </footer>
 
 <script> prettyPrint(); </script>

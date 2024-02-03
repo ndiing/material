@@ -3,12 +3,39 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+    height: 32px;
+    border-radius: 8px;
+    padding: 0 12px;
+    gap: 0 8px;
 }
 
 .md-chip__icon {
-    @extend .md-icon;
+    font-size: 18px;
+    margin-left: -4px;
+}
+
+.md-chip__avatar {
+    width: 24px;
+    height: 24px;
+    margin-left: -8px;
 }
 
 .md-chip__label {
     @extend .md-typography--label-large;
+
+    +.md-chip__icon{
+        margin-right: -4px;
+    }
+}
+
+
+.md-chip {
+    color: var(--md-sys-color-primary);
+    border: 1px solid var(--md-sys-color-outline);
+}
+
+.md-chip[activated] {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    border: 1px solid var(--md-sys-color-secondary-container);
 }

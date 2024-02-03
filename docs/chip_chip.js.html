@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: dialog/dialog.js</title>
+    <title>JSDoc: Source: chip/chip.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: dialog/dialog.js</h1>
+    <h1 class="page-title">Source: chip/chip.js</h1>
 
     
 
@@ -28,138 +28,96 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
-import { MDCardComponent } from "../card/card.js";
+import { MDRippleController } from "../ripple/ripple";
 
 /**
- * MDDialogComponent represents a dialog component.
+ * MDChipComponent represents a material design chip.
  *
- * @extends MDCardComponent
+ * @extends MDComponent
  */
-class MDDialogComponent extends MDCardComponent {
+class MDChipComponent extends MDComponent {
     /**
-     * Properties of the component.
-     *
-     * @type {Object}
-     * @property {Boolean} open - Indicates whether the dialog is open.
+     * @property {String} icon - The icon for the chip.
+     * @property {String} avatar - The avatar for the chip.
+     * @property {String} label - The label for the chip.
+     * @property {String} trailingIcon - The trailing icon for the chip.
+     * @property {Boolean} activated - Indicates whether the chip is activated.
      */
-    static properties = Object.assign(MDCardComponent.properties, {
-        open: { type: Boolean, reflect: true },
-    });
+    static properties = {
+        icon: { type: String },
+        avatar: { type: String },
+        label: { type: String },
+        trailingIcon: { type: String },
+        activated: { type: Boolean, reflect: true },
+    };
+
+    constructor() {
+        super();
+
+        // default
+        // this.label = "Label";
+    }
 
     /**
-     * Lifecycle callback when the element is added to the DOM.
+     * Called when the element is connected to the DOM.
      */
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-dialog");
+        // Add the 'md-chip' class to the component
+        this.classList.add("md-chip");
     }
 
     /**
-     * Lifecycle callback when the element is removed from the DOM.
+     * Called when the element is disconnected from the DOM.
      */
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.classList.remove("md-dialog");
+        // Remove the 'md-chip' class from the component
+        this.classList.remove("md-chip");
     }
 
     /**
-     * Lifecycle callback when the element is first updated.
+     * Called after the component's first update.
      *
-     * @param {Map} changedProperties - A Map of changed properties.
+     * @param {Map} changedProperties - Map of changed properties.
      */
     firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+        // Initialize the ripple effect for the chip
+        this.ripple = new MDRippleController(this, {});
     }
 
     /**
-     * Lifecycle callback when the element is updated.
+     * Called when the component is updated.
      *
-     * @param {Map} changedProperties - A Map of changed properties.
+     * @param {Map} changedProperties - Map of changed properties.
      */
     updated(changedProperties) {
-        super.updated(changedProperties);
-
-        if (changedProperties.has("open")) {
-            if (this.open) {
-                this.createDialogScrim();
-            } else {
-                this.removeDialogScrim();
-            }
-        }
+        // Additional logic if needed
     }
 
     /**
-     * Creates the dialog scrim.
+     * Render method for the component.
      *
-     * @private
+     * @returns {TemplateResult} Rendered template result.
      */
-    createDialogScrim() {
-        if (!this.dialogScrim) {
-            this.dialogScrim = document.createElement("md-dialog-scrim");
-            this.handleDialogScrimClick = this.handleDialogScrimClick.bind(this);
-            this.dialogScrim.addEventListener("click", this.handleDialogScrimClick);
-            document.body.append(this.dialogScrim);
-        }
-    }
-
-    /**
-     * Removes the dialog scrim.
-     *
-     * @private
-     */
-    removeDialogScrim() {
-        if (this.dialogScrim) {
-            this.dialogScrim.removeEventListener("click", this.handleDialogScrimClick);
-            this.dialogScrim.remove();
-            this.dialogScrim = null;
-        }
-    }
-
-    /**
-     * Shows the dialog.
-     */
-    show() {
-        this.open = true;
-    }
-
-    /**
-     * Closes the dialog.
-     */
-    close() {
-        this.open = false;
-    }
-
-    /**
-     * Toggles the dialog's visibility.
-     */
-    toggle() {
-        if (this.open) {
-            this.close();
-        } else {
-            this.show();
-        }
-    }
-
-    /**
-     * Handles the click event on the dialog scrim.
-     *
-     * @param {Event} event - The click event.
-     * @fires MDDialogComponent#onDialogScrimClick
-     * @private
-     */
-    handleDialogScrimClick(event) {
-        this.close();
-
-        this.emit("onDialogScrimClick", { event });
+    render() {
+        // prettier-ignore
+        return html`
+            ${this.icon ? html`&lt;md-icon class="md-chip__icon">${this.icon}&lt;/md-icon>` : nothing}
+            ${this.avatar ? html`&lt;md-image class="md-chip__avatar" .src="${this.avatar?.src ?? this.avatar}" .ui="${this.avatar?.ui ?? 'shape'}">&lt;/md-image>` : nothing}
+            ${this.label ? html`&lt;div class="md-chip__label">${this.label}&lt;/div>` : nothing}
+            ${this.trailingIcon ? html`&lt;md-icon class="md-chip__icon">${this.trailingIcon}&lt;/md-icon>` : nothing}
+        `;
     }
 }
 
-// Define the component
-customElements.define("md-dialog", MDDialogComponent);
+// Define the custom element
+customElements.define("md-chip", MDChipComponent);
 
-export { MDDialogComponent };
+// Export the component
+export { MDChipComponent };
 </code></pre>
         </article>
     </section>
