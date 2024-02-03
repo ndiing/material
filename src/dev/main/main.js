@@ -3,7 +3,7 @@ import { MDComponent } from "../../material/base/component";
 const items=[
     { icon:'done_all', label: "badge", routerLink: "/badge", },
     { icon:'done_all', label: "bottom-app-bar", routerLink: "/bottom-app-bar", },
-    { icon:'done_all', label: "bottom-sheet", routerLink: "/bottom-sheet", },
+    { icon:'done', label: "bottom-sheet", routerLink: "/bottom-sheet", },
     { icon:'done_all', label: "button", routerLink: "/button", },
     { icon:'done_all', label: "card", routerLink: "/card", },
     { icon:'done', label: "carousel", routerLink: "/carousel", },
