@@ -1,0 +1,14 @@
+.md-date-picker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-date-picker__icon {
+    @extend .md-icon;
+}
+
+.md-date-picker__label {
+    @extend .md-typography--label-large;
+}

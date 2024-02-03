@@ -1,10 +1,4 @@
 .md-checkbox {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    height: 24px;
-    width: 24px;
     position: relative;
 }
 
@@ -40,10 +34,10 @@
             .md-checkbox__thumb {
                 height: 5px;
                 width: 10px;
+                border-bottom: 2px solid var(--md-sys-color-on-primary);
+                border-left: 2px solid var(--md-sys-color-on-primary);
                 transform: rotate(-45deg);
                 margin-top: -2px;
-                border-left: 2px solid var(--md-sys-color-on-primary);
-                border-bottom: 2px solid var(--md-sys-color-on-primary);
             }
         }
     }

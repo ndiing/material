@@ -1,0 +1,14 @@
+.md-text-field {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-text-field__icon {
+    @extend .md-icon;
+}
+
+.md-text-field__label {
+    @extend .md-typography--label-large;
+}

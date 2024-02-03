@@ -1,0 +1,14 @@
+.md-time-picker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-time-picker__icon {
+    @extend .md-icon;
+}
+
+.md-time-picker__label {
+    @extend .md-typography--label-large;
+}

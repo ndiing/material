@@ -1,0 +1,14 @@
+.md-snackbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-snackbar__icon {
+    @extend .md-icon;
+}
+
+.md-snackbar__label {
+    @extend .md-typography--label-large;
+}

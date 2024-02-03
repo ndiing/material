@@ -1,0 +1,14 @@
+.md-bottom-sheet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-bottom-sheet__icon {
+    @extend .md-icon;
+}
+
+.md-bottom-sheet__label {
+    @extend .md-typography--label-large;
+}

@@ -1,20 +1,73 @@
 .md-dialog {
+    border-radius: 28px;
+    background: var(--md-sys-color-surface-container-high);
+    box-shadow: var(--md-sys-elevation-level1);
+
+    // .md-card__start {
+    // }
+
+    // .md-card__center {
+    // }
+
+    // .md-card__end {
+    // }
+
+    .md-card__label {
+        @extend .md-typography--title-large;
+    }
+
+    // .md-card__supporting-text {
+    // }
+}
+
+.md-dialog__header {
+    padding: 24px;
+    gap: 0 16px;
+
+    + .md-dialog__body {
+        margin-top: 0px;
+    }
+}
+
+.md-dialog__body {
+    padding: 0 24px;
+    margin: 24px 0;
+
+    + .md-dialog__footer {
+        margin-top: -24px;
+    }
+}
+
+.md-dialog__footer {
+    padding: 24px;
+}
+
+.md-dialog {
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 12;
     transform: scale(1) translate3d(-50%, -50%, 0);
     transform-origin: left top;
-    pointer-events: all;
     opacity: 1;
-    transition-property: none;
+    transition-property: all;
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     transition-duration: var(--md-sys-motion-duration-short2);
 
     &:not([open]) {
-        transform: scale(0.88) translate3d(-50%, -50%, 0);
-        pointer-events: none;
+        transform: scale(.88) translate3d(-50%, -50%, 0);
         opacity: 0;
+        pointer-events: none;
     }
 }
 
+.md-dialog__scrim {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    background: var(--md-sys-color-shadow);
+    opacity: 32%;
+}

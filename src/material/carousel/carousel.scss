@@ -1,0 +1,14 @@
+.md-carousel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-carousel__icon {
+    @extend .md-icon;
+}
+
+.md-carousel__label {
+    @extend .md-typography--label-large;
+}

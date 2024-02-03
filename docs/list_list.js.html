@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: list/list.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: list/list.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../base/component";
+
+/**
+ * Material Design List Component.
+ * @extends MDComponent
+ */
+class MDListComponent extends MDComponent {
+    /**
+     * Properties for the MDListComponent.
+     * @property {String} size - Size of the list items ("one-line", "two-line", "three-line").
+     * @property {Array} items - Array of items to be rendered in the list.
+     * @property {String} type - Type of list selection ("single-select" or "multi-select").
+     * @property {Boolean} selectable - Flag indicating if list items are selectable.
+     */
+    static properties = {
+        size: { type: String },
+        items: { type: Array },
+        type: { type: String },
+        selectable: { type: Boolean },
+    };
+
+    /**
+     * Constructor for MDListComponent.
+     */
+    constructor() {
+        super();
+
+        // default
+        this.size = "one-line";
+        this.items = [];
+        this.type = "single-select";
+    }
+
+    /**
+     * Callback when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-list");
+    }
+
+    /**
+     * Callback when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-list");
+    }
+
+    /**
+     * Callback when the element is updated.
+     * @param {Map} changedProperties - Map of changed properties.
+     */
+    updated(changedProperties) {
+        if (changedProperties.has("size")) {
+            ["one-line", "two-line", "three-line"].forEach((size) => {
+                this.classList.remove(`md-list--${size}`);
+            });
+            if (this.size) {
+                this.size.split(" ").forEach((size) => {
+                    this.classList.add(`md-list--${size}`);
+                });
+            }
+        }
+    }
+
+    /**
+     * Render method for MDListComponent.
+     * @returns {TemplateResult} - The rendered HTML template.
+     */
+    render() {
+        // prettier-ignore
+        return this.items.map(
+            (item) => html`
+                &lt;md-list-row>
+                    ${item.headline ? html`&lt;div class="md-list__headline">${item.headline}&lt;/div>` : nothing}
+                    ${!item.divider &amp;&amp; !item.headline ? html`
+                        &lt;md-list-item 
+                            .item="${item}" 
+                            .avatar="${item.avatar}" 
+                            .image="${item.image}" 
+                            .video="${item.video}" 
+                            .icon="${item.icon}" 
+                            .label="${item.label}" 
+                            .supportingText="${item.supportingText}" 
+                            .checkbox="${item.checkbox}" 
+                            .radioButton="${item.radioButton}" 
+                            .trailingSwitch="${item.trailingSwitch}" 
+                            .trailingCheckbox="${item.trailingCheckbox}" 
+                            .trailingSupportingText="${item.trailingSupportingText}" 
+                            .trailingIcon="${item.trailingIcon}" 
+                            .badge="${item.badge}" 
+                            .activated="${item.activated}" 
+                            .routerLink="${item.routerLink}" 
+                            @click="${this.handleListItemClick}"
+                        >&lt;/md-list-item>
+                    ` : nothing}
+                    ${item.divider ? html`&lt;md-divider class="md-list__divider">&lt;/md-divider>` : nothing}
+                &lt;/md-list-row>
+            `
+        );
+    }
+
+    /**
+     * Event handler for list item click.
+     * @param {Event} event - The click event.
+     * @fires MDListComponent#onListItemClick
+     */
+    handleListItemClick(event) {
+        const listItem = event.currentTarget;
+        const listItemData = listItem.item;
+
+        if (this.selectable) {
+            if (this.type === "single-select") {
+                for (const item of this.items) {
+                    item.activated = item === listItemData;
+                }
+            } else if (this.type === "multi-select") {
+                listItemData.activated = !listItemData.activated;
+            }
+
+            this.requestUpdate();
+        }
+
+        this.emit("onListItemClick", { event });
+    }
+}
+
+// Define the custom element.
+customElements.define("md-list", MDListComponent);
+
+// Export the component.
+export { MDListComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDBottomAppBarComponent.html">MDBottomAppBarComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCardBodyComponent.html">MDCardBodyComponent</a></li><li><a href="MDCardComponent.html">MDCardComponent</a></li><li><a href="MDCardFooterComponent.html">MDCardFooterComponent</a></li><li><a href="MDCardHeaderComponent.html">MDCardHeaderComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDDialogBodyComponent.html">MDDialogBodyComponent</a></li><li><a href="MDDialogComponent.html">MDDialogComponent</a></li><li><a href="MDDialogFooterComponent.html">MDDialogFooterComponent</a></li><li><a href="MDDialogHeaderComponent.html">MDDialogHeaderComponent</a></li><li><a href="MDDialogScrimComponent.html">MDDialogScrimComponent</a></li><li><a href="MDDividerComponent.html">MDDividerComponent</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDListRowComponent.html">MDListRowComponent</a></li><li><a href="MDMenuComponent.html">MDMenuComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSheetBodyComponent.html">MDSheetBodyComponent</a></li><li><a href="MDSheetComponent.html">MDSheetComponent</a></li><li><a href="MDSheetFooterComponent.html">MDSheetFooterComponent</a></li><li><a href="MDSheetHeaderComponent.html">MDSheetHeaderComponent</a></li><li><a href="MDSheetScrimComponent.html">MDSheetScrimComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTopAppBarComponent.html">MDTopAppBarComponent</a></li></ul><h3>Events</h3><ul><li><a href="MDRadioButtonComponent.html#event:onRadioButtonNativeInput">onRadioButtonNativeInput</a></li><li><a href="MDSwitchComponent.html#event:onSwitchNativeInput">onSwitchNativeInput</a></li></ul><h3>Global</h3><ul><li><a href="global.html#notNull">notNull</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Feb 03 2024 20:11:50 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

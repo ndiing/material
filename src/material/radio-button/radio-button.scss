@@ -1,10 +1,4 @@
 .md-radio-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    height: 24px;
-    width: 24px;
     position: relative;
 }
 
@@ -25,7 +19,7 @@
 
             .md-radio-button__thumb {
                 height: 10px;
-                border-radius: 50%;
+                border-radius: 5px;
                 width: 10px;
                 background: var(--md-sys-color-primary);
             }

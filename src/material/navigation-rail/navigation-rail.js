@@ -1,85 +1,70 @@
 import { html } from "lit";
 import { MDComponent } from "../base/component";
 import { MDListComponent } from "../list/list";
-import { MDPanelComponent } from "../panel/panel";
 
-class MDNavigationRailComponent extends MDPanelComponent {
-    static properties = Object.assign(MDPanelComponent.properties, MDListComponent.properties, {});
+/**
+ * Material Design Navigation Rail Component.
+ * @extends MDListComponent
+ */
+class MDNavigationRailComponent extends MDComponent {
+    /**
+     * Properties for the MDNavigationRailComponent.
+     * Inherits properties from MDListComponent.
+     * @property {Array} items - Array of items to be rendered in the navigation rail.
+     */
+    static properties = {
+        ...MDListComponent.properties,
+        items: { type: Array },
+    };
 
+    /**
+     * Constructor for MDNavigationRailComponent.
+     */
     constructor() {
         super();
 
         // default
+        this.items = [];
     }
 
+    /**
+     * Callback when the element is connected to the DOM.
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-navigation-rail");
     }
 
+    /**
+     * Callback when the element is disconnected from the DOM.
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.classList.remove("md-navigation-rail");
     }
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
-    }
-
-    updated(changedProperties) {
-        super.updated(changedProperties);
-    }
-
+    /**
+     * Render method for MDNavigationRailComponent.
+     * @returns {TemplateResult} - The rendered HTML template.
+     */
     render() {
         // prettier-ignore
         return html`
-            <md-panel-body>
-                <md-list 
-                    .items="${this.items}"
-                    .ui="${this.ui}"
-                    .type="${this.type ?? 'single-select'}"
-                    .selectable="${this.selectable ?? true}"
-                    class="md-navigation-rail__list"
-                    @onListItemContainerClick="${this.handleListItemContainerClick}"
-                ></md-list>
-            </md-panel-body>
+            <md-list
+                class="md-navigation-rail__list"
+                .size="${this.size}"
+                .items="${this.items}"
+                .type="${this.type ?? 'single-select'}"
+                .selectable="${this.selectable ?? true}"
+            ></md-list>
         `;
-    }
-
-    handleListItemContainerClick(event) {
-        this.activatedListItemContainer = event.detail.listItemContainer;
-
-        if (!this.activatedListItemContainer) {
-            return;
-        }
-
-        this.handleListIconAnimationend = this.handleListIconAnimationend.bind(this);
-        this.activatedListItemContainer.addEventListener("animationend", this.handleListIconAnimationend);
-
-        this.activatedListIcon = this.activatedListItemContainer.querySelector(".md-list__icon");
-        if (!this.activatedListIcon) {
-            return;
-        }
-        this.activatedListIcon.style.setProperty("animation-name", "md-navigation-bar-list-item-container-activated");
-    }
-
-    handleListIconAnimationend() {
-        if (!this.activatedListIcon) {
-            return;
-        }
-        this.activatedListIcon.style.removeProperty("animation-name");
-        this.activatedListIcon = null;
-
-        if (!this.activatedListItemContainer) {
-            return;
-        }
-        this.activatedListItemContainer.removeEventListener("animationend", this.handleListIconAnimationend);
-        this.activatedListItemContainer = null;
     }
 }
 
+// Define the custom element.
 customElements.define("md-navigation-rail", MDNavigationRailComponent);
 
+// Export the component.
 export { MDNavigationRailComponent };

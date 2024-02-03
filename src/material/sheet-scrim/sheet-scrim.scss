@@ -1,0 +1,14 @@
+.md-sheet-scrim {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-sheet-scrim__icon {
+    @extend .md-icon;
+}
+
+.md-sheet-scrim__label {
+    @extend .md-typography--label-large;
+}

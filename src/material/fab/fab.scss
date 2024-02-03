@@ -11,18 +11,6 @@
     background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     box-shadow: var(--md-sys-elevation-level1);
-    position: relative;
-}
-
-.md-fab__native {
-    appearance: none;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: transparent;
-    color: transparent;
 }
 
 .md-fab__icon {
@@ -55,6 +43,7 @@
     height: 56px;
     border-radius: 16px;
     width: auto;
+    // min-width: 80px;
     padding: 0 16px;
 
     .md-fab__icon {
@@ -62,6 +51,6 @@
     }
 }
 
-.md-fab--unelevated {
+.md-fab--unelevated{
     box-shadow: none;
 }

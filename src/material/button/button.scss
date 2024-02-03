@@ -5,6 +5,7 @@
     vertical-align: middle;
     height: 40px;
     border-radius: 20px;
+    // min-width: 48px;
     padding: 0 12px;
     gap: 0 8px;
     color: var(--md-sys-color-primary);
@@ -35,7 +36,6 @@
     @extend .md-typography--label-large;
 }
 
-
 .md-button--elevated,
 .md-button--filled,
 .md-button--filled-tonal,
@@ -52,7 +52,7 @@
 }
 
 .md-button--elevated {
-    background: var(--md-sys-color-surface);
+    background: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
 }
@@ -62,6 +62,7 @@
     color: var(--md-sys-color-on-primary);
 }
 
+.md-button[activated],
 .md-button--filled-tonal {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);

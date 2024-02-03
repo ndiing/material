@@ -5,57 +5,43 @@ class NavigationDrawerComponent extends MDComponent {
     render() {
         // prettier-ignore
         return html`
-            <div class="md-layout__grid">
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-navigation-drawer .items="${[
-                        {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
-                        {leadingIcon:'image',label:"Label"},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label",},
-                        {divider:true},
-                        {headline:'Label'},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label"},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label",},
-                    ]}"></md-navigation-drawer>
+            <div class="md-layout md-layout--grid">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-navigation-drawer
+                        .items="${[
+                            {icon:'image',label:'Label',trailingSupportingText:'24', activated:true},
+                            {icon:'image',label:'Label'},
+                            {icon:'image',label:'Label'},
+                            {icon:'image',label:'Label'},
+                            {divider:true,},
+                            {headline:'Label',},
+                            {label:'Label',},
+                            {label:'Label',},
+                            {label:'Label',},
+                            {label:'Label',},
+                        ]}"
+                    ></md-navigation-drawer>
                 </div>
-
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-navigation-drawer .items="${[
-                        {headline:'Label'},
-                        {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
-                        {leadingIcon:'image',label:"Label"},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label",},
-                        {divider:true},
-                        {headline:'Label'},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label"},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label",},
-                    ]}"></md-navigation-drawer>
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-navigation-drawer
+                        .items="${[
+                            {headline:'Label',},
+                            {icon:'image',label:'Label',trailingSupportingText:'24', activated:true},
+                            {icon:'image',label:'Label'},
+                            {icon:'image',label:'Label'},
+                            {icon:'image',label:'Label'},
+                            {divider:true,},
+                            {headline:'Label',},
+                            {label:'Label',},
+                            {label:'Label',},
+                            {label:'Label',},
+                            {label:'Label',},
+                        ]}"
+                    ></md-navigation-drawer>
                 </div>
-                <!-- <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-navigation-drawer style="width:360px;" id="drawer" ui="drawer" position="left" .items="${[
-                        {headline:'Label'},
-                        {leadingIcon:'image',label:"Label",activated:true,trailingSupportingText:'24'},
-                        {leadingIcon:'image',label:"Label"},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label",},
-                        {divider:true},
-                        {headline:'Label'},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label"},
-                        {leadingIcon:'image',label:"Label",},
-                        {leadingIcon:'image',label:"Label",},
-                    ]}"></md-navigation-drawer>
-                    <md-button ui="filled-tonal" label="drawer modal" @click="${() => {drawer.modal=true;drawer.toggle()}}"></md-button>
-                    <md-button ui="filled-tonal" label="drawer" @click="${() => {drawer.modal=false;drawer.toggle()}}"></md-button>
-                </div> -->
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
             </div>
         `;

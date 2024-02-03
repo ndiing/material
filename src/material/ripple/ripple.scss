@@ -3,16 +3,17 @@
         width: 0;
     }
 }
+@keyframes md-ripple-fadeout-animation {
+    from {
+        opacity: 10%;
+    }
+}
 
 .md-ripple {
     position: relative;
 }
 
-.md-ripple--containment {
-    overflow: hidden;
-}
-
-.md-ripple--button {
+.md-ripple__button {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -29,9 +30,16 @@
     background: var(--md-sys-color-on-surface);
     opacity: 0;
     pointer-events: none;
-    animation-name: none;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short4);
+    // animation-name: md-ripple-animation;
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short4);
+}
+
+.md-ripple--containment {
+    overflow: hidden;
 }
 
 .md-ripple--inverted {
@@ -40,12 +48,12 @@
     }
 }
 
-[activated],
-.md-ripple[activated],
-.md-ripple--activated {
+[activated] {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-
+    > .md-ripple__layer {
+        opacity: 0%;
+    }
 }
 
 .md-ripple--focused {
@@ -62,7 +70,10 @@
 
 .md-ripple--fadeout {
     > .md-ripple__layer {
-        opacity: 0;
+        opacity: 0%;
+        // animation-name: md-ripple-animation, md-ripple-fadeout-animation;
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate)), cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+        animation-duration: var(--md-sys-motion-duration-short4), var(--md-sys-motion-duration-long4);
     }
 }
 
@@ -72,13 +83,9 @@
     }
 }
 
-// disabled
-[disabled],
-.md-ripple[disabled],
-.md-ripple--disabled {
+[disabled] {
     opacity: 38%;
     pointer-events: none;
-
     > .md-ripple__layer {
         opacity: 0%;
     }

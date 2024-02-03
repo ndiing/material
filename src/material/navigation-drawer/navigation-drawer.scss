@@ -1,29 +1,22 @@
 .md-navigation-drawer {
-    .md-panel__body {
-        padding: 0;
-        margin: 0;
-    }
 }
 
 .md-navigation-drawer__list {
-    padding: 0;
-
-    .md-list__item {
+    padding-top: 0;
+    padding-bottom: 0;
+    .md-list__row{
         padding: 0 12px;
     }
-
-    .md-list__container {
+    .md-list__item{
         border-radius: 28px;
-        gap: 0 12px;
+        column-gap: 12px;
     }
-
-    .md-list__end {
+    .md-list__label {
+        @extend .md-typography--label-large;
+    }
+    .md-list__end{
         .md-list__supporting-text {
             @extend .md-typography--label-large;
         }
-    }
-
-    .md-list__label {
-        @extend .md-typography--label-large;
     }
 }

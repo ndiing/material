@@ -1,10 +1,4 @@
 .md-switch {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    height: 32px;
-    width: 52px;
     position: relative;
 }
 
@@ -28,12 +22,8 @@
                 height: 24px;
                 border-radius: 12px;
                 width: 24px;
-                left: 22px;
                 background: var(--md-sys-color-on-primary);
-
-                > .md-ripple__layer {
-                    width: 40px !important;
-                }
+                left: 22px;
             }
         }
 
@@ -41,10 +31,6 @@
             + .md-switch__track {
                 .md-switch__thumb {
                     left: 20px;
-
-                    > .md-ripple__layer {
-                        width: 40px !important;
-                    }
                 }
             }
         }
@@ -57,10 +43,6 @@
                 border-radius: 14px;
                 width: 28px;
                 left: 0px;
-
-                > .md-ripple__layer {
-                    width: 40px !important;
-                }
             }
         }
     }
@@ -96,7 +78,7 @@
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     transition-duration: var(--md-sys-motion-duration-short2);
 
-    > .md-ripple__layer {
+    .md-ripple__layer{
         width: 40px !important;
     }
 }

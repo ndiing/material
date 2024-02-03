@@ -5,22 +5,30 @@ class SegmentedButtonComponent extends MDComponent {
     render() {
         // prettier-ignore
         return html`
-            <div class="md-layout__grid">
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-segmented-button type="single-select" .items="${[
-                        { label:"Label 1", activated:true },
-                        { label:"Label 2" },
-                        { label:"Label 3" },
-                    ]}"></md-segmented-button>
+            <div class="md-layout md-layout--grid">
+                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-segmented-button
+                        .type="${'single-select'}"
+                        .items="${[
+                            {label:'Label',activated:true},
+                            {label:'Label'},
+                            {label:'Label'},
+                        ]}"
+                    ></md-segmented-button>
                 </div>
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                    <md-segmented-button type="multi-select" .items="${[
-                        { label:"Label 1", activated:true },
-                        { label:"Label 2", activated:true },
-                        { label:"Label 3" },
-                    ]}"></md-segmented-button>
+                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-segmented-button
+                        .type="${'multi-select'}"
+                        .items="${[
+                            {label:'Label',activated:true},
+                            {label:'Label',activated:true},
+                            {label:'Label'},
+                        ]}"
+                    ></md-segmented-button>
                 </div>
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
+                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                </div>
+                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
             </div>
         `;

@@ -1,14 +1,10 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
-import { MDRippleController } from "../ripple/ripple";
 
 class MDChipComponent extends MDComponent {
     static properties = {
-        leadingIcon: { type: String },
-        avatar: { type: String },
-        trailingIcon: { type: String },
+        icon: { type: String },
         label: { type: String },
-        activated: { type: Boolean, reflect: true },
     };
 
     constructor() {
@@ -30,21 +26,15 @@ class MDChipComponent extends MDComponent {
         this.classList.remove("md-chip");
     }
 
-    firstUpdated(changedProperties) {
-        this.ripple = new MDRippleController(this, {});
-    }
+    firstUpdated(changedProperties) {}
 
-    updated(changedProperties) {
-        // Implement logic if needed
-    }
+    updated(changedProperties) {}
 
     render() {
         // prettier-ignore
         return html`
-            ${this.leadingIcon ? html`<md-icon class="md-chip__icon">${this.leadingIcon}</md-icon>` : nothing}
-            ${this.avatar ? html`<md-image class="md-chip__image" .src="${this.avatar}"></md-image>` : nothing}
-            ${this.label ? html`<div class="md-chip__label">${this.label}</div>` : nothing}
-            ${this.trailingIcon ? html`<md-icon class="md-chip__icon">${this.trailingIcon}</md-icon>` : nothing}
+            ${this.icon?html`<div class="md-chip__icon">${this.icon}</div>`:nothing}
+            ${this.label?html`<div class="md-chip__label">${this.label}</div>`:nothing}
         `;
     }
 }

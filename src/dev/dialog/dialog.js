@@ -5,31 +5,26 @@ class DialogComponent extends MDComponent {
     render() {
         // prettier-ignore
         return html`
-            <div class="md-layout__grid">
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
+            <div class="md-layout md-layout--grid">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-dialog id="dialog">
-                        <md-panel-header
-                            label="Basic dialog title"
+                        <md-dialog-header
+                            label="Label"
                             supportingText="Supporting text"
-                            leadingIcon="arrow_back"
-                            trailingIcon="close"
-                            @onPanelIconClick="${() => dialog.toggle()}"
-                        ></md-panel-header>
-                        <md-panel-body>
-                            A dialog is a type of modal window that<br>
-                            appears in front of app content to provide<br>
-                            critical information, or ask for decision.<br>
-                        </md-panel-body>
-                        <md-panel-footer>
-                            <md-button label="Enabled" @click="${() => dialog.toggle()}"></md-button>
-                            <md-button label="Enabled" @click="${() => dialog.toggle()}"></md-button>
-                        </md-panel-footer>
+                        ></md-dialog-header>
+                        <md-dialog-body>
+                            Lorem, ipsum dolor.<br>
+                            Aperiam, laudantium. Autem.<br>
+                            Quae, eveniet veniam!<br>
+                        </md-dialog-body>
+                        <md-dialog-footer>
+                            <md-button ui="filled" label="Label" @click="${() => dialog.toggle()}"></md-button>
+                        </md-dialog-footer>
                     </md-dialog>
-                    <md-button ui="filled-tonal" label="dialog" @click="${() => dialog.toggle()}"></md-button>
+                    <md-button ui="filled-tonal" label="Dialog" @click="${() => dialog.toggle()}"></md-button>
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
-                </div>
-                <div class="md-layout__grid-item md-layout__grid-item--expanded4 md-layout__grid-item--medium4 md-layout__grid-item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
             </div>
         `;

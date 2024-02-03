@@ -4,27 +4,16 @@
     justify-content: center;
     vertical-align: middle;
 
-    &.md-icon-button--toggle {
-        &[activated] {
-            background: inherit;
-            color: inherit;
+    &[toggle] {
+        background: inherit;
+        color: inherit;
 
-            // .md-icon-button__icon{
-            //     color: inherit;
-            // }
+        &[activated] {
+            .md-icon-button__icon {
+                color: var(--md-sys-color-primary);
+            }
         }
     }
-}
-
-.md-icon-button__native {
-    appearance: none;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: transparent;
-    color: transparent;
 }
 
 .md-icon-button__icon {
@@ -37,23 +26,30 @@
     height: 40px;
     border-radius: 20px;
     width: 40px;
+
+    &[toggle] {
+        background: inherit;
+        color: inherit;
+
+        &[activated] {
+            .md-icon-button__icon {
+                color: inherit;
+            }
+        }
+    }
 }
 
 .md-icon-button--filled {
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
 
-    &.md-icon-button--toggle {
+    &[toggle] {
         background: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-primary);
 
         &[activated] {
             background: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
-
-            .md-icon-button__icon {
-                color: var(--md-sys-color-on-primary);
-            }
         }
     }
 }
@@ -62,17 +58,13 @@
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 
-    &.md-icon-button--toggle {
+    &[toggle] {
         background: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-on-surface-variant);
 
         &[activated] {
             background: var(--md-sys-color-secondary-container);
             color: var(--md-sys-color-on-secondary-container);
-
-            .md-icon-button__icon {
-                color: var(--md-sys-color-on-secondary-container);
-            }
         }
     }
 }
@@ -81,18 +73,14 @@
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 
-    &.md-icon-button--toggle {
-        color: var(--md-sys-color-on-surface-variant);
+    &[toggle] {
         border: 1px solid var(--md-sys-color-outline);
+        color: var(--md-sys-color-on-surface-variant);
 
         &[activated] {
             background: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);
             border: 1px solid var(--md-sys-color-inverse-surface);
-
-            .md-icon-button__icon {
-                color: var(--md-sys-color-inverse-on-surface);
-            }
         }
     }
 }
