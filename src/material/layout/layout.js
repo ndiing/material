@@ -66,9 +66,3 @@ class MDLayoutComponent extends MDComponent {
 customElements.define("md-layout", MDLayoutComponent);
 
 export { MDLayoutComponent };
-
-var data=[
-    {name:'expanded', query:'(min-width: 840px)'},
-    {name:'medium', query:'(min-width: 601px) and (max-width: 839px)'},
-    {name:'compact', query:'(max-width: 600px)'},
-]

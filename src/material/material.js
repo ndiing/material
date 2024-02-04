@@ -1,4 +1,5 @@
 import { MDRouter } from "./router/router.js";
+import { MDBreakpoint } from "./breakpoint/breakpoint.js";
 import { MDRippleController } from "./ripple/ripple.js";
 import { MDLayoutComponent } from "./layout/layout.js";
 import { MDIconComponent } from "./icon/icon.js";
