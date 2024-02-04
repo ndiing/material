@@ -12,6 +12,17 @@ class MDTextFieldComponent extends MDComponent {
      * Properties of the component.
      *
      * @type {Object}
+     * @property {String} icon - The icon for the text field.
+     * @property {String} trailingIcon - The trailing icon for the text field.
+     * @property {String} label - The label for the text field.
+     * @property {String} name - The name attribute for the text field.
+     * @property {String} value - The current value of the text field.
+     * @property {String} defaultValue - The default value of the text field.
+     * @property {Boolean} required - Indicates if the text field is required.
+     * @property {String} type - The type of the text field (e.g., "text", "number").
+     * @property {String} validationMessage - The validation message for the text field.
+     * @property {String} supportingText - The supporting text for the text field.
+     * @property {String} ui - The user interface style for the text field.
      */
     static properties = {
         icon: { type: String },
@@ -21,6 +32,7 @@ class MDTextFieldComponent extends MDComponent {
         value: { type: String },
         defaultValue: { type: String },
         required: { type: Boolean },
+        type: { type: String },
         validationMessage: { type: String },
         supportingText: { type: String },
         ui: { type: String },
@@ -50,7 +62,7 @@ class MDTextFieldComponent extends MDComponent {
      * @returns {Boolean} - True if there is an end element; otherwise, false.
      */
     get hasTextfieldEnd() {
-        return this.trailingIcon;
+        return this.trailingIcon || this.type === "datetime-local" || this.type === "month" || this.type === "time" || this.type === "week" || this.type === "number";
     }
 
     /**
@@ -78,7 +90,7 @@ class MDTextFieldComponent extends MDComponent {
         super();
 
         // default
-        // this.label = "Label";
+        this.type = "text";
     }
 
     /**
@@ -160,7 +172,7 @@ class MDTextFieldComponent extends MDComponent {
         // prettier-ignore
         return html`
             ${this.label ? html`<div class="md-text-field__label">${this.label}</div>` : nothing}
-            <label class="md-text-field__container">
+            <div class="md-text-field__container">
                 ${this.hasTextfieldStart ? html`
                     <div class="md-text-field__start">
                         ${this.icon ? html`<md-icon class="md-text-field__icon">${this.icon}</md-icon>` : nothing}
@@ -169,12 +181,13 @@ class MDTextFieldComponent extends MDComponent {
                 ${this.hasTextfieldCenter ? html`
                     <div class="md-text-field__center">
                         <input 
-                            type="text" 
                             class="md-text-field__native"
                             .name="${ifDefined(this.name)}"
                             .value="${ifDefined(this.value)}"
                             .defaultValue="${ifDefined(this.defaultValue)}"
                             .required="${ifDefined(this.required)}"
+                            .type="${ifDefined(this.type)}"
+                            .autocomplete="${ifDefined(this.autocomplete??'off')}"
                             @input="${this.handleTextFieldNativeInput}"
                             @invalid="${this.handleTextFieldNativeInvalid}"
                             @focus="${this.handleTextFieldNativeFocus}"
@@ -186,9 +199,19 @@ class MDTextFieldComponent extends MDComponent {
                 ${this.hasTextfieldEnd ? html`
                     <div class="md-text-field__end">
                         ${this.trailingIcon ? html`<md-icon class="md-text-field__icon">${this.trailingIcon}</md-icon>` : nothing}
+                        ${this.type==='datetime-local' ? html`<md-icon-button class="md-text-field__icon" @click="${this.showPicker}" .icon="${'calendar_today'}"></md-icon-button>` : nothing}
+                        ${this.type==='month' ? html`<md-icon-button class="md-text-field__icon" @click="${this.showPicker}" .icon="${'calendar_today'}"></md-icon-button>` : nothing}
+                        ${this.type==='time' ? html`<md-icon-button class="md-text-field__icon" @click="${this.showPicker}" .icon="${'schedule'}"></md-icon-button>` : nothing}
+                        ${this.type==='week' ? html`<md-icon-button class="md-text-field__icon" @click="${this.showPicker}" .icon="${'calendar_today'}"></md-icon-button>` : nothing}
+                        ${this.type==='number' ? html`
+                            <div class="md-text-field__icons">
+                                <md-icon-button class="md-text-field__icon" @click="${this.stepUp}" .icon="${'arrow_drop_up'}"></md-icon-button>
+                                <md-icon-button class="md-text-field__icon" @click="${this.stepDown}" .icon="${'arrow_drop_down'}"></md-icon-button>
+                            </div>
+                        ` : nothing}
                     </div>
                 ` : nothing}
-            </label>
+            </div>
             ${this.hasTextfieldSupportingText ? html`<div class="md-text-field__supporting-text">${this.validationMessage ?? this.supportingText}</div>` : nothing}
         `;
     }
@@ -227,6 +250,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeFocus(event) {
         // Add the 'md-text-field--focused' class and emit the custom event
         this.classList.add("md-text-field--focused");
+        // this.showPicker()
         this.emit("onTextFieldNativeFocus", { event });
     }
 
@@ -253,6 +277,36 @@ class MDTextFieldComponent extends MDComponent {
         this.value = this.defaultValue;
         this.validationMessage = null;
         this.emit("onTextFieldNativeReset", { event });
+    }
+
+    // checkValidity(){this.textFieldNative.checkValidity()}
+    // reportValidity(){this.textFieldNative.reportValidity()}
+    // select(){this.textFieldNative.select()}
+    // setCustomValidity(){this.textFieldNative.setCustomValidity()}
+    // setRangeText(){this.textFieldNative.setRangeText()}
+    // setSelectionRange(){this.textFieldNative.setSelectionRange()}
+
+    /**
+     * Show the picker associated with the text field.
+     */
+    showPicker() {
+        this.textFieldNative.showPicker();
+    }
+
+    /**
+     * Step down the value of the text field.
+     */
+    stepDown() {
+        this.textFieldNative.stepDown();
+        this.value = this.textFieldNative.value;
+    }
+
+    /**
+     * Step up the value of the text field.
+     */
+    stepUp() {
+        this.textFieldNative.stepUp();
+        this.value = this.textFieldNative.value;
     }
 }
 

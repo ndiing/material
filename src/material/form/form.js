@@ -122,6 +122,7 @@ class MDFormComponent extends MDComponent {
      * @fires MDFormComponent#onFormNativeFormdata
      */
     handleFormNativeFormdata(event) {
+        console.log(event.formData)
         this.emit("onFormNativeFormdata", { event });
     }
 

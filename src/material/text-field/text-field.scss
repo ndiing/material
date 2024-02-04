@@ -26,8 +26,7 @@
     display: flex;
     align-items: center;
     height: 56px;
-    padding: 0 16px;
-    gap: 0 16px;
+    padding: 0;
     border-radius: 4px;
     background: var(--md-sys-color-surface-container-highest);
     transition-property: all;
@@ -36,30 +35,77 @@
 }
 
 .md-text-field__start {
-    margin-left: -4px;
+    margin-left: 12px;
 }
 
 .md-text-field__center {
     flex: 1;
+    height: 100%;
+    width: 100%;
 }
 
 .md-text-field__end {
-    margin-right: -4px;
+    margin-right: 12px;
 }
 
 .md-text-field__icon {
     height: 24px;
     width: 24px;
-    overflow: hidden;
+    // overflow: hidden;
+}
+
+.md-text-field__icons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex-direction: column;
+
+    .md-text-field__icon{
+        &:first-child{
+            margin-bottom: -6px;
+        }
+        &:last-child{
+            margin-top: -6px;
+        }
+    }
 }
 
 .md-text-field__native {
     appearance: none;
     height: 100%;
     width: 100%;
+    padding: 0 16px;
     background: inherit;
     color: inherit;
     @extend .md-typography--body-large;
+    position: relative;
+
+    // &::-webkit-datetime-edit{}
+
+    &::-webkit-datetime-edit-fields-wrapper {
+        padding: 0;
+    }
+
+    &::-webkit-datetime-edit-day-field,
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-year-field,
+    &::-webkit-datetime-edit-hour-field,
+    &::-webkit-datetime-edit-minute-field {
+        padding: 0;
+    }
+
+    &::-webkit-calendar-picker-indicator,
+    &::-webkit-inner-spin-button,
+    &::-webkit-search-cancel-button {
+        appearance: none;
+        height: 0;
+        width: 0;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        color: transparent;
+    }
 }
 
 .md-text-field--populated {
@@ -75,6 +121,7 @@
     .md-text-field__label {
         color: var(--md-sys-color-error);
     }
+
     .md-text-field__supporting-text {
         color: var(--md-sys-color-error);
     }
@@ -91,13 +138,17 @@
     .md-text-field__label {
         position: absolute;
         top: 16px;
-        left: calc(var(--md-text-field-indent) - 16px);
+        left: var(--md-text-field-indent);
         pointer-events: none;
     }
 
     &:not(.md-text-field--focused):not(.md-text-field--populated) {
         .md-text-field__label {
             @extend .md-typography--body-large;
+        }
+
+        .md-text-field__native::-webkit-datetime-edit {
+            visibility: hidden;
         }
     }
 
@@ -138,13 +189,17 @@
     .md-text-field__label {
         position: absolute;
         top: 16px;
-        left: calc(var(--md-text-field-indent) - 16px);
+        left: var(--md-text-field-indent);
         pointer-events: none;
     }
 
     &:not(.md-text-field--focused):not(.md-text-field--populated) {
         .md-text-field__label {
             @extend .md-typography--body-large;
+        }
+
+        .md-text-field__native::-webkit-datetime-edit {
+            visibility: hidden;
         }
     }
 

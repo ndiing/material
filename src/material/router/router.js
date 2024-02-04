@@ -97,6 +97,9 @@ class MDRouter {
         this.query = Object.fromEntries(new URLSearchParams(window.location.search).entries());
         this.params = {};
         const route = MDRouter.getRoute();
+
+        document.title = route.title ?? "";
+
         const routes = MDRouter.getRoutes(route);
 
         this.emit("onRouterChange");
