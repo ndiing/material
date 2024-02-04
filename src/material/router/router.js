@@ -93,7 +93,7 @@ class MDRouter {
     }
 
     static async handlePopstate(event) {
-        this.path = window.location.pathname;
+        this.path = window.location.pathname.replace(document.querySelector("base").href.replace(window.location.origin, ""), "/");
         this.query = Object.fromEntries(new URLSearchParams(window.location.search).entries());
         this.params = {};
         const route = MDRouter.getRoute();
