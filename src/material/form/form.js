@@ -33,7 +33,7 @@ class MDFormComponent extends MDComponent {
         // this.label = "Label";
 
         // Store a reference to the initial children of the form
-        this._children = Array.from(this.children);
+        this._children = Array.from(this.childNodes);
     }
 
     /**

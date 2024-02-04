@@ -1,14 +1,26 @@
 .md-snackbar {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    vertical-align: middle;
+    flex-wrap: wrap;
+    width: 340px;
+    border-radius: 4px;
+    padding: 6px 0;
+    background: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+    box-shadow: var(--md-sys-elevation-level1);
 }
 
-.md-snackbar__icon {
-    @extend .md-icon;
+.md-snackbar__body {
+    width: 72%;
+    padding: 8px 16px;
+    @extend .md-typography--body-medium;
 }
 
-.md-snackbar__label {
-    @extend .md-typography--label-large;
+.md-snackbar__footer {
+    padding: 2px 8px;
+    margin-left: auto;
+
+    .md-button {
+        height: 32px;
+    }
 }
