@@ -1,7 +1,14 @@
+// base
 @import "./base/style.scss";
+
+// modules
 @import "./router/router.scss";
 @import "./breakpoint/breakpoint.scss";
+
+// controllers
 @import "./ripple/ripple.scss";
+
+// components
 @import "./layout/layout.scss";
 @import "./icon/icon.scss";
 @import "./emoji/emoji.scss";

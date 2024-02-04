@@ -1,6 +1,11 @@
+// modules
 import { MDRouter } from "./router/router.js";
 import { MDBreakpoint } from "./breakpoint/breakpoint.js";
+
+// controllers
 import { MDRippleController } from "./ripple/ripple.js";
+
+// components
 import { MDLayoutComponent } from "./layout/layout.js";
 import { MDIconComponent } from "./icon/icon.js";
 import { MDEmojiComponent } from "./emoji/emoji.js";
