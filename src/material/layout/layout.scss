@@ -1,10 +1,59 @@
 // .md-layout{}
 
+@mixin md-layout-expanded() {
+    @media (min-width: 840px) {
+        @content;
+    }
+}
+
+@mixin md-layout-medium() {
+    @media (min-width: 601px) and (max-width: 839px) {
+        @content;
+    }
+}
+
+@mixin md-layout-compact() {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+:root {
+    --md-layout-grid-margin: 24px;
+    --md-layout-grid-columns: 24;
+    --md-layout-grid-gap: 24px;
+}
+
+@include md-layout-expanded() {
+    :root {
+        --md-layout-grid-margin: 24px;
+        --md-layout-grid-columns: 12;
+        --md-layout-grid-gap: 24px;
+    }
+}
+
+@include md-layout-medium() {
+    :root {
+        --md-layout-grid-margin: 24px;
+        --md-layout-grid-columns: 8;
+        --md-layout-grid-gap: 24px;
+    }
+}
+
+@include md-layout-compact() {
+    :root {
+        --md-layout-grid-margin: 16px;
+        --md-layout-grid-columns: 4;
+        --md-layout-grid-gap: 16px;
+    }
+}
+
 // grid
+
 .md-layout--grid {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-gap: 24px;
+    grid-template-columns: repeat(var(--md-layout-grid-columns), minmax(0, 1fr));
+    grid-gap: var(--md-layout-grid-gap);
 
     > .md-layout__item {
         grid-column-end: span 4;
@@ -16,14 +65,33 @@
         }
     }
 
-    @for $i from 1 through 12 {
-        > .md-layout__item--expanded#{$i} {
-            grid-column-end: span $i;
+    @include md-layout-expanded() {
+        @for $i from 1 through 12 {
+            > .md-layout__item--expanded#{$i} {
+                grid-column-end: span $i;
+            }
+        }
+    }
+
+    @include md-layout-medium() {
+        @for $i from 1 through 8 {
+            > .md-layout__item--medium#{$i} {
+                grid-column-end: span $i;
+            }
+        }
+    }
+
+    @include md-layout-compact() {
+        @for $i from 1 through 4 {
+            > .md-layout__item--compact#{$i} {
+                grid-column-end: span $i;
+            }
         }
     }
 }
 
 // border
+
 .md-layout--border {
     height: 100%;
     width: 100%;

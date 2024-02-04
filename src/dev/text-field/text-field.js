@@ -145,7 +145,7 @@ class TextFieldComponent extends MDComponent {
                     <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     </div>
 
-                    <div style="display: flex;align-items: center;justify-content: flex-end;gap:8px;" class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                    <div style="display: flex;align-items: center;justify-content: flex-end;gap:8px;" class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                         <md-button label="Reset" type="reset" ui=""></md-button>
                         <md-button label="Submit" type="submit" ui="filled-tonal"></md-button>
                     </div>

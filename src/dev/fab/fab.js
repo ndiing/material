@@ -6,18 +6,18 @@ class FabComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout md-layout--grid">
-                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-fab size="small" icon="image"></md-fab>
                     <md-fab size="" icon="image"></md-fab>
                     <md-fab size="large" icon="image"></md-fab>
                 </div>
-                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-fab ui="extended" icon="image" label="Label"></md-fab>
                     <md-fab ui="extended" label="Label"></md-fab>
                 </div>
-                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
-                <div class="md-layout__item md-layout__item--expanded12 md-layout__item--medium4 md-layout__item--compact4">
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
             </div>
         `;
