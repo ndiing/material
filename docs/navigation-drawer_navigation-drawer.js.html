@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: navigation-drawer/navigation-drawer.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,88 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: navigation-drawer/navigation-drawer.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html } from "lit";
+import { MDComponent } from "../base/component";
+import { MDListComponent } from "../list/list";
 
+/**
+ * Material Design Navigation Drawer Component.
+ * @extends MDListComponent
+ */
+class MDNavigationDrawerComponent extends MDComponent {
+    /**
+     * Properties for the MDNavigationDrawerComponent.
+     * Inherits properties from MDListComponent.
+     * @property {Array} items - Array of items to be rendered in the navigation drawer.
+     */
+    static properties = {
+        ...MDListComponent.properties,
+        items: { type: Array },
+    };
 
-    <h3> </h3>
+    /**
+     * Constructor for MDNavigationDrawerComponent.
+     */
+    constructor() {
+        super();
 
+        // default
+        this.items = [];
+    }
 
+    /**
+     * Callback when the element is connected to the DOM.
+     */
+    connectedCallback() {
+        super.connectedCallback();
 
+        this.classList.add("md-navigation-drawer");
+    }
 
+    /**
+     * Callback when the element is disconnected from the DOM.
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
 
+        this.classList.remove("md-navigation-drawer");
+    }
 
+    /**
+     * Render method for MDNavigationDrawerComponent.
+     * @returns {TemplateResult} - The rendered HTML template.
+     */
+    render() {
+        // prettier-ignore
+        return html`
+            &lt;md-list
+                class="md-navigation-drawer__list"
+                .size="${this.size}"
+                .items="${this.items}"
+                .type="${this.type ?? 'single-select'}"
+                .selectable="${this.selectable ?? true}"
+            >&lt;/md-list>
+        `;
+    }
+}
 
+// Define the custom element.
+customElements.define("md-navigation-drawer", MDNavigationDrawerComponent);
 
-
-
-    
-
-
-
-
-
+// Export the component.
+export { MDNavigationDrawerComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

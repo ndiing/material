@@ -1,6 +1,12 @@
 # Material Project
 
+![Material Project Logo](path/to/logo.png)
+
 Welcome to the Material project, an enriching resource crafted to elevate your web development experience. This repository offers a carefully curated collection of materials, providing a solid foundation to enhance the quality of your projects.
+
+## Demo
+
+Explore a live demo of the Material project [here](https://ndiing.github.io/material/dist).
 
 ## Getting Started
 
