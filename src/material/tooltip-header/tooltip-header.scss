@@ -1,0 +1,14 @@
+.md-tooltip-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-tooltip-header__icon {
+    @extend .md-icon;
+}
+
+.md-tooltip-header__label {
+    @extend .md-typography--label-large;
+}

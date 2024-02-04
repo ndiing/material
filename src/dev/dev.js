@@ -1,8 +1,6 @@
-import ErrorComponent from "./error/error.js";
-import MainComponent from "./main/main.js";
-
-// Usage example
 import { MDRouter } from "../material/router/router";
+import MainComponent from "./main/main.js";
+import ErrorComponent from "./error/error.js";
 // prettier-ignore
 MDRouter.register([
     {

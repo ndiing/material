@@ -34,7 +34,7 @@ const items=[
     { icon:'done', label: "tab", routerLink: "/tab", },
     { icon:'done_all', label: "text-field", routerLink: "/text-field", },
     { icon:'done', label: "time-picker", routerLink: "/time-picker", },
-    { icon:'done', label: "tooltip", routerLink: "/tooltip", },
+    { icon:'done_all', label: "tooltip", routerLink: "/tooltip", },
     { icon:'done_all', label: "top-app-bar", routerLink: "/top-app-bar", },
 ]
 

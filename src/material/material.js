@@ -54,4 +54,7 @@ import "./tab/tab.js";
 import "./form/form.js";
 import "./text-field/text-field.js";
 import "./time-picker/time-picker.js";
+import "./tooltip-header/tooltip-header.js";
+import "./tooltip-body/tooltip-body.js";
+import "./tooltip-footer/tooltip-footer.js";
 import "./tooltip/tooltip.js";
