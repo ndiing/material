@@ -1,5 +1,6 @@
 // .md-layout{}
 
+// grid
 .md-layout--grid {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -22,6 +23,7 @@
     }
 }
 
+// border
 .md-layout--border {
     height: 100%;
     width: 100%;

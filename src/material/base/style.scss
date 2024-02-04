@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans:wght@300;400;500&display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 // color
+
 @media (prefers-color-scheme: light) {
     :root {
         --md-sys-color-primary: #6750a4;
@@ -114,6 +115,7 @@
 }
 
 // icon
+
 .md-icon {
     display: inline-flex;
     align-items: center;
@@ -141,6 +143,7 @@
 }
 
 // emoji
+
 .md-emoji {
     display: inline-flex;
     align-items: center;
@@ -153,6 +156,7 @@
 }
 
 // elevation
+
 :root {
     --md-sys-elevation-level5: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px;
     --md-sys-elevation-level4: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
@@ -163,6 +167,7 @@
 }
 
 // motion
+
 :root {
     --md-sys-motion-easing-emphasized: 0.2, 0, 0, 1;
     --md-sys-motion-easing-emphasized-accelerate: 0.3, 0, 0.8, 0.15;
@@ -194,6 +199,7 @@
 }
 
 // shape
+
 :root {
     --md-sys-shape-corner-full: 50%;
     --md-sys-shape-corner-extra-large-top: 28px 28px 0 0;
@@ -210,6 +216,7 @@
 }
 
 // typography
+
 :root {
     --md-sys-typescale-display-large-font: "Noto Sans";
     --md-sys-typescale-display-large-weight: 400;
@@ -417,6 +424,7 @@
 }
 
 // base
+
 * {
     margin: 0;
     padding: 0;

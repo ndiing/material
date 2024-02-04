@@ -3,6 +3,7 @@
         width: 0;
     }
 }
+
 @keyframes md-ripple-fadeout-animation {
     from {
         opacity: 10%;
@@ -51,6 +52,7 @@
 [activated] {
     background: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
+
     > .md-ripple__layer {
         opacity: 0%;
     }
@@ -86,6 +88,7 @@
 [disabled] {
     opacity: 38%;
     pointer-events: none;
+
     > .md-ripple__layer {
         opacity: 0%;
     }
