@@ -172,7 +172,7 @@ class MDTextFieldComponent extends MDComponent {
         // prettier-ignore
         return html`
             ${this.label ? html`<div class="md-text-field__label">${this.label}</div>` : nothing}
-            <div class="md-text-field__container">
+            <label class="md-text-field__container">
                 ${this.hasTextfieldStart ? html`
                     <div class="md-text-field__start">
                         ${this.icon ? html`<md-icon class="md-text-field__icon">${this.icon}</md-icon>` : nothing}
@@ -211,7 +211,7 @@ class MDTextFieldComponent extends MDComponent {
                         ` : nothing}
                     </div>
                 ` : nothing}
-            </div>
+            </label>
             ${this.hasTextfieldSupportingText ? html`<div class="md-text-field__supporting-text">${this.validationMessage ?? this.supportingText}</div>` : nothing}
         `;
     }
