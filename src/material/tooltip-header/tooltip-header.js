@@ -16,12 +16,6 @@ class MDTooltipHeaderComponent extends MDCardHeaderComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        /**
-         * Emitted when the tooltip header is connected to the DOM.
-         * @event MDTooltipHeaderComponent#connected
-         */
-        this.dispatchEvent(new CustomEvent('connected'));
-        
         this.classList.add("md-tooltip__header");
     }
 
@@ -31,12 +25,6 @@ class MDTooltipHeaderComponent extends MDCardHeaderComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-
-        /**
-         * Emitted when the tooltip header is disconnected from the DOM.
-         * @event MDTooltipHeaderComponent#disconnected
-         */
-        this.dispatchEvent(new CustomEvent('disconnected'));
 
         this.classList.remove("md-tooltip__header");
     }

@@ -15,12 +15,6 @@ class MDTooltipBodyComponent extends MDCardBodyComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        /**
-         * Emitted when the tooltip body is connected to the DOM.
-         * @event MDTooltipBodyComponent#connected
-         */
-        this.dispatchEvent(new CustomEvent('connected'));
-
         this.classList.add("md-tooltip__body");
     }
 
@@ -30,12 +24,6 @@ class MDTooltipBodyComponent extends MDCardBodyComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-
-        /**
-         * Emitted when the tooltip body is disconnected from the DOM.
-         * @event MDTooltipBodyComponent#disconnected
-         */
-        this.dispatchEvent(new CustomEvent('disconnected'));
 
         this.classList.remove("md-tooltip__body");
     }

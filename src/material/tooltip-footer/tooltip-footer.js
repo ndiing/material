@@ -15,12 +15,6 @@ class MDTooltipFooterComponent extends MDCardFooterComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        /**
-         * Emitted when the tooltip footer is connected to the DOM.
-         * @event MDTooltipFooterComponent#connected
-         */
-        this.dispatchEvent(new CustomEvent('connected'));
-
         this.classList.add("md-tooltip__footer");
     }
 
@@ -30,12 +24,6 @@ class MDTooltipFooterComponent extends MDCardFooterComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-
-        /**
-         * Emitted when the tooltip footer is disconnected from the DOM.
-         * @event MDTooltipFooterComponent#disconnected
-         */
-        this.dispatchEvent(new CustomEvent('disconnected'));
 
         this.classList.remove("md-tooltip__footer");
     }
