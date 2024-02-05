@@ -8,24 +8,29 @@ class SnackbarComponent extends MDComponent {
             <div class="md-layout md-layout--grid">
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-snackbar
+                        open
                     >Lorem, ipsum dolor.</md-snackbar>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-snackbar
+                        open
                         button="Action"
                     >Lorem, ipsum dolor.</md-snackbar>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-snackbar
+                        open
                     >Lorem, ipsum dolor.<br>Sed, ab iste!</md-snackbar>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-snackbar
+                        open
                         button="Action"
                     >Lorem, ipsum dolor.<br>Sed, ab iste!</md-snackbar>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-snackbar
+                        open
                         button="Longer action"
                     >Lorem, ipsum dolor.<br>Sed, ab iste!</md-snackbar>
                 </div>

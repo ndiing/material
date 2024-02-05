@@ -5,6 +5,7 @@
     padding-top: 0;
     padding-bottom: 0;
     flex-direction: row;
+
     .md-list__item {
         flex-direction: column;
         justify-content: center;
@@ -24,27 +25,29 @@
             }
         }
     }
+
     .md-list__icon {
         height: 32px;
         border-radius: 16px;
         width: 64px;
     }
+
     .md-list__label {
         @extend .md-typography--label-medium;
         margin-bottom: 4px;
     }
 
-    .md-list__badge{
+    .md-list__badge {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate3d(-50%,-50%,0);
+        transform: translate3d(-50%, -50%, 0);
         margin-top: -8px;
         margin-left: 8px;
     }
 
-    .md-list__center{
-        +.md-list__badge{
+    .md-list__center {
+        + .md-list__badge {
             margin-top: -20px;
         }
     }

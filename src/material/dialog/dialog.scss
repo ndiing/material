@@ -3,21 +3,10 @@
     background: var(--md-sys-color-surface-container-high);
     box-shadow: var(--md-sys-elevation-level1);
 
-    // .md-card__start {
-    // }
-
-    // .md-card__center {
-    // }
-
-    // .md-card__end {
-    // }
-
     .md-card__label {
         @extend .md-typography--headline-small;
     }
 
-    // .md-card__supporting-text {
-    // }
 }
 
 .md-dialog__header {
@@ -62,8 +51,6 @@
 }
 
 .md-dialog__scrim {
-    // height: 100%;
-    // width: 100%;
     position: absolute;
     left: 0;
     top: 0;

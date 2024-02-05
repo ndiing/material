@@ -5,6 +5,7 @@
 .md-navigation-rail__list {
     padding-top: 0;
     padding-bottom: 0;
+
     .md-list__item {
         flex-direction: column;
         justify-content: center;
@@ -26,11 +27,13 @@
             }
         }
     }
+
     .md-list__icon {
         height: 32px;
         border-radius: 16px;
         width: 56px;
     }
+
     .md-list__label {
         @extend .md-typography--label-medium;
         margin-bottom: 4px;

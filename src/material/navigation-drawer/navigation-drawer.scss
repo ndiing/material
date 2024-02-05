@@ -4,17 +4,21 @@
 .md-navigation-drawer__list {
     padding-top: 0;
     padding-bottom: 0;
-    .md-list__row{
+
+    .md-list__row {
         padding: 0 12px;
     }
-    .md-list__item{
+
+    .md-list__item {
         border-radius: 28px;
         column-gap: 12px;
     }
+
     .md-list__label {
         @extend .md-typography--label-large;
     }
-    .md-list__end{
+
+    .md-list__end {
         .md-list__supporting-text {
             @extend .md-typography--label-large;
         }

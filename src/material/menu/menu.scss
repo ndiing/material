@@ -2,17 +2,19 @@
 }
 
 .md-menu__list {
-    .md-list__item{
+    .md-list__item {
         min-height: 48px;
         padding-left: 12px;
         padding-right: 12px;
         column-gap: 12px;
     }
-    .md-list__end{
+
+    .md-list__end {
         .md-list__supporting-text {
             @extend .md-typography--label-large;
         }
     }
+
     .md-list__label {
         @extend .md-typography--label-large;
     }

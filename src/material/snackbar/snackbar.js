@@ -1,12 +1,14 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
+import { MDCardComponent } from "../card/card.js";
 
 /**
  * MDSnackbarComponent represents a snackbar component.
  *
- * @extends MDComponent
+ * @extends MDCardComponent
+ * @fires MDSnackbarComponent#onSnackbarScrimClick
  */
-class MDSnackbarComponent extends MDComponent {
+class MDSnackbarComponent extends MDCardComponent {
     /**
      * Properties of the component.
      *
@@ -39,7 +41,7 @@ class MDSnackbarComponent extends MDComponent {
         // Default supporting text is derived from child nodes
         this.supportingText = Array.from(this.childNodes);
     }
-
+    
     /**
      * Lifecycle callback when the element is added to the DOM.
      * @override
@@ -66,7 +68,9 @@ class MDSnackbarComponent extends MDComponent {
      * @param {Map} changedProperties - A Map of changed properties.
      * @override
      */
-    firstUpdated(changedProperties) {}
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+    }
 
     /**
      * Lifecycle callback when the element is updated.
@@ -74,14 +78,11 @@ class MDSnackbarComponent extends MDComponent {
      * @param {Map} changedProperties - A Map of changed properties.
      * @override
      */
-    updated(changedProperties) {}
+    updated(changedProperties) {
+        super.updated(changedProperties);
 
-    /**
-     * Renders the snackbar component.
-     *
-     * @returns {TemplateResult} - The rendered template.
-     * @override
-     */
+    }
+
     render() {
         // prettier-ignore
         return html`
@@ -93,6 +94,31 @@ class MDSnackbarComponent extends MDComponent {
                 </div>
             ` : nothing}
         `;
+    }
+
+    /**
+     * Shows the snackbar.
+     */
+    show() {
+        this.open = true;
+    }
+
+    /**
+     * Closes the snackbar.
+     */
+    close() {
+        this.open = false;
+    }
+
+    /**
+     * Toggles the snackbar's visibility.
+     */
+    toggle() {
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 }
 

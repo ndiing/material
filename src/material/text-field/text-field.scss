@@ -61,11 +61,12 @@
     vertical-align: middle;
     flex-direction: column;
 
-    .md-text-field__icon{
-        &:first-child{
+    .md-text-field__icon {
+        &:first-child {
             margin-bottom: -6px;
         }
-        &:last-child{
+
+        &:last-child {
             margin-top: -6px;
         }
     }
@@ -106,9 +107,6 @@
         background: transparent;
         color: transparent;
     }
-}
-
-.md-text-field--populated {
 }
 
 .md-text-field--focused {

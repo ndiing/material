@@ -1,26 +1,42 @@
 .md-snackbar {
     display: inline-flex;
+    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     width: 340px;
     border-radius: 4px;
-    padding: 6px 0;
+    padding: 3px 0;
     background: var(--md-sys-color-inverse-surface);
     color: var(--md-sys-color-inverse-on-surface);
     box-shadow: var(--md-sys-elevation-level1);
 }
 
 .md-snackbar__body {
-    width: 72%;
-    padding: 8px 16px;
+    width: 64%;
+    padding: 11px 16px;
     @extend .md-typography--body-medium;
 }
 
 .md-snackbar__footer {
-    padding: 2px 8px;
+    padding: 5px 8px;
     margin-left: auto;
+    justify-content: flex-start;
 
     .md-button {
         height: 32px;
+    }
+}
+
+.md-snackbar {
+    position: absolute;
+    z-index: 12;
+    opacity: 1;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
+
+    &:not([open]) {
+        opacity: 0;
+        pointer-events: none;
     }
 }
