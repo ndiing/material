@@ -49,8 +49,10 @@
     }
 
     .md-list__center {
-        + .md-list__badge {
-            margin-top: -20px;
+        + .md-list__end {
+            .md-list__badge {
+                margin-top: -20px;
+            }
         }
     }
 }

@@ -16,7 +16,6 @@ function notNull(value) {
  * @extends MDComponent
  */
 class MDListItemComponent extends MDComponent {
-
     /**
      * Properties for the MDListItemComponent.
      * @property {String} avatar - URL or source for the avatar image.
@@ -58,14 +57,7 @@ class MDListItemComponent extends MDComponent {
      * @returns {boolean} - True if there is content in the start, otherwise false.
      */
     get hasListStart() {
-        return (
-            notNull(this.avatar) ||
-            notNull(this.image) ||
-            notNull(this.video) ||
-            notNull(this.icon) ||
-            notNull(this.checkbox) ||
-            notNull(this.radioButton)
-        );
+        return notNull(this.avatar) || notNull(this.image) || notNull(this.video) || notNull(this.icon) || notNull(this.checkbox) || notNull(this.radioButton);
     }
 
     /**
@@ -73,10 +65,7 @@ class MDListItemComponent extends MDComponent {
      * @returns {boolean} - True if there is content in the center, otherwise false.
      */
     get hasListCenter() {
-        return (
-            this.label ||
-            this.supportingText
-        );
+        return this.label || this.supportingText;
     }
 
     /**
@@ -84,12 +73,7 @@ class MDListItemComponent extends MDComponent {
      * @returns {boolean} - True if there is content at the end, otherwise false.
      */
     get hasListEnd() {
-        return (
-            notNull(this.trailingSwitch) ||
-            notNull(this.trailingCheckbox) ||
-            this.trailingSupportingText ||
-            notNull(this.trailingIcon)
-        );
+        return notNull(this.trailingSwitch) || notNull(this.trailingCheckbox) || this.trailingSupportingText || notNull(this.trailingIcon) || notNull(this.badge);
     }
 
     /**
@@ -126,7 +110,7 @@ class MDListItemComponent extends MDComponent {
      */
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
-            fadeout: true
+            fadeout: true,
         });
     }
 
@@ -134,7 +118,8 @@ class MDListItemComponent extends MDComponent {
      * Callback when the element is updated.
      * @param {Map} changedProperties - Map of changed properties.
      */
-    updated(changedProperties) {}
+    updated(changedProperties) {
+    }
 
     /**
      * Render method for MDListItemComponent.
@@ -165,9 +150,9 @@ class MDListItemComponent extends MDComponent {
                     ${notNull(this.trailingCheckbox) ? html`<md-checkbox class="md-list__checkbox" .checked="${this.trailingCheckbox?.checked ?? this.activated}"></md-checkbox>` : nothing}
                     ${this.trailingSupportingText ? html`<div class="md-list__supporting-text">${this.trailingSupportingText}</div>` : nothing}
                     ${notNull(this.trailingIcon) ? html`<md-icon class="md-list__icon">${this.trailingIcon}</md-icon>` : nothing}
+                    ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge?.label ?? this.badge}"></md-badge>` : nothing}
                 </div>
             ` : nothing}
-            ${notNull(this.badge) ? html`<md-badge class="md-list__badge" .label="${this.badge?.label ?? this.badge}"></md-badge>` : nothing}
         `;
     }
 }

@@ -44,7 +44,6 @@ function notNull(value) {
  * @extends MDComponent
  */
 class MDListItemComponent extends MDComponent {
-
     /**
      * Properties for the MDListItemComponent.
      * @property {String} avatar - URL or source for the avatar image.
@@ -86,14 +85,7 @@ class MDListItemComponent extends MDComponent {
      * @returns {boolean} - True if there is content in the start, otherwise false.
      */
     get hasListStart() {
-        return (
-            notNull(this.avatar) ||
-            notNull(this.image) ||
-            notNull(this.video) ||
-            notNull(this.icon) ||
-            notNull(this.checkbox) ||
-            notNull(this.radioButton)
-        );
+        return notNull(this.avatar) || notNull(this.image) || notNull(this.video) || notNull(this.icon) || notNull(this.checkbox) || notNull(this.radioButton);
     }
 
     /**
@@ -101,10 +93,7 @@ class MDListItemComponent extends MDComponent {
      * @returns {boolean} - True if there is content in the center, otherwise false.
      */
     get hasListCenter() {
-        return (
-            this.label ||
-            this.supportingText
-        );
+        return this.label || this.supportingText;
     }
 
     /**
@@ -112,12 +101,7 @@ class MDListItemComponent extends MDComponent {
      * @returns {boolean} - True if there is content at the end, otherwise false.
      */
     get hasListEnd() {
-        return (
-            notNull(this.trailingSwitch) ||
-            notNull(this.trailingCheckbox) ||
-            this.trailingSupportingText ||
-            notNull(this.trailingIcon)
-        );
+        return notNull(this.trailingSwitch) || notNull(this.trailingCheckbox) || this.trailingSupportingText || notNull(this.trailingIcon) || notNull(this.badge);
     }
 
     /**
@@ -154,7 +138,7 @@ class MDListItemComponent extends MDComponent {
      */
     firstUpdated(changedProperties) {
         this.ripple = new MDRippleController(this, {
-            fadeout: true
+            fadeout: true,
         });
     }
 
@@ -162,7 +146,8 @@ class MDListItemComponent extends MDComponent {
      * Callback when the element is updated.
      * @param {Map} changedProperties - Map of changed properties.
      */
-    updated(changedProperties) {}
+    updated(changedProperties) {
+    }
 
     /**
      * Render method for MDListItemComponent.
@@ -193,9 +178,9 @@ class MDListItemComponent extends MDComponent {
                     ${notNull(this.trailingCheckbox) ? html`&lt;md-checkbox class="md-list__checkbox" .checked="${this.trailingCheckbox?.checked ?? this.activated}">&lt;/md-checkbox>` : nothing}
                     ${this.trailingSupportingText ? html`&lt;div class="md-list__supporting-text">${this.trailingSupportingText}&lt;/div>` : nothing}
                     ${notNull(this.trailingIcon) ? html`&lt;md-icon class="md-list__icon">${this.trailingIcon}&lt;/md-icon>` : nothing}
+                    ${notNull(this.badge) ? html`&lt;md-badge class="md-list__badge" .label="${this.badge?.label ?? this.badge}">&lt;/md-badge>` : nothing}
                 &lt;/div>
             ` : nothing}
-            ${notNull(this.badge) ? html`&lt;md-badge class="md-list__badge" .label="${this.badge?.label ?? this.badge}">&lt;/md-badge>` : nothing}
         `;
     }
 }
@@ -215,13 +200,13 @@ export { MDListItemComponent };
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDBottomAppBarComponent.html">MDBottomAppBarComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCardBodyComponent.html">MDCardBodyComponent</a></li><li><a href="MDCardComponent.html">MDCardComponent</a></li><li><a href="MDCardFooterComponent.html">MDCardFooterComponent</a></li><li><a href="MDCardHeaderComponent.html">MDCardHeaderComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDDialogBodyComponent.html">MDDialogBodyComponent</a></li><li><a href="MDDialogComponent.html">MDDialogComponent</a></li><li><a href="MDDialogFooterComponent.html">MDDialogFooterComponent</a></li><li><a href="MDDialogHeaderComponent.html">MDDialogHeaderComponent</a></li><li><a href="MDDialogScrimComponent.html">MDDialogScrimComponent</a></li><li><a href="MDDividerComponent.html">MDDividerComponent</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDFormComponent.html">MDFormComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDListRowComponent.html">MDListRowComponent</a></li><li><a href="MDMenuComponent.html">MDMenuComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSheetBodyComponent.html">MDSheetBodyComponent</a></li><li><a href="MDSheetComponent.html">MDSheetComponent</a></li><li><a href="MDSheetFooterComponent.html">MDSheetFooterComponent</a></li><li><a href="MDSheetHeaderComponent.html">MDSheetHeaderComponent</a></li><li><a href="MDSheetScrimComponent.html">MDSheetScrimComponent</a></li><li><a href="MDSnackbarComponent.html">MDSnackbarComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTextFieldComponent.html">MDTextFieldComponent</a></li><li><a href="MDTooltipBodyComponent.html">MDTooltipBodyComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li><li><a href="MDTooltipFooterComponent.html">MDTooltipFooterComponent</a></li><li><a href="MDTooltipHeaderComponent.html">MDTooltipHeaderComponent</a></li><li><a href="MDTopAppBarComponent.html">MDTopAppBarComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#notNull">notNull</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDBottomAppBarComponent.html">MDBottomAppBarComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCardBodyComponent.html">MDCardBodyComponent</a></li><li><a href="MDCardComponent.html">MDCardComponent</a></li><li><a href="MDCardFooterComponent.html">MDCardFooterComponent</a></li><li><a href="MDCardHeaderComponent.html">MDCardHeaderComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipSetComponent.html">MDChipSetComponent</a></li><li><a href="MDDialogBodyComponent.html">MDDialogBodyComponent</a></li><li><a href="MDDialogComponent.html">MDDialogComponent</a></li><li><a href="MDDialogFooterComponent.html">MDDialogFooterComponent</a></li><li><a href="MDDialogHeaderComponent.html">MDDialogHeaderComponent</a></li><li><a href="MDDialogScrimComponent.html">MDDialogScrimComponent</a></li><li><a href="MDDividerComponent.html">MDDividerComponent</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDFormComponent.html">MDFormComponent</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDListRowComponent.html">MDListRowComponent</a></li><li><a href="MDMenuComponent.html">MDMenuComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSheetBodyComponent.html">MDSheetBodyComponent</a></li><li><a href="MDSheetComponent.html">MDSheetComponent</a></li><li><a href="MDSheetFooterComponent.html">MDSheetFooterComponent</a></li><li><a href="MDSheetHeaderComponent.html">MDSheetHeaderComponent</a></li><li><a href="MDSheetScrimComponent.html">MDSheetScrimComponent</a></li><li><a href="MDSnackbarComponent.html">MDSnackbarComponent</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTabComponent.html">MDTabComponent</a></li><li><a href="MDTabsComponent.html">MDTabsComponent</a></li><li><a href="MDTextFieldComponent.html">MDTextFieldComponent</a></li><li><a href="MDTooltipBodyComponent.html">MDTooltipBodyComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li><li><a href="MDTooltipFooterComponent.html">MDTooltipFooterComponent</a></li><li><a href="MDTooltipHeaderComponent.html">MDTooltipHeaderComponent</a></li><li><a href="MDTopAppBarComponent.html">MDTopAppBarComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#notNull">notNull</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Feb 05 2024 09:38:00 GMT+0700 (Western Indonesia Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Feb 05 2024 19:07:22 GMT+0700 (Western Indonesia Time)
 </footer>
 
 <script> prettyPrint(); </script>

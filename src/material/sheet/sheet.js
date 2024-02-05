@@ -6,15 +6,21 @@ import { MDCardComponent } from "../card/card";
  * MDSheetComponent represents a material design sheet.
  *
  * @extends MDCardComponent
+ * @fires MDSheetComponent#onSheetScrimClick
  */
 class MDSheetComponent extends MDCardComponent {
     /**
+     * Properties of the component.
+     *
+     * @type {Object}
      * @property {Boolean} open - Indicates whether the sheet is open.
      * @property {String} region - Defines the region(s) of the sheet.
+     * @property {String} type - The type of the sheet (e.g., "modal").
      */
     static properties = Object.assign(MDCardComponent.properties, {
         open: { type: Boolean, reflect: true },
         region: { type: String },
+        type: { type: String },
     });
 
     /**
@@ -74,6 +80,19 @@ class MDSheetComponent extends MDCardComponent {
             if (this.region) {
                 this.region.split(" ").forEach((region) => {
                     this.classList.add(`md-sheet--${region}`);
+                });
+            }
+        }
+
+        if (changedProperties.has("type")) {
+            [
+                'modal',
+            ].forEach((type) => {
+                this.classList.remove(`md-sheet--${type}`);
+            });
+            if (this.type) {
+                this.type.split(" ").forEach((type) => {
+                    this.classList.add(`md-sheet--${type}`);
                 });
             }
         }

@@ -33,7 +33,7 @@ const items = [
     // { icon:'done', label: "slider", routerLink: "slider", },
     { icon: "done_all", label: "snackbar", routerLink: "snackbar" },
     { icon: "done_all", label: "switch", routerLink: "switch" },
-    { icon: "done", label: "tab", routerLink: "tab" },
+    { icon: "done_all", label: "tab", routerLink: "tab" },
     { icon: "done_all", label: "text-field", routerLink: "text-field" },
     // { icon:'done', label: "time-picker", routerLink: "time-picker", },
     { icon: "done_all", label: "tooltip", routerLink: "tooltip" },

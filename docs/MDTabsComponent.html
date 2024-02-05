@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: MDCardHeaderComponent</title>
+    <title>JSDoc: Class: MDTabsComponent</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: MDCardHeaderComponent</h1>
+    <h1 class="page-title">Class: MDTabsComponent</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>MDCardHeaderComponent<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>MDTabsComponent<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">MDCardHeaderComponent represents the header of a card component.</div>
+            <div class="class-description">MDTabsComponent represents a set of tabs.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="MDCardHeaderComponent"><span class="type-signature"></span>new MDCardHeaderComponent<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MDTabsComponent"><span class="type-signature"></span>new MDTabsComponent<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -53,7 +53,7 @@
 
 
 <div class="description">
-    Constructor for MDCardHeaderComponent.
+    Constructor for MDTabsComponent.
 </div>
 
 
@@ -97,7 +97,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line9">line 9</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -111,6 +111,11 @@
 
 
 
+
+<h5>Fires:</h5>
+<ul>
+    <li>MDTabsComponent#event:onTabClick</li>
+</ul>
 
 
 
@@ -155,192 +160,6 @@
 
     
         <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="hasCardCenter"><span class="type-signature"></span>hasCardCenter<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Checks if the card has content in the center.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line47">line 47</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="hasCardEnd"><span class="type-signature"></span>hasCardEnd<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Checks if the card has content at the end.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line56">line 56</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="hasCardStart"><span class="type-signature"></span>hasCardStart<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Checks if the card has content at the start.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line35">line 35</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
 
         
             
@@ -395,13 +214,13 @@
 
         <tr>
             
-                <td class="name"><code>label</code></td>
+                <td class="name"><code>items</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Array</span>
 
 
             
@@ -411,14 +230,14 @@
 
             
 
-            <td class="description last">The label text for the card header.</td>
+            <td class="description last">An array of tab items.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>supportingText</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
@@ -434,99 +253,7 @@
 
             
 
-            <td class="description last">The supporting text for the card header.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>icon</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The icon for the card header.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>trailingIcon</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The trailing icon for the card header.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>iconButton</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The icon button for the card header.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>trailingIconButton</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The trailing icon button for the card header.</td>
+            <td class="description last">The type of tabs (e.g., "primary", "secondary").</td>
         </tr>
 
     
@@ -565,7 +292,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line21">line 21</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -601,7 +328,7 @@
 
 
 <div class="description">
-    Lifecycle callback when the element is added to the DOM.
+    Called when the element is connected to the DOM.
 </div>
 
 
@@ -645,7 +372,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line75">line 75</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -689,7 +416,7 @@
 
 
 <div class="description">
-    Lifecycle callback when the element is removed from the DOM.
+    Called when the element is disconnected from the DOM.
 </div>
 
 
@@ -733,7 +460,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line84">line 84</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -777,7 +504,7 @@
 
 
 <div class="description">
-    Lifecycle callback when the element is first updated.
+    Called after the component's first update.
 </div>
 
 
@@ -829,7 +556,7 @@
 
             
 
-            <td class="description last">A Map of changed properties.</td>
+            <td class="description last">Map of changed properties.</td>
         </tr>
 
     
@@ -870,7 +597,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line95">line 95</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -906,7 +633,7 @@
     
 
     
-    <h4 class="name" id="handleCardIconButtonClick"><span class="type-signature"></span>handleCardIconButtonClick<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="handleTabActivated"><span class="type-signature"></span>handleTabActivated<span class="signature">(event)</span><span class="type-signature"></span></h4>
     
 
     
@@ -914,7 +641,144 @@
 
 
 <div class="description">
-    Event handler for card icon button click events.
+    Handles the 'onTabActivated' event.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Event</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The 'onTabActivated' event.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line137">line 137</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleTabClick"><span class="type-signature"></span>handleTabClick<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Handles a click event on a tab.
 </div>
 
 
@@ -1007,7 +871,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line149">line 149</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1024,149 +888,7 @@
 
 <h5>Fires:</h5>
 <ul>
-    <li>MDCardHeaderComponent#event:onCardIconButtonClick</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="handleCardIconClick"><span class="type-signature"></span>handleCardIconClick<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Event handler for card icon click events.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The click event.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line139">line 139</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<h5>Fires:</h5>
-<ul>
-    <li>MDCardHeaderComponent#event:onCardIconClick</li>
+    <li>MDTabsComponent#event:onTabClick</li>
 </ul>
 
 
@@ -1198,7 +920,7 @@
 
 
 <div class="description">
-    Renders the card header.
+    Renders the tabs and the tab indicator.
 </div>
 
 
@@ -1242,7 +964,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line109">line 109</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -1271,7 +993,7 @@
 
         
 <div class="param-desc">
-    - The HTML template result.
+    - The rendered template.
 </div>
 
 
@@ -1308,7 +1030,7 @@
 
 
 <div class="description">
-    Lifecycle callback when the element is updated.
+    Called when the component is updated.
 </div>
 
 
@@ -1360,7 +1082,7 @@
 
             
 
-            <td class="description last">A Map of changed properties.</td>
+            <td class="description last">Map of changed properties.</td>
         </tr>
 
     
@@ -1401,7 +1123,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="card-header_card-header.js.html">card-header/card-header.js</a>, <a href="card-header_card-header.js.html#line102">line 102</a>
+        <a href="tabs_tabs.js.html">tabs/tabs.js</a>, <a href="tabs_tabs.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
@@ -1453,7 +1175,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Feb 05 2024 19:07:22 GMT+0700 (Western Indonesia Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Feb 05 2024 19:07:23 GMT+0700 (Western Indonesia Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,2 +1,33 @@
 .md-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    min-height: 48px;
+    padding: 10px 16px;
+    position: relative;
+
+    &[activated] {
+        background: inherit;
+        color: var(--md-sys-color-primary);
+    }
+}
+
+.md-tab__wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    gap: 0 8px;
+}
+
+.md-tab__icon {
+}
+
+.md-tab__label {
+    @extend .md-typography--title-small;
+}
+
+.md-tab__badge {
+    margin-left: -4px;
 }
