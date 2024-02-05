@@ -1,11 +1,6 @@
-// modules
 import { MDRouter } from "../material/router/router";
-
-// components
 import MainComponent from "./main/main.js";
 import ErrorComponent from "./error/error.js";
-
-// router
 MDRouter.register([
     {
         path: "",
