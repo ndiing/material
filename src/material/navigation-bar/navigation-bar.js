@@ -1,18 +1,21 @@
 import { html } from "lit";
 import { MDComponent } from "../base/component";
 import { MDListComponent } from "../list/list";
+import { MDSheetComponent } from "../sheet/sheet";
 
 /**
  * Material Design Navigation Bar Component.
- * @extends MDListComponent
+ * @extends MDSheetComponent
  */
-class MDNavigationBarComponent extends MDComponent {
+class MDNavigationBarComponent extends MDSheetComponent {
     /**
      * Properties for the MDNavigationBarComponent.
-     * Inherits properties from MDListComponent.
+     * Inherits properties from MDSheetComponent and MDListComponent.
+     * @type {Object}
      * @property {Array} items - Array of items to be rendered in the navigation bar.
      */
     static properties = {
+        ...MDSheetComponent.properties,
         ...MDListComponent.properties,
         items: { type: Array },
     };
@@ -25,6 +28,7 @@ class MDNavigationBarComponent extends MDComponent {
 
         // default
         this.items = [];
+        this.region="south";
     }
 
     /**

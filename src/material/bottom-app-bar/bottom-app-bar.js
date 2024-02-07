@@ -1,15 +1,16 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
+import { MDSheetComponent } from "../sheet/sheet";
 
 /**
  * MDBottomAppBarComponent represents a bottom app bar component.
  *
- * @extends MDComponent
+ * @extends MDSheetComponent
  * @fires MDBottomAppBarComponent#onBottomAppBarIconClick
  * @fires MDBottomAppBarComponent#onBottomAppBarIconButtonClick
  * @fires MDBottomAppBarComponent#onBottomAppBarFabClick
  */
-class MDBottomAppBarComponent extends MDComponent {
+class MDBottomAppBarComponent extends MDSheetComponent {
     /**
      * Properties of the component.
      *
@@ -21,6 +22,7 @@ class MDBottomAppBarComponent extends MDComponent {
      * @property {String} trailingFab - The trailing FAB (Floating Action Button) for the bottom app bar.
      */
     static properties = {
+        ...MDSheetComponent.properties,
         icon: { type: String },
         iconButton: { type: String },
         icons: { type: Array },
@@ -65,6 +67,7 @@ class MDBottomAppBarComponent extends MDComponent {
      */
     constructor() {
         super();
+        this.region='south';
     }
 
     /**
@@ -85,19 +88,19 @@ class MDBottomAppBarComponent extends MDComponent {
         this.classList.remove("md-bottom-app-bar");
     }
 
-    /**
-     * Lifecycle callback when the element is first updated.
-     *
-     * @param {Map} changedProperties - A Map of changed properties.
-     */
-    firstUpdated(changedProperties) {}
+    // /**
+    //  * Lifecycle callback when the element is first updated.
+    //  *
+    //  * @param {Map} changedProperties - A Map of changed properties.
+    //  */
+    // firstUpdated(changedProperties) {}
 
-    /**
-     * Lifecycle callback when the element is updated.
-     *
-     * @param {Map} changedProperties - A Map of changed properties.
-     */
-    updated(changedProperties) {}
+    // /**
+    //  * Lifecycle callback when the element is updated.
+    //  *
+    //  * @param {Map} changedProperties - A Map of changed properties.
+    //  */
+    // updated(changedProperties) {}
 
     /**
      * Renders the bottom app bar component.
@@ -107,26 +110,28 @@ class MDBottomAppBarComponent extends MDComponent {
     render() {
         // prettier-ignore
         return html`
-            ${this.hasBottomAppBarStart ? html`
-                <div class="md-bottom-app-bar__start">
-                    ${this.icon ? html`<md-icon class="md-bottom-app-bar__icon" @click="${this.handleBottomAppBarIconClick}">${this.icon}</md-icon>` : nothing}
-                    ${this.icons?.map(icon => html`
-                        <md-icon class="md-bottom-app-bar__icon" @click="${this.handleBottomAppBarIconClick}">${icon}</md-icon>
-                    `)}
-                    ${this.iconButton ? html`<md-icon-button class="md-bottom-app-bar__icon-button" .icon="${this.iconButton}" @click="${this.handleBottomAppBarIconButtonClick}"></md-icon-button>` : nothing}
-                    ${this.iconButtons?.map(iconButton => html`
-                        <md-icon-button class="md-bottom-app-bar__icon-button" .icon="${iconButton}" @click="${this.handleBottomAppBarIconButtonClick}"></md-icon-button>
-                    `)}
+            <div class="md-bottom-app-bar__container">
+                ${this.hasBottomAppBarStart ? html`
+                    <div class="md-bottom-app-bar__start">
+                        ${this.icon ? html`<md-icon class="md-bottom-app-bar__icon" @click="${this.handleBottomAppBarIconClick}">${this.icon}</md-icon>` : nothing}
+                        ${this.icons?.map(icon => html`
+                            <md-icon class="md-bottom-app-bar__icon" @click="${this.handleBottomAppBarIconClick}">${icon}</md-icon>
+                        `)}
+                        ${this.iconButton ? html`<md-icon-button class="md-bottom-app-bar__icon-button" .icon="${this.iconButton}" @click="${this.handleBottomAppBarIconButtonClick}"></md-icon-button>` : nothing}
+                        ${this.iconButtons?.map(iconButton => html`
+                            <md-icon-button class="md-bottom-app-bar__icon-button" .icon="${iconButton}" @click="${this.handleBottomAppBarIconButtonClick}"></md-icon-button>
+                        `)}
+                    </div>
+                ` : nothing}
+                <div class="md-bottom-app-bar__center">
+                    <!-- Placeholder for center content -->
                 </div>
-            ` : nothing}
-            <div class="md-bottom-app-bar__center">
-                <!-- Placeholder for center content -->
+                ${this.hasBottomAppBarEnd ? html`
+                    <div class="md-bottom-app-bar__end">
+                        ${this.trailingFab ? html`<md-fab class="md-bottom-app-bar__fab" @click="${this.handleBottomAppBarFabClick}" .icon="${this.trailingFab?.icon ?? this.trailingFab}" .ui="${this.trailingFab?.ui ?? 'unelevated'}"></md-fab>` : nothing}
+                    </div>
+                ` : nothing}
             </div>
-            ${this.hasBottomAppBarEnd ? html`
-                <div class="md-bottom-app-bar__end">
-                    ${this.trailingFab ? html`<md-fab class="md-bottom-app-bar__fab" @click="${this.handleBottomAppBarFabClick}" .icon="${this.trailingFab?.icon ?? this.trailingFab}" .ui="${this.trailingFab?.ui ?? 'unelevated'}"></md-fab>` : nothing}
-                </div>
-            ` : nothing}
         `;
     }
 

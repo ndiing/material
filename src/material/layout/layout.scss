@@ -77,6 +77,9 @@
     grid-template-rows: auto minmax(0, 1fr) auto;
     grid-template-columns: auto minmax(0, 1fr) auto;
     overflow: hidden;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
 
     &:has(>.md-layout__item--north:not([open])){grid-template-rows: 0px minmax(0, 1fr) auto;}
     &:has(>.md-layout__item--west:not([open])){grid-template-columns: 0px minmax(0, 1fr) auto;}
@@ -88,6 +91,9 @@
 
     > .md-layout__item {
         overflow: auto;
+        transition-property: all;
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-duration-short2);
     }
     > .md-layout__item--north {
         grid-area: north;

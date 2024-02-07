@@ -14,7 +14,7 @@
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
-        row-gap: 4px;
+        // row-gap: 4px;
         position: relative;
 
         &[activated] {
@@ -36,6 +36,7 @@
 
     .md-list__label {
         @extend .md-typography--label-medium;
+        margin-top: 4px;
         margin-bottom: 4px;
     }
 

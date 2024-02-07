@@ -5,9 +5,10 @@ class NavigationDrawerComponent extends MDComponent {
     render() {
         // prettier-ignore
         return html`
-            <div class="md-layout md-layout--grid">
-                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+            <div class="md-layout md-layout--border">
+                <div class="md-layout__item md-layout__item--west" open>
                     <md-navigation-drawer
+                        style="height:100%;width:360px;"
                         .items="${[
                             {icon:'image',label:'Label',trailingSupportingText:'24', activated:true},
                             {icon:'image',label:'Label'},
@@ -21,9 +22,7 @@ class NavigationDrawerComponent extends MDComponent {
                             {label:'Label',},
                         ]}"
                     ></md-navigation-drawer>
-                </div>
-                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
-                    <md-navigation-drawer
+                    <!-- <md-navigation-drawer
                         .items="${[
                             {headline:'Label',},
                             {icon:'image',label:'Label',trailingSupportingText:'24', activated:true},
@@ -37,11 +36,10 @@ class NavigationDrawerComponent extends MDComponent {
                             {label:'Label',},
                             {label:'Label',},
                         ]}"
-                    ></md-navigation-drawer>
+                    ></md-navigation-drawer> -->
                 </div>
-                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
-                </div>
-                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+                <div class="md-layout__item md-layout__item--center">
+                    lorem*100
                 </div>
             </div>
         `;

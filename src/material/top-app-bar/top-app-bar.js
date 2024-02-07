@@ -1,14 +1,15 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
+import { MDSheetComponent } from "../sheet/sheet";
 
 /**
  * MDTopAppBarComponent represents a top app bar component.
  *
- * @extends MDComponent
+ * @extends MDSheetComponent
  * @fires MDTopAppBarComponent#onTopAppBarIconClick
  * @fires MDTopAppBarComponent#onTopAppBarIconButtonClick
  */
-class MDTopAppBarComponent extends MDComponent {
+class MDTopAppBarComponent extends MDSheetComponent {
     /**
      * Properties of the component.
      *
@@ -21,6 +22,7 @@ class MDTopAppBarComponent extends MDComponent {
      * @property {String} trailingIconButton - The trailing icon button for the top app bar.
      */
     static properties = {
+        ...MDSheetComponent.properties,
         label: { type: String },
         supportingText: { type: String },
         icon: { type: String },
@@ -67,6 +69,7 @@ class MDTopAppBarComponent extends MDComponent {
      */
     constructor() {
         super();
+        this.region='north';
     }
 
     /**
@@ -87,19 +90,19 @@ class MDTopAppBarComponent extends MDComponent {
         this.classList.remove("md-top-app-bar");
     }
 
-    /**
-     * Lifecycle callback when the element is first updated.
-     *
-     * @param {Map} changedProperties - A Map of changed properties.
-     */
-    firstUpdated(changedProperties) {}
+    // /**
+    //  * Lifecycle callback when the element is first updated.
+    //  *
+    //  * @param {Map} changedProperties - A Map of changed properties.
+    //  */
+    // firstUpdated(changedProperties) {}
 
-    /**
-     * Lifecycle callback when the element is updated.
-     *
-     * @param {Map} changedProperties - A Map of changed properties.
-     */
-    updated(changedProperties) {}
+    // /**
+    //  * Lifecycle callback when the element is updated.
+    //  *
+    //  * @param {Map} changedProperties - A Map of changed properties.
+    //  */
+    // updated(changedProperties) {}
 
     /**
      * Renders the top app bar component.
@@ -109,24 +112,26 @@ class MDTopAppBarComponent extends MDComponent {
     render() {
         // prettier-ignore
         return html`
-            ${this.hasTopAppBarStart ? html`
-                <div class="md-top-app-bar__start">
-                    ${this.icon ? html`<md-icon class="md-top-app-bar__icon" @click="${this.handleTopAppBarIconClick}">${this.icon}</md-icon>` : nothing}
-                    ${this.iconButton ? html`<md-icon-button class="md-top-app-bar__icon-button" .icon="${this.iconButton}" @click="${this.handleTopAppBarIconButtonClick}"></md-icon-button>` : nothing}
-                </div>
-            ` : nothing}
-            ${this.hasTopAppBarCenter ? html`
-                <div class="md-top-app-bar__center">
-                    ${this.label ? html`<div class="md-top-app-bar__label">${this.label}</div>` : nothing}
-                    ${this.supportingText ? html`<div class="md-top-app-bar__supporting-text">${this.supportingText}</div>` : nothing}
-                </div>
-            ` : nothing}
-            ${this.hasTopAppBarEnd ? html`
-                <div class="md-top-app-bar__end">
-                    ${this.trailingIcon ? html`<md-icon class="md-top-app-bar__icon" @click="${this.handleTopAppBarIconClick}">${this.trailingIcon}</md-icon>` : nothing}
-                    ${this.trailingIconButton ? html`<md-icon-button class="md-top-app-bar__icon-button" .icon="${this.trailingIconButton}" @click="${this.handleTopAppBarIconButtonClick}"></md-icon-button>` : nothing}
-                </div>
-            ` : nothing}
+            <div class="md-top-app-bar__container">
+                ${this.hasTopAppBarStart ? html`
+                    <div class="md-top-app-bar__start">
+                        ${this.icon ? html`<md-icon class="md-top-app-bar__icon" @click="${this.handleTopAppBarIconClick}">${this.icon}</md-icon>` : nothing}
+                        ${this.iconButton ? html`<md-icon-button class="md-top-app-bar__icon-button" .icon="${this.iconButton}" @click="${this.handleTopAppBarIconButtonClick}"></md-icon-button>` : nothing}
+                    </div>
+                ` : nothing}
+                ${this.hasTopAppBarCenter ? html`
+                    <div class="md-top-app-bar__center">
+                        ${this.label ? html`<div class="md-top-app-bar__label">${this.label}</div>` : nothing}
+                        ${this.supportingText ? html`<div class="md-top-app-bar__supporting-text">${this.supportingText}</div>` : nothing}
+                    </div>
+                ` : nothing}
+                ${this.hasTopAppBarEnd ? html`
+                    <div class="md-top-app-bar__end">
+                        ${this.trailingIcon ? html`<md-icon class="md-top-app-bar__icon" @click="${this.handleTopAppBarIconClick}">${this.trailingIcon}</md-icon>` : nothing}
+                        ${this.trailingIconButton ? html`<md-icon-button class="md-top-app-bar__icon-button" .icon="${this.trailingIconButton}" @click="${this.handleTopAppBarIconButtonClick}"></md-icon-button>` : nothing}
+                    </div>
+                ` : nothing}
+            </div>
         `;
     }
 

@@ -1,4 +1,7 @@
-.md-top-app-bar {
+.md-top-app-bar{}
+
+.md-top-app-bar__container {
+    flex-direction: row;
     display: flex;
     align-items: center;
     min-height: 64px;
