@@ -1,7 +1,7 @@
 .md-tooltip {
     border-radius: 12px;
     background: var(--md-sys-color-surface-container);
-    box-shadow: var(--md-sys-elevation-level1);
+    // box-shadow: var(--md-sys-elevation-level1);
 
     .md-card__label {
         @extend .md-typography--title-small;

@@ -44,5 +44,7 @@ MDRouter.register([
             { path: "top-app-bar", title: "top-app-bar", load: () => import("./top-app-bar/top-app-bar.js").then((m) => m.default) },
         ],
     },
+    // { path: "layout", title: "layout", load: () => import("./layout/layout.js").then((m) => m.default) },
+
     { path: "*", component: ErrorComponent, children: [] },
 ]);

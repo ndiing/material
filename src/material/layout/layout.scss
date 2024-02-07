@@ -1,5 +1,3 @@
-// .md-layout{}
-
 @mixin md-layout-expanded() {
     @media (min-width: 840px) {
         @content;
@@ -18,53 +16,34 @@
     }
 }
 
-:root {
-    --md-layout-grid-margin: 24px;
-    --md-layout-grid-columns: 24;
-    --md-layout-grid-gap: 24px;
-}
-
 @include md-layout-expanded() {
-    :root {
-        --md-layout-grid-margin: 24px;
-        --md-layout-grid-columns: 12;
-        --md-layout-grid-gap: 24px;
+    :root{
+        --md-layout-grid-columns:12;
+        --md-layout-grid-gap:24px;
     }
 }
 
 @include md-layout-medium() {
-    :root {
-        --md-layout-grid-margin: 24px;
-        --md-layout-grid-columns: 8;
-        --md-layout-grid-gap: 24px;
+    :root{
+        --md-layout-grid-columns:8;
+        --md-layout-grid-gap:24px;
     }
 }
 
 @include md-layout-compact() {
-    :root {
-        --md-layout-grid-margin: 16px;
-        --md-layout-grid-columns: 4;
-        --md-layout-grid-gap: 16px;
+    :root{
+        --md-layout-grid-columns:4;
+        --md-layout-grid-gap:16px;
     }
 }
-
-// grid
 
 .md-layout--grid {
     display: grid;
     grid-template-columns: repeat(var(--md-layout-grid-columns), minmax(0, 1fr));
     grid-gap: var(--md-layout-grid-gap);
-
     > .md-layout__item {
         grid-column-end: span 4;
     }
-
-    @for $i from 1 through 12 {
-        > .md-layout__item--#{$i} {
-            grid-column-end: span $i;
-        }
-    }
-
     @include md-layout-expanded() {
         @for $i from 1 through 12 {
             > .md-layout__item--expanded#{$i} {
@@ -72,7 +51,6 @@
             }
         }
     }
-
     @include md-layout-medium() {
         @for $i from 1 through 8 {
             > .md-layout__item--medium#{$i} {
@@ -80,7 +58,6 @@
             }
         }
     }
-
     @include md-layout-compact() {
         @for $i from 1 through 4 {
             > .md-layout__item--compact#{$i} {
@@ -89,9 +66,6 @@
         }
     }
 }
-
-// border
-
 .md-layout--border {
     height: 100%;
     width: 100%;
@@ -100,77 +74,42 @@
         "north north north"
         "west center east"
         "south south south";
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     overflow: hidden;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    transition-duration: var(--md-sys-motion-duration-short4);
 
-    &:has(.md-layout__item--north:not([open])) {
-        grid-template-rows: 0px 1fr auto;
-    }
+    &:has(>.md-layout__item--north:not([open])){grid-template-rows: 0px minmax(0, 1fr) auto;}
+    &:has(>.md-layout__item--west:not([open])){grid-template-columns: 0px minmax(0, 1fr) auto;}
+    &:has(>.md-layout__item--east:not([open])){grid-template-columns: auto minmax(0, 1fr) 0px;}
+    &:has(>.md-layout__item--south:not([open])){grid-template-rows: auto minmax(0, 1fr) 0px;}
 
-    &:has(.md-layout__item--east:not([open])) {
-        grid-template-columns: auto 1fr 0px;
-    }
-
-    &:has(.md-layout__item--south:not([open])) {
-        grid-template-rows: auto 1fr 0px;
-    }
-
-    &:has(.md-layout__item--west:not([open])) {
-        grid-template-columns: 0px 1fr auto;
-    }
-
-    &:has(.md-layout__item--north:not([open])):has(.md-layout__item--south:not([open])) {
-        grid-template-rows: 0px 1fr 0px;
-    }
-
-    &:has(.md-layout__item--east:not([open])):has(.md-layout__item--west:not([open])) {
-        grid-template-columns: 0px 1fr 0px;
-    }
+    &:has(>.md-layout__item--north:not([open])):has(>.md-layout__item--south:not([open])){grid-template-rows: 0px minmax(0, 1fr) 0px;}
+    &:has(>.md-layout__item--west:not([open])):has(>.md-layout__item--east:not([open])){grid-template-columns: 0px minmax(0, 1fr) 0px;}
 
     > .md-layout__item {
         overflow: auto;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-        transition-duration: var(--md-sys-motion-duration-short4);
     }
-
     > .md-layout__item--north {
         grid-area: north;
 
-        &:not([open]) {
-            transform: translate3d(0, -100%, 0);
-        }
+        &:not([open]){transform: translate3d(0,-100%,0);}
     }
-
-    > .md-layout__item--east {
-        grid-area: east;
-
-        &:not([open]) {
-            transform: translate3d(100%, 0, 0);
-        }
-    }
-
-    > .md-layout__item--south {
-        grid-area: south;
-
-        &:not([open]) {
-            transform: translate3d(0, 100%, 0);
-        }
-    }
-
     > .md-layout__item--west {
         grid-area: west;
 
-        &:not([open]) {
-            transform: translate3d(-100%, 0, 0);
-        }
+        &:not([open]){transform: translate3d(-100%,0,0);}
     }
-
     > .md-layout__item--center {
         grid-area: center;
+    }
+    > .md-layout__item--east {
+        grid-area: east;
+
+        &:not([open]){transform: translate3d(100%,0,0);}
+    }
+    > .md-layout__item--south {
+        grid-area: south;
+
+        &:not([open]){transform: translate3d(0,100%,0);}
     }
 }

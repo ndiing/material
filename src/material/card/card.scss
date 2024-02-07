@@ -47,16 +47,16 @@
 
 .md-card--elevated {
     background: var(--md-sys-color-surface-container-low);
-    box-shadow: var(--md-sys-elevation-level1);
+    // box-shadow: var(--md-sys-elevation-level1);
 }
 
 .md-card--filled {
     background: var(--md-sys-color-surface-container-highest);
-    box-shadow: var(--md-sys-elevation-level0);
+    // box-shadow: var(--md-sys-elevation-level0);
 }
 
 .md-card--outlined {
     background: var(--md-sys-color-surface);
-    box-shadow: var(--md-sys-elevation-level0);
+    // box-shadow: var(--md-sys-elevation-level0);
     border: 1px solid var(--md-sys-color-outline);
 }

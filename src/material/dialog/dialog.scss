@@ -1,7 +1,7 @@
 .md-dialog {
     border-radius: 28px;
     background: var(--md-sys-color-surface-container-high);
-    box-shadow: var(--md-sys-elevation-level1);
+    // box-shadow: var(--md-sys-elevation-level1);
 
     .md-card__label {
         @extend .md-typography--headline-small;
