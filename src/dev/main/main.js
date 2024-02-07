@@ -56,11 +56,12 @@ class MainComponent extends MDComponent {
         // prettier-ignore
         return html`
             <div class="md-layout md-layout--border">
-                <div style="width:360px;padding:8px 0;" class="md-layout__item md-layout__item--west" ?open="${this.open}">
-                    <md-navigation-drawer
-                        .items="${items}"
-                    ></md-navigation-drawer>
-                </div>
+                <md-navigation-drawer
+                    class="md-layout__item md-layout__item--west"
+                    style="width:360px;"
+                    ?open="${this.open}"
+                    .items="${items}"
+                ></md-navigation-drawer>
                 <div style="padding:24px;" class="md-layout__item md-layout__item--center">
                     <md-outlet></md-outlet>
                 </div>
