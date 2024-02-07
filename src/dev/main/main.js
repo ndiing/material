@@ -19,6 +19,7 @@ const items = [
     { icon: "done_all", label: "icon", routerLink: "icon" },
     { icon: "done_all", label: "icon-button", routerLink: "icon-button" },
     { icon: "done_all", label: "image", routerLink: "image" },
+    { icon: "done", label: "layout", routerLink: "layout" },
     { icon: "done_all", label: "list", routerLink: "list" },
     { icon: "done_all", label: "menu", routerLink: "menu" },
     { icon: "done_all", label: "navigation-bar", routerLink: "navigation-bar" },

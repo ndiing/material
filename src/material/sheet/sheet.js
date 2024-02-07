@@ -61,10 +61,12 @@ class MDSheetComponent extends MDCardComponent {
         super.updated(changedProperties);
 
         if (changedProperties.has("open")) {
-            if (this.open) {
-                this.createSheetScrim();
-            } else {
-                this.removeSheetScrim();
+            if(this.type==='modal'){
+                if (this.open) {
+                    this.createSheetScrim();
+                } else {
+                    this.removeSheetScrim();
+                }
             }
         }
 

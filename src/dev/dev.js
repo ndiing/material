@@ -22,6 +22,7 @@ MDRouter.register([
             { path: "icon", title: "icon", load: () => import("./icon/icon.js").then((m) => m.default) },
             { path: "icon-button", title: "icon-button", load: () => import("./icon-button/icon-button.js").then((m) => m.default) },
             { path: "image", title: "image", load: () => import("./image/image.js").then((m) => m.default) },
+            { path: "layout", title: "layout", load: () => import("./layout/layout.js").then((m) => m.default) },
             { path: "list", title: "list", load: () => import("./list/list.js").then((m) => m.default) },
             { path: "menu", title: "menu", load: () => import("./menu/menu.js").then((m) => m.default) },
             { path: "navigation-bar", title: "navigation-bar", load: () => import("./navigation-bar/navigation-bar.js").then((m) => m.default) },

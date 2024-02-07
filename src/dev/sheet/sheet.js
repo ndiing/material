@@ -15,7 +15,8 @@ class SheetComponent extends MDComponent {
                         <md-sheet-body>
                         </md-sheet-body>
                     </md-sheet>
-                    <md-button ui="filled-tonal" label="Sheet North" @click="${() => north.toggle()}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet North" @click="${() => {north.type='';north.toggle()}}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet Modal North" @click="${() => {north.type='modal';north.toggle()}}"></md-button>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-sheet id="east" region="east">
@@ -26,7 +27,8 @@ class SheetComponent extends MDComponent {
                         <md-sheet-body>
                         </md-sheet-body>
                     </md-sheet>
-                    <md-button ui="filled-tonal" label="Sheet East" @click="${() => east.toggle()}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet East" @click="${() => {east.type='';east.toggle()}}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet Modal East" @click="${() => {east.type='modal';east.toggle()}}"></md-button>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-sheet id="south" region="south">
@@ -37,7 +39,8 @@ class SheetComponent extends MDComponent {
                         <md-sheet-body>
                         </md-sheet-body>
                     </md-sheet>
-                    <md-button ui="filled-tonal" label="Sheet South" @click="${() => south.toggle()}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet South" @click="${() => {south.type='';south.toggle()}}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet Modal South" @click="${() => {south.type='modal';south.toggle()}}"></md-button>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                     <md-sheet id="west" region="west">
@@ -48,7 +51,8 @@ class SheetComponent extends MDComponent {
                         <md-sheet-body>
                         </md-sheet-body>
                     </md-sheet>
-                    <md-button ui="filled-tonal" label="Sheet West" @click="${() => west.toggle()}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet West" @click="${() => {west.type='';west.toggle()}}"></md-button>
+                    <md-button ui="filled-tonal" label="Sheet Modal West" @click="${() => {west.type='modal';west.toggle()}}"></md-button>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
                 </div>
