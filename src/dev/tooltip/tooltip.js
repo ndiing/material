@@ -7,14 +7,14 @@ class TooltipComponent extends MDComponent {
         return html`
             <div class="md-layout md-layout--grid">
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
-                    <md-tooltip open>
+                    <md-tooltip id="tooltip0" button="#button0" >
                         <md-tooltip-body>
                             Lorem, ipsum dolor.
                         </md-tooltip-body>
                     </md-tooltip>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
-                    <md-tooltip open>
+                    <md-tooltip id="tooltip1" button="#button1" >
                         <md-tooltip-body>
                             Lorem ipsum dolor sit.<br>
                             Magnam vitae iste possimus?<br>
@@ -24,7 +24,7 @@ class TooltipComponent extends MDComponent {
                     </md-tooltip>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
-                    <md-tooltip type="rich" open>
+                    <md-tooltip id="tooltip2" button="#button2" type="rich" >
                         <md-tooltip-header
                             label="Label"
                         ></md-tooltip-header>
@@ -34,13 +34,18 @@ class TooltipComponent extends MDComponent {
                             Enim, odio possimus!
                         </md-tooltip-body>
                         <md-tooltip-footer>
-                            <md-button label="Label"></md-button>
+                            <md-button label="Label" @click="${() => tooltip2.close()}"></md-button>
                         </md-tooltip-footer>
                     </md-tooltip>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-button id="button0" label="tooltip0" ui="filled-tonal" @pointerenter="${() => tooltip0.show()}" @pointerleave="${() => tooltip0.close()}"></md-button>
                 </div>
                 <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-button id="button1" label="tooltip1" ui="filled-tonal" @pointerenter="${() => tooltip1.show()}" @pointerleave="${() => tooltip1.close()}"></md-button>
+                </div>
+                <div class="md-layout__item md-layout__item--expanded4 md-layout__item--medium4 md-layout__item--compact4">
+                    <md-button id="button2" label="tooltip2" ui="filled-tonal" @pointerenter="${() => tooltip2.show()}"></md-button>
                 </div>
             </div>
         `;

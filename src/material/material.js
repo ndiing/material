@@ -1,6 +1,7 @@
 import "./router/router.js";
 import "./breakpoint/breakpoint.js";
 import "./ripple/ripple.js";
+import "./poper/poper.js";
 import "./layout/layout.js";
 import "./icon/icon.js";
 import "./emoji/emoji.js";

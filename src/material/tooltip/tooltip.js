@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../base/component";
 import { MDCardComponent } from "../card/card.js";
+import { MDPoperController } from "../poper/poper.js";
 
 /**
  * MDTooltipComponent represents a tooltip component.
@@ -18,7 +19,8 @@ class MDTooltipComponent extends MDCardComponent {
      */
     static properties = Object.assign(MDCardComponent.properties, {
         open: { type: Boolean, reflect: true },
-        type: { type: String }
+        type: { type: String },
+        button: { type: String },
     });
 
     /**
@@ -59,6 +61,13 @@ class MDTooltipComponent extends MDCardComponent {
      */
     firstUpdated(changedProperties) {
         super.firstUpdated(changedProperties);
+
+        this.poper=new MDPoperController(this,{
+            button: document.querySelector(this.button),
+            // container,
+            placement:'bottom',
+            offset:4,
+        })
     }
 
     /**
@@ -90,6 +99,7 @@ class MDTooltipComponent extends MDCardComponent {
      */
     show() {
         this.open = true;
+        this.poper.setPlacement()
     }
 
     /**
