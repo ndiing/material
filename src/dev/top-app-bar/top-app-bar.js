@@ -19,6 +19,7 @@ class TopAppBarComponent extends MDComponent {
             </div>
         `;
     }
+
 }
 
 customElements.define("top-app-bar-component", TopAppBarComponent);

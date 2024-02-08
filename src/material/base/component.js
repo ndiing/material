@@ -13,6 +13,14 @@ class MDComponent extends LitElement {
         });
         this.dispatchEvent(event);
     }
+
+    on(type, listener) {
+        this.addEventListener(type,listener)
+    }
+
+    off(type, listener) {
+        this.removeEventListener(type,listener)
+    }
 }
 
 export { MDComponent };

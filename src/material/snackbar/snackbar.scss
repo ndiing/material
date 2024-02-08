@@ -29,6 +29,8 @@
 
 .md-snackbar {
     position: absolute;
+    left: 16px;
+    bottom: 16px;
     z-index: 12;
     opacity: 1;
     transition-property: all;

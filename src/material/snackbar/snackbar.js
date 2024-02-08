@@ -18,6 +18,7 @@ class MDSnackbarComponent extends MDCardComponent {
      * @property {String} button - The label of the button to be displayed in the snackbar footer.
      */
     static properties = {
+        open: { type: Boolean, reflect: true },
         supportingText: { type: String },
         icon: { type: String },
         button: { type: String },
@@ -38,10 +39,10 @@ class MDSnackbarComponent extends MDCardComponent {
     constructor() {
         super();
 
-        // Default supporting text is derived from child nodes
-        this.supportingText = Array.from(this.childNodes);
+        // // Default supporting text is derived from child nodes
+        // this.supportingText = Array.from(this.childNodes);
     }
-    
+
     /**
      * Lifecycle callback when the element is added to the DOM.
      * @override
@@ -80,7 +81,6 @@ class MDSnackbarComponent extends MDCardComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
     }
 
     render() {
@@ -89,8 +89,16 @@ class MDSnackbarComponent extends MDCardComponent {
             <div class="md-snackbar__body">${this.supportingText}</div>
             ${this.hasSnackbarFooter ? html`
                 <div class="md-snackbar__footer">
-                    ${this.icon ? html`<md-icon-button class="md-snackbar__icon-button" .icon="${this.icon?.icon ?? this.icon}"></md-icon-button>` : nothing}
-                    ${this.button ? html`<md-button class="md-snackbar__button" .label="${this.button?.label ?? this.button}"></md-button>` : nothing}
+                    ${this.icon ? html`<md-icon-button 
+                        class="md-snackbar__icon-button" 
+                        .icon="${this.icon?.icon ?? this.icon}"
+                        @click="${this.handleIconButtonClick}"
+                    ></md-icon-button>` : nothing}
+                    ${this.button ? html`<md-button 
+                        class="md-snackbar__button" 
+                        .label="${this.button?.label ?? this.button}"
+                        @click="${this.handleButtonClick}"
+                    ></md-button>` : nothing}
                 </div>
             ` : nothing}
         `;
@@ -101,12 +109,21 @@ class MDSnackbarComponent extends MDCardComponent {
      */
     show() {
         this.open = true;
+        this.timeout = setTimeout(() => {
+            this.close();
+        }, 1000 * 3);
     }
 
     /**
      * Closes the snackbar.
      */
     close() {
+        clearTimeout(this.timeout);
+        const callback = () => {
+            this.off("transitionend", callback);
+            this.emit("onClosed");
+        };
+        this.on("transitionend", callback);
         this.open = false;
     }
 
@@ -119,6 +136,50 @@ class MDSnackbarComponent extends MDCardComponent {
         } else {
             this.show();
         }
+    }
+
+    handleIconButtonClick(event){
+        this.emit('onIconButtonClick',{event})
+    }
+    handleButtonClick(event){
+        this.emit('onButtonClick',{event})
+    }
+
+    static queue = (() => {
+        let pending = Promise.resolve();
+        let execute = async (callback) => {
+            try {
+                await pending;
+            } finally {
+                return callback();
+            }
+        };
+        return (callback) => (pending = execute(callback));
+    })();
+
+    static show(options = {}) {
+        options={
+            onIconButtonClick: () => {},
+            onButtonClick: () => {},
+            ...options
+        }
+        return this.queue(
+            () =>
+                new Promise((resolve) => {
+                    const element = document.createElement("md-snackbar");
+                    element.supportingText = options.supportingText;
+                    element.icon = options.icon;
+                    element.button = options.button;
+                    element.on('onIconButtonClick',() => options.onIconButtonClick)
+                    element.on('onButtonClick',() => options.onButtonClick)
+                    element.on('onClosed',() => {
+                        element.remove()
+                        resolve()
+                    })
+                    document.body.append(element);
+                    element.show();
+                })
+        );
     }
 }
 
