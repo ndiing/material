@@ -57,3 +57,5 @@ import "./tooltip-header/tooltip-header.js";
 import "./tooltip-body/tooltip-body.js";
 import "./tooltip-footer/tooltip-footer.js";
 import "./tooltip/tooltip.js";
+import "./data-table-item/data-table-item.js";
+import "./data-table/data-table.js";

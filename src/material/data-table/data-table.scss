@@ -1,0 +1,111 @@
+.md-data-table {
+    display: block;
+    background: var(--md-sys-color-surface-container-low);
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+    }
+    thead {
+    }
+    tbody {
+        &:last-child {
+            tr {
+                td {
+                    .md-data-table__item {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    tfoot {
+    }
+    tr {
+    }
+    th {
+        text-align: left;
+        width: 1%;
+
+        .md-data-table__label {
+            @extend .md-typography--title-small;
+        }
+    }
+    td {
+        max-width: 0;
+    }
+}
+
+.md-data-table__item {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 8px 16px;
+    gap: 0 16px;
+    border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+// .md-data-table__start {}
+
+.md-data-table__center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.md-data-table__end {
+    .md-data-table__supporting-text {
+        @extend .md-typography--body-small;
+    }
+}
+
+.md-data-table__avatar {
+    height: 40px;
+    border-radius: 20px;
+    width: 40px;
+    overflow: hidden;
+}
+
+.md-data-table__image {
+    height: 56px;
+    width: 56px;
+}
+
+.md-data-table__video {
+    height: 64px;
+    width: 113.77777777777777px;
+    margin: 4px 0 4px -16px;
+}
+
+.md-data-table__icon {
+    @extend .md-icon;
+    height: 24px;
+    width: 24px;
+}
+
+// .md-data-table__checkbox {}
+
+// .md-data-table__radio-button {}
+
+// .md-data-table__switch {}
+
+.md-data-table__label {
+    @extend .md-typography--body-medium;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.md-data-table__supporting-text {
+    @extend .md-typography--body-medium;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.md-data-table__item[activated] {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}

@@ -14,6 +14,7 @@ MDRouter.register([
             { path: "carousel", title: "carousel", load: () => import("./carousel/carousel.js").then((m) => m.default) },
             { path: "checkbox", title: "checkbox", load: () => import("./checkbox/checkbox.js").then((m) => m.default) },
             { path: "chip", title: "chip", load: () => import("./chip/chip.js").then((m) => m.default) },
+            { path: "data-table", title: "data-table", load: () => import("./data-table/data-table.js").then((m) => m.default) },
             { path: "date-picker", title: "date-picker", load: () => import("./date-picker/date-picker.js").then((m) => m.default) },
             { path: "dialog", title: "dialog", load: () => import("./dialog/dialog.js").then((m) => m.default) },
             { path: "divider", title: "divider", load: () => import("./divider/divider.js").then((m) => m.default) },
@@ -45,6 +46,5 @@ MDRouter.register([
         ],
     },
     // { path: "layout", title: "layout", load: () => import("./layout/layout.js").then((m) => m.default) },
-
     { path: "*", component: ErrorComponent, children: [] },
 ]);

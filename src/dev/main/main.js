@@ -11,6 +11,7 @@ const items = [
     // { icon:'done', label: "carousel", routerLink: "carousel", },
     { icon: "done_all", label: "checkbox", routerLink: "checkbox" },
     { icon: "done_all", label: "chip", routerLink: "chip" },
+    { icon: "done", label: "data-table", routerLink: "data-table" },
     // { icon:'done', label: "date-picker", routerLink: "date-picker", },
     { icon: "done_all", label: "dialog", routerLink: "dialog" },
     { icon: "done_all", label: "divider", routerLink: "divider" },
