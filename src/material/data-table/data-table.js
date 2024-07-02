@@ -228,15 +228,15 @@ class MDDataTableComponent extends MDCardComponent {
             viewportSelector: ".md-data-table__viewport",
             scrollbarSelector: ".md-data-table__scrollbar",
             containerSelector: ".md-data-table__container",
-            columnSelector: ".md-data-table__column",
-            rowSelector: ".md-data-table__row",
+            // columnSelector: ".md-data-table__column",
+            // rowSelector: ".md-data-table__row",
 
             rowTotal: total,
             rowHeight: 56,
             rowBuffer: 0, //+ (this.stickyHeader ? 1 : 0),
 
             columnTotal: this.columns.length,
-            columnWidth: 200,
+            columnWidth: this.columns.reduce((acc,prev) => acc+prev.width,0)/this.columns.length,
             columnBuffer: this.columns.filter((column) => column.sticky).length, //+ (this.stickyCheckbox ? 1 : 0),
         });
 

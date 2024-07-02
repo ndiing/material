@@ -79,14 +79,14 @@ class MDVirtualController {
         window.requestAnimationFrame(() => {
             if (this.options.rowTotal) {
                 let rowHeight;
-                if (this.options.rowSelector) {
-                    let totalHeight = 0;
-                    const rows = Array.from(this.viewport.querySelectorAll(this.options.rowSelector));
-                    rows.forEach((row) => {
-                        totalHeight += row.data.height;
-                    });
-                    rowHeight = totalHeight / rows.length;
-                }
+                // if (this.options.rowSelector) {
+                //     let totalHeight = 0;
+                //     const rows = Array.from(this.viewport.querySelectorAll(this.options.rowSelector));
+                //     rows.forEach((row) => {
+                //         totalHeight += row.data.height;
+                //     });
+                //     rowHeight = totalHeight / rows.length;
+                // }
                 rowHeight = rowHeight || this.options.rowHeight;
                 this.scrollbarHeight = this.options.rowTotal * rowHeight;
                 this.rowStart = Math.floor(this.viewport.scrollTop / rowHeight) - (this.options.rowBuffer || this.options.buffer);
@@ -99,14 +99,14 @@ class MDVirtualController {
 
             if (this.options.columnTotal) {
                 let columnWidth;
-                if (this.options.columnSelector) {
-                    let totalWidth = 0;
-                    const columns = Array.from(this.viewport.querySelectorAll(this.options.columnSelector));
-                    columns.forEach((column) => {
-                        totalWidth += column.data.width;
-                    });
-                    columnWidth = totalWidth / columns.length;
-                }
+                // if (this.options.columnSelector) {
+                //     let totalWidth = 0;
+                //     const columns = Array.from(this.viewport.querySelectorAll(this.options.columnSelector));
+                //     columns.forEach((column) => {
+                //         totalWidth += column.data.width;
+                //     });
+                //     columnWidth = totalWidth / columns.length;
+                // }
                 columnWidth = columnWidth || this.options.columnWidth;
                 this.scrollbarWidth = this.options.columnTotal * columnWidth;
                 this.columnStart = Math.floor(this.viewport.scrollLeft / columnWidth) - this.options.columnBuffer;
