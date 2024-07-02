@@ -27,13 +27,13 @@ class MDVirtualController {
             columnSelector: null,
 
             rowTotal: 0,
-            rowHeight: 52,
-            buffer: 2,
-            rowBuffer: 2,
+            rowHeight: 0,
+            buffer: 0,
+            rowBuffer: 0,
 
             columnTotal: 0,
-            columnWidth: 156,
-            columnBuffer: 2,
+            columnWidth: 0,
+            columnBuffer: 0,
 
             ...options,
         };

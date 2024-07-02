@@ -2,27 +2,23 @@ import { html } from "lit";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.js";
 
+
 /**
  * {{desc}}
  * @extends MDDatetimePickerComponent
  * @tagname md-date-picker
  * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerIconButtonPrevClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerIconButtonNextClick - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerButtonLabelClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerButtonCancelClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerButtonOkClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerYearItemClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerMonthItemClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatePickerDayItemClick - {{desc}}
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
+    
     /**
      * {{desc}}
      */
@@ -38,6 +34,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -52,6 +49,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         `];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -65,6 +63,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.classList.add("md-date-picker");
     }
 
+    
     /**
      * {{desc}}
      */
@@ -185,6 +184,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerDayItemClick", event);
     }
 
+    
     /**
      * {{desc}}
      */

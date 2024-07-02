@@ -2,24 +2,25 @@ import { parseWeek, stringifyWeek, stringifyYear } from "../functions/functions.
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
 
+
 /**
- * Week picker component for selecting a specific week.
+ * {{desc}}
  * @extends MDDatetimePickerComponent
  * @tagname md-week-picker
- * @fires MDWeekPickerComponent#onWeekPickerSelection - Fired when a week is selected.
- * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - Fired when the previous button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - Fired when the next button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - Fired when the label button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - Fired when the cancel button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - Fired when the OK button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - Fired when a year item is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - Fired when a month item is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - Fired when a day item is clicked.
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - {{desc}}
  */
 class MDWeekPickerComponent extends MDDatetimePickerComponent {
+    
     /**
-     * Gets the formatted weekdays.
-     * @returns {Array} An array of weekday objects.
+     * {{desc}}
      */
     get weekdays() {
         const rows = [];
@@ -32,9 +33,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         return rows;
     }
 
+    
     /**
-     * Gets the formatted days of the current selection.
-     * @returns {Array} An array of day objects with their corresponding weeks.
+     * {{desc}}
      */
     get days() {
         const rows = [];
@@ -64,9 +65,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         return rows;
     }
 
+    
     /**
-     * Gets the body of the week picker component.
-     * @returns {Array} An array containing the HTML template for the body.
+     * {{desc}}
      */
     get body() {
         /* prettier-ignore */
@@ -79,17 +80,17 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         `];
     }
 
+    
     /**
-     * Sets the body of the week picker component.
-     * @param {Array} value - The new body value.
+     * {{desc}}
      */
     set body(value) {
         this._body = value;
     }
 
+    
     /**
-     * Gets the leading actions of the week picker component.
-     * @returns {Array} An array containing the leading action buttons.
+     * {{desc}}
      */
     get leadingActions() {
         let label;
@@ -134,8 +135,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.classList.add("md-week-picker");
     }
 
+    
     /**
-     * Updates the date based on the selected week.
+     * {{desc}}
      */
     updateDate() {
         const date = parseWeek(this.value);
@@ -249,9 +251,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerDayItemClick", event);
     }
 
+    
     /**
-     * Gets the stringified value of the selected week.
-     * @returns {String} The stringified week.
+     * {{desc}}
      */
     getValue() {
         return stringifyWeek(this.selected);

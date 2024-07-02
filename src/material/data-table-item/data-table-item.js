@@ -1,5 +1,8 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
+import { MDRippleController } from "../ripple/ripple.js";
+import { MDGestureController } from "../gesture/gesture.js";
+
 
 /**
  * {{desc}}
@@ -7,6 +10,7 @@ import { MDComponent } from "../component/component.js";
  * @tagname md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
+    
     /**
      * @property {String} avatar - {{desc}}
      * @property {String} thumbnail - {{desc}}
@@ -24,7 +28,6 @@ class MDDataTableItemComponent extends MDComponent {
      * @property {Boolean} trailingSwitch - {{desc}}
      * @property {Boolean} selected - {{desc}}
      * @property {String} routerLink - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
      */
     static properties = {
         avatar: { type: String },
@@ -50,23 +53,19 @@ class MDDataTableItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
-
-        indeterminate: { type: Boolean },
-
-        sortable: { type: Boolean },
-        sortableIcon: { type: String },
     };
 
     constructor() {
         super();
+
     }
 
     renderCheckbox() {
         /* prettier-ignore */
         return html`<md-checkbox 
             class="md-data-table__checkbox"
-            .indeterminate="${this.indeterminate}"
             .checked="${this.selected}"
+            @onCheckboxNativeInput="${this.handleCheckboxNativeInput}"
         ></md-checkbox>`
     }
 
@@ -75,6 +74,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-radio-button 
             class="md-data-table__radio-button"
             .checked="${this.selected}"
+            @onRadioButtonNativeInput="${this.handleRadioButtonNativeInput}"
         ></md-radio-button>`
     }
 
@@ -83,6 +83,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-switch 
             class="md-data-table__switch"
             .checked="${this.selected}"
+            @onSwitchNativeInput="${this.handleSwitchNativeInput}"
         ></md-switch>`
     }
 
@@ -110,8 +111,6 @@ class MDDataTableItemComponent extends MDComponent {
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
-
-            ${this.sortable?html`<md-icon-button class="md-data-table__sortable" .icon="${this.sortableIcon}"></md-icon-button>`:nothing}
 
             ${this.text?html`<div class="md-data-table__text">${this.text}</div>`:nothing}
 
@@ -142,6 +141,19 @@ class MDDataTableItemComponent extends MDComponent {
             }
         }
     }
+
+    handleCheckboxNativeInput(event){
+        this.emit('onCheckboxNativeInput',event)
+    }
+
+    handleRadioButtonNativeInput(event){
+        this.emit('onRadioButtonNativeInput',event)
+    }
+
+    handleSwitchNativeInput(event){
+        this.emit('onSwitchNativeInput',event)
+    }
+
 }
 
 customElements.define("md-data-table-item", MDDataTableItemComponent);

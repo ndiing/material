@@ -31,7 +31,7 @@
 /* [ ] */ import "./date-picker/date-picker.js";
 /* [ ] */ import "./month-picker/month-picker.js";
 /* [ ] */ import "./time-picker/time-picker.js";
-/* [x] */ import "./week-picker/week-picker.js";
+/* [ ] */ import "./week-picker/week-picker.js";
 /* [ ] */ import "./color-picker/color-picker.js";
 /* [ ] */ import "./emoji-picker/emoji-picker.js";
 /* [x] */ import "./fab/fab.js";
@@ -44,7 +44,7 @@
 /* [x] */ import "./switch/switch.js";
 /* [x] */ import "./slider/slider.js";
 /* [x] */ import "./progress-indicator/progress-indicator.js";
-/* [x] */ import "./list-item/list-item.js";
+/* [ ] */ import "./list-item/list-item.js";
 /* [x] */ import "./list/list.js";
 /* [x] */ import "./tree-item/tree-item.js";
 /* [x] */ import "./tree/tree.js";

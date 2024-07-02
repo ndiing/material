@@ -81,21 +81,17 @@ class MDStore {
     }
 
     /**
-     * Sorts an array of documents based on given sorters.
-     * @param {Array} docs - The array of documents to sort.
-     * @param {Array<{ name: string, order: 'asc' | 'desc' }>} sorters - Sort configurations.
-     * @returns {Array} The sorted array of documents.
+     * Sorts an array of objects based on multiple fields.
+     * @param {Array<Object>} docs - The array of objects to be sorted.
+     * @param {Array<{name: string, order: 'asc' | 'desc'}>} sorters - The array of sorting criteria.
+     * @returns {Array<Object>} - The sorted array.
      */
     sort(docs, sorters) {
         return docs.sort((a, b) => {
             for (const sorter of sorters) {
                 const { name, order } = sorter;
-                const aValue = this.getValue(a, name);
-                const bValue = this.getValue(b, name);
-
-                if (aValue !== bValue) {
-                    const comparison = typeof aValue === "string" && typeof bValue === "string" ? aValue.localeCompare(bValue) : aValue < bValue ? -1 : 1;
-
+                const comparison = (a[name] > b[name]) - (a[name] < b[name]);
+                if (comparison !== 0) {
                     return order === "asc" ? comparison : -comparison;
                 }
             }

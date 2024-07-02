@@ -3,30 +3,31 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
+
 /**
- * Represents a list item component with various configurable properties.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-list-item
  */
 class MDListItemComponent extends MDComponent {
+    
     /**
-     * Properties that can be defined for an MDListItemComponent.
-     * @property {String} avatar - URL for the avatar image.
-     * @property {String} thumbnail - URL for the thumbnail image.
-     * @property {String} video - URL for the video.
-     * @property {String} icon - Icon name or URL.
-     * @property {String} label - Primary label text.
-     * @property {String} subLabel - Secondary label text.
-     * @property {Number} badge - Numeric badge value.
-     * @property {String} text - Additional text content.
-     * @property {Boolean} leadingCheckbox - Whether the item has a leading checkbox.
-     * @property {Boolean} leadingRadioButton - Whether the item has a leading radio button.
-     * @property {Boolean} leadingSwitch - Whether the item has a leading switch.
-     * @property {Boolean} trailingCheckbox - Whether the item has a trailing checkbox.
-     * @property {Boolean} trailingRadioButton - Whether the item has a trailing radio button.
-     * @property {Boolean} trailingSwitch - Whether the item has a trailing switch.
-     * @property {Boolean} selected - Indicates if the item is selected.
-     * @property {String} routerLink - Optional link for routing.
+     * @property {String} avatar - {{desc}}
+     * @property {String} thumbnail - {{desc}}
+     * @property {String} video - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadioButton - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Boolean} trailingRadioButton - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {String} routerLink - {{desc}}
      */
     static properties = {
         avatar: { type: String },
@@ -76,6 +77,7 @@ class MDListItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-list__checkbox"
             .checked="${this.selected}"
+            @onCheckboxNativeInput="${this.handleCheckboxNativeInput}"
         ></md-checkbox>`
     }
 
@@ -84,6 +86,7 @@ class MDListItemComponent extends MDComponent {
         return html`<md-radio-button 
             class="md-list__radio-button"
             .checked="${this.selected}"
+            @onRadioButtonNativeInput="${this.handleRadioButtonNativeInput}"
         ></md-radio-button>`
     }
 
@@ -92,6 +95,7 @@ class MDListItemComponent extends MDComponent {
         return html`<md-switch 
             class="md-list__switch"
             .checked="${this.selected}"
+            @onSwitchNativeInput="${this.handleSwitchNativeInput}"
         ></md-switch>`
     }
 
@@ -149,6 +153,19 @@ class MDListItemComponent extends MDComponent {
             }
         }
     }
+
+    handleCheckboxNativeInput(event){
+        this.emit('onCheckboxNativeInput',event)
+    }
+
+    handleRadioButtonNativeInput(event){
+        this.emit('onRadioButtonNativeInput',event)
+    }
+
+    handleSwitchNativeInput(event){
+        this.emit('onSwitchNativeInput',event)
+    }
+
 }
 
 customElements.define("md-list-item", MDListItemComponent);

@@ -1,3 +1,4 @@
+
 .md-data-table__item {
     display: flex;
     align-items: center;
@@ -32,19 +33,16 @@
     flex-direction: column;
     min-width: 0;
     min-height: 0;
-    // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .md-data-table__label-primary {
     @include typescale-body-medium();
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;
-    // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .md-data-table__label-secondary {
     @include typescale-body-medium();
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;
-    // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .md-data-table__text {
     @include typescale-body-small();
