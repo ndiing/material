@@ -17,11 +17,16 @@
     
     .md-card__actions {
         gap: 0 16px;
+
+        .md-card__text-field{
+            --md-comp-text-field-density:-2;
+            width: 260px;
+        }
     }
     
     .md-card__label-primary {
-        @include typescale-body-large();
-        height: var(--md-sys-typescale-body-large-line-height);
+        @include typescale-title-large();
+        height: var(--md-sys-typescale-title-large-line-height);
     }
     
     .md-card__body {
@@ -79,6 +84,9 @@
     td{
         max-width: 0;
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        .md-data-table__item{
+            min-height: 52px;
+        }
     }
     tbody{
         tr{
@@ -113,4 +121,20 @@
     @include ripple-button();
     --md-comp-ripple-size:200%;
     &::after{animation: none;}
+}
+
+.md-data-table__spacer{
+    flex: 1;
+}
+.md-data-table__pagination{
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+}
+.md-data-table__pagination-select{
+    --md-comp-text-field-density:-2;
+    width: 130px;
+}
+.md-data-table__pagination-text{
+    white-space: nowrap;
 }

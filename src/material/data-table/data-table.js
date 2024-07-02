@@ -5,6 +5,7 @@ import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
+import { choose } from "lit/directives/choose.js";
 
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
@@ -25,8 +26,59 @@ class MDDataTableComponent extends MDCardComponent {
     }
     set body(value) {}
 
+    get label() {
+        return 'label'
+    }
+    set label(value) {
+    }
+
+    get trailingActions() {
+        return [
+            {component:'text-field'}
+        ]
+    }
+    set trailingActions(value) {
+    }
+
+    get actions() {
+        return [
+            {component:'pagination'}
+        ]
+    }
+    set actions(value) {
+    }
+
     constructor() {
         super();
+    }
+
+    renderAction(item, defaultAction = this.renderButton) {
+        /* prettier-ignore */
+        return choose(item.component, [
+            ['text-field', () => this.renderTextField(item)],
+            ['icon-button', () => this.renderIconButton(item)],
+            ['icon', () => this.renderIcon(item)],
+            ['button', () => this.renderButton(item)],
+            ['fab', () => this.renderFab(item)],
+            ['pagination', () => this.renderPagination(item)],
+            ['spacer', () => html`<div class="md-pane__spacer"></div>`],
+        ], () => defaultAction(item));
+    }
+
+    renderPagination(){
+        /* prettier-ignore */
+        return html`
+            <div class="md-data-table__spacer"></div>
+            <div class="md-data-table__pagination">
+                <div class="md-data-table__pagination-text">Rows per page</div>
+                <md-text-field class="md-data-table__pagination-select" ></md-text-field>
+                <div class="md-data-table__pagination-text">1-5 of 20</div>
+                <md-icon-button .icon="${"first_page"}"></md-icon-button>
+                <md-icon-button .icon="${"keyboard_arrow_left"}"></md-icon-button>
+                <md-icon-button .icon="${"keyboard_arrow_right"}"></md-icon-button>
+                <md-icon-button .icon="${"last_page"}"></md-icon-button>
+            </div>
+        `
     }
 
     renderDataTableItem(item) {
@@ -90,7 +142,7 @@ class MDDataTableComponent extends MDCardComponent {
                             <th
                                 .data="${column}"
                                 style="${styleMap({
-                                    'min-width': (column.width||(56*4))+'px',
+                                    'min-width': (column.width||(52*4))+'px',
                                     ...(this.stickyHeader&&{
                                         position:'sticky',
                                         top:(0-this.virtual.translateY)+'px',
@@ -197,7 +249,7 @@ class MDDataTableComponent extends MDCardComponent {
                 for (let i = from; i < to; i++) {
                     let column = this.columns[i];
                     if (column.sticky) {
-                        value += column.width || 56 * 4;
+                        value += column.width || 52 * 4;
                     }
                 }
                 column.flow = flow;
@@ -215,11 +267,11 @@ class MDDataTableComponent extends MDCardComponent {
             containerSelector: ".md-data-table__container",
 
             rowTotal: total,
-            rowHeight: 56,
+            rowHeight: 52,
             rowBuffer: 1,
 
             columnTotal: this.columns.length,
-            columnWidth: this.columns.reduce((acc, prev) => acc + (prev.width || 56 * 4), 0) / this.columns.length,
+            columnWidth: this.columns.reduce((acc, prev) => acc + (prev.width || 52 * 4), 0) / this.columns.length,
             columnBuffer: this.columns.filter((column) => column.sticky).length,
         });
 
