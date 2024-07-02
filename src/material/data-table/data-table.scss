@@ -80,4 +80,37 @@
         max-width: 0;
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
     }
+    tbody{
+        tr{
+            &:focus,
+            &:hover,
+            &:active,
+            &[activated],
+            &[selected],
+            &[dragged],
+            &[disabled] {.md-data-table__item{@include ripple-size();}}
+
+            &:focus,
+            &:hover,
+            &:active,
+            &[activated],
+            &[selected],
+            &[dragged],
+            &[disabled] {.md-data-table__item{@include ripple-clipped();}}
+
+            &:focus {.md-data-table__item{@include ripple-focused();}}
+            &:hover {.md-data-table__item{@include ripple-hover();}}
+            &:active {.md-data-table__item{@include ripple-pressed();}}
+            &[activated] {.md-data-table__item{@include ripple-activated();}}
+            &[selected] {.md-data-table__item{@include ripple-selected();}}
+            &[dragged] {.md-data-table__item{@include ripple-dragged();}}
+            &[disabled] {.md-data-table__item{@include ripple-disabled();}}
+        }
+    }
+}
+.md-data-table__item{
+    @include ripple();
+    @include ripple-button();
+    --md-comp-ripple-size:200%;
+    &::after{animation: none;}
 }

@@ -53,6 +53,10 @@ class MDDataTableItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
+        indeterminate: { type: Boolean,  },
+
+        sortable: { type: Boolean,  },
+        sortableIcon: { type: String,  },
     };
 
     constructor() {
@@ -65,7 +69,8 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-data-table__checkbox"
             .checked="${this.selected}"
-            @onCheckboxNativeInput="${this.handleCheckboxNativeInput}"
+            .indeterminate="${this.indeterminate}"
+            @onCheckboxNativeInput="${this.handleDataTableItemCheckboxNativeInput}"
         ></md-checkbox>`
     }
 
@@ -74,7 +79,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-radio-button 
             class="md-data-table__radio-button"
             .checked="${this.selected}"
-            @onRadioButtonNativeInput="${this.handleRadioButtonNativeInput}"
+            @onRadioButtonNativeInput="${this.handleDataTableItemRadioButtonNativeInput}"
         ></md-radio-button>`
     }
 
@@ -83,7 +88,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-switch 
             class="md-data-table__switch"
             .checked="${this.selected}"
-            @onSwitchNativeInput="${this.handleSwitchNativeInput}"
+            @onSwitchNativeInput="${this.handleDataTableItemSwitchNativeInput}"
         ></md-switch>`
     }
 
@@ -99,8 +104,8 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.video?html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
-
-            ${this.label||this.subLabel||this.badge?html`
+            
+            ${this.label||this.subLabel||this.badge||this.sortable?html`
                 <div class="md-data-table__inner">
                     ${this.label||this.subLabel?html`
                         <div class="md-data-table__label">
@@ -108,6 +113,7 @@ class MDDataTableItemComponent extends MDComponent {
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
+                    ${this.sortable?html`<div class="md-icon md-data-table__sortable">${this.sortableIcon}</div>`:nothing}
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
@@ -142,16 +148,16 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 
-    handleCheckboxNativeInput(event){
-        this.emit('onCheckboxNativeInput',event)
+    handleDataTableItemCheckboxNativeInput(event){
+        this.emit('onDataTableItemCheckboxNativeInput',event)
     }
 
-    handleRadioButtonNativeInput(event){
-        this.emit('onRadioButtonNativeInput',event)
+    handleDataTableItemRadioButtonNativeInput(event){
+        this.emit('onDataTableItemRadioButtonNativeInput',event)
     }
 
-    handleSwitchNativeInput(event){
-        this.emit('onSwitchNativeInput',event)
+    handleDataTableItemSwitchNativeInput(event){
+        this.emit('onDataTableItemSwitchNativeInput',event)
     }
 
 }
