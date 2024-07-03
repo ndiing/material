@@ -186,7 +186,7 @@ class MDDataTableComponent extends MDCardComponent {
                 let flow = "left";
                 let from = 0;
                 let to = index;
-                let value = 0 + (this.stickyCheckbox ? 56 : 0);
+                let value = 0 + (this.stickyCheckbox ? 16 + 24 + 16 : 0);
                 if (index > half) {
                     flow = "right";
                     from = index + 1;
