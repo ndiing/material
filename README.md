@@ -1,7 +1,4 @@
-
-
-<!-- 
-jsdoc2md ./src/material/functions/functions.js > ./docs/functions.md
+<!-- jsdoc2md ./src/material/functions/functions.js > ./docs/functions.md
 jsdoc2md ./src/material/localization/localization.js > ./docs/localization.md
 jsdoc2md ./src/material/color/color.js > ./docs/color.md
 jsdoc2md ./src/material/component/component.js > ./docs/component.md
@@ -14,6 +11,7 @@ jsdoc2md ./src/material/observer/observer.js > ./docs/observer.md
 jsdoc2md ./src/material/attribute-observer/attribute-observer.js > ./docs/attribute-observer.md
 jsdoc2md ./src/material/virtual/virtual.js > ./docs/virtual.md
 jsdoc2md ./src/material/store/store.js > ./docs/store.md
+jsdoc2md ./src/material/markdown/markdown.js > ./docs/markdown.md
 
 jsdoc2md ./src/material/icon/icon.js > ./docs/icon.md
 jsdoc2md ./src/material/emoji/emoji.js > ./docs/emoji.md
@@ -58,6 +56,5 @@ jsdoc2md ./src/material/tabs/tabs.js > ./docs/tabs.md
 jsdoc2md ./src/material/chip/chip.js > ./docs/chip.md
 jsdoc2md ./src/material/chips/chips.js > ./docs/chips.md
 jsdoc2md ./src/material/text-field/text-field.js > ./docs/text-field.md
-
-
- -->
+jsdoc2md ./src/material/data-table-item/data-table-item.js > ./docs/data-table-item.md
+jsdoc2md ./src/material/data-table/data-table.js > ./docs/data-table.md -->
