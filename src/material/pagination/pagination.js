@@ -2,21 +2,21 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * A component for handling pagination in a list or table.
  * @extends MDComponent
  * @tagname md-pagination
- * @fires MDPaginationComponent#onPaginationChange - {{desc}}
- * @fires MDPaginationComponent#onPaginationLimitChange - {{desc}}
- * @fires MDPaginationComponent#onPaginationFirstClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationPrevClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationNextClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationChange - Event fired when the pagination changes.
+ * @fires MDPaginationComponent#onPaginationLimitChange - Event fired when the pagination limit changes.
+ * @fires MDPaginationComponent#onPaginationFirstClick - Event fired when the first page button is clicked.
+ * @fires MDPaginationComponent#onPaginationPrevClick - Event fired when the previous page button is clicked.
+ * @fires MDPaginationComponent#onPaginationNextClick - Event fired when the next page button is clicked.
+ * @fires MDPaginationComponent#onPaginationLastClick - Event fired when the last page button is clicked.
  */
 class MDPaginationComponent extends MDComponent {
     /**
-     * @property {Number} total - {{desc}}
-     * @property {Number} page - {{desc}}
-     * @property {Number} limit - {{desc}}
+     * @property {Number} total - The total number of items.
+     * @property {Number} page - The current page number.
+     * @property {Number} limit - The number of items per page.
      */
     static properties = {
         total: { type: Number },
@@ -25,7 +25,7 @@ class MDPaginationComponent extends MDComponent {
     };
 
     /**
-     * {{desc}}
+     * Options for the number of items per page.
      */
     get options() {
         const options = [];
@@ -50,46 +50,43 @@ class MDPaginationComponent extends MDComponent {
     set options(value) {}
 
     /**
-     * {{desc}}
+     * The total number of pages.
      */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
-    /**
-     * {{desc}}
-     */
     set pages(value) {}
 
+    /**
+     * The starting index for the current page.
+     */
     get start() {
         return (this.page - 1) * this.limit;
     }
-    /**
-     * {{desc}}
-     */
     set start(value) {}
 
-    get end() {
-        return this.start + this.limit;
-    }
     /**
-     * {{desc}}
+     * The ending index for the current page.
      */
+    get end() {
+        return Math.min(this.start + this.limit, this.total);
+    }
     set end(value) {}
 
+    /**
+     * The starting item number for the current page.
+     */
     get numberStart() {
         return this.start + 1;
     }
-    /**
-     * {{desc}}
-     */
     set numberStart(value) {}
 
-    get numberEnd() {
-        return this.start + this.limit;
-    }
     /**
-     * {{desc}}
+     * The ending item number for the current page.
      */
+    get numberEnd() {
+        return Math.min(this.start + this.limit, this.total);
+    }
     set numberEnd(value) {}
 
     constructor() {
@@ -134,7 +131,7 @@ class MDPaginationComponent extends MDComponent {
                 .disabled="${this.page==this.pages}"
                 @click="${this.handlePaginationLastClick}"
             ></md-icon-button>
-        `
+        `;
     }
 
     connectedCallback() {

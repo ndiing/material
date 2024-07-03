@@ -5,28 +5,34 @@ import { choose } from "lit/directives/choose.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * MDCardComponent is a versatile card component used to display various types of content in different styles.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-card
- * @fires MDCardComponent#onCardIconButtonClick - Fired when an icon button on the card is clicked.
- * @fires MDCardComponent#onCardIconClick - Fired when an icon on the card is clicked.
- * @fires MDCardComponent#onCardButtonClick - Fired when a button on the card is clicked.
- * @fires MDCardComponent#onCardFabClick - Fired when a FAB (Floating Action Button) on the card is clicked.
- * @fires MDCardComponent#onCardTextFieldNativeFocus - Fired when a text field on the card receives focus.
- * @fires MDCardComponent#onCardTextFieldNativeBlur - Fired when a text field on the card loses focus.
- * @fires MDCardComponent#onCardTextFieldNativeInput - Fired when there is input in a text field on the card.
- * @fires MDCardComponent#onCardTextFieldNativeSearch - Fired when a search is performed in a text field on the card.
- * @fires MDCardComponent#onCardTextFieldNativeInvalid - Fired when a text field on the card becomes invalid.
- * @fires MDCardComponent#onCardTextFieldNativeReset - Fired when a text field on the card is reset.
+ * @fires MDCardComponent#onCardIconButtonClick - {{desc}}
+ * @fires MDCardComponent#onCardIconClick - {{desc}}
+ * @fires MDCardComponent#onCardButtonClick - {{desc}}
+ * @fires MDCardComponent#onCardFabClick - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeFocus - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeBlur - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeInput - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeSearch - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeInvalid - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeReset - {{desc}}
+ * @fires MDCardComponent#onCardPaginationChange - {{desc}}
+ * @fires MDCardComponent#onCardPaginationLimitChange - {{desc}}
+ * @fires MDCardComponent#onCardPaginationFirstClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationPrevClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationNextClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationLastClick - {{desc}}
  */
 class MDCardComponent extends MDComponent {
     /**
-     * @property {String} variant - Specifies the visual variant of the card (e.g., elevated, filled, outlined).
-     * @property {Array} leadingActions - Array of actions placed at the leading end of the card.
-     * @property {String} label - Primary label for the card.
-     * @property {String} subLabel - Secondary label for the card.
-     * @property {Array} trailingActions - Array of actions placed at the trailing end of the card.
-     * @property {Array} actions - Array of actions associated with the card.
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
      */
     static properties = {
         variant: { type: String },
@@ -185,6 +191,24 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    renderPagination(item) {
+        /* prettier-ignore */
+        return html`
+            <md-pagination
+                class="md-card__pagination"
+                .total="${ifDefined(item.total)}"
+                .page="${ifDefined(item.page)}"
+                .limit="${ifDefined(item.limit)}"
+                @onPaginationChange="${this.handleCardPaginationChange}"
+                @onPaginationLimitChange="${this.handleCardPaginationLimitChange}"
+                @onPaginationFirstClick="${this.handleCardPaginationFirstClick}"
+                @onPaginationPrevClick="${this.handleCardPaginationPrevClick}"
+                @onPaginationNextClick="${this.handleCardPaginationNextClick}"
+                @onPaginationLastClick="${this.handleCardPaginationLastClick}"
+            ></md-pagination>
+        `;
+    }
+
     renderAction(item, defaultAction = this.renderButton) {
         /* prettier-ignore */
         return choose(item.component, [
@@ -193,6 +217,7 @@ class MDCardComponent extends MDComponent {
             ['icon', () => this.renderIcon(item)],
             ['button', () => this.renderButton(item)],
             ['fab', () => this.renderFab(item)],
+            ['pagination', () => this.renderPagination(item)],
             ['spacer', () => html`<div class="md-pane__spacer"></div>`],
         ], () => defaultAction(item));
     }
@@ -295,6 +320,24 @@ class MDCardComponent extends MDComponent {
     }
     handleCardTextFieldNativeReset(event) {
         this.emit("onCardTextFieldNativeReset", event);
+    }
+    handleCardPaginationChange(event) {
+        this.emit("onCardPaginationChange", event);
+    }
+    handleCardPaginationLimitChange(event) {
+        this.emit("onCardPaginationLimitChange", event);
+    }
+    handleCardPaginationFirstClick(event) {
+        this.emit("onCardPaginationFirstClick", event);
+    }
+    handleCardPaginationPrevClick(event) {
+        this.emit("onCardPaginationPrevClick", event);
+    }
+    handleCardPaginationNextClick(event) {
+        this.emit("onCardPaginationNextClick", event);
+    }
+    handleCardPaginationLastClick(event) {
+        this.emit("onCardPaginationLastClick", event);
     }
 }
 

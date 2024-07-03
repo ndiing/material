@@ -7,7 +7,7 @@
     box-shadow: var(--md-sys-elevation-level0);
 
     .md-card__header {
-        padding: 24px 24px;
+        padding: 16px 24px;
         gap: 0 24px;
 
         + .md-card__body {
@@ -17,6 +17,11 @@
 
     .md-card__actions {
         gap: 0 24px;
+
+        .md-card__text-field {
+            min-width: 252px;
+            user-select: none;
+        }
     }
 
     .md-card__label {
@@ -43,7 +48,7 @@
     }
 
     .md-card__footer {
-        padding: 24px 24px;
+        padding: 16px 24px;
         gap: 0 8px;
     }
 
@@ -155,5 +160,13 @@
     --md-comp-ripple-size: 200%;
     &::after {
         animation: none;
+    }
+}
+.md-pagination {
+    .md-pagination__select {
+        min-width: 84px;
+    }
+    .md-pagination__text {
+        min-width: 120px;
     }
 }

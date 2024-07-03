@@ -11,7 +11,9 @@
     @include typescale-body-medium();
     user-select: none;
 }
-// .md-pagination__select{}
+.md-pagination__select {
+    user-select: none;
+}
 .md-pagination__text {
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;

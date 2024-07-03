@@ -44,7 +44,7 @@
 /* [x] */ import "./switch/switch.js";
 /* [x] */ import "./slider/slider.js";
 /* [x] */ import "./progress-indicator/progress-indicator.js";
-/* [ ] */ import "./list-item/list-item.js";
+/* [x] */ import "./list-item/list-item.js";
 /* [x] */ import "./list/list.js";
 /* [x] */ import "./tree-item/tree-item.js";
 /* [x] */ import "./tree/tree.js";
@@ -56,6 +56,6 @@
 /* [x] */ import "./chip/chip.js";
 /* [x] */ import "./chips/chips.js";
 /* [ ] */ import "./text-field/text-field.js";
-/* [ ] */ import "./pagination/pagination.js";
+/* [x] */ import "./pagination/pagination.js";
 /* [ ] */ import "./data-table-item/data-table-item.js";
 /* [ ] */ import "./data-table/data-table.js";
