@@ -26,59 +26,9 @@ class MDDataTableComponent extends MDCardComponent {
     }
     set body(value) {}
 
-    get label() {
-        return 'label'
-    }
-    set label(value) {
-    }
-
-    get trailingActions() {
-        return [
-            {component:'text-field'}
-        ]
-    }
-    set trailingActions(value) {
-    }
-
-    get actions() {
-        return [
-            {component:'pagination'}
-        ]
-    }
-    set actions(value) {
-    }
-
+    
     constructor() {
         super();
-    }
-
-    renderAction(item, defaultAction = this.renderButton) {
-        /* prettier-ignore */
-        return choose(item.component, [
-            ['text-field', () => this.renderTextField(item)],
-            ['icon-button', () => this.renderIconButton(item)],
-            ['icon', () => this.renderIcon(item)],
-            ['button', () => this.renderButton(item)],
-            ['fab', () => this.renderFab(item)],
-            ['pagination', () => this.renderPagination(item)],
-            ['spacer', () => html`<div class="md-pane__spacer"></div>`],
-        ], () => defaultAction(item));
-    }
-
-    renderPagination(){
-        /* prettier-ignore */
-        return html`
-            <div class="md-data-table__spacer"></div>
-            <div class="md-data-table__pagination">
-                <div class="md-data-table__pagination-text">Rows per page</div>
-                <md-text-field class="md-data-table__pagination-select" ></md-text-field>
-                <div class="md-data-table__pagination-text">1-5 of 20</div>
-                <md-icon-button .icon="${"first_page"}"></md-icon-button>
-                <md-icon-button .icon="${"keyboard_arrow_left"}"></md-icon-button>
-                <md-icon-button .icon="${"keyboard_arrow_right"}"></md-icon-button>
-                <md-icon-button .icon="${"last_page"}"></md-icon-button>
-            </div>
-        `
     }
 
     renderDataTableItem(item) {
