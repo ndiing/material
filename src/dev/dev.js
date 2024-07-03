@@ -31,12 +31,14 @@ import DevBottomAppBarComponent from "./bottom-app-bar/bottom-app-bar.js";
 import DevImageComponent from "./image/image.js";
 import DevPopperComponent from "./popper/popper.js";
 import DevBadgeComponent from "./badge/badge.js";
+
 import DevFormComponent from "./form/form.js";
+import DevForm2Component from "./form/form2.js";
+
 import DevCheckboxComponent from "./checkbox/checkbox.js";
 import DevRadioButtonComponent from "./radio-button/radio-button.js";
 import DevSwitchComponent from "./switch/switch.js";
 import DevSliderComponent from "./slider/slider.js";
-import DevForm2Component from "./form2/form2.js";
 import DevProgressIndicatorComponent from "./progress-indicator/progress-indicator.js";
 import DevGestureComponent from "./gesture/gesture.js";
 import DevListComponent from "./list/list.js";
@@ -49,9 +51,11 @@ import DevNavigationRailComponent from "./navigation-rail/navigation-rail.js";
 import DevMenuComponent from "./menu/menu.js";
 import DevTabsComponent from "./tabs/tabs.js";
 import DevChipsComponent from "./chips/chips.js";
+
 import DevTextFieldComponent from "./text-field/text-field.js";
-import DevTextField2Component from "./text-field2/text-field2.js";
-import DevTextField3Component from "./text-field3/text-field3.js";
+import DevTextField2Component from "./text-field/text-field2.js";
+import DevTextField3Component from "./text-field/text-field3.js";
+
 import DevVirtualComponent from "./virtual/virtual.js";
 import DevEmojiComponent from "./emoji/emoji.js";
 import DevDataTableComponent from "./data-table/data-table.js";
