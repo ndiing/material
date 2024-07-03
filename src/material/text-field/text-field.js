@@ -390,7 +390,6 @@ class MDTextFieldComponent extends MDComponent {
         this.emit("onTextFieldNativeSearch", event);
     }
 
-
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
 

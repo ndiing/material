@@ -1,11 +1,11 @@
 <a name="MDCardComponent"></a>
 
 ## MDCardComponent ⇐ <code>MDComponent</code>
-Represents a card component that extends MDComponent.
+MDCardComponent is a versatile card component used to display various types of content in different styles.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDCardComponent#event:onCardIconButtonClick - Fired when an icon button in the card is clicked.</code>, <code>MDCardComponent#event:onCardButtonClick - Fired when a button in the card is clicked.</code>, <code>MDCardComponent#event:onCardFabClick - Fired when a FAB (Floating Action Button) in the card is clicked.</code>  
+**Emits**: <code>MDCardComponent#event:onCardIconButtonClick - Fired when an icon button on the card is clicked.</code>, <code>MDCardComponent#event:onCardIconClick - Fired when an icon on the card is clicked.</code>, <code>MDCardComponent#event:onCardButtonClick - Fired when a button on the card is clicked.</code>, <code>MDCardComponent#event:onCardFabClick - Fired when a FAB (Floating Action Button) on the card is clicked.</code>, <code>MDCardComponent#event:onCardTextFieldNativeFocus - Fired when a text field on the card receives focus.</code>, <code>MDCardComponent#event:onCardTextFieldNativeBlur - Fired when a text field on the card loses focus.</code>, <code>MDCardComponent#event:onCardTextFieldNativeInput - Fired when there is input in a text field on the card.</code>, <code>MDCardComponent#event:onCardTextFieldNativeSearch - Fired when a search is performed in a text field on the card.</code>, <code>MDCardComponent#event:onCardTextFieldNativeInvalid - Fired when a text field on the card becomes invalid.</code>, <code>MDCardComponent#event:onCardTextFieldNativeReset - Fired when a text field on the card is reset.</code>  
 **Tagname**: md-card  
 <a name="MDCardComponent+properties"></a>
 
@@ -15,10 +15,10 @@ Represents a card component that extends MDComponent.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| variant | <code>String</code> | The variant style of the card (e.g., "elevated", "filled", "outlined"). |
-| leadingActions | <code>Array</code> | An array of leading actions displayed in the card. |
-| label | <code>String</code> | The primary label of the card. |
-| subLabel | <code>String</code> | The secondary label of the card. |
-| trailingActions | <code>Array</code> | An array of trailing actions displayed in the card. |
-| actions | <code>Array</code> | An array of actions displayed in the card footer. |
+| variant | <code>String</code> | Specifies the visual variant of the card (e.g., elevated, filled, outlined). |
+| leadingActions | <code>Array</code> | Array of actions placed at the leading end of the card. |
+| label | <code>String</code> | Primary label for the card. |
+| subLabel | <code>String</code> | Secondary label for the card. |
+| trailingActions | <code>Array</code> | Array of actions placed at the trailing end of the card. |
+| actions | <code>Array</code> | Array of actions associated with the card. |
 

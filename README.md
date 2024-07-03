@@ -56,5 +56,6 @@ jsdoc2md ./src/material/tabs/tabs.js > ./docs/tabs.md
 jsdoc2md ./src/material/chip/chip.js > ./docs/chip.md
 jsdoc2md ./src/material/chips/chips.js > ./docs/chips.md
 jsdoc2md ./src/material/text-field/text-field.js > ./docs/text-field.md
+jsdoc2md ./src/material/pagination/pagination.js > ./docs/pagination.md
 jsdoc2md ./src/material/data-table-item/data-table-item.js > ./docs/data-table-item.md
 jsdoc2md ./src/material/data-table/data-table.js > ./docs/data-table.md -->

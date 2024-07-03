@@ -2,18 +2,31 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * Represents an pagination component that extends MDComponent.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-pagination
+ * @fires MDPaginationComponent#onPaginationChange - {{desc}}
+ * @fires MDPaginationComponent#onPaginationLimitChange - {{desc}}
+ * @fires MDPaginationComponent#onPaginationFirstClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationPrevClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationNextClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
  */
 class MDPaginationComponent extends MDComponent {
+    /**
+     * @property {Number} total - {{desc}}
+     * @property {Number} page - {{desc}}
+     * @property {Number} limit - {{desc}}
+     */
     static properties = {
         total: { type: Number },
         page: { type: Number },
         limit: { type: Number },
     };
 
-    
+    /**
+     * {{desc}}
+     */
     get options() {
         const options = [];
         let selected;
@@ -34,32 +47,49 @@ class MDPaginationComponent extends MDComponent {
         }
         return options;
     }
-    set options(value){}
+    set options(value) {}
 
-    
+    /**
+     * {{desc}}
+     */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
+    /**
+     * {{desc}}
+     */
     set pages(value) {}
 
     get start() {
         return (this.page - 1) * this.limit;
     }
+    /**
+     * {{desc}}
+     */
     set start(value) {}
 
     get end() {
         return this.start + this.limit;
     }
+    /**
+     * {{desc}}
+     */
     set end(value) {}
 
     get numberStart() {
         return this.start + 1;
     }
+    /**
+     * {{desc}}
+     */
     set numberStart(value) {}
 
     get numberEnd() {
         return this.start + this.limit;
     }
+    /**
+     * {{desc}}
+     */
     set numberEnd(value) {}
 
     constructor() {
