@@ -1,8 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { MDRippleController } from "../ripple/ripple.js";
-import { MDGestureController } from "../gesture/gesture.js";
-
 
 /**
  * {{desc}}
@@ -10,7 +7,6 @@ import { MDGestureController } from "../gesture/gesture.js";
  * @tagname md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
-    
     /**
      * @property {String} avatar - {{desc}}
      * @property {String} thumbnail - {{desc}}
@@ -53,15 +49,14 @@ class MDDataTableItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
-        indeterminate: { type: Boolean,  },
+        indeterminate: { type: Boolean },
 
-        sortable: { type: Boolean,  },
-        sortableIcon: { type: String,  },
+        sortable: { type: Boolean },
+        sortableIcon: { type: String },
     };
 
     constructor() {
         super();
-
     }
 
     renderCheckbox() {
@@ -148,18 +143,17 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 
-    handleDataTableItemCheckboxNativeInput(event){
-        this.emit('onDataTableItemCheckboxNativeInput',event)
+    handleDataTableItemCheckboxNativeInput(event) {
+        this.emit("onDataTableItemCheckboxNativeInput", event);
     }
 
-    handleDataTableItemRadioButtonNativeInput(event){
-        this.emit('onDataTableItemRadioButtonNativeInput',event)
+    handleDataTableItemRadioButtonNativeInput(event) {
+        this.emit("onDataTableItemRadioButtonNativeInput", event);
     }
 
-    handleDataTableItemSwitchNativeInput(event){
-        this.emit('onDataTableItemSwitchNativeInput',event)
+    handleDataTableItemSwitchNativeInput(event) {
+        this.emit("onDataTableItemSwitchNativeInput", event);
     }
-
 }
 
 customElements.define("md-data-table-item", MDDataTableItemComponent);

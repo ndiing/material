@@ -4,8 +4,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { styleMap } from "lit/directives/style-map.js";
-import { classMap } from "lit/directives/class-map.js";
-import { choose } from "lit/directives/choose.js";
 
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
@@ -26,7 +24,6 @@ class MDDataTableComponent extends MDCardComponent {
     }
     set body(value) {}
 
-    
     constructor() {
         super();
     }
@@ -189,12 +186,12 @@ class MDDataTableComponent extends MDCardComponent {
                 let flow = "left";
                 let from = 0;
                 let to = index;
-                let value = 0+(this.stickyCheckbox?56:0);
+                let value = 0 + (this.stickyCheckbox ? 56 : 0);
                 if (index > half) {
                     flow = "right";
                     from = index + 1;
                     to = this.columns.length;
-                    value=0
+                    value = 0;
                 }
                 for (let i = from; i < to; i++) {
                     let column = this.columns[i];
@@ -225,12 +222,12 @@ class MDDataTableComponent extends MDCardComponent {
             columnBuffer: this.columns.filter((column) => column.sticky).length,
         });
 
-        this.on('keydown',this.handleDataTableKeydown)
+        this.on("keydown", this.handleDataTableKeydown);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.off('keydown',this.handleDataTableKeydown)
+        this.off("keydown", this.handleDataTableKeydown);
     }
 
     handleDataTableViewportVirtualScroll(event) {
@@ -271,24 +268,23 @@ class MDDataTableComponent extends MDCardComponent {
     handleDataTableRowCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
 
-        this.multiSelect(data)
+        this.multiSelect(data);
         this.requestUpdate();
 
         this.emit("onDataTableRowCheckboxNativeInput", event);
     }
     handleDataTableRowClick(event) {
-
-        if(event.target.closest('.md-data-table__checkbox')){
-            return
+        if (event.target.closest(".md-data-table__checkbox")) {
+            return;
         }
 
         const data = event.currentTarget.data;
 
-        if (this.rangeSelection&&event.shiftKey) {
+        if (this.rangeSelection && event.shiftKey) {
             this.selectRange(data);
-        } else if (this.multiSelection&&event.ctrlKey) {
+        } else if (this.multiSelection && event.ctrlKey) {
             this.multiSelect(data);
-        } else if(this.singleSelection) {
+        } else if (this.singleSelection) {
             this.select(data);
         }
         this.requestUpdate();
@@ -296,65 +292,63 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableRowClick", event);
     }
 
-    handleDataTableKeydown(event){
-        if(this.allSelection&&event.ctrlKey&&event.key=='a'){
+    handleDataTableKeydown(event) {
+        if (this.allSelection && event.ctrlKey && event.key == "a") {
             this.selectAll();
-            this.requestUpdate()
+            this.requestUpdate();
         }
-        this.emit('onDataTableKeydown',event)
+        this.emit("onDataTableKeydown", event);
     }
 
-    handleDataTableColumnCellPointerenter(event){
-        const data=event.currentTarget.data
+    handleDataTableColumnCellPointerenter(event) {
+        const data = event.currentTarget.data;
 
-        if(data.sortable){
-            if(!data.order){
-                data.sortableIcon='arrow_upward'
-                this.requestUpdate()
+        if (data.sortable) {
+            if (!data.order) {
+                data.sortableIcon = "arrow_upward";
+                this.requestUpdate();
             }
         }
 
-        this.emit('onDataTableColumnCellPointerenter',event)
+        this.emit("onDataTableColumnCellPointerenter", event);
     }
-    handleDataTableColumnCellPointerleave(event){
-        const data=event.currentTarget.data
+    handleDataTableColumnCellPointerleave(event) {
+        const data = event.currentTarget.data;
 
-        if(data.sortable){
-            if(!data.order){
-                data.sortableIcon=''
-                this.requestUpdate()
+        if (data.sortable) {
+            if (!data.order) {
+                data.sortableIcon = "";
+                this.requestUpdate();
             }
         }
 
-        this.emit('onDataTableColumnCellPointerleave',event)
+        this.emit("onDataTableColumnCellPointerleave", event);
     }
-    handleDataTableColumnCellClick(event){
-        const data=event.currentTarget.data
+    handleDataTableColumnCellClick(event) {
+        const data = event.currentTarget.data;
 
-        if(data.sortable){
-            if(!data.order){
-                data.order='asc'
-                data.sortableIcon='arrow_upward'
-            }   
-            else if(data.order=='asc'){
-                data.order='desc'
-                data.sortableIcon='arrow_downward'
+        if (data.sortable) {
+            if (!data.order) {
+                data.order = "asc";
+                data.sortableIcon = "arrow_upward";
+            } else if (data.order == "asc") {
+                data.order = "desc";
+                data.sortableIcon = "arrow_downward";
+            } else {
+                data.order = "";
+                data.sortableIcon = "";
             }
-            else {
-                data.order=''
-                data.sortableIcon=''
-            }
-            const sorters=(this.columns.filter(column=>column.order))
-            this.storeRows=this.store.getAll({sorters}).docs
-            this.virtual.handleVirtualScroll()
-            this.requestUpdate()
+            const sorters = this.columns.filter((column) => column.order);
+            this.storeRows = this.store.getAll({ sorters }).docs;
+            this.virtual.handleVirtualScroll();
+            this.requestUpdate();
         }
 
-        this.emit('onDataTableColumnCellClick',event)
+        this.emit("onDataTableColumnCellClick", event);
     }
 
     selectAll() {
-        this.storeRows.forEach(row => {
+        this.storeRows.forEach((row) => {
             row.selected = true;
         });
     }

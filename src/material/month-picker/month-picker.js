@@ -2,8 +2,6 @@ import { parseMonth, stringifyMonth } from "../functions/functions.js";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
 
-
-
 /**
  * {{desc}}
  * @extends MDDatetimePickerComponent
@@ -18,8 +16,6 @@ import { html } from "lit";
  * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - {{desc}}
  */
 class MDMonthPickerComponent extends MDDatetimePickerComponent {
-    
-    
     /**
      * {{desc}}
      */
@@ -33,8 +29,6 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
-    
-    
     /**
      * {{desc}}
      */
@@ -48,8 +42,6 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         `];
     }
 
-    
-    
     /**
      * {{desc}}
      */
@@ -68,8 +60,6 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         this.classList.add("md-month-picker");
     }
 
-    
-    
     /**
      * {{desc}}
      */
@@ -168,8 +158,6 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         this.emit("onMonthPickerMonthItemClick", event);
     }
 
-    
-    
     /**
      * {{desc}}
      */
