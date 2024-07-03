@@ -231,6 +231,7 @@ class MDTextFieldComponent extends MDComponent {
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @input="${this.handleTextFieldNativeInput}"
+                @change="${this.handleTextFieldNativeChange}"
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
             >
@@ -367,9 +368,28 @@ class MDTextFieldComponent extends MDComponent {
         this.emit("onTextFieldNativeInput", event);
     }
 
+    handleTextFieldNativeChange(event) {
+        if (this.type !== "file") {
+            this.value = this.native.value;
+        }
+
+        this.populate();
+        this.validate();
+
+        this.emit("onTextFieldNativeChange", event);
+    }
+
     handleTextFieldNativeSearch(event) {
+        if (this.type !== "file") {
+            this.value = this.native.value;
+        }
+
+        this.populate();
+        this.validate();
+
         this.emit("onTextFieldNativeSearch", event);
     }
+
 
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();

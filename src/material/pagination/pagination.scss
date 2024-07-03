@@ -1,0 +1,23 @@
+.md-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0 24px;
+}
+.md-pagination__label {
+    height: var(--md-sys-typescale-body-medium-line-height);
+    overflow: hidden;
+    margin-right: -20px;
+    @include typescale-body-medium();
+    user-select: none;
+}
+// .md-pagination__select{}
+.md-pagination__text {
+    height: var(--md-sys-typescale-body-medium-line-height);
+    overflow: hidden;
+    margin-left: 8px;
+    margin-right: 8px;
+    @include typescale-body-medium();
+    user-select: none;
+}
+// .md-pagination__action{}

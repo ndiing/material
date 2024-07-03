@@ -58,6 +58,7 @@ import DevTextField3Component from "./text-field/text-field3.js";
 
 import DevVirtualComponent from "./virtual/virtual.js";
 import DevEmojiComponent from "./emoji/emoji.js";
+import DevPaginationComponent from "./pagination/pagination.js";
 import DevDataTableComponent from "./data-table/data-table.js";
 
 const routes = [
@@ -116,6 +117,7 @@ const routes = [
             { path: "text-field3", component: DevTextField3Component },
             { path: "virtual", component: DevVirtualComponent },
             { path: "emoji", component: DevEmojiComponent },
+            { path: "pagination", component: DevPaginationComponent },
             { path: "data-table", component: DevDataTableComponent },
         ],
     },
