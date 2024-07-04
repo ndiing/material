@@ -28,122 +28,122 @@
     }
 }
 
-@mixin typescale-display-large($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-display-large-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-display-large-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-display-large-tracking) * $ratio);
+@mixin typescale-display-large() {
+    font-size: var(--md-sys-typescale-display-large-size);
+    line-height: var(--md-sys-typescale-display-large-line-height);
+    letter-spacing: var(--md-sys-typescale-display-large-tracking);
     font-weight: var(--md-sys-typescale-display-large-weight);
     font-family: var(--md-sys-typescale-display-large-font);
 }
 
-@mixin typescale-display-medium($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-display-medium-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-display-medium-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-display-medium-tracking) * $ratio);
+@mixin typescale-display-medium() {
+    font-size: var(--md-sys-typescale-display-medium-size);
+    line-height: var(--md-sys-typescale-display-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-display-medium-tracking);
     font-weight: var(--md-sys-typescale-display-medium-weight);
     font-family: var(--md-sys-typescale-display-medium-font);
 }
 
-@mixin typescale-display-small($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-display-small-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-display-small-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-display-small-tracking) * $ratio);
+@mixin typescale-display-small() {
+    font-size: var(--md-sys-typescale-display-small-size);
+    line-height: var(--md-sys-typescale-display-small-line-height);
+    letter-spacing: var(--md-sys-typescale-display-small-tracking);
     font-weight: var(--md-sys-typescale-display-small-weight);
     font-family: var(--md-sys-typescale-display-small-font);
 }
 
-@mixin typescale-headline-large($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-headline-large-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-headline-large-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-headline-large-tracking) * $ratio);
+@mixin typescale-headline-large() {
+    font-size: var(--md-sys-typescale-headline-large-size);
+    line-height: var(--md-sys-typescale-headline-large-line-height);
+    letter-spacing: var(--md-sys-typescale-headline-large-tracking);
     font-weight: var(--md-sys-typescale-headline-large-weight);
     font-family: var(--md-sys-typescale-headline-large-font);
 }
 
-@mixin typescale-headline-medium($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-headline-medium-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-headline-medium-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-headline-medium-tracking) * $ratio);
+@mixin typescale-headline-medium() {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    line-height: var(--md-sys-typescale-headline-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
     font-weight: var(--md-sys-typescale-headline-medium-weight);
     font-family: var(--md-sys-typescale-headline-medium-font);
 }
 
-@mixin typescale-headline-small($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-headline-small-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-headline-small-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-headline-small-tracking) * $ratio);
+@mixin typescale-headline-small() {
+    font-size: var(--md-sys-typescale-headline-small-size);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
+    letter-spacing: var(--md-sys-typescale-headline-small-tracking);
     font-weight: var(--md-sys-typescale-headline-small-weight);
     font-family: var(--md-sys-typescale-headline-small-font);
 }
 
-@mixin typescale-title-large($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-title-large-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-title-large-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-title-large-tracking) * $ratio);
+@mixin typescale-title-large() {
+    font-size: var(--md-sys-typescale-title-large-size);
+    line-height: var(--md-sys-typescale-title-large-line-height);
+    letter-spacing: var(--md-sys-typescale-title-large-tracking);
     font-weight: var(--md-sys-typescale-title-large-weight);
     font-family: var(--md-sys-typescale-title-large-font);
 }
 
-@mixin typescale-title-medium($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-title-medium-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-title-medium-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-title-medium-tracking) * $ratio);
+@mixin typescale-title-medium() {
+    font-size: var(--md-sys-typescale-title-medium-size);
+    line-height: var(--md-sys-typescale-title-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-title-medium-tracking);
     font-weight: var(--md-sys-typescale-title-medium-weight);
     font-family: var(--md-sys-typescale-title-medium-font);
 }
 
-@mixin typescale-title-small($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-title-small-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-title-small-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-title-small-tracking) * $ratio);
+@mixin typescale-title-small() {
+    font-size: var(--md-sys-typescale-title-small-size);
+    line-height: var(--md-sys-typescale-title-small-line-height);
+    letter-spacing: var(--md-sys-typescale-title-small-tracking);
     font-weight: var(--md-sys-typescale-title-small-weight);
     font-family: var(--md-sys-typescale-title-small-font);
 }
 
-@mixin typescale-body-large($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-body-large-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-body-large-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-body-large-tracking) * $ratio);
+@mixin typescale-body-large() {
+    font-size: var(--md-sys-typescale-body-large-size);
+    line-height: var(--md-sys-typescale-body-large-line-height);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
     font-weight: var(--md-sys-typescale-body-large-weight);
     font-family: var(--md-sys-typescale-body-large-font);
 }
 
-@mixin typescale-body-medium($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-body-medium-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-body-medium-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-body-medium-tracking) * $ratio);
+@mixin typescale-body-medium() {
+    font-size: var(--md-sys-typescale-body-medium-size);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-body-medium-tracking);
     font-weight: var(--md-sys-typescale-body-medium-weight);
     font-family: var(--md-sys-typescale-body-medium-font);
 }
 
-@mixin typescale-body-small($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-body-small-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-body-small-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-body-small-tracking) * $ratio);
+@mixin typescale-body-small() {
+    font-size: var(--md-sys-typescale-body-small-size);
+    line-height: var(--md-sys-typescale-body-small-line-height);
+    letter-spacing: var(--md-sys-typescale-body-small-tracking);
     font-weight: var(--md-sys-typescale-body-small-weight);
     font-family: var(--md-sys-typescale-body-small-font);
 }
 
-@mixin typescale-label-large($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-label-large-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-label-large-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-label-large-tracking) * $ratio);
+@mixin typescale-label-large() {
+    font-size: var(--md-sys-typescale-label-large-size);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
     font-weight: var(--md-sys-typescale-label-large-weight);
     font-family: var(--md-sys-typescale-label-large-font);
 }
 
-@mixin typescale-label-medium($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-label-medium-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-label-medium-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-label-medium-tracking) * $ratio);
+@mixin typescale-label-medium() {
+    font-size: var(--md-sys-typescale-label-medium-size);
+    line-height: var(--md-sys-typescale-label-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-label-medium-tracking);
     font-weight: var(--md-sys-typescale-label-medium-weight);
     font-family: var(--md-sys-typescale-label-medium-font);
 }
 
-@mixin typescale-label-small($ratio: 1) {
-    font-size: calc(var(--md-sys-typescale-label-small-size) * $ratio);
-    line-height: calc(var(--md-sys-typescale-label-small-line-height) * $ratio);
-    letter-spacing: calc(var(--md-sys-typescale-label-small-tracking) * $ratio);
+@mixin typescale-label-small() {
+    font-size: var(--md-sys-typescale-label-small-size);
+    line-height: var(--md-sys-typescale-label-small-line-height);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
     font-weight: var(--md-sys-typescale-label-small-weight);
     font-family: var(--md-sys-typescale-label-small-font);
 }

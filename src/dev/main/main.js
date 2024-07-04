@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 
-MDRouter.historyApiFallback = false;
+// MDRouter.historyApiFallback = false;
 
 class DevMainComponent extends MDComponent {
     get topAppBar() {
