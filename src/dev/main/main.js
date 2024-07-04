@@ -70,6 +70,7 @@ class DevMainComponent extends MDComponent {
             { icon: "deployed_code", routerLink: "/emoji", label: "Emoji" },
             { icon: "deployed_code", routerLink: "/pagination", label: "Pagination" },
             { icon: "deployed_code", routerLink: "/data-table", label: "Data Table" },
+            { icon: "deployed_code", routerLink: "/markdown", label: "Markdown" },
         ];
 
         for (let i = 0; i < this.list.length; i++) {

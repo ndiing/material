@@ -59,6 +59,15 @@ class DevPickerComponent extends MDComponent {
                         @click="${this.handleColorPickerButtonClick}"
                     ></md-button>
                 </div>
+
+                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <md-emoji-picker id="emojiPicker"></md-emoji-picker>
+                    <md-button
+                        variant="tonal"
+                        label="Emoji Picker"
+                        @click="${this.handleEmojiPickerButtonClick}"
+                    ></md-button>
+                </div>
             </div>
         `;
     }
@@ -103,6 +112,13 @@ class DevPickerComponent extends MDComponent {
     }
     handleColorPickerButtonClick(event) {
         this.colorPicker.showModal(event.currentTarget);
+    }
+
+    get emojiPicker() {
+        return this.querySelector("#emojiPicker");
+    }
+    handleEmojiPickerButtonClick(event) {
+        this.emojiPicker.showModal(event.currentTarget);
     }
 }
 

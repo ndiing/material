@@ -11,13 +11,13 @@
 /* [x] */ import "./attribute-observer/attribute-observer.js";
 /* [x] */ import "./virtual/virtual.js";
 /* [x] */ import "./store/store.js";
-/* [ ] */ import "./markdown/markdown.js";
 
+/* [ ] */ import "./markdown/markdown.js";
 /* [x] */ import "./icon/icon.js";
 /* [x] */ import "./emoji/emoji.js";
 /* [x] */ import "./button/button.js";
 /* [x] */ import "./icon-button/icon-button.js";
-/* [x] */ import "./card/card.js";
+/* [ ] */ import "./card/card.js";
 /* [x] */ import "./scrim/scrim.js";
 /* [x] */ import "./sheet/sheet.js";
 /* [x] */ import "./dialog/dialog.js";

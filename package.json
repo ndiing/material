@@ -43,6 +43,6 @@
     "@lit/localize": "^0.12.1",
     "@material/material-color-utilities": "^0.2.7",
     "lit": "^3.1.4",
-    "marked": "^13.0.1"
+    "marked": "^13.0.2"
   }
 }
