@@ -18,10 +18,6 @@
     .md-card__actions {
         gap: 0 24px;
 
-        .md-card__text-field {
-            min-width: 252px;
-            user-select: none;
-        }
     }
 
     .md-card__label {
@@ -160,13 +156,5 @@
     --md-comp-ripple-size: 200%;
     &::after {
         animation: none;
-    }
-}
-.md-pagination {
-    .md-pagination__select {
-        min-width: 84px;
-    }
-    .md-pagination__text {
-        min-width: 120px;
     }
 }

@@ -2,112 +2,80 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * A component for handling pagination in a list or table.
+ * A web component for pagination control.
  * @extends MDComponent
  * @tagname md-pagination
- * @fires MDPaginationComponent#onPaginationChange - Event fired when the pagination changes.
- * @fires MDPaginationComponent#onPaginationLimitChange - Event fired when the pagination limit changes.
- * @fires MDPaginationComponent#onPaginationFirstClick - Event fired when the first page button is clicked.
- * @fires MDPaginationComponent#onPaginationPrevClick - Event fired when the previous page button is clicked.
- * @fires MDPaginationComponent#onPaginationNextClick - Event fired when the next page button is clicked.
- * @fires MDPaginationComponent#onPaginationLastClick - Event fired when the last page button is clicked.
+ * @fires MDPaginationComponent#onPaginationChange - Fired when the pagination changes.
+ * @fires MDPaginationComponent#onPaginationLimitChange - Fired when the pagination limit changes.
+ * @fires MDPaginationComponent#onPaginationFirstClick - Fired when the first page button is clicked.
+ * @fires MDPaginationComponent#onPaginationPrevClick - Fired when the previous page button is clicked.
+ * @fires MDPaginationComponent#onPaginationNextClick - Fired when the next page button is clicked.
+ * @fires MDPaginationComponent#onPaginationLastClick - Fired when the last page button is clicked.
  */
 class MDPaginationComponent extends MDComponent {
     /**
      * @property {Number} total - The total number of items.
-     * @property {Number} page - The current page number.
      * @property {Number} limit - The number of items per page.
+     * @property {Number} page - The current page number.
      */
     static properties = {
         total: { type: Number },
-        page: { type: Number },
         limit: { type: Number },
+        page: { type: Number },
     };
 
     /**
-     * Options for the number of items per page.
-     */
-
-    get options() {
-        const options = [];
-        let selected;
-
-        for (let i = 1; i <= 5; i++) {
-            const value = (this.total / 5) * i;
-            selected = value === this.defaultLimit;
-            options.push({ value, label: String(value), selected });
-        }
-
-        if (!selected) {
-            if (this.defaultLimit) {
-                const value = this.defaultLimit;
-                selected = value === this.defaultLimit;
-                options.push({ value, label: String(value), selected });
-                options.sort((a, b) => a.value - b.value);
-            } else {
-                options[0].selected = true;
-            }
-        }
-        return options;
-    }
-
-    set options(value) {}
-
-    /**
      * The total number of pages.
+     * @returns {Number}
      */
-
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
 
-    set pages(value) {}
-
     /**
-     * The starting index for the current page.
+     * The starting index of items on the current page.
+     * @returns {Number}
      */
-
     get start() {
         return (this.page - 1) * this.limit;
     }
 
-    set start(value) {}
-
     /**
-     * The ending index for the current page.
+     * The ending index of items on the current page.
+     * @returns {Number}
      */
-
     get end() {
-        return Math.min(this.start + this.limit, this.total);
+        return this.start + this.limit;
     }
 
-    set end(value) {}
-
     /**
-     * The starting item number for the current page.
+     * The starting item number displayed on the current page.
+     * @returns {Number}
      */
-
     get numberStart() {
-        return this.start + 1;
+        return Math.min(this.start + 1, this.total);
     }
-
-    set numberStart(value) {}
 
     /**
-     * The ending item number for the current page.
+     * The ending item number displayed on the current page.
+     * @returns {Number}
      */
-
     get numberEnd() {
-        return Math.min(this.start + this.limit, this.total);
+        return Math.min(this.end, this.total);
     }
-
-    set numberEnd(value) {}
 
     constructor() {
         super();
-        // this.total = 1000;
+        this.total = 1000;
+        this.limit = 50;
         this.page = 1;
-        // this.limit = 1000;
+        this.options = [
+            { value: 50, label: "50", selected: true },
+            { value: 100, label: "100" },
+            { value: 250, label: "250" },
+            { value: 500, label: "500" },
+            { value: 1000, label: "1000" },
+        ];
     }
 
     render() {
@@ -121,47 +89,27 @@ class MDPaginationComponent extends MDComponent {
                 @onTextFieldNativeChange="${this.handlePaginationLimitChange}"
             ></md-text-field>
             <div class="md-pagination__text">${this.numberStart}-${this.numberEnd} of ${this.total}</div>
-            <md-icon-button 
-                class="md-pagination__action" 
-                .icon="${"first_page"}" 
-                .disabled="${this.page===1}"
-                @click="${this.handlePaginationFirstClick}"
-            ></md-icon-button>
-            <md-icon-button 
-                class="md-pagination__action" 
-                .icon="${"keyboard_arrow_left"}" 
-                .disabled="${this.page===1}"
-                @click="${this.handlePaginationPrevClick}"
-            ></md-icon-button>
-            <md-icon-button 
-                class="md-pagination__action" 
-                .icon="${"keyboard_arrow_right"}" 
-                .disabled="${this.page===this.pages}"
-                @click="${this.handlePaginationNextClick}"
-            ></md-icon-button>
-            <md-icon-button 
-                class="md-pagination__action" 
-                .icon="${"last_page"}" 
-                .disabled="${this.page===this.pages}"
-                @click="${this.handlePaginationLastClick}"
-            ></md-icon-button>
-        `;
+            <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===1}" .icon="${"first_page"}" @click="${this.handlePaginationFirstClick}"></md-icon-button>
+            <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===1}" .icon="${"keyboard_arrow_left"}" @click="${this.handlePaginationPrevClick}"></md-icon-button>
+            <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===this.pages}" .icon="${"keyboard_arrow_right"}" @click="${this.handlePaginationNextClick}"></md-icon-button>
+            <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===this.pages}" .icon="${"last_page"}" @click="${this.handlePaginationLastClick}"></md-icon-button>
+        `
     }
 
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-pagination");
-        this.defaultLimit = this.limit;
     }
 
     async updated(changedProperties) {
         super.updated(changedProperties);
 
-        if (changedProperties.has("total") || changedProperties.has("limit")) {
+        if (changedProperties.has("limit") || changedProperties.has("total")) {
             await this.updateComplete;
             this.page = 1;
         }
-        let cache = JSON.stringify([this.total, this.page, this.limit, this.start, this.end]);
+
+        let cache = JSON.stringify([this.total, this.limit, this.page]);
 
         if (this.cache !== cache) {
             this.cache = cache;
@@ -170,7 +118,8 @@ class MDPaginationComponent extends MDComponent {
     }
 
     handlePaginationLimitChange(event) {
-        this.limit = Number(event.detail.currentTarget.value);
+        const limit = Number(event.detail.currentTarget.value);
+        this.limit = limit;
 
         this.emit("onPaginationLimitChange", event);
     }

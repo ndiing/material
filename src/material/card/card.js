@@ -18,12 +18,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDCardComponent#onCardTextFieldNativeSearch - When a native input in the card performs a search.
  * @fires MDCardComponent#onCardTextFieldNativeInvalid - When a native input in the card becomes invalid.
  * @fires MDCardComponent#onCardTextFieldNativeReset - When a native input in the card is reset.
- * @fires MDCardComponent#onCardPaginationChange - When pagination in the card changes.
- * @fires MDCardComponent#onCardPaginationLimitChange - When pagination limit in the card changes.
- * @fires MDCardComponent#onCardPaginationFirstClick - When pagination first page button in the card is clicked.
- * @fires MDCardComponent#onCardPaginationPrevClick - When pagination previous page button in the card is clicked.
- * @fires MDCardComponent#onCardPaginationNextClick - When pagination next page button in the card is clicked.
- * @fires MDCardComponent#onCardPaginationLastClick - When pagination last page button in the card is clicked.
  */
 class MDCardComponent extends MDComponent {
     /**
@@ -192,26 +186,6 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
-    renderPagination(item) {
-        /* prettier-ignore */
-        return html`
-            <md-pagination
-                class="md-card__pagination"
-                name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
-                .total="${ifDefined(item.total)}"
-                .page="${ifDefined(item.page)}"
-                .limit="${ifDefined(item.limit)}"
-                @onPaginationChange="${this.handleCardPaginationChange}"
-                @onPaginationLimitChange="${this.handleCardPaginationLimitChange}"
-                @onPaginationFirstClick="${this.handleCardPaginationFirstClick}"
-                @onPaginationPrevClick="${this.handleCardPaginationPrevClick}"
-                @onPaginationNextClick="${this.handleCardPaginationNextClick}"
-                @onPaginationLastClick="${this.handleCardPaginationLastClick}"
-            ></md-pagination>
-        `;
-    }
-
     renderAction(item, defaultAction = this.renderButton) {
         /* prettier-ignore */
         return choose(item.component, [
@@ -220,7 +194,6 @@ class MDCardComponent extends MDComponent {
             ['icon', () => this.renderIcon(item)],
             ['button', () => this.renderButton(item)],
             ['fab', () => this.renderFab(item)],
-            ['pagination', () => this.renderPagination(item)],
             ['spacer', () => html`<div class="md-pane__spacer"></div>`],
         ], () => defaultAction(item));
     }

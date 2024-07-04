@@ -38,6 +38,7 @@
     "prettier:check": "prettier src/material --check",
     "eslint:fix": "eslint  src/material --fix",
     "eslint:check": "eslint  src/material",
+    "jsdoc": "jsdoc -c conf.json",
     "docs": "node dev/docs"
   },
   "dependencies": {

@@ -10,6 +10,7 @@ async function open(dir){
         }else{
             let {ext,name} = path.parse(curr)
             if(ext=='.js'){
+                console.log('generate docs for '+name)
                 execSync(`jsdoc2md ${curr} > ${'./docs/'+name+'.md'}`)
             }
         }
