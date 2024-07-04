@@ -9,13 +9,12 @@ class DevFormComponent extends MDComponent {
                     <md-markdown href="./docs/form.md"></md-markdown>
                 </div>
             </div>
-            
+
             <md-form
                 @onFormNativeReset="${this.handleFormNativeReset}"
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"
             >
                 <div class="md-layout-column">
-
                     <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <!-- Checkbox Input -->
                         <label for="subscribe">Subscribe:</label>
@@ -270,7 +269,6 @@ Enter your message here...</textarea
                     </div>
                 </div>
             </md-form>
-
         `;
     }
 

@@ -10,6 +10,9 @@ class DevRadioButtonComponent extends MDComponent {
             >
                 <div class="md-layout-column">
                     <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-markdown href="./docs/radio-button.md"></md-markdown>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-radio-button
                             name="radio-button"
                             value="item1"

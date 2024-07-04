@@ -17,7 +17,7 @@
 /* [x] */ import "./emoji/emoji.js";
 /* [x] */ import "./button/button.js";
 /* [x] */ import "./icon-button/icon-button.js";
-/* [ ] */ import "./card/card.js";
+/* [x] */ import "./card/card.js";
 /* [x] */ import "./scrim/scrim.js";
 /* [x] */ import "./sheet/sheet.js";
 /* [x] */ import "./dialog/dialog.js";

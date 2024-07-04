@@ -40,6 +40,9 @@ class DevVirtualComponent extends MDComponent {
                 class="md-layout-column"
                 style="margin:0;padding:24px;min-height:0;min-width:0;height:100%;width:100%;"
             >
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <md-markdown href="./docs/virtual.md"></md-markdown>
+                </div>
                 <div
                     class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"
                     style="min-height:0;min-width:0;height:100%;width:100%;"

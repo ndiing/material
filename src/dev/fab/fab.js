@@ -6,6 +6,9 @@ class DevIconComponent extends MDComponent {
         return html`
             <div class="md-layout-column">
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <md-markdown href="./docs/fab.md"></md-markdown>
+                </div>
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-fab
                         variant="small"
                         icon="edit"

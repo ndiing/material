@@ -29,7 +29,7 @@ class DevSnackbarComponent extends MDComponent {
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown href="./docs/snackbar.md"></md-markdown>
                         </div>
-                        
+
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-snackbar
                                 id="snackbar"

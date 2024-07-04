@@ -4,6 +4,11 @@ import { MDComponent } from "../../material/component/component.js";
 class DevTextFieldComponent extends MDComponent {
     render() {
         return html`
+            <div class="md-layout-column">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <md-markdown href="./docs/text-field.md"></md-markdown>
+                </div>
+            </div>
             <md-form
                 @onFormNativeReset="${this.handleFormNativeReset}"
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"

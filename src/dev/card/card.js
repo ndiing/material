@@ -91,7 +91,6 @@ class DevCardComponent extends MDComponent {
             </div>
         `;
     }
-    
 }
 
 customElements.define("dev-card", DevCardComponent);

@@ -5,6 +5,9 @@ class DevEmojiPickerComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <md-markdown href="./docs/emoji-picker.md"></md-markdown>
+                </div>
                 <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <label for="emoji">Select emoji</label>
                     <div
@@ -75,14 +78,12 @@ class DevEmojiPickerComponent extends MDComponent {
     }
 
     // contenteditable
-    handleEmojiInput() {
-    }
+    handleEmojiInput() {}
 
     // search emoji
-    handleEmojiPickerTextFieldNativeInput() {
-    }
+    handleEmojiPickerTextFieldNativeInput() {}
     handleTextFieldNativeBlur() {
-        this.restoreCursorPosition()
+        this.restoreCursorPosition();
     }
 
     // pick emoji
@@ -118,7 +119,7 @@ class DevEmojiPickerComponent extends MDComponent {
         const range = selection.getRangeAt(0);
         range.deleteContents();
 
-        const emojiNode = document.createElement('span');
+        const emojiNode = document.createElement("span");
         emojiNode.textContent = emoji;
         range.insertNode(emojiNode);
 
