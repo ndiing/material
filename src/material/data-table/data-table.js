@@ -22,22 +22,8 @@ class MDDataTableComponent extends MDCardComponent {
     get body() {
         return [this.renderViewport()];
     }
+
     set body(value) {}
-
-    get label() {
-        return "label";
-    }
-    set label(value) {}
-
-    get trailingActions() {
-        return [{ component: "text-field", type: "search", icon: "search", placeholder: "Search" }];
-    }
-    set trailingActions(value) {}
-
-    get actions() {
-        return [{ component: "spacer" }, { component: "pagination", total: this.storeTotal, limit: 50, page: 1 }];
-    }
-    set actions(value) {}
 
     constructor() {
         super();
@@ -202,14 +188,17 @@ class MDDataTableComponent extends MDCardComponent {
                 let from = 0;
                 let to = index;
                 let value = 0 + (this.stickyCheckbox ? 72 : 0);
+
                 if (index > half) {
                     flow = "right";
                     from = index + 1;
                     to = this.columns.length;
                     value = 0;
                 }
+
                 for (let i = from; i < to; i++) {
                     let column = this.columns[i];
+
                     if (column.sticky) {
                         value += column.width || 52 * 4;
                     }
@@ -239,57 +228,11 @@ class MDDataTableComponent extends MDCardComponent {
         });
 
         this.on("keydown", this.handleDataTableKeydown);
-        // this.on("onCardPaginationChange", this.handleDataTablePaginationChange);
-        this.on("onCardTextFieldNativeSearch", this.handleDataTableTextFieldNativeSearch);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.off("keydown", this.handleDataTableKeydown);
-        // this.off("onCardPaginationChange", this.handleDataTablePaginationChange);
-        this.off("onCardTextFieldNativeSearch", this.handleDataTableTextFieldNativeSearch);
-    }
-
-    handleDataTableTextFieldNativeSearch(event) {
-        const value = event.detail.currentTarget.value;
-        // console.log(value)
-
-        const { total, docs } = this.store.getAll({
-            q: value,
-        });
-        this.storeTotal = total;
-        this.storeRows = docs;
-        // console.log(total,docs)
-
-        this.virtual.options.rowTotal = total;
-        this.virtual.options.rowHeight = 52;
-        this.virtual.options.rowBuffer = 1;
-        this.virtual.options.columnTotal = this.columns.length;
-        this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + (prev.width || 52 * 4), 0) / this.columns.length;
-        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
-        this.virtual.viewport.scrollTop = 0;
-        this.virtual.handleVirtualScroll();
-    }
-
-    handleDataTablePaginationChange(event) {
-        const pagination = event.detail.detail;
-        // console.log(pagination)
-
-        const { total, docs } = this.store.getAll({
-            _start: pagination.start,
-            _end: pagination.end,
-        });
-        this.storeTotal = total;
-        this.storeRows = docs;
-
-        this.virtual.options.rowTotal = pagination.end - pagination.start;
-        this.virtual.options.rowHeight = 52;
-        this.virtual.options.rowBuffer = 1;
-        this.virtual.options.columnTotal = this.columns.length;
-        this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + (prev.width || 52 * 4), 0) / this.columns.length;
-        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
-        this.virtual.viewport.scrollTop = 0;
-        this.virtual.handleVirtualScroll();
     }
 
     handleDataTableViewportVirtualScroll(event) {
@@ -312,6 +255,7 @@ class MDDataTableComponent extends MDCardComponent {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
         return selectedTotal && selectedTotal < this.storeRows.length;
     }
+
     get selectedAll() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
         return selectedTotal && selectedTotal == this.storeRows.length;
@@ -327,6 +271,7 @@ class MDDataTableComponent extends MDCardComponent {
 
         this.emit("onDataTableColumnCellCheckboxNativeInput", event);
     }
+
     handleDataTableRowCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
 
@@ -335,6 +280,7 @@ class MDDataTableComponent extends MDCardComponent {
 
         this.emit("onDataTableRowCheckboxNativeInput", event);
     }
+
     handleDataTableRowClick(event) {
         if (event.target.closest(".md-data-table__checkbox")) {
             return;
@@ -374,6 +320,7 @@ class MDDataTableComponent extends MDCardComponent {
 
         this.emit("onDataTableColumnCellPointerenter", event);
     }
+
     handleDataTableColumnCellPointerleave(event) {
         const data = event.currentTarget.data;
 
@@ -386,6 +333,7 @@ class MDDataTableComponent extends MDCardComponent {
 
         this.emit("onDataTableColumnCellPointerleave", event);
     }
+
     handleDataTableColumnCellClick(event) {
         const data = event.currentTarget.data;
 
@@ -430,6 +378,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.endIndex = this.endIndex || 0;
         this.startIndex = this.storeRows.indexOf(data);
         this.swapIndex = this.endIndex < this.startIndex;
+
         if (this.swapIndex) {
             [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
         }

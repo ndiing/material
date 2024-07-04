@@ -187,6 +187,7 @@ class MDCardComponent extends MDComponent {
                 @onTextFieldNativeSearch="${this.handleCardTextFieldNativeSearch}"
                 @onTextFieldNativeInvalid="${this.handleCardTextFieldNativeInvalid}"
                 @onTextFieldNativeReset="${this.handleCardTextFieldNativeReset}"
+                @onTextFieldIconButtonClick="${this.handleCardTextFieldIconButtonClick}"
             ></md-text-field>
         `;
     }
@@ -196,6 +197,8 @@ class MDCardComponent extends MDComponent {
         return html`
             <md-pagination
                 class="md-card__pagination"
+                name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .total="${ifDefined(item.total)}"
                 .page="${ifDefined(item.page)}"
                 .limit="${ifDefined(item.limit)}"
@@ -320,6 +323,9 @@ class MDCardComponent extends MDComponent {
     }
     handleCardTextFieldNativeReset(event) {
         this.emit("onCardTextFieldNativeReset", event);
+    }
+    handleCardTextFieldIconButtonClick(event) {
+        this.emit("onCardTextFieldIconButtonClick", event);
     }
     handleCardPaginationChange(event) {
         this.emit("onCardPaginationChange", event);

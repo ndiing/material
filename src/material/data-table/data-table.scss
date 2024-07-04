@@ -7,7 +7,7 @@
     box-shadow: var(--md-sys-elevation-level0);
 
     .md-card__header {
-        padding: 16px 24px;
+        padding: 24px;
         gap: 0 24px;
 
         + .md-card__body {
@@ -48,8 +48,8 @@
     }
 
     .md-card__footer {
-        padding: 16px 24px;
-        gap: 0 8px;
+        padding: 24px;
+        gap: 0 24px;
     }
 
     // .md-card__button {}
