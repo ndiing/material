@@ -7,7 +7,7 @@ class DevButtonComponent extends MDComponent {
         return html`
             <div class="md-layout-column">
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-markdown href="./docs/button.md"></md-markdown>
+                    <md-markdown href="https://raw.githubusercontent.com/ndiing/material/main/docs/button.md"></md-markdown>
                 </div>
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-button

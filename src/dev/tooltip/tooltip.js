@@ -30,7 +30,7 @@ class DevTooltipComponent extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown href="./docs/tooltip.md"></md-markdown>
+                            <md-markdown href="https://raw.githubusercontent.com/ndiing/material/main/docs/tooltip.md"></md-markdown>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tooltip
