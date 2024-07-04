@@ -2,7 +2,15 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { MDComponent } from "../component/component.js";
 import { marked } from "marked";
 
+/**
+ * A web component for rendering Markdown content.
+ * @extends MDComponent
+ * @tagname md-markdown
+ */
 class MDMarkdownComponent extends MDComponent {
+    /**
+     * @property {String} href - The URL to fetch the Markdown content from.
+     */
     static properties = {
         href: { type: String },
     };
