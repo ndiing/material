@@ -66,7 +66,7 @@ class MDPaginationComponent extends MDComponent {
 
     constructor() {
         super();
-        this.total = 1000;
+        this.total = 0;
         this.limit = 50;
         this.page = 1;
         this.options = [

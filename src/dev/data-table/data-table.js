@@ -55,6 +55,7 @@ class DevDataTableComponent extends MDComponent {
                         rangeSelection
                         multiSelection
                         singleSelection
+                        allSelection
                     ></md-data-table>
                 </div>
             </div>

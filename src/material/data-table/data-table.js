@@ -4,6 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { styleMap } from "lit/directives/style-map.js";
+import { classMap } from "lit/directives/class-map.js";
+
 
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
@@ -24,6 +26,34 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     set body(value) {}
+
+    get label() {
+        return 'label'
+    }
+
+    set label(value) {
+    }
+
+    get trailingActions() {
+        return [
+            {name:'search',component:'text-field',type:'search',placeholder:'Search',icon:'search'},
+            {name:'filter',icon:'filter_list'},
+            {name:'more',icon:'more_vert'},
+        ]
+    }
+
+    set trailingActions(value) {
+    }
+
+    get actions() {
+        return [
+            {component:'spacer',},
+            {name:'pagination',component:'pagination',},
+        ]
+    }
+
+    set actions(value) {
+    }
 
     constructor() {
         super();
@@ -103,6 +133,10 @@ class MDDataTableComponent extends MDCardComponent {
                                     }),
                                    
                                 })}"
+                                class="${classMap({
+                                    'md-data-table__column--sticky-end':column.stickyEnd,
+                                    'md-data-table__column--sticky-start':column.stickyStart,
+                                })}"
                                 @pointerenter="${this.handleDataTableColumnCellPointerenter}"
                                 @pointerleave="${this.handleDataTableColumnCellPointerleave}"
                                 @click="${this.handleDataTableColumnCellClick}"
@@ -134,6 +168,7 @@ class MDDataTableComponent extends MDCardComponent {
                                             'z-index':'1',
                                         }),
                                     })}"
+                                    
                                 >
                                     ${this.renderDataTableItem({
                                         leadingCheckbox:true,
@@ -149,6 +184,10 @@ class MDDataTableComponent extends MDCardComponent {
                                             [column.flow]:((column.flow==='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+'px',
                                             'z-index':'1',
                                         }),
+                                    })}"
+                                    class="${classMap({
+                                        'md-data-table__column--sticky-end':column.stickyEnd,
+                                        'md-data-table__column--sticky-start':column.stickyStart,
                                     })}"
                                 >
                                     ${this.renderDataTableItem({
@@ -182,7 +221,11 @@ class MDDataTableComponent extends MDCardComponent {
         this.classList.add("md-data-table");
 
         const half = Math.floor(this.columns.length / 2);
+        let stickyEnd
+        let stickyStart
         this.columns.forEach((column, index) => {
+            column.stickyEnd=undefined
+            column.stickyStart=undefined
             if (column.sticky) {
                 let flow = "left";
                 let from = 0;
@@ -194,6 +237,9 @@ class MDDataTableComponent extends MDCardComponent {
                     from = index + 1;
                     to = this.columns.length;
                     value = 0;
+                    if(!stickyStart){stickyStart=index}
+                }else{
+                    stickyEnd=index
                 }
 
                 for (let i = from; i < to; i++) {
@@ -207,6 +253,9 @@ class MDDataTableComponent extends MDCardComponent {
                 column[flow] = value;
             }
         });
+        if(stickyEnd!==undefined){this.columns[stickyEnd].stickyEnd=true}
+        if(stickyStart!==undefined){this.columns[stickyStart].stickyStart=true}
+        // console.log(stickyEnd,stickyStart)
 
         this.store = new MDStore(this.rows);
         const { total, docs } = this.store.getAll();
@@ -301,7 +350,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableKeydown(event) {
-        if (this.allSelection && event.ctrlKey && event.key === "a") {
+        if (this.allSelection &&document.activeElement==event.target.closest('tr')&& event.ctrlKey && event.key === "a") {
             this.selectAll();
             this.requestUpdate();
         }

@@ -186,6 +186,26 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    renderPagination(item) {
+        /* prettier-ignore */
+        return html`
+            <md-pagination
+                class="md-card__pagination"
+                name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
+                .total="${ifDefined(item.total)}"
+                .limit="${ifDefined(item.limit)}"
+                .page="${ifDefined(item.page)}"
+                @onPaginationChange="${this.handleCardPaginationChange}"
+                @onPaginationLimitChange="${this.handleCardPaginationLimitChange}"
+                @onPaginationFirstClick="${this.handleCardPaginationFirstClick}"
+                @onPaginationPrevClick="${this.handleCardPaginationPrevClick}"
+                @onPaginationNextClick="${this.handleCardPaginationNextClick}"
+                @onPaginationLastClick="${this.handleCardPaginationLastClick}"
+            ></md-pagination>
+        `;
+    }
+
     renderAction(item, defaultAction = this.renderButton) {
         /* prettier-ignore */
         return choose(item.component, [
@@ -194,6 +214,7 @@ class MDCardComponent extends MDComponent {
             ['icon', () => this.renderIcon(item)],
             ['button', () => this.renderButton(item)],
             ['fab', () => this.renderFab(item)],
+            ['pagination', () => this.renderPagination(item)],
             ['spacer', () => html`<div class="md-pane__spacer"></div>`],
         ], () => defaultAction(item));
     }
@@ -311,29 +332,31 @@ class MDCardComponent extends MDComponent {
         this.emit("onCardTextFieldIconButtonClick", event);
     }
 
-    handleCardPaginationChange(event) {
-        this.emit("onCardPaginationChange", event);
+    handleCardPaginationChange(event){
+        this.emit('onCardPaginationChange',event)    
     }
-
-    handleCardPaginationLimitChange(event) {
-        this.emit("onCardPaginationLimitChange", event);
+    
+    handleCardPaginationLimitChange(event){
+        this.emit('onCardPaginationLimitChange',event)    
     }
-
-    handleCardPaginationFirstClick(event) {
-        this.emit("onCardPaginationFirstClick", event);
+    
+    handleCardPaginationFirstClick(event){
+        this.emit('onCardPaginationFirstClick',event)    
     }
-
-    handleCardPaginationPrevClick(event) {
-        this.emit("onCardPaginationPrevClick", event);
+    
+    handleCardPaginationPrevClick(event){
+        this.emit('onCardPaginationPrevClick',event)    
     }
-
-    handleCardPaginationNextClick(event) {
-        this.emit("onCardPaginationNextClick", event);
+    
+    handleCardPaginationNextClick(event){
+        this.emit('onCardPaginationNextClick',event)    
     }
-
-    handleCardPaginationLastClick(event) {
-        this.emit("onCardPaginationLastClick", event);
+    
+    handleCardPaginationLastClick(event){
+        this.emit('onCardPaginationLastClick',event)    
     }
+    
+    
 }
 
 customElements.define("md-card", MDCardComponent);
