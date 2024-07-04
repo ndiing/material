@@ -167,8 +167,8 @@ class MDRouter {
                 } catch (error) {
                     this.emit("onRouterNavigateError", event);
                     performance.mark("markRouterNavigateError");
-                    console.error(error);
-                    break;
+                    throw error;
+                    // break;
                 }
             }
 
@@ -188,8 +188,8 @@ class MDRouter {
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
                 while (nextElement) {
-                    const notComponent = !this.routes.find((route) => route.component == nextElement);
-                    const notOutlet = !outlets.find((outlet) => outlet == nextElement);
+                    const notComponent = !this.routes.find((route) => route.component === nextElement);
+                    const notOutlet = !outlets.find((outlet) => outlet === nextElement);
 
                     if (notComponent && notOutlet) {
                         nextElement.remove();

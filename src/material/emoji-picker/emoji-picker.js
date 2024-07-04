@@ -308,20 +308,20 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     handleCardIconButtonClick(event) {
-        if (event.currentTarget.name == "prev") {
+        if (event.currentTarget.name === "prev") {
             this.handleEmojiPickerIconButtonPrevClick(event);
-        } else if (event.currentTarget.name == "next") {
+        } else if (event.currentTarget.name === "next") {
             this.handleEmojiPickerIconButtonNextClick(event);
         }
         this.emit("onEmojiPickerIconButtonClick", event);
     }
 
     handleCardButtonClick(event) {
-        if (event.currentTarget.name == "label") {
+        if (event.currentTarget.name === "label") {
             this.handleEmojiPickerButtonLabelClick(event);
-        } else if (event.currentTarget.name == "cancel") {
+        } else if (event.currentTarget.name === "cancel") {
             this.handleEmojiPickerButtonCancelClick(event);
-        } else if (event.currentTarget.name == "ok") {
+        } else if (event.currentTarget.name === "ok") {
             this.handleEmojiPickerButtonOkClick(event);
         }
         this.emit("onEmojiPickerButtonClick", event);

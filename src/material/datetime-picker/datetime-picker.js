@@ -45,8 +45,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
             const year = date.getFullYear();
             rows.push({
                 label: this.yearFormat(date),
-                activated: year == this.activated.getFullYear(),
-                selected: year == this.selected.getFullYear(),
+                activated: year === this.activated.getFullYear(),
+                selected: year === this.selected.getFullYear(),
                 year,
             });
         }
@@ -64,8 +64,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
             const month = date.getMonth();
             rows.push({
                 label: this.monthFormat(date),
-                activated: year == this.activated.getFullYear() && month == this.activated.getMonth(),
-                selected: year == this.selected.getFullYear() && month == this.selected.getMonth(),
+                activated: year === this.activated.getFullYear() && month === this.activated.getMonth(),
+                selected: year === this.selected.getFullYear() && month === this.selected.getMonth(),
                 year,
                 month,
             });
@@ -116,8 +116,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
                 const day = date.getDate();
                 children.push({
                     label: this.dayFormat(date),
-                    activated: year == this.activated.getFullYear() && month == this.activated.getMonth() && day == this.activated.getDate(),
-                    selected: year == this.selected.getFullYear() && month == this.selected.getMonth() && day == this.selected.getDate(),
+                    activated: year === this.activated.getFullYear() && month === this.activated.getMonth() && day === this.activated.getDate(),
+                    selected: year === this.selected.getFullYear() && month === this.selected.getMonth() && day === this.selected.getDate(),
                     year,
                     month,
                     day,
@@ -142,8 +142,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
             const hour = date.getHours();
             rows.push({
                 label: this.hourFormat(date),
-                activated: hour == this.activated.getHours(),
-                selected: hour == this.selected.getHours(),
+                activated: hour === this.activated.getHours(),
+                selected: hour === this.selected.getHours(),
                 year,
                 month,
                 day,
@@ -167,9 +167,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
             const minute = date.getMinutes();
             rows.push({
                 label: this.minuteFormat(date),
-                activated: hour == this.activated.getHours() && minute == this.activated.getMinutes(),
+                activated: hour === this.activated.getHours() && minute === this.activated.getMinutes(),
 
-                selected: hour == this.selected.getHours() && minute == this.selected.getMinutes(),
+                selected: hour === this.selected.getHours() && minute === this.selected.getMinutes(),
                 year,
                 month,
                 day,
@@ -208,15 +208,15 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get leadingActions() {
         let label;
-        if (this.index == 0) {
+        if (this.index === 0) {
             label = [this.years[0].label, this.years[this.years.length - 1].label].join("-");
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             label = stringifyYear(this.selection);
-        } else if (this.index == 2) {
+        } else if (this.index === 2) {
             label = stringifyDatetimeLocal(this.selection);
-        } else if (this.index == 3) {
+        } else if (this.index === 3) {
             label = stringifyTime(this.selection);
-        } else if (this.index == 4) {
+        } else if (this.index === 4) {
             label = stringifyTime(this.selection);
         }
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
@@ -364,9 +364,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     }
 
     handleCardIconButtonClick(event) {
-        if (event.currentTarget.name == "prev") {
+        if (event.currentTarget.name === "prev") {
             this.handleCardIconButtonPrevClick(event);
-        } else if (event.currentTarget.name == "next") {
+        } else if (event.currentTarget.name === "next") {
             this.handleCardIconButtonNextClick(event);
         }
 
@@ -374,11 +374,11 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     }
 
     handleCardButtonClick(event) {
-        if (event.currentTarget.name == "label") {
+        if (event.currentTarget.name === "label") {
             this.handleCardButtonLabelClick(event);
-        } else if (event.currentTarget.name == "cancel") {
+        } else if (event.currentTarget.name === "cancel") {
             this.handleCardButtonCancelClick(event);
-        } else if (event.currentTarget.name == "ok") {
+        } else if (event.currentTarget.name === "ok") {
             this.handleCardButtonOkClick(event);
         }
 
@@ -405,15 +405,15 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     }
 
     handleCardIconButtonPrevClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() - 10);
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() - 1);
-        } else if (this.index == 2) {
+        } else if (this.index === 2) {
             this.selection.setMonth(this.selection.getMonth() - 1);
-        } else if (this.index == 3) {
+        } else if (this.index === 3) {
             this.selection.setHours(this.selection.getHours() - 1);
-        } else if (this.index == 4) {
+        } else if (this.index === 4) {
             this.selection.setMinutes(this.selection.getMinutes() - 1);
         }
 
@@ -424,15 +424,15 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     }
 
     handleCardIconButtonNextClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() + 10);
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() + 1);
-        } else if (this.index == 2) {
+        } else if (this.index === 2) {
             this.selection.setMonth(this.selection.getMonth() + 1);
-        } else if (this.index == 3) {
+        } else if (this.index === 3) {
             this.selection.setHours(this.selection.getHours() + 1);
-        } else if (this.index == 4) {
+        } else if (this.index === 4) {
             this.selection.setMinutes(this.selection.getMinutes() + 1);
         }
 
@@ -443,15 +443,15 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     }
 
     handleCardButtonLabelClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.index = 2;
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.index = 0;
-        } else if (this.index == 2) {
+        } else if (this.index === 2) {
             this.index = 1;
-        } else if (this.index == 3) {
+        } else if (this.index === 3) {
             this.index = 4;
-        } else if (this.index == 4) {
+        } else if (this.index === 4) {
             this.index = 2;
         }
 

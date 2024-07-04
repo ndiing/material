@@ -259,20 +259,20 @@ class MDColorPickerComponent extends MDSheetComponent {
     }
 
     handleCardIconButtonClick(event) {
-        if (event.currentTarget.name == "prev") {
+        if (event.currentTarget.name === "prev") {
             this.handleColorPickerIconButtonPrevClick(event);
-        } else if (event.currentTarget.name == "next") {
+        } else if (event.currentTarget.name === "next") {
             this.handleColorPickerIconButtonNextClick(event);
         }
         this.emit("onColorPickerIconButtonClick", event);
     }
 
     handleCardButtonClick(event) {
-        if (event.currentTarget.name == "label") {
+        if (event.currentTarget.name === "label") {
             this.handleColorPickerButtonLabelClick(event);
-        } else if (event.currentTarget.name == "cancel") {
+        } else if (event.currentTarget.name === "cancel") {
             this.handleColorPickerButtonCancelClick(event);
-        } else if (event.currentTarget.name == "ok") {
+        } else if (event.currentTarget.name === "ok") {
             this.handleColorPickerButtonOkClick(event);
         }
         this.emit("onColorPickerButtonClick", event);

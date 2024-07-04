@@ -1,4 +1,13 @@
 /**
+ * Checks if a value is an object.
+ * @param {*} obj - The value to check.
+ * @returns {boolean} True if the value is an object, otherwise false.
+ */
+function isObject(obj) {
+    return obj !== null && typeof obj === "object";
+}
+
+/**
  * Represents a simple in-memory store for managing documents.
  * @class
  */
@@ -210,7 +219,9 @@ class MDStore {
         }
         for (const key in source) {
             if (isObject(source[key])) {
-                if (!target[key]) Object.assign(target, { [key]: {} });
+                if (!target[key]) {
+                    Object.assign(target, { [key]: {} });
+                }
                 this.deepMerge(target[key], source[key]);
             } else {
                 Object.assign(target, { [key]: source[key] });
@@ -236,10 +247,14 @@ class MDStore {
      * @returns {boolean} True if the query string is found within the object, otherwise false.
      */
     deepSearch(obj, query) {
-        if (!isObject(obj)) return false;
+        if (!isObject(obj)) {
+            return false;
+        }
         for (const key in obj) {
             if (isObject(obj[key])) {
-                if (this.deepSearch(obj[key], query)) return true;
+                if (this.deepSearch(obj[key], query)) {
+                    return true;
+                }
             } else if (typeof obj[key] === "string" && obj[key].toLowerCase().includes(query)) {
                 return true;
             }
@@ -300,15 +315,6 @@ class MDStore {
             }
         });
     }
-}
-
-/**
- * Checks if a value is an object.
- * @param {*} obj - The value to check.
- * @returns {boolean} True if the value is an object, otherwise false.
- */
-function isObject(obj) {
-    return obj !== null && typeof obj === "object";
 }
 
 export { MDStore };

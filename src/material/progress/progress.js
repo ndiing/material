@@ -7,6 +7,57 @@ let elapsedTime = 0;
 let progressBar;
 
 /**
+ * Creates a progress bar element and appends it to the document body.
+ * Initializes the progress bar with maximum duration.
+ */
+function createProgressBar() {
+    progressBar = document.createElement("md-progress-indicator");
+    progressBar.setAttribute("max", totalDuration);
+    progressBar.setAttribute("value", 0);
+    document.body.insertAdjacentElement("afterbegin", progressBar);
+    progressBar.style.position = "absolute";
+    progressBar.style.left = "0px";
+    progressBar.style.top = "0px";
+}
+
+/**
+ * Resets animation variables and removes the progress bar element.
+ */
+function resetAnimationVariables() {
+    isAnimating = false;
+    pausedTime = 0;
+    totalDuration = 10000;
+    elapsedTime = 0;
+
+    progressBar.parentNode.removeChild(progressBar);
+    progressBar = null;
+}
+
+/**
+ * Recursive function that updates the progress of the animation.
+ * @param {Function} [resolve] - Optional callback function to be called when animation completes.
+ */
+function loop(resolve) {
+    let currentTime = performance.now();
+    elapsedTime = currentTime - startTime;
+
+    // let progress = Math.min(100, (elapsedTime / totalDuration) * 100);
+
+    if (progressBar) {
+        progressBar.setAttribute("value", elapsedTime);
+    }
+
+    if (elapsedTime < totalDuration) {
+        requestId = requestAnimationFrame(() => loop(resolve));
+    } else {
+        resetAnimationVariables();
+        if (resolve) {
+            resolve();
+        }
+    }
+}
+
+/**
  * Starts or resumes the animation for a specified duration.
  * If animation is already running, extends the total duration.
  * @param {number} [duration=10000] - The duration of the animation in milliseconds.
@@ -30,20 +81,6 @@ function start(duration = 10000) {
         progressBar.setAttribute("max", totalDuration);
         loop(resolve);
     });
-}
-
-/**
- * Creates a progress bar element and appends it to the document body.
- * Initializes the progress bar with maximum duration.
- */
-function createProgressBar() {
-    progressBar = document.createElement("md-progress-indicator");
-    progressBar.setAttribute("max", totalDuration);
-    progressBar.setAttribute("value", 0);
-    document.body.insertAdjacentElement("afterbegin", progressBar);
-    progressBar.style.position = "absolute";
-    progressBar.style.left = "0px";
-    progressBar.style.top = "0px";
 }
 
 /**
@@ -82,43 +119,6 @@ function stop() {
 
         cancelAnimationFrame(requestId);
         resetAnimationVariables();
-    }
-}
-
-/**
- * Resets animation variables and removes the progress bar element.
- */
-function resetAnimationVariables() {
-    isAnimating = false;
-    pausedTime = 0;
-    totalDuration = 10000;
-    elapsedTime = 0;
-
-    progressBar.parentNode.removeChild(progressBar);
-    progressBar = null;
-}
-
-/**
- * Recursive function that updates the progress of the animation.
- * @param {Function} [resolve] - Optional callback function to be called when animation completes.
- */
-function loop(resolve) {
-    let currentTime = performance.now();
-    elapsedTime = currentTime - startTime;
-
-    // let progress = Math.min(100, (elapsedTime / totalDuration) * 100);
-
-    if (progressBar) {
-        progressBar.setAttribute("value", elapsedTime);
-    }
-
-    if (elapsedTime < totalDuration) {
-        requestId = requestAnimationFrame(() => loop(resolve));
-    } else {
-        resetAnimationVariables();
-        if (resolve) {
-            resolve();
-        }
     }
 }
 

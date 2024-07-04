@@ -51,11 +51,11 @@ class MDTreeItemComponent extends MDComponent {
     get nodeActions_() {
         let icons = [];
 
-        if (this.variant == "accordion") {
+        if (this.variant === "accordion") {
             icons = ["keyboard_arrow_down", "keyboard_arrow_up"];
-        } else if (this.variant == "tree") {
+        } else if (this.variant === "tree") {
             icons = ["keyboard_arrow_right", "keyboard_arrow_down"];
-        } else if (this.variant == "level") {
+        } else if (this.variant === "level") {
             icons = ["arrow_forward", "arrow_back"];
         }
 
@@ -73,7 +73,7 @@ class MDTreeItemComponent extends MDComponent {
     get nodeIcons_() {
         let icons = [];
 
-        if (this.variant == "tree") {
+        if (this.variant === "tree") {
             icons = ["folder", "folder_open"];
         }
 
@@ -93,7 +93,7 @@ class MDTreeItemComponent extends MDComponent {
     get leafIcons_() {
         let icons = [];
 
-        if (this.variant == "tree") {
+        if (this.variant === "tree") {
             icons = ["draft", "draft"];
         }
 

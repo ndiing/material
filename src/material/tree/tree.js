@@ -54,7 +54,7 @@ class MDTreeComponent extends MDComponent {
 
     render() {
         /* prettier-ignore */
-        return (this.variant == 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTreeItem(item));
+        return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTreeItem(item));
     }
 
     connectedCallback() {
@@ -130,7 +130,7 @@ class MDTreeComponent extends MDComponent {
             }
 
             if (item.children?.length) {
-                if (this.variant == "level") {
+                if (this.variant === "level") {
                     item.children.unshift({
                         label: item.label,
                         parent: item,
@@ -168,7 +168,7 @@ class MDTreeComponent extends MDComponent {
 
         for (let i = 0; i < list.length; i++) {
             let item = list[i];
-            item.selected = item == data;
+            item.selected = item === data;
             item.activated = false;
 
             if (item.selected) {

@@ -46,9 +46,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     get leadingActions() {
         let label;
-        if (this.index == 0) {
+        if (this.index === 0) {
             label = stringifyTime(this.selection);
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             label = stringifyTime(this.selection);
         }
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
@@ -79,11 +79,11 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     handleCardIconButtonPrevClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.selection.setHours(this.selection.getHours() - 1);
 
             this.selected.setHours(this.selection.getHours());
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.selection.setMinutes(this.selection.getMinutes() - 1);
 
             this.selected.setMinutes(this.selection.getMinutes());
@@ -96,11 +96,11 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     handleCardIconButtonNextClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.selection.setHours(this.selection.getHours() + 1);
 
             this.selected.setHours(this.selection.getHours());
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.selection.setMinutes(this.selection.getMinutes() + 1);
 
             this.selected.setMinutes(this.selection.getMinutes());
@@ -113,9 +113,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     handleCardButtonLabelClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.index = 1;
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.index = 0;
         }
 

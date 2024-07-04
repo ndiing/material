@@ -297,51 +297,67 @@ class MDCardComponent extends MDComponent {
     handleCardIconButtonClick(event) {
         this.emit("onCardIconButtonClick", event);
     }
+
     handleCardIconClick(event) {
         this.emit("onCardIconClick", event);
     }
+
     handleCardButtonClick(event) {
         this.emit("onCardButtonClick", event);
     }
+
     handleCardFabClick(event) {
         this.emit("onCardFabClick", event);
     }
+
     handleCardTextFieldNativeFocus(event) {
         this.emit("onCardTextFieldNativeFocus", event);
     }
+
     handleCardTextFieldNativeBlur(event) {
         this.emit("onCardTextFieldNativeBlur", event);
     }
+
     handleCardTextFieldNativeInput(event) {
         this.emit("onCardTextFieldNativeInput", event);
     }
+
     handleCardTextFieldNativeSearch(event) {
         this.emit("onCardTextFieldNativeSearch", event);
     }
+
     handleCardTextFieldNativeInvalid(event) {
         this.emit("onCardTextFieldNativeInvalid", event);
     }
+
     handleCardTextFieldNativeReset(event) {
         this.emit("onCardTextFieldNativeReset", event);
     }
+
     handleCardTextFieldIconButtonClick(event) {
         this.emit("onCardTextFieldIconButtonClick", event);
     }
+
     handleCardPaginationChange(event) {
         this.emit("onCardPaginationChange", event);
     }
+
     handleCardPaginationLimitChange(event) {
         this.emit("onCardPaginationLimitChange", event);
     }
+
     handleCardPaginationFirstClick(event) {
         this.emit("onCardPaginationFirstClick", event);
     }
+
     handleCardPaginationPrevClick(event) {
         this.emit("onCardPaginationPrevClick", event);
     }
+
     handleCardPaginationNextClick(event) {
         this.emit("onCardPaginationNextClick", event);
     }
+
     handleCardPaginationLastClick(event) {
         this.emit("onCardPaginationLastClick", event);
     }

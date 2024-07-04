@@ -108,7 +108,7 @@ class MDListComponent extends MDComponent {
     multiSelect(data) {
         data.selected = !data.selected;
 
-        if (this.selectionMode && this.list.findIndex((item) => item.selected) == -1) {
+        if (this.selectionMode && this.list.findIndex((item) => item.selected) === -1) {
             this.selectionMode = false;
         }
     }
@@ -167,7 +167,7 @@ class MDListComponent extends MDComponent {
     }
 
     handleListKeydown(event) {
-        if (this.allSelection && event.ctrlKey && event.key == "a") {
+        if (this.allSelection && event.ctrlKey && event.key === "a") {
             this.selectAll();
 
             this.requestUpdate();

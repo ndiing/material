@@ -34,7 +34,7 @@ class MDSnackbarComponent extends MDSheetComponent {
                 }, 4000);
 
                 const handleSnackbarClose = (event) => {
-                    if (event.animationName == "snackbarOut") {
+                    if (event.animationName === "snackbarOut") {
                         window.clearTimeout(this.timeout);
                         resolve();
                     }

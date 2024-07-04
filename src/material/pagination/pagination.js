@@ -27,18 +27,21 @@ class MDPaginationComponent extends MDComponent {
     /**
      * Options for the number of items per page.
      */
+
     get options() {
         const options = [];
         let selected;
+
         for (let i = 1; i <= 5; i++) {
             const value = (this.total / 5) * i;
-            selected = value == this.defaultLimit;
+            selected = value === this.defaultLimit;
             options.push({ value, label: String(value), selected });
         }
+
         if (!selected) {
             if (this.defaultLimit) {
                 const value = this.defaultLimit;
-                selected = value == this.defaultLimit;
+                selected = value === this.defaultLimit;
                 options.push({ value, label: String(value), selected });
                 options.sort((a, b) => a.value - b.value);
             } else {
@@ -47,46 +50,57 @@ class MDPaginationComponent extends MDComponent {
         }
         return options;
     }
+
     set options(value) {}
 
     /**
      * The total number of pages.
      */
+
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
+
     set pages(value) {}
 
     /**
      * The starting index for the current page.
      */
+
     get start() {
         return (this.page - 1) * this.limit;
     }
+
     set start(value) {}
 
     /**
      * The ending index for the current page.
      */
+
     get end() {
         return Math.min(this.start + this.limit, this.total);
     }
+
     set end(value) {}
 
     /**
      * The starting item number for the current page.
      */
+
     get numberStart() {
         return this.start + 1;
     }
+
     set numberStart(value) {}
 
     /**
      * The ending item number for the current page.
      */
+
     get numberEnd() {
         return Math.min(this.start + this.limit, this.total);
     }
+
     set numberEnd(value) {}
 
     constructor() {
@@ -110,25 +124,25 @@ class MDPaginationComponent extends MDComponent {
             <md-icon-button 
                 class="md-pagination__action" 
                 .icon="${"first_page"}" 
-                .disabled="${this.page==1}"
+                .disabled="${this.page===1}"
                 @click="${this.handlePaginationFirstClick}"
             ></md-icon-button>
             <md-icon-button 
                 class="md-pagination__action" 
                 .icon="${"keyboard_arrow_left"}" 
-                .disabled="${this.page==1}"
+                .disabled="${this.page===1}"
                 @click="${this.handlePaginationPrevClick}"
             ></md-icon-button>
             <md-icon-button 
                 class="md-pagination__action" 
                 .icon="${"keyboard_arrow_right"}" 
-                .disabled="${this.page==this.pages}"
+                .disabled="${this.page===this.pages}"
                 @click="${this.handlePaginationNextClick}"
             ></md-icon-button>
             <md-icon-button 
                 class="md-pagination__action" 
                 .icon="${"last_page"}" 
-                .disabled="${this.page==this.pages}"
+                .disabled="${this.page===this.pages}"
                 @click="${this.handlePaginationLastClick}"
             ></md-icon-button>
         `;
@@ -142,11 +156,13 @@ class MDPaginationComponent extends MDComponent {
 
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("total") || changedProperties.has("limit")) {
             await this.updateComplete;
             this.page = 1;
         }
         let cache = JSON.stringify([this.total, this.page, this.limit, this.start, this.end]);
+
         if (this.cache !== cache) {
             this.cache = cache;
             this.emit("onPaginationChange", this);

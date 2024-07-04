@@ -418,7 +418,7 @@ class MDTextFieldComponent extends MDComponent {
      * {{desc}}
      */
     populate() {
-        this.classList.toggle("md-text-field--populated", !!this.value || this.type == "file");
+        this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
     }
 
     /**

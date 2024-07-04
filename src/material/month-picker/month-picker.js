@@ -21,9 +21,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     get leadingActions() {
         let label;
-        if (this.index == 0) {
+        if (this.index === 0) {
             label = [this.years[0].label, this.years[this.years.length - 1].label].join("-");
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             label = stringifyMonth(this.selection);
         }
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
@@ -74,9 +74,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     handleCardIconButtonPrevClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() - 10);
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() - 1);
         }
 
@@ -87,9 +87,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     handleCardIconButtonNextClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() + 10);
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() + 1);
         }
 
@@ -100,9 +100,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     handleCardButtonLabelClick(event) {
-        if (this.index == 0) {
+        if (this.index === 0) {
             this.index = 1;
-        } else if (this.index == 1) {
+        } else if (this.index === 1) {
             this.index = 0;
         }
 

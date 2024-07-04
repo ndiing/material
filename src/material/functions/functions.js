@@ -21,7 +21,7 @@ function toCamelCase(string) {
     return string
         .replace(/([a-z])([A-Z])/g, (_$, $1, $2) => $1 + " " + $2)
         .toLowerCase()
-        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2, $0) => ($0 == 0 ? $2.toLowerCase() : $2.toUpperCase()))
+        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2, $0) => ($0 === 0 ? $2.toLowerCase() : $2.toUpperCase()))
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
@@ -99,7 +99,7 @@ function toCamelSnakeCase(string) {
     return string
         .replace(/([a-z])([A-Z])/g, (_$, $1, $2) => $1 + "_" + $2)
         .toLowerCase()
-        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2, $0) => "_" + ($0 == 0 ? $2.toLowerCase() : $2.toUpperCase()))
+        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2, $0) => "_" + ($0 === 0 ? $2.toLowerCase() : $2.toUpperCase()))
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 

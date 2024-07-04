@@ -95,7 +95,7 @@ class MDGestureController {
             return;
         }
 
-        const dragHandle = (this.options.dragHandleSelector ? event.target.closest(this.options.dragHandleSelector) : this.container) == this.dragHandle;
+        const dragHandle = (this.options.dragHandleSelector ? event.target.closest(this.options.dragHandleSelector) : this.container) === this.dragHandle;
         const resizeDirection = event.target.closest(".md-resizable__handle")?.classList.value.match(/--(\w+)$/)[1];
 
         window.addEventListener("pointermove", this.handleGesturePointermove);

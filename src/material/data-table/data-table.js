@@ -98,7 +98,7 @@ class MDDataTableComponent extends MDCardComponent {
                                     }),
                                     ...(column.sticky&&{
                                         position:'sticky',
-                                        [column.flow]:((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+'px',
+                                        [column.flow]:((column.flow==='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+'px',
                                         'z-index':'3',
                                     }),
                                    
@@ -146,7 +146,7 @@ class MDDataTableComponent extends MDCardComponent {
                                     style="${styleMap({
                                         ...(column.sticky&&{
                                             position:'sticky',
-                                            [column.flow]:((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+'px',
+                                            [column.flow]:((column.flow==='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+'px',
                                             'z-index':'1',
                                         }),
                                     })}"
@@ -258,7 +258,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     get selectedAll() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
-        return selectedTotal && selectedTotal == this.storeRows.length;
+        return selectedTotal && selectedTotal === this.storeRows.length;
     }
 
     handleDataTableColumnCellCheckboxNativeInput(event) {
@@ -301,7 +301,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableKeydown(event) {
-        if (this.allSelection && event.ctrlKey && event.key == "a") {
+        if (this.allSelection && event.ctrlKey && event.key === "a") {
             this.selectAll();
             this.requestUpdate();
         }
@@ -341,7 +341,7 @@ class MDDataTableComponent extends MDCardComponent {
             if (!data.order) {
                 data.order = "asc";
                 data.sortableIcon = "arrow_upward";
-            } else if (data.order == "asc") {
+            } else if (data.order === "asc") {
                 data.order = "desc";
                 data.sortableIcon = "arrow_downward";
             } else {
@@ -365,7 +365,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     select(data) {
         this.storeRows.forEach((row) => {
-            row.selected = row == data;
+            row.selected = row === data;
         });
         this.endIndex = this.storeRows.indexOf(data);
     }
