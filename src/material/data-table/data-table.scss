@@ -152,6 +152,12 @@
             @include typescale-label-large();
             height: var(--md-sys-typescale-label-large-line-height);
         }
+
+        &:hover {
+            .md-resizable__handle--e {
+                border-right: 1px solid var(--md-sys-color-outline-variant);
+            }
+        }
     }
 
     td {

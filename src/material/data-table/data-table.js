@@ -437,7 +437,7 @@ class MDDataTableComponent extends MDCardComponent {
             data.selected = !data.selected;
         } else {
             this.storeRows.forEach((row) => {
-                row.selected = row == data;
+                row.selected = row === data;
             });
             this.endIndex = this.storeRows.indexOf(data);
         }
@@ -449,7 +449,7 @@ class MDDataTableComponent extends MDCardComponent {
     handleDataTableKeydown(event) {
         const isRowFocused = document.activeElement === event.target.closest("tr");
 
-        if (isRowFocused && event.ctrlKey && event.key == "a") {
+        if (isRowFocused && event.ctrlKey && event.key === "a") {
             this.storeRows.forEach((row) => {
                 row.selected = true;
             });
