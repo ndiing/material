@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { isDefined } from "../functions/functions.js";
-
+import { MDRippleController } from "../ripple/ripple.js";
+import { MDGestureController } from "../gesture/gesture.js";
 
 /**
  * Represents a custom data-table item component with various content options such as avatar, thumbnail, icon, and more.
@@ -51,6 +51,7 @@ class MDDataTableItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
+        indeterminate: { type: Boolean },
     };
 
     constructor() {
@@ -63,7 +64,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-data-table__checkbox"
             .checked="${this.selected}"
-            @onCheckboxNativeInput="${this.handleCheckboxNativeInput}"
+            .indeterminate="${this.indeterminate}"
         ></md-checkbox>`
     }
 
@@ -72,7 +73,6 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-radio-button 
             class="md-data-table__radio-button"
             .checked="${this.selected}"
-            @onRadioButtonNativeInput="${this.handleRadioButtonNativeInput}"
         ></md-radio-button>`
     }
 
@@ -81,7 +81,6 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-switch 
             class="md-data-table__switch"
             .checked="${this.selected}"
-            @onSwitchNativeInput="${this.handleSwitchNativeInput}"
         ></md-switch>`
     }
 
@@ -98,11 +97,11 @@ class MDDataTableItemComponent extends MDComponent {
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
 
-            ${isDefined(this.label)||this.subLabel||this.badge?html`
+            ${this.label||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
-                    ${isDefined(this.label)||this.subLabel?html`
+                    ${this.label||this.subLabel?html`
                         <div class="md-data-table__label">
-                            ${isDefined(this.label)?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
+                            ${this.label?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
@@ -140,17 +139,7 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 
-    handleCheckboxNativeInput(event) {
-        this.emit("onCheckboxNativeInput", event);
-    }
-
-    handleRadioButtonNativeInput(event) {
-        this.emit("onRadioButtonNativeInput", event);
-    }
-
-    handleSwitchNativeInput(event) {
-        this.emit("onSwitchNativeInput", event);
-    }
+    
 }
 
 customElements.define("md-data-table-item", MDDataTableItemComponent);

@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html, nothing } from "lit";
 import { MDCardComponent } from "../card/card.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -12,32 +12,34 @@ class MDDataTableComponent extends MDCardComponent {
         columns: { type: Array },
         rows: { type: Array },
         stickyHeader: { type: Boolean },
+        checkboxSelection: { type: Boolean },
+        stickyCheckbox: { type: Boolean },
     };
+
+    get label() {
+        return "label";
+    }
+    set label(value) {}
+
+    get trailingActions() {
+        return [
+            { name: "search", component: "text-field", type: "search", icon: "search", placeholder: "Search" },
+            { name: "filter", icon: "filter_list" },
+            { name: "more", icon: "more_vert" },
+        ];
+    }
+    set trailingActions(value) {}
 
     get body() {
         return [this.renderViewport()];
     }
     set body(value) {}
 
-    get label() {
-        return 'label'
-    }
-    set label(value) {}
-
-    get trailingActions() {
-        return [
-            {icon:'search'},
-            {icon:'filter_list'},
-            {icon:'more_vert'},
-        ]
-    }
-    set trailingActions(value) {}
-
     get actions() {
         return [
-            {component:'spacer'},
-            {component:'pagination'},
-        ]
+            { name: "spacer", component: "spacer" },
+            { name: "pagination", component: "pagination" },
+        ];
     }
     set actions(value) {}
 
@@ -66,57 +68,99 @@ class MDDataTableComponent extends MDCardComponent {
                 .trailingSwitch="${ifDefined(item.trailingSwitch)}"
                 .selected="${ifDefined(item.selected)}"
                 .routerLink="${ifDefined(item.routerLink)}"
+                .indeterminate="${ifDefined(item.indeterminate)}"
             ></md-data-table-item>
         `;
     }
 
-    renderDataTableNative(item) {
+    renderDataTableNative() {
         /* prettier-ignore */
         return html`
             <table class="md-data-table__native">
                 <thead>
                     <tr>
-                        ${this.virtualColumns?.map(column => html`
+                        ${this.checkboxSelection?html`
+                            <th
+                                style="${styleMap({
+                                    ...(this.stickyHeader&&{
+                                        "position":"sticky",
+                                        "top":(0-this.virtual.translateY)+"px",
+                                        "z-index":"2",
+                                    }),
+                                    ...(this.stickyCheckbox&&{
+                                        "position":"sticky",
+                                        "left": (0-this.virtual.translateX)+"px",
+                                        "z-index":"3",
+                                    }),
+                                })}"
+                                @onCheckboxNativeInput="${this.handleDataTableColumnCheckboxNativeInput}"
+                            >
+                                ${this.renderDataTableItem({
+                                    leadingCheckbox:true,
+                                    indeterminate:this.indeterminate,
+                                    selected:this.selected,
+                                })}
+                            </th>
+                        `:nothing}
+                        ${this.virtualColumns?.map(column=>html`
                             <th
                                 .data="${column}"
                                 style="${styleMap({
                                     "min-width":column.width+"px",
                                     ...(this.stickyHeader&&{
-                                        position: "sticky",
+                                        "position":"sticky",
                                         "top":(0-this.virtual.translateY)+"px",
-                                        "z-index": "2",
+                                        "z-index":"2",
                                     }),
                                     ...(column.sticky&&{
-                                        position: "sticky",
-                                        [column.flow]:((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+"px",
-                                        "z-index": "3",
+                                        "position":"sticky",
+                                        [column.flow]: ((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+"px",
+                                        "z-index":"3",
                                     }),
                                 })}"
                             >
                                 ${this.renderDataTableItem({
-                                    label: column.label,
+                                    label:column.label
                                 })}
                             </th>
                         `)}
                     </tr>
                 </thead>
                 <tbody>
-                    ${this.virtualRows?.map(row => html`
+                    ${this.virtualRows?.map(row=>html`
                         <tr
                             .data="${row}"
+                            ?selected="${row.selected}"
+                            @onCheckboxNativeInput="${this.handleDataTableRowCheckboxNativeInput}"
                         >
-                            ${this.virtualColumns?.map(column => html`
+                            ${this.checkboxSelection?html`
                                 <td
                                     style="${styleMap({
-                                        ...(column.sticky&&{
-                                            position: "sticky",
-                                            [column.flow]:((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+"px",
-                                            "z-index": "1",
+                                        ...(this.stickyCheckbox&&{
+                                            "position":"sticky",
+                                            "left":(0-this.virtual.translateX)+"px",
+                                            "z-index":"1",
                                         }),
                                     })}"
                                 >
                                     ${this.renderDataTableItem({
-                                        label: row[column.name],
+                                        leadingCheckbox:true,
+                                        selected:row.selected,
+                                    })}
+                                </td>
+                            `:nothing}
+                            ${this.virtualColumns?.map(column=>html`
+                                <td
+                                    style="${styleMap({
+                                        ...(column.sticky&&{
+                                            "position":"sticky",
+                                            [column.flow]: ((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+"px",
+                                            "z-index":"1",
+                                        }),
+                                    })}"
+                                >
+                                    ${this.renderDataTableItem({
+                                        label:row[column.name]
                                     })}
                                 </td>
                             `)}
@@ -124,25 +168,24 @@ class MDDataTableComponent extends MDCardComponent {
                     `)}
                 </tbody>
             </table>
-        `;
+        `
     }
 
-    renderViewport(item) {
+    renderViewport() {
         /* prettier-ignore */
         return html`
             <div 
                 class="md-data-table__viewport"
-                @onVirtualScroll="${this.handleDataTableVirtualScroll}"
+                @onVirtualScroll="${this.handleDataTableViewportVirtualScroll}"
             >
                 <div class="md-data-table__scrollbar"></div>
                 <div class="md-data-table__container">${this.renderDataTableNative()}</div>
             </div>
-        `;
+        `
     }
 
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-card");
         this.classList.add("md-data-table");
 
@@ -150,29 +193,42 @@ class MDDataTableComponent extends MDCardComponent {
             column.width = column.width || 52 * 4;
         });
 
-        const half = Math.floor(this.columns.length / 2);
-
+        let half = Math.floor(this.columns.length / 2);
         this.columns.forEach((column, index) => {
             if (column.sticky) {
-                let flow = index <= half ? "left" : "right";
-                let from = index <= half ? 0 : index + 1;
-                let to = index <= half ? index : this.columns.length;
-                let value = 0;
-
+                let flow;
+                let from;
+                let to;
+                let value;
+                if (index <= half) {
+                    flow = "left";
+                    from = 0;
+                    to = index;
+                    value = 0;
+                    if (this.stickyCheckbox) {
+                        value = 72;
+                    }
+                } else {
+                    flow = "right";
+                    from = index + 1;
+                    to = this.columns.length;
+                    value = 0;
+                }
                 for (let i = from; i < to; i++) {
                     let column = this.columns[i];
-
                     if (column.sticky) {
                         value += column.width;
                     }
                 }
-
-                column.flow = flow;
                 column[flow] = value;
+                column.flow = flow;
             }
         });
 
         this.store = new MDStore(this.rows);
+        const { total, docs } = this.store.getAll();
+        this.storeTotal = total;
+        this.storeRows = docs;
 
         this.virtual = new MDVirtualController(this, {
             viewportSelector: ".md-data-table__viewport",
@@ -180,36 +236,60 @@ class MDDataTableComponent extends MDCardComponent {
             containerSelector: ".md-data-table__container",
         });
 
-        const { total, docs } = this.store.getAll();
-        this.storeTotal = total;
-        this.storeRows = docs;
-
         this.virtual.options.rowTotal = this.storeTotal;
         this.virtual.options.rowHeight = 52;
         this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
 
         this.virtual.options.columnTotal = this.columns.length;
-        this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + prev.width, 0) / this.columns.length;
+        this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
     }
 
-    handleDataTableVirtualScroll(event) {
+    handleDataTableViewportVirtualScroll(event) {
         this.virtualColumns = this.columns.filter((column, index) => {
             return (index >= this.virtual.columnStart && index < this.virtual.columnEnd) || column.sticky;
         });
-
         this.virtualRows = this.storeRows.filter((row, index) => {
             return index >= this.virtual.rowStart && index < this.virtual.rowEnd;
         });
-
         this.requestUpdate();
 
         this.virtual.scrollbar.style.width = `${this.virtual.scrollbarWidth}px`;
         this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
         this.virtual.container.style.transform = `translate3d(${this.virtual.translateX}px,${this.virtual.translateY}px,0)`;
 
-        this.emit("onDataTableVirtualScroll", event);
+        this.emit('onDataTableViewportVirtualScroll',event)
     }
+
+    get indeterminate(){
+        const selectedTotal=this.storeRows.filter(row=>row.selected).length
+        return selectedTotal>0&&selectedTotal<this.storeTotal
+    }
+    get selected(){
+        const selectedTotal=this.storeRows.filter(row=>row.selected).length
+        return selectedTotal>0&&selectedTotal==this.storeTotal
+    }
+
+    handleDataTableColumnCheckboxNativeInput(event){
+        const checked=event.detail.currentTarget.checked
+
+        this.storeRows.forEach(row=>{
+            row.selected=checked
+        })
+        this.requestUpdate()
+
+        this.emit('onDataTableColumnCheckboxNativeInput',event)
+    }
+
+    handleDataTableRowCheckboxNativeInput(event){
+        const data = event.currentTarget.data
+
+        data.selected=!data.selected
+        this.requestUpdate()
+
+        this.emit('onDataTableRowCheckboxNativeInput',event)
+    }
+
 }
 
 customElements.define("md-data-table", MDDataTableComponent);

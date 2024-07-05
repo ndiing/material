@@ -75,7 +75,6 @@ class MDListItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-list__checkbox"
             .checked="${this.selected}"
-            @onCheckboxNativeInput="${this.handleCheckboxNativeInput}"
         ></md-checkbox>`
     }
 
@@ -84,7 +83,6 @@ class MDListItemComponent extends MDComponent {
         return html`<md-radio-button 
             class="md-list__radio-button"
             .checked="${this.selected}"
-            @onRadioButtonNativeInput="${this.handleRadioButtonNativeInput}"
         ></md-radio-button>`
     }
 
@@ -93,7 +91,6 @@ class MDListItemComponent extends MDComponent {
         return html`<md-switch 
             class="md-list__switch"
             .checked="${this.selected}"
-            @onSwitchNativeInput="${this.handleSwitchNativeInput}"
         ></md-switch>`
     }
 
@@ -152,17 +149,7 @@ class MDListItemComponent extends MDComponent {
         }
     }
 
-    handleCheckboxNativeInput(event) {
-        this.emit("onCheckboxNativeInput", event);
-    }
-
-    handleRadioButtonNativeInput(event) {
-        this.emit("onRadioButtonNativeInput", event);
-    }
-
-    handleSwitchNativeInput(event) {
-        this.emit("onSwitchNativeInput", event);
-    }
+    
 }
 
 customElements.define("md-list-item", MDListItemComponent);
