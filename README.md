@@ -69,6 +69,10 @@ If you would like to contribute to this project, please follow these steps:
 5. Push to the branch (`git push origin feature/YourFeature`).
 6. Create a new Pull Request.
 
+## Demo and API Documentation
+
+You can find the demo and API documentation [here](https://ndiing.github.io/material/dist/).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

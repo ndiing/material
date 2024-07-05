@@ -3,7 +3,7 @@ import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
 
-// MDRouter.historyApiFallback = false;
+MDRouter.historyApiFallback = false;
 
 class DevMainComponent extends MDComponent {
     get topAppBar() {

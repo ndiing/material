@@ -1,6 +1,6 @@
 import { MDRouter } from "../material/router/router.js";
 
-// MDRouter.historyApiFallback = false;
+MDRouter.historyApiFallback = false;
 
 import DevMainComponent from "./main/main.js";
 import DevIconComponent from "./icon/icon.js";
