@@ -71,7 +71,7 @@ class MDDataTableComponent extends MDCardComponent {
     get actions() {
         return [
             { name: "spacer", component: "spacer" },
-            { name: "pagination", component: "pagination" },
+            { name: "pagination", component: "pagination",total:this.storeTotal,page:1,limit:50 },
         ];
     }
 
@@ -302,16 +302,18 @@ class MDDataTableComponent extends MDCardComponent {
             containerSelector: ".md-data-table__container",
         });
 
-        const { total, docs } = this.store.getAll();
-        this.storeTotal = total;
-        this.storeRows = docs;
+        this.updateRows()
+        // const { total, docs } = this.store.getAll();
+        // this.storeTotal = total;
+        // this.storeRows = docs;
 
-        this.virtual.options.rowTotal = this.storeTotal;
-        this.virtual.options.rowHeight = 52;
-        this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
-        this.virtual.options.columnTotal = this.columns.length;
-        this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
-        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
+        // this.virtual.options.rowTotal = this.storeTotal;
+        // this.virtual.options.rowHeight = 52;
+        // this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
+
+        // this.virtual.options.columnTotal = this.columns.length;
+        // this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
+        // this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
 
         this.on("keydown", this.handleDataTableKeydown);
     }
@@ -426,8 +428,8 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableRowClick(event) {
-        if(event.target.closest('.md-data-table__checkbox')){
-            return
+        if (event.target.closest(".md-data-table__checkbox")) {
+            return;
         }
 
         const data = event.currentTarget.data;
@@ -494,61 +496,88 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnResizeEnd", event);
     }
 
-    handleDataTableColumnPointerenter(event){
-        const data = event.currentTarget.data
+    handleDataTableColumnPointerenter(event) {
+        const data = event.currentTarget.data;
 
-        if(data.sortable){
-            if(!data.order){
-                data.sortableIcon='arrow_upward'
-                this.requestUpdate()
+        if (data.sortable) {
+            if (!data.order) {
+                data.sortableIcon = "arrow_upward";
+                this.requestUpdate();
             }
         }
 
-        this.emit('onDataTableColumnPointerenter',event)
+        this.emit("onDataTableColumnPointerenter", event);
     }
 
-    handleDataTableColumnPointerleave(event){
-        const data = event.currentTarget.data
+    handleDataTableColumnPointerleave(event) {
+        const data = event.currentTarget.data;
 
-        if(data.sortable){
-            if(!data.order){
-                data.sortableIcon=''
-                this.requestUpdate()
+        if (data.sortable) {
+            if (!data.order) {
+                data.sortableIcon = "";
+                this.requestUpdate();
             }
         }
 
-        this.emit('onDataTableColumnPointerleave',event)
+        this.emit("onDataTableColumnPointerleave", event);
     }
-
 
     handleDataTableColumnTap(event) {
-        const data = event.currentTarget.data
+        const data = event.currentTarget.data;
         const gesture = event.currentTarget.gesture;
 
         if (gesture.resize) {
             // this.handleDataTableColumnResizeTap(event);
-            return
+            return;
         }
 
-        if(data.sortable){
-            if(!data.order){
-                data.order='asc'
-                data.sortableIcon='arrow_upward'
+        if (data.sortable) {
+            if (!data.order) {
+                data.order = "asc";
+                data.sortableIcon = "arrow_upward";
+            } else if (data.order == "asc") {
+                data.order = "desc";
+                data.sortableIcon = "arrow_downward";
+            } else {
+                data.order = "";
+                data.sortableIcon = "";
             }
-            else if(data.order=='asc'){
-                data.order='desc'
-                data.sortableIcon='arrow_downward'
-            }
-            else {
-                data.order=''
-                data.sortableIcon=''
-            }
-            const sorters=(this.columns.filter(column=>column.order))
-            console.log(sorters)
-            this.requestUpdate()
+            const sorters = this.columns.filter((column) => column.order);
+
+            this.sorters=sorters
+
+        
+            this.updateRows();
+
         }
 
         this.emit("onDataTableColumnTap", event);
+    }
+
+    updateRows() {
+        const { total, docs } = this.store.getAll({
+            sorters: this.sorters,
+            q: this.q,
+            _page: this._page,
+            _limit: this._limit,
+        });
+        this.storeTotal = total;
+        this.storeRows = docs;
+
+        // this.virtual.options.rowTotal = this.storeTotal;
+        this.virtual.options.rowTotal = this._end-this._start;
+
+        this.virtual.options.rowHeight = 52;
+        this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
+
+        this.virtual.options.columnTotal = this.columns.length;
+        this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
+        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
+
+        if(this.virtual.viewport){
+            this.virtual.viewport.scrollTop = 0;
+            this.virtual.handleVirtualScroll();
+        }
     }
 
     handleDataTableColumnDoubleTap(event) {
@@ -615,37 +644,43 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnDragEnd", event);
     }
 
-
     handleCardTextFieldNativeSearch(event) {
-        super.handleCardTextFieldNativeSearch(event)
-        const name = event.currentTarget.name
-        if(name==='search'){
-            this.handleDataTableTextFieldNativeSearch(event)
+        super.handleCardTextFieldNativeSearch(event);
+        const name = event.currentTarget.name;
+        if (name === "search") {
+            this.handleDataTableTextFieldNativeSearch(event);
         }
     }
 
-
-    handleCardPaginationChange(event){
-        super.handleCardPaginationChange(event)
-        const name = event.currentTarget.name
-        if(name==='pagination'){
-            this.handleDataTablePaginationChange(event)
+    handleCardPaginationChange(event) {
+        super.handleCardPaginationChange(event);
+        const name = event.currentTarget.name;
+        if (name === "pagination") {
+            this.handleDataTablePaginationChange(event);
         }
     }
 
-    handleDataTableTextFieldNativeSearch(event){
-        const value = (event.currentTarget.value)
+    handleDataTableTextFieldNativeSearch(event) {
+        const q = event.currentTarget.value;
+
+        this.q=q
+
+        this.updateRows()
     }
 
-    handleDataTablePaginationChange(event){
-        const page = (event.currentTarget.page)
-        const limit = (event.currentTarget.limit)
-        const total = (event.currentTarget.total)
-        const start = (event.currentTarget.start)
-        const end = (event.currentTarget.end)
-    }
+    handleDataTablePaginationChange(event) {
+        const _page = event.currentTarget.page;
+        const _limit = event.currentTarget.limit;
+        const _start = event.currentTarget.start;
+        const _end = event.currentTarget.end;
 
-    
+        this._page=_page
+        this._limit=_limit
+        this._start=_start
+        this._end=_end
+
+        this.updateRows()
+    }
 }
 
 customElements.define("md-data-table", MDDataTableComponent);
