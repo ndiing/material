@@ -1,29 +1,31 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
+import { isDefined } from "../functions/functions.js";
+
 
 /**
- * {{desc}}
+ * Represents a custom data-table item component with various content options such as avatar, thumbnail, icon, and more.
  * @extends MDComponent
  * @tagname md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
     /**
-     * @property {String} avatar - {{desc}}
-     * @property {String} thumbnail - {{desc}}
-     * @property {String} video - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Number} badge - {{desc}}
-     * @property {String} text - {{desc}}
-     * @property {Boolean} leadingCheckbox - {{desc}}
-     * @property {Boolean} leadingRadioButton - {{desc}}
-     * @property {Boolean} leadingSwitch - {{desc}}
-     * @property {Boolean} trailingCheckbox - {{desc}}
-     * @property {Boolean} trailingRadioButton - {{desc}}
-     * @property {Boolean} trailingSwitch - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {String} routerLink - {{desc}}
+     * @property {String} avatar - URL for the avatar image.
+     * @property {String} thumbnail - URL for the thumbnail image.
+     * @property {String} video - URL for the video thumbnail image.
+     * @property {String} icon - Icon to display in the data-table item.
+     * @property {String} label - Primary label text.
+     * @property {String} subLabel - Secondary label text.
+     * @property {Number} badge - Badge number to display.
+     * @property {String} text - Main text content of the data-table item.
+     * @property {Boolean} leadingCheckbox - Indicates if a leading checkbox is displayed.
+     * @property {Boolean} leadingRadioButton - Indicates if a leading radio button is displayed.
+     * @property {Boolean} leadingSwitch - Indicates if a leading switch is displayed.
+     * @property {Boolean} trailingCheckbox - Indicates if a trailing checkbox is displayed.
+     * @property {Boolean} trailingRadioButton - Indicates if a trailing radio button is displayed.
+     * @property {Boolean} trailingSwitch - Indicates if a trailing switch is displayed.
+     * @property {Boolean} selected - Indicates if the data-table item is selected.
+     * @property {String} routerLink - URL for routing purposes.
      */
     static properties = {
         avatar: { type: String },
@@ -49,14 +51,11 @@ class MDDataTableItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
-        indeterminate: { type: Boolean },
-
-        sortable: { type: Boolean },
-        sortableIcon: { type: String },
     };
 
     constructor() {
         super();
+
     }
 
     renderCheckbox() {
@@ -64,8 +63,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-data-table__checkbox"
             .checked="${this.selected}"
-            .indeterminate="${this.indeterminate}"
-            @onCheckboxNativeInput="${this.handleDataTableItemCheckboxNativeInput}"
+            @onCheckboxNativeInput="${this.handleCheckboxNativeInput}"
         ></md-checkbox>`
     }
 
@@ -74,7 +72,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-radio-button 
             class="md-data-table__radio-button"
             .checked="${this.selected}"
-            @onRadioButtonNativeInput="${this.handleDataTableItemRadioButtonNativeInput}"
+            @onRadioButtonNativeInput="${this.handleRadioButtonNativeInput}"
         ></md-radio-button>`
     }
 
@@ -83,7 +81,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-switch 
             class="md-data-table__switch"
             .checked="${this.selected}"
-            @onSwitchNativeInput="${this.handleDataTableItemSwitchNativeInput}"
+            @onSwitchNativeInput="${this.handleSwitchNativeInput}"
         ></md-switch>`
     }
 
@@ -99,16 +97,15 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.video?html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
-            
-            ${this.label||this.subLabel||this.badge||this.sortable?html`
+
+            ${isDefined(this.label)||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
-                    ${this.label||this.subLabel?html`
+                    ${isDefined(this.label)||this.subLabel?html`
                         <div class="md-data-table__label">
-                            ${this.label?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
+                            ${isDefined(this.label)?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
-                    ${this.sortable?html`<div class="md-icon md-data-table__sortable">${this.sortableIcon}</div>`:nothing}
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
@@ -143,16 +140,16 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 
-    handleDataTableItemCheckboxNativeInput(event) {
-        this.emit("onDataTableItemCheckboxNativeInput", event);
+    handleCheckboxNativeInput(event) {
+        this.emit("onCheckboxNativeInput", event);
     }
 
-    handleDataTableItemRadioButtonNativeInput(event) {
-        this.emit("onDataTableItemRadioButtonNativeInput", event);
+    handleRadioButtonNativeInput(event) {
+        this.emit("onRadioButtonNativeInput", event);
     }
 
-    handleDataTableItemSwitchNativeInput(event) {
-        this.emit("onDataTableItemSwitchNativeInput", event);
+    handleSwitchNativeInput(event) {
+        this.emit("onSwitchNativeInput", event);
     }
 }
 

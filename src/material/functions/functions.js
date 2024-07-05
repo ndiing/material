@@ -569,4 +569,46 @@ function calcDecimal(min, max, value) {
     return decimal;
 }
 
-export { calcPercentage, calcDecimal, isArrayString, toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, parseWeek, isDefined, createQueue, hexToRgba, hexToHsla, hslaToRgba, rgbaToHex, hslaToHex, rgbaToHsla };
+export {
+    //
+    calcPercentage,
+    calcDecimal,
+    
+    isArrayString,
+    toPascalCase,
+    toCamelCase,
+    toSnakeCase,
+    toKebabCase,
+    toFlatCase,
+    toUpperFlatCase,
+    toPascalSnakeCase,
+    toCamelSnakeCase,
+    toScreamingSnakeCase,
+    toTrainCase,
+    toCobolCase,
+    toTitleCase,
+
+    stringifyDatetimeLocal,
+    stringifyDate,
+    stringifyYear,
+    stringifyMonth,
+    stringifyTime,
+    stringifyWeek,
+
+    parseDatetimeLocal,
+    parseDate,
+    parseYear,
+    parseMonth,
+    parseTime,
+    parseWeek,
+
+    isDefined,
+    createQueue,
+
+    hexToRgba,
+    hexToHsla,
+    hslaToRgba,
+    rgbaToHex,
+    hslaToHex,
+    rgbaToHsla,
+};
