@@ -480,15 +480,15 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnResizeEnd", event);
     }
 
-    // handleDataTableColumnTap(event) {
-    //     const gesture = event.currentTarget.gesture;
+    handleDataTableColumnTap(event) {
+        const gesture = event.currentTarget.gesture;
 
-    //     if (gesture.resize) {
-    //         this.handleDataTableColumnResizeTap(event);
-    //     }
+        // if (gesture.resize) {
+        //     this.handleDataTableColumnResizeTap(event);
+        // }
 
-    //     this.emit("onDataTableColumnTap", event);
-    // }
+        this.emit("onDataTableColumnTap", event);
+    }
 
     handleDataTableColumnDoubleTap(event) {
         const gesture = event.currentTarget.gesture;
