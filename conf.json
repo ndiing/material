@@ -17,8 +17,6 @@
         }
     },
     "opts": {
-        "template": "templates/markdown",
-        "encoding": "utf8",
         "destination": "./out/",
         "recurse": true
     }
