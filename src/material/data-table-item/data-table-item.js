@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { MDRippleController } from "../ripple/ripple.js";
-import { MDGestureController } from "../gesture/gesture.js";
+import { isDefined } from "../functions/functions.js";
+
 
 /**
  * Represents a custom data-table item component with various content options such as avatar, thumbnail, icon, and more.
@@ -97,11 +97,11 @@ class MDDataTableItemComponent extends MDComponent {
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
 
-            ${this.label||this.subLabel||this.badge?html`
+            ${isDefined(this.label)||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
-                    ${this.label||this.subLabel?html`
+                    ${isDefined(this.label)||this.subLabel?html`
                         <div class="md-data-table__label">
-                            ${this.label?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
+                            ${isDefined(this.label)?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
