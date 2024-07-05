@@ -93,7 +93,7 @@ class DevMainComponent extends MDComponent {
             return a.label.localeCompare(b.label);
         });
 
-        this.path = MDRouter.path;
+        this.path = MDRouter.path
     }
 
     render() {
@@ -127,7 +127,7 @@ class DevMainComponent extends MDComponent {
         super.connectedCallback();
 
         window.addEventListener("onRouterCurrentEntryChange", () => {
-            this.path = MDRouter.path;
+            this.path = MDRouter.path
             this.requestUpdate();
         });
     }
@@ -138,14 +138,11 @@ class DevMainComponent extends MDComponent {
 
     handleTreeItemSelected(event) {
         const treeItem = event.detail;
-        if (!this.ready) {
-            this.ready = true;
-            treeItem.scrollIntoView({
-                block: "center",
-                inline: "center",
-                behavior: "instant",
-            });
-        }
+        treeItem.scrollIntoView({
+            block: "center",
+            inline: "center",
+            behavior: "smooth",
+        });
     }
 }
 
