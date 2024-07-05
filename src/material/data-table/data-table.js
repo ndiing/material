@@ -16,7 +16,7 @@ class MDDataTableColumnComponent extends HTMLTableCellElement {
             drag: ["x"],
             // dragAfterLongPress: true,
             resize: ["e"],
-            // resizeAfterLongPress: false,
+            // resizeAfterLongPress: true,
             // selection: false,
             // selectionAfterLongPress: false,
             // updateStyle: true,
@@ -567,8 +567,9 @@ class MDDataTableComponent extends MDCardComponent {
 
     handleDataTableColumnPointerenter(event) {
         const data = event.currentTarget.data;
+        const gesture = event.currentTarget.gesture;
 
-        if (data.sortable) {
+        if (data.sortable&&!this.dragged) {
             if (!data.order) {
                 data.sortableIcon = "arrow_upward";
                 this.requestUpdate();
@@ -580,6 +581,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     handleDataTableColumnPointerleave(event) {
         const data = event.currentTarget.data;
+        const gesture = event.currentTarget.gesture;
 
         if (data.sortable) {
             if (!data.order) {
@@ -594,6 +596,8 @@ class MDDataTableComponent extends MDCardComponent {
     handleDataTableColumnTap(event) {
         const data = event.currentTarget.data;
         const gesture = event.currentTarget.gesture;
+
+        // console.log(gesture)
 
         if (gesture.resize) {
             // this.handleDataTableColumnResizeTap(event);
@@ -693,6 +697,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableColumnDragStart(event) {
+        this.dragged=true
         this.emit("onDataTableColumnDragStart", event);
     }
 
@@ -713,6 +718,7 @@ class MDDataTableComponent extends MDCardComponent {
             this.virtual.handleVirtualScroll();
         }
 
+        this.dragged=false
         this.emit("onDataTableColumnDragEnd", event);
     }
 
