@@ -52,6 +52,9 @@ class MDDataTableItemComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
         indeterminate: { type: Boolean },
+
+        sortable:{type:Boolean},
+        sortableIcon:{type:String},
     };
 
     constructor() {
@@ -96,6 +99,7 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.video?html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
+            
 
             ${isDefined(this.label)||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
@@ -105,6 +109,7 @@ class MDDataTableItemComponent extends MDComponent {
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
+                    ${this.sortable?html`<div class="md-icon md-data-table__sortable">${this.sortableIcon}</div>`:nothing}
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
