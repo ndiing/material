@@ -93,6 +93,9 @@ class MDDataTableComponent extends MDCardComponent {
                                         "z-index":"3",
                                     }),
                                 })}"
+                                class="${classMap({
+                                    "md-data-table__column--sticky-left-end": this.stickyLeftEnd,
+                                })}"
                                 @onCheckboxNativeInput="${this.handleDataTableColumnCheckboxNativeInput}"
                             >
                                 ${this.renderDataTableItem({
@@ -118,6 +121,10 @@ class MDDataTableComponent extends MDCardComponent {
                                         "z-index":"3",
                                     }),
                                 })}"
+                                class="${classMap({
+                                    "md-data-table__column--sticky-left-end": column.stickyLeftEnd,
+                                    "md-data-table__column--sticky-right-start": column.stickyRightStart,
+                                })}"
                             >
                                 ${this.renderDataTableItem({
                                     label:column.label
@@ -142,6 +149,9 @@ class MDDataTableComponent extends MDCardComponent {
                                             "z-index":"1",
                                         }),
                                     })}"
+                                    class="${classMap({
+                                        "md-data-table__column--sticky-left-end": this.stickyLeftEnd,
+                                    })}"
                                 >
                                     ${this.renderDataTableItem({
                                         leadingCheckbox:true,
@@ -157,6 +167,10 @@ class MDDataTableComponent extends MDCardComponent {
                                             [column.flow]: ((column.flow=='left'?0-this.virtual.translateX:this.virtual.translateX)+column[column.flow])+"px",
                                             "z-index":"1",
                                         }),
+                                    })}"
+                                    class="${classMap({
+                                        "md-data-table__column--sticky-left-end": column.stickyLeftEnd,
+                                        "md-data-table__column--sticky-right-start": column.stickyRightStart,
                                     })}"
                                 >
                                     ${this.renderDataTableItem({
@@ -194,6 +208,8 @@ class MDDataTableComponent extends MDCardComponent {
         });
 
         let half = Math.floor(this.columns.length / 2);
+        let stickyLeftEnd
+        let stickyRightStart
         this.columns.forEach((column, index) => {
             if (column.sticky) {
                 let flow;
@@ -208,11 +224,14 @@ class MDDataTableComponent extends MDCardComponent {
                     if (this.stickyCheckbox) {
                         value = 72;
                     }
+                    stickyLeftEnd=index
                 } else {
                     flow = "right";
                     from = index + 1;
                     to = this.columns.length;
                     value = 0;
+                    if(stickyRightStart==undefined)
+                    {stickyRightStart=index}
                 }
                 for (let i = from; i < to; i++) {
                     let column = this.columns[i];
@@ -222,8 +241,13 @@ class MDDataTableComponent extends MDCardComponent {
                 }
                 column[flow] = value;
                 column.flow = flow;
+                column.stickyLeftEnd = false;
+                column.stickyRightStart = false;
             }
         });
+        if(stickyLeftEnd!==undefined){this.columns[stickyLeftEnd].stickyLeftEnd=true}
+        if(stickyRightStart!==undefined){this.columns[stickyRightStart].stickyRightStart=true}
+        this.stickyLeftEnd= this.stickyCheckbox&& stickyLeftEnd==undefined
 
         this.store = new MDStore(this.rows);
         const { total, docs } = this.store.getAll();

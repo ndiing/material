@@ -109,5 +109,21 @@
     @include ripple();
     @include ripple-button();
     --md-comp-ripple-size:200%;
+    &::after{animation: none;}
     
+}
+
+.md-data-table__item{
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.md-data-table__column--sticky-left-end{
+    .md-data-table__item{
+        border-right: 1px solid var(--md-sys-color-outline-variant);
+    }
+}
+.md-data-table__column--sticky-right-start{
+    .md-data-table__item{
+        border-left: 1px solid var(--md-sys-color-outline-variant);
+    }
 }
