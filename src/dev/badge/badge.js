@@ -5,9 +5,7 @@ class DevIconComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-markdown href="./docs/badge.md"></md-markdown>
-                </div>
+                
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-badge label=""></md-badge>
                     <md-badge label="1"></md-badge>

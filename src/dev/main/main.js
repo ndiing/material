@@ -71,6 +71,14 @@ class DevMainComponent extends MDComponent {
             { icon: "deployed_code", routerLink: "/pagination", label: "Pagination" },
             { icon: "deployed_code", routerLink: "/data-table", label: "Data Table" },
             { icon: "deployed_code", routerLink: "/markdown", label: "Markdown" },
+
+            { icon: "deployed_code", routerLink: "/functions", label: "functions" },
+            { icon: "deployed_code", routerLink: "/component", label: "component" },
+            { icon: "deployed_code", routerLink: "/router", label: "router" },
+            { icon: "deployed_code", routerLink: "/progress", label: "progress" },
+            { icon: "deployed_code", routerLink: "/observer", label: "observer" },
+            { icon: "deployed_code", routerLink: "/attribute-observer", label: "attribute-observer" },
+            { icon: "deployed_code", routerLink: "/store", label: "store" },
         ];
 
         for (let i = 0; i < this.list.length; i++) {
@@ -81,6 +89,9 @@ class DevMainComponent extends MDComponent {
         this.list.sort((a, b) => {
             return a.label.localeCompare(b.label);
         });
+
+        this.path=MDRouter.path
+
     }
 
     render() {
@@ -95,13 +106,28 @@ class DevMainComponent extends MDComponent {
                     id="navigationDrawer"
                     open
                     .list="${this.list}"
+                    @onTreeItemClick="${this.handleTreeItemClick}"
                     @onTreeItemSelected="${this.handleTreeItemSelected}"
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-markdown href="./docs/${this.path}.md"></md-markdown>
+                        </div>
+                    </div>
                     <md-outlet></md-outlet>
                 </div>
             </div>
         `;
+    }
+
+    connectedCallback(){
+        super.connectedCallback()
+
+        window.addEventListener('onRouterCurrentEntryChange', () => {
+            this.path=MDRouter.path
+            this.requestUpdate()
+        })
     }
 
     handleCardIconButtonClick(event) {

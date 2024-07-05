@@ -4,6 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevForm2Component extends MDComponent {
     render() {
         return html`
+        
             <md-form
                 @onFormNativeReset="${this.handleFormNativeReset}"
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"

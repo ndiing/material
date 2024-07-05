@@ -30,4 +30,5 @@
 | trailingSwitch | <code>Boolean</code> | {{desc}} |
 | selected | <code>Boolean</code> | {{desc}} |
 | routerLink | <code>String</code> | {{desc}} |
+| indeterminate | <code>Boolean</code> | {{desc}} |
 

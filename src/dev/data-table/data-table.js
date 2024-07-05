@@ -40,6 +40,7 @@ class DevDataTableComponent extends MDComponent {
 
     render() {
         return html`
+            
             <div
                 style="height:100%;width:100%;margin:0;min-width:0;min-height:0;padding:24px;"
                 class="md-layout-column"
@@ -61,6 +62,8 @@ class DevDataTableComponent extends MDComponent {
                     ></md-data-table>
                 </div>
             </div>
+
+            
         `;
     }
 }
