@@ -5,7 +5,6 @@ class DevCardComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                
                 <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-card
                         variant="elevated interactive"
@@ -86,8 +85,6 @@ class DevCardComponent extends MDComponent {
                 <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-card> Use a card to display content and actions on a single topic. Cards should be easy to scan for relevant information. </md-card>
                 </div>
-
-                
             </div>
         `;
     }

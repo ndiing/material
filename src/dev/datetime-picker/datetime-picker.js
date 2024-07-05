@@ -6,7 +6,6 @@ class DevDatetimePickerComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                
                 <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <label for="datetimeLocal">Select datetime-local</label>
                     <input

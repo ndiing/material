@@ -90,8 +90,7 @@ class DevMainComponent extends MDComponent {
             return a.label.localeCompare(b.label);
         });
 
-        this.path=MDRouter.path
-
+        this.path = MDRouter.path;
     }
 
     render() {
@@ -121,13 +120,13 @@ class DevMainComponent extends MDComponent {
         `;
     }
 
-    connectedCallback(){
-        super.connectedCallback()
+    connectedCallback() {
+        super.connectedCallback();
 
-        window.addEventListener('onRouterCurrentEntryChange', () => {
-            this.path=MDRouter.path
-            this.requestUpdate()
-        })
+        window.addEventListener("onRouterCurrentEntryChange", () => {
+            this.path = MDRouter.path;
+            this.requestUpdate();
+        });
     }
 
     handleCardIconButtonClick(event) {

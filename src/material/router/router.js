@@ -180,7 +180,7 @@ class MDRouter {
             const outlet = await this.getOutlet(container, route);
 
             if (!route.component.isConnected) {
-                route.component.isComponent=true
+                route.component.isComponent = true;
                 outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
             }
 
@@ -191,8 +191,8 @@ class MDRouter {
                     const notComponent = !this.routes.find((route) => route.component === nextElement);
                     const notOutlet = !outlets.find((outlet) => outlet === nextElement);
 
-                    if (notComponent && notOutlet&&nextElement.isComponent) {
-                        console.log(nextElement)
+                    if (notComponent && notOutlet && nextElement.isComponent) {
+                        console.log(nextElement);
                         nextElement.remove();
                     }
 
