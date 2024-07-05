@@ -45,7 +45,6 @@
 .md-button__label {
     @include typescale-label-large();
     height: var(--md-sys-typescale-label-large-line-height);
-    // overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

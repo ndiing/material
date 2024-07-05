@@ -148,8 +148,6 @@ class MDListItemComponent extends MDComponent {
             }
         }
     }
-
-    
 }
 
 customElements.define("md-list-item", MDListItemComponent);

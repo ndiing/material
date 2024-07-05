@@ -311,31 +311,29 @@ class MDCardComponent extends MDComponent {
         this.emit("onCardTextFieldIconButtonClick", event);
     }
 
-    handleCardPaginationChange(event){
-        this.emit('onCardPaginationChange',event)    
+    handleCardPaginationChange(event) {
+        this.emit("onCardPaginationChange", event);
     }
-    
-    handleCardPaginationLimitChange(event){
-        this.emit('onCardPaginationLimitChange',event)    
+
+    handleCardPaginationLimitChange(event) {
+        this.emit("onCardPaginationLimitChange", event);
     }
-    
-    handleCardPaginationFirstClick(event){
-        this.emit('onCardPaginationFirstClick',event)    
+
+    handleCardPaginationFirstClick(event) {
+        this.emit("onCardPaginationFirstClick", event);
     }
-    
-    handleCardPaginationPrevClick(event){
-        this.emit('onCardPaginationPrevClick',event)    
+
+    handleCardPaginationPrevClick(event) {
+        this.emit("onCardPaginationPrevClick", event);
     }
-    
-    handleCardPaginationNextClick(event){
-        this.emit('onCardPaginationNextClick',event)    
+
+    handleCardPaginationNextClick(event) {
+        this.emit("onCardPaginationNextClick", event);
     }
-    
-    handleCardPaginationLastClick(event){
-        this.emit('onCardPaginationLastClick',event)    
+
+    handleCardPaginationLastClick(event) {
+        this.emit("onCardPaginationLastClick", event);
     }
-    
-    
 }
 
 customElements.define("md-card", MDCardComponent);

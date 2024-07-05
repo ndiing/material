@@ -123,17 +123,3 @@ function stop() {
 }
 
 export { start, pause, resume, stop };
-
-// // test progress
-// let timeout;
-// new PerformanceObserver((list) => {
-//     list.getEntries().forEach((entry) => {
-//         window.clearTimeout(timeout);
-//         timeout = window.setTimeout(() => {
-//             stop();
-//         }, 300);
-//         start(entry.duration);
-//     });
-// }).observe({
-//     entryTypes: PerformanceObserver.supportedEntryTypes,
-// });

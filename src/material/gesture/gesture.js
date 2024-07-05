@@ -166,7 +166,7 @@ class MDGestureController {
         this.swipe = !this.drag && !this.resize && (currentX - this.endX < -30 ? "Left" : currentY - this.endY < -30 ? "Top" : currentX - this.endX > 30 ? "Right" : currentY - this.endY > 30 ? "Bottom" : "");
 
         if (this.drag) {
-            this.dragged=true
+            this.dragged = true;
             if (this.options.drag.includes("x")) {
                 this.currentX = currentX;
             }
@@ -215,7 +215,7 @@ class MDGestureController {
             this.endY = this.currentY;
         }
 
-        if (!this.longPress && !this.swipe&&!this.dragged) {
+        if (!this.longPress && !this.swipe && !this.dragged) {
             this.emit("onTap", event);
             if (performance.now() - this.lastTap < 300) {
                 if (this.lastTap - this.lastDoubleTap !== 0) {

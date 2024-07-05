@@ -1,20 +1,20 @@
-.md-pagination{
+.md-pagination {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 0 24px;
     user-select: none;
 }
-.md-pagination__label{
+.md-pagination__label {
     margin-right: -20px;
     @include typescale-body-medium();
 }
-.md-pagination__select{
-    --md-comp-text-field-density:-2;
+.md-pagination__select {
+    --md-comp-text-field-density: -2;
     width: auto;
     min-width: 72px;
 }
-.md-pagination__text{
+.md-pagination__text {
     margin-left: 8px;
     margin-right: 8px;
     @include typescale-body-medium();

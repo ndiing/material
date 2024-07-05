@@ -205,8 +205,6 @@ class MDStore {
         return { total, docs: docs };
     }
 
-    // Helper methods for handling nested values
-
     /**
      * Deep merges two objects.
      * @param {*} target - The target object to merge into.
@@ -289,7 +287,6 @@ class MDStore {
                         return false;
                 }
             } else {
-                // Handle non-array values
                 switch (operator) {
                     case "_eq":
                         return objValue === value;

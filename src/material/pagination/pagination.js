@@ -37,7 +37,7 @@ class MDPaginationComponent extends MDComponent {
      * @returns {Number}
      */
     get start() {
-        return Math.max((this.page - 1) * this.limit,0);
+        return Math.max((this.page - 1) * this.limit, 0);
     }
 
     /**
@@ -45,7 +45,7 @@ class MDPaginationComponent extends MDComponent {
      * @returns {Number}
      */
     get end() {
-        return Math.min(this.start + this.limit,this.total);
+        return Math.min(this.start + this.limit, this.total);
     }
 
     /**

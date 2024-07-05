@@ -168,7 +168,6 @@ class MDRouter {
                     this.emit("onRouterNavigateError", event);
                     performance.mark("markRouterNavigateError");
                     throw error;
-                    // break;
                 }
             }
 

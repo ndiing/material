@@ -90,7 +90,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             Symbols: "🔴",
             Flags: "🏁",
         };
-        // frequently used
         this.rows = [];
 
         this.popper = new MDPopperController(this, {});
@@ -246,7 +245,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             this.updateEmojiPickerTabsIndicator(data);
         }
 
-        // viewport.style
         scrollbar.style.height = scrollbarHeight + "px";
         container.style.transform = `translate3d(0,${translateY}px,0)`;
 

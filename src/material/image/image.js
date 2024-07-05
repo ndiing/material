@@ -127,7 +127,6 @@ class MDImageComponent extends MDComponent {
     handleImageNativeError(event) {
         const native = event.currentTarget;
 
-        // Placeholder image for error case
         native.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
         this.emit("onImageNativeError", event);

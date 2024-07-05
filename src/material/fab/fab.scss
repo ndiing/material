@@ -29,13 +29,11 @@
     }
 }
 
-.md-fab__icon {
-}
+// .md-fab__icon {}
 
 .md-fab__label {
     @include typescale-label-large();
     height: var(--md-sys-typescale-label-large-line-height);
-    // overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
