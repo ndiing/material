@@ -71,7 +71,7 @@ class MDDataTableComponent extends MDCardComponent {
     get actions() {
         return [
             { name: "spacer", component: "spacer" },
-            { name: "pagination", component: "pagination",total:this.storeTotal,page:1,limit:50 },
+            { name: "pagination", component: "pagination",total:this.storeTotal,page:this._page,limit:this._limit },
         ];
     }
 
