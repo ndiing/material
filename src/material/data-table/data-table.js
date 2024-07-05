@@ -548,6 +548,8 @@ class MDDataTableComponent extends MDCardComponent {
 
         
             this.updateRows();
+            this.virtual.viewport.scrollTop = 0;
+            this.virtual.handleVirtualScroll();
 
         }
 
@@ -565,7 +567,8 @@ class MDDataTableComponent extends MDCardComponent {
         this.storeRows = docs;
 
         // this.virtual.options.rowTotal = this.storeTotal;
-        this.virtual.options.rowTotal = this._end-this._start;
+        this.virtual.options.rowTotal = (this._end-this._start)||this.storeTotal;
+        // console.log(this.virtual.options.rowTotal)
 
         this.virtual.options.rowHeight = 52;
         this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
@@ -574,10 +577,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
 
-        if(this.virtual.viewport){
-            this.virtual.viewport.scrollTop = 0;
-            this.virtual.handleVirtualScroll();
-        }
     }
 
     handleDataTableColumnDoubleTap(event) {
@@ -666,6 +665,8 @@ class MDDataTableComponent extends MDCardComponent {
         this.q=q
 
         this.updateRows()
+        this.virtual.viewport.scrollTop = 0;
+        this.virtual.handleVirtualScroll();
     }
 
     handleDataTablePaginationChange(event) {
@@ -680,6 +681,8 @@ class MDDataTableComponent extends MDCardComponent {
         this._end=_end
 
         this.updateRows()
+        this.virtual.viewport.scrollTop = 0;
+        this.virtual.handleVirtualScroll();
     }
 }
 
