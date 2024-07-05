@@ -41,14 +41,18 @@
 
 .md-data-table__label-primary {
     @include typescale-body-medium();
-    height: var(--md-sys-typescale-body-medium-line-height);
+    // height: var(--md-sys-typescale-body-medium-line-height);
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .md-data-table__label-secondary {
     @include typescale-body-medium();
-    height: var(--md-sys-typescale-body-medium-line-height);
+    // height: var(--md-sys-typescale-body-medium-line-height);
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .md-data-table__text {

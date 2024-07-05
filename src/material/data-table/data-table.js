@@ -13,13 +13,13 @@ class MDDataTableColumnComponent extends HTMLTableCellElement {
         this.gesture = new MDGestureController(this, {
             // containerSelector: undefined,
             // dragHandleSelector: undefined,
-            drag: [],
-            // dragAfterLongPress: false,
+            drag: ["x"],
+            // dragAfterLongPress: true,
             resize: ["e"],
             // resizeAfterLongPress: false,
             // selection: false,
             // selectionAfterLongPress: false,
-            // updateStyle: false,
+            // updateStyle: true,
         });
         this.gesture.hostConnected();
     }
@@ -174,6 +174,7 @@ class MDDataTableComponent extends MDCardComponent {
                                 .data="${column}"
                                 style="${styleMap({
                                     "min-width":column.width+"px",
+                                    "max-width":column.width+"px",
                                     ...(this.stickyHeader&&{
                                         "position":"sticky",
                                         "top":(0-this.virtual.translateY)+"px",
@@ -192,6 +193,11 @@ class MDDataTableComponent extends MDCardComponent {
                                 @onResizeStart="${this.handleDataTableColumnResizeStart}"
                                 @onResize="${this.handleDataTableColumnResize}"
                                 @onResizeEnd="${this.handleDataTableColumnResizeEnd}"
+                                @onDragStart="${this.handleDataTableColumnDragStart}"
+                                @onDrag="${this.handleDataTableColumnDrag}"
+                                @onDragEnd="${this.handleDataTableColumnDragEnd}"
+                                @onTap="${this.handleDataTableColumnTap}"
+                                @onDoubleTap="${this.handleDataTableColumnDoubleTap}"
                             >
                                 ${this.renderDataTableItem({
                                     label:column.label
@@ -472,6 +478,80 @@ class MDDataTableComponent extends MDCardComponent {
         this.requestUpdate();
 
         this.emit("onDataTableColumnResizeEnd", event);
+    }
+
+    // handleDataTableColumnTap(event) {
+    //     const gesture = event.currentTarget.gesture;
+
+    //     if (gesture.resize) {
+    //         this.handleDataTableColumnResizeTap(event);
+    //     }
+
+    //     this.emit("onDataTableColumnTap", event);
+    // }
+
+    handleDataTableColumnDoubleTap(event) {
+        const gesture = event.currentTarget.gesture;
+
+        if (gesture.resize) {
+            this.handleDataTableColumnResizeDoubleTap(event);
+        }
+
+        this.emit("onDataTableColumnDoubleTap", event);
+    }
+
+    // handleDataTableColumnResizeTap(event) {
+    //     this.emit("onDataTableColumnResizeTap", event);
+    // }
+
+    async handleDataTableColumnResizeDoubleTap(event) {
+        const th = event.currentTarget;
+        const data = th.data;
+        const index = Array.from(th.parentElement.children).indexOf(th) + 1;
+        let width = 0;
+        th.style.setProperty("min-width", "0px");
+        th.style.setProperty("max-width", "0px");
+        this.querySelectorAll("td:nth-child(" + index + ") .md-data-table__item").forEach((item) => {
+            const style = window.getComputedStyle(item);
+            const paddingLeft = parseFloat(style.getPropertyValue("padding-left"));
+            const paddingRight = parseFloat(style.getPropertyValue("padding-right"));
+            const label = item.querySelector(".md-data-table__label-primary");
+            const currentWidth = paddingLeft + label.scrollWidth + paddingRight;
+            if (width < currentWidth) {
+                width = currentWidth;
+            }
+        });
+        th.style.removeProperty("min-width");
+        th.style.removeProperty("max-width");
+        data.width = width;
+        this.updateColumns();
+        this.virtual.handleVirtualScroll();
+
+        this.emit("onDataTableColumnResizeDoubleTap", event);
+    }
+
+    handleDataTableColumnDragStart(event) {
+        this.emit("onDataTableColumnDragStart", event);
+    }
+
+    handleDataTableColumnDrag(event) {
+        this.emit("onDataTableColumnDrag", event);
+    }
+
+    handleDataTableColumnDragEnd(event) {
+        const fromData = event.currentTarget.data;
+        const toData = event.detail.target.closest("th")?.data;
+
+        if (toData) {
+            const fromIndex = this.columns.indexOf(fromData);
+            const toIndex = this.columns.indexOf(toData);
+            const [column] = this.columns.splice(fromIndex, 1);
+            this.columns.splice(toIndex, 0, column);
+            this.updateColumns();
+            this.virtual.handleVirtualScroll();
+        }
+
+        this.emit("onDataTableColumnDragEnd", event);
     }
 }
 

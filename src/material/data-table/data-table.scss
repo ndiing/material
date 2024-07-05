@@ -31,7 +31,7 @@
 
     .md-card__label-primary {
         @include typescale-title-large();
-        height: var(--md-sys-typescale-title-large-line-height);
+        // height: var(--md-sys-typescale-title-large-line-height);
     }
 
     .md-card__inner {
@@ -71,7 +71,7 @@
 
 .md-data-table__native {
     border-spacing: 0;
-    border-collapse: collapse;
+    border-collapse: separate;
 
     // thead{}
 
