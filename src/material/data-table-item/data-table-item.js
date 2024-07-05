@@ -2,30 +2,30 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { isDefined } from "../functions/functions.js";
 
-
 /**
- * Represents a custom data-table item component with various content options such as avatar, thumbnail, icon, and more.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
     /**
-     * @property {String} avatar - URL for the avatar image.
-     * @property {String} thumbnail - URL for the thumbnail image.
-     * @property {String} video - URL for the video thumbnail image.
-     * @property {String} icon - Icon to display in the data-table item.
-     * @property {String} label - Primary label text.
-     * @property {String} subLabel - Secondary label text.
-     * @property {Number} badge - Badge number to display.
-     * @property {String} text - Main text content of the data-table item.
-     * @property {Boolean} leadingCheckbox - Indicates if a leading checkbox is displayed.
-     * @property {Boolean} leadingRadioButton - Indicates if a leading radio button is displayed.
-     * @property {Boolean} leadingSwitch - Indicates if a leading switch is displayed.
-     * @property {Boolean} trailingCheckbox - Indicates if a trailing checkbox is displayed.
-     * @property {Boolean} trailingRadioButton - Indicates if a trailing radio button is displayed.
-     * @property {Boolean} trailingSwitch - Indicates if a trailing switch is displayed.
-     * @property {Boolean} selected - Indicates if the data-table item is selected.
-     * @property {String} routerLink - URL for routing purposes.
+     * @property {String} avatar - {{desc}}
+     * @property {String} thumbnail - {{desc}}
+     * @property {String} video - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadioButton - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Boolean} trailingRadioButton - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {String} routerLink - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
      */
     static properties = {
         avatar: { type: String },
@@ -53,13 +53,12 @@ class MDDataTableItemComponent extends MDComponent {
         routerLink: { type: String, reflect: true },
         indeterminate: { type: Boolean },
 
-        sortable:{type:Boolean},
-        sortableIcon:{type:String},
+        sortable: { type: Boolean },
+        sortableIcon: { type: String },
     };
 
     constructor() {
         super();
-
     }
 
     renderCheckbox() {
@@ -143,8 +142,6 @@ class MDDataTableItemComponent extends MDComponent {
             }
         }
     }
-
-    
 }
 
 customElements.define("md-data-table-item", MDDataTableItemComponent);

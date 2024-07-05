@@ -28,11 +28,48 @@ class MDDataTableColumnComponent extends HTMLTableCellElement {
         this.gesture.hostDisconnected();
     }
 
+    /**
+     * {{desc}}
+     */
     addController() {}
 }
 customElements.define("md-th", MDDataTableColumnComponent, { extends: "th" });
 
+
+/**
+ * {{desc}}
+ * @extends MDCardComponent
+ * @tagname md-data-table
+ * @fires MDDataTableComponent#onDataTableViewportVirtualScroll - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnCheckboxNativeInput - {{desc}}
+ * @fires MDDataTableComponent#onDataTableRowCheckboxNativeInput - {{desc}}
+ * @fires MDDataTableComponent#onDataTableRowClick - {{desc}}
+ * @fires MDDataTableComponent#onDataTableKeydown - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnResizeStart - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnResize - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnResizeEnd - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnPointerenter - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnPointerleave - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnTap - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnDoubleTap - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnResizeDoubleTap - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnDragStart - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnDrag - {{desc}}
+ * @fires MDDataTableComponent#onDataTableColumnDragEnd - {{desc}}
+ */
 class MDDataTableComponent extends MDCardComponent {
+    
+    /**
+     * @property {Array} columns - {{desc}}
+     * @property {Array} rows - {{desc}}
+     * @property {Boolean} stickyHeader - {{desc}}
+     * @property {Boolean} checkboxSelection - {{desc}}
+     * @property {Boolean} stickyCheckbox - {{desc}}
+     * @property {Boolean} rangeSelection - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
+     * @property {Boolean} singleSelection - {{desc}}
+     * @property {Boolean} allSelection - {{desc}}
+     */
     static properties = {
         ...MDCardComponent.properties,
         columns: { type: Array },
@@ -46,10 +83,18 @@ class MDDataTableComponent extends MDCardComponent {
         allSelection: { type: Boolean },
     };
 
+    
+    /**
+     * {{desc}}
+     */
     get label() {
         return "label";
     }
 
+    
+    /**
+     * {{desc}}
+     */
     set label(value) {}
 
     get trailingActions() {
@@ -60,12 +105,20 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
+    
+    /**
+     * {{desc}}
+     */
     set trailingActions(value) {}
 
     get body() {
         return [this.renderViewport()];
     }
 
+    
+    /**
+     * {{desc}}
+     */
     set body(value) {}
 
     get actions() {
@@ -75,6 +128,10 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
+    
+    /**
+     * {{desc}}
+     */
     set actions(value) {}
 
     constructor() {
@@ -323,6 +380,10 @@ class MDDataTableComponent extends MDCardComponent {
         this.off("keydown", this.handleDataTableKeydown);
     }
 
+    
+    /**
+     * {{desc}}
+     */
     updateColumns() {
         let half = Math.floor(this.columns.length / 2);
         let stickyLeftEnd;
@@ -399,11 +460,19 @@ class MDDataTableComponent extends MDCardComponent {
 
     // selection
 
+    
+    /**
+     * {{desc}}
+     */
     get indeterminate() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
         return selectedTotal > 0 && selectedTotal < this.storeTotal;
     }
 
+    
+    /**
+     * {{desc}}
+     */
     get selected() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
         return selectedTotal > 0 && selectedTotal === this.storeTotal;
@@ -556,6 +625,10 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnTap", event);
     }
 
+    
+    /**
+     * {{desc}}
+     */
     updateRows() {
         const { total, docs } = this.store.getAll({
             sorters: this.sorters,
