@@ -21,10 +21,6 @@ class MDDataTableColumnComponent extends HTMLTableCellElement {
         this.gesture.hostDisconnected();
     }
 
-    /**
-     * {{desc}}
-     */
-
     addController() {}
 }
 customElements.define("md-th", MDDataTableColumnComponent, { extends: "th" });

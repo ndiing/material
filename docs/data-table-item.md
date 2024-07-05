@@ -1,7 +1,7 @@
 <a name="MDDataTableItemComponent"></a>
 
 ## MDDataTableItemComponent ⇐ <code>MDComponent</code>
-{{desc}}
+Represents an item within a data table, supporting various types of content and interactive elements.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
@@ -14,21 +14,23 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| avatar | <code>String</code> | {{desc}} |
-| thumbnail | <code>String</code> | {{desc}} |
-| video | <code>String</code> | {{desc}} |
-| icon | <code>String</code> | {{desc}} |
-| label | <code>String</code> | {{desc}} |
-| subLabel | <code>String</code> | {{desc}} |
-| badge | <code>Number</code> | {{desc}} |
-| text | <code>String</code> | {{desc}} |
-| leadingCheckbox | <code>Boolean</code> | {{desc}} |
-| leadingRadioButton | <code>Boolean</code> | {{desc}} |
-| leadingSwitch | <code>Boolean</code> | {{desc}} |
-| trailingCheckbox | <code>Boolean</code> | {{desc}} |
-| trailingRadioButton | <code>Boolean</code> | {{desc}} |
-| trailingSwitch | <code>Boolean</code> | {{desc}} |
-| selected | <code>Boolean</code> | {{desc}} |
-| routerLink | <code>String</code> | {{desc}} |
-| indeterminate | <code>Boolean</code> | {{desc}} |
+| avatar | <code>String</code> | URL of the avatar image. |
+| thumbnail | <code>String</code> | URL of the thumbnail image. |
+| video | <code>String</code> | URL of the video. |
+| icon | <code>String</code> | Icon to be displayed. |
+| label | <code>String</code> | Primary label text. |
+| subLabel | <code>String</code> | Secondary label text. |
+| badge | <code>Number</code> | Numeric value to be displayed in a badge. |
+| text | <code>String</code> | Additional text content. |
+| leadingCheckbox | <code>Boolean</code> | Whether to display a leading checkbox. |
+| leadingRadioButton | <code>Boolean</code> | Whether to display a leading radio button. |
+| leadingSwitch | <code>Boolean</code> | Whether to display a leading switch. |
+| trailingCheckbox | <code>Boolean</code> | Whether to display a trailing checkbox. |
+| trailingRadioButton | <code>Boolean</code> | Whether to display a trailing radio button. |
+| trailingSwitch | <code>Boolean</code> | Whether to display a trailing switch. |
+| selected | <code>Boolean</code> | Whether the item is selected. |
+| routerLink | <code>String</code> | URL for the router link. |
+| indeterminate | <code>Boolean</code> | Whether the checkbox is in an indeterminate state. |
+| sortable | <code>Boolean</code> | Whether the item is sortable. |
+| sortableIcon | <code>String</code> | Icon for the sortable indicator. |
 

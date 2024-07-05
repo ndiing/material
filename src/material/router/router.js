@@ -21,7 +21,8 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Gets the current path of the router.
+     * @returns {string} The current path.
      */
     static get path() {
         if (this.historyApiFallback) {
@@ -32,7 +33,8 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Gets the current query parameters as an object.
+     * @returns {Object} The current query parameters.
      */
     static get query() {
         let search;
@@ -59,7 +61,9 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Finds and returns a route that matches the given path.
+     * @param {string} path - The path to match.
+     * @returns {Object} The matched route.
      */
     static getRoute(path) {
         return this.stacks.find((route) => {
@@ -77,7 +81,9 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Gets all routes from the root to the specified route.
+     * @param {Object} route - The route to start from.
+     * @returns {Array} An array of routes.
      */
     static getRoutes(route) {
         return [route].reduce((acc, curr) => {
@@ -92,7 +98,10 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Finds and returns the outlet element for a given route.
+     * @param {HTMLElement} container - The container element to search within.
+     * @param {Object} route - The route to find the outlet for.
+     * @returns {Promise<HTMLElement>} A promise that resolves to the outlet element.
      */
     static getOutlet(container, route) {
         return new Promise((resolve) => {

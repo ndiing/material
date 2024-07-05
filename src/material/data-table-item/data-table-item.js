@@ -3,29 +3,31 @@ import { MDComponent } from "../component/component.js";
 import { isDefined } from "../functions/functions.js";
 
 /**
- * {{desc}}
+ * Represents an item within a data table, supporting various types of content and interactive elements.
  * @extends MDComponent
  * @tagname md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
     /**
-     * @property {String} avatar - {{desc}}
-     * @property {String} thumbnail - {{desc}}
-     * @property {String} video - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Number} badge - {{desc}}
-     * @property {String} text - {{desc}}
-     * @property {Boolean} leadingCheckbox - {{desc}}
-     * @property {Boolean} leadingRadioButton - {{desc}}
-     * @property {Boolean} leadingSwitch - {{desc}}
-     * @property {Boolean} trailingCheckbox - {{desc}}
-     * @property {Boolean} trailingRadioButton - {{desc}}
-     * @property {Boolean} trailingSwitch - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {String} routerLink - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
+     * @property {String} avatar - URL of the avatar image.
+     * @property {String} thumbnail - URL of the thumbnail image.
+     * @property {String} video - URL of the video.
+     * @property {String} icon - Icon to be displayed.
+     * @property {String} label - Primary label text.
+     * @property {String} subLabel - Secondary label text.
+     * @property {Number} badge - Numeric value to be displayed in a badge.
+     * @property {String} text - Additional text content.
+     * @property {Boolean} leadingCheckbox - Whether to display a leading checkbox.
+     * @property {Boolean} leadingRadioButton - Whether to display a leading radio button.
+     * @property {Boolean} leadingSwitch - Whether to display a leading switch.
+     * @property {Boolean} trailingCheckbox - Whether to display a trailing checkbox.
+     * @property {Boolean} trailingRadioButton - Whether to display a trailing radio button.
+     * @property {Boolean} trailingSwitch - Whether to display a trailing switch.
+     * @property {Boolean} selected - Whether the item is selected.
+     * @property {String} routerLink - URL for the router link.
+     * @property {Boolean} indeterminate - Whether the checkbox is in an indeterminate state.
+     * @property {Boolean} sortable - Whether the item is sortable.
+     * @property {String} sortableIcon - Icon for the sortable indicator.
      */
     static properties = {
         avatar: { type: String },

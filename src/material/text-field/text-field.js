@@ -4,76 +4,76 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * {{desc}}
+ * A text field component for Material Design framework.
  * @extends MDComponent
  * @tagname md-text-field
- * @fires MDTextFieldComponent#onTextFieldNativeFocus - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeBlur - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeInput - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeSearch - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeInvalid - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeReset - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldIconButtonClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeFocus - Event fired when the native input field receives focus.
+ * @fires MDTextFieldComponent#onTextFieldNativeBlur - Event fired when the native input field loses focus.
+ * @fires MDTextFieldComponent#onTextFieldNativeInput - Event fired when the value of the native input field changes.
+ * @fires MDTextFieldComponent#onTextFieldNativeSearch - Event fired when a search is performed in the native input field.
+ * @fires MDTextFieldComponent#onTextFieldNativeInvalid - Event fired when the native input field is invalid.
+ * @fires MDTextFieldComponent#onTextFieldNativeReset - Event fired when the native input field is reset.
+ * @fires MDTextFieldComponent#onTextFieldIconButtonClick - Event fired when an icon button in the text field is clicked.
  */
 class MDTextFieldComponent extends MDComponent {
     /**
-     * @property {String} label - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} prefix - {{desc}}
-     * @property {String} suffix - {{desc}}
-     * @property {Array} actions - {{desc}}
-     * @property {String} text - {{desc}}
-     * @property {String} accept - {{desc}}
-     * @property {String} alt - {{desc}}
-     * @property {String} autocomplete - {{desc}}
-     * @property {Boolean} autofocus - {{desc}}
-     * @property {Boolean} checked - {{desc}}
-     * @property {Boolean} defaultChecked - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {FileList} files - {{desc}}
-     * @property {Object} form - {{desc}}
-     * @property {String} formAction - {{desc}}
-     * @property {String} formEnctype - {{desc}}
-     * @property {String} formMethod - {{desc}}
-     * @property {Boolean} formNoValidate - {{desc}}
-     * @property {String} formTarget - {{desc}}
-     * @property {Number} height - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {Object} list - {{desc}}
-     * @property {String} max - {{desc}}
-     * @property {Number} maxLength - {{desc}}
-     * @property {String} min - {{desc}}
-     * @property {Number} minLength - {{desc}}
-     * @property {Boolean} multiple - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {String} pattern - {{desc}}
-     * @property {String} placeholder - {{desc}}
-     * @property {Boolean} readOnly - {{desc}}
-     * @property {Boolean} required - {{desc}}
-     * @property {Number} size - {{desc}}
-     * @property {String} src - {{desc}}
-     * @property {String} step - {{desc}}
-     * @property {String} type - {{desc}}
-     * @property {String} defaultValue - {{desc}}
-     * @property {String} value - {{desc}}
-     * @property {Number} width - {{desc}}
-     * @property {String} inputMode - {{desc}}
-     * @property {String} selectionDirection - {{desc}}
-     * @property {Number} selectionEnd - {{desc}}
-     * @property {Number} selectionStart - {{desc}}
-     * @property {String} align - {{desc}}
-     * @property {String} useMap - {{desc}}
-     * @property {Number} cols - {{desc}}
-     * @property {Number} rows - {{desc}}
-     * @property {Boolean} spellcheck - {{desc}}
-     * @property {String} wrap - {{desc}}
-     * @property {Number} length - {{desc}}
-     * @property {Number} selectedIndex - {{desc}}
-     * @property {HTMLCollection} selectedOptions - {{desc}}
-     * @property {Array} options - {{desc}}
-     * @property {String} errorText - {{desc}}
-     * @property {Boolean} error - {{desc}}
-     * @property {String} variant - {{desc}}
+     * @property {String} label - The label for the text field.
+     * @property {String} icon - The icon to display in the text field.
+     * @property {String} prefix - The prefix text to display in the text field.
+     * @property {String} suffix - The suffix text to display in the text field.
+     * @property {Array} actions - The actions available in the text field.
+     * @property {String} text - The text content of the text field.
+     * @property {String} accept - The file types accepted by the input field.
+     * @property {String} alt - The alternative text for the input field.
+     * @property {String} autocomplete - The autocomplete attribute for the input field.
+     * @property {Boolean} autofocus - Whether the input field should be focused automatically.
+     * @property {Boolean} checked - Whether the input field is checked.
+     * @property {Boolean} defaultChecked - The default checked state of the input field.
+     * @property {Boolean} disabled - Whether the input field is disabled.
+     * @property {FileList} files - The files selected in the input field.
+     * @property {Object} form - The form element associated with the input field.
+     * @property {String} formAction - The action URL for the form.
+     * @property {String} formEnctype - The encoding type for the form.
+     * @property {String} formMethod - The HTTP method for the form.
+     * @property {Boolean} formNoValidate - Whether the form should not be validated.
+     * @property {String} formTarget - The target for the form.
+     * @property {Number} height - The height of the input field.
+     * @property {Boolean} indeterminate - Whether the input field is indeterminate.
+     * @property {Object} list - The list element associated with the input field.
+     * @property {String} max - The maximum value for the input field.
+     * @property {Number} maxLength - The maximum length of the input field.
+     * @property {String} min - The minimum value for the input field.
+     * @property {Number} minLength - The minimum length of the input field.
+     * @property {Boolean} multiple - Whether the input field allows multiple values.
+     * @property {String} name - The name of the input field.
+     * @property {String} pattern - The pattern for the input field.
+     * @property {String} placeholder - The placeholder text for the input field.
+     * @property {Boolean} readOnly - Whether the input field is read-only.
+     * @property {Boolean} required - Whether the input field is required.
+     * @property {Number} size - The size of the input field.
+     * @property {String} src - The source URL for the input field.
+     * @property {String} step - The step value for the input field.
+     * @property {String} type - The type of the input field.
+     * @property {String} defaultValue - The default value of the input field.
+     * @property {String} value - The value of the input field.
+     * @property {Number} width - The width of the input field.
+     * @property {String} inputMode - The input mode for the input field.
+     * @property {String} selectionDirection - The selection direction for the input field.
+     * @property {Number} selectionEnd - The selection end position for the input field.
+     * @property {Number} selectionStart - The selection start position for the input field.
+     * @property {String} align - The alignment of the input field.
+     * @property {String} useMap - The use map for the input field.
+     * @property {Number} cols - The number of columns for the textarea.
+     * @property {Number} rows - The number of rows for the textarea.
+     * @property {Boolean} spellcheck - Whether spellcheck is enabled for the input field.
+     * @property {String} wrap - The wrap attribute for the textarea.
+     * @property {Number} length - The length of the input field.
+     * @property {Number} selectedIndex - The selected index for the select field.
+     * @property {HTMLCollection} selectedOptions - The selected options for the select field.
+     * @property {Array} options - The options for the select field.
+     * @property {String} errorText - The error text to display for the input field.
+     * @property {Boolean} error - Whether the input field has an error.
+     * @property {String} variant - The variant of the text field.
      */
     static properties = {
         label: { type: String },
@@ -141,7 +141,7 @@ class MDTextFieldComponent extends MDComponent {
     variants = ["filled", "outlined", "rounded"];
 
     /**
-     * {{desc}}
+     * Returns the native input element inside the component.
      */
     get native() {
         return this.querySelector(".md-text-field__native");
@@ -415,14 +415,14 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * Toggles the "md-text-field--populated" class based on the presence of a value or if the type is "file".
      */
     populate() {
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
     }
 
     /**
-     * {{desc}}
+     * Validates the input field, setting the error text and toggling the "md-text-field--error" class based on the validation state.
      */
     validate() {
         this.errorText = this.native.validationMessage;
