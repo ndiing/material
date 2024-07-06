@@ -154,12 +154,15 @@ class DevMainComponent extends MDComponent {
     }
 
     handleTreeItemSelected(event) {
-        const treeItem = event.detail;
-        treeItem.scrollIntoView({
-            block: "center",
-            inline: "center",
-            behavior: "smooth",
-        });
+        if(!this.ready){
+            this.ready=1
+            const treeItem = event.detail;
+            treeItem.scrollIntoView({
+                block: "center",
+                inline: "center",
+                behavior: "instant",
+            });
+        }
     }
 }
 

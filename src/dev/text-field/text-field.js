@@ -9,7 +9,7 @@ class DevTextFieldComponent extends MDComponent {
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"
             >
                 <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -17,7 +17,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -25,7 +25,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -34,7 +34,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -44,7 +44,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -53,7 +53,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -64,7 +64,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -73,7 +73,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -82,7 +82,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -92,7 +92,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -103,7 +103,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -113,7 +113,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             required
                             text="Text"
@@ -125,7 +125,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -134,7 +134,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -143,7 +143,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -153,7 +153,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -164,7 +164,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -174,7 +174,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -186,7 +186,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -196,7 +196,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -206,7 +206,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -217,7 +217,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -229,7 +229,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -240,7 +240,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             required
@@ -253,7 +253,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -262,7 +262,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -271,7 +271,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -281,7 +281,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -292,7 +292,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -302,7 +302,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -314,7 +314,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -324,7 +324,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -334,7 +334,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -345,7 +345,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -357,7 +357,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -368,7 +368,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             required
@@ -381,7 +381,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -390,7 +390,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -399,7 +399,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -409,7 +409,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -420,7 +420,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -430,7 +430,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -442,7 +442,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -452,7 +452,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -462,7 +462,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -473,7 +473,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -485,7 +485,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -496,7 +496,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded"
                             required
@@ -509,7 +509,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -518,7 +518,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -527,7 +527,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -537,7 +537,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -548,7 +548,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -558,7 +558,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -570,7 +570,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -580,7 +580,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -590,7 +590,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -601,7 +601,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -613,7 +613,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -624,7 +624,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded filled"
                             required
@@ -637,7 +637,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -646,7 +646,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -655,7 +655,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -665,7 +665,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -676,7 +676,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -686,7 +686,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -698,7 +698,7 @@ class DevTextFieldComponent extends MDComponent {
                         ></md-text-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -708,7 +708,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -718,7 +718,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -729,7 +729,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -741,7 +741,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required
@@ -752,7 +752,7 @@ class DevTextFieldComponent extends MDComponent {
                             placeholder="Placeholder"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="rounded outlined"
                             required

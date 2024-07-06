@@ -62,14 +62,17 @@
     }
 }
 .md-text-field__native {
-    flex: 1 1 100%;
+    // flex: 1 1 100%;
     appearance: none;
-    width: 50%;
+    width: 100%;
     min-height: 24px;
     margin: calc((var(--md-comp-text-field-height) - 24px) / 2) 0;
     @include typescale-body-large();
     background: transparent;
     color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &::placeholder {
         color: var(--md-sys-color-on-surface-variant);
@@ -82,6 +85,7 @@
 .md-text-field__native {
     resize: none;
     field-sizing: content;
+    white-space: normal;
 }
 .md-text-field__actions {
     flex: 1 0 auto;
