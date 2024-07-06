@@ -105,7 +105,7 @@ class MDDataTableComponent extends MDCardComponent {
     get trailingActions() {
         return [
             //
-            { name: "search", component: "text-field", type: "search", icon: "search", placeholder: "Search" },
+            { name: "search", component: "search-field", icon: "search", placeholder: "Search" },
             { name: "filter", icon: "filter_list" },
             { name: "add", icon: "add" },
             { name: "more", icon: "more_vert" },

@@ -139,71 +139,24 @@ class MDCardComponent extends MDComponent {
             <md-text-field
                 class="md-card__text-field"
                 name="${ifDefined(item.name)}"
-                .label="${ifDefined(item.label)}"
                 .icon="${ifDefined(item.icon)}"
-                .prefix="${ifDefined(item.prefix)}"
-                .suffix="${ifDefined(item.suffix)}"
-                .actions="${ifDefined(item.actions)}"
-                .text="${ifDefined(item.text)}"
-                .accept="${ifDefined(item.accept)}"
-                .alt="${ifDefined(item.alt)}"
-                .autocomplete="${ifDefined(item.autocomplete)}"
-                .autofocus="${ifDefined(item.autofocus)}"
-                .checked="${ifDefined(item.checked)}"
-                .defaultChecked="${ifDefined(item.defaultChecked)}"
-                .disabled="${ifDefined(item.disabled)}"
-                .files="${ifDefined(item.files)}"
-                .form="${ifDefined(item.form)}"
-                .formAction="${ifDefined(item.formAction)}"
-                .formEnctype="${ifDefined(item.formEnctype)}"
-                .formMethod="${ifDefined(item.formMethod)}"
-                .formNoValidate="${ifDefined(item.formNoValidate)}"
-                .formTarget="${ifDefined(item.formTarget)}"
-                .height="${ifDefined(item.height)}"
-                .indeterminate="${ifDefined(item.indeterminate)}"
-                .list="${ifDefined(item.list)}"
-                .max="${ifDefined(item.max)}"
-                .maxLength="${ifDefined(item.maxLength)}"
-                .min="${ifDefined(item.min)}"
-                .minLength="${ifDefined(item.minLength)}"
-                .multiple="${ifDefined(item.multiple)}"
-                .name="${ifDefined(item.name)}"
-                .pattern="${ifDefined(item.pattern)}"
                 .placeholder="${ifDefined(item.placeholder)}"
-                .readOnly="${ifDefined(item.readOnly)}"
-                .required="${ifDefined(item.required)}"
-                .size="${ifDefined(item.size)}"
-                .src="${ifDefined(item.src)}"
-                .step="${ifDefined(item.step)}"
-                .type="${ifDefined(item.type)}"
-                .defaultValue="${ifDefined(item.defaultValue)}"
-                .value="${ifDefined(item.value)}"
-                .width="${ifDefined(item.width)}"
-                .inputMode="${ifDefined(item.inputMode)}"
-                .selectionDirection="${ifDefined(item.selectionDirection)}"
-                .selectionEnd="${ifDefined(item.selectionEnd)}"
-                .selectionStart="${ifDefined(item.selectionStart)}"
-                .align="${ifDefined(item.align)}"
-                .useMap="${ifDefined(item.useMap)}"
-                .cols="${ifDefined(item.cols)}"
-                .rows="${ifDefined(item.rows)}"
-                .spellcheck="${ifDefined(item.spellcheck)}"
-                .wrap="${ifDefined(item.wrap)}"
-                .length="${ifDefined(item.length)}"
-                .selectedIndex="${ifDefined(item.selectedIndex)}"
-                .selectedOptions="${ifDefined(item.selectedOptions)}"
-                .options="${ifDefined(item.options)}"
-                .errorText="${ifDefined(item.errorText)}"
-                .error="${ifDefined(item.error)}"
-                .variant="${ifDefined(item.variant)}"
-                @onTextFieldNativeFocus="${this.handleCardTextFieldNativeFocus}"
-                @onTextFieldNativeBlur="${this.handleCardTextFieldNativeBlur}"
+                @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
+            ></md-text-field>
+        `;
+    }
+
+    renderSearchField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-search-field
+                class="md-card__search-field"
+                name="${ifDefined(item.name)}"
+                .icon="${ifDefined(item.icon)}"
+                .placeholder="${ifDefined(item.placeholder)}"
                 @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
                 @onTextFieldNativeSearch="${this.handleCardTextFieldNativeSearch}"
-                @onTextFieldNativeInvalid="${this.handleCardTextFieldNativeInvalid}"
-                @onTextFieldNativeReset="${this.handleCardTextFieldNativeReset}"
-                @onTextFieldIconButtonClick="${this.handleCardTextFieldIconButtonClick}"
-            ></md-text-field>
+            ></md-search-field>
         `;
     }
 
@@ -211,6 +164,7 @@ class MDCardComponent extends MDComponent {
         /* prettier-ignore */
         return choose(item.component, [
             ['text-field', () => this.renderTextField(item)],
+            ['search-field', () => this.renderSearchField(item)],
             ['icon-button', () => this.renderIconButton(item)],
             ['icon', () => this.renderIcon(item)],
             ['button', () => this.renderButton(item)],

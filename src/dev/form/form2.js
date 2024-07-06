@@ -107,6 +107,39 @@ class DevForm2Component extends MDComponent {
                     </div>
 
 
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-number-field
+                            variant="filled"
+                            name="number1"
+                            label="number"
+                        ></md-number-field>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-number-field
+                            variant="filled"
+                            name="number2"
+                            label="number"
+                            value="123456789"
+                        ></md-number-field>
+                    </div>
+
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-search-field
+                            variant="filled"
+                            name="search1"
+                            label="search"
+                        ></md-search-field>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-search-field
+                            variant="filled"
+                            name="search2"
+                            label="search"
+                            value="What day is it today?"
+                        ></md-search-field>
+                    </div>
+
+
                     <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <br />
                         <br />

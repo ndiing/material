@@ -1,0 +1,7 @@
+.md-search-field {
+    .md-text-field__native {
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+    }
+}

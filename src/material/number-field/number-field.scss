@@ -1,0 +1,7 @@
+.md-number-field {
+    .md-text-field__native {
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+}
