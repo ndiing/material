@@ -37,7 +37,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     get days() {
         const rows = [];
         for (let i = 0; i < 6; i++) {
-            const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + 1 - this.first);
+            const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + 0 + 1 - this.first + 1);
             const year = date.getFullYear();
             const month = date.getMonth();
             const week = date.getWeek();
@@ -51,7 +51,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
             };
 
             for (let j = 0; j < 7; j++) {
-                const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first);
+                const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first + 1);
                 children.push({
                     label: this.dayFormat(date),
                 });
@@ -190,7 +190,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.requestUpdate();
         this.index = 2;
 
-        this.emit("onWeekPickerSelection", event);
+        // this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerButtonCancelClick", event);
     }
 
@@ -203,7 +203,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
 
         this.index = 2;
 
-        this.emit("onWeekPickerSelection", event);
+        // this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerButtonOkClick", event);
     }
 

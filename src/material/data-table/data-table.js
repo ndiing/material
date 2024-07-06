@@ -8,8 +8,6 @@ import { classMap } from "lit/directives/class-map.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
 class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
-    static observedAttributes = ["resizable", "orderable"];
-
     constructor() {
         super();
 
@@ -33,8 +31,6 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     disconnectedCallback() {
         this.gesture.hostDisconnected();
     }
-
-    attributeChangedCallback(name, oldValue, newValue) {}
 
     /**
      * {{desc}}
@@ -585,13 +581,17 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableColumnResizeStart(event) {
-        if(!event.currentTarget.hasAttribute('resizable')){return}
+        if (!event.currentTarget.hasAttribute("resizable")) {
+            return;
+        }
         this.resizing = true;
         this.emit("onDataTableColumnResizeStart", event);
     }
 
     handleDataTableColumnResize(event) {
-        if(!event.currentTarget.hasAttribute('resizable')){return}
+        if (!event.currentTarget.hasAttribute("resizable")) {
+            return;
+        }
         const data = event.currentTarget.data;
         const gesture = event.currentTarget.gesture;
 
@@ -602,7 +602,9 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableColumnResizeEnd(event) {
-        if(!event.currentTarget.hasAttribute('resizable')){return}
+        if (!event.currentTarget.hasAttribute("resizable")) {
+            return;
+        }
         this.resizing = false;
         this.updateColumns();
         this.updateVirtualColumns();
@@ -735,14 +737,18 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableColumnDragStart(event) {
-        if(!event.currentTarget.hasAttribute('orderable')){return}
+        if (!event.currentTarget.hasAttribute("orderable")) {
+            return;
+        }
         this.fromData = event.currentTarget.data;
 
         this.emit("onDataTableColumnDragStart", event);
     }
 
     handleDataTableColumnDrag(event) {
-        if(!event.currentTarget.hasAttribute('orderable')){return}
+        if (!event.currentTarget.hasAttribute("orderable")) {
+            return;
+        }
         this.dragging = true;
         const data = event.detail.target.closest("th")?.data;
 
@@ -764,7 +770,9 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTableColumnDragEnd(event) {
-        if(!event.currentTarget.hasAttribute('orderable')){return}
+        if (!event.currentTarget.hasAttribute("orderable")) {
+            return;
+        }
         this.dragging = false;
         this.emit("onDataTableColumnDragEnd", event);
     }

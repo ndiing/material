@@ -61,6 +61,8 @@ class MDSheetComponent extends MDCardComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
 
         this.open = true;
+
+        this.emit('onSheetShow',this)
     }
 
     /**
@@ -78,6 +80,8 @@ class MDSheetComponent extends MDCardComponent {
         }
 
         this.open = false;
+
+        this.emit('onSheetClose',this)
     }
 
     /**

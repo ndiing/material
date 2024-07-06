@@ -167,9 +167,9 @@ class MDListComponent extends MDComponent {
     }
 
     handleListKeydown(event) {
-        const activeElement=document.activeElement===event.target.closest('.md-list__item')
+        const activeElement = document.activeElement === event.target.closest(".md-list__item");
 
-        if (this.allSelection && activeElement&& event.ctrlKey && event.key === "a") {
+        if (this.allSelection && activeElement && event.ctrlKey && event.key === "a") {
             this.selectAll();
 
             this.requestUpdate();

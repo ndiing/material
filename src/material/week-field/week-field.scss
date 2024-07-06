@@ -1,0 +1,7 @@
+.md-week-field{
+    .md-text-field__native{
+        &::-webkit-calendar-picker-indicator{
+            display: none;
+        }
+    }
+}

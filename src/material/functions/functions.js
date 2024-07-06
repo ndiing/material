@@ -333,9 +333,11 @@ Date.prototype.setWeek = function (week) {
     if (typeof week !== "number" || week < 1 || week > 53) {
         throw new Error("Invalid week number. Week number should be between 1 and 53.");
     }
-    this.setDate(1);
-    this.setMonth(0);
-    this.setDate(1 + (week - 1) * 7);
+    let jan4 = new Date(this.getFullYear(), 0, 4); // January 4th
+    let jan4Day = (jan4.getDay() + 6) % 7; // Day of the week for January 4th (0 = Monday, 6 = Sunday)
+    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day); // Start of the first week of the year
+
+    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000); // Set time to the start of the target week
     return this;
 };
 
@@ -350,6 +352,11 @@ Date.prototype.getWeek = function () {
     let week1 = new Date(tempDate.getFullYear(), 0, 4);
     return 1 + Math.round(((tempDate - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
 };
+
+// // Testing the function
+// let date = new Date('1990-10-17');
+// console.log(date.getWeek()); // Output should be 42
+
 /**
  * Converts a hexadecimal color representation to RGBA components.
  * @param {string} hex - The hexadecimal color string (e.g., "#RRGGBB" or "#RRGGBBAA").

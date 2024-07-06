@@ -55,7 +55,14 @@ import "./menu/menu.js";
 import "./tabs/tabs.js";
 import "./chip/chip.js";
 import "./chips/chips.js";
+
 import "./text-field/text-field.js";
+import "./datetime-field/datetime-field.js";
+import "./date-field/date-field.js";
+import "./time-field/time-field.js";
+import "./week-field/week-field.js";
+import "./month-field/month-field.js";
+
 import "./pagination/pagination.js";
 import "./data-table-item/data-table-item.js";
 import "./data-table/data-table.js";

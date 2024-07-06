@@ -340,12 +340,12 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     handleEmojiPickerButtonCancelClick(event) {
-        this.emit("onEmojiPickerSelection", event);
+        // this.emit("onEmojiPickerSelection", event);
         this.emit("onEmojiPickerButtonCancelClick", event);
     }
 
     handleEmojiPickerButtonOkClick(event) {
-        this.emit("onEmojiPickerSelection", event);
+        // this.emit("onEmojiPickerSelection", event);
         this.emit("onEmojiPickerButtonOkClick", event);
     }
 

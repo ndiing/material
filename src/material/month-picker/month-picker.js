@@ -115,7 +115,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         this.requestUpdate();
         this.index = 1;
 
-        this.emit("onMonthPickerSelection", event);
+        // this.emit("onMonthPickerSelection", event);
         this.emit("onMonthPickerButtonCancelClick", event);
     }
 
@@ -128,7 +128,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
 
         this.index = 1;
 
-        this.emit("onMonthPickerSelection", event);
+        // this.emit("onMonthPickerSelection", event);
         this.emit("onMonthPickerButtonOkClick", event);
     }
 

@@ -147,6 +147,10 @@ class MDTextFieldComponent extends MDComponent {
         return this.querySelector(".md-text-field__native");
     }
 
+    get container() {
+        return this.querySelector(".md-text-field__container");
+    }
+
     constructor() {
         super();
 
@@ -180,6 +184,7 @@ class MDTextFieldComponent extends MDComponent {
                 .type="${ifDefined(this.type)}"
                 .defaultValue="${ifDefined(this.defaultValue)}"
                 .value="${ifDefined(this.value)}"
+                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @input="${this.handleTextFieldNativeInput}"
@@ -207,6 +212,7 @@ class MDTextFieldComponent extends MDComponent {
                 .value="${ifDefined(this.value)}"
                 .cols="${ifDefined(this.cols)}"
                 .rows="${ifDefined(this.rows)}"
+                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @input="${this.handleTextFieldNativeInput}"
@@ -228,6 +234,7 @@ class MDTextFieldComponent extends MDComponent {
                 .required="${ifDefined(this.required)}"
                 .size="${ifDefined(this.size)}"
                 .value="${ifDefined(this.value)}"
+                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @input="${this.handleTextFieldNativeInput}"
@@ -325,7 +332,7 @@ class MDTextFieldComponent extends MDComponent {
         this.value = this.value || defaultValue[this.type];
         this.defaultValue = this.value;
 
-        this.populate();
+        this.updatePopulation();
     }
 
     updated(changedProperties) {
@@ -345,6 +352,10 @@ class MDTextFieldComponent extends MDComponent {
         }
     }
 
+    handleTextFieldNativeClick(event) {
+        this.emit("onTextFieldNativeClick", event);
+    }
+
     handleTextFieldNativeFocus(event) {
         this.classList.add("md-text-field--focused");
 
@@ -358,34 +369,19 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     handleTextFieldNativeInput(event) {
-        if (this.type !== "file") {
-            this.value = this.native.value;
-        }
-
         this.populate();
-        this.validate();
 
         this.emit("onTextFieldNativeInput", event);
     }
 
     handleTextFieldNativeChange(event) {
-        if (this.type !== "file") {
-            this.value = this.native.value;
-        }
-
         this.populate();
-        this.validate();
 
         this.emit("onTextFieldNativeChange", event);
     }
 
     handleTextFieldNativeSearch(event) {
-        if (this.type !== "file") {
-            this.value = this.native.value;
-        }
-
         this.populate();
-        this.validate();
 
         this.emit("onTextFieldNativeSearch", event);
     }
@@ -393,19 +389,13 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
 
-        this.validate();
+        this.updateValidation();
 
         this.emit("onTextFieldNativeInvalid", event);
     }
 
     handleTextFieldNativeReset(event) {
-        if (this.type !== "file") {
-            this.native.value = this.defaultValue;
-            this.value = this.defaultValue;
-        }
-
-        this.populate();
-        this.validate();
+        this.reset();
 
         this.emit("onTextFieldNativeReset", event);
     }
@@ -414,17 +404,36 @@ class MDTextFieldComponent extends MDComponent {
         this.emit("onTextFieldIconButtonClick", event);
     }
 
+    populate() {
+        if (this.type !== "file") {
+            this.value = this.native.value;
+        }
+
+        this.updatePopulation();
+        this.updateValidation();
+    }
+
+    reset() {
+        if (this.type !== "file") {
+            this.native.value = this.defaultValue;
+            this.value = this.defaultValue;
+        }
+
+        this.updatePopulation();
+        this.updateValidation();
+    }
+
     /**
      * Toggles the "md-text-field--populated" class based on the presence of a value or if the type is "file".
      */
-    populate() {
+    updatePopulation() {
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
     }
 
     /**
      * Validates the input field, setting the error text and toggling the "md-text-field--error" class based on the validation state.
      */
-    validate() {
+    updateValidation() {
         this.errorText = this.native.validationMessage;
         this.error = !!this.errorText;
 
