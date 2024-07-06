@@ -69,18 +69,18 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         
     }
 
-    handlePickerSelection(event) {
+    handlePickerSelection() {
         const value = stringifyMonth(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent('input',{}))
         // this.value = value;
     }
 
-    handlePickerButtonCancelClick(event) {
+    handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
-    handlePickerButtonOkClick(event) {
+    handlePickerButtonOkClick() {
         const value = stringifyMonth(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent('input',{}))

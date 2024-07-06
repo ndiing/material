@@ -1,7 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { MDRippleController } from "../ripple/ripple.js";
-import { MDGestureController } from "../gesture/gesture.js";
 import { isDefined } from "../functions/functions.js";
 
 /**

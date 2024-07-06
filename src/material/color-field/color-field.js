@@ -1,4 +1,3 @@
-import { stringifyColor } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
@@ -68,18 +67,18 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.picker.showModal(this.container);
     }
 
-    handlePickerSelection(event) {
+    handlePickerSelection() {
         const value = this.picker.selection.hex.slice(0,1+6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent('input',{}))
         // this.value = value;
     }
 
-    handlePickerButtonCancelClick(event) {
+    handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
-    handlePickerButtonOkClick(event) {
+    handlePickerButtonOkClick() {
         const value = this.picker.selection.hex.slice(0,1+6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent('input',{}))
