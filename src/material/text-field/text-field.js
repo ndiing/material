@@ -320,13 +320,18 @@ class MDTextFieldComponent extends MDComponent {
 
         const defaultValue = {
             color: "#000000",
-            "datetime-local": "",
             date: "",
-            time: "",
-            week: "",
-            month: "",
-            url: "",
+            "datetime-local": "",
             email: "",
+            month: "",
+            number: "",
+            password: "",
+            search: "",
+            tel: "",
+            text: "",
+            time: "",
+            url: "",
+            week: "",
         };
 
         this.value = this.value || defaultValue[this.type];
