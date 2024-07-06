@@ -34,14 +34,12 @@
 }
 .md-list__label-primary {
     @include typescale-body-large();
-    height: var(--md-sys-typescale-body-large-line-height);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .md-list__label-secondary {
     @include typescale-body-medium();
-    height: var(--md-sys-typescale-body-medium-line-height);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

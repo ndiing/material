@@ -5,17 +5,11 @@ Represents an item within a data table, supporting various types of content and 
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-
-| Emits |
-|-------|
 **Tagname**: md-data-table-item  
 <a name="MDDataTableItemComponent+properties"></a>
 
 ### mdDataTableItemComponent.properties
 **Kind**: instance property of [<code>MDDataTableItemComponent</code>](#MDDataTableItemComponent)  
-
-| Emits |
-|-------|
 **Properties**
 
 | Name | Type | Description |

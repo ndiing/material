@@ -1,34 +1,9 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { isDefined } from "../functions/functions.js";
+import { MDRippleController } from "../ripple/ripple.js";
+import { MDGestureController } from "../gesture/gesture.js";
 
-/**
- * Represents an item within a data table, supporting various types of content and interactive elements.
- * @extends MDComponent
- * @tagname md-data-table-item
- */
 class MDDataTableItemComponent extends MDComponent {
-    /**
-     * @property {String} avatar - URL of the avatar image.
-     * @property {String} thumbnail - URL of the thumbnail image.
-     * @property {String} video - URL of the video.
-     * @property {String} icon - Icon to be displayed.
-     * @property {String} label - Primary label text.
-     * @property {String} subLabel - Secondary label text.
-     * @property {Number} badge - Numeric value to be displayed in a badge.
-     * @property {String} text - Additional text content.
-     * @property {Boolean} leadingCheckbox - Whether to display a leading checkbox.
-     * @property {Boolean} leadingRadioButton - Whether to display a leading radio button.
-     * @property {Boolean} leadingSwitch - Whether to display a leading switch.
-     * @property {Boolean} trailingCheckbox - Whether to display a trailing checkbox.
-     * @property {Boolean} trailingRadioButton - Whether to display a trailing radio button.
-     * @property {Boolean} trailingSwitch - Whether to display a trailing switch.
-     * @property {Boolean} selected - Whether the item is selected.
-     * @property {String} routerLink - URL for the router link.
-     * @property {Boolean} indeterminate - Whether the checkbox is in an indeterminate state.
-     * @property {Boolean} sortable - Whether the item is sortable.
-     * @property {String} sortableIcon - Icon for the sortable indicator.
-     */
     static properties = {
         avatar: { type: String },
         thumbnail: { type: String },
@@ -53,14 +28,23 @@ class MDDataTableItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
-        indeterminate: { type: Boolean },
-
-        sortable: { type: Boolean },
-        sortableIcon: { type: String },
     };
 
     constructor() {
         super();
+
+        this.ripple = new MDRippleController(this, {
+            clipped: true,
+        });
+
+        this.gesture = new MDGestureController(this, {
+            drag: [],
+            dragAfterLongPress: true,
+            resize: [],
+            resizeAfterLongPress: true,
+            selection: true,
+            selectionAfterLongPress: true,
+        });
     }
 
     renderCheckbox() {
@@ -68,7 +52,6 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-data-table__checkbox"
             .checked="${this.selected}"
-            .indeterminate="${this.indeterminate}"
         ></md-checkbox>`
     }
 
@@ -100,17 +83,15 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.video?html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
-            
 
-            ${isDefined(this.label)||this.subLabel||this.badge?html`
+            ${this.label||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
-                    ${isDefined(this.label)||this.subLabel?html`
+                    ${this.label||this.subLabel?html`
                         <div class="md-data-table__label">
-                            ${isDefined(this.label)?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
+                            ${this.label?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
-                    ${this.sortable?html`<div class="md-icon md-data-table__sortable">${this.sortableIcon}</div>`:nothing}
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}

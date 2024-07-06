@@ -17,9 +17,6 @@ Checks if the provided color string is a valid hexadecimal color.
 **Kind**: global function  
 **Returns**: <code>Boolean</code> - - True if the color string is a valid hexadecimal color, false otherwise.  
 
-| Emits |
-|-------|
-
 | Param | Type | Description |
 | --- | --- | --- |
 | color | <code>String</code> | The color string to validate. |
@@ -31,9 +28,6 @@ Sets the theme of the application based on either a hexadecimal color or an imag
 
 **Kind**: global function  
 **Returns**: <code>Promise.&lt;void&gt;</code> - - Promise that resolves once the theme is applied.  
-
-| Emits |
-|-------|
 
 | Param | Type | Description |
 | --- | --- | --- |

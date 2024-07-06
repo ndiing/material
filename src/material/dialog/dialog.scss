@@ -118,7 +118,6 @@
 
     .md-card__label-primary {
         @include typescale-headline-small();
-        height: var(--md-sys-typescale-headline-small-line-height);
     }
 
     .md-card__inner {
@@ -161,6 +160,5 @@
 
     .md-card__label-primary {
         @include typescale-title-large();
-        height: var(--md-sys-typescale-title-large-line-height);
     }
 }

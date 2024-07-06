@@ -5,9 +5,6 @@ Represents an attribute observer that watches changes in a specific attribute of
 
 **Kind**: global class  
 
-| Emits |
-|-------|
-
 * [MDAttributeObserver](#MDAttributeObserver)
     * [new MDAttributeObserver([callback])](#new_MDAttributeObserver_new)
     * [.observe(target, attributeName)](#MDAttributeObserver+observe)
@@ -17,9 +14,6 @@ Represents an attribute observer that watches changes in a specific attribute of
 ### new MDAttributeObserver([callback])
 Creates an instance of MDAttributeObserver.
 
-
-| Emits |
-|-------|
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -31,9 +25,6 @@ Creates an instance of MDAttributeObserver.
 Begins observing changes in the specified attribute of the target DOM element.
 
 **Kind**: instance method of [<code>MDAttributeObserver</code>](#MDAttributeObserver)  
-
-| Emits |
-|-------|
 
 | Param | Type | Description |
 | --- | --- | --- |

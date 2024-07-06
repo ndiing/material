@@ -29,7 +29,6 @@
 
     .md-card__label-primary {
         @include typescale-title-small();
-        height: var(--md-sys-typescale-title-small-line-height);
     }
 
     .md-card__inner {

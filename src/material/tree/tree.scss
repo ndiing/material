@@ -26,7 +26,6 @@
 }
 .md-tree__label-primary {
     @include typescale-label-large();
-    height: var(--md-sys-typescale-label-large-line-height);
     overflow: hidden;
 }
 
@@ -142,7 +141,6 @@
 
     .md-tree__label-primary {
         @include typescale-label-medium();
-        height: var(--md-sys-typescale-label-medium-line-height);
     }
 
     .md-tree__badge {
@@ -275,7 +273,6 @@
 
     .md-tree__label-primary {
         @include typescale-label-medium();
-        height: var(--md-sys-typescale-label-medium-line-height);
     }
 
     .md-tree__badge {

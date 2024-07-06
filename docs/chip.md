@@ -6,18 +6,12 @@ This component provides various visual and interactive states based on its prope
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-
-| Emits |
-|-------|
-| <code>MDChipComponent#event:onChipActionClick - Fires when the chip action button is clicked.</code> |
+**Emits**: <code>MDChipComponent#event:onChipActionClick - Fires when the chip action button is clicked.</code>  
 **Tagname**: md-chip  
 <a name="MDChipComponent+properties"></a>
 
 ### mdChipComponent.properties
 **Kind**: instance property of [<code>MDChipComponent</code>](#MDChipComponent)  
-
-| Emits |
-|-------|
 **Properties**
 
 | Name | Type | Description |

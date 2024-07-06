@@ -6,18 +6,12 @@ This component manages an array of chip data and handles their interactions.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-
-| Emits |
-|-------|
-| <code>MDChipsComponent#event:onChipClick - Fires when a chip in the collection is clicked.</code> |
+**Emits**: <code>MDChipsComponent#event:onChipClick - Fires when a chip in the collection is clicked.</code>  
 **Tagname**: md-chips  
 <a name="MDChipsComponent+properties"></a>
 
 ### mdChipsComponent.properties
 **Kind**: instance property of [<code>MDChipsComponent</code>](#MDChipsComponent)  
-
-| Emits |
-|-------|
 **Properties**
 
 | Name | Type | Description |
