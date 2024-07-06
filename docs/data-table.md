@@ -5,7 +5,10 @@
 
 **Kind**: global class  
 **Extends**: <code>MDCardComponent</code>  
-**Emits**: <code>MDDataTableComponent#event:onDataTableViewportVirtualScroll - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableRowCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableRowClick - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableKeydown - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeStart - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResize - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeEnd - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnPointerenter - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnPointerleave - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDoubleTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeDoubleTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDragStart - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDrag - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDragEnd - {{desc}}</code>  
+
+| Emits |
+|-------|
+| <code>MDDataTableComponent#event:onDataTableViewportVirtualScroll - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableRowCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableRowClick - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableKeydown - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeStart - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResize - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeEnd - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnPointerenter - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnPointerleave - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDoubleTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeDoubleTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDragStart - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDrag - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDragEnd - {{desc}}</code> |
 **Tagname**: md-data-table  
 
 * [MDDataTableComponent](#MDDataTableComponent) ⇐ <code>MDCardComponent</code>
@@ -24,6 +27,9 @@
 
 ### mdDataTableComponent.properties
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 **Properties**
 
 | Name | Type | Description |
@@ -44,51 +50,78 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+label"></a>
 
 ### mdDataTableComponent.label
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+trailingActions"></a>
 
 ### mdDataTableComponent.trailingActions
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+body"></a>
 
 ### mdDataTableComponent.body
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+actions"></a>
 
 ### mdDataTableComponent.actions
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+indeterminate"></a>
 
 ### mdDataTableComponent.indeterminate
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+selected"></a>
 
 ### mdDataTableComponent.selected
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+updateColumns"></a>
 
 ### mdDataTableComponent.updateColumns()
 {{desc}}
 
 **Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|
 <a name="MDDataTableComponent+updateRows"></a>
 
 ### mdDataTableComponent.updateRows()
 {{desc}}
 
 **Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+
+| Emits |
+|-------|

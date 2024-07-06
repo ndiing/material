@@ -5,11 +5,17 @@ Represents a button component that extends MDComponent.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
+
+| Emits |
+|-------|
 **Tagname**: md-button  
 <a name="MDButtonComponent+properties"></a>
 
 ### mdButtonComponent.properties
 **Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
+
+| Emits |
+|-------|
 **Properties**
 
 | Name | Type | Description |

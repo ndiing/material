@@ -7,6 +7,9 @@ Provides utility methods for event handling.
 **Kind**: global class  
 **Extends**: <code>LitElement</code>  
 
+| Emits |
+|-------|
+
 * [MDComponent](#MDComponent) ⇐ <code>LitElement</code>
     * [.on(type, listener)](#MDComponent+on)
     * [.once(type, listener)](#MDComponent+once)
@@ -20,6 +23,9 @@ Adds an event listener bound to the element instance.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
 
+| Emits |
+|-------|
+
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>string</code> | The type of event to listen for. |
@@ -31,6 +37,9 @@ Adds an event listener bound to the element instance.
 Adds a one-time event listener bound to the element instance.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
+
+| Emits |
+|-------|
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -44,6 +53,9 @@ Removes an event listener from the element instance.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
 
+| Emits |
+|-------|
+
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>string</code> | The type of event to remove the listener from. |
@@ -55,6 +67,9 @@ Removes an event listener from the element instance.
 Dispatches a custom event from the element instance.
 
 **Kind**: instance method of [<code>MDComponent</code>](#MDComponent)  
+
+| Emits |
+|-------|
 
 | Param | Type | Description |
 | --- | --- | --- |

@@ -5,4 +5,7 @@ MDBottomAppBarComponent is a custom bottom app bar element, extending the functi
 
 **Kind**: global class  
 **Extends**: <code>MDSheetComponent</code>  
+
+| Emits |
+|-------|
 **Tagname**: md-bottom-app-bar  

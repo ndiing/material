@@ -5,12 +5,18 @@ MDCheckboxComponent is a custom checkbox element with support for ripple effects
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDCheckboxComponent#event:onCheckboxNativeInput - Fired when the checkbox&#x27;s native input value changes.</code>, <code>MDCheckboxComponent#event:onCheckboxNativeReset - Fired when the checkbox&#x27;s native input is reset.</code>  
+
+| Emits |
+|-------|
+| <code>MDCheckboxComponent#event:onCheckboxNativeInput - Fired when the checkbox&#x27;s native input value changes.</code>, <code>MDCheckboxComponent#event:onCheckboxNativeReset - Fired when the checkbox&#x27;s native input is reset.</code> |
 **Tagname**: md-checkbox  
 <a name="MDCheckboxComponent+properties"></a>
 
 ### mdCheckboxComponent.properties
 **Kind**: instance property of [<code>MDCheckboxComponent</code>](#MDCheckboxComponent)  
+
+| Emits |
+|-------|
 **Properties**
 
 | Name | Type | Description |

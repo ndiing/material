@@ -6,4 +6,7 @@ This component automatically adds the "md-emoji" CSS class when connected to the
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
+
+| Emits |
+|-------|
 **Tagname**: md-emoji  

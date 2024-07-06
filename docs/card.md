@@ -5,12 +5,18 @@ Custom card component.
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDCardComponent#event:onCardIconButtonClick - When an icon button in the card is clicked.</code>, <code>MDCardComponent#event:onCardIconClick - When an icon in the card is clicked.</code>, <code>MDCardComponent#event:onCardButtonClick - When a button in the card is clicked.</code>, <code>MDCardComponent#event:onCardFabClick - When a FAB (Floating Action Button) in the card is clicked.</code>, <code>MDCardComponent#event:onCardTextFieldNativeFocus - When a native input in the card gains focus.</code>, <code>MDCardComponent#event:onCardTextFieldNativeBlur - When a native input in the card loses focus.</code>, <code>MDCardComponent#event:onCardTextFieldNativeInput - When a native input in the card receives input.</code>, <code>MDCardComponent#event:onCardTextFieldNativeSearch - When a native input in the card performs a search.</code>, <code>MDCardComponent#event:onCardTextFieldNativeInvalid - When a native input in the card becomes invalid.</code>, <code>MDCardComponent#event:onCardTextFieldNativeReset - When a native input in the card is reset.</code>  
+
+| Emits |
+|-------|
+| <code>MDCardComponent#event:onCardIconButtonClick - When an icon button in the card is clicked.</code>, <code>MDCardComponent#event:onCardIconClick - When an icon in the card is clicked.</code>, <code>MDCardComponent#event:onCardButtonClick - When a button in the card is clicked.</code>, <code>MDCardComponent#event:onCardFabClick - When a FAB (Floating Action Button) in the card is clicked.</code>, <code>MDCardComponent#event:onCardTextFieldNativeFocus - When a native input in the card gains focus.</code>, <code>MDCardComponent#event:onCardTextFieldNativeBlur - When a native input in the card loses focus.</code>, <code>MDCardComponent#event:onCardTextFieldNativeInput - When a native input in the card receives input.</code>, <code>MDCardComponent#event:onCardTextFieldNativeSearch - When a native input in the card performs a search.</code>, <code>MDCardComponent#event:onCardTextFieldNativeInvalid - When a native input in the card becomes invalid.</code>, <code>MDCardComponent#event:onCardTextFieldNativeReset - When a native input in the card is reset.</code> |
 **Tagname**: md-card  
 <a name="MDCardComponent+properties"></a>
 
 ### mdCardComponent.properties
 **Kind**: instance property of [<code>MDCardComponent</code>](#MDCardComponent)  
+
+| Emits |
+|-------|
 **Properties**
 
 | Name | Type | Description |
