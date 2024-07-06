@@ -82,8 +82,11 @@ class MDPopperController {
             this.containerRect = this.container.getBoundingClientRect();
             this.boundaryRect = this.boundary.getBoundingClientRect();
 
+            let left, top, originX, originY;
+            let matches;
+
             for (const placement of this.options.placements) {
-                const { left, top, originX, originY } = placements[placement]();
+                ({ left, top, originX, originY } = placements[placement]());
                 const right = left + this.containerRect.width;
                 const bottom = top + this.containerRect.height;
 
@@ -94,12 +97,18 @@ class MDPopperController {
                     bottom > this.boundaryRect.bottom;
 
                 if (!exceed) {
-                    this.container.style.left = `${left}px`;
-                    this.container.style.top = `${top}px`;
-                    this.container.style.transformOrigin = `${originX} ${originY}`;
+                    matches = 1;
                     break;
                 }
             }
+
+            if (!matches) {
+                ({ left, top, originX, originY } = placements["center"]());
+            }
+
+            this.container.style.left = `${left}px`;
+            this.container.style.top = `${top}px`;
+            this.container.style.transformOrigin = `${originX} ${originY}`;
         });
     }
 
