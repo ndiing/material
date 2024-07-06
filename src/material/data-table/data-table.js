@@ -7,6 +7,7 @@ import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
+
 class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     constructor() {
         super();
@@ -31,11 +32,48 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
         this.gesture.hostDisconnected();
     }
 
+    /**
+     * {{desc}}
+     */
     addController() {}
 }
 customElements.define("md-data-table-native-column", MDDataTableNativeColumnComponent, { extends: "th" });
 
+/**
+ * {{desc}}
+ * @extends HTMLTableCellElement
+ * @tagname md-data-table
+ * @fires MDDataTableNativeColumnComponent#onDataTableViewportVirtualScroll - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnCheckboxNativeInput - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableRowCheckboxNativeInput - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableRowClick - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#handleDataTableKeydown - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnResizeStart - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnResize - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnResizeEnd - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnPointerenter - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnPointerleave - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnTap - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableTextFieldNativeSearch - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTablePaginationChange - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnDoubleTap - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnResizeDoubleTap - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnDragStart - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnDrag - {{desc}}
+ * @fires MDDataTableNativeColumnComponent#onDataTableColumnDragEnd - {{desc}}
+ */
 class MDDataTableComponent extends MDCardComponent {
+    /**
+     * @property {Array} columns - {{desc}}
+     * @property {Array} rows - {{desc}}
+     * @property {Boolean} stickyHeader - {{desc}}
+     * @property {Boolean} checkboxSelection - {{desc}}
+     * @property {Boolean} stickyCheckboxSelection - {{desc}}
+     * @property {Boolean} rangeSelection - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
+     * @property {Boolean} singleSelection - {{desc}}
+     * @property {Boolean} allSelection - {{desc}}
+     */
     static properties = {
         ...MDCardComponent.properties,
         columns: { type: Array },
@@ -52,10 +90,16 @@ class MDDataTableComponent extends MDCardComponent {
         allSelection: { type: Boolean },
     };
 
+    /**
+     * {{desc}}
+     */
     get label() {
         return "label";
     }
 
+    /**
+     * {{desc}}
+     */
     set label(value) {}
 
     get trailingActions() {
@@ -68,12 +112,18 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
+    /**
+     * {{desc}}
+     */
     set trailingActions(value) {}
 
     get body() {
         return [this.renderViewport()];
     }
 
+    /**
+     * {{desc}}
+     */
     set body(value) {}
 
     get actions() {
@@ -84,6 +134,9 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
+    /**
+     * {{desc}}
+     */
     set actions(value) {}
 
     constructor() {
@@ -286,6 +339,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.on("keydown", this.handleDataTableKeydown);
     }
 
+    /**
+     * {{desc}}
+     */
     updateVirtualRows() {
         const { total, docs } = this.store.getAll({
             sorters: this.sorters,
@@ -302,12 +358,18 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
     }
 
+    /**
+     * {{desc}}
+     */
     updateVirtualColumns() {
         this.virtual.options.columnTotal = this.columns.length;
         this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + prev.width, 0) / this.columns.length;
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);
     }
 
+    /**
+     * {{desc}}
+     */
     updateColumns() {
         const half = Math.floor(this.columns.length / 2);
         let stickyLeftEnd;
@@ -384,26 +446,41 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableViewportVirtualScroll", event);
     }
 
+    /**
+     * {{desc}}
+     */
     get isSelectedAll() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
         return selectedTotal > 0 && selectedTotal === this.storeTotal;
     }
 
+    /**
+     * {{desc}}
+     */
     get isSelectedPartial() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
         return selectedTotal > 0 && selectedTotal < this.storeTotal;
     }
 
+    /**
+     * {{desc}}
+     */
     selectAllToggle(checked) {
         this.storeRows.forEach((row) => {
             row.selected = checked;
         });
     }
 
+    /**
+     * {{desc}}
+     */
     selectToggle(data) {
         data.selected = !data.selected;
     }
 
+    /**
+     * {{desc}}
+     */
     select(data) {
         this.storeRows.forEach((item) => {
             item.selected = item === data;
@@ -411,6 +488,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.endIndex = this.storeRows.indexOf(data);
     }
 
+    /**
+     * {{desc}}
+     */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
         this.startIndex = this.storeRows.indexOf(data);
@@ -429,6 +509,9 @@ class MDDataTableComponent extends MDCardComponent {
         }
     }
 
+    /**
+     * {{desc}}
+     */
     selectAll() {
         this.storeRows.forEach((item) => {
             item.selected = true;

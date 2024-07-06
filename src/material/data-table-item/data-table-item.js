@@ -5,7 +5,33 @@ import { MDGestureController } from "../gesture/gesture.js";
 import { isDefined } from "../functions/functions.js";
 
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @tagname md-data-table-item
+ */
 class MDDataTableItemComponent extends MDComponent {
+    /**
+     * @property {String} avatar - {{desc}}
+     * @property {String} thumbnail - {{desc}}
+     * @property {String} video - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadioButton - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Boolean} trailingRadioButton - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {String} routerLink - {{desc}}
+     * @property {Boolean} sortable - {{desc}}
+     * @property {String} sortableIcon - {{desc}}
+     */
     static properties = {
         avatar: { type: String },
         thumbnail: { type: String },
