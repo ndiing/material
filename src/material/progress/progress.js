@@ -10,7 +10,7 @@ let progressBar;
  * Creates a progress bar element and appends it to the document body.
  * Initializes the progress bar with maximum duration.
  */
-function createProgressBar() {
+function create() {
     progressBar = document.createElement("md-progress-indicator");
     progressBar.setAttribute("max", totalDuration);
     progressBar.setAttribute("value", 0);
@@ -23,7 +23,7 @@ function createProgressBar() {
 /**
  * Resets animation variables and removes the progress bar element.
  */
-function resetAnimationVariables() {
+function reset() {
     isAnimating = false;
     pausedTime = 0;
     totalDuration = 10000;
@@ -37,7 +37,7 @@ function resetAnimationVariables() {
  * Recursive function that updates the progress of the animation.
  * @param {Function} [resolve] - Optional callback function to be called when animation completes.
  */
-function loop(resolve) {
+function observe(resolve) {
     let currentTime = performance.now();
     elapsedTime = currentTime - startTime;
 
@@ -48,9 +48,9 @@ function loop(resolve) {
     }
 
     if (elapsedTime < totalDuration) {
-        requestId = requestAnimationFrame(() => loop(resolve));
+        requestId = requestAnimationFrame(() => observe(resolve));
     } else {
-        resetAnimationVariables();
+        reset();
         if (resolve) {
             resolve();
         }
@@ -66,7 +66,7 @@ function loop(resolve) {
 function start(duration = 10000) {
     return new Promise((resolve) => {
         if (!progressBar) {
-            createProgressBar();
+            create();
         }
 
         if (isAnimating) {
@@ -79,7 +79,7 @@ function start(duration = 10000) {
         isAnimating = true;
         startTime = performance.now() - pausedTime;
         progressBar.setAttribute("max", totalDuration);
-        loop(resolve);
+        observe(resolve);
     });
 }
 
@@ -101,7 +101,7 @@ function resume() {
     if (!isAnimating) {
         isAnimating = true;
         startTime = performance.now() - pausedTime;
-        loop();
+        observe();
     }
 }
 
@@ -118,7 +118,7 @@ function stop() {
         }
 
         cancelAnimationFrame(requestId);
-        resetAnimationVariables();
+        reset();
     }
 }
 
