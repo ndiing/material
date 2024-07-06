@@ -67,6 +67,7 @@ import "./time-field/time-field.js";
 import "./color-field/color-field.js";
 import "./number-field/number-field.js";
 import "./search-field/search-field.js";
+import "./password-field/password-field.js";
 
 import "./pagination/pagination.js";
 import "./data-table-item/data-table-item.js";

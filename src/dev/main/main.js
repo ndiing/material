@@ -92,6 +92,7 @@ class DevMainComponent extends MDComponent {
             {routerLink: "/color-field"},
             {routerLink: "/number-field"},
             {routerLink: "/search-field"},
+            {routerLink: "/password-field"},
 
             {routerLink: "/pagination"},
             {routerLink: "/data-table-item"},

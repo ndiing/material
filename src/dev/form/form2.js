@@ -139,6 +139,22 @@ class DevForm2Component extends MDComponent {
                         ></md-search-field>
                     </div>
 
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-password-field
+                            variant="filled"
+                            name="password1"
+                            label="password"
+                        ></md-password-field>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-password-field
+                            variant="filled"
+                            name="password2"
+                            label="password"
+                            value="secret"
+                        ></md-password-field>
+                    </div>
+
 
                     <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <br />

@@ -1,14 +1,14 @@
 ## Functions
 
 <dl>
-<dt><a href="#createProgressBar">createProgressBar()</a></dt>
+<dt><a href="#create">create()</a></dt>
 <dd><p>Creates a progress bar element and appends it to the document body.
 Initializes the progress bar with maximum duration.</p>
 </dd>
-<dt><a href="#resetAnimationVariables">resetAnimationVariables()</a></dt>
+<dt><a href="#reset">reset()</a></dt>
 <dd><p>Resets animation variables and removes the progress bar element.</p>
 </dd>
-<dt><a href="#loop">loop([resolve])</a></dt>
+<dt><a href="#observe">observe([resolve])</a></dt>
 <dd><p>Recursive function that updates the progress of the animation.</p>
 </dd>
 <dt><a href="#start">start([duration])</a> ⇒ <code>Promise</code></dt>
@@ -26,22 +26,22 @@ If animation is already running, extends the total duration.</p>
 </dd>
 </dl>
 
-<a name="createProgressBar"></a>
+<a name="create"></a>
 
-## createProgressBar()
+## create()
 Creates a progress bar element and appends it to the document body.
 Initializes the progress bar with maximum duration.
 
 **Kind**: global function  
-<a name="resetAnimationVariables"></a>
+<a name="reset"></a>
 
-## resetAnimationVariables()
+## reset()
 Resets animation variables and removes the progress bar element.
 
 **Kind**: global function  
-<a name="loop"></a>
+<a name="observe"></a>
 
-## loop([resolve])
+## observe([resolve])
 Recursive function that updates the progress of the animation.
 
 **Kind**: global function  
