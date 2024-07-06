@@ -80,7 +80,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/observer" },
             { routerLink: "/attribute-observer" },
             { routerLink: "/store" },
-
             { routerLink: "/datetime-field" },
             { routerLink: "/date-field" },
             { routerLink: "/month-field" },
