@@ -136,6 +136,21 @@ export { start, pause, resume, stop };
             start(entry.duration);
         });
     }).observe({
-        entryTypes: PerformanceObserver.supportedEntryTypes,
+        entryTypes: [
+            // "element",
+            // "event",
+            // "first-input",
+            // "largest-contentful-paint",
+            // "layout-shift",
+            // "long-animation-frame",
+            // "longtask",
+            "mark",
+            "measure",
+            "navigation",
+            // "paint",
+            "resource",
+            // "visibility-state"
+        ],
     });
 })();
+

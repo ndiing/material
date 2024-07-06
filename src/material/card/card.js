@@ -51,6 +51,27 @@ class MDCardComponent extends MDComponent {
         this.renderTextField = this.renderTextField.bind(this);
     }
 
+    renderPagination(item) {
+        /* prettier-ignore */
+        return html`
+            <md-pagination
+                class="md-card__pagination"
+                name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
+                .total="${ifDefined(item.total)}"
+                .limit="${ifDefined(item.limit)}"
+                .page="${ifDefined(item.page)}"
+                .options="${ifDefined(item.options)}"
+                @onPaginationChange="${this.handleCardPaginationChange}"
+                @onPaginationLimitChange="${this.handleCardPaginationLimitChange}"
+                @onPaginationFirstClick="${this.handleCardPaginationFirstClick}"
+                @onPaginationPrevClick="${this.handleCardPaginationPrevClick}"
+                @onPaginationNextClick="${this.handleCardPaginationNextClick}"
+                @onPaginationLastClick="${this.handleCardPaginationLastClick}"
+            ></md-pagination>
+        `;
+    }
+
     renderIconButton(item) {
         /* prettier-ignore */
         return html`
@@ -194,6 +215,7 @@ class MDCardComponent extends MDComponent {
             ['icon', () => this.renderIcon(item)],
             ['button', () => this.renderButton(item)],
             ['fab', () => this.renderFab(item)],
+            ['pagination', () => this.renderPagination(item)],
             ['spacer', () => html`<div class="md-pane__spacer"></div>`],
         ], () => defaultAction(item));
     }

@@ -105,7 +105,7 @@ class MDListComponent extends MDComponent {
      * Toggles the selection state of an item in the list for multi-selection.
      * @param {Object} data - The data item to toggle selection.
      */
-    multiSelect(data) {
+    selectToggle(data) {
         data.selected = !data.selected;
 
         if (this.selectionMode && this.list.findIndex((item) => item.selected) === -1) {
@@ -156,7 +156,7 @@ class MDListComponent extends MDComponent {
         if (this.rangeSelection && event.shiftKey) {
             this.selectRange(data);
         } else if ((this.multiSelection && event.ctrlKey) || this.selectionMode) {
-            this.multiSelect(data);
+            this.selectToggle(data);
         } else if (this.singleSelection) {
             this.select(data);
         }
@@ -167,7 +167,9 @@ class MDListComponent extends MDComponent {
     }
 
     handleListKeydown(event) {
-        if (this.allSelection && event.ctrlKey && event.key === "a") {
+        const activeElement=document.activeElement===event.target.closest('.md-list__item')
+
+        if (this.allSelection && activeElement&& event.ctrlKey && event.key === "a") {
             this.selectAll();
 
             this.requestUpdate();
@@ -218,7 +220,7 @@ class MDListComponent extends MDComponent {
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
 
-        this.multiSelect(data);
+        this.selectToggle(data);
         this.requestUpdate();
 
         this.emit("onListItemCheckboxNativeInput", event);
@@ -236,7 +238,7 @@ class MDListComponent extends MDComponent {
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
 
-        this.multiSelect(data);
+        this.selectToggle(data);
         this.requestUpdate();
 
         this.emit("onListItemSwitchNativeInput", event);

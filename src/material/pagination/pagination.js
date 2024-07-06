@@ -22,6 +22,7 @@ class MDPaginationComponent extends MDComponent {
         total: { type: Number },
         limit: { type: Number },
         page: { type: Number },
+        options: { type: Array },
     };
 
     /**

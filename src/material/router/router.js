@@ -197,11 +197,10 @@ class MDRouter {
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
                 while (nextElement) {
-                    const notComponent = !this.routes.find((route) => route.component === nextElement);
-                    const notOutlet = !outlets.find((outlet) => outlet === nextElement);
+                    const unusedComponent = !this.routes.find((route) => route.component === nextElement) && nextElement.isComponent;
+                    const unusedOutlet = !outlets.find((outlet) => outlet === nextElement);
 
-                    if (notComponent && notOutlet && nextElement.isComponent) {
-                        console.log(nextElement);
+                    if (unusedComponent && unusedOutlet) {
                         nextElement.remove();
                     }
 

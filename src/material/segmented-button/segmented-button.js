@@ -11,14 +11,14 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MDSegmentedButtonComponent extends MDComponent {
     /**
      * @property {Array} buttons - An array of button items to be rendered in the segmented button.
-     * @property {Boolean} singleSelect - Indicates if only one button can be selected at a time.
-     * @property {Boolean} multiSelect - Indicates if multiple buttons can be selected simultaneously.
+     * @property {Boolean} singleSelection - Indicates if only one button can be selected at a time.
+     * @property {Boolean} multiSelection - Indicates if multiple buttons can be selected simultaneously.
      */
     static properties = {
         ...MDComponent.properties,
         buttons: { type: Array },
-        singleSelect: { type: Boolean, attribute: "single-select" },
-        multiSelect: { type: Boolean, attribute: "multi-select" },
+        singleSelection: { type: Boolean, attribute: "single-select" },
+        multiSelection: { type: Boolean, attribute: "multi-select" },
     };
 
     renderButton(item) {
@@ -51,12 +51,12 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     handleSegmentedButtonItemClick(event) {
-        if (this.multiSelect || this.singleSelect) {
+        if (this.multiSelection || this.singleSelection) {
             const data = event.currentTarget.data;
 
-            if (this.multiSelect) {
+            if (this.multiSelection) {
                 data.selected = !data.selected;
-            } else if (this.singleSelect) {
+            } else if (this.singleSelection) {
                 for (let i = 0; i < this.buttons.length; i++) {
                     let item = this.buttons[i];
                     item.selected = item === data;

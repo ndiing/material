@@ -2,6 +2,8 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
+import { isDefined } from "../functions/functions.js";
+
 
 class MDDataTableItemComponent extends MDComponent {
     static properties = {
@@ -27,24 +29,15 @@ class MDDataTableItemComponent extends MDComponent {
         trailingSwitch: { type: Boolean },
 
         selected: { type: Boolean, reflect: true },
+        indeterminate: { type: Boolean },
         routerLink: { type: String, reflect: true },
+
+        sortable: { type: Boolean },
+        sortableIcon: { type: String },
     };
 
     constructor() {
         super();
-
-        this.ripple = new MDRippleController(this, {
-            clipped: true,
-        });
-
-        this.gesture = new MDGestureController(this, {
-            drag: [],
-            dragAfterLongPress: true,
-            resize: [],
-            resizeAfterLongPress: true,
-            selection: true,
-            selectionAfterLongPress: true,
-        });
     }
 
     renderCheckbox() {
@@ -52,6 +45,7 @@ class MDDataTableItemComponent extends MDComponent {
         return html`<md-checkbox 
             class="md-data-table__checkbox"
             .checked="${this.selected}"
+            .indeterminate="${this.indeterminate}"
         ></md-checkbox>`
     }
 
@@ -83,15 +77,17 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.video?html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
 
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
+            
 
-            ${this.label||this.subLabel||this.badge?html`
+            ${isDefined(this.label)||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
-                    ${this.label||this.subLabel?html`
+                    ${isDefined(this.label)||this.subLabel?html`
                         <div class="md-data-table__label">
-                            ${this.label?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
+                            ${isDefined(this.label)?html`<div class="md-data-table__label-primary">${this.label}</div>`:nothing}
                             ${this.subLabel?html`<div class="md-data-table__label-secondary">${this.subLabel}</div>`:nothing}
                         </div>
                     `:nothing}
+                    ${this.sortable?html`<div class="md-icon md-data-table__sortable">${this.sortableIcon}</div>`:nothing}
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
