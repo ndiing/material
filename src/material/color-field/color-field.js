@@ -1,17 +1,17 @@
-import { stringifyMonth } from "../functions/functions.js";
+import { stringifyColor } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
- * @tagname md-month-field
+ * @tagname md-color-field
  */
-class MDMonthFieldComponent extends MDTextFieldComponent {
+class MDColorFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      */
     get actions() {
-        return [{ icon: "calendar_month" }];
+        return [{ icon: "palette" }];
     }
 
     /**
@@ -22,14 +22,14 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     constructor() {
         super();
 
-        this.type = "month";
+        this.type = "color";
     }
 
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-text-field");
-        this.classList.add("md-month-field");
+        this.classList.add("md-color-field");
     }
 
     handleTextFieldNativeClick(event) {
@@ -40,7 +40,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
-        this.picker = document.createElement("md-month-picker");
+        this.picker = document.createElement("md-color-picker");
         if (this.value) {
             this.picker.value = this.value;
         }
@@ -51,14 +51,14 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
         this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
 
-        this.picker.addEventListener("onMonthPickerSelection", this.handlePickerSelection);
-        this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-        this.picker.addEventListener("onMonthPickerButtonOkClick", this.handlePickerButtonOkClick);
+        this.picker.addEventListener("onColorPickerSelection", this.handlePickerSelection);
+        this.picker.addEventListener("onColorPickerButtonCancelClick", this.handlePickerButtonCancelClick);
+        this.picker.addEventListener("onColorPickerButtonOkClick", this.handlePickerButtonOkClick);
 
         const handleSheetClose = () => {
-            this.picker.removeEventListener("onMonthPickerSelection", this.handlePickerSelection);
-            this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-            this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handlePickerButtonOkClick);
+            this.picker.removeEventListener("onColorPickerSelection", this.handlePickerSelection);
+            this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handlePickerButtonCancelClick);
+            this.picker.removeEventListener("onColorPickerButtonOkClick", this.handlePickerButtonOkClick);
 
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
             this.picker.remove();
@@ -66,11 +66,10 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
         this.picker.showModal(this.container);
-        
     }
 
     handlePickerSelection(event) {
-        const value = stringifyMonth(this.picker.selection);
+        const value = this.picker.selection.hex.slice(0,1+6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent('input',{}))
         // this.value = value;
@@ -81,7 +80,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     handlePickerButtonOkClick(event) {
-        const value = stringifyMonth(this.picker.selection);
+        const value = this.picker.selection.hex.slice(0,1+6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent('input',{}))
         // this.value = value;
@@ -89,6 +88,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 }
 
-customElements.define("md-month-field", MDMonthFieldComponent);
+customElements.define("md-color-field", MDColorFieldComponent);
 
-export { MDMonthFieldComponent };
+export { MDColorFieldComponent };

@@ -1,11 +1,22 @@
 import { stringifyTime } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
+/**
+ * {{desc}}
+ * @extends MDTextFieldComponent
+ * @tagname md-time-field
+ */
 class MDTimeFieldComponent extends MDTextFieldComponent {
+    /**
+     * {{desc}}
+     */
     get actions() {
-        return [{ icon: "calendar_today" }];
+        return [{ icon: "schedule" }];
     }
 
+    /**
+     * {{desc}}
+     */
     set actions(value) {}
 
     constructor() {
@@ -60,7 +71,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handlePickerSelection(event) {
         const value = stringifyTime(this.picker.selection);
         this.native.value = value;
-        this.value = value;
+        this.native.dispatchEvent(new CustomEvent('input',{}))
+        // this.value = value;
     }
 
     handlePickerButtonCancelClick(event) {
@@ -70,7 +82,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handlePickerButtonOkClick(event) {
         const value = stringifyTime(this.picker.selection);
         this.native.value = value;
-        this.value = value;
+        this.native.dispatchEvent(new CustomEvent('input',{}))
+        // this.value = value;
         this.picker.close();
     }
 }

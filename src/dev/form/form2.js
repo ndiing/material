@@ -9,64 +9,101 @@ class DevForm2Component extends MDComponent {
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"
             >
                 <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-datetime-field
+                            variant="filled"
                             name="datetime1"
+                            label="datetime"
                         ></md-datetime-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-datetime-field
+                            variant="filled"
                             name="datetime2"
+                            label="datetime"
                             value="1990-10-17T20:30"
                         ></md-datetime-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-date-field
+                            variant="filled"
                             name="date1"
+                            label="date"
                         ></md-date-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-date-field
+                            variant="filled"
                             name="date2"
+                            label="date"
                             value="1990-10-17"
                         ></md-date-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-month-field
+                            variant="filled"
                             name="month1"
+                            label="month"
                         ></md-month-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-month-field
+                            variant="filled"
                             name="month2"
+                            label="month"
                             value="1990-10"
                         ></md-month-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-week-field
+                            variant="filled"
                             name="week1"
+                            label="week"
                         ></md-week-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-week-field
+                            variant="filled"
                             name="week2"
+                            label="week"
                             value="1990-W42"
                         ></md-week-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-time-field
+                            variant="filled"
                             name="time1"
+                            label="time"
                         ></md-time-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-time-field
+                            variant="filled"
                             name="time2"
+                            label="time"
                             value="20:30"
                         ></md-time-field>
+                    </div>
+
+
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-color-field
+                            variant="filled"
+                            name="color1"
+                            label="color"
+                        ></md-color-field>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-color-field
+                            variant="filled"
+                            name="color2"
+                            label="color"
+                            value="#6750a4"
+                        ></md-color-field>
                     </div>
 
 

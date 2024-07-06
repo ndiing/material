@@ -27,6 +27,7 @@ import "./bottom-sheet/bottom-sheet.js";
 import "./segmented-button/segmented-button.js";
 import "./snackbar/snackbar.js";
 import "./tooltip/tooltip.js";
+
 import "./datetime-picker/datetime-picker.js";
 import "./date-picker/date-picker.js";
 import "./month-picker/month-picker.js";
@@ -34,6 +35,7 @@ import "./time-picker/time-picker.js";
 import "./week-picker/week-picker.js";
 import "./color-picker/color-picker.js";
 import "./emoji-picker/emoji-picker.js";
+
 import "./fab/fab.js";
 import "./bottom-app-bar/bottom-app-bar.js";
 import "./image/image.js";
@@ -59,9 +61,10 @@ import "./chips/chips.js";
 import "./text-field/text-field.js";
 import "./datetime-field/datetime-field.js";
 import "./date-field/date-field.js";
-import "./time-field/time-field.js";
-import "./week-field/week-field.js";
 import "./month-field/month-field.js";
+import "./week-field/week-field.js";
+import "./time-field/time-field.js";
+import "./color-field/color-field.js";
 
 import "./pagination/pagination.js";
 import "./data-table-item/data-table-item.js";

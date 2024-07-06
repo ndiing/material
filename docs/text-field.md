@@ -11,8 +11,8 @@ A text field component for Material Design framework.
 * [MDTextFieldComponent](#MDTextFieldComponent) ⇐ <code>MDComponent</code>
     * [.properties](#MDTextFieldComponent+properties)
     * [.native](#MDTextFieldComponent+native)
-    * [.populate()](#MDTextFieldComponent+populate)
-    * [.validate()](#MDTextFieldComponent+validate)
+    * [.updatePopulation()](#MDTextFieldComponent+updatePopulation)
+    * [.updateValidation()](#MDTextFieldComponent+updateValidation)
 
 <a name="MDTextFieldComponent+properties"></a>
 
@@ -86,15 +86,15 @@ A text field component for Material Design framework.
 Returns the native input element inside the component.
 
 **Kind**: instance property of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  
-<a name="MDTextFieldComponent+populate"></a>
+<a name="MDTextFieldComponent+updatePopulation"></a>
 
-### mdTextFieldComponent.populate()
+### mdTextFieldComponent.updatePopulation()
 Toggles the "md-text-field--populated" class based on the presence of a value or if the type is "file".
 
 **Kind**: instance method of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  
-<a name="MDTextFieldComponent+validate"></a>
+<a name="MDTextFieldComponent+updateValidation"></a>
 
-### mdTextFieldComponent.validate()
+### mdTextFieldComponent.updateValidation()
 Validates the input field, setting the error text and toggling the "md-text-field--error" class based on the validation state.
 
 **Kind**: instance method of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  

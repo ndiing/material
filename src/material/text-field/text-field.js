@@ -341,7 +341,7 @@ class MDTextFieldComponent extends MDComponent {
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
-                this.classList.toggle(`${this.localName}--${variant}`, (this.variant ?? "").split(" ").includes(variant));
+                this.classList.toggle(`md-text-field--${variant}`, (this.variant ?? "").split(" ").includes(variant));
             }
         }
 
