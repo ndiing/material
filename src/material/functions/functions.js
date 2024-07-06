@@ -576,4 +576,22 @@ function calcDecimal(min, max, value) {
     return decimal;
 }
 
-export { calcPercentage, calcDecimal, isArrayString, toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, parseWeek, isDefined, createQueue, hexToRgba, hexToHsla, hslaToRgba, rgbaToHex, hslaToHex, rgbaToHsla };
+/**
+ * Checks if the provided color string is a valid hexadecimal color.
+ * @param {String} color - The color string to validate.
+ * @returns {Boolean} - True if the color string is a valid hexadecimal color, false otherwise.
+ */
+function isValidHexColor(color) {
+    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    return hexColorRegex.test(color);
+}
+/**
+ * Checks if a value is an object.
+ * @param {*} obj - The value to check.
+ * @returns {boolean} True if the value is an object, otherwise false.
+ */
+function isObject(obj) {
+    return obj !== null && typeof obj === "object";
+}
+
+export { isObject,isValidHexColor,calcPercentage, calcDecimal, isArrayString, toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, parseWeek, isDefined, createQueue, hexToRgba, hexToHsla, hslaToRgba, rgbaToHex, hslaToHex, rgbaToHsla };

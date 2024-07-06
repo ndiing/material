@@ -1,11 +1,4 @@
-/**
- * Checks if a value is an object.
- * @param {*} obj - The value to check.
- * @returns {boolean} True if the value is an object, otherwise false.
- */
-function isObject(obj) {
-    return obj !== null && typeof obj === "object";
-}
+import { isObject } from "../functions/functions";
 
 /**
  * Represents a simple in-memory store for managing documents.

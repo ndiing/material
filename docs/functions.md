@@ -106,6 +106,12 @@
 <dt><a href="#calcDecimal">calcDecimal(min, max, value)</a> ⇒ <code>number</code></dt>
 <dd><p>Calculates the decimal value representing the position of a value within a range defined by min and max values.</p>
 </dd>
+<dt><a href="#isValidHexColor">isValidHexColor(color)</a> ⇒ <code>Boolean</code></dt>
+<dd><p>Checks if the provided color string is a valid hexadecimal color.</p>
+</dd>
+<dt><a href="#isObject">isObject(obj)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Checks if a value is an object.</p>
+</dd>
 </dl>
 
 <a name="toPascalCase"></a>
@@ -542,4 +548,28 @@ Calculates the decimal value representing the position of a value within a range
 | min | <code>number</code> | The minimum value of the range. |
 | max | <code>number</code> | The maximum value of the range. |
 | value | <code>number</code> | The value to calculate the decimal for. |
+
+<a name="isValidHexColor"></a>
+
+## isValidHexColor(color) ⇒ <code>Boolean</code>
+Checks if the provided color string is a valid hexadecimal color.
+
+**Kind**: global function  
+**Returns**: <code>Boolean</code> - - True if the color string is a valid hexadecimal color, false otherwise.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| color | <code>String</code> | The color string to validate. |
+
+<a name="isObject"></a>
+
+## isObject(obj) ⇒ <code>boolean</code>
+Checks if a value is an object.
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - True if the value is an object, otherwise false.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>\*</code> | The value to check. |
 

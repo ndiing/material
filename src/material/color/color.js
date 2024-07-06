@@ -1,14 +1,5 @@
 import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@material/material-color-utilities";
-
-/**
- * Checks if the provided color string is a valid hexadecimal color.
- * @param {String} color - The color string to validate.
- * @returns {Boolean} - True if the color string is a valid hexadecimal color, false otherwise.
- */
-function isValidHexColor(color) {
-    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    return hexColorRegex.test(color);
-}
+import { isValidHexColor } from "../functions/functions";
 
 /**
  * Sets the theme of the application based on either a hexadecimal color or an image.

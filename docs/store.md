@@ -1,19 +1,3 @@
-## Classes
-
-<dl>
-<dt><a href="#MDStore">MDStore</a></dt>
-<dd><p>Represents a simple in-memory store for managing documents.</p>
-</dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#isObject">isObject(obj)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Checks if a value is an object.</p>
-</dd>
-</dl>
-
 <a name="MDStore"></a>
 
 ## MDStore
@@ -249,16 +233,4 @@ Deeply filters an object based on given filters.
 | --- | --- | --- |
 | obj | <code>\*</code> | The object to filter. |
 | filters | <code>Array.&lt;{name: string, value: any, operator: string}&gt;</code> | Filter configurations. |
-
-<a name="isObject"></a>
-
-## isObject(obj) ⇒ <code>boolean</code>
-Checks if a value is an object.
-
-**Kind**: global function  
-**Returns**: <code>boolean</code> - True if the value is an object, otherwise false.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>\*</code> | The value to check. |
 
