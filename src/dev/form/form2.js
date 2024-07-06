@@ -11,80 +11,70 @@ class DevForm2Component extends MDComponent {
                 <div class="md-layout-column">
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-datetime-field
-                            variant="filled"
                             name="datetime1"
-                            label="datetime"
+                            label="Datetime Field"
                         ></md-datetime-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-datetime-field
-                            variant="filled"
                             name="datetime2"
-                            label="datetime"
+                            label="Datetime Field"
                             value="1990-10-17T20:30"
                         ></md-datetime-field>
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-date-field
-                            variant="filled"
                             name="date1"
-                            label="date"
+                            label="Date Field"
                         ></md-date-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-date-field
-                            variant="filled"
                             name="date2"
-                            label="date"
+                            label="Date Field"
                             value="1990-10-17"
                         ></md-date-field>
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-month-field
-                            variant="filled"
                             name="month1"
-                            label="month"
+                            label="Month Field"
                         ></md-month-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-month-field
-                            variant="filled"
                             name="month2"
-                            label="month"
+                            label="Month Field"
                             value="1990-10"
                         ></md-month-field>
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-week-field
-                            variant="filled"
                             name="week1"
-                            label="week"
+                            label="Week Field"
                         ></md-week-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-week-field
-                            variant="filled"
                             name="week2"
-                            label="week"
+                            label="Week Field"
                             value="1990-W42"
                         ></md-week-field>
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-time-field
-                            variant="filled"
                             name="time1"
-                            label="time"
+                            label="Time Field"
                         ></md-time-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-time-field
-                            variant="filled"
                             name="time2"
-                            label="time"
+                            label="Time Field"
                             value="20:30"
                         ></md-time-field>
                     </div>
@@ -92,16 +82,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-color-field
-                            variant="filled"
                             name="color1"
-                            label="color"
+                            label="Color Field"
                         ></md-color-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-color-field
-                            variant="filled"
                             name="color2"
-                            label="color"
+                            label="Color Field"
                             value="#6750a4"
                         ></md-color-field>
                     </div>
@@ -109,48 +97,42 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-number-field
-                            variant="filled"
                             name="number1"
-                            label="number"
+                            label="Number Field"
                         ></md-number-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-number-field
-                            variant="filled"
                             name="number2"
-                            label="number"
+                            label="Number Field"
                             value="123456789"
                         ></md-number-field>
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-search-field
-                            variant="filled"
                             name="search1"
-                            label="search"
+                            label="Search Field"
                         ></md-search-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-search-field
-                            variant="filled"
                             name="search2"
-                            label="search"
+                            label="Search Field"
                             value="What day is it today?"
                         ></md-search-field>
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-password-field
-                            variant="filled"
                             name="password1"
-                            label="password"
+                            label="Password Field"
                         ></md-password-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-password-field
-                            variant="filled"
                             name="password2"
-                            label="password"
+                            label="Password Field"
                             value="secret"
                         ></md-password-field>
                     </div>
@@ -255,14 +237,13 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-button
-                            label="Reset"
+                            label="Reset Field"
                             type="reset"
                             variant="outlined"
                         ></md-button>
                         <md-button
-                            label="Submit"
+                            label="Submit Field"
                             type="submit"
-                            variant="filled"
                         ></md-button>
                     </div>
                 </div>
