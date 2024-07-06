@@ -39,7 +39,7 @@
     "eslint:fix": "eslint  src/material --fix",
     "eslint:check": "eslint  src/material",
     "jsdoc": "jsdoc -c conf.json",
-    "docs": "node dev/docs"
+    "doc": "node dev/doc"
   },
   "dependencies": {
     "@lit/localize": "^0.12.1",
