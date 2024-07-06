@@ -6,42 +6,50 @@
     background-color: var(--md-sys-color-surface-container-lowest);
     color: var(--md-sys-color-on-surface-variant);
 }
+
 .md-data-table__avatar {
     width: 40px;
     height: 40px;
 }
+
 .md-data-table__thumbnail {
     width: 56px;
     height: 56px;
 }
+
 .md-data-table__video {
     height: 64px;
     margin: 4px 0 4px -24px;
 }
+
 .md-data-table__inner {
     display: flex;
     align-items: center;
     min-width: 0;
     min-height: 0;
 }
+
 .md-data-table__label {
     display: flex;
     flex-direction: column;
     min-width: 0;
     min-height: 0;
 }
+
 .md-data-table__label-primary {
     @include typescale-body-medium();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .md-data-table__label-secondary {
     @include typescale-body-medium();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .md-data-table__text {
     @include typescale-body-small();
 }
@@ -49,9 +57,11 @@
 .md-data-table__item {
     min-height: 56px;
 }
+
 .md-data-table__item--two {
     min-height: 72px;
 }
+
 .md-data-table__item--three {
     align-items: flex-start;
     min-height: 88px;

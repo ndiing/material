@@ -1,24 +1,30 @@
 <a name="MDDataTableComponent"></a>
 
-## MDDataTableComponent ⇐ <code>MDCardComponent</code>
+## MDDataTableComponent ⇐ <code>HTMLTableCellElement</code>
 {{desc}}
 
 **Kind**: global class  
-**Extends**: <code>MDCardComponent</code>  
-**Emits**: <code>MDDataTableComponent#event:onDataTableViewportVirtualScroll - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableRowCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableRowClick - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableKeydown - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeStart - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResize - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeEnd - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnPointerenter - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnPointerleave - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDoubleTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnResizeDoubleTap - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDragStart - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDrag - {{desc}}</code>, <code>MDDataTableComponent#event:onDataTableColumnDragEnd - {{desc}}</code>  
+**Extends**: <code>HTMLTableCellElement</code>  
+**Emits**: <code>MDDataTableNativeColumnComponent#event:onDataTableViewportVirtualScroll - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableRowCheckboxNativeInput - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableRowClick - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:handleDataTableKeydown - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnResizeStart - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnResize - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnResizeEnd - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnPointerenter - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnPointerleave - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnTap - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableTextFieldNativeSearch - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTablePaginationChange - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnDoubleTap - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnResizeDoubleTap - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnDragStart - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnDrag - {{desc}}</code>, <code>MDDataTableNativeColumnComponent#event:onDataTableColumnDragEnd - {{desc}}</code>  
 **Tagname**: md-data-table  
 
-* [MDDataTableComponent](#MDDataTableComponent) ⇐ <code>MDCardComponent</code>
+* [MDDataTableComponent](#MDDataTableComponent) ⇐ <code>HTMLTableCellElement</code>
     * [.properties](#MDDataTableComponent+properties)
     * [.label](#MDDataTableComponent+label)
     * [.label](#MDDataTableComponent+label)
     * [.trailingActions](#MDDataTableComponent+trailingActions)
     * [.body](#MDDataTableComponent+body)
     * [.actions](#MDDataTableComponent+actions)
-    * [.indeterminate](#MDDataTableComponent+indeterminate)
-    * [.selected](#MDDataTableComponent+selected)
+    * [.isSelectedAll](#MDDataTableComponent+isSelectedAll)
+    * [.isSelectedPartial](#MDDataTableComponent+isSelectedPartial)
+    * [.updateVirtualRows()](#MDDataTableComponent+updateVirtualRows)
+    * [.updateVirtualColumns()](#MDDataTableComponent+updateVirtualColumns)
     * [.updateColumns()](#MDDataTableComponent+updateColumns)
-    * [.updateRows()](#MDDataTableComponent+updateRows)
+    * [.selectAllToggle()](#MDDataTableComponent+selectAllToggle)
+    * [.selectToggle()](#MDDataTableComponent+selectToggle)
+    * [.select()](#MDDataTableComponent+select)
+    * [.selectRange()](#MDDataTableComponent+selectRange)
+    * [.selectAll()](#MDDataTableComponent+selectAll)
 
 <a name="MDDataTableComponent+properties"></a>
 
@@ -32,7 +38,7 @@
 | rows | <code>Array</code> | {{desc}} |
 | stickyHeader | <code>Boolean</code> | {{desc}} |
 | checkboxSelection | <code>Boolean</code> | {{desc}} |
-| stickyCheckbox | <code>Boolean</code> | {{desc}} |
+| stickyCheckboxSelection | <code>Boolean</code> | {{desc}} |
 | rangeSelection | <code>Boolean</code> | {{desc}} |
 | multiSelection | <code>Boolean</code> | {{desc}} |
 | singleSelection | <code>Boolean</code> | {{desc}} |
@@ -68,27 +74,63 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+indeterminate"></a>
+<a name="MDDataTableComponent+isSelectedAll"></a>
 
-### mdDataTableComponent.indeterminate
+### mdDataTableComponent.isSelectedAll
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+selected"></a>
+<a name="MDDataTableComponent+isSelectedPartial"></a>
 
-### mdDataTableComponent.selected
+### mdDataTableComponent.isSelectedPartial
 {{desc}}
 
 **Kind**: instance property of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+<a name="MDDataTableComponent+updateVirtualRows"></a>
+
+### mdDataTableComponent.updateVirtualRows()
+{{desc}}
+
+**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+<a name="MDDataTableComponent+updateVirtualColumns"></a>
+
+### mdDataTableComponent.updateVirtualColumns()
+{{desc}}
+
+**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
 <a name="MDDataTableComponent+updateColumns"></a>
 
 ### mdDataTableComponent.updateColumns()
 {{desc}}
 
 **Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+updateRows"></a>
+<a name="MDDataTableComponent+selectAllToggle"></a>
 
-### mdDataTableComponent.updateRows()
+### mdDataTableComponent.selectAllToggle()
+{{desc}}
+
+**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+<a name="MDDataTableComponent+selectToggle"></a>
+
+### mdDataTableComponent.selectToggle()
+{{desc}}
+
+**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+<a name="MDDataTableComponent+select"></a>
+
+### mdDataTableComponent.select()
+{{desc}}
+
+**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+<a name="MDDataTableComponent+selectRange"></a>
+
+### mdDataTableComponent.selectRange()
+{{desc}}
+
+**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
+<a name="MDDataTableComponent+selectAll"></a>
+
+### mdDataTableComponent.selectAll()
 {{desc}}
 
 **Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  

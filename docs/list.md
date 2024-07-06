@@ -11,7 +11,7 @@ A custom list component that extends MDComponent to display a list of items with
 * [MDListComponent](#MDListComponent) ⇐ <code>MDComponent</code>
     * [.properties](#MDListComponent+properties)
     * [.select(data)](#MDListComponent+select)
-    * [.multiSelect(data)](#MDListComponent+multiSelect)
+    * [.selectToggle(data)](#MDListComponent+selectToggle)
     * [.selectRange(data)](#MDListComponent+selectRange)
     * [.selectAll()](#MDListComponent+selectAll)
 
@@ -41,9 +41,9 @@ Selects a single item in the list.
 | --- | --- | --- |
 | data | <code>Object</code> | The data item to select. |
 
-<a name="MDListComponent+multiSelect"></a>
+<a name="MDListComponent+selectToggle"></a>
 
-### mdListComponent.multiSelect(data)
+### mdListComponent.selectToggle(data)
 Toggles the selection state of an item in the list for multi-selection.
 
 **Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
