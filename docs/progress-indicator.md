@@ -1,20 +1,27 @@
-<a name="MDProgressIndicatorComponent"></a>
+# MDProgressIndicatorComponent
 
-## MDProgressIndicatorComponent ⇐ <code>MDComponent</code>
+The `MDProgressIndicatorComponent` interface represents a `<md-progress-indicator>` element in the DOM.
 MDProgressIndicatorComponent is a custom component for displaying progress indicators, either circular or linear.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Tagname**: md-progress-indicator  
-<a name="MDProgressIndicatorComponent+properties"></a>
 
-### mdProgressIndicatorComponent.properties
-**Kind**: instance property of [<code>MDProgressIndicatorComponent</code>](#MDProgressIndicatorComponent)  
-**Properties**
+
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| variant | <code>String</code> | Specifies the type of progress indicator (circular or linear). |
-| value | <code>Number</code> | The current progress value. |
-| max | <code>Number</code> | The maximum value that the progress can reach. |
+|------|------|-------------|
+| `variant` | (String) | Specifies the type of progress indicator (circular or linear). |
+| `value` | (Number) | The current progress value. |
+| `max` | (Number) | The maximum value that the progress can reach. |
+
+
+
+
+
 

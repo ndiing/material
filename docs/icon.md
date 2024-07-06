@@ -1,8 +1,11 @@
-<a name="MDIconComponent"></a>
+# MDIconComponent
 
-## MDIconComponent ⇐ <code>MDComponent</code>
+The `MDIconComponent` interface represents a `<md-icon>` element in the DOM.
 Represents an icon component that extends MDComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Tagname**: md-icon  
+
+
+
+
+
+

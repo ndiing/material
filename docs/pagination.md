@@ -1,60 +1,112 @@
-<a name="MDPaginationComponent"></a>
+# MDPaginationComponent
 
-## MDPaginationComponent ⇐ <code>MDComponent</code>
+The `MDPaginationComponent` interface represents a `<md-pagination>` element in the DOM.
 A web component for pagination control.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDPaginationComponent#event:onPaginationChange - Fired when the pagination changes.</code>, <code>MDPaginationComponent#event:onPaginationLimitChange - Fired when the pagination limit changes.</code>, <code>MDPaginationComponent#event:onPaginationFirstClick - Fired when the first page button is clicked.</code>, <code>MDPaginationComponent#event:onPaginationPrevClick - Fired when the previous page button is clicked.</code>, <code>MDPaginationComponent#event:onPaginationNextClick - Fired when the next page button is clicked.</code>, <code>MDPaginationComponent#event:onPaginationLastClick - Fired when the last page button is clicked.</code>  
-**Tagname**: md-pagination  
 
-* [MDPaginationComponent](#MDPaginationComponent) ⇐ <code>MDComponent</code>
-    * [.properties](#MDPaginationComponent+properties)
-    * [.pages](#MDPaginationComponent+pages) ⇒ <code>Number</code>
-    * [.start](#MDPaginationComponent+start) ⇒ <code>Number</code>
-    * [.end](#MDPaginationComponent+end) ⇒ <code>Number</code>
-    * [.numberStart](#MDPaginationComponent+numberStart) ⇒ <code>Number</code>
-    * [.numberEnd](#MDPaginationComponent+numberEnd) ⇒ <code>Number</code>
 
-<a name="MDPaginationComponent+properties"></a>
+### Events
 
-### mdPaginationComponent.properties
-**Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDPaginationComponent#event:onPaginationChange - Fired when the pagination changes.` | |
+| `MDPaginationComponent#event:onPaginationLimitChange - Fired when the pagination limit changes.` | |
+| `MDPaginationComponent#event:onPaginationFirstClick - Fired when the first page button is clicked.` | |
+| `MDPaginationComponent#event:onPaginationPrevClick - Fired when the previous page button is clicked.` | |
+| `MDPaginationComponent#event:onPaginationNextClick - Fired when the next page button is clicked.` | |
+| `MDPaginationComponent#event:onPaginationLastClick - Fired when the last page button is clicked.` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| total | <code>Number</code> | The total number of items. |
-| limit | <code>Number</code> | The number of items per page. |
-| page | <code>Number</code> | The current page number. |
+|------|------|-------------|
+| `total` | (Number) | The total number of items. |
+| `limit` | (Number) | The number of items per page. |
+| `page` | (Number) | The current page number. |
 
-<a name="MDPaginationComponent+pages"></a>
 
-### mdPaginationComponent.pages ⇒ <code>Number</code>
+
+
+
+
+# pages
+
 The total number of pages.
 
-**Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+start"></a>
 
-### mdPaginationComponent.start ⇒ <code>Number</code>
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Number |  |
+
+# start
+
 The starting index of items on the current page.
 
-**Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+end"></a>
 
-### mdPaginationComponent.end ⇒ <code>Number</code>
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Number |  |
+
+# end
+
 The ending index of items on the current page.
 
-**Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+numberStart"></a>
 
-### mdPaginationComponent.numberStart ⇒ <code>Number</code>
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Number |  |
+
+# numberStart
+
 The starting item number displayed on the current page.
 
-**Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+numberEnd"></a>
 
-### mdPaginationComponent.numberEnd ⇒ <code>Number</code>
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Number |  |
+
+# numberEnd
+
 The ending item number displayed on the current page.
 
-**Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
+
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Number |  |
+

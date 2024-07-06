@@ -1,25 +1,31 @@
-<a name="MDSearchFieldComponent"></a>
+# MDSearchFieldComponent
 
-## MDSearchFieldComponent ⇐ <code>MDTextFieldComponent</code>
+The `MDSearchFieldComponent` interface represents a `<md-search-field>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDTextFieldComponent</code>  
-**Tagname**: md-search-field  
 
-* [MDSearchFieldComponent](#MDSearchFieldComponent) ⇐ <code>MDTextFieldComponent</code>
-    * [.actions](#MDSearchFieldComponent+actions)
-    * [.actions](#MDSearchFieldComponent+actions)
 
-<a name="MDSearchFieldComponent+actions"></a>
 
-### mdSearchFieldComponent.actions
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDSearchFieldComponent</code>](#MDSearchFieldComponent)  
-<a name="MDSearchFieldComponent+actions"></a>
 
-### mdSearchFieldComponent.actions
+
+
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDSearchFieldComponent</code>](#MDSearchFieldComponent)  
+
+
+
+
+
+

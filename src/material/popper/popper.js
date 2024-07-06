@@ -37,8 +37,7 @@ class MDPopperController {
      * @param {Object} [options] - Additional options to override default placement behavior.
      */
     async setPlacement(button, options = {}) {
-        window.requestAnimationFrame(() => {
-            this.button = button;
+        this.button = button;
             this.options = {
                 ...this.options,
                 ...options,
@@ -109,7 +108,6 @@ class MDPopperController {
             this.container.style.left = `${left}px`;
             this.container.style.top = `${top}px`;
             this.container.style.transformOrigin = `${originX} ${originY}`;
-        });
     }
 
     /**

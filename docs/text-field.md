@@ -1,100 +1,131 @@
-<a name="MDTextFieldComponent"></a>
+# MDTextFieldComponent
 
-## MDTextFieldComponent ⇐ <code>MDComponent</code>
-A text field component for Material Design framework.
+The `MDTextFieldComponent` interface represents a `<md-text-field>` element in the DOM.
+A custom text field component that extends MDComponent and provides various input types with support for icons, actions, and validation.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDTextFieldComponent#event:onTextFieldNativeFocus - Event fired when the native input field receives focus.</code>, <code>MDTextFieldComponent#event:onTextFieldNativeBlur - Event fired when the native input field loses focus.</code>, <code>MDTextFieldComponent#event:onTextFieldNativeInput - Event fired when the value of the native input field changes.</code>, <code>MDTextFieldComponent#event:onTextFieldNativeSearch - Event fired when a search is performed in the native input field.</code>, <code>MDTextFieldComponent#event:onTextFieldNativeInvalid - Event fired when the native input field is invalid.</code>, <code>MDTextFieldComponent#event:onTextFieldNativeReset - Event fired when the native input field is reset.</code>, <code>MDTextFieldComponent#event:onTextFieldIconButtonClick - Event fired when an icon button in the text field is clicked.</code>  
-**Tagname**: md-text-field  
 
-* [MDTextFieldComponent](#MDTextFieldComponent) ⇐ <code>MDComponent</code>
-    * [.properties](#MDTextFieldComponent+properties)
-    * [.native](#MDTextFieldComponent+native)
-    * [.updatePopulation()](#MDTextFieldComponent+updatePopulation)
-    * [.updateValidation()](#MDTextFieldComponent+updateValidation)
 
-<a name="MDTextFieldComponent+properties"></a>
+### Events
 
-### mdTextFieldComponent.properties
-**Kind**: instance property of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDTextFieldComponent#event:onTextFieldNativeClick - Fired when the native input element is clicked.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeFocus - Fired when the native input element receives focus.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeBlur - Fired when the native input element loses focus.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeInput - Fired when the native input element receives input.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeChange - Fired when the native input element&#x27;s value changes.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeSearch - Fired when the native input element receives a search event.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeInvalid - Fired when the native input element is invalid.` | |
+| `MDTextFieldComponent#event:onTextFieldNativeReset - Fired when the native input element is reset.` | |
+| `MDTextFieldComponent#event:onTextFieldIconButtonClick - Fired when an icon button within the component is clicked.` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| label | <code>String</code> | The label for the text field. |
-| icon | <code>String</code> | The icon to display in the text field. |
-| prefix | <code>String</code> | The prefix text to display in the text field. |
-| suffix | <code>String</code> | The suffix text to display in the text field. |
-| actions | <code>Array</code> | The actions available in the text field. |
-| text | <code>String</code> | The text content of the text field. |
-| accept | <code>String</code> | The file types accepted by the input field. |
-| alt | <code>String</code> | The alternative text for the input field. |
-| autocomplete | <code>String</code> | The autocomplete attribute for the input field. |
-| autofocus | <code>Boolean</code> | Whether the input field should be focused automatically. |
-| checked | <code>Boolean</code> | Whether the input field is checked. |
-| defaultChecked | <code>Boolean</code> | The default checked state of the input field. |
-| disabled | <code>Boolean</code> | Whether the input field is disabled. |
-| files | <code>FileList</code> | The files selected in the input field. |
-| form | <code>Object</code> | The form element associated with the input field. |
-| formAction | <code>String</code> | The action URL for the form. |
-| formEnctype | <code>String</code> | The encoding type for the form. |
-| formMethod | <code>String</code> | The HTTP method for the form. |
-| formNoValidate | <code>Boolean</code> | Whether the form should not be validated. |
-| formTarget | <code>String</code> | The target for the form. |
-| height | <code>Number</code> | The height of the input field. |
-| indeterminate | <code>Boolean</code> | Whether the input field is indeterminate. |
-| list | <code>Object</code> | The list element associated with the input field. |
-| max | <code>String</code> | The maximum value for the input field. |
-| maxLength | <code>Number</code> | The maximum length of the input field. |
-| min | <code>String</code> | The minimum value for the input field. |
-| minLength | <code>Number</code> | The minimum length of the input field. |
-| multiple | <code>Boolean</code> | Whether the input field allows multiple values. |
-| name | <code>String</code> | The name of the input field. |
-| pattern | <code>String</code> | The pattern for the input field. |
-| placeholder | <code>String</code> | The placeholder text for the input field. |
-| readOnly | <code>Boolean</code> | Whether the input field is read-only. |
-| required | <code>Boolean</code> | Whether the input field is required. |
-| size | <code>Number</code> | The size of the input field. |
-| src | <code>String</code> | The source URL for the input field. |
-| step | <code>String</code> | The step value for the input field. |
-| type | <code>String</code> | The type of the input field. |
-| defaultValue | <code>String</code> | The default value of the input field. |
-| value | <code>String</code> | The value of the input field. |
-| width | <code>Number</code> | The width of the input field. |
-| inputMode | <code>String</code> | The input mode for the input field. |
-| selectionDirection | <code>String</code> | The selection direction for the input field. |
-| selectionEnd | <code>Number</code> | The selection end position for the input field. |
-| selectionStart | <code>Number</code> | The selection start position for the input field. |
-| align | <code>String</code> | The alignment of the input field. |
-| useMap | <code>String</code> | The use map for the input field. |
-| cols | <code>Number</code> | The number of columns for the textarea. |
-| rows | <code>Number</code> | The number of rows for the textarea. |
-| spellcheck | <code>Boolean</code> | Whether spellcheck is enabled for the input field. |
-| wrap | <code>String</code> | The wrap attribute for the textarea. |
-| length | <code>Number</code> | The length of the input field. |
-| selectedIndex | <code>Number</code> | The selected index for the select field. |
-| selectedOptions | <code>HTMLCollection</code> | The selected options for the select field. |
-| options | <code>Array</code> | The options for the select field. |
-| errorText | <code>String</code> | The error text to display for the input field. |
-| error | <code>Boolean</code> | Whether the input field has an error. |
-| variant | <code>String</code> | The variant of the text field. |
+|------|------|-------------|
+| `label` | (String) | The label text for the text field. |
+| `icon` | (String) | The icon to display within the text field. |
+| `prefix` | (String) | The prefix text to display before the input. |
+| `suffix` | (String) | The suffix text to display after the input. |
+| `actions` | (Array) | An array of action objects for additional buttons or icons. |
+| `text` | (String) | The text content for the text field. |
+| `accept` | (String) | The types of files that the server accepts (only for file input). |
+| `alt` | (String) | The alternative text for the input element. |
+| `autocomplete` | (String) | The autocomplete attribute for the input element. |
+| `autofocus` | (Boolean) | If true, the input element should automatically get focus when the page loads. |
+| `disabled` | (Boolean) | If true, the input element is disabled. |
+| `max` | (String) | The maximum value for the input element. |
+| `maxLength` | (Number) | The maximum number of characters allowed in the input element. |
+| `min` | (String) | The minimum value for the input element. |
+| `minLength` | (Number) | The minimum number of characters required in the input element. |
+| `multiple` | (Boolean) | If true, multiple values can be entered (only for file input). |
+| `name` | (String) | The name of the input element. |
+| `pattern` | (String) | The regular expression that the input element&#x27;s value is checked against. |
+| `placeholder` | (String) | The placeholder text for the input element. |
+| `readOnly` | (Boolean) | If true, the input element is read-only. |
+| `required` | (Boolean) | If true, the input element must be filled out before submitting the form. |
+| `size` | (Number) | The visible width of the input element. |
+| `step` | (String) | The granularity that is expected (only for numeric input). |
+| `type` | (String) | The type of the input element. |
+| `defaultValue` | (String) | The default value of the input element. |
+| `value` | (String) | The current value of the input element. |
+| `cols` | (Number) | The number of visible text lines for a textarea element. |
+| `rows` | (Number) | The number of visible columns for a textarea element. |
+| `spellcheck` | (Boolean) | If true, enables spell checking for the input element. |
+| `wrap` | (String) | How the text in a textarea is wrapped. |
+| `options` | (Array) | The options for a select element. |
+| `errorText` | (String) | The error message text to display. |
+| `error` | (Boolean) | If true, indicates that the input has an error. |
+| `variant` | (String) | The variant of the text field. |
 
-<a name="MDTextFieldComponent+native"></a>
 
-### mdTextFieldComponent.native
-Returns the native input element inside the component.
 
-**Kind**: instance property of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  
-<a name="MDTextFieldComponent+updatePopulation"></a>
 
-### mdTextFieldComponent.updatePopulation()
-Toggles the "md-text-field--populated" class based on the presence of a value or if the type is "file".
 
-**Kind**: instance method of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  
-<a name="MDTextFieldComponent+updateValidation"></a>
 
-### mdTextFieldComponent.updateValidation()
-Validates the input field, setting the error text and toggling the "md-text-field--error" class based on the validation state.
+# native
 
-**Kind**: instance method of [<code>MDTextFieldComponent</code>](#MDTextFieldComponent)  
+{{desc}}
+
+
+
+
+
+
+
+# container
+
+{{desc}}
+
+
+
+
+
+
+
+# populate
+
+{{desc}}
+
+
+
+
+
+
+
+# reset
+
+{{desc}}
+
+
+
+
+
+
+
+# updatePopulation
+
+{{desc}}
+
+
+
+
+
+
+
+# updateValidation
+
+{{desc}}
+
+
+
+
+
+
+

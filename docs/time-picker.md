@@ -1,47 +1,78 @@
-<a name="MDTimePickerComponent"></a>
+# MDTimePickerComponent
 
-## MDTimePickerComponent ⇐ <code>MDDatetimePickerComponent</code>
+The `MDTimePickerComponent` interface represents a `<md-time-picker>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDDatetimePickerComponent</code>  
-**Emits**: <code>MDTimePickerComponent#event:onTimePickerSelection - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerIconButtonPrevClick - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerSelection - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerIconButtonNextClick - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerButtonLabelClick - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerSelection - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerButtonCancelClick - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerSelection - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerButtonOkClick - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerSelection - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerHourItemClick - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerSelection - {{desc}}</code>, <code>MDTimePickerComponent#event:onTimePickerMinuteItemClick - {{desc}}</code>  
-**Tagname**: md-time-picker  
 
-* [MDTimePickerComponent](#MDTimePickerComponent) ⇐ <code>MDDatetimePickerComponent</code>
-    * [.body](#MDTimePickerComponent+body)
-    * [.body](#MDTimePickerComponent+body)
-    * [.leadingActions](#MDTimePickerComponent+leadingActions)
-    * [.updateDate()](#MDTimePickerComponent+updateDate)
-    * [.getValue()](#MDTimePickerComponent+getValue)
 
-<a name="MDTimePickerComponent+body"></a>
+### Events
 
-### mdTimePickerComponent.body
+| Event | Description |
+|-------|-------------|
+| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerIconButtonPrevClick - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerIconButtonNextClick - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerButtonLabelClick - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerButtonCancelClick - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerButtonOkClick - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerHourItemClick - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
+| `MDTimePickerComponent#event:onTimePickerMinuteItemClick - {{desc}}` | |
+
+
+
+
+# body
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-<a name="MDTimePickerComponent+body"></a>
 
-### mdTimePickerComponent.body
+
+
+
+
+
+# body
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-<a name="MDTimePickerComponent+leadingActions"></a>
 
-### mdTimePickerComponent.leadingActions
+
+
+
+
+
+# leadingActions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-<a name="MDTimePickerComponent+updateDate"></a>
 
-### mdTimePickerComponent.updateDate()
+
+
+
+
+
+# updateDate
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-<a name="MDTimePickerComponent+getValue"></a>
 
-### mdTimePickerComponent.getValue()
+
+
+
+
+
+# getValue
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
+
+
+
+
+
+

@@ -1,101 +1,152 @@
-<a name="MDEmojiPickerComponent"></a>
+# MDEmojiPickerComponent
 
-## MDEmojiPickerComponent ⇐ <code>MDSheetComponent</code>
+The `MDEmojiPickerComponent` interface represents a `<md-emoji-picker>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Emits**: <code>MDEmojiPickerComponent#event:onEmojiPickerTabsItemClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerViewportVirtualScroll - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerTextFieldNativeInput - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerGridColumnClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerIconButtonClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerButtonClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerSelection - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerIconButtonPrevClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerIconButtonNextClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerButtonLabelClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerButtonCancelClick - {{desc}}</code>, <code>MDEmojiPickerComponent#event:onEmojiPickerButtonOkClick - {{desc}}</code>  
-**Tagname**: md-emoji-picker  
 
-* [MDEmojiPickerComponent](#MDEmojiPickerComponent) ⇐ <code>MDSheetComponent</code>
-    * [.properties](#MDEmojiPickerComponent+properties)
-    * [.body](#MDEmojiPickerComponent+body)
-    * [.body](#MDEmojiPickerComponent+body)
-    * [.leadingActions](#MDEmojiPickerComponent+leadingActions)
-    * [.actions](#MDEmojiPickerComponent+actions)
-    * [.emojiPickerTabs](#MDEmojiPickerComponent+emojiPickerTabs)
-    * [.emojiPickerTabs](#MDEmojiPickerComponent+emojiPickerTabs)
-    * [.updateEmojiPickerTabsIndicator()](#MDEmojiPickerComponent+updateEmojiPickerTabsIndicator)
-    * [.generateTabsAndRows()](#MDEmojiPickerComponent+generateTabsAndRows)
-    * [.showModal()](#MDEmojiPickerComponent+showModal)
-    * [.show()](#MDEmojiPickerComponent+show)
-    * [.setPlacement()](#MDEmojiPickerComponent+setPlacement)
 
-<a name="MDEmojiPickerComponent+properties"></a>
+### Events
 
-### mdEmojiPickerComponent.properties
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDEmojiPickerComponent#event:onEmojiPickerTabsItemClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerViewportVirtualScroll - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerTextFieldNativeInput - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerGridColumnClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerIconButtonClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerButtonClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerSelection - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerIconButtonPrevClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerIconButtonNextClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerButtonLabelClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerButtonCancelClick - {{desc}}` | |
+| `MDEmojiPickerComponent#event:onEmojiPickerButtonOkClick - {{desc}}` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| tabs | <code>Object</code> | {{desc}} |
-| rows | <code>Array</code> | {{desc}} |
+|------|------|-------------|
+| `tabs` | (Object) | {{desc}} |
+| `rows` | (Array) | {{desc}} |
 
-<a name="MDEmojiPickerComponent+body"></a>
 
-### mdEmojiPickerComponent.body
+
+
+
+
+# body
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+body"></a>
 
-### mdEmojiPickerComponent.body
+
+
+
+
+
+# body
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+leadingActions"></a>
 
-### mdEmojiPickerComponent.leadingActions
+
+
+
+
+
+# leadingActions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+actions"></a>
 
-### mdEmojiPickerComponent.actions
+
+
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+emojiPickerTabs"></a>
 
-### mdEmojiPickerComponent.emojiPickerTabs
+
+
+
+
+
+# emojiPickerTabs
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+emojiPickerTabs"></a>
 
-### mdEmojiPickerComponent.emojiPickerTabs
+
+
+
+
+
+# emojiPickerTabs
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+updateEmojiPickerTabsIndicator"></a>
 
-### mdEmojiPickerComponent.updateEmojiPickerTabsIndicator()
+
+
+
+
+
+# updateEmojiPickerTabsIndicator
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+generateTabsAndRows"></a>
 
-### mdEmojiPickerComponent.generateTabsAndRows()
+
+
+
+
+
+# generateTabsAndRows
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+showModal"></a>
 
-### mdEmojiPickerComponent.showModal()
+
+
+
+
+
+# showModal
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+show"></a>
 
-### mdEmojiPickerComponent.show()
+
+
+
+
+
+# show
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+setPlacement"></a>
 
-### mdEmojiPickerComponent.setPlacement()
+
+
+
+
+
+# setPlacement
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
+
+
+
+
+
+

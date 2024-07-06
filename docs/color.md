@@ -1,13 +1,21 @@
-<a name="setTheme"></a>
+# setTheme
 
-## setTheme(colorOrImage, customColors) ⇒ <code>Promise.&lt;void&gt;</code>
 Sets the theme of the application based on either a hexadecimal color or an image.
 
-**Kind**: global function  
-**Returns**: <code>Promise.&lt;void&gt;</code> - - Promise that resolves once the theme is applied.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| colorOrImage | <code>String</code> | The hexadecimal color string or image URL to set as the theme. |
-| customColors | <code>Object</code> | Custom color definitions to apply to the theme. |
+
+
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `colorOrImage` | (String) | The hexadecimal color string or image URL to set as the theme. |
+| `customColors` | (Object) | Custom color definitions to apply to the theme. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Promise.&lt;void&gt; | - Promise that resolves once the theme is applied. |
 

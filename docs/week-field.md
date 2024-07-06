@@ -1,25 +1,31 @@
-<a name="MDWeekFieldComponent"></a>
+# MDWeekFieldComponent
 
-## MDWeekFieldComponent ⇐ <code>MDTextFieldComponent</code>
+The `MDWeekFieldComponent` interface represents a `<md-week-field>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDTextFieldComponent</code>  
-**Tagname**: md-week-field  
 
-* [MDWeekFieldComponent](#MDWeekFieldComponent) ⇐ <code>MDTextFieldComponent</code>
-    * [.actions](#MDWeekFieldComponent+actions)
-    * [.actions](#MDWeekFieldComponent+actions)
 
-<a name="MDWeekFieldComponent+actions"></a>
 
-### mdWeekFieldComponent.actions
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-<a name="MDWeekFieldComponent+actions"></a>
 
-### mdWeekFieldComponent.actions
+
+
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
+
+
+
+
+
+

@@ -1,36 +1,43 @@
-<a name="MDDataTableItemComponent"></a>
+# MDDataTableItemComponent
 
-## MDDataTableItemComponent ⇐ <code>MDComponent</code>
+The `MDDataTableItemComponent` interface represents a `<md-data-table-item>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Tagname**: md-data-table-item  
-<a name="MDDataTableItemComponent+properties"></a>
 
-### mdDataTableItemComponent.properties
-**Kind**: instance property of [<code>MDDataTableItemComponent</code>](#MDDataTableItemComponent)  
-**Properties**
+
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| avatar | <code>String</code> | {{desc}} |
-| thumbnail | <code>String</code> | {{desc}} |
-| video | <code>String</code> | {{desc}} |
-| icon | <code>String</code> | {{desc}} |
-| label | <code>String</code> | {{desc}} |
-| subLabel | <code>String</code> | {{desc}} |
-| badge | <code>Number</code> | {{desc}} |
-| text | <code>String</code> | {{desc}} |
-| leadingCheckbox | <code>Boolean</code> | {{desc}} |
-| leadingRadioButton | <code>Boolean</code> | {{desc}} |
-| leadingSwitch | <code>Boolean</code> | {{desc}} |
-| trailingCheckbox | <code>Boolean</code> | {{desc}} |
-| trailingRadioButton | <code>Boolean</code> | {{desc}} |
-| trailingSwitch | <code>Boolean</code> | {{desc}} |
-| selected | <code>Boolean</code> | {{desc}} |
-| indeterminate | <code>Boolean</code> | {{desc}} |
-| routerLink | <code>String</code> | {{desc}} |
-| sortable | <code>Boolean</code> | {{desc}} |
-| sortableIcon | <code>String</code> | {{desc}} |
+|------|------|-------------|
+| `avatar` | (String) | {{desc}} |
+| `thumbnail` | (String) | {{desc}} |
+| `video` | (String) | {{desc}} |
+| `icon` | (String) | {{desc}} |
+| `label` | (String) | {{desc}} |
+| `subLabel` | (String) | {{desc}} |
+| `badge` | (Number) | {{desc}} |
+| `text` | (String) | {{desc}} |
+| `leadingCheckbox` | (Boolean) | {{desc}} |
+| `leadingRadioButton` | (Boolean) | {{desc}} |
+| `leadingSwitch` | (Boolean) | {{desc}} |
+| `trailingCheckbox` | (Boolean) | {{desc}} |
+| `trailingRadioButton` | (Boolean) | {{desc}} |
+| `trailingSwitch` | (Boolean) | {{desc}} |
+| `selected` | (Boolean) | {{desc}} |
+| `indeterminate` | (Boolean) | {{desc}} |
+| `routerLink` | (String) | {{desc}} |
+| `sortable` | (Boolean) | {{desc}} |
+| `sortableIcon` | (String) | {{desc}} |
+
+
+
+
+
 

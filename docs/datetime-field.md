@@ -1,25 +1,31 @@
-<a name="MDDatetimeFieldComponent"></a>
+# MDDatetimeFieldComponent
 
-## MDDatetimeFieldComponent ⇐ <code>MDTextFieldComponent</code>
+The `MDDatetimeFieldComponent` interface represents a `<md-datetime-field>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDTextFieldComponent</code>  
-**Tagname**: md-datetime-field  
 
-* [MDDatetimeFieldComponent](#MDDatetimeFieldComponent) ⇐ <code>MDTextFieldComponent</code>
-    * [.actions](#MDDatetimeFieldComponent+actions)
-    * [.actions](#MDDatetimeFieldComponent+actions)
 
-<a name="MDDatetimeFieldComponent+actions"></a>
 
-### mdDatetimeFieldComponent.actions
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDDatetimeFieldComponent</code>](#MDDatetimeFieldComponent)  
-<a name="MDDatetimeFieldComponent+actions"></a>
 
-### mdDatetimeFieldComponent.actions
+
+
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDDatetimeFieldComponent</code>](#MDDatetimeFieldComponent)  
+
+
+
+
+
+

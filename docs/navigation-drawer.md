@@ -1,38 +1,47 @@
-<a name="MDNavigationBarComponent"></a>
+# MDNavigationBarComponent
 
-## MDNavigationBarComponent ⇐ <code>MDSheetComponent</code>
+The `MDNavigationBarComponent` interface represents a `<md-navigation-drawer>` element in the DOM.
 MDNavigationBarComponent is a class that extends MDSheetComponent and represents a navigation drawer component.
 This component is used for side navigation within an application.
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Tagname**: md-navigation-drawer  
 
-* [MDNavigationBarComponent](#MDNavigationBarComponent) ⇐ <code>MDSheetComponent</code>
-    * [.properties](#MDNavigationBarComponent+properties)
-    * [.body](#MDNavigationBarComponent+body)
-    * [.body](#MDNavigationBarComponent+body)
 
-<a name="MDNavigationBarComponent+properties"></a>
 
-### mdNavigationBarComponent.properties
+
+
+
+# properties
+
 Inherits properties from MDSheetComponent and MDTreeComponent.
 
-**Kind**: instance property of [<code>MDNavigationBarComponent</code>](#MDNavigationBarComponent)  
-<a name="MDNavigationBarComponent+body"></a>
 
-### mdNavigationBarComponent.body
+
+
+
+
+
+# body
+
 Returns the body of the navigation drawer component, which contains a tree of navigation items.
 
-**Kind**: instance property of [<code>MDNavigationBarComponent</code>](#MDNavigationBarComponent)  
-<a name="MDNavigationBarComponent+body"></a>
 
-### mdNavigationBarComponent.body
+
+
+
+
+
+# body
+
 Sets the body of the navigation drawer component.
 
-**Kind**: instance property of [<code>MDNavigationBarComponent</code>](#MDNavigationBarComponent)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>Object</code> | The new body content for the navigation drawer. |
+
+
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `value` | (Object) | The new body content for the navigation drawer. |
+
 

@@ -1,18 +1,25 @@
-<a name="MDTopAppBarComponent"></a>
+# MDTopAppBarComponent
 
-## MDTopAppBarComponent ⇐ <code>MDSheetComponent</code>
+The `MDTopAppBarComponent` interface represents a `<md-top-app-bar>` element in the DOM.
 Represents a top app bar component that extends MDSheetComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Tagname**: md-top-app-bar  
-<a name="MDTopAppBarComponent+variants"></a>
 
-### mdTopAppBarComponent.variants
-**Kind**: instance property of [<code>MDTopAppBarComponent</code>](#MDTopAppBarComponent)  
-**Properties**
+
+
+
+
+
+# variants
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| variants | <code>Array</code> | Variants of the top app bar. |
+|------|------|-------------|
+| `variants` | (Array) | Variants of the top app bar. |
+
+
+
+
+
 

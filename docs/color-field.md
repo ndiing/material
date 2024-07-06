@@ -1,25 +1,31 @@
-<a name="MDColorFieldComponent"></a>
+# MDColorFieldComponent
 
-## MDColorFieldComponent ⇐ <code>MDTextFieldComponent</code>
+The `MDColorFieldComponent` interface represents a `<md-color-field>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDTextFieldComponent</code>  
-**Tagname**: md-color-field  
 
-* [MDColorFieldComponent](#MDColorFieldComponent) ⇐ <code>MDTextFieldComponent</code>
-    * [.actions](#MDColorFieldComponent+actions)
-    * [.actions](#MDColorFieldComponent+actions)
 
-<a name="MDColorFieldComponent+actions"></a>
 
-### mdColorFieldComponent.actions
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
-<a name="MDColorFieldComponent+actions"></a>
 
-### mdColorFieldComponent.actions
+
+
+
+
+
+# actions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
+
+
+
+
+
+

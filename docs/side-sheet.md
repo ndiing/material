@@ -1,18 +1,25 @@
-<a name="MDSideSheetComponent"></a>
+# MDSideSheetComponent
 
-## MDSideSheetComponent ⇐ <code>MDSheetComponent</code>
+The `MDSideSheetComponent` interface represents a `<md-side-sheet>` element in the DOM.
 Represents a side sheet component that extends MDSheetComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Tagname**: md-side-sheet  
-<a name="MDSideSheetComponent+variants"></a>
 
-### mdSideSheetComponent.variants
-**Kind**: instance property of [<code>MDSideSheetComponent</code>](#MDSideSheetComponent)  
-**Properties**
+
+
+
+
+
+# variants
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| variants | <code>Array</code> | Variants of the side sheet. |
+|------|------|-------------|
+| `variants` | (Array) | Variants of the side sheet. |
+
+
+
+
+
 

@@ -1,19 +1,26 @@
-<a name="MDBadgeComponent"></a>
+# MDBadgeComponent
 
-## MDBadgeComponent ⇐ <code>MDComponent</code>
+The `MDBadgeComponent` interface represents a `<md-badge>` element in the DOM.
 MDBadgeComponent is a custom badge element used to display a label with a limit.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Tagname**: md-badge  
-<a name="MDBadgeComponent+properties"></a>
 
-### mdBadgeComponent.properties
-**Kind**: instance property of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
-**Properties**
+
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| label | <code>Number</code> | The numeric label to display in the badge. |
-| limit | <code>Number</code> | The upper limit for the label before appending a "+". |
+|------|------|-------------|
+| `label` | (Number) | The numeric label to display in the badge. |
+| `limit` | (Number) | The upper limit for the label before appending a &quot;+&quot;. |
+
+
+
+
+
 

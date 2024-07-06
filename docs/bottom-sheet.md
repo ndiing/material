@@ -1,18 +1,25 @@
-<a name="MDBottomSheetComponent"></a>
+# MDBottomSheetComponent
 
-## MDBottomSheetComponent ⇐ <code>MDSheetComponent</code>
+The `MDBottomSheetComponent` interface represents a `<md-bottom-sheet>` element in the DOM.
 Represents a bottom sheet component that extends MDSheetComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Tagname**: md-bottom-sheet  
-<a name="MDBottomSheetComponent+variants"></a>
 
-### mdBottomSheetComponent.variants
-**Kind**: instance property of [<code>MDBottomSheetComponent</code>](#MDBottomSheetComponent)  
-**Properties**
+
+
+
+
+
+# variants
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| variants | <code>Array</code> | Variants of the bottom sheet. |
+|------|------|-------------|
+| `variants` | (Array) | Variants of the bottom sheet. |
+
+
+
+
+
 

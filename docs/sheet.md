@@ -1,51 +1,70 @@
-<a name="MDSheetComponent"></a>
+# MDSheetComponent
 
-## MDSheetComponent ⇐ <code>MDCardComponent</code>
+The `MDSheetComponent` interface represents a `<md-sheet>` element in the DOM.
 Represents a sheet component that extends MDCardComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDCardComponent</code>  
-**Emits**: <code>MDSheetComponent#event:onSheetScrimClick - Fired when the scrim of the sheet is clicked.</code>  
-**Tagname**: md-sheet  
 
-* [MDSheetComponent](#MDSheetComponent) ⇐ <code>MDCardComponent</code>
-    * [.properties](#MDSheetComponent+properties)
-    * [.showModal()](#MDSheetComponent+showModal)
-    * [.show()](#MDSheetComponent+show)
-    * [.close()](#MDSheetComponent+close)
-    * [.toggle()](#MDSheetComponent+toggle)
 
-<a name="MDSheetComponent+properties"></a>
+### Events
 
-### mdSheetComponent.properties
-**Kind**: instance property of [<code>MDSheetComponent</code>](#MDSheetComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDSheetComponent#event:onSheetScrimClick - Fired when the scrim of the sheet is clicked.` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| open | <code>Boolean</code> | Indicates whether the sheet is currently open. |
+|------|------|-------------|
+| `open` | (Boolean) | Indicates whether the sheet is currently open. |
 
-<a name="MDSheetComponent+showModal"></a>
 
-### mdSheetComponent.showModal()
+
+
+
+
+# showModal
+
 Shows the sheet as a modal.
 
-**Kind**: instance method of [<code>MDSheetComponent</code>](#MDSheetComponent)  
-<a name="MDSheetComponent+show"></a>
 
-### mdSheetComponent.show()
+
+
+
+
+
+# show
+
 Shows the sheet.
 
-**Kind**: instance method of [<code>MDSheetComponent</code>](#MDSheetComponent)  
-<a name="MDSheetComponent+close"></a>
 
-### mdSheetComponent.close()
+
+
+
+
+
+# close
+
 Closes the sheet.
 
-**Kind**: instance method of [<code>MDSheetComponent</code>](#MDSheetComponent)  
-<a name="MDSheetComponent+toggle"></a>
 
-### mdSheetComponent.toggle()
+
+
+
+
+
+# toggle
+
 Toggles the visibility of the sheet. If currently open, it closes; if closed, it opens.
 
-**Kind**: instance method of [<code>MDSheetComponent</code>](#MDSheetComponent)  
+
+
+
+
+
+

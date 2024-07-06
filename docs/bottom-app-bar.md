@@ -1,8 +1,11 @@
-<a name="MDBottomAppBarComponent"></a>
+# MDBottomAppBarComponent
 
-## MDBottomAppBarComponent ⇐ <code>MDSheetComponent</code>
+The `MDBottomAppBarComponent` interface represents a `<md-bottom-app-bar>` element in the DOM.
 MDBottomAppBarComponent is a custom bottom app bar element, extending the functionalities of MDSheetComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Tagname**: md-bottom-app-bar  
+
+
+
+
+
+

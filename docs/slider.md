@@ -1,39 +1,54 @@
-<a name="MDSliderComponent"></a>
+# MDSliderComponent
 
-## MDSliderComponent ⇐ <code>MDComponent</code>
+The `MDSliderComponent` interface represents a `<md-slider>` element in the DOM.
 MDSliderComponent is a custom component for creating slider controls.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDSliderComponent#event:onSliderNativeInput - Fired when the slider&#x27;s native input value changes.</code>, <code>MDSliderComponent#event:onSliderNativeReset - Fired when the slider&#x27;s native input is reset.</code>  
-**Tagname**: md-slider  
 
-* [MDSliderComponent](#MDSliderComponent) ⇐ <code>MDComponent</code>
-    * [.properties](#MDSliderComponent+properties)
-    * [.natives](#MDSliderComponent+natives) ⇒ <code>NodeList</code>
 
-<a name="MDSliderComponent+properties"></a>
+### Events
 
-### mdSliderComponent.properties
-**Kind**: instance property of [<code>MDSliderComponent</code>](#MDSliderComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDSliderComponent#event:onSliderNativeInput - Fired when the slider&#x27;s native input value changes.` | |
+| `MDSliderComponent#event:onSliderNativeReset - Fired when the slider&#x27;s native input is reset.` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| defaultValue | <code>Array</code> | The default value of the slider. |
-| min | <code>Number</code> | The minimum value of the slider. |
-| max | <code>Number</code> | The maximum value of the slider. |
-| step | <code>Number</code> | The step value for the slider. |
-| disabled | <code>Boolean</code> | Indicates if the slider is disabled. |
-| form | <code>String</code> | The form attribute of the slider. |
-| name | <code>String</code> | The name attribute of the slider. |
-| list | <code>String</code> | The list attribute of the slider. |
-| autocomplete | <code>String</code> | The autocomplete attribute of the slider. |
+|------|------|-------------|
+| `defaultValue` | (Array) | The default value of the slider. |
+| `min` | (Number) | The minimum value of the slider. |
+| `max` | (Number) | The maximum value of the slider. |
+| `step` | (Number) | The step value for the slider. |
+| `disabled` | (Boolean) | Indicates if the slider is disabled. |
+| `form` | (String) | The form attribute of the slider. |
+| `name` | (String) | The name attribute of the slider. |
+| `list` | (String) | The list attribute of the slider. |
+| `autocomplete` | (String) | The autocomplete attribute of the slider. |
 
-<a name="MDSliderComponent+natives"></a>
 
-### mdSliderComponent.natives ⇒ <code>NodeList</code>
+
+
+
+
+# natives
+
 Gets the native input elements associated with the slider.
 
-**Kind**: instance property of [<code>MDSliderComponent</code>](#MDSliderComponent)  
-**Returns**: <code>NodeList</code> - The native input elements.  
+
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| NodeList | The native input elements. |
+

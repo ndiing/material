@@ -1,23 +1,30 @@
-<a name="MDButtonComponent"></a>
+# MDButtonComponent
 
-## MDButtonComponent ⇐ <code>MDComponent</code>
+The `MDButtonComponent` interface represents a `<md-button>` element in the DOM.
 Represents a button component that extends MDComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Tagname**: md-button  
-<a name="MDButtonComponent+properties"></a>
 
-### mdButtonComponent.properties
-**Kind**: instance property of [<code>MDButtonComponent</code>](#MDButtonComponent)  
-**Properties**
+
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| variant | <code>String</code> | The variant style of the button (e.g., "elevated", "filled", "tonal", "outlined", "icon-right"). |
-| type | <code>String</code> | The type attribute of the button (default: "button"). |
-| icon | <code>String</code> | The icon name or URL to be displayed on the button. |
-| label | <code>String</code> | The label text of the button. |
-| selected | <code>Boolean</code> | Indicates if the button is selected. |
-| disabled | <code>Boolean</code> | Indicates if the button is disabled. |
+|------|------|-------------|
+| `variant` | (String) | The variant style of the button (e.g., &quot;elevated&quot;, &quot;filled&quot;, &quot;tonal&quot;, &quot;outlined&quot;, &quot;icon-right&quot;). |
+| `type` | (String) | The type attribute of the button (default: &quot;button&quot;). |
+| `icon` | (String) | The icon name or URL to be displayed on the button. |
+| `label` | (String) | The label text of the button. |
+| `selected` | (Boolean) | Indicates if the button is selected. |
+| `disabled` | (Boolean) | Indicates if the button is disabled. |
+
+
+
+
+
 

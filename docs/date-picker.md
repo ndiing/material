@@ -1,47 +1,74 @@
-<a name="MDDatePickerComponent"></a>
+# MDDatePickerComponent
 
-## MDDatePickerComponent ⇐ <code>MDDatetimePickerComponent</code>
+The `MDDatePickerComponent` interface represents a `<md-date-picker>` element in the DOM.
 {{desc}}
 
-**Kind**: global class  
-**Extends**: <code>MDDatetimePickerComponent</code>  
-**Emits**: <code>MDDatePickerComponent#event:onDatePickerSelection - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerIconButtonPrevClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerIconButtonNextClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerButtonLabelClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerButtonCancelClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerButtonOkClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerYearItemClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerMonthItemClick - {{desc}}</code>, <code>MDDatePickerComponent#event:onDatePickerDayItemClick - {{desc}}</code>  
-**Tagname**: md-date-picker  
 
-* [MDDatePickerComponent](#MDDatePickerComponent) ⇐ <code>MDDatetimePickerComponent</code>
-    * [.leadingActions](#MDDatePickerComponent+leadingActions)
-    * [.body](#MDDatePickerComponent+body)
-    * [.body](#MDDatePickerComponent+body)
-    * [.updateDate()](#MDDatePickerComponent+updateDate)
-    * [.getValue()](#MDDatePickerComponent+getValue)
 
-<a name="MDDatePickerComponent+leadingActions"></a>
+### Events
 
-### mdDatePickerComponent.leadingActions
+| Event | Description |
+|-------|-------------|
+| `MDDatePickerComponent#event:onDatePickerSelection - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerIconButtonPrevClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerIconButtonNextClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerButtonLabelClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerButtonCancelClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerButtonOkClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerYearItemClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerMonthItemClick - {{desc}}` | |
+| `MDDatePickerComponent#event:onDatePickerDayItemClick - {{desc}}` | |
+
+
+
+
+# leadingActions
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-<a name="MDDatePickerComponent+body"></a>
 
-### mdDatePickerComponent.body
+
+
+
+
+
+# body
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-<a name="MDDatePickerComponent+body"></a>
 
-### mdDatePickerComponent.body
+
+
+
+
+
+# body
+
 {{desc}}
 
-**Kind**: instance property of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-<a name="MDDatePickerComponent+updateDate"></a>
 
-### mdDatePickerComponent.updateDate()
+
+
+
+
+
+# updateDate
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-<a name="MDDatePickerComponent+getValue"></a>
 
-### mdDatePickerComponent.getValue()
+
+
+
+
+
+# getValue
+
 {{desc}}
 
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
+
+
+
+
+
+

@@ -1,8 +1,11 @@
-<a name="MDDialogComponent"></a>
+# MDDialogComponent
 
-## MDDialogComponent ⇐ <code>MDSheetComponent</code>
+The `MDDialogComponent` interface represents a `<md-dialog>` element in the DOM.
 Represents a dialog component that extends MDSheetComponent.
 
-**Kind**: global class  
-**Extends**: <code>MDSheetComponent</code>  
-**Tagname**: md-dialog  
+
+
+
+
+
+

@@ -1,90 +1,139 @@
-<a name="MDRouter"></a>
+# MDRouter
 
-## MDRouter
 Router for managing client-side navigation and routing.
 
-**Kind**: global class  
-**Emits**: <code>MDRouter#event:onRouterCurrentEntryChange - Triggered when the current route changes.</code>, <code>MDRouter#event:onRouterNavigate - Triggered when navigating to a new route.</code>, <code>MDRouter#event:onRouterNavigateError - Triggered when an error occurs during navigation.</code>, <code>MDRouter#event:onRouterNavigateSuccess - Triggered when navigation to a route is successful.</code>  
 
-* [MDRouter](#MDRouter)
-    * [.path](#MDRouter.path) ⇒ <code>string</code>
-    * [.query](#MDRouter.query) ⇒ <code>Object</code>
-    * [.getRoute(path)](#MDRouter.getRoute) ⇒ <code>Object</code>
-    * [.getRoutes(route)](#MDRouter.getRoutes) ⇒ <code>Array</code>
-    * [.getOutlet(container, route)](#MDRouter.getOutlet) ⇒ <code>Promise.&lt;HTMLElement&gt;</code>
-    * [.navigate(url)](#MDRouter.navigate)
-    * [.init(routes)](#MDRouter.init)
 
-<a name="MDRouter.path"></a>
+### Events
 
-### MDRouter.path ⇒ <code>string</code>
+| Event | Description |
+|-------|-------------|
+| `MDRouter#event:onRouterCurrentEntryChange - Triggered when the current route changes.` | |
+| `MDRouter#event:onRouterNavigate - Triggered when navigating to a new route.` | |
+| `MDRouter#event:onRouterNavigateError - Triggered when an error occurs during navigation.` | |
+| `MDRouter#event:onRouterNavigateSuccess - Triggered when navigation to a route is successful.` | |
+
+
+
+
+# path
+
 Gets the current path of the router.
 
-**Kind**: static property of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>string</code> - The current path.  
-<a name="MDRouter.query"></a>
 
-### MDRouter.query ⇒ <code>Object</code>
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| string | The current path. |
+
+# query
+
 Gets the current query parameters as an object.
 
-**Kind**: static property of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Object</code> - The current query parameters.  
-<a name="MDRouter.getRoute"></a>
 
-### MDRouter.getRoute(path) ⇒ <code>Object</code>
+
+
+
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Object | The current query parameters. |
+
+# getRoute
+
 Finds and returns a route that matches the given path.
 
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Object</code> - The matched route.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| path | <code>string</code> | The path to match. |
 
-<a name="MDRouter.getRoutes"></a>
 
-### MDRouter.getRoutes(route) ⇒ <code>Array</code>
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `path` | (string) | The path to match. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Object | The matched route. |
+
+# getRoutes
+
 Gets all routes from the root to the specified route.
 
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Array</code> - An array of routes.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| route | <code>Object</code> | The route to start from. |
 
-<a name="MDRouter.getOutlet"></a>
 
-### MDRouter.getOutlet(container, route) ⇒ <code>Promise.&lt;HTMLElement&gt;</code>
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `route` | (Object) | The route to start from. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Array | An array of routes. |
+
+# getOutlet
+
 Finds and returns the outlet element for a given route.
 
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-**Returns**: <code>Promise.&lt;HTMLElement&gt;</code> - A promise that resolves to the outlet element.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| container | <code>HTMLElement</code> | The container element to search within. |
-| route | <code>Object</code> | The route to find the outlet for. |
 
-<a name="MDRouter.navigate"></a>
 
-### MDRouter.navigate(url)
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `container` | (HTMLElement) | The container element to search within. |
+| `route` | (Object) | The route to find the outlet for. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Promise.&lt;HTMLElement&gt; | A promise that resolves to the outlet element. |
+
+# navigate
+
 Navigates to a new URL, updating browser history.
 
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | URL to navigate to. |
 
-<a name="MDRouter.init"></a>
 
-### MDRouter.init(routes)
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `url` | (String) | URL to navigate to. |
+
+
+# init
+
 Initializes the router with provided route configurations.
 
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| routes | <code>Array</code> | List of route configurations. |
+
+
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `routes` | (Array) | List of route configurations. |
+
 

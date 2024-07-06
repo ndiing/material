@@ -1,71 +1,97 @@
-<a name="MDListComponent"></a>
+# MDListComponent
 
-## MDListComponent ⇐ <code>MDComponent</code>
+The `MDListComponent` interface represents a `<md-list>` element in the DOM.
 A custom list component that extends MDComponent to display a list of items with various selection modes.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDListComponent#event:onListItemClick - Fires when a list item is clicked.</code>, <code>MDListComponent#event:handleListKeydown - Fires when a keydown event occurs on the list.</code>, <code>MDListComponent#event:onListItemSelectionStart - Fires when a list item selection starts.</code>, <code>MDListComponent#event:onListItemSelection - Fires when a list item is selected.</code>, <code>MDListComponent#event:onListItemSelectionEnd - Fires when a list item selection ends.</code>, <code>MDListComponent#event:onListItemCheckboxNativeInput - Fires when a checkbox native input event occurs on a list item.</code>, <code>MDListComponent#event:onListItemRadioButtonNativeInput - Fires when a radio button native input event occurs on a list item.</code>, <code>MDListComponent#event:onListItemSwitchNativeInput - Fires when a switch native input event occurs on a list item.</code>  
-**Tagname**: md-list  
 
-* [MDListComponent](#MDListComponent) ⇐ <code>MDComponent</code>
-    * [.properties](#MDListComponent+properties)
-    * [.select(data)](#MDListComponent+select)
-    * [.selectToggle(data)](#MDListComponent+selectToggle)
-    * [.selectRange(data)](#MDListComponent+selectRange)
-    * [.selectAll()](#MDListComponent+selectAll)
 
-<a name="MDListComponent+properties"></a>
+### Events
 
-### mdListComponent.properties
-**Kind**: instance property of [<code>MDListComponent</code>](#MDListComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDListComponent#event:onListItemClick - Fires when a list item is clicked.` | |
+| `MDListComponent#event:handleListKeydown - Fires when a keydown event occurs on the list.` | |
+| `MDListComponent#event:onListItemSelectionStart - Fires when a list item selection starts.` | |
+| `MDListComponent#event:onListItemSelection - Fires when a list item is selected.` | |
+| `MDListComponent#event:onListItemSelectionEnd - Fires when a list item selection ends.` | |
+| `MDListComponent#event:onListItemCheckboxNativeInput - Fires when a checkbox native input event occurs on a list item.` | |
+| `MDListComponent#event:onListItemRadioButtonNativeInput - Fires when a radio button native input event occurs on a list item.` | |
+| `MDListComponent#event:onListItemSwitchNativeInput - Fires when a switch native input event occurs on a list item.` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| list | <code>Array</code> | The list of items to be rendered in the list component. |
-| selection | <code>Boolean</code> | Enables or disables selection mode. |
-| rangeSelection | <code>Boolean</code> | Enables or disables range selection mode. |
-| multiSelection | <code>Boolean</code> | Enables or disables multi-selection mode. |
-| singleSelection | <code>Boolean</code> | Enables or disables single-selection mode. |
-| allSelection | <code>Boolean</code> | Enables or disables the ability to select all items. |
+|------|------|-------------|
+| `list` | (Array) | The list of items to be rendered in the list component. |
+| `selection` | (Boolean) | Enables or disables selection mode. |
+| `rangeSelection` | (Boolean) | Enables or disables range selection mode. |
+| `multiSelection` | (Boolean) | Enables or disables multi-selection mode. |
+| `singleSelection` | (Boolean) | Enables or disables single-selection mode. |
+| `allSelection` | (Boolean) | Enables or disables the ability to select all items. |
 
-<a name="MDListComponent+select"></a>
 
-### mdListComponent.select(data)
+
+
+
+
+# select
+
 Selects a single item in the list.
 
-**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Object</code> | The data item to select. |
 
-<a name="MDListComponent+selectToggle"></a>
 
-### mdListComponent.selectToggle(data)
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `data` | (Object) | The data item to select. |
+
+
+# selectToggle
+
 Toggles the selection state of an item in the list for multi-selection.
 
-**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Object</code> | The data item to toggle selection. |
 
-<a name="MDListComponent+selectRange"></a>
 
-### mdListComponent.selectRange(data)
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `data` | (Object) | The data item to toggle selection. |
+
+
+# selectRange
+
 Selects a range of items in the list from the last selected item to the current item.
 
-**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>Object</code> | The data item to start the range selection. |
 
-<a name="MDListComponent+selectAll"></a>
 
-### mdListComponent.selectAll()
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `data` | (Object) | The data item to start the range selection. |
+
+
+# selectAll
+
 Selects all items in the list.
 
-**Kind**: instance method of [<code>MDListComponent</code>](#MDListComponent)  
+
+
+
+
+
+

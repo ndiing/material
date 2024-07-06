@@ -1,78 +1,109 @@
-<a name="MDTreeComponent"></a>
+# MDTreeComponent
 
-## MDTreeComponent ⇐ <code>MDComponent</code>
+The `MDTreeComponent` interface represents a `<md-tree>` element in the DOM.
 A custom tree component that extends MDComponent to display a tree structure with various variants.
 
-**Kind**: global class  
-**Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDTreeComponent#event:onTreeItemClick - Fires when a tree item is clicked.</code>  
-**Tagname**: md-tree  
 
-* [MDTreeComponent](#MDTreeComponent) ⇐ <code>MDComponent</code>
-    * [.properties](#MDTreeComponent+properties)
-    * [.getList(list)](#MDTreeComponent+getList) ⇒ <code>Array</code> \| <code>undefined</code>
-    * [.setList(list, [indent])](#MDTreeComponent+setList) ⇒ <code>Object</code>
-    * [.select(list, data)](#MDTreeComponent+select) ⇒ <code>boolean</code>
-    * [.expand(list, data)](#MDTreeComponent+expand)
 
-<a name="MDTreeComponent+properties"></a>
+### Events
 
-### mdTreeComponent.properties
-**Kind**: instance property of [<code>MDTreeComponent</code>](#MDTreeComponent)  
-**Properties**
+| Event | Description |
+|-------|-------------|
+| `MDTreeComponent#event:onTreeItemClick - Fires when a tree item is clicked.` | |
+
+
+
+
+# properties
+
+
+### Instance properties
 
 | Name | Type | Description |
-| --- | --- | --- |
-| list | <code>Array</code> | The list of tree items to be rendered. |
-| variant | <code>String</code> | The variant of the tree component (e.g., "plain", "accordion", "tree", "level"). |
+|------|------|-------------|
+| `list` | (Array) | The list of tree items to be rendered. |
+| `variant` | (String) | The variant of the tree component (e.g., &quot;plain&quot;, &quot;accordion&quot;, &quot;tree&quot;, &quot;level&quot;). |
 
-<a name="MDTreeComponent+getList"></a>
 
-### mdTreeComponent.getList(list) ⇒ <code>Array</code> \| <code>undefined</code>
+
+
+
+
+# getList
+
 Recursively retrieves the list of children from the given list of items.
 
-**Kind**: instance method of [<code>MDTreeComponent</code>](#MDTreeComponent)  
-**Returns**: <code>Array</code> \| <code>undefined</code> - The list of children, if any.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| list | <code>Array</code> | The list of items to retrieve children from. |
 
-<a name="MDTreeComponent+setList"></a>
 
-### mdTreeComponent.setList(list, [indent]) ⇒ <code>Object</code>
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `list` | (Array) | The list of items to retrieve children from. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Array,undefined | The list of children, if any. |
+
+# setList
+
 Recursively sets the list of items with the appropriate properties.
 
-**Kind**: instance method of [<code>MDTreeComponent</code>](#MDTreeComponent)  
-**Returns**: <code>Object</code> - An object containing expanded and activated states.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| list | <code>Array</code> |  | The list of items to set. |
-| [indent] | <code>number</code> | <code>0</code> | The indent level of the items. |
 
-<a name="MDTreeComponent+select"></a>
 
-### mdTreeComponent.select(list, data) ⇒ <code>boolean</code>
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `list` | (Array) | The list of items to set. |
+| `indent` | (number) | The indent level of the items. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| Object | An object containing expanded and activated states. |
+
+# select
+
 Recursively selects the specified data item in the list.
 
-**Kind**: instance method of [<code>MDTreeComponent</code>](#MDTreeComponent)  
-**Returns**: <code>boolean</code> - True if the item was activated, false otherwise.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| list | <code>Array</code> | The list of items to search. |
-| data | <code>Object</code> | The data item to select. |
 
-<a name="MDTreeComponent+expand"></a>
 
-### mdTreeComponent.expand(list, data)
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `list` | (Array) | The list of items to search. |
+| `data` | (Object) | The data item to select. |
+
+#### Returns
+
+| Type | Description |
+|------|-------------|
+| boolean | True if the item was activated, false otherwise. |
+
+# expand
+
 Toggles the expanded state of the specified data item.
 
-**Kind**: instance method of [<code>MDTreeComponent</code>](#MDTreeComponent)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| list | <code>Array</code> | The list of items. |
-| data | <code>Object</code> | The data item to expand or collapse. |
+
+
+
+#### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `list` | (Array) | The list of items. |
+| `data` | (Object) | The data item to expand or collapse. |
+
 
