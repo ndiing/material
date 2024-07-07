@@ -108,6 +108,9 @@ class DevMainComponent extends MDComponent {
     }
 
     get href(){
+        if(MDRouter.path=='/'){
+            return './README.md'
+        }
         return `./docs${MDRouter.path}.md`
     }
 
