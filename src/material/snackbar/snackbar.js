@@ -25,8 +25,7 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * Shows the snackbar.
-     * Resolves when the snackbar is shown and timed out.
+     * Shows the snackbar. Resolves when the snackbar is shown and timed out.
      */
     show() {
         return MDSnackbarComponent.queue(() => {
@@ -52,8 +51,7 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * Closes the snackbar.
-     * Emits the `onSnackbarClose` event when the snackbar is closed.
+     * Closes the snackbar. Emits the `onSnackbarClose` event when the snackbar is closed.
      */
     close() {
         super.close();

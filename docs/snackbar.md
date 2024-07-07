@@ -7,10 +7,8 @@ This interface also inherits methods from its parent, `MDSheetComponent`.
 
 | Name | Parameters | Description |
 | --- | --- | --- |
-| show |  | Shows the snackbar.
-Resolves when the snackbar is shown and timed out. |
-| close |  | Closes the snackbar.
-Emits the `onSnackbarClose` event when the snackbar is closed. |
+| show |  | Shows the snackbar. Resolves when the snackbar is shown and timed out. |
+| close |  | Closes the snackbar. Emits the `onSnackbarClose` event when the snackbar is closed. |
 
 ## Events
 Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
