@@ -1,4 +1,5 @@
-/* String Formatting Functions */
+/* Casing Conversion */
+
 /**
  * Converts a string to PascalCase.
  * @param {string} string - The input string to convert.
@@ -155,7 +156,9 @@ function toTitleCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
-/* Datetime Functions */
+/* Stringify Date */
+
+
 /**
  * Converts a date object to a string formatted as YYYY-MM-DDTHH:MM.
  * @param {Date} date - The date object to convert.
@@ -220,7 +223,9 @@ function stringifyWeek(date) {
     return `${year}-W${week < 10 ? "0" + week : week}`;
 }
 
-/* Parsing Functions */
+/* Parse Date */
+
+
 /**
  * Parses a datetime-local string into a Date object.
  * @param {string} datetimeLocal - The datetime-local string to parse.
@@ -279,11 +284,13 @@ function parseTime(timeString) {
  */
 function parseWeek(weekStr) {
     let parts = weekStr.split("-W");
+
     if (parts.length !== 2 || parts[1].length !== 2) {
         throw new Error("Invalid week format. Should be in YYYY-WW format.");
     }
     let year = parseInt(parts[0], 10);
     let week = parseInt(parts[1], 10);
+
     if (isNaN(year) || isNaN(week) || week < 1 || week > 53) {
         throw new Error("Invalid year or week number.");
     }
@@ -292,70 +299,8 @@ function parseWeek(weekStr) {
     return startOfWeek;
 }
 
-/* Utility Functions */
-/**
- * Checks if a value is defined and not null.
- * @param {*} value - The value to check.
- * @returns {boolean} Returns true if the value is defined and not null, otherwise false.
- */
-function isDefined(value) {
-    return value !== undefined && value !== null;
-}
+/* Color Conversion */
 
-/**
- * Creates a queue function that executes callbacks asynchronously in sequence.
- * @returns {Function} A function that when called with a callback function, queues the callback for execution.
- */
-const createQueue = () => {
-    let pending = Promise.resolve();
-
-    const execute = async (callback = () => {}) => {
-        let result;
-        try {
-            await pending;
-        } finally {
-            result = callback();
-        }
-        return result;
-    };
-
-    return (callback = () => {}) => (pending = execute(callback));
-};
-
-/* Date Prototype Methods */
-/**
- * Sets the week number of the date.
- * @param {number} week - The week number to set (between 1 and 53).
- * @returns {Date} The modified Date object with the week set.
- * @throws {Error} If the week number is not a number or is out of valid range (1 to 53).
- */
-Date.prototype.setWeek = function (week) {
-    if (typeof week !== "number" || week < 1 || week > 53) {
-        throw new Error("Invalid week number. Week number should be between 1 and 53.");
-    }
-    let jan4 = new Date(this.getFullYear(), 0, 4); // January 4th
-    let jan4Day = (jan4.getDay() + 6) % 7; // Day of the week for January 4th (0 = Monday, 6 = Sunday)
-    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day); // Start of the first week of the year
-
-    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000); // Set time to the start of the target week
-    return this;
-};
-
-/**
- * Gets the ISO week number of the date.
- * @returns {number} The ISO week number of the date (1 to 53).
- */
-Date.prototype.getWeek = function () {
-    let tempDate = new Date(this.getTime());
-    tempDate.setHours(0, 0, 0, 0);
-    tempDate.setDate(tempDate.getDate() + 3 - ((tempDate.getDay() + 6) % 7));
-    let week1 = new Date(tempDate.getFullYear(), 0, 4);
-    return 1 + Math.round(((tempDate - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
-};
-
-// // Testing the function
-// let date = new Date('1990-10-17');
-// console.log(date.getWeek()); // Output should be 42
 
 /**
  * Converts a hexadecimal color representation to RGBA components.
@@ -542,6 +487,29 @@ function rgbaToHsla(r, g, b, a = 1) {
 
     return { hue: Math.round(hue), saturation, lightness, alpha: a };
 }
+
+/* Utility Functions */
+
+
+/**
+ * Checks if the provided color string is a valid hexadecimal color.
+ * @param {String} color - The color string to validate.
+ * @returns {Boolean} - True if the color string is a valid hexadecimal color, false otherwise.
+ */
+function isValidHexColor(color) {
+    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    return hexColorRegex.test(color);
+}
+
+/**
+ * Checks if a value is an object.
+ * @param {*} obj - The value to check.
+ * @returns {boolean} True if the value is an object, otherwise false.
+ */
+function isObject(obj) {
+    return obj !== null && typeof obj === "object";
+}
+
 /**
  * Checks if a string represents an array in a stringified format.
  * @param {string} str - The string to check.
@@ -550,6 +518,15 @@ function rgbaToHsla(r, g, b, a = 1) {
 function isArrayString(str) {
     const arrayRegex = /^\s*\[.*\]\s*$/;
     return arrayRegex.test(str);
+}
+
+/**
+ * Checks if a value is defined and not null.
+ * @param {*} value - The value to check.
+ * @returns {boolean} Returns true if the value is defined and not null, otherwise false.
+ */
+function isDefined(value) {
+    return value !== undefined && value !== null;
 }
 
 /**
@@ -576,22 +553,109 @@ function calcDecimal(min, max, value) {
     return decimal;
 }
 
+/* Additional Functions */
+
+
 /**
- * Checks if the provided color string is a valid hexadecimal color.
- * @param {String} color - The color string to validate.
- * @returns {Boolean} - True if the color string is a valid hexadecimal color, false otherwise.
+ * Creates a queue function that executes callbacks asynchronously in sequence.
+ * @returns {Function} A function that when called with a callback function, queues the callback for execution.
  */
-function isValidHexColor(color) {
-    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    return hexColorRegex.test(color);
-}
-/**
- * Checks if a value is an object.
- * @param {*} obj - The value to check.
- * @returns {boolean} True if the value is an object, otherwise false.
- */
-function isObject(obj) {
-    return obj !== null && typeof obj === "object";
+function createQueue() {
+    let pending = Promise.resolve();
+
+    const execute = async (callback = () => {}) => {
+        let result;
+        try {
+            await pending;
+        } finally {
+            result = callback();
+        }
+        return result;
+    };
+
+    return (callback = () => {}) => (pending = execute(callback));
 }
 
-export { isObject, isValidHexColor, calcPercentage, calcDecimal, isArrayString, toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, parseWeek, isDefined, createQueue, hexToRgba, hexToHsla, hslaToRgba, rgbaToHex, hslaToHex, rgbaToHsla };
+/* Date Prototype Extensions */
+
+
+/**
+ * Sets the week number of the date.
+ * @param {number} week - The week number to set (between 1 and 53).
+ * @returns {Date} The modified Date object with the week set.
+ * @throws {Error} If the week number is not a number or is out of valid range (1 to 53).
+ */
+Date.prototype.setWeek = function (week) {
+    if (typeof week !== "number" || week < 1 || week > 53) {
+        throw new Error("Invalid week number. Week number should be between 1 and 53.");
+    }
+    let jan4 = new Date(this.getFullYear(), 0, 4); // January 4th
+    let jan4Day = (jan4.getDay() + 6) % 7; // Day of the week for January 4th (0 = Monday, 6 = Sunday)
+    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day); // Start of the first week of the year
+
+    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000); // Set time to the start of the target week
+    return this;
+};
+
+/**
+ * Gets the ISO week number of the date.
+ * @returns {number} The ISO week number of the date (1 to 53).
+ */
+Date.prototype.getWeek = function () {
+    let tempDate = new Date(this.getTime());
+    tempDate.setHours(0, 0, 0, 0);
+    tempDate.setDate(tempDate.getDate() + 3 - ((tempDate.getDay() + 6) % 7));
+    let week1 = new Date(tempDate.getFullYear(), 0, 4);
+    return 1 + Math.round(((tempDate - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+};
+
+export {
+    // String Manipulation
+    toPascalCase,
+    toCamelCase,
+    toSnakeCase,
+    toKebabCase,
+    toFlatCase,
+    toUpperFlatCase,
+    toPascalSnakeCase,
+    toCamelSnakeCase,
+    toScreamingSnakeCase,
+    toTrainCase,
+    toCobolCase,
+    toTitleCase,
+
+    // Date Manipulation
+    stringifyDatetimeLocal,
+    stringifyDate,
+    stringifyYear,
+    stringifyMonth,
+    stringifyTime,
+    stringifyWeek,
+    parseDatetimeLocal,
+    parseDate,
+    parseYear,
+    parseMonth,
+    parseTime,
+    parseWeek,
+
+    // Color Manipulation
+    hexToRgba,
+    hexToHsla,
+    rgbaToHex,
+    rgbaToHsla,
+    hslaToRgba,
+    hslaToHex,
+
+    // Utility Functions
+    calcPercentage,
+    calcDecimal,
+    isValidHexColor,
+    isObject,
+    isArrayString,
+    isDefined,
+
+    // Additional Functions
+    createQueue,
+
+    // Date Prototype Extensions
+};
