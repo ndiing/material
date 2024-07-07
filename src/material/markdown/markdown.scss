@@ -67,7 +67,7 @@
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
         @include typescale-body-medium();
-        font-family: Consolas, 'Courier New', monospace;
+        font-family: Consolas, "Courier New", monospace;
     }
 
     // br {}
@@ -78,7 +78,7 @@
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
         @include typescale-body-medium();
-        font-family: Consolas, 'Courier New', monospace;
+        font-family: Consolas, "Courier New", monospace;
     }
 
     ul {

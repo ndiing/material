@@ -1,9 +1,9 @@
-# MDDataTableNativeColumnComponent
+# MDDataTableComponent
 
-The `MDDataTableNativeColumnComponent` interface represents a `<md-data-table-native-column>` element in the DOM. {{desc}}
+The `MDDataTableComponent` interface represents a `<md-data-table>` element in the DOM. {{desc}}
 
 ## Instance Properties
-This interface also inherits properties from its parent, `HTMLTableCellElement`.
+This interface also inherits properties from its parent, `MDCardComponent`.
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -18,11 +18,10 @@ This interface also inherits properties from its parent, `HTMLTableCellElement`.
 | allSelection | `Boolean` | {{desc}} |
 
 ## Instance Methods
-This interface also inherits methods from its parent, `HTMLTableCellElement`.
+This interface also inherits methods from its parent, `MDCardComponent`.
 
 | Name | Parameters | Description |
 | --- | --- | --- |
-| addController |  | {{desc}} |
 | updateVirtualRows |  | {{desc}} |
 | updateVirtualColumns |  | {{desc}} |
 | updateColumns |  | {{desc}} |
@@ -32,6 +31,30 @@ This interface also inherits methods from its parent, `HTMLTableCellElement`.
 | selectRange | `data` | {{desc}} |
 | selectAll |  | {{desc}} |
 
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
+
+| Name | Description |
+| --- | --- |
+| `onDataTableViewportVirtualScroll` | {{desc}} |
+| `onDataTableColumnCheckboxNativeInput` | {{desc}} |
+| `onDataTableRowCheckboxNativeInput` | {{desc}} |
+| `onDataTableRowClick` | {{desc}} |
+| `handleDataTableKeydown` | {{desc}} |
+| `onDataTableColumnResizeStart` | {{desc}} |
+| `onDataTableColumnResize` | {{desc}} |
+| `onDataTableColumnResizeEnd` | {{desc}} |
+| `onDataTableColumnPointerenter` | {{desc}} |
+| `onDataTableColumnPointerleave` | {{desc}} |
+| `onDataTableColumnTap` | {{desc}} |
+| `onDataTableTextFieldNativeSearch` | {{desc}} |
+| `onDataTablePaginationChange` | {{desc}} |
+| `onDataTableColumnDoubleTap` | {{desc}} |
+| `onDataTableColumnResizeDoubleTap` | {{desc}} |
+| `onDataTableColumnDragStart` | {{desc}} |
+| `onDataTableColumnDrag` | {{desc}} |
+| `onDataTableColumnDragEnd` | {{desc}} |
+
 ## Inheritance
-`HTMLTableCellElement`
+`MDCardComponent`
 

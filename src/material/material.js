@@ -73,4 +73,5 @@ import "./password-field/password-field.js";
 
 import "./pagination/pagination.js";
 import "./data-table-item/data-table-item.js";
+import "./data-table/data-table-native-column.js";
 import "./data-table/data-table.js";
