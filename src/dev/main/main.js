@@ -99,6 +99,10 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/data-table" },
         ];
 
+        this.list.sort((a, b) => {
+            return a.routerLink.localeCompare(b.routerLink);
+        });
+        
         for (let i = 0; i < this.list.length; i++) {
             let item = this.list[i];
             item.icon = "deployed_code";
@@ -106,9 +110,6 @@ class DevMainComponent extends MDComponent {
             item.selected = item.routerLink === MDRouter.path;
         }
 
-        this.list.sort((a, b) => {
-            return a.label.localeCompare(b.label);
-        });
     }
 
     render() {

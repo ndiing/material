@@ -67,7 +67,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
         window.requestAnimationFrame(() => {
             this.picker.showModal(this.container);
-        })
+        });
     }
 
     handlePickerSelection() {

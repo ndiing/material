@@ -66,7 +66,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
         window.requestAnimationFrame(() => {
             this.picker.showModal(this.container);
-        })
+        });
     }
 
     handlePickerSelection() {

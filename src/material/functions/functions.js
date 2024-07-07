@@ -158,7 +158,6 @@ function toTitleCase(string) {
 
 /* Stringify Date */
 
-
 /**
  * Converts a date object to a string formatted as YYYY-MM-DDTHH:MM.
  * @param {Date} date - The date object to convert.
@@ -224,7 +223,6 @@ function stringifyWeek(date) {
 }
 
 /* Parse Date */
-
 
 /**
  * Parses a datetime-local string into a Date object.
@@ -300,7 +298,6 @@ function parseWeek(weekStr) {
 }
 
 /* Color Conversion */
-
 
 /**
  * Converts a hexadecimal color representation to RGBA components.
@@ -490,7 +487,6 @@ function rgbaToHsla(r, g, b, a = 1) {
 
 /* Utility Functions */
 
-
 /**
  * Checks if the provided color string is a valid hexadecimal color.
  * @param {String} color - The color string to validate.
@@ -555,7 +551,6 @@ function calcDecimal(min, max, value) {
 
 /* Additional Functions */
 
-
 /**
  * Creates a queue function that executes callbacks asynchronously in sequence.
  * @returns {Function} A function that when called with a callback function, queues the callback for execution.
@@ -577,7 +572,6 @@ function createQueue() {
 }
 
 /* Date Prototype Extensions */
-
 
 /**
  * Sets the week number of the date.
