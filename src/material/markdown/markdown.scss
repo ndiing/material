@@ -1,42 +1,51 @@
 .md-markdown {
+    display: block;
+    max-width: 840px;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+
+    /* Headings */
+
     h1 {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-headline-large-line-height) 0;
         @include typescale-headline-large();
         font-weight: 600;
     }
 
     h2 {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-headline-medium-line-height) 0;
         @include typescale-headline-medium();
         font-weight: 600;
     }
 
     h3 {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-headline-small-line-height) 0;
         @include typescale-headline-small();
         font-weight: 600;
     }
 
     h4 {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-title-large-line-height) 0;
         @include typescale-title-large();
         font-weight: 600;
     }
 
     h5 {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-title-medium-line-height) 0;
         @include typescale-title-medium();
         font-weight: 600;
     }
 
     h6 {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-title-small-line-height) 0;
         @include typescale-title-small();
         font-weight: 600;
     }
 
+    /* Text Elements */
+
     p {
-        margin: 24px 0;
+        margin: var(--md-sys-typescale-body-large-line-height) 0;
         @include typescale-body-large();
     }
 
@@ -48,41 +57,34 @@
         font-weight: 600;
     }
 
+    /* Block Elements */
+
     blockquote {
-        margin: 24px 0;
-        padding: 16px 16px;
-        border-radius: 12px;
-        background-color: var(--md-sys-color-surface-container-high);
+        margin: var(--md-sys-typescale-body-large-line-height) 0;
+        padding: var(--md-sys-typescale-body-large-line-height) 24px;
+        border-radius: var(--md-sys-shape-corner-medium);
+        @include typescale-body-large();
+        background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface-variant);
 
         blockquote {
-            padding: 0 16px;
+            padding: 0 24px;
         }
     }
 
     pre {
-        margin: 24px 0;
-        padding: 16px 16px;
-        border-radius: 12px;
-        background-color: var(--md-sys-color-surface-container-high);
-        color: var(--md-sys-color-on-surface-variant);
+        margin: var(--md-sys-typescale-body-large-line-height) 0;
+        padding: var(--md-sys-typescale-body-large-line-height) 24px;
+        border-radius: var(--md-sys-shape-corner-medium);
         @include typescale-body-medium();
-        font-family: Consolas, "Courier New", monospace;
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-variant);
     }
 
-    // br {}
-
-    code {
-        padding: 2px 4px;
-        border-radius: 4px;
-        background-color: var(--md-sys-color-surface-container-high);
-        color: var(--md-sys-color-on-surface-variant);
-        @include typescale-body-medium();
-        font-family: Consolas, "Courier New", monospace;
-    }
+    /* Lists */
 
     ul {
-        margin: 24px;
+        margin: var(--md-sys-typescale-body-large-line-height) 24px;
 
         ul {
             margin: 0 24px;
@@ -90,40 +92,98 @@
     }
 
     ol {
-        margin: 24px;
+        margin: var(--md-sys-typescale-body-large-line-height) 24px;
 
         ol {
             margin: 0 24px;
         }
     }
 
-    // li {}
+    li {
+        @include typescale-body-large();
+    }
+
+    /* Code */
+
+    code {
+        padding: calc((var(--md-sys-typescale-body-large-line-height) - var(--md-sys-typescale-body-medium-line-height)) / 2) 4px;
+        border-radius: var(--md-sys-shape-corner-extra-small);
+        @include typescale-body-medium();
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-variant);
+    }
+
+    /* Images and Links */
 
     // img {}
 
     // a {}
 
+    /* Tables */
+
     table {
-        border-collapse: collapse;
         border-spacing: 0;
+        border-collapse: separate;
     }
 
-    // thead {}
+    thead {
+        tr {
+            &:first-child {
+                th {
+                    border-top: 1px solid var(--md-sys-color-outline-variant);
 
-    // tbody {}
+                    &:first-child {
+                        border-radius: var(--md-sys-shape-corner-medium) 0 0 0;
+                    }
+
+                    &:last-child {
+                        border-radius: 0 var(--md-sys-shape-corner-medium) 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:last-child {
+                td {
+                    &:first-child {
+                        border-radius: 0 0 0 var(--md-sys-shape-corner-medium);
+                    }
+
+                    &:last-child {
+                        border-radius: 0 0 var(--md-sys-shape-corner-medium) 0;
+                    }
+                }
+            }
+        }
+    }
 
     // tr {}
 
     th {
         text-align: left;
-        padding: calc(((56px - 20px) / 2) + (4px * -2)) 16px;
-        border: 1px solid var(--md-sys-color-outline-variant);
-        @include typescale-label-large();
+        padding: calc(((56px - var(--md-sys-typescale-body-large-line-height)) / 2) + (4px * 0)) 24px;
+        @include typescale-body-large();
+        border-right: 1px solid var(--md-sys-color-outline-variant);
+        border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-variant);
+
+        &:first-child {
+            border-left: 1px solid var(--md-sys-color-outline-variant);
+        }
     }
 
     td {
-        padding: calc(((52px - 20px) / 2) + (4px * -2)) 16px;
-        border: 1px solid var(--md-sys-color-outline-variant);
-        @include typescale-body-medium();
+        border-right: 1px solid var(--md-sys-color-outline-variant);
+        border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        padding: calc(((52px - var(--md-sys-typescale-body-large-line-height)) / 2) + (4px * 0)) 24px;
+        @include typescale-body-large();
+
+        &:first-child {
+            border-left: 1px solid var(--md-sys-color-outline-variant);
+        }
     }
 }

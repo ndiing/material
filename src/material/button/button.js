@@ -6,6 +6,8 @@ import { MDRippleController } from "../ripple/ripple.js";
  * Button component for Material Design.
  * @extends MDComponent
  * @tagname md-button
+ * @example
+ * <md-button variant="elevated" label="Elevated button" icon="add"></md-button>
  */
 class MDButtonComponent extends MDComponent {
     /**

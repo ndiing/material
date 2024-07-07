@@ -2,6 +2,11 @@
 
 The `MDButtonComponent` interface represents a `<md-button>` element in the DOM. Button component for Material Design.
 
+## Examples
+```
+<md-button variant="elevated" label="Elevated button" icon="add"></md-button>
+```
+
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.
 
