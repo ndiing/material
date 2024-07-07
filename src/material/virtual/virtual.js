@@ -20,9 +20,9 @@ class MDVirtualController {
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
-            viewportSelector: null,
-            scrollbarSelector: null,
-            containerSelector: null,
+            viewportSelector: '.md-virtual',
+            scrollbarSelector: '.md-virtual__scrollbar',
+            containerSelector: '.md-virtual__container',
             rowSelector: null,
             columnSelector: null,
 

@@ -298,11 +298,11 @@ class MDDataTableComponent extends MDCardComponent {
         /* prettier-ignore */
         return html`
             <div 
-                class="md-data-table__viewport"
+                class="md-virtual md-data-table__viewport"
                 @onVirtualScroll="${this.handleDataTableViewportVirtualScroll}"
             >
-                <div class="md-data-table__scrollbar"></div>
-                <div class="md-data-table__container">${this.renderDataTable()}</div>
+                <div class="md-virtual__scrollbar md-data-table__scrollbar"></div>
+                <div class="md-virtual__container md-data-table__container">${this.renderDataTable()}</div>
             </div>
         `;
     }
@@ -314,11 +314,7 @@ class MDDataTableComponent extends MDCardComponent {
 
         this.store = new MDStore(this.rows);
 
-        this.virtual = new MDVirtualController(this, {
-            viewportSelector: ".md-data-table__viewport",
-            scrollbarSelector: ".md-data-table__scrollbar",
-            containerSelector: ".md-data-table__container",
-        });
+        this.virtual = new MDVirtualController(this,{});
 
         this.columns.forEach((column) => {
             column.width = column.width || 52 * 4;

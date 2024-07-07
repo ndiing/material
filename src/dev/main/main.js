@@ -94,6 +94,8 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/search-field" },
             { routerLink: "/password-field" },
 
+            { routerLink: "/data-list" },
+
             { routerLink: "/pagination" },
             { routerLink: "/data-table-item" },
             { routerLink: "/data-table" },

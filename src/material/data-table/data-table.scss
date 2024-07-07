@@ -45,25 +45,11 @@
     }
 }
 
-.md-data-table__viewport {
-    overflow: auto;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
+// .md-data-table__viewport {}
 
-.md-data-table__scrollbar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1px;
-    height: 1px;
-    pointer-events: none;
-}
+// .md-data-table__scrollbar {}
 
-.md-data-table__container {
-    transform: translate3d(0, 0, 0);
-}
+// .md-data-table__container {}
 
 .md-data-table__native {
     border-collapse: collapse;

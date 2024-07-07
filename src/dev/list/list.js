@@ -1,10 +1,21 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
+import data from "../../assets/screener.json"
 
 class DevListComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
+                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <md-list
+                        .list="${data.slice(0,10)}"
+                        .itemMap="${{
+                            label: 'name',
+                            value: 'logoid',
+                        }}"
+                    ></md-list>
+                </div>
+
                 <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-list
                         .list="${[
