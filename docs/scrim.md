@@ -1,13 +1,13 @@
 # MDScrimComponent
 
-The `MDScrimComponent` interface represents a `md-scrim` element in the DOM.{{desc}}
+The `MDScrimComponent` interface represents a `md-scrim` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| properties | `Boolean` |  |
+| open | `Boolean` | {{desc}} |
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDComponent`.

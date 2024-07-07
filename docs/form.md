@@ -1,14 +1,21 @@
 # MDFormComponent
 
-The `MDFormComponent` interface represents a `md-form` element in the DOM.{{desc}}
+The `MDFormComponent` interface represents a `md-form` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| properties | `String` |  |
-| native |  | {{desc}} |
+| acceptCharset | `String` | {{desc}} |
+| action | `String` | {{desc}} |
+| autocomplete | `String` | {{desc}} |
+| enctype | `String` | {{desc}} |
+| method | `String` | {{desc}} |
+| name | `String` | {{desc}} |
+| novalidate | `Boolean` | {{desc}} |
+| target | `String` | {{desc}} |
+| rel | `String` | {{desc}} |
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDComponent`.

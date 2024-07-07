@@ -1,14 +1,6 @@
 # MDSearchFieldComponent
 
-The `MDSearchFieldComponent` interface represents a `md-search-field` element in the DOM.{{desc}}
-
-## Instance Properties
-This interface also inherits properties from its parent, `MDTextFieldComponent`.
-
-| Name | Type | Description |
-| --- | --- | --- |
-| actions |  | {{desc}} |
-| actions |  | {{desc}} |
+The `MDSearchFieldComponent` interface represents a `md-search-field` element in the DOM. {{desc}}
 
 ## Inheritance
 `MDTextFieldComponent`

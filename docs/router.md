@@ -2,12 +2,6 @@
 
 {{desc}}
 
-## Instance Properties
-| Name | Type | Description |
-| --- | --- | --- |
-| path |  | {{desc}} |
-| query |  | {{desc}} |
-
 ## Instance Methods
 | Name | Parameters | Description |
 | --- | --- | --- |

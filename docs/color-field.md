@@ -1,14 +1,6 @@
 # MDColorFieldComponent
 
-The `MDColorFieldComponent` interface represents a `md-color-field` element in the DOM.{{desc}}
-
-## Instance Properties
-This interface also inherits properties from its parent, `MDTextFieldComponent`.
-
-| Name | Type | Description |
-| --- | --- | --- |
-| actions |  | {{desc}} |
-| actions |  | {{desc}} |
+The `MDColorFieldComponent` interface represents a `md-color-field` element in the DOM. {{desc}}
 
 ## Inheritance
 `MDTextFieldComponent`

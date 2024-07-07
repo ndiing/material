@@ -244,6 +244,7 @@ class DevForm2Component extends MDComponent {
                         <md-button
                             label="Submit Field"
                             type="submit"
+                            variant="filled"
                         ></md-button>
                     </div>
                 </div>

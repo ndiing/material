@@ -1,15 +1,6 @@
 # MDTimePickerComponent
 
-The `MDTimePickerComponent` interface represents a `md-time-picker` element in the DOM.{{desc}}
-
-## Instance Properties
-This interface also inherits properties from its parent, `MDDatetimePickerComponent`.
-
-| Name | Type | Description |
-| --- | --- | --- |
-| body |  | {{desc}} |
-| body |  | {{desc}} |
-| leadingActions |  | {{desc}} |
+The `MDTimePickerComponent` interface represents a `md-time-picker` element in the DOM. {{desc}}
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDDatetimePickerComponent`.

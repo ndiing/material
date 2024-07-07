@@ -1,13 +1,14 @@
 # MDTreeComponent
 
-The `MDTreeComponent` interface represents a `md-tree` element in the DOM.{{desc}}
+The `MDTreeComponent` interface represents a `md-tree` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| properties | `Array` |  |
+| list | `Array` | {{desc}} |
+| variant | `String` | {{desc}} |
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDComponent`.

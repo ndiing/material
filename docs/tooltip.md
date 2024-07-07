@@ -1,6 +1,6 @@
 # MDTooltipComponent
 
-The `MDTooltipComponent` interface represents a `md-tooltip` element in the DOM.{{desc}}
+The `MDTooltipComponent` interface represents a `md-tooltip` element in the DOM. {{desc}}
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDSheetComponent`.

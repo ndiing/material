@@ -1,17 +1,6 @@
 # MDWeekPickerComponent
 
-The `MDWeekPickerComponent` interface represents a `md-week-picker` element in the DOM.{{desc}}
-
-## Instance Properties
-This interface also inherits properties from its parent, `MDDatetimePickerComponent`.
-
-| Name | Type | Description |
-| --- | --- | --- |
-| weekdays |  | {{desc}} |
-| days |  | {{desc}} |
-| body |  | {{desc}} |
-| body |  | {{desc}} |
-| leadingActions |  | {{desc}} |
+The `MDWeekPickerComponent` interface represents a `md-week-picker` element in the DOM. {{desc}}
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDDatetimePickerComponent`.

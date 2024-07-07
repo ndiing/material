@@ -1,20 +1,21 @@
 # MDDataTableNativeColumnComponent
 
-The `MDDataTableNativeColumnComponent` interface represents a `md-data-table-native-column` element in the DOM.{{desc}}
+The `MDDataTableNativeColumnComponent` interface represents a `md-data-table-native-column` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `HTMLTableCellElement`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| properties | `Array` |  |
-| label |  | {{desc}} |
-| label |  | {{desc}} |
-| trailingActions |  | {{desc}} |
-| body |  | {{desc}} |
-| actions |  | {{desc}} |
-| isSelectedAll |  | {{desc}} |
-| isSelectedPartial |  | {{desc}} |
+| columns | `Array` | {{desc}} |
+| rows | `Array` | {{desc}} |
+| stickyHeader | `Boolean` | {{desc}} |
+| checkboxSelection | `Boolean` | {{desc}} |
+| stickyCheckboxSelection | `Boolean` | {{desc}} |
+| rangeSelection | `Boolean` | {{desc}} |
+| multiSelection | `Boolean` | {{desc}} |
+| singleSelection | `Boolean` | {{desc}} |
+| allSelection | `Boolean` | {{desc}} |
 
 ## Instance Methods
 This interface also inherits methods from its parent, `HTMLTableCellElement`.

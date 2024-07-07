@@ -1,15 +1,6 @@
 # MDMonthPickerComponent
 
-The `MDMonthPickerComponent` interface represents a `md-month-picker` element in the DOM.{{desc}}
-
-## Instance Properties
-This interface also inherits properties from its parent, `MDDatetimePickerComponent`.
-
-| Name | Type | Description |
-| --- | --- | --- |
-| leadingActions |  | {{desc}} |
-| body |  | {{desc}} |
-| body |  | {{desc}} |
+The `MDMonthPickerComponent` interface represents a `md-month-picker` element in the DOM. {{desc}}
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDDatetimePickerComponent`.

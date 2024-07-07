@@ -1,13 +1,13 @@
 # MDSheetComponent
 
-The `MDSheetComponent` interface represents a `md-sheet` element in the DOM.{{desc}}
+The `MDSheetComponent` interface represents a `md-sheet` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDCardComponent`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| properties | `Boolean` |  |
+| open | `Boolean` | {{desc}} |
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDCardComponent`.
