@@ -2,24 +2,26 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * A custom form component that extends MDComponent to handle form submissions and resets.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-form
- * @fires MDFormComponent#onFormNativeReset - Fires when the form is reset.
- * @fires MDFormComponent#onFormNativeSubmit - Fires when the form is submitted.
+ * @fires MDFormComponent#onFormNativeReset - {{desc}}
+ * @fires MDFormComponent#onFormNativeSubmit - {{desc}}
  */
 class MDFormComponent extends MDComponent {
+    
     /**
-     * @property {String} acceptCharset - Character encodings that are to be used for the form submission.
-     * @property {String} action - The URL that processes the form submission.
-     * @property {String} autocomplete - Indicates whether the browser can automatically complete the form fields.
-     * @property {String} enctype - The encoding type to use for form submission.
-     * @property {String} method - The HTTP method to use for form submission (e.g., "get", "post").
-     * @property {String} name - The name of the form.
-     * @property {Boolean} novalidate - If true, the form will not be validated when submitted.
-     * @property {String} target - The browsing context in which to display the response.
-     * @property {String} rel - Specifies the relationship of the target object to the form.
+     * @property {String} acceptCharset - {{desc}}
+     * @property {String} action - {{desc}}
+     * @property {String} autocomplete - {{desc}}
+     * @property {String} enctype - {{desc}}
+     * @property {String} method - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {Boolean} novalidate - {{desc}}
+     * @property {String} target - {{desc}}
+     * @property {String} rel - {{desc}}
      */
     static properties = {
         acceptCharset: { type: String },
@@ -33,9 +35,9 @@ class MDFormComponent extends MDComponent {
         rel: { type: String },
     };
 
+    
     /**
-     * Returns the native form element within the component.
-     * @return {HTMLFormElement} The native form element.
+     * {{desc}}
      */
     get native() {
         return this.querySelector(".md-form__native");
@@ -110,15 +112,17 @@ class MDFormComponent extends MDComponent {
         this.emit("onFormNativeSubmit", event);
     }
 
+    
     /**
-     * Resets the native form element.
+     * {{desc}}
      */
     reset() {
         this.native.reset();
     }
 
+    
     /**
-     * Submits the native form element.
+     * {{desc}}
      */
     submit() {
         this.native.submit();

@@ -1,22 +1,11 @@
+
 /**
- * Manages virtual scrolling for a host element.
- * @fires MDVirtualController#onVirtualScrollChange - Fired when the virtual scroll position changes.
- * @fires MDVirtualController#onVirtualScroll - Fired during virtual scrolling.
+ * {{desc}}
+ * @fires MDVirtualController#onVirtualScrollChange - {{desc}}
+ * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
-    /**
-     * Initializes the virtual scrolling controller.
-     * @param {*} host - The host element that this controller is associated with.
-     * @param {*} options - Configuration options for virtual scrolling.
-     * @property {String} options.viewportSelector - CSS selector for the viewport element.
-     * @property {String} options.scrollbarSelector - CSS selector for the scrollbar element.
-     * @property {String} options.containerSelector - CSS selector for the container element.
-     * @property {Number} options.rowTotal - Total number of rows.
-     * @property {Number} options.rowHeight - Height of each row.
-     * @property {Number} options.buffer - Buffer size for pre-rendering rows.
-     * @property {Number} options.columnTotal - Total number of columns.
-     * @property {Number} options.columnWidth - Width of each column.
-     */
+    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {

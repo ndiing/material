@@ -1,10 +1,7 @@
 import { configureLocalization } from "@lit/localize";
 import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
-/**
- * Mapping of language names to their ISO language codes.
- * @type {Object.<string, string>}
- */
+
 const languageMap = {
     Afrikaans: "af",
     Akan: "ak",

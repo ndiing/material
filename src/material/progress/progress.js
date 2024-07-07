@@ -6,9 +6,9 @@ let isAnimating = false;
 let elapsedTime = 0;
 let progressBar;
 
+
 /**
- * Creates a progress bar element and appends it to the document body.
- * Initializes the progress bar with maximum duration.
+ * {{desc}}
  */
 function create() {
     progressBar = document.createElement("md-progress-indicator");
@@ -20,8 +20,9 @@ function create() {
     progressBar.style.top = "0px";
 }
 
+
 /**
- * Resets animation variables and removes the progress bar element.
+ * {{desc}}
  */
 function reset() {
     isAnimating = false;
@@ -33,9 +34,9 @@ function reset() {
     progressBar = null;
 }
 
+
 /**
- * Recursive function that updates the progress of the animation.
- * @param {Function} [resolve] - Optional callback function to be called when animation completes.
+ * {{desc}}
  */
 function observe(resolve) {
     let currentTime = performance.now();
@@ -57,11 +58,9 @@ function observe(resolve) {
     }
 }
 
+
 /**
- * Starts or resumes the animation for a specified duration.
- * If animation is already running, extends the total duration.
- * @param {number} [duration=10000] - The duration of the animation in milliseconds.
- * @returns {Promise} A promise that resolves when the animation completes.
+ * {{desc}}
  */
 function start(duration = 10000) {
     return new Promise((resolve) => {
@@ -83,8 +82,9 @@ function start(duration = 10000) {
     });
 }
 
+
 /**
- * Pauses the currently running animation if any.
+ * {{desc}}
  */
 function pause() {
     if (isAnimating) {
@@ -94,8 +94,9 @@ function pause() {
     }
 }
 
+
 /**
- * Resumes a paused animation.
+ * {{desc}}
  */
 function resume() {
     if (!isAnimating) {
@@ -105,8 +106,9 @@ function resume() {
     }
 }
 
+
 /**
- * Stops the current animation and resets animation variables.
+ * {{desc}}
  */
 function stop() {
     if (isAnimating) {

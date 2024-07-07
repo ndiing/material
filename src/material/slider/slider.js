@@ -3,24 +3,26 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { calcDecimal, calcPercentage, isArrayString } from "../functions/functions.js";
 
+
 /**
- * MDSliderComponent is a custom component for creating slider controls.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-slider
- * @fires MDSliderComponent#onSliderNativeInput - Fired when the slider's native input value changes.
- * @fires MDSliderComponent#onSliderNativeReset - Fired when the slider's native input is reset.
+ * @fires MDSliderComponent#onSliderNativeInput - {{desc}}
+ * @fires MDSliderComponent#onSliderNativeReset - {{desc}}
  */
 class MDSliderComponent extends MDComponent {
+    
     /**
-     * @property {Array} defaultValue - The default value of the slider.
-     * @property {Number} min - The minimum value of the slider.
-     * @property {Number} max - The maximum value of the slider.
-     * @property {Number} step - The step value for the slider.
-     * @property {Boolean} disabled - Indicates if the slider is disabled.
-     * @property {String} form - The form attribute of the slider.
-     * @property {String} name - The name attribute of the slider.
-     * @property {String} list - The list attribute of the slider.
-     * @property {String} autocomplete - The autocomplete attribute of the slider.
+     * @property {Array} defaultValue - {{desc}}
+     * @property {Number} min - {{desc}}
+     * @property {Number} max - {{desc}}
+     * @property {Number} step - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {String} form - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {String} list - {{desc}}
+     * @property {String} autocomplete - {{desc}}
      */
     static properties = {
         value: {
@@ -159,9 +161,9 @@ class MDSliderComponent extends MDComponent {
         }
     }
 
+    
     /**
-     * Gets the native input elements associated with the slider.
-     * @returns {NodeList} The native input elements.
+     * {{desc}}
      */
     get natives() {
         return this.querySelectorAll(".md-slider__native");

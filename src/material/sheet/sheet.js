@@ -1,14 +1,18 @@
 import { MDCardComponent } from "../card/card.js";
 
+
 /**
- * Represents a sheet component that extends MDCardComponent.
+ * {{desc}}
  * @extends MDCardComponent
  * @tagname md-sheet
- * @fires MDSheetComponent#onSheetScrimClick - Fired when the scrim of the sheet is clicked.
+ * @fires MDSheetComponent#onSheetScrimClick - {{desc}}
+ * @fires MDSheetComponent#onSheetShow - {{desc}}
+ * @fires MDSheetComponent#onSheetClose - {{desc}}
  */
 class MDSheetComponent extends MDCardComponent {
+    
     /**
-     * @property {Boolean} open - Indicates whether the sheet is currently open.
+     * @property {Boolean} open - {{desc}}
      */
     static properties = {
         ...MDCardComponent.properties,
@@ -26,8 +30,9 @@ class MDSheetComponent extends MDCardComponent {
         this.classList.add("md-sheet");
     }
 
+    
     /**
-     * Shows the sheet as a modal.
+     * {{desc}}
      */
     showModal() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -52,8 +57,9 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetScrimClick", event);
     }
 
+    
     /**
-     * Shows the sheet.
+     * {{desc}}
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -65,8 +71,9 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetShow", this);
     }
 
+    
     /**
-     * Closes the sheet.
+     * {{desc}}
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -84,8 +91,9 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetClose", this);
     }
 
+    
     /**
-     * Toggles the visibility of the sheet. If currently open, it closes; if closed, it opens.
+     * {{desc}}
      */
     toggle(...args) {
         if (this.open) {

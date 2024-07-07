@@ -1,8 +1,8 @@
 import { MDTreeComponent } from "../tree/tree.js";
 
+
 /**
- * MDTabsComponent is a class that extends MDTreeComponent and represents a tabbed interface component.
- * This component allows for the creation of tabbed navigation with different visual variants.
+ * {{desc}}
  * @extends MDTreeComponent
  * @tagname md-tabs
  */

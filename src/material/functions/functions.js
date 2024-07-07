@@ -1,9 +1,8 @@
 /* Casing Conversion */
 
+
 /**
- * Converts a string to PascalCase.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to PascalCase.
+ * {{desc}}
  */
 function toPascalCase(string) {
     return string
@@ -13,10 +12,9 @@ function toPascalCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to camelCase.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to camelCase.
+ * {{desc}}
  */
 function toCamelCase(string) {
     return string
@@ -26,10 +24,9 @@ function toCamelCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to snake_case.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to snake_case.
+ * {{desc}}
  */
 function toSnakeCase(string) {
     return string
@@ -39,10 +36,9 @@ function toSnakeCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to kebab-case.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to kebab-case.
+ * {{desc}}
  */
 function toKebabCase(string) {
     return string
@@ -52,10 +48,9 @@ function toKebabCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to flatcase.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to flatcase.
+ * {{desc}}
  */
 function toFlatCase(string) {
     return string
@@ -65,10 +60,9 @@ function toFlatCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to UPPERFLATCASE.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to UPPERFLATCASE.
+ * {{desc}}
  */
 function toUpperFlatCase(string) {
     return string
@@ -78,10 +72,9 @@ function toUpperFlatCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to Pascal_Snake_Case.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to Pascal_Snake_Case.
+ * {{desc}}
  */
 function toPascalSnakeCase(string) {
     return string
@@ -91,10 +84,9 @@ function toPascalSnakeCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to camel_Snake_Case.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to camel_Snake_Case.
+ * {{desc}}
  */
 function toCamelSnakeCase(string) {
     return string
@@ -104,10 +96,9 @@ function toCamelSnakeCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to SCREAMING_SNAKE_CASE.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to SCREAMING_SNAKE_CASE.
+ * {{desc}}
  */
 function toScreamingSnakeCase(string) {
     return string
@@ -117,10 +108,9 @@ function toScreamingSnakeCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to Train-Case.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to Train-Case.
+ * {{desc}}
  */
 function toTrainCase(string) {
     return string
@@ -130,10 +120,9 @@ function toTrainCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to COBOL-CASE.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to COBOL-CASE.
+ * {{desc}}
  */
 function toCobolCase(string) {
     return string
@@ -143,10 +132,9 @@ function toCobolCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+
 /**
- * Converts a string to Title Case.
- * @param {string} string - The input string to convert.
- * @returns {string} The string converted to Title Case.
+ * {{desc}}
  */
 function toTitleCase(string) {
     return string
@@ -158,10 +146,9 @@ function toTitleCase(string) {
 
 /* Stringify Date */
 
+
 /**
- * Converts a date object to a string formatted as YYYY-MM-DDTHH:MM.
- * @param {Date} date - The date object to convert.
- * @returns {string} The date formatted as YYYY-MM-DDTHH:MM.
+ * {{desc}}
  */
 function stringifyDatetimeLocal(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -169,10 +156,9 @@ function stringifyDatetimeLocal(date) {
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
 
+
 /**
- * Converts a date object to a string formatted as YYYY-MM-DD.
- * @param {Date} date - The date object to convert.
- * @returns {string} The date formatted as YYYY-MM-DD.
+ * {{desc}}
  */
 function stringifyDate(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -180,19 +166,17 @@ function stringifyDate(date) {
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
 
+
 /**
- * Converts a date object to a string formatted as YYYY.
- * @param {Date} date - The date object to convert.
- * @returns {string} The date formatted as YYYY.
+ * {{desc}}
  */
 function stringifyYear(date) {
     return `${date.getFullYear()}`;
 }
 
+
 /**
- * Converts a date object to a string formatted as YYYY-MM.
- * @param {Date} date - The date object to convert.
- * @returns {string} The date formatted as YYYY-MM.
+ * {{desc}}
  */
 function stringifyMonth(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -200,10 +184,9 @@ function stringifyMonth(date) {
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}`;
 }
 
+
 /**
- * Converts a date object to a string formatted as HH:MM.
- * @param {Date} date - The date object to convert.
- * @returns {string} The time formatted as HH:MM.
+ * {{desc}}
  */
 function stringifyTime(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -211,10 +194,9 @@ function stringifyTime(date) {
     return `${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
 
+
 /**
- * Converts a date object to a string formatted as YYYY-WW.
- * @param {Date} date - The date object to convert.
- * @returns {string} The date formatted as YYYY-WW.
+ * {{desc}}
  */
 function stringifyWeek(date) {
     let year = date.getFullYear();
@@ -224,48 +206,43 @@ function stringifyWeek(date) {
 
 /* Parse Date */
 
+
 /**
- * Parses a datetime-local string into a Date object.
- * @param {string} datetimeLocal - The datetime-local string to parse.
- * @returns {Date} The parsed Date object.
+ * {{desc}}
  */
 function parseDatetimeLocal(datetimeLocal) {
     return new Date(datetimeLocal);
 }
 
+
 /**
- * Parses a date string (YYYY-MM-DD) into a Date object.
- * @param {string} dateString - The date string (YYYY-MM-DD) to parse.
- * @returns {Date} The parsed Date object.
+ * {{desc}}
  */
 function parseDate(dateString) {
     var [year, month, day] = dateString.split("-").map(Number);
     return new Date(year, month - 1, day);
 }
 
+
 /**
- * Parses a year string (YYYY) into a Date object.
- * @param {string} yearString - The year string (YYYY) to parse.
- * @returns {Date} The parsed Date object.
+ * {{desc}}
  */
 function parseYear(yearString) {
     return new Date(yearString);
 }
 
+
 /**
- * Parses a month string (YYYY-MM) into a Date object.
- * @param {string} monthString - The month string (YYYY-MM) to parse.
- * @returns {Date} The parsed Date object.
+ * {{desc}}
  */
 function parseMonth(monthString) {
     var [year, month] = monthString.split("-").map(Number);
     return new Date(year, month - 1);
 }
 
+
 /**
- * Parses a time string (HH:MM) into a Date object.
- * @param {string} timeString - The time string (HH:MM) to parse.
- * @returns {Date} The parsed Date object.
+ * {{desc}}
  */
 function parseTime(timeString) {
     var [hours, minutes] = timeString.split(":").map(Number);
@@ -274,11 +251,9 @@ function parseTime(timeString) {
     return date;
 }
 
+
 /**
- * Parses a week string (YYYY-WW) into a Date object representing the start of that week.
- * @param {string} weekStr - The week string (YYYY-WW) to parse.
- * @returns {Date} The Date object representing the start of the parsed week.
- * @throws {Error} If the week string format is invalid or the year/week number is invalid.
+ * {{desc}}
  */
 function parseWeek(weekStr) {
     let parts = weekStr.split("-W");
@@ -299,10 +274,9 @@ function parseWeek(weekStr) {
 
 /* Color Conversion */
 
+
 /**
- * Converts a hexadecimal color representation to RGBA components.
- * @param {string} hex - The hexadecimal color string (e.g., "#RRGGBB" or "#RRGGBBAA").
- * @returns {{ red: number, green: number, blue: number, alpha: number }} The RGBA components.
+ * {{desc}}
  */
 function hexToRgba(hex) {
     hex = hex.replace(/^#/, "");
@@ -315,10 +289,9 @@ function hexToRgba(hex) {
     return { red, green, blue, alpha };
 }
 
+
 /**
- * Converts a hexadecimal color representation to HSLA components.
- * @param {string} hex - The hexadecimal color string (e.g., "#RRGGBB" or "#RRGGBBAA").
- * @returns {{ hue: number, saturation: number, lightness: number, red: number, green: number, blue: number, alpha: number }} The HSLA components.
+ * {{desc}}
  */
 function hexToHsla(hex) {
     const rgba = hexToRgba(hex);
@@ -358,13 +331,9 @@ function hexToHsla(hex) {
     return { hue: Math.round(hue), saturation, lightness, red, green, blue, alpha };
 }
 
+
 /**
- * Converts HSLA components to RGBA components.
- * @param {number} h - The hue value (0-360).
- * @param {number} s - The saturation value (0-1).
- * @param {number} l - The lightness value (0-1).
- * @param {number} [a=1] - The alpha value (0-1).
- * @returns {{ red: number, green: number, blue: number, alpha: number }} The RGBA components.
+ * {{desc}}
  */
 function hslaToRgba(h, s, l, a = 1) {
     h = ((h % 360) + 360) % 360;
@@ -407,13 +376,9 @@ function hslaToRgba(h, s, l, a = 1) {
     return { red: r, green: g, blue: b, alpha: a };
 }
 
+
 /**
- * Converts RGBA components to a hexadecimal color representation.
- * @param {number} r - The red value (0-255).
- * @param {number} g - The green value (0-255).
- * @param {number} b - The blue value (0-255).
- * @param {number} [a=1] - The alpha value (0-1).
- * @returns {string} The hexadecimal color string (e.g., "#RRGGBB" or "#RRGGBBAA").
+ * {{desc}}
  */
 function rgbaToHex(r, g, b, a = 1) {
     r = Math.round(Math.min(255, Math.max(0, r)));
@@ -429,26 +394,18 @@ function rgbaToHex(r, g, b, a = 1) {
     return a === 1 ? rgbHex : `${rgbHex}${alphaHex}`;
 }
 
+
 /**
- * Converts HSLA components to a hexadecimal color representation.
- * @param {number} h - The hue value (0-360).
- * @param {number} s - The saturation value (0-1).
- * @param {number} l - The lightness value (0-1).
- * @param {number} [a=1] - The alpha value (0-1).
- * @returns {string} The hexadecimal color string (e.g., "#RRGGBB" or "#RRGGBBAA").
+ * {{desc}}
  */
 function hslaToHex(h, s, l, a = 1) {
     const { red, green, blue } = hslaToRgba(h, s, l, a);
     return rgbaToHex(red, green, blue, a);
 }
 
+
 /**
- * Converts RGBA components to HSLA components.
- * @param {number} r - The red value (0-255).
- * @param {number} g - The green value (0-255).
- * @param {number} b - The blue value (0-255).
- * @param {number} [a=1] - The alpha value (0-1).
- * @returns {{ hue: number, saturation: number, lightness: number, alpha: number }} The HSLA components.
+ * {{desc}}
  */
 function rgbaToHsla(r, g, b, a = 1) {
     const nr = r / 255;
@@ -487,62 +444,52 @@ function rgbaToHsla(r, g, b, a = 1) {
 
 /* Utility Functions */
 
+
 /**
- * Checks if the provided color string is a valid hexadecimal color.
- * @param {String} color - The color string to validate.
- * @returns {Boolean} - True if the color string is a valid hexadecimal color, false otherwise.
+ * {{desc}}
  */
 function isValidHexColor(color) {
     const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
     return hexColorRegex.test(color);
 }
 
+
 /**
- * Checks if a value is an object.
- * @param {*} obj - The value to check.
- * @returns {boolean} True if the value is an object, otherwise false.
+ * {{desc}}
  */
 function isObject(obj) {
     return obj !== null && typeof obj === "object";
 }
 
+
 /**
- * Checks if a string represents an array in a stringified format.
- * @param {string} str - The string to check.
- * @returns {boolean} True if the string represents an array, false otherwise.
+ * {{desc}}
  */
 function isArrayString(str) {
     const arrayRegex = /^\s*\[.*\]\s*$/;
     return arrayRegex.test(str);
 }
 
+
 /**
- * Checks if a value is defined and not null.
- * @param {*} value - The value to check.
- * @returns {boolean} Returns true if the value is defined and not null, otherwise false.
+ * {{desc}}
  */
 function isDefined(value) {
     return value !== undefined && value !== null;
 }
 
+
 /**
- * Calculates the percentage of a value relative to a range defined by min and max values.
- * @param {number} min - The minimum value of the range.
- * @param {number} max - The maximum value of the range.
- * @param {number} value - The value to calculate the percentage for.
- * @returns {number} The percentage value (between 0 and 100).
+ * {{desc}}
  */
 function calcPercentage(min, max, value) {
     let percentage = ((value - min) / (max - min)) * 100;
     return percentage;
 }
 
+
 /**
- * Calculates the decimal value representing the position of a value within a range defined by min and max values.
- * @param {number} min - The minimum value of the range.
- * @param {number} max - The maximum value of the range.
- * @param {number} value - The value to calculate the decimal for.
- * @returns {number} The decimal value (between 0 and 1).
+ * {{desc}}
  */
 function calcDecimal(min, max, value) {
     let decimal = (value - min) / (max - min);
@@ -551,9 +498,9 @@ function calcDecimal(min, max, value) {
 
 /* Additional Functions */
 
+
 /**
- * Creates a queue function that executes callbacks asynchronously in sequence.
- * @returns {Function} A function that when called with a callback function, queues the callback for execution.
+ * {{desc}}
  */
 function createQueue() {
     let pending = Promise.resolve();
@@ -573,12 +520,7 @@ function createQueue() {
 
 /* Date Prototype Extensions */
 
-/**
- * Sets the week number of the date.
- * @param {number} week - The week number to set (between 1 and 53).
- * @returns {Date} The modified Date object with the week set.
- * @throws {Error} If the week number is not a number or is out of valid range (1 to 53).
- */
+
 Date.prototype.setWeek = function (week) {
     if (typeof week !== "number" || week < 1 || week > 53) {
         throw new Error("Invalid week number. Week number should be between 1 and 53.");
@@ -591,10 +533,7 @@ Date.prototype.setWeek = function (week) {
     return this;
 };
 
-/**
- * Gets the ISO week number of the date.
- * @returns {number} The ISO week number of the date (1 to 53).
- */
+
 Date.prototype.getWeek = function () {
     let tempDate = new Date(this.getTime());
     tempDate.setHours(0, 0, 0, 0);

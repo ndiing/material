@@ -9,22 +9,19 @@ const breakpoints = [
     { name: "expanded", query: "(min-width: 840px)" },
 ];
 
+
 /**
- * Represents a media observer that watches changes in media queries.
- * Use this class to observe changes in media queries based on a provided list.
+ * {{desc}}
  */
 class MDObserver {
-    /**
-     * Creates an instance of MDObserver.
-     * @param {function} [callback] - The callback function to be called on query change.
-     */
+    
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
+    
     /**
-     * Begins observing changes in media queries based on the provided list.
-     * @param {Array<{ name: string, query: string }>} list - The list of media queries to observe.
+     * {{desc}}
      */
     observe(list) {
         const handleChange = () => {

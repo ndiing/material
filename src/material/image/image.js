@@ -3,33 +3,34 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 
+
 /**
- * MDImageComponent represents an image component that extends MDComponent.
- * This component supports various properties for image attributes and styling.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-image
- * @fires MDImageComponent#onImageNativeLoad - Fires when the native image has loaded successfully.
- * @fires MDImageComponent#onImageNativeError - Fires when there is an error loading the native image.
+ * @fires MDImageComponent#onImageNativeLoad - {{desc}}
+ * @fires MDImageComponent#onImageNativeError - {{desc}}
  */
 class MDImageComponent extends MDComponent {
+    
     /**
-     * @property {String} src - The URL of the image.
-     * @property {String} alt - The alternate text for the image.
-     * @property {String} srcset - The image sourceset attribute.
-     * @property {String} sizes - The image sizes attribute.
-     * @property {String} crossorigin - The CORS attribute for the image.
-     * @property {String} usemap - The usemap attribute for image maps.
-     * @property {Boolean} ismap - Indicates if the image is part of an image map.
-     * @property {Number} width - The width of the image.
-     * @property {Number} height - The height of the image.
-     * @property {String} referrerpolicy - The referrer policy for the image.
-     * @property {String} decoding - The decoding hint for the image.
-     * @property {String} loading - The lazy-loading strategy for the image ('lazy', 'eager', or 'auto').
-     * @property {String} title - The title attribute of the image.
-     * @property {String} longdesc - The long description URL for the image.
-     * @property {String} fetchpriority - The priority hint for fetching the image ('auto', 'high', 'low', or 'none').
-     * @property {String} ratio - The aspect ratio of the image container (e.g., '16/9', '1.5', etc.).
-     * @property {String} variant - The variant style for the image (e.g., 'rounded').
+     * @property {String} src - {{desc}}
+     * @property {String} alt - {{desc}}
+     * @property {String} srcset - {{desc}}
+     * @property {String} sizes - {{desc}}
+     * @property {String} crossorigin - {{desc}}
+     * @property {String} usemap - {{desc}}
+     * @property {Boolean} ismap - {{desc}}
+     * @property {Number} width - {{desc}}
+     * @property {Number} height - {{desc}}
+     * @property {String} referrerpolicy - {{desc}}
+     * @property {String} decoding - {{desc}}
+     * @property {String} loading - {{desc}}
+     * @property {String} title - {{desc}}
+     * @property {String} longdesc - {{desc}}
+     * @property {String} fetchpriority - {{desc}}
+     * @property {String} ratio - {{desc}}
+     * @property {String} variant - {{desc}}
      */
     static properties = {
         src: { type: String },

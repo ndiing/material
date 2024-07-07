@@ -4,29 +4,38 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
+
 /**
- * Custom card component.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-card
- * @fires MDCardComponent#onCardIconButtonClick - When an icon button in the card is clicked.
- * @fires MDCardComponent#onCardIconClick - When an icon in the card is clicked.
- * @fires MDCardComponent#onCardButtonClick - When a button in the card is clicked.
- * @fires MDCardComponent#onCardFabClick - When a FAB (Floating Action Button) in the card is clicked.
- * @fires MDCardComponent#onCardTextFieldNativeFocus - When a native input in the card gains focus.
- * @fires MDCardComponent#onCardTextFieldNativeBlur - When a native input in the card loses focus.
- * @fires MDCardComponent#onCardTextFieldNativeInput - When a native input in the card receives input.
- * @fires MDCardComponent#onCardTextFieldNativeSearch - When a native input in the card performs a search.
- * @fires MDCardComponent#onCardTextFieldNativeInvalid - When a native input in the card becomes invalid.
- * @fires MDCardComponent#onCardTextFieldNativeReset - When a native input in the card is reset.
+ * @fires MDCardComponent#onCardIconButtonClick - {{desc}}
+ * @fires MDCardComponent#onCardIconClick - {{desc}}
+ * @fires MDCardComponent#onCardButtonClick - {{desc}}
+ * @fires MDCardComponent#onCardFabClick - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeFocus - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeBlur - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeInput - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeSearch - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeInvalid - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldNativeReset - {{desc}}
+ * @fires MDCardComponent#onCardTextFieldIconButtonClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationChange - {{desc}}
+ * @fires MDCardComponent#onCardPaginationLimitChange - {{desc}}
+ * @fires MDCardComponent#onCardPaginationFirstClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationPrevClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationNextClick - {{desc}}
+ * @fires MDCardComponent#onCardPaginationLastClick - {{desc}}
  */
 class MDCardComponent extends MDComponent {
+    
     /**
-     * @property {String} variant - Variant of the card (e.g., "elevated", "filled", "outlined").
-     * @property {Array} leadingActions - Array of leading actions (e.g., icons, buttons) in the card.
-     * @property {String} label - Main label text for the card.
-     * @property {String} subLabel - Sub-label text for the card.
-     * @property {Array} trailingActions - Array of trailing actions (e.g., icons, buttons) in the card.
-     * @property {Array} actions - Array of actions (e.g., buttons) within the card body or footer.
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
      */
     static properties = {
         variant: { type: String },

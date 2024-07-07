@@ -1,22 +1,25 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
+
 /**
- * A web component for pagination control.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-pagination
- * @fires MDPaginationComponent#onPaginationChange - Fired when the pagination changes.
- * @fires MDPaginationComponent#onPaginationLimitChange - Fired when the pagination limit changes.
- * @fires MDPaginationComponent#onPaginationFirstClick - Fired when the first page button is clicked.
- * @fires MDPaginationComponent#onPaginationPrevClick - Fired when the previous page button is clicked.
- * @fires MDPaginationComponent#onPaginationNextClick - Fired when the next page button is clicked.
- * @fires MDPaginationComponent#onPaginationLastClick - Fired when the last page button is clicked.
+ * @fires MDPaginationComponent#onPaginationChange - {{desc}}
+ * @fires MDPaginationComponent#onPaginationLimitChange - {{desc}}
+ * @fires MDPaginationComponent#onPaginationFirstClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationPrevClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationNextClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
  */
 class MDPaginationComponent extends MDComponent {
+    
     /**
-     * @property {Number} total - The total number of items.
-     * @property {Number} limit - The number of items per page.
-     * @property {Number} page - The current page number.
+     * @property {Number} total - {{desc}}
+     * @property {Number} limit - {{desc}}
+     * @property {Number} page - {{desc}}
+     * @property {Array} options - {{desc}}
      */
     static properties = {
         total: { type: Number },
@@ -25,41 +28,41 @@ class MDPaginationComponent extends MDComponent {
         options: { type: Array },
     };
 
+    
     /**
-     * The total number of pages.
-     * @returns {Number}
+     * {{desc}}
      */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
 
+    
     /**
-     * The starting index of items on the current page.
-     * @returns {Number}
+     * {{desc}}
      */
     get start() {
         return Math.max((this.page - 1) * this.limit, 0);
     }
 
+    
     /**
-     * The ending index of items on the current page.
-     * @returns {Number}
+     * {{desc}}
      */
     get end() {
         return Math.min(this.start + this.limit, this.total);
     }
 
+    
     /**
-     * The starting item number displayed on the current page.
-     * @returns {Number}
+     * {{desc}}
      */
     get numberStart() {
         return Math.min(this.start + 1, this.total);
     }
 
+    
     /**
-     * The ending item number displayed on the current page.
-     * @returns {Number}
+     * {{desc}}
      */
     get numberEnd() {
         return this.end;

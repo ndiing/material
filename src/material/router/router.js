@@ -1,11 +1,15 @@
+
 /**
- * Router for managing client-side navigation and routing.
- * @fires MDRouter#onRouterCurrentEntryChange - Triggered when the current route changes.
- * @fires MDRouter#onRouterNavigate - Triggered when navigating to a new route.
- * @fires MDRouter#onRouterNavigateError - Triggered when an error occurs during navigation.
- * @fires MDRouter#onRouterNavigateSuccess - Triggered when navigation to a route is successful.
+ * {{desc}}
+ * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
+ * @fires MDRouter#onRouterNavigate - {{desc}}
+ * @fires MDRouter#onRouterNavigateError - {{desc}}
+ * @fires MDRouter#onRouterNavigateSuccess - {{desc}}
  */
 class MDRouter {
+    /**
+     * {{desc}}
+     */
     static setRoutes(routes, parent) {
         return routes.reduce((acc, curr) => {
             curr.parent = parent;
@@ -20,9 +24,9 @@ class MDRouter {
         }, []);
     }
 
+    
     /**
-     * Gets the current path of the router.
-     * @returns {string} The current path.
+     * {{desc}}
      */
     static get path() {
         if (this.historyApiFallback) {
@@ -32,9 +36,9 @@ class MDRouter {
         }
     }
 
+    
     /**
-     * Gets the current query parameters as an object.
-     * @returns {Object} The current query parameters.
+     * {{desc}}
      */
     static get query() {
         let search;
@@ -60,10 +64,9 @@ class MDRouter {
         return query;
     }
 
+    
     /**
-     * Finds and returns a route that matches the given path.
-     * @param {string} path - The path to match.
-     * @returns {Object} The matched route.
+     * {{desc}}
      */
     static getRoute(path) {
         return this.stacks.find((route) => {
@@ -80,10 +83,9 @@ class MDRouter {
         });
     }
 
+    
     /**
-     * Gets all routes from the root to the specified route.
-     * @param {Object} route - The route to start from.
-     * @returns {Array} An array of routes.
+     * {{desc}}
      */
     static getRoutes(route) {
         return [route].reduce((acc, curr) => {
@@ -97,11 +99,9 @@ class MDRouter {
         }, []);
     }
 
+    
     /**
-     * Finds and returns the outlet element for a given route.
-     * @param {HTMLElement} container - The container element to search within.
-     * @param {Object} route - The route to find the outlet for.
-     * @returns {Promise<HTMLElement>} A promise that resolves to the outlet element.
+     * {{desc}}
      */
     static getOutlet(container, route) {
         return new Promise((resolve) => {
@@ -219,9 +219,9 @@ class MDRouter {
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
 
+    
     /**
-     * Navigates to a new URL, updating browser history.
-     * @param {String} url - URL to navigate to.
+     * {{desc}}
      */
     static navigate(url) {
         if (this.historyApiFallback) {
@@ -250,9 +250,9 @@ class MDRouter {
         window.dispatchEvent(event);
     }
 
+    
     /**
-     * Initializes the router with provided route configurations.
-     * @param {Array} routes - List of route configurations.
+     * {{desc}}
      */
     static init(routes) {
         this.stacks = this.setRoutes(routes);

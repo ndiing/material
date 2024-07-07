@@ -2,17 +2,18 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * MDChipsComponent is a class that extends MDComponent and represents a collection of chip components.
- * This component manages an array of chip data and handles their interactions.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-chips
- * @fires MDChipsComponent#onChipClick - Fires when a chip in the collection is clicked.
+ * @fires MDChipsComponent#onChipClick - {{desc}}
  */
 class MDChipsComponent extends MDComponent {
+    
     /**
-     * @property {Array} list - The list of chip data to be rendered.
-     * @property {Boolean} multiSelection - Whether multiple chips can be selected simultaneously.
+     * @property {Array} list - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
      */
     static properties = {
         list: { type: Array },

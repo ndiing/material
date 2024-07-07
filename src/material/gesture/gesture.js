@@ -1,33 +1,21 @@
+
 /**
- * Gesture controller for handling drag, resize, selection, tap, double tap, long press, and swipe events.
- * @fires MDGestureController#onDragStart - Triggered when a drag operation starts.
- * @fires MDGestureController#onResizeStart - Triggered when a resize operation starts.
- * @fires MDGestureController#onSelectionStart - Triggered when a selection operation starts.
- * @fires MDGestureController#onLongPress - Triggered when a long press is detected.
- * @fires MDGestureController#onDrag - Triggered continuously during a drag operation.
- * @fires MDGestureController#onResize - Triggered continuously during a resize operation.
- * @fires MDGestureController#onSelection - Triggered continuously during a selection operation.
- * @fires MDGestureController#onTap - Triggered when a tap (short press) is detected.
- * @fires MDGestureController#onDoubleTap - Triggered when a double tap is detected.
- * @fires MDGestureController#onSelectionEnd - Triggered when a selection operation ends.
- * @fires MDGestureController#onDragEnd - Triggered when a drag operation ends.
- * @fires MDGestureController#onResizeEnd - Triggered when a resize operation ends.
+ * {{desc}}
+ * @fires MDGestureController#onDragStart - {{desc}}
+ * @fires MDGestureController#onResizeStart - {{desc}}
+ * @fires MDGestureController#onSelectionStart - {{desc}}
+ * @fires MDGestureController#onLongPress - {{desc}}
+ * @fires MDGestureController#onDrag - {{desc}}
+ * @fires MDGestureController#onResize - {{desc}}
+ * @fires MDGestureController#onSelection - {{desc}}
+ * @fires MDGestureController#onTap - {{desc}}
+ * @fires MDGestureController#onDoubleTap - {{desc}}
+ * @fires MDGestureController#onSelectionEnd - {{desc}}
+ * @fires MDGestureController#onDragEnd - {{desc}}
+ * @fires MDGestureController#onResizeEnd - {{desc}}
  */
 class MDGestureController {
-    /**
-     * Initializes the gesture controller with the specified host and options.
-     * @param {*} host - The host element to which the controller is attached.
-     * @param {*} options - Configuration options for the gesture controller.
-     * @property {String} options.containerSelector - Selector for the container element.
-     * @property {String} options.dragHandleSelector - Selector for the drag handle element.
-     * @property {Array} options.drag - Directions in which dragging is enabled ('x', 'y', or both).
-     * @property {Boolean} options.dragAfterLongPress - Whether dragging should start after a long press.
-     * @property {Array} options.resize - Directions in which resizing is enabled ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
-     * @property {Boolean} options.resizeAfterLongPress - Whether resizing should start after a long press.
-     * @property {Boolean} options.selection - Whether selection is enabled.
-     * @property {Boolean} options.selectionAfterLongPress - Whether selection should start after a long press.
-     * @property {Boolean} options.updateStyle - Whether to update the style of the container element during gestures.
-     */
+    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {

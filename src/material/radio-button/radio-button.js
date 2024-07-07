@@ -3,23 +3,25 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
+
 /**
- * MDRadioButtonComponent is a custom radio button element with support for ripple effects.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-radio-button
- * @fires MDRadioButtonComponent#onRadioButtonNativeInput - Fired when the radio button's native input value changes.
- * @fires MDRadioButtonComponent#onRadioButtonNativeReset - Fired when the radio button's native input is reset.
+ * @fires MDRadioButtonComponent#onRadioButtonNativeInput - {{desc}}
+ * @fires MDRadioButtonComponent#onRadioButtonNativeReset - {{desc}}
  */
 class MDRadioButtonComponent extends MDComponent {
+    
     /**
-     * @property {Boolean} checked - Indicates whether the radio button is checked.
-     * @property {Boolean} defaultChecked - The default checked state of the radio button.
-     * @property {Boolean} disabled - Indicates whether the radio button is disabled.
-     * @property {Boolean} indeterminate - Indicates whether the radio button is in an indeterminate state.
-     * @property {String} value - The value associated with the radio button.
-     * @property {String} name - The name attribute for the radio button.
-     * @property {Object} form - The form element associated with the radio button.
-     * @property {String} type - The type of the radio button, typically "radio".
+     * @property {Boolean} checked - {{desc}}
+     * @property {Boolean} defaultChecked - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {String} value - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {Object} form - {{desc}}
+     * @property {String} type - {{desc}}
      */
     static properties = {
         checked: { type: Boolean },

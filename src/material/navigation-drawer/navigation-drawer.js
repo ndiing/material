@@ -2,23 +2,24 @@ import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
+
 /**
- * MDNavigationBarComponent is a class that extends MDSheetComponent and represents a navigation drawer component.
- * This component is used for side navigation within an application.
+ * {{desc}}
  * @extends MDSheetComponent
  * @tagname md-navigation-drawer
  */
 class MDNavigationBarComponent extends MDSheetComponent {
+    
     /**
-     * Inherits properties from MDSheetComponent and MDTreeComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
 
+    
     /**
-     * Returns the body of the navigation drawer component, which contains a tree of navigation items.
+     * {{desc}}
      */
     get body() {
         /* prettier-ignore */
@@ -31,9 +32,9 @@ class MDNavigationBarComponent extends MDSheetComponent {
         `];
     }
 
+    
     /**
-     * Sets the body of the navigation drawer component.
-     * @param {Object} value - The new body content for the navigation drawer.
+     * {{desc}}
      */
     set body(value) {
         this._body = value;

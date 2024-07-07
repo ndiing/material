@@ -2,16 +2,18 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * A custom tree component that extends MDComponent to display a tree structure with various variants.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-tree
- * @fires MDTreeComponent#onTreeItemClick - Fires when a tree item is clicked.
+ * @fires MDTreeComponent#onTreeItemClick - {{desc}}
  */
 class MDTreeComponent extends MDComponent {
+    
     /**
-     * @property {Array} list - The list of tree items to be rendered.
-     * @property {String} variant - The variant of the tree component (e.g., "plain", "accordion", "tree", "level").
+     * @property {Array} list - {{desc}}
+     * @property {String} variant - {{desc}}
      */
     static properties = {
         list: { type: Array },
@@ -80,10 +82,9 @@ class MDTreeComponent extends MDComponent {
         }
     }
 
+    
     /**
-     * Recursively retrieves the list of children from the given list of items.
-     * @param {Array} list - The list of items to retrieve children from.
-     * @return {Array|undefined} The list of children, if any.
+     * {{desc}}
      */
     getList(list) {
         let children;
@@ -107,11 +108,9 @@ class MDTreeComponent extends MDComponent {
         return children;
     }
 
+    
     /**
-     * Recursively sets the list of items with the appropriate properties.
-     * @param {Array} list - The list of items to set.
-     * @param {number} [indent=0] - The indent level of the items.
-     * @return {Object} An object containing expanded and activated states.
+     * {{desc}}
      */
     setList(list, indent = 0) {
         let expanded;
@@ -157,11 +156,9 @@ class MDTreeComponent extends MDComponent {
         return { expanded, activated };
     }
 
+    
     /**
-     * Recursively selects the specified data item in the list.
-     * @param {Array} list - The list of items to search.
-     * @param {Object} data - The data item to select.
-     * @return {boolean} True if the item was activated, false otherwise.
+     * {{desc}}
      */
     select(list, data) {
         let activated;
@@ -186,10 +183,9 @@ class MDTreeComponent extends MDComponent {
         return activated;
     }
 
+    
     /**
-     * Toggles the expanded state of the specified data item.
-     * @param {Array} list - The list of items.
-     * @param {Object} data - The data item to expand or collapse.
+     * {{desc}}
      */
     expand(list, data) {
         data.expanded = !data.expanded;

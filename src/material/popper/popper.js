@@ -1,15 +1,9 @@
+
 /**
- * Controller for managing popper-like positioning of a container relative to a button or host element.
+ * {{desc}}
  */
 class MDPopperController {
-    /**
-     * Constructs a new MDPopperController instance.
-     * @param {*} host - The host element to which the popper container is attached.
-     * @param {Object} options - Options for configuring the popper behavior.
-     * @param {Array<String>} options.placements - Array of placement options for positioning the popper container.
-     * @param {HTMLElement} options.boundary - The boundary element that limits the popper container's movement.
-     * @param {Number} options.offset - Offset value for adjusting the position of the popper container.
-     */
+    
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
@@ -31,10 +25,9 @@ class MDPopperController {
         };
     }
 
+    
     /**
-     * Sets the position of the popper container relative to a button or host element.
-     * @param {HTMLElement} button - The button or host element triggering the popper.
-     * @param {Object} [options] - Additional options to override default placement behavior.
+     * {{desc}}
      */
     async setPlacement(button, options = {}) {
         this.button = button;
@@ -110,10 +103,9 @@ class MDPopperController {
         this.container.style.transformOrigin = `${originX} ${originY}`;
     }
 
+    
     /**
-     * Retrieves the bounding rectangle of an element.
-     * @param {HTMLElement|Event} button - The element or event containing client coordinates.
-     * @returns {DOMRect} The bounding rectangle of the element.
+     * {{desc}}
      */
     getRect(button) {
         if (button instanceof Event) {

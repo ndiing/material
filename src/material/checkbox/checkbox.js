@@ -3,23 +3,25 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
+
 /**
- * MDCheckboxComponent is a custom checkbox element with support for ripple effects.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-checkbox
- * @fires MDCheckboxComponent#onCheckboxNativeInput - Fired when the checkbox's native input value changes.
- * @fires MDCheckboxComponent#onCheckboxNativeReset - Fired when the checkbox's native input is reset.
+ * @fires MDCheckboxComponent#onCheckboxNativeInput - {{desc}}
+ * @fires MDCheckboxComponent#onCheckboxNativeReset - {{desc}}
  */
 class MDCheckboxComponent extends MDComponent {
+    
     /**
-     * @property {Boolean} checked - Indicates whether the checkbox is checked.
-     * @property {Boolean} defaultChecked - The default checked state of the checkbox.
-     * @property {Boolean} disabled - Indicates whether the checkbox is disabled.
-     * @property {Boolean} indeterminate - Indicates whether the checkbox is in an indeterminate state.
-     * @property {String} value - The value associated with the checkbox.
-     * @property {String} name - The name attribute for the checkbox.
-     * @property {Object} form - The form element associated with the checkbox.
-     * @property {String} type - The type of the checkbox, typically "checkbox".
+     * @property {Boolean} checked - {{desc}}
+     * @property {Boolean} defaultChecked - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {String} value - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {Object} form - {{desc}}
+     * @property {String} type - {{desc}}
      */
     static properties = {
         checked: { type: Boolean },

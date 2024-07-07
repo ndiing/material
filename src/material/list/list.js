@@ -2,27 +2,31 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * A custom list component that extends MDComponent to display a list of items with various selection modes.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-list
- * @fires MDListComponent#onListItemClick - Fires when a list item is clicked.
- * @fires MDListComponent#handleListKeydown - Fires when a keydown event occurs on the list.
- * @fires MDListComponent#onListItemSelectionStart - Fires when a list item selection starts.
- * @fires MDListComponent#onListItemSelection - Fires when a list item is selected.
- * @fires MDListComponent#onListItemSelectionEnd - Fires when a list item selection ends.
- * @fires MDListComponent#onListItemCheckboxNativeInput - Fires when a checkbox native input event occurs on a list item.
- * @fires MDListComponent#onListItemRadioButtonNativeInput - Fires when a radio button native input event occurs on a list item.
- * @fires MDListComponent#onListItemSwitchNativeInput - Fires when a switch native input event occurs on a list item.
+ * @fires MDListComponent#onListItemClick - {{desc}}
+ * @fires MDListComponent#handleListKeydown - {{desc}}
+ * @fires MDListComponent#onListItemSelectionStart - {{desc}}
+ * @fires MDListComponent#onListItemSelection - {{desc}}
+ * @fires MDListComponent#onListItemSelectionEnd - {{desc}}
+ * @fires MDListComponent#onListItemCheckboxNativeInput - {{desc}}
+ * @fires MDListComponent#onListItemRadioButtonNativeInput - {{desc}}
+ * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
  */
 class MDListComponent extends MDComponent {
+    
     /**
-     * @property {Array} list - The list of items to be rendered in the list component.
-     * @property {Boolean} selection - Enables or disables selection mode.
-     * @property {Boolean} rangeSelection - Enables or disables range selection mode.
-     * @property {Boolean} multiSelection - Enables or disables multi-selection mode.
-     * @property {Boolean} singleSelection - Enables or disables single-selection mode.
-     * @property {Boolean} allSelection - Enables or disables the ability to select all items.
+     * @property {Array} list - {{desc}}
+     * @property {Object} map - {{desc}}
+     * @property {Function} format - {{desc}}
+     * @property {Boolean} selection - {{desc}}
+     * @property {Boolean} rangeSelection - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
+     * @property {Boolean} singleSelection - {{desc}}
+     * @property {Boolean} allSelection - {{desc}}
      */
     static properties = {
         list: { type: Array },
@@ -96,9 +100,9 @@ class MDListComponent extends MDComponent {
         this.off("keydown", this.handleListKeydown);
     }
 
+    
     /**
-     * Selects a single item in the list.
-     * @param {Object} data - The data item to select.
+     * {{desc}}
      */
     select(data) {
         for (let i = 0; i < this.list.length; i++) {
@@ -108,9 +112,9 @@ class MDListComponent extends MDComponent {
         this.endIndex = this.list.indexOf(data);
     }
 
+    
     /**
-     * Toggles the selection state of an item in the list for multi-selection.
-     * @param {Object} data - The data item to toggle selection.
+     * {{desc}}
      */
     selectToggle(data) {
         data.selected = !data.selected;
@@ -120,9 +124,9 @@ class MDListComponent extends MDComponent {
         }
     }
 
+    
     /**
-     * Selects a range of items in the list from the last selected item to the current item.
-     * @param {Object} data - The data item to start the range selection.
+     * {{desc}}
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
@@ -143,8 +147,9 @@ class MDListComponent extends MDComponent {
         }
     }
 
+    
     /**
-     * Selects all items in the list.
+     * {{desc}}
      */
     selectAll() {
         for (let i = 0; i < this.list.length; i++) {

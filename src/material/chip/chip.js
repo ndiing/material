@@ -2,22 +2,23 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
+
 /**
- * MDChipComponent is a class that extends MDComponent and represents a custom chip component.
- * This component provides various visual and interactive states based on its properties.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-chip
- * @fires MDChipComponent#onChipActionClick - Fires when the chip action button is clicked.
+ * @fires MDChipComponent#onChipActionClick - {{desc}}
  */
 class MDChipComponent extends MDComponent {
+    
     /**
-     * @property {String} variant - The variant type of the chip (e.g., "assist", "filter", "input", "suggestion").
-     * @property {String} avatar - The URL of the avatar image to be displayed in the chip.
-     * @property {String} icon - The icon to be displayed in the chip.
-     * @property {String} label - The text label of the chip.
-     * @property {String} action - The icon for the action button in the chip.
-     * @property {Boolean} selected - Whether the chip is in a selected state.
-     * @property {Boolean} disabled - Whether the chip is disabled.
+     * @property {String} variant - {{desc}}
+     * @property {String} avatar - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} action - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
      */
     static properties = {
         variant: { type: String },

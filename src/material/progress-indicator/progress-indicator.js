@@ -2,16 +2,18 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { calcPercentage } from "../functions/functions.js";
 
+
 /**
- * MDProgressIndicatorComponent is a custom component for displaying progress indicators, either circular or linear.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-progress-indicator
  */
 class MDProgressIndicatorComponent extends MDComponent {
+    
     /**
-     * @property {String} variant - Specifies the type of progress indicator (circular or linear).
-     * @property {Number} value - The current progress value.
-     * @property {Number} max - The maximum value that the progress can reach.
+     * @property {String} variant - {{desc}}
+     * @property {Number} value - {{desc}}
+     * @property {Number} max - {{desc}}
      */
     static properties = {
         variant: { type: String },

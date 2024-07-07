@@ -3,29 +3,31 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
+
 /**
- * Represents a custom list item component with various content options such as avatar, thumbnail, icon, and more.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-list-item
  */
 class MDListItemComponent extends MDComponent {
+    
     /**
-     * @property {String} avatar - URL for the avatar image.
-     * @property {String} thumbnail - URL for the thumbnail image.
-     * @property {String} video - URL for the video thumbnail image.
-     * @property {String} icon - Icon to display in the list item.
-     * @property {String} label - Primary label text.
-     * @property {String} subLabel - Secondary label text.
-     * @property {Number} badge - Badge number to display.
-     * @property {String} text - Main text content of the list item.
-     * @property {Boolean} leadingCheckbox - Indicates if a leading checkbox is displayed.
-     * @property {Boolean} leadingRadioButton - Indicates if a leading radio button is displayed.
-     * @property {Boolean} leadingSwitch - Indicates if a leading switch is displayed.
-     * @property {Boolean} trailingCheckbox - Indicates if a trailing checkbox is displayed.
-     * @property {Boolean} trailingRadioButton - Indicates if a trailing radio button is displayed.
-     * @property {Boolean} trailingSwitch - Indicates if a trailing switch is displayed.
-     * @property {Boolean} selected - Indicates if the list item is selected.
-     * @property {String} routerLink - URL for routing purposes.
+     * @property {String} avatar - {{desc}}
+     * @property {String} thumbnail - {{desc}}
+     * @property {String} video - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadioButton - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Boolean} trailingRadioButton - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {String} routerLink - {{desc}}
      */
     static properties = {
         avatar: { type: String },

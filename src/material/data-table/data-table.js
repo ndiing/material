@@ -7,6 +7,12 @@ import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
+
+/**
+ * {{desc}}
+ * @extends HTMLTableCellElement
+ * @tagname md-data-table-native-column
+ */
 class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     constructor() {
         super();
@@ -25,6 +31,7 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
         this.gesture.hostDisconnected();
     }
 
+    
     /**
      * {{desc}}
      */
@@ -34,7 +41,7 @@ customElements.define("md-data-table-native-column", MDDataTableNativeColumnComp
 
 /**
  * {{desc}}
- * @extends HTMLTableCellElement
+ * @extends MDCardComponent
  * @tagname md-data-table
  * @fires MDDataTableNativeColumnComponent#onDataTableViewportVirtualScroll - {{desc}}
  * @fires MDDataTableNativeColumnComponent#onDataTableColumnCheckboxNativeInput - {{desc}}
@@ -56,6 +63,7 @@ customElements.define("md-data-table-native-column", MDDataTableNativeColumnComp
  * @fires MDDataTableNativeColumnComponent#onDataTableColumnDragEnd - {{desc}}
  */
 class MDDataTableComponent extends MDCardComponent {
+    
     /**
      * @property {Array} columns - {{desc}}
      * @property {Array} rows - {{desc}}
@@ -83,6 +91,7 @@ class MDDataTableComponent extends MDCardComponent {
         allSelection: { type: Boolean },
     };
 
+    
     /**
      * {{desc}}
      */
@@ -90,6 +99,7 @@ class MDDataTableComponent extends MDCardComponent {
         return "label";
     }
 
+    
     /**
      * {{desc}}
      */
@@ -105,6 +115,7 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -114,6 +125,7 @@ class MDDataTableComponent extends MDCardComponent {
         return [this.renderViewport()];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -127,6 +139,7 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -329,6 +342,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.on("keydown", this.handleDataTableKeydown);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -347,6 +361,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -356,6 +371,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -435,6 +451,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableViewportVirtualScroll", event);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -443,6 +460,7 @@ class MDDataTableComponent extends MDCardComponent {
         return selectedTotal > 0 && selectedTotal === this.storeTotal;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -451,6 +469,7 @@ class MDDataTableComponent extends MDCardComponent {
         return selectedTotal > 0 && selectedTotal < this.storeTotal;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -460,6 +479,7 @@ class MDDataTableComponent extends MDCardComponent {
         });
     }
 
+    
     /**
      * {{desc}}
      */
@@ -467,6 +487,7 @@ class MDDataTableComponent extends MDCardComponent {
         data.selected = !data.selected;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -477,6 +498,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.endIndex = this.storeRows.indexOf(data);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -498,6 +520,7 @@ class MDDataTableComponent extends MDCardComponent {
         }
     }
 
+    
     /**
      * {{desc}}
      */

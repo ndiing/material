@@ -2,17 +2,19 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * Represents a segmented button component that extends MDComponent.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-segmented-button
- * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - Triggered when a button item in the segmented button is clicked.
+ * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - {{desc}}
  */
 class MDSegmentedButtonComponent extends MDComponent {
+    
     /**
-     * @property {Array} buttons - An array of button items to be rendered in the segmented button.
-     * @property {Boolean} singleSelection - Indicates if only one button can be selected at a time.
-     * @property {Boolean} multiSelection - Indicates if multiple buttons can be selected simultaneously.
+     * @property {Array} buttons - {{desc}}
+     * @property {Boolean} singleSelection - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
      */
     static properties = {
         ...MDComponent.properties,

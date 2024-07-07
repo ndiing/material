@@ -1,11 +1,9 @@
 import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@material/material-color-utilities";
 import { isValidHexColor } from "../functions/functions";
 
+
 /**
- * Sets the theme of the application based on either a hexadecimal color or an image.
- * @param {String} colorOrImage - The hexadecimal color string or image URL to set as the theme.
- * @param {Object} customColors - Custom color definitions to apply to the theme.
- * @returns {Promise<void>} - Promise that resolves once the theme is applied.
+ * {{desc}}
  */
 async function setTheme(colorOrImage, customColors) {
     let theme;

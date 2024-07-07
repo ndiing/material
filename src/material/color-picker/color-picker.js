@@ -3,62 +3,64 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { hexToHsla, hslaToRgba, rgbaToHex, rgbaToHsla } from "../functions/functions.js";
 import { MDPopperController } from "../popper/popper.js";
 
+
 /**
- * A component for selecting and picking colors, extending MDSheetComponent.
+ * {{desc}}
  * @extends MDSheetComponent
  * @tagname md-color-picker
- * @fires MDColorPickerComponent#onColorPickerIconButtonClick - Fired when an icon button is clicked.
- * @fires MDColorPickerComponent#onColorPickerButtonClick - Fired when a button is clicked.
- * @fires MDColorPickerComponent#onColorPickerSelection - Fired when a color is selected.
- * @fires MDColorPickerComponent#onColorPickerIconButtonPrevClick - Fired when the previous icon button is clicked.
- * @fires MDColorPickerComponent#onColorPickerIconButtonNextClick - Fired when the next icon button is clicked.
- * @fires MDColorPickerComponent#onColorPickerButtonLabelClick - Fired when the label button is clicked.
- * @fires MDColorPickerComponent#onColorPickerButtonCancelClick - Fired when the cancel button is clicked.
- * @fires MDColorPickerComponent#onColorPickerButtonOkClick - Fired when the OK button is clicked.
- * @fires MDColorPickerComponent#onColorPickerGradientTrackPointerdown - Fired when the gradient track is pressed down.
- * @fires MDColorPickerComponent#onColorPickerGradientTrackPointermove - Fired when the gradient track is moved.
- * @fires MDColorPickerComponent#onColorPickerGradientTrackPointerup - Fired when the gradient track is released.
- * @fires MDColorPickerComponent#onColorPickerHueNativeInput - Fired when the hue input is changed.
- * @fires MDColorPickerComponent#onColorPickerOpacityNativeInput - Fired when the opacity input is changed.
+ * @fires MDColorPickerComponent#onColorPickerIconButtonClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerButtonClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerSelection - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerIconButtonPrevClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerIconButtonNextClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerButtonLabelClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerButtonCancelClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerButtonOkClick - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerGradientTrackPointerdown - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerGradientTrackPointermove - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerGradientTrackPointerup - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerHueNativeInput - {{desc}}
+ * @fires MDColorPickerComponent#onColorPickerOpacityNativeInput - {{desc}}
  */
 class MDColorPickerComponent extends MDSheetComponent {
+    
     /**
-     * @property {String} value - The selected color value in hex format.
+     * @property {String} value - {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,
         value: { type: String },
     };
 
+    
     /**
-     * The body content of the color picker component.
-     * @returns {Array} The main rendered content of the component.
+     * {{desc}}
      */
     get body() {
         /* prettier-ignore */
         return [this.renderMain()];
     }
 
+    
     /**
-     * Sets the body content of the color picker component.
-     * @param {Array} value - The body content to be set.
+     * {{desc}}
      */
     set body(value) {
         this._body = value;
     }
 
+    
     /**
-     * The leading actions of the color picker component.
-     * @returns {Array} An array containing the leading actions.
+     * {{desc}}
      */
     get leadingActions() {
         let label = this.selection.hex;
         return [{ name: "label", component: "button", label }];
     }
 
+    
     /**
-     * The actions of the color picker component.
-     * @returns {Array} An array containing the actions.
+     * {{desc}}
      */
     get actions() {
         return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
@@ -148,8 +150,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.style.setProperty("--md-comp-color-picker-base", `rgb(${this.selection.red},${this.selection.green},${this.selection.blue})`);
     }
 
+    
     /**
-     * Initializes the color picker canvas and thumb elements.
+     * {{desc}}
      */
     init() {
         this.canvas = this.querySelector(".md-color-picker__gradient-track");
@@ -161,8 +164,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.updateThumb();
     }
 
+    
     /**
-     * Draws the color gradient on the canvas.
+     * {{desc}}
      */
     draw() {
         const ctx = this.context;
@@ -185,12 +189,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.data = ctx.getImageData(0, 0, this.canvas.width, this.canvas.height).data;
     }
 
+    
     /**
-     * Finds the pixel on the canvas with the specified color values.
-     * @param {Number} r - The red color value.
-     * @param {Number} g - The green color value.
-     * @param {Number} b - The blue color value.
-     * @returns {Object} The coordinates of the found pixel.
+     * {{desc}}
      */
     findPixel(r, g, b) {
         const data = this.data;
@@ -215,8 +216,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         return { x: xx, y: yy };
     }
 
+    
     /**
-     * Updates the HSLA selection values based on the current color value.
+     * {{desc}}
      */
     updateHsla() {
         const { hue, saturation, lightness, red, green, blue, alpha } = hexToHsla(this.value);
@@ -230,8 +232,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.selection.hex = this.value;
     }
 
+    
     /**
-     * Updates the position of the color picker thumb based on the selected color.
+     * {{desc}}
      */
     updateThumb() {
         const { x, y } = this.findPixel(this.selection.red, this.selection.green, this.selection.blue);
@@ -240,9 +243,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.thumb.style.top = y + "px";
     }
 
+    
     /**
-     * Updates the RGBA selection values based on the pointer event.
-     * @param {PointerEvent} event - The pointer event.
+     * {{desc}}
      */
     updateRgba(event) {
         const { width, height, left, top } = this.canvasRect;
@@ -382,10 +385,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerOpacityNativeInput", event);
     }
 
+    
     /**
-     * Displays the modal and sets its placement relative to the given button.
-     * @param {HTMLElement} button - The button element to position the modal relative to.
-     * @param {Object} options - Additional options for positioning.
+     * {{desc}}
      */
     showModal(button, options) {
         super.showModal();
@@ -393,10 +395,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
+    
     /**
-     * Shows the component and sets its placement relative to the given button.
-     * @param {HTMLElement} button - The button element to position the component relative to.
-     * @param {Object} options - Additional options for positioning.
+     * {{desc}}
      */
     show(button, options) {
         super.show();
@@ -404,10 +405,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
+    
     /**
-     * Sets the placement of the component relative to the given button.
-     * @param {HTMLElement} button - The button element to position the component relative to.
-     * @param {Object} options - Additional options for positioning.
+     * {{desc}}
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

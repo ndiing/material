@@ -1,7 +1,8 @@
 import { MDComponent } from "../component/component.js";
 
+
 /**
- * Represents an icon component that extends MDComponent.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-icon
  */
