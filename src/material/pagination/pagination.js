@@ -2,22 +2,22 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * Component for handling pagination of data.
  * @extends MDComponent
  * @tagname md-pagination
- * @fires MDPaginationComponent#onPaginationChange - {{desc}}
- * @fires MDPaginationComponent#onPaginationLimitChange - {{desc}}
- * @fires MDPaginationComponent#onPaginationFirstClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationPrevClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationNextClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationChange - Triggered when pagination changes.
+ * @fires MDPaginationComponent#onPaginationLimitChange - Triggered when pagination limit changes.
+ * @fires MDPaginationComponent#onPaginationFirstClick - Triggered when 'First' button is clicked.
+ * @fires MDPaginationComponent#onPaginationPrevClick - Triggered when 'Previous' button is clicked.
+ * @fires MDPaginationComponent#onPaginationNextClick - Triggered when 'Next' button is clicked.
+ * @fires MDPaginationComponent#onPaginationLastClick - Triggered when 'Last' button is clicked.
  */
 class MDPaginationComponent extends MDComponent {
     /**
-     * @property {Number} total - {{desc}}
-     * @property {Number} limit - {{desc}}
-     * @property {Number} page - {{desc}}
-     * @property {Array} options - {{desc}}
+     * @property {Number} total - Total number of data to paginate.
+     * @property {Number} limit - Limit of data per page.
+     * @property {Number} page - Current page.
+     * @property {Array} options - Available pagination limit options.
      */
     static properties = {
         total: { type: Number },
@@ -27,35 +27,35 @@ class MDPaginationComponent extends MDComponent {
     };
 
     /**
-     * {{desc}}
+     * Calculates the total number of pages based on total data and limit.
      */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
 
     /**
-     * {{desc}}
+     * Calculates the starting index of data displayed on the current page.
      */
     get start() {
         return Math.max((this.page - 1) * this.limit, 0);
     }
 
     /**
-     * {{desc}}
+     * Calculates the ending index of data displayed on the current page.
      */
     get end() {
         return Math.min(this.start + this.limit, this.total);
     }
 
     /**
-     * {{desc}}
+     * Gets the starting number of data displayed on the current page.
      */
     get numberStart() {
         return Math.min(this.start + 1, this.total);
     }
 
     /**
-     * {{desc}}
+     * Gets the ending number of data displayed on the current page.
      */
     get numberEnd() {
         return this.end;
@@ -90,7 +90,7 @@ class MDPaginationComponent extends MDComponent {
             <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===1}" .icon="${"keyboard_arrow_left"}" @click="${this.handlePaginationPrevClick}"></md-icon-button>
             <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===this.pages}" .icon="${"keyboard_arrow_right"}" @click="${this.handlePaginationNextClick}"></md-icon-button>
             <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===this.pages}" .icon="${"last_page"}" @click="${this.handlePaginationLastClick}"></md-icon-button>
-        `
+        `;
     }
 
     connectedCallback() {

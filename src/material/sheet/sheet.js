@@ -1,5 +1,4 @@
 import { MDCardComponent } from "../card/card.js";
-import { MDScrimComponent } from "../scrim/scrim.js";
 
 /**
  * Represents a sheet component that extends from MDCardComponent.

@@ -3,12 +3,13 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * {{desc}}
+ * Represents a navigation rail component that includes a tree view for navigation.
  * @extends MDSheetComponent
  * @tagname md-navigation-rail
  */
 class MDNavigationBarComponent extends MDSheetComponent {
     /**
+     * Properties inherited from MDSheetComponent and MDTreeComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -16,7 +17,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     };
 
     /**
-     * {{desc}}
+     * Returns the body content of the navigation rail, which includes a tree component.
      */
     get body() {
         /* prettier-ignore */
@@ -30,7 +31,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Sets the body content of the navigation rail.
      */
     set body(value) {
         this._body = value;
