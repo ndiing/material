@@ -40,19 +40,24 @@ import "./fab/fab.js";
 import "./bottom-app-bar/bottom-app-bar.js";
 import "./image/image.js";
 import "./badge/badge.js";
+
 import "./form/form.js";
+
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
+
 import "./slider/slider.js";
 import "./progress-indicator/progress-indicator.js";
 import "./list-item/list-item.js";
 import "./list/list.js";
 import "./tree-item/tree-item.js";
 import "./tree/tree.js";
+
 import "./navigation-bar/navigation-bar.js";
 import "./navigation-drawer/navigation-drawer.js";
 import "./navigation-rail/navigation-rail.js";
+
 import "./menu/menu.js";
 import "./tabs/tabs.js";
 import "./chip/chip.js";
