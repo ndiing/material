@@ -1,6 +1,7 @@
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { MDComponent } from "../component/component.js";
 import { marked } from "marked";
+import { nothing } from "lit";
 
 /**
  * Custom element for rendering Markdown content.
@@ -13,6 +14,7 @@ class MDMarkdownComponent extends MDComponent {
      */
     static properties = {
         href: { type: String },
+        text: { type: String },
     };
 
     constructor() {
@@ -22,7 +24,7 @@ class MDMarkdownComponent extends MDComponent {
     }
 
     render() {
-        return unsafeHTML(marked(this.text));
+        return this.text ? unsafeHTML(marked(this.text)) : nothing;
     }
 
     connectedCallback() {

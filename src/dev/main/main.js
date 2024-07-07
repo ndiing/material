@@ -2,6 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
+import data from  "../../../docs/docs.json"
 
 MDRouter.historyApiFallback = false;
 
@@ -107,11 +108,9 @@ class DevMainComponent extends MDComponent {
 
     }
 
-    get href(){
-        if(MDRouter.path=='/'){
-            return './README.md'
-        }
-        return `./docs${MDRouter.path}.md`
+    get doc(){
+        const name=(MDRouter.path.slice(1))
+        return data[name]
     }
 
     render() {
@@ -132,7 +131,7 @@ class DevMainComponent extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown href="${this.href}"></md-markdown>
+                            <md-markdown .text="${this.doc}"></md-markdown>
                         </div>
                     </div>
                     <md-outlet></md-outlet>
