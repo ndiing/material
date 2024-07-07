@@ -3,17 +3,17 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * Icon button component for Material Design.
  * @extends MDComponent
  * @tagname md-icon-button
- * @fires MDIconButtonComponent#onIconButtonClick - {{desc}}
+ * @fires MDIconButtonComponent#onIconButtonClick - Event fired when the icon button is clicked.
  */
 class MDIconButtonComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
+     * @property {String} variant - The variant style of the icon button (e.g., filled, tonal, outlined, toggle).
+     * @property {String} icon - The icon to display inside the icon button.
+     * @property {Boolean} selected - Indicates if the icon button is selected.
+     * @property {Boolean} disabled - Indicates if the icon button is disabled.
      */
     static properties = {
         variant: { type: String },

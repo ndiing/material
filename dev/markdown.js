@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
+const [,,argvName] = process.argv
+
 // Fungsi untuk melakukan pengelompokan data berdasarkan kunci
 function groupBy(array, keyGetter) {
     return array.reduce((result, item) => {
@@ -24,7 +26,7 @@ function generateMarkdown(groupedData) {
         if (className.classdesc) {
             markdown += `\n`;
             if (className.tags?.length > 0) {
-                markdown += `The \`${className.name}\` interface represents a \`${className.tags[0].value}\` element in the DOM. `;
+                markdown += `The \`${className.name}\` interface represents a \`<${className.tags[0].value}>\` element in the DOM. `;
             }
             markdown += `${className.classdesc}\n\n`;
         }
@@ -104,7 +106,7 @@ async function open(dir) {
             } else {
                 let { ext, name } = path.parse(curr);
                 if (ext == ".js") {
-                    // if(!name.includes('component'))continue
+                    if(argvName&&!name.includes(argvName))continue
                     console.log("Generating docs for " + name);
                     let data = execSync(`jsdoc -X ${curr}`);
                     try {

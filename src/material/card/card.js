@@ -5,35 +5,35 @@ import { choose } from "lit/directives/choose.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * Card component for Material Design.
  * @extends MDComponent
  * @tagname md-card
- * @fires MDCardComponent#onCardIconButtonClick - {{desc}}
- * @fires MDCardComponent#onCardIconClick - {{desc}}
- * @fires MDCardComponent#onCardButtonClick - {{desc}}
- * @fires MDCardComponent#onCardFabClick - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeFocus - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeBlur - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeInput - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeSearch - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeInvalid - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeReset - {{desc}}
- * @fires MDCardComponent#onCardTextFieldIconButtonClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationChange - {{desc}}
- * @fires MDCardComponent#onCardPaginationLimitChange - {{desc}}
- * @fires MDCardComponent#onCardPaginationFirstClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationPrevClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationNextClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationLastClick - {{desc}}
+ * @fires MDCardComponent#onCardIconButtonClick - Event fired when an icon button inside the card is clicked.
+ * @fires MDCardComponent#onCardIconClick - Event fired when an icon inside the card is clicked.
+ * @fires MDCardComponent#onCardButtonClick - Event fired when a button inside the card is clicked.
+ * @fires MDCardComponent#onCardFabClick - Event fired when a FAB (floating action button) inside the card is clicked.
+ * @fires MDCardComponent#onCardTextFieldNativeFocus - Event fired when a native input field inside the card gains focus.
+ * @fires MDCardComponent#onCardTextFieldNativeBlur - Event fired when a native input field inside the card loses focus.
+ * @fires MDCardComponent#onCardTextFieldNativeInput - Event fired when a native input field inside the card receives input.
+ * @fires MDCardComponent#onCardTextFieldNativeSearch - Event fired when a native input field inside the card performs a search.
+ * @fires MDCardComponent#onCardTextFieldNativeInvalid - Event fired when a native input field inside the card becomes invalid.
+ * @fires MDCardComponent#onCardTextFieldNativeReset - Event fired when a native input field inside the card is reset.
+ * @fires MDCardComponent#onCardTextFieldIconButtonClick - Event fired when an icon button inside a text field inside the card is clicked.
+ * @fires MDCardComponent#onCardPaginationChange - Event fired when pagination changes inside the card.
+ * @fires MDCardComponent#onCardPaginationLimitChange - Event fired when pagination limit changes inside the card.
+ * @fires MDCardComponent#onCardPaginationFirstClick - Event fired when the first pagination button inside the card is clicked.
+ * @fires MDCardComponent#onCardPaginationPrevClick - Event fired when the previous pagination button inside the card is clicked.
+ * @fires MDCardComponent#onCardPaginationNextClick - Event fired when the next pagination button inside the card is clicked.
+ * @fires MDCardComponent#onCardPaginationLastClick - Event fired when the last pagination button inside the card is clicked.
  */
 class MDCardComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Array} trailingActions - {{desc}}
-     * @property {Array} actions - {{desc}}
+     * @property {String} variant - The variant style of the card (e.g., elevated, filled, outlined).
+     * @property {Array} leadingActions - Actions displayed at the leading edge of the card.
+     * @property {String} label - The primary label of the card.
+     * @property {String} subLabel - The secondary label of the card.
+     * @property {Array} trailingActions - Actions displayed at the trailing edge of the card.
+     * @property {Array} actions - Actions displayed in the card body or footer.
      */
     static properties = {
         variant: { type: String },
@@ -64,7 +64,6 @@ class MDCardComponent extends MDComponent {
             <md-pagination
                 class="md-card__pagination"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .total="${ifDefined(item.total)}"
                 .limit="${ifDefined(item.limit)}"
                 .page="${ifDefined(item.page)}"
@@ -85,7 +84,6 @@ class MDCardComponent extends MDComponent {
             <md-icon-button
                 class="md-card__icon-button"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
                 .selected="${ifDefined(item.selected)}"
@@ -101,7 +99,6 @@ class MDCardComponent extends MDComponent {
             <div
                 class="md-icon md-card__icon"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 @click="${this.handleCardIconClick}"
             >${item.icon}</div>
         `;
@@ -113,7 +110,6 @@ class MDCardComponent extends MDComponent {
             <md-button
                 class="md-card__button"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .type="${ifDefined(item.type)}"
                 .icon="${ifDefined(item.icon)}"
@@ -131,7 +127,6 @@ class MDCardComponent extends MDComponent {
             <md-fab
                 class="md-card__fab"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
                 .label="${ifDefined(item.label)}"

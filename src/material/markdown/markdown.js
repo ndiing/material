@@ -3,13 +3,13 @@ import { MDComponent } from "../component/component.js";
 import { marked } from "marked";
 
 /**
- * {{desc}}
+ * Custom element for rendering Markdown content.
  * @extends MDComponent
  * @tagname md-markdown
  */
 class MDMarkdownComponent extends MDComponent {
     /**
-     * @property {String} href - {{desc}}
+     * @property {String} href - The URL from which to fetch Markdown content.
      */
     static properties = {
         href: { type: String },
@@ -22,13 +22,14 @@ class MDMarkdownComponent extends MDComponent {
     }
 
     render() {
-        return unsafeHTML(marked.parse(this.text));
+        return unsafeHTML(marked(this.text));
     }
 
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-markdown");
+        // this.classList.add("markdown-body");
 
         if (this.href) {
             fetch(this.href)

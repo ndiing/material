@@ -1,6 +1,6 @@
 # MDEmojiPickerComponent
 
-The `MDEmojiPickerComponent` interface represents a `md-emoji-picker` element in the DOM. {{desc}}
+The `MDEmojiPickerComponent` interface represents a `<md-emoji-picker>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDSheetComponent`.

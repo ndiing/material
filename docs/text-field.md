@@ -1,6 +1,6 @@
 # MDTextFieldComponent
 
-The `MDTextFieldComponent` interface represents a `md-text-field` element in the DOM. {{desc}}
+The `MDTextFieldComponent` interface represents a `<md-text-field>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.

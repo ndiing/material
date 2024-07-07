@@ -1,6 +1,6 @@
 # MDChipComponent
 
-The `MDChipComponent` interface represents a `md-chip` element in the DOM. {{desc}}
+The `MDChipComponent` interface represents a `<md-chip>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.

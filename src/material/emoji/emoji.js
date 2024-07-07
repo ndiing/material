@@ -1,14 +1,13 @@
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * Represents an emoji component for displaying emojis.
  * @extends MDComponent
  * @tagname md-emoji
  */
 class MDEmojiComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-emoji");
     }
 }

@@ -1,6 +1,6 @@
 # MDDataTableNativeColumnComponent
 
-The `MDDataTableNativeColumnComponent` interface represents a `md-data-table-native-column` element in the DOM. {{desc}}
+The `MDDataTableNativeColumnComponent` interface represents a `<md-data-table-native-column>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `HTMLTableCellElement`.

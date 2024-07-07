@@ -1,6 +1,6 @@
 # MDFormComponent
 
-The `MDFormComponent` interface represents a `md-form` element in the DOM. {{desc}}
+The `MDFormComponent` interface represents a `<md-form>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.

@@ -1,6 +1,6 @@
 # MDImageComponent
 
-The `MDImageComponent` interface represents a `md-image` element in the DOM. {{desc}}
+The `MDImageComponent` interface represents a `<md-image>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.

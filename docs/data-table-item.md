@@ -1,6 +1,6 @@
 # MDDataTableItemComponent
 
-The `MDDataTableItemComponent` interface represents a `md-data-table-item` element in the DOM. {{desc}}
+The `MDDataTableItemComponent` interface represents a `<md-data-table-item>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDComponent`.

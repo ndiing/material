@@ -2,11 +2,11 @@ import { createQueue } from "../functions/functions.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{desc}}
+ * Represents a snackbar component.
  * @extends MDSheetComponent
  * @tagname md-snackbar
- * @fires MDSnackbarComponent#onSnackbarShow - {{desc}}
- * @fires MDSnackbarComponent#onSnackbarClose - {{desc}}
+ * @fires MDSnackbarComponent#onSnackbarShow - Event fired when the snackbar is shown.
+ * @fires MDSnackbarComponent#onSnackbarClose - Event fired when the snackbar is closed.
  */
 class MDSnackbarComponent extends MDSheetComponent {
     /**
@@ -25,7 +25,8 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Shows the snackbar.
+     * Resolves when the snackbar is shown and timed out.
      */
     show() {
         return MDSnackbarComponent.queue(() => {
@@ -51,7 +52,8 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Closes the snackbar.
+     * Emits the `onSnackbarClose` event when the snackbar is closed.
      */
     close() {
         super.close();

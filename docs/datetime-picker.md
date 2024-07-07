@@ -1,6 +1,6 @@
 # MDDatetimePickerComponent
 
-The `MDDatetimePickerComponent` interface represents a `md-datetime-picker` element in the DOM. {{desc}}
+The `MDDatetimePickerComponent` interface represents a `<md-datetime-picker>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDSheetComponent`.

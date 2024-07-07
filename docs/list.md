@@ -1,6 +1,6 @@
 # MDListComponent
 
-The `MDListComponent` interface represents a `md-list` element in the DOM. Represents a list component that extends MDComponent and provides various list-related functionalities.
+The `MDListComponent` interface represents a `<md-list>` element in the DOM. Represents a list component that extends MDComponent and provides various list-related functionalities.
 
 ## Examples
 ```

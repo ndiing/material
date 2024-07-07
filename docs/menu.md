@@ -1,6 +1,6 @@
 # MDMenuComponent
 
-The `MDMenuComponent` interface represents a `md-menu` element in the DOM. {{desc}}
+The `MDMenuComponent` interface represents a `<md-menu>` element in the DOM. {{desc}}
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDSheetComponent`.

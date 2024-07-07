@@ -1,6 +1,6 @@
 # MDTimePickerComponent
 
-The `MDTimePickerComponent` interface represents a `md-time-picker` element in the DOM. {{desc}}
+The `MDTimePickerComponent` interface represents a `<md-time-picker>` element in the DOM. {{desc}}
 
 ## Instance Methods
 This interface also inherits methods from its parent, `MDDatetimePickerComponent`.

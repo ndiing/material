@@ -1,36 +1,42 @@
 .md-markdown {
     h1 {
-        margin: var(--md-sys-typescale-headline-large-line-height) 0;
+        margin: 24px 0;
         @include typescale-headline-large();
+        font-weight: 600;
     }
 
     h2 {
-        margin: var(--md-sys-typescale-headline-medium-line-height) 0;
+        margin: 24px 0;
         @include typescale-headline-medium();
+        font-weight: 600;
     }
 
     h3 {
-        margin: var(--md-sys-typescale-headline-small-line-height) 0;
+        margin: 24px 0;
         @include typescale-headline-small();
+        font-weight: 600;
     }
 
     h4 {
-        margin: var(--md-sys-typescale-title-large-line-height) 0;
+        margin: 24px 0;
         @include typescale-title-large();
+        font-weight: 600;
     }
 
     h5 {
-        margin: var(--md-sys-typescale-title-medium-line-height) 0;
+        margin: 24px 0;
         @include typescale-title-medium();
+        font-weight: 600;
     }
 
     h6 {
-        margin: var(--md-sys-typescale-title-small-line-height) 0;
+        margin: 24px 0;
         @include typescale-title-small();
+        font-weight: 600;
     }
 
     p {
-        margin: var(--md-sys-typescale-body-large-line-height) 0;
+        margin: 24px 0;
         @include typescale-body-large();
     }
 
@@ -39,44 +45,55 @@
     }
 
     strong {
-        font-weight: bold;
+        font-weight: 600;
     }
 
     blockquote {
-        margin: var(--md-sys-typescale-body-large-line-height) 0;
-        padding: calc(var(--md-sys-typescale-body-large-line-height) / 2) var(--md-sys-typescale-body-large-line-height);
-        background-color: var(--md-sys-color-surface-container);
+        margin: 24px 0;
+        padding: 16px 16px;
+        border-radius: 12px;
+        background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
+
         blockquote {
-            padding: 0 var(--md-sys-typescale-body-large-line-height);
+            padding: 0 16px;
         }
     }
 
     pre {
-        margin: var(--md-sys-typescale-body-large-line-height) 0;
-        padding: calc(var(--md-sys-typescale-body-large-line-height) / 2) var(--md-sys-typescale-body-large-line-height);
-        background-color: var(--md-sys-color-surface-container);
+        margin: 24px 0;
+        padding: 16px 16px;
+        border-radius: 12px;
+        background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
+        @include typescale-body-medium();
+        font-family: Consolas, 'Courier New', monospace;
     }
 
     // br {}
 
     code {
-        background-color: var(--md-sys-color-surface-container);
+        padding: 2px 4px;
+        border-radius: 4px;
+        background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
+        @include typescale-body-medium();
+        font-family: Consolas, 'Courier New', monospace;
     }
 
     ul {
-        margin: var(--md-sys-typescale-body-large-line-height);
+        margin: 24px;
+
         ul {
-            margin: 0 var(--md-sys-typescale-body-large-line-height);
+            margin: 0 24px;
         }
     }
 
     ol {
-        margin: var(--md-sys-typescale-body-large-line-height);
+        margin: 24px;
+
         ol {
-            margin: 0 var(--md-sys-typescale-body-large-line-height);
+            margin: 0 24px;
         }
     }
 
@@ -99,12 +116,14 @@
 
     th {
         text-align: left;
-        padding: calc(var(--md-sys-typescale-body-large-line-height) / 2) var(--md-sys-typescale-body-large-line-height);
+        padding: calc(((56px - 20px) / 2) + (4px * -2)) 16px;
         border: 1px solid var(--md-sys-color-outline-variant);
+        @include typescale-label-large();
     }
 
     td {
-        padding: calc(var(--md-sys-typescale-body-large-line-height) / 2) var(--md-sys-typescale-body-large-line-height);
+        padding: calc(((52px - 20px) / 2) + (4px * -2)) 16px;
         border: 1px solid var(--md-sys-color-outline-variant);
+        @include typescale-body-medium();
     }
 }

@@ -1,6 +1,6 @@
 # MDColorPickerComponent
 
-The `MDColorPickerComponent` interface represents a `md-color-picker` element in the DOM. {{desc}}
+The `MDColorPickerComponent` interface represents a `<md-color-picker>` element in the DOM. {{desc}}
 
 ## Instance Properties
 This interface also inherits properties from its parent, `MDSheetComponent`.

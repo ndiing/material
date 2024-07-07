@@ -1,7 +1,7 @@
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * Represents an icon component for Material Design.
  * @extends MDComponent
  * @tagname md-icon
  */
