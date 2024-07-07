@@ -4,13 +4,14 @@ import { MDTreeComponent } from "../tree/tree.js";
 import { MDPopperController } from "../popper/popper.js";
 
 /**
- * {{desc}}
+ * Represents a menu component.
  * @extends MDSheetComponent
  * @tagname md-menu
- * @fires MDMenuComponent#onMenuTreeItemClick - {{desc}}
+ * @fires MDMenuComponent#onMenuTreeItemClick - Event fired when a tree item in the menu is clicked.
  */
 class MDMenuComponent extends MDSheetComponent {
     /**
+     * Inherits properties from MDSheetComponent and MDTreeComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -18,7 +19,8 @@ class MDMenuComponent extends MDSheetComponent {
     };
 
     /**
-     * {{desc}}
+     * Gets the body of the menu, which includes a tree component.
+     * @returns {TemplateResult} The HTML template for the menu body.
      */
     get body() {
         /* prettier-ignore */
@@ -33,7 +35,8 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Sets the body of the menu.
+     * @param {TemplateResult} value - The new value for the menu body.
      */
     set body(value) {
         this._body = value;
@@ -57,7 +60,9 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Shows the menu as a modal.
+     * @param {HTMLElement} button - The button element that triggers the menu.
+     * @param {Object} options - Additional options for customizing menu behavior.
      */
     showModal(button, options) {
         super.showModal();
@@ -66,7 +71,9 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Shows the menu.
+     * @param {HTMLElement} button - The button element that triggers the menu.
+     * @param {Object} options - Additional options for customizing menu behavior.
      */
     show(button, options) {
         super.show();
@@ -75,7 +82,9 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * Sets the placement of the menu relative to a button.
+     * @param {HTMLElement} button - The button element that triggers the menu.
+     * @param {Object} options - Additional options for customizing menu placement.
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

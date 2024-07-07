@@ -57,6 +57,7 @@ import DevEmojiComponent from "./emoji/emoji.js";
 import DevPaginationComponent from "./pagination/pagination.js";
 import DevDataTableComponent from "./data-table/data-table.js";
 import DevMarkdownComponent from "./markdown/markdown.js";
+import DevChartComponent from "./chart/chart.js";
 
 const routes = [
     {
@@ -117,6 +118,7 @@ const routes = [
             { path: "pagination", component: DevPaginationComponent },
             { path: "data-table", component: DevDataTableComponent },
             { path: "markdown", component: DevMarkdownComponent },
+            { path: "chart", component: DevChartComponent },
         ],
     },
     { path: "*", component: DevMainComponent },
