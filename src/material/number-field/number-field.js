@@ -1,13 +1,11 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
-
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-number-field
  */
 class MDNumberFieldComponent extends MDTextFieldComponent {
-    
     /**
      * {{desc}}
      */
@@ -18,7 +16,6 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         ];
     }
 
-    
     /**
      * {{desc}}
      */

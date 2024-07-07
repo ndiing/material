@@ -71,7 +71,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handlePickerSelection() {
         const value = stringifyTime(this.picker.selection);
         this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent('input',{}))
+        this.native.dispatchEvent(new CustomEvent("input", {}));
         // this.value = value;
     }
 
@@ -82,7 +82,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handlePickerButtonOkClick() {
         const value = stringifyTime(this.picker.selection);
         this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent('input',{}))
+        this.native.dispatchEvent(new CustomEvent("input", {}));
         // this.value = value;
         this.picker.close();
     }

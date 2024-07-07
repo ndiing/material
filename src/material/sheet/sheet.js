@@ -62,7 +62,7 @@ class MDSheetComponent extends MDCardComponent {
 
         this.open = true;
 
-        this.emit('onSheetShow',this)
+        this.emit("onSheetShow", this);
     }
 
     /**
@@ -81,7 +81,7 @@ class MDSheetComponent extends MDCardComponent {
 
         this.open = false;
 
-        this.emit('onSheetClose',this)
+        this.emit("onSheetClose", this);
     }
 
     /**

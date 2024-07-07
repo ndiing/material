@@ -1,23 +1,18 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
-
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-search-field
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
-    
     /**
      * {{desc}}
      */
     get actions() {
-        return [
-            ...(this.value&&[{ name: "clear", icon: "close" }]||[]),
-        ];
+        return [...((this.value && [{ name: "clear", icon: "close" }]) || [])];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -44,7 +39,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
-        this.native.value=''
+        this.native.value = "";
 
         this.native.dispatchEvent(new CustomEvent("input", {}));
         this.native.dispatchEvent(new CustomEvent("search", {}));

@@ -87,7 +87,7 @@ class MDTextFieldComponent extends MDComponent {
         spellcheck: { type: Boolean },
         wrap: { type: String },
         options: { type: Array },
-        
+
         // src: { type: String },
         // checked: { type: Boolean },
         // defaultChecked: { type: Boolean },

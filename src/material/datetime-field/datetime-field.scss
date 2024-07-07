@@ -1,6 +1,6 @@
-.md-datetime-field{
-    .md-text-field__native{
-        &::-webkit-calendar-picker-indicator{
+.md-datetime-field {
+    .md-text-field__native {
+        &::-webkit-calendar-picker-indicator {
             display: none;
         }
     }

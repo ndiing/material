@@ -66,13 +66,12 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
         this.picker.showModal(this.container);
-        
     }
 
     handlePickerSelection() {
         const value = stringifyWeek(this.picker.selection);
         this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent('input',{}))
+        this.native.dispatchEvent(new CustomEvent("input", {}));
         // this.value = value;
     }
 
@@ -83,7 +82,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     handlePickerButtonOkClick() {
         const value = stringifyWeek(this.picker.selection);
         this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent('input',{}))
+        this.native.dispatchEvent(new CustomEvent("input", {}));
         // this.value = value;
         this.picker.close();
     }
