@@ -104,7 +104,7 @@ async function open(dir) {
             } else {
                 let { ext, name } = path.parse(curr);
                 if (ext == ".js") {
-                    if(!name.includes('component'))continue
+                    // if(!name.includes('component'))continue
                     console.log("Generating docs for " + name);
                     let data = execSync(`jsdoc -X ${curr}`);
                     try {
