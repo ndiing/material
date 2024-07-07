@@ -65,7 +65,9 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
-        this.picker.showModal(this.container);
+        window.requestAnimationFrame(() => {
+            this.picker.showModal(this.container);
+        })
     }
 
     handlePickerSelection() {
