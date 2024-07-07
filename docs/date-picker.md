@@ -1,74 +1,39 @@
 # MDDatePickerComponent
 
-The `MDDatePickerComponent` interface represents a `<md-date-picker>` element in the DOM.
-{{desc}}
+The `MDDatePickerComponent` interface represents a `md-date-picker` element in the DOM.{{desc}}
 
+## Instance Properties
+This interface also inherits properties from its parent, `MDDatetimePickerComponent`.
 
+| Name | Type | Description |
+| --- | --- | --- |
+| leadingActions |  | {{desc}} |
+| body |  | {{desc}} |
+| body |  | {{desc}} |
 
-### Events
+## Instance Methods
+This interface also inherits methods from its parent, `MDDatetimePickerComponent`.
 
-| Event | Description |
-|-------|-------------|
-| `MDDatePickerComponent#event:onDatePickerSelection - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerIconButtonPrevClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerIconButtonNextClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerButtonLabelClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerButtonCancelClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerButtonOkClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerYearItemClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerMonthItemClick - {{desc}}` | |
-| `MDDatePickerComponent#event:onDatePickerDayItemClick - {{desc}}` | |
+| Name | Parameters | Description |
+| --- | --- | --- |
+| updateDate |  | {{desc}} |
+| getValue |  | {{desc}} |
 
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
+| Name | Description |
+| --- | --- |
+| `onDatePickerSelection` | {{desc}} |
+| `onDatePickerIconButtonPrevClick` | {{desc}} |
+| `onDatePickerIconButtonNextClick` | {{desc}} |
+| `onDatePickerButtonLabelClick` | {{desc}} |
+| `onDatePickerButtonCancelClick` | {{desc}} |
+| `onDatePickerButtonOkClick` | {{desc}} |
+| `onDatePickerYearItemClick` | {{desc}} |
+| `onDatePickerMonthItemClick` | {{desc}} |
+| `onDatePickerDayItemClick` | {{desc}} |
 
-
-# leadingActions
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# updateDate
-
-{{desc}}
-
-
-
-
-
-
-
-# getValue
-
-{{desc}}
-
-
-
-
-
-
+## Inheritance
+`MDDatetimePickerComponent`
 

@@ -1,7 +1,6 @@
 import { configureLocalization } from "@lit/localize";
 import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
-
 const languageMap = {
     Afrikaans: "af",
     Akan: "ak",

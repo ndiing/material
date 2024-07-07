@@ -2,14 +2,12 @@ import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent
  * @tagname md-navigation-drawer
  */
 class MDNavigationBarComponent extends MDSheetComponent {
-    
     /**
      */
     static properties = {
@@ -17,7 +15,6 @@ class MDNavigationBarComponent extends MDSheetComponent {
         ...MDTreeComponent.properties,
     };
 
-    
     /**
      * {{desc}}
      */
@@ -32,7 +29,6 @@ class MDNavigationBarComponent extends MDSheetComponent {
         `];
     }
 
-    
     /**
      * {{desc}}
      */

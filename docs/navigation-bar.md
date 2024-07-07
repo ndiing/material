@@ -1,47 +1,16 @@
 # MDNavigationBarComponent
 
-The `MDNavigationBarComponent` interface represents a `<md-navigation-bar>` element in the DOM.
-MDNavigationBarComponent is a class that extends MDSheetComponent and represents a navigation bar component.
-This component is used for vertical navigation within an application.
+The `MDNavigationBarComponent` interface represents a `md-navigation-bar` element in the DOM.{{desc}}
 
+## Instance Properties
+This interface also inherits properties from its parent, `MDSheetComponent`.
 
+| Name | Type | Description |
+| --- | --- | --- |
+| properties |  |  |
+| body |  | {{desc}} |
+| body |  | {{desc}} |
 
-
-
-
-
-# properties
-
-Inherits properties from MDSheetComponent and MDTreeComponent.
-
-
-
-
-
-
-
-# body
-
-Returns the body of the navigation bar component, which contains a tree of navigation items.
-
-
-
-
-
-
-
-# body
-
-Sets the body of the navigation bar component.
-
-
-
-
-
-#### Parameters
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `value` | (Object) | The new body content for the navigation bar. |
-
+## Inheritance
+`MDSheetComponent`
 

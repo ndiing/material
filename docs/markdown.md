@@ -1,25 +1,14 @@
 # MDMarkdownComponent
 
-The `MDMarkdownComponent` interface represents a `<md-markdown>` element in the DOM.
-A web component for rendering Markdown content.
+The `MDMarkdownComponent` interface represents a `md-markdown` element in the DOM.{{desc}}
 
-
-
-
-
-
-
-# properties
-
-
-### Instance properties
+## Instance Properties
+This interface also inherits properties from its parent, `MDComponent`.
 
 | Name | Type | Description |
-|------|------|-------------|
-| `href` | (String) | The URL to fetch the Markdown content from. |
+| --- | --- | --- |
+| properties | `String` |  |
 
-
-
-
-
+## Inheritance
+`MDComponent`
 

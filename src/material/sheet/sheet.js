@@ -1,6 +1,5 @@
 import { MDCardComponent } from "../card/card.js";
 
-
 /**
  * {{desc}}
  * @extends MDCardComponent
@@ -10,7 +9,6 @@ import { MDCardComponent } from "../card/card.js";
  * @fires MDSheetComponent#onSheetClose - {{desc}}
  */
 class MDSheetComponent extends MDCardComponent {
-    
     /**
      * @property {Boolean} open - {{desc}}
      */
@@ -30,7 +28,6 @@ class MDSheetComponent extends MDCardComponent {
         this.classList.add("md-sheet");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -57,7 +54,6 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetScrimClick", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -71,7 +67,6 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetShow", this);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -91,7 +86,6 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetClose", this);
     }
 
-    
     /**
      * {{desc}}
      */

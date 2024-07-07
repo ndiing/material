@@ -1,6 +1,5 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent

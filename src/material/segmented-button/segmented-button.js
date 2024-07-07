@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -10,7 +9,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - {{desc}}
  */
 class MDSegmentedButtonComponent extends MDComponent {
-    
     /**
      * @property {Array} buttons - {{desc}}
      * @property {Boolean} singleSelection - {{desc}}

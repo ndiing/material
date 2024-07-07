@@ -1,14 +1,11 @@
-
 /**
  * {{desc}}
  */
 class MDAttributeObserver {
-    
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
-    
     /**
      * {{desc}}
      */

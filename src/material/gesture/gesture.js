@@ -1,4 +1,3 @@
-
 /**
  * {{desc}}
  * @fires MDGestureController#onDragStart - {{desc}}
@@ -15,7 +14,6 @@
  * @fires MDGestureController#onResizeEnd - {{desc}}
  */
 class MDGestureController {
-    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {

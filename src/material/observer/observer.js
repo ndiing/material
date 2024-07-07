@@ -9,17 +9,14 @@ const breakpoints = [
     { name: "expanded", query: "(min-width: 840px)" },
 ];
 
-
 /**
  * {{desc}}
  */
 class MDObserver {
-    
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
-    
     /**
      * {{desc}}
      */

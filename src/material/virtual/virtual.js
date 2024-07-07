@@ -1,17 +1,15 @@
-
 /**
  * {{desc}}
  * @fires MDVirtualController#onVirtualScrollChange - {{desc}}
  * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
-    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
-            viewportSelector: '.md-virtual',
-            scrollbarSelector: '.md-virtual__scrollbar',
-            containerSelector: '.md-virtual__container',
+            viewportSelector: ".md-virtual",
+            scrollbarSelector: ".md-virtual__scrollbar",
+            containerSelector: ".md-virtual__container",
             rowSelector: null,
             columnSelector: null,
 

@@ -1,14 +1,12 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
  * @tagname md-badge
  */
 class MDBadgeComponent extends MDComponent {
-    
     /**
      * @property {Number} label - {{desc}}
      * @property {Number} limit - {{desc}}

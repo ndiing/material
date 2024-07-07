@@ -1,9 +1,7 @@
-
 /**
  * {{desc}}
  */
 class MDPopperController {
-    
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
@@ -25,7 +23,6 @@ class MDPopperController {
         };
     }
 
-    
     /**
      * {{desc}}
      */
@@ -103,7 +100,6 @@ class MDPopperController {
         this.container.style.transformOrigin = `${originX} ${originY}`;
     }
 
-    
     /**
      * {{desc}}
      */

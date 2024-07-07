@@ -1,78 +1,38 @@
 # MDTimePickerComponent
 
-The `MDTimePickerComponent` interface represents a `<md-time-picker>` element in the DOM.
-{{desc}}
+The `MDTimePickerComponent` interface represents a `md-time-picker` element in the DOM.{{desc}}
 
+## Instance Properties
+This interface also inherits properties from its parent, `MDDatetimePickerComponent`.
 
+| Name | Type | Description |
+| --- | --- | --- |
+| body |  | {{desc}} |
+| body |  | {{desc}} |
+| leadingActions |  | {{desc}} |
 
-### Events
+## Instance Methods
+This interface also inherits methods from its parent, `MDDatetimePickerComponent`.
 
-| Event | Description |
-|-------|-------------|
-| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerIconButtonPrevClick - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerIconButtonNextClick - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerButtonLabelClick - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerButtonCancelClick - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerButtonOkClick - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerHourItemClick - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerSelection - {{desc}}` | |
-| `MDTimePickerComponent#event:onTimePickerMinuteItemClick - {{desc}}` | |
+| Name | Parameters | Description |
+| --- | --- | --- |
+| updateDate |  | {{desc}} |
+| getValue |  | {{desc}} |
 
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
+| Name | Description |
+| --- | --- |
+| `onTimePickerSelection` | {{desc}} |
+| `onTimePickerIconButtonPrevClick` | {{desc}} |
+| `onTimePickerIconButtonNextClick` | {{desc}} |
+| `onTimePickerButtonLabelClick` | {{desc}} |
+| `onTimePickerButtonCancelClick` | {{desc}} |
+| `onTimePickerButtonOkClick` | {{desc}} |
+| `onTimePickerHourItemClick` | {{desc}} |
+| `onTimePickerMinuteItemClick` | {{desc}} |
 
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# leadingActions
-
-{{desc}}
-
-
-
-
-
-
-
-# updateDate
-
-{{desc}}
-
-
-
-
-
-
-
-# getValue
-
-{{desc}}
-
-
-
-
-
-
+## Inheritance
+`MDDatetimePickerComponent`
 

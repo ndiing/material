@@ -1,13 +1,11 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
-
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-color-field
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
-    
     /**
      * {{desc}}
      */
@@ -15,7 +13,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         return [{ icon: "palette" }];
     }
 
-    
     /**
      * {{desc}}
      */

@@ -1,6 +1,5 @@
 /* Casing Conversion */
 
-
 /**
  * {{desc}}
  */
@@ -11,7 +10,6 @@ function toPascalCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => $2.toUpperCase())
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
 
 /**
  * {{desc}}
@@ -24,7 +22,6 @@ function toCamelCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
-
 /**
  * {{desc}}
  */
@@ -35,7 +32,6 @@ function toSnakeCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => "_" + $2)
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
 
 /**
  * {{desc}}
@@ -48,7 +44,6 @@ function toKebabCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
-
 /**
  * {{desc}}
  */
@@ -59,7 +54,6 @@ function toFlatCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => "" + $2)
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
 
 /**
  * {{desc}}
@@ -72,7 +66,6 @@ function toUpperFlatCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
-
 /**
  * {{desc}}
  */
@@ -83,7 +76,6 @@ function toPascalSnakeCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => "_" + $2.toUpperCase())
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
 
 /**
  * {{desc}}
@@ -96,7 +88,6 @@ function toCamelSnakeCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
-
 /**
  * {{desc}}
  */
@@ -107,7 +98,6 @@ function toScreamingSnakeCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => "_" + $2)
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
 
 /**
  * {{desc}}
@@ -120,7 +110,6 @@ function toTrainCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
-
 /**
  * {{desc}}
  */
@@ -131,7 +120,6 @@ function toCobolCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => "-" + $2)
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
 
 /**
  * {{desc}}
@@ -146,7 +134,6 @@ function toTitleCase(string) {
 
 /* Stringify Date */
 
-
 /**
  * {{desc}}
  */
@@ -155,7 +142,6 @@ function stringifyDatetimeLocal(date) {
 
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
-
 
 /**
  * {{desc}}
@@ -166,14 +152,12 @@ function stringifyDate(date) {
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
 
-
 /**
  * {{desc}}
  */
 function stringifyYear(date) {
     return `${date.getFullYear()}`;
 }
-
 
 /**
  * {{desc}}
@@ -184,7 +168,6 @@ function stringifyMonth(date) {
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}`;
 }
 
-
 /**
  * {{desc}}
  */
@@ -193,7 +176,6 @@ function stringifyTime(date) {
 
     return `${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
-
 
 /**
  * {{desc}}
@@ -206,14 +188,12 @@ function stringifyWeek(date) {
 
 /* Parse Date */
 
-
 /**
  * {{desc}}
  */
 function parseDatetimeLocal(datetimeLocal) {
     return new Date(datetimeLocal);
 }
-
 
 /**
  * {{desc}}
@@ -223,14 +203,12 @@ function parseDate(dateString) {
     return new Date(year, month - 1, day);
 }
 
-
 /**
  * {{desc}}
  */
 function parseYear(yearString) {
     return new Date(yearString);
 }
-
 
 /**
  * {{desc}}
@@ -239,7 +217,6 @@ function parseMonth(monthString) {
     var [year, month] = monthString.split("-").map(Number);
     return new Date(year, month - 1);
 }
-
 
 /**
  * {{desc}}
@@ -250,7 +227,6 @@ function parseTime(timeString) {
     date.setHours(hours, minutes, 0, 0);
     return date;
 }
-
 
 /**
  * {{desc}}
@@ -274,7 +250,6 @@ function parseWeek(weekStr) {
 
 /* Color Conversion */
 
-
 /**
  * {{desc}}
  */
@@ -288,7 +263,6 @@ function hexToRgba(hex) {
 
     return { red, green, blue, alpha };
 }
-
 
 /**
  * {{desc}}
@@ -330,7 +304,6 @@ function hexToHsla(hex) {
 
     return { hue: Math.round(hue), saturation, lightness, red, green, blue, alpha };
 }
-
 
 /**
  * {{desc}}
@@ -376,7 +349,6 @@ function hslaToRgba(h, s, l, a = 1) {
     return { red: r, green: g, blue: b, alpha: a };
 }
 
-
 /**
  * {{desc}}
  */
@@ -394,7 +366,6 @@ function rgbaToHex(r, g, b, a = 1) {
     return a === 1 ? rgbHex : `${rgbHex}${alphaHex}`;
 }
 
-
 /**
  * {{desc}}
  */
@@ -402,7 +373,6 @@ function hslaToHex(h, s, l, a = 1) {
     const { red, green, blue } = hslaToRgba(h, s, l, a);
     return rgbaToHex(red, green, blue, a);
 }
-
 
 /**
  * {{desc}}
@@ -444,7 +414,6 @@ function rgbaToHsla(r, g, b, a = 1) {
 
 /* Utility Functions */
 
-
 /**
  * {{desc}}
  */
@@ -453,14 +422,12 @@ function isValidHexColor(color) {
     return hexColorRegex.test(color);
 }
 
-
 /**
  * {{desc}}
  */
 function isObject(obj) {
     return obj !== null && typeof obj === "object";
 }
-
 
 /**
  * {{desc}}
@@ -470,14 +437,12 @@ function isArrayString(str) {
     return arrayRegex.test(str);
 }
 
-
 /**
  * {{desc}}
  */
 function isDefined(value) {
     return value !== undefined && value !== null;
 }
-
 
 /**
  * {{desc}}
@@ -486,7 +451,6 @@ function calcPercentage(min, max, value) {
     let percentage = ((value - min) / (max - min)) * 100;
     return percentage;
 }
-
 
 /**
  * {{desc}}
@@ -497,7 +461,6 @@ function calcDecimal(min, max, value) {
 }
 
 /* Additional Functions */
-
 
 /**
  * {{desc}}
@@ -520,19 +483,17 @@ function createQueue() {
 
 /* Date Prototype Extensions */
 
-
 Date.prototype.setWeek = function (week) {
     if (typeof week !== "number" || week < 1 || week > 53) {
         throw new Error("Invalid week number. Week number should be between 1 and 53.");
     }
-    let jan4 = new Date(this.getFullYear(), 0, 4); 
-    let jan4Day = (jan4.getDay() + 6) % 7; 
-    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day); 
+    let jan4 = new Date(this.getFullYear(), 0, 4);
+    let jan4Day = (jan4.getDay() + 6) % 7;
+    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day);
 
-    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000); 
+    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000);
     return this;
 };
-
 
 Date.prototype.getWeek = function () {
     let tempDate = new Date(this.getTime());

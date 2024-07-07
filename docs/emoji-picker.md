@@ -1,152 +1,49 @@
 # MDEmojiPickerComponent
 
-The `MDEmojiPickerComponent` interface represents a `<md-emoji-picker>` element in the DOM.
-{{desc}}
+The `MDEmojiPickerComponent` interface represents a `md-emoji-picker` element in the DOM.{{desc}}
 
-
-
-### Events
-
-| Event | Description |
-|-------|-------------|
-| `MDEmojiPickerComponent#event:onEmojiPickerTabsItemClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerViewportVirtualScroll - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerTextFieldNativeInput - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerGridColumnClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerIconButtonClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerButtonClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerSelection - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerIconButtonPrevClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerIconButtonNextClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerButtonLabelClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerButtonCancelClick - {{desc}}` | |
-| `MDEmojiPickerComponent#event:onEmojiPickerButtonOkClick - {{desc}}` | |
-
-
-
-
-# properties
-
-
-### Instance properties
+## Instance Properties
+This interface also inherits properties from its parent, `MDSheetComponent`.
 
 | Name | Type | Description |
-|------|------|-------------|
-| `tabs` | (Object) | {{desc}} |
-| `rows` | (Array) | {{desc}} |
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# leadingActions
-
-{{desc}}
-
-
-
-
-
-
-
-# actions
-
-{{desc}}
-
-
-
-
-
-
-
-# emojiPickerTabs
-
-{{desc}}
-
-
-
-
-
-
-
-# emojiPickerTabs
-
-{{desc}}
-
-
-
-
-
-
-
-# updateEmojiPickerTabsIndicator
-
-{{desc}}
-
-
-
-
-
-
-
-# generateTabsAndRows
-
-{{desc}}
-
-
-
-
-
-
-
-# showModal
-
-{{desc}}
-
-
-
-
-
-
-
-# show
-
-{{desc}}
-
-
-
-
-
-
-
-# setPlacement
-
-{{desc}}
-
-
-
-
-
-
+| --- | --- | --- |
+| properties | `Object` |  |
+| body |  | {{desc}} |
+| body |  | {{desc}} |
+| leadingActions |  | {{desc}} |
+| actions |  | {{desc}} |
+| emojiPickerTabs |  | {{desc}} |
+| emojiPickerTabs |  | {{desc}} |
+
+## Instance Methods
+This interface also inherits methods from its parent, `MDSheetComponent`.
+
+| Name | Parameters | Description |
+| --- | --- | --- |
+| updateEmojiPickerTabsIndicator | `data` | {{desc}} |
+| generateTabsAndRows | `data`, `tabs` | {{desc}} |
+| showModal | `button`, `options` | {{desc}} |
+| show | `button`, `options` | {{desc}} |
+| setPlacement | `button`, `options` | {{desc}} |
+
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
+
+| Name | Description |
+| --- | --- |
+| `onEmojiPickerTabsItemClick` | {{desc}} |
+| `onEmojiPickerViewportVirtualScroll` | {{desc}} |
+| `onEmojiPickerTextFieldNativeInput` | {{desc}} |
+| `onEmojiPickerGridColumnClick` | {{desc}} |
+| `onEmojiPickerIconButtonClick` | {{desc}} |
+| `onEmojiPickerButtonClick` | {{desc}} |
+| `onEmojiPickerSelection` | {{desc}} |
+| `onEmojiPickerIconButtonPrevClick` | {{desc}} |
+| `onEmojiPickerIconButtonNextClick` | {{desc}} |
+| `onEmojiPickerButtonLabelClick` | {{desc}} |
+| `onEmojiPickerButtonCancelClick` | {{desc}} |
+| `onEmojiPickerButtonOkClick` | {{desc}} |
+
+## Inheritance
+`MDSheetComponent`
 

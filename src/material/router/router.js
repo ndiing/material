@@ -1,4 +1,3 @@
-
 /**
  * {{desc}}
  * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
@@ -24,7 +23,6 @@ class MDRouter {
         }, []);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -36,7 +34,6 @@ class MDRouter {
         }
     }
 
-    
     /**
      * {{desc}}
      */
@@ -64,7 +61,6 @@ class MDRouter {
         return query;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -83,7 +79,6 @@ class MDRouter {
         });
     }
 
-    
     /**
      * {{desc}}
      */
@@ -99,7 +94,6 @@ class MDRouter {
         }, []);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -219,7 +213,6 @@ class MDRouter {
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -250,7 +243,6 @@ class MDRouter {
         window.dispatchEvent(event);
     }
 
-    
     /**
      * {{desc}}
      */

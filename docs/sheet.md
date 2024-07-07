@@ -1,70 +1,33 @@
 # MDSheetComponent
 
-The `MDSheetComponent` interface represents a `<md-sheet>` element in the DOM.
-Represents a sheet component that extends MDCardComponent.
+The `MDSheetComponent` interface represents a `md-sheet` element in the DOM.{{desc}}
 
-
-
-### Events
-
-| Event | Description |
-|-------|-------------|
-| `MDSheetComponent#event:onSheetScrimClick - Fired when the scrim of the sheet is clicked.` | |
-
-
-
-
-# properties
-
-
-### Instance properties
+## Instance Properties
+This interface also inherits properties from its parent, `MDCardComponent`.
 
 | Name | Type | Description |
-|------|------|-------------|
-| `open` | (Boolean) | Indicates whether the sheet is currently open. |
+| --- | --- | --- |
+| properties | `Boolean` |  |
 
+## Instance Methods
+This interface also inherits methods from its parent, `MDCardComponent`.
 
+| Name | Parameters | Description |
+| --- | --- | --- |
+| showModal |  | {{desc}} |
+| show |  | {{desc}} |
+| close |  | {{desc}} |
+| toggle | `args` | {{desc}} |
 
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
+| Name | Description |
+| --- | --- |
+| `onSheetScrimClick` | {{desc}} |
+| `onSheetShow` | {{desc}} |
+| `onSheetClose` | {{desc}} |
 
-
-# showModal
-
-Shows the sheet as a modal.
-
-
-
-
-
-
-
-# show
-
-Shows the sheet.
-
-
-
-
-
-
-
-# close
-
-Closes the sheet.
-
-
-
-
-
-
-
-# toggle
-
-Toggles the visibility of the sheet. If currently open, it closes; if closed, it opens.
-
-
-
-
-
-
+## Inheritance
+`MDCardComponent`
 

@@ -2,14 +2,12 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { calcPercentage } from "../functions/functions.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
  * @tagname md-progress-indicator
  */
 class MDProgressIndicatorComponent extends MDComponent {
-    
     /**
      * @property {String} variant - {{desc}}
      * @property {Number} value - {{desc}}

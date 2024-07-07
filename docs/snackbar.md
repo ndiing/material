@@ -1,42 +1,30 @@
 # MDSnackbarComponent
 
-The `MDSnackbarComponent` interface represents a `<md-snackbar>` element in the DOM.
-Represents a snackbar component that extends MDSheetComponent.
+The `MDSnackbarComponent` interface represents a `md-snackbar` element in the DOM.{{desc}}
 
+## Instance Properties
+This interface also inherits properties from its parent, `MDSheetComponent`.
 
+| Name | Type | Description |
+| --- | --- | --- |
+| properties |  |  |
 
-### Events
+## Instance Methods
+This interface also inherits methods from its parent, `MDSheetComponent`.
 
-| Event | Description |
-|-------|-------------|
-| `MDSnackbarComponent#event:onSnackbarShow - Triggered when the snackbar is shown.` | |
-| `MDSnackbarComponent#event:onSnackbarClose - Triggered when the snackbar is closed.` | |
+| Name | Parameters | Description |
+| --- | --- | --- |
+| show |  | {{desc}} |
+| close |  | {{desc}} |
 
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
+| Name | Description |
+| --- | --- |
+| `onSnackbarShow` | {{desc}} |
+| `onSnackbarClose` | {{desc}} |
 
-
-# show
-
-Shows the snackbar.
-
-
-
-
-
-
-#### Returns
-
-| Type | Description |
-|------|-------------|
-| Promise | A promise that resolves when the snackbar is shown and closed. |
-
-# close
-
-Closes the snackbar.
-
-
-
-
-
-
+## Inheritance
+`MDSheetComponent`
 

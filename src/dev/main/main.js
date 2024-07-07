@@ -104,6 +104,11 @@ class DevMainComponent extends MDComponent {
             item.label = toTitleCase(item.routerLink);
             item.selected = item.routerLink === MDRouter.path;
         }
+
+    }
+
+    get href(){
+        return `./docs${MDRouter.path}.md`
     }
 
     render() {
@@ -122,6 +127,11 @@ class DevMainComponent extends MDComponent {
                     @onTreeItemSelected="${this.handleTreeItemSelected}"
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-markdown href="${this.href}"></md-markdown>
+                        </div>
+                    </div>
                     <md-outlet></md-outlet>
                 </div>
             </div>
@@ -130,6 +140,10 @@ class DevMainComponent extends MDComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
+        window.addEventListener('onRouterCurrentEntryChange',() => {
+            this.requestUpdate()
+        })
     }
 
     handleCardIconButtonClick(event) {

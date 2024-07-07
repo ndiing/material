@@ -37,9 +37,7 @@
     "prettier:write": "prettier src/material --write",
     "prettier:check": "prettier src/material --check",
     "eslint:fix": "eslint  src/material --fix",
-    "eslint:check": "eslint  src/material",
-    "jsdoc": "jsdoc -c conf.json",
-    "doc": "node dev/doc"
+    "eslint:check": "eslint  src/material"
   },
   "dependencies": {
     "@lit/localize": "^0.12.1",

@@ -6,7 +6,6 @@ let isAnimating = false;
 let elapsedTime = 0;
 let progressBar;
 
-
 /**
  * {{desc}}
  */
@@ -20,7 +19,6 @@ function create() {
     progressBar.style.top = "0px";
 }
 
-
 /**
  * {{desc}}
  */
@@ -33,7 +31,6 @@ function reset() {
     progressBar.parentNode.removeChild(progressBar);
     progressBar = null;
 }
-
 
 /**
  * {{desc}}
@@ -58,7 +55,6 @@ function observe(resolve) {
     }
 }
 
-
 /**
  * {{desc}}
  */
@@ -82,7 +78,6 @@ function start(duration = 10000) {
     });
 }
 
-
 /**
  * {{desc}}
  */
@@ -94,7 +89,6 @@ function pause() {
     }
 }
 
-
 /**
  * {{desc}}
  */
@@ -105,7 +99,6 @@ function resume() {
         observe();
     }
 }
-
 
 /**
  * {{desc}}

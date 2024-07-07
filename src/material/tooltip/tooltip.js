@@ -1,7 +1,6 @@
 import { MDPopperController } from "../popper/popper.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent
@@ -23,7 +22,6 @@ class MDTooltipComponent extends MDSheetComponent {
         this.classList.add("md-tooltip");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -33,7 +31,6 @@ class MDTooltipComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -43,7 +40,6 @@ class MDTooltipComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */

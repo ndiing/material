@@ -2,14 +2,12 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
  * @tagname md-fab
  */
 class MDFabComponent extends MDComponent {
-    
     /**
      * @property {String} variant - {{desc}}
      * @property {String} icon - {{desc}}

@@ -4,7 +4,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -28,7 +27,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDCardComponent#onCardPaginationLastClick - {{desc}}
  */
 class MDCardComponent extends MDComponent {
-    
     /**
      * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}

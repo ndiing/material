@@ -1,223 +1,57 @@
 # MDDatetimePickerComponent
 
-The `MDDatetimePickerComponent` interface represents a `<md-datetime-picker>` element in the DOM.
-{{desc}}
+The `MDDatetimePickerComponent` interface represents a `md-datetime-picker` element in the DOM.{{desc}}
 
-
-
-### Events
-
-| Event | Description |
-|-------|-------------|
-| `MDDatetimePickerComponent#event:onDatetimePickerIconButtonClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerButtonClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerSelection - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerIconButtonPrevClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerIconButtonNextClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerButtonLabelClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerButtonCancelClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerButtonOkClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerYearItemClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerMonthItemClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerDayItemClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerHourItemClick - {{desc}}` | |
-| `MDDatetimePickerComponent#event:onDatetimePickerMinuteItemClick - {{desc}}` | |
-
-
-
-
-# properties
-
-
-### Instance properties
+## Instance Properties
+This interface also inherits properties from its parent, `MDSheetComponent`.
 
 | Name | Type | Description |
-|------|------|-------------|
-| `index` | (Number) | {{desc}} |
-| `value` | (String) | {{desc}} |
-
-
-
-
-
-
-# years
-
-{{desc}}
-
-
-
-
-
-
-
-# months
-
-{{desc}}
-
-
-
-
-
-
-
-# first
-
-{{desc}}
-
-
-
-
-
-
-
-# last
-
-{{desc}}
-
-
-
-
-
-
-
-# weekdays
-
-{{desc}}
-
-
-
-
-
-
-
-# days
-
-{{desc}}
-
-
-
-
-
-
-
-# hours
-
-{{desc}}
-
-
-
-
-
-
-
-# minutes
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# leadingActions
-
-{{desc}}
-
-
-
-
-
-
-
-# trailingActions
-
-{{desc}}
-
-
-
-
-
-
-
-# actions
-
-{{desc}}
-
-
-
-
-
-
-
-# updateDate
-
-{{desc}}
-
-
-
-
-
-
-
-# getValue
-
-{{desc}}
-
-
-
-
-
-
-
-# showModal
-
-{{desc}}
-
-
-
-
-
-
-
-# show
-
-{{desc}}
-
-
-
-
-
-
-
-# setPlacement
-
-{{desc}}
-
-
-
-
-
-
+| --- | --- | --- |
+| properties | `Number` |  |
+| years |  | {{desc}} |
+| months |  | {{desc}} |
+| first |  | {{desc}} |
+| last |  | {{desc}} |
+| weekdays |  | {{desc}} |
+| days |  | {{desc}} |
+| hours |  | {{desc}} |
+| minutes |  | {{desc}} |
+| body |  | {{desc}} |
+| body |  | {{desc}} |
+| leadingActions |  | {{desc}} |
+| trailingActions |  | {{desc}} |
+| actions |  | {{desc}} |
+
+## Instance Methods
+This interface also inherits methods from its parent, `MDSheetComponent`.
+
+| Name | Parameters | Description |
+| --- | --- | --- |
+| updateDate |  | {{desc}} |
+| getValue |  | {{desc}} |
+| showModal | `button`, `options` | {{desc}} |
+| show | `button`, `options` | {{desc}} |
+| setPlacement | `button`, `options` | {{desc}} |
+
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
+
+| Name | Description |
+| --- | --- |
+| `onDatetimePickerIconButtonClick` | {{desc}} |
+| `onDatetimePickerButtonClick` | {{desc}} |
+| `onDatetimePickerSelection` | {{desc}} |
+| `onDatetimePickerIconButtonPrevClick` | {{desc}} |
+| `onDatetimePickerIconButtonNextClick` | {{desc}} |
+| `onDatetimePickerButtonLabelClick` | {{desc}} |
+| `onDatetimePickerButtonCancelClick` | {{desc}} |
+| `onDatetimePickerButtonOkClick` | {{desc}} |
+| `onDatetimePickerYearItemClick` | {{desc}} |
+| `onDatetimePickerMonthItemClick` | {{desc}} |
+| `onDatetimePickerDayItemClick` | {{desc}} |
+| `onDatetimePickerHourItemClick` | {{desc}} |
+| `onDatetimePickerMinuteItemClick` | {{desc}} |
+
+## Inheritance
+`MDSheetComponent`
 

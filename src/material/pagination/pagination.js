@@ -1,7 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -14,7 +13,6 @@ import { MDComponent } from "../component/component.js";
  * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
  */
 class MDPaginationComponent extends MDComponent {
-    
     /**
      * @property {Number} total - {{desc}}
      * @property {Number} limit - {{desc}}
@@ -28,7 +26,6 @@ class MDPaginationComponent extends MDComponent {
         options: { type: Array },
     };
 
-    
     /**
      * {{desc}}
      */
@@ -36,7 +33,6 @@ class MDPaginationComponent extends MDComponent {
         return Math.ceil(this.total / this.limit);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -44,7 +40,6 @@ class MDPaginationComponent extends MDComponent {
         return Math.max((this.page - 1) * this.limit, 0);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -52,7 +47,6 @@ class MDPaginationComponent extends MDComponent {
         return Math.min(this.start + this.limit, this.total);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -60,7 +54,6 @@ class MDPaginationComponent extends MDComponent {
         return Math.min(this.start + 1, this.total);
     }
 
-    
     /**
      * {{desc}}
      */

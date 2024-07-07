@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -10,7 +9,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDIconButtonComponent#onIconButtonClick - {{desc}}
  */
 class MDIconButtonComponent extends MDComponent {
-    
     /**
      * @property {String} variant - {{desc}}
      * @property {String} icon - {{desc}}

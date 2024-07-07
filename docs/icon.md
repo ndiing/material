@@ -1,11 +1,7 @@
 # MDIconComponent
 
-The `MDIconComponent` interface represents a `<md-icon>` element in the DOM.
-Represents an icon component that extends MDComponent.
+The `MDIconComponent` interface represents a `md-icon` element in the DOM.{{desc}}
 
-
-
-
-
-
+## Inheritance
+`MDComponent`
 

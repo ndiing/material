@@ -1,55 +1,23 @@
 # MDScrimComponent
 
-The `MDScrimComponent` interface represents a `<md-scrim>` element in the DOM.
-Represents a scrim component that extends MDComponent.
+The `MDScrimComponent` interface represents a `md-scrim` element in the DOM.{{desc}}
 
-
-
-
-
-
-
-# properties
-
-
-### Instance properties
+## Instance Properties
+This interface also inherits properties from its parent, `MDComponent`.
 
 | Name | Type | Description |
-|------|------|-------------|
-| `open` | (Boolean) | Indicates whether the scrim is currently open. |
+| --- | --- | --- |
+| properties | `Boolean` |  |
 
+## Instance Methods
+This interface also inherits methods from its parent, `MDComponent`.
 
+| Name | Parameters | Description |
+| --- | --- | --- |
+| show |  | {{desc}} |
+| close |  | {{desc}} |
+| toggle |  | {{desc}} |
 
-
-
-
-# show
-
-Shows the scrim by setting the &#x60;open&#x60; property to &#x60;true&#x60;.
-
-
-
-
-
-
-
-# close
-
-Closes the scrim by setting the &#x60;open&#x60; property to &#x60;false&#x60;.
-
-
-
-
-
-
-
-# toggle
-
-Toggles the visibility of the scrim. If currently open, it closes; if closed, it opens.
-
-
-
-
-
-
+## Inheritance
+`MDComponent`
 

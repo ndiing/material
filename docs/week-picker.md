@@ -1,94 +1,41 @@
 # MDWeekPickerComponent
 
-The `MDWeekPickerComponent` interface represents a `<md-week-picker>` element in the DOM.
-{{desc}}
+The `MDWeekPickerComponent` interface represents a `md-week-picker` element in the DOM.{{desc}}
 
+## Instance Properties
+This interface also inherits properties from its parent, `MDDatetimePickerComponent`.
 
+| Name | Type | Description |
+| --- | --- | --- |
+| weekdays |  | {{desc}} |
+| days |  | {{desc}} |
+| body |  | {{desc}} |
+| body |  | {{desc}} |
+| leadingActions |  | {{desc}} |
 
-### Events
+## Instance Methods
+This interface also inherits methods from its parent, `MDDatetimePickerComponent`.
 
-| Event | Description |
-|-------|-------------|
-| `MDWeekPickerComponent#event:onWeekPickerSelection - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerIconButtonPrevClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerIconButtonNextClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerButtonLabelClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerButtonCancelClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerButtonOkClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerYearItemClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerMonthItemClick - {{desc}}` | |
-| `MDWeekPickerComponent#event:onWeekPickerDayItemClick - {{desc}}` | |
+| Name | Parameters | Description |
+| --- | --- | --- |
+| updateDate |  | {{desc}} |
+| getValue |  | {{desc}} |
 
+## Events
+Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
+| Name | Description |
+| --- | --- |
+| `onWeekPickerSelection` | {{desc}} |
+| `onWeekPickerIconButtonPrevClick` | {{desc}} |
+| `onWeekPickerIconButtonNextClick` | {{desc}} |
+| `onWeekPickerButtonLabelClick` | {{desc}} |
+| `onWeekPickerButtonCancelClick` | {{desc}} |
+| `onWeekPickerButtonOkClick` | {{desc}} |
+| `onWeekPickerYearItemClick` | {{desc}} |
+| `onWeekPickerMonthItemClick` | {{desc}} |
+| `onWeekPickerDayItemClick` | {{desc}} |
 
-
-# weekdays
-
-{{desc}}
-
-
-
-
-
-
-
-# days
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# body
-
-{{desc}}
-
-
-
-
-
-
-
-# leadingActions
-
-{{desc}}
-
-
-
-
-
-
-
-# updateDate
-
-{{desc}}
-
-
-
-
-
-
-
-# getValue
-
-{{desc}}
-
-
-
-
-
-
+## Inheritance
+`MDDatetimePickerComponent`
 

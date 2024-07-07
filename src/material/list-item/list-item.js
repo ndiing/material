@@ -3,14 +3,12 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
  * @tagname md-list-item
  */
 class MDListItemComponent extends MDComponent {
-    
     /**
      * @property {String} avatar - {{desc}}
      * @property {String} thumbnail - {{desc}}

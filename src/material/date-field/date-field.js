@@ -1,14 +1,12 @@
 import { stringifyDate } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
-
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-date-field
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
-    
     /**
      * {{desc}}
      */
@@ -16,7 +14,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         return [{ icon: "today" }];
     }
 
-    
     /**
      * {{desc}}
      */
