@@ -32,7 +32,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/attribute-observer" },
             { routerLink: "/virtual" },
             { routerLink: "/store" },
-
             { routerLink: "/markdown" },
             { routerLink: "/icon" },
             { routerLink: "/emoji" },
@@ -48,7 +47,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/segmented-button" },
             { routerLink: "/snackbar" },
             { routerLink: "/tooltip" },
-
             { routerLink: "/picker" },
             { routerLink: "/datetime-picker" },
             { routerLink: "/date-picker" },
@@ -57,7 +55,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/week-picker" },
             { routerLink: "/color-picker" },
             { routerLink: "/emoji-picker" },
-
             { routerLink: "/fab" },
             { routerLink: "/bottom-app-bar" },
             { routerLink: "/image" },
@@ -80,7 +77,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/tabs" },
             { routerLink: "/chip" },
             { routerLink: "/chips" },
-
             { routerLink: "/text-field" },
             { routerLink: "/text-field2" },
             { routerLink: "/text-field3" },
@@ -93,9 +89,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/number-field" },
             { routerLink: "/search-field" },
             { routerLink: "/password-field" },
-
-            { routerLink: "/data-list" },
-
             { routerLink: "/pagination" },
             { routerLink: "/data-table-item" },
             { routerLink: "/data-table" },
@@ -104,14 +97,13 @@ class DevMainComponent extends MDComponent {
         this.list.sort((a, b) => {
             return a.routerLink.localeCompare(b.routerLink);
         });
-        
+
         for (let i = 0; i < this.list.length; i++) {
             let item = this.list[i];
             item.icon = "deployed_code";
             item.label = toTitleCase(item.routerLink);
             item.selected = item.routerLink === MDRouter.path;
         }
-
     }
 
     render() {
