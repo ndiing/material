@@ -9,10 +9,12 @@ class DevListComponent extends MDComponent {
                 <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-list
                         .list="${data.slice(0,10)}"
-                        .itemMap="${{
+                        .map="${{
                             label: 'name',
                             value: 'logoid',
                         }}"
+                        .format="${value=>value.toLowerCase()}"
+                        .singleSelection="${true}"
                     ></md-list>
                 </div>
 

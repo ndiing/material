@@ -26,7 +26,8 @@ class MDListComponent extends MDComponent {
      */
     static properties = {
         list: { type: Array },
-        itemMap: { type: Object },
+        map: { type: Object },
+        format: { type: Function },
 
         selection: { type: Boolean },
         rangeSelection: { type: Boolean },
@@ -37,7 +38,7 @@ class MDListComponent extends MDComponent {
 
     constructor() {
         super();
-        this.itemMap={
+        this.map={
             'label':'label',
             'value':'value',
         }
@@ -52,7 +53,7 @@ class MDListComponent extends MDComponent {
                 .thumbnail="${ifDefined(item.thumbnail)}"
                 .video="${ifDefined(item.video)}"
                 .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item[this.itemMap.label])}"
+                .label="${ifDefined((this.format||(value=>value))(item[this.map.label]))}"
                 .subLabel="${ifDefined(item.subLabel)}"
                 .badge="${ifDefined(item.badge)}"
                 .text="${ifDefined(item.text)}"
@@ -64,7 +65,7 @@ class MDListComponent extends MDComponent {
                 .trailingSwitch="${ifDefined(item.trailingSwitch)}"
                 .selected="${ifDefined(item.selected)}"
                 .routerLink="${ifDefined(item.routerLink)}"
-                .value="${ifDefined(item[this.itemMap.value])}"
+                .value="${ifDefined(item[this.map.value])}"
                 @click="${this.handleListItemClick}"
                 @onCheckboxNativeInput="${this.handleListItemCheckboxNativeInput}"
                 @onRadioButtonNativeInput="${this.handleListItemRadioButtonNativeInput}"
