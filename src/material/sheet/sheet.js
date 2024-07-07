@@ -11,8 +11,7 @@ import { MDScrimComponent } from "../scrim/scrim.js";
  */
 class MDSheetComponent extends MDCardComponent {
     /**
-     * @property {Boolean} open - Controls the visibility state of the sheet.
-     * Set to `true` to show the sheet and `false` to hide it.
+     * @property {Boolean} open - Controls the visibility state of the sheet. Set to `true` to show the sheet and `false` to hide it.
      */
     static properties = {
         ...MDCardComponent.properties,
@@ -31,8 +30,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Shows a modal sheet by displaying the scrim and setting `open` to `true`.
-     * This method adjusts the sheet's dimensions and emits the `onSheetShow` event.
+     * Shows a modal sheet by displaying the scrim and setting `open` to `true`. This method adjusts the sheet's dimensions and emits the `onSheetShow` event.
      */
     showModal() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -52,8 +50,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Handles click events on the scrim of the sheet.
-     * Closes the sheet and emits the `onSheetScrimClick` event.
+     * Handles click events on the scrim of the sheet. Closes the sheet and emits the `onSheetScrimClick` event.
      * @param {MouseEvent} event - The click event object.
      */
     handleSheetScrimClick(event) {
@@ -63,8 +60,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Shows the sheet by adjusting its dimensions and setting `open` to `true`.
-     * Emits the `onSheetShow` event.
+     * Shows the sheet by adjusting its dimensions and setting `open` to `true`. Emits the `onSheetShow` event.
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -77,8 +73,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Closes the sheet by hiding it and removing the scrim if present.
-     * Emits the `onSheetClose` event.
+     * Closes the sheet by hiding it and removing the scrim if present. Emits the `onSheetClose` event.
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -97,8 +92,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Toggles the visibility of the sheet.
-     * If the sheet is open, it will close it. If closed, it will show it.
+     * Toggles the visibility of the sheet. If the sheet is open, it will close it. If closed, it will show it.
      * @param {...any} args - Additional arguments to pass to the `show` method.
      */
     toggle(...args) {
