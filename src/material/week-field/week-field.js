@@ -74,7 +74,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         const value = stringifyWeek(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
-        // this.value = value;
     }
 
     handlePickerButtonCancelClick() {
@@ -85,7 +84,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         const value = stringifyWeek(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
-        // this.value = value;
         this.picker.close();
     }
 }

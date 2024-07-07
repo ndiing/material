@@ -190,7 +190,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.requestUpdate();
         this.index = 2;
 
-        // this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerButtonCancelClick", event);
     }
 
@@ -203,7 +202,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
 
         this.index = 2;
 
-        // this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerButtonOkClick", event);
     }
 

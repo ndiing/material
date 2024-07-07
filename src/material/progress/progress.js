@@ -124,7 +124,6 @@ function stop() {
 
 export { start, pause, resume, stop };
 
-// auto run
 (() => {
     let timeout;
     new PerformanceObserver((list) => {

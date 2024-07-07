@@ -12,15 +12,8 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
         super();
 
         this.gesture = new MDGestureController(this, {
-            // containerSelector: undefined,
-            // dragHandleSelector: undefined,
             drag: ["x"],
-            // dragAfterLongPress: false,
             resize: ["e"],
-            // resizeAfterLongPress: false,
-            // selection: false,
-            // selectionAfterLongPress: false,
-            // updateStyle: false,
         });
     }
 
@@ -143,7 +136,6 @@ class MDDataTableComponent extends MDCardComponent {
         super();
     }
 
-    // md-data-table-item
     renderDataTableItem(item) {
         /* prettier-ignore */
         return html`
@@ -354,7 +346,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.storeTotal = total;
         this.storeRows = docs;
 
-        // this.virtual.options.rowTotal = this.storeTotal;
         this.virtual.options.rowTotal = this._end - this._start;
         this.virtual.options.rowHeight = 52;
         this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
@@ -409,8 +400,8 @@ class MDDataTableComponent extends MDCardComponent {
                     }
                 }
 
-                column.flow = flow; // left|right
-                column[flow] = value; //{x}px
+                column.flow = flow;
+                column[flow] = value;
             }
 
             column.stickyLeftEnd = false;
@@ -520,8 +511,6 @@ class MDDataTableComponent extends MDCardComponent {
         });
     }
 
-    // checkbox selection start
-
     handleDataTableColumnCheckboxNativeInput(event) {
         event.preventDefault();
 
@@ -545,8 +534,6 @@ class MDDataTableComponent extends MDCardComponent {
 
         this.emit("onDataTableRowCheckboxNativeInput", event);
     }
-
-    // checkbox selection end
 
     handleDataTableRowClick(event) {
         if (event.target.closest(".md-data-table__checkbox," + ".md-data-table__radio-button," + ".md-data-table__switch")) {

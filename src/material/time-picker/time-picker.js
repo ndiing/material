@@ -128,7 +128,6 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.requestUpdate();
         this.index = 0;
 
-        // this.emit("onTimePickerSelection", event);
         this.emit("onTimePickerButtonCancelClick", event);
     }
 
@@ -140,7 +139,6 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
 
         this.index = 0;
 
-        // this.emit("onTimePickerSelection", event);
         this.emit("onTimePickerButtonOkClick", event);
     }
 

@@ -136,7 +136,6 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
         this.index = 2;
 
-        // this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerButtonOkClick", event);
     }
 
@@ -147,7 +146,6 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
         this.index = 1;
 
-        // this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerYearItemClick", event);
     }
 

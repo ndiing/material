@@ -307,14 +307,12 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.updateThumb();
         this.requestUpdate();
 
-        // this.emit("onColorPickerSelection", event);
         this.emit("onColorPickerButtonCancelClick", event);
     }
 
     handleColorPickerButtonOkClick(event) {
         this.value = this.selection.hex;
 
-        // this.emit("onColorPickerSelection", event);
         this.emit("onColorPickerButtonOkClick", event);
     }
 

@@ -464,7 +464,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.requestUpdate();
         this.index = 2;
 
-        // this.emit("onDatetimePickerSelection", event);
         this.emit("onDatetimePickerButtonCancelClick", event);
     }
 
@@ -480,7 +479,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
         this.index = 2;
 
-        // this.emit("onDatetimePickerSelection", event);
         this.emit("onDatetimePickerButtonOkClick", event);
     }
 

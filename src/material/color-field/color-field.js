@@ -73,7 +73,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
-        // this.value = value;
     }
 
     handlePickerButtonCancelClick() {
@@ -84,7 +83,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
-        // this.value = value;
         this.picker.close();
     }
 }

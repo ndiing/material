@@ -583,11 +583,11 @@ Date.prototype.setWeek = function (week) {
     if (typeof week !== "number" || week < 1 || week > 53) {
         throw new Error("Invalid week number. Week number should be between 1 and 53.");
     }
-    let jan4 = new Date(this.getFullYear(), 0, 4); // January 4th
-    let jan4Day = (jan4.getDay() + 6) % 7; // Day of the week for January 4th (0 = Monday, 6 = Sunday)
-    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day); // Start of the first week of the year
+    let jan4 = new Date(this.getFullYear(), 0, 4); 
+    let jan4Day = (jan4.getDay() + 6) % 7; 
+    let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day); 
 
-    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000); // Set time to the start of the target week
+    this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000); 
     return this;
 };
 
@@ -604,7 +604,7 @@ Date.prototype.getWeek = function () {
 };
 
 export {
-    // String Manipulation
+    /* String Manipulation */
     toPascalCase,
     toCamelCase,
     toSnakeCase,
@@ -618,7 +618,7 @@ export {
     toCobolCase,
     toTitleCase,
 
-    // Date Manipulation
+    /* Date Manipulation */
     stringifyDatetimeLocal,
     stringifyDate,
     stringifyYear,
@@ -632,7 +632,7 @@ export {
     parseTime,
     parseWeek,
 
-    // Color Manipulation
+    /* Color Manipulation */
     hexToRgba,
     hexToHsla,
     rgbaToHex,
@@ -640,7 +640,7 @@ export {
     hslaToRgba,
     hslaToHex,
 
-    // Utility Functions
+    /* Utility Functions */
     calcPercentage,
     calcDecimal,
     isValidHexColor,
@@ -648,8 +648,8 @@ export {
     isArrayString,
     isDefined,
 
-    // Additional Functions
+    /* Additional Functions */
     createQueue,
 
-    // Date Prototype Extensions
+    /* Date Prototype Extensions */
 };
