@@ -7,6 +7,7 @@ import { MDGestureController } from "../gesture/gesture.js";
  * {{desc}}
  * @extends MDComponent
  * @tagname md-list-item
+ * @fires MDListItemComponent#onListItemSelected - {{desc}}
  */
 class MDListItemComponent extends MDComponent {
     /**
@@ -131,6 +132,8 @@ class MDListItemComponent extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-list__item");
+
+        this.list=this.closest('md-list')
     }
 
     async updated(changedProperties) {
@@ -145,6 +148,12 @@ class MDListItemComponent extends MDComponent {
                 this.classList.add("md-list__item--three");
             } else {
                 this.classList.add("md-list__item--two");
+            }
+        }
+
+        if (changedProperties.has("selected")) {
+            if (this.selected) {
+                this.emit("onListItemSelected", this);
             }
         }
     }
