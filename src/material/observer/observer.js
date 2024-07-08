@@ -10,15 +10,22 @@ const breakpoints = [
 ];
 
 /**
- * {{desc}}
+ * Defines media query observer for handling changes based on provided list.
+ * This class allows monitoring changes in media queries and triggering a callback function.
  */
 class MDObserver {
+    /**
+     * Creates an instance of MDObserver.
+     * @param {Function} [callback=() => {}] - Optional callback function triggered on query change.
+     */
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
     /**
-     * {{desc}}
+     * Observes changes in media queries based on the provided list.
+     * @param {Array<Object>} list - List of objects containing 'name' and 'query' properties.
+     * This method sets up event listeners for each media query in the list, triggering the callback function when a match is found.
      */
     observe(list) {
         const handleChange = () => {

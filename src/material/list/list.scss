@@ -8,8 +8,8 @@
     align-items: center;
     padding: 8px 16px;
     gap: 0 16px;
-    &.md-ripple--focused{
-        &::after{
+    &.md-ripple--focused {
+        &::after {
             opacity: 0;
         }
     }

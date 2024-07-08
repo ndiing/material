@@ -1,24 +1,27 @@
 # MDRouter
 
-{{desc}}
+Router class for managing application routing and navigation.
 
 ## Instance Methods
 | Name | Parameters | Description |
 | --- | --- | --- |
-| setRoutes | `routes`, `parent` | {{desc}} |
-| getRoute | `path` | {{desc}} |
-| getRoutes | `route` | {{desc}} |
-| getOutlet | `container`, `route` | {{desc}} |
-| navigate | `url` | {{desc}} |
-| init | `routes` | {{desc}} |
+| setRoutes | `routes`, `parent` | Sets up routes recursively with parent-child relationships. |
+| getRoute | `path` | Finds a route object based on the provided path. |
+| getRoutes | `route` | Retrieves all routes in the hierarchy starting from the provided route. |
+| getOutlet | `container`, `route` | Retrieves the outlet element associated with the given route. |
+| handleLoad | `event` | Handles the process of loading and rendering a route's component. |
+| navigate | `url` | Navigates to the specified URL using the appropriate navigation method. |
+| handleClick | `event` | Handles click events on elements with a 'routerLink' attribute, triggering navigation. |
+| init | `routes` | Initializes the router with the provided routes. |
+| emit | `type`, `detail` | Emits a custom event with the specified type and detail. |
 
 ## Events
 Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
 | Name | Description |
 | --- | --- |
-| `onRouterCurrentEntryChange` | {{desc}} |
-| `onRouterNavigate` | {{desc}} |
-| `onRouterNavigateError` | {{desc}} |
-| `onRouterNavigateSuccess` | {{desc}} |
+| `onRouterCurrentEntryChange` | Triggered when the current route entry changes. |
+| `onRouterNavigate` | Triggered when navigating to a new route. |
+| `onRouterNavigateError` | Triggered when an error occurs during navigation. |
+| `onRouterNavigateSuccess` | Triggered when navigation is successful. |
 

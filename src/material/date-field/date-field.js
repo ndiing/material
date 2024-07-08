@@ -19,8 +19,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      * Sets the actions associated with the date field.
      * @param {Array} value - An array of actions.
      */
-    set actions(value) {
-    }
+    set actions(value) {}
 
     constructor() {
         super();

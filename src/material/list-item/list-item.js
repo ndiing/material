@@ -133,7 +133,7 @@ class MDListItemComponent extends MDComponent {
 
         this.classList.add("md-list__item");
 
-        this.list=this.closest('md-list')
+        this.list = this.closest("md-list");
     }
 
     async updated(changedProperties) {

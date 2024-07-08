@@ -1,22 +1,26 @@
 # MDGestureController
 
-{{desc}}
+MDGestureController provides gesture handling functionalities such as drag, resize, selection, taps, and swipes.
 
 ## Events
 Listen to these events using `addEventListener()`, or by assigning an event listener to the @onEventName property of this interface.
 
 | Name | Description |
 | --- | --- |
-| `onDragStart` | {{desc}} |
-| `onResizeStart` | {{desc}} |
-| `onSelectionStart` | {{desc}} |
-| `onLongPress` | {{desc}} |
-| `onDrag` | {{desc}} |
-| `onResize` | {{desc}} |
-| `onSelection` | {{desc}} |
-| `onTap` | {{desc}} |
-| `onDoubleTap` | {{desc}} |
-| `onSelectionEnd` | {{desc}} |
-| `onDragEnd` | {{desc}} |
-| `onResizeEnd` | {{desc}} |
+| `onDragStart` | Triggered when drag gesture starts. |
+| `onResizeStart` | Triggered when resize gesture starts. |
+| `onSelectionStart` | Triggered when selection gesture starts. |
+| `onLongPress` | Triggered when a long press gesture is detected. |
+| `onDrag` | Triggered during drag gesture. |
+| `onResize` | Triggered during resize gesture. |
+| `onSelection` | Triggered during selection gesture. |
+| `onTap` | Triggered on tap gesture. |
+| `onDoubleTap` | Triggered on double tap gesture. |
+| `onSwipeLeft` | Triggered on swipe left gesture. |
+| `onSwipeRight` | Triggered on swipe right gesture. |
+| `onSwipeTop` | Triggered on swipe top gesture. |
+| `onSwipeBottom` | Triggered on swipe bottom gesture. |
+| `onSelectionEnd` | Triggered when selection gesture ends. |
+| `onDragEnd` | Triggered when drag gesture ends. |
+| `onResizeEnd` | Triggered when resize gesture ends. |
 

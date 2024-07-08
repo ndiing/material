@@ -1,13 +1,16 @@
 /**
- * {{desc}}
- * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
- * @fires MDRouter#onRouterNavigate - {{desc}}
- * @fires MDRouter#onRouterNavigateError - {{desc}}
- * @fires MDRouter#onRouterNavigateSuccess - {{desc}}
+ * Router class for managing application routing and navigation.
+ * @fires MDRouter#onRouterCurrentEntryChange - Triggered when the current route entry changes.
+ * @fires MDRouter#onRouterNavigate - Triggered when navigating to a new route.
+ * @fires MDRouter#onRouterNavigateError - Triggered when an error occurs during navigation.
+ * @fires MDRouter#onRouterNavigateSuccess - Triggered when navigation is successful.
  */
 class MDRouter {
     /**
-     * {{desc}}
+     * Sets up routes recursively with parent-child relationships.
+     * @param {Array<Object>} routes - List of route objects.
+     * @param {Object} parent - Parent route object.
+     * @returns {Array<Object>} - Flattened array of routes with parent references.
      */
     static setRoutes(routes, parent) {
         return routes.reduce((acc, curr) => {
@@ -24,7 +27,8 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Retrieves the current path based on the application's routing mode.
+     * @returns {string} - Current path.
      */
     static get path() {
         if (this.historyApiFallback) {
@@ -35,7 +39,8 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Retrieves the current query parameters based on the application's routing mode.
+     * @returns {Object} - Current query parameters.
      */
     static get query() {
         let search;
@@ -62,7 +67,9 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Finds a route object based on the provided path.
+     * @param {string} path - Path to match against route patterns.
+     * @returns {Object|undefined} - Matching route object, if found.
      */
     static getRoute(path) {
         return this.stacks.find((route) => {
@@ -80,7 +87,9 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Retrieves all routes in the hierarchy starting from the provided route.
+     * @param {Object} route - Starting route object.
+     * @returns {Array<Object>} - List of routes in hierarchical order.
      */
     static getRoutes(route) {
         return [route].reduce((acc, curr) => {
@@ -95,7 +104,10 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Retrieves the outlet element associated with the given route.
+     * @param {HTMLElement} container - Container element to search for outlets.
+     * @param {Object} route - Route object.
+     * @returns {Promise<HTMLElement>} - Promise resolving to the outlet element.
      */
     static getOutlet(container, route) {
         return new Promise((resolve) => {
@@ -133,6 +145,10 @@ class MDRouter {
         });
     }
 
+    /**
+     * Handles the process of loading and rendering a route's component.
+     * @param {Event} event - Event triggering the navigation.
+     */
     static async handleLoad(event) {
         this.emit("onRouterCurrentEntryChange", event);
         performance.mark("markRouterCurrentEntryChange");
@@ -214,7 +230,8 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * Navigates to the specified URL using the appropriate navigation method.
+     * @param {string} url - URL to navigate to.
      */
     static navigate(url) {
         if (this.historyApiFallback) {
@@ -224,6 +241,10 @@ class MDRouter {
         }
     }
 
+    /**
+     * Handles click events on elements with a 'routerLink' attribute, triggering navigation.
+     * @param {Event} event - Click event.
+     */
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
         if (routerLink) {
@@ -232,19 +253,18 @@ class MDRouter {
         }
     }
 
-    static historyApiFallback = true;
-
-    static emit(type, detail) {
-        const event = new CustomEvent(type, {
-            bubbles: true,
-            cancelable: true,
-            detail,
-        });
-        window.dispatchEvent(event);
-    }
+    /**
+     * Represents a route object.
+     * @property {String} path - URL path of the route.
+     * @property {HTMLElement} component - Element to render when the route matches.
+     * @property {Function} load - Function that loads the component asynchronously if not already loaded.
+     * @property {Function} [beforeLoad] - Optional function called before loading the route.
+     * @property {Array<route>} [children] - Optional array of child route objects.
+     */
 
     /**
-     * {{desc}}
+     * Initializes the router with the provided routes.
+     * @param {Array<route>} routes - List of route objects.
      */
     static init(routes) {
         this.stacks = this.setRoutes(routes);
@@ -267,6 +287,22 @@ class MDRouter {
 
         this.handleClick = this.handleClick.bind(this);
         window.addEventListener("click", this.handleClick);
+    }
+
+    static historyApiFallback = true;
+
+    /**
+     * Emits a custom event with the specified type and detail.
+     * @param {string} type - Event type.
+     * @param {any} detail - Event detail.
+     */
+    static emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+        window.dispatchEvent(event);
     }
 }
 

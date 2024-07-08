@@ -1,9 +1,15 @@
 import { isObject } from "../functions/functions";
 
 /**
- * {{desc}}
+ * Represents a simple in-memory store for managing documents.
  */
 class MDStore {
+    /**
+     * Initializes a new instance of MDStore.
+     * @param {Array} docs - Initial array of documents.
+     * @param {Object} options - Options object for configuration.
+     * @param {String} options.primaryKey - Primary key used to identify documents.
+     */
     constructor(docs = [], options = {}) {
         this.docs = docs;
         this.options = {
@@ -13,7 +19,9 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Adds a new document to the store.
+     * @param {Object} doc - Document to be added.
+     * @returns {Object} The added document.
      */
     post(doc) {
         this.docs.push(doc);
@@ -21,14 +29,19 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Retrieves a document by its primary key.
+     * @param {String} _id - Primary key of the document to retrieve.
+     * @returns {Object|null} The found document, or null if not found.
      */
     get(_id) {
         return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
     }
 
     /**
-     * {{desc}}
+     * Updates a document by merging with a new object.
+     * @param {String} _id - Primary key of the document to update.
+     * @param {Object} doc - New data to merge into the existing document.
+     * @returns {Object|null} The updated document, or null if not found.
      */
     patch(_id, doc) {
         const index = this.docs.findIndex((d) => d[this.options.primaryKey] === _id);
@@ -40,7 +53,9 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Deletes a document from the store.
+     * @param {String} _id - Primary key of the document to delete.
+     * @returns {Object|null} The deleted document, or null if not found.
      */
     delete(_id) {
         const index = this.docs.findIndex((doc) => doc[this.options.primaryKey] === _id);
@@ -53,7 +68,9 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Adds or updates a document in the store.
+     * @param {Object} doc - Document to add or update.
+     * @returns {Object} The added or updated document.
      */
     put(doc) {
         if (doc[this.options.primaryKey]) {
@@ -64,7 +81,10 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Sorts an array of documents based on given sort criteria.
+     * @param {Array} docs - Array of documents to sort.
+     * @param {Array} sorters - Array of sort criteria objects.
+     * @returns {Array} Sorted array of documents.
      */
     sort(docs, sorters) {
         return docs.sort((a, b) => {
@@ -80,7 +100,10 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Searches an array of documents based on a query string.
+     * @param {Array} docs - Array of documents to search.
+     * @param {String} q - Query string for searching.
+     * @returns {Array} Array of documents matching the search query.
      */
     search(docs, q) {
         const query = q.toLowerCase().trim();
@@ -88,14 +111,21 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Filters an array of documents based on given filters.
+     * @param {Array} docs - Array of documents to filter.
+     * @param {Array} filters - Array of filter objects.
+     * @returns {Array} Array of documents matching the filters.
      */
     filter(docs, filters) {
         return docs.filter((doc) => this.deepFilter(doc, filters));
     }
 
     /**
-     * {{desc}}
+     * Paginates an array of documents based on page and limit.
+     * @param {Array} docs - Array of documents to paginate.
+     * @param {Number} _page - Page number.
+     * @param {Number} _limit - Limit of documents per page.
+     * @returns {Array} Array of documents for the requested page.
      */
     paginate(docs, _page, _limit) {
         const startIndex = (_page - 1) * _limit;
@@ -103,14 +133,29 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Slices an array of documents based on start and end indices.
+     * @param {Array} docs - Array of documents to slice.
+     * @param {Number} _start - Starting index of slice.
+     * @param {Number} _end - Ending index of slice.
+     * @returns {Array} Sliced array of documents.
      */
     slice(docs, _start, _end) {
         return docs.slice(_start, _end);
     }
 
     /**
-     * {{desc}}
+     * Retrieves all documents from the store with optional filtering, sorting, and pagination.
+     * @param {Object} options - Options object for filtering, sorting, and pagination.
+     * @param {String} options._sort - Comma-separated string of fields to sort by.
+     * @param {String} options._order - Comma-separated string of sort orders (asc or desc).
+     * @param {String} options.q - Query string for searching.
+     * @param {Number} options._page - Page number for pagination.
+     * @param {Number} options._limit - Limit of documents per page for pagination.
+     * @param {Number} options._start - Starting index for slicing.
+     * @param {Number} options._end - Ending index for slicing.
+     * @param {Array} options.sorters - Array of sort criteria objects.
+     * @param {Array} options.filters - Array of filter objects.
+     * @returns {Object} Object containing total count of documents and array of documents.
      */
     getAll(options = {}) {
         let { _sort, _order, q, _page, _limit, _start, _end, sorters, filters, ...rest } = options;
@@ -154,7 +199,10 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Recursively merges two objects.
+     * @param {Object} target - Target object to merge into.
+     * @param {Object} source - Source object to merge from.
+     * @returns {Object} Merged object.
      */
     deepMerge(target, source) {
         if (!isObject(target) || !isObject(source)) {
@@ -174,14 +222,20 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Retrieves a nested value from an object based on a dot-separated path.
+     * @param {Object} obj - Object to retrieve value from.
+     * @param {String} path - Dot-separated path to retrieve value.
+     * @returns {*} Retrieved value.
      */
     getValue(obj, path) {
         return path.split(".").reduce((acc, part) => acc && acc[part], obj);
     }
 
     /**
-     * {{desc}}
+     * Recursively searches an object for a string query.
+     * @param {Object} obj - Object to search.
+     * @param {String} query - Query string to search for.
+     * @returns {Boolean} True if query is found in object, false otherwise.
      */
     deepSearch(obj, query) {
         if (!isObject(obj)) {
@@ -200,7 +254,10 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * Filters an object based on given filters.
+     * @param {Object} obj - Object to filter.
+     * @param {Array} filters - Array of filter objects.
+     * @returns {Boolean} True if object passes all filters, false otherwise.
      */
     deepFilter(obj, filters) {
         return filters.every((filter) => {

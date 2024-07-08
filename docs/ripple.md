@@ -1,4 +1,4 @@
 # MDRippleController
 
-{{desc}}
+MDRippleController provides ripple effect handling for UI interactions.
 
