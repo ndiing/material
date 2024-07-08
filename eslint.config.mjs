@@ -54,7 +54,7 @@ export default [
             // }],
             // "template-curly-spacing": ["error", "never"]
 
-            "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
+            "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
         },
     },
     pluginJs.configs.recommended,
