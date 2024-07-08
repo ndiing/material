@@ -3,17 +3,17 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * Represents a floating action button component.
  * @extends MDComponent
  * @tagname md-fab
  */
 class MDFabComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
+     * @property {String} variant - The variant styles for the FAB. Can be one or more of: "small", "large", "surface", "secondary", "tertiary", "unelevated", "extended".
+     * @property {String} icon - The icon displayed on the FAB.
+     * @property {String} label - The label displayed alongside the icon on the FAB.
+     * @property {Boolean} selected - Indicates if the FAB is selected.
+     * @property {Boolean} disabled - Indicates if the FAB is disabled.
      */
     static properties = {
         variant: { type: String },
@@ -28,6 +28,7 @@ class MDFabComponent extends MDComponent {
     constructor() {
         super();
 
+        // Initialize ripple effect controller for the FAB.
         this.ripple = new MDRippleController(this, {
             clipped: true,
             fadeOut: true,
@@ -38,13 +39,14 @@ class MDFabComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon ? html`<div class="md-icon md-fab__icon">${this.icon}</div>` : nothing}
-            ${this.label?html`<div class="md-fab__label">${this.label}</div>`:nothing}
+            ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing}
         `;
     }
 
     connectedCallback() {
         super.connectedCallback();
 
+        // Add specific CSS class for styling the FAB.
         this.classList.add("md-fab");
     }
 
@@ -52,6 +54,7 @@ class MDFabComponent extends MDComponent {
         super.updated(changedProperties);
 
         if (changedProperties.has("variant")) {
+            // Toggle variant classes based on the variant property.
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-fab--${variant}`, (this.variant ?? "").split(" ").includes(variant));
@@ -59,6 +62,7 @@ class MDFabComponent extends MDComponent {
         }
 
         if (changedProperties.has("disabled")) {
+            // Update accessibility attributes based on the disabled property.
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
                 this.setAttribute("tabindex", "-1");

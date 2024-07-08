@@ -4,22 +4,21 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * A component for creating a custom checkbox with ripple effect.
  * @extends MDComponent
  * @tagname md-checkbox
- * @fires MDCheckboxComponent#onCheckboxNativeInput - {{desc}}
- * @fires MDCheckboxComponent#onCheckboxNativeReset - {{desc}}
+ * @fires MDCheckboxComponent#onCheckboxNativeInput - Triggered when the checkbox value changes.
+ * @fires MDCheckboxComponent#onCheckboxNativeReset - Triggered when the checkbox is reset.
  */
 class MDCheckboxComponent extends MDComponent {
     /**
-     * @property {Boolean} checked - {{desc}}
-     * @property {Boolean} defaultChecked - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {String} value - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {Object} form - {{desc}}
-     * @property {String} type - {{desc}}
+     * @property {Boolean} checked - Indicates whether the checkbox is checked.
+     * @property {Boolean} defaultChecked - Indicates whether the checkbox is checked by default.
+     * @property {Boolean} disabled - Indicates whether the checkbox is disabled.
+     * @property {Boolean} indeterminate - Indicates whether the checkbox is in an indeterminate state.
+     * @property {String} value - The value of the checkbox.
+     * @property {String} name - The name of the checkbox.
+     * @property {String} type - The type of the input element, default is "checkbox".
      */
     static properties = {
         checked: { type: Boolean },
@@ -28,7 +27,6 @@ class MDCheckboxComponent extends MDComponent {
         indeterminate: { type: Boolean },
         value: { type: String },
         name: { type: String },
-        form: { type: Object },
         type: { type: String },
     };
 
@@ -59,7 +57,6 @@ class MDCheckboxComponent extends MDComponent {
                 .value="${ifDefined(this.value)}"
                 .defaultValue="${ifDefined(this.defaultValue)}"
                 .name="${ifDefined(this.name)}"
-                .form="${ifDefined(this.form)}"
                 @input="${this.handleCheckboxNativeInput}"
                 @reset="${this.handleCheckboxNativeReset}"
             >

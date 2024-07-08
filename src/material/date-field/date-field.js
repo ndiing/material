@@ -2,32 +2,37 @@ import { stringifyDate } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{desc}}
+ * Represents a date field component extending MDTextFieldComponent.
  * @extends MDTextFieldComponent
  * @tagname md-date-field
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
     /**
-     * {{desc}}
+     * Defines the actions associated with the date field.
+     * @returns {Array} An array of actions, each defined by an icon.
      */
     get actions() {
         return [{ icon: "today" }];
     }
 
     /**
-     * {{desc}}
+     * Sets the actions associated with the date field.
+     * @param {Array} value - An array of actions.
      */
-    set actions(value) {}
+    set actions(value) {
+    }
 
     constructor() {
         super();
 
+        // Set the input type to date for the date field.
         this.type = "date";
     }
 
     connectedCallback() {
         super.connectedCallback();
 
+        // Add specific CSS classes to style the date field.
         this.classList.add("md-text-field");
         this.classList.add("md-date-field");
     }
@@ -40,6 +45,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
+        // Create a date picker component and handle its events.
         this.picker = document.createElement("md-date-picker");
         if (this.value) {
             this.picker.value = this.value;
@@ -71,16 +77,19 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     handlePickerSelection() {
+        // Handle selection from the date picker and update the date field value.
         const value = stringifyDate(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
     }
 
     handlePickerButtonCancelClick() {
+        // Handle cancel button click on the date picker.
         this.picker.close();
     }
 
     handlePickerButtonOkClick() {
+        // Handle OK button click on the date picker.
         const value = stringifyDate(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));

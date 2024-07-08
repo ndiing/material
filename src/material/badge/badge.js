@@ -2,14 +2,14 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * A component that displays a badge with a numeric label.
  * @extends MDComponent
  * @tagname md-badge
  */
 class MDBadgeComponent extends MDComponent {
     /**
-     * @property {Number} label - {{desc}}
-     * @property {Number} limit - {{desc}}
+     * @property {Number} label - The numeric value to display inside the badge.
+     * @property {Number} limit - The maximum value to display before appending a '+' symbol.
      */
     static properties = {
         label: { type: Number },

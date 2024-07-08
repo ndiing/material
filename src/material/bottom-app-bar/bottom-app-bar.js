@@ -1,7 +1,7 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{desc}}
+ * A component for creating a bottom application bar.
  * @extends MDSheetComponent
  * @tagname md-bottom-app-bar
  */

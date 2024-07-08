@@ -4,31 +4,31 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 
 /**
- * {{desc}}
+ * Represents an image component.
  * @extends MDComponent
  * @tagname md-image
- * @fires MDImageComponent#onImageNativeLoad - {{desc}}
- * @fires MDImageComponent#onImageNativeError - {{desc}}
+ * @fires MDImageComponent#onImageNativeLoad - Fires when the native image element successfully loads an image.
+ * @fires MDImageComponent#onImageNativeError - Fires when the native image element encounters an error while loading an image.
  */
 class MDImageComponent extends MDComponent {
     /**
-     * @property {String} src - {{desc}}
-     * @property {String} alt - {{desc}}
-     * @property {String} srcset - {{desc}}
-     * @property {String} sizes - {{desc}}
-     * @property {String} crossorigin - {{desc}}
-     * @property {String} usemap - {{desc}}
-     * @property {Boolean} ismap - {{desc}}
-     * @property {Number} width - {{desc}}
-     * @property {Number} height - {{desc}}
-     * @property {String} referrerpolicy - {{desc}}
-     * @property {String} decoding - {{desc}}
-     * @property {String} loading - {{desc}}
-     * @property {String} title - {{desc}}
-     * @property {String} longdesc - {{desc}}
-     * @property {String} fetchpriority - {{desc}}
-     * @property {String} ratio - {{desc}}
-     * @property {String} variant - {{desc}}
+     * @property {String} src - The URL of the image.
+     * @property {String} alt - The alternative text description of the image.
+     * @property {String} srcset - A list of one or more strings separated by commas indicating a set of possible images to use for different viewport sizes.
+     * @property {String} sizes - The sizes attribute specifies the sizes of the images for different viewport widths.
+     * @property {String} crossorigin - The CORS settings for the image element.
+     * @property {String} usemap - The name of the image map associated with the image element.
+     * @property {Boolean} ismap - Indicates that the image is a server-side image map.
+     * @property {Number} width - The displayed width of the image element.
+     * @property {Number} height - The displayed height of the image element.
+     * @property {String} referrerpolicy - The referrer policy for the image element.
+     * @property {String} decoding - The decoding hint for the image element.
+     * @property {String} loading - The lazy-loading strategy of the image element.
+     * @property {String} title - The title of the image.
+     * @property {String} longdesc - The URL to a detailed description of the image.
+     * @property {String} fetchpriority - The image loading priority.
+     * @property {String} ratio - The aspect ratio of the image container.
+     * @property {String} variant - The variant styles for the image. Currently supports "rounded".
      */
     static properties = {
         src: { type: String },
@@ -71,6 +71,7 @@ class MDImageComponent extends MDComponent {
     constructor() {
         super();
 
+        // Default loading strategy and alt text for accessibility.
         this.loading = "lazy";
         this.alt = "alt";
     }
@@ -105,6 +106,7 @@ class MDImageComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
+        // Add specific CSS class for styling the image component.
         this.classList.add("md-image");
     }
 
@@ -112,6 +114,7 @@ class MDImageComponent extends MDComponent {
         super.updated(changedProperties);
 
         if (changedProperties.has("variant")) {
+            // Toggle variant classes based on the variant property.
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-image--${variant}`, (this.variant ?? "").split(" ").includes(variant));
@@ -120,14 +123,17 @@ class MDImageComponent extends MDComponent {
     }
 
     handleImageNativeLoad(event) {
+        // Emit custom event when the native image element successfully loads an image.
         this.emit("onImageNativeLoad", event);
     }
 
     handleImageNativeError(event) {
         const native = event.currentTarget;
 
+        // Handle image load error by replacing with a placeholder image.
         native.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
+        // Emit custom event for image load error.
         this.emit("onImageNativeError", event);
     }
 }
