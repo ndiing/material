@@ -1,5 +1,5 @@
 # MDSliderComponent
-The `MDSliderComponent` interface represents a `<md-slider>` element in the DOM. {{desc}}
+The `MDSliderComponent` interface represents a `<md-slider>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,26 +9,32 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onSliderNativeInput` | {{desc}}
-`onSliderNativeReset` | {{desc}}
+`onSliderNativeInput` | {{description}}
+`onSliderNativeReset` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`defaultValue` | `Array` | {{desc}}
-`min` | `Number` | {{desc}}
-`max` | `Number` | {{desc}}
-`step` | `Number` | {{desc}}
-`disabled` | `Boolean` | {{desc}}
-`form` | `String` | {{desc}}
-`name` | `String` | {{desc}}
-`list` | `String` | {{desc}}
-`autocomplete` | `String` | {{desc}}
-`natives` | `ReadOnly` | {{desc}}
+`defaultValue` | `Array` | {{description}}
+`min` | `Number` | {{description}}
+`max` | `Number` | {{description}}
+`step` | `Number` | {{description}}
+`disabled` | `Boolean` | {{description}}
+`form` | `String` | {{description}}
+`name` | `String` | {{description}}
+`list` | `String` | {{description}}
+`autocomplete` | `String` | {{description}}
+`natives` | `ReadOnly` | {{description}}
 
+## Instance methods
+This interface also inherits methods from its parent, `MDComponent`.
+
+name | params | desc
+--- | --- | ---
+`updateStyle` | `index` | {{description}}
 
 
 

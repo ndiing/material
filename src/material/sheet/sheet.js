@@ -1,16 +1,17 @@
 import { MDCardComponent } from "../card/card.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-sheet
  * @extends MDCardComponent
- * @tagname md-sheet
- * @fires MDSheetComponent#onSheetScrimClick - {{desc}}
- * @fires MDSheetComponent#onSheetShow - {{desc}}
- * @fires MDSheetComponent#onSheetClose - {{desc}}
+ * @fires MDSheetComponent#onSheetScrimClick - {{description}}
+ * @fires MDSheetComponent#onSheetShow - {{description}}
+ * @fires MDSheetComponent#onSheetClose - {{description}}
  */
 class MDSheetComponent extends MDCardComponent {
     /**
-     * @property {Boolean} open - {{desc}}
+     * {{description}}
+     * @property {Boolean} open - {{description}}
      */
     static properties = {
         ...MDCardComponent.properties,
@@ -29,7 +30,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     showModal() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -55,7 +56,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -68,7 +69,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -87,7 +88,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     toggle(...args) {
         if (this.open) {

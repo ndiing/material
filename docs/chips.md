@@ -1,5 +1,5 @@
 # MDChipsComponent
-The `MDChipsComponent` interface represents a `<md-chips>` element in the DOM. {{desc}}
+The `MDChipsComponent` interface represents a `<md-chips>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,16 +9,16 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onChipClick` | {{desc}}
+`onChipClick` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`list` | `Array` | {{desc}}
-`multiSelection` | `Boolean` | {{desc}}
+`list` | `Array` | {{description}}
+`multiSelection` | `Boolean` | {{description}}
 
 
 

@@ -4,31 +4,32 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-image
  * @extends MDComponent
- * @tagname md-image
- * @fires MDImageComponent#onImageNativeLoad - {{desc}}
- * @fires MDImageComponent#onImageNativeError - {{desc}}
+ * @fires MDImageComponent#onImageNativeLoad - {{description}}
+ * @fires MDImageComponent#onImageNativeError - {{description}}
  */
 class MDImageComponent extends MDComponent {
     /**
-     * @property {String} src - {{desc}}
-     * @property {String} alt - {{desc}}
-     * @property {String} srcset - {{desc}}
-     * @property {String} sizes - {{desc}}
-     * @property {String} crossorigin - {{desc}}
-     * @property {String} usemap - {{desc}}
-     * @property {Boolean} ismap - {{desc}}
-     * @property {Number} width - {{desc}}
-     * @property {Number} height - {{desc}}
-     * @property {String} referrerpolicy - {{desc}}
-     * @property {String} decoding - {{desc}}
-     * @property {String} loading - {{desc}}
-     * @property {String} title - {{desc}}
-     * @property {String} longdesc - {{desc}}
-     * @property {String} fetchpriority - {{desc}}
-     * @property {String} ratio - {{desc}}
-     * @property {String} variant - {{desc}}
+     * {{description}}
+     * @property {String} src - {{description}}
+     * @property {String} alt - {{description}}
+     * @property {String} srcset - {{description}}
+     * @property {String} sizes - {{description}}
+     * @property {String} crossorigin - {{description}}
+     * @property {String} usemap - {{description}}
+     * @property {Boolean} ismap - {{description}}
+     * @property {Number} width - {{description}}
+     * @property {Number} height - {{description}}
+     * @property {String} referrerpolicy - {{description}}
+     * @property {String} decoding - {{description}}
+     * @property {String} loading - {{description}}
+     * @property {String} title - {{description}}
+     * @property {String} longdesc - {{description}}
+     * @property {String} fetchpriority - {{description}}
+     * @property {String} ratio - {{description}}
+     * @property {String} variant - {{description}}
      */
     static properties = {
         src: { type: String },
@@ -53,6 +54,9 @@ class MDImageComponent extends MDComponent {
 
     variants = ["rounded"];
 
+    /**
+     * {{description}}
+     */
     get nativeStyle() {
         let style = {};
         if (this.ratio) {
@@ -68,10 +72,12 @@ class MDImageComponent extends MDComponent {
         return style;
     }
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
-        // Default loading strategy and alt text for accessibility.
         this.loading = "lazy";
         this.alt = "alt";
     }
@@ -106,7 +112,6 @@ class MDImageComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        // Add specific CSS class for styling the image component.
         this.classList.add("md-image");
     }
 
@@ -114,7 +119,6 @@ class MDImageComponent extends MDComponent {
         super.updated(changedProperties);
 
         if (changedProperties.has("variant")) {
-            // Toggle variant classes based on the variant property.
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-image--${variant}`, (this.variant ?? "").split(" ").includes(variant));
@@ -123,17 +127,14 @@ class MDImageComponent extends MDComponent {
     }
 
     handleImageNativeLoad(event) {
-        // Emit custom event when the native image element successfully loads an image.
         this.emit("onImageNativeLoad", event);
     }
 
     handleImageNativeError(event) {
         const native = event.currentTarget;
 
-        // Handle image load error by replacing with a placeholder image.
         native.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
-        // Emit custom event for image load error.
         this.emit("onImageNativeError", event);
     }
 }

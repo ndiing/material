@@ -4,23 +4,24 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-switch
  * @extends MDComponent
- * @tagname md-switch
- * @fires MDSwitchComponent#onSwitchNativeInput - {{desc}}
- * @fires MDSwitchComponent#onSwitchNativeReset - {{desc}}
+ * @fires MDSwitchComponent#onSwitchNativeInput - {{description}}
+ * @fires MDSwitchComponent#onSwitchNativeReset - {{description}}
  */
 class MDSwitchComponent extends MDComponent {
     /**
-     * @property {Boolean} checked - {{desc}}
-     * @property {Boolean} defaultChecked - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {String} value - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {Object} form - {{desc}}
-     * @property {String} type - {{desc}}
-     * @property {Array} icons - {{desc}}
+     * {{description}}
+     * @property {Boolean} checked - {{description}}
+     * @property {Boolean} defaultChecked - {{description}}
+     * @property {Boolean} disabled - {{description}}
+     * @property {Boolean} indeterminate - {{description}}
+     * @property {String} value - {{description}}
+     * @property {String} name - {{description}}
+     * @property {Object} form - {{description}}
+     * @property {String} type - {{description}}
+     * @property {Array} icons - {{description}}
      */
     static properties = {
         checked: { type: Boolean },
@@ -34,6 +35,9 @@ class MDSwitchComponent extends MDComponent {
         icons: { type: Array },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

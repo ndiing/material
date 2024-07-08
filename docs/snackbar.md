@@ -1,5 +1,5 @@
 # MDSnackbarComponent
-The `MDSnackbarComponent` interface represents a `<md-snackbar>` element in the DOM. {{desc}}
+The `MDSnackbarComponent` interface represents a `<md-snackbar>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDSheetComponent`
@@ -9,8 +9,8 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onSnackbarShow` | {{desc}}
-`onSnackbarClose` | {{desc}}
+`onSnackbarShow` | {{description}}
+`onSnackbarClose` | {{description}}
 
 
 ## Instance properties
@@ -18,14 +18,14 @@ This interface also inherits properties from its parent, `MDSheetComponent`.
 
 name | type | desc
 --- | --- | ---
-`properties` | `ReadOnly` | undefined
+`properties` | `ReadOnly` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDSheetComponent`.
 
 name | params | desc
 --- | --- | ---
-`show` |  | {{desc}}
-`close` |  | {{desc}}
+`show` |  | {{description}}
+`close` |  | {{description}}
 
 

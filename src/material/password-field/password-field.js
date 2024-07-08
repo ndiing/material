@@ -1,20 +1,20 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-password-field
  * @extends MDTextFieldComponent
- * @tagname md-password-field
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get actions() {
         return [{ name: "password", icon: this.type === "password" ? "visibility_off" : "visibility" }];
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set actions(value) {}
 

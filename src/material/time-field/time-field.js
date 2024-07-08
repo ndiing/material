@@ -2,20 +2,20 @@ import { stringifyTime } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-time-field
  * @extends MDTextFieldComponent
- * @tagname md-time-field
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get actions() {
         return [{ icon: "schedule" }];
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set actions(value) {}
 

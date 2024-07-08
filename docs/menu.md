@@ -1,5 +1,5 @@
 # MDMenuComponent
-The `MDMenuComponent` interface represents a `<md-menu>` element in the DOM. {{desc}}
+The `MDMenuComponent` interface represents a `<md-menu>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDSheetComponent`
@@ -9,7 +9,7 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onMenuTreeItemClick` | {{desc}}
+`onMenuTreeItemClick` | {{description}}
 
 
 ## Instance properties
@@ -17,17 +17,17 @@ This interface also inherits properties from its parent, `MDSheetComponent`.
 
 name | type | desc
 --- | --- | ---
-`properties` | `ReadOnly` | undefined
-`body` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
+`properties` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDSheetComponent`.
 
 name | params | desc
 --- | --- | ---
-`showModal` | `button`,`options` | {{desc}}
-`show` | `button`,`options` | {{desc}}
-`setPlacement` | `button`,`options` | {{desc}}
+`showModal` | `button`,`options` | {{description}}
+`show` | `button`,`options` | {{description}}
+`setPlacement` | `button`,`options` | {{description}}
 
 

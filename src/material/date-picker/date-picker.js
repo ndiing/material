@@ -3,22 +3,26 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-date-picker
  * @extends MDDatetimePickerComponent
- * @tagname md-date-picker
- * @fires MDDatePickerComponent#onDatePickerSelection - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerIconButtonPrevClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerIconButtonNextClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerButtonLabelClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerButtonCancelClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerButtonOkClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerYearItemClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerMonthItemClick - {{desc}}
- * @fires MDDatePickerComponent#onDatePickerDayItemClick - {{desc}}
+ * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerIconButtonPrevClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerIconButtonNextClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerButtonLabelClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerButtonCancelClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerButtonOkClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerYearItemClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerMonthItemClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerDayItemClick - {{description}}
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get leadingActions() {
         let label;
@@ -33,7 +37,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get body() {
         /* prettier-ignore */
@@ -47,7 +51,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set body(value) {
         this._body = value;
@@ -60,7 +64,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateDate() {
         const date = parseDate(this.value);
@@ -178,7 +182,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getValue() {
         return stringifyDate(this.selected);

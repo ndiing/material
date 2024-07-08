@@ -3,15 +3,16 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-tree
  * @extends MDComponent
- * @tagname md-tree
- * @fires MDTreeComponent#onTreeItemClick - {{desc}}
+ * @fires MDTreeComponent#onTreeItemClick - {{description}}
  */
 class MDTreeComponent extends MDComponent {
     /**
-     * @property {Array} list - {{desc}}
-     * @property {String} variant - {{desc}}
+     * {{description}}
+     * @property {Array} list - {{description}}
+     * @property {String} variant - {{description}}
      */
     static properties = {
         list: { type: Array },
@@ -20,6 +21,9 @@ class MDTreeComponent extends MDComponent {
 
     variants = ["plain", "accordion", "tree", "level"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
@@ -81,7 +85,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getList(list) {
         let children;
@@ -106,7 +110,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     setList(list, indent = 0) {
         let expanded;
@@ -153,7 +157,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     select(list, data) {
         let activated;
@@ -179,7 +183,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     expand(list, data) {
         data.expanded = !data.expanded;

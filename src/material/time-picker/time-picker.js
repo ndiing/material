@@ -3,21 +3,24 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { html } from "lit";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-time-picker
  * @extends MDDatetimePickerComponent
- * @tagname md-time-picker
- * @fires MDTimePickerComponent#onTimePickerSelection - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerIconButtonPrevClick - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerIconButtonNextClick - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerButtonLabelClick - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerButtonCancelClick - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerButtonOkClick - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerHourItemClick - {{desc}}
- * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerIconButtonPrevClick - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerIconButtonNextClick - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerButtonLabelClick - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerButtonCancelClick - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerButtonOkClick - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerHourItemClick - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
+ * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - {{description}}
  */
 class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get body() {
         /* prettier-ignore */
@@ -30,14 +33,14 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set body(value) {
         this._body = value;
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get leadingActions() {
         let label;
@@ -49,6 +52,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
         this.index = 0;
@@ -61,7 +67,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateDate() {
         const date = parseTime(this.value);
@@ -166,7 +172,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getValue() {
         return stringifyTime(this.selected);

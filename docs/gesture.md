@@ -1,26 +1,35 @@
 # MDGestureController
-{{desc}}
+{{description}}
 
 ## Events
 Listen to these events using `addEventListener()`, or by assigning an event listener to the `@onEventName` property of this interface.
 
 name | desc
 --- | ---
-`onDragStart` | {{desc}}
-`onResizeStart` | {{desc}}
-`onSelectionStart` | {{desc}}
-`onLongPress` | {{desc}}
-`onDrag` | {{desc}}
-`onResize` | {{desc}}
-`onSelection` | {{desc}}
-`onTap` | {{desc}}
-`onDoubleTap` | {{desc}}
-`onSelectionEnd` | {{desc}}
-`onDragEnd` | {{desc}}
-`onResizeEnd` | {{desc}}
+`onDragStart` | {{description}}
+`onResizeStart` | {{description}}
+`onSelectionStart` | {{description}}
+`onLongPress` | {{description}}
+`onDragStart` | {{description}}
+`onResizeStart` | {{description}}
+`onSelectionStart` | {{description}}
+`onDrag` | {{description}}
+`onResize` | {{description}}
+`onSelection` | {{description}}
+`onTap` | {{description}}
+`onDoubleTap` | {{description}}
+`onSelectionEnd` | {{description}}
+`onDragEnd` | {{description}}
+`onResizeEnd` | {{description}}
 
 
 
+## Instance methods
+name | params | desc
+--- | --- | ---
+`emit` | `type`,`detail` | {{description}}
+`hostConnected` |  | {{description}}
+`hostDisconnected` |  | {{description}}
 
 
 

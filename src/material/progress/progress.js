@@ -7,7 +7,7 @@ let elapsedTime = 0;
 let progressBar;
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function create() {
     progressBar = document.createElement("md-progress-indicator");
@@ -20,7 +20,7 @@ function create() {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function reset() {
     isAnimating = false;
@@ -33,7 +33,7 @@ function reset() {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function observe(resolve) {
     let currentTime = performance.now();
@@ -56,7 +56,7 @@ function observe(resolve) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function start(duration = 10000) {
     return new Promise((resolve) => {
@@ -79,7 +79,7 @@ function start(duration = 10000) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function pause() {
     if (isAnimating) {
@@ -90,7 +90,7 @@ function pause() {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function resume() {
     if (!isAnimating) {
@@ -101,7 +101,7 @@ function resume() {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stop() {
     if (isAnimating) {

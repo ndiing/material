@@ -2,30 +2,31 @@ import { MDPopperController } from "../popper/popper.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-tooltip
  * @extends MDSheetComponent
- * @tagname md-tooltip
  */
 class MDTooltipComponent extends MDSheetComponent {
     variants = ["plain", "rich"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
-        // Initialize a new Popper controller for managing tooltip placement.
         this.popper = new MDPopperController(this, {});
     }
 
     connectedCallback() {
         super.connectedCallback();
 
-        // Add necessary CSS classes for styling tooltip appearance.
         this.classList.add("md-card");
         this.classList.add("md-tooltip");
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     showModal(button, options) {
         super.showModal();
@@ -34,7 +35,7 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     show(button, options) {
         super.show();
@@ -43,7 +44,7 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

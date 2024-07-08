@@ -3,23 +3,24 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-form
  * @extends MDComponent
- * @tagname md-form
- * @fires MDFormComponent#onFormNativeReset - {{desc}}
- * @fires MDFormComponent#onFormNativeSubmit - {{desc}}
+ * @fires MDFormComponent#onFormNativeReset - {{description}}
+ * @fires MDFormComponent#onFormNativeSubmit - {{description}}
  */
 class MDFormComponent extends MDComponent {
     /**
-     * @property {String} acceptCharset - {{desc}}
-     * @property {String} action - {{desc}}
-     * @property {String} autocomplete - {{desc}}
-     * @property {String} enctype - {{desc}}
-     * @property {String} method - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {Boolean} novalidate - {{desc}}
-     * @property {String} target - {{desc}}
-     * @property {String} rel - {{desc}}
+     * {{description}}
+     * @property {String} acceptCharset - {{description}}
+     * @property {String} action - {{description}}
+     * @property {String} autocomplete - {{description}}
+     * @property {String} enctype - {{description}}
+     * @property {String} method - {{description}}
+     * @property {String} name - {{description}}
+     * @property {Boolean} novalidate - {{description}}
+     * @property {String} target - {{description}}
+     * @property {String} rel - {{description}}
      */
     static properties = {
         acceptCharset: { type: String },
@@ -34,12 +35,15 @@ class MDFormComponent extends MDComponent {
     };
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get native() {
         return this.querySelector(".md-form__native");
     }
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
@@ -110,14 +114,14 @@ class MDFormComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     reset() {
         this.native.reset();
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     submit() {
         this.native.submit();

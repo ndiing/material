@@ -4,20 +4,24 @@ import { marked } from "marked";
 import { nothing } from "lit";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-markdown
  * @extends MDComponent
- * @tagname md-markdown
  */
 class MDMarkdownComponent extends MDComponent {
     /**
-     * @property {String} href - {{desc}}
-     * @property {String} text - {{desc}}
+     * {{description}}
+     * @property {String} href - {{description}}
+     * @property {String} text - {{description}}
      */
     static properties = {
         href: { type: String },
         text: { type: String },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
         this.text = this.textContent;
@@ -32,7 +36,6 @@ class MDMarkdownComponent extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-markdown");
-        // this.classList.add("markdown-body");
 
         if (this.href) {
             fetch(this.href)

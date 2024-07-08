@@ -1,9 +1,12 @@
 import { isObject } from "../functions/functions";
 
 /**
- * {{desc}}
+ * {{description}}
  */
 class MDStore {
+    /**
+     * {{description}}
+     */
     constructor(docs = [], options = {}) {
         this.docs = docs;
         this.options = {
@@ -13,7 +16,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     post(doc) {
         this.docs.push(doc);
@@ -21,14 +24,14 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get(_id) {
         return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     patch(_id, doc) {
         const index = this.docs.findIndex((d) => d[this.options.primaryKey] === _id);
@@ -40,7 +43,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     delete(_id) {
         const index = this.docs.findIndex((doc) => doc[this.options.primaryKey] === _id);
@@ -53,7 +56,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     put(doc) {
         if (doc[this.options.primaryKey]) {
@@ -64,7 +67,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     sort(docs, sorters) {
         return docs.sort((a, b) => {
@@ -80,7 +83,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     search(docs, q) {
         const query = q.toLowerCase().trim();
@@ -88,14 +91,14 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     filter(docs, filters) {
         return docs.filter((doc) => this.deepFilter(doc, filters));
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     paginate(docs, _page, _limit) {
         const startIndex = (_page - 1) * _limit;
@@ -103,14 +106,14 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     slice(docs, _start, _end) {
         return docs.slice(_start, _end);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getAll(options = {}) {
         let { _sort, _order, q, _page, _limit, _start, _end, sorters, filters, ...rest } = options;
@@ -154,7 +157,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     deepMerge(target, source) {
         if (!isObject(target) || !isObject(source)) {
@@ -174,14 +177,14 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getValue(obj, path) {
         return path.split(".").reduce((acc, part) => acc && acc[part], obj);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     deepSearch(obj, query) {
         if (!isObject(obj)) {
@@ -200,7 +203,7 @@ class MDStore {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     deepFilter(obj, filters) {
         return filters.every((filter) => {

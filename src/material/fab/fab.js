@@ -3,17 +3,18 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-fab
  * @extends MDComponent
- * @tagname md-fab
  */
 class MDFabComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
+     * {{description}}
+     * @property {String} variant - {{description}}
+     * @property {String} icon - {{description}}
+     * @property {String} label - {{description}}
+     * @property {Boolean} selected - {{description}}
+     * @property {Boolean} disabled - {{description}}
      */
     static properties = {
         variant: { type: String },
@@ -25,10 +26,12 @@ class MDFabComponent extends MDComponent {
 
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
-        // Initialize ripple effect controller for the FAB.
         this.ripple = new MDRippleController(this, {
             clipped: true,
             fadeOut: true,
@@ -46,7 +49,6 @@ class MDFabComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        // Add specific CSS class for styling the FAB.
         this.classList.add("md-fab");
     }
 
@@ -54,7 +56,6 @@ class MDFabComponent extends MDComponent {
         super.updated(changedProperties);
 
         if (changedProperties.has("variant")) {
-            // Toggle variant classes based on the variant property.
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-fab--${variant}`, (this.variant ?? "").split(" ").includes(variant));
@@ -62,7 +63,6 @@ class MDFabComponent extends MDComponent {
         }
 
         if (changedProperties.has("disabled")) {
-            // Update accessibility attributes based on the disabled property.
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
                 this.setAttribute("tabindex", "-1");

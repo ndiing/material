@@ -2,20 +2,20 @@ import { stringifyMonth } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-month-field
  * @extends MDTextFieldComponent
- * @tagname md-month-field
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get actions() {
         return [{ icon: "calendar_month" }];
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set actions(value) {}
 

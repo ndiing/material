@@ -4,22 +4,23 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-radio-button
  * @extends MDComponent
- * @tagname md-radio-button
- * @fires MDRadioButtonComponent#onRadioButtonNativeInput - {{desc}}
- * @fires MDRadioButtonComponent#onRadioButtonNativeReset - {{desc}}
+ * @fires MDRadioButtonComponent#onRadioButtonNativeInput - {{description}}
+ * @fires MDRadioButtonComponent#onRadioButtonNativeReset - {{description}}
  */
 class MDRadioButtonComponent extends MDComponent {
     /**
-     * @property {Boolean} checked - {{desc}}
-     * @property {Boolean} defaultChecked - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {String} value - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {Object} form - {{desc}}
-     * @property {String} type - {{desc}}
+     * {{description}}
+     * @property {Boolean} checked - {{description}}
+     * @property {Boolean} defaultChecked - {{description}}
+     * @property {Boolean} disabled - {{description}}
+     * @property {Boolean} indeterminate - {{description}}
+     * @property {String} value - {{description}}
+     * @property {String} name - {{description}}
+     * @property {Object} form - {{description}}
+     * @property {String} type - {{description}}
      */
     static properties = {
         checked: { type: Boolean },
@@ -32,6 +33,9 @@ class MDRadioButtonComponent extends MDComponent {
         type: { type: String },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

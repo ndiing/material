@@ -3,21 +3,25 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-chips
  * @extends MDComponent
- * @tagname md-chips
- * @fires MDChipsComponent#onChipClick - {{desc}}
+ * @fires MDChipsComponent#onChipClick - {{description}}
  */
 class MDChipsComponent extends MDComponent {
     /**
-     * @property {Array} list - {{desc}}
-     * @property {Boolean} multiSelection - {{desc}}
+     * {{description}}
+     * @property {Array} list - {{description}}
+     * @property {Boolean} multiSelection - {{description}}
      */
     static properties = {
         list: { type: Array },
         multiSelection: { type: Boolean },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
     }

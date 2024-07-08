@@ -4,23 +4,24 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { calcDecimal, calcPercentage, isArrayString } from "../functions/functions.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-slider
  * @extends MDComponent
- * @tagname md-slider
- * @fires MDSliderComponent#onSliderNativeInput - {{desc}}
- * @fires MDSliderComponent#onSliderNativeReset - {{desc}}
+ * @fires MDSliderComponent#onSliderNativeInput - {{description}}
+ * @fires MDSliderComponent#onSliderNativeReset - {{description}}
  */
 class MDSliderComponent extends MDComponent {
     /**
-     * @property {Array} defaultValue - {{desc}}
-     * @property {Number} min - {{desc}}
-     * @property {Number} max - {{desc}}
-     * @property {Number} step - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {String} form - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {String} list - {{desc}}
-     * @property {String} autocomplete - {{desc}}
+     * {{description}}
+     * @property {Array} defaultValue - {{description}}
+     * @property {Number} min - {{description}}
+     * @property {Number} max - {{description}}
+     * @property {Number} step - {{description}}
+     * @property {Boolean} disabled - {{description}}
+     * @property {String} form - {{description}}
+     * @property {String} name - {{description}}
+     * @property {String} list - {{description}}
+     * @property {String} autocomplete - {{description}}
      */
     static properties = {
         value: {
@@ -48,6 +49,9 @@ class MDSliderComponent extends MDComponent {
         autocomplete: { type: String },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
@@ -131,6 +135,9 @@ class MDSliderComponent extends MDComponent {
         }
     }
 
+    /**
+     * {{description}}
+     */
     updateStyle(index) {
         const percentage = calcPercentage(this.min, this.max, this.value[index]);
         const decimal = calcDecimal(this.min, this.max, this.value[index]);
@@ -160,7 +167,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get natives() {
         return this.querySelectorAll(".md-slider__native");

@@ -1,5 +1,5 @@
 # MDRadioButtonComponent
-The `MDRadioButtonComponent` interface represents a `<md-radio-button>` element in the DOM. {{desc}}
+The `MDRadioButtonComponent` interface represents a `<md-radio-button>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,23 +9,23 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onRadioButtonNativeInput` | {{desc}}
-`onRadioButtonNativeReset` | {{desc}}
+`onRadioButtonNativeInput` | {{description}}
+`onRadioButtonNativeReset` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`checked` | `Boolean` | {{desc}}
-`defaultChecked` | `Boolean` | {{desc}}
-`disabled` | `Boolean` | {{desc}}
-`indeterminate` | `Boolean` | {{desc}}
-`value` | `String` | {{desc}}
-`name` | `String` | {{desc}}
-`form` | `Object` | {{desc}}
-`type` | `String` | {{desc}}
+`checked` | `Boolean` | {{description}}
+`defaultChecked` | `Boolean` | {{description}}
+`disabled` | `Boolean` | {{description}}
+`indeterminate` | `Boolean` | {{description}}
+`value` | `String` | {{description}}
+`name` | `String` | {{description}}
+`form` | `Object` | {{description}}
+`type` | `String` | {{description}}
 
 
 

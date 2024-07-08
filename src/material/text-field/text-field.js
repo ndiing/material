@@ -4,78 +4,79 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-text-field
  * @extends MDComponent
- * @tagname md-text-field
- * @fires MDTextFieldComponent#onTextFieldNativeClick - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeFocus - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeBlur - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeInput - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeChange - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeSearch - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeInvalid - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldNativeReset - {{desc}}
- * @fires MDTextFieldComponent#onTextFieldIconButtonClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeClick - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeFocus - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeBlur - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeInput - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeChange - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeSearch - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeInvalid - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeReset - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldIconButtonClick - {{description}}
  */
 class MDTextFieldComponent extends MDComponent {
     /**
-     * @property {String} label - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} prefix - {{desc}}
-     * @property {String} suffix - {{desc}}
-     * @property {Array} actions - {{desc}}
-     * @property {String} text - {{desc}}
-     * @property {String} accept - {{desc}}
-     * @property {String} alt - {{desc}}
-     * @property {String} autocomplete - {{desc}}
-     * @property {Boolean} autofocus - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {String} max - {{desc}}
-     * @property {Number} maxLength - {{desc}}
-     * @property {String} min - {{desc}}
-     * @property {Number} minLength - {{desc}}
-     * @property {Boolean} multiple - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {String} pattern - {{desc}}
-     * @property {String} placeholder - {{desc}}
-     * @property {Boolean} readOnly - {{desc}}
-     * @property {Boolean} required - {{desc}}
-     * @property {Number} size - {{desc}}
-     * @property {String} step - {{desc}}
-     * @property {String} type - {{desc}}
-     * @property {String} defaultValue - {{desc}}
-     * @property {String} value - {{desc}}
-     * @property {Number} cols - {{desc}}
-     * @property {Number} rows - {{desc}}
-     * @property {Boolean} spellcheck - {{desc}}
-     * @property {String} wrap - {{desc}}
-     * @property {Array} options - {{desc}}
-     * @property {String} src - {{desc}}
-     * @property {Boolean} checked - {{desc}}
-     * @property {Boolean} defaultChecked - {{desc}}
-     * @property {FileList} files - {{desc}}
-     * @property {Object} form - {{desc}}
-     * @property {String} formAction - {{desc}}
-     * @property {String} formEnctype - {{desc}}
-     * @property {String} formMethod - {{desc}}
-     * @property {Boolean} formNoValidate - {{desc}}
-     * @property {String} formTarget - {{desc}}
-     * @property {Number} height - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {Object} list - {{desc}}
-     * @property {Number} width - {{desc}}
-     * @property {String} inputMode - {{desc}}
-     * @property {String} selectionDirection - {{desc}}
-     * @property {Number} selectionEnd - {{desc}}
-     * @property {Number} selectionStart - {{desc}}
-     * @property {String} align - {{desc}}
-     * @property {String} useMap - {{desc}}
-     * @property {Number} length - {{desc}}
-     * @property {Number} selectedIndex - {{desc}}
-     * @property {HTMLCollection} selectedOptions - {{desc}}
-     * @property {String} errorText - {{desc}}
-     * @property {Boolean} error - {{desc}}
-     * @property {String} variant - {{desc}}
+     * {{description}}
+     * @property {String} label - {{description}}
+     * @property {String} icon - {{description}}
+     * @property {String} prefix - {{description}}
+     * @property {String} suffix - {{description}}
+     * @property {Array} actions - {{description}}
+     * @property {String} text - {{description}}
+     * @property {String} accept - {{description}}
+     * @property {String} alt - {{description}}
+     * @property {String} autocomplete - {{description}}
+     * @property {Boolean} autofocus - {{description}}
+     * @property {Boolean} disabled - {{description}}
+     * @property {String} max - {{description}}
+     * @property {Number} maxLength - {{description}}
+     * @property {String} min - {{description}}
+     * @property {Number} minLength - {{description}}
+     * @property {Boolean} multiple - {{description}}
+     * @property {String} name - {{description}}
+     * @property {String} pattern - {{description}}
+     * @property {String} placeholder - {{description}}
+     * @property {Boolean} readOnly - {{description}}
+     * @property {Boolean} required - {{description}}
+     * @property {Number} size - {{description}}
+     * @property {String} step - {{description}}
+     * @property {String} type - {{description}}
+     * @property {String} defaultValue - {{description}}
+     * @property {String} value - {{description}}
+     * @property {Number} cols - {{description}}
+     * @property {Number} rows - {{description}}
+     * @property {Boolean} spellcheck - {{description}}
+     * @property {String} wrap - {{description}}
+     * @property {Array} options - {{description}}
+     * @property {String} src - {{description}}
+     * @property {Boolean} checked - {{description}}
+     * @property {Boolean} defaultChecked - {{description}}
+     * @property {FileList} files - {{description}}
+     * @property {Object} form - {{description}}
+     * @property {String} formAction - {{description}}
+     * @property {String} formEnctype - {{description}}
+     * @property {String} formMethod - {{description}}
+     * @property {Boolean} formNoValidate - {{description}}
+     * @property {String} formTarget - {{description}}
+     * @property {Number} height - {{description}}
+     * @property {Boolean} indeterminate - {{description}}
+     * @property {Object} list - {{description}}
+     * @property {Number} width - {{description}}
+     * @property {String} inputMode - {{description}}
+     * @property {String} selectionDirection - {{description}}
+     * @property {Number} selectionEnd - {{description}}
+     * @property {Number} selectionStart - {{description}}
+     * @property {String} align - {{description}}
+     * @property {String} useMap - {{description}}
+     * @property {Number} length - {{description}}
+     * @property {Number} selectedIndex - {{description}}
+     * @property {HTMLCollection} selectedOptions - {{description}}
+     * @property {String} errorText - {{description}}
+     * @property {Boolean} error - {{description}}
+     * @property {String} variant - {{description}}
      */
     static properties = {
         label: { type: String },
@@ -144,19 +145,22 @@ class MDTextFieldComponent extends MDComponent {
     variants = ["filled", "outlined", "rounded"];
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get native() {
         return this.querySelector(".md-text-field__native");
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get container() {
         return this.querySelector(".md-text-field__container");
     }
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 
@@ -415,7 +419,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     populate() {
         if (this.type !== "file") {
@@ -427,7 +431,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     reset() {
         if (this.type !== "file") {
@@ -440,14 +444,14 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updatePopulation() {
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateValidation() {
         this.errorText = this.native.validationMessage;

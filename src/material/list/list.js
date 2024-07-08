@@ -3,28 +3,29 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-list
  * @extends MDComponent
- * @tagname md-list
- * @fires MDListComponent#onListItemClick - {{desc}}
- * @fires MDListComponent#handleListKeydown - {{desc}}
- * @fires MDListComponent#onListItemSelectionStart - {{desc}}
- * @fires MDListComponent#onListItemSelection - {{desc}}
- * @fires MDListComponent#onListItemSelectionEnd - {{desc}}
- * @fires MDListComponent#onListItemCheckboxNativeInput - {{desc}}
- * @fires MDListComponent#onListItemRadioButtonNativeInput - {{desc}}
- * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
+ * @fires MDListComponent#onListItemClick - {{description}}
+ * @fires MDListComponent#handleListKeydown - {{description}}
+ * @fires MDListComponent#onListItemSelectionStart - {{description}}
+ * @fires MDListComponent#onListItemSelection - {{description}}
+ * @fires MDListComponent#onListItemSelectionEnd - {{description}}
+ * @fires MDListComponent#onListItemCheckboxNativeInput - {{description}}
+ * @fires MDListComponent#onListItemRadioButtonNativeInput - {{description}}
+ * @fires MDListComponent#onListItemSwitchNativeInput - {{description}}
  */
 class MDListComponent extends MDComponent {
     /**
-     * @property {Array} list - {{desc}}
-     * @property {Object} map - {{desc}}
-     * @property {Function} format - {{desc}}
-     * @property {Boolean} selection - {{desc}}
-     * @property {Boolean} rangeSelection - {{desc}}
-     * @property {Boolean} multiSelection - {{desc}}
-     * @property {Boolean} singleSelection - {{desc}}
-     * @property {Boolean} allSelection - {{desc}}
+     * {{description}}
+     * @property {Array} list - {{description}}
+     * @property {Object} map - {{description}}
+     * @property {Function} format - {{description}}
+     * @property {Boolean} selection - {{description}}
+     * @property {Boolean} rangeSelection - {{description}}
+     * @property {Boolean} multiSelection - {{description}}
+     * @property {Boolean} singleSelection - {{description}}
+     * @property {Boolean} allSelection - {{description}}
      */
     static properties = {
         list: { type: Array },
@@ -38,6 +39,9 @@ class MDListComponent extends MDComponent {
         allSelection: { type: Boolean },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
         this.map = {
@@ -99,7 +103,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     select(data) {
         for (let i = 0; i < this.list.length; i++) {
@@ -110,7 +114,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectToggle(data) {
         data.selected = !data.selected;
@@ -121,7 +125,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
@@ -143,7 +147,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectAll() {
         for (let i = 0; i < this.list.length; i++) {

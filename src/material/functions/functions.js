@@ -1,7 +1,7 @@
 /* Casing Conversion */
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toPascalCase(string) {
     return string
@@ -12,7 +12,7 @@ function toPascalCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toCamelCase(string) {
     return string
@@ -23,7 +23,7 @@ function toCamelCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toSnakeCase(string) {
     return string
@@ -34,7 +34,7 @@ function toSnakeCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toKebabCase(string) {
     return string
@@ -45,7 +45,7 @@ function toKebabCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toFlatCase(string) {
     return string
@@ -56,7 +56,7 @@ function toFlatCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toUpperFlatCase(string) {
     return string
@@ -67,7 +67,7 @@ function toUpperFlatCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toPascalSnakeCase(string) {
     return string
@@ -78,7 +78,7 @@ function toPascalSnakeCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toCamelSnakeCase(string) {
     return string
@@ -89,7 +89,7 @@ function toCamelSnakeCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toScreamingSnakeCase(string) {
     return string
@@ -100,7 +100,7 @@ function toScreamingSnakeCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toTrainCase(string) {
     return string
@@ -111,7 +111,7 @@ function toTrainCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toCobolCase(string) {
     return string
@@ -122,7 +122,7 @@ function toCobolCase(string) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function toTitleCase(string) {
     return string
@@ -135,7 +135,7 @@ function toTitleCase(string) {
 /* Stringify Date */
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stringifyDatetimeLocal(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -144,7 +144,7 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stringifyDate(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -153,14 +153,14 @@ function stringifyDate(date) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stringifyYear(date) {
     return `${date.getFullYear()}`;
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stringifyMonth(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -169,7 +169,7 @@ function stringifyMonth(date) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stringifyTime(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -178,7 +178,7 @@ function stringifyTime(date) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function stringifyWeek(date) {
     let year = date.getFullYear();
@@ -189,14 +189,14 @@ function stringifyWeek(date) {
 /* Parse Date */
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function parseDatetimeLocal(datetimeLocal) {
     return new Date(datetimeLocal);
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function parseDate(dateString) {
     var [year, month, day] = dateString.split("-").map(Number);
@@ -204,14 +204,14 @@ function parseDate(dateString) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function parseYear(yearString) {
     return new Date(yearString);
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function parseMonth(monthString) {
     var [year, month] = monthString.split("-").map(Number);
@@ -219,7 +219,7 @@ function parseMonth(monthString) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function parseTime(timeString) {
     var [hours, minutes] = timeString.split(":").map(Number);
@@ -229,7 +229,7 @@ function parseTime(timeString) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function parseWeek(weekStr) {
     let parts = weekStr.split("-W");
@@ -251,7 +251,7 @@ function parseWeek(weekStr) {
 /* Color Conversion */
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function hexToRgba(hex) {
     hex = hex.replace(/^#/, "");
@@ -265,7 +265,7 @@ function hexToRgba(hex) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function hexToHsla(hex) {
     const rgba = hexToRgba(hex);
@@ -306,7 +306,7 @@ function hexToHsla(hex) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function hslaToRgba(h, s, l, a = 1) {
     h = ((h % 360) + 360) % 360;
@@ -350,7 +350,7 @@ function hslaToRgba(h, s, l, a = 1) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function rgbaToHex(r, g, b, a = 1) {
     r = Math.round(Math.min(255, Math.max(0, r)));
@@ -367,7 +367,7 @@ function rgbaToHex(r, g, b, a = 1) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function hslaToHex(h, s, l, a = 1) {
     const { red, green, blue } = hslaToRgba(h, s, l, a);
@@ -375,7 +375,7 @@ function hslaToHex(h, s, l, a = 1) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function rgbaToHsla(r, g, b, a = 1) {
     const nr = r / 255;
@@ -415,7 +415,7 @@ function rgbaToHsla(r, g, b, a = 1) {
 /* Utility Functions */
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function isValidHexColor(color) {
     const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -423,14 +423,14 @@ function isValidHexColor(color) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function isObject(obj) {
     return obj !== null && typeof obj === "object";
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function isArrayString(str) {
     const arrayRegex = /^\s*\[.*\]\s*$/;
@@ -438,14 +438,14 @@ function isArrayString(str) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function isDefined(value) {
     return value !== undefined && value !== null;
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function calcPercentage(min, max, value) {
     let percentage = ((value - min) / (max - min)) * 100;
@@ -453,7 +453,7 @@ function calcPercentage(min, max, value) {
 }
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function calcDecimal(min, max, value) {
     let decimal = (value - min) / (max - min);
@@ -463,7 +463,7 @@ function calcDecimal(min, max, value) {
 /* Additional Functions */
 
 /**
- * {{desc}}
+ * {{description}}
  */
 function createQueue() {
     let pending = Promise.resolve();

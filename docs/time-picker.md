@@ -1,5 +1,5 @@
 # MDTimePickerComponent
-The `MDTimePickerComponent` interface represents a `<md-time-picker>` element in the DOM. {{desc}}
+The `MDTimePickerComponent` interface represents a `<md-time-picker>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDDatetimePickerComponent`
@@ -9,14 +9,17 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onTimePickerSelection` | {{desc}}
-`onTimePickerIconButtonPrevClick` | {{desc}}
-`onTimePickerIconButtonNextClick` | {{desc}}
-`onTimePickerButtonLabelClick` | {{desc}}
-`onTimePickerButtonCancelClick` | {{desc}}
-`onTimePickerButtonOkClick` | {{desc}}
-`onTimePickerHourItemClick` | {{desc}}
-`onTimePickerMinuteItemClick` | {{desc}}
+`onTimePickerSelection` | {{description}}
+`onTimePickerIconButtonPrevClick` | {{description}}
+`onTimePickerSelection` | {{description}}
+`onTimePickerIconButtonNextClick` | {{description}}
+`onTimePickerButtonLabelClick` | {{description}}
+`onTimePickerButtonCancelClick` | {{description}}
+`onTimePickerButtonOkClick` | {{description}}
+`onTimePickerSelection` | {{description}}
+`onTimePickerHourItemClick` | {{description}}
+`onTimePickerSelection` | {{description}}
+`onTimePickerMinuteItemClick` | {{description}}
 
 
 ## Instance properties
@@ -24,17 +27,17 @@ This interface also inherits properties from its parent, `MDDatetimePickerCompon
 
 name | type | desc
 --- | --- | ---
-`body` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
-`leadingActions` | `ReadOnly` | {{desc}}
+`body` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`leadingActions` | `ReadOnly` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDDatetimePickerComponent`.
 
 name | params | desc
 --- | --- | ---
-`updateDate` |  | {{desc}}
-`getValue` |  | {{desc}}
+`updateDate` |  | {{description}}
+`getValue` |  | {{description}}
 
 
 

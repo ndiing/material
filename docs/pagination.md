@@ -1,5 +1,5 @@
 # MDPaginationComponent
-The `MDPaginationComponent` interface represents a `<md-pagination>` element in the DOM. {{desc}}
+The `MDPaginationComponent` interface represents a `<md-pagination>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,28 +9,28 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onPaginationChange` | {{desc}}
-`onPaginationLimitChange` | {{desc}}
-`onPaginationFirstClick` | {{desc}}
-`onPaginationPrevClick` | {{desc}}
-`onPaginationNextClick` | {{desc}}
-`onPaginationLastClick` | {{desc}}
+`onPaginationChange` | {{description}}
+`onPaginationLimitChange` | {{description}}
+`onPaginationFirstClick` | {{description}}
+`onPaginationPrevClick` | {{description}}
+`onPaginationNextClick` | {{description}}
+`onPaginationLastClick` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`total` | `Number` | {{desc}}
-`limit` | `Number` | {{desc}}
-`page` | `Number` | {{desc}}
-`options` | `Array` | {{desc}}
-`pages` | `ReadOnly` | {{desc}}
-`start` | `ReadOnly` | {{desc}}
-`end` | `ReadOnly` | {{desc}}
-`numberStart` | `ReadOnly` | {{desc}}
-`numberEnd` | `ReadOnly` | {{desc}}
+`total` | `Number` | {{description}}
+`limit` | `Number` | {{description}}
+`page` | `Number` | {{description}}
+`options` | `Array` | {{description}}
+`pages` | `ReadOnly` | {{description}}
+`start` | `ReadOnly` | {{description}}
+`end` | `ReadOnly` | {{description}}
+`numberStart` | `ReadOnly` | {{description}}
+`numberEnd` | `ReadOnly` | {{description}}
 
 
 

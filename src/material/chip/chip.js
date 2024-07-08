@@ -3,20 +3,21 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-chip
  * @extends MDComponent
- * @tagname md-chip
- * @fires MDChipComponent#onChipActionClick - {{desc}}
+ * @fires MDChipComponent#onChipActionClick - {{description}}
  */
 class MDChipComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {String} avatar - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} action - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
+     * {{description}}
+     * @property {String} variant - {{description}}
+     * @property {String} avatar - {{description}}
+     * @property {String} icon - {{description}}
+     * @property {String} label - {{description}}
+     * @property {String} action - {{description}}
+     * @property {Boolean} selected - {{description}}
+     * @property {Boolean} disabled - {{description}}
      */
     static properties = {
         variant: { type: String },
@@ -30,6 +31,9 @@ class MDChipComponent extends MDComponent {
 
     variants = ["assist", "filter", "input", "suggestion"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

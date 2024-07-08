@@ -3,31 +3,32 @@ import { MDComponent } from "../component/component.js";
 import { isDefined } from "../functions/functions.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-data-table-item
  * @extends MDComponent
- * @tagname md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
     /**
-     * @property {String} avatar - {{desc}}
-     * @property {String} thumbnail - {{desc}}
-     * @property {String} video - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Number} badge - {{desc}}
-     * @property {String} text - {{desc}}
-     * @property {Boolean} leadingCheckbox - {{desc}}
-     * @property {Boolean} leadingRadioButton - {{desc}}
-     * @property {Boolean} leadingSwitch - {{desc}}
-     * @property {Boolean} trailingCheckbox - {{desc}}
-     * @property {Boolean} trailingRadioButton - {{desc}}
-     * @property {Boolean} trailingSwitch - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {String} routerLink - {{desc}}
-     * @property {Boolean} sortable - {{desc}}
-     * @property {String} sortableIcon - {{desc}}
+     * {{description}}
+     * @property {String} avatar - {{description}}
+     * @property {String} thumbnail - {{description}}
+     * @property {String} video - {{description}}
+     * @property {String} icon - {{description}}
+     * @property {String} label - {{description}}
+     * @property {String} subLabel - {{description}}
+     * @property {Number} badge - {{description}}
+     * @property {String} text - {{description}}
+     * @property {Boolean} leadingCheckbox - {{description}}
+     * @property {Boolean} leadingRadioButton - {{description}}
+     * @property {Boolean} leadingSwitch - {{description}}
+     * @property {Boolean} trailingCheckbox - {{description}}
+     * @property {Boolean} trailingRadioButton - {{description}}
+     * @property {Boolean} trailingSwitch - {{description}}
+     * @property {Boolean} selected - {{description}}
+     * @property {Boolean} indeterminate - {{description}}
+     * @property {String} routerLink - {{description}}
+     * @property {Boolean} sortable - {{description}}
+     * @property {String} sortableIcon - {{description}}
      */
     static properties = {
         avatar: { type: String },
@@ -59,6 +60,9 @@ class MDDataTableItemComponent extends MDComponent {
         sortableIcon: { type: String },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
     }

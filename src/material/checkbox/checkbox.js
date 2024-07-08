@@ -4,21 +4,22 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-checkbox
  * @extends MDComponent
- * @tagname md-checkbox
- * @fires MDCheckboxComponent#onCheckboxNativeInput - {{desc}}
- * @fires MDCheckboxComponent#onCheckboxNativeReset - {{desc}}
+ * @fires MDCheckboxComponent#onCheckboxNativeInput - {{description}}
+ * @fires MDCheckboxComponent#onCheckboxNativeReset - {{description}}
  */
 class MDCheckboxComponent extends MDComponent {
     /**
-     * @property {Boolean} checked - {{desc}}
-     * @property {Boolean} defaultChecked - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
-     * @property {Boolean} indeterminate - {{desc}}
-     * @property {String} value - {{desc}}
-     * @property {String} name - {{desc}}
-     * @property {String} type - {{desc}}
+     * {{description}}
+     * @property {Boolean} checked - {{description}}
+     * @property {Boolean} defaultChecked - {{description}}
+     * @property {Boolean} disabled - {{description}}
+     * @property {Boolean} indeterminate - {{description}}
+     * @property {String} value - {{description}}
+     * @property {String} name - {{description}}
+     * @property {String} type - {{description}}
      */
     static properties = {
         checked: { type: Boolean },
@@ -30,6 +31,9 @@ class MDCheckboxComponent extends MDComponent {
         type: { type: String },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

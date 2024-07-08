@@ -1,5 +1,5 @@
 # MDMonthFieldComponent
-The `MDMonthFieldComponent` interface represents a `<md-month-field>` element in the DOM. {{desc}}
+The `MDMonthFieldComponent` interface represents a `<md-month-field>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDTextFieldComponent`
@@ -10,8 +10,8 @@ This interface also inherits properties from its parent, `MDTextFieldComponent`.
 
 name | type | desc
 --- | --- | ---
-`actions` | `ReadOnly` | {{desc}}
-`actions` | `ReadOnly` | {{desc}}
+`actions` | `ReadOnly` | {{description}}
+`actions` | `ReadOnly` | {{description}}
 
 
 

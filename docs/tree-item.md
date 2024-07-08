@@ -1,5 +1,5 @@
 # MDTreeItemComponent
-The `MDTreeItemComponent` interface represents a `<md-tree-item>` element in the DOM. {{desc}}
+The `MDTreeItemComponent` interface represents a `<md-tree-item>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,35 +9,35 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onTreeItemSelected` | {{desc}}
+`onTreeItemSelected` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`icon` | `String` | {{desc}}
-`label` | `String` | {{desc}}
-`badge` | `Number` | {{desc}}
-`selected` | `Boolean` | {{desc}}
-`routerLink` | `String` | {{desc}}
-`indent` | `Number` | {{desc}}
-`isNode` | `Boolean` | {{desc}}
-`expanded` | `Boolean` | {{desc}}
-`activated` | `Boolean` | {{desc}}
-`variant` | `String` | {{desc}}
-`isParent` | `Boolean` | {{desc}}
-`nodeActions` | `Array` | {{desc}}
-`nodeIcons` | `Array` | {{desc}}
-`leafIcons` | `Array` | {{desc}}
-`nodeActions_` | `ReadOnly` | {{desc}}
-`nodeIcons_` | `ReadOnly` | {{desc}}
-`leafIcons_` | `ReadOnly` | {{desc}}
-`nodeAction` | `ReadOnly` | {{desc}}
-`nodeicon` | `ReadOnly` | {{desc}}
-`leafIcon` | `ReadOnly` | {{desc}}
-`icon_` | `ReadOnly` | {{desc}}
+`icon` | `String` | {{description}}
+`label` | `String` | {{description}}
+`badge` | `Number` | {{description}}
+`selected` | `Boolean` | {{description}}
+`routerLink` | `String` | {{description}}
+`indent` | `Number` | {{description}}
+`isNode` | `Boolean` | {{description}}
+`expanded` | `Boolean` | {{description}}
+`activated` | `Boolean` | {{description}}
+`variant` | `String` | {{description}}
+`isParent` | `Boolean` | {{description}}
+`nodeActions` | `Array` | {{description}}
+`nodeIcons` | `Array` | {{description}}
+`leafIcons` | `Array` | {{description}}
+`nodeActions_` | `ReadOnly` | {{description}}
+`nodeIcons_` | `ReadOnly` | {{description}}
+`leafIcons_` | `ReadOnly` | {{description}}
+`nodeAction` | `ReadOnly` | {{description}}
+`nodeicon` | `ReadOnly` | {{description}}
+`leafIcon` | `ReadOnly` | {{description}}
+`icon_` | `ReadOnly` | {{description}}
 
 
 

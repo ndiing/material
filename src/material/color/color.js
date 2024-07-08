@@ -2,7 +2,7 @@ import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@
 import { isValidHexColor } from "../functions/functions";
 
 /**
- * {{desc}}
+ * {{description}}
  */
 async function setTheme(colorOrImage, customColors) {
     let theme;

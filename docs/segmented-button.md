@@ -1,5 +1,5 @@
 # MDSegmentedButtonComponent
-The `MDSegmentedButtonComponent` interface represents a `<md-segmented-button>` element in the DOM. {{desc}}
+The `MDSegmentedButtonComponent` interface represents a `<md-segmented-button>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,17 +9,17 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onSegmentedButtonItemClick` | {{desc}}
+`onSegmentedButtonItemClick` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`buttons` | `Array` | {{desc}}
-`singleSelection` | `Boolean` | {{desc}}
-`multiSelection` | `Boolean` | {{desc}}
+`buttons` | `Array` | {{description}}
+`singleSelection` | `Boolean` | {{description}}
+`multiSelection` | `Boolean` | {{description}}
 
 
 

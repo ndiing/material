@@ -5,35 +5,36 @@ import { choose } from "lit/directives/choose.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-card
  * @extends MDComponent
- * @tagname md-card
- * @fires MDCardComponent#onCardIconButtonClick - {{desc}}
- * @fires MDCardComponent#onCardIconClick - {{desc}}
- * @fires MDCardComponent#onCardButtonClick - {{desc}}
- * @fires MDCardComponent#onCardFabClick - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeFocus - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeBlur - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeInput - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeSearch - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeInvalid - {{desc}}
- * @fires MDCardComponent#onCardTextFieldNativeReset - {{desc}}
- * @fires MDCardComponent#onCardTextFieldIconButtonClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationChange - {{desc}}
- * @fires MDCardComponent#onCardPaginationLimitChange - {{desc}}
- * @fires MDCardComponent#onCardPaginationFirstClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationPrevClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationNextClick - {{desc}}
- * @fires MDCardComponent#onCardPaginationLastClick - {{desc}}
+ * @fires MDCardComponent#onCardIconButtonClick - {{description}}
+ * @fires MDCardComponent#onCardIconClick - {{description}}
+ * @fires MDCardComponent#onCardButtonClick - {{description}}
+ * @fires MDCardComponent#onCardFabClick - {{description}}
+ * @fires MDCardComponent#onCardTextFieldNativeFocus - {{description}}
+ * @fires MDCardComponent#onCardTextFieldNativeBlur - {{description}}
+ * @fires MDCardComponent#onCardTextFieldNativeInput - {{description}}
+ * @fires MDCardComponent#onCardTextFieldNativeSearch - {{description}}
+ * @fires MDCardComponent#onCardTextFieldNativeInvalid - {{description}}
+ * @fires MDCardComponent#onCardTextFieldNativeReset - {{description}}
+ * @fires MDCardComponent#onCardTextFieldIconButtonClick - {{description}}
+ * @fires MDCardComponent#onCardPaginationChange - {{description}}
+ * @fires MDCardComponent#onCardPaginationLimitChange - {{description}}
+ * @fires MDCardComponent#onCardPaginationFirstClick - {{description}}
+ * @fires MDCardComponent#onCardPaginationPrevClick - {{description}}
+ * @fires MDCardComponent#onCardPaginationNextClick - {{description}}
+ * @fires MDCardComponent#onCardPaginationLastClick - {{description}}
  */
 class MDCardComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Array} trailingActions - {{desc}}
-     * @property {Array} actions - {{desc}}
+     * {{description}}
+     * @property {String} variant - {{description}}
+     * @property {Array} leadingActions - {{description}}
+     * @property {String} label - {{description}}
+     * @property {String} subLabel - {{description}}
+     * @property {Array} trailingActions - {{description}}
+     * @property {Array} actions - {{description}}
      */
     static properties = {
         variant: { type: String },
@@ -46,6 +47,9 @@ class MDCardComponent extends MDComponent {
 
     variants = ["elevated", "filled", "outlined"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

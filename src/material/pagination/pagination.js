@@ -2,22 +2,23 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-pagination
  * @extends MDComponent
- * @tagname md-pagination
- * @fires MDPaginationComponent#onPaginationChange - {{desc}}
- * @fires MDPaginationComponent#onPaginationLimitChange - {{desc}}
- * @fires MDPaginationComponent#onPaginationFirstClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationPrevClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationNextClick - {{desc}}
- * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
+ * @fires MDPaginationComponent#onPaginationChange - {{description}}
+ * @fires MDPaginationComponent#onPaginationLimitChange - {{description}}
+ * @fires MDPaginationComponent#onPaginationFirstClick - {{description}}
+ * @fires MDPaginationComponent#onPaginationPrevClick - {{description}}
+ * @fires MDPaginationComponent#onPaginationNextClick - {{description}}
+ * @fires MDPaginationComponent#onPaginationLastClick - {{description}}
  */
 class MDPaginationComponent extends MDComponent {
     /**
-     * @property {Number} total - {{desc}}
-     * @property {Number} limit - {{desc}}
-     * @property {Number} page - {{desc}}
-     * @property {Array} options - {{desc}}
+     * {{description}}
+     * @property {Number} total - {{description}}
+     * @property {Number} limit - {{description}}
+     * @property {Number} page - {{description}}
+     * @property {Array} options - {{description}}
      */
     static properties = {
         total: { type: Number },
@@ -27,40 +28,43 @@ class MDPaginationComponent extends MDComponent {
     };
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get start() {
         return Math.max((this.page - 1) * this.limit, 0);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get end() {
         return Math.min(this.start + this.limit, this.total);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get numberStart() {
         return Math.min(this.start + 1, this.total);
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get numberEnd() {
         return this.end;
     }
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
         this.total = 0;

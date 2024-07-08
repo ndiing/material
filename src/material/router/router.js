@@ -1,13 +1,13 @@
 /**
- * {{desc}}
- * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
- * @fires MDRouter#onRouterNavigate - {{desc}}
- * @fires MDRouter#onRouterNavigateError - {{desc}}
- * @fires MDRouter#onRouterNavigateSuccess - {{desc}}
+ * {{description}}
+ * @fires MDRouter#onRouterCurrentEntryChange - {{description}}
+ * @fires MDRouter#onRouterNavigate - {{description}}
+ * @fires MDRouter#onRouterNavigateError - {{description}}
+ * @fires MDRouter#onRouterNavigateSuccess - {{description}}
  */
 class MDRouter {
     /**
-     * {{desc}}
+     * {{description}}
      */
     static setRoutes(routes, parent) {
         return routes.reduce((acc, curr) => {
@@ -24,7 +24,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static get path() {
         if (this.historyApiFallback) {
@@ -35,7 +35,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static get query() {
         let search;
@@ -62,7 +62,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static getRoute(path) {
         return this.stacks.find((route) => {
@@ -80,7 +80,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static getRoutes(route) {
         return [route].reduce((acc, curr) => {
@@ -95,7 +95,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static getOutlet(container, route) {
         return new Promise((resolve) => {
@@ -214,7 +214,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static navigate(url) {
         if (this.historyApiFallback) {
@@ -233,7 +233,7 @@ class MDRouter {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     static init(routes) {
         this.stacks = this.setRoutes(routes);
@@ -260,6 +260,9 @@ class MDRouter {
 
     static historyApiFallback = true;
 
+    /**
+     * {{description}}
+     */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

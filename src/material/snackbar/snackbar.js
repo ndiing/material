@@ -2,14 +2,15 @@ import { createQueue } from "../functions/functions.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-snackbar
  * @extends MDSheetComponent
- * @tagname md-snackbar
- * @fires MDSnackbarComponent#onSnackbarShow - {{desc}}
- * @fires MDSnackbarComponent#onSnackbarClose - {{desc}}
+ * @fires MDSnackbarComponent#onSnackbarShow - {{description}}
+ * @fires MDSnackbarComponent#onSnackbarClose - {{description}}
  */
 class MDSnackbarComponent extends MDSheetComponent {
     /**
+     * {{description}}
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -25,7 +26,7 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     show() {
         return MDSnackbarComponent.queue(() => {
@@ -51,7 +52,7 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     close() {
         super.close();

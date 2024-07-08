@@ -1,9 +1,12 @@
 /**
- * {{desc}}
- * @fires MDVirtualController#onVirtualScrollChange - {{desc}}
- * @fires MDVirtualController#onVirtualScroll - {{desc}}
+ * {{description}}
+ * @fires MDVirtualController#onVirtualScrollChange - {{description}}
+ * @fires MDVirtualController#onVirtualScroll - {{description}}
  */
 class MDVirtualController {
+    /**
+     * {{description}}
+     */
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
@@ -27,6 +30,9 @@ class MDVirtualController {
         this.cache = null;
     }
 
+    /**
+     * {{description}}
+     */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -39,6 +45,9 @@ class MDVirtualController {
         }
     }
 
+    /**
+     * {{description}}
+     */
     async hostConnected() {
         await this.host.updateComplete;
 
@@ -55,6 +64,9 @@ class MDVirtualController {
         }
     }
 
+    /**
+     * {{description}}
+     */
     async hostDisconnected() {
         await this.host.updateComplete;
         if (this.viewport) {

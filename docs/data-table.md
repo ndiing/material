@@ -1,5 +1,5 @@
 # MDDataTableComponent
-The `MDDataTableComponent` interface represents a `<md-data-table>` element in the DOM. {{desc}}
+The `MDDataTableComponent` interface represents a `<md-data-table>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDCardComponent`
@@ -9,61 +9,61 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onDataTableViewportVirtualScroll` | {{desc}}
-`onDataTableColumnCheckboxNativeInput` | {{desc}}
-`onDataTableRowCheckboxNativeInput` | {{desc}}
-`onDataTableRowClick` | {{desc}}
-`handleDataTableKeydown` | {{desc}}
-`onDataTableColumnResizeStart` | {{desc}}
-`onDataTableColumnResize` | {{desc}}
-`onDataTableColumnResizeEnd` | {{desc}}
-`onDataTableColumnPointerenter` | {{desc}}
-`onDataTableColumnPointerleave` | {{desc}}
-`onDataTableColumnTap` | {{desc}}
-`onDataTableTextFieldNativeSearch` | {{desc}}
-`onDataTablePaginationChange` | {{desc}}
-`onDataTableColumnDoubleTap` | {{desc}}
-`onDataTableColumnResizeDoubleTap` | {{desc}}
-`onDataTableColumnDragStart` | {{desc}}
-`onDataTableColumnDrag` | {{desc}}
-`onDataTableColumnDragEnd` | {{desc}}
+`onDataTableViewportVirtualScroll` | {{description}}
+`onDataTableColumnCheckboxNativeInput` | {{description}}
+`onDataTableRowCheckboxNativeInput` | {{description}}
+`onDataTableRowClick` | {{description}}
+`handleDataTableKeydown` | {{description}}
+`onDataTableColumnResizeStart` | {{description}}
+`onDataTableColumnResize` | {{description}}
+`onDataTableColumnResizeEnd` | {{description}}
+`onDataTableColumnPointerenter` | {{description}}
+`onDataTableColumnPointerleave` | {{description}}
+`onDataTableColumnTap` | {{description}}
+`onDataTableTextFieldNativeSearch` | {{description}}
+`onDataTablePaginationChange` | {{description}}
+`onDataTableColumnDoubleTap` | {{description}}
+`onDataTableColumnResizeDoubleTap` | {{description}}
+`onDataTableColumnDragStart` | {{description}}
+`onDataTableColumnDrag` | {{description}}
+`onDataTableColumnDragEnd` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDCardComponent`. undefined
+This interface also inherits properties from its parent, `MDCardComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`columns` | `Array` | {{desc}}
-`rows` | `Array` | {{desc}}
-`stickyHeader` | `Boolean` | {{desc}}
-`checkboxSelection` | `Boolean` | {{desc}}
-`stickyCheckboxSelection` | `Boolean` | {{desc}}
-`rangeSelection` | `Boolean` | {{desc}}
-`multiSelection` | `Boolean` | {{desc}}
-`singleSelection` | `Boolean` | {{desc}}
-`allSelection` | `Boolean` | {{desc}}
-`label` | `ReadOnly` | {{desc}}
-`label` | `ReadOnly` | {{desc}}
-`trailingActions` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
-`actions` | `ReadOnly` | {{desc}}
-`isSelectedAll` | `ReadOnly` | {{desc}}
-`isSelectedPartial` | `ReadOnly` | {{desc}}
+`columns` | `Array` | {{description}}
+`rows` | `Array` | {{description}}
+`stickyHeader` | `Boolean` | {{description}}
+`checkboxSelection` | `Boolean` | {{description}}
+`stickyCheckboxSelection` | `Boolean` | {{description}}
+`rangeSelection` | `Boolean` | {{description}}
+`multiSelection` | `Boolean` | {{description}}
+`singleSelection` | `Boolean` | {{description}}
+`allSelection` | `Boolean` | {{description}}
+`label` | `ReadOnly` | {{description}}
+`label` | `ReadOnly` | {{description}}
+`trailingActions` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`actions` | `ReadOnly` | {{description}}
+`isSelectedAll` | `ReadOnly` | {{description}}
+`isSelectedPartial` | `ReadOnly` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDCardComponent`.
 
 name | params | desc
 --- | --- | ---
-`updateVirtualRows` |  | {{desc}}
-`updateVirtualColumns` |  | {{desc}}
-`updateColumns` |  | {{desc}}
-`selectAllToggle` | `checked` | {{desc}}
-`selectToggle` | `data` | {{desc}}
-`select` | `data` | {{desc}}
-`selectRange` | `data` | {{desc}}
-`selectAll` |  | {{desc}}
+`updateVirtualRows` |  | {{description}}
+`updateVirtualColumns` |  | {{description}}
+`updateColumns` |  | {{description}}
+`selectAllToggle` | `checked` | {{description}}
+`selectToggle` | `data` | {{description}}
+`select` | `data` | {{description}}
+`selectRange` | `data` | {{description}}
+`selectAll` |  | {{description}}
 
 
 

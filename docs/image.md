@@ -1,5 +1,5 @@
 # MDImageComponent
-The `MDImageComponent` interface represents a `<md-image>` element in the DOM. {{desc}}
+The `MDImageComponent` interface represents a `<md-image>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,32 +9,33 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onImageNativeLoad` | {{desc}}
-`onImageNativeError` | {{desc}}
+`onImageNativeLoad` | {{description}}
+`onImageNativeError` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`src` | `String` | {{desc}}
-`alt` | `String` | {{desc}}
-`srcset` | `String` | {{desc}}
-`sizes` | `String` | {{desc}}
-`crossorigin` | `String` | {{desc}}
-`usemap` | `String` | {{desc}}
-`ismap` | `Boolean` | {{desc}}
-`width` | `Number` | {{desc}}
-`height` | `Number` | {{desc}}
-`referrerpolicy` | `String` | {{desc}}
-`decoding` | `String` | {{desc}}
-`loading` | `String` | {{desc}}
-`title` | `String` | {{desc}}
-`longdesc` | `String` | {{desc}}
-`fetchpriority` | `String` | {{desc}}
-`ratio` | `String` | {{desc}}
-`variant` | `String` | {{desc}}
+`src` | `String` | {{description}}
+`alt` | `String` | {{description}}
+`srcset` | `String` | {{description}}
+`sizes` | `String` | {{description}}
+`crossorigin` | `String` | {{description}}
+`usemap` | `String` | {{description}}
+`ismap` | `Boolean` | {{description}}
+`width` | `Number` | {{description}}
+`height` | `Number` | {{description}}
+`referrerpolicy` | `String` | {{description}}
+`decoding` | `String` | {{description}}
+`loading` | `String` | {{description}}
+`title` | `String` | {{description}}
+`longdesc` | `String` | {{description}}
+`fetchpriority` | `String` | {{description}}
+`ratio` | `String` | {{description}}
+`variant` | `String` | {{description}}
+`nativeStyle` | `ReadOnly` | {{description}}
 
 
 

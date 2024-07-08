@@ -1,5 +1,5 @@
 # MDDatePickerComponent
-The `MDDatePickerComponent` interface represents a `<md-date-picker>` element in the DOM. {{desc}}
+The `MDDatePickerComponent` interface represents a `<md-date-picker>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDDatetimePickerComponent`
@@ -9,15 +9,19 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onDatePickerSelection` | {{desc}}
-`onDatePickerIconButtonPrevClick` | {{desc}}
-`onDatePickerIconButtonNextClick` | {{desc}}
-`onDatePickerButtonLabelClick` | {{desc}}
-`onDatePickerButtonCancelClick` | {{desc}}
-`onDatePickerButtonOkClick` | {{desc}}
-`onDatePickerYearItemClick` | {{desc}}
-`onDatePickerMonthItemClick` | {{desc}}
-`onDatePickerDayItemClick` | {{desc}}
+`onDatePickerSelection` | {{description}}
+`onDatePickerIconButtonPrevClick` | {{description}}
+`onDatePickerSelection` | {{description}}
+`onDatePickerIconButtonNextClick` | {{description}}
+`onDatePickerButtonLabelClick` | {{description}}
+`onDatePickerSelection` | {{description}}
+`onDatePickerButtonCancelClick` | {{description}}
+`onDatePickerButtonOkClick` | {{description}}
+`onDatePickerYearItemClick` | {{description}}
+`onDatePickerSelection` | {{description}}
+`onDatePickerMonthItemClick` | {{description}}
+`onDatePickerSelection` | {{description}}
+`onDatePickerDayItemClick` | {{description}}
 
 
 ## Instance properties
@@ -25,17 +29,17 @@ This interface also inherits properties from its parent, `MDDatetimePickerCompon
 
 name | type | desc
 --- | --- | ---
-`leadingActions` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
+`leadingActions` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDDatetimePickerComponent`.
 
 name | params | desc
 --- | --- | ---
-`updateDate` |  | {{desc}}
-`getValue` |  | {{desc}}
+`updateDate` |  | {{description}}
+`getValue` |  | {{description}}
 
 
 

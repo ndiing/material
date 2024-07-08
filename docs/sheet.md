@@ -1,5 +1,5 @@
 # MDSheetComponent
-The `MDSheetComponent` interface represents a `<md-sheet>` element in the DOM. {{desc}}
+The `MDSheetComponent` interface represents a `<md-sheet>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDCardComponent`
@@ -9,26 +9,26 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onSheetScrimClick` | {{desc}}
-`onSheetShow` | {{desc}}
-`onSheetClose` | {{desc}}
+`onSheetScrimClick` | {{description}}
+`onSheetShow` | {{description}}
+`onSheetClose` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDCardComponent`. undefined
+This interface also inherits properties from its parent, `MDCardComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`open` | `Boolean` | {{desc}}
+`open` | `Boolean` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDCardComponent`.
 
 name | params | desc
 --- | --- | ---
-`showModal` |  | {{desc}}
-`show` |  | {{desc}}
-`close` |  | {{desc}}
-`toggle` | `args` | {{desc}}
+`showModal` |  | {{description}}
+`show` |  | {{description}}
+`close` |  | {{description}}
+`toggle` | `args` | {{description}}
 
 

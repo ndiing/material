@@ -1,5 +1,5 @@
 # MDCheckboxComponent
-The `MDCheckboxComponent` interface represents a `<md-checkbox>` element in the DOM. {{desc}}
+The `MDCheckboxComponent` interface represents a `<md-checkbox>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,22 +9,22 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onCheckboxNativeInput` | {{desc}}
-`onCheckboxNativeReset` | {{desc}}
+`onCheckboxNativeInput` | {{description}}
+`onCheckboxNativeReset` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`checked` | `Boolean` | {{desc}}
-`defaultChecked` | `Boolean` | {{desc}}
-`disabled` | `Boolean` | {{desc}}
-`indeterminate` | `Boolean` | {{desc}}
-`value` | `String` | {{desc}}
-`name` | `String` | {{desc}}
-`type` | `String` | {{desc}}
+`checked` | `Boolean` | {{description}}
+`defaultChecked` | `Boolean` | {{description}}
+`disabled` | `Boolean` | {{description}}
+`indeterminate` | `Boolean` | {{description}}
+`value` | `String` | {{description}}
+`name` | `String` | {{description}}
+`type` | `String` | {{description}}
 
 
 

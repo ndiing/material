@@ -4,29 +4,30 @@ import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-list-item
  * @extends MDComponent
- * @tagname md-list-item
- * @fires MDListItemComponent#onListItemSelected - {{desc}}
+ * @fires MDListItemComponent#onListItemSelected - {{description}}
  */
 class MDListItemComponent extends MDComponent {
     /**
-     * @property {String} avatar - {{desc}}
-     * @property {String} thumbnail - {{desc}}
-     * @property {String} video - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Number} badge - {{desc}}
-     * @property {String} text - {{desc}}
-     * @property {Boolean} leadingCheckbox - {{desc}}
-     * @property {Boolean} leadingRadioButton - {{desc}}
-     * @property {Boolean} leadingSwitch - {{desc}}
-     * @property {Boolean} trailingCheckbox - {{desc}}
-     * @property {Boolean} trailingRadioButton - {{desc}}
-     * @property {Boolean} trailingSwitch - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {String} routerLink - {{desc}}
+     * {{description}}
+     * @property {String} avatar - {{description}}
+     * @property {String} thumbnail - {{description}}
+     * @property {String} video - {{description}}
+     * @property {String} icon - {{description}}
+     * @property {String} label - {{description}}
+     * @property {String} subLabel - {{description}}
+     * @property {Number} badge - {{description}}
+     * @property {String} text - {{description}}
+     * @property {Boolean} leadingCheckbox - {{description}}
+     * @property {Boolean} leadingRadioButton - {{description}}
+     * @property {Boolean} leadingSwitch - {{description}}
+     * @property {Boolean} trailingCheckbox - {{description}}
+     * @property {Boolean} trailingRadioButton - {{description}}
+     * @property {Boolean} trailingSwitch - {{description}}
+     * @property {Boolean} selected - {{description}}
+     * @property {String} routerLink - {{description}}
      */
     static properties = {
         avatar: { type: String },
@@ -54,6 +55,9 @@ class MDListItemComponent extends MDComponent {
         routerLink: { type: String, reflect: true },
     };
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

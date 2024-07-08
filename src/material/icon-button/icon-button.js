@@ -3,17 +3,18 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-icon-button
  * @extends MDComponent
- * @tagname md-icon-button
- * @fires MDIconButtonComponent#onIconButtonClick - {{desc}}
+ * @fires MDIconButtonComponent#onIconButtonClick - {{description}}
  */
 class MDIconButtonComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {String} icon - {{desc}}
-     * @property {Boolean} selected - {{desc}}
-     * @property {Boolean} disabled - {{desc}}
+     * {{description}}
+     * @property {String} variant - {{description}}
+     * @property {String} icon - {{description}}
+     * @property {Boolean} selected - {{description}}
+     * @property {Boolean} disabled - {{description}}
      */
     static properties = {
         variant: { type: String },
@@ -24,6 +25,9 @@ class MDIconButtonComponent extends MDComponent {
 
     variants = ["filled", "tonal", "outlined", "toggle"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

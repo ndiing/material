@@ -1,11 +1,14 @@
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-tabs
  * @extends MDTreeComponent
- * @tagname md-tabs
  */
 class MDTabsComponent extends MDTreeComponent {
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

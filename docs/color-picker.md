@@ -1,5 +1,5 @@
 # MDColorPickerComponent
-The `MDColorPickerComponent` interface represents a `<md-color-picker>` element in the DOM. {{desc}}
+The `MDColorPickerComponent` interface represents a `<md-color-picker>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDSheetComponent`
@@ -9,46 +9,52 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onColorPickerIconButtonClick` | {{desc}}
-`onColorPickerButtonClick` | {{desc}}
-`onColorPickerSelection` | {{desc}}
-`onColorPickerIconButtonPrevClick` | {{desc}}
-`onColorPickerIconButtonNextClick` | {{desc}}
-`onColorPickerButtonLabelClick` | {{desc}}
-`onColorPickerButtonCancelClick` | {{desc}}
-`onColorPickerButtonOkClick` | {{desc}}
-`onColorPickerGradientTrackPointerdown` | {{desc}}
-`onColorPickerGradientTrackPointermove` | {{desc}}
-`onColorPickerGradientTrackPointerup` | {{desc}}
-`onColorPickerHueNativeInput` | {{desc}}
-`onColorPickerOpacityNativeInput` | {{desc}}
+`onColorPickerIconButtonClick` | {{description}}
+`onColorPickerButtonClick` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerIconButtonPrevClick` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerIconButtonNextClick` | {{description}}
+`onColorPickerButtonLabelClick` | {{description}}
+`onColorPickerButtonCancelClick` | {{description}}
+`onColorPickerButtonOkClick` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerGradientTrackPointerdown` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerGradientTrackPointermove` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerGradientTrackPointerup` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerHueNativeInput` | {{description}}
+`onColorPickerSelection` | {{description}}
+`onColorPickerOpacityNativeInput` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDSheetComponent`. undefined
+This interface also inherits properties from its parent, `MDSheetComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`value` | `String` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
-`leadingActions` | `ReadOnly` | {{desc}}
-`actions` | `ReadOnly` | {{desc}}
+`value` | `String` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`leadingActions` | `ReadOnly` | {{description}}
+`actions` | `ReadOnly` | {{description}}
 
 ## Instance methods
 This interface also inherits methods from its parent, `MDSheetComponent`.
 
 name | params | desc
 --- | --- | ---
-`init` |  | {{desc}}
-`draw` |  | {{desc}}
-`findPixel` | `r`,`g`,`b` | {{desc}}
-`updateHsla` |  | {{desc}}
-`updateThumb` |  | {{desc}}
-`updateRgba` | `event` | {{desc}}
-`showModal` | `button`,`options` | {{desc}}
-`show` | `button`,`options` | {{desc}}
-`setPlacement` | `button`,`options` | {{desc}}
+`init` |  | {{description}}
+`draw` |  | {{description}}
+`findPixel` | `r`,`g`,`b` | {{description}}
+`updateHsla` |  | {{description}}
+`updateThumb` |  | {{description}}
+`updateRgba` | `event` | {{description}}
+`showModal` | `button`,`options` | {{description}}
+`show` | `button`,`options` | {{description}}
+`setPlacement` | `button`,`options` | {{description}}
 
 
 

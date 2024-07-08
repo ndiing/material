@@ -3,12 +3,13 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-navigation-drawer
  * @extends MDSheetComponent
- * @tagname md-navigation-drawer
  */
 class MDNavigationBarComponent extends MDSheetComponent {
     /**
+     * {{description}}
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -16,7 +17,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     };
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get body() {
         /* prettier-ignore */
@@ -30,7 +31,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set body(value) {
         this._body = value;

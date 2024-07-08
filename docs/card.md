@@ -1,5 +1,5 @@
 # MDCardComponent
-The `MDCardComponent` interface represents a `<md-card>` element in the DOM. {{desc}}
+The `MDCardComponent` interface represents a `<md-card>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,36 +9,36 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onCardIconButtonClick` | {{desc}}
-`onCardIconClick` | {{desc}}
-`onCardButtonClick` | {{desc}}
-`onCardFabClick` | {{desc}}
-`onCardTextFieldNativeFocus` | {{desc}}
-`onCardTextFieldNativeBlur` | {{desc}}
-`onCardTextFieldNativeInput` | {{desc}}
-`onCardTextFieldNativeSearch` | {{desc}}
-`onCardTextFieldNativeInvalid` | {{desc}}
-`onCardTextFieldNativeReset` | {{desc}}
-`onCardTextFieldIconButtonClick` | {{desc}}
-`onCardPaginationChange` | {{desc}}
-`onCardPaginationLimitChange` | {{desc}}
-`onCardPaginationFirstClick` | {{desc}}
-`onCardPaginationPrevClick` | {{desc}}
-`onCardPaginationNextClick` | {{desc}}
-`onCardPaginationLastClick` | {{desc}}
+`onCardIconButtonClick` | {{description}}
+`onCardIconClick` | {{description}}
+`onCardButtonClick` | {{description}}
+`onCardFabClick` | {{description}}
+`onCardTextFieldNativeFocus` | {{description}}
+`onCardTextFieldNativeBlur` | {{description}}
+`onCardTextFieldNativeInput` | {{description}}
+`onCardTextFieldNativeSearch` | {{description}}
+`onCardTextFieldNativeInvalid` | {{description}}
+`onCardTextFieldNativeReset` | {{description}}
+`onCardTextFieldIconButtonClick` | {{description}}
+`onCardPaginationChange` | {{description}}
+`onCardPaginationLimitChange` | {{description}}
+`onCardPaginationFirstClick` | {{description}}
+`onCardPaginationPrevClick` | {{description}}
+`onCardPaginationNextClick` | {{description}}
+`onCardPaginationLastClick` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`variant` | `String` | {{desc}}
-`leadingActions` | `Array` | {{desc}}
-`label` | `String` | {{desc}}
-`subLabel` | `String` | {{desc}}
-`trailingActions` | `Array` | {{desc}}
-`actions` | `Array` | {{desc}}
+`variant` | `String` | {{description}}
+`leadingActions` | `Array` | {{description}}
+`label` | `String` | {{description}}
+`subLabel` | `String` | {{description}}
+`trailingActions` | `Array` | {{description}}
+`actions` | `Array` | {{description}}
 
 
 

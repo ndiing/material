@@ -1,20 +1,20 @@
 # MDFabComponent
-The `MDFabComponent` interface represents a `<md-fab>` element in the DOM. {{desc}}
+The `MDFabComponent` interface represents a `<md-fab>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`variant` | `String` | {{desc}}
-`icon` | `String` | {{desc}}
-`label` | `String` | {{desc}}
-`selected` | `Boolean` | {{desc}}
-`disabled` | `Boolean` | {{desc}}
+`variant` | `String` | {{description}}
+`icon` | `String` | {{description}}
+`label` | `String` | {{description}}
+`selected` | `Boolean` | {{description}}
+`disabled` | `Boolean` | {{description}}
 
 
 

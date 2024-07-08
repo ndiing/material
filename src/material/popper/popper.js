@@ -1,7 +1,10 @@
 /**
- * {{desc}}
+ * {{description}}
  */
 class MDPopperController {
+    /**
+     * {{description}}
+     */
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
@@ -24,7 +27,7 @@ class MDPopperController {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     async setPlacement(button, options = {}) {
         this.button = button;
@@ -79,11 +82,7 @@ class MDPopperController {
             const right = left + this.containerRect.width;
             const bottom = top + this.containerRect.height;
 
-            const exceed =
-                left < this.boundaryRect.left || //
-                top < this.boundaryRect.top ||
-                right > this.boundaryRect.right ||
-                bottom > this.boundaryRect.bottom;
+            const exceed = left < this.boundaryRect.left || top < this.boundaryRect.top || right > this.boundaryRect.right || bottom > this.boundaryRect.bottom;
 
             if (!exceed) {
                 matches = 1;
@@ -101,7 +100,7 @@ class MDPopperController {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getRect(button) {
         if (button instanceof Event) {

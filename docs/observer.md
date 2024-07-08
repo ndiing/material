@@ -1,12 +1,12 @@
 
 
 # MDObserver
-{{desc}}
+{{description}}
 
 
 ## Instance methods
 name | params | desc
 --- | --- | ---
-`observe` | `list` | {{desc}}
+`observe` | `list` | {{description}}
 
 

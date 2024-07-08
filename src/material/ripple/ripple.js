@@ -1,7 +1,10 @@
 /**
- * {{desc}}
+ * {{description}}
  */
 class MDRippleController {
+    /**
+     * {{description}}
+     */
     constructor(host, options = {}) {
         (this.host = host).addController(this);
 
@@ -16,6 +19,9 @@ class MDRippleController {
         };
     }
 
+    /**
+     * {{description}}
+     */
     async hostConnected() {
         await this.host.updateComplete;
 
@@ -53,6 +59,9 @@ class MDRippleController {
         this.button.addEventListener("blur", this.handleRippleBlur);
     }
 
+    /**
+     * {{description}}
+     */
     async hostDisconnected() {
         await this.host.updateComplete;
 

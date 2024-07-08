@@ -2,20 +2,20 @@ import { stringifyDatetimeLocal } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-datetime-field
  * @extends MDTextFieldComponent
- * @tagname md-datetime-field
  */
 class MDDatetimeFieldComponent extends MDTextFieldComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get actions() {
         return [{ icon: "calendar_clock" }];
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set actions(value) {}
 

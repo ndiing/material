@@ -1,9 +1,9 @@
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-icon
  * @extends MDComponent
- * @tagname md-icon
  */
 class MDIconComponent extends MDComponent {
     connectedCallback() {

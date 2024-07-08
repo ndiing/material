@@ -1,9 +1,9 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-dialog
  * @extends MDSheetComponent
- * @tagname md-dialog
  */
 class MDDialogComponent extends MDSheetComponent {
     variants = ["full"];

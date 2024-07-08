@@ -1,9 +1,9 @@
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-emoji
  * @extends MDComponent
- * @tagname md-emoji
  */
 class MDEmojiComponent extends MDComponent {
     connectedCallback() {

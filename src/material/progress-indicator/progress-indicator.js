@@ -3,15 +3,16 @@ import { MDComponent } from "../component/component.js";
 import { calcPercentage } from "../functions/functions.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-progress-indicator
  * @extends MDComponent
- * @tagname md-progress-indicator
  */
 class MDProgressIndicatorComponent extends MDComponent {
     /**
-     * @property {String} variant - {{desc}}
-     * @property {Number} value - {{desc}}
-     * @property {Number} max - {{desc}}
+     * {{description}}
+     * @property {String} variant - {{description}}
+     * @property {Number} value - {{description}}
+     * @property {Number} max - {{description}}
      */
     static properties = {
         variant: { type: String },
@@ -21,6 +22,9 @@ class MDProgressIndicatorComponent extends MDComponent {
 
     variants = ["circular", "linear"];
 
+    /**
+     * {{description}}
+     */
     constructor() {
         super();
 

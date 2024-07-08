@@ -1,5 +1,5 @@
 # MDNavigationBarComponent
-The `MDNavigationBarComponent` interface represents a `<md-navigation-rail>` element in the DOM. {{desc}}
+The `MDNavigationBarComponent` interface represents a `<md-navigation-rail>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDSheetComponent`
@@ -10,9 +10,9 @@ This interface also inherits properties from its parent, `MDSheetComponent`.
 
 name | type | desc
 --- | --- | ---
-`properties` | `ReadOnly` | undefined
-`body` | `ReadOnly` | {{desc}}
-`body` | `ReadOnly` | {{desc}}
+`properties` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
+`body` | `ReadOnly` | {{description}}
 
 
 

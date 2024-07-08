@@ -1,5 +1,5 @@
 # MDIconButtonComponent
-The `MDIconButtonComponent` interface represents a `<md-icon-button>` element in the DOM. {{desc}}
+The `MDIconButtonComponent` interface represents a `<md-icon-button>` element in the DOM. {{description}}
 
 ## Inheritance
 `MDComponent`
@@ -9,18 +9,18 @@ Listen to these events using `addEventListener()`, or by assigning an event list
 
 name | desc
 --- | ---
-`onIconButtonClick` | {{desc}}
+`onIconButtonClick` | {{description}}
 
 
 ## Instance properties
-This interface also inherits properties from its parent, `MDComponent`. undefined
+This interface also inherits properties from its parent, `MDComponent`. {{description}}
 
 name | type | desc
 --- | --- | ---
-`variant` | `String` | {{desc}}
-`icon` | `String` | {{desc}}
-`selected` | `Boolean` | {{desc}}
-`disabled` | `Boolean` | {{desc}}
+`variant` | `String` | {{description}}
+`icon` | `String` | {{description}}
+`selected` | `Boolean` | {{description}}
+`disabled` | `Boolean` | {{description}}
 
 
 

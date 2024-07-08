@@ -2,20 +2,20 @@ import { stringifyWeek } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-week-field
  * @extends MDTextFieldComponent
- * @tagname md-week-field
  */
 class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get actions() {
         return [{ icon: "date_range" }];
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set actions(value) {}
 

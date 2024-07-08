@@ -7,39 +7,40 @@ import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-data-table
  * @extends MDCardComponent
- * @tagname md-data-table
- * @fires MDDataTableComponent#onDataTableViewportVirtualScroll - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnCheckboxNativeInput - {{desc}}
- * @fires MDDataTableComponent#onDataTableRowCheckboxNativeInput - {{desc}}
- * @fires MDDataTableComponent#onDataTableRowClick - {{desc}}
- * @fires MDDataTableComponent#handleDataTableKeydown - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnResizeStart - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnResize - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnResizeEnd - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnPointerenter - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnPointerleave - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnTap - {{desc}}
- * @fires MDDataTableComponent#onDataTableTextFieldNativeSearch - {{desc}}
- * @fires MDDataTableComponent#onDataTablePaginationChange - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnDoubleTap - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnResizeDoubleTap - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnDragStart - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnDrag - {{desc}}
- * @fires MDDataTableComponent#onDataTableColumnDragEnd - {{desc}}
+ * @fires MDDataTableComponent#onDataTableViewportVirtualScroll - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnCheckboxNativeInput - {{description}}
+ * @fires MDDataTableComponent#onDataTableRowCheckboxNativeInput - {{description}}
+ * @fires MDDataTableComponent#onDataTableRowClick - {{description}}
+ * @fires MDDataTableComponent#handleDataTableKeydown - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnResizeStart - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnResize - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnResizeEnd - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnPointerenter - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnPointerleave - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnTap - {{description}}
+ * @fires MDDataTableComponent#onDataTableTextFieldNativeSearch - {{description}}
+ * @fires MDDataTableComponent#onDataTablePaginationChange - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnDoubleTap - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnResizeDoubleTap - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnDragStart - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnDrag - {{description}}
+ * @fires MDDataTableComponent#onDataTableColumnDragEnd - {{description}}
  */
 class MDDataTableComponent extends MDCardComponent {
     /**
-     * @property {Array} columns - {{desc}}
-     * @property {Array} rows - {{desc}}
-     * @property {Boolean} stickyHeader - {{desc}}
-     * @property {Boolean} checkboxSelection - {{desc}}
-     * @property {Boolean} stickyCheckboxSelection - {{desc}}
-     * @property {Boolean} rangeSelection - {{desc}}
-     * @property {Boolean} multiSelection - {{desc}}
-     * @property {Boolean} singleSelection - {{desc}}
-     * @property {Boolean} allSelection - {{desc}}
+     * {{description}}
+     * @property {Array} columns - {{description}}
+     * @property {Array} rows - {{description}}
+     * @property {Boolean} stickyHeader - {{description}}
+     * @property {Boolean} checkboxSelection - {{description}}
+     * @property {Boolean} stickyCheckboxSelection - {{description}}
+     * @property {Boolean} rangeSelection - {{description}}
+     * @property {Boolean} multiSelection - {{description}}
+     * @property {Boolean} singleSelection - {{description}}
+     * @property {Boolean} allSelection - {{description}}
      */
     static properties = {
         ...MDCardComponent.properties,
@@ -58,20 +59,19 @@ class MDDataTableComponent extends MDCardComponent {
     };
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get label() {
         return "label";
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set label(value) {}
 
     get trailingActions() {
         return [
-            //
             { name: "search", component: "search-field", icon: "search", placeholder: "Search" },
             { name: "filter", icon: "filter_list" },
             { name: "add", icon: "add" },
@@ -80,7 +80,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set trailingActions(value) {}
 
@@ -89,20 +89,19 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set body(value) {}
 
     get actions() {
         return [
-            //
             { name: "spacer", component: "spacer" },
             { name: "pagination", component: "pagination", total: this.storeTotal },
         ];
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set actions(value) {}
 
@@ -304,7 +303,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateVirtualRows() {
         const { total, docs } = this.store.getAll({
@@ -322,7 +321,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateVirtualColumns() {
         this.virtual.options.columnTotal = this.columns.length;
@@ -331,7 +330,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateColumns() {
         const half = Math.floor(this.columns.length / 2);
@@ -410,7 +409,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get isSelectedAll() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
@@ -418,7 +417,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get isSelectedPartial() {
         const selectedTotal = this.storeRows.filter((row) => row.selected).length;
@@ -426,7 +425,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectAllToggle(checked) {
         this.storeRows.forEach((row) => {
@@ -435,14 +434,14 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectToggle(data) {
         data.selected = !data.selected;
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     select(data) {
         this.storeRows.forEach((item) => {
@@ -452,7 +451,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
@@ -473,7 +472,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     selectAll() {
         this.storeRows.forEach((item) => {

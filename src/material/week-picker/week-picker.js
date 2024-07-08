@@ -3,22 +3,26 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { html } from "lit";
 
 /**
- * {{desc}}
+ * {{description}}
+ * @element md-week-picker
  * @extends MDDatetimePickerComponent
- * @tagname md-week-picker
- * @fires MDWeekPickerComponent#onWeekPickerSelection - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - {{desc}}
- * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
+ * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - {{description}}
  */
 class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
-     * {{desc}}
+     * {{description}}
      */
     get weekdays() {
         const rows = [];
@@ -32,7 +36,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get days() {
         const rows = [];
@@ -63,7 +67,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get body() {
         /* prettier-ignore */
@@ -77,14 +81,14 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     set body(value) {
         this._body = value;
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     get leadingActions() {
         let label;
@@ -130,7 +134,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     updateDate() {
         const date = parseWeek(this.value);
@@ -243,7 +247,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{desc}}
+     * {{description}}
      */
     getValue() {
         return stringifyWeek(this.selected);
