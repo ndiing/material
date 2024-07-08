@@ -137,11 +137,6 @@ export { start, pause, resume, stop };
             start(entry.duration);
         });
     }).observe({
-        entryTypes: [
-            "mark",
-            "measure",
-            "navigation",
-            "resource",
-        ],
+        entryTypes: ["mark", "measure", "navigation", "resource"],
     });
 })();

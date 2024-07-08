@@ -58,6 +58,7 @@ const DevPaginationComponent = () => import( "./pagination/pagination.js").then(
 const DevDataTableComponent = () => import( "./data-table/data-table.js").then(m=>m.default)
 const DevMarkdownComponent = () => import( "./markdown/markdown.js").then(m=>m.default)
 const DevChartComponent = () => import( "./chart/chart.js").then(m=>m.default)
+const DevDataListComponent = () => import( "./data-list/data-list.js").then(m=>m.default)
 
 const routes = [
     {
@@ -119,6 +120,7 @@ const routes = [
             { path: "data-table", load: DevDataTableComponent },
             { path: "markdown", load: DevMarkdownComponent },
             { path: "chart", load: DevChartComponent },
+            { path: "data-list", load: DevDataListComponent },
         ],
     },
     { path: "*", load: DevMainComponent },

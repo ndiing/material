@@ -93,6 +93,7 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/pagination" },
             { routerLink: "/data-table-item" },
             { routerLink: "/data-table" },
+            { routerLink: "/data-list" },
         ];
 
         this.list.sort((a, b) => {
@@ -129,11 +130,11 @@ class DevMainComponent extends MDComponent {
                     @onTreeItemSelected="${this.handleTreeItemSelected}"
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
-                    <div class="md-layout-column">
+                    <!-- <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown .text="${this.doc}"></md-markdown>
                         </div>
-                    </div>
+                    </div> -->
                     <md-outlet></md-outlet>
                 </div>
             </div>
