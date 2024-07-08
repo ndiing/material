@@ -31,7 +31,7 @@ class MDVirtualController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -46,7 +46,7 @@ class MDVirtualController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     async hostConnected() {
         await this.host.updateComplete;
@@ -65,7 +65,7 @@ class MDVirtualController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     async hostDisconnected() {
         await this.host.updateComplete;
@@ -74,6 +74,9 @@ class MDVirtualController {
         }
     }
 
+    /**
+     * @private
+     */
     handleVirtualScroll(event) {
         window.requestAnimationFrame(() => {
             if (this.options.rowTotal) {

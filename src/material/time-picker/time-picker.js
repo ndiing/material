@@ -60,6 +60,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.index = 0;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -79,6 +82,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.selected.setMinutes(date.getMinutes());
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
             this.selection.setHours(this.selection.getHours() - 1);
@@ -96,6 +102,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerIconButtonPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
             this.selection.setHours(this.selection.getHours() + 1);
@@ -113,6 +122,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerIconButtonNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
             this.index = 1;
@@ -123,6 +135,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerButtonLabelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
         this.updateDate();
@@ -132,6 +147,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerButtonCancelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonOkClick(event) {
         this.selected.setMinutes(this.selection.getMinutes());
 
@@ -143,6 +161,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerButtonOkClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -156,6 +177,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerHourItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
 

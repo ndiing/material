@@ -42,6 +42,9 @@ class MDChipComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -53,12 +56,18 @@ class MDChipComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-chip");
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -80,6 +89,9 @@ class MDChipComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", event);
     }

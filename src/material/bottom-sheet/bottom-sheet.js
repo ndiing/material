@@ -8,6 +8,9 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 class MDBottomSheetComponent extends MDSheetComponent {
     variants = ["modal"];
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

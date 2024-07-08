@@ -24,6 +24,9 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.type = "color";
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -31,11 +34,17 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-color-field");
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
         super.handleTextFieldNativeClick(event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
@@ -69,16 +78,25 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         });
     }
 
+    /**
+     * @private
+     */
     handlePickerSelection() {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonOkClick() {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
         this.native.value = value;

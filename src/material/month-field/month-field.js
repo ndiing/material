@@ -25,6 +25,9 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.type = "month";
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -32,11 +35,17 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-month-field");
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
         super.handleTextFieldNativeClick(event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
@@ -70,16 +79,25 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         });
     }
 
+    /**
+     * @private
+     */
     handlePickerSelection() {
         const value = stringifyMonth(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonOkClick() {
         const value = stringifyMonth(this.picker.selection);
         this.native.value = value;

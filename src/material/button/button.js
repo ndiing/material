@@ -42,6 +42,9 @@ class MDButtonComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -52,12 +55,18 @@ class MDButtonComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-button");
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 

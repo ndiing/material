@@ -79,6 +79,9 @@ class MDPaginationComponent extends MDComponent {
         ];
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -97,11 +100,17 @@ class MDPaginationComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-pagination");
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -118,6 +127,9 @@ class MDPaginationComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handlePaginationLimitChange(event) {
         const limit = Number(event.detail.currentTarget.value);
         this.limit = limit;
@@ -125,24 +137,36 @@ class MDPaginationComponent extends MDComponent {
         this.emit("onPaginationLimitChange", event);
     }
 
+    /**
+     * @private
+     */
     handlePaginationFirstClick(event) {
         this.page = 1;
 
         this.emit("onPaginationFirstClick", event);
     }
 
+    /**
+     * @private
+     */
     handlePaginationPrevClick(event) {
         this.page = Math.max(--this.page, 1);
 
         this.emit("onPaginationPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handlePaginationNextClick(event) {
         this.page = Math.min(++this.page, this.pages);
 
         this.emit("onPaginationNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handlePaginationLastClick(event) {
         this.page = this.pages;
 

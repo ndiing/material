@@ -50,6 +50,9 @@ class MDListComponent extends MDComponent {
         };
     }
 
+    /**
+     * @private
+     */
     renderListItem(item) {
         /* prettier-ignore */
         return html`
@@ -83,11 +86,17 @@ class MDListComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return this.list?.map(item => this.renderListItem(item));
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -96,6 +105,9 @@ class MDListComponent extends MDComponent {
         this.on("keydown", this.handleListKeydown);
     }
 
+    /**
+     * @private
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
 
@@ -156,6 +168,9 @@ class MDListComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleListItemClick(event) {
         if (event.target.closest(".md-list__checkbox," + ".md-list__radio-button," + ".md-list__switch")) {
             return;
@@ -176,6 +191,9 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleListKeydown(event) {
         const activeElement = document.activeElement === event.target.closest(".md-list__item");
 
@@ -188,6 +206,9 @@ class MDListComponent extends MDComponent {
         this.emit("handleListKeydown", event);
     }
 
+    /**
+     * @private
+     */
     handleListItemSelectionStart(event) {
         if (!this.selection) {
             return;
@@ -201,6 +222,9 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemSelectionStart", event);
     }
 
+    /**
+     * @private
+     */
     handleListItemSelection(event) {
         if (!this.selection) {
             return;
@@ -215,6 +239,9 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemSelection", event);
     }
 
+    /**
+     * @private
+     */
     async handleListItemSelectionEnd(event) {
         if (!this.selection) {
             return;
@@ -227,6 +254,9 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemSelectionEnd", event);
     }
 
+    /**
+     * @private
+     */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
 
@@ -236,6 +266,9 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemCheckboxNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
 
@@ -245,6 +278,9 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemRadioButtonNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
 

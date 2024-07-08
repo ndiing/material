@@ -67,6 +67,9 @@ class MDDataTableItemComponent extends MDComponent {
         super();
     }
 
+    /**
+     * @private
+     */
     renderCheckbox() {
         /* prettier-ignore */
         return html`<md-checkbox 
@@ -76,6 +79,9 @@ class MDDataTableItemComponent extends MDComponent {
         ></md-checkbox>`
     }
 
+    /**
+     * @private
+     */
     renderRadioButton() {
         /* prettier-ignore */
         return html`<md-radio-button 
@@ -84,6 +90,9 @@ class MDDataTableItemComponent extends MDComponent {
         ></md-radio-button>`
     }
 
+    /**
+     * @private
+     */
     renderSwitch() {
         /* prettier-ignore */
         return html`<md-switch 
@@ -92,6 +101,9 @@ class MDDataTableItemComponent extends MDComponent {
         ></md-switch>`
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -127,12 +139,18 @@ class MDDataTableItemComponent extends MDComponent {
         `
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-data-table__item");
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 

@@ -15,6 +15,9 @@ class MDScrimComponent extends MDComponent {
         open: { type: Boolean, reflect: true },
     };
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

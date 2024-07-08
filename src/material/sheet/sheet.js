@@ -20,6 +20,9 @@ class MDSheetComponent extends MDCardComponent {
 
     variants = ["north", "east", "south", "west", "modal"];
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -49,6 +52,9 @@ class MDSheetComponent extends MDCardComponent {
         this.open = true;
     }
 
+    /**
+     * @private
+     */
     handleSheetScrimClick(event) {
         this.close();
 

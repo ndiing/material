@@ -60,7 +60,13 @@ function parse(data) {
         // console.log(body)
         doc.methods.push({ static, acc, async, methodName, methodParams, fires });
         let code = "";
+        code+=`    /**\n`
         if(![
+            /^on$/,
+            /^off$/,
+            /^emit$/,
+            /^hostConnected$/,
+            /^hostDisconnected$/,
             /^handle/,
             /^createRenderRoot/,
             /^firstUpdate/,
@@ -69,10 +75,11 @@ function parse(data) {
             /^disconnectedCallback/,
             /^render/,
         ].some(r=>r.test(methodName))){
-            code+=`    /**\n`
             code+=`     * {{description}}\n`
-            code+=`     */\n`
+        }else{
+            code+=`     * @private\n`
         }
+        code+=`     */\n`
         code += text;
         return code;
     });

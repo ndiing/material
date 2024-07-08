@@ -22,6 +22,9 @@ class MDSegmentedButtonComponent extends MDComponent {
         multiSelection: { type: Boolean, attribute: "multi-select" },
     };
 
+    /**
+     * @private
+     */
     renderButton(item) {
         /* prettier-ignore */
         return html`
@@ -40,17 +43,26 @@ class MDSegmentedButtonComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return this.buttons.map(item => this.renderButton(item));
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-segmented-button");
     }
 
+    /**
+     * @private
+     */
     handleSegmentedButtonItemClick(event) {
         if (this.multiSelection || this.singleSelection) {
             const data = event.currentTarget.data;

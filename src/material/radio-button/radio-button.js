@@ -50,6 +50,9 @@ class MDRadioButtonComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     renderNative() {
         /* prettier-ignore */
         return html`
@@ -70,6 +73,9 @@ class MDRadioButtonComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderTrack() {
         /* prettier-ignore */
         return html`
@@ -77,6 +83,9 @@ class MDRadioButtonComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderContainer() {
         /* prettier-ignore */
         return html`
@@ -87,6 +96,9 @@ class MDRadioButtonComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -97,6 +109,9 @@ class MDRadioButtonComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -107,6 +122,9 @@ class MDRadioButtonComponent extends MDComponent {
         this.classList.add("md-radio-button");
     }
 
+    /**
+     * @private
+     */
     handleRadioButtonNativeInput(event) {
         const native = event.currentTarget;
 
@@ -117,6 +135,9 @@ class MDRadioButtonComponent extends MDComponent {
         this.emit("onRadioButtonNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleRadioButtonNativeReset(event) {
         const native = event.currentTarget;
 

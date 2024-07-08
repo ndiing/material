@@ -143,6 +143,9 @@ class MDTreeItemComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     renderPlain() {
         /* prettier-ignore */
         return html`
@@ -157,6 +160,9 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderAccordion() {
         /* prettier-ignore */
         return html`
@@ -171,6 +177,9 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderTree() {
         /* prettier-ignore */
         return html`
@@ -186,6 +195,9 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderLevel() {
         /* prettier-ignore */
         return html`
@@ -200,6 +212,9 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return choose(this.variant, [
@@ -209,12 +224,18 @@ class MDTreeItemComponent extends MDComponent {
         ], () => this.renderPlain());
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-tree__item");
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 

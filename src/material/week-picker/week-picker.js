@@ -103,6 +103,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
+    /**
+     * @private
+     */
     renderDay() {
         /* prettier-ignore */
         return html`
@@ -127,6 +130,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -146,6 +152,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.selected.setWeek(date.getWeek());
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() - 10);
@@ -161,6 +170,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerIconButtonPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() + 10);
@@ -176,6 +188,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerIconButtonNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
             this.index = 2;
@@ -188,6 +203,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerButtonLabelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
         this.updateDate();
@@ -197,6 +215,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerButtonCancelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
         this.selected.setWeek(this.selection.getWeek());
@@ -209,6 +230,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerButtonOkClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -220,6 +244,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerYearItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -231,6 +258,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerMonthItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
 

@@ -109,6 +109,9 @@ class MDDataTableComponent extends MDCardComponent {
         super();
     }
 
+    /**
+     * @private
+     */
     renderDataTableItem(item) {
         /* prettier-ignore */
         return html`
@@ -137,6 +140,9 @@ class MDDataTableComponent extends MDCardComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderDataTable() {
         /* prettier-ignore */
         return html`
@@ -267,6 +273,9 @@ class MDDataTableComponent extends MDCardComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderViewport() {
         /* prettier-ignore */
         return html`
@@ -280,6 +289,9 @@ class MDDataTableComponent extends MDCardComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-card");
@@ -386,12 +398,18 @@ class MDDataTableComponent extends MDCardComponent {
         this.stickyLeftEnd = this.stickyCheckboxSelection && stickyLeftEnd === undefined;
     }
 
+    /**
+     * @private
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.off("keydown", this.handleDataTableKeydown);
     }
 
+    /**
+     * @private
+     */
     handleDataTableViewportVirtualScroll(event) {
         this.virtualColumns = this.columns.filter((column, index) => {
             return (index >= this.virtual.columnStart && index <= this.virtual.columnEnd) || column.sticky;
@@ -480,6 +498,9 @@ class MDDataTableComponent extends MDCardComponent {
         });
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnCheckboxNativeInput(event) {
         event.preventDefault();
 
@@ -492,6 +513,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnCheckboxNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableRowCheckboxNativeInput(event) {
         event.preventDefault();
 
@@ -504,6 +528,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableRowCheckboxNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableRowClick(event) {
         if (event.target.closest(".md-data-table__checkbox," + ".md-data-table__radio-button," + ".md-data-table__switch")) {
             return;
@@ -524,6 +551,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableRowClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableKeydown(event) {
         const activeElement = document.activeElement === event.target.closest("tr");
 
@@ -536,6 +566,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("handleDataTableKeydown", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnResizeStart(event) {
         if (!event.currentTarget.hasAttribute("resizable")) {
             return;
@@ -544,6 +577,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnResizeStart", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnResize(event) {
         if (!event.currentTarget.hasAttribute("resizable")) {
             return;
@@ -557,6 +593,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnResize", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnResizeEnd(event) {
         if (!event.currentTarget.hasAttribute("resizable")) {
             return;
@@ -569,6 +608,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnResizeEnd", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnPointerenter(event) {
         const data = event.currentTarget.data;
 
@@ -582,6 +624,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnPointerenter", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnPointerleave(event) {
         const data = event.currentTarget.data;
 
@@ -595,6 +640,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnPointerleave", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnTap(event) {
         const data = event.currentTarget.data;
 
@@ -622,6 +670,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnTap", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeSearch(event) {
         const q = event.currentTarget.value;
 
@@ -635,6 +686,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableTextFieldNativeSearch", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationChange(event) {
         const page = event.currentTarget.page;
         const limit = event.currentTarget.limit;
@@ -654,6 +708,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTablePaginationChange", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnDoubleTap(event) {
         const gesture = event.currentTarget.gesture;
 
@@ -664,6 +721,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnDoubleTap", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnResizeDoubleTap(event) {
         const th = event.currentTarget;
         const data = th.data;
@@ -692,6 +752,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnResizeDoubleTap", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnDragStart(event) {
         if (!event.currentTarget.hasAttribute("orderable")) {
             return;
@@ -701,6 +764,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnDragStart", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnDrag(event) {
         if (!event.currentTarget.hasAttribute("orderable")) {
             return;
@@ -725,6 +791,9 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnDrag", event);
     }
 
+    /**
+     * @private
+     */
     handleDataTableColumnDragEnd(event) {
         if (!event.currentTarget.hasAttribute("orderable")) {
             return;

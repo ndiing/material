@@ -83,6 +83,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.popper = new MDPopperController(this, {});
     }
 
+    /**
+     * @private
+     */
     renderMain() {
         /* prettier-ignore */
         return html`
@@ -123,6 +126,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     async connectedCallback() {
         super.connectedCallback();
 
@@ -138,6 +144,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.init();
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -267,6 +276,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.requestUpdate();
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonClick(event) {
         if (event.currentTarget.name === "prev") {
             this.handleColorPickerIconButtonPrevClick(event);
@@ -276,6 +288,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerIconButtonClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonClick(event) {
         if (event.currentTarget.name === "label") {
             this.handleColorPickerButtonLabelClick(event);
@@ -287,20 +302,32 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerButtonClick", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerIconButtonPrevClick(event) {
         this.emit("onColorPickerSelection", event);
         this.emit("onColorPickerIconButtonPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerIconButtonNextClick(event) {
         this.emit("onColorPickerSelection", event);
         this.emit("onColorPickerIconButtonNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerButtonLabelClick(event) {
         this.emit("onColorPickerButtonLabelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerButtonCancelClick(event) {
         this.value = this.defaultValue;
         this.updateHsla();
@@ -311,12 +338,18 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerButtonCancelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerButtonOkClick(event) {
         this.value = this.selection.hex;
 
         this.emit("onColorPickerButtonOkClick", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerGradientTrackPointerdown(event) {
         window.addEventListener("pointermove", this.handleColorPickerGradientTrackPointermove);
         window.addEventListener("pointerup", this.handleColorPickerGradientTrackPointerup);
@@ -331,6 +364,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerGradientTrackPointerdown", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerGradientTrackPointermove(event) {
         this.updateRgba(event);
 
@@ -338,6 +374,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerGradientTrackPointermove", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerGradientTrackPointerup(event) {
         this.updateRgba(event);
 
@@ -350,6 +389,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerGradientTrackPointerup", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerHueNativeInput(event) {
         const hue = parseFloat(event.currentTarget.value);
 
@@ -370,6 +412,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerHueNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleColorPickerOpacityNativeInput(event) {
         const alpha = parseFloat(event.currentTarget.value);
 

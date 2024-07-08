@@ -52,6 +52,9 @@ class MDSwitchComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     renderNative() {
         /* prettier-ignore */
         return html`
@@ -72,6 +75,9 @@ class MDSwitchComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderTrack() {
         /* prettier-ignore */
         return html`
@@ -79,6 +85,9 @@ class MDSwitchComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderContainer() {
         /* prettier-ignore */
         return html`
@@ -89,6 +98,9 @@ class MDSwitchComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -99,6 +111,9 @@ class MDSwitchComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -109,6 +124,9 @@ class MDSwitchComponent extends MDComponent {
         this.classList.add("md-switch");
     }
 
+    /**
+     * @private
+     */
     handleSwitchNativeInput(event) {
         const native = event.currentTarget;
 
@@ -119,6 +137,9 @@ class MDSwitchComponent extends MDComponent {
         this.emit("onSwitchNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleSwitchNativeReset(event) {
         const native = event.currentTarget;
 

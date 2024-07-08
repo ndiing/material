@@ -6,6 +6,9 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @extends MDSheetComponent
  */
 class MDBottomAppBarComponent extends MDSheetComponent {
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

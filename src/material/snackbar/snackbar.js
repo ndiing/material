@@ -18,6 +18,9 @@ class MDSnackbarComponent extends MDSheetComponent {
 
     static queue = createQueue();
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

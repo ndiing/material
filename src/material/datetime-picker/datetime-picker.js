@@ -269,6 +269,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.popper = new MDPopperController(this, {});
     }
 
+    /**
+     * @private
+     */
     renderYear() {
         /* prettier-ignore */
         return html`
@@ -283,6 +286,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderMonth() {
         /* prettier-ignore */
         return html`
@@ -297,6 +303,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderDay() {
         /* prettier-ignore */
         return html`
@@ -321,6 +330,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderHour() {
         /* prettier-ignore */
         return html`
@@ -334,6 +346,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderMinute() {
         /* prettier-ignore */
         return html`
@@ -347,6 +362,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -357,6 +375,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.updateDate();
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -373,6 +394,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonClick(event) {
         if (event.currentTarget.name === "prev") {
             this.handleCardIconButtonPrevClick(event);
@@ -383,6 +407,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerIconButtonClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonClick(event) {
         if (event.currentTarget.name === "label") {
             this.handleCardButtonLabelClick(event);
@@ -414,6 +441,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.selected.setMinutes(date.getMinutes());
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() - 10);
@@ -433,6 +463,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerIconButtonPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() + 10);
@@ -452,6 +485,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerIconButtonNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
             this.index = 2;
@@ -468,6 +504,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerButtonLabelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
         this.updateDate();
@@ -477,6 +516,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerButtonCancelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
         this.selected.setMonth(this.selection.getMonth());
@@ -492,6 +534,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerButtonOkClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -503,6 +548,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerYearItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -514,6 +562,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerMonthItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -531,6 +582,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerDayItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -550,6 +604,9 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.emit("onDatetimePickerHourItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
 

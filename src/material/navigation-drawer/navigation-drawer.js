@@ -37,6 +37,9 @@ class MDNavigationBarComponent extends MDSheetComponent {
         this._body = value;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

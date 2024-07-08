@@ -17,12 +17,18 @@ class MDTabsComponent extends MDTreeComponent {
 
     variants = ["primary", "secondary"];
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-tabs");
     }
 
+    /**
+     * @private
+     */
     handleTreeItemSelected(event) {
         window.requestAnimationFrame(() => {
             const treeItem = event.detail;

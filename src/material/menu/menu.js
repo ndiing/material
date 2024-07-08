@@ -48,6 +48,9 @@ class MDMenuComponent extends MDSheetComponent {
         this.popper = new MDPopperController(this, {});
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -55,6 +58,9 @@ class MDMenuComponent extends MDSheetComponent {
         this.classList.add("md-menu");
     }
 
+    /**
+     * @private
+     */
     handleMenuTreeItemClick(event) {
         this.close();
         this.emit("onMenuTreeItemClick", event);

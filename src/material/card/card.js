@@ -62,6 +62,9 @@ class MDCardComponent extends MDComponent {
         this.renderTextField = this.renderTextField.bind(this);
     }
 
+    /**
+     * @private
+     */
     renderPagination(item) {
         /* prettier-ignore */
         return html`
@@ -82,6 +85,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderIconButton(item) {
         /* prettier-ignore */
         return html`
@@ -97,6 +103,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderIcon(item) {
         /* prettier-ignore */
         return html`
@@ -109,6 +118,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderButton(item) {
         /* prettier-ignore */
         return html`
@@ -127,6 +139,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderFab(item) {
         /* prettier-ignore */
         return html`
@@ -142,6 +157,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderTextField(item) {
         /* prettier-ignore */
         return html`
@@ -156,6 +174,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderSearchField(item) {
         /* prettier-ignore */
         return html`
@@ -171,6 +192,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderAction(item, defaultAction = this.renderButton) {
         /* prettier-ignore */
         return choose(item.component, [
@@ -185,6 +209,9 @@ class MDCardComponent extends MDComponent {
         ], () => defaultAction(item));
     }
 
+    /**
+     * @private
+     */
     renderHeader() {
         /* prettier-ignore */
         return this.leadingActions?.length || this.label || this.subLabel || this.trailingActions?.length ? html`
@@ -209,6 +236,9 @@ class MDCardComponent extends MDComponent {
         ` : nothing;
     }
 
+    /**
+     * @private
+     */
     renderBody() {
         /* prettier-ignore */
         return this.body?.length || this.actions?.length ? html`
@@ -223,6 +253,9 @@ class MDCardComponent extends MDComponent {
         ` : nothing;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -231,6 +264,9 @@ class MDCardComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -243,6 +279,9 @@ class MDCardComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -254,70 +293,121 @@ class MDCardComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonClick(event) {
         this.emit("onCardIconButtonClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardIconClick(event) {
         this.emit("onCardIconClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonClick(event) {
         this.emit("onCardButtonClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardFabClick(event) {
         this.emit("onCardFabClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeFocus(event) {
         this.emit("onCardTextFieldNativeFocus", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeBlur(event) {
         this.emit("onCardTextFieldNativeBlur", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeInput(event) {
         this.emit("onCardTextFieldNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeSearch(event) {
         this.emit("onCardTextFieldNativeSearch", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeInvalid(event) {
         this.emit("onCardTextFieldNativeInvalid", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldNativeReset(event) {
         this.emit("onCardTextFieldNativeReset", event);
     }
 
+    /**
+     * @private
+     */
     handleCardTextFieldIconButtonClick(event) {
         this.emit("onCardTextFieldIconButtonClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationChange(event) {
         this.emit("onCardPaginationChange", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationLimitChange(event) {
         this.emit("onCardPaginationLimitChange", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationFirstClick(event) {
         this.emit("onCardPaginationFirstClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationPrevClick(event) {
         this.emit("onCardPaginationPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationNextClick(event) {
         this.emit("onCardPaginationNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardPaginationLastClick(event) {
         this.emit("onCardPaginationLastClick", event);
     }

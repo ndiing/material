@@ -27,6 +27,9 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         this.type = "number";
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -34,11 +37,17 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-number-field");
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
         super.handleTextFieldNativeClick(event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 

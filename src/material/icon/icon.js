@@ -6,6 +6,9 @@ import { MDComponent } from "../component/component.js";
  * @extends MDComponent
  */
 class MDIconComponent extends MDComponent {
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon");

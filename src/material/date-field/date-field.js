@@ -25,6 +25,9 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.type = "date";
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -32,11 +35,17 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-date-field");
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
         super.handleTextFieldNativeClick(event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
@@ -70,16 +79,25 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         });
     }
 
+    /**
+     * @private
+     */
     handlePickerSelection() {
         const value = stringifyDate(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonOkClick() {
         const value = stringifyDate(this.picker.selection);
         this.native.value = value;

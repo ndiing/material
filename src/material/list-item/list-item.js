@@ -75,6 +75,9 @@ class MDListItemComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     renderCheckbox() {
         /* prettier-ignore */
         return html`<md-checkbox 
@@ -83,6 +86,9 @@ class MDListItemComponent extends MDComponent {
         ></md-checkbox>`
     }
 
+    /**
+     * @private
+     */
     renderRadioButton() {
         /* prettier-ignore */
         return html`<md-radio-button 
@@ -91,6 +97,9 @@ class MDListItemComponent extends MDComponent {
         ></md-radio-button>`
     }
 
+    /**
+     * @private
+     */
     renderSwitch() {
         /* prettier-ignore */
         return html`<md-switch 
@@ -99,6 +108,9 @@ class MDListItemComponent extends MDComponent {
         ></md-switch>`
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -132,6 +144,9 @@ class MDListItemComponent extends MDComponent {
         `
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -140,6 +155,9 @@ class MDListItemComponent extends MDComponent {
         this.list = this.closest("md-list");
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 

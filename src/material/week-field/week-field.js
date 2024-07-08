@@ -25,6 +25,9 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.type = "week";
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -32,11 +35,17 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-week-field");
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
         super.handleTextFieldNativeClick(event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
@@ -70,16 +79,25 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         });
     }
 
+    /**
+     * @private
+     */
     handlePickerSelection() {
         const value = stringifyWeek(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonOkClick() {
         const value = stringifyWeek(this.picker.selection);
         this.native.value = value;

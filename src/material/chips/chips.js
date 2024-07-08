@@ -26,6 +26,9 @@ class MDChipsComponent extends MDComponent {
         super();
     }
 
+    /**
+     * @private
+     */
     renderChip(item) {
         /* prettier-ignore */
         return html`
@@ -44,17 +47,26 @@ class MDChipsComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return this.list?.map(item => this.renderChip(item));
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-chips");
     }
 
+    /**
+     * @private
+     */
     handleChipClick(event) {
         const data = event.currentTarget.data;
 
@@ -67,6 +79,9 @@ class MDChipsComponent extends MDComponent {
         this.emit("onChipClick", event);
     }
 
+    /**
+     * @private
+     */
     handleChipActionClick(event) {
         const data = event.currentTarget.data;
 

@@ -20,7 +20,7 @@ class MDRippleController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     async hostConnected() {
         await this.host.updateComplete;
@@ -60,7 +60,7 @@ class MDRippleController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     async hostDisconnected() {
         await this.host.updateComplete;
@@ -81,16 +81,25 @@ class MDRippleController {
         this.button.removeEventListener("blur", this.handleRippleBlur);
     }
 
+    /**
+     * @private
+     */
     handleRipplePointerenter() {
         this.container.style.removeProperty("--md-comp-ripple-animation");
 
         this.container.classList.add("md-ripple--hover");
     }
 
+    /**
+     * @private
+     */
     handleRipplePointerleave() {
         this.container.classList.remove("md-ripple--hover");
     }
 
+    /**
+     * @private
+     */
     handleRipplePointerdown(event) {
         this.container.classList.add("md-ripple--pressed");
 
@@ -117,16 +126,25 @@ class MDRippleController {
         }
     }
 
+    /**
+     * @private
+     */
     handleRipplePointerup() {
         this.container.classList.remove("md-ripple--pressed");
 
         window.removeEventListener("pointerup", this.handleRipplePointerup);
     }
 
+    /**
+     * @private
+     */
     handleRippleFocus() {
         this.container.classList.add("md-ripple--focused");
     }
 
+    /**
+     * @private
+     */
     handleRippleBlur() {
         this.container.classList.remove("md-ripple--focused");
     }

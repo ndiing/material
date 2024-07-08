@@ -31,6 +31,9 @@ class MDProgressIndicatorComponent extends MDComponent {
         this.max = 100;
     }
 
+    /**
+     * @private
+     */
     renderCircular() {
         /* prettier-ignore */
         return html`
@@ -41,6 +44,9 @@ class MDProgressIndicatorComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderLinear() {
         /* prettier-ignore */
         return html`
@@ -50,6 +56,9 @@ class MDProgressIndicatorComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return this.variant && this.variant.includes('circular') ?
@@ -57,12 +66,18 @@ class MDProgressIndicatorComponent extends MDComponent {
         this.renderLinear();
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-progress-indicator");
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 

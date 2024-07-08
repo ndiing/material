@@ -21,7 +21,6 @@ name | params | desc
 `getOutlet` | `container`,`route` | {{description}}
 `navigate` | `url` | {{description}}
 `init` | `routes` | {{description}}
-`emit` | `type`,`detail` | {{description}}
 
 ## Instance properties
 name | type | desc

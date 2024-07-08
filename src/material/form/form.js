@@ -54,6 +54,9 @@ class MDFormComponent extends MDComponent {
         this.body = Array.from(this.childNodes);
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -74,12 +77,18 @@ class MDFormComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-form");
     }
 
+    /**
+     * @private
+     */
     handleFormNativeReset(event) {
         for (const element of event.currentTarget.elements) {
             const customEvent = new CustomEvent("reset", {
@@ -93,6 +102,9 @@ class MDFormComponent extends MDComponent {
         this.emit("onFormNativeReset", event);
     }
 
+    /**
+     * @private
+     */
     handleFormNativeSubmit(event) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);

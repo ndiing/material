@@ -30,6 +30,9 @@ class MDTreeComponent extends MDComponent {
         this.variant = "tree";
     }
 
+    /**
+     * @private
+     */
     renderTreeItem(item) {
         /* prettier-ignore */
         return html`
@@ -56,17 +59,26 @@ class MDTreeComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTreeItem(item));
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-tree");
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -189,6 +201,9 @@ class MDTreeComponent extends MDComponent {
         data.expanded = !data.expanded;
     }
 
+    /**
+     * @private
+     */
     handleTreeItemClick(event) {
         const data = event.currentTarget.data;
 

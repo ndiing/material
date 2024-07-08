@@ -24,7 +24,7 @@ function generateMarkdown(grouped) {
 
         if (name === "class") {
             for (const doc of value) {
-                if (doc.undocumented) {
+                if (doc.undocumented || doc.access == "private") {
                     continue;
                 }
                 markdown += `# ${doc.name}\n`;
@@ -41,7 +41,7 @@ function generateMarkdown(grouped) {
                     markdown += `--- | --- | --- \n`;
                     for (const par of doc.params) {
                         markdown += `\`${par.name}\` | `;
-                        markdown += `${par.type.names.map(a=>`\`${a}\``)} | `;
+                        markdown += `${par.type.names.map((a) => `\`${a}\``)} | `;
                         markdown += `${par.description}\n`;
                     }
                     markdown += `\n`;
@@ -76,7 +76,7 @@ function generateMarkdown(grouped) {
         if (name === "member") {
             let hasHeader;
             for (const doc of value) {
-                if (doc.undocumented || !doc.properties) {
+                if (doc.undocumented || doc.access == "private" || !doc.properties) {
                     continue;
                 }
                 markdown += `## Instance properties\n`;
@@ -93,7 +93,7 @@ function generateMarkdown(grouped) {
                 });
             }
 
-            if (!hasHeader && value.filter((doc) => !(doc.undocumented || doc.properties?.length)).length > 0) {
+            if (!hasHeader && value.filter((doc) => !(doc.undocumented || doc.access == "private" || doc.properties?.length)).length > 0) {
                 markdown += `## Instance properties\n`;
                 if (extend) {
                     markdown += `This interface also inherits properties from its parent, \`${extend}\`. \n\n`;
@@ -104,14 +104,14 @@ function generateMarkdown(grouped) {
                 markdown += `--- | --- | ---\n`;
             }
             for (const doc of value) {
-                if (doc.undocumented || doc.properties?.length) {
+                if (doc.undocumented || doc.access == "private" || doc.properties?.length) {
                     continue;
                 }
                 markdown += `\`${doc.name}\` | \`ReadOnly\` | ${doc.description}\n`;
             }
         }
 
-        if (name === "function" && value.some((doc) => !doc.undocumented)) {
+        if (name === "function" && value.some((doc) => !doc.undocumented && doc.access !== "private")) {
             markdown += `## Instance methods\n`;
             if (extend) {
                 markdown += `This interface also inherits methods from its parent, \`${extend}\`.\n\n`;
@@ -119,7 +119,8 @@ function generateMarkdown(grouped) {
             markdown += `name | params | desc\n`;
             markdown += `--- | --- | ---\n`;
             value.forEach((doc) => {
-                if (!doc.undocumented) {
+                if (!doc.undocumented && doc.access !== "private") {
+                    // console.log(doc)
                     markdown += `\`${doc.name}\` | ${doc.meta?.code?.paramnames.map((na) => `\`${na}\``)} | ${doc.description}\n`;
                 }
             });

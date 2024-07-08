@@ -38,11 +38,17 @@ class MDIconButtonComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return this.icon ? html`<div class="md-icon md-icon-button__icon">${this.icon}</div>` : nothing;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -51,12 +57,18 @@ class MDIconButtonComponent extends MDComponent {
         this.on("click", this.handleIconButtonClick);
     }
 
+    /**
+     * @private
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
 
         this.off("click", this.handleIconButtonClick);
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -78,6 +90,9 @@ class MDIconButtonComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleIconButtonClick(event) {
         if (this.variant && this.variant.includes("toggle")) {
             this.selected = !this.selected;

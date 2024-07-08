@@ -24,12 +24,6 @@ name | desc
 
 
 
-## Instance methods
-name | params | desc
---- | --- | ---
-`emit` | `type`,`detail` | {{description}}
-`hostConnected` |  | {{description}}
-`hostDisconnected` |  | {{description}}
 
 
 

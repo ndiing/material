@@ -61,6 +61,9 @@ class MDSliderComponent extends MDComponent {
         this.value = [undefined];
     }
 
+    /**
+     * @private
+     */
     renderTrack(value) {
         let length = 2;
         if (this.step > 1) {
@@ -77,6 +80,9 @@ class MDSliderComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -113,6 +119,9 @@ class MDSliderComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     async connectedCallback() {
         await super.connectedCallback();
 
@@ -146,6 +155,9 @@ class MDSliderComponent extends MDComponent {
         this.style.setProperty("--md-comp-slider-decimal" + (index + 1), decimal);
     }
 
+    /**
+     * @private
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -173,6 +185,9 @@ class MDSliderComponent extends MDComponent {
         return this.querySelectorAll(".md-slider__native");
     }
 
+    /**
+     * @private
+     */
     handleSliderNativeInput(event) {
         if (this.value?.length > 1) {
             this.natives[0].value = Math.min(this.natives[0].value, this.value[1]);
@@ -192,6 +207,9 @@ class MDSliderComponent extends MDComponent {
         this.emit("onSliderNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleSliderNativeReset(event) {
         for (let index = 0; index < this.natives.length; index++) {
             let native = this.natives[index];

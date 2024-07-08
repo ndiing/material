@@ -170,6 +170,9 @@ class MDTextFieldComponent extends MDComponent {
         this.renderIconButton = this.renderIconButton.bind(this);
     }
 
+    /**
+     * @private
+     */
     renderInput() {
         /* prettier-ignore */
         return html`
@@ -204,6 +207,9 @@ class MDTextFieldComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderTextarea() {
         /* prettier-ignore */
         return html`
@@ -231,6 +237,9 @@ class MDTextFieldComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderSelect() {
         /* prettier-ignore */
         return html`
@@ -264,6 +273,9 @@ class MDTextFieldComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderNative() {
         return choose(
             this.type,
@@ -275,6 +287,9 @@ class MDTextFieldComponent extends MDComponent {
         );
     }
 
+    /**
+     * @private
+     */
     renderIconButton(item) {
         /* prettier-ignore */
         return html`
@@ -291,10 +306,16 @@ class MDTextFieldComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderAction(item) {
         return this.renderIconButton(item);
     }
 
+    /**
+     * @private
+     */
     renderActions() {
         /* prettier-ignore */
         return this.actions?.length || this.error ? html`
@@ -305,6 +326,9 @@ class MDTextFieldComponent extends MDComponent {
         ` : nothing;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -322,6 +346,9 @@ class MDTextFieldComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     async connectedCallback() {
         super.connectedCallback();
 
@@ -349,6 +376,9 @@ class MDTextFieldComponent extends MDComponent {
         this.updatePopulation();
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -366,40 +396,61 @@ class MDTextFieldComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         this.emit("onTextFieldNativeClick", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeFocus(event) {
         this.classList.add("md-text-field--focused");
 
         this.emit("onTextFieldNativeFocus", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeBlur(event) {
         this.classList.remove("md-text-field--focused");
 
         this.emit("onTextFieldNativeBlur", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeInput(event) {
         this.populate();
 
         this.emit("onTextFieldNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeChange(event) {
         this.populate();
 
         this.emit("onTextFieldNativeChange", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeSearch(event) {
         this.populate();
 
         this.emit("onTextFieldNativeSearch", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
 
@@ -408,12 +459,18 @@ class MDTextFieldComponent extends MDComponent {
         this.emit("onTextFieldNativeInvalid", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeReset(event) {
         this.reset();
 
         this.emit("onTextFieldNativeReset", event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", event);
     }

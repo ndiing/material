@@ -8,6 +8,9 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 class MDSideSheetComponent extends MDSheetComponent {
     variants = ["modal"];
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

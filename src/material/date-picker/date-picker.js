@@ -57,6 +57,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this._body = value;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -78,6 +81,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.selected.setDate(date.getDate());
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() - 10);
@@ -93,6 +99,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerIconButtonPrevClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
             this.selection.setFullYear(this.selection.getFullYear() + 10);
@@ -108,6 +117,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerIconButtonNextClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
             this.index = 2;
@@ -120,6 +132,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerButtonLabelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
         this.updateDate();
@@ -130,6 +145,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerButtonCancelClick", event);
     }
 
+    /**
+     * @private
+     */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
         this.selected.setMonth(this.selection.getMonth());
@@ -143,6 +161,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerButtonOkClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -153,6 +174,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerYearItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
 
@@ -164,6 +188,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerMonthItemClick", event);
     }
 
+    /**
+     * @private
+     */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
 

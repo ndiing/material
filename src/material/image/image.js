@@ -82,6 +82,9 @@ class MDImageComponent extends MDComponent {
         this.alt = "alt";
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -109,12 +112,18 @@ class MDImageComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-image");
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 
@@ -126,10 +135,16 @@ class MDImageComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     handleImageNativeLoad(event) {
         this.emit("onImageNativeLoad", event);
     }
 
+    /**
+     * @private
+     */
     handleImageNativeError(event) {
         const native = event.currentTarget;
 

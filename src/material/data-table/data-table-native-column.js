@@ -17,10 +17,16 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
         });
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         this.gesture.hostConnected();
     }
 
+    /**
+     * @private
+     */
     disconnectedCallback() {
         this.gesture.hostDisconnected();
     }

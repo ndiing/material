@@ -37,7 +37,7 @@ class MDGestureController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -49,7 +49,7 @@ class MDGestureController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     async hostConnected() {
         await this.host.updateComplete;
@@ -85,12 +85,15 @@ class MDGestureController {
     }
 
     /**
-     * {{description}}
+     * @private
      */
     async hostDisconnected() {
         await this.host.updateComplete;
     }
 
+    /**
+     * @private
+     */
     handleGesturePointerdown(event) {
         if (event.button !== 0) {
             return;
@@ -158,6 +161,9 @@ class MDGestureController {
         }, 300);
     }
 
+    /**
+     * @private
+     */
     handleGesturePointermove(event) {
         window.clearTimeout(this.longPressTimeout);
 
@@ -208,6 +214,9 @@ class MDGestureController {
         }
     }
 
+    /**
+     * @private
+     */
     handleGesturePointerup(event) {
         window.clearTimeout(this.longPressTimeout);
 

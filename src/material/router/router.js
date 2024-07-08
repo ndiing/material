@@ -133,6 +133,9 @@ class MDRouter {
         });
     }
 
+    /**
+     * @private
+     */
     static async handleLoad(event) {
         this.emit("onRouterCurrentEntryChange", event);
         performance.mark("markRouterCurrentEntryChange");
@@ -224,6 +227,9 @@ class MDRouter {
         }
     }
 
+    /**
+     * @private
+     */
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
         if (routerLink) {
@@ -261,7 +267,7 @@ class MDRouter {
     static historyApiFallback = true;
 
     /**
-     * {{description}}
+     * @private
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {

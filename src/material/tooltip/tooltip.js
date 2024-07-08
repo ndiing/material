@@ -18,6 +18,9 @@ class MDTooltipComponent extends MDSheetComponent {
         this.popper = new MDPopperController(this, {});
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 

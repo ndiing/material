@@ -48,6 +48,9 @@ class MDCheckboxComponent extends MDComponent {
         });
     }
 
+    /**
+     * @private
+     */
     renderNative() {
         /* prettier-ignore */
         return html`
@@ -67,6 +70,9 @@ class MDCheckboxComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderTrack() {
         /* prettier-ignore */
         return html`
@@ -74,6 +80,9 @@ class MDCheckboxComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     renderContainer() {
         /* prettier-ignore */
         return html`
@@ -84,6 +93,9 @@ class MDCheckboxComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     render() {
         /* prettier-ignore */
         return html`
@@ -94,6 +106,9 @@ class MDCheckboxComponent extends MDComponent {
         `;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -104,6 +119,9 @@ class MDCheckboxComponent extends MDComponent {
         this.classList.add("md-checkbox");
     }
 
+    /**
+     * @private
+     */
     handleCheckboxNativeInput(event) {
         const native = event.currentTarget;
 
@@ -114,6 +132,9 @@ class MDCheckboxComponent extends MDComponent {
         this.emit("onCheckboxNativeInput", event);
     }
 
+    /**
+     * @private
+     */
     handleCheckboxNativeReset(event) {
         const native = event.currentTarget;
 

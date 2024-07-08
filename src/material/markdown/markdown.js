@@ -28,10 +28,16 @@ class MDMarkdownComponent extends MDComponent {
         this.textContent = "";
     }
 
+    /**
+     * @private
+     */
     render() {
         return this.text ? unsafeHTML(marked(this.text)) : nothing;
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -47,6 +53,9 @@ class MDMarkdownComponent extends MDComponent {
         }
     }
 
+    /**
+     * @private
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
 

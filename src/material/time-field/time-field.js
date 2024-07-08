@@ -25,6 +25,9 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.type = "time";
     }
 
+    /**
+     * @private
+     */
     connectedCallback() {
         super.connectedCallback();
 
@@ -32,11 +35,17 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-time-field");
     }
 
+    /**
+     * @private
+     */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
         super.handleTextFieldNativeClick(event);
     }
 
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
@@ -70,16 +79,25 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         });
     }
 
+    /**
+     * @private
+     */
     handlePickerSelection() {
         const value = stringifyTime(this.picker.selection);
         this.native.value = value;
         this.native.dispatchEvent(new CustomEvent("input", {}));
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonCancelClick() {
         this.picker.close();
     }
 
+    /**
+     * @private
+     */
     handlePickerButtonOkClick() {
         const value = stringifyTime(this.picker.selection);
         this.native.value = value;
