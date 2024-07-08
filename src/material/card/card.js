@@ -73,6 +73,7 @@ class MDCardComponent extends MDComponent {
             <md-pagination
                 class="md-card__pagination"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .total="${ifDefined(item.total)}"
                 .limit="${ifDefined(item.limit)}"
                 .page="${ifDefined(item.page)}"
@@ -97,6 +98,7 @@ class MDCardComponent extends MDComponent {
             <md-icon-button
                 class="md-card__icon-button"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
                 .selected="${ifDefined(item.selected)}"
@@ -116,6 +118,7 @@ class MDCardComponent extends MDComponent {
             <div
                 class="md-icon md-card__icon"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 @click="${this.handleCardIconClick}"
             >${item.icon}</div>
         `;
@@ -131,6 +134,7 @@ class MDCardComponent extends MDComponent {
             <md-button
                 class="md-card__button"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .type="${ifDefined(item.type)}"
                 .icon="${ifDefined(item.icon)}"
@@ -152,6 +156,7 @@ class MDCardComponent extends MDComponent {
             <md-fab
                 class="md-card__fab"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
                 .label="${ifDefined(item.label)}"
@@ -170,6 +175,7 @@ class MDCardComponent extends MDComponent {
             <md-text-field
                 class="md-card__text-field"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .icon="${ifDefined(item.icon)}"
                 .placeholder="${ifDefined(item.placeholder)}"
                 @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
@@ -187,6 +193,7 @@ class MDCardComponent extends MDComponent {
             <md-search-field
                 class="md-card__search-field"
                 name="${ifDefined(item.name)}"
+                .name="${ifDefined(item.name)}"
                 .icon="${ifDefined(item.icon)}"
                 .placeholder="${ifDefined(item.placeholder)}"
                 @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"

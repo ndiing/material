@@ -41,6 +41,7 @@ class MDSheetComponent extends MDCardComponent {
 
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+        this.handleSheetScrimClick=this.handleSheetScrimClick.bind(this)
         this.scrim.on("click", this.handleSheetScrimClick);
         this.scrim.show();
 
