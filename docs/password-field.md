@@ -1,8 +1,8 @@
 # MDPasswordFieldComponent
-The `MDPasswordFieldComponent` interface represents a `md-password-field` element in the DOM. {{desc}}
+The `MDPasswordFieldComponent` interface represents a `<md-password-field>` element in the DOM. {{desc}}
 
 ## Inheritance
-MDTextFieldComponent
+`MDTextFieldComponent`
 
 
 ## Instance properties
@@ -10,8 +10,8 @@ This interface also inherits properties from its parent, `MDTextFieldComponent`.
 
 name | type | desc
 --- | --- | ---
-actions | Read only | {{desc}}
-actions | Read only | {{desc}}
+`actions` | `ReadOnly` | {{desc}}
+`actions` | `ReadOnly` | {{desc}}
 
 
 

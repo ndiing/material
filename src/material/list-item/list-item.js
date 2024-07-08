@@ -3,6 +3,7 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
+
 /**
  * {{desc}}
  * @extends MDComponent
@@ -10,6 +11,7 @@ import { MDGestureController } from "../gesture/gesture.js";
  * @fires MDListItemComponent#onListItemSelected - {{desc}}
  */
 class MDListItemComponent extends MDComponent {
+    
     /**
      * @property {String} avatar - {{desc}}
      * @property {String} thumbnail - {{desc}}

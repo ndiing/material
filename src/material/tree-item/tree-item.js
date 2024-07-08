@@ -4,6 +4,7 @@ import { MDRippleController } from "../ripple/ripple.js";
 import { choose } from "lit/directives/choose.js";
 import { isDefined } from "../functions/functions.js";
 
+
 /**
  * {{desc}}
  * @extends MDComponent
@@ -11,6 +12,7 @@ import { isDefined } from "../functions/functions.js";
  * @fires MDTreeItemComponent#onTreeItemSelected - {{desc}}
  */
 class MDTreeItemComponent extends MDComponent {
+    
     /**
      * @property {String} icon - {{desc}}
      * @property {String} label - {{desc}}
@@ -44,6 +46,7 @@ class MDTreeItemComponent extends MDComponent {
         leafIcons: { type: Array },
     };
 
+    
     /**
      * {{desc}}
      */
@@ -65,6 +68,7 @@ class MDTreeItemComponent extends MDComponent {
         return icons;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -84,6 +88,7 @@ class MDTreeItemComponent extends MDComponent {
         return icons;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -103,6 +108,7 @@ class MDTreeItemComponent extends MDComponent {
         return icons;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -110,6 +116,7 @@ class MDTreeItemComponent extends MDComponent {
         return this.nodeActions_[~~this.expanded];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -117,6 +124,7 @@ class MDTreeItemComponent extends MDComponent {
         return this.nodeIcons_[~~this.expanded];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -124,6 +132,7 @@ class MDTreeItemComponent extends MDComponent {
         return this.leafIcons_[~~this.selected];
     }
 
+    
     /**
      * {{desc}}
      */

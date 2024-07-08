@@ -3,6 +3,7 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { calcDecimal, calcPercentage, isArrayString } from "../functions/functions.js";
 
+
 /**
  * {{desc}}
  * @extends MDComponent
@@ -11,6 +12,7 @@ import { calcDecimal, calcPercentage, isArrayString } from "../functions/functio
  * @fires MDSliderComponent#onSliderNativeReset - {{desc}}
  */
 class MDSliderComponent extends MDComponent {
+    
     /**
      * @property {Array} defaultValue - {{desc}}
      * @property {Number} min - {{desc}}
@@ -159,6 +161,7 @@ class MDSliderComponent extends MDComponent {
         }
     }
 
+    
     /**
      * {{desc}}
      */

@@ -1,26 +1,11 @@
+
 /**
- * MDVirtualController is a controller for virtual scrolling functionality.
- * @fires MDVirtualController#onVirtualScrollChange - Triggered when the virtual scroll range changes.
- * @fires MDVirtualController#onVirtualScroll - Triggered on every virtual scroll event.
+ * {{desc}}
+ * @fires MDVirtualController#onVirtualScrollChange - {{desc}}
+ * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
-    /**
-     * Creates an instance of MDVirtualController.
-     * @param {HTMLElement} host - The host element where virtual scrolling is applied.
-     * @param {Object} options - Options for configuring virtual scrolling behavior.
-     * @param {String} options.viewportSelector - Selector for the viewport element.
-     * @param {String} options.scrollbarSelector - Selector for the scrollbar element.
-     * @param {String} options.containerSelector - Selector for the container element.
-     * @param {String|null} options.rowSelector - Selector for rows within the container (optional).
-     * @param {String|null} options.columnSelector - Selector for columns within the container (optional).
-     * @param {Number} options.rowTotal - Total number of rows in the virtual space.
-     * @param {Number} options.rowHeight - Height of each row in pixels.
-     * @param {Number} options.buffer - General buffer size for rows and columns.
-     * @param {Number} options.rowBuffer - Buffer size specifically for rows.
-     * @param {Number} options.columnTotal - Total number of columns in the virtual space.
-     * @param {Number} options.columnWidth - Width of each column in pixels.
-     * @param {Number} options.columnBuffer - Buffer size specifically for columns.
-     */
+    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {

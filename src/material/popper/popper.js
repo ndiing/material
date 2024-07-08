@@ -1,3 +1,4 @@
+
 /**
  * {{desc}}
  */
@@ -23,6 +24,7 @@ class MDPopperController {
         };
     }
 
+    
     /**
      * {{desc}}
      */
@@ -100,6 +102,7 @@ class MDPopperController {
         this.container.style.transformOrigin = `${originX} ${originY}`;
     }
 
+    
     /**
      * {{desc}}
      */

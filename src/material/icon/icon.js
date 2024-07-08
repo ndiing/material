@@ -1,11 +1,10 @@
 import { MDComponent } from "../component/component.js";
 
+
 /**
- * Represents an icon component for Material Design.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-icon
- * @example
- * <md-icon>image</md-icon>
  */
 class MDIconComponent extends MDComponent {
     connectedCallback() {

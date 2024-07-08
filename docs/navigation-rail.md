@@ -1,8 +1,8 @@
 # MDNavigationBarComponent
-The `MDNavigationBarComponent` interface represents a `md-navigation-rail` element in the DOM. Represents a navigation rail component that includes a tree view for navigation.
+The `MDNavigationBarComponent` interface represents a `<md-navigation-rail>` element in the DOM. {{desc}}
 
 ## Inheritance
-MDSheetComponent
+`MDSheetComponent`
 
 
 ## Instance properties
@@ -10,9 +10,9 @@ This interface also inherits properties from its parent, `MDSheetComponent`.
 
 name | type | desc
 --- | --- | ---
-properties | Read only | Properties inherited from MDSheetComponent and MDTreeComponent.
-body | Read only | Returns the body content of the navigation rail, which includes a tree component.
-body | Read only | Sets the body content of the navigation rail.
+`properties` | `ReadOnly` | undefined
+`body` | `ReadOnly` | {{desc}}
+`body` | `ReadOnly` | {{desc}}
 
 
 

@@ -1,8 +1,8 @@
 # MDFabComponent
-The `MDFabComponent` interface represents a `md-fab` element in the DOM. Represents a floating action button component.
+The `MDFabComponent` interface represents a `<md-fab>` element in the DOM. {{desc}}
 
 ## Inheritance
-MDComponent
+`MDComponent`
 
 
 ## Instance properties
@@ -10,11 +10,11 @@ This interface also inherits properties from its parent, `MDComponent`. undefine
 
 name | type | desc
 --- | --- | ---
-variant | String | The variant styles for the FAB. Can be one or more of: "small", "large", "surface", "secondary", "tertiary", "unelevated", "extended".
-icon | String | The icon displayed on the FAB.
-label | String | The label displayed alongside the icon on the FAB.
-selected | Boolean | Indicates if the FAB is selected.
-disabled | Boolean | Indicates if the FAB is disabled.
+`variant` | `String` | {{desc}}
+`icon` | `String` | {{desc}}
+`label` | `String` | {{desc}}
+`selected` | `Boolean` | {{desc}}
+`disabled` | `Boolean` | {{desc}}
 
 
 

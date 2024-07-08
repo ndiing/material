@@ -2,21 +2,21 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
+
 /**
- * Button component for Material Design.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-button
- * @example
- * <md-button variant="elevated" label="Elevated button" icon="add"></md-button>
  */
 class MDButtonComponent extends MDComponent {
+    
     /**
-     * @property {String} variant - The variant style of the button (e.g., elevated, filled, outlined).
-     * @property {String} type - The type attribute of the button (default is "button").
-     * @property {String} icon - Optional icon to display inside the button.
-     * @property {String} label - The label or text content of the button.
-     * @property {Boolean} selected - Indicates if the button is selected.
-     * @property {Boolean} disabled - Indicates if the button is disabled.
+     * @property {String} variant - {{desc}}
+     * @property {String} type - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
      */
     static properties = {
         variant: { type: String },

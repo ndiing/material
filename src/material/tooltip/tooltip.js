@@ -1,8 +1,9 @@
 import { MDPopperController } from "../popper/popper.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
+
 /**
- * Represents a tooltip component.
+ * {{desc}}
  * @extends MDSheetComponent
  * @tagname md-tooltip
  */
@@ -24,10 +25,9 @@ class MDTooltipComponent extends MDSheetComponent {
         this.classList.add("md-tooltip");
     }
 
+    
     /**
-     * Shows the tooltip as a modal.
-     * @param {HTMLElement} button - The button element that triggers the tooltip.
-     * @param {Object} options - Additional options for customizing tooltip behavior.
+     * {{desc}}
      */
     showModal(button, options) {
         super.showModal();
@@ -35,10 +35,9 @@ class MDTooltipComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
+    
     /**
-     * Shows the tooltip.
-     * @param {HTMLElement} button - The button element that triggers the tooltip.
-     * @param {Object} options - Additional options for customizing tooltip behavior.
+     * {{desc}}
      */
     show(button, options) {
         super.show();
@@ -46,10 +45,9 @@ class MDTooltipComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
+    
     /**
-     * Sets the placement of the tooltip relative to a button.
-     * @param {HTMLElement} button - The button element that triggers the tooltip.
-     * @param {Object} options - Additional options for customizing tooltip placement.
+     * {{desc}}
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

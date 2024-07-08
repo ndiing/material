@@ -3,24 +3,25 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 import { MDPopperController } from "../popper/popper.js";
 
+
 /**
- * Represents a menu component.
+ * {{desc}}
  * @extends MDSheetComponent
  * @tagname md-menu
- * @fires MDMenuComponent#onMenuTreeItemClick - Event fired when a tree item in the menu is clicked.
+ * @fires MDMenuComponent#onMenuTreeItemClick - {{desc}}
  */
 class MDMenuComponent extends MDSheetComponent {
+    
     /**
-     * Inherits properties from MDSheetComponent and MDTreeComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
 
+    
     /**
-     * Gets the body of the menu, which includes a tree component.
-     * @returns {TemplateResult} The HTML template for the menu body.
+     * {{desc}}
      */
     get body() {
         /* prettier-ignore */
@@ -34,9 +35,9 @@ class MDMenuComponent extends MDSheetComponent {
         `];
     }
 
+    
     /**
-     * Sets the body of the menu.
-     * @param {TemplateResult} value - The new value for the menu body.
+     * {{desc}}
      */
     set body(value) {
         this._body = value;
@@ -59,10 +60,9 @@ class MDMenuComponent extends MDSheetComponent {
         this.emit("onMenuTreeItemClick", event);
     }
 
+    
     /**
-     * Shows the menu as a modal.
-     * @param {HTMLElement} button - The button element that triggers the menu.
-     * @param {Object} options - Additional options for customizing menu behavior.
+     * {{desc}}
      */
     showModal(button, options) {
         super.showModal();
@@ -70,10 +70,9 @@ class MDMenuComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
+    
     /**
-     * Shows the menu.
-     * @param {HTMLElement} button - The button element that triggers the menu.
-     * @param {Object} options - Additional options for customizing menu behavior.
+     * {{desc}}
      */
     show(button, options) {
         super.show();
@@ -81,10 +80,9 @@ class MDMenuComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
+    
     /**
-     * Sets the placement of the menu relative to a button.
-     * @param {HTMLElement} button - The button element that triggers the menu.
-     * @param {Object} options - Additional options for customizing menu placement.
+     * {{desc}}
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

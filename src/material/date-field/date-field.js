@@ -1,23 +1,24 @@
 import { stringifyDate } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
+
 /**
- * Represents a date field component extending MDTextFieldComponent.
+ * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-date-field
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
+    
     /**
-     * Defines the actions associated with the date field.
-     * @returns {Array} An array of actions, each defined by an icon.
+     * {{desc}}
      */
     get actions() {
         return [{ icon: "today" }];
     }
 
+    
     /**
-     * Sets the actions associated with the date field.
-     * @param {Array} value - An array of actions.
+     * {{desc}}
      */
     set actions(value) {}
 

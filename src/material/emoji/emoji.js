@@ -1,7 +1,8 @@
 import { MDComponent } from "../component/component.js";
 
+
 /**
- * Represents an emoji component for displaying emojis.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-emoji
  */

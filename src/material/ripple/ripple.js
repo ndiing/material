@@ -1,18 +1,9 @@
+
 /**
- * MDRippleController provides ripple effect handling for UI interactions.
+ * {{desc}}
  */
 class MDRippleController {
-    /**
-     * Creates an instance of MDRippleController.
-     * @param {HTMLElement} host - The host element where ripple effects are applied.
-     * @param {Object} [options={}] - Options for configuring ripple behavior.
-     * @param {String|null} options.buttonSelector - Selector for the button element.
-     * @param {Boolean} options.centered - Whether the ripple effect should be centered.
-     * @param {Boolean} options.clipped - Whether the ripple effect should be clipped.
-     * @param {String|null} options.containerSelector - Selector for the container element.
-     * @param {Boolean} options.fadeOut - Whether the ripple effect should fade out.
-     * @param {Number|null} options.size - Size of the ripple effect.
-     */
+    
     constructor(host, options = {}) {
         (this.host = host).addController(this);
 

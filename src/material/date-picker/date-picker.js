@@ -2,6 +2,7 @@ import { html } from "lit";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.js";
 
+
 /**
  * {{desc}}
  * @extends MDDatetimePickerComponent
@@ -17,6 +18,7 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
  * @fires MDDatePickerComponent#onDatePickerDayItemClick - {{desc}}
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
+    
     /**
      * {{desc}}
      */
@@ -32,6 +34,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -46,6 +49,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         `];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -59,6 +63,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.classList.add("md-date-picker");
     }
 
+    
     /**
      * {{desc}}
      */
@@ -177,6 +182,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerDayItemClick", event);
     }
 
+    
     /**
      * {{desc}}
      */

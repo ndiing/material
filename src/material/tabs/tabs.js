@@ -1,7 +1,8 @@
 import { MDTreeComponent } from "../tree/tree.js";
 
+
 /**
- * Represents a tabs component for managing tabbed navigation.
+ * {{desc}}
  * @extends MDTreeComponent
  * @tagname md-tabs
  */

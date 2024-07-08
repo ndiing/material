@@ -1,25 +1,23 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
+
 /**
- * MDColorFieldComponent provides a custom color input field with an integrated color picker. Extends MDTextFieldComponent to incorporate the basic text field functionality.
- *
+ * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-color-field
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
+    
     /**
-     * Returns the actions available for the color field.
-     *
-     * @returns {Array} - Array of action objects, each with an icon property.
+     * {{desc}}
      */
     get actions() {
         return [{ icon: "palette" }];
     }
 
+    
     /**
-     * Setter for actions, currently does nothing as actions are fixed.
-     *
-     * @param {Array} value - Array of action objects.
+     * {{desc}}
      */
     set actions(value) {}
 

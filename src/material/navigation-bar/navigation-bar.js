@@ -2,22 +2,24 @@ import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
+
 /**
- * Represents a navigation bar component that includes a tree view for navigation.
+ * {{desc}}
  * @extends MDSheetComponent
  * @tagname md-navigation-bar
  */
 class MDNavigationBarComponent extends MDSheetComponent {
+    
     /**
-     * Properties inherited from MDSheetComponent and MDTreeComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
 
+    
     /**
-     * Returns the body content of the navigation bar, which includes a tree component.
+     * {{desc}}
      */
     get body() {
         /* prettier-ignore */
@@ -30,8 +32,9 @@ class MDNavigationBarComponent extends MDSheetComponent {
         `];
     }
 
+    
     /**
-     * Sets the body content of the navigation bar.
+     * {{desc}}
      */
     set body(value) {
         this._body = value;

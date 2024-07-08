@@ -2,26 +2,22 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * Represents a list component that extends MDComponent and provides various list-related functionalities.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-list
- * @fires MDListComponent#onListItemClick - Fired when a list item is clicked.
- * @fires MDListComponent#handleListKeydown - Fired when a key is pressed while focusing on the list.
- * @fires MDListComponent#onListItemSelectionStart - Fired when the selection of a list item starts.
- * @fires MDListComponent#onListItemSelection - Fired when a list item is selected.
- * @fires MDListComponent#onListItemSelectionEnd - Fired when the selection of a list item ends.
- * @fires MDListComponent#onListItemCheckboxNativeInput - Fired when a native input event occurs on a list item checkbox.
- * @fires MDListComponent#onListItemRadioButtonNativeInput - Fired when a native input event occurs on a list item radio button.
- * @fires MDListComponent#onListItemSwitchNativeInput - Fired when a native input event occurs on a list item switch.
- * @example
- * // Example usage of MDListComponent
- * const list = new MDListComponent();
- * list.onListItemClick = (event) => {
- *   console.log('List item clicked:', event);
- * };
+ * @fires MDListComponent#onListItemClick - {{desc}}
+ * @fires MDListComponent#handleListKeydown - {{desc}}
+ * @fires MDListComponent#onListItemSelectionStart - {{desc}}
+ * @fires MDListComponent#onListItemSelection - {{desc}}
+ * @fires MDListComponent#onListItemSelectionEnd - {{desc}}
+ * @fires MDListComponent#onListItemCheckboxNativeInput - {{desc}}
+ * @fires MDListComponent#onListItemRadioButtonNativeInput - {{desc}}
+ * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
  */
 class MDListComponent extends MDComponent {
+    
     /**
      * @property {Array} list - {{desc}}
      * @property {Object} map - {{desc}}
@@ -104,6 +100,7 @@ class MDListComponent extends MDComponent {
         this.off("keydown", this.handleListKeydown);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -115,6 +112,7 @@ class MDListComponent extends MDComponent {
         this.endIndex = this.list.indexOf(data);
     }
 
+    
     /**
      * {{desc}}
      */
@@ -126,6 +124,7 @@ class MDListComponent extends MDComponent {
         }
     }
 
+    
     /**
      * {{desc}}
      */
@@ -148,6 +147,7 @@ class MDListComponent extends MDComponent {
         }
     }
 
+    
     /**
      * {{desc}}
      */

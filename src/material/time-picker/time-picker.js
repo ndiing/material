@@ -2,6 +2,7 @@ import { parseTime, stringifyTime } from "../functions/functions.js";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
 
+
 /**
  * {{desc}}
  * @extends MDDatetimePickerComponent
@@ -16,6 +17,7 @@ import { html } from "lit";
  * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - {{desc}}
  */
 class MDTimePickerComponent extends MDDatetimePickerComponent {
+    
     /**
      * {{desc}}
      */
@@ -29,6 +31,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         `];
     }
 
+    
     /**
      * {{desc}}
      */
@@ -36,6 +39,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this._body = value;
     }
 
+    
     /**
      * {{desc}}
      */
@@ -60,6 +64,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.classList.add("md-time-picker");
     }
 
+    
     /**
      * {{desc}}
      */
@@ -165,6 +170,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerMinuteItemClick", event);
     }
 
+    
     /**
      * {{desc}}
      */

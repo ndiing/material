@@ -2,16 +2,18 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
- * Represents a collection of chips for displaying and interacting with items.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-chips
- * @fires MDChipsComponent#onChipClick - Event fired when a chip is clicked.
+ * @fires MDChipsComponent#onChipClick - {{desc}}
  */
 class MDChipsComponent extends MDComponent {
+    
     /**
-     * @property {Array} list - The array of items to render as chips.
-     * @property {Boolean} multiSelection - Indicates whether multiple chips can be selected simultaneously.
+     * @property {Array} list - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
      */
     static properties = {
         list: { type: Array },

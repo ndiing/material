@@ -1,37 +1,21 @@
+
 /**
- * MDGestureController provides gesture handling functionalities such as drag, resize, selection, taps, and swipes.
- * @fires MDGestureController#onDragStart - Triggered when drag gesture starts.
- * @fires MDGestureController#onResizeStart - Triggered when resize gesture starts.
- * @fires MDGestureController#onSelectionStart - Triggered when selection gesture starts.
- * @fires MDGestureController#onLongPress - Triggered when a long press gesture is detected.
- * @fires MDGestureController#onDrag - Triggered during drag gesture.
- * @fires MDGestureController#onResize - Triggered during resize gesture.
- * @fires MDGestureController#onSelection - Triggered during selection gesture.
- * @fires MDGestureController#onTap - Triggered on tap gesture.
- * @fires MDGestureController#onDoubleTap - Triggered on double tap gesture.
- * @fires MDGestureController#onSwipeLeft - Triggered on swipe left gesture.
- * @fires MDGestureController#onSwipeRight - Triggered on swipe right gesture.
- * @fires MDGestureController#onSwipeTop - Triggered on swipe top gesture.
- * @fires MDGestureController#onSwipeBottom - Triggered on swipe bottom gesture.
- * @fires MDGestureController#onSelectionEnd - Triggered when selection gesture ends.
- * @fires MDGestureController#onDragEnd - Triggered when drag gesture ends.
- * @fires MDGestureController#onResizeEnd - Triggered when resize gesture ends.
+ * {{desc}}
+ * @fires MDGestureController#onDragStart - {{desc}}
+ * @fires MDGestureController#onResizeStart - {{desc}}
+ * @fires MDGestureController#onSelectionStart - {{desc}}
+ * @fires MDGestureController#onLongPress - {{desc}}
+ * @fires MDGestureController#onDrag - {{desc}}
+ * @fires MDGestureController#onResize - {{desc}}
+ * @fires MDGestureController#onSelection - {{desc}}
+ * @fires MDGestureController#onTap - {{desc}}
+ * @fires MDGestureController#onDoubleTap - {{desc}}
+ * @fires MDGestureController#onSelectionEnd - {{desc}}
+ * @fires MDGestureController#onDragEnd - {{desc}}
+ * @fires MDGestureController#onResizeEnd - {{desc}}
  */
 class MDGestureController {
-    /**
-     * Creates an instance of MDGestureController.
-     * @param {HTMLElement} host - The host element where gesture events are applied.
-     * @param {Object} options - Options for configuring gesture behavior.
-     * @param {String|undefined} options.containerSelector - Selector for the container element.
-     * @param {String|undefined} options.dragHandleSelector - Selector for the drag handle element.
-     * @param {Array<String>} options.drag - Directions in which dragging is allowed ('x', 'y', or both).
-     * @param {Boolean} options.dragAfterLongPress - Whether drag starts after a long press.
-     * @param {Array<String>} options.resize - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
-     * @param {Boolean} options.resizeAfterLongPress - Whether resize starts after a long press.
-     * @param {Boolean} options.selection - Whether selection gesture is enabled.
-     * @param {Boolean} options.selectionAfterLongPress - Whether selection starts after a long press.
-     * @param {Boolean} options.updateStyle - Whether to update element style during gesture handling.
-     */
+    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {

@@ -1,8 +1,8 @@
 # MDTooltipComponent
-The `MDTooltipComponent` interface represents a `md-tooltip` element in the DOM. Represents a tooltip component.
+The `MDTooltipComponent` interface represents a `<md-tooltip>` element in the DOM. {{desc}}
 
 ## Inheritance
-MDSheetComponent
+`MDSheetComponent`
 
 
 
@@ -11,8 +11,8 @@ This interface also inherits methods from its parent, `MDSheetComponent`.
 
 name | params | desc
 --- | --- | ---
-showModal | button,options | Shows the tooltip as a modal.
-show | button,options | Shows the tooltip.
-setPlacement | button,options | Sets the placement of the tooltip relative to a button.
+`showModal` | `button`,`options` | {{desc}}
+`show` | `button`,`options` | {{desc}}
+`setPlacement` | `button`,`options` | {{desc}}
 
 

@@ -1,11 +1,10 @@
 # MDSideSheetComponent
-The `MDSideSheetComponent` interface represents a `md-side-sheet` element in the DOM. Represents a side sheet component that extends from MDSheetComponent.
+The `MDSideSheetComponent` interface represents a `<md-side-sheet>` element in the DOM. {{desc}}
 
 ## Inheritance
-MDSheetComponent
+`MDSheetComponent`
 
 
-variants | Read only | Variants for different styles of the side sheet.
 
 
 

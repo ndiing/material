@@ -162,7 +162,7 @@ async function open(dir) {
                         docs[name] = md;
                         // fs.writeFileSync("./docs/docs.json", JSON.stringify(docs));
 
-                        // fs.writeFileSync(`./docs/${name}.md`, md);
+                        fs.writeFileSync(`./docs/${name}.md`, md);
                     } catch (error) {
                         console.log(error);
                         console.error(`Error parsing data for ${curr}: ${error.message}`);
