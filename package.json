@@ -37,7 +37,10 @@
     "prettier:write": "prettier src/material --write",
     "prettier:check": "prettier src/material --check",
     "eslint:fix": "eslint  src/material --fix",
-    "eslint:check": "eslint  src/material"
+    "eslint:check": "eslint  src/material",
+    "generate/placeholder": "node dev/generate-jsdoc-placeholder XYZ",
+    "generate/renderer": "node dev/generate-renderer XYZ",
+    "generate/markdown": "node dev/generate-markdown"
   },
   "dependencies": {
     "@lit/localize": "^0.12.1",

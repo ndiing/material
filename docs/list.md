@@ -4,7 +4,11 @@ The `MDListComponent` interface represents a `<md-list>` element in the DOM. Rep
 
 ## Examples
 ```
-// Example usage of MDListComponentconst list = new MDListComponent();list.onListItemClick = (event) => {  console.log('List item clicked:', event);};
+// Example usage of MDListComponent
+const list = new MDListComponent();
+list.onListItemClick = (event) => {
+  console.log('List item clicked:', event);
+};
 ```
 
 ## Instance Properties

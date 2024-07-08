@@ -3,14 +3,17 @@ import { MDComponent } from "../component/component.js";
 import { marked } from "marked";
 import { nothing } from "lit";
 
+
 /**
- * Custom element for rendering Markdown content.
+ * {{desc}}
  * @extends MDComponent
  * @tagname md-markdown
  */
 class MDMarkdownComponent extends MDComponent {
+    
     /**
-     * @property {String} href - The URL from which to fetch Markdown content.
+     * @property {String} href - {{desc}}
+     * @property {String} text - {{desc}}
      */
     static properties = {
         href: { type: String },

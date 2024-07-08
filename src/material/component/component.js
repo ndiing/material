@@ -17,8 +17,7 @@ class MDComponent extends LitElement {
     }
 
     /**
-     * Adds an event listener to the component.
-     * The listener is automatically bound to the component's context.
+     * Adds an event listener to the component. The listener is automatically bound to the component's context.
      * 
      * @param {string} type - The event type to listen for.
      * @param {Function} listener - The callback function to handle the event.
@@ -29,8 +28,7 @@ class MDComponent extends LitElement {
     }
 
     /**
-     * Adds an event listener to the component that will only be called once.
-     * The listener is automatically bound to the component's context and removed after the first call.
+     * Adds an event listener to the component that will only be called once. The listener is automatically bound to the component's context and removed after the first call.
      * 
      * @param {string} type - The event type to listen for.
      * @param {Function} listener - The callback function to handle the event.

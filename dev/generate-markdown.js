@@ -118,6 +118,9 @@ async function open(dir) {
                         const groupedData = groupBy(data, (doc) => doc.kind);
                         const generatedMarkdown = generateMarkdown(groupedData);
 
+                        docs[name]=generatedMarkdown
+                        fs.writeFileSync('./docs/docs.json',JSON.stringify(docs))
+
                         fs.writeFileSync(`./docs/${name}.md`, generatedMarkdown);
                     } catch (error) {
                         console.log(error)
@@ -131,5 +134,9 @@ async function open(dir) {
     }
 }
 
+let docs={}
+
 // Memulai proses generasi dokumentasi pada direktori tertentu
 open("./src/material");
+
+// fs.writeFileSync('./docs/docs.json',JSON.stringify(docs))
