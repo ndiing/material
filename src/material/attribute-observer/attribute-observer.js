@@ -1,23 +1,29 @@
 /**
- * {{description}}
+ * MDAttributeObserver observes changes to a specified attribute of a target element
+ * and triggers a callback whenever the attribute's value changes.
  */
 class MDAttributeObserver {
     /**
-     * {{description}}
+     * Creates an instance of MDAttributeObserver.
+     * @param {Function} [callback=() => {}] - The callback function to be called when the attribute changes.
      */
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
     /**
-     * {{description}}
+     * Begins observing changes to the specified attribute of the target element.
+     * @param {Element} target - The target element to observe.
+     * @param {string} attributeName - The name of the attribute to observe for changes.
      */
     observe(target, attributeName) {
+        // Initial callback with current attribute value
         this.callback({
             name: attributeName,
             value: target.getAttribute(attributeName),
         });
 
+        // MutationObserver to watch for attribute changes
         new MutationObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.attributeName === attributeName) {

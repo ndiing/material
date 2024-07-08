@@ -10,23 +10,28 @@ const breakpoints = [
 ];
 
 /**
- * {{description}}
+ * MDObserver observes media queries and triggers a callback when a matching query is found.
  */
 class MDObserver {
     /**
-     * {{description}}
+     * Creates an instance of MDObserver.
+     * @param {Function} [callback=() => {}] - The callback function to be called when a media query matches.
      */
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
     /**
-     * {{description}}
+     * Observes a list of media query configurations and triggers the callback when a matching query is found.
+     * @param {Object[]} list - The list of media query configurations to observe.
+     * Each object in the list should have a `name` (string) and `query` (string) property.
      */
     observe(list) {
         const handleChange = () => {
+            // Remove previous listener to prevent memory leaks
             this.media?.removeEventListener("change", handleChange);
 
+            // Find the matching media query
             this.item = null;
             for (let i = 0; i < list.length; i++) {
                 if (window.matchMedia(list[i].query).matches) {
@@ -35,6 +40,7 @@ class MDObserver {
                 }
             }
 
+            // If a matching media query is found, set up a listener for changes
             if (this.item) {
                 this.media = window.matchMedia(this.item.query);
                 this.callback(this.item);
@@ -42,6 +48,7 @@ class MDObserver {
             }
         };
 
+        // Initial call to setup the listener
         handleChange();
     }
 }

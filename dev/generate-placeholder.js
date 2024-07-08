@@ -63,6 +63,7 @@ function parse(data) {
         code+=`    /**\n`
         if(![
             /^on$/,
+            /^once$/,
             /^off$/,
             /^emit$/,
             /^hostConnected$/,

@@ -1,7 +1,7 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{description}}
+ * Represents a top app bar component that extends MDSheetComponent.
  * @element md-top-app-bar
  * @extends MDSheetComponent
  */
@@ -9,11 +9,11 @@ class MDTopAppBarComponent extends MDSheetComponent {
     variants = ["center", "small", "medium", "large"];
 
     /**
+     * Enhances connectedCallback to add specific CSS classes for top app bar styling.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-card");
         this.classList.add("md-top-app-bar");
     }

@@ -1,7 +1,7 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{description}}
+ * Represents a dialog component that extends MDSheetComponent.
  * @element md-dialog
  * @extends MDSheetComponent
  */
@@ -9,11 +9,11 @@ class MDDialogComponent extends MDSheetComponent {
     variants = ["full"];
 
     /**
+     * Enhances connectedCallback to add specific CSS classes for dialog styling.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-card");
         this.classList.add("md-dialog");
     }

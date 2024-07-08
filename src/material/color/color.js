@@ -2,7 +2,9 @@ import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@
 import { isValidHexColor } from "../functions/functions";
 
 /**
- * {{description}}
+ * Sets the theme of the application based on a color or image.
+ * @param {string} colorOrImage - Hexadecimal color or URL of an image.
+ * @param {object} customColors - Custom color configurations.
  */
 async function setTheme(colorOrImage, customColors) {
     let theme;
@@ -13,6 +15,7 @@ async function setTheme(colorOrImage, customColors) {
         theme = await themeFromImage(colorOrImage, customColors);
     }
 
+    // Custom adjustments for dark and light schemes
     theme.schemes.dark.props.surfaceDim = theme.palettes.neutral.tone(6);
     theme.schemes.dark.props.surfaceBright = theme.palettes.neutral.tone(24);
     theme.schemes.dark.props.surfaceContainerLowest = theme.palettes.neutral.tone(4);
@@ -29,8 +32,10 @@ async function setTheme(colorOrImage, customColors) {
     theme.schemes.light.props.surfaceContainerHigh = theme.palettes.neutral.tone(92);
     theme.schemes.light.props.surfaceContainerHighest = theme.palettes.neutral.tone(90);
 
+    // Check system preference for dark mode
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+    // Apply the theme to the document body
     applyTheme(theme, { target: document.body, dark: systemDark });
 }
 

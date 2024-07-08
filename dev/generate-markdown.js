@@ -132,7 +132,7 @@ function generateMarkdown(grouped) {
 
     return markdown;
 }
-let docs = {};
+let docs = JSON.parse(fs.readFileSync('./docs/docs.json',{encoding:'utf8'})||'{}');
 
 // Fungsi untuk membuka direktori dan menghasilkan dokumen markdown dari file-file JavaScript di dalamnya
 async function open(dir) {
@@ -163,7 +163,7 @@ async function open(dir) {
                         docs[name] = md;
                         // fs.writeFileSync("./docs/docs.json", JSON.stringify(docs));
 
-                        fs.writeFileSync(`./docs/${name}.md`, md);
+                        // fs.writeFileSync(`./docs/${name}.md`, md);
                     } catch (error) {
                         console.log(error);
                         console.error(`Error parsing data for ${curr}: ${error.message}`);

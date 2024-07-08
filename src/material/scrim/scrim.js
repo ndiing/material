@@ -1,14 +1,14 @@
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{description}}
+ * Represents a scrim component that extends MDComponent.
  * @element md-scrim
  * @extends MDComponent
  */
 class MDScrimComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Boolean} open - {{description}}
+     * Properties of the MDScrimComponent.
+     * @property {Boolean} open - Reflects whether the scrim is open.
      */
     static properties = {
         ...MDComponent.properties,
@@ -16,30 +16,30 @@ class MDScrimComponent extends MDComponent {
     };
 
     /**
+     * Enhances connectedCallback to add specific CSS class.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-scrim");
     }
 
     /**
-     * {{description}}
+     * Shows the scrim by setting `open` to true.
      */
     show() {
         this.open = true;
     }
 
     /**
-     * {{description}}
+     * Hides the scrim by setting `open` to false.
      */
     close() {
         this.open = false;
     }
 
     /**
-     * {{description}}
+     * Toggles the scrim visibility.
      */
     toggle() {
         if (this.open) {

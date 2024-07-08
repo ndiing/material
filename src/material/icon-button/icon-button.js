@@ -3,18 +3,18 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{description}}
+ * A custom element for creating icon buttons with various styles and ripple effects.
  * @element md-icon-button
  * @extends MDComponent
- * @fires MDIconButtonComponent#onIconButtonClick - {{description}}
+ * @fires MDIconButtonComponent#onIconButtonClick - Event fired when the icon button is clicked.
  */
 class MDIconButtonComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} variant - {{description}}
-     * @property {String} icon - {{description}}
-     * @property {Boolean} selected - {{description}}
-     * @property {Boolean} disabled - {{description}}
+     * Defines the properties of the element.
+     * @property {String} variant - The style variant of the icon button (e.g., "filled", "tonal", "outlined", "toggle").
+     * @property {String} icon - The icon to display within the button.
+     * @property {Boolean} selected - Indicates whether the button is selected (for toggle buttons).
+     * @property {Boolean} disabled - Indicates whether the button is disabled.
      */
     static properties = {
         variant: { type: String },
@@ -26,7 +26,7 @@ class MDIconButtonComponent extends MDComponent {
     variants = ["filled", "tonal", "outlined", "toggle"];
 
     /**
-     * {{description}}
+     * Creates an instance of MDIconButtonComponent.
      */
     constructor() {
         super();
@@ -39,6 +39,7 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
+     * Renders the icon button.
      * @private
      */
     render() {
@@ -47,6 +48,8 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
+     * Invoked each time the custom element is appended into a document-connected element.
+     * Adds the 'md-icon-button' class and sets up the click event listener.
      * @private
      */
     connectedCallback() {
@@ -58,6 +61,8 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
+     * Invoked each time the custom element is disconnected from the document.
+     * Removes the click event listener.
      * @private
      */
     disconnectedCallback() {
@@ -67,7 +72,10 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
+     * Called when the element's properties are updated.
+     * Toggles the button's variant classes and handles the disabled state.
      * @private
+     * @param {Map} changedProperties - The properties that changed.
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -91,7 +99,10 @@ class MDIconButtonComponent extends MDComponent {
     }
 
     /**
+     * Handles the click event on the icon button.
+     * Toggles the selected state for toggle buttons and emits a custom event.
      * @private
+     * @param {Event} event - The click event.
      */
     handleIconButtonClick(event) {
         if (this.variant && this.variant.includes("toggle")) {

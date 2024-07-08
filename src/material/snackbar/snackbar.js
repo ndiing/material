@@ -2,23 +2,27 @@ import { createQueue } from "../functions/functions.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{description}}
+ * Represents a snackbar component for displaying temporary messages.
  * @element md-snackbar
  * @extends MDSheetComponent
- * @fires MDSnackbarComponent#onSnackbarShow - {{description}}
- * @fires MDSnackbarComponent#onSnackbarClose - {{description}}
+ * @fires MDSnackbarComponent#onSnackbarShow - Triggered when the snackbar is shown.
+ * @fires MDSnackbarComponent#onSnackbarClose - Triggered when the snackbar is closed.
  */
 class MDSnackbarComponent extends MDSheetComponent {
     /**
-     * {{description}}
+     * Inherit properties from MDSheetComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
     };
 
+    /**
+     * Queue for managing sequential showing of snackbar instances.
+     */
     static queue = createQueue();
 
     /**
+     * Enhances connectedCallback to add specific CSS classes for snackbar styling.
      * @private
      */
     connectedCallback() {
@@ -29,7 +33,8 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{description}}
+     * Shows the snackbar.
+     * @returns {Promise} A promise that resolves when the snackbar is shown.
      */
     show() {
         return MDSnackbarComponent.queue(() => {
@@ -47,7 +52,7 @@ class MDSnackbarComponent extends MDSheetComponent {
 
                 this.once("animationend", handleSnackbarClose);
 
-                super.show();
+                super.show(); // Calls MDSheetComponent's show method
 
                 this.emit("onSnackbarShow", this);
             });
@@ -55,10 +60,10 @@ class MDSnackbarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{description}}
+     * Closes the snackbar.
      */
     close() {
-        super.close();
+        super.close(); // Calls MDSheetComponent's close method
 
         this.emit("onSnackbarClose", this);
     }

@@ -4,15 +4,15 @@ import { marked } from "marked";
 import { nothing } from "lit";
 
 /**
- * {{description}}
+ * A custom element for rendering Markdown content.
  * @element md-markdown
  * @extends MDComponent
  */
 class MDMarkdownComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} href - {{description}}
-     * @property {String} text - {{description}}
+     * Defines the properties of the element.
+     * @property {String} href - The URL to fetch Markdown content from.
+     * @property {String} text - The Markdown text to be rendered.
      */
     static properties = {
         href: { type: String },
@@ -20,7 +20,7 @@ class MDMarkdownComponent extends MDComponent {
     };
 
     /**
-     * {{description}}
+     * Creates an instance of MDMarkdownComponent.
      */
     constructor() {
         super();
@@ -29,6 +29,7 @@ class MDMarkdownComponent extends MDComponent {
     }
 
     /**
+     * Renders the Markdown content as HTML.
      * @private
      */
     render() {
@@ -36,6 +37,7 @@ class MDMarkdownComponent extends MDComponent {
     }
 
     /**
+     * Invoked each time the custom element is appended into a document-connected element.
      * @private
      */
     connectedCallback() {
@@ -54,7 +56,9 @@ class MDMarkdownComponent extends MDComponent {
     }
 
     /**
+     * Called when the element's properties are updated.
      * @private
+     * @param {Map} changedProperties - The properties that changed.
      */
     updated(changedProperties) {
         super.updated(changedProperties);

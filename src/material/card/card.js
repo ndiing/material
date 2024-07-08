@@ -5,36 +5,36 @@ import { choose } from "lit/directives/choose.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{description}}
+ * A custom element representing a card with various interactive elements and actions.
  * @element md-card
  * @extends MDComponent
- * @fires MDCardComponent#onCardIconButtonClick - {{description}}
- * @fires MDCardComponent#onCardIconClick - {{description}}
- * @fires MDCardComponent#onCardButtonClick - {{description}}
- * @fires MDCardComponent#onCardFabClick - {{description}}
- * @fires MDCardComponent#onCardTextFieldNativeFocus - {{description}}
- * @fires MDCardComponent#onCardTextFieldNativeBlur - {{description}}
- * @fires MDCardComponent#onCardTextFieldNativeInput - {{description}}
- * @fires MDCardComponent#onCardTextFieldNativeSearch - {{description}}
- * @fires MDCardComponent#onCardTextFieldNativeInvalid - {{description}}
- * @fires MDCardComponent#onCardTextFieldNativeReset - {{description}}
- * @fires MDCardComponent#onCardTextFieldIconButtonClick - {{description}}
- * @fires MDCardComponent#onCardPaginationChange - {{description}}
- * @fires MDCardComponent#onCardPaginationLimitChange - {{description}}
- * @fires MDCardComponent#onCardPaginationFirstClick - {{description}}
- * @fires MDCardComponent#onCardPaginationPrevClick - {{description}}
- * @fires MDCardComponent#onCardPaginationNextClick - {{description}}
- * @fires MDCardComponent#onCardPaginationLastClick - {{description}}
+ * @fires MDCardComponent#onCardIconButtonClick - Event fired when an icon button in the card is clicked.
+ * @fires MDCardComponent#onCardIconClick - Event fired when an icon in the card is clicked.
+ * @fires MDCardComponent#onCardButtonClick - Event fired when a button in the card is clicked.
+ * @fires MDCardComponent#onCardFabClick - Event fired when a FAB (Floating Action Button) in the card is clicked.
+ * @fires MDCardComponent#onCardTextFieldNativeFocus - Event fired when a native text field in the card receives focus.
+ * @fires MDCardComponent#onCardTextFieldNativeBlur - Event fired when a native text field in the card loses focus.
+ * @fires MDCardComponent#onCardTextFieldNativeInput - Event fired when input occurs in a native text field in the card.
+ * @fires MDCardComponent#onCardTextFieldNativeSearch - Event fired when a search action occurs in a native text field in the card.
+ * @fires MDCardComponent#onCardTextFieldNativeInvalid - Event fired when a native text field in the card is invalid.
+ * @fires MDCardComponent#onCardTextFieldNativeReset - Event fired when a reset action occurs in a native text field in the card.
+ * @fires MDCardComponent#onCardTextFieldIconButtonClick - Event fired when an icon button in a text field in the card is clicked.
+ * @fires MDCardComponent#onCardPaginationChange - Event fired when pagination in the card changes.
+ * @fires MDCardComponent#onCardPaginationLimitChange - Event fired when pagination limit in the card changes.
+ * @fires MDCardComponent#onCardPaginationFirstClick - Event fired when the first page button in pagination in the card is clicked.
+ * @fires MDCardComponent#onCardPaginationPrevClick - Event fired when the previous page button in pagination in the card is clicked.
+ * @fires MDCardComponent#onCardPaginationNextClick - Event fired when the next page button in pagination in the card is clicked.
+ * @fires MDCardComponent#onCardPaginationLastClick - Event fired when the last page button in pagination in the card is clicked.
  */
 class MDCardComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} variant - {{description}}
-     * @property {Array} leadingActions - {{description}}
-     * @property {String} label - {{description}}
-     * @property {String} subLabel - {{description}}
-     * @property {Array} trailingActions - {{description}}
-     * @property {Array} actions - {{description}}
+     * Defines the properties of the card element.
+     * @property {String} variant - The variant style of the card (e.g., "elevated", "filled", "outlined").
+     * @property {Array} leadingActions - An array of leading actions (e.g., icon buttons) in the card.
+     * @property {String} label - The primary label text of the card.
+     * @property {String} subLabel - The secondary label text of the card.
+     * @property {Array} trailingActions - An array of trailing actions (e.g., icon buttons) in the card.
+     * @property {Array} actions - An array of general actions (e.g., buttons, FABs) in the card footer.
      */
     static properties = {
         variant: { type: String },
@@ -48,13 +48,14 @@ class MDCardComponent extends MDComponent {
     variants = ["elevated", "filled", "outlined"];
 
     /**
-     * {{description}}
+     * Constructs an instance of MDCardComponent.
      */
     constructor() {
         super();
 
         this.body = Array.from(this.childNodes);
 
+        // Binding render methods to the instance for use in rendering actions dynamically.
         this.renderIconButton = this.renderIconButton.bind(this);
         this.renderIcon = this.renderIcon.bind(this);
         this.renderButton = this.renderButton.bind(this);
@@ -63,6 +64,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders the pagination component.
      * @private
      */
     renderPagination(item) {
@@ -86,6 +88,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders an icon button component.
      * @private
      */
     renderIconButton(item) {
@@ -104,6 +107,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders an icon component.
      * @private
      */
     renderIcon(item) {
@@ -112,13 +116,13 @@ class MDCardComponent extends MDComponent {
             <div
                 class="md-icon md-card__icon"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 @click="${this.handleCardIconClick}"
             >${item.icon}</div>
         `;
     }
 
     /**
+     * Renders a button component.
      * @private
      */
     renderButton(item) {
@@ -127,7 +131,6 @@ class MDCardComponent extends MDComponent {
             <md-button
                 class="md-card__button"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .type="${ifDefined(item.type)}"
                 .icon="${ifDefined(item.icon)}"
@@ -140,6 +143,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders a FAB (Floating Action Button) component.
      * @private
      */
     renderFab(item) {
@@ -148,7 +152,6 @@ class MDCardComponent extends MDComponent {
             <md-fab
                 class="md-card__fab"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
                 .label="${ifDefined(item.label)}"
@@ -158,6 +161,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders a text field component.
      * @private
      */
     renderTextField(item) {
@@ -166,7 +170,6 @@ class MDCardComponent extends MDComponent {
             <md-text-field
                 class="md-card__text-field"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .icon="${ifDefined(item.icon)}"
                 .placeholder="${ifDefined(item.placeholder)}"
                 @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
@@ -175,6 +178,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders a search field component.
      * @private
      */
     renderSearchField(item) {
@@ -183,7 +187,6 @@ class MDCardComponent extends MDComponent {
             <md-search-field
                 class="md-card__search-field"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .icon="${ifDefined(item.icon)}"
                 .placeholder="${ifDefined(item.placeholder)}"
                 @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
@@ -193,6 +196,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders an action component based on its type.
      * @private
      */
     renderAction(item, defaultAction = this.renderButton) {
@@ -210,6 +214,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders the header section of the card.
      * @private
      */
     renderHeader() {
@@ -237,6 +242,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders the body section of the card.
      * @private
      */
     renderBody() {
@@ -254,6 +260,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Renders the complete card element.
      * @private
      */
     render() {
@@ -265,6 +272,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles the connected state of the card to the DOM.
      * @private
      */
     connectedCallback() {
@@ -272,6 +280,7 @@ class MDCardComponent extends MDComponent {
 
         this.classList.add("md-card");
 
+        // Initialize ripple effect if the card is interactive.
         if (this.variant && this.variant.includes("interactive")) {
             this.ripple = new MDRippleController(this, {
                 clipped: true,
@@ -280,11 +289,13 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles updates to the card's properties.
      * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
 
+        // Toggle variant-specific classes based on updated properties.
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
@@ -293,7 +304,9 @@ class MDCardComponent extends MDComponent {
         }
     }
 
+    // Event Handlers
     /**
+     * Handles click events on icon buttons within the card.
      * @private
      */
     handleCardIconButtonClick(event) {
@@ -301,6 +314,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles click events on icons within the card.
      * @private
      */
     handleCardIconClick(event) {
@@ -308,6 +322,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles click events on buttons within the card.
      * @private
      */
     handleCardButtonClick(event) {
@@ -315,6 +330,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles click events on FABs within the card.
      * @private
      */
     handleCardFabClick(event) {
@@ -322,6 +338,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles focus events on native text fields within the card.
      * @private
      */
     handleCardTextFieldNativeFocus(event) {
@@ -329,6 +346,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles blur events on native text fields within the card.
      * @private
      */
     handleCardTextFieldNativeBlur(event) {
@@ -336,6 +354,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles input events on native text fields within the card.
      * @private
      */
     handleCardTextFieldNativeInput(event) {
@@ -343,6 +362,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles search events on native text fields within the card.
      * @private
      */
     handleCardTextFieldNativeSearch(event) {
@@ -350,6 +370,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles invalid events on native text fields within the card.
      * @private
      */
     handleCardTextFieldNativeInvalid(event) {
@@ -357,6 +378,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles reset events on native text fields within the card.
      * @private
      */
     handleCardTextFieldNativeReset(event) {
@@ -364,6 +386,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles click events on icon buttons within text fields in the card.
      * @private
      */
     handleCardTextFieldIconButtonClick(event) {
@@ -371,6 +394,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles pagination change events within the card.
      * @private
      */
     handleCardPaginationChange(event) {
@@ -378,6 +402,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles pagination limit change events within the card.
      * @private
      */
     handleCardPaginationLimitChange(event) {
@@ -385,6 +410,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles first page click events within pagination in the card.
      * @private
      */
     handleCardPaginationFirstClick(event) {
@@ -392,6 +418,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles previous page click events within pagination in the card.
      * @private
      */
     handleCardPaginationPrevClick(event) {
@@ -399,6 +426,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles next page click events within pagination in the card.
      * @private
      */
     handleCardPaginationNextClick(event) {
@@ -406,6 +434,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
+     * Handles last page click events within pagination in the card.
      * @private
      */
     handleCardPaginationLastClick(event) {

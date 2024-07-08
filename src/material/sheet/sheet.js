@@ -1,17 +1,17 @@
 import { MDCardComponent } from "../card/card.js";
 
 /**
- * {{description}}
+ * Represents a sheet component that extends MDCardComponent.
  * @element md-sheet
  * @extends MDCardComponent
- * @fires MDSheetComponent#onSheetScrimClick - {{description}}
- * @fires MDSheetComponent#onSheetShow - {{description}}
- * @fires MDSheetComponent#onSheetClose - {{description}}
+ * @fires MDSheetComponent#onSheetScrimClick - Triggered when the sheet scrim is clicked.
+ * @fires MDSheetComponent#onSheetShow - Triggered when the sheet is shown.
+ * @fires MDSheetComponent#onSheetClose - Triggered when the sheet is closed.
  */
 class MDSheetComponent extends MDCardComponent {
     /**
-     * {{description}}
-     * @property {Boolean} open - {{description}}
+     * Properties of the MDSheetComponent.
+     * @property {Boolean} open - Reflects whether the sheet is open.
      */
     static properties = {
         ...MDCardComponent.properties,
@@ -21,19 +21,18 @@ class MDSheetComponent extends MDCardComponent {
     variants = ["north", "east", "south", "west", "modal"];
 
     /**
+     * Enhances connectedCallback to initialize sheet styling and add necessary classes.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.style.setProperty("--md-comp-sheet-animation", "none");
-
         this.classList.add("md-card");
         this.classList.add("md-sheet");
     }
 
     /**
-     * {{description}}
+     * Shows the sheet as a modal.
      */
     showModal() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -41,28 +40,24 @@ class MDSheetComponent extends MDCardComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
 
         this.scrim = document.createElement("md-scrim");
-
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
-        this.handleSheetScrimClick = this.handleSheetScrimClick.bind(this);
         this.scrim.on("click", this.handleSheetScrimClick);
-
         this.scrim.show();
 
         this.open = true;
     }
 
     /**
+     * Handles click events on the sheet scrim.
      * @private
      */
     handleSheetScrimClick(event) {
         this.close();
-
         this.emit("onSheetScrimClick", event);
     }
 
     /**
-     * {{description}}
+     * Shows the sheet.
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -70,12 +65,11 @@ class MDSheetComponent extends MDCardComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
 
         this.open = true;
-
         this.emit("onSheetShow", this);
     }
 
     /**
-     * {{description}}
+     * Closes the sheet.
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -89,12 +83,11 @@ class MDSheetComponent extends MDCardComponent {
         }
 
         this.open = false;
-
         this.emit("onSheetClose", this);
     }
 
     /**
-     * {{description}}
+     * Toggles the sheet visibility.
      */
     toggle(...args) {
         if (this.open) {

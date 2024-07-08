@@ -3,17 +3,16 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{description}}
+ * Represents a segmented button component that allows single or multiple selection of its items.
  * @element md-segmented-button
  * @extends MDComponent
- * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - {{description}}
+ * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - Triggered when a segmented button item is clicked.
  */
 class MDSegmentedButtonComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Array} buttons - {{description}}
-     * @property {Boolean} singleSelection - {{description}}
-     * @property {Boolean} multiSelection - {{description}}
+     * @property {Array} buttons - Array of button items to render.
+     * @property {Boolean} singleSelection - Indicates single selection mode.
+     * @property {Boolean} multiSelection - Indicates multiple selection mode.
      */
     static properties = {
         ...MDComponent.properties,
@@ -23,6 +22,7 @@ class MDSegmentedButtonComponent extends MDComponent {
     };
 
     /**
+     * Renders a single segmented button item.
      * @private
      */
     renderButton(item) {
@@ -44,6 +44,7 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
+     * Renders the segmented button component.
      * @private
      */
     render() {
@@ -52,15 +53,16 @@ class MDSegmentedButtonComponent extends MDComponent {
     }
 
     /**
+     * Enhances connectedCallback to add specific CSS classes for segmented button styling.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-segmented-button");
     }
 
     /**
+     * Handles the click event on segmented button items to toggle selection based on mode.
      * @private
      */
     handleSegmentedButtonItemClick(event) {

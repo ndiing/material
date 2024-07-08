@@ -1,3 +1,6 @@
+/**
+ * Represents a controller for managing a progress indicator.
+ */
 let requestId;
 let startTime;
 let pausedTime = 0;
@@ -7,7 +10,7 @@ let elapsedTime = 0;
 let progressBar;
 
 /**
- * {{description}}
+ * Creates a new progress indicator element and appends it to the document body.
  */
 function create() {
     progressBar = document.createElement("md-progress-indicator");
@@ -20,7 +23,7 @@ function create() {
 }
 
 /**
- * {{description}}
+ * Resets the progress indicator and animation state.
  */
 function reset() {
     isAnimating = false;
@@ -33,18 +36,19 @@ function reset() {
 }
 
 /**
- * {{description}}
+ * Observes the progress of the animation.
+ * @param {Function} resolve - Callback function to execute when animation completes.
  */
 function observe(resolve) {
     let currentTime = performance.now();
     elapsedTime = currentTime - startTime;
 
-    // let progress = Math.min(100, (elapsedTime / totalDuration) * 100);
-
+    // Update progress bar value
     if (progressBar) {
         progressBar.setAttribute("value", elapsedTime);
     }
 
+    // Check if animation should continue or complete
     if (elapsedTime < totalDuration) {
         requestId = requestAnimationFrame(() => observe(resolve));
     } else {
@@ -56,7 +60,9 @@ function observe(resolve) {
 }
 
 /**
- * {{description}}
+ * Starts the progress animation with a specified duration.
+ * @param {number} duration - Duration of the animation in milliseconds.
+ * @returns {Promise} Promise that resolves when the animation completes.
  */
 function start(duration = 10000) {
     return new Promise((resolve) => {
@@ -64,12 +70,14 @@ function start(duration = 10000) {
             create();
         }
 
+        // If already animating, adjust total duration
         if (isAnimating) {
             totalDuration += duration;
             resolve();
             return;
         }
 
+        // Start new animation
         totalDuration = duration;
         isAnimating = true;
         startTime = performance.now() - pausedTime;
@@ -79,7 +87,7 @@ function start(duration = 10000) {
 }
 
 /**
- * {{description}}
+ * Pauses the current animation.
  */
 function pause() {
     if (isAnimating) {
@@ -90,7 +98,7 @@ function pause() {
 }
 
 /**
- * {{description}}
+ * Resumes a paused animation.
  */
 function resume() {
     if (!isAnimating) {
@@ -101,13 +109,11 @@ function resume() {
 }
 
 /**
- * {{description}}
+ * Stops the current animation and resets the progress indicator.
  */
 function stop() {
     if (isAnimating) {
-        // let remainingTime = totalDuration - (performance.now() - startTime);
-        // let progress = Math.min(100, ((totalDuration - remainingTime) / totalDuration) * 100);
-
+        // Complete animation
         if (progressBar) {
             progressBar.setAttribute("value", totalDuration);
         }
@@ -119,6 +125,7 @@ function stop() {
 
 export { start, pause, resume, stop };
 
+// Automatically start and stop animations based on PerformanceObserver entries
 (() => {
     let timeout;
     new PerformanceObserver((list) => {
@@ -131,19 +138,10 @@ export { start, pause, resume, stop };
         });
     }).observe({
         entryTypes: [
-            // "element",
-            // "event",
-            // "first-input",
-            // "largest-contentful-paint",
-            // "layout-shift",
-            // "long-animation-frame",
-            // "longtask",
             "mark",
             "measure",
             "navigation",
-            // "paint",
             "resource",
-            // "visibility-state"
         ],
     });
 })();

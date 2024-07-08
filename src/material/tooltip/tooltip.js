@@ -2,23 +2,28 @@ import { MDPopperController } from "../popper/popper.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * {{description}}
+ * Represents a tooltip component.
  * @element md-tooltip
  * @extends MDSheetComponent
  */
 class MDTooltipComponent extends MDSheetComponent {
+    /**
+     * Variants of the tooltip component.
+     */
     variants = ["plain", "rich"];
 
     /**
-     * {{description}}
+     * Initializes the tooltip component.
      */
     constructor() {
         super();
 
+        // Initialize MDPopperController for positioning the tooltip
         this.popper = new MDPopperController(this, {});
     }
 
     /**
+     * Enhances connectedCallback to add specific CSS classes for tooltip styling.
      * @private
      */
     connectedCallback() {
@@ -29,25 +34,31 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * {{description}}
+     * Shows the tooltip as a modal.
+     * @param {Element} button - The button element to which the tooltip is attached.
+     * @param {Object} options - Options for positioning the tooltip.
      */
     showModal(button, options) {
-        super.showModal();
+        super.showModal(); // Call MDSheetComponent's showModal method
 
         this.setPlacement(button, options);
     }
 
     /**
-     * {{description}}
+     * Shows the tooltip.
+     * @param {Element} button - The button element to which the tooltip is attached.
+     * @param {Object} options - Options for positioning the tooltip.
      */
     show(button, options) {
-        super.show();
+        super.show(); // Call MDSheetComponent's show method
 
         this.setPlacement(button, options);
     }
 
     /**
-     * {{description}}
+     * Sets the placement of the tooltip relative to the provided button element.
+     * @param {Element} button - The button element to which the tooltip is attached.
+     * @param {Object} options - Options for positioning the tooltip.
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

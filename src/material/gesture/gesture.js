@@ -1,24 +1,36 @@
 /**
- * {{description}}
- * @fires MDGestureController#onDragStart - {{description}}
- * @fires MDGestureController#onResizeStart - {{description}}
- * @fires MDGestureController#onSelectionStart - {{description}}
- * @fires MDGestureController#onLongPress - {{description}}
- * @fires MDGestureController#onDragStart - {{description}}
- * @fires MDGestureController#onResizeStart - {{description}}
- * @fires MDGestureController#onSelectionStart - {{description}}
- * @fires MDGestureController#onDrag - {{description}}
- * @fires MDGestureController#onResize - {{description}}
- * @fires MDGestureController#onSelection - {{description}}
- * @fires MDGestureController#onTap - {{description}}
- * @fires MDGestureController#onDoubleTap - {{description}}
- * @fires MDGestureController#onSelectionEnd - {{description}}
- * @fires MDGestureController#onDragEnd - {{description}}
- * @fires MDGestureController#onResizeEnd - {{description}}
+ * MDGestureController manages gesture events like drag, resize, selection, taps, double taps, long presses, and swipes.
+ * @fires MDGestureController#onDragStart - Event fired when drag starts.
+ * @fires MDGestureController#onResizeStart - Event fired when resize starts.
+ * @fires MDGestureController#onSelectionStart - Event fired when selection starts.
+ * @fires MDGestureController#onLongPress - Event fired on long press.
+ * @fires MDGestureController#onDrag - Event fired during drag.
+ * @fires MDGestureController#onResize - Event fired during resize.
+ * @fires MDGestureController#onSelection - Event fired during selection.
+ * @fires MDGestureController#onTap - Event fired on tap.
+ * @fires MDGestureController#onDoubleTap - Event fired on double tap.
+ * @fires MDGestureController#onSwipeLeft - Event fired on swipe left.
+ * @fires MDGestureController#onSwipeRight - Event fired on swipe right.
+ * @fires MDGestureController#onSwipeTop - Event fired on swipe top.
+ * @fires MDGestureController#onSwipeBottom - Event fired on swipe bottom.
+ * @fires MDGestureController#onSelectionEnd - Event fired when selection ends.
+ * @fires MDGestureController#onDragEnd - Event fired when drag ends.
+ * @fires MDGestureController#onResizeEnd - Event fired when resize ends.
  */
 class MDGestureController {
     /**
-     * {{description}}
+     * Creates an instance of MDGestureController.
+     * @param {HTMLElement} host - The host element to attach gesture events to.
+     * @param {Object} options - Options for configuring gesture behavior.
+     * @param {string} [options.containerSelector] - Selector for the container element within the host.
+     * @param {string} [options.dragHandleSelector] - Selector for the drag handle element within the container.
+     * @param {string[]} [options.drag=["x", "y"]] - Directions in which dragging is allowed ('x', 'y', or both).
+     * @param {boolean} [options.dragAfterLongPress=false] - Whether dragging should start after a long press.
+     * @param {string[]} [options.resize=["n", "e", "s", "w", "ne", "se", "sw", "nw"]] - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
+     * @param {boolean} [options.resizeAfterLongPress=false] - Whether resizing should start after a long press.
+     * @param {boolean} [options.selection=false] - Whether selection is enabled.
+     * @param {boolean} [options.selectionAfterLongPress=false] - Whether selection should start after a long press.
+     * @param {boolean} [options.updateStyle=false] - Whether to update the element style during gestures.
      */
     constructor(host, options) {
         (this.host = host).addController(this);
@@ -37,6 +49,9 @@ class MDGestureController {
     }
 
     /**
+     * Emits a custom event with specified type and detail.
+     * @param {string} type - The type of event to emit.
+     * @param {Object} detail - Additional details to include with the event.
      * @private
      */
     emit(type, detail) {
@@ -49,6 +64,7 @@ class MDGestureController {
     }
 
     /**
+     * Handles setup when the host element is connected to the DOM.
      * @private
      */
     async hostConnected() {
@@ -85,6 +101,7 @@ class MDGestureController {
     }
 
     /**
+     * Handles cleanup when the host element is disconnected from the DOM.
      * @private
      */
     async hostDisconnected() {
@@ -92,6 +109,8 @@ class MDGestureController {
     }
 
     /**
+     * Handles pointer down event for initiating gestures.
+     * @param {PointerEvent} event - The pointer down event.
      * @private
      */
     handleGesturePointerdown(event) {
@@ -162,6 +181,8 @@ class MDGestureController {
     }
 
     /**
+     * Handles pointer move event for updating gestures.
+     * @param {PointerEvent} event - The pointer move event.
      * @private
      */
     handleGesturePointermove(event) {
@@ -215,6 +236,8 @@ class MDGestureController {
     }
 
     /**
+     * Handles pointer up event for finalizing gestures.
+     * @param {PointerEvent} event - The pointer up event.
      * @private
      */
     handleGesturePointerup(event) {
