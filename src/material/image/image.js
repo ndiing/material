@@ -3,7 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -12,7 +11,6 @@ import { styleMap } from "lit/directives/style-map.js";
  * @fires MDImageComponent#onImageNativeError - {{desc}}
  */
 class MDImageComponent extends MDComponent {
-    
     /**
      * @property {String} src - {{desc}}
      * @property {String} alt - {{desc}}

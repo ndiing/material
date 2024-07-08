@@ -1,7 +1,6 @@
 import { createQueue } from "../functions/functions.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent
@@ -10,7 +9,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @fires MDSnackbarComponent#onSnackbarClose - {{desc}}
  */
 class MDSnackbarComponent extends MDSheetComponent {
-    
     /**
      */
     static properties = {
@@ -26,7 +24,6 @@ class MDSnackbarComponent extends MDSheetComponent {
         this.classList.add("md-snackbar");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -53,7 +50,6 @@ class MDSnackbarComponent extends MDSheetComponent {
         });
     }
 
-    
     /**
      * {{desc}}
      */

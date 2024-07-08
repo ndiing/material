@@ -1,4 +1,3 @@
-
 /**
  * {{desc}}
  * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
@@ -7,7 +6,6 @@
  * @fires MDRouter#onRouterNavigateSuccess - {{desc}}
  */
 class MDRouter {
-    
     /**
      * {{desc}}
      */
@@ -25,7 +23,6 @@ class MDRouter {
         }, []);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -37,7 +34,6 @@ class MDRouter {
         }
     }
 
-    
     /**
      * {{desc}}
      */
@@ -65,7 +61,6 @@ class MDRouter {
         return query;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -84,7 +79,6 @@ class MDRouter {
         });
     }
 
-    
     /**
      * {{desc}}
      */
@@ -100,7 +94,6 @@ class MDRouter {
         }, []);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -140,7 +133,6 @@ class MDRouter {
         });
     }
 
-    
     static async handleLoad(event) {
         this.emit("onRouterCurrentEntryChange", event);
         performance.mark("markRouterCurrentEntryChange");
@@ -221,7 +213,6 @@ class MDRouter {
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -233,7 +224,6 @@ class MDRouter {
         }
     }
 
-    
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
         if (routerLink) {
@@ -242,7 +232,6 @@ class MDRouter {
         }
     }
 
-    
     /**
      * {{desc}}
      */
@@ -271,7 +260,6 @@ class MDRouter {
 
     static historyApiFallback = true;
 
-    
     static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

@@ -1,13 +1,11 @@
 import { MDComponent } from "../component/component.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
  * @tagname md-scrim
  */
 class MDScrimComponent extends MDComponent {
-    
     /**
      * @property {Boolean} open - {{desc}}
      */
@@ -22,7 +20,6 @@ class MDScrimComponent extends MDComponent {
         this.classList.add("md-scrim");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -30,7 +27,6 @@ class MDScrimComponent extends MDComponent {
         this.open = true;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -38,7 +34,6 @@ class MDScrimComponent extends MDComponent {
         this.open = false;
     }
 
-    
     /**
      * {{desc}}
      */

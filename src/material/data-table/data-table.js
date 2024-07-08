@@ -6,7 +6,6 @@ import { MDVirtualController } from "../virtual/virtual.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 
-
 /**
  * {{desc}}
  * @extends MDCardComponent
@@ -31,7 +30,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MDDataTableComponent#onDataTableColumnDragEnd - {{desc}}
  */
 class MDDataTableComponent extends MDCardComponent {
-    
     /**
      * @property {Array} columns - {{desc}}
      * @property {Array} rows - {{desc}}
@@ -59,7 +57,6 @@ class MDDataTableComponent extends MDCardComponent {
         allSelection: { type: Boolean },
     };
 
-    
     /**
      * {{desc}}
      */
@@ -67,7 +64,6 @@ class MDDataTableComponent extends MDCardComponent {
         return "label";
     }
 
-    
     /**
      * {{desc}}
      */
@@ -83,7 +79,6 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -93,7 +88,6 @@ class MDDataTableComponent extends MDCardComponent {
         return [this.renderViewport()];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -107,7 +101,6 @@ class MDDataTableComponent extends MDCardComponent {
         ];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -310,7 +303,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.on("keydown", this.handleDataTableKeydown);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -329,7 +321,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -339,7 +330,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -419,7 +409,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableViewportVirtualScroll", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -428,7 +417,6 @@ class MDDataTableComponent extends MDCardComponent {
         return selectedTotal > 0 && selectedTotal === this.storeTotal;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -437,7 +425,6 @@ class MDDataTableComponent extends MDCardComponent {
         return selectedTotal > 0 && selectedTotal < this.storeTotal;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -447,7 +434,6 @@ class MDDataTableComponent extends MDCardComponent {
         });
     }
 
-    
     /**
      * {{desc}}
      */
@@ -455,7 +441,6 @@ class MDDataTableComponent extends MDCardComponent {
         data.selected = !data.selected;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -466,7 +451,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.endIndex = this.storeRows.indexOf(data);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -488,7 +472,6 @@ class MDDataTableComponent extends MDCardComponent {
         }
     }
 
-    
     /**
      * {{desc}}
      */

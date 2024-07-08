@@ -2,7 +2,6 @@ import { parseWeek, stringifyWeek, stringifyYear } from "../functions/functions.
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
 
-
 /**
  * {{desc}}
  * @extends MDDatetimePickerComponent
@@ -18,7 +17,6 @@ import { html } from "lit";
  * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - {{desc}}
  */
 class MDWeekPickerComponent extends MDDatetimePickerComponent {
-    
     /**
      * {{desc}}
      */
@@ -33,7 +31,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         return rows;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -65,7 +62,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         return rows;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -80,7 +76,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         `];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -88,7 +83,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this._body = value;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -135,7 +129,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.classList.add("md-week-picker");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -249,7 +242,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerDayItemClick", event);
     }
 
-    
     /**
      * {{desc}}
      */

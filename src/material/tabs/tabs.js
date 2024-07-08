@@ -1,6 +1,5 @@
 import { MDTreeComponent } from "../tree/tree.js";
 
-
 /**
  * {{desc}}
  * @extends MDTreeComponent

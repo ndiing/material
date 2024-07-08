@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -10,7 +9,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDTreeComponent#onTreeItemClick - {{desc}}
  */
 class MDTreeComponent extends MDComponent {
-    
     /**
      * @property {Array} list - {{desc}}
      * @property {String} variant - {{desc}}
@@ -82,7 +80,6 @@ class MDTreeComponent extends MDComponent {
         }
     }
 
-    
     /**
      * {{desc}}
      */
@@ -108,7 +105,6 @@ class MDTreeComponent extends MDComponent {
         return children;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -156,7 +152,6 @@ class MDTreeComponent extends MDComponent {
         return { expanded, activated };
     }
 
-    
     /**
      * {{desc}}
      */
@@ -183,7 +178,6 @@ class MDTreeComponent extends MDComponent {
         return activated;
     }
 
-    
     /**
      * {{desc}}
      */

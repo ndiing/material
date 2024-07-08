@@ -1,13 +1,11 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
-
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-search-field
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
-    
     /**
      * {{desc}}
      */
@@ -15,7 +13,6 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
         return [...((this.value && [{ name: "clear", icon: "close" }]) || [])];
     }
 
-    
     /**
      * {{desc}}
      */

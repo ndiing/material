@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -11,7 +10,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDFormComponent#onFormNativeSubmit - {{desc}}
  */
 class MDFormComponent extends MDComponent {
-    
     /**
      * @property {String} acceptCharset - {{desc}}
      * @property {String} action - {{desc}}
@@ -35,7 +33,6 @@ class MDFormComponent extends MDComponent {
         rel: { type: String },
     };
 
-    
     /**
      * {{desc}}
      */
@@ -112,7 +109,6 @@ class MDFormComponent extends MDComponent {
         this.emit("onFormNativeSubmit", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -120,7 +116,6 @@ class MDFormComponent extends MDComponent {
         this.native.reset();
     }
 
-    
     /**
      * {{desc}}
      */

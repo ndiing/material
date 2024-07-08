@@ -1,7 +1,6 @@
 import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@material/material-color-utilities";
 import { isValidHexColor } from "../functions/functions";
 
-
 /**
  * {{desc}}
  */

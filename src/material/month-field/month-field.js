@@ -1,14 +1,12 @@
 import { stringifyMonth } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
-
 /**
  * {{desc}}
  * @extends MDTextFieldComponent
  * @tagname md-month-field
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
-    
     /**
      * {{desc}}
      */
@@ -16,7 +14,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         return [{ icon: "calendar_month" }];
     }
 
-    
     /**
      * {{desc}}
      */

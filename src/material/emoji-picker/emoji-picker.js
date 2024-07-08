@@ -6,7 +6,6 @@ import { MDVirtualController } from "../virtual/virtual.js";
 import { MDStore } from "../store/store.js";
 import data from "../../assets/emojis.json";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent
@@ -25,7 +24,6 @@ import data from "../../assets/emojis.json";
  * @fires MDEmojiPickerComponent#onEmojiPickerButtonOkClick - {{desc}}
  */
 class MDEmojiPickerComponent extends MDSheetComponent {
-    
     /**
      * @property {Object} tabs - {{desc}}
      * @property {Array} rows - {{desc}}
@@ -36,7 +34,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         rows: { type: Array },
     };
 
-    
     /**
      * {{desc}}
      */
@@ -45,7 +42,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         return [this.renderMain()];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -53,7 +49,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this._body = value;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -61,7 +56,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         return [{ name: "label", component: "text-field", icon: "search", placeholder: "Search", type: "search", variant: "rounded" }];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -69,7 +63,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -77,7 +70,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         return this.querySelector(".md-emoji-picker__tabs");
     }
 
-    
     /**
      * {{desc}}
      */
@@ -204,7 +196,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.emit("onEmojiPickerTabsItemClick", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -284,7 +275,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.emit("onEmojiPickerGridColumnClick", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -357,7 +347,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.emit("onEmojiPickerButtonOkClick", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -367,7 +356,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -377,7 +365,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */

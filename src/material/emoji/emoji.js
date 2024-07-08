@@ -1,6 +1,5 @@
 import { MDComponent } from "../component/component.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent

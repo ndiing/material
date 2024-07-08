@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -17,7 +16,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
  */
 class MDListComponent extends MDComponent {
-    
     /**
      * @property {Array} list - {{desc}}
      * @property {Object} map - {{desc}}
@@ -100,7 +98,6 @@ class MDListComponent extends MDComponent {
         this.off("keydown", this.handleListKeydown);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -112,7 +109,6 @@ class MDListComponent extends MDComponent {
         this.endIndex = this.list.indexOf(data);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -124,7 +120,6 @@ class MDListComponent extends MDComponent {
         }
     }
 
-    
     /**
      * {{desc}}
      */
@@ -147,7 +142,6 @@ class MDListComponent extends MDComponent {
         }
     }
 
-    
     /**
      * {{desc}}
      */

@@ -1,11 +1,9 @@
-
 /**
  * {{desc}}
  * @fires MDVirtualController#onVirtualScrollChange - {{desc}}
  * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
-    
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {

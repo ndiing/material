@@ -3,7 +3,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { hexToHsla, hslaToRgba, rgbaToHex, rgbaToHsla } from "../functions/functions.js";
 import { MDPopperController } from "../popper/popper.js";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent
@@ -23,7 +22,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerOpacityNativeInput - {{desc}}
  */
 class MDColorPickerComponent extends MDSheetComponent {
-    
     /**
      * @property {String} value - {{desc}}
      */
@@ -32,7 +30,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         value: { type: String },
     };
 
-    
     /**
      * {{desc}}
      */
@@ -41,7 +38,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         return [this.renderMain()];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -49,7 +45,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this._body = value;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -58,7 +53,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         return [{ name: "label", component: "button", label }];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -150,7 +144,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.style.setProperty("--md-comp-color-picker-base", `rgb(${this.selection.red},${this.selection.green},${this.selection.blue})`);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -164,7 +157,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.updateThumb();
     }
 
-    
     /**
      * {{desc}}
      */
@@ -189,7 +181,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.data = ctx.getImageData(0, 0, this.canvas.width, this.canvas.height).data;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -216,7 +207,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         return { x: xx, y: yy };
     }
 
-    
     /**
      * {{desc}}
      */
@@ -232,7 +222,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.selection.hex = this.value;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -243,7 +232,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.thumb.style.top = y + "px";
     }
 
-    
     /**
      * {{desc}}
      */
@@ -385,7 +373,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerOpacityNativeInput", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -395,7 +382,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -405,7 +391,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */

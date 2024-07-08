@@ -1,11 +1,9 @@
 import { isObject } from "../functions/functions";
 
-
 /**
  * {{desc}}
  */
 class MDStore {
-    
     constructor(docs = [], options = {}) {
         this.docs = docs;
         this.options = {
@@ -14,7 +12,6 @@ class MDStore {
         };
     }
 
-    
     /**
      * {{desc}}
      */
@@ -23,7 +20,6 @@ class MDStore {
         return doc;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -31,7 +27,6 @@ class MDStore {
         return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -44,7 +39,6 @@ class MDStore {
         return null;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -58,7 +52,6 @@ class MDStore {
         return null;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -70,7 +63,6 @@ class MDStore {
         }
     }
 
-    
     /**
      * {{desc}}
      */
@@ -87,7 +79,6 @@ class MDStore {
         });
     }
 
-    
     /**
      * {{desc}}
      */
@@ -96,7 +87,6 @@ class MDStore {
         return docs.filter((doc) => this.deepSearch(doc, query));
     }
 
-    
     /**
      * {{desc}}
      */
@@ -104,7 +94,6 @@ class MDStore {
         return docs.filter((doc) => this.deepFilter(doc, filters));
     }
 
-    
     /**
      * {{desc}}
      */
@@ -113,7 +102,6 @@ class MDStore {
         return docs.slice(startIndex, startIndex + _limit);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -121,7 +109,6 @@ class MDStore {
         return docs.slice(_start, _end);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -166,7 +153,6 @@ class MDStore {
         return { total, docs: docs };
     }
 
-    
     /**
      * {{desc}}
      */
@@ -187,7 +173,6 @@ class MDStore {
         return target;
     }
 
-    
     /**
      * {{desc}}
      */
@@ -195,7 +180,6 @@ class MDStore {
         return path.split(".").reduce((acc, part) => acc && acc[part], obj);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -215,7 +199,6 @@ class MDStore {
         return false;
     }
 
-    
     /**
      * {{desc}}
      */

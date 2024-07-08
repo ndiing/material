@@ -3,7 +3,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 import { MDPopperController } from "../popper/popper.js";
 
-
 /**
  * {{desc}}
  * @extends MDSheetComponent
@@ -11,7 +10,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDMenuComponent#onMenuTreeItemClick - {{desc}}
  */
 class MDMenuComponent extends MDSheetComponent {
-    
     /**
      */
     static properties = {
@@ -19,7 +17,6 @@ class MDMenuComponent extends MDSheetComponent {
         ...MDTreeComponent.properties,
     };
 
-    
     /**
      * {{desc}}
      */
@@ -35,7 +32,6 @@ class MDMenuComponent extends MDSheetComponent {
         `];
     }
 
-    
     /**
      * {{desc}}
      */
@@ -60,7 +56,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.emit("onMenuTreeItemClick", event);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -70,7 +65,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */
@@ -80,7 +74,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.setPlacement(button, options);
     }
 
-    
     /**
      * {{desc}}
      */

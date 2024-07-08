@@ -3,7 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
-
 /**
  * {{desc}}
  * @extends MDComponent
@@ -12,7 +11,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDCheckboxComponent#onCheckboxNativeReset - {{desc}}
  */
 class MDCheckboxComponent extends MDComponent {
-    
     /**
      * @property {Boolean} checked - {{desc}}
      * @property {Boolean} defaultChecked - {{desc}}

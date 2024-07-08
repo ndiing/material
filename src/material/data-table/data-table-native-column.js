@@ -1,6 +1,5 @@
 import { MDGestureController } from "../gesture/gesture.js";
 
-
 /**
  * {{desc}}
  * @extends HTMLTableCellElement
@@ -27,7 +26,6 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
         this.gesture.hostDisconnected();
     }
 
-    
     addController() {}
 }
 

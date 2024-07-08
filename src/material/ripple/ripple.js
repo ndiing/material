@@ -1,9 +1,7 @@
-
 /**
  * {{desc}}
  */
 class MDRippleController {
-    
     constructor(host, options = {}) {
         (this.host = host).addController(this);
 
