@@ -254,17 +254,13 @@ class MDRouter {
     }
 
     /**
-     * Represents a route object.
-     * @property {String} path - URL path of the route.
-     * @property {HTMLElement} component - Element to render when the route matches.
-     * @property {Function} load - Function that loads the component asynchronously if not already loaded.
-     * @property {Function} [beforeLoad] - Optional function called before loading the route.
-     * @property {Array<route>} [children] - Optional array of child route objects.
-     */
-
-    /**
      * Initializes the router with the provided routes.
      * @param {Array<route>} routes - List of route objects.
+     * @param {String} [routes.path] - URL path of the route.
+     * @param {HTMLElement} [routes.component] - Element to render when the route matches.
+     * @param {Function} [routes.load] - Function that loads the component asynchronously if not already loaded.
+     * @param {Function} [routes.beforeLoad] - Optional function called before loading the route.
+     * @param {Array<route>} [routes.children] - Optional array of child route objects.
      */
     static init(routes) {
         this.stacks = this.setRoutes(routes);

@@ -22,16 +22,15 @@ class MDGestureController {
      * Creates an instance of MDGestureController.
      * @param {HTMLElement} host - The host element where gesture events are applied.
      * @param {Object} options - Options for configuring gesture behavior.
-     * @property {String|undefined} options.containerSelector - Selector for the container element.
-     * @property {String|undefined} options.dragHandleSelector - Selector for the drag handle element.
-     * @property {Array<String>} options.drag - Directions in which dragging is allowed ('x', 'y', or both).
-     * @property {Boolean} options.dragAfterLongPress - Whether drag starts after a long press.
-     * @property {Array<String>} options.resize - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
-     * @property {Boolean} options.resizeAfterLongPress - Whether resize starts after a long press.
-     * @property {Boolean} options.selection - Whether selection gesture is enabled.
-     * @property {Boolean} options.selectionAfterLongPress - Whether selection starts after a long press.
-     * @property {Boolean} options.updateStyle - Whether to update element style during gesture handling.
-     * @param {Object} options - Other custom options passed during instantiation.
+     * @param {String|undefined} options.containerSelector - Selector for the container element.
+     * @param {String|undefined} options.dragHandleSelector - Selector for the drag handle element.
+     * @param {Array<String>} options.drag - Directions in which dragging is allowed ('x', 'y', or both).
+     * @param {Boolean} options.dragAfterLongPress - Whether drag starts after a long press.
+     * @param {Array<String>} options.resize - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
+     * @param {Boolean} options.resizeAfterLongPress - Whether resize starts after a long press.
+     * @param {Boolean} options.selection - Whether selection gesture is enabled.
+     * @param {Boolean} options.selectionAfterLongPress - Whether selection starts after a long press.
+     * @param {Boolean} options.updateStyle - Whether to update element style during gesture handling.
      */
     constructor(host, options) {
         (this.host = host).addController(this);

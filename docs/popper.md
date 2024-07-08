@@ -1,10 +1,13 @@
 # MDPopperController
-
 {{desc}}
 
-## Instance Methods
-| Name | Parameters | Description |
-| --- | --- | --- |
-| setPlacement | `button`, `options` | {{desc}} |
-| getRect | `button` | {{desc}} |
+
+
+## Instance methods
+name | params | desc
+--- | --- | ---
+setPlacement | button,options | {{desc}}
+getRect | button | {{desc}}
+
+
 
