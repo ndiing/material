@@ -1,15 +1,15 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import data from "../../assets/screener.json"
+// import data from "../../assets/screener.json"
 
 
 class DevDataListComponent extends MDComponent {
     constructor(){
         super()
-        this.data=data.map(doc=>{
-            doc.avatar='https://api.dicebear.com/9.x/croodles/svg?seed='+doc.logoid
-            return doc
-        })
+        // this.data=data.map(doc=>{
+        //     doc.avatar='https://api.dicebear.com/9.x/croodles/svg?seed='+doc.logoid
+        //     return doc
+        // })
     }
     render() {
         return html`
@@ -46,8 +46,8 @@ class DevDataListComponent extends MDComponent {
                         "
                         .list="${this.data}"
                         .map="${{
-                            label:'name',
-                            value:'logoid',
+                            label:'title',
+                            value:'id',
                         }}"
                         @onDataListItemSelected="${(event) => input.value=dataList.selectedList[0][dataList.map.label]}"
                     ></md-data-list>
@@ -59,11 +59,11 @@ class DevDataListComponent extends MDComponent {
     connectedCallback(){
         super.connectedCallback()
 
-        // fetch('https://jsonplaceholder.typicode.com/photos')
-        // .then(res=>res.json())
-        // .then(data=>{
-        //     dataList.load(data)
-        // })
+        fetch('https://jsonplaceholder.typicode.com/photos')
+        .then(res=>res.json())
+        .then(data=>{
+            dataList.load(data)
+        })
     }
 }
 
