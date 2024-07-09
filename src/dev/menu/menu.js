@@ -35,7 +35,7 @@ class DevMenuComponent extends MDComponent {
                     .list="${Array.from({ length: 100 }, (v, k) => ({
                         label: "Label " + (k + 1),
                         value: k + 1,
-                        selected: k + 1 === 10,
+                        selected: k + 1 === 35,
                     }))}"
                     @onCardIconButtonClick=${this.menu3Click}
                     @onCardButtonClick=${this.menu3Click}

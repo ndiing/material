@@ -112,6 +112,10 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual = new MDVirtualController(this);
 
         this.updateVirtualList();
+
+        await this.updateComplete;
+        const deltaY = Math.floor((this.maxRows - 1) / 2);
+        this.virtual.viewport.scrollTop = (this.selectedIndex - deltaY) * this.rowHeight;
     }
 
     /**
