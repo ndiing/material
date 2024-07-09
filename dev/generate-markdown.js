@@ -134,7 +134,7 @@ function generateMarkdown(grouped) {
 
     return markdown;
 }
-let docs = JSON.parse(fs.readFileSync("./docs/docs.json", { encoding: "utf8" }) || "{}");
+let docs = JSON.parse(fs.readFileSync("./src/assets/docs.json", { encoding: "utf8" }) || "{}");
 
 async function open(dir) {
     try {
