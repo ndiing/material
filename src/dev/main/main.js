@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
-import data from  "../../../docs/docs.json"
+import data from "../../../docs/docs.json";
 
 MDRouter.historyApiFallback = false;
 
@@ -105,12 +105,11 @@ class DevMainComponent extends MDComponent {
             item.label = toTitleCase(item.routerLink);
             item.selected = item.routerLink === MDRouter.path;
         }
-
     }
 
-    get doc(){
-        const name=(MDRouter.path.slice(1))
-        return data[name]
+    get doc() {
+        const name = MDRouter.path.slice(1);
+        return data[name];
     }
 
     render() {
@@ -129,11 +128,11 @@ class DevMainComponent extends MDComponent {
                     @onTreeItemSelected="${this.handleTreeItemSelected}"
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
-                    <!-- <div class="md-layout-column">
+                    <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown .text="${this.doc}"></md-markdown>
                         </div>
-                    </div> -->
+                    </div>
                     <md-outlet></md-outlet>
                 </div>
             </div>
@@ -143,9 +142,9 @@ class DevMainComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        window.addEventListener('onRouterCurrentEntryChange',() => {
-            this.requestUpdate()
-        })
+        window.addEventListener("onRouterCurrentEntryChange", () => {
+            this.requestUpdate();
+        });
     }
 
     handleCardIconButtonClick(event) {

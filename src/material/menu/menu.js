@@ -172,6 +172,10 @@ class MDMenuComponent extends MDSheetComponent {
         this.emit("onMenuViewportVirtualScroll", event);
     }
 
+    /**
+     * Initializes the virtual scroll position based on the selected item.
+     * @private
+     */
     handleMenuViewportVirtualScrollInitialized() {
         const delta = Math.floor((this.maxRows - 1) / 2);
         this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
@@ -192,6 +196,11 @@ class MDMenuComponent extends MDSheetComponent {
         this.emit("onMenuListItemClick", event);
     }
 
+    /**
+     * Handles list item selected events.
+     * @private
+     * @param {Event} event - The selection event.
+     */
     handleMenuListItemSelected(event) {
         this.emit("onMenuListItemSelected", event);
     }

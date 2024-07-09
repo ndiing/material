@@ -3,11 +3,9 @@ import { MDComponent } from "../../material/component/component.js";
 // import data from "../../assets/screener.json"
 
 class DevMenuComponent extends MDComponent {
-
     render() {
         return html`
             <div class="md-layout-border">
-
                 <md-menu
                     id="menu"
                     .list="${[
@@ -34,10 +32,10 @@ class DevMenuComponent extends MDComponent {
 
                 <md-menu
                     id="menu3"
-                    .list="${Array.from({length:100},(v,k)=>({
-                        label:'Label '+(k+1),
-                        value:(k+1),
-                        selected:(k+1)===10
+                    .list="${Array.from({ length: 100 }, (v, k) => ({
+                        label: "Label " + (k + 1),
+                        value: k + 1,
+                        selected: k + 1 === 10,
                     }))}"
                     @onCardIconButtonClick=${this.menu3Click}
                     @onCardButtonClick=${this.menu3Click}
@@ -55,7 +53,7 @@ class DevMenuComponent extends MDComponent {
                                 @click="${this.handleButtonMenuClick}"
                             ></md-button>
                         </div>
-                        
+
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-button
                                 variant="tonal"
@@ -63,12 +61,12 @@ class DevMenuComponent extends MDComponent {
                                 @click="${this.handleButtonMenu2Click}"
                             ></md-button>
                         </div>
-                        
+
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <!-- <input
                                 id="input3" 
                                 type="text"
-                                @input="${event => this.menu3.filter(event.currentTarget.value)}"
+                                @input="${(event) => this.menu3.filter(event.currentTarget.value)}"
                             > -->
                             <md-button
                                 id="button3"
@@ -77,14 +75,12 @@ class DevMenuComponent extends MDComponent {
                                 @click="${this.handleButtonMenu3Click}"
                             ></md-button>
                         </div>
-
                     </div>
                 </div>
             </div>
         `;
     }
 
-    
     get menu() {
         return this.querySelector("#menu");
     }

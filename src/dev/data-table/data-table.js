@@ -1,43 +1,20 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import data from "../../assets/screener.json";
-import { toTitleCase } from "../../material/functions/functions.js";
 
 class DevDataTableComponent extends MDComponent {
     constructor() {
         super();
-        this.columns = [
-            { name: "name", label: toTitleCase("name"), sticky: true, sortable: true, resizable: true, orderable: true },
-            { name: "description", label: toTitleCase("description"), sortable: true, resizable: true, orderable: true },
-            { name: "logoid", label: toTitleCase("logoid"), sticky: true, sortable: true, resizable: true, orderable: true },
-            { name: "update_mode", label: toTitleCase("update_mode"), sortable: true, resizable: true, orderable: true },
-            { name: "type", label: toTitleCase("type"), sortable: true, resizable: true, orderable: true },
-            { name: "typespecs", label: toTitleCase("typespecs"), sortable: true, resizable: true, orderable: true },
-            { name: "close", label: toTitleCase("close"), sortable: true, resizable: true, orderable: true },
-            { name: "pricescale", label: toTitleCase("pricescale"), sortable: true, resizable: true, orderable: true },
-            { name: "minmov", label: toTitleCase("minmov"), sortable: true, resizable: true, orderable: true },
-            { name: "fractional", label: toTitleCase("fractional"), sortable: true, resizable: true, orderable: true },
-            { name: "minmove2", label: toTitleCase("minmove2"), sortable: true, resizable: true, orderable: true },
-            { name: "currency", label: toTitleCase("currency"), sortable: true, resizable: true, orderable: true },
-            { name: "change", label: toTitleCase("change"), sortable: true, resizable: true, orderable: true },
-            { name: "volume", label: toTitleCase("volume"), sortable: true, resizable: true, orderable: true },
-            { name: "relative_volume_10d_calc", label: toTitleCase("relative_volume_10d_calc"), sortable: true, resizable: true, orderable: true },
-            { name: "market_cap_basic", label: toTitleCase("market_cap_basic"), sortable: true, resizable: true, orderable: true },
-            { name: "fundamental_currency_code", label: toTitleCase("fundamental_currency_code"), sortable: true, resizable: true, orderable: true },
-            { name: "price_earnings_ttm", label: toTitleCase("price_earnings_ttm"), sortable: true, resizable: true, orderable: true },
-            { name: "earnings_per_share_diluted_ttm", label: toTitleCase("earnings_per_share_diluted_ttm"), sortable: true, resizable: true, orderable: true },
-            { name: "earnings_per_share_diluted_yoy_growth_ttm", label: toTitleCase("earnings_per_share_diluted_yoy_growth_ttm"), sortable: true, resizable: true, orderable: true },
-            { name: "dividends_yield_current", label: "dividends_yield_current", sortable: true, resizable: true, orderable: true },
-            { name: "sector.tr", label: toTitleCase("sector.tr"), sortable: true, resizable: true, orderable: true },
-            { name: "market", label: toTitleCase("market"), sortable: true, resizable: true, orderable: true },
-            { name: "sector", label: toTitleCase("sector"), sticky: true, sortable: true, resizable: true, orderable: true },
-            { name: "recommendation_mark", label: toTitleCase("recommendation_mark"), sortable: true, resizable: true, orderable: true },
-            { name: "exchange", label: toTitleCase("exchange"), sticky: true, sortable: true, resizable: true, orderable: true },
-        ];
-        this.rows = data;
+        this.columns = Array.from({ length: 10 }, (v, k) => ({
+            name: "name" + k,
+            label: "label" + k,
+        }));
 
-        // this.columns=[]
-        // this.rows=[]
+        this.rows = Array.from({ length: 100 }, (v, k) => {
+            return this.columns.reduce((acc, col) => {
+                acc[col.name] = `data_${col.name}_${k}`;
+                return acc;
+            }, {});
+        });
     }
 
     render() {

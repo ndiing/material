@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import data from "../../assets/screener.json"
 
 class DevForm2Component extends MDComponent {
     render() {
@@ -80,7 +79,6 @@ class DevForm2Component extends MDComponent {
                         ></md-time-field>
                     </div>
 
-
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-color-field
                             name="color1"
@@ -94,7 +92,6 @@ class DevForm2Component extends MDComponent {
                             value="#6750a4"
                         ></md-color-field>
                     </div>
-
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-number-field
@@ -156,25 +153,25 @@ class DevForm2Component extends MDComponent {
                         <md-select-field
                             name="select1"
                             label="Select Field"
-                            .options="${data}"
-                            .map="${{label:'name',value:'logoid'}}"
+                            .options="${Array.from({ length: 10 }, (v, k) => ({
+                                label: "label" + k,
+                                value: k,
+                            }))}"
                         ></md-select-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-select-field
                             name="select2"
                             label="Select Field"
-                            .options="${data}"
-                            .map="${{label:'name',value:'logoid'}}"
+                            .options="${Array.from({ length: 10 }, (v, k) => ({
+                                label: "label" + k,
+                                value: k,
+                            }))}"
                         ></md-select-field>
                     </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    </div>
-                    
-
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <br />

@@ -6,7 +6,6 @@ class DevColorComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <label for="color">Select color</label>
                     <input
@@ -26,7 +25,6 @@ class DevColorComponent extends MDComponent {
                         @input="${this.handleChange2}"
                     />
                 </div>
-
             </div>
         `;
     }
@@ -37,21 +35,21 @@ class DevColorComponent extends MDComponent {
 
     handleChange2(event) {
         const file = event.target.files[0];
-    
+
         if (!file) {
-            console.error('No file selected.');
+            console.error("No file selected.");
             return;
         }
-        
+
         const reader = new FileReader();
-        
-        reader.onload = function(event) {
+
+        reader.onload = function (event) {
             const imageUrl = event.target.result;
-            const imgElement = document.createElement('img');
+            const imgElement = document.createElement("img");
             imgElement.src = imageUrl;
-            setTheme(imgElement); 
+            setTheme(imgElement);
         };
-        
+
         reader.readAsDataURL(file);
     }
 }
