@@ -5,6 +5,16 @@ import { isValidHexColor } from "../functions/functions";
  * Sets the theme of the application based on a color or image.
  * @param {string} colorOrImage - Hexadecimal color or URL of an image.
  * @param {object} customColors - Custom color configurations.
+ * 
+ * @example
+ * // Set theme from color
+ * setTheme("#FFFFFF")
+ * 
+ * @example
+ * // Set theme from image
+ * const image = new Image()
+ * image.src="./image.png"
+ * setTheme(image)
  */
 async function setTheme(colorOrImage, customColors) {
     let theme;
