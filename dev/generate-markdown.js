@@ -170,5 +170,5 @@ async function open(dir) {
 (async () => {
     await open("./src/material", docs);
 
-    fs.writeFileSync("./docs/docs.json", JSON.stringify(docs));
+    fs.writeFileSync("./src/assets/docs.json", JSON.stringify(docs));
 })();

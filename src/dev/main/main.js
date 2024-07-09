@@ -2,9 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
-import data from "../../../docs/docs.json";
-
-MDRouter.historyApiFallback = false;
+import data from "../../assets/docs.json";
 
 class DevMainComponent extends MDComponent {
     get topAppBar() {
@@ -128,11 +126,11 @@ class DevMainComponent extends MDComponent {
                     @onTreeItemSelected="${this.handleTreeItemSelected}"
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
-                    <div class="md-layout-column">
+                    <!-- <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown .text="${this.doc}"></md-markdown>
                         </div>
-                    </div>
+                    </div> -->
                     <md-outlet></md-outlet>
                 </div>
             </div>
