@@ -8,7 +8,7 @@ class MDStore {
      * Creates an instance of MDStore.
      * @param {Array} [docs=[]] - Initial array of documents.
      * @param {Object} [options={}] - Options for configuring the store.
-     * @param {string} [options.primaryKey="_id"] - Primary key field used for document identification.
+     * @property {string} [options.primaryKey="_id"] - Primary key field used for document identification.
      */
     constructor(docs = [], options = {}) {
         this.docs = docs;
@@ -151,15 +151,15 @@ class MDStore {
     /**
      * Retrieves all documents from the store based on query options.
      * @param {Object} [options={}] - Query options including sorting, filtering, search, pagination, and additional filters.
-     * @param {string} [_sort] - Comma-separated list of fields to sort by.
-     * @param {string} [_order] - Comma-separated list of sort orders (asc, desc).
-     * @param {string} [q] - Query string for full-text search.
-     * @param {number} [_page] - Page number for pagination.
-     * @param {number} [_limit] - Number of documents per page for pagination.
-     * @param {number} [_start] - Start index for slicing.
-     * @param {number} [_end] - End index for slicing.
-     * @param {Array} [sorters] - Array of sorting criteria objects.
-     * @param {Array} [filters] - Array of filter criteria objects.
+     * @property {string} options._sort - Comma-separated list of fields to sort by.
+     * @property {string} options._order - Comma-separated list of sort orders (asc, desc).
+     * @property {string} options.q - Query string for full-text search.
+     * @property {number} options._page - Page number for pagination.
+     * @property {number} options._limit - Number of documents per page for pagination.
+     * @property {number} options._start - Start index for slicing.
+     * @property {number} options._end - End index for slicing.
+     * @property {Array} options.sorters - Array of sorting criteria objects.
+     * @property {Array} options.filters - Array of filter criteria objects.
      * @returns {Object} An object containing the total number of documents and the array of documents based on the query.
      */
     getAll(options = {}) {

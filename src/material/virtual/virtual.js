@@ -8,18 +8,18 @@ class MDVirtualController {
      * Creates an instance of MDVirtualController.
      * @param {HTMLElement} host - The host element to which the controller is attached.
      * @param {Object} options - Options for configuring the virtual controller.
-     * @param {string} [options.viewportSelector=".md-virtual"] - Selector for the viewport element.
-     * @param {string} [options.scrollbarSelector=".md-virtual__scrollbar"] - Selector for the scrollbar element.
-     * @param {string} [options.containerSelector=".md-virtual__container"] - Selector for the container element.
-     * @param {string|null} [options.rowSelector=null] - Selector for identifying rows within the container.
-     * @param {string|null} [options.columnSelector=null] - Selector for identifying columns within the container.
-     * @param {number} [options.rowTotal=0] - Total number of rows.
-     * @param {number} [options.rowHeight=0] - Height of each row.
-     * @param {number} [options.buffer=0] - Buffer size for rows.
-     * @param {number} [options.rowBuffer=0] - Buffer size specifically for rows.
-     * @param {number} [options.columnTotal=0] - Total number of columns.
-     * @param {number} [options.columnWidth=0] - Width of each column.
-     * @param {number} [options.columnBuffer=0] - Buffer size for columns.
+     * @property {string} [options.viewportSelector=".md-virtual"] - Selector for the viewport element.
+     * @property {string} [options.scrollbarSelector=".md-virtual__scrollbar"] - Selector for the scrollbar element.
+     * @property {string} [options.containerSelector=".md-virtual__container"] - Selector for the container element.
+     * @property {string|null} [options.rowSelector=null] - Selector for identifying rows within the container.
+     * @property {string|null} [options.columnSelector=null] - Selector for identifying columns within the container.
+     * @property {number} [options.rowTotal=0] - Total number of rows.
+     * @property {number} [options.rowHeight=0] - Height of each row.
+     * @property {number} [options.buffer=0] - Buffer size for rows.
+     * @property {number} [options.rowBuffer=0] - Buffer size specifically for rows.
+     * @property {number} [options.columnTotal=0] - Total number of columns.
+     * @property {number} [options.columnWidth=0] - Width of each column.
+     * @property {number} [options.columnBuffer=0] - Buffer size for columns.
      */
     constructor(host, options) {
         (this.host = host).addController(this);

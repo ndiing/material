@@ -22,15 +22,15 @@ class MDGestureController {
      * Creates an instance of MDGestureController.
      * @param {HTMLElement} host - The host element to attach gesture events to.
      * @param {Object} options - Options for configuring gesture behavior.
-     * @param {string} [options.containerSelector] - Selector for the container element within the host.
-     * @param {string} [options.dragHandleSelector] - Selector for the drag handle element within the container.
-     * @param {string[]} [options.drag=["x", "y"]] - Directions in which dragging is allowed ('x', 'y', or both).
-     * @param {boolean} [options.dragAfterLongPress=false] - Whether dragging should start after a long press.
-     * @param {string[]} [options.resize=["n", "e", "s", "w", "ne", "se", "sw", "nw"]] - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
-     * @param {boolean} [options.resizeAfterLongPress=false] - Whether resizing should start after a long press.
-     * @param {boolean} [options.selection=false] - Whether selection is enabled.
-     * @param {boolean} [options.selectionAfterLongPress=false] - Whether selection should start after a long press.
-     * @param {boolean} [options.updateStyle=false] - Whether to update the element style during gestures.
+     * @property {string} [options.containerSelector] - Selector for the container element within the host.
+     * @property {string} [options.dragHandleSelector] - Selector for the drag handle element within the container.
+     * @property {string[]} [options.drag=["x", "y"]] - Directions in which dragging is allowed ('x', 'y', or both).
+     * @property {boolean} [options.dragAfterLongPress=false] - Whether dragging should start after a long press.
+     * @property {string[]} [options.resize=["n", "e", "s", "w", "ne", "se", "sw", "nw"]] - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
+     * @property {boolean} [options.resizeAfterLongPress=false] - Whether resizing should start after a long press.
+     * @property {boolean} [options.selection=false] - Whether selection is enabled.
+     * @property {boolean} [options.selectionAfterLongPress=false] - Whether selection should start after a long press.
+     * @property {boolean} [options.updateStyle=false] - Whether to update the element style during gestures.
      */
     constructor(host, options) {
         (this.host = host).addController(this);

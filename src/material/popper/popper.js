@@ -6,9 +6,9 @@ class MDPopperController {
      * Initializes the popper controller for a host element.
      * @param {HTMLElement} host - Host element to apply popper behavior.
      * @param {Object} options - Configuration options for the popper behavior.
-     * @param {string[]} options.placements - List of possible placements for the popper.
-     * @param {HTMLElement} options.boundary - Boundary element for the popper positioning.
-     * @param {number} options.offset - Offset value for the popper position.
+     * @property {string[]} options.placements - List of possible placements for the popper.
+     * @property {HTMLElement} options.boundary - Boundary element for the popper positioning.
+     * @property {number} options.offset - Offset value for the popper position.
      */
     constructor(host, options = {}) {
         this.host = host;
@@ -97,6 +97,7 @@ class MDPopperController {
 
     /**
      * Retrieves the bounding rectangle of an element.
+     * @private
      * @param {HTMLElement|Event} button - Element or event representing the button.
      * @returns {DOMRect} Bounding rectangle of the element.
      */

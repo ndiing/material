@@ -1,6 +1,6 @@
 /**
  * Manages routing within a single-page application.
- * @fires MDRouter#onRouterCurrentEntryChange - Event emitted when current route changes.
+ * @fires MDRouter#onRouterCurrentEntryChange - Event emitted when the current route changes.
  * @fires MDRouter#onRouterNavigate - Event emitted before navigating to a new route.
  * @fires MDRouter#onRouterNavigateError - Event emitted if an error occurs during navigation.
  * @fires MDRouter#onRouterNavigateSuccess - Event emitted after successful navigation.
@@ -8,9 +8,14 @@
 class MDRouter {
     /**
      * Sets routes recursively with parent-child relationships.
-     * @param {Array} routes - Array of route configurations.
-     * @param {Object} parent - Parent route configuration.
-     * @returns {Array} - Flattened array of routes with parent references.
+     * @param {Array<Object>} routes - Array of route configurations.
+     * @param {Object} [parent] - Parent route configuration.
+     * @property {string} parent.path - The path for the parent route.
+     * @property {HTMLElement} [parent.component] - The component associated with the parent route.
+     * @property {Function} [parent.load] - Function to dynamically load the component for the parent route.
+     * @property {Function} [parent.beforeLoad] - Hook to run before loading the parent route.
+     * @property {Array<Object>} [parent.children] - Array of child route configurations.
+     * @returns {Array<Object>} - Flattened array of routes with parent references.
      * @private
      */
     static setRoutes(routes, parent) {
@@ -42,7 +47,7 @@ class MDRouter {
 
     /**
      * Retrieves query parameters from the current URL.
-     * @returns {Object} - Query parameters as key-value pairs.
+     * @returns {Object<string, string|string[]>} - Query parameters as key-value pairs. If a parameter appears multiple times, its value is an array of strings.
      * @private
      */
     static get query() {
@@ -93,7 +98,7 @@ class MDRouter {
     /**
      * Retrieves all routes from a given route, including its parent routes.
      * @param {Object} route - Current route object.
-     * @returns {Array} - Array of all routes, including parent routes.
+     * @returns {Array<Object>} - Array of all routes, including parent routes.
      * @private
      */
     static getRoutes(route) {
@@ -266,7 +271,12 @@ class MDRouter {
 
     /**
      * Initializes the router with the provided routes configuration.
-     * @param {Array} routes - Array of route configurations.
+     * @param {Array<Object>} routes - Array of route configurations.
+     * @property {string} routes[].path - Path for the route.
+     * @property {HTMLElement} [routes[].component] - Component associated with the route.
+     * @property {Function} [routes[].load] - Function to dynamically load the component for the route.
+     * @property {Function} [routes[].beforeLoad] - Hook to run before loading the route.
+     * @property {Array<Object>} [routes[].children] - Array of child route configurations.
      * @returns {void}
      */
     static init(routes) {
@@ -301,7 +311,7 @@ class MDRouter {
     /**
      * Emits a custom event with optional detail data.
      * @param {string} type - Type of event to emit.
-     * @param {*} detail - Optional detail data to include with the event.
+     * @param {*} [detail] - Optional detail data to include with the event.
      * @returns {void}
      * @private
      */

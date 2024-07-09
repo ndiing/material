@@ -6,12 +6,12 @@ class MDRippleController {
      * Initializes the ripple controller for a host element.
      * @param {HTMLElement} host - Host element to apply ripple effect.
      * @param {Object} options - Configuration options for the ripple effect.
-     * @param {string} options.buttonSelector - Selector for the button element within the host.
-     * @param {boolean} options.centered - Whether the ripple effect should be centered.
-     * @param {boolean} options.clipped - Whether the ripple effect should be clipped.
-     * @param {string} options.containerSelector - Selector for the container element within the host.
-     * @param {boolean} options.fadeOut - Whether the ripple effect should fade out.
-     * @param {number} options.size - Size of the ripple effect relative to the container.
+     * @property {string} options.buttonSelector - Selector for the button element within the host.
+     * @property {boolean} options.centered - Whether the ripple effect should be centered.
+     * @property {boolean} options.clipped - Whether the ripple effect should be clipped.
+     * @property {string} options.containerSelector - Selector for the container element within the host.
+     * @property {boolean} options.fadeOut - Whether the ripple effect should fade out.
+     * @property {number} options.size - Size of the ripple effect relative to the container.
      */
     constructor(host, options = {}) {
         (this.host = host).addController(this);

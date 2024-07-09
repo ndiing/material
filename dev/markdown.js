@@ -15,7 +15,7 @@ Object.groupBy = function (array, keyFunction) {
     }, {});
 };
 
-jsdoc = jsdoc.filter((doc) => !(doc.undocumented || doc.access === "private"||doc.inherited));
+jsdoc = jsdoc.filter((doc) => !(doc.undocumented || doc.access === "private" || doc.inherited));
 
 let grouped = Object.groupBy(jsdoc, (doc) => doc.meta?.filename);
 
@@ -24,28 +24,40 @@ let json = {};
 for (let name in grouped) {
     let grouped2 = Object.groupBy(grouped[name], (doc) => doc.kind);
 
+    // if(name!=='store.js'){continue}
+
     let markdown = "";
 
     if (grouped2["class"]) {
         let value = grouped2["class"];
         for (let val of value) {
             markdown += `# ${val.name}\r\n`;
-            if(val.tags?.[0]?.value){
+            if (val.tags?.[0]?.value) {
                 markdown += `The \`${val.name}\` interface represents an HTML \`<${val.tags?.[0]?.value}>\` element, `;
             }
             markdown += `${val.classdesc}\r\n`;
             markdown += `\r\n`;
 
-            if (val?.params?.length) {
+            if (val?.description) {
                 markdown += `## Constructor\r\n`;
                 markdown += `${val.description}\r\n`;
                 markdown += `\r\n`;
-                markdown += `Name | Type | Description\r\n`;
-                markdown += `--- | --- | ---\r\n`;
-                for (let param of val?.params || []) {
-                    markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                if (val?.params?.length) {
+                    markdown += `Name | Type | Description\r\n`;
+                    markdown += `--- | --- | ---\r\n`;
+                    for (let param of val?.params || []) {
+                        markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                    }
+                    markdown += `\r\n`;
                 }
-                markdown += `\r\n`;
+                if (val?.properties?.length) {
+                    markdown += `Name | Type | Description\r\n`;
+                    markdown += `--- | --- | ---\r\n`;
+                    for (let param of val?.properties || []) {
+                        markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                    }
+                    markdown += `\r\n`;
+                }
             }
 
             if (val?.augments?.length) {
@@ -82,57 +94,74 @@ for (let name in grouped) {
     if (grouped2["member"]) {
         let value = grouped2["member"];
 
-        if (grouped2?.["class"]) {
-            markdown += `## Instance properties\r\n`;
-            if (grouped2?.["class"]?.[0]?.augments?.[0]) {
-                markdown += `This interface also inherits properties from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
-            }
-            markdown += `\r\n`;
-            markdown += `Name | Type | Description\r\n`;
-            markdown += `--- | --- | ---\r\n`;
+        markdown += `## Instance properties\r\n`;
+        if (grouped2?.["class"]?.[0]?.augments?.[0]) {
+            markdown += `This interface also inherits properties from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
         }
+        markdown += `\r\n`;
+        markdown += `Name | Type | Description\r\n`;
+        markdown += `--- | --- | ---\r\n`;
 
         for (let val of value) {
-            // markdown += `#### ${val.name}\r\n`;
+            // markdown += `### ${val.name}\r\n`;
             // markdown += `${val.description}\r\n`;
             // markdown += `\r\n`;
             if (val?.properties?.length) {
                 // markdown += `Name | Type | Description\r\n`;
                 // markdown += `--- | --- | ---\r\n`;
                 for (let prop of val?.properties || []) {
-                    markdown += `${[prop.name, prop.type.names.map((name) => `\`${name}\``), prop.description].filter(Boolean).join(" | ")}\r\n`;
+                    markdown += `${[`\`${prop.name}\``, prop.type.names.map((name) => `\`${name}\``), prop.description].filter(Boolean).join(" | ")}\r\n`;
                 }
                 // markdown += `\r\n`;
             } else {
-                let acc=val.meta.code.paramnames?.length?'set':'get'
-                markdown += `${[val.name, `\`${acc}\``, val.description].filter(Boolean).join(" | ")}\r\n`;
+                let acc = val.meta.code.paramnames?.length ? "set" : "get";
+                markdown += `${[`\`${val.name}\``, `\`${acc}\``, val.description].filter(Boolean).join(" | ")}\r\n`;
             }
         }
     }
     if (grouped2["function"]) {
         let value = grouped2["function"];
-        if (grouped2?.["class"]) {
-            markdown += `## Instance methods\r\n`;
-            if (grouped2?.["class"]?.[0]?.augments?.[0]) {
-                markdown += `This interface also inherits methods from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
-            }
-            markdown += `\r\n`;
+        markdown += `## Instance methods\r\n`;
+        if (grouped2?.["class"]?.[0]?.augments?.[0]) {
+            markdown += `This interface also inherits methods from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
         }
+        markdown += `\r\n`;
         for (let val of value) {
             // console.log(val)
-            markdown += `#### ${val.name}(${val.params?.map((param) => param.name)})\r\n`;
+            markdown += `### \`${val.name}(${val.params?.map((param) => param.name)})\`\r\n`;
             markdown += `${val.description}\r\n`;
             markdown += `\r\n`;
+
             if (val?.params?.length) {
                 markdown += `Name | Type | Description\r\n`;
                 markdown += `--- | --- | ---\r\n`;
                 for (let param of val?.params || []) {
+                    markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                }
+                markdown += `\r\n`;
+            }
+            markdown += `\r\n`;
+            if (val?.properties?.length) {
+                markdown += `Name | Type | Description\r\n`;
+                markdown += `--- | --- | ---\r\n`;
+                for (let param of val?.properties || []) {
                     markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
                 }
                 markdown += `\r\n`;
             }
-            markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``), val.returns?.[0]?.description].filter(Boolean).join("\r\n")}\r\n`;
-            markdown += `\r\n`;
+            if (val.returns?.length) {
+                markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``), val.returns?.[0]?.description].filter(Boolean).join("\r\n")}\r\n`;
+                markdown += `\r\n`;
+            }
+            if (val?.examples?.length) {
+                markdown += `#### Examples\r\n`;
+                for (let example of val?.examples || []) {
+                    markdown += `\`\`\`\r\n`;
+                    markdown += `${example}\r\n`;
+                    markdown += `\`\`\`\r\n`;
+                }
+                markdown += `\r\n`;
+            }
         }
     }
 
