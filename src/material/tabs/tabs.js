@@ -29,33 +29,33 @@ class MDTabsComponent extends MDTreeComponent {
     /**
      * @private
      */
-    handleTreeItemSelected(event) {
-        window.requestAnimationFrame(() => {
-            const treeItem = event.detail;
+    async handleTreeItemSelected(event) {
+        await this.updateComplete;
 
-            let width = treeItem.clientWidth;
-            let left = treeItem.offsetLeft;
+        const treeItem = event.detail;
 
-            if (this.variant === "primary") {
-                const treeInner = treeItem.querySelector(".md-tree__inner");
-                width = treeInner.clientWidth;
-                left += treeInner.offsetLeft;
-            }
+        let width = treeItem.clientWidth;
+        let left = treeItem.offsetLeft;
 
-            let right = this.scrollWidth - (left + width);
+        if (this.variant === "primary") {
+            const treeInner = treeItem.querySelector(".md-tree__inner");
+            width = treeInner.clientWidth;
+            left += treeInner.offsetLeft;
+        }
 
-            this.currentSelectedIndex = this.list.indexOf(treeItem.data);
-            const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";
+        let right = this.scrollWidth - (left + width);
 
-            this.style.removeProperty(`--md-comp-tabs-indicator-transition-left`);
-            this.style.removeProperty(`--md-comp-tabs-indicator-transition-right`);
-            this.style.setProperty(`--md-comp-tabs-indicator-transition-${direction}`, "0ms");
+        this.currentSelectedIndex = this.list.indexOf(treeItem.data);
+        const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";
 
-            this.lastSelectedIndex = this.currentSelectedIndex;
+        this.style.removeProperty(`--md-comp-tabs-indicator-transition-left`);
+        this.style.removeProperty(`--md-comp-tabs-indicator-transition-right`);
+        this.style.setProperty(`--md-comp-tabs-indicator-transition-${direction}`, "0ms");
 
-            this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
-            this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
-        });
+        this.lastSelectedIndex = this.currentSelectedIndex;
+
+        this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
+        this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
     }
 }
 

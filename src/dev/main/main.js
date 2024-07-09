@@ -4,6 +4,8 @@ import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
 import data from "../../assets/docs.json";
 
+MDRouter.historyApiFallback=false
+
 class DevMainComponent extends MDComponent {
     get topAppBar() {
         return this.querySelector("#topAppBar");
@@ -91,6 +93,7 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/pagination" },
             { routerLink: "/data-table-item" },
             { routerLink: "/data-table" },
+            { routerLink: "/selection" },
         ];
 
         this.list.sort((a, b) => {

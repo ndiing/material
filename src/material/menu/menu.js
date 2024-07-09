@@ -167,7 +167,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.emit("onMenuViewportVirtualScroll", event);
     }
 
-    
     /**
      * Handles click events on the menu list items, updating the selected item and
      * closing the menu.

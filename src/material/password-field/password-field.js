@@ -45,7 +45,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldIconButtonClick(event) {
+    async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
         this.type = this.type === "password" ? "text" : "password";

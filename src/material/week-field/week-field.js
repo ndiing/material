@@ -46,7 +46,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldIconButtonClick(event) {
+    async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
         this.picker = document.createElement("md-week-picker");
@@ -74,9 +74,8 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
-        window.requestAnimationFrame(() => {
-            this.picker.showModal(this.container);
-        });
+        await this.picker.updateComplete;
+        this.picker.showModal(this.container);
     }
 
     /**

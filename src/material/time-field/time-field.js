@@ -46,7 +46,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldIconButtonClick(event) {
+    async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
         this.picker = document.createElement("md-time-picker");
@@ -74,9 +74,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
-        window.requestAnimationFrame(() => {
-            this.picker.showModal(this.container);
-        });
+        await this.picker.updateComplete;
+        this.picker.showModal(this.container);
     }
 
     /**

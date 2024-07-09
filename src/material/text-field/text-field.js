@@ -399,7 +399,7 @@ class MDTextFieldComponent extends MDComponent {
     /**
      * @private
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("variant")) {
@@ -410,9 +410,8 @@ class MDTextFieldComponent extends MDComponent {
         }
 
         if (changedProperties.has("icon")) {
-            window.requestAnimationFrame(() => {
-                this.style.setProperty("--md-comp-text-field-offset-left", this.native.offsetLeft + "px");
-            });
+            await this.updateComplete;
+            this.style.setProperty("--md-comp-text-field-offset-left", this.native.offsetLeft + "px");
         }
     }
 

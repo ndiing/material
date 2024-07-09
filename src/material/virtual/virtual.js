@@ -68,47 +68,35 @@ class MDVirtualController {
      * @private
      */
     async handleVirtualScroll(event) {
-        window.requestAnimationFrame(() => {
-            if (this.options.rowTotal) {
-                let rowHeight;
-                rowHeight = rowHeight || this.options.rowHeight;
-                this.scrollbarHeight = this.options.rowTotal * rowHeight;
-                this.rowStart = Math.floor(this.viewport.scrollTop / rowHeight) - (this.options.rowBuffer || this.options.buffer);
-                this.rowStart = Math.max(0, this.rowStart);
-                this.rowLimit = Math.ceil(this.viewport.clientHeight / rowHeight) + 2 * (this.options.rowBuffer || this.options.buffer);
-                this.rowLimit = Math.min(this.options.rowTotal - this.rowStart, this.rowLimit);
-                this.rowEnd = this.rowStart + this.rowLimit;
-                this.translateY = this.rowStart * rowHeight;
-            }
+        if (this.options.rowTotal) {
+            let rowHeight;
+            rowHeight = rowHeight || this.options.rowHeight;
+            this.scrollbarHeight = this.options.rowTotal * rowHeight;
+            this.rowStart = Math.floor(this.viewport.scrollTop / rowHeight) - (this.options.rowBuffer || this.options.buffer);
+            this.rowStart = Math.max(0, this.rowStart);
+            this.rowLimit = Math.ceil(this.viewport.clientHeight / rowHeight) + 2 * (this.options.rowBuffer || this.options.buffer);
+            this.rowLimit = Math.min(this.options.rowTotal - this.rowStart, this.rowLimit);
+            this.rowEnd = this.rowStart + this.rowLimit;
+            this.translateY = this.rowStart * rowHeight;
+        }
 
-            if (this.options.columnTotal) {
-                let columnWidth;
-                columnWidth = columnWidth || this.options.columnWidth;
-                this.scrollbarWidth = this.options.columnTotal * columnWidth;
-                this.columnStart = Math.floor(this.viewport.scrollLeft / columnWidth) - this.options.columnBuffer;
-                this.columnStart = Math.max(0, this.columnStart);
-                this.columnLimit = Math.ceil(this.viewport.clientWidth / columnWidth) + 2 * this.options.columnBuffer;
-                this.columnLimit = Math.min(this.options.columnTotal - this.columnStart, this.columnLimit);
-                this.columnEnd = this.columnStart + this.columnLimit;
-                this.translateX = this.columnStart * columnWidth;
-            }
+        if (this.options.columnTotal) {
+            let columnWidth;
+            columnWidth = columnWidth || this.options.columnWidth;
+            this.scrollbarWidth = this.options.columnTotal * columnWidth;
+            this.columnStart = Math.floor(this.viewport.scrollLeft / columnWidth) - this.options.columnBuffer;
+            this.columnStart = Math.max(0, this.columnStart);
+            this.columnLimit = Math.ceil(this.viewport.clientWidth / columnWidth) + 2 * this.options.columnBuffer;
+            this.columnLimit = Math.min(this.options.columnTotal - this.columnStart, this.columnLimit);
+            this.columnEnd = this.columnStart + this.columnLimit;
+            this.translateX = this.columnStart * columnWidth;
+        }
 
+        this.scrollbar.style.width = `${this.scrollbarWidth || 1}px`;
+        this.scrollbar.style.height = `${this.scrollbarHeight || 1}px`;
+        this.container.style.transform = `translate3d(${this.translateX || 0}px,${this.translateY || 0}px,0)`;
 
-            this.scrollbar.style.width = `${(this.scrollbarWidth||1)}px`;
-            this.scrollbar.style.height = `${(this.scrollbarHeight||1)}px`;
-            this.container.style.transform = `translate3d(${(this.translateX||0)}px,${(this.translateY||0)}px,0)`;
-    
-
-            let cache = JSON.stringify([this.rowStart, this.rowEnd, this.columnStart, this.columnEnd]);
-
-            if (this.cache !== cache) {
-                this.cache = cache;
-                this.emit("onVirtualScrollChange", event);
-            }
-
-            this.emit("onVirtualScroll", event);
-
-        });
+        this.emit("onVirtualScroll", event);
     }
 
     /**

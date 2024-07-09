@@ -53,12 +53,12 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldIconButtonClick(event) {
+    async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
         this.showPicker();
     }
 
-    showPicker() {
+    async showPicker() {
         if (this.pickerOpen) {
             return;
         }
@@ -91,9 +91,8 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
-        window.requestAnimationFrame(() => {
-            this.picker.showModal(this.container);
-        });
+        await this.picker.updateComplete;
+        this.picker.showModal(this.container);
     }
 
     /**

@@ -48,7 +48,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldIconButtonClick(event) {
+    async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
         const name = event.currentTarget.name;
