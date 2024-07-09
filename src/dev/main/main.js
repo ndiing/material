@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
-import data from "../../assets/docs.json";
+import jsdoc from "../../assets/jsdoc.json";
 
 MDRouter.historyApiFallback=false
 
@@ -120,8 +120,8 @@ class DevMainComponent extends MDComponent {
     }
 
     get doc() {
-        const name = MDRouter.path.slice(1);
-        return data[name];
+        const name = MDRouter.path.slice(1)+'.js';
+        return jsdoc[name];
     }
 
     render() {

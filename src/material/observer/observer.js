@@ -23,8 +23,7 @@ class MDObserver {
 
     /**
      * Observes a list of media query configurations and triggers the callback when a matching query is found.
-     * @param {Object[]} list - The list of media query configurations to observe.
-     * Each object in the list should have a `name` (string) and `query` (string) property.
+     * @param {Object[]} list - The list of media query configurations to observe. Each object in the list should have a `name` (string) and `query` (string) property.
      */
     observe(list) {
         const handleChange = () => {
