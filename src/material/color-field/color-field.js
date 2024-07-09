@@ -45,8 +45,24 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
+    handleTextFieldNativeFocus(event) {
+        super.handleTextFieldNativeFocus(event);
+
+        this.showPicker();
+    }
+
+    /**
+     * @private
+     */
     handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
+
+        this.showPicker();
+    }
+
+    showPicker() {
+        if(this.pickerShow){return}
+        this.pickerShow=true
 
         this.picker = document.createElement("md-color-picker");
         if (this.value) {
@@ -70,6 +86,8 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
             this.picker.remove();
+
+            this.pickerShow=false
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 

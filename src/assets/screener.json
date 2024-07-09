@@ -120,7 +120,6 @@
         "exchange": "NASDAQ"
     },
     {
-        "selected":true,
         "name": "GOOGL",
         "description": "Alphabet Inc.",
         "logoid": "alphabet",

@@ -96,11 +96,10 @@ class MDMenuComponent extends MDSheetComponent {
 
         this.updateVirtualList();
 
-        await this.updateComplete;
-        await new Promise((resolve) => window.requestAnimationFrame(resolve));
-        const delta = Math.floor((this.maxRows - 1) / 2);
-
-        this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
+        // await this.updateComplete;
+        // await new Promise((resolve) => window.requestAnimationFrame(resolve));
+        // const delta = Math.floor((this.maxRows - 1) / 2);
+        // this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
     }
 
     /**
@@ -184,7 +183,7 @@ class MDMenuComponent extends MDSheetComponent {
             doc.selected = doc === data;
         });
         this.requestUpdate();
-        this.close();
+        // this.close();
         this.emit("onMenuListItemClick", event);
     }
 

@@ -1,5 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
+import data from "../../assets/screener.json"
 
 class DevForm2Component extends MDComponent {
     render() {
@@ -136,6 +137,43 @@ class DevForm2Component extends MDComponent {
                             value="secret"
                         ></md-password-field>
                     </div>
+
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-textarea-field
+                            name="textarea1"
+                            label="Textarea Field"
+                        ></md-textarea-field>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-textarea-field
+                            name="textarea2"
+                            label="Textarea Field"
+                            value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ea."
+                        ></md-textarea-field>
+                    </div>
+
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-select-field
+                            name="select1"
+                            label="Select Field"
+                            .options="${data}"
+                            .map="${{label:'name',value:'logoid'}}"
+                        ></md-select-field>
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <md-select-field
+                            name="select2"
+                            label="Select Field"
+                            .options="${data}"
+                            .map="${{label:'name',value:'logoid'}}"
+                        ></md-select-field>
+                    </div>
+
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    </div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    </div>
+                    
 
 
                     <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
