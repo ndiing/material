@@ -208,7 +208,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {HTMLElement} button - The button that triggers the menu.
      * @param {Object} options - Options for positioning the menu.
      */
-    showModal(button, options) {
+    async showModal(button, options) {
         super.showModal();
         this.setPlacement(button, options);
     }
@@ -218,7 +218,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {HTMLElement} button - The button that triggers the menu.
      * @param {Object} options - Options for positioning the menu.
      */
-    show(button, options) {
+    async show(button, options) {
         super.show();
         this.setPlacement(button, options);
     }

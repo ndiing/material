@@ -283,6 +283,18 @@ class MDTextFieldComponent extends MDComponent {
     /**
      * @private
      */
+    renderHidden() {
+        return html`
+            <input
+                type="hidden"
+                class="md-text-field__hidden"
+            />
+        `;
+    }
+
+    /**
+     * @private
+     */
     renderNative() {
         return choose(
             this.type,
@@ -331,15 +343,6 @@ class MDTextFieldComponent extends MDComponent {
                 ${this.actions?.map(item => this.renderAction(item))}
             </div>
         ` : nothing;
-    }
-
-    renderHidden() {
-        return html`
-            <input
-                type="hidden"
-                class="md-text-field__hidden"
-            />
-        `;
     }
 
     /**

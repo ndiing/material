@@ -101,14 +101,11 @@ class MDVirtualController {
                 this.cache = cache;
                 this.emit("onVirtualScrollChange", event);
             }
-            
 
             if (!this.initialized) {
                 this.initialized = true;
                 this.emit("onVirtualScrollInitialized", event);
             }
-            
-
         });
     }
 
