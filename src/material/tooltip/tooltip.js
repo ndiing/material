@@ -38,9 +38,8 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the tooltip.
      */
     showModal(button, options) {
-        super.showModal();
-
         this.setPlacement(button, options);
+        super.showModal();
     }
 
     /**
@@ -49,9 +48,8 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the tooltip.
      */
     show(button, options) {
-        super.show();
-
         this.setPlacement(button, options);
+        super.show();
     }
 
     /**

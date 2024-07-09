@@ -397,18 +397,16 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      * {{description}}
      */
     showModal(button, options) {
-        super.showModal();
-
         this.setPlacement(button, options);
+        super.showModal();
     }
 
     /**
      * {{description}}
      */
     show(button, options) {
-        super.show();
-
         this.setPlacement(button, options);
+        super.show();
     }
 
     /**
