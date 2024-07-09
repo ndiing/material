@@ -11,12 +11,14 @@ class DevForm2Component extends MDComponent {
                 <div class="md-layout-column">
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-datetime-field
+                            required
                             name="datetime1"
                             label="Datetime Field"
                         ></md-datetime-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-datetime-field
+                            required
                             name="datetime2"
                             label="Datetime Field"
                             value="1990-10-17T20:30"
@@ -25,12 +27,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-date-field
+                            required
                             name="date1"
                             label="Date Field"
                         ></md-date-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-date-field
+                            required
                             name="date2"
                             label="Date Field"
                             value="1990-10-17"
@@ -39,12 +43,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-month-field
+                            required
                             name="month1"
                             label="Month Field"
                         ></md-month-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-month-field
+                            required
                             name="month2"
                             label="Month Field"
                             value="1990-10"
@@ -53,12 +59,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-week-field
+                            required
                             name="week1"
                             label="Week Field"
                         ></md-week-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-week-field
+                            required
                             name="week2"
                             label="Week Field"
                             value="1990-W42"
@@ -67,12 +75,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-time-field
+                            required
                             name="time1"
                             label="Time Field"
                         ></md-time-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-time-field
+                            required
                             name="time2"
                             label="Time Field"
                             value="20:30"
@@ -81,12 +91,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-color-field
+                            required
                             name="color1"
                             label="Color Field"
                         ></md-color-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-color-field
+                            required
                             name="color2"
                             label="Color Field"
                             value="#6750a4"
@@ -95,12 +107,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-number-field
+                            required
                             name="number1"
                             label="Number Field"
                         ></md-number-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-number-field
+                            required
                             name="number2"
                             label="Number Field"
                             value="123456789"
@@ -109,12 +123,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-search-field
+                            required
                             name="search1"
                             label="Search Field"
                         ></md-search-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-search-field
+                            required
                             name="search2"
                             label="Search Field"
                             value="What day is it today?"
@@ -123,12 +139,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-password-field
+                            required
                             name="password1"
                             label="Password Field"
                         ></md-password-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-password-field
+                            required
                             name="password2"
                             label="Password Field"
                             value="secret"
@@ -137,12 +155,14 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-textarea-field
+                            required
                             name="textarea1"
                             label="Textarea Field"
                         ></md-textarea-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-textarea-field
+                            required
                             name="textarea2"
                             label="Textarea Field"
                             value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ea."
@@ -151,9 +171,10 @@ class DevForm2Component extends MDComponent {
 
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-select-field
+                            required
                             name="select1"
                             label="Select Field"
-                            .options="${Array.from({ length: 10 }, (v, k) => ({
+                            .options="${Array.from({ length: 100 }, (v, k) => ({
                                 label: "label" + k,
                                 value: k,
                             }))}"
@@ -161,9 +182,10 @@ class DevForm2Component extends MDComponent {
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-select-field
+                            required
                             name="select2"
                             label="Select Field"
-                            .options="${Array.from({ length: 10 }, (v, k) => ({
+                            .options="${Array.from({ length: 100 }, (v, k) => ({
                                 label: "label" + k,
                                 value: k,
                                 selected: k==5

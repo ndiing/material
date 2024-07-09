@@ -71,6 +71,7 @@ import "./number-field/number-field.js";
 import "./search-field/search-field.js";
 import "./password-field/password-field.js";
 import "./textarea-field/textarea-field.js";
+import "./select-field/select-field.js";
 
 import "./pagination/pagination.js";
 import "./data-table-item/data-table-item.js";

@@ -112,10 +112,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual = new MDVirtualController(this);
 
         this.updateVirtualList();
-
-        await this.updateComplete;
-        const deltaY = Math.floor((this.maxRows - 1) / 2);
-        this.virtual.viewport.scrollTop = (this.selectedIndex - deltaY) * this.rowHeight;
     }
 
     /**
@@ -154,6 +150,8 @@ class MDMenuComponent extends MDSheetComponent {
         this.updateVirtualList();
         this.virtual.viewport.scrollTop = 0;
         this.virtual.handleVirtualScroll();
+
+        this.setPlacement();
     }
 
     /**
@@ -161,14 +159,17 @@ class MDMenuComponent extends MDSheetComponent {
      * @private
      * @param {Event} event - The scroll event.
      */
-    handleMenuViewportVirtualScroll(event) {
+    async handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
 
-        // this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
-        // this.virtual.container.style.transform = `translate3d(0,${this.virtual.translateY}px,0)`;
-
         this.emit("onMenuViewportVirtualScroll", event);
+
+        if (!this.virtual.initialized) {
+            this.virtual.initialized = true;
+            await this.updateComplete;
+            this.emit("onMenuViewportVirtualScrollInitialized", event);
+        }
     }
 
     /**
@@ -222,7 +223,8 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the menu.
      */
     setPlacement(button, options) {
-        this.popper.setPlacement(button, {
+        this.popperButton = this.popperButton || button;
+        this.popperOptions = {
             /* prettier-ignore */
             placements: [
                 "top-start", "top-end", "top", 
@@ -235,8 +237,10 @@ class MDMenuComponent extends MDSheetComponent {
                 "before-start", "before-end", "before", 
                 "center"
             ],
+            ...this.popperOptions,
             ...options,
-        });
+        };
+        this.popper.setPlacement(this.popperButton, this.popperOptions);
     }
 }
 
