@@ -284,12 +284,12 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      */
     renderHidden() {
-        return html`
+        /* return html`
             <input
                 type="hidden"
                 class="md-text-field__hidden"
             />
-        `;
+        `; */
     }
 
     /**
