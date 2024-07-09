@@ -123,21 +123,21 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldNativeFocus(event) {
+    handleTextFieldNativeFocus() {
         this.showPicker();
     }
 
     /**
      * @private
      */
-    handleTextFieldNativeBlur(event) {
+    handleTextFieldNativeBlur() {
         window.setTimeout(() => this.picker.close(), 200);
     }
 
     /**
      * @private
      */
-    handleTextFieldNativeInput(event) {
+    handleTextFieldNativeInput() {
         this.picker.filter(this.native.value);
     }
 
@@ -155,7 +155,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    async handleTextFieldIconButtonClick(event) {
+    async handleTextFieldIconButtonClick() {
         this.showPicker();
     }
 
