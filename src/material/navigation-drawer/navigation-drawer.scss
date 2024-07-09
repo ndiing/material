@@ -45,3 +45,10 @@
         animation-name: var(--md-comp-sheet-animation, sheetWestModalIn);
     }
 }
+
+.md-navigation-drawer__tree {
+    .md-tree__item {
+        margin: 0 12px;
+        border-radius: 28px;
+    }
+}

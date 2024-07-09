@@ -1,13 +1,16 @@
 import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
-import { MDTreeComponent } from "../tree/tree.js";
 import { MDPopperController } from "../popper/popper.js";
+import { MDStore } from "../store/store.js";
+import { MDVirtualController } from "../virtual/virtual.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { MDListComponent } from "../list/list.js";
 
 /**
  * {{description}}
  * @element md-menu
  * @extends MDSheetComponent
- * @fires MDMenuComponent#onMenuTreeItemClick - {{description}}
+ * @fires MDMenuComponent#onMenuListItemClick - {{description}}
  */
 class MDMenuComponent extends MDSheetComponent {
     /**
@@ -15,8 +18,14 @@ class MDMenuComponent extends MDSheetComponent {
      */
     static properties = {
         ...MDSheetComponent.properties,
-        ...MDTreeComponent.properties,
+        ...MDListComponent.properties,
+        rowHeight: { type: Number },
+        maxRows: { type: Number },
     };
+
+    get menuList() {
+        return this.querySelector(".md-menu__list");
+    }
 
     /**
      * {{description}}
@@ -24,12 +33,21 @@ class MDMenuComponent extends MDSheetComponent {
     get body() {
         /* prettier-ignore */
         return [html`
-            <md-tree
-                class="md-menu__tree"
-                .variant="${"plain"}"
-                .list="${this.list}"
-                @onTreeItemClick="${this.handleMenuTreeItemClick}"
-            ></md-tree>
+            <div 
+                class="md-virtual"
+                @onVirtualScroll="${this.handleMenuViewportVirtualScroll}"
+            >
+                <div class="md-virtual__scrollbar"></div>
+                <div class="md-virtual__container">
+                    <md-list
+                        class="md-menu__list"
+                        .variant="${"plain"}"
+                        .list="${ifDefined(this.virtualList)}"
+                        .map="${ifDefined(this.map)}"
+                        @onListItemClick="${this.handleMenuListItemClick}"
+                    ></md-list>
+                </div>
+            </div>
         `];
     }
 
@@ -46,24 +64,92 @@ class MDMenuComponent extends MDSheetComponent {
     constructor() {
         super();
         this.popper = new MDPopperController(this, {});
+        this.rowHeight = 48;
+        this.maxRows = 5;
     }
 
     /**
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-sheet");
         this.classList.add("md-menu");
+
+        this.store = new MDStore(this.list);
+        this.virtual = new MDVirtualController(this);
+
+        this.updateVirtualList();
+
+        await this.updateComplete;
+        await new Promise((resolve) => window.requestAnimationFrame(resolve));
+        const delta = Math.floor((this.maxRows - 1) / 2);
+
+        this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
+    }
+
+    updateVirtualList() {
+        const { total, docs } = this.store.getAll({
+            filters: this.filters,
+        });
+        this.storeTotal = total;
+        this.storeList = docs;
+
+        this.virtual.options.rowTotal = this.storeTotal;
+        this.virtual.options.rowHeight = this.rowHeight;
+        this.virtual.options.rowBuffer = 0;
+
+        this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal?16:0)}px`;
+    }
+
+    filter(value) {
+        this.filters = [{ name: this.menuList.map.label, value, operator: "_like" }];
+
+        this.updateVirtualList();
+        this.virtual.viewport.scrollTop = 0;
+        this.virtual.handleVirtualScroll();
     }
 
     /**
      * @private
      */
-    handleMenuTreeItemClick(event) {
+    disconnectedCallback() {
+        super.disconnectedCallback();
+    }
+
+    get selectedIndex() {
+        return this.store.docs.findIndex((doc) => doc.selected);
+    }
+
+    get selectedList() {
+        return this.store.docs.filter((doc) => doc.selected);
+    }
+
+    /**
+     * @private
+     */
+    handleMenuViewportVirtualScroll(event) {
+        this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
+        this.requestUpdate();
+
+        this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
+        this.virtual.container.style.transform = `translate3d(0,${this.virtual.translateY}px,0)`;
+
+        this.emit("onDataTableViewportVirtualScroll", event);
+    }
+
+    /**
+     * @private
+     */
+    handleMenuListItemClick(event) {
+        const data = event.detail.currentTarget.data;
+        this.store.docs.forEach((doc) => {
+            doc.selected = doc === data;
+        });
+        this.requestUpdate();
         this.close();
-        this.emit("onMenuTreeItemClick", event);
+        this.emit("onMenuListItemClick", event);
     }
 
     /**

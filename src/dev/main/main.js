@@ -93,7 +93,6 @@ class DevMainComponent extends MDComponent {
             { routerLink: "/pagination" },
             { routerLink: "/data-table-item" },
             { routerLink: "/data-table" },
-            { routerLink: "/data-list" },
         ];
 
         this.list.sort((a, b) => {

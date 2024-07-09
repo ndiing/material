@@ -42,6 +42,7 @@
     display: inline-flex;
     min-width: 112px;
     max-width: 280px;
+    height: 256px;
     max-height: 256px;
     border-radius: var(--md-sys-shape-corner-extra-small);
     background-color: var(--md-sys-color-surface-container);
@@ -53,7 +54,7 @@
     animation-name: var(--md-comp-sheet-animation, menuOut);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    .md-card__inner {
+    .md-virtual {
         overflow: hidden;
         animation-name: var(--md-comp-sheet-animation, menuInnerOut);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
@@ -64,7 +65,7 @@
         visibility: visible;
         animation-name: var(--md-comp-sheet-animation, menuIn);
 
-        .md-card__inner {
+        .md-virtual {
             overflow: auto;
             animation-name: var(--md-comp-sheet-animation, menuInnerIn);
         }
@@ -77,5 +78,22 @@
 
     + .md-scrim {
         opacity: 0;
+    }
+}
+
+.md-menu__tree {
+    .md-tree__item {
+        padding: 0 12px;
+        min-height: 48px;
+    }
+}
+
+.md-menu__list {
+    .md-list__item {
+        padding: 0 12px;
+        min-height: 48px;
+    }
+    .md-list__label-primary {
+        @include typescale-label-large();
     }
 }

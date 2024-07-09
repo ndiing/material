@@ -50,7 +50,6 @@ import "./list-item/list-item.js";
 import "./list/list.js";
 import "./tree-item/tree-item.js";
 import "./tree/tree.js";
-import "./data-list/data-list.js";
 
 import "./navigation-bar/navigation-bar.js";
 import "./navigation-drawer/navigation-drawer.js";
