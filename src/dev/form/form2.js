@@ -166,6 +166,7 @@ class DevForm2Component extends MDComponent {
                             .options="${Array.from({ length: 10 }, (v, k) => ({
                                 label: "label" + k,
                                 value: k,
+                                selected: k==5
                             }))}"
                         ></md-select-field>
                     </div>

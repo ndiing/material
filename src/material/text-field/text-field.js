@@ -361,8 +361,8 @@ class MDTextFieldComponent extends MDComponent {
                     ${this.renderActions()}
                 </div>
                 ${this.errorText || this.text ? html`<div class="md-text-field__text">${this.errorText || this.text}</div>` : nothing}
+                ${this.renderHidden()}
             </label>
-            ${this.renderHidden()}
         `;
     }
 

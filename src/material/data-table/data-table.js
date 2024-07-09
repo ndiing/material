@@ -422,9 +422,9 @@ class MDDataTableComponent extends MDCardComponent {
         });
         this.requestUpdate();
 
-        this.virtual.scrollbar.style.width = `${this.virtual.scrollbarWidth}px`;
-        this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
-        this.virtual.container.style.transform = `translate3d(${this.virtual.translateX}px,${this.virtual.translateY}px,0)`;
+        // this.virtual.scrollbar.style.width = `${this.virtual.scrollbarWidth}px`;
+        // this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
+        // this.virtual.container.style.transform = `translate3d(${this.virtual.translateX}px,${this.virtual.translateY}px,0)`;
 
         this.emit("onDataTableViewportVirtualScroll", event);
     }
