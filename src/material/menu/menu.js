@@ -46,6 +46,7 @@ class MDMenuComponent extends MDSheetComponent {
             <div 
                 class="md-virtual"
                 @onVirtualScroll="${this.handleMenuViewportVirtualScroll}"
+                @onVirtualScrollInitialized="${this.handleMenuViewportVirtualScrollInitialized}"
             >
                 <div class="md-virtual__scrollbar"></div>
                 <div class="md-virtual__container">
@@ -164,11 +165,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
         this.virtual.container.style.transform = `translate3d(0,${this.virtual.translateY}px,0)`;
 
-        if (!this.virtual.initialized) {
-            this.virtual.initialized = true;
-            this.handleMenuViewportVirtualScrollInitialized(event);
-        }
-
         this.emit("onMenuViewportVirtualScroll", event);
     }
 
@@ -176,9 +172,11 @@ class MDMenuComponent extends MDSheetComponent {
      * Initializes the virtual scroll position based on the selected item.
      * @private
      */
-    handleMenuViewportVirtualScrollInitialized() {
+    handleMenuViewportVirtualScrollInitialized(event) {
         const delta = Math.floor((this.maxRows - 1) / 2);
         this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
+
+        this.emit("onMenuViewportVirtualScrollInitialized", event);
     }
 
     /**

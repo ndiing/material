@@ -93,14 +93,22 @@ class MDVirtualController {
                 this.translateX = this.columnStart * columnWidth;
             }
 
+            this.emit("onVirtualScroll", event);
+
             let cache = JSON.stringify([this.rowStart, this.rowEnd, this.columnStart, this.columnEnd]);
 
             if (this.cache !== cache) {
                 this.cache = cache;
                 this.emit("onVirtualScrollChange", event);
             }
+            
 
-            this.emit("onVirtualScroll", event);
+            if (!this.initialized) {
+                this.initialized = true;
+                this.emit("onVirtualScrollInitialized", event);
+            }
+            
+
         });
     }
 
