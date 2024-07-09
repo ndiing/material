@@ -1,5 +1,5 @@
 .md-week-picker {
-    .md-datetime-picker__grid-row {
+    .md-datetime-picker__grid-row--days {
         border-radius: 20px;
 
         @include ripple();
@@ -43,6 +43,7 @@
             @include ripple-disabled();
         }
     }
+    
     .md-datetime-picker__grid-item {
         @include ripple-reset();
     }
