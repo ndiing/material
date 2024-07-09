@@ -6,7 +6,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDTextareaFieldComponent extends MDTextFieldComponent {
-
     constructor() {
         super();
 
@@ -22,7 +21,6 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-text-field");
         this.classList.add("md-textarea-field");
     }
-
 }
 
 customElements.define("md-textarea-field", MDTextareaFieldComponent);

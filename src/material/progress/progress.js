@@ -43,12 +43,10 @@ function observe(resolve) {
     let currentTime = performance.now();
     elapsedTime = currentTime - startTime;
 
-    // Update progress bar value
     if (progressBar) {
         progressBar.setAttribute("value", elapsedTime);
     }
 
-    // Check if animation should continue or complete
     if (elapsedTime < totalDuration) {
         requestId = requestAnimationFrame(() => observe(resolve));
     } else {
@@ -70,14 +68,12 @@ function start(duration = 10000) {
             create();
         }
 
-        // If already animating, adjust total duration
         if (isAnimating) {
             totalDuration += duration;
             resolve();
             return;
         }
 
-        // Start new animation
         totalDuration = duration;
         isAnimating = true;
         startTime = performance.now() - pausedTime;
@@ -113,7 +109,6 @@ function resume() {
  */
 function stop() {
     if (isAnimating) {
-        // Complete animation
         if (progressBar) {
             progressBar.setAttribute("value", totalDuration);
         }
@@ -125,7 +120,6 @@ function stop() {
 
 export { start, pause, resume, stop };
 
-// Automatically start and stop animations based on PerformanceObserver entries
 (() => {
     let timeout;
     new PerformanceObserver((list) => {

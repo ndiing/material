@@ -18,7 +18,6 @@ class MDTooltipComponent extends MDSheetComponent {
     constructor() {
         super();
 
-        // Initialize MDPopperController for positioning the tooltip
         this.popper = new MDPopperController(this, {});
     }
 
@@ -39,7 +38,7 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the tooltip.
      */
     showModal(button, options) {
-        super.showModal(); // Call MDSheetComponent's showModal method
+        super.showModal();
 
         this.setPlacement(button, options);
     }
@@ -50,7 +49,7 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the tooltip.
      */
     show(button, options) {
-        super.show(); // Call MDSheetComponent's show method
+        super.show();
 
         this.setPlacement(button, options);
     }

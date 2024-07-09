@@ -11,7 +11,6 @@ class MDComponent extends LitElement {
      */
     constructor() {
         super();
-        // Automatically update when locale changes
         updateWhenLocaleChanges(this);
     }
 

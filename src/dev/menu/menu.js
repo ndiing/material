@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import data from "../../assets/screener.json"
+// import data from "../../assets/screener.json"
 
 class DevMenuComponent extends MDComponent {
 
@@ -34,8 +34,11 @@ class DevMenuComponent extends MDComponent {
 
                 <md-menu
                     id="menu3"
-                    .list="${data}"
-                    .map="${{label:'name',value:'logoid'}}"
+                    .list="${Array.from({length:100},(v,k)=>({
+                        label:'Label '+(k+1),
+                        value:(k+1),
+                        selected:(k+1)===10
+                    }))}"
                     @onCardIconButtonClick=${this.menu3Click}
                     @onCardButtonClick=${this.menu3Click}
                 ></md-menu>

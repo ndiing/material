@@ -1,7 +1,6 @@
 import { configureLocalization } from "@lit/localize";
 import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
-// Language map for human-readable language names to ISO codes
 const languageMap = {
     Afrikaans: "af",
     Akan: "ak",
@@ -138,11 +137,10 @@ const languageMap = {
     Zulu: "zu",
 };
 
-// Configure localization with Lit's localize module
 const { getLocale, setLocale } = configureLocalization({
-    sourceLocale, // Default locale to use as fallback
-    targetLocales, // Array of locales to support
-    loadLocale: (locale) => import(`../../generated/locales/${locale}.js`), // Function to load locale data
+    sourceLocale,
+    targetLocales,
+    loadLocale: (locale) => import(`../../generated/locales/${locale}.js`),
 });
 
 export { sourceLocale, targetLocales, languageMap, getLocale, setLocale };

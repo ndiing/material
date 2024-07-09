@@ -55,7 +55,6 @@ class MDCardComponent extends MDComponent {
 
         this.body = Array.from(this.childNodes);
 
-        // Binding render methods to the instance for use in rendering actions dynamically.
         this.renderIconButton = this.renderIconButton.bind(this);
         this.renderIcon = this.renderIcon.bind(this);
         this.renderButton = this.renderButton.bind(this);
@@ -287,7 +286,6 @@ class MDCardComponent extends MDComponent {
 
         this.classList.add("md-card");
 
-        // Initialize ripple effect if the card is interactive.
         if (this.variant && this.variant.includes("interactive")) {
             this.ripple = new MDRippleController(this, {
                 clipped: true,
@@ -302,7 +300,6 @@ class MDCardComponent extends MDComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
 
-        // Toggle variant-specific classes based on updated properties.
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
@@ -311,7 +308,6 @@ class MDCardComponent extends MDComponent {
         }
     }
 
-    // Event Handlers
     /**
      * Handles click events on icon buttons within the card.
      * @private

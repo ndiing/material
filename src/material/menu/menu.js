@@ -55,6 +55,7 @@ class MDMenuComponent extends MDSheetComponent {
                         .list="${ifDefined(this.virtualList)}"
                         .map="${ifDefined(this.map)}"
                         @onListItemClick="${this.handleMenuListItemClick}"
+                        @onListItemSelected="${this.handleMenuListItemSelected}"
                     ></md-list>
                 </div>
             </div>
@@ -67,6 +68,22 @@ class MDMenuComponent extends MDSheetComponent {
      */
     set body(value) {
         this._body = value;
+    }
+
+    /**
+     * Gets the index of the currently selected item in the menu list.
+     * @type {Number}
+     */
+    get selectedIndex() {
+        return this.store.docs.findIndex((doc) => doc.selected);
+    }
+
+    /**
+     * Gets the list of selected items in the menu list.
+     * @type {Array}
+     */
+    get selectedList() {
+        return this.store.docs.filter((doc) => doc.selected);
     }
 
     /**
@@ -95,11 +112,14 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual = new MDVirtualController(this);
 
         this.updateVirtualList();
+    }
 
-        // await this.updateComplete;
-        // await new Promise((resolve) => window.requestAnimationFrame(resolve));
-        // const delta = Math.floor((this.maxRows - 1) / 2);
-        // this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
+    /**
+     * Handles the disconnection of the component from the DOM.
+     * @private
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
     }
 
     /**
@@ -133,30 +153,6 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles the disconnection of the component from the DOM.
-     * @private
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-    }
-
-    /**
-     * Gets the index of the currently selected item in the menu list.
-     * @type {Number}
-     */
-    get selectedIndex() {
-        return this.store.docs.findIndex((doc) => doc.selected);
-    }
-
-    /**
-     * Gets the list of selected items in the menu list.
-     * @type {Array}
-     */
-    get selectedList() {
-        return this.store.docs.filter((doc) => doc.selected);
-    }
-
-    /**
      * Handles virtual scroll events, updating the virtual list and scrollbar position.
      * @private
      * @param {Event} event - The scroll event.
@@ -168,7 +164,17 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
         this.virtual.container.style.transform = `translate3d(0,${this.virtual.translateY}px,0)`;
 
+        if (!this.virtual.initialized) {
+            this.virtual.initialized = true;
+            this.handleMenuViewportVirtualScrollInitialized(event);
+        }
+
         this.emit("onMenuViewportVirtualScroll", event);
+    }
+
+    handleMenuViewportVirtualScrollInitialized() {
+        const delta = Math.floor((this.maxRows - 1) / 2);
+        this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
     }
 
     /**
@@ -183,8 +189,11 @@ class MDMenuComponent extends MDSheetComponent {
             doc.selected = doc === data;
         });
         this.requestUpdate();
-        // this.close();
         this.emit("onMenuListItemClick", event);
+    }
+
+    handleMenuListItemSelected(event) {
+        this.emit("onMenuListItemSelected", event);
     }
 
     /**

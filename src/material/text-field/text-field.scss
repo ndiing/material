@@ -10,6 +10,7 @@
     vertical-align: middle;
     width: 100%;
     user-select: none;
+    position: relative;
     // min-width: 0;
     // min-height: 0;
 }
@@ -103,6 +104,13 @@
     padding: 0 16px;
     margin: 4px 0;
     @include typescale-body-small();
+}
+.md-text-field__hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
 }
 
 .md-text-field--focused {

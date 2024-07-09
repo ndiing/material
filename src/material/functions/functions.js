@@ -216,7 +216,7 @@ function stringifyTime(date) {
  */
 function stringifyWeek(date) {
     let year = date.getFullYear();
-    let week = date.getWeek(); // Assuming this method exists and returns the ISO week number
+    let week = date.getWeek();
     return `${year}-W${week < 10 ? "0" + week : week}`;
 }
 

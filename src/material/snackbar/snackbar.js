@@ -52,7 +52,7 @@ class MDSnackbarComponent extends MDSheetComponent {
 
                 this.once("animationend", handleSnackbarClose);
 
-                super.show(); // Calls MDSheetComponent's show method
+                super.show();
 
                 this.emit("onSnackbarShow", this);
             });
@@ -63,7 +63,7 @@ class MDSnackbarComponent extends MDSheetComponent {
      * Closes the snackbar.
      */
     close() {
-        super.close(); // Calls MDSheetComponent's close method
+        super.close();
 
         this.emit("onSnackbarClose", this);
     }

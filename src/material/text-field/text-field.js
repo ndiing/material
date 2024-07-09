@@ -154,6 +154,13 @@ class MDTextFieldComponent extends MDComponent {
     /**
      * {{description}}
      */
+    get nativeHidden() {
+        return this.querySelector(".md-text-field__hidden");
+    }
+
+    /**
+     * {{description}}
+     */
     get container() {
         return this.querySelector(".md-text-field__container");
     }
@@ -326,8 +333,13 @@ class MDTextFieldComponent extends MDComponent {
         ` : nothing;
     }
 
-    renderHidden(){
-        return html``
+    renderHidden() {
+        return html`
+            <input
+                type="hidden"
+                class="md-text-field__hidden"
+            />
+        `;
     }
 
     /**

@@ -28,10 +28,8 @@ class MDObserver {
      */
     observe(list) {
         const handleChange = () => {
-            // Remove previous listener to prevent memory leaks
             this.media?.removeEventListener("change", handleChange);
 
-            // Find the matching media query
             this.item = null;
             for (let i = 0; i < list.length; i++) {
                 if (window.matchMedia(list[i].query).matches) {
@@ -40,7 +38,6 @@ class MDObserver {
                 }
             }
 
-            // If a matching media query is found, set up a listener for changes
             if (this.item) {
                 this.media = window.matchMedia(this.item.query);
                 this.callback(this.item);
@@ -48,7 +45,6 @@ class MDObserver {
             }
         };
 
-        // Initial call to setup the listener
         handleChange();
     }
 }
