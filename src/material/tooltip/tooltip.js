@@ -57,6 +57,7 @@ class MDTooltipComponent extends MDSheetComponent {
 
     /**
      * Sets the placement of the tooltip relative to the provided button element.
+     * @private
      * @param {Element} button - The button element to which the tooltip is attached.
      * @param {Object} options - Options for positioning the tooltip.
      */

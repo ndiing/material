@@ -146,6 +146,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateStyle(index) {
         const percentage = calcPercentage(this.min, this.max, this.value[index]);

@@ -316,6 +316,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateVirtualRows() {
         const { total, docs } = this.store.getAll({
@@ -334,6 +335,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateVirtualColumns() {
         this.virtual.options.columnTotal = this.columns.length;
@@ -343,6 +345,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateColumns() {
         const half = Math.floor(this.columns.length / 2);

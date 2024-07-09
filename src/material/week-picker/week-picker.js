@@ -141,6 +141,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateDate() {
         const date = parseWeek(this.value);
@@ -278,6 +279,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{description}}
+     * @private
      */
     getValue() {
         return stringifyWeek(this.selected);

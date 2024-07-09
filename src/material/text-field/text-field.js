@@ -477,6 +477,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     populate() {
         if (this.type !== "file") {
@@ -489,6 +490,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     reset() {
         if (this.type !== "file") {
@@ -502,6 +504,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updatePopulation() {
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
@@ -509,6 +512,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateValidation() {
         this.errorText = this.native.validationMessage;

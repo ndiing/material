@@ -212,6 +212,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateEmojiPickerTabsIndicator(data) {
         if (!data) {
@@ -300,6 +301,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{description}}
+     * @private
      */
     generateTabsAndRows(data = [], tabs = {}) {
         const grouped = data.reduce((acc, curr) => {
@@ -411,6 +413,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{description}}
+     * @private
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

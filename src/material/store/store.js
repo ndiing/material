@@ -82,6 +82,7 @@ class MDStore {
 
     /**
      * Sorts an array of documents based on given sort criteria.
+     * @private
      * @param {Array} docs - Array of documents to sort.
      * @param {Array} sorters - Array of sorting criteria objects.
      * @returns {Array} The sorted array of documents.
@@ -101,6 +102,7 @@ class MDStore {
 
     /**
      * Searches an array of documents for a query string.
+     * @private
      * @param {Array} docs - Array of documents to search.
      * @param {string} q - Query string to search for.
      * @returns {Array} Array of documents matching the search query.
@@ -112,6 +114,7 @@ class MDStore {
 
     /**
      * Filters an array of documents based on given filter criteria.
+     * @private
      * @param {Array} docs - Array of documents to filter.
      * @param {Array} filters - Array of filter criteria objects.
      * @returns {Array} Array of documents matching the filter criteria.
@@ -122,6 +125,7 @@ class MDStore {
 
     /**
      * Paginates an array of documents based on page number and limit.
+     * @private
      * @param {Array} docs - Array of documents to paginate.
      * @param {number} _page - Page number to retrieve.
      * @param {number} _limit - Number of documents per page.
@@ -134,6 +138,7 @@ class MDStore {
 
     /**
      * Slices an array of documents based on start and end indices.
+     * @private
      * @param {Array} docs - Array of documents to slice.
      * @param {number} _start - Start index of the slice.
      * @param {number} _end - End index of the slice.
@@ -200,6 +205,7 @@ class MDStore {
 
     /**
      * Recursively merges properties of two objects.
+     * @private
      * @param {Object} target - The target object to merge into.
      * @param {Object} source - The source object to merge from.
      * @returns {Object} The merged object.
@@ -223,6 +229,7 @@ class MDStore {
 
     /**
      * Retrieves the value of a nested property from an object based on dot notation path.
+     * @private
      * @param {Object} obj - The object from which to retrieve the value.
      * @param {string} path - Dot notation path to the nested property.
      * @returns {*} The value of the nested property.
@@ -233,6 +240,7 @@ class MDStore {
 
     /**
      * Recursively searches for a query string within an object's properties.
+     * @private
      * @param {Object} obj - The object to search within.
      * @param {string} query - The query string to search for.
      * @returns {boolean} True if the query string is found within the object, false otherwise.
@@ -255,6 +263,7 @@ class MDStore {
 
     /**
      * Applies a set of filters to an object based on filter criteria.
+     * @private
      * @param {Object} obj - The object to filter.
      * @param {Array} filters - Array of filter criteria objects.
      * @returns {boolean} True if the object matches all filter criteria, false otherwise.

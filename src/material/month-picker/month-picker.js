@@ -71,6 +71,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateDate() {
         const date = parseMonth(this.value);
@@ -188,6 +189,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{description}}
+     * @private
      */
     getValue() {
         return stringifyMonth(this.selected);

@@ -424,6 +424,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateDate() {
         const date = parseDatetimeLocal(this.value);
@@ -630,6 +631,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{description}}
+     * @private
      */
     getValue() {
         return stringifyDatetimeLocal(this.selected);
@@ -655,6 +657,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{description}}
+     * @private
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

@@ -7,14 +7,19 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDListComponent } from "../list/list.js";
 
 /**
- * {{description}}
+ * MDMenuComponent is a custom element that represents a menu component
+ * with integrated virtual scrolling and popper positioning.
  * @element md-menu
  * @extends MDSheetComponent
- * @fires MDMenuComponent#onMenuListItemClick - {{description}}
+ * @fires MDMenuComponent#onMenuViewportVirtualScroll - Fired when the virtual scroll position changes.
+ * @fires MDMenuComponent#onMenuListItemClick - Fired when a list item in the menu is clicked.
  */
 class MDMenuComponent extends MDSheetComponent {
     /**
-     * {{description}}
+     * Defines the properties of the MDMenuComponent, merging properties
+     * from MDSheetComponent and MDListComponent.
+     * @property {Number} rowHeight - The height of each row in the virtual list.
+     * @property {Number} maxRows - The maximum number of rows to display in the menu.
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -23,12 +28,17 @@ class MDMenuComponent extends MDSheetComponent {
         maxRows: { type: Number },
     };
 
+    /**
+     * Gets the menu list element.
+     * @type {HTMLElement}
+     */
     get menuList() {
         return this.querySelector(".md-menu__list");
     }
 
     /**
-     * {{description}}
+     * Gets the HTML content of the menu's body, which includes a virtual list component.
+     * @type {TemplateResult[]}
      */
     get body() {
         /* prettier-ignore */
@@ -52,14 +62,16 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * {{description}}
+     * Sets the HTML content of the menu's body.
+     * @param {TemplateResult[]} value - The new content of the menu's body.
      */
     set body(value) {
         this._body = value;
     }
 
     /**
-     * {{description}}
+     * Constructs an instance of MDMenuComponent, initializing the popper controller
+     * and setting default values for row height and maximum rows.
      */
     constructor() {
         super();
@@ -69,6 +81,8 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
+     * Handles the connection of the component to the DOM, adding necessary CSS classes,
+     * initializing the store and virtual controller, and updating the virtual list.
      * @private
      */
     async connectedCallback() {
@@ -89,6 +103,10 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.viewport.scrollTop = (this.selectedIndex - delta) * this.rowHeight;
     }
 
+    /**
+     * Updates the virtual list based on the current filters and store data.
+     * @private
+     */
     updateVirtualList() {
         const { total, docs } = this.store.getAll({
             filters: this.filters,
@@ -100,9 +118,13 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.options.rowHeight = this.rowHeight;
         this.virtual.options.rowBuffer = 0;
 
-        this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal?16:0)}px`;
+        this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`;
     }
 
+    /**
+     * Applies a filter to the menu list based on the provided value.
+     * @param {String} value - The filter value.
+     */
     filter(value) {
         this.filters = [{ name: this.menuList.map.label, value, operator: "_like" }];
 
@@ -112,22 +134,33 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
+     * Handles the disconnection of the component from the DOM.
      * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
 
+    /**
+     * Gets the index of the currently selected item in the menu list.
+     * @type {Number}
+     */
     get selectedIndex() {
         return this.store.docs.findIndex((doc) => doc.selected);
     }
 
+    /**
+     * Gets the list of selected items in the menu list.
+     * @type {Array}
+     */
     get selectedList() {
         return this.store.docs.filter((doc) => doc.selected);
     }
 
     /**
+     * Handles virtual scroll events, updating the virtual list and scrollbar position.
      * @private
+     * @param {Event} event - The scroll event.
      */
     handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
@@ -136,11 +169,14 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.scrollbar.style.height = `${this.virtual.scrollbarHeight}px`;
         this.virtual.container.style.transform = `translate3d(0,${this.virtual.translateY}px,0)`;
 
-        this.emit("onDataTableViewportVirtualScroll", event);
+        this.emit("onMenuViewportVirtualScroll", event);
     }
 
     /**
+     * Handles click events on the menu list items, updating the selected item and
+     * closing the menu.
      * @private
+     * @param {Event} event - The click event.
      */
     handleMenuListItemClick(event) {
         const data = event.detail.currentTarget.data;
@@ -153,25 +189,30 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * {{description}}
+     * Displays the menu as a modal, setting its placement relative to the button.
+     * @param {HTMLElement} button - The button that triggers the menu.
+     * @param {Object} options - Options for positioning the menu.
      */
     showModal(button, options) {
         super.showModal();
-
         this.setPlacement(button, options);
     }
 
     /**
-     * {{description}}
+     * Displays the menu, setting its placement relative to the button.
+     * @param {HTMLElement} button - The button that triggers the menu.
+     * @param {Object} options - Options for positioning the menu.
      */
     show(button, options) {
         super.show();
-
         this.setPlacement(button, options);
     }
 
     /**
-     * {{description}}
+     * Sets the placement of the menu relative to the button based on the provided options.
+     * @private
+     * @param {HTMLElement} button - The button that triggers the menu.
+     * @param {Object} options - Options for positioning the menu.
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {

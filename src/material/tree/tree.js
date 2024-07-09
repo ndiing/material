@@ -98,6 +98,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     getList(list) {
         let children;
@@ -123,6 +124,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{description}}
+     * @private
      */
     setList(list, indent = 0) {
         let expanded;

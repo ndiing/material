@@ -68,6 +68,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{description}}
+     * @private
      */
     updateDate() {
         const date = parseDate(this.value);
@@ -210,6 +211,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{description}}
+     * @private
      */
     getValue() {
         return stringifyDate(this.selected);

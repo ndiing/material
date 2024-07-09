@@ -62,11 +62,11 @@ class DevMenuComponent extends MDComponent {
                         </div>
                         
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <input
+                            <!-- <input
                                 id="input3" 
                                 type="text"
                                 @input="${event => this.menu3.filter(event.currentTarget.value)}"
-                            >
+                            > -->
                             <md-button
                                 id="button3"
                                 variant="tonal"

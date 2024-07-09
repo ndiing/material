@@ -68,7 +68,12 @@ function generateMarkdown(grouped) {
 
                 if (doc.examples?.length) {
                     markdown += `## Examples\n\n`;
-                    doc.examples.forEach((ex) => (markdown += `\`\`\`${ex}\`\`\`\n\n`));
+                    for (const ex of doc.examples) {
+                        markdown += `\`\`\`\n`;
+                        markdown += `${ex}\n`;
+                        markdown += `\`\`\`\n`;
+                    }
+                    markdown += `\n`;
                 }
             }
         }
@@ -98,7 +103,6 @@ function generateMarkdown(grouped) {
                 if (extend) {
                     markdown += `This interface also inherits properties from its parent, \`${extend}\`. \n\n`;
                 }
-                // markdown += `${doc.description}\n\n`;
 
                 markdown += `name | type | desc\n`;
                 markdown += `--- | --- | ---\n`;
@@ -120,64 +124,50 @@ function generateMarkdown(grouped) {
             markdown += `--- | --- | ---\n`;
             value.forEach((doc) => {
                 if (!doc.undocumented && doc.access !== "private") {
-                    // console.log(doc)
                     markdown += `\`${doc.name}\` | ${doc.meta?.code?.paramnames.map((na) => `\`${na}\``)} | ${doc.description}\n`;
                 }
             });
         }
 
         markdown += `\n`;
-        // Handle other cases like "constant", "package", etc. if needed
     }
 
     return markdown;
 }
-let docs = JSON.parse(fs.readFileSync('./docs/docs.json',{encoding:'utf8'})||'{}');
+let docs = JSON.parse(fs.readFileSync("./docs/docs.json", { encoding: "utf8" }) || "{}");
 
-// Fungsi untuk membuka direktori dan menghasilkan dokumen markdown dari file-file JavaScript di dalamnya
 async function open(dir) {
     try {
         const dirents = fs.readdirSync(dir, { withFileTypes: true });
         for (let dirent of dirents) {
             let curr = path.join(dir, dirent.name);
             if (dirent.isDirectory()) {
-                await open(curr); // Rekursi untuk direktori
+                await open(curr);
             } else {
                 let { ext, name } = path.parse(curr);
                 if (ext == ".js") {
                     if (argvName && !name.includes(argvName)) continue;
-                    console.log("Generating docs for " + name);
                     let data = execSync(`jsdoc -X ${curr}`);
                     try {
                         data = JSON.parse(data.toString());
                         if (!Array.isArray(data) || data.length === 0) {
-                            console.error(`No valid data found for ${curr}`);
                             continue;
                         }
 
                         const grouped = groupBy(data, (item) => item.kind);
                         const md = generateMarkdown(grouped);
-                        // console.log(md);
 
-                        // console.log(docs)
                         docs[name] = md;
-                        // fs.writeFileSync("./docs/docs.json", JSON.stringify(docs));
 
-                        // fs.writeFileSync(`./docs/${name}.md`, md);
-                    } catch (error) {
-                        console.log(error);
-                        console.error(`Error parsing data for ${curr}: ${error.message}`);
-                    }
+                        fs.writeFileSync(`./docs/${name}.md`, md);
+                    } catch (error) {}
                 }
             }
         }
-    } catch (error) {
-        console.error(`Error reading directory ${dir}: ${error.message}`);
-    }
+    } catch (error) {}
 }
 
 (async () => {
-    // Memulai proses generasi dokumentasi pada direktori tertentu
     await open("./src/material", docs);
 
     fs.writeFileSync("./docs/docs.json", JSON.stringify(docs));
