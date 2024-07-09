@@ -25,6 +25,100 @@ class DevColorComponent extends MDComponent {
                         @input="${this.handleChange2}"
                     />
                 </div>
+
+                
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-error);
+                            color:var(--md-sys-color-on-error);
+                        "
+                    >error</div>
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-error-container);
+                            color:var(--md-sys-color-on-error-container);
+                        "
+                    >error-container</div>
+                </div>
+
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-success);
+                            color:var(--md-sys-color-on-success);
+                        "
+                    >success</div>
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-success-container);
+                            color:var(--md-sys-color-on-success-container);
+                        "
+                    >success-container</div>
+                </div>
+
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-info);
+                            color:var(--md-sys-color-on-info);
+                        "
+                    >info</div>
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-info-container);
+                            color:var(--md-sys-color-on-info-container);
+                        "
+                    >info-container</div>
+                </div>
+
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-warning);
+                            color:var(--md-sys-color-on-warning);
+                        "
+                    >warning</div>
+                    <div
+                        style="
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:112px;
+                            height:112px;
+                            background-color:var(--md-sys-color-warning-container);
+                            color:var(--md-sys-color-on-warning-container);
+                        "
+                    >warning-container</div>
+                </div>
+
             </div>
         `;
     }
