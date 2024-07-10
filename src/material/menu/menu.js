@@ -43,6 +43,7 @@ class MDMenuComponent extends MDSheetComponent {
         /* prettier-ignore */
         return [html`
             <div 
+                .tabIndex="${0}"
                 class="md-virtual"
                 @onVirtualScroll="${this.handleMenuViewportVirtualScroll}"
             >
@@ -123,18 +124,20 @@ class MDMenuComponent extends MDSheetComponent {
      * Updates the virtual list with the current store data and filters.
      * @private
      */
-    updateVirtualList() {
+    async updateVirtualList() {
         const { total, docs } = this.store.getAll({
             filters: this.filters,
         });
         this.storeTotal = total;
         this.storeList = docs;
 
+        this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`;
+
         this.virtual.options.rowTotal = this.storeTotal;
         this.virtual.options.rowHeight = this.rowHeight;
         this.virtual.options.rowBuffer = 0;
 
-        this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`;
+
     }
 
     /**
@@ -157,6 +160,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @private
      */
     async handleMenuViewportVirtualScroll(event) {
+
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
 
@@ -192,8 +196,11 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Object} options - Additional options for displaying the menu.
      */
     async showModal(button, options) {
+        
         this.setPlacement(button, options);
         super.showModal();
+        
+
     }
 
     /**
