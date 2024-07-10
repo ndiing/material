@@ -64,7 +64,7 @@ class DevMainComponent extends MDComponent {
             {"routerLink":"/image"},
             {"routerLink":"/badge"},
             {"routerLink":"/form"},
-            {"routerLink":"/form2"},
+            // {"routerLink":"/form2"},
             {"routerLink":"/checkbox"},
             {"routerLink":"/radio-button"},
             {"routerLink":"/switch"},
@@ -72,7 +72,7 @@ class DevMainComponent extends MDComponent {
             {"routerLink":"/progress-indicator"},
             {"routerLink":"/list-item"},
             {"routerLink":"/list"},
-            {"routerLink":"/selection"},
+            // {"routerLink":"/selection"},
             {"routerLink":"/tree-item"},
             {"routerLink":"/tree"},
 
@@ -86,8 +86,8 @@ class DevMainComponent extends MDComponent {
             {"routerLink":"/chips"},
 
             {"routerLink":"/text-field"},
-            {"routerLink":"/text-field2"},
-            {"routerLink":"/text-field3"},
+            // {"routerLink":"/text-field2"},
+            // {"routerLink":"/text-field3"},
             {"routerLink":"/datetime-field"},
             {"routerLink":"/date-field"},
             {"routerLink":"/month-field"},

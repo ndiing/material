@@ -7,6 +7,8 @@ class DevDataTableComponent extends MDComponent {
         this.columns = Array.from({ length: 10 }, (v, k) => ({
             name: "name" + k,
             label: "label" + k,
+            resizable:true,
+            sortable:true,
         }));
 
         this.rows = Array.from({ length: 100 }, (v, k) => {
