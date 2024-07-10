@@ -117,11 +117,11 @@ class MDEmojiPickerComponent extends MDSheetComponent {
                 </div>
 
                 <div 
-                    class="md-emoji-picker__viewport"
+                    class="md-virtual md-emoji-picker__viewport"
                     @onVirtualScroll="${this.handleEmojiPickerViewportVirtualScroll}"
                 >
-                    <div class="md-emoji-picker__scrollbar"></div>
-                    <div class="md-emoji-picker__container">
+                    <div class="md-virtual__scrollbar md-emoji-picker__scrollbar"></div>
+                    <div class="md-virtual__container md-emoji-picker__container">
 
                         <div class="md-emoji-picker__grid">
                             ${this.virtualRows?.map(row=>html`
@@ -173,10 +173,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.dataRows = dataRows;
 
         this.virtual = new MDVirtualController(this, {
-            viewportSelector: ".md-emoji-picker__viewport",
-            scrollbarSelector: ".md-emoji-picker__scrollbar",
-            containerSelector: ".md-emoji-picker__container",
-
             rowTotal: this.dataRows.length,
             rowHeight: 48,
             rowBuffer: this.dataTabs.length,
@@ -232,24 +228,15 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     /**
      * @private
      */
-    handleEmojiPickerViewportVirtualScroll(event) {
-        const {
-            viewport,
-            scrollbar,
-            container,
-            scrollbarHeight,
-            translateY,
-            rowStart,
-            rowEnd,
-            options: { rowHeight },
-        } = this.virtual;
-
+    async handleEmojiPickerViewportVirtualScroll(event) {
         this.virtualRows = this.dataRows.filter((row, index) => {
-            return (index >= rowStart && index < rowEnd) || !!row[0]?.label;
+            return (index >= this.virtual.rowStart && index < this.virtual.rowEnd) || !!row[0]?.label;
         });
         this.requestUpdate();
 
-        const scrollTop = Math.floor(viewport.scrollTop / rowHeight);
+        await this.updateComplete;
+
+        const scrollTop = Math.floor(this.virtual.viewport.scrollTop / this.virtual.options.rowHeight);
         const data = this.dataTabs.find((item, index, array) => {
             if (array[index + 1]) {
                 return scrollTop >= item.rowIndex && scrollTop < array[index + 1].rowIndex;
@@ -261,9 +248,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             this.selectedTab = data;
             this.updateEmojiPickerTabsIndicator(data);
         }
-
-        scrollbar.style.height = scrollbarHeight + "px";
-        container.style.transform = `translate3d(0,${translateY}px,0)`;
 
         this.emit("onEmojiPickerViewportVirtualScroll", event);
     }

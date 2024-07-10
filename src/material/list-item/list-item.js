@@ -53,7 +53,7 @@ class MDListItemComponent extends MDComponent {
 
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
-        
+
         activated: { type: Boolean, reflect: true },
     };
 

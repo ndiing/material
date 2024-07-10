@@ -10,7 +10,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MDSelectFieldComponent extends MDTextFieldComponent {
     static properties = {
         ...MDTextFieldComponent.properties,
-        // options:{type:Array},
         map: { type: Object },
     };
 

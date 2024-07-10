@@ -136,8 +136,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.options.rowTotal = this.storeTotal;
         this.virtual.options.rowHeight = this.rowHeight;
         this.virtual.options.rowBuffer = 0;
-
-
     }
 
     /**
@@ -160,7 +158,6 @@ class MDMenuComponent extends MDSheetComponent {
      * @private
      */
     async handleMenuViewportVirtualScroll(event) {
-
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
 
@@ -196,11 +193,8 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Object} options - Additional options for displaying the menu.
      */
     async showModal(button, options) {
-        
         this.setPlacement(button, options);
         super.showModal();
-        
-
     }
 
     /**

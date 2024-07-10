@@ -19,7 +19,6 @@ class MDMarkdownComponent extends MDComponent {
         text: { type: String },
     };
 
-    
     /**
      * Creates an instance of MDMarkdownComponent.
      */
@@ -34,9 +33,7 @@ class MDMarkdownComponent extends MDComponent {
      * @private
      */
     render() {
-        return html`
-            ${this.text?html`<div class="md-markdown__body">${unsafeHTML(marked(this.text))}</div>`:nothing}
-        `
+        return html` ${this.text ? html`<div class="md-markdown__body">${unsafeHTML(marked(this.text))}</div>` : nothing} `;
     }
 
     /**
