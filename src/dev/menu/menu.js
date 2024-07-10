@@ -55,6 +55,9 @@ class DevMenuComponent extends MDComponent {
                         @onCardIconButtonClick=${this.menu3Click}
                         @onCardButtonClick=${this.menu3Click}
                     ></md-menu>
+                    <!-- <input type="text"
+                        @input="${(event) => this.menu3.filter(event.currentTarget.value)}"
+                    > -->
                     <md-button
                         id="button3"
                         variant="tonal"
@@ -90,7 +93,7 @@ class DevMenuComponent extends MDComponent {
         return this.querySelector("#menu3");
     }
     handleButtonMenu3Click(event) {
-        this.menu3.showModal(event.currentTarget);
+        this.menu3.show(event.currentTarget);
     }
     menu3Click() {
         this.menu3.close();

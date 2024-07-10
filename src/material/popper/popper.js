@@ -64,65 +64,63 @@ class MDPopperController {
      * @param {Object} options - Additional options for setting the popper placement.
      */
     async setPlacement(button, options = {}) {
-        this.button = button;
-        this.options = {
+        options = {
             ...this.options,
             ...options,
         };
-        this.container = this.host;
-        this.boundary = this.options.boundary;
 
         const placements = {
-            above: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.top - this.containerRect.height - this.options.offset, originX: "50%", originY: "100%" }),
-            "above-start": () => ({ left: this.buttonRect.left, top: this.buttonRect.top - this.containerRect.height - this.options.offset, originX: "0%", originY: "100%" }),
-            "above-end": () => ({ left: this.buttonRect.left + this.buttonRect.width - this.containerRect.width, top: this.buttonRect.top - this.containerRect.height - this.options.offset, originX: "100%", originY: "100%" }),
-            after: () => ({ left: this.buttonRect.right + this.options.offset, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "0%", originY: "50%" }),
-            "after-start": () => ({ left: this.buttonRect.right + this.options.offset, top: this.buttonRect.top, originX: "0%", originY: "0%" }),
-            "after-end": () => ({ left: this.buttonRect.right + this.options.offset, top: this.buttonRect.top + this.buttonRect.height - this.containerRect.height, originX: "0%", originY: "100%" }),
-            below: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.bottom + this.options.offset, originX: "50%", originY: "0%" }),
-            "below-start": () => ({ left: this.buttonRect.left, top: this.buttonRect.bottom + this.options.offset, originX: "0%", originY: "0%" }),
-            "below-end": () => ({ left: this.buttonRect.left + this.buttonRect.width - this.containerRect.width, top: this.buttonRect.bottom + this.options.offset, originX: "100%", originY: "0%" }),
-            before: () => ({ left: this.buttonRect.left - this.containerRect.width - this.options.offset, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "100%", originY: "50%" }),
-            "before-start": () => ({ left: this.buttonRect.left - this.containerRect.width - this.options.offset, top: this.buttonRect.top, originX: "100%", originY: "0%" }),
-            "before-end": () => ({ left: this.buttonRect.left - this.containerRect.width - this.options.offset, top: this.buttonRect.top + this.buttonRect.height - this.containerRect.height, originX: "100%", originY: "100%" }),
-            top: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.top + this.options.offset, originX: "50%", originY: "0%" }),
-            "top-start": () => ({ left: this.buttonRect.left, top: this.buttonRect.top + this.options.offset, originX: "0%", originY: "0%" }),
-            "top-end": () => ({ left: this.buttonRect.left + this.buttonRect.width - this.containerRect.width, top: this.buttonRect.top + this.options.offset, originX: "100%", originY: "0%" }),
-            right: () => ({ left: this.buttonRect.right - this.containerRect.width - this.options.offset, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "0%", originY: "50%" }),
-            "right-start": () => ({ left: this.buttonRect.right - this.containerRect.width - this.options.offset, top: this.buttonRect.top, originX: "0%", originY: "0%" }),
-            "right-end": () => ({ left: this.buttonRect.right - this.containerRect.width - this.options.offset, top: this.buttonRect.top + this.buttonRect.height - this.containerRect.height, originX: "0%", originY: "100%" }),
-            bottom: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.bottom - this.containerRect.height - this.options.offset, originX: "50%", originY: "100%" }),
-            "bottom-start": () => ({ left: this.buttonRect.left, top: this.buttonRect.bottom - this.containerRect.height - this.options.offset, originX: "0%", originY: "100%" }),
-            "bottom-end": () => ({ left: this.buttonRect.left + this.buttonRect.width - this.containerRect.width, top: this.buttonRect.bottom - this.containerRect.height - this.options.offset, originX: "100%", originY: "100%" }),
-            left: () => ({ left: this.buttonRect.left + this.options.offset, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "100%", originY: "50%" }),
-            "left-start": () => ({ left: this.buttonRect.left + this.options.offset, top: this.buttonRect.top, originX: "100%", originY: "0%" }),
-            "left-end": () => ({ left: this.buttonRect.left + this.options.offset, top: this.buttonRect.top + this.buttonRect.height - this.containerRect.height, originX: "100%", originY: "100%" }),
-            "north-east": () => ({ left: this.buttonRect.right + this.options.offset, top: this.buttonRect.top - this.containerRect.height - this.options.offset, originX: "0%", originY: "100%" }),
-            "south-east": () => ({ left: this.buttonRect.right + this.options.offset, top: this.buttonRect.bottom + this.options.offset, originX: "0%", originY: "0%" }),
-            "south-west": () => ({ left: this.buttonRect.left - this.containerRect.width - this.options.offset, top: this.buttonRect.bottom + this.options.offset, originX: "100%", originY: "0%" }),
-            "north-west": () => ({ left: this.buttonRect.left - this.containerRect.width - this.options.offset, top: this.buttonRect.top - this.containerRect.height - this.options.offset, originX: "100%", originY: "100%" }),
-            center: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "50%", originY: "50%" }),
+            above: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top - containerRect.height - options.offset, originX: "50%", originY: "100%" }),
+            "above-start": () => ({ left: buttonRect.left, top: buttonRect.top - containerRect.height - options.offset, originX: "0%", originY: "100%" }),
+            "above-end": () => ({ left: buttonRect.left + buttonRect.width - containerRect.width, top: buttonRect.top - containerRect.height - options.offset, originX: "100%", originY: "100%" }),
+            after: () => ({ left: buttonRect.right + options.offset, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "0%", originY: "50%" }),
+            "after-start": () => ({ left: buttonRect.right + options.offset, top: buttonRect.top, originX: "0%", originY: "0%" }),
+            "after-end": () => ({ left: buttonRect.right + options.offset, top: buttonRect.top + buttonRect.height - containerRect.height, originX: "0%", originY: "100%" }),
+            below: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.bottom + options.offset, originX: "50%", originY: "0%" }),
+            "below-start": () => ({ left: buttonRect.left, top: buttonRect.bottom + options.offset, originX: "0%", originY: "0%" }),
+            "below-end": () => ({ left: buttonRect.left + buttonRect.width - containerRect.width, top: buttonRect.bottom + options.offset, originX: "100%", originY: "0%" }),
+            before: () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "100%", originY: "50%" }),
+            "before-start": () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.top, originX: "100%", originY: "0%" }),
+            "before-end": () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.top + buttonRect.height - containerRect.height, originX: "100%", originY: "100%" }),
+            top: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top + options.offset, originX: "50%", originY: "0%" }),
+            "top-start": () => ({ left: buttonRect.left, top: buttonRect.top + options.offset, originX: "0%", originY: "0%" }),
+            "top-end": () => ({ left: buttonRect.left + buttonRect.width - containerRect.width, top: buttonRect.top + options.offset, originX: "100%", originY: "0%" }),
+            right: () => ({ left: buttonRect.right - containerRect.width - options.offset, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "0%", originY: "50%" }),
+            "right-start": () => ({ left: buttonRect.right - containerRect.width - options.offset, top: buttonRect.top, originX: "0%", originY: "0%" }),
+            "right-end": () => ({ left: buttonRect.right - containerRect.width - options.offset, top: buttonRect.top + buttonRect.height - containerRect.height, originX: "0%", originY: "100%" }),
+            bottom: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.bottom - containerRect.height - options.offset, originX: "50%", originY: "100%" }),
+            "bottom-start": () => ({ left: buttonRect.left, top: buttonRect.bottom - containerRect.height - options.offset, originX: "0%", originY: "100%" }),
+            "bottom-end": () => ({ left: buttonRect.left + buttonRect.width - containerRect.width, top: buttonRect.bottom - containerRect.height - options.offset, originX: "100%", originY: "100%" }),
+            left: () => ({ left: buttonRect.left + options.offset, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "100%", originY: "50%" }),
+            "left-start": () => ({ left: buttonRect.left + options.offset, top: buttonRect.top, originX: "100%", originY: "0%" }),
+            "left-end": () => ({ left: buttonRect.left + options.offset, top: buttonRect.top + buttonRect.height - containerRect.height, originX: "100%", originY: "100%" }),
+            "north-east": () => ({ left: buttonRect.right + options.offset, top: buttonRect.top - containerRect.height - options.offset, originX: "0%", originY: "100%" }),
+            "south-east": () => ({ left: buttonRect.right + options.offset, top: buttonRect.bottom + options.offset, originX: "0%", originY: "0%" }),
+            "south-west": () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.bottom + options.offset, originX: "100%", originY: "0%" }),
+            "north-west": () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.top - containerRect.height - options.offset, originX: "100%", originY: "100%" }),
+            center: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "50%", originY: "50%" }),
         };
 
-        if (this.button instanceof Event) {
-            const { clientX: left, clientY: top, width, height } = this.button;
-            this.buttonRect = { left, top, width, height, right: left + width, bottom: top + height };
+        let buttonRect
+        if (button instanceof Event) {
+            const { clientX: left, clientY: top, width, height } = button;
+            buttonRect = { left, top, width, height, right: left + width, bottom: top + height };
         } else {
-            this.buttonRect = this.button.getBoundingClientRect();
+            buttonRect = button.getBoundingClientRect();
         }
 
-        this.containerRect = this.container.getBoundingClientRect();
-        this.boundaryRect = this.boundary.getBoundingClientRect();
+        let containerRect = this.host.getBoundingClientRect();
+        let boundaryRect = options.boundary.getBoundingClientRect();
 
         let left, top, originX, originY;
         let matches;
 
-        for (const placement of this.options.placements) {
+        for (const placement of options.placements) {
             ({ left, top, originX, originY } = placements[placement]());
-            const right = left + this.containerRect.width;
-            const bottom = top + this.containerRect.height;
+            const right = left + containerRect.width;
+            const bottom = top + containerRect.height;
 
-            const exceed = left < this.boundaryRect.left || top < this.boundaryRect.top || right > this.boundaryRect.right || bottom > this.boundaryRect.bottom;
+            const exceed = left < boundaryRect.left || top < boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
 
             if (!exceed) {
                 matches = 1;
@@ -134,9 +132,10 @@ class MDPopperController {
             ({ left, top, originX, originY } = placements.center());
         }
 
-        this.container.style.left = `${left}px`;
-        this.container.style.top = `${top}px`;
-        this.container.style.transformOrigin = `${originX} ${originY}`;
+        this.host.style.left = `${left}px`;
+        this.host.style.top = `${top}px`;
+        this.host.style.transformOrigin = `${originX} ${originY}`;
+
     }
 }
 
