@@ -3,21 +3,21 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{description}}
+ * A custom chip component with enhanced functionality.
  * @element md-chip
  * @extends MDComponent
- * @fires MDChipComponent#onChipActionClick - {{description}}
+ * @fires MDChipComponent#onChipActionClick - Event emitted when the chip action button is clicked.
  */
 class MDChipComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} variant - {{description}}
-     * @property {String} avatar - {{description}}
-     * @property {String} icon - {{description}}
-     * @property {String} label - {{description}}
-     * @property {String} action - {{description}}
-     * @property {Boolean} selected - {{description}}
-     * @property {Boolean} disabled - {{description}}
+     * Defines the properties of the MDChipComponent.
+     * @property {String} variant - The variant of the chip, which can be one of "assist", "filter", "input", or "suggestion".
+     * @property {String} avatar - The URL of the avatar image to display in the chip.
+     * @property {String} icon - The icon to display in the chip.
+     * @property {String} label - The text label of the chip.
+     * @property {String} action - The icon for the action button in the chip.
+     * @property {Boolean} selected - Indicates whether the chip is selected.
+     * @property {Boolean} disabled - Indicates whether the chip is disabled.
      */
     static properties = {
         variant: { type: String },
@@ -32,7 +32,7 @@ class MDChipComponent extends MDComponent {
     variants = ["assist", "filter", "input", "suggestion"];
 
     /**
-     * {{description}}
+     * Creates an instance of MDChipComponent.
      */
     constructor() {
         super();
@@ -43,6 +43,7 @@ class MDChipComponent extends MDComponent {
     }
 
     /**
+     * Renders the chip component.
      * @private
      */
     render() {
@@ -57,6 +58,7 @@ class MDChipComponent extends MDComponent {
     }
 
     /**
+     * Called when the component is added to the DOM.
      * @private
      */
     connectedCallback() {
@@ -66,6 +68,8 @@ class MDChipComponent extends MDComponent {
     }
 
     /**
+     * Called when the component is updated.
+     * @param {Map} changedProperties - The properties that have changed.
      * @private
      */
     updated(changedProperties) {
@@ -90,6 +94,8 @@ class MDChipComponent extends MDComponent {
     }
 
     /**
+     * Handles the click event on the chip action button.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleChipActionClick(event) {

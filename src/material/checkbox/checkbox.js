@@ -4,22 +4,22 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{description}}
+ * A custom checkbox component with enhanced functionality.
  * @element md-checkbox
  * @extends MDComponent
- * @fires MDCheckboxComponent#onCheckboxNativeInput - {{description}}
- * @fires MDCheckboxComponent#onCheckboxNativeReset - {{description}}
+ * @fires MDCheckboxComponent#onCheckboxNativeInput - Event emitted when the native checkbox input event is triggered.
+ * @fires MDCheckboxComponent#onCheckboxNativeReset - Event emitted when the native checkbox reset event is triggered.
  */
 class MDCheckboxComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Boolean} checked - {{description}}
-     * @property {Boolean} defaultChecked - {{description}}
-     * @property {Boolean} disabled - {{description}}
-     * @property {Boolean} indeterminate - {{description}}
-     * @property {String} value - {{description}}
-     * @property {String} name - {{description}}
-     * @property {String} type - {{description}}
+     * Defines the properties of the MDCheckboxComponent.
+     * @property {Boolean} checked - Indicates whether the checkbox is checked.
+     * @property {Boolean} defaultChecked - Indicates the default checked state of the checkbox.
+     * @property {Boolean} disabled - Indicates whether the checkbox is disabled.
+     * @property {Boolean} indeterminate - Indicates whether the checkbox is in an indeterminate state.
+     * @property {String} value - The value associated with the checkbox.
+     * @property {String} name - The name of the checkbox.
+     * @property {String} type - The type of the checkbox (default is "checkbox").
      */
     static properties = {
         checked: { type: Boolean },
@@ -32,7 +32,7 @@ class MDCheckboxComponent extends MDComponent {
     };
 
     /**
-     * {{description}}
+     * Creates an instance of MDCheckboxComponent.
      */
     constructor() {
         super();
@@ -49,6 +49,7 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Renders the native input element of the checkbox.
      * @private
      */
     renderNative() {
@@ -71,6 +72,7 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Renders the track element of the checkbox.
      * @private
      */
     renderTrack() {
@@ -81,6 +83,7 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Renders the container element that wraps the native input and track elements.
      * @private
      */
     renderContainer() {
@@ -94,6 +97,7 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Renders the entire checkbox component.
      * @private
      */
     render() {
@@ -107,6 +111,7 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Called when the component is added to the DOM.
      * @private
      */
     connectedCallback() {
@@ -120,6 +125,8 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Handles the native input event for the checkbox.
+     * @param {Event} event - The input event object.
      * @private
      */
     handleCheckboxNativeInput(event) {
@@ -133,6 +140,8 @@ class MDCheckboxComponent extends MDComponent {
     }
 
     /**
+     * Handles the native reset event for the checkbox.
+     * @param {Event} event - The reset event object.
      * @private
      */
     handleCheckboxNativeReset(event) {

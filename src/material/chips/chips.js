@@ -3,16 +3,16 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{description}}
+ * A container component for displaying a list of chips.
  * @element md-chips
  * @extends MDComponent
- * @fires MDChipsComponent#onChipClick - {{description}}
+ * @fires MDChipsComponent#onChipClick - Event emitted when a chip is clicked.
  */
 class MDChipsComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Array} list - {{description}}
-     * @property {Boolean} multiSelection - {{description}}
+     * Defines the properties of the MDChipsComponent.
+     * @property {Array} list - The list of chip data objects to render.
+     * @property {Boolean} multiSelection - Indicates whether multiple chips can be selected.
      */
     static properties = {
         list: { type: Array },
@@ -20,13 +20,15 @@ class MDChipsComponent extends MDComponent {
     };
 
     /**
-     * {{description}}
+     * Creates an instance of MDChipsComponent.
      */
     constructor() {
         super();
     }
 
     /**
+     * Renders a single chip component.
+     * @param {Object} item - The data object for the chip.
      * @private
      */
     renderChip(item) {
@@ -48,6 +50,7 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
+     * Renders the list of chips.
      * @private
      */
     render() {
@@ -56,6 +59,7 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
+     * Called when the component is added to the DOM.
      * @private
      */
     connectedCallback() {
@@ -65,6 +69,8 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
+     * Handles the click event on a chip.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleChipClick(event) {
@@ -80,6 +86,8 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
+     * Handles the chip action click event.
+     * @param {Event} event - The chip action click event object.
      * @private
      */
     handleChipActionClick(event) {

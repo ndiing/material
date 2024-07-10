@@ -1,12 +1,12 @@
 import { MDGestureController } from "../gesture/gesture.js";
 
 /**
- * {{description}}
+ * Represents a data table column with gesture controls for dragging and resizing.
  * @extends HTMLTableCellElement
  */
 class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     /**
-     * {{description}}
+     * Initializes the component and sets up the gesture controller.
      */
     constructor() {
         super();
@@ -18,6 +18,7 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     }
 
     /**
+     * Called when the component is added to the DOM.
      * @private
      */
     connectedCallback() {
@@ -25,12 +26,16 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     }
 
     /**
+     * Called when the component is removed from the DOM.
      * @private
      */
     disconnectedCallback() {
         this.gesture.hostDisconnected();
     }
 
+    /**
+     * Adds a controller to the component. (Currently not implemented)
+     */
     addController() {}
 }
 
