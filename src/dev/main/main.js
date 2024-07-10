@@ -35,7 +35,7 @@ class DevMainComponent extends MDComponent {
             "component",
             "data-table",
             "data-table-item",
-            "data-table-native-column",
+            // "data-table-native-column",
             "date-field",
             "date-picker",
             "datetime-field",
