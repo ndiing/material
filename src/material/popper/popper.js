@@ -66,7 +66,14 @@ class MDPopperController {
             center: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "50%", originY: "50%" }),
         };
 
-        this.buttonRect = this.getRect(this.button);
+
+        if (this.button instanceof Event) {
+            const { clientX: left, clientY: top, width, height } = this.button;
+            this.buttonRect =  { left, top, width, height, right: left + width, bottom: top + height };
+        } else {
+            this.buttonRect =  this.button.getBoundingClientRect();
+        }
+
         this.containerRect = this.container.getBoundingClientRect();
         this.boundaryRect = this.boundary.getBoundingClientRect();
 
@@ -95,20 +102,6 @@ class MDPopperController {
         this.container.style.transformOrigin = `${originX} ${originY}`;
     }
 
-    /**
-     * Retrieves the bounding rectangle of an element.
-     * @private
-     * @param {HTMLElement|Event} button - Element or event representing the button.
-     * @returns {DOMRect} Bounding rectangle of the element.
-     */
-    getRect(button) {
-        if (button instanceof Event) {
-            const { clientX: left, clientY: top, width, height } = button;
-            return { left, top, width, height, right: left + width, bottom: top + height };
-        } else {
-            return button.getBoundingClientRect();
-        }
-    }
 }
 
 export { MDPopperController };
