@@ -1,8 +1,10 @@
 .md-markdown {
-    display: block;
+    display: flex;
+    flex-direction: column;
     max-width: 840px;
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
+}
+.md-markdown__body {
+    flex: 1;
 
     /* Headings */
 

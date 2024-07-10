@@ -1,7 +1,7 @@
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { MDComponent } from "../component/component.js";
 import { marked } from "marked";
-import { nothing } from "lit";
+import { html, nothing } from "lit";
 
 /**
  * A custom element for rendering Markdown content.
@@ -19,6 +19,7 @@ class MDMarkdownComponent extends MDComponent {
         text: { type: String },
     };
 
+    
     /**
      * Creates an instance of MDMarkdownComponent.
      */
@@ -33,7 +34,9 @@ class MDMarkdownComponent extends MDComponent {
      * @private
      */
     render() {
-        return this.text ? unsafeHTML(marked(this.text)) : nothing;
+        return html`
+            ${this.text?html`<div class="md-markdown__body">${unsafeHTML(marked(this.text))}</div>`:nothing}
+        `
     }
 
     /**
@@ -44,15 +47,6 @@ class MDMarkdownComponent extends MDComponent {
         super.connectedCallback();
 
         this.classList.add("md-markdown");
-
-        if (this.href) {
-            fetch(this.href)
-                .then((res) => res.text())
-                .then((text) => {
-                    this.text = text;
-                    this.requestUpdate();
-                });
-        }
     }
 
     /**
@@ -60,16 +54,16 @@ class MDMarkdownComponent extends MDComponent {
      * @private
      * @param {Map} changedProperties - The properties that changed.
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
 
-        if (changedProperties.has("href") && changedProperties.get("href")) {
-            fetch(this.href)
-                .then((res) => res.text())
-                .then((text) => {
-                    this.text = text;
-                    this.requestUpdate();
-                });
+        if (changedProperties.has("href")) {
+            try {
+                const response = await fetch(this.href);
+                const text = await response.text();
+                this.text = text;
+                this.requestUpdate();
+            } catch (error) {}
         }
     }
 }
