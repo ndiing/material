@@ -100,7 +100,7 @@
                 &::placeholder {
                     visibility: hidden;
                 }
-                &::-webkit-datetime-edit{
+                &::-webkit-datetime-edit {
                     visibility: hidden;
                 }
             }
@@ -130,7 +130,7 @@
                     &::placeholder {
                         visibility: visible;
                     }
-                    &::-webkit-datetime-edit{
+                    &::-webkit-datetime-edit {
                         visibility: visible;
                     }
                 }
@@ -228,35 +228,35 @@
 }
 
 .md-text-field--rounded {
-    .md-text-field__container{
+    .md-text-field__container {
         border-radius: calc(56px / 2);
     }
 }
 
-.md-text-field__native[type="color" i]::-webkit-color-swatch-wrapper{
+.md-text-field__native[type="color" i]::-webkit-color-swatch-wrapper {
     padding: 0;
 }
-.md-text-field__native[type="color" i]::-webkit-color-swatch{
+.md-text-field__native[type="color" i]::-webkit-color-swatch {
     border: 0;
 }
-.md-text-field__native::-webkit-datetime-edit-fields-wrapper{
+.md-text-field__native::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
 }
-.md-text-field__native::-webkit-datetime-edit-year-field{
+.md-text-field__native::-webkit-datetime-edit-year-field {
     padding: 0;
 }
-.md-text-field__native::-webkit-datetime-edit-month-field{
+.md-text-field__native::-webkit-datetime-edit-month-field {
     padding: 0;
 }
-.md-text-field__native::-webkit-datetime-edit-day-field{
+.md-text-field__native::-webkit-datetime-edit-day-field {
     padding: 0;
 }
-.md-text-field__native::-webkit-datetime-edit-hour-field{
+.md-text-field__native::-webkit-datetime-edit-hour-field {
     padding: 0;
 }
-.md-text-field__native::-webkit-datetime-edit-minute-field{
+.md-text-field__native::-webkit-datetime-edit-minute-field {
     padding: 0;
 }
-.md-text-field__native[type="file" i]::-webkit-file-upload-button{
+.md-text-field__native[type="file" i]::-webkit-file-upload-button {
     display: none;
 }

@@ -1,7 +1,7 @@
 /**
  * Finds the nearest scrollable parent of the given element.
  * A scrollable parent is an element that can be scrolled, i.e., it has overflow set to auto, scroll, or hidden with non-zero scrollHeight or scrollWidth.
- * 
+ *
  * @param {Element} element - The element whose scrollable parent needs to be found.
  * @returns {Element|null} - The nearest scrollable parent element, or null if none is found.
  */
@@ -16,9 +16,9 @@ function getScrollableParent(element) {
 
         const overflowY = window.getComputedStyle(parent).overflowY;
         const overflowX = window.getComputedStyle(parent).overflowX;
-        
-        const isScrollableY = (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'hidden') && parent.scrollHeight > parent.clientHeight;
-        const isScrollableX = (overflowX === 'auto' || overflowX === 'scroll' || overflowX === 'hidden') && parent.scrollWidth > parent.clientWidth;
+
+        const isScrollableY = (overflowY === "auto" || overflowY === "scroll" || overflowY === "hidden") && parent.scrollHeight > parent.clientHeight;
+        const isScrollableX = (overflowX === "auto" || overflowX === "scroll" || overflowX === "hidden") && parent.scrollWidth > parent.clientWidth;
 
         if (isScrollableY || isScrollableX) {
             return parent;
@@ -27,7 +27,6 @@ function getScrollableParent(element) {
 
     return null;
 }
-
 
 /**
  * Provides a controller for managing popper-like behavior on elements.
@@ -49,6 +48,14 @@ class MDPopperController {
             offset: 0,
             ...options,
         };
+    }
+
+    async hostConnected() {
+        await this.host.updateComplete;
+    }
+
+    async hostDisconnected() {
+        await this.host.updateComplete;
     }
 
     /**
@@ -97,12 +104,11 @@ class MDPopperController {
             center: () => ({ left: this.buttonRect.left + (this.buttonRect.width - this.containerRect.width) / 2, top: this.buttonRect.top + (this.buttonRect.height - this.containerRect.height) / 2, originX: "50%", originY: "50%" }),
         };
 
-
         if (this.button instanceof Event) {
             const { clientX: left, clientY: top, width, height } = this.button;
-            this.buttonRect =  { left, top, width, height, right: left + width, bottom: top + height };
+            this.buttonRect = { left, top, width, height, right: left + width, bottom: top + height };
         } else {
-            this.buttonRect =  this.button.getBoundingClientRect();
+            this.buttonRect = this.button.getBoundingClientRect();
         }
 
         this.containerRect = this.container.getBoundingClientRect();
@@ -131,9 +137,7 @@ class MDPopperController {
         this.container.style.left = `${left}px`;
         this.container.style.top = `${top}px`;
         this.container.style.transformOrigin = `${originX} ${originY}`;
-
     }
-
 }
 
 export { MDPopperController };

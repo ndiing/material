@@ -60,7 +60,9 @@ class MDMarkdownComponent extends MDComponent {
                 const text = await response.text();
                 this.text = text;
                 this.requestUpdate();
-            } catch (error) {}
+            } catch (error) {
+                console.error(error);
+            }
         }
     }
 }
