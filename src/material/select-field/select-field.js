@@ -178,6 +178,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.picker.remove();
 
             this.pickerOpen = false;
+
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
