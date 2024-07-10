@@ -6,14 +6,11 @@ import { html } from "lit";
  * {{description}}
  * @element md-month-picker
  * @extends MDDatetimePickerComponent
- * @fires MDMonthPickerComponent#onMonthPickerSelection - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerIconButtonPrevClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerSelection - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerIconButtonNextClick - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerButtonLabelClick - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerButtonCancelClick - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerButtonOkClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerSelection - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerYearItemClick - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerSelection - {{description}}
  * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - {{description}}

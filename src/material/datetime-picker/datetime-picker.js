@@ -9,20 +9,14 @@ import { MDPopperController } from "../popper/popper.js";
  * @extends MDSheetComponent
  * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonClick - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerButtonClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonPrevClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonNextClick - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerButtonLabelClick - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerButtonCancelClick - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerButtonOkClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerYearItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerMonthItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerDayItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerHourItemClick - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
  * @fires MDDatetimePickerComponent#onDatetimePickerMinuteItemClick - {{description}}

@@ -16,7 +16,6 @@ import data from "../../assets/emojis.json";
  * @fires MDEmojiPickerComponent#onEmojiPickerGridColumnClick - {{description}}
  * @fires MDEmojiPickerComponent#onEmojiPickerIconButtonClick - {{description}}
  * @fires MDEmojiPickerComponent#onEmojiPickerButtonClick - {{description}}
- * @fires MDEmojiPickerComponent#onEmojiPickerSelection - {{description}}
  * @fires MDEmojiPickerComponent#onEmojiPickerIconButtonPrevClick - {{description}}
  * @fires MDEmojiPickerComponent#onEmojiPickerSelection - {{description}}
  * @fires MDEmojiPickerComponent#onEmojiPickerIconButtonNextClick - {{description}}

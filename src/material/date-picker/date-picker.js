@@ -6,16 +6,12 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
  * {{description}}
  * @element md-date-picker
  * @extends MDDatetimePickerComponent
- * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
  * @fires MDDatePickerComponent#onDatePickerIconButtonPrevClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
  * @fires MDDatePickerComponent#onDatePickerIconButtonNextClick - {{description}}
  * @fires MDDatePickerComponent#onDatePickerButtonLabelClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
  * @fires MDDatePickerComponent#onDatePickerButtonCancelClick - {{description}}
  * @fires MDDatePickerComponent#onDatePickerButtonOkClick - {{description}}
  * @fires MDDatePickerComponent#onDatePickerYearItemClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
  * @fires MDDatePickerComponent#onDatePickerMonthItemClick - {{description}}
  * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
  * @fires MDDatePickerComponent#onDatePickerDayItemClick - {{description}}

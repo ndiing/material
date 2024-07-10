@@ -6,14 +6,11 @@ import { html } from "lit";
  * {{description}}
  * @element md-time-picker
  * @extends MDDatetimePickerComponent
- * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
  * @fires MDTimePickerComponent#onTimePickerIconButtonPrevClick - {{description}}
- * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
  * @fires MDTimePickerComponent#onTimePickerIconButtonNextClick - {{description}}
  * @fires MDTimePickerComponent#onTimePickerButtonLabelClick - {{description}}
  * @fires MDTimePickerComponent#onTimePickerButtonCancelClick - {{description}}
  * @fires MDTimePickerComponent#onTimePickerButtonOkClick - {{description}}
- * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
  * @fires MDTimePickerComponent#onTimePickerHourItemClick - {{description}}
  * @fires MDTimePickerComponent#onTimePickerSelection - {{description}}
  * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - {{description}}

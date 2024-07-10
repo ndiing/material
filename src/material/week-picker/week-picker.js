@@ -6,16 +6,12 @@ import { html } from "lit";
  * {{description}}
  * @element md-week-picker
  * @extends MDDatetimePickerComponent
- * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - {{description}}
- * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - {{description}}
- * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - {{description}}
- * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerSelection - {{description}}
  * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - {{description}}

@@ -4,7 +4,7 @@ import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
 import jsdoc from "../../assets/jsdoc.json";
 
-MDRouter.historyApiFallback=false
+MDRouter.historyApiFallback = false;
 
 class DevMainComponent extends MDComponent {
     get topAppBar() {
@@ -20,107 +20,90 @@ class DevMainComponent extends MDComponent {
 
         this.list = [
             //
-            {"routerLink":"/functions"},
-            {"routerLink":"/localization"},
-            {"routerLink":"/color"},
-            {"routerLink":"/component"},
-            {"routerLink":"/router"},
-            {"routerLink":"/ripple"},
-            {"routerLink":"/popper"},
-            {"routerLink":"/progress"},
-            {"routerLink":"/gesture"},
-            {"routerLink":"/observer"},
-            {"routerLink":"/attribute-observer"},
-            {"routerLink":"/virtual"},
-            {"routerLink":"/store"},
-
-            {"routerLink":"/markdown"},
-            {"routerLink":"/icon"},
-            {"routerLink":"/emoji"},
-            {"routerLink":"/button"},
-            {"routerLink":"/icon-button"},
-            {"routerLink":"/card"},
-            {"routerLink":"/scrim"},
-            {"routerLink":"/sheet"},
-            {"routerLink":"/dialog"},
-            {"routerLink":"/top-app-bar"},
-            {"routerLink":"/side-sheet"},
-            {"routerLink":"/bottom-sheet"},
-            {"routerLink":"/segmented-button"},
-            {"routerLink":"/snackbar"},
-            {"routerLink":"/tooltip"},
-
-            {"routerLink":"/picker"},
-            {"routerLink":"/datetime-picker"},
-            {"routerLink":"/date-picker"},
-            {"routerLink":"/month-picker"},
-            {"routerLink":"/time-picker"},
-            {"routerLink":"/week-picker"},
-            {"routerLink":"/color-picker"},
-            {"routerLink":"/emoji-picker"},
-
-            {"routerLink":"/fab"},
-            {"routerLink":"/bottom-app-bar"},
-            {"routerLink":"/image"},
-            {"routerLink":"/badge"},
-            {"routerLink":"/form"},
-            // {"routerLink":"/form2"},
-            {"routerLink":"/checkbox"},
-            {"routerLink":"/radio-button"},
-            {"routerLink":"/switch"},
-            {"routerLink":"/slider"},
-            {"routerLink":"/progress-indicator"},
-            {"routerLink":"/list-item"},
-            {"routerLink":"/list"},
-            // {"routerLink":"/selection"},
-            {"routerLink":"/tree-item"},
-            {"routerLink":"/tree"},
-
-            {"routerLink":"/navigation-bar"},
-            {"routerLink":"/navigation-drawer"},
-            {"routerLink":"/navigation-rail"},
-
-            {"routerLink":"/menu"},
-            {"routerLink":"/tabs"},
-            {"routerLink":"/chip"},
-            {"routerLink":"/chips"},
-
-            {"routerLink":"/text-field"},
-            // {"routerLink":"/text-field2"},
-            // {"routerLink":"/text-field3"},
-            {"routerLink":"/datetime-field"},
-            {"routerLink":"/date-field"},
-            {"routerLink":"/month-field"},
-            {"routerLink":"/week-field"},
-            {"routerLink":"/time-field"},
-            {"routerLink":"/color-field"},
-            {"routerLink":"/number-field"},
-            {"routerLink":"/search-field"},
-            {"routerLink":"/password-field"},
-            {"routerLink":"/textarea-field"},
-            {"routerLink":"/select-field"},
-
-            {"routerLink":"/pagination"},
-            {"routerLink":"/data-table-item"},
-            // {"routerLink":"/data-table-native-column"},
-            {"routerLink":"/data-table"},
-
-        ];
-
-        this.list.sort((a, b) => {
-            return a.routerLink.localeCompare(b.routerLink);
-        });
-
-        for (let i = 0; i < this.list.length; i++) {
-            let item = this.list[i];
-            item.icon = "deployed_code";
-            item.label = toTitleCase(item.routerLink);
-            item.selected = item.routerLink === MDRouter.path;
-        }
+            "attribute-observer",
+            "badge",
+            "bottom-app-bar",
+            "bottom-sheet",
+            "button",
+            "card",
+            "checkbox",
+            "chip",
+            "chips",
+            "color",
+            "color-field",
+            "color-picker",
+            "component",
+            "data-table",
+            "data-table-item",
+            "data-table-native-column",
+            "date-field",
+            "date-picker",
+            "datetime-field",
+            "datetime-picker",
+            "dialog",
+            "emoji",
+            "emoji-picker",
+            "fab",
+            "form",
+            "functions",
+            "gesture",
+            "icon",
+            "icon-button",
+            "image",
+            "list",
+            "list-item",
+            "localization",
+            "markdown",
+            "menu",
+            "month-field",
+            "month-picker",
+            "navigation-bar",
+            "navigation-drawer",
+            "navigation-rail",
+            "number-field",
+            "observer",
+            "pagination",
+            "password-field",
+            "popper",
+            "progress",
+            "progress-indicator",
+            "radio-button",
+            "ripple",
+            "router",
+            "scrim",
+            "search-field",
+            "segmented-button",
+            "select-field",
+            "sheet",
+            "side-sheet",
+            "slider",
+            "snackbar",
+            "store",
+            "switch",
+            "tabs",
+            "text-field",
+            "textarea-field",
+            "time-field",
+            "time-picker",
+            "tooltip",
+            "top-app-bar",
+            "tree",
+            "tree-item",
+            "virtual",
+            "week-field",
+            "week-picker",
+        ]
+            .sort((a, b) => a.localeCompare(b))
+            .map((name) => ({
+                routerLink: "/" + name,
+                label: toTitleCase(name),
+                icon: "deployed_code",
+                selected: "/" + name === MDRouter.path,
+            }));
     }
 
     get doc() {
-        const name = MDRouter.path.slice(1)+'.js';
+        const name = MDRouter.path.slice(1) + ".js";
         return jsdoc[name];
     }
 
