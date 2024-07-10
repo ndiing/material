@@ -1,4 +1,4 @@
-import { isObject } from "../functions/functions";
+import { isObject } from "../functions/functions.js";
 
 /**
  * MDStore provides CRUD operations and advanced querying capabilities for an array of documents.
