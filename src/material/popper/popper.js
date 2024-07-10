@@ -1,4 +1,35 @@
 /**
+ * Finds the nearest scrollable parent of the given element.
+ * A scrollable parent is an element that can be scrolled, i.e., it has overflow set to auto, scroll, or hidden with non-zero scrollHeight or scrollWidth.
+ * 
+ * @param {Element} element - The element whose scrollable parent needs to be found.
+ * @returns {Element|null} - The nearest scrollable parent element, or null if none is found.
+ */
+function getScrollableParent(element) {
+    let parent = element;
+
+    while (parent) {
+        parent = parent.parentElement;
+        if (!parent) {
+            return null;
+        }
+
+        const overflowY = window.getComputedStyle(parent).overflowY;
+        const overflowX = window.getComputedStyle(parent).overflowX;
+        
+        const isScrollableY = (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'hidden') && parent.scrollHeight > parent.clientHeight;
+        const isScrollableX = (overflowX === 'auto' || overflowX === 'scroll' || overflowX === 'hidden') && parent.scrollWidth > parent.clientWidth;
+
+        if (isScrollableY || isScrollableX) {
+            return parent;
+        }
+    }
+
+    return null;
+}
+
+
+/**
  * Provides a controller for managing popper-like behavior on elements.
  */
 class MDPopperController {
@@ -100,6 +131,7 @@ class MDPopperController {
         this.container.style.left = `${left}px`;
         this.container.style.top = `${top}px`;
         this.container.style.transformOrigin = `${originX} ${originY}`;
+
     }
 
 }

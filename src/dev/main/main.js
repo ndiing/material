@@ -92,7 +92,7 @@ class DevMainComponent extends MDComponent {
             "virtual",
             "week-field",
             "week-picker",
-            "example",
+
         ]
             .sort((a, b) => a.localeCompare(b))
             .map((name) => ({

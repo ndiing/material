@@ -111,7 +111,8 @@ class MDTextFieldComponent extends MDComponent {
                 aria-label="Label"
                 type="${ifDefined(this.type)}"
                 name="${ifDefined(this.name)}"
-                value="${ifDefined(this.defaultValue)}"
+                .value="${ifDefined(this.value)}"
+                .defaultValue="${ifDefined(this.defaultValue)}"
                 min="${ifDefined(this.min)}"
                 max="${ifDefined(this.max)}"
                 minlength="${ifDefined(this.minLength)}"
@@ -144,6 +145,8 @@ class MDTextFieldComponent extends MDComponent {
                 class="md-text-field__native"
                 aria-label="Label"
                 name="${ifDefined(this.name)}"
+                .value="${ifDefined(this.value)}"
+                .defaultValue="${ifDefined(this.defaultValue)}"
                 cols="${ifDefined(this.cols)}"
                 rows="${ifDefined(this.rows)}"
                 minlength="${ifDefined(this.minLength)}"
@@ -159,7 +162,7 @@ class MDTextFieldComponent extends MDComponent {
                 @input="${this.handleTextFieldNativeInput}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
-            >${this.defaultValue}</textarea>
+            ></textarea>
         `;
     }
 
@@ -175,6 +178,8 @@ class MDTextFieldComponent extends MDComponent {
                 class="md-text-field__native"
                 aria-label="Label"
                 name="${ifDefined(this.name)}"
+                .value="${ifDefined(this.value)}"
+                .defaultValue="${ifDefined(this.defaultValue)}"
                 ?multiple="${ifDefined(this.multiple)}"
                 ?required="${ifDefined(this.required)}"
                 ?readonly="${ifDefined(this.readOnly)}"
