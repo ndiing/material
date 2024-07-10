@@ -75,7 +75,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
         await this.picker.updateComplete;
-        this.picker.showModal(this.container);
+        this.picker.showModal(this.textFieldContainer.value);
     }
 
     /**
@@ -83,8 +83,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
      */
     handlePickerSelection() {
         const value = stringifyTime(this.picker.selection);
-        this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.value = value;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 
     /**
@@ -99,8 +99,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
      */
     handlePickerButtonOkClick() {
         const value = stringifyTime(this.picker.selection);
-        this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.value = value;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.picker.close();
     }
 }

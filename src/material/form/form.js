@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 /**
  * Represents a form component with extended functionalities.
@@ -34,13 +35,7 @@ class MDFormComponent extends MDComponent {
         rel: { type: String },
     };
 
-    /**
-     * Retrieves the native form element within the component.
-     * @returns {HTMLFormElement} The native form element.
-     */
-    get native() {
-        return this.querySelector(".md-form__native");
-    }
+    formNative = createRef();
 
     /**
      * Creates an instance of MDFormComponent.
@@ -73,6 +68,7 @@ class MDFormComponent extends MDComponent {
                 .novalidate="${ifDefined(this.novalidate)}"
                 .target="${ifDefined(this.target)}"
                 .rel="${ifDefined(this.rel)}"
+                ${ref(this.formNative)}
                 @reset="${this.handleFormNativeReset}"
                 @submit="${this.handleFormNativeSubmit}"
             >${this.body}</form>
@@ -136,14 +132,14 @@ class MDFormComponent extends MDComponent {
      * Resets the form to its initial state.
      */
     reset() {
-        this.native.reset();
+        this.formNative.value.reset();
     }
 
     /**
      * Submits the form.
      */
     submit() {
-        this.native.submit();
+        this.formNative.value.submit();
     }
 }
 

@@ -243,6 +243,7 @@ class MDTextFieldComponent extends MDComponent {
                         ${this.actions?.map(action => html`
                             <md-icon-button 
                                 class="md-text-field__action" 
+                                .name="${action.name}"
                                 .icon="${action.icon}"
                                 @click="${this.handleTextFieldIconButtonClick}"
                             ></md-icon-button>

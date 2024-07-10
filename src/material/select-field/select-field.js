@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { ref } from "lit/directives/ref.js";
 
 /**
  * {{description}}
@@ -62,32 +63,29 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         /* prettier-ignore */
         return html`
             <input 
-                class="md-text-field__native"
-                .accept="${ifDefined(this.accept)}"
-                .autocomplete="${ifDefined(this.autocomplete)}"
-                .disabled="${ifDefined(this.disabled)}"
-                .max="${ifDefined(this.max)}"
-                .maxLength="${ifDefined(this.maxLength)}"
-                .min="${ifDefined(this.min)}"
-                .minLength="${ifDefined(this.minLength)}"
-                .multiple="${ifDefined(this.multiple)}"
-                .name="${ifDefined(this.name)}"
-                .pattern="${ifDefined(this.pattern)}"
-                .placeholder="${ifDefined(this.placeholder)}"
-                .readOnly="${ifDefined(this.readOnly)}"
-                .required="${ifDefined(this.required)}"
-                .size="${ifDefined(this.size)}"
-                .step="${ifDefined(this.step)}"
+            class="md-text-field__native"
+                aria-label="Label"
+                name="${ifDefined(this.name)}"
+                value="${ifDefined(this.defaultValue)}"
+                min="${ifDefined(this.min)}"
+                max="${ifDefined(this.max)}"
+                minlength="${ifDefined(this.minLength)}"
+                maxlength="${ifDefined(this.maxLength)}"
+                pattern="${ifDefined(this.pattern)}"
+                ?required="${ifDefined(this.required)}"
+                ?readonly="${ifDefined(this.readOnly)}"
+                ?disabled="${ifDefined(this.disabled)}"
+                autocomplete="${ifDefined(this.autocomplete)}"
                 type="text"
                 .defaultValue="${this.defaultSelectedOptions.map(option=>option.label)}"
                 .value="${this.selectedOptions.map(option=>option.label)}"
-                @click="${this.handleTextFieldNativeClick}"
-                @focus="${this.handleTextFieldNativeFocus}"
-                @blur="${this.handleTextFieldNativeBlur}"
-                @input="${this.handleTextFieldNativeInput}"
-                @change="${this.handleTextFieldNativeChange}"
+                ${ref(this.textFieldNative)}
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
+                @input="${this.handleTextFieldNativeInput}"
+                @search="${this.handleTextFieldNativeSearch}"
+                @focus="${this.handleTextFieldNativeFocus}"
+                @blur="${this.handleTextFieldNativeBlur}"
             >
         `;
     }
@@ -137,7 +135,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleTextFieldNativeInput() {
-        this.picker.filter(this.native.value);
+        this.picker.filter(this.textFieldNative.value.value);
     }
 
     /**
@@ -192,8 +190,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
         await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScroll", resolve));
         await this.picker.updateComplete;
-        this.picker.style.width = `${this.container.clientWidth}px`;
-        this.picker.show(this.container, {
+        this.picker.style.width = `${this.textFieldContainer.value.clientWidth}px`;
+        this.picker.show(this.textFieldContainer.value, {
             /* prettier-ignore */
             placements: [
                 "below-start", "below-end", "below", 
@@ -208,7 +206,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     handlePickerMenuListItemClick(event) {
         this.requestUpdate();
         this.picker.close();
-        this.native.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.emit("onPickerMenuListItemClick", event);
     }
 

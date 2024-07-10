@@ -75,7 +75,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
         await this.picker.updateComplete;
-        this.picker.showModal(this.container);
+        this.picker.showModal(this.textFieldContainer.value);
     }
 
     /**
@@ -83,8 +83,8 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      */
     handlePickerSelection() {
         const value = stringifyMonth(this.picker.selection);
-        this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.value = value;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 
     /**
@@ -99,8 +99,8 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      */
     handlePickerButtonOkClick() {
         const value = stringifyMonth(this.picker.selection);
-        this.native.value = value;
-        this.native.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.value = value;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.picker.close();
     }
 }

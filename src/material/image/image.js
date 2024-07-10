@@ -57,7 +57,7 @@ class MDImageComponent extends MDComponent {
     /**
      * {{description}}
      */
-    get nativeStyle() {
+    get imageNativeStyle() {
         let style = {};
         if (this.ratio) {
             style["aspect-ratio"] = this.ratio;
@@ -90,7 +90,7 @@ class MDImageComponent extends MDComponent {
         return html`
             <img 
                 class="md-image__native"
-                style="${styleMap(this.nativeStyle)}"
+                style="${styleMap(this.imageNativeStyle)}"
                 .src="${ifDefined(this.src)}"
                 .alt="${ifDefined(this.alt)}"
                 .srcset="${ifDefined(this.srcset)}"

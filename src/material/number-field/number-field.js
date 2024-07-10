@@ -54,12 +54,12 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         const name = event.currentTarget.name;
 
         if (name === "subtract") {
-            this.native.stepDown();
+            this.textFieldNative.value.stepDown();
         } else if (name === "add") {
-            this.native.stepUp();
+            this.textFieldNative.value.stepUp();
         }
 
-        this.native.dispatchEvent(new CustomEvent("input", {}));
+        // this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 }
 

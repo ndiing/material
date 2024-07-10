@@ -48,10 +48,10 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
 
-        this.native.value = "";
+        this.textFieldNative.value.value = "";
 
-        this.native.dispatchEvent(new CustomEvent("input", {}));
-        this.native.dispatchEvent(new CustomEvent("search", {}));
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));
     }
 }
 
