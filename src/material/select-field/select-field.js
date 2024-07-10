@@ -154,8 +154,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    async handleTextFieldIconButtonClick() {
-        this.showPicker();
+    async handleTextFieldIconButtonClick(event) {
     }
 
     async showPicker() {

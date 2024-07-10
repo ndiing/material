@@ -1,82 +1,52 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { createRef, ref } from "lit/directives/ref.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * {{description}}
+ * Represents a Material Design text field component.
  * @element md-text-field
  * @extends MDComponent
- * @fires MDTextFieldComponent#onTextFieldNativeClick - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeFocus - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeBlur - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeInput - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeChange - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeSearch - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeInvalid - {{description}}
- * @fires MDTextFieldComponent#onTextFieldNativeReset - {{description}}
- * @fires MDTextFieldComponent#onTextFieldIconButtonClick - {{description}}
+ * @fires MDTextFieldComponent#onTextFieldNativeInvalid - Fired when the native input is invalid.
+ * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native input is reset.
+ * @fires MDTextFieldComponent#onTextFieldNativeInput - Fired when the native input receives input.
+ * @fires MDTextFieldComponent#onTextFieldNativeSearch - Fired when the native input triggers a search.
+ * @fires MDTextFieldComponent#onTextFieldNativeFocus - Fired when the native input gains focus.
+ * @fires MDTextFieldComponent#onTextFieldNativeBlur - Fired when the native input loses focus.
+ * @fires MDTextFieldComponent#onTextFieldLabelClick - Fired when the text field label is clicked.
+ * @fires MDTextFieldComponent#onTextFieldMetaClick - Fired when the text field meta element is clicked.
+ * @fires MDTextFieldComponent#onTextFieldActionClick - Fired when a text field action button is clicked.
+ * @fires MDTextFieldComponent#onTextFieldIconButtonClick - Fired when a text field icon button is clicked.
  */
 class MDTextFieldComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} label - {{description}}
-     * @property {String} icon - {{description}}
-     * @property {String} prefix - {{description}}
-     * @property {String} suffix - {{description}}
-     * @property {Array} actions - {{description}}
-     * @property {String} text - {{description}}
-     * @property {String} accept - {{description}}
-     * @property {String} alt - {{description}}
-     * @property {String} autocomplete - {{description}}
-     * @property {Boolean} autofocus - {{description}}
-     * @property {Boolean} disabled - {{description}}
-     * @property {String} max - {{description}}
-     * @property {Number} maxLength - {{description}}
-     * @property {String} min - {{description}}
-     * @property {Number} minLength - {{description}}
-     * @property {Boolean} multiple - {{description}}
-     * @property {String} name - {{description}}
-     * @property {String} pattern - {{description}}
-     * @property {String} placeholder - {{description}}
-     * @property {Boolean} readOnly - {{description}}
-     * @property {Boolean} required - {{description}}
-     * @property {Number} size - {{description}}
-     * @property {String} step - {{description}}
-     * @property {String} type - {{description}}
-     * @property {String} defaultValue - {{description}}
-     * @property {String} value - {{description}}
-     * @property {Number} cols - {{description}}
-     * @property {Number} rows - {{description}}
-     * @property {Boolean} spellcheck - {{description}}
-     * @property {String} wrap - {{description}}
-     * @property {Array} options - {{description}}
-     * @property {String} src - {{description}}
-     * @property {Boolean} checked - {{description}}
-     * @property {Boolean} defaultChecked - {{description}}
-     * @property {FileList} files - {{description}}
-     * @property {Object} form - {{description}}
-     * @property {String} formAction - {{description}}
-     * @property {String} formEnctype - {{description}}
-     * @property {String} formMethod - {{description}}
-     * @property {Boolean} formNoValidate - {{description}}
-     * @property {String} formTarget - {{description}}
-     * @property {Number} height - {{description}}
-     * @property {Boolean} indeterminate - {{description}}
-     * @property {Object} list - {{description}}
-     * @property {Number} width - {{description}}
-     * @property {String} inputMode - {{description}}
-     * @property {String} selectionDirection - {{description}}
-     * @property {Number} selectionEnd - {{description}}
-     * @property {Number} selectionStart - {{description}}
-     * @property {String} align - {{description}}
-     * @property {String} useMap - {{description}}
-     * @property {Number} length - {{description}}
-     * @property {Number} selectedIndex - {{description}}
-     * @property {HTMLCollection} selectedOptions - {{description}}
-     * @property {String} errorText - {{description}}
-     * @property {Boolean} error - {{description}}
-     * @property {String} variant - {{description}}
+     * Defines the component's properties.
+     * @property {String} label - The label text for the text field.
+     * @property {String} icon - The icon to be displayed in the text field.
+     * @property {String} prefix - The prefix text for the text field.
+     * @property {String} suffix - The suffix text for the text field.
+     * @property {Array} actions - The actions available in the text field.
+     * @property {String} text - Additional text for the text field.
+     * @property {String} type - The type of the text field (e.g., text, password).
+     * @property {String} name - The name attribute of the text field.
+     * @property {String} value - The value of the text field.
+     * @property {Number} min - The minimum value for the text field.
+     * @property {Number} max - The maximum value for the text field.
+     * @property {Number} cols - The number of columns for a textarea.
+     * @property {Number} rows - The number of rows for a textarea.
+     * @property {Number} minLength - The minimum length for the text field.
+     * @property {Number} maxLength - The maximum length for the text field.
+     * @property {String} pattern - The pattern attribute for the text field.
+     * @property {Boolean} required - Indicates if the text field is required.
+     * @property {Boolean} readOnly - Indicates if the text field is read-only.
+     * @property {Boolean} disabled - Indicates if the text field is disabled.
+     * @property {String} autocomplete - The autocomplete attribute for the text field.
+     * @property {Boolean} multiple - Indicates if the text field allows multiple values.
+     * @property {Array} options - The options for a select input.
+     * @property {Boolean} validationMessage - The validation message for the text field.
+     * @property {Boolean} focused - Indicates if the text field is focused.
+     * @property {String} variant - The variant of the text field (e.g., filled, outlined).
      */
     static properties = {
         label: { type: String },
@@ -85,435 +55,359 @@ class MDTextFieldComponent extends MDComponent {
         suffix: { type: String },
         actions: { type: Array },
         text: { type: String },
-
-        accept: { type: String },
-        alt: { type: String },
-        autocomplete: { type: String },
-        autofocus: { type: Boolean },
-        disabled: { type: Boolean },
-        max: { type: String },
-        maxLength: { type: Number },
-        min: { type: String },
-        minLength: { type: Number },
-        multiple: { type: Boolean },
-        name: { type: String },
-        pattern: { type: String },
-        placeholder: { type: String },
-        readOnly: { type: Boolean },
-        required: { type: Boolean },
-        size: { type: Number },
-        step: { type: String },
         type: { type: String },
-        defaultValue: { type: String },
+        name: { type: String },
         value: { type: String },
+        min: { type: Number },
+        max: { type: Number },
         cols: { type: Number },
         rows: { type: Number },
-        spellcheck: { type: Boolean },
-        wrap: { type: String },
+        minLength: { type: Number },
+        maxLength: { type: Number },
+        pattern: { type: String },
+        required: { type: Boolean },
+        readOnly: { type: Boolean },
+        disabled: { type: Boolean },
+        autocomplete: { type: String },
+        multiple: { type: Boolean },
         options: { type: Array },
-
-        // src: { type: String },
-        // checked: { type: Boolean },
-        // defaultChecked: { type: Boolean },
-        // files: { type: FileList },
-        // form: { type: Object },
-        // formAction: { type: String },
-        // formEnctype: { type: String },
-        // formMethod: { type: String },
-        // formNoValidate: { type: Boolean },
-        // formTarget: { type: String },
-        // height: { type: Number },
-        // indeterminate: { type: Boolean },
-        // list: { type: Object },
-        // width: { type: Number },
-        // inputMode: { type: String },
-        // selectionDirection: { type: String },
-        // selectionEnd: { type: Number },
-        // selectionStart: { type: Number },
-        // align: { type: String },
-        // useMap: { type: String },
-        // length: { type: Number },
-        // selectedIndex: { type: Number },
-        // selectedOptions: { type: HTMLCollection },
-
-        errorText: { type: String },
-        error: { type: Boolean },
-
+        validationMessage: { type: Boolean },
+        focused: { type: Boolean },
         variant: { type: String },
     };
 
-    variants = ["filled", "outlined", "rounded"];
-
     /**
-     * {{description}}
+     * A reference to the native text field element.
+     * @type {Object}
      */
-    get native() {
-        return this.querySelector(".md-text-field__native");
-    }
+    textFieldNative = createRef();
 
     /**
-     * {{description}}
+     * A reference to the text field container element.
+     * @type {Object}
      */
-    get nativeHidden() {
-        return this.querySelector(".md-text-field__hidden");
-    }
+    textFieldContainer = createRef();
 
     /**
-     * {{description}}
-     */
-    get container() {
-        return this.querySelector(".md-text-field__container");
-    }
-
-    /**
-     * {{description}}
+     * Initializes a new instance of the MDTextFieldComponent class.
      */
     constructor() {
         super();
-
         this.type = "text";
         this.autocomplete = "off";
-
-        this.renderIconButton = this.renderIconButton.bind(this);
+        this.rows = 1;
     }
 
     /**
+     * Renders the native input element.
      * @private
+     * @returns {TemplateResult} The rendered input element.
      */
     renderInput() {
         /* prettier-ignore */
         return html`
             <input 
                 class="md-text-field__native"
-                .accept="${ifDefined(this.accept)}"
-                .autocomplete="${ifDefined(this.autocomplete)}"
-                .disabled="${ifDefined(this.disabled)}"
-                .max="${ifDefined(this.max)}"
-                .maxLength="${ifDefined(this.maxLength)}"
-                .min="${ifDefined(this.min)}"
-                .minLength="${ifDefined(this.minLength)}"
-                .multiple="${ifDefined(this.multiple)}"
-                .name="${ifDefined(this.name)}"
-                .pattern="${ifDefined(this.pattern)}"
-                .placeholder="${ifDefined(this.placeholder)}"
-                .readOnly="${ifDefined(this.readOnly)}"
-                .required="${ifDefined(this.required)}"
-                .size="${ifDefined(this.size)}"
-                .step="${ifDefined(this.step)}"
-                .type="${ifDefined(this.type)}"
-                .defaultValue="${ifDefined(this.defaultValue)}"
-                .value="${ifDefined(this.value)}"
-                @click="${this.handleTextFieldNativeClick}"
-                @focus="${this.handleTextFieldNativeFocus}"
-                @blur="${this.handleTextFieldNativeBlur}"
-                @input="${this.handleTextFieldNativeInput}"
-                @search="${this.handleTextFieldNativeSearch}"
+                aria-label="Label"
+                type="${ifDefined(this.type)}"
+                name="${ifDefined(this.name)}"
+                value="${ifDefined(this.defaultValue)}"
+                min="${ifDefined(this.min)}"
+                max="${ifDefined(this.max)}"
+                minlength="${ifDefined(this.minLength)}"
+                maxlength="${ifDefined(this.maxLength)}"
+                pattern="${ifDefined(this.pattern)}"
+                ?required="${ifDefined(this.required)}"
+                ?readonly="${ifDefined(this.readOnly)}"
+                ?disabled="${ifDefined(this.disabled)}"
+                autocomplete="${ifDefined(this.autocomplete)}"
+                ${ref(this.textFieldNative)}
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
+                @input="${this.handleTextFieldNativeInput}"
+                @search="${this.handleTextFieldNativeSearch}"
+                @focus="${this.handleTextFieldNativeFocus}"
+                @blur="${this.handleTextFieldNativeBlur}"
             >
         `;
     }
 
     /**
+     * Renders the native textarea element.
      * @private
+     * @returns {TemplateResult} The rendered textarea element.
      */
     renderTextarea() {
         /* prettier-ignore */
         return html`
             <textarea 
                 class="md-text-field__native"
-                .autocomplete="${ifDefined(this.autocomplete)}"
-                .disabled="${ifDefined(this.disabled)}"
-                .maxLength="${ifDefined(this.maxLength)}"
-                .minLength="${ifDefined(this.minLength)}"
-                .name="${ifDefined(this.name)}"
-                .placeholder="${ifDefined(this.placeholder)}"
-                .readOnly="${ifDefined(this.readOnly)}"
-                .required="${ifDefined(this.required)}"
-                .defaultValue="${ifDefined(this.defaultValue)}"
-                .value="${ifDefined(this.value)}"
-                .cols="${ifDefined(this.cols)}"
-                .rows="${ifDefined(this.rows)}"
-                @click="${this.handleTextFieldNativeClick}"
-                @focus="${this.handleTextFieldNativeFocus}"
-                @blur="${this.handleTextFieldNativeBlur}"
-                @input="${this.handleTextFieldNativeInput}"
+                aria-label="Label"
+                name="${ifDefined(this.name)}"
+                cols="${ifDefined(this.cols)}"
+                rows="${ifDefined(this.rows)}"
+                minlength="${ifDefined(this.minLength)}"
+                maxlength="${ifDefined(this.maxLength)}"
+                pattern="${ifDefined(this.pattern)}"
+                ?required="${ifDefined(this.required)}"
+                ?readonly="${ifDefined(this.readOnly)}"
+                ?disabled="${ifDefined(this.disabled)}"
+                autocomplete="${ifDefined(this.autocomplete)}"
+                ${ref(this.textFieldNative)}
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
-            ></textarea>
+                @input="${this.handleTextFieldNativeInput}"
+                @focus="${this.handleTextFieldNativeFocus}"
+                @blur="${this.handleTextFieldNativeBlur}"
+            >${this.defaultValue}</textarea>
         `;
     }
 
     /**
+     * Renders the native select element.
      * @private
+     * @returns {TemplateResult} The rendered select element.
      */
     renderSelect() {
         /* prettier-ignore */
         return html`
             <select 
                 class="md-text-field__native"
-                .autocomplete="${ifDefined(this.autocomplete)}"
-                .disabled="${ifDefined(this.disabled)}"
-                .multiple="${ifDefined(this.multiple)}"
-                .name="${ifDefined(this.name)}"
-                .required="${ifDefined(this.required)}"
-                .size="${ifDefined(this.size)}"
-                .value="${ifDefined(this.value)}"
-                @click="${this.handleTextFieldNativeClick}"
-                @focus="${this.handleTextFieldNativeFocus}"
-                @blur="${this.handleTextFieldNativeBlur}"
-                @input="${this.handleTextFieldNativeInput}"
-                @change="${this.handleTextFieldNativeChange}"
+                aria-label="Label"
+                name="${ifDefined(this.name)}"
+                ?multiple="${ifDefined(this.multiple)}"
+                ?required="${ifDefined(this.required)}"
+                ?readonly="${ifDefined(this.readOnly)}"
+                ?disabled="${ifDefined(this.disabled)}"
+                autocomplete="${ifDefined(this.autocomplete)}"
+                ${ref(this.textFieldNative)}
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
+                @input="${this.handleTextFieldNativeInput}"
+                @focus="${this.handleTextFieldNativeFocus}"
+                @blur="${this.handleTextFieldNativeBlur}"
             >
-                ${this.options?.map(option => html`
+                ${this.options.map(option => html`
                     <option 
-                        ?disabled="${ifDefined(option.disabled)}"
+                        value="${ifDefined(option.value)}" 
                         label="${ifDefined(option.label)}"
                         ?selected="${ifDefined(option.selected)}"
-                        value="${ifDefined(option.value)}"
-                        text="${ifDefined(option.text)}"
-                    ></option>
+                    ></option>    
                 `)}
             </select>
         `;
     }
 
     /**
+     * Renders the hidden input element.
      * @private
      */
     renderHidden() {
-        /* return html`
-            <input
-                type="hidden"
-                class="md-text-field__hidden"
-            />
-        `; */
-    }
-
-    /**
-     * @private
-     */
-    renderNative() {
-        return choose(
-            this.type,
-            [
-                ["textarea", () => this.renderTextarea()],
-                ["select", () => this.renderSelect()],
-            ],
-            () => this.renderInput(),
-        );
-    }
-
-    /**
-     * @private
-     */
-    renderIconButton(item) {
         /* prettier-ignore */
-        return html`
-            <md-icon-button
-                class="md-text-field__icon-button"
-                name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
-                .variant="${ifDefined(item.variant)}"
-                .icon="${ifDefined(item.icon)}"
-                .selected="${ifDefined(item.selected)}"
-                .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleTextFieldIconButtonClick}"
-            ></md-icon-button>
-        `;
+        // Implementation for hidden input
     }
 
     /**
+     * Renders the native text field element based on the type.
      * @private
+     * @returns {TemplateResult} The rendered native text field element.
      */
-    renderAction(item) {
-        return this.renderIconButton(item);
-    }
-
-    /**
-     * @private
-     */
-    renderActions() {
+    renderTextFieldNative() {
         /* prettier-ignore */
-        return this.actions?.length || this.error ? html`
-            <div class="md-text-field__actions">
-                ${this.error ? html`<div class="md-icon md-text-field__icon md-text-field__icon--error">error</div>` : nothing}
-                ${this.actions?.map(item => this.renderAction(item))}
-            </div>
-        ` : nothing;
+        return choose(this.type, [
+            ['textarea', () => this.renderTextarea()],
+            ['select', () => this.renderSelect()],
+        ], () => this.renderInput());
     }
 
     /**
+     * Renders the MDTextFieldComponent.
      * @private
+     * @returns {TemplateResult} The rendered component.
      */
     render() {
         /* prettier-ignore */
         return html`
-            <label class="md-text-field__inner">
-                ${this.label ? html`<div class="md-text-field__label">${this.label}</div>` : html`<div class="md-text-field__nolabel">Label</div>`}
-                <div class="md-text-field__container">
-                    ${this.icon ? html`<div class="md-icon md-text-field__icon">${this.icon}</div>` : nothing}
-                    ${this.prefix ? html`<div class="md-text-field__meta">${this.prefix}</div>` : nothing}
-                    ${this.renderNative()}
-                    ${this.suffix ? html`<div class="md-text-field__meta">${this.suffix}</div>` : nothing}
-                    ${this.renderActions()}
+            ${this.label ? html`<div class="md-text-field__label" @click="${this.handleTextFieldLabelClick}">${this.label}</div>` : nothing}
+            <div 
+                class="md-text-field__container"
+                ${ref(this.textFieldContainer)}
+            >
+                ${this.icon ? html`<md-icon class="md-text-field__icon">${this.icon}</md-icon>` : nothing}
+                ${this.prefix ? html`<div class="md-text-field__meta md-text-field__meta-prefix" @click="${this.handleTextFieldMetaClick}">${this.prefix}</div>` : nothing}
+                ${this.renderTextFieldNative()}
+                ${this.suffix ? html`<div class="md-text-field__meta md-text-field__meta-suffix" @click="${this.handleTextFieldMetaClick}">${this.suffix}</div>` : nothing}
+                ${(this.validationMessage || this.actions?.length) ? html`
+                    <div class="md-text-field__actions">
+                        ${this.validationMessage ? html`<md-icon class="md-text-field__icon md-text-field__icon--error">error</md-icon>` : nothing}
+                        ${this.actions?.map(action => html`
+                            <md-icon-button 
+                                class="md-text-field__action" 
+                                .icon="${action.icon}"
+                                @click="${this.handleTextFieldIconButtonClick}"
+                            ></md-icon-button>
+                        `)}
+                    </div>
+                ` : nothing}
+            </div>
+            ${(this.validationMessage || this.text || this.maxLength) ? html`
+                <div class="md-text-field__text">
+                    ${(this.validationMessage || this.text) ? html`<div class="md-text-field__text-start">${this.validationMessage || this.text}</div>` : nothing}
+                    ${this.maxLength ? html`<div class="md-text-field__text-end">${this.value?.length || 0}/${this.maxLength}</div>` : nothing}
                 </div>
-                ${this.errorText || this.text ? html`<div class="md-text-field__text">${this.errorText || this.text}</div>` : nothing}
-                ${this.renderHidden()}
-            </label>
+            ` : nothing}
+            ${this.renderHidden()}
         `;
     }
 
     /**
+     * Called when the component is connected to the DOM.
      * @private
      */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
 
-        const defaultValue = {
-            color: "#000000",
-            date: "",
-            "datetime-local": "",
-            email: "",
-            month: "",
-            number: "",
-            password: "",
-            search: "",
-            tel: "",
-            text: "",
-            time: "",
-            url: "",
-            week: "",
-        };
+        this.style.setProperty("--md-sys-motion-duration-short4", "0s");
 
-        this.value = this.value || defaultValue[this.type];
-        this.defaultValue = this.value;
+        if (this.defaultValue === undefined) {
+            if (this.type === "color" && !this.value) {
+                this.value = "#000000";
+            } else if (this.type === "select" && !this.value) {
+                let selectedIndex = this.options.findIndex((option) => option.selected);
+                if (selectedIndex === -1) {
+                    selectedIndex = 0;
+                }
+                this.value = this.options[selectedIndex].value;
+            }
+            this.defaultValue = this.value || "";
+        }
     }
 
+    variants = ["filled", "outlined", "rounded"];
+
     /**
+     * Called when the component is updated.
      * @private
+     * @param {Map} changedProperties - The properties that have changed.
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("variant")) {
-            for (let i = 0; i < this.variants.length; i++) {
-                let variant = this.variants[i];
-                this.classList.toggle(`md-text-field--${variant}`, (this.variant ?? "").split(" ").includes(variant));
-            }
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-text-field--${variant}`, variants.includes(variant));
+            });
         }
 
         if (changedProperties.has("icon")) {
             await this.updateComplete;
-            this.style.setProperty("--md-comp-text-field-offset-left", this.native.offsetLeft + "px");
+            this.style.setProperty("--md-comp-text-field-native-offset-left", `${this.textFieldNative.value.offsetLeft}px`);
         }
 
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
-
-        this.classList.toggle("md-text-field--error", !!this.error);
+        this.classList.toggle("md-text-field--error", !!this.validationMessage);
+        this.classList.toggle("md-text-field--focused", !!this.focused);
     }
 
     /**
+     * Handles the invalid event for the native input element.
      * @private
-     */
-    handleTextFieldNativeClick(event) {
-        this.emit("onTextFieldNativeClick", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldNativeFocus(event) {
-        this.classList.add("md-text-field--focused");
-
-        this.emit("onTextFieldNativeFocus", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldNativeBlur(event) {
-        this.classList.remove("md-text-field--focused");
-
-        this.emit("onTextFieldNativeBlur", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldNativeInput(event) {
-        this.populate();
-
-        this.validate();
-
-        this.emit("onTextFieldNativeInput", event);
-    }
-
-    populate() {
-        if (this.type !== "file") {
-            this.value = this.native.value;
-        }
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldNativeChange(event) {
-        this.populate();
-
-        this.validate();
-
-        this.emit("onTextFieldNativeChange", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldNativeSearch(event) {
-        this.populate();
-
-        this.validate();
-
-        this.emit("onTextFieldNativeSearch", event);
-    }
-
-    /**
-     * @private
+     * @param {Event} event - The event object.
      */
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
-
-        this.validate();
-
+        this.validationMessage = this.textFieldNative.value.validationMessage;
         this.emit("onTextFieldNativeInvalid", event);
     }
 
-    validate() {
-        this.errorText = this.native.validationMessage;
-        this.error = !!this.errorText;
-    }
-
     /**
+     * Handles the reset event for the native input element.
      * @private
+     * @param {Event} event - The event object.
      */
     handleTextFieldNativeReset(event) {
-        if (this.type !== "file") {
-            this.native.value = this.defaultValue;
-            this.value = this.defaultValue;
-        }
-
-        this.errorText = "";
-        this.error = !!this.errorText;
-
+        event.preventDefault();
+        this.value = this.defaultValue;
+        this.validationMessage = "";
         this.emit("onTextFieldNativeReset", event);
     }
 
     /**
+     * Handles the input event for the native input element.
      * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeInput(event) {
+        this.value = this.textFieldNative.value.value;
+        this.validationMessage = this.textFieldNative.value.validationMessage;
+        this.emit("onTextFieldNativeInput", event);
+    }
+
+    /**
+     * Handles the search event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeSearch(event) {
+        this.value = this.textFieldNative.value.value;
+        this.validationMessage = this.textFieldNative.value.validationMessage;
+        this.emit("onTextFieldNativeSearch", event);
+    }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeFocus(event) {
+        this.style.removeProperty("--md-sys-motion-duration-short4");
+        this.focused = true;
+        this.emit("onTextFieldNativeFocus", event);
+    }
+
+    /**
+     * Handles the blur event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeBlur(event) {
+        this.focused = false;
+        this.emit("onTextFieldNativeBlur", event);
+    }
+
+    /**
+     * Handles the click event for the text field label.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldLabelClick(event) {
+        this.emit("onTextFieldLabelClick", event);
+    }
+
+    /**
+     * Handles the click event for the text field meta element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldMetaClick(event) {
+        this.emit("onTextFieldMetaClick", event);
+    }
+
+    /**
+     * Handles the click event for a text field action button.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldActionClick(event) {
+        this.emit("onTextFieldActionClick", event);
+    }
+
+    /**
+     * Handles the click event for a text field icon button.
+     * @private
+     * @param {Event} event - The event object.
      */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", event);
