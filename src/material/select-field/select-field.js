@@ -66,7 +66,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             class="md-text-field__native"
                 aria-label="Label"
                 name="${ifDefined(this.name)}"
-                value="${ifDefined(this.defaultValue)}"
                 min="${ifDefined(this.min)}"
                 max="${ifDefined(this.max)}"
                 minlength="${ifDefined(this.minLength)}"
@@ -185,7 +184,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScroll", resolve));
         await this.picker.updateComplete;
         this.picker.style.width = `${this.textFieldContainer.value.clientWidth}px`;
-        this.picker.show(this.textFieldContainer.value, {
+        this.picker.showModal(this.textFieldContainer.value, {
             /* prettier-ignore */
             placements: [
                 "below-start", "below-end", "below", 
