@@ -75,6 +75,7 @@ class MDListComponent extends MDComponent {
                 .selected="${ifDefined(item.selected)}"
                 .routerLink="${ifDefined(item.routerLink)}"
                 .value="${ifDefined(item[this.map.value])}"
+                .activated="${ifDefined(item.activated)}"
                 @click="${this.handleListItemClick}"
                 @onCheckboxNativeInput="${this.handleListItemCheckboxNativeInput}"
                 @onRadioButtonNativeInput="${this.handleListItemRadioButtonNativeInput}"

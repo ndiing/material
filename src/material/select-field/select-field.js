@@ -192,8 +192,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
-        // await this.picker.updateComplete;
-        await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScrollInitialized", resolve));
+        await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScroll", resolve));
+        await this.picker.updateComplete;
         this.picker.style.width = `${this.container.clientWidth}px`;
         this.picker.show(this.container, {
             /* prettier-ignore */
