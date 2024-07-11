@@ -25,6 +25,7 @@ class MDBadgeComponent extends MDComponent {
      */
     constructor() {
         super();
+        
         this.limit = 999;
     }
 
@@ -44,6 +45,7 @@ class MDBadgeComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-badge");
     }
 }

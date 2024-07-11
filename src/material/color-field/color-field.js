@@ -47,6 +47,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
+
         super.handleTextFieldNativeClick(event);
     }
 
@@ -57,6 +58,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeFocus(event) {
         super.handleTextFieldNativeFocus(event);
+
         this.showPicker();
     }
 
@@ -67,6 +69,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
+
         this.showPicker();
     }
 
@@ -78,6 +81,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
+
         this.pickerOpen = true;
 
         this.picker = document.createElement("md-color-picker");
@@ -105,9 +109,11 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
             this.pickerOpen = false;
         };
+
         this.picker.addEventListener("onSheetClose", handleSheetClose);
 
         await this.picker.updateComplete;
+
         this.picker.showModal(this.textFieldContainer.value);
     }
 
@@ -117,7 +123,9 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handlePickerSelection() {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
+
         this.textFieldNative.value.value = value;
+
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 
@@ -135,8 +143,11 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handlePickerButtonOkClick() {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
+
         this.textFieldNative.value.value = value;
+
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+        
         this.picker.close();
     }
 }

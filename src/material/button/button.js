@@ -63,6 +63,7 @@ class MDButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+        
         this.classList.add("md-button");
     }
 

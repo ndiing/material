@@ -11,6 +11,7 @@ class MDComponent extends LitElement {
      */
     constructor() {
         super();
+
         updateWhenLocaleChanges(this);
     }
 
@@ -30,6 +31,7 @@ class MDComponent extends LitElement {
      */
     on(type, listener) {
         listener = listener.bind(this);
+
         this.addEventListener(type, listener);
     }
 
@@ -44,6 +46,7 @@ class MDComponent extends LitElement {
             listener(event);
             this.off(type, handleListener);
         };
+
         this.on(type, handleListener);
     }
 
@@ -69,6 +72,7 @@ class MDComponent extends LitElement {
             cancelable: true,
             detail,
         });
+        
         this.dispatchEvent(event);
     }
 }
