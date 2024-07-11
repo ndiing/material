@@ -206,10 +206,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.setPlacement(button, options);
         super.show();
 
-        let parent=this.popper.getScrollableParent(this)
-        parent.addEventListener('scroll',() => {
-            // this.setPlacement()
-        })
     }
 
     /**
