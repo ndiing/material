@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[243],{243:(e,n,t)=>{t.r(n),t.d(n,{templates:()=>i});const i={se85c64ef6406b6c8:"The older sisters perched on the window of grandma, her old teeth were only two"}}}]);

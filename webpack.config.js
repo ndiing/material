@@ -26,33 +26,33 @@ const config = {
             template: "index.html",
         }),
 
-        new MiniCssExtractPlugin({
-        }),
+        // new MiniCssExtractPlugin({
+        // }),
 
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
-            },
+            // {
+            //     test: /\.(js|jsx)$/i,
+            //     loader: 'babel-loader',
+            // },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    stylesHandler,
+                    // stylesHandler,
                     "css-loader",
-                    'postcss-loader',
+                    // 'postcss-loader',
                     "sass-loader",
                 ],
             },
             {
                 test: /\.css$/i,
                 use: [
-                    stylesHandler,
+                    // stylesHandler,
                     "css-loader",
-                    'postcss-loader'
+                    // 'postcss-loader'
                 ],
             },
             {
