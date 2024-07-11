@@ -25,7 +25,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     constructor() {
         super();
-
         this.type = "color";
     }
 
@@ -35,7 +34,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
         this.classList.add("md-color-field");
     }
@@ -47,7 +45,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
-
         super.handleTextFieldNativeClick(event);
     }
 
@@ -58,7 +55,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeFocus(event) {
         super.handleTextFieldNativeFocus(event);
-
         this.showPicker();
     }
 
@@ -69,7 +65,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-
         this.showPicker();
     }
 
@@ -81,39 +76,28 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
-
         this.pickerOpen = true;
-
         this.picker = document.createElement("md-color-picker");
         if (this.value) {
             this.picker.value = this.value;
         }
-
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handlePickerSelection = this.handlePickerSelection.bind(this);
         this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
         this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-
         this.picker.addEventListener("onColorPickerSelection", this.handlePickerSelection);
         this.picker.addEventListener("onColorPickerButtonCancelClick", this.handlePickerButtonCancelClick);
         this.picker.addEventListener("onColorPickerButtonOkClick", this.handlePickerButtonOkClick);
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onColorPickerSelection", this.handlePickerSelection);
             this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handlePickerButtonCancelClick);
             this.picker.removeEventListener("onColorPickerButtonOkClick", this.handlePickerButtonOkClick);
-
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
             this.picker.remove();
-
             this.pickerOpen = false;
         };
-
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         await this.picker.updateComplete;
-
         this.picker.showModal(this.textFieldContainer.value);
     }
 
@@ -123,9 +107,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handlePickerSelection() {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
-
         this.textFieldNative.value.value = value;
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 
@@ -143,15 +125,11 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handlePickerButtonOkClick() {
         const value = this.picker.selection.hex.slice(0, 1 + 6);
-
         this.textFieldNative.value.value = value;
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-        
+
         this.picker.close();
     }
 }
-
 customElements.define("md-color-field", MDColorFieldComponent);
-
 export { MDColorFieldComponent };

@@ -33,7 +33,6 @@ class MDCheckboxComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-checkbox__native",
             containerSelector: ".md-checkbox__track",
@@ -42,7 +41,6 @@ class MDCheckboxComponent extends MDComponent {
             fadeOut: true,
         });
     }
-
     checkboxNative = createRef();
 
     /**
@@ -75,7 +73,6 @@ class MDCheckboxComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
@@ -85,7 +82,6 @@ class MDCheckboxComponent extends MDComponent {
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
-
         this.classList.add("md-checkbox");
     }
 
@@ -96,7 +92,6 @@ class MDCheckboxComponent extends MDComponent {
         this.value = this.checkboxNative.value.value;
         this.checked = this.checkboxNative.value.checked;
         this.indeterminate = this.checkboxNative.value.indeterminate;
-
         this.emit("onCheckboxNativeInput", event);
     }
 
@@ -107,15 +102,11 @@ class MDCheckboxComponent extends MDComponent {
         this.checkboxNative.value.value = this.defaultValue;
         this.checkboxNative.value.checked = this.defaultChecked;
         this.checkboxNative.value.indeterminate = this.defaultIndeterminate;
-
         this.value = this.defaultValue;
         this.checked = this.defaultChecked;
         this.indeterminate = this.defaultIndeterminate;
-
         this.emit("onCheckboxNativeReset", event);
     }
 }
-
 customElements.define("md-checkbox", MDCheckboxComponent);
-
 export { MDCheckboxComponent };

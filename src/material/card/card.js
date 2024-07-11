@@ -44,7 +44,6 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
-
     variants = ["elevated", "filled", "outlined"];
 
     /**
@@ -52,9 +51,7 @@ class MDCardComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.childNodes_ = Array.from(this.childNodes);
-
         this.renderIconButton = this.renderIconButton.bind(this);
         this.renderIcon = this.renderIcon.bind(this);
         this.renderButton = this.renderButton.bind(this);
@@ -283,9 +280,7 @@ class MDCardComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-card");
-
         // if (this.variant && this.variant.includes("interactive")) {
         //     this.ripple = new MDRippleController(this, {
         //         clipped: true,
@@ -299,7 +294,6 @@ class MDCardComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
@@ -444,7 +438,5 @@ class MDCardComponent extends MDComponent {
         this.emit("onCardPaginationLastClick", event);
     }
 }
-
 customElements.define("md-card", MDCardComponent);
-
 export { MDCardComponent };

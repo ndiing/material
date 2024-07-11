@@ -25,7 +25,6 @@ class MDButtonComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
 
     /**
@@ -33,9 +32,7 @@ class MDButtonComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.type = "button";
-
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-button__native",
             clipped: true,
@@ -63,7 +60,7 @@ class MDButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        
+
         this.classList.add("md-button");
     }
 
@@ -75,14 +72,12 @@ class MDButtonComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-button--${variant}`, (this.variant ?? "").split(" ").includes(variant));
             }
         }
-
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
@@ -94,7 +89,5 @@ class MDButtonComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-button", MDButtonComponent);
-
 export { MDButtonComponent };

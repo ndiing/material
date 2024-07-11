@@ -64,7 +64,6 @@ class MDChipsComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-chips");
     }
 
@@ -75,13 +74,10 @@ class MDChipsComponent extends MDComponent {
      */
     handleChipClick(event) {
         const data = event.currentTarget.data;
-
         if (this.multiSelection) {
             data.selected = !data.selected;
-
             this.requestUpdate();
         }
-
         this.emit("onChipClick", event);
     }
 
@@ -92,7 +88,6 @@ class MDChipsComponent extends MDComponent {
      */
     handleChipActionClick(event) {
         const data = event.currentTarget.data;
-
         const index = this.list.indexOf(data);
         if (index > -1) {
             this.list.splice(index, 1);
@@ -100,7 +95,5 @@ class MDChipsComponent extends MDComponent {
         this.requestUpdate();
     }
 }
-
 customElements.define("md-chips", MDChipsComponent);
-
 export { MDChipsComponent };

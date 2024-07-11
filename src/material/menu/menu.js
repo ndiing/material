@@ -102,13 +102,10 @@ class MDMenuComponent extends MDSheetComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-sheet");
         this.classList.add("md-menu");
-
         this.store = new MDStore(this.list);
         this.virtual = new MDVirtualController(this);
-
         this.updateVirtualList();
     }
 
@@ -130,9 +127,7 @@ class MDMenuComponent extends MDSheetComponent {
         });
         this.storeTotal = total;
         this.storeList = docs;
-
         this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`;
-
         this.virtual.options.rowTotal = this.storeTotal;
         this.virtual.options.rowHeight = this.rowHeight;
         this.virtual.options.rowBuffer = 0;
@@ -144,11 +139,9 @@ class MDMenuComponent extends MDSheetComponent {
      */
     filter(value) {
         this.filters = [{ name: this.menuList.value.map.label, value, operator: "_like" }];
-
         this.updateVirtualList();
         this.virtual.viewport.scrollTop = 0;
         this.virtual.handleVirtualScroll();
-
         this.setPlacement();
     }
 
@@ -160,7 +153,6 @@ class MDMenuComponent extends MDSheetComponent {
     async handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
-
         this.emit("onMenuViewportVirtualScroll", event);
     }
 
@@ -234,7 +226,5 @@ class MDMenuComponent extends MDSheetComponent {
         this.popper.setPlacement(this.popperButton, this.popperOptions);
     }
 }
-
 customElements.define("md-menu", MDMenuComponent);
-
 export { MDMenuComponent };

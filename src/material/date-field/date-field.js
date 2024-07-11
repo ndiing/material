@@ -18,10 +18,8 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      * {{description}}
      */
     set actions(value) {}
-
     constructor() {
         super();
-
         this.type = "date";
     }
 
@@ -30,7 +28,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
         this.classList.add("md-date-field");
     }
@@ -48,32 +45,25 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-
         this.picker = document.createElement("md-date-picker");
         if (this.value) {
             this.picker.value = this.value;
         }
-
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handlePickerSelection = this.handlePickerSelection.bind(this);
         this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
         this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-
         this.picker.addEventListener("onDatePickerSelection", this.handlePickerSelection);
         this.picker.addEventListener("onDatePickerButtonCancelClick", this.handlePickerButtonCancelClick);
         this.picker.addEventListener("onDatePickerButtonOkClick", this.handlePickerButtonOkClick);
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onDatePickerSelection", this.handlePickerSelection);
             this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handlePickerButtonCancelClick);
             this.picker.removeEventListener("onDatePickerButtonOkClick", this.handlePickerButtonOkClick);
-
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
             this.picker.remove();
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         await this.picker.updateComplete;
         this.picker.showModal(this.textFieldContainer.value);
     }
@@ -104,7 +94,5 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.picker.close();
     }
 }
-
 customElements.define("md-date-field", MDDateFieldComponent);
-
 export { MDDateFieldComponent };

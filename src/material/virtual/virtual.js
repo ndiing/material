@@ -29,16 +29,13 @@ class MDVirtualController {
             containerSelector: ".md-virtual__container",
             rowSelector: null,
             columnSelector: null,
-
             rowTotal: 0,
             rowHeight: 0,
             buffer: 0,
             rowBuffer: 0,
-
             columnTotal: 0,
             columnWidth: 0,
             columnBuffer: 0,
-
             ...options,
         };
         this.cache = null;
@@ -56,7 +53,6 @@ class MDVirtualController {
             cancelable: true,
             detail,
         });
-
         if (this.viewport) {
             this.viewport.dispatchEvent(event);
         }
@@ -79,7 +75,6 @@ class MDVirtualController {
             this.rowEnd = this.rowStart + this.rowLimit;
             this.translateY = this.rowStart * rowHeight;
         }
-
         if (this.options.columnTotal) {
             let columnWidth;
             columnWidth = columnWidth || this.options.columnWidth;
@@ -91,11 +86,9 @@ class MDVirtualController {
             this.columnEnd = this.columnStart + this.columnLimit;
             this.translateX = this.columnStart * columnWidth;
         }
-
         this.scrollbar.style.width = `${this.scrollbarWidth || 1}px`;
         this.scrollbar.style.height = `${this.scrollbarHeight || 1}px`;
         this.container.style.transform = `translate3d(${this.translateX || 0}px,${this.translateY || 0}px,0)`;
-
         this.emit("onVirtualScroll", event);
     }
 
@@ -105,13 +98,9 @@ class MDVirtualController {
      */
     async hostConnected() {
         await this.host.updateComplete;
-
         this.viewport = this.options.viewportSelector ? this.host.querySelector(this.options.viewportSelector) : this.host;
-
         this.scrollbar = this.options.scrollbarSelector && this.host.querySelector(this.options.scrollbarSelector);
-
         this.container = this.options.containerSelector && this.host.querySelector(this.options.containerSelector);
-
         if (this.viewport) {
             this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
             this.viewport.addEventListener("scroll", this.handleVirtualScroll);
@@ -130,5 +119,4 @@ class MDVirtualController {
         }
     }
 }
-
 export { MDVirtualController };

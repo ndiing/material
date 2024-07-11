@@ -10,7 +10,6 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      */
     constructor() {
         super();
-
         this.gesture = new MDGestureController(this, {
             drag: ["x"],
             resize: ["e"],
@@ -30,10 +29,7 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
     disconnectedCallback() {
         this.gesture.hostDisconnected();
     }
-
     addController() {}
 }
-
 customElements.define("md-data-table-native-column", MDDataTableNativeColumnComponent, { extends: "th" });
-
 export { MDDataTableNativeColumnComponent };

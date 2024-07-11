@@ -28,7 +28,6 @@ class MDAttributeObserver {
             name: attributeName,
             value: target.getAttribute(attributeName),
         });
-
         new MutationObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.attributeName === attributeName) {
@@ -44,5 +43,4 @@ class MDAttributeObserver {
         });
     }
 }
-
 export { MDAttributeObserver };

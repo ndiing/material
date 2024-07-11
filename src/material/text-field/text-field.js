@@ -277,9 +277,7 @@ class MDTextFieldComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-text-field");
-
         this.style.setProperty("--md-sys-motion-duration-short4", "0s");
-
         if (this.defaultValue === undefined) {
             if (this.type === "color" && !this.value) {
                 this.value = "#000000";
@@ -293,7 +291,6 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value || "";
         }
     }
-
     variants = ["filled", "outlined", "rounded"];
 
     /**
@@ -303,19 +300,16 @@ class MDTextFieldComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-text-field--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("icon")) {
             await this.updateComplete;
             this.style.setProperty("--md-comp-text-field-native-offset-left", `${this.textFieldNative.value.offsetLeft}px`);
         }
-
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
         this.classList.toggle("md-text-field--error", !!this.validationMessage);
         this.classList.toggle("md-text-field--focused", !!this.focused);
@@ -423,7 +417,5 @@ class MDTextFieldComponent extends MDComponent {
         this.emit("onTextFieldIconButtonClick", event);
     }
 }
-
 customElements.define("md-text-field", MDTextFieldComponent);
-
 export { MDTextFieldComponent };

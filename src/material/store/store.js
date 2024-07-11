@@ -164,9 +164,7 @@ class MDStore {
      */
     getAll(options = {}) {
         let { _sort, _order, q, _page, _limit, _start, _end, sorters, filters, ...rest } = options;
-
         let docs = this.docs.slice();
-
         if ((_sort && _order) || sorters) {
             if (!sorters) {
                 const sort = _sort.split(",");
@@ -191,15 +189,12 @@ class MDStore {
             }
             docs = this.filter(docs, filters);
         }
-
         let total = docs.length;
-
         if (_page !== undefined && _limit !== undefined) {
             docs = this.paginate(docs, _page, _limit);
         } else if (_start !== undefined && _end !== undefined) {
             docs = this.slice(docs, _start, _end);
         }
-
         return { total, docs: docs };
     }
 
@@ -272,7 +267,6 @@ class MDStore {
         return filters.every((filter) => {
             const { name, value, operator } = filter;
             const objValue = this.getValue(obj, name);
-
             if (Array.isArray(objValue)) {
                 switch (operator) {
                     case "_eq":
@@ -315,5 +309,4 @@ class MDStore {
         });
     }
 }
-
 export { MDStore };

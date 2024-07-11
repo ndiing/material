@@ -68,7 +68,6 @@ class MDSegmentedButtonComponent extends MDComponent {
     handleSegmentedButtonItemClick(event) {
         if (this.multiSelection || this.singleSelection) {
             const data = event.currentTarget.data;
-
             if (this.multiSelection) {
                 data.selected = !data.selected;
             } else if (this.singleSelection) {
@@ -77,14 +76,10 @@ class MDSegmentedButtonComponent extends MDComponent {
                     item.selected = item === data;
                 }
             }
-
             this.requestUpdate();
         }
-
         this.emit("onSegmentedButtonItemClick", event);
     }
 }
-
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
-
 export { MDSegmentedButtonComponent };

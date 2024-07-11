@@ -17,10 +17,8 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      * {{description}}
      */
     set actions(value) {}
-
     constructor() {
         super();
-
         this.type = "search";
     }
 
@@ -29,7 +27,6 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
         this.classList.add("md-search-field");
     }
@@ -47,14 +44,10 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-
         this.textFieldNative.value.value = "";
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));
     }
 }
-
 customElements.define("md-search-field", MDSearchFieldComponent);
-
 export { MDSearchFieldComponent };

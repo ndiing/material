@@ -18,7 +18,6 @@ class MDTreeComponent extends MDComponent {
         list: { type: Array },
         variant: { type: String },
     };
-
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
@@ -26,7 +25,6 @@ class MDTreeComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.variant = "tree";
     }
 
@@ -72,7 +70,6 @@ class MDTreeComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-tree");
     }
 
@@ -81,14 +78,12 @@ class MDTreeComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`${this.localName}--${variant}`, (this.variant ?? "").split(" ").includes(variant));
             }
         }
-
         if (changedProperties.has("list")) {
             await this.updateComplete;
             this.setList(this.list);
@@ -102,23 +97,18 @@ class MDTreeComponent extends MDComponent {
      */
     getList(list) {
         let children;
-
         for (let i = 0; i < list.length; i++) {
             let item = list[i];
-
             if (item.expanded) {
                 children = item.children;
             }
-
             if (item.children?.length) {
                 const children_ = this.getList(item.children);
-
                 if (children_) {
                     children = children_;
                 }
             }
         }
-
         return children;
     }
 
@@ -129,19 +119,15 @@ class MDTreeComponent extends MDComponent {
     setList(list, indent = 0) {
         let expanded;
         let activated;
-
         for (let index = 0; index < list.length; index++) {
             let item = list[index];
             item.indent = indent;
-
             if (item.expanded || item.selected) {
                 expanded = true;
             }
-
             if (item.selected) {
                 activated = true;
             }
-
             if (item.children?.length) {
                 if (this.variant === "level") {
                     item.children.unshift({
@@ -150,23 +136,18 @@ class MDTreeComponent extends MDComponent {
                         isParent: true,
                     });
                 }
-
                 item.isNode = true;
-
                 const { expanded: isExpanded, activated: isActivated } = this.setList(item.children, indent + 1);
-
                 if (isExpanded) {
                     expanded = true;
                     item.expanded = true;
                 }
-
                 if (isActivated) {
                     activated = true;
                     item.activated = true;
                 }
             }
         }
-
         return { expanded, activated };
     }
 
@@ -175,16 +156,13 @@ class MDTreeComponent extends MDComponent {
      */
     select(list, data) {
         let activated;
-
         for (let i = 0; i < list.length; i++) {
             let item = list[i];
             item.selected = item === data;
             item.activated = false;
-
             if (item.selected) {
                 activated = true;
             }
-
             if (item.children?.length) {
                 if (this.select(item.children, data)) {
                     activated = true;
@@ -192,7 +170,6 @@ class MDTreeComponent extends MDComponent {
                 }
             }
         }
-
         return activated;
     }
 
@@ -208,23 +185,16 @@ class MDTreeComponent extends MDComponent {
      */
     handleTreeItemClick(event) {
         const data = event.currentTarget.data;
-
         if (data.isNode || data.isParent) {
             event.preventDefault();
-
             this.expand(this.list, data.isParent ? data.parent : data);
         } else {
             this.select(this.list, data);
         }
-
         this.requestUpdate();
-
         this.emit("onTreeItemClick", event);
     }
-
     handleTreeItemSelected() {}
 }
-
 customElements.define("md-tree", MDTreeComponent);
-
 export { MDTreeComponent };

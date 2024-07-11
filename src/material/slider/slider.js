@@ -51,7 +51,6 @@ class MDSliderComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.autocomplete = "off";
         this.min = 0;
         this.max = 100;
@@ -80,9 +79,7 @@ class MDSliderComponent extends MDComponent {
             </div>
         `;
     }
-
     sliderNative1 = createRef();
-
     sliderNative2 = createRef();
 
     /**
@@ -129,19 +126,13 @@ class MDSliderComponent extends MDComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-
         const defaultValue = this.max < this.min ? this.min : this.min + (this.max - this.min) / 2;
-
         for (let index = 0; index < this.value.length; index++) {
             this.value[index] = this.value[index] ?? defaultValue;
         }
-
         this.defaultValue = this.value.slice();
-
         this.classList.add("md-slider");
-
         await this.updateComplete;
-
         for (let index = 0; index < this.natives.length; index++) {
             let native = this.natives[index];
             native.value = this.value[index];
@@ -157,7 +148,6 @@ class MDSliderComponent extends MDComponent {
     updateStyle(index) {
         const percentage = calcPercentage(this.min, this.max, this.value[index]);
         const decimal = calcDecimal(this.min, this.max, this.value[index]);
-
         this.style.setProperty("--md-comp-slider-percentage" + (index + 1), percentage + "%");
         this.style.setProperty("--md-comp-slider-decimal" + (index + 1), decimal);
     }
@@ -170,7 +160,6 @@ class MDSliderComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("min")) {
             if (this.min < 0) {
                 this.classList.add("md-slider--centered");
@@ -207,17 +196,14 @@ class MDSliderComponent extends MDComponent {
         if (this.value?.length > 1) {
             this.natives[0].value = Math.min(this.natives[0].value, this.value[1]);
             this.natives[1].value = Math.max(this.natives[1].value, this.value[0]);
-
             this.value[0] = this.natives[0].value;
             this.value[1] = this.natives[1].value;
-
             this.updateStyle(0);
             this.updateStyle(1);
         } else {
             this.value[0] = this.natives[0].value;
             this.updateStyle(0);
         }
-
         this.requestUpdate();
         this.emit("onSliderNativeInput", event);
     }
@@ -235,12 +221,9 @@ class MDSliderComponent extends MDComponent {
             this.value[index] = this.defaultValue[index];
             this.updateStyle(index);
         }
-
         this.requestUpdate();
         this.emit("onSliderNativeReset", event);
     }
 }
-
 customElements.define("md-slider", MDSliderComponent);
-
 export { MDSliderComponent };

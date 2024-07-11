@@ -24,7 +24,8 @@ function write(pathname, data) {
 const [, , argvName] = process.argv;
 function clean(text){
     text=text
-    .replace(/(^.*?\{)/gm,'\r\n$1')
+    .replace(/(\r?\n)+/gm,'\r\n')
+    .replace(/(\/\*\*)/gm,'\r\n$1')
     return text
 }
 function open(pathname) {
@@ -35,12 +36,11 @@ function open(pathname) {
             open(curr);
         } else {
             const extname = path.extname(curr);
-            if (extname === ".scss") {
+            if (extname === ".js") {
                 if (argvName && !curr.includes(argvName)) {
                     continue;
                 }
                 const text = read(curr);
-                console.log('clean '+curr)
                 write(curr,clean(text))
             }
         }

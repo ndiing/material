@@ -50,7 +50,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     get nodeActions_() {
         let icons = [];
-
         if (this.variant === "accordion") {
             icons = ["keyboard_arrow_down", "keyboard_arrow_up"];
         } else if (this.variant === "tree") {
@@ -58,11 +57,9 @@ class MDTreeItemComponent extends MDComponent {
         } else if (this.variant === "level") {
             icons = ["arrow_forward", "arrow_back"];
         }
-
         if (this.nodeActions) {
             icons = this.nodeActions;
         }
-
         return icons;
     }
 
@@ -71,17 +68,14 @@ class MDTreeItemComponent extends MDComponent {
      */
     get nodeIcons_() {
         let icons = [];
-
         if (this.variant === "tree") {
             icons = ["folder", "folder_open"];
         }
-
         if (this.nodeIcons) {
             icons = this.nodeIcons;
         } else if (this.icon) {
             icons = [this.icon, this.icon];
         }
-
         return icons;
     }
 
@@ -90,17 +84,14 @@ class MDTreeItemComponent extends MDComponent {
      */
     get leafIcons_() {
         let icons = [];
-
         if (this.variant === "tree") {
             icons = ["draft", "draft"];
         }
-
         if (this.leafIcons) {
             icons = this.leafIcons;
         } else if (this.icon) {
             icons = [this.icon, this.icon];
         }
-
         return icons;
     }
 
@@ -137,7 +128,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
@@ -229,7 +219,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-tree__item");
     }
 
@@ -238,7 +227,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("selected")) {
             if (this.selected) {
                 this.emit("onTreeItemSelected", this);
@@ -246,7 +234,5 @@ class MDTreeItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-tree-item", MDTreeItemComponent);
-
 export { MDTreeItemComponent };

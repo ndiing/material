@@ -49,7 +49,5 @@ class MDScrimComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-scrim", MDScrimComponent);
-
 export { MDScrimComponent };

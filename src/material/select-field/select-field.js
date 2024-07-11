@@ -49,10 +49,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
-
     constructor() {
         super();
-
         this.type = "select";
     }
 
@@ -109,10 +107,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
         this.classList.add("md-select-field");
-
         this.defaultOptions = JSON.parse(JSON.stringify(this.options));
     }
 
@@ -147,13 +143,11 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         });
         this.requestUpdate();
     }
-
     async showPicker() {
         if (this.pickerOpen) {
             return;
         }
         this.pickerOpen = true;
-
         this.picker = document.createElement("md-menu");
         if (this.options) {
             this.picker.list = this.options;
@@ -161,26 +155,19 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         if (this.map) {
             this.picker.map = this.map;
         }
-
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handlePickerMenuListItemClick = this.handlePickerMenuListItemClick.bind(this);
         this.handlePickerMenuListItemSelected = this.handlePickerMenuListItemSelected.bind(this);
-
         this.picker.addEventListener("onMenuListItemClick", this.handlePickerMenuListItemClick);
         this.picker.addEventListener("onMenuListItemSelected", this.handlePickerMenuListItemSelected);
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onMenuListItemClick", this.handlePickerMenuListItemClick);
             this.picker.removeEventListener("onMenuListItemSelected", this.handlePickerMenuListItemSelected);
-
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
             this.picker.remove();
-
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScroll", resolve));
         await this.picker.updateComplete;
         this.picker.style.width = `${this.textFieldContainer.value.clientWidth}px`;
@@ -195,19 +182,15 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             ],
         });
     }
-
     handlePickerMenuListItemClick(event) {
         this.requestUpdate();
         this.picker.close();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.emit("onPickerMenuListItemClick", event);
     }
-
     handlePickerMenuListItemSelected(event) {
         this.emit("onPickerMenuListItemSelected", event);
     }
 }
-
 customElements.define("md-select-field", MDSelectFieldComponent);
-
 export { MDSelectFieldComponent };

@@ -19,7 +19,6 @@ class MDProgressIndicatorComponent extends MDComponent {
         value: { type: Number },
         max: { type: Number },
     };
-
     variants = ["circular", "linear"];
 
     /**
@@ -27,7 +26,6 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.max = 100;
     }
 
@@ -71,7 +69,6 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-progress-indicator");
     }
 
@@ -80,14 +77,12 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-progress-indicator--${variant}`, (this.variant ?? "").split(" ").includes(variant));
             }
         }
-
         if (changedProperties.has("value")) {
             const percentage = calcPercentage(0, this.max, this.value);
             this.style.setProperty("--md-comp-progress-indicator-percentage", percentage + "%");
@@ -95,7 +90,5 @@ class MDProgressIndicatorComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-progress-indicator", MDProgressIndicatorComponent);
-
 export { MDProgressIndicatorComponent };

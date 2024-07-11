@@ -48,11 +48,9 @@ class MDImageComponent extends MDComponent {
         title: { type: String },
         longdesc: { type: String },
         fetchpriority: { type: String },
-
         ratio: { type: String },
         variant: { type: String },
     };
-
     variants = ["rounded"];
 
     /**
@@ -72,7 +70,6 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
-
     imageNative = createRef();
 
     /**
@@ -80,7 +77,6 @@ class MDImageComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.loading = "lazy";
         this.alt = "alt";
     }
@@ -121,7 +117,6 @@ class MDImageComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-image");
     }
 
@@ -130,7 +125,6 @@ class MDImageComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
@@ -151,11 +145,8 @@ class MDImageComponent extends MDComponent {
      */
     handleImageNativeError(event) {
         this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
-
         this.emit("onImageNativeError", event);
     }
 }
-
 customElements.define("md-image", MDImageComponent);
-
 export { MDImageComponent };

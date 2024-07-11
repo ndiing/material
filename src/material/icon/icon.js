@@ -16,7 +16,5 @@ class MDIconComponent extends MDComponent {
         this.classList.add("md-icon");
     }
 }
-
 customElements.define("md-icon", MDIconComponent);
-
 export { MDIconComponent };

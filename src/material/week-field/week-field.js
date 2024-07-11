@@ -18,10 +18,8 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
      * {{description}}
      */
     set actions(value) {}
-
     constructor() {
         super();
-
         this.type = "week";
     }
 
@@ -30,7 +28,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
         this.classList.add("md-week-field");
     }
@@ -48,32 +45,25 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-
         this.picker = document.createElement("md-week-picker");
         if (this.value) {
             this.picker.value = this.value;
         }
-
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handlePickerSelection = this.handlePickerSelection.bind(this);
         this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
         this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-
         this.picker.addEventListener("onWeekPickerSelection", this.handlePickerSelection);
         this.picker.addEventListener("onWeekPickerButtonCancelClick", this.handlePickerButtonCancelClick);
         this.picker.addEventListener("onWeekPickerButtonOkClick", this.handlePickerButtonOkClick);
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onWeekPickerSelection", this.handlePickerSelection);
             this.picker.removeEventListener("onWeekPickerButtonCancelClick", this.handlePickerButtonCancelClick);
             this.picker.removeEventListener("onWeekPickerButtonOkClick", this.handlePickerButtonOkClick);
-
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
             this.picker.remove();
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         await this.picker.updateComplete;
         this.picker.showModal(this.textFieldContainer.value);
     }
@@ -104,7 +94,5 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.picker.close();
     }
 }
-
 customElements.define("md-week-field", MDWeekFieldComponent);
-
 export { MDWeekFieldComponent };

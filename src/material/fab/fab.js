@@ -23,7 +23,6 @@ class MDFabComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
 
     /**
@@ -31,7 +30,6 @@ class MDFabComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             clipped: true,
             fadeOut: true,
@@ -54,7 +52,6 @@ class MDFabComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-fab");
     }
 
@@ -63,14 +60,12 @@ class MDFabComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-fab--${variant}`, (this.variant ?? "").split(" ").includes(variant));
             }
         }
-
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
@@ -82,7 +77,5 @@ class MDFabComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-fab", MDFabComponent);
-
 export { MDFabComponent };

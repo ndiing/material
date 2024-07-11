@@ -113,14 +113,11 @@ class MDPaginationComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("limit") || changedProperties.has("total")) {
             await this.updateComplete;
             this.page = 1;
         }
-
         let cache = JSON.stringify([this.total, this.limit, this.page]);
-
         if (this.cache !== cache) {
             this.cache = cache;
             this.emit("onPaginationChange", this);
@@ -133,7 +130,6 @@ class MDPaginationComponent extends MDComponent {
     handlePaginationLimitChange(event) {
         const limit = Number(event.detail.currentTarget.value);
         this.limit = limit;
-
         this.emit("onPaginationLimitChange", event);
     }
 
@@ -142,7 +138,6 @@ class MDPaginationComponent extends MDComponent {
      */
     handlePaginationFirstClick(event) {
         this.page = 1;
-
         this.emit("onPaginationFirstClick", event);
     }
 
@@ -151,7 +146,6 @@ class MDPaginationComponent extends MDComponent {
      */
     handlePaginationPrevClick(event) {
         this.page = Math.max(--this.page, 1);
-
         this.emit("onPaginationPrevClick", event);
     }
 
@@ -160,7 +154,6 @@ class MDPaginationComponent extends MDComponent {
      */
     handlePaginationNextClick(event) {
         this.page = Math.min(++this.page, this.pages);
-
         this.emit("onPaginationNextClick", event);
     }
 
@@ -169,11 +162,8 @@ class MDPaginationComponent extends MDComponent {
      */
     handlePaginationLastClick(event) {
         this.page = this.pages;
-
         this.emit("onPaginationLastClick", event);
     }
 }
-
 customElements.define("md-pagination", MDPaginationComponent);
-
 export { MDPaginationComponent };

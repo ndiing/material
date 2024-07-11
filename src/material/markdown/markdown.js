@@ -42,7 +42,6 @@ class MDMarkdownComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-markdown");
     }
 
@@ -53,7 +52,6 @@ class MDMarkdownComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("href")) {
             try {
                 const response = await fetch(this.href);
@@ -66,7 +64,5 @@ class MDMarkdownComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-markdown", MDMarkdownComponent);
-
 export { MDMarkdownComponent };

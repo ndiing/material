@@ -17,7 +17,6 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     constructor() {
         super();
-
         this.popper = new MDPopperController(this, {});
     }
 
@@ -27,7 +26,6 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-card");
         this.classList.add("md-tooltip");
     }
@@ -66,7 +64,5 @@ class MDTooltipComponent extends MDSheetComponent {
         });
     }
 }
-
 customElements.define("md-tooltip", MDTooltipComponent);
-
 export { MDTooltipComponent };

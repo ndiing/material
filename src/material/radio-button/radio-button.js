@@ -34,7 +34,6 @@ class MDRadioButtonComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-radio-button__native",
             containerSelector: ".md-radio-button__track",
@@ -43,7 +42,6 @@ class MDRadioButtonComponent extends MDComponent {
             fadeOut: true,
         });
     }
-
     radioButtonNative = createRef();
 
     /**
@@ -79,7 +77,6 @@ class MDRadioButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
@@ -89,7 +86,6 @@ class MDRadioButtonComponent extends MDComponent {
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
-
         this.classList.add("md-radio-button");
     }
 
@@ -103,7 +99,6 @@ class MDRadioButtonComponent extends MDComponent {
         this.value = this.radioButtonNative.value.value;
         this.checked = this.radioButtonNative.value.checked;
         this.indeterminate = this.radioButtonNative.value.indeterminate;
-
         this.emit("onRadioButtonNativeInput", event);
     }
 
@@ -117,15 +112,11 @@ class MDRadioButtonComponent extends MDComponent {
         this.radioButtonNative.value.value = this.defaultValue;
         this.radioButtonNative.value.checked = this.defaultChecked;
         this.radioButtonNative.value.indeterminate = this.defaultIndeterminate;
-
         this.value = this.defaultValue;
         this.checked = this.defaultChecked;
         this.indeterminate = this.defaultIndeterminate;
-
         this.emit("onRadioButtonNativeReset", event);
     }
 }
-
 customElements.define("md-radio-button", MDRadioButtonComponent);
-
 export { MDRadioButtonComponent };

@@ -33,27 +33,19 @@ class MDListItemComponent extends MDComponent {
         avatar: { type: String },
         thumbnail: { type: String },
         video: { type: String },
-
         icon: { type: String },
-
         label: { type: String },
         subLabel: { type: String },
-
         badge: { type: Number },
-
         text: { type: String },
-
         leadingCheckbox: { type: Boolean },
         leadingRadioButton: { type: Boolean },
         leadingSwitch: { type: Boolean },
-
         trailingCheckbox: { type: Boolean },
         trailingRadioButton: { type: Boolean },
         trailingSwitch: { type: Boolean },
-
         selected: { type: Boolean, reflect: true },
         routerLink: { type: String, reflect: true },
-
         activated: { type: Boolean, reflect: true },
     };
 
@@ -62,11 +54,9 @@ class MDListItemComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
-
         this.gesture = new MDGestureController(this, {
             drag: [],
             dragAfterLongPress: true,
@@ -119,13 +109,10 @@ class MDListItemComponent extends MDComponent {
             ${this.leadingCheckbox?this.renderCheckbox():nothing}
             ${this.leadingRadioButton?this.renderRadioButton():nothing}
             ${this.leadingSwitch?this.renderSwitch():nothing}
-
             ${this.avatar?html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>`:nothing}
             ${this.thumbnail?html`<md-image class="md-list__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>`:nothing}
             ${this.video?html`<md-image class="md-list__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
-
             ${this.icon?html`<div class="md-icon md-list__icon">${this.icon}</div>`:nothing}
-
             ${this.label||this.subLabel||this.badge?html`
                 <div class="md-list__inner">
                     ${this.label||this.subLabel?html`
@@ -137,9 +124,7 @@ class MDListItemComponent extends MDComponent {
                     ${this.badge?html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
-
             ${this.text?html`<div class="md-list__text">${this.text}</div>`:nothing}
-
             ${this.trailingCheckbox?this.renderCheckbox():nothing}
             ${this.trailingRadioButton?this.renderRadioButton():nothing}
             ${this.trailingSwitch?this.renderSwitch():nothing}
@@ -151,9 +136,7 @@ class MDListItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-list__item");
-
         this.list = this.closest("md-list");
     }
 
@@ -162,7 +145,6 @@ class MDListItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("subLabel")) {
             await this.requestUpdate;
             const secondary = this.querySelector(".md-list__label-secondary");
@@ -174,7 +156,6 @@ class MDListItemComponent extends MDComponent {
                 this.classList.add("md-list__item--two");
             }
         }
-
         if (changedProperties.has("selected")) {
             if (this.selected) {
                 this.emit("onListItemSelected", this);
@@ -182,7 +163,5 @@ class MDListItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-list-item", MDListItemComponent);
-
 export { MDListItemComponent };

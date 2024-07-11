@@ -18,7 +18,5 @@ class MDTopAppBarComponent extends MDSheetComponent {
         this.classList.add("md-top-app-bar");
     }
 }
-
 customElements.define("md-top-app-bar", MDTopAppBarComponent);
-
 export { MDTopAppBarComponent };

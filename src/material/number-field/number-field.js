@@ -20,10 +20,8 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
      * {{description}}
      */
     set actions(value) {}
-
     constructor() {
         super();
-
         this.type = "number";
     }
 
@@ -32,7 +30,6 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
         this.classList.add("md-number-field");
     }
@@ -50,19 +47,14 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-
         const name = event.currentTarget.name;
-
         if (name === "subtract") {
             this.textFieldNative.value.stepDown();
         } else if (name === "add") {
             this.textFieldNative.value.stepUp();
         }
-
         // this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 }
-
 customElements.define("md-number-field", MDNumberFieldComponent);
-
 export { MDNumberFieldComponent };

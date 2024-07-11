@@ -19,11 +19,9 @@ class MDPopperController {
             ...options,
         };
     }
-
     async hostConnected() {
         await this.host.updateComplete;
     }
-
     async hostDisconnected() {
         await this.host.updateComplete;
     }
@@ -38,7 +36,6 @@ class MDPopperController {
             ...this.options,
             ...options,
         };
-
         const placements = {
             above: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top - containerRect.height - options.offset, originX: "50%", originY: "100%" }),
             "above-start": () => ({ left: buttonRect.left, top: buttonRect.top - containerRect.height - options.offset, originX: "0%", originY: "100%" }),
@@ -70,7 +67,6 @@ class MDPopperController {
             "north-west": () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.top - containerRect.height - options.offset, originX: "100%", originY: "100%" }),
             center: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "50%", originY: "50%" }),
         };
-
         let buttonRect;
         if (button instanceof Event) {
             const { clientX: left, clientY: top, width, height } = button;
@@ -78,30 +74,23 @@ class MDPopperController {
         } else {
             buttonRect = button.getBoundingClientRect();
         }
-
         let containerRect = this.host.getBoundingClientRect();
         let boundaryRect = options.boundary.getBoundingClientRect();
-
         let left, top, originX, originY;
         let matches;
-
         for (const placement of options.placements) {
             ({ left, top, originX, originY } = placements[placement]());
             const right = left + containerRect.width;
             const bottom = top + containerRect.height;
-
             const exceed = left < boundaryRect.left || top < boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
-
             if (!exceed) {
                 matches = 1;
                 break;
             }
         }
-
         // if (!matches) {
         //     ({ left, top, originX, originY } = placements.center());
         // }
-
         this.host.style.left = `${left}px`;
         this.host.style.top = `${top}px`;
         this.host.style.transformOrigin = `${originX} ${originY}`;
@@ -116,26 +105,20 @@ class MDPopperController {
      */
     getScrollableParent(element) {
         let parent = element;
-
         while (parent) {
             parent = parent.parentElement;
             if (!parent) {
                 return null;
             }
-
             const overflowY = window.getComputedStyle(parent).overflowY;
             const overflowX = window.getComputedStyle(parent).overflowX;
-
             const isScrollableY = (overflowY === "auto" || overflowY === "scroll" || overflowY === "hidden") && parent.scrollHeight > parent.clientHeight;
             const isScrollableX = (overflowX === "auto" || overflowX === "scroll" || overflowX === "hidden") && parent.scrollWidth > parent.clientWidth;
-
             if (isScrollableY || isScrollableX) {
                 return parent;
             }
         }
-
         return null;
     }
 }
-
 export { MDPopperController };

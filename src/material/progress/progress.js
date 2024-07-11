@@ -30,7 +30,6 @@ function reset() {
     pausedTime = 0;
     totalDuration = 10000;
     elapsedTime = 0;
-
     progressBar.parentNode.removeChild(progressBar);
     progressBar = null;
 }
@@ -42,11 +41,9 @@ function reset() {
 function observe(resolve) {
     let currentTime = performance.now();
     elapsedTime = currentTime - startTime;
-
     if (progressBar) {
         progressBar.setAttribute("value", elapsedTime);
     }
-
     if (elapsedTime < totalDuration) {
         requestId = requestAnimationFrame(() => observe(resolve));
     } else {
@@ -67,13 +64,11 @@ function start(duration = 10000) {
         if (!progressBar) {
             create();
         }
-
         if (isAnimating) {
             totalDuration += duration;
             resolve();
             return;
         }
-
         totalDuration = duration;
         isAnimating = true;
         startTime = performance.now() - pausedTime;
@@ -112,14 +107,11 @@ function stop() {
         if (progressBar) {
             progressBar.setAttribute("value", totalDuration);
         }
-
         cancelAnimationFrame(requestId);
         reset();
     }
 }
-
 export { start, pause, resume, stop };
-
 (() => {
     let timeout;
     new PerformanceObserver((list) => {

@@ -29,7 +29,6 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
-
     switchNative = createRef();
 
     /**
@@ -38,7 +37,6 @@ class MDSwitchComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-switch__native",
             containerSelector: ".md-switch__thumb",
@@ -81,7 +79,6 @@ class MDSwitchComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
@@ -91,7 +88,6 @@ class MDSwitchComponent extends MDComponent {
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
-
         this.classList.add("md-switch");
     }
 
@@ -105,7 +101,6 @@ class MDSwitchComponent extends MDComponent {
         this.value = this.switchNative.value.value;
         this.checked = this.switchNative.value.checked;
         this.indeterminate = this.switchNative.value.indeterminate;
-
         this.emit("onSwitchNativeInput", event);
     }
 
@@ -119,15 +114,11 @@ class MDSwitchComponent extends MDComponent {
         this.switchNative.value.value = this.defaultValue;
         this.switchNative.value.checked = this.defaultChecked;
         this.switchNative.value.indeterminate = this.defaultIndeterminate;
-
         this.value = this.defaultValue;
         this.checked = this.defaultChecked;
         this.indeterminate = this.defaultIndeterminate;
-
         this.emit("onSwitchNativeReset", event);
     }
 }
-
 customElements.define("md-switch", MDSwitchComponent);
-
 export { MDSwitchComponent };

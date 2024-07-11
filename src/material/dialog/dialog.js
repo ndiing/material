@@ -18,7 +18,5 @@ class MDDialogComponent extends MDSheetComponent {
         this.classList.add("md-dialog");
     }
 }
-
 customElements.define("md-dialog", MDDialogComponent);
-
 export { MDDialogComponent };

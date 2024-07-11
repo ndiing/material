@@ -18,7 +18,5 @@ class MDSideSheetComponent extends MDSheetComponent {
         this.classList.add("md-side-sheet");
     }
 }
-
 customElements.define("md-side-sheet", MDSideSheetComponent);
-
 export { MDSideSheetComponent };

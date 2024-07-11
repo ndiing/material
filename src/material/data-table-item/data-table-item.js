@@ -34,28 +34,20 @@ class MDDataTableItemComponent extends MDComponent {
         avatar: { type: String },
         thumbnail: { type: String },
         video: { type: String },
-
         icon: { type: String },
-
         label: { type: String },
         subLabel: { type: String },
-
         badge: { type: Number },
-
         text: { type: String },
-
         leadingCheckbox: { type: Boolean },
         leadingRadioButton: { type: Boolean },
         leadingSwitch: { type: Boolean },
-
         trailingCheckbox: { type: Boolean },
         trailingRadioButton: { type: Boolean },
         trailingSwitch: { type: Boolean },
-
         selected: { type: Boolean, reflect: true },
         indeterminate: { type: Boolean },
         routerLink: { type: String, reflect: true },
-
         sortable: { type: Boolean },
         sortableIcon: { type: String },
     };
@@ -110,14 +102,11 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.leadingCheckbox?this.renderCheckbox():nothing}
             ${this.leadingRadioButton?this.renderRadioButton():nothing}
             ${this.leadingSwitch?this.renderSwitch():nothing}
-
             ${this.avatar?html`<md-image class="md-data-table__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>`:nothing}
             ${this.thumbnail?html`<md-image class="md-data-table__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>`:nothing}
             ${this.video?html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
-
             ${this.icon?html`<div class="md-icon md-data-table__icon">${this.icon}</div>`:nothing}
             
-
             ${isDefined(this.label)||this.subLabel||this.badge?html`
                 <div class="md-data-table__inner">
                     ${isDefined(this.label)||this.subLabel?html`
@@ -130,9 +119,7 @@ class MDDataTableItemComponent extends MDComponent {
                     ${this.badge?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
                 </div>
             `:nothing}
-
             ${this.text?html`<div class="md-data-table__text">${this.text}</div>`:nothing}
-
             ${this.trailingCheckbox?this.renderCheckbox():nothing}
             ${this.trailingRadioButton?this.renderRadioButton():nothing}
             ${this.trailingSwitch?this.renderSwitch():nothing}
@@ -144,7 +131,6 @@ class MDDataTableItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-data-table__item");
     }
 
@@ -153,7 +139,6 @@ class MDDataTableItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("subLabel")) {
             await this.requestUpdate;
             const secondary = this.querySelector(".md-data-table__label-secondary");
@@ -167,7 +152,5 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-data-table-item", MDDataTableItemComponent);
-
 export { MDDataTableItemComponent };
