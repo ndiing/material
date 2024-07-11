@@ -1,13 +1,6 @@
 /**
  * MDAttributeObserver observes changes to a specified attribute of a target element
  * and triggers a callback whenever the attribute's value changes.
- * @example
- * // Observe meta name="theme-color" when content change
- * const target = document.head.querySelector('meta[name="theme-color"]');
- * const observer = new MDAttributeObserver((entry) => {
- *     console.log(entry); // {name: 'content', value: '#ff0000'}
- * });
- * observer.observe(target, "content");
  */
 class MDAttributeObserver {
     /**

@@ -6,8 +6,6 @@ import { MDComponent } from "../component/component.js";
  * for displaying labels or counts with an optional limit.
  * @element md-badge
  * @extends MDComponent
- * @example
- * <md-badge label=""></md-badge>
  */
 class MDBadgeComponent extends MDComponent {
     /**

@@ -18,82 +18,7 @@ class DevMainComponent extends MDComponent {
     constructor() {
         super();
 
-        this.list = [
-            //
-            "attribute-observer",
-            "badge",
-            "bottom-app-bar",
-            "bottom-sheet",
-            "button",
-            "card",
-            "checkbox",
-            "chip",
-            "chips",
-            "color",
-            "color-field",
-            "color-picker",
-            "component",
-            "data-table",
-            "data-table-item",
-            // "data-table-native-column",
-            "date-field",
-            "date-picker",
-            "datetime-field",
-            "datetime-picker",
-            "dialog",
-            "emoji",
-            "emoji-picker",
-            "fab",
-            "form",
-            "functions",
-            "gesture",
-            "icon",
-            "icon-button",
-            "image",
-            "list",
-            "list-item",
-            "localization",
-            "markdown",
-            "menu",
-            "month-field",
-            "month-picker",
-            "navigation-bar",
-            "navigation-drawer",
-            "navigation-rail",
-            "number-field",
-            "observer",
-            "pagination",
-            "password-field",
-            "popper",
-            "progress",
-            "progress-indicator",
-            "radio-button",
-            "ripple",
-            "router",
-            "scrim",
-            "search-field",
-            "segmented-button",
-            "select-field",
-            "sheet",
-            "side-sheet",
-            "slider",
-            "snackbar",
-            "store",
-            "switch",
-            "tabs",
-            "text-field",
-            "textarea-field",
-            "time-field",
-            "time-picker",
-            "tooltip",
-            "top-app-bar",
-            "tree",
-            "tree-item",
-            "virtual",
-            "week-field",
-            "week-picker",
-
-        ]
+        this.list = ["functions", "localization", "color", "component", "router", "ripple", "popper", "progress", "gesture", "observer", "attribute-observer", "virtual", "store", "markdown", "icon", "emoji", "image", "badge", "button", "icon-button", "segmented-button", "fab", "card", "scrim", "sheet", "dialog", "top-app-bar", "side-sheet", "bottom-sheet", "snackbar", "tooltip", "bottom-app-bar", "datetime-picker", "date-picker", "month-picker", "time-picker", "week-picker", "color-picker", "emoji-picker", "form", "checkbox", "radio-button", "switch", "slider", "progress-indicator", "list-item", "list", "tree-item", "tree", "navigation-bar", "navigation-drawer", "navigation-rail", "menu", "tabs", "chip", "chips", "text-field", "datetime-field", "date-field", "month-field", "week-field", "time-field", "color-field", "number-field", "search-field", "password-field", "textarea-field", "select-field", "pagination", "data-table-item", "data-table"]
             .sort((a, b) => a.localeCompare(b))
             .map((name) => ({
                 routerLink: "/" + name,
@@ -125,11 +50,13 @@ class DevMainComponent extends MDComponent {
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-outlet></md-outlet>
+                    
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown .text="${this.doc}"></md-markdown>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         `;
