@@ -69,7 +69,6 @@
                     @include ripple-size();
                 }
             }
-
             &:focus,
             &:hover,
             &:active,
@@ -157,7 +156,6 @@
 
         .md-data-table__item {
             min-height: 52px;
-
             @include ripple();
             @include ripple-button();
             --md-comp-ripple-size: 200%;

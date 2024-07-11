@@ -7,7 +7,6 @@
     height: 24px;
     background-color: transparent;
     color: var(--md-sys-color-on-surface-variant);
-
     transition-property: background-color, color, border-color;
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     transition-duration: var(--md-sys-motion-duration-short4);
@@ -24,7 +23,6 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
-
 .md-icon-button--filled,
 .md-icon-button--tonal,
 .md-icon-button--outlined {

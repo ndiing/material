@@ -3,24 +3,29 @@
         visibility: visible;
         height: 0;
     }
+
     100% {
         height: var(--md-comp-sheet-height);
     }
 }
+
 @keyframes snackbarOut {
     0% {
         visibility: visible;
         opacity: 1;
     }
+
     100% {
         visibility: hidden;
         opacity: 0;
     }
 }
+
 @keyframes snackbarWrapperIn {
     0% {
         transform: translate3d(0, calc(0px - var(--md-comp-sheet-height)), 0);
     }
+
     100% {
         transform: translate3d(0, 0, 0);
     }
@@ -79,7 +84,6 @@
 
     .md-card__button {
         --md-comp-button-density: -2;
-
         color: var(--md-sys-color-inverse-primary);
 
         &.md-ripple {

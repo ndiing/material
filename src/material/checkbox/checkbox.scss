@@ -22,6 +22,7 @@
         + .md-checkbox__track {
             background-color: var(--md-sys-color-primary);
             border-color: var(--md-sys-color-primary);
+
             .md-checkbox__thumb {
                 width: 10px;
                 height: 2px;
@@ -29,10 +30,12 @@
             }
         }
     }
+
     &:checked {
         + .md-checkbox__track {
             background-color: var(--md-sys-color-primary);
             border-color: var(--md-sys-color-primary);
+
             .md-checkbox__thumb {
                 width: 10px;
                 height: 5px;
@@ -44,6 +47,7 @@
         }
     }
 }
+
 .md-checkbox__track {
     display: inline-flex;
     align-items: center;

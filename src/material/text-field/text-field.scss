@@ -6,11 +6,13 @@
     gap: 4px 0;
     position: relative;
 }
+
 .md-text-field__label {
     display: flex;
     padding: 0 16px;
     @include typescale-body-small();
 }
+
 .md-text-field__container {
     display: flex;
     align-items: center;
@@ -20,19 +22,24 @@
     background-color: var(--md-sys-color-surface-container-highest);
     color: var(--md-sys-color-on-surface);
 }
+
 .md-text-field__icon {
     margin-left: -4px;
 }
+
 .md-text-field__meta {
     padding: calc((56px - 24px) / 2) 0;
     @include typescale-body-large();
 }
+
 .md-text-field__meta-prefix {
     margin-right: -16px;
 }
+
 .md-text-field__meta-suffix {
     margin-left: -16px;
 }
+
 .md-text-field__native {
     appearance: none;
     resize: none;
@@ -44,39 +51,45 @@
     background: transparent;
     color: inherit;
 }
+
 .md-text-field__actions {
     display: inline-flex;
     gap: 0 12px;
     margin-right: -4px;
 }
-.md-text-field__action {
-}
+
+// .md-text-field__action {}
+
 .md-text-field__text {
     display: flex;
     padding: 0 16px;
     gap: 0 16px;
     @include typescale-body-small();
 }
-.md-text-field__text-start {
-}
+
+// .md-text-field__text-start {}
+
 .md-text-field__text-end {
     margin-left: auto;
 }
 
-.md-text-field--populated {
-}
+// .md-text-field--populated {}
+
 .md-text-field--focused {
     .md-text-field__label {
         color: var(--md-sys-color-primary);
     }
 }
+
 .md-text-field--error {
     .md-text-field__label {
         color: var(--md-sys-color-error);
     }
+
     .md-text-field__icon--error {
         color: var(--md-sys-color-error);
     }
+
     .md-text-field__text {
         color: var(--md-sys-color-error);
     }
@@ -92,25 +105,28 @@
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
         transition-duration: var(--md-sys-motion-duration-short4);
         pointer-events: none;
+
         + .md-text-field__container {
             .md-text-field__meta {
                 visibility: hidden;
             }
+
             .md-text-field__native {
                 &::placeholder {
                     visibility: hidden;
                 }
+
                 &::-webkit-datetime-edit {
                     visibility: hidden;
                 }
             }
         }
     }
+
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
         box-shadow: inset 0 -1px 0 0 var(--md-sys-color-on-surface-variant);
     }
-
     &.md-text-field--populated,
     &.md-text-field--focused {
         .md-text-field__label {
@@ -124,12 +140,15 @@
                     padding-top: calc(((56px - 24px) / 2) + 8px);
                     padding-bottom: calc(((56px - 24px) / 2) - 8px);
                 }
+
                 .md-text-field__native {
                     padding-top: calc(((56px - 24px) / 2) + 8px);
                     padding-bottom: calc(((56px - 24px) / 2) - 8px);
+
                     &::placeholder {
                         visibility: visible;
                     }
+
                     &::-webkit-datetime-edit {
                         visibility: visible;
                     }
@@ -137,11 +156,13 @@
             }
         }
     }
+
     &.md-text-field--focused {
         .md-text-field__container {
             box-shadow: inset 0 -2px 0 0 var(--md-sys-color-primary);
         }
     }
+
     &.md-text-field--error {
         .md-text-field__container {
             box-shadow: inset 0 -2px 0 0 var(--md-sys-color-error);
@@ -159,6 +180,7 @@
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
         transition-duration: var(--md-sys-motion-duration-short4);
         pointer-events: none;
+
         &::before {
             content: "";
             width: 0%;
@@ -173,10 +195,12 @@
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
             transition-duration: var(--md-sys-motion-duration-short4);
         }
+
         + .md-text-field__container {
             .md-text-field__meta {
                 visibility: hidden;
             }
+
             .md-text-field__native {
                 &::placeholder {
                     visibility: hidden;
@@ -184,12 +208,12 @@
             }
         }
     }
+
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small);
         box-shadow: inset 0 0 0 1px var(--md-sys-color-on-surface-variant);
         background-color: transparent;
     }
-
     &.md-text-field--populated,
     &.md-text-field--focused {
         .md-text-field__label {
@@ -198,6 +222,7 @@
             transform: translate3d(0, -50%, 0);
             @include typescale-body-small();
             left: 0;
+
             &::before {
                 width: 100%;
                 height: 100%;
@@ -207,6 +232,7 @@
                 .md-text-field__meta {
                     visibility: visible;
                 }
+
                 .md-text-field__native {
                     &::placeholder {
                         visibility: visible;
@@ -215,11 +241,13 @@
             }
         }
     }
+
     &.md-text-field--focused {
         .md-text-field__container {
             box-shadow: inset 0 0 0 2px var(--md-sys-color-primary);
         }
     }
+
     &.md-text-field--error {
         .md-text-field__container {
             box-shadow: inset 0 0 0 2px var(--md-sys-color-error);
@@ -236,27 +264,35 @@
 .md-text-field__native[type="color" i]::-webkit-color-swatch-wrapper {
     padding: 0;
 }
+
 .md-text-field__native[type="color" i]::-webkit-color-swatch {
     border: 0;
 }
+
 .md-text-field__native::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
 }
+
 .md-text-field__native::-webkit-datetime-edit-year-field {
     padding: 0;
 }
+
 .md-text-field__native::-webkit-datetime-edit-month-field {
     padding: 0;
 }
+
 .md-text-field__native::-webkit-datetime-edit-day-field {
     padding: 0;
 }
+
 .md-text-field__native::-webkit-datetime-edit-hour-field {
     padding: 0;
 }
+
 .md-text-field__native::-webkit-datetime-edit-minute-field {
     padding: 0;
 }
+
 .md-text-field__native[type="file" i]::-webkit-file-upload-button {
     display: none;
 }

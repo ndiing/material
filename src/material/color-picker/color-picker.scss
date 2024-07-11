@@ -79,11 +79,13 @@
     position: relative;
     overflow: hidden;
 }
+
 .md-color-picker__gradient-track {
     width: 360px;
     height: 256px;
     background: linear-gradient(to bottom, transparent, #000000), linear-gradient(to right, #ffffff, transparent), #ff0000;
 }
+
 .md-color-picker__gradient-thumb {
     width: 40px;
     height: 40px;
@@ -98,7 +100,6 @@
     top: 0;
     pointer-events: none;
 }
-
 .md-color-picker__hue,
 .md-color-picker__opacity {
     display: flex;
@@ -106,7 +107,6 @@
     height: 40px;
     position: relative;
 }
-
 .md-color-picker__hue-label,
 .md-color-picker__opacity-label {
     width: 0;
@@ -118,7 +118,6 @@
     left: 0;
     top: 0;
 }
-
 .md-color-picker__hue-native,
 .md-color-picker__opacity-native {
     appearance: none;
@@ -131,10 +130,12 @@
         width: 100%;
         height: 100%;
     }
+
     &::-webkit-slider-runnable-track {
         width: 100%;
         height: 100%;
     }
+
     &::-webkit-slider-thumb {
         appearance: none;
         width: 40px;

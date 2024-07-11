@@ -3,7 +3,6 @@
     padding: 0;
     border: 0;
     font: inherit;
-
     &,
     &::before,
     &::after {
@@ -14,7 +13,6 @@
         outline: none;
     }
 }
-
 html,
 body {
     width: 100%;
@@ -44,27 +42,35 @@ body {
 .md-layout-border__item {
     overflow: auto;
 }
+
 .md-layout-border__item--north {
     grid-area: 1 / 1 / 2 / 4;
 }
+
 .md-layout-border__item--east {
     grid-area: 2 / 3 / 3 / 4;
 }
+
 .md-layout-border__item--south {
     grid-area: 3 / 1 / 4 / 4;
 }
+
 .md-layout-border__item--west {
     grid-area: 2 / 1 / 3 / 2;
 }
+
 .md-layout-border__item--center {
     grid-area: 2 / 2 / 3 / 3;
 }
+
 .md-layout-border__item--full-west {
     grid-area: 1 / 1 / 4 / 2;
 }
+
 .md-layout-border__item--full-east {
     grid-area: 1 / 3 / 4 / 4;
 }
+
 .md-layout-border__item--full {
     grid-area: 1 / 1 / 4 / 4;
 }

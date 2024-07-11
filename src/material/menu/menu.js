@@ -205,7 +205,6 @@ class MDMenuComponent extends MDSheetComponent {
     async show(button, options) {
         this.setPlacement(button, options);
         super.show();
-
     }
 
     /**

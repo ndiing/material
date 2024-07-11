@@ -3,7 +3,6 @@
     --md-comp-button-density-height: calc(40 + (4 * var(--md-comp-button-density)));
     --md-comp-button-density-ratio: calc(var(--md-comp-button-density-height) / 40);
     --md-comp-button-height: calc(var(--md-comp-button-density-height) * 1px);
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -52,13 +51,13 @@
 .md-button--icon-right {
     .md-button__icon {
         order: 1;
+
         + .md-button__label {
             margin-right: 0;
             margin-left: 4px;
         }
     }
 }
-
 .md-button--elevated,
 .md-button--filled,
 .md-button--tonal,
@@ -99,7 +98,6 @@
     background-color: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
-
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     transition-duration: var(--md-sys-motion-duration-short4);
@@ -120,7 +118,6 @@
 .md-button--filled {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     transition-duration: var(--md-sys-motion-duration-short4);
@@ -147,7 +144,6 @@
 .md-button--tonal {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     transition-duration: var(--md-sys-motion-duration-short4);

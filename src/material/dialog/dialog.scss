@@ -5,18 +5,21 @@
         transform: translate3d(-50%, calc(-50% - (56px * 2)), 0);
         opacity: 0;
     }
+
     100% {
         height: var(--md-comp-sheet-height);
         transform: translate3d(-50%, -50%, 0);
         opacity: 1;
     }
 }
+
 @keyframes dialogOut {
     0% {
         visibility: visible;
         transform: translate3d(-50%, -50%, 0);
         opacity: 1;
     }
+
     100% {
         visibility: hidden;
         transform: translate3d(-50%, calc(-50% - (56px * 2)), 0);
@@ -28,14 +31,17 @@
     0% {
         overflow: hidden;
     }
+
     100% {
         overflow: hidden;
     }
 }
+
 @keyframes dialogInnerIn {
     0% {
         overflow: hidden;
     }
+
     100% {
         overflow: hidden;
     }
@@ -46,15 +52,18 @@
         visibility: visible;
         transform: translate3d(-50%, -100%, 0);
     }
+
     100% {
         transform: translate3d(-50%, -50%, 0);
     }
 }
+
 @keyframes dialogFullOut {
     0% {
         visibility: visible;
         transform: translate3d(-50%, -50%, 0);
     }
+
     100% {
         visibility: hidden;
         transform: translate3d(-50%, 50%, 0);

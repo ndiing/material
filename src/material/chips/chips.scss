@@ -8,21 +8,25 @@
     gap: 0 8px;
     border-radius: var(--md-sys-shape-corner-small);
 }
+
 .md-chip__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
     margin-left: -4px;
 }
+
 .md-chip__avatar {
     width: 24px;
     height: 24px;
     margin-left: -8px;
 }
+
 .md-chip__label {
     flex: 1;
     @include typescale-label-large();
 }
+
 .md-chip__action {
     margin-right: -4px;
 

@@ -151,24 +151,31 @@
 @mixin layout-border-item-north() {
     grid-area: 1 / 1 / 2 / 4;
 }
+
 @mixin layout-border-item-east() {
     grid-area: 2 / 3 / 3 / 4;
 }
+
 @mixin layout-border-item-south() {
     grid-area: 3 / 1 / 4 / 4;
 }
+
 @mixin layout-border-item-west() {
     grid-area: 2 / 1 / 3 / 2;
 }
+
 @mixin layout-border-item-center() {
     grid-area: 2 / 2 / 3 / 3;
 }
+
 @mixin layout-border-item-full-west() {
     grid-area: 1 / 1 / 4 / 2;
 }
+
 @mixin layout-border-item-full-east() {
     grid-area: 1 / 3 / 4 / 4;
 }
+
 @mixin layout-border-item-full() {
     grid-area: 1 / 1 / 4 / 4;
 }

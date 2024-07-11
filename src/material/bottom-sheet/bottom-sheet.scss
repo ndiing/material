@@ -23,6 +23,7 @@
         transform: translate3d(0, 0, 0);
         animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
     }
+
     .md-card__header {
         padding: 24px 24px 24px 16px;
         gap: 0 12px;
@@ -50,5 +51,4 @@
     }
 }
 
-.md-bottom-sheet--modal {
-}
+// .md-bottom-sheet--modal {}

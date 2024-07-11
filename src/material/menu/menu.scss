@@ -4,35 +4,42 @@
         height: 64px;
         opacity: 0;
     }
+
     100% {
         height: var(--md-comp-sheet-height);
         opacity: 1;
     }
 }
+
 @keyframes menuOut {
     0% {
         visibility: visible;
         height: var(--md-comp-sheet-height);
         opacity: 1;
     }
+
     100% {
         visibility: hidden;
         height: 64px;
         opacity: 0;
     }
 }
+
 @keyframes menuInnerOut {
     0% {
         overflow: hidden;
     }
+
     100% {
         overflow: hidden;
     }
 }
+
 @keyframes menuInnerIn {
     0% {
         overflow: hidden;
     }
+
     100% {
         overflow: hidden;
     }
@@ -54,6 +61,7 @@
     animation-name: var(--md-comp-sheet-animation, menuOut);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
+
     .md-virtual {
         overflow: hidden;
         animation-name: var(--md-comp-sheet-animation, menuInnerOut);
@@ -94,6 +102,7 @@
         padding: 0 12px;
         min-height: 48px;
     }
+
     .md-list__label-primary {
         @include typescale-label-large();
     }

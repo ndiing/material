@@ -5,17 +5,20 @@
         transform: translate3d(0, 56px, 0);
         opacity: 0;
     }
+
     100% {
         height: 456px;
         transform: translate3d(0, 0, 0);
         opacity: 1;
     }
 }
+
 @keyframes datetimePickerOut {
     0% {
         visibility: visible;
         opacity: 1;
     }
+
     100% {
         visibility: hidden;
         opacity: 0;
@@ -26,6 +29,7 @@
     0% {
         transform: translate3d(0, -56px, 0);
     }
+
     100% {
         transform: translate3d(0, 0, 0);
     }
@@ -104,10 +108,10 @@
     width: 360px;
     height: 336px;
 }
+
 .md-datetime-picker__card-item {
     flex: 1 0 100%;
     overflow: auto;
-
     transform: translate3d(calc((0 - var(--md-comp-datetime-picker-card-index)) * 100%), 0, 0);
 }
 
@@ -115,13 +119,13 @@
     display: flex;
     flex-direction: column;
 }
+
 .md-datetime-picker__list-item {
     display: flex;
     align-items: center;
     height: 48px;
     padding: 0 16px;
     gap: 0 16px;
-
     @include ripple();
     @include ripple-button();
     &:focus,
@@ -140,25 +144,32 @@
     &[disabled] {
         @include ripple-clipped();
     }
+
     &:focus {
         @include ripple-focused();
     }
+
     &:hover {
         @include ripple-hover();
     }
+
     &:active {
         @include ripple-pressed();
     }
+
     &[activated] {
         box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
     }
+
     &[selected] {
         background-color: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-on-surface-variant);
     }
+
     &[dragged] {
         @include ripple-dragged();
     }
+
     &[disabled] {
         @include ripple-disabled();
     }
@@ -175,6 +186,7 @@
     display: flex;
     gap: 0 8px;
 }
+
 .md-datetime-picker__grid-row--days {
     .md-datetime-picker__grid-item {
         @include ripple();
@@ -195,25 +207,32 @@
         &[disabled] {
             @include ripple-clipped();
         }
+
         &:focus {
             @include ripple-focused();
         }
+
         &:hover {
             @include ripple-hover();
         }
+
         &:active {
             @include ripple-pressed();
         }
+
         &[activated] {
             box-shadow: inset 0 0 0 1px var(--md-sys-color-primary);
         }
+
         &[selected] {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
         }
+
         &[dragged] {
             @include ripple-dragged();
         }
+
         &[disabled] {
             @include ripple-disabled();
         }
@@ -251,6 +270,7 @@
         top: 50%;
     }
 }
+
 .md-datetime-picker__absolute--hours {
     .md-datetime-picker__absolute-item {
         @for $i from 1 through 12 {
@@ -278,6 +298,7 @@
         }
     }
 }
+
 .md-datetime-picker__absolute--minutes {
     .md-datetime-picker__absolute-item {
         @for $i from 1 through 60 {
@@ -290,6 +311,7 @@
                     transform: rotate(calc((360deg / 60) * ($i - 16)));
                 }
             }
+
             &:nth-child(#{$i}) {
                 @if ((($i - 16) % 5) != 0) {
                     color: transparent;
@@ -298,6 +320,7 @@
         }
     }
 }
+
 .md-datetime-picker__absolute-item {
     display: inline-flex;
     align-items: center;
@@ -306,7 +329,6 @@
     width: 48px;
     height: 48px;
     border-radius: 24px;
-
     @include ripple();
     position: absolute;
     @include ripple-button();
@@ -318,33 +340,42 @@
     &[disabled] {
         @include ripple-size();
     }
+
     &:focus {
         @include ripple-focused();
     }
+
     &:hover {
         @include ripple-hover();
         color: var(--md-sys-color-on-surface-variant);
+
         &::before {
             background-color: var(--md-sys-color-on-surface);
             opacity: 8%;
         }
     }
+
     &:active {
         @include ripple-pressed();
     }
+
     &[activated] {
         box-shadow: inset 0 0 0 1px var(--md-sys-color-primary);
     }
+
     &[selected] {
         background-color: var(--md-sys-color-primary);
         color: var(--md-sys-color-on-primary);
+
         &::before {
             opacity: 100%;
         }
     }
+
     &[dragged] {
         @include ripple-dragged();
     }
+
     &[disabled] {
         @include ripple-disabled();
     }

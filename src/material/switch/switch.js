@@ -12,7 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDSwitchComponent#onSwitchNativeReset - Fired when the switch is reset.
  */
 class MDSwitchComponent extends MDComponent {
-    
     /**
      * Defines the properties of the switch component.
      * @property {String} name - The name attribute of the switch input.

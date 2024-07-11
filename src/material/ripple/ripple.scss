@@ -3,6 +3,7 @@
         width: 0;
     }
 }
+
 @keyframes rippleOut {
     0% {
         opacity: 10%;
@@ -15,7 +16,6 @@
     --md-comp-ripple-y: 0%;
     --md-comp-ripple-left: 50%;
     --md-comp-ripple-top: 50%;
-
     position: relative;
 
     &::after {
@@ -33,25 +33,30 @@
         animation-duration: var(--md-sys-motion-duration-short4);
     }
 }
+
 @mixin ripple-size() {
     &::after {
         width: var(--md-comp-ripple-size);
     }
 }
+
 @mixin ripple-button() {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
+
 @mixin ripple-clipped() {
     overflow: hidden;
 }
+
 @mixin ripple-focused() {
     &::after {
         opacity: 10%;
         animation-name: var(--md-comp-ripple-animation, rippleIn);
     }
 }
+
 @mixin ripple-fade-out() {
     &::after {
         opacity: 0%;
@@ -59,11 +64,11 @@
         animation-duration: var(--md-sys-motion-duration-short4), var(--md-sys-motion-duration-long4);
     }
 }
+
 @mixin ripple-hover() {
     &::after {
         opacity: 8%;
     }
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -73,11 +78,11 @@
             "opsz" 24;
     }
 }
+
 @mixin ripple-pressed() {
     &::after {
         opacity: 10%;
     }
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -87,9 +92,9 @@
             "opsz" 24;
     }
 }
+
 @mixin ripple-activated() {
     box-shadow: inset 0 0 0 1px var(--md-sys-color-secondary-container);
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -99,10 +104,10 @@
             "opsz" 24;
     }
 }
+
 @mixin ripple-selected() {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -112,11 +117,13 @@
             "opsz" 24;
     }
 }
+
 @mixin ripple-dragged() {
     &::after {
         opacity: 16%;
     }
 }
+
 @mixin ripple-disabled() {
     background-color: var(--md-sys-color-on-surface12);
     border-color: var(--md-sys-color-on-surface12);
@@ -125,6 +132,7 @@
     transition: none;
     pointer-events: none;
 }
+
 @mixin ripple-reset() {
     background-color: inherit;
     color: inherit;
@@ -141,7 +149,6 @@
 .md-ripple--button {
     @include ripple-button();
 }
-
 .md-ripple--focused,
 .md-ripple--hover,
 .md-ripple--pressed,
@@ -150,7 +157,6 @@
 .md-ripple[disabled] {
     @include ripple-size();
 }
-
 .md-ripple--clipped.md-ripple--focused,
 .md-ripple--clipped.md-ripple--hover,
 .md-ripple--clipped.md-ripple--pressed,
@@ -163,53 +169,75 @@
 .md-ripple--focused {
     @include ripple-focused();
 }
+
 .md-ripple--fade-out.md-ripple--focused {
     @include ripple-fade-out();
 }
+
 .md-ripple--hover {
     @include ripple-hover();
 }
+
 .md-ripple--pressed {
     @include ripple-pressed();
 }
+
 .md-ripple[activated] {
     @include ripple-activated();
 }
+
 .md-ripple[selected] {
     @include ripple-selected();
 }
+
 .md-ripple[dragged] {
     @include ripple-dragged();
 }
+
 .md-ripple[disabled] {
     @include ripple-disabled();
 }
-
 /* 
 @include ripple();
 @include ripple-button();
-
 &:focus,
 &:hover,
 &:active,
 &[selected],
 &[dragged],
-&[disabled] {.md-any{@include ripple-size();}}
 
+&[disabled] {.md-any{@include ripple-size();}
+}
 &:focus,
 &:hover,
 &:active,
 &[selected],
 &[dragged],
-&[disabled] {.md-any{@include ripple-clipped();}}
 
-&:focus {.md-any{@include ripple-focused();}}
-// &:focus {.md-any{@include ripple-fade-out();}}
-&:hover {.md-any{@include ripple-hover();}}
-&:active {.md-any{@include ripple-pressed();}}
-&[activated] {.md-any{@include ripple-activated();}}
-&[selected] {.md-any{@include ripple-selected();}}
-&[dragged] {.md-any{@include ripple-dragged();}}
-&[disabled] {.md-any{@include ripple-disabled();}}
+&[disabled] {.md-any{@include ripple-clipped();}
+}
 
+&:focus {.md-any{@include ripple-focused();}
+}
+
+// &:focus {.md-any{@include ripple-fade-out();}
+}
+
+&:hover {.md-any{@include ripple-hover();}
+}
+
+&:active {.md-any{@include ripple-pressed();}
+}
+
+&[activated] {.md-any{@include ripple-activated();}
+}
+
+&[selected] {.md-any{@include ripple-selected();}
+}
+
+&[dragged] {.md-any{@include ripple-dragged();}
+}
+
+&[disabled] {.md-any{@include ripple-disabled();}
+}
 */
