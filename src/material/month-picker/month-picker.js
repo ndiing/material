@@ -32,7 +32,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{description}}
      */
-    get body() {
+    get childNodes_() {
         /* prettier-ignore */
         return [html`
             <div class="md-datetime-picker__card">
@@ -45,7 +45,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{description}}
      */
-    set body(value) {
+    set childNodes_(value) {
         this._body = value;
     }
 

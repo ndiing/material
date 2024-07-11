@@ -53,7 +53,7 @@ class MDCardComponent extends MDComponent {
     constructor() {
         super();
 
-        this.body = Array.from(this.childNodes);
+        this.childNodes_ = Array.from(this.childNodes);
 
         this.renderIconButton = this.renderIconButton.bind(this);
         this.renderIcon = this.renderIcon.bind(this);
@@ -253,9 +253,9 @@ class MDCardComponent extends MDComponent {
      */
     renderBody() {
         /* prettier-ignore */
-        return this.body?.length || this.actions?.length ? html`
+        return this.childNodes_?.length || this.actions?.length ? html`
             <div class="md-card__body">
-                ${this.body?.length ? html`<div class="md-card__inner">${this.body}</div>` : nothing}
+                ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
                 ${this.actions?.length ? html`
                     <div class="md-card__footer">
                         ${this.actions.map(item => this.renderAction(item, this.renderButton))}

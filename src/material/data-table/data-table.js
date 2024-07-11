@@ -84,14 +84,14 @@ class MDDataTableComponent extends MDCardComponent {
      */
     set trailingActions(value) {}
 
-    get body() {
+    get childNodes_() {
         return [this.renderViewport()];
     }
 
     /**
      * {{description}}
      */
-    set body(value) {}
+    set childNodes_(value) {}
 
     get actions() {
         return [

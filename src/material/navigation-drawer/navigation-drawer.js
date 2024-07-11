@@ -19,7 +19,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     /**
      * {{description}}
      */
-    get body() {
+    get childNodes_() {
         /* prettier-ignore */
         return [html`
             <md-tree
@@ -33,7 +33,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     /**
      * {{description}}
      */
-    set body(value) {
+    set childNodes_(value) {
         this._body = value;
     }
 

@@ -38,7 +38,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     /**
      * {{description}}
      */
-    get body() {
+    get childNodes_() {
         /* prettier-ignore */
         return [this.renderMain()];
     }
@@ -46,7 +46,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     /**
      * {{description}}
      */
-    set body(value) {
+    set childNodes_(value) {
         this._body = value;
     }
 

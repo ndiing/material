@@ -48,7 +48,7 @@ class MDFormComponent extends MDComponent {
         this.autocomplete = "off";
         this.novalidate = true;
 
-        this.body = Array.from(this.childNodes);
+        this.childNodes_ = Array.from(this.childNodes);
     }
 
     /**
@@ -71,7 +71,7 @@ class MDFormComponent extends MDComponent {
                 ${ref(this.formNative)}
                 @reset="${this.handleFormNativeReset}"
                 @submit="${this.handleFormNativeSubmit}"
-            >${this.body}</form>
+            >${this.childNodes_}</form>
         `;
     }
 

@@ -184,7 +184,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     /**
      * {{description}}
      */
-    get body() {
+    get childNodes_() {
         /* prettier-ignore */
         return [html`
             <div class="md-datetime-picker__card">
@@ -200,7 +200,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     /**
      * {{description}}
      */
-    set body(value) {
+    set childNodes_(value) {
         this._body = value;
     }
 

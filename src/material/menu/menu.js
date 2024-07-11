@@ -5,6 +5,7 @@ import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDListComponent } from "../list/list.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 /**
  * Represents a menu component with virtual scrolling, filtering, and item selection capabilities.
@@ -31,15 +32,13 @@ class MDMenuComponent extends MDSheetComponent {
      * Returns the menu list element.
      * @return {HTMLElement} The menu list element.
      */
-    get menuList() {
-        return this.querySelector(".md-menu__list");
-    }
+    menuList = createRef();
 
     /**
      * Returns the body content of the menu.
      * @return {Array} The body content template.
      */
-    get body() {
+    get childNodes_() {
         /* prettier-ignore */
         return [html`
             <div 
@@ -54,6 +53,7 @@ class MDMenuComponent extends MDSheetComponent {
                         .variant="${"plain"}"
                         .list="${ifDefined(this.virtualList)}"
                         .map="${ifDefined(this.map)}"
+                        ${ref(this.menuList)}
                         @onListItemClick="${this.handleMenuListItemClick}"
                         @onListItemSelected="${this.handleMenuListItemSelected}"
                     ></md-list>
@@ -66,7 +66,7 @@ class MDMenuComponent extends MDSheetComponent {
      * Sets the body content of the menu.
      * @param {Array} value - The new body content.
      */
-    set body(value) {
+    set childNodes_(value) {
         this._body = value;
     }
 
@@ -143,7 +143,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {String} value - The value to filter the menu items by.
      */
     filter(value) {
-        this.filters = [{ name: this.menuList.map.label, value, operator: "_like" }];
+        this.filters = [{ name: this.menuList.value.map.label, value, operator: "_like" }];
 
         this.updateVirtualList();
         this.virtual.viewport.scrollTop = 0;
