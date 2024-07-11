@@ -2,6 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 /**
  * {{description}}
@@ -72,6 +73,8 @@ class MDImageComponent extends MDComponent {
         return style;
     }
 
+    imageNative = createRef();
+
     /**
      * {{description}}
      */
@@ -106,6 +109,7 @@ class MDImageComponent extends MDComponent {
                 .title="${ifDefined(this.title)}"
                 .longdesc="${ifDefined(this.longdesc)}"
                 .fetchpriority="${ifDefined(this.fetchpriority)}"
+                ${ref(this.imageNative)}
                 @load="${this.handleImageNativeLoad}"
                 @error="${this.handleImageNativeError}"
             >
@@ -146,9 +150,7 @@ class MDImageComponent extends MDComponent {
      * @private
      */
     handleImageNativeError(event) {
-        const native = event.currentTarget;
-
-        native.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+        this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
         this.emit("onImageNativeError", event);
     }

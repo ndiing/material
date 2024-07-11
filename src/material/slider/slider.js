@@ -2,28 +2,28 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { calcDecimal, calcPercentage, isArrayString } from "../functions/functions.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * {{description}}
+ * Slider component that extends the MDComponent base class.
  * @element md-slider
  * @extends MDComponent
- * @fires MDSliderComponent#onSliderNativeInput - {{description}}
- * @fires MDSliderComponent#onSliderNativeReset - {{description}}
+ * @fires MDSliderComponent#onSliderNativeInput - Fired when the slider input changes.
+ * @fires MDSliderComponent#onSliderNativeReset - Fired when the slider is reset.
  */
 class MDSliderComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Array} defaultValue - {{description}}
-     * @property {Number} min - {{description}}
-     * @property {Number} max - {{description}}
-     * @property {Number} step - {{description}}
-     * @property {Boolean} disabled - {{description}}
-     * @property {String} form - {{description}}
-     * @property {String} name - {{description}}
-     * @property {String} list - {{description}}
-     * @property {String} autocomplete - {{description}}
+     * Defines the properties of the slider component.
+     * @property {String} name - The name attribute of the slider input.
+     * @property {Array} value - The value of the slider, can be an array for range sliders.
+     * @property {Number} min - The minimum value of the slider.
+     * @property {Number} max - The maximum value of the slider.
+     * @property {Number} step - The step value of the slider.
+     * @property {Boolean} disabled - The disabled state of the slider.
+     * @property {String} autocomplete - The autocomplete attribute of the slider.
      */
     static properties = {
+        name: { type: String },
         value: {
             type: Array,
             converter: {
@@ -38,23 +38,21 @@ class MDSliderComponent extends MDComponent {
                 },
             },
         },
-        defaultValue: { type: Array },
         min: { type: Number },
         max: { type: Number },
         step: { type: Number },
         disabled: { type: Boolean },
-        form: { type: String },
-        name: { type: String },
-        list: { type: String },
         autocomplete: { type: String },
     };
 
     /**
-     * {{description}}
+     * Initializes a new instance of the MDSliderComponent.
+     * Sets up default properties.
      */
     constructor() {
         super();
 
+        this.autocomplete = "off";
         this.min = 0;
         this.max = 100;
         this.step = 1;
@@ -62,7 +60,10 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
+     * Renders the slider track with indicators.
      * @private
+     * @param {Number} value - The current value of the slider.
+     * @returns {TemplateResult} The HTML template for the track.
      */
     renderTrack(value) {
         let length = 2;
@@ -80,50 +81,54 @@ class MDSliderComponent extends MDComponent {
         `;
     }
 
+    sliderNative1 = createRef();
+
+    sliderNative2 = createRef();
+
     /**
+     * Renders the slider component template.
      * @private
      */
     render() {
         /* prettier-ignore */
         return html`
-            <label class="md-slider__inner">
-                <div class="md-slider__label">${this.type}</div>
-                ${this.value.map((value,index) => html`
-                    <div class="md-slider__container md-slider__container${index+1}">
-                        <input 
-                            type="range" 
-                            class="md-slider__native"
-                            .value="${ifDefined(this.value?.[index])}"
-                            .defaultValue="${ifDefined(this.defaultValue?.[index])}"
-                            .min="${ifDefined(this.min)}"
-                            .max="${ifDefined(this.max)}"
-                            .step="${ifDefined(this.step)}"
-                            .disabled="${ifDefined(this.disabled)}"
-                            .form="${ifDefined(this.form)}"
-                            .list="${ifDefined(this.list)}"
-                            .autocomplete="${ifDefined(this.autocomplete)}"
-                            @input="${this.handleSliderNativeInput}"
-                            @reset="${this.handleSliderNativeReset}"
-                        >
-                        <div class="md-slider__value">${value}</div>
-                        ${this.renderTrack(value,index)}
-                    </div>
-                `)}
-                <input 
-                    type="hidden" 
-                    class="md-slider__hidden"
-                    .name="${ifDefined(this.name)}"
-                    .value="${ifDefined(this.value)}"
-                >
-            </label>
+            ${this.value.map((value,index) => html`
+                <div class="md-slider__container md-slider__container${index+1}">
+                    <input 
+                        class="md-slider__native"
+                        aria-label="label"
+                        type="range" 
+                        .value="${ifDefined(this.value?.[index])}"
+                        .defaultValue="${ifDefined(this.defaultValue?.[index])}"
+                        .min="${ifDefined(this.min)}"
+                        .max="${ifDefined(this.max)}"
+                        .step="${ifDefined(this.step)}"
+                        ?disabled="${ifDefined(this.disabled)}"
+                        .autocomplete="${ifDefined(this.autocomplete)}"
+                        ${ref(this[`sliderNative${index + 1}`])}
+                        @input="${this.handleSliderNativeInput}"
+                        @reset="${this.handleSliderNativeReset}"
+                    >
+                    <div class="md-slider__value">${value}</div>
+                    ${this.renderTrack(value,index)}
+                </div>
+            `)}
+            <input 
+                type="hidden" 
+                class="md-slider__hidden"
+                .name="${ifDefined(this.name)}"
+                .value="${ifDefined(this.value)}"
+            >
         `;
     }
 
     /**
+     * Lifecycle method called when the component is added to the DOM.
+     * Sets default values and updates styles.
      * @private
      */
     async connectedCallback() {
-        await super.connectedCallback();
+        super.connectedCallback();
 
         const defaultValue = this.max < this.min ? this.min : this.min + (this.max - this.min) / 2;
 
@@ -145,7 +150,8 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * {{description}}
+     * Updates the style of the slider based on its value.
+     * @param {Number} index - The index of the slider value to update.
      * @private
      */
     updateStyle(index) {
@@ -157,6 +163,9 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
+     * Lifecycle method called when the component is updated.
+     * Updates classes based on properties.
+     * @param {Map} changedProperties - Map of changed properties.
      * @private
      */
     async updated(changedProperties) {
@@ -180,13 +189,18 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * {{description}}
+     * Returns a NodeList of slider input elements.
+     * @returns {NodeList} The slider input elements.
+     * @private
      */
     get natives() {
         return this.querySelectorAll(".md-slider__native");
     }
 
     /**
+     * Event handler for the slider input event.
+     * Updates the component's value and emits the onSliderNativeInput event.
+     * @param {Event} event - The input event.
      * @private
      */
     handleSliderNativeInput(event) {
@@ -209,6 +223,9 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
+     * Event handler for the slider reset event.
+     * Resets the component's value and emits the onSliderNativeReset event.
+     * @param {Event} event - The reset event.
      * @private
      */
     handleSliderNativeReset(event) {

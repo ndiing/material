@@ -46,7 +46,6 @@ import "./week-picker/week-picker.js";
 import "./color-picker/color-picker.js";
 import "./emoji-picker/emoji-picker.js";
 
-
 import "./form/form.js";
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
