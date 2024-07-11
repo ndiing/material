@@ -26,8 +26,8 @@ const config = {
             template: "index.html",
         }),
 
-        // new MiniCssExtractPlugin({
-        // }),
+        new MiniCssExtractPlugin({
+        }),
 
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -41,7 +41,7 @@ const config = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    // stylesHandler,
+                    stylesHandler,
                     "css-loader",
                     // 'postcss-loader',
                     "sass-loader",
@@ -50,7 +50,7 @@ const config = {
             {
                 test: /\.css$/i,
                 use: [
-                    // stylesHandler,
+                    stylesHandler,
                     "css-loader",
                     // 'postcss-loader'
                 ],
