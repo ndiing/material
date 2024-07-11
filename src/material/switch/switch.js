@@ -2,46 +2,43 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * {{description}}
+ * Switch component that extends the MDComponent base class.
  * @element md-switch
  * @extends MDComponent
- * @fires MDSwitchComponent#onSwitchNativeInput - {{description}}
- * @fires MDSwitchComponent#onSwitchNativeReset - {{description}}
+ * @fires MDSwitchComponent#onSwitchNativeInput - Fired when the switch input changes.
+ * @fires MDSwitchComponent#onSwitchNativeReset - Fired when the switch is reset.
  */
 class MDSwitchComponent extends MDComponent {
+    
     /**
-     * {{description}}
-     * @property {Boolean} checked - {{description}}
-     * @property {Boolean} defaultChecked - {{description}}
-     * @property {Boolean} disabled - {{description}}
-     * @property {Boolean} indeterminate - {{description}}
-     * @property {String} value - {{description}}
-     * @property {String} name - {{description}}
-     * @property {Object} form - {{description}}
-     * @property {String} type - {{description}}
-     * @property {Array} icons - {{description}}
+     * Defines the properties of the switch component.
+     * @property {String} name - The name attribute of the switch input.
+     * @property {String} value - The value attribute of the switch input.
+     * @property {Boolean} indeterminate - The indeterminate state of the switch.
+     * @property {Boolean} checked - The checked state of the switch.
+     * @property {Boolean} disabled - The disabled state of the switch.
+     * @property {Array} icons - Array of icons to display based on the checked state.
      */
     static properties = {
-        checked: { type: Boolean },
-        defaultChecked: { type: Boolean },
-        disabled: { type: Boolean },
-        indeterminate: { type: Boolean },
-        value: { type: String },
         name: { type: String },
-        form: { type: Object },
-        type: { type: String },
+        value: { type: String },
+        indeterminate: { type: Boolean },
+        checked: { type: Boolean },
+        disabled: { type: Boolean },
         icons: { type: Array },
     };
 
+    switchNative = createRef();
+
     /**
-     * {{description}}
+     * Initializes a new instance of the MDSwitchComponent.
+     * Sets up the ripple controller.
      */
     constructor() {
         super();
-
-        this.type = "checkbox";
 
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-switch__native",
@@ -53,99 +50,76 @@ class MDSwitchComponent extends MDComponent {
     }
 
     /**
-     * @private
-     */
-    renderNative() {
-        /* prettier-ignore */
-        return html`
-            <input 
-                .type="${this.type}" 
-                class="md-switch__native"
-                .checked="${ifDefined(this.checked)}"
-                .defaultChecked="${ifDefined(this.defaultChecked)}"
-                .disabled="${ifDefined(this.disabled)}"
-                .indeterminate="${ifDefined(this.indeterminate)}"
-                .value="${ifDefined(this.value)}"
-                .defaultValue="${ifDefined(this.defaultValue)}"
-                .name="${ifDefined(this.name)}"
-                .form="${ifDefined(this.form)}"
-                @input="${this.handleSwitchNativeInput}"
-                @reset="${this.handleSwitchNativeReset}"
-            >
-        `;
-    }
-
-    /**
-     * @private
-     */
-    renderTrack() {
-        /* prettier-ignore */
-        return html`
-            <div class="md-switch__track"><div class="md-icon md-switch__thumb">${this.icons?.length ? this.icons[~~this.checked] : nothing}</div></div>
-        `;
-    }
-
-    /**
-     * @private
-     */
-    renderContainer() {
-        /* prettier-ignore */
-        return html`
-            <div class="md-switch__container">
-                ${this.renderNative()}
-                ${this.renderTrack()}
-            </div>
-        `;
-    }
-
-    /**
+     * Renders the switch component template.
      * @private
      */
     render() {
         /* prettier-ignore */
         return html`
-            <label class="md-switch__inner">
-                <div class="md-switch__label">${this.type}</div>
-                ${this.renderContainer()}
-            </label>
+            <input 
+                class="md-switch__native"
+                aria-label="label"
+                type="checkbox" 
+                .name="${ifDefined(this.name)}"
+                .defaultValue="${ifDefined(this.defaultValue)}"
+                .value="${ifDefined(this.value)}"
+                .indeterminate="${ifDefined(this.indeterminate)}"
+                .defaultChecked="${ifDefined(this.defaultChecked)}"
+                .checked="${ifDefined(this.checked)}"
+                ?disabled="${ifDefined(this.disabled)}"
+                ${ref(this.switchNative)}
+                @input="${this.handleSwitchNativeInput}"
+                @reset="${this.handleSwitchNativeReset}"
+            >
+            <div class="md-switch__track"><div class="md-icon md-switch__thumb">${this.icons?.length ? this.icons[~~this.checked] : nothing}</div></div>
         `;
     }
 
     /**
+     * Lifecycle method called when the component is added to the DOM.
+     * Adds necessary classes to the switch element and sets default properties.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = this.value || "on";
-        this.defaultChecked = this.checked;
-        this.defaultIndeterminate = this.indeterminate;
+        if (this.defaultValue === undefined) {
+            this.defaultValue = this.value || "on";
+        }
+        if (this.defaultChecked === undefined) {
+            this.defaultChecked = !!this.checked;
+        }
+        if (this.defaultIndeterminate === undefined) {
+            this.defaultIndeterminate = !!this.indeterminate;
+        }
 
         this.classList.add("md-switch");
     }
 
     /**
+     * Event handler for the switch input event.
+     * Updates the component's properties and emits the onSwitchNativeInput event.
+     * @param {Event} event - The input event.
      * @private
      */
     handleSwitchNativeInput(event) {
-        const native = event.currentTarget;
-
-        this.value = native.value;
-        this.checked = native.checked;
-        this.indeterminate = native.indeterminate;
+        this.value = this.switchNative.value.value;
+        this.checked = this.switchNative.value.checked;
+        this.indeterminate = this.switchNative.value.indeterminate;
 
         this.emit("onSwitchNativeInput", event);
     }
 
     /**
+     * Event handler for the switch reset event.
+     * Resets the component's properties and emits the onSwitchNativeReset event.
+     * @param {Event} event - The reset event.
      * @private
      */
     handleSwitchNativeReset(event) {
-        const native = event.currentTarget;
-
-        native.value = this.defaultValue;
-        native.checked = this.defaultChecked;
-        native.indeterminate = this.defaultIndeterminate;
+        this.switchNative.value.value = this.defaultValue;
+        this.switchNative.value.checked = this.defaultChecked;
+        this.switchNative.value.indeterminate = this.defaultIndeterminate;
 
         this.value = this.defaultValue;
         this.checked = this.defaultChecked;

@@ -1,4 +1,5 @@
 import "./functions/functions.js";
+
 import "./localization/localization.js";
 import "./color/color.js";
 
@@ -12,16 +13,18 @@ import "./gesture/gesture.js";
 import "./observer/observer.js";
 import "./attribute-observer/attribute-observer.js";
 import "./virtual/virtual.js";
-
 import "./store/store.js";
 
 import "./markdown/markdown.js";
-
 import "./icon/icon.js";
 import "./emoji/emoji.js";
+import "./image/image.js";
+import "./badge/badge.js";
 
 import "./button/button.js";
 import "./icon-button/icon-button.js";
+import "./segmented-button/segmented-button.js";
+import "./fab/fab.js";
 
 import "./card/card.js";
 import "./scrim/scrim.js";
@@ -31,10 +34,9 @@ import "./dialog/dialog.js";
 import "./top-app-bar/top-app-bar.js";
 import "./side-sheet/side-sheet.js";
 import "./bottom-sheet/bottom-sheet.js";
-
-import "./segmented-button/segmented-button.js";
 import "./snackbar/snackbar.js";
 import "./tooltip/tooltip.js";
+import "./bottom-app-bar/bottom-app-bar.js";
 
 import "./datetime-picker/datetime-picker.js";
 import "./date-picker/date-picker.js";
@@ -44,10 +46,6 @@ import "./week-picker/week-picker.js";
 import "./color-picker/color-picker.js";
 import "./emoji-picker/emoji-picker.js";
 
-import "./fab/fab.js";
-import "./bottom-app-bar/bottom-app-bar.js";
-import "./image/image.js";
-import "./badge/badge.js";
 
 import "./form/form.js";
 import "./checkbox/checkbox.js";
@@ -56,10 +54,8 @@ import "./switch/switch.js";
 import "./slider/slider.js";
 
 import "./progress-indicator/progress-indicator.js";
-
 import "./list-item/list-item.js";
 import "./list/list.js";
-
 import "./tree-item/tree-item.js";
 import "./tree/tree.js";
 

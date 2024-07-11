@@ -56,6 +56,7 @@ class MDTextFieldComponent extends MDComponent {
         actions: { type: Array },
         text: { type: String },
         type: { type: String },
+        placeholder: { type: String },
         name: { type: String },
         value: { type: String },
         min: { type: Number },
@@ -110,6 +111,7 @@ class MDTextFieldComponent extends MDComponent {
                 class="md-text-field__native"
                 aria-label="Label"
                 type="${ifDefined(this.type)}"
+                placeholder="${ifDefined(this.placeholder)}"
                 name="${ifDefined(this.name)}"
                 .value="${ifDefined(this.value)}"
                 .defaultValue="${ifDefined(this.defaultValue)}"
@@ -144,6 +146,7 @@ class MDTextFieldComponent extends MDComponent {
             <textarea 
                 class="md-text-field__native"
                 aria-label="Label"
+                placeholder="${ifDefined(this.placeholder)}"
                 name="${ifDefined(this.name)}"
                 .value="${ifDefined(this.value)}"
                 .defaultValue="${ifDefined(this.defaultValue)}"
@@ -177,6 +180,7 @@ class MDTextFieldComponent extends MDComponent {
             <select 
                 class="md-text-field__native"
                 aria-label="Label"
+                placeholder="${ifDefined(this.placeholder)}"
                 name="${ifDefined(this.name)}"
                 .value="${ifDefined(this.value)}"
                 .defaultValue="${ifDefined(this.defaultValue)}"

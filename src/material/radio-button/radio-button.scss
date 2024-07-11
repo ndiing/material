@@ -3,25 +3,6 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-}
-.md-radio-button__inner {
-    position: relative;
-}
-.md-radio-button__label {
-    width: 0;
-    height: 0;
-    font-size: 0;
-    line-height: 0;
-    letter-spacing: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.md-radio-button__container {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
     width: 24px;
     height: 24px;
     position: relative;

@@ -2,44 +2,38 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * {{description}}
+ * Radio button component that extends the MDComponent base class.
  * @element md-radio-button
  * @extends MDComponent
- * @fires MDRadioButtonComponent#onRadioButtonNativeInput - {{description}}
- * @fires MDRadioButtonComponent#onRadioButtonNativeReset - {{description}}
+ * @fires MDRadioButtonComponent#onRadioButtonNativeInput - Fired when the radio button input is changed.
+ * @fires MDRadioButtonComponent#onRadioButtonNativeReset - Fired when the radio button input is reset.
  */
 class MDRadioButtonComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Boolean} checked - {{description}}
-     * @property {Boolean} defaultChecked - {{description}}
-     * @property {Boolean} disabled - {{description}}
-     * @property {Boolean} indeterminate - {{description}}
-     * @property {String} value - {{description}}
-     * @property {String} name - {{description}}
-     * @property {Object} form - {{description}}
-     * @property {String} type - {{description}}
+     * Defines the properties of the radio button component.
+     * @property {String} name - The name attribute of the radio button.
+     * @property {String} value - The value attribute of the radio button.
+     * @property {Boolean} indeterminate - The indeterminate state of the radio button.
+     * @property {Boolean} checked - The checked state of the radio button.
+     * @property {Boolean} disabled - The disabled state of the radio button.
      */
     static properties = {
-        checked: { type: Boolean },
-        defaultChecked: { type: Boolean },
-        disabled: { type: Boolean },
-        indeterminate: { type: Boolean },
-        value: { type: String },
         name: { type: String },
-        form: { type: Object },
-        type: { type: String },
+        value: { type: String },
+        indeterminate: { type: Boolean },
+        checked: { type: Boolean },
+        disabled: { type: Boolean },
     };
 
     /**
-     * {{description}}
+     * Initializes a new instance of the MDRadioButtonComponent.
+     * Sets up the ripple effect and initializes component properties.
      */
     constructor() {
         super();
-
-        this.type = "radio";
 
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-radio-button__native",
@@ -50,100 +44,79 @@ class MDRadioButtonComponent extends MDComponent {
         });
     }
 
-    /**
-     * @private
-     */
-    renderNative() {
-        /* prettier-ignore */
-        return html`
-            <input 
-                .type="${this.type}" 
-                class="md-radio-button__native"
-                .checked="${ifDefined(this.checked)}"
-                .defaultChecked="${ifDefined(this.defaultChecked)}"
-                .disabled="${ifDefined(this.disabled)}"
-                .indeterminate="${ifDefined(this.indeterminate)}"
-                .value="${ifDefined(this.value)}"
-                .defaultValue="${ifDefined(this.defaultValue)}"
-                .name="${ifDefined(this.name)}"
-                .form="${ifDefined(this.form)}"
-                @input="${this.handleRadioButtonNativeInput}"
-                @reset="${this.handleRadioButtonNativeReset}"
-            >
-        `;
-    }
+    radioButtonNative = createRef();
 
     /**
-     * @private
-     */
-    renderTrack() {
-        /* prettier-ignore */
-        return html`
-            <div class="md-radio-button__track"><div class="md-radio-button__thumb"></div></div>
-        `;
-    }
-
-    /**
-     * @private
-     */
-    renderContainer() {
-        /* prettier-ignore */
-        return html`
-            <div class="md-radio-button__container">
-                ${this.renderNative()}
-                ${this.renderTrack()}
-            </div>
-        `;
-    }
-
-    /**
+     * Renders the radio button component template.
      * @private
      */
     render() {
         /* prettier-ignore */
         return html`
-            <label class="md-radio-button__inner">
-                <div class="md-radio-button__label">${this.type}</div>
-                ${this.renderContainer()}
-            </label>
+            <input 
+                class="md-radio-button__native"
+                aria-label="label"
+                type="radio" 
+                .name="${ifDefined(this.name)}"
+                .defaultValue="${ifDefined(this.defaultValue)}"
+                .value="${ifDefined(this.value)}"
+                .defaultChecked="${ifDefined(this.defaultChecked)}"
+                .checked="${ifDefined(this.checked)}"
+                ?disabled="${ifDefined(this.disabled)}"
+                .indeterminate="${ifDefined(this.indeterminate)}"
+                ${ref(this.radioButtonNative)}
+                @input="${this.handleRadioButtonNativeInput}"
+                @reset="${this.handleRadioButtonNativeReset}"
+            >
+            <div class="md-radio-button__track"><div class="md-radio-button__thumb"></div></div>
         `;
     }
 
     /**
+     * Lifecycle method called when the component is added to the DOM.
+     * Initializes default values and adds necessary classes.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = this.value || "on";
-        this.defaultChecked = this.checked;
-        this.defaultIndeterminate = this.indeterminate;
+        if (this.defaultValue === undefined) {
+            this.defaultValue = this.value || "on";
+        }
+        if (this.defaultChecked === undefined) {
+            this.defaultChecked = !!this.checked;
+        }
+        if (this.defaultIndeterminate === undefined) {
+            this.defaultIndeterminate = !!this.indeterminate;
+        }
 
         this.classList.add("md-radio-button");
     }
 
     /**
+     * Event handler for the radio button input event.
+     * Updates component properties and emits the onRadioButtonNativeInput event.
+     * @param {Event} event - The input event.
      * @private
      */
     handleRadioButtonNativeInput(event) {
-        const native = event.currentTarget;
-
-        this.value = native.value;
-        this.checked = native.checked;
-        this.indeterminate = native.indeterminate;
+        this.value = this.radioButtonNative.value.value;
+        this.checked = this.radioButtonNative.value.checked;
+        this.indeterminate = this.radioButtonNative.value.indeterminate;
 
         this.emit("onRadioButtonNativeInput", event);
     }
 
     /**
+     * Event handler for the radio button reset event.
+     * Resets component properties to their default values and emits the onRadioButtonNativeReset event.
+     * @param {Event} event - The reset event.
      * @private
      */
     handleRadioButtonNativeReset(event) {
-        const native = event.currentTarget;
-
-        native.value = this.defaultValue;
-        native.checked = this.defaultChecked;
-        native.indeterminate = this.defaultIndeterminate;
+        this.radioButtonNative.value.value = this.defaultValue;
+        this.radioButtonNative.value.checked = this.defaultChecked;
+        this.radioButtonNative.value.indeterminate = this.defaultIndeterminate;
 
         this.value = this.defaultValue;
         this.checked = this.defaultChecked;
