@@ -299,8 +299,21 @@ function open(pathname) {
                 }
                 const text = read(curr);
                 const {doc} = parse(text)
-                console.log(doc.tagName)
-                console.log(doc.properties)
+                if(doc.className){
+                    let name=toKebabCase(doc.className)
+                    name=(name.replace(/^md/,'').replace(/-(component|controller)$/,''))
+
+                    console.log(name)
+
+                    if(doc.tagName){
+                        // console.log(doc.tagName)
+                        // console.log(doc.properties)
+                    }else{
+                        // console.log(doc.className)
+                    }
+                }else{
+                    // console.log(doc.functions)
+                }
 
             }
         }

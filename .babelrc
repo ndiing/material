@@ -1,11 +1,13 @@
 {
-    // "plugins": ["@babel/syntax-dynamic-import"],
-    // "presets": [
-    //   [
-    //     "@babel/preset-env",
-    //     {
-    //       "modules": false
-    //     }
-    //   ]
-    // ]
-}
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+            "targets": {
+              "esmodules": true
+           },
+            "bugfixes": true
+        }
+      ]
+    ]
+   }

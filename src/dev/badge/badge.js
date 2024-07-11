@@ -11,9 +11,16 @@ class DevIconComponent extends MDComponent {
                     <md-badge label="11"></md-badge>
                     <md-badge label="111"></md-badge>
                     <md-badge label="1111"></md-badge>
+         
                 </div>
             </div>
         `;
+    }
+    connectedCallback(){
+        super.connectedCallback()
+    }
+    firstUpdated(){
+        
     }
 }
 

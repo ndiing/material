@@ -6,9 +6,6 @@ import { MDComponent } from "../component/component.js";
  * @extends MDComponent
  */
 class MDIconComponent extends MDComponent {
-    static properties = {
-        name: { type: String, reflect: true },
-    };
     
     /**
      * Invoked each time the custom element is appended into a document-connected element.

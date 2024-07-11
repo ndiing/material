@@ -34,16 +34,16 @@ const config = {
     ],
     module: {
         rules: [
-            // {
-            //     test: /\.(js|jsx)$/i,
-            //     loader: 'babel-loader',
-            // },
+            {
+                test: /\.(js|jsx)$/i,
+                loader: 'babel-loader',
+            },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
                     stylesHandler,
                     "css-loader",
-                    // 'postcss-loader',
+                    'postcss-loader',
                     "sass-loader",
                 ],
             },
@@ -52,7 +52,7 @@ const config = {
                 use: [
                     stylesHandler,
                     "css-loader",
-                    // 'postcss-loader'
+                    'postcss-loader'
                 ],
             },
             {
@@ -64,9 +64,9 @@ const config = {
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
-    optimization: {
-        minimize: true, // Ensure JS files are minified
-    },
+    // optimization: {
+    //     minimize: true, // Ensure JS files are minified
+    // },
 };
 
 module.exports = () => {
