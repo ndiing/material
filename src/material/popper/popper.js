@@ -1,34 +1,4 @@
 /**
- * Finds the nearest scrollable parent of the given element.
- * A scrollable parent is an element that can be scrolled, i.e., it has overflow set to auto, scroll, or hidden with non-zero scrollHeight or scrollWidth.
- *
- * @param {Element} element - The element whose scrollable parent needs to be found.
- * @returns {Element|null} - The nearest scrollable parent element, or null if none is found.
- */
-function getScrollableParent(element) {
-    let parent = element;
-
-    while (parent) {
-        parent = parent.parentElement;
-        if (!parent) {
-            return null;
-        }
-
-        const overflowY = window.getComputedStyle(parent).overflowY;
-        const overflowX = window.getComputedStyle(parent).overflowX;
-
-        const isScrollableY = (overflowY === "auto" || overflowY === "scroll" || overflowY === "hidden") && parent.scrollHeight > parent.clientHeight;
-        const isScrollableX = (overflowX === "auto" || overflowX === "scroll" || overflowX === "hidden") && parent.scrollWidth > parent.clientWidth;
-
-        if (isScrollableY || isScrollableX) {
-            return parent;
-        }
-    }
-
-    return null;
-}
-
-/**
  * Provides a controller for managing popper-like behavior on elements.
  */
 class MDPopperController {
@@ -101,7 +71,7 @@ class MDPopperController {
             center: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "50%", originY: "50%" }),
         };
 
-        let buttonRect
+        let buttonRect;
         if (button instanceof Event) {
             const { clientX: left, clientY: top, width, height } = button;
             buttonRect = { left, top, width, height, right: left + width, bottom: top + height };
@@ -128,14 +98,43 @@ class MDPopperController {
             }
         }
 
-        if (!matches) {
-            ({ left, top, originX, originY } = placements.center());
-        }
+        // if (!matches) {
+        //     ({ left, top, originX, originY } = placements.center());
+        // }
 
         this.host.style.left = `${left}px`;
         this.host.style.top = `${top}px`;
         this.host.style.transformOrigin = `${originX} ${originY}`;
+    }
 
+    /**
+     * Finds the nearest scrollable parent of the given element.
+     * A scrollable parent is an element that can be scrolled, i.e., it has overflow set to auto, scroll, or hidden with non-zero scrollHeight or scrollWidth.
+     *
+     * @param {Element} element - The element whose scrollable parent needs to be found.
+     * @returns {Element|null} - The nearest scrollable parent element, or null if none is found.
+     */
+    getScrollableParent(element) {
+        let parent = element;
+
+        while (parent) {
+            parent = parent.parentElement;
+            if (!parent) {
+                return null;
+            }
+
+            const overflowY = window.getComputedStyle(parent).overflowY;
+            const overflowX = window.getComputedStyle(parent).overflowX;
+
+            const isScrollableY = (overflowY === "auto" || overflowY === "scroll" || overflowY === "hidden") && parent.scrollHeight > parent.clientHeight;
+            const isScrollableX = (overflowX === "auto" || overflowX === "scroll" || overflowX === "hidden") && parent.scrollWidth > parent.clientWidth;
+
+            if (isScrollableY || isScrollableX) {
+                return parent;
+            }
+        }
+
+        return null;
     }
 }
 
