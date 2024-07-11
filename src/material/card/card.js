@@ -68,7 +68,6 @@ class MDCardComponent extends MDComponent {
         return html`
             <md-pagination
                 class="md-card__pagination"
-                name="${ifDefined(item.name)}"
                 .name="${ifDefined(item.name)}"
                 .total="${ifDefined(item.total)}"
                 .limit="${ifDefined(item.limit)}"
@@ -94,7 +93,6 @@ class MDCardComponent extends MDComponent {
             <md-icon-button
                 class="md-card__icon-button"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
                 .selected="${ifDefined(item.selected)}"
@@ -111,12 +109,11 @@ class MDCardComponent extends MDComponent {
     renderIcon(item) {
         /* prettier-ignore */
         return html`
-            <div
-                class="md-icon md-card__icon"
+            <md-icon
+                class="md-card__icon"
                 name="${ifDefined(item.name)}"
-                .name="${ifDefined(item.name)}"
                 @click="${this.handleCardIconClick}"
-            >${item.icon}</div>
+            >${item.icon}</md-icon>
         `;
     }
 
@@ -129,7 +126,6 @@ class MDCardComponent extends MDComponent {
         return html`
             <md-button
                 class="md-card__button"
-                name="${ifDefined(item.name)}"
                 .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .type="${ifDefined(item.type)}"
@@ -151,7 +147,6 @@ class MDCardComponent extends MDComponent {
         return html`
             <md-fab
                 class="md-card__fab"
-                name="${ifDefined(item.name)}"
                 .name="${ifDefined(item.name)}"
                 .variant="${ifDefined(item.variant)}"
                 .icon="${ifDefined(item.icon)}"
@@ -170,7 +165,6 @@ class MDCardComponent extends MDComponent {
         return html`
             <md-text-field
                 class="md-card__text-field"
-                name="${ifDefined(item.name)}"
                 .name="${ifDefined(item.name)}"
                 .icon="${ifDefined(item.icon)}"
                 .placeholder="${ifDefined(item.placeholder)}"
@@ -188,7 +182,6 @@ class MDCardComponent extends MDComponent {
         return html`
             <md-search-field
                 class="md-card__search-field"
-                name="${ifDefined(item.name)}"
                 .name="${ifDefined(item.name)}"
                 .icon="${ifDefined(item.icon)}"
                 .placeholder="${ifDefined(item.placeholder)}"
