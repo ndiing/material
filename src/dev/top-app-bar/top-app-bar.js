@@ -20,7 +20,7 @@ class DevTopAppBarComponent extends MDComponent {
 
     render() {
         return html`
-            <div class="md-layout-border">
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
                 <md-top-app-bar
                     id="topAppBarCenter"
                     variant="center"

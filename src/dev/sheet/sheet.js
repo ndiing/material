@@ -30,7 +30,7 @@ class DevSheetComponent extends MDComponent {
 
     render() {
         return html`
-            <div class="md-layout-border">
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
                 <md-sheet
                     id="sheetNorth"
                     variant="north"

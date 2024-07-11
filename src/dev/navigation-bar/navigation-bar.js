@@ -11,7 +11,7 @@ class DevNavigationBarComponent extends MDComponent {
 
     render() {
         return html`
-            <div class="md-layout-border">
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
                 <md-navigation-bar
                     id="navigationBar"
                     .list="${[

@@ -11,7 +11,7 @@ class DevBottomAppBarComponent extends MDComponent {
 
     render() {
         return html`
-            <div class="md-layout-border">
+            <div class="md-layout-border" style="width:360px;height:640px;">
                 <md-bottom-app-bar
                     id="bottomAppBar"
                     leadingActions='[{"icon":"check_box"},{"icon":"brush"},{"icon":"mic"},{"icon":"image"}]'
