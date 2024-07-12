@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
+import { ref } from "lit/directives/ref.js";
 
 /**
  * A custom element for creating various styles of buttons with optional ripple effects.
@@ -47,7 +48,10 @@ class MDButtonComponent extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <button class="md-button__native" .type="${this.type}">
+            <button 
+                class="md-button__native" 
+                .type="${this.type}"
+            >
                 ${this.icon ? html`<div class="md-icon md-button__icon">${this.icon}</div>` : nothing}
                 <div class="md-button__label">${this.label}</div>
             </button>

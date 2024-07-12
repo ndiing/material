@@ -130,7 +130,6 @@ for (let name in grouped) {
         }
         markdown += `\r\n`;
         for (let val of value) {
-            // console.log(val)
             markdown += `### \`${val.name}(${val.params?.map((param) => param.name)})\`\r\n`;
             markdown += `${val.description}\r\n`;
             markdown += `\r\n`;
@@ -175,7 +174,6 @@ for (let name in grouped) {
         }
         markdown += `\r\n`;
         for (let val of value) {
-            console.log(val)
             markdown += `### \`${val.name}\`\r\n`;
             markdown += `${val.description}\r\n`;
             markdown += `\r\n`;
