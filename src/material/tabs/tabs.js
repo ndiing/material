@@ -45,7 +45,7 @@ class MDTabsComponent extends MDTreeComponent {
             this.lastSelectedIndex = this.currentSelectedIndex;
             this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
             this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
-        })
+        });
     }
 }
 customElements.define("md-tabs", MDTabsComponent);

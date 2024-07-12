@@ -32,10 +32,10 @@ class MDMenuComponent extends MDSheetComponent {
      * Returns the menu list element.
      * @return {HTMLElement} The menu list element.
      */
-    get menuList(){
-        return{
-            value:this.querySelector('.md-menu__list')
-        }
+    get menuList() {
+        return {
+            value: this.querySelector(".md-menu__list"),
+        };
     }
 
     /**
