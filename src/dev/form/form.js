@@ -33,7 +33,7 @@ class DevForm extends MDComponent {
                                 <md-text-field label="url6" name="url6" type="url"></md-text-field>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-text-field label="url7" name="url7" type="url" value="httphttps://ndiing.github.io/material/dist/"></md-text-field>
+                                <md-text-field label="url7" name="url7" type="url" value="https://ndiing.github.io/material/dist/"></md-text-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
