@@ -1,20 +1,20 @@
 import { configureLocalization } from "@lit/localize";
-import { sourceLocale as sourceLocaleInternal, targetLocales as targetLocalesInternal } from "../../generated/locale-codes.js";
+import { sourceLocale as sourceLocale_, targetLocales as targetLocales_ } from "../../generated/locale-codes.js";
 
 /**
  * The locale code that templates in this source code are written in.
  * @type {string}
  */
-const sourceLocale = sourceLocaleInternal;
+const sourceLocale = sourceLocale_;
 
 /**
  * The other locale codes that this application is localized into. Sorted
  * lexicographically.
  * @type {string[]}
  */
-const targetLocales = targetLocalesInternal;
+const targetLocales = targetLocales_;
 
-const { getLocale: getLocaleInternal, setLocale: setLocaleInternal } = configureLocalization({
+const { getLocale: getLocale_, setLocale: setLocale_ } = configureLocalization({
     sourceLocale,
     targetLocales,
     loadLocale: (locale) => import(`../../generated/locales/${locale}.js`),
@@ -24,14 +24,14 @@ const { getLocale: getLocaleInternal, setLocale: setLocaleInternal } = configure
  * Return the active locale code.
  * @returns {string} The active locale code.
  */
-const getLocale = getLocaleInternal;
+const getLocale = getLocale_;
 
 /**
  * Set the active locale code.
  * @param {string} locale - The locale code to set as active.
  * @returns {Promise<void>} A promise that resolves when the locale has been set.
  */
-const setLocale = setLocaleInternal;
+const setLocale = setLocale_;
 
 export { 
     sourceLocale, 

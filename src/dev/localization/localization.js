@@ -1,8 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { msg } from "@lit/localize";
-import { getLocale, setLocale } from "../../material/localization/localization.js";
-import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
+import { getLocale, setLocale,sourceLocale, targetLocales } from "../../material/localization/localization.js";
 
 class DevLocalization extends MDComponent {
     constructor(){
@@ -12,6 +11,10 @@ class DevLocalization extends MDComponent {
             value:locale,
             selected:locale===sourceLocale,
         }))
+        console.log(sourceLocale)
+        console.log(targetLocales)
+        console.log(getLocale())
+        // console.log(setLocale(sourceLocale))
     }
     render() {
         return html`
