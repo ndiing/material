@@ -43,7 +43,7 @@ class MDColorPickerComponent extends MDSheetComponent {
      * {{description}}
      */
     set childNodes_(value) {
-        this._body = value;
+        this._childNodes = value;
     }
 
     /**

@@ -83,7 +83,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
      * @param {Array} value - Array containing HTML templates for child nodes.
      */
     set childNodes_(value) {
-        this._body = value;
+        this._childNodes = value;
     }
 
     /**

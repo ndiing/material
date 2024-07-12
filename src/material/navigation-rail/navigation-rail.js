@@ -36,7 +36,7 @@ class MDNavigationRailComponent extends MDSheetComponent {
      * @param {TemplateResult[]} value - Array of child nodes to set.
      */
     set childNodes_(value) {
-        this._body = value;
+        this._childNodes = value;
     }
 
     /**

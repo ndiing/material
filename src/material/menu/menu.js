@@ -68,23 +68,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Array} value - The new body content.
      */
     set childNodes_(value) {
-        this._body = value;
-    }
-
-    /**
-     * Returns the index of the selected item in the menu.
-     * @return {Number} The index of the selected item.
-     */
-    get selectedIndex() {
-        return this.store.docs.findIndex((doc) => doc.selected);
-    }
-
-    /**
-     * Returns the list of selected items in the menu.
-     * @return {Array} The list of selected items.
-     */
-    get selectedList() {
-        return this.store.docs.filter((doc) => doc.selected);
+        this._childNodes = value;
     }
 
     /**
@@ -143,7 +127,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.updateVirtualList();
         this.virtual.viewport.scrollTop = 0;
         this.virtual.handleVirtualScroll();
-        // this.setPlacement();
+        this.setPlacement();
     }
 
     /**
@@ -206,7 +190,9 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Object} options - Additional options for setting the placement.
      * @private
      */
-    setPlacement(button, options) {
+    setPlacement(button=this.poppperButton, options=this.poppperOptions) {
+        this.poppperButton = button
+        this.poppperOptions = options
         this.popper.setPlacement(button, {
             /* prettier-ignore */
             placements: [
