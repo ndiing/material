@@ -3,29 +3,29 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * {{description}}
+ * List component for managing lists with selectable items.
  * @element md-list
  * @extends MDComponent
- * @fires MDListComponent#onListItemClick - {{description}}
- * @fires MDListComponent#handleListKeydown - {{description}}
- * @fires MDListComponent#onListItemSelectionStart - {{description}}
- * @fires MDListComponent#onListItemSelection - {{description}}
- * @fires MDListComponent#onListItemSelectionEnd - {{description}}
- * @fires MDListComponent#onListItemCheckboxNativeInput - {{description}}
- * @fires MDListComponent#onListItemRadioButtonNativeInput - {{description}}
- * @fires MDListComponent#onListItemSwitchNativeInput - {{description}}
+ * @fires MDListComponent#onListItemClick - Triggered when a list item is clicked.
+ * @fires MDListComponent#handleListKeydown - Triggered on keydown events within the list.
+ * @fires MDListComponent#onListItemSelectionStart - Triggered when selection starts on a list item.
+ * @fires MDListComponent#onListItemSelection - Triggered during selection of a list item.
+ * @fires MDListComponent#onListItemSelectionEnd - Triggered when selection ends on a list item.
+ * @fires MDListComponent#onListItemCheckboxNativeInput - Triggered when a checkbox within a list item is interacted with.
+ * @fires MDListComponent#onListItemRadioButtonNativeInput - Triggered when a radio button within a list item is interacted with.
+ * @fires MDListComponent#onListItemSwitchNativeInput - Triggered when a switch within a list item is interacted with.
  */
 class MDListComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Array} list - {{description}}
-     * @property {Object} map - {{description}}
-     * @property {Function} format - {{description}}
-     * @property {Boolean} selection - {{description}}
-     * @property {Boolean} rangeSelection - {{description}}
-     * @property {Boolean} multiSelection - {{description}}
-     * @property {Boolean} singleSelection - {{description}}
-     * @property {Boolean} allSelection - {{description}}
+     * Properties for MDListComponent.
+     * @property {Array} list - List of items to display.
+     * @property {Object} map - Mapping configuration for list items.
+     * @property {Function} format - Function for formatting list item labels.
+     * @property {Boolean} selection - Indicates if selection mode is enabled.
+     * @property {Boolean} rangeSelection - Indicates if range selection mode is enabled.
+     * @property {Boolean} multiSelection - Indicates if multi-selection mode is enabled.
+     * @property {Boolean} singleSelection - Indicates if single-selection mode is enabled.
+     * @property {Boolean} allSelection - Indicates if all-selection mode is enabled.
      */
     static properties = {
         list: { type: Array },
@@ -39,7 +39,7 @@ class MDListComponent extends MDComponent {
     };
 
     /**
-     * {{description}}
+     * Initializes MDListComponent with default values.
      */
     constructor() {
         super();
@@ -50,7 +50,10 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Renders a single list item.
      * @private
+     * @param {Object} item - The list item to render.
+     * @returns {TemplateResult} The HTML template for the list item.
      */
     renderListItem(item) {
         /* prettier-ignore */
@@ -87,7 +90,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Renders the list of items.
      * @private
+     * @returns {TemplateResult[]} Array of HTML templates for list items.
      */
     render() {
         /* prettier-ignore */
@@ -95,6 +100,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Initializes component styles and class.
      * @private
      */
     connectedCallback() {
@@ -104,6 +110,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Cleans up event listeners when component is disconnected.
      * @private
      */
     disconnectedCallback() {
@@ -112,7 +119,8 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{description}}
+     * Selects a specific item in the list.
+     * @param {Object} data - The data object of the item to select.
      */
     select(data) {
         for (let i = 0; i < this.list.length; i++) {
@@ -123,7 +131,8 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{description}}
+     * Toggles the selection state of a specific item in the list.
+     * @param {Object} data - The data object of the item to toggle.
      */
     selectToggle(data) {
         data.selected = !data.selected;
@@ -133,7 +142,8 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{description}}
+     * Selects a range of items in the list.
+     * @param {Object} data - The data object of the item to include in the selection range.
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
@@ -152,7 +162,7 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * {{description}}
+     * Selects all items in the list.
      */
     selectAll() {
         for (let i = 0; i < this.list.length; i++) {
@@ -162,7 +172,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles click events on list items.
      * @private
+     * @param {MouseEvent} event - The click event.
      */
     handleListItemClick(event) {
         if (event.target.closest(".md-list__checkbox," + ".md-list__radio-button," + ".md-list__switch")) {
@@ -181,7 +193,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles keydown events within the list.
      * @private
+     * @param {KeyboardEvent} event - The keydown event.
      */
     handleListKeydown(event) {
         const activeElement = document.activeElement === event.target.closest(".md-list__item");
@@ -193,7 +207,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles the start of item selection.
      * @private
+     * @param {CustomEvent} event - The selection start event.
      */
     handleListItemSelectionStart(event) {
         if (!this.selection) {
@@ -206,7 +222,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles ongoing item selection.
      * @private
+     * @param {CustomEvent} event - The selection event.
      */
     handleListItemSelection(event) {
         if (!this.selection) {
@@ -222,7 +240,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles the end of item selection.
      * @private
+     * @param {CustomEvent} event - The selection end event.
      */
     async handleListItemSelectionEnd(event) {
         if (!this.selection) {
@@ -235,7 +255,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles native input events on list item checkboxes.
      * @private
+     * @param {CustomEvent} event - The native input event.
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -245,7 +267,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles native input events on list item radio buttons.
      * @private
+     * @param {CustomEvent} event - The native input event.
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
@@ -255,7 +279,9 @@ class MDListComponent extends MDComponent {
     }
 
     /**
+     * Handles native input events on list item switches.
      * @private
+     * @param {CustomEvent} event - The native input event.
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
@@ -264,5 +290,6 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemSwitchNativeInput", event);
     }
 }
+
 customElements.define("md-list", MDListComponent);
 export { MDListComponent };

@@ -2,23 +2,23 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * {{description}}
+ * Pagination component for managing pagination UI and events.
  * @element md-pagination
  * @extends MDComponent
- * @fires MDPaginationComponent#onPaginationChange - {{description}}
- * @fires MDPaginationComponent#onPaginationLimitChange - {{description}}
- * @fires MDPaginationComponent#onPaginationFirstClick - {{description}}
- * @fires MDPaginationComponent#onPaginationPrevClick - {{description}}
- * @fires MDPaginationComponent#onPaginationNextClick - {{description}}
- * @fires MDPaginationComponent#onPaginationLastClick - {{description}}
+ * @fires MDPaginationComponent#onPaginationChange - Triggered when pagination parameters change.
+ * @fires MDPaginationComponent#onPaginationLimitChange - Triggered when pagination limit changes.
+ * @fires MDPaginationComponent#onPaginationFirstClick - Triggered when first page button is clicked.
+ * @fires MDPaginationComponent#onPaginationPrevClick - Triggered when previous page button is clicked.
+ * @fires MDPaginationComponent#onPaginationNextClick - Triggered when next page button is clicked.
+ * @fires MDPaginationComponent#onPaginationLastClick - Triggered when last page button is clicked.
  */
 class MDPaginationComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {Number} total - {{description}}
-     * @property {Number} limit - {{description}}
-     * @property {Number} page - {{description}}
-     * @property {Array} options - {{description}}
+     * Properties for MDPaginationComponent.
+     * @property {Number} total - Total number of items.
+     * @property {Number} limit - Number of items per page.
+     * @property {Number} page - Current page number.
+     * @property {Array} options - Pagination options for items per page.
      */
     static properties = {
         total: { type: Number },
@@ -28,42 +28,47 @@ class MDPaginationComponent extends MDComponent {
     };
 
     /**
-     * {{description}}
+     * Calculates the total number of pages.
+     * @returns {Number} The total number of pages.
      */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
 
     /**
-     * {{description}}
+     * Calculates the start index of items shown on the current page.
+     * @returns {Number} The start index of items.
      */
     get start() {
         return Math.max((this.page - 1) * this.limit, 0);
     }
 
     /**
-     * {{description}}
+     * Calculates the end index of items shown on the current page.
+     * @returns {Number} The end index of items.
      */
     get end() {
         return Math.min(this.start + this.limit, this.total);
     }
 
     /**
-     * {{description}}
+     * Returns the starting number displayed on the pagination UI.
+     * @returns {Number} The starting number displayed.
      */
     get numberStart() {
         return Math.min(this.start + 1, this.total);
     }
 
     /**
-     * {{description}}
+     * Returns the ending number displayed on the pagination UI.
+     * @returns {Number} The ending number displayed.
      */
     get numberEnd() {
         return this.end;
     }
 
     /**
-     * {{description}}
+     * Initializes MDPaginationComponent with default values.
      */
     constructor() {
         super();
@@ -80,7 +85,9 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Renders the pagination UI.
      * @private
+     * @returns {TemplateResult} The HTML template for pagination.
      */
     render() {
         /* prettier-ignore */
@@ -101,6 +108,7 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Initializes component styles and class.
      * @private
      */
     connectedCallback() {
@@ -109,7 +117,9 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Handles updates to limit or total properties and emits pagination change event.
      * @private
+     * @param {Map} changedProperties - Map of changed properties.
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -125,7 +135,9 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Handles pagination limit change event.
      * @private
+     * @param {Event} event - The change event.
      */
     handlePaginationLimitChange(event) {
         const limit = Number(event.detail.currentTarget.value);
@@ -134,7 +146,9 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Handles first page button click event.
      * @private
+     * @param {Event} event - The click event.
      */
     handlePaginationFirstClick(event) {
         this.page = 1;
@@ -142,7 +156,9 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Handles previous page button click event.
      * @private
+     * @param {Event} event - The click event.
      */
     handlePaginationPrevClick(event) {
         this.page = Math.max(--this.page, 1);
@@ -150,7 +166,9 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Handles next page button click event.
      * @private
+     * @param {Event} event - The click event.
      */
     handlePaginationNextClick(event) {
         this.page = Math.min(++this.page, this.pages);
@@ -158,12 +176,15 @@ class MDPaginationComponent extends MDComponent {
     }
 
     /**
+     * Handles last page button click event.
      * @private
+     * @param {Event} event - The click event.
      */
     handlePaginationLastClick(event) {
         this.page = this.pages;
         this.emit("onPaginationLastClick", event);
     }
 }
+
 customElements.define("md-pagination", MDPaginationComponent);
 export { MDPaginationComponent };

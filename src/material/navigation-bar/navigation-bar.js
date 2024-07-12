@@ -3,13 +3,13 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * {{description}}
+ * Navigation bar component that extends MDSheetComponent and includes MDTreeComponent properties.
  * @element md-navigation-bar
  * @extends MDSheetComponent
  */
 class MDNavigationBarComponent extends MDSheetComponent {
     /**
-     * {{description}}
+     * Properties inherited from MDSheetComponent and MDTreeComponent.
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -17,7 +17,8 @@ class MDNavigationBarComponent extends MDSheetComponent {
     };
 
     /**
-     * {{description}}
+     * Retrieves the child nodes for the navigation bar, which includes an MDTree component.
+     * @returns {TemplateResult[]} Array of child nodes for rendering.
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -31,13 +32,15 @@ class MDNavigationBarComponent extends MDSheetComponent {
     }
 
     /**
-     * {{description}}
+     * Sets the child nodes of the navigation bar.
+     * @param {TemplateResult[]} value - Array of child nodes to set.
      */
     set childNodes_(value) {
         this._body = value;
     }
 
     /**
+     * Adds CSS classes to the component on connection.
      * @private
      */
     connectedCallback() {
@@ -46,5 +49,6 @@ class MDNavigationBarComponent extends MDSheetComponent {
         this.classList.add("md-navigation-bar");
     }
 }
+
 customElements.define("md-navigation-bar", MDNavigationBarComponent);
 export { MDNavigationBarComponent };

@@ -4,30 +4,31 @@ import { MDRippleController } from "../ripple/ripple.js";
 import { MDGestureController } from "../gesture/gesture.js";
 
 /**
- * {{description}}
+ * List item component for displaying items in a list with optional selection and actions.
  * @element md-list-item
  * @extends MDComponent
- * @fires MDListItemComponent#onListItemSelected - {{description}}
+ * @fires MDListItemComponent#onListItemSelected - Triggered when the list item is selected.
  */
 class MDListItemComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} avatar - {{description}}
-     * @property {String} thumbnail - {{description}}
-     * @property {String} video - {{description}}
-     * @property {String} icon - {{description}}
-     * @property {String} label - {{description}}
-     * @property {String} subLabel - {{description}}
-     * @property {Number} badge - {{description}}
-     * @property {String} text - {{description}}
-     * @property {Boolean} leadingCheckbox - {{description}}
-     * @property {Boolean} leadingRadioButton - {{description}}
-     * @property {Boolean} leadingSwitch - {{description}}
-     * @property {Boolean} trailingCheckbox - {{description}}
-     * @property {Boolean} trailingRadioButton - {{description}}
-     * @property {Boolean} trailingSwitch - {{description}}
-     * @property {Boolean} selected - {{description}}
-     * @property {String} routerLink - {{description}}
+     * Properties defining the structure and behavior of the list item.
+     * @property {String} avatar - URL of the avatar image.
+     * @property {String} thumbnail - URL of the thumbnail image.
+     * @property {String} video - URL of the video.
+     * @property {String} icon - Name or URL of the icon.
+     * @property {String} label - Primary label text.
+     * @property {String} subLabel - Secondary label text.
+     * @property {Number} badge - Numeric badge value.
+     * @property {String} text - Additional text content.
+     * @property {Boolean} leadingCheckbox - Indicates presence of a leading checkbox.
+     * @property {Boolean} leadingRadioButton - Indicates presence of a leading radio button.
+     * @property {Boolean} leadingSwitch - Indicates presence of a leading switch.
+     * @property {Boolean} trailingCheckbox - Indicates presence of a trailing checkbox.
+     * @property {Boolean} trailingRadioButton - Indicates presence of a trailing radio button.
+     * @property {Boolean} trailingSwitch - Indicates presence of a trailing switch.
+     * @property {Boolean} selected - Indicates if the list item is selected.
+     * @property {String} routerLink - URL link for routing.
+     * @property {Boolean} activated - Reflects if the list item is activated.
      */
     static properties = {
         avatar: { type: String },
@@ -50,7 +51,7 @@ class MDListItemComponent extends MDComponent {
     };
 
     /**
-     * {{description}}
+     * Initializes MDListItemComponent with ripple and gesture controllers.
      */
     constructor() {
         super();
@@ -68,70 +69,79 @@ class MDListItemComponent extends MDComponent {
     }
 
     /**
+     * Renders the checkbox element based on the `selected` property.
      * @private
+     * @returns {TemplateResult} The rendered checkbox template.
      */
     renderCheckbox() {
         /* prettier-ignore */
         return html`<md-checkbox 
             class="md-list__checkbox"
             .checked="${this.selected}"
-        ></md-checkbox>`
+        ></md-checkbox>`;
     }
 
     /**
+     * Renders the radio button element based on the `selected` property.
      * @private
+     * @returns {TemplateResult} The rendered radio button template.
      */
     renderRadioButton() {
         /* prettier-ignore */
         return html`<md-radio-button 
             class="md-list__radio-button"
             .checked="${this.selected}"
-        ></md-radio-button>`
+        ></md-radio-button>`;
     }
 
     /**
+     * Renders the switch element based on the `selected` property.
      * @private
+     * @returns {TemplateResult} The rendered switch template.
      */
     renderSwitch() {
         /* prettier-ignore */
         return html`<md-switch 
             class="md-list__switch"
             .checked="${this.selected}"
-        ></md-switch>`
+        ></md-switch>`;
     }
 
     /**
+     * Renders the HTML template for the list item.
      * @private
+     * @returns {TemplateResult} The rendered HTML template.
      */
     render() {
         /* prettier-ignore */
         return html`
-            ${this.leadingCheckbox?this.renderCheckbox():nothing}
-            ${this.leadingRadioButton?this.renderRadioButton():nothing}
-            ${this.leadingSwitch?this.renderSwitch():nothing}
-            ${this.avatar?html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>`:nothing}
-            ${this.thumbnail?html`<md-image class="md-list__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>`:nothing}
-            ${this.video?html`<md-image class="md-list__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>`:nothing}
-            ${this.icon?html`<div class="md-icon md-list__icon">${this.icon}</div>`:nothing}
-            ${this.label||this.subLabel||this.badge?html`
+            ${this.leadingCheckbox ? this.renderCheckbox() : nothing}
+            ${this.leadingRadioButton ? this.renderRadioButton() : nothing}
+            ${this.leadingSwitch ? this.renderSwitch() : nothing}
+            ${this.avatar ? html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
+            ${this.thumbnail ? html`<md-image class="md-list__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>` : nothing}
+            ${this.video ? html`<md-image class="md-list__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>` : nothing}
+            ${this.icon ? html`<div class="md-icon md-list__icon">${this.icon}</div>` : nothing}
+            ${this.label || this.subLabel || this.badge ? html`
                 <div class="md-list__inner">
-                    ${this.label||this.subLabel?html`
+                    ${this.label || this.subLabel ? html`
                         <div class="md-list__label">
-                            ${this.label?html`<div class="md-list__label-primary">${this.label}</div>`:nothing}
-                            ${this.subLabel?html`<div class="md-list__label-secondary">${this.subLabel}</div>`:nothing}
+                            ${this.label ? html`<div class="md-list__label-primary">${this.label}</div>` : nothing}
+                            ${this.subLabel ? html`<div class="md-list__label-secondary">${this.subLabel}</div>` : nothing}
                         </div>
-                    `:nothing}
-                    ${this.badge?html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>`:nothing}
+                    ` : nothing}
+                    ${this.badge ? html`<md-badge class="md-list__badge" .label="${this.badge}"></md-badge>` : nothing}
                 </div>
-            `:nothing}
-            ${this.text?html`<div class="md-list__text">${this.text}</div>`:nothing}
-            ${this.trailingCheckbox?this.renderCheckbox():nothing}
-            ${this.trailingRadioButton?this.renderRadioButton():nothing}
-            ${this.trailingSwitch?this.renderSwitch():nothing}
-        `
+            ` : nothing}
+            ${this.text ? html`<div class="md-list__text">${this.text}</div>` : nothing}
+            ${this.trailingCheckbox ? this.renderCheckbox() : nothing}
+            ${this.trailingRadioButton ? this.renderRadioButton() : nothing}
+            ${this.trailingSwitch ? this.renderSwitch() : nothing}
+        `;
     }
 
     /**
+     * Adds CSS classes to the component on connection.
      * @private
      */
     connectedCallback() {
@@ -141,7 +151,10 @@ class MDListItemComponent extends MDComponent {
     }
 
     /**
+     * Updates the component when certain properties change.
+     * Triggers event when `selected` property changes to true.
      * @private
+     * @param {Map} changedProperties - Map of changed properties.
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -163,5 +176,6 @@ class MDListItemComponent extends MDComponent {
         }
     }
 }
+
 customElements.define("md-list-item", MDListItemComponent);
 export { MDListItemComponent };
