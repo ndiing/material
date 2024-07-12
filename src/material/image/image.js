@@ -16,38 +16,14 @@ class MDImageComponent extends MDComponent {
      * {{description}}
      * @property {String} src - {{description}}
      * @property {String} alt - {{description}}
-     * @property {String} srcset - {{description}}
-     * @property {String} sizes - {{description}}
-     * @property {String} crossorigin - {{description}}
-     * @property {String} usemap - {{description}}
-     * @property {Boolean} ismap - {{description}}
-     * @property {Number} width - {{description}}
-     * @property {Number} height - {{description}}
-     * @property {String} referrerpolicy - {{description}}
-     * @property {String} decoding - {{description}}
      * @property {String} loading - {{description}}
-     * @property {String} title - {{description}}
-     * @property {String} longdesc - {{description}}
-     * @property {String} fetchpriority - {{description}}
      * @property {String} ratio - {{description}}
      * @property {String} variant - {{description}}
      */
     static properties = {
         src: { type: String },
         alt: { type: String },
-        srcset: { type: String },
-        sizes: { type: String },
-        crossorigin: { type: String },
-        usemap: { type: String },
-        ismap: { type: Boolean },
-        width: { type: Number },
-        height: { type: Number },
-        referrerpolicy: { type: String },
-        decoding: { type: String },
         loading: { type: String },
-        title: { type: String },
-        longdesc: { type: String },
-        fetchpriority: { type: String },
         ratio: { type: String },
         variant: { type: String },
     };
