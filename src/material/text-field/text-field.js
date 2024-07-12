@@ -278,7 +278,7 @@ class MDTextFieldComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-text-field");
         this.style.setProperty("--md-sys-motion-duration-short4", "0s");
-        if (this.defaultValue === undefined&&this.type!=='file') {
+        if (this.defaultValue === undefined && this.type !== "file") {
             if (this.type === "color" && !this.value) {
                 this.value = "#000000";
             } else if (this.type === "select" && !this.value) {
@@ -334,7 +334,7 @@ class MDTextFieldComponent extends MDComponent {
      */
     handleTextFieldNativeReset(event) {
         event.preventDefault();
-        if(this.type!=='file'){
+        if (this.type !== "file") {
             this.value = this.defaultValue;
             this.validationMessage = "";
         }
@@ -347,7 +347,7 @@ class MDTextFieldComponent extends MDComponent {
      * @param {Event} event - The event object.
      */
     handleTextFieldNativeInput(event) {
-        if(this.type!=='file'){
+        if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
             this.validationMessage = this.textFieldNative.value.validationMessage;
         }
@@ -360,7 +360,7 @@ class MDTextFieldComponent extends MDComponent {
      * @param {Event} event - The event object.
      */
     handleTextFieldNativeSearch(event) {
-        if(this.type!=='file'){
+        if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
             this.validationMessage = this.textFieldNative.value.validationMessage;
         }

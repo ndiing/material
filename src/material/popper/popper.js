@@ -1,55 +1,95 @@
 /**
- * Provides a controller for managing popper-like behavior on elements.
+ * Class representing a MDPopperController.
  */
 class MDPopperController {
     /**
-     * Initializes the popper controller for a host element.
-     * @param {HTMLElement} host - Host element to apply popper behavior.
-     * @param {Object} options - Configuration options for the popper behavior.
-     * @property {string[]} options.placements - List of possible placements for the popper.
-     * @property {HTMLElement} options.boundary - Boundary element for the popper positioning.
-     * @property {number} options.offset - Offset value for the popper position.
+     * Create a MDPopperController.
+     * @param {HTMLElement} host - The host element.
+     * @param {Object} [options={}] - The options for the popper controller.
+     * @param {string[]} [options.placements] - The possible placements for the popper.
+     * @param {HTMLElement|null} [options.boundary] - The boundary element for the popper.
+     * @param {number} [options.offset] - The offset for the popper.
      */
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
             placements: ["center", "top", "top-start", "top-end", "right", "right-start", "right-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "above", "above-start", "above-end", "after", "after-start", "after-end", "below", "below-start", "below-end", "before", "before-start", "before-end", "north-east", "south-east", "south-west", "north-west"],
-            boundary: document.documentElement,
+            boundary: null,
             offset: 0,
             ...options,
         };
     }
 
-    async hostConnected() {
-        await this.host.updateComplete;
-    }
+    // /**
+    //  * Handle host connected event.
+    //  */
+    // async hostConnected() {
+    //     await this.host.updateComplete;
+    // }
 
-    async hostDisconnected() {
-        await this.host.updateComplete;
+    // /**
+    //  * Handle host disconnected event.
+    //  */
+    // async hostDisconnected() {
+    //     await this.host.updateComplete;
+    // }
+
+    /**
+     * Get the bounding rect of an element.
+     * @param {HTMLElement|Event} element - The element or event to get the rect from.
+     * @param {Object} [divRect={left:0,top:0}] - The rect of the div.
+     * @returns {Object} The bounding rect of the element.
+     */
+    getRect(element, divRect = { left: 0, top: 0 }) {
+        let width, height, left, top, right, bottom;
+
+        if (element instanceof HTMLElement) {
+            ({ width, height, left, top, right, bottom } = element.getBoundingClientRect());
+        } else {
+            const event = element;
+            width = event.width;
+            height = event.height;
+            left = event.clientX;
+            top = event.clientY;
+        }
+
+        left -= divRect.left;
+        top -= divRect.top;
+        right = left + width;
+        bottom = top + height;
+
+        return { width, height, left, top, right, bottom };
     }
 
     /**
-     * Sets the placement of the popper relative to a button element.
-     * @param {HTMLElement} button - Button element triggering the popper.
-     * @param {Object} options - Additional options for setting the popper placement.
+     * Set the placement of the popper.
+     * @param {HTMLElement} button - The button element to position relative to.
+     * @param {Object} [options={}] - The options for the placement.
      */
-    async setPlacement(button, options = {}) {
+    setPlacement(button, options = {}) {
         options = {
             ...this.options,
             ...options,
         };
 
-        let buttonRect;
-        if (button instanceof Event) {
-            const { clientX: left, clientY: top, width, height } = button;
-            buttonRect = { left, top, width, height, right: left + width, bottom: top + height };
-        } else {
-            buttonRect = button.getBoundingClientRect();
-        }
-        let containerRect = this.host.getBoundingClientRect();
-        let boundaryRect = options.boundary.getBoundingClientRect();
-        let left, top, originX, originY;
-        let matches;
+        const container = this.host;
+        const boundary = options.boundary || this.getBoundary(container);
+
+        const div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.left = "0px";
+        div.style.top = "0px";
+        div.style.right = "0px";
+        div.style.bottom = "0px";
+        container.parentElement.insertBefore(div, container.nextElementSibling);
+        const divRect = div.getBoundingClientRect();
+        div.remove();
+
+        const containerRect = this.getRect(container, divRect);
+        const buttonRect = this.getRect(button, divRect);
+        const boundaryRect = this.getRect(boundary, divRect);
+
+        let originX, originY, left, top, right, bottom; //, matches;
 
         const placements = {
             above: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top - containerRect.height - options.offset, originX: "50%", originY: "100%" }),
@@ -85,45 +125,60 @@ class MDPopperController {
 
         for (const placement of options.placements) {
             ({ left, top, originX, originY } = placements[placement]());
-            const right = left + containerRect.width;
-            const bottom = top + containerRect.height;
+            right = left + containerRect.width;
+            bottom = top + containerRect.height;
             const exceed = left < boundaryRect.left || top < boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
+
             if (!exceed) {
-                matches = 1;
+                // matches = true;
                 break;
             }
         }
-        if (!matches) {
-            ({ left, top, originX, originY } = placements.center());
+
+        if (left < boundaryRect.left) {
+            left = Math.max(left, boundaryRect.left);
         }
+        if (top < boundaryRect.top) {
+            top = Math.max(top, boundaryRect.top);
+        }
+        if (right > boundaryRect.right) {
+            left = Math.min(right - containerRect.width, boundaryRect.right - containerRect.width);
+        }
+        if (bottom > boundaryRect.bottom) {
+            top = Math.min(bottom - containerRect.height, boundaryRect.bottom - containerRect.height);
+        }
+
         this.host.style.left = `${left}px`;
         this.host.style.top = `${top}px`;
         this.host.style.transformOrigin = `${originX} ${originY}`;
     }
 
     /**
-     * Finds the nearest scrollable parent of the given element.
-     * A scrollable parent is an element that can be scrolled, i.e., it has overflow set to auto, scroll, or hidden with non-zero scrollHeight or scrollWidth.
-     *
-     * @param {Element} element - The element whose scrollable parent needs to be found.
-     * @returns {Element|null} - The nearest scrollable parent element, or null if none is found.
+     * Get the boundary element for the popper.
+     * @param {HTMLElement} element - The element to get the boundary for.
+     * @returns {HTMLElement|null} The boundary element.
      */
-    getScrollableParent(element) {
-        let parent = element;
-        while (parent) {
-            parent = parent.parentElement;
-            if (!parent) {
-                return null;
+    getBoundary(element) {
+        let boundary = element.parentElement;
+        let scrollableElement;
+        let relativeElement;
+        while (boundary) {
+            const style = window.getComputedStyle(boundary);
+            const auto = style.getPropertyValue("overflow") === "auto";
+            const relative = style.getPropertyValue("position") === "relative";
+            if (relative) {
+                relativeElement = boundary;
             }
-            const overflowY = window.getComputedStyle(parent).overflowY;
-            const overflowX = window.getComputedStyle(parent).overflowX;
-            const isScrollableY = (overflowY === "auto" || overflowY === "scroll" || overflowY === "hidden") && parent.scrollHeight > parent.clientHeight;
-            const isScrollableX = (overflowX === "auto" || overflowX === "scroll" || overflowX === "hidden") && parent.scrollWidth > parent.clientWidth;
-            if (isScrollableY || isScrollableX) {
-                return parent;
+            if (auto) {
+                scrollableElement = boundary;
             }
+            if (scrollableElement && relativeElement) {
+                break;
+            }
+            boundary = boundary.parentElement;
         }
-        return null;
+        return boundary || scrollableElement;
     }
 }
+
 export { MDPopperController };

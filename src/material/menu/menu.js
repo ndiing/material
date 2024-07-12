@@ -143,7 +143,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.updateVirtualList();
         this.virtual.viewport.scrollTop = 0;
         this.virtual.handleVirtualScroll();
-        this.setPlacement();
+        // this.setPlacement();
     }
 
     /**
@@ -207,20 +207,22 @@ class MDMenuComponent extends MDSheetComponent {
      * @private
      */
     setPlacement(button, options) {
-        this.popperButton = this.popperButton || button;
-        this.popperOptions = {
+        this.popper.setPlacement(button, {
             /* prettier-ignore */
             placements: [
-                "below-start", "below-end", "below", 
-                "above-start", "above-end", "above", 
-                "after-start", "after-end", "after", 
-                "before-start", "before-end", "before", 
-                "center"
+                //
+                "below-start", "below-end", "below",
+                "above-start", "above-end", "above",
+                "after-start", "after-end", "after",
+                "top-start", "top-end", "top",
+                "before-start", "before-end", "before",
+                "bottom-start", "bottom-end", "bottom",
+                "left-start", "left-end", "left",
+                "right-start", "right-end", "right",
+                "center",
             ],
-            ...this.popperOptions,
             ...options,
-        };
-        this.popper.setPlacement(this.popperButton, this.popperOptions);
+        });
     }
 }
 customElements.define("md-menu", MDMenuComponent);

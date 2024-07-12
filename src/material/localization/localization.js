@@ -33,9 +33,4 @@ const getLocale = getLocale_;
  */
 const setLocale = setLocale_;
 
-export { 
-    sourceLocale, 
-    targetLocales, 
-    getLocale, 
-    setLocale 
-};
+export { sourceLocale, targetLocales, getLocale, setLocale };

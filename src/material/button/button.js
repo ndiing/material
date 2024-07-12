@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
-import { ref } from "lit/directives/ref.js";
 
 /**
  * A custom element for creating various styles of buttons with optional ripple effects.

@@ -6,7 +6,7 @@ const list = [{ label: "label 1" }, { label: "label 2" }, { label: "label 3" }, 
 class DevMenu extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:480px;height:800px;position:relative;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:480px;height:800px;">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
@@ -17,6 +17,19 @@ class DevMenu extends MDComponent {
                 </div>
             </div>
         `;
+    }
+    connectedCallback(){
+        super.connectedCallback()
+        this.handleContextmenu=this.handleContextmenu.bind(this)
+        window.addEventListener('contextmenu',this.handleContextmenu)
+    }
+    disconnectedCallback(){
+        super.disconnectedCallback()
+        window.removeEventListener('contextmenu',this.handleContextmenu)
+    }
+    handleContextmenu(event){
+        event.preventDefault()
+        menu.show(event)
     }
 }
 
