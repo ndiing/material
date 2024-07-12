@@ -49,7 +49,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
-    
+
     constructor() {
         super();
         this.type = "select";
@@ -92,15 +92,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @private
      */
     renderHidden() {
-        return html`
-            <input
-                type="hidden"
-                class="md-text-field__hidden"
-                .name="${ifDefined(this.name)}"
-                .defaultValue="${this.defaultSelectedOptions.map((option) => option.value)}"
-                .value="${this.selectedOptions.map((option) => option.value)}"
-            />
-        `;
+        return html` <input type="hidden" class="md-text-field__hidden" .name="${ifDefined(this.name)}" .defaultValue="${this.defaultSelectedOptions.map((option) => option.value)}" .value="${this.selectedOptions.map((option) => option.value)}" /> `;
     }
 
     /**

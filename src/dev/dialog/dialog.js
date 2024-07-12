@@ -8,17 +8,8 @@ class DevDialog extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-dialog
-                                open
-                                label="Lorem ipsum dolor"
-                                actions='[{"label":"label"},{"label":"label"}]'
-                            >
-                                Lorem ipsum dolor sit amet.
-                                Recusandae ut velit quo delectus.
-                                Qui recusandae placeat minus architecto?
-                            </md-dialog>
+                            <md-dialog open label="Lorem ipsum dolor" actions='[{"label":"label"},{"label":"label"}]'> Lorem ipsum dolor sit amet. Recusandae ut velit quo delectus. Qui recusandae placeat minus architecto? </md-dialog>
                         </div>
-
                     </div>
                 </div>
             </div>

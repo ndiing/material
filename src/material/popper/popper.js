@@ -82,7 +82,7 @@ class MDPopperController {
             "north-west": () => ({ left: buttonRect.left - containerRect.width - options.offset, top: buttonRect.top - containerRect.height - options.offset, originX: "100%", originY: "100%" }),
             center: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top + (buttonRect.height - containerRect.height) / 2, originX: "50%", originY: "50%" }),
         };
-        
+
         for (const placement of options.placements) {
             ({ left, top, originX, originY } = placements[placement]());
             const right = left + containerRect.width;

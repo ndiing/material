@@ -8,46 +8,28 @@ class DevButton extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button
-                                variant="elevated"
-                                type="button"
-                                icon="image"
-                                label="label"
-                            ></md-button>
+                            <md-button variant="elevated" type="button" label="label"></md-button>
+                            <md-button variant="elevated" type="button" icon="image" label="label"></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button
-                                variant="filled"
-                                type="button"
-                                icon="image"
-                                label="label"
-                            ></md-button>
+                            <md-button variant="filled" type="button" label="label"></md-button>
+                            <md-button variant="filled" type="button" icon="image" label="label"></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button
-                                variant="tonal"
-                                type="button"
-                                icon="image"
-                                label="label"
-                            ></md-button>
+                            <md-button variant="tonal" type="button" label="label"></md-button>
+                            <md-button variant="tonal" type="button" icon="image" label="label"></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button
-                                variant="outlined"
-                                type="button"
-                                icon="image"
-                                label="label"
-                            ></md-button>
+                            <md-button variant="outlined" type="button" label="label"></md-button>
+                            <md-button variant="outlined" type="button" icon="image" label="label"></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button
-                                variant="icon-right"
-                                type="button"
-                                icon="image"
-                                label="label"
-                            ></md-button>
+                            <md-button type="button" label="label"></md-button>
+                            <md-button type="button" icon="image" label="label"></md-button>
                         </div>
-
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-button variant="icon-right" type="button" icon="image" label="label"></md-button>
+                        </div>
                     </div>
                 </div>
             </div>

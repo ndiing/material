@@ -182,62 +182,23 @@
     @include ripple-pressed();
 }
 
+[activated],
 .md-ripple[activated] {
     @include ripple-activated();
 }
 
+[selected],
 .md-ripple[selected] {
     @include ripple-selected();
 }
 
+[dragged],
 .md-ripple[dragged] {
     @include ripple-dragged();
 }
 
+[disabled],
 .md-ripple[disabled] {
     @include ripple-disabled();
 }
-/* 
-@include ripple();
-@include ripple-button();
-&:focus,
-&:hover,
-&:active,
-&[selected],
-&[dragged],
 
-&[disabled] {.md-any{@include ripple-size();}
-}
-&:focus,
-&:hover,
-&:active,
-&[selected],
-&[dragged],
-
-&[disabled] {.md-any{@include ripple-clipped();}
-}
-
-&:focus {.md-any{@include ripple-focused();}
-}
-
-// &:focus {.md-any{@include ripple-fade-out();}
-}
-
-&:hover {.md-any{@include ripple-hover();}
-}
-
-&:active {.md-any{@include ripple-pressed();}
-}
-
-&[activated] {.md-any{@include ripple-activated();}
-}
-
-&[selected] {.md-any{@include ripple-selected();}
-}
-
-&[dragged] {.md-any{@include ripple-dragged();}
-}
-
-&[disabled] {.md-any{@include ripple-disabled();}
-}
-*/

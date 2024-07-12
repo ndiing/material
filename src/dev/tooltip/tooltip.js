@@ -8,18 +8,11 @@ class DevTooltip extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tooltip
-                                open
-                                variant="rich"
-                            >tooltip</md-tooltip>
+                            <md-tooltip open variant="rich">tooltip</md-tooltip>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tooltip
-                                open
-                                variant="plain"
-                            >tooltip</md-tooltip>
+                            <md-tooltip open variant="plain">tooltip</md-tooltip>
                         </div>
-
                     </div>
                 </div>
             </div>

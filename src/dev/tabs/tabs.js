@@ -1,19 +1,19 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-const list=[
-    {label:'label',icon:'image',selected:true},
-    {label:'label',icon:'image'},
-    {label:'label',icon:'image'},
-    {label:'label',icon:'image'},
-]
+const list = [
+    { label: "label", icon: "image", selected: true },
+    { label: "label", icon: "image" },
+    { label: "label", icon: "image" },
+    { label: "label", icon: "image" },
+];
 
-const list2=[
-    {label:'label',icon:'image',selected:true},
-    {label:'label',icon:'image'},
-    {label:'label',icon:'image'},
-    {label:'label',icon:'image'},
-]
+const list2 = [
+    { label: "label", icon: "image", selected: true },
+    { label: "label", icon: "image" },
+    { label: "label", icon: "image" },
+    { label: "label", icon: "image" },
+];
 
 class DevTabs extends MDComponent {
     render() {
@@ -22,18 +22,11 @@ class DevTabs extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tabs
-                                variant="primary"
-                                .list="${list}"
-                            ></md-tabs>
+                            <md-tabs variant="primary" .list="${list}"></md-tabs>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tabs
-                                variant="secondary"
-                                .list="${list2}"
-                            ></md-tabs>
+                            <md-tabs variant="secondary" .list="${list2}"></md-tabs>
                         </div>
-
                     </div>
                 </div>
             </div>

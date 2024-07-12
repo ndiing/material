@@ -8,49 +8,20 @@ class DevSnackbar extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-snackbar
-                                @onSnackbarShow="${console.log}"
-                                @onSnackbarClose="${console.log}"
-                            >Lorem, ipsum dolor.</md-snackbar>
+                            <md-snackbar @onSnackbarShow="${console.log}" @onSnackbarClose="${console.log}">Lorem, ipsum dolor.</md-snackbar>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-snackbar
-                                actions='[{"label":"label"}]'
-                                @onSnackbarShow="${console.log}"
-                                @onSnackbarClose="${console.log}"
-                            >Lorem, ipsum dolor.</md-snackbar>
+                            <md-snackbar actions='[{"label":"label"}]' @onSnackbarShow="${console.log}" @onSnackbarClose="${console.log}">Lorem, ipsum dolor.</md-snackbar>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-snackbar
-                                @onSnackbarShow="${console.log}"
-                                @onSnackbarClose="${console.log}"
-                            >
-                                Lorem, ipsum dolor.
-                                Natus, praesentium provident?
-                            </md-snackbar>
+                            <md-snackbar @onSnackbarShow="${console.log}" @onSnackbarClose="${console.log}"> Lorem, ipsum dolor. Natus, praesentium provident? </md-snackbar>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-snackbar
-                                actions='[{"label":"label"}]'
-                                @onSnackbarShow="${console.log}"
-                                @onSnackbarClose="${console.log}"
-                            >
-                                Lorem, ipsum dolor.
-                                Natus, praesentium provident?
-                            </md-snackbar>
+                            <md-snackbar actions='[{"label":"label"}]' @onSnackbarShow="${console.log}" @onSnackbarClose="${console.log}"> Lorem, ipsum dolor. Natus, praesentium provident? </md-snackbar>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-snackbar
-                                open
-                                actions='[{"label":"Lorem, ipsum"}]'
-                                @onSnackbarShow="${console.log}"
-                                @onSnackbarClose="${console.log}"
-                            >
-                                Lorem, ipsum dolor.
-                                Natus, praesentium provident?
-                            </md-snackbar>
+                            <md-snackbar open actions='[{"label":"Lorem, ipsum"}]' @onSnackbarShow="${console.log}" @onSnackbarClose="${console.log}"> Lorem, ipsum dolor. Natus, praesentium provident? </md-snackbar>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -67,9 +67,7 @@ class MDProgressIndicatorComponent extends MDComponent {
      * @private
      */
     render() {
-        return this.variant && this.variant.includes("circular") ?
-            this.renderCircular() :
-            this.renderLinear();
+        return this.variant && this.variant.includes("circular") ? this.renderCircular() : this.renderLinear();
     }
 
     /**

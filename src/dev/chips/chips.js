@@ -8,31 +8,11 @@ class DevChips extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-chips
-                                .list="${[
-                                    {"label":"label 1",selected:true},
-                                    {"label":"label 2"},
-                                    {"label":"label 3"},
-                                    {"label":"label 4"},
-                                    {"label":"label 5"},
-                                ]}"
-                                @onChipClick="${console.log}"
-                            ></md-chips>
+                            <md-chips .list="${[{ label: "label 1", selected: true }, { label: "label 2" }, { label: "label 3" }, { label: "label 4" }, { label: "label 5" }]}" @onChipClick="${console.log}"></md-chips>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-chips
-                                .list="${[
-                                    {"label":"label 1",selected:true},
-                                    {"label":"label 2"},
-                                    {"label":"label 3",selected:true},
-                                    {"label":"label 4"},
-                                    {"label":"label 5"},
-                                ]}"
-                                multiSelection
-                                @onChipClick="${console.log}"
-                            ></md-chips>
+                            <md-chips .list="${[{ label: "label 1", selected: true }, { label: "label 2" }, { label: "label 3", selected: true }, { label: "label 4" }, { label: "label 5" }]}" multiSelection @onChipClick="${console.log}"></md-chips>
                         </div>
-
                     </div>
                 </div>
             </div>

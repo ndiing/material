@@ -8,25 +8,8 @@ class DevTreeItem extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree-item
-                                icon="image"
-                                label="label"
-                                badge=""
-                                selected
-                                routerLink=""
-                                indent=""
-                                isNode
-                                expanded
-                                activated
-                                variant=""
-                                isParent
-                                nodeActions=""
-                                nodeIcons=""
-                                leafIcons=""
-                                @onTreeItemSelected="${console.log}"
-                            ></md-tree-item>
+                            <md-tree-item icon="image" label="label" badge="" selected routerLink="" indent="" isNode expanded activated variant="" isParent nodeActions="" nodeIcons="" leafIcons="" @onTreeItemSelected="${console.log}"></md-tree-item>
                         </div>
-
                     </div>
                 </div>
             </div>

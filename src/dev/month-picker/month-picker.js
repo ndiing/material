@@ -8,20 +8,8 @@ class DevMonthPicker extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-month-picker
-                                open
-                                value="1990-10"
-                                @onMonthPickerSelection="${console.log}"
-                                @onMonthPickerIconButtonPrevClick="${console.log}"
-                                @onMonthPickerIconButtonNextClick="${console.log}"
-                                @onMonthPickerButtonLabelClick="${console.log}"
-                                @onMonthPickerButtonCancelClick="${console.log}"
-                                @onMonthPickerButtonOkClick="${console.log}"
-                                @onMonthPickerYearItemClick="${console.log}"
-                                @onMonthPickerMonthItemClick="${console.log}"
-                            ></md-month-picker>
+                            <md-month-picker open value="1990-10" @onMonthPickerSelection="${console.log}" @onMonthPickerIconButtonPrevClick="${console.log}" @onMonthPickerIconButtonNextClick="${console.log}" @onMonthPickerButtonLabelClick="${console.log}" @onMonthPickerButtonCancelClick="${console.log}" @onMonthPickerButtonOkClick="${console.log}" @onMonthPickerYearItemClick="${console.log}" @onMonthPickerMonthItemClick="${console.log}"></md-month-picker>
                         </div>
-
                     </div>
                 </div>
             </div>

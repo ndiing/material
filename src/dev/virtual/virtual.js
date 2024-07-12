@@ -8,11 +8,8 @@ class DevVirtual extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-virtual
-                                @onVirtualScroll="${console.log}"
-                            ></md-virtual>
+                            <md-virtual @onVirtualScroll="${console.log}"></md-virtual>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -211,13 +211,9 @@ class MDMenuComponent extends MDSheetComponent {
         this.popperOptions = {
             /* prettier-ignore */
             placements: [
-                "top-start", "top-end", "top", 
                 "below-start", "below-end", "below", 
-                "bottom-start", "bottom-end", "bottom", 
                 "above-start", "above-end", "above", 
-                "left-start", "left-end", "left", 
                 "after-start", "after-end", "after", 
-                "right-start", "right-end", "right", 
                 "before-start", "before-end", "before", 
                 "center"
             ],

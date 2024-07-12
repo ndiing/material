@@ -32,7 +32,7 @@ class MDFormComponent extends MDComponent {
         novalidate: { type: Boolean },
         target: { type: String },
     };
-    
+
     formNative = createRef();
 
     /**

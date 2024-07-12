@@ -71,7 +71,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onTimePickerSelection", this.handlePickerSelection);
         this.picker.addEventListener("onTimePickerButtonCancelClick", this.handlePickerButtonCancelClick);
         this.picker.addEventListener("onTimePickerButtonOkClick", this.handlePickerButtonOkClick);
-        
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onTimePickerSelection", this.handlePickerSelection);
             this.picker.removeEventListener("onTimePickerButtonCancelClick", this.handlePickerButtonCancelClick);
@@ -80,7 +80,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.picker.remove();
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-        
+
         await this.picker.updateComplete;
         this.picker.showModal(this.textFieldContainer.value);
     }
