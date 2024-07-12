@@ -10,11 +10,11 @@
     padding: 8px 16px;
     gap: 0 16px;
 
-    &.md-ripple--focused {
-        &::after {
-            opacity: 0;
-        }
-    }
+    // &.md-ripple--focused {
+    //     &::after {
+    //         opacity: 0;
+    //     }
+    // }
 }
 
 .md-list__avatar {

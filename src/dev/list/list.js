@@ -89,7 +89,7 @@ const data=[
 class DevList extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
+            <div class="md-layout-border" style="width:480px;height:800px;position:relative;">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
 
@@ -99,11 +99,6 @@ class DevList extends MDComponent {
                                     .list="${list}"
                                     map='{"label":"label","value":"value"}'
                                     format=""
-                                    selection
-                                    rangeSelection
-                                    multiSelection
-                                    singleSelection
-                                    allSelection
                                     @onListItemClick="${console.log}"
                                     @handleListKeydown="${console.log}"
                                     @onListItemSelectionStart="${console.log}"

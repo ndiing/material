@@ -1,5 +1,7 @@
 @import "./mixins/mixins.scss";
+
 @import "./tokens/tokens.scss";
+
 @import "./base/base.scss";
 
 @import "./ripple/ripple.scss";
@@ -7,6 +9,7 @@
 @import "./virtual/virtual.scss";
 
 @import "./markdown/markdown.scss";
+
 @import "./icon/icon.scss";
 @import "./emoji/emoji.scss";
 @import "./image/image.scss";
@@ -42,17 +45,6 @@
 @import "./switch/switch.scss";
 @import "./slider/slider.scss";
 
-@import "./progress-indicator/progress-indicator.scss";
-@import "./list/list.scss";
-@import "./tree/tree.scss";
-
-@import "./navigation-bar/navigation-bar.scss";
-@import "./navigation-drawer/navigation-drawer.scss";
-@import "./navigation-rail/navigation-rail.scss";
-@import "./menu/menu.scss";
-@import "./tabs/tabs.scss";
-@import "./chips/chips.scss";
-
 @import "./text-field/text-field.scss";
 @import "./datetime-field/datetime-field.scss";
 @import "./date-field/date-field.scss";
@@ -65,6 +57,17 @@
 @import "./password-field/password-field.scss";
 @import "./textarea-field/textarea-field.scss";
 @import "./select-field/select-field.scss";
+
+@import "./progress-indicator/progress-indicator.scss";
+@import "./list/list.scss";
+@import "./tree/tree.scss";
+
+@import "./navigation-bar/navigation-bar.scss";
+@import "./navigation-drawer/navigation-drawer.scss";
+@import "./navigation-rail/navigation-rail.scss";
+@import "./menu/menu.scss";
+@import "./tabs/tabs.scss";
+@import "./chips/chips.scss";
 
 @import "./pagination/pagination.scss";
 @import "./data-table-item/data-table-item.scss";

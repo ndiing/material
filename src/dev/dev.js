@@ -74,7 +74,6 @@ const routes = [
             { path: "tooltip", load: () => import("./tooltip/tooltip").then((m) => m.default) },
             { path: "top-app-bar", load: () => import("./top-app-bar/top-app-bar").then((m) => m.default) },
             /*  */{ path: "tree-item", load: () => import("./tree-item/tree-item").then((m) => m.default) },
-            // 
             { path: "tree", load: () => import("./tree/tree").then((m) => m.default) },
             { path: "virtual", load: () => import("./virtual/virtual").then((m) => m.default) },
             /*  */{ path: "week-field", load: () => import("./week-field/week-field").then((m) => m.default) },

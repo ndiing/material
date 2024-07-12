@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevTextField extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
+            <div class="md-layout-border" style="width:480px;height:800px;position:relative;">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-form
                         @onFormNativeReset="${event=>console.log(event)}"
@@ -15,17 +15,20 @@ class DevTextField extends MDComponent {
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="label"
+                                    name="text"
                                 ></md-text-field>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="label"
+                                    name="text2"
                                     variant="filled"
                                 ></md-text-field>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="label"
+                                    name="text3"
                                     variant="outlined"
                                 ></md-text-field>
                             </div>
@@ -33,18 +36,24 @@ class DevTextField extends MDComponent {
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="label"
+                                    name="text4"
+                                    value="text4"
                                     variant="rounded"
                                 ></md-text-field>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="label"
+                                    name="text5"
+                                    value="text5"
                                     variant="filled rounded"
                                 ></md-text-field>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="label"
+                                    name="text6"
+                                    value="text6"
                                     variant="outlined rounded"
                                 ></md-text-field>
                             </div>
