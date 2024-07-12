@@ -1,86 +1,39 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevColorPickerComponent extends MDComponent {
+class DevColorPicker extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <label for="color">Select color</label>
-                    <input
-                        id="color"
-                        name="color"
-                        type="color"
-                        value="#6750a4"
-                        @input="${this.handleColorInput}"
-                    />
-                    <md-color-picker
-                        id="colorPicker"
-                        value="#6750a4"
-                        @onColorPickerButtonCancelClick="${this.handleColorPickerButtonCancelClick}"
-                        @onColorPickerButtonOkClick="${this.handleColorPickerButtonOkClick}"
-                        @onColorPickerSelection="${this.handleColorPickerSelection}"
-                    ></md-color-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Color Picker"
-                        @click="${this.handleColorPickerButtonClick}"
-                    ></md-button>
-                </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-color-picker id="colorPicker2"></md-color-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Color Picker 2"
-                        @click="${this.handleColorPickerButtonClick2}"
-                    ></md-button>
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-color-picker
+                                open
+                                value="#289f9a"
+                                @onColorPickerIconButtonClick="${console.log}"
+                                @onColorPickerButtonClick="${console.log}"
+                                @onColorPickerSelection="${console.log}"
+                                @onColorPickerIconButtonPrevClick="${console.log}"
+                                @onColorPickerIconButtonNextClick="${console.log}"
+                                @onColorPickerButtonLabelClick="${console.log}"
+                                @onColorPickerButtonCancelClick="${console.log}"
+                                @onColorPickerButtonOkClick="${console.log}"
+                                @onColorPickerGradientTrackPointerdown="${console.log}"
+                                @onColorPickerGradientTrackPointermove="${console.log}"
+                                @onColorPickerGradientTrackPointerup="${console.log}"
+                                @onColorPickerHueNativeInput="${console.log}"
+                                @onColorPickerOpacityNativeInput="${console.log}"
+                            ></md-color-picker>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         `;
     }
-
-    get color() {
-        return this.querySelector("#color");
-    }
-
-    get colorPicker() {
-        return this.querySelector("#colorPicker");
-    }
-
-    get colorPicker2() {
-        return this.querySelector("#colorPicker2");
-    }
-
-    // button
-    handleColorPickerButtonClick(event) {
-        this.colorPicker.showModal(event.currentTarget);
-    }
-
-    handleColorPickerButtonClick2(event) {
-        this.colorPicker2.showModal(event.currentTarget);
-    }
-
-    // input
-    handleColorInput() {
-        this.colorPicker.value = this.color.value;
-    }
-
-    // color-picker
-    handleColorPickerButtonCancelClick() {
-        this.color.value = this.colorPicker.value;
-        this.colorPicker.close();
-    }
-
-    handleColorPickerButtonOkClick() {
-        this.color.value = this.colorPicker.value;
-        this.colorPicker.close();
-    }
-
-    handleColorPickerSelection() {
-        this.color.value = this.colorPicker.selection.hex.slice(0, 1 + 6);
-    }
 }
 
-customElements.define("dev-color-picker", DevColorPickerComponent);
+customElements.define("dev-color-picker", DevColorPicker);
 
 export default document.createElement("dev-color-picker");

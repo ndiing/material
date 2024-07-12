@@ -1,18 +1,34 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevPaginationComponent extends MDComponent {
+class DevPagination extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-pagination></md-pagination>
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-pagination
+                                total="100"
+                                limit="10"
+                                page="1"
+                                options='[{"label":"10","value":10}]'
+                                @onPaginationChange="${console.log}"
+                                @onPaginationLimitChange="${console.log}"
+                                @onPaginationFirstClick="${console.log}"
+                                @onPaginationPrevClick="${console.log}"
+                                @onPaginationNextClick="${console.log}"
+                                @onPaginationLastClick="${console.log}"
+                            ></md-pagination>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         `;
     }
 }
 
-customElements.define("dev-pagination", DevPaginationComponent);
+customElements.define("dev-pagination", DevPagination);
 
 export default document.createElement("dev-pagination");

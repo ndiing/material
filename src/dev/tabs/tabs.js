@@ -1,61 +1,46 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevTabsComponent extends MDComponent {
-    constructor() {
-        super();
-    }
+const list=[
+    {label:'label',icon:'image',selected:true},
+    {label:'label',icon:'image'},
+    {label:'label',icon:'image'},
+    {label:'label',icon:'image'},
+]
+
+const list2=[
+    {label:'label',icon:'image',selected:true},
+    {label:'label',icon:'image'},
+    {label:'label',icon:'image'},
+    {label:'label',icon:'image'},
+]
+
+class DevTabs extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-tabs
-                        .list="${[
-                            { icon: "image", label: "Item 1", selected: true },
-                            { icon: "image", label: "Item 2", badge: 0 },
-                            { icon: "image", label: "Item 3", badge: 1 },
-                            { icon: "image", label: "Item 4", badge: 1111 },
-                        ]}"
-                    ></md-tabs>
-                </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-tabs
-                        .list="${[
-                            { label: "Item 1", selected: true },
-                            { label: "Item 2", badge: 0 },
-                            { label: "Item 3", badge: 1 },
-                            { label: "Item 4", badge: 1111 },
-                        ]}"
-                    ></md-tabs>
-                </div>
+            <div class="md-layout-border" style="width:1280px;height:720px;position:relative;">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-tabs
+                                variant="primary"
+                                .list="${list}"
+                            ></md-tabs>
+                        </div>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-tabs
+                                variant="secondary"
+                                .list="${list2}"
+                            ></md-tabs>
+                        </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-tabs
-                        variant="secondary"
-                        .list="${[
-                            { icon: "image", label: "Item 1", selected: true },
-                            { icon: "image", label: "Item 2", badge: 0 },
-                            { icon: "image", label: "Item 3", badge: 1 },
-                            { icon: "image", label: "Item 4", badge: 1111 },
-                        ]}"
-                    ></md-tabs>
-                </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-tabs
-                        variant="secondary"
-                        .list="${[
-                            { label: "Item 1", selected: true },
-                            { label: "Item 2", badge: 0 },
-                            { label: "Item 3", badge: 1 },
-                            { label: "Item 4", badge: 1111 },
-                        ]}"
-                    ></md-tabs>
+                    </div>
                 </div>
             </div>
         `;
     }
 }
 
-customElements.define("dev-tabs", DevTabsComponent);
+customElements.define("dev-tabs", DevTabs);
 
 export default document.createElement("dev-tabs");

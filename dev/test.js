@@ -24,7 +24,39 @@ customElements.define("dev-example", DevExample);
 
 export default document.createElement("dev-example");
 `
+let template3=`import { html } from "lit";
+import { MDComponent } from "../../material/component/component.js";
 
+class DevExample extends MDComponent {
+    render() {
+        return html\`
+            <div class="md-layout-border">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <md-form
+                        @onFormNativeReset="\${event=>console.log(event)}"
+                        @onFormNativeSubmit="\${event=>console.log(event.detail.data)}"
+                    >
+                        <div class="md-layout-column">
+                            
+`
+let template4=`
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                <md-button type="reset" label="Reset" variant="outlined"></md-button>
+                                <md-button type="submit" label="Submit" variant="filled"></md-button>
+                            </div>
+    
+                        </div>
+                    </md-form>
+                </div>
+            </div>
+        \`;
+    }
+}
+
+customElements.define("dev-example", DevExample);
+
+export default document.createElement("dev-example");
+`
 /**
  * Converts a string to `PascalCase` format.
  * @param {string} string - The input string to convert.
@@ -235,6 +267,7 @@ function parse(data) {
             let [text, name, params] = args;
             params = params.split(",");
             fires.push({ name, params });
+            if(doc.fires.findIndex(doc=>doc.name==name)==-1)
             doc.fires.push({ name, params });
             return text;
         });
@@ -331,6 +364,7 @@ function open(pathname) {
                 const text = read(curr);
                 const {doc} = parse(text)
 
+
                 let className=toPascalCase('dev-'+name)
                 let tagName=toKebabCase('dev-'+name)
                 let tagName2=toKebabCase('md-'+name)
@@ -341,12 +375,30 @@ function open(pathname) {
                 // }
 
                 let temp=template
-                .replaceAll('DevExample',className)
-                .replaceAll('dev-example',tagName)
+                if([
+                    /field$/,
+                    /form$/,
+                    /checkbox$/,
+                    /radio-button$/,
+                    /slider$/,
+                ].some(key=>key.test(name))){
+                    temp=template3
+                }
+                temp=temp.replaceAll('DevExample',className)
+                temp=temp.replaceAll('dev-example',tagName)
 
                 let temp2=template2
-                .replaceAll('DevExample',className)
-                .replaceAll('dev-example',tagName)
+                if([
+                    /field$/,
+                    /form$/,
+                    /checkbox$/,
+                    /radio-button$/,
+                    /slider$/,
+                ].some(key=>key.test(name))){
+                    temp2=template4
+                }
+                temp2=temp2.replaceAll('DevExample',className)
+                temp2=temp2.replaceAll('dev-example',tagName)
 
                 let code=''
                 code+=temp
@@ -354,15 +406,64 @@ function open(pathname) {
 
                 code+=`${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`
                 code+=`${space}    <${tagName2}\r\n`
-                if(doc.properties){
+                const values={
+                    avatar:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+                    thumbnail:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+                    image:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+                    src:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+                    alt:'"alt"',
+                    icon:'"image"',
+                    label:'"label"',
+                    subLabel:'"subLabel"',
+                    action:'"image"',
+                    leadingActions:`'[{"icon":"image"}]'`,
+                    trailingActions:`'[{"icon":"image"}]'`,
+                    actions:`'[{"label":"label","icon":"image"}]'`,
+                    columns:`'[]'`,
+                    rows:`'[]'`,
+                    list:`'[]'`,
+                    buttons:`'[]'`,
+                    chips:`'[]'`,
+                    options:`'[{"label":"10","value":10}]'`,
+                    tabs:`'{}'`,
+                    map:`'{"label":"label","value":"value"}'`,
+                    page:`"1"`,
+                    total:`"100"`,
+                    limit:`"10"`,
+                }
+                if(doc.properties&&!name.includes('datetime')){
                     doc.properties.forEach(prop => {
                         if(prop.name=='variant'&&doc.variants){
                             code+=`${space}        ${prop.name}="${doc.variants[0]}"\r\n`
-
+                            
                         }else{
-                            code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=""`:``}\r\n`
-
+                            code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=${values[prop.name]||'""'}`:``}\r\n`
+                            
                         }
+                    })
+                }
+                if(name.includes('datetime')){
+                    code+=`${space}        value="1990-10-17T20:30"\r\n`
+                }
+                if(name.includes('time')){
+                    code+=`${space}        value="20:30"\r\n`
+                }
+                if(name.includes('date')){
+                    code+=`${space}        value="1990-10-17"\r\n`
+                }
+                if(name.includes('month')){
+                    code+=`${space}        value="1990-10"\r\n`
+                }
+                if(name.includes('week')){
+                    code+=`${space}        value="1990-W42"\r\n`
+                }
+                if(name.includes('select')){
+                    code+=`${space}        options=${values['options']}\r\n`
+                }
+                if(doc.fires){
+                    doc.fires.forEach(doc=>{
+                        code+=`${space}        @${doc.name}="\${console.log}"\r\n`
+
                     })
                 }
                 code+=`${space}    ></${tagName2}>\r\n`
@@ -376,11 +477,17 @@ function open(pathname) {
                             doc.properties.forEach(prop => {
                                 if(prop.name=='variant'){
                                     code+=`${space}        ${prop.name}="${variant}"\r\n`
-    
+                                    
                                 }else{
-                                    code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=""`:``}\r\n`
-    
+                                    code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=${values[prop.name]||'""'}`:``}\r\n`
+                                    
                                 }
+                            })
+                        }
+                        if(doc.fires){
+                            doc.fires.forEach(doc=>{
+                                code+=`${space}        @${doc.name}="\${console.log}"\r\n`
+
                             })
                         }
                         code+=`${space}    ></${tagName2}>\r\n`

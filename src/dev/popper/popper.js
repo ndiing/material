@@ -1,34 +1,24 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevPopperComponent extends MDComponent {
-    get tooltip() {
-        return this.querySelector("#tooltip");
-    }
-
+class DevPopper extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                    <md-tooltip
-                        id="tooltip"
-                        variant="plain"
-                        >tooltip</md-tooltip
-                    >
-                    <md-button
-                        label="button"
-                        @click="${this.handleButtonClick}"
-                    ></md-button>
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-popper
+                            ></md-popper>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         `;
     }
-
-    handleButtonClick(event) {
-        this.tooltip.toggle(event.currentTarget);
-    }
 }
 
-customElements.define("dev-popper", DevPopperComponent);
+customElements.define("dev-popper", DevPopper);
 
 export default document.createElement("dev-popper");

@@ -28,6 +28,24 @@
     }
 }
 
+@mixin container-compact() {
+    @container (width < 599px) {
+        @content;
+    }
+}
+
+@mixin container-medium() {
+    @container (width > 600px) and (width < 839px) {
+        @content;
+    }
+}
+
+@mixin container-expanded() {
+    @container (width > 840px) {
+        @content;
+    }
+}
+
 @mixin typescale-display-large() {
     font-size: var(--md-sys-typescale-display-large-size);
     line-height: var(--md-sys-typescale-display-large-line-height);

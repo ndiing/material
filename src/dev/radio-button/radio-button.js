@@ -1,52 +1,56 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevRadioButtonComponent extends MDComponent {
+class DevRadioButton extends MDComponent {
     render() {
         return html`
-            <md-form
-                @onFormNativeReset="${this.handleFormNativeReset}"
-                @onFormNativeSubmit="${this.handleFormNativeSubmit}"
-            >
-                <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-radio-button
-                            name="radio-button"
-                            value="item1"
-                            checked
-                        ></md-radio-button>
-                        <md-radio-button
-                            name="radio-button"
-                            value="item2"
-                        ></md-radio-button>
-                    </div>
+            <div class="md-layout-border" style="width:360px;height:640px;position:relative;">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <md-form
+                        @onFormNativeReset="${event=>console.log(event)}"
+                        @onFormNativeSubmit="${event=>console.log(event.detail.data)}"
+                    >
+                        <div class="md-layout-column">
+                            
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                <md-radio-button
+                                    name="radio"
+                                    value="1"
+                                    @onRadioButtonNativeInput="${console.log}"
+                                    @onRadioButtonNativeReset="${console.log}"
+                                ></md-radio-button>
+                            </div>
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                <md-radio-button
+                                    name="radio"
+                                    value="2"
+                                    @onRadioButtonNativeInput="${console.log}"
+                                    @onRadioButtonNativeReset="${console.log}"
+                                ></md-radio-button>
+                            </div>
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                <md-radio-button
+                                    name="radio"
+                                    value="3"
+                                    checked
+                                    @onRadioButtonNativeInput="${console.log}"
+                                    @onRadioButtonNativeReset="${console.log}"
+                                ></md-radio-button>
+                            </div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-button
-                            label="Reset"
-                            type="reset"
-                            variant="outlined"
-                        ></md-button>
-                        <md-button
-                            label="Submit"
-                            type="submit"
-                            variant="filled"
-                        ></md-button>
-                    </div>
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                <md-button type="reset" label="Reset" variant="outlined"></md-button>
+                                <md-button type="submit" label="Submit" variant="filled"></md-button>
+                            </div>
+    
+                        </div>
+                    </md-form>
                 </div>
-            </md-form>
+            </div>
         `;
-    }
-
-    handleFormNativeReset(event) {
-        console.log(event);
-    }
-
-    handleFormNativeSubmit(event) {
-        console.log(JSON.stringify(event.detail.data, null, 4));
     }
 }
 
-customElements.define("dev-radio-button", DevRadioButtonComponent);
+customElements.define("dev-radio-button", DevRadioButton);
 
 export default document.createElement("dev-radio-button");

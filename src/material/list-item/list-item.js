@@ -146,10 +146,11 @@ class MDListItemComponent extends MDComponent {
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("subLabel")) {
-            await this.requestUpdate;
+            await this.updateComplete;
             const secondary = this.querySelector(".md-list__label-secondary");
             const style = window.getComputedStyle(secondary);
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
+            console.log(secondary.scrollHeight,lineHeight)
             if (secondary.scrollHeight > lineHeight) {
                 this.classList.add("md-list__item--three");
             } else {

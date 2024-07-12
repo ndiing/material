@@ -51,14 +51,14 @@
 
 .md-list__label-primary {
     @include typescale-body-large();
-    white-space: nowrap;
+    // white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .md-list__label-secondary {
     @include typescale-body-medium();
-    white-space: nowrap;
+    // white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }

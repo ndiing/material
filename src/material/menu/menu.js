@@ -32,7 +32,11 @@ class MDMenuComponent extends MDSheetComponent {
      * Returns the menu list element.
      * @return {HTMLElement} The menu list element.
      */
-    menuList = createRef();
+    get menuList(){
+        return{
+            value:this.querySelector('.md-menu__list')
+        }
+    }
 
     /**
      * Returns the body content of the menu.
@@ -50,10 +54,8 @@ class MDMenuComponent extends MDSheetComponent {
                 <div class="md-virtual__container">
                     <md-list
                         class="md-menu__list"
-                        .variant="${"plain"}"
                         .list="${ifDefined(this.virtualList)}"
                         .map="${ifDefined(this.map)}"
-                        ${ref(this.menuList)}
                         @onListItemClick="${this.handleMenuListItemClick}"
                         @onListItemSelected="${this.handleMenuListItemSelected}"
                     ></md-list>
