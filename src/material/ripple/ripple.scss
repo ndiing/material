@@ -182,17 +182,14 @@
     @include ripple-pressed();
 }
 
-[activated],
 .md-ripple[activated] {
     @include ripple-activated();
 }
 
-[selected],
 .md-ripple[selected] {
     @include ripple-selected();
 }
 
-[dragged],
 .md-ripple[dragged] {
     @include ripple-dragged();
 }
