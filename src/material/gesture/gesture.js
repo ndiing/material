@@ -97,7 +97,20 @@ class MDGestureController {
      * @private
      */
     async hostDisconnected() {
-        await this.host.updateComplete;
+        await this.host.updateComplete
+        this.container.classList.remove("md-gesture");
+        if (this.dragHandle) {
+            this.dragHandle.classList.remove("md-draggable");
+            this.dragHandle.classList.remove("md-draggable--drag");
+        }
+        if (this.resizable) {
+            this.resizable.remove();
+        }
+        document.body.classList.remove("md-gesture--unselectable");
+        this.container.removeEventListener("pointerdown", this.handleGesturePointerdown);
+        window.removeEventListener("pointermove", this.handleGesturePointermove);
+        window.removeEventListener("pointerup", this.handleGesturePointerup);
+    
     }
 
     /**
