@@ -5,11 +5,10 @@ class DevBottomAppBar extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:480px;height:800px;">
-                <md-bottom-app-bar id="bottomAppBar" open leadingActions='[{"icon":"check_box"},{"icon":"brush"},{"icon":"mic"},{"icon":"image"}]' trailingActions='[{"component":"fab","icon":"add","variant":"unelevated"}]'></md-bottom-app-bar>
+                <md-bottom-app-bar open leadingActions='[{"icon":"search"},{"icon":"delete"},{"icon":"archive"},{"icon":"reply"}]' trailingActions='[{"component":"fab","icon":"add","variant":"unelevated"}]'></md-bottom-app-bar>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button label="toggle bottom app bar" @click="${() => bottomAppBar.toggle()}"></md-button>
                         </div>
                     </div>
                 </div>

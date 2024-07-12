@@ -74,7 +74,7 @@ class DevMainComponent extends MDComponent {
             "navigation-rail",
             "menu",
             "tabs",
-            "chip",
+            // "chip",
             "chips",
             "text-field",
             "datetime-field",
