@@ -2,12 +2,12 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
 const columns = [
-    { name: 'symbol', label: 'Symbol' },
-    { name: 'company', label: 'Company Name' },
-    { name: 'price', label: 'Price', type: 'currency' },
-    { name: 'change', label: 'Change', type: 'percent' },
-    { name: 'volume', label: 'Volume', type: 'number' },
-    { name: 'marketCap', label: 'Market Cap', type: 'currency' },
+    { name: 'symbol', label: 'Symbol', resizable:true,orderable:true,sortable:true ,sticky:true},
+    { name: 'company', label: 'Company Name', resizable:true,orderable:true,sortable:true,sticky:true },
+    { name: 'price', label: 'Price', type: 'currency', resizable:true,orderable:true,sortable:true },
+    { name: 'change', label: 'Change', type: 'percent', resizable:true,orderable:true,sortable:true },
+    { name: 'volume', label: 'Volume', type: 'number', resizable:true,orderable:true,sortable:true,sticky:true },
+    { name: 'marketCap', label: 'Market Cap', type: 'currency', resizable:true,orderable:true,sortable:true,sticky:true },
   ];
   
   const rows = [
