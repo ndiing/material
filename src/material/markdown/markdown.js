@@ -59,7 +59,7 @@ class MDMarkdownComponent extends MDComponent {
                 this.text = text;
                 this.requestUpdate();
             } catch (error) {
-                console.error(error);
+                throw error
             }
         }
     }

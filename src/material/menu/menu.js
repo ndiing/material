@@ -190,9 +190,9 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Object} options - Additional options for setting the placement.
      * @private
      */
-    setPlacement(button=this.poppperButton, options=this.poppperOptions) {
-        this.poppperButton = button
-        this.poppperOptions = options
+    setPlacement(button = this.poppperButton, options = this.poppperOptions) {
+        this.poppperButton = button;
+        this.poppperOptions = options;
         this.popper.setPlacement(button, {
             /* prettier-ignore */
             placements: [

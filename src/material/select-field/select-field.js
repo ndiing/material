@@ -102,15 +102,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @returns {TemplateResult} Lit HTML template result.
      */
     renderHidden() {
-        return html`
-            <input 
-                type="hidden" 
-                class="md-text-field__hidden" 
-                .name="${ifDefined(this.name)}" 
-                .defaultValue="${this.defaultSelectedOptions.map((option) => option.value)}" 
-                .value="${this.selectedOptions.map((option) => option.value)}"
-            />
-        `;
+        return html` <input type="hidden" class="md-text-field__hidden" .name="${ifDefined(this.name)}" .defaultValue="${this.defaultSelectedOptions.map((option) => option.value)}" .value="${this.selectedOptions.map((option) => option.value)}" /> `;
     }
 
     /**
