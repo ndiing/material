@@ -121,14 +121,62 @@ for (let name in grouped) {
     }
     if (grouped2["function"]) {
         let value = grouped2["function"];
-        markdown += `## Instance methods\r\n`;
         if (grouped2?.["class"]?.[0]?.augments?.[0]) {
+            markdown += `## Instance methods\r\n`;
             markdown += `This interface also inherits methods from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
+        }else{
+            markdown += `## Methods\r\n`;
+
         }
         markdown += `\r\n`;
         for (let val of value) {
             // console.log(val)
             markdown += `### \`${val.name}(${val.params?.map((param) => param.name)})\`\r\n`;
+            markdown += `${val.description}\r\n`;
+            markdown += `\r\n`;
+
+            if (val?.params?.length) {
+                markdown += `Name | Type | Description\r\n`;
+                markdown += `--- | --- | ---\r\n`;
+                for (let param of val?.params || []) {
+                    markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                }
+                markdown += `\r\n`;
+            }
+            markdown += `\r\n`;
+            if (val?.properties?.length) {
+                markdown += `Name | Type | Description\r\n`;
+                markdown += `--- | --- | ---\r\n`;
+                for (let param of val?.properties || []) {
+                    markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                }
+                markdown += `\r\n`;
+            }
+            if (val.returns?.length) {
+                markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``), val.returns?.[0]?.description].filter(Boolean).join("\r\n")}\r\n`;
+                markdown += `\r\n`;
+            }
+            if (val?.examples?.length) {
+                markdown += `#### Examples\r\n`;
+                for (let example of val?.examples || []) {
+                    markdown += `\`\`\`\r\n`;
+                    markdown += `${example}\r\n`;
+                    markdown += `\`\`\`\r\n`;
+                }
+                markdown += `\r\n`;
+            }
+        }
+    }
+    if (grouped2['constant']) {
+        let value = grouped2['constant'];
+        markdown += `## Constants\r\n`;
+        if (grouped2?.["class"]?.[0]?.augments?.[0]) {
+            markdown += `This interface also inherits methods from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
+        }
+        markdown += `\r\n`;
+        for (let val of value) {
+            console.log(val)
+            markdown += `### \`${val.name}\`\r\n`;
             markdown += `${val.description}\r\n`;
             markdown += `\r\n`;
 
