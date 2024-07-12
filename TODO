@@ -1,25 +1,28 @@
+IMPORTANT!
+FIX THIS FILE FIRST
 
-butuh penanganan segera untuk:
+## ripple
+- [ ] src\material\button\button.js:
+- [ ] src\material\card\card.js:
+- [ ] src\material\checkbox\checkbox.js:
+- [ ] src\material\chip\chip.js:
+- [ ] src\material\fab\fab.js:
+- [ ] src\material\icon-button\icon-button.js:
+- [ ] src\material\list-item\list-item.js:
+- [ ] src\material\radio-button\radio-button.js:
+- [ ] src\material\ripple\ripple.js:
+- [ ] src\material\switch\switch.js:
+- [ ] src\material\tree-item\tree-item.js:
 
-src\material\button\button.js:
-src\material\card\card.js:
-src\material\checkbox\checkbox.js:
-src\material\chip\chip.js:
-src\material\fab\fab.js:
-src\material\icon-button\icon-button.js:
-src\material\list-item\list-item.js:
-src\material\radio-button\radio-button.js:
-src\material\ripple\ripple.js:
-src\material\switch\switch.js:
-src\material\tree-item\tree-item.js:
+## popper
+- [ ] src\material\color-picker\color-picker.js:
+- [ ] src\material\datetime-picker\datetime-picker.js:
+- [ ] src\material\emoji-picker\emoji-picker.js:
+- [ ] src\material\menu\menu.js:
+- [ ] src\material\popper\popper.js:
+- [ ] src\material\tooltip\tooltip.js:
 
-src\material\color-picker\color-picker.js:
-src\material\datetime-picker\datetime-picker.js:
-src\material\emoji-picker\emoji-picker.js:
-src\material\menu\menu.js:
-src\material\popper\popper.js:
-src\material\tooltip\tooltip.js:
-
-src\material\data-table\data-table-native-column.js:
-src\material\gesture\gesture.js:
-src\material\list-item\list-item.js:
+## gesture
+- [ ] src\material\data-table\data-table-native-column.js:
+- [ ] src\material\gesture\gesture.js:
+- [ ] src\material\list-item\list-item.js:
