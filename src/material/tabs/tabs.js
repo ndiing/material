@@ -1,21 +1,30 @@
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * {{description}}
+ * Custom component for managing tabs with indicators.
  * @element md-tabs
  * @extends MDTreeComponent
  */
 class MDTabsComponent extends MDTreeComponent {
     /**
-     * {{description}}
+     * Initializes the tabs component.
+     * Sets the default variant to "primary".
      */
     constructor() {
         super();
         this.variant = "primary";
+        this.currentSelectedIndex = -1;
+        this.lastSelectedIndex = -1;
     }
+
+    /**
+     * Available variants for the tabs component.
+     */
     variants = ["primary", "secondary"];
 
     /**
+     * Callback when the component is connected to the DOM.
+     * Adds necessary classes to style the component.
      * @private
      */
     connectedCallback() {
@@ -24,6 +33,9 @@ class MDTabsComponent extends MDTreeComponent {
     }
 
     /**
+     * Handles the selection of a tree item (tab).
+     * Updates the indicator position based on the selected tab.
+     * @param {CustomEvent} event - Custom event containing the selected tree item.
      * @private
      */
     async handleTreeItemSelected(event) {
@@ -37,6 +49,7 @@ class MDTabsComponent extends MDTreeComponent {
                 left += treeInner.offsetLeft;
             }
             let right = this.scrollWidth - (left + width);
+
             this.currentSelectedIndex = this.list.indexOf(treeItem.data);
             const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";
             this.style.removeProperty(`--md-comp-tabs-indicator-transition-left`);
@@ -48,5 +61,6 @@ class MDTabsComponent extends MDTreeComponent {
         });
     }
 }
+
 customElements.define("md-tabs", MDTabsComponent);
 export { MDTabsComponent };

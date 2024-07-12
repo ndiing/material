@@ -2,28 +2,37 @@ import { stringifyTime } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{description}}
+ * Custom component for selecting time.
  * @element md-time-field
  * @extends MDTextFieldComponent
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
-     * {{description}}
+     * Retrieves the actions associated with the time field.
+     * @returns {Array} Array containing action objects.
      */
     get actions() {
         return [{ icon: "schedule" }];
     }
 
     /**
-     * {{description}}
+     * Setter for the actions associated with the time field.
+     * @param {Array} value - Array containing action objects.
      */
     set actions(value) {}
+
+    /**
+     * Initializes the component.
+     * Sets the type of the component to "time".
+     */
     constructor() {
         super();
         this.type = "time";
     }
 
     /**
+     * Callback invoked when the component is added to the document's DOM.
+     * Adds necessary classes to the component.
      * @private
      */
     connectedCallback() {
@@ -33,6 +42,9 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the native text field.
+     * Prevents the default behavior of the event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleTextFieldNativeClick(event) {
@@ -41,6 +53,9 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the icon button associated with the time field.
+     * Creates and displays a time picker component.
+     * @param {Event} event - The click event.
      * @private
      */
     async handleTextFieldIconButtonClick(event) {
@@ -56,6 +71,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onTimePickerSelection", this.handlePickerSelection);
         this.picker.addEventListener("onTimePickerButtonCancelClick", this.handlePickerButtonCancelClick);
         this.picker.addEventListener("onTimePickerButtonOkClick", this.handlePickerButtonOkClick);
+        
         const handleSheetClose = () => {
             this.picker.removeEventListener("onTimePickerSelection", this.handlePickerSelection);
             this.picker.removeEventListener("onTimePickerButtonCancelClick", this.handlePickerButtonCancelClick);
@@ -64,11 +80,14 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.picker.remove();
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
+        
         await this.picker.updateComplete;
         this.picker.showModal(this.textFieldContainer.value);
     }
 
     /**
+     * Handles the selection of a time in the time picker.
+     * Updates the value of the text field and dispatches an input event.
      * @private
      */
     handlePickerSelection() {
@@ -78,6 +97,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the cancel button in the time picker.
+     * Closes the time picker dialog.
      * @private
      */
     handlePickerButtonCancelClick() {
@@ -85,6 +106,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the OK button in the time picker.
+     * Updates the value of the text field, dispatches an input event, and closes the dialog.
      * @private
      */
     handlePickerButtonOkClick() {
@@ -94,5 +117,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.close();
     }
 }
+
 customElements.define("md-time-field", MDTimeFieldComponent);
 export { MDTimeFieldComponent };

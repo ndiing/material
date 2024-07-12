@@ -1,28 +1,37 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{description}}
+ * Custom component for managing a search field with clear action.
  * @element md-search-field
  * @extends MDTextFieldComponent
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
     /**
-     * {{description}}
+     * Returns actions based on the current state of the search field.
+     * Includes a clear action when there is a value present.
      */
     get actions() {
         return [...((this.value && [{ name: "clear", icon: "close" }]) || [])];
     }
 
     /**
-     * {{description}}
+     * Setter for actions property.
+     * @param {any} value - Value to set.
      */
     set actions(value) {}
+
+    /**
+     * Initializes the search field component.
+     * Sets the input type to "search".
+     */
     constructor() {
         super();
         this.type = "search";
     }
 
     /**
+     * Callback when the component is connected to the DOM.
+     * Adds necessary classes to style the component.
      * @private
      */
     connectedCallback() {
@@ -32,6 +41,9 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the native text field.
+     * Prevents the default action.
+     * @param {Event} event - Click event.
      * @private
      */
     handleTextFieldNativeClick(event) {
@@ -40,14 +52,18 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the icon button associated with the search field.
+     * Clears the search field value and dispatches input and search events.
+     * @param {Event} event - Click event.
      * @private
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-        this.textFieldNative.value.value = "";
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));
+        this.textFieldNative.value.value = ""; // Clears the search field value
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {})); // Dispatches input event
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {})); // Dispatches search event
     }
 }
+
 customElements.define("md-search-field", MDSearchFieldComponent);
 export { MDSearchFieldComponent };

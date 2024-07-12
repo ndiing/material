@@ -3,33 +3,40 @@ import { MDComponent } from "../component/component.js";
 import { calcPercentage } from "../functions/functions.js";
 
 /**
- * {{description}}
+ * Custom component for rendering progress indicators.
  * @element md-progress-indicator
  * @extends MDComponent
  */
 class MDProgressIndicatorComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} variant - {{description}}
-     * @property {Number} value - {{description}}
-     * @property {Number} max - {{description}}
+     * Defines the properties and their types for the component.
+     * @property {String} variant - The variant of the progress indicator.
+     * @property {Number} value - The current value of the progress indicator.
+     * @property {Number} max - The maximum value of the progress indicator.
      */
     static properties = {
         variant: { type: String },
         value: { type: Number },
         max: { type: Number },
     };
+
+    /**
+     * Array of supported variants for the progress indicator.
+     * @type {Array<String>}
+     */
     variants = ["circular", "linear"];
 
     /**
-     * {{description}}
+     * Initializes the component.
+     * Sets the default maximum value for the progress indicator.
      */
     constructor() {
         super();
-        this.max = 100;
+        this.max = 100; // Default maximum value
     }
 
     /**
+     * Renders the circular progress indicator.
      * @private
      */
     renderCircular() {
@@ -37,34 +44,38 @@ class MDProgressIndicatorComponent extends MDComponent {
         return html`
             <svg class="md-progress-indicator__container" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle class="md-progress-indicator__track" cx="50" cy="50" r="45.833333333333336" />
-                <circle class="md-progress-indicator__indicator" cx="50" cy="50" r="45.833333333333336" />
+                <circle class="md-progress-indicator__indicator" style="stroke-dasharray: var(--md-comp-progress-indicator-percentage, 0%);"
+                    cx="50" cy="50" r="45.833333333333336" />
             </svg>
         `;
     }
 
     /**
+     * Renders the linear progress indicator.
      * @private
      */
     renderLinear() {
         /* prettier-ignore */
         return html`
             <div class="md-progress-indicator__track">
-                <div class="md-progress-indicator__indicator"></div>
+                <div class="md-progress-indicator__indicator" style="width: var(--md-comp-progress-indicator-percentage, 0%);"></div>
             </div>
         `;
     }
 
     /**
+     * Renders the appropriate progress indicator based on the variant.
      * @private
      */
     render() {
-        /* prettier-ignore */
-        return this.variant && this.variant.includes('circular') ?
-        this.renderCircular() :
-        this.renderLinear();
+        return this.variant && this.variant.includes("circular") ?
+            this.renderCircular() :
+            this.renderLinear();
     }
 
     /**
+     * Callback when the component is connected to the DOM.
+     * Adds necessary classes to the component.
      * @private
      */
     connectedCallback() {
@@ -73,16 +84,23 @@ class MDProgressIndicatorComponent extends MDComponent {
     }
 
     /**
+     * Handles updates to the component's properties.
+     * Updates the progress indicator's visuals based on property changes.
+     * @param {Map} changedProperties - Map of properties that have changed
      * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
+
+        // Update variant-specific classes
         if (changedProperties.has("variant")) {
             for (let i = 0; i < this.variants.length; i++) {
                 let variant = this.variants[i];
                 this.classList.toggle(`md-progress-indicator--${variant}`, (this.variant ?? "").split(" ").includes(variant));
             }
         }
+
+        // Update progress indicator value
         if (changedProperties.has("value")) {
             const percentage = calcPercentage(0, this.max, this.value);
             this.style.setProperty("--md-comp-progress-indicator-percentage", percentage + "%");
@@ -90,5 +108,6 @@ class MDProgressIndicatorComponent extends MDComponent {
         }
     }
 }
+
 customElements.define("md-progress-indicator", MDProgressIndicatorComponent);
 export { MDProgressIndicatorComponent };
