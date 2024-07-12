@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[92],{92:(e,a,i)=>{i.r(a),i.d(a,{templates:()=>n});const n={sc958887ef4afecbd:"¡Hola, bienvenido a nuestra aplicación!"}}}]);

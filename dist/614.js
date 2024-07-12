@@ -1,1 +1,1 @@
-"use strict";(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[614],{614:(e,n,t)=>{t.r(n),t.d(n,{templates:()=>i});const i={se85c64ef6406b6c8:"The older sisters perched on the window of grandma, her old teeth were only two"}}}]);
+"use strict";(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[614],{614:(e,i,n)=>{n.r(i),n.d(i,{templates:()=>a});const a={sc958887ef4afecbd:"你好，欢迎来到我们的应用程序！"}}}]);
