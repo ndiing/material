@@ -91,10 +91,10 @@ class MDProgressIndicatorComponent extends MDComponent {
 
         // Update variant-specific classes
         if (changedProperties.has("variant")) {
-            for (let i = 0; i < this.variants.length; i++) {
-                let variant = this.variants[i];
-                this.classList.toggle(`md-progress-indicator--${variant}`, (this.variant ?? "").split(" ").includes(variant));
-            }
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-progress-indicator--${variant}`, variants.includes(variant));
+            });
         }
 
         // Update progress indicator value

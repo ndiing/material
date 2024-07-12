@@ -3,22 +3,23 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.js";
 
 /**
- * {{description}}
+ * Custom date picker component.
  * @element md-date-picker
  * @extends MDDatetimePickerComponent
- * @fires MDDatePickerComponent#onDatePickerIconButtonPrevClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerIconButtonNextClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerButtonLabelClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerButtonCancelClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerButtonOkClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerYearItemClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerMonthItemClick - {{description}}
- * @fires MDDatePickerComponent#onDatePickerSelection - {{description}}
- * @fires MDDatePickerComponent#onDatePickerDayItemClick - {{description}}
+ * @fires MDDatePickerComponent#onDatePickerIconButtonPrevClick - Fires when the previous icon button is clicked.
+ * @fires MDDatePickerComponent#onDatePickerIconButtonNextClick - Fires when the next icon button is clicked.
+ * @fires MDDatePickerComponent#onDatePickerButtonLabelClick - Fires when the label button is clicked.
+ * @fires MDDatePickerComponent#onDatePickerButtonCancelClick - Fires when the cancel button is clicked.
+ * @fires MDDatePickerComponent#onDatePickerButtonOkClick - Fires when the OK button is clicked.
+ * @fires MDDatePickerComponent#onDatePickerYearItemClick - Fires when a year item is clicked.
+ * @fires MDDatePickerComponent#onDatePickerMonthItemClick - Fires when a month item is clicked.
+ * @fires MDDatePickerComponent#onDatePickerSelection - Fires when a date is selected.
+ * @fires MDDatePickerComponent#onDatePickerDayItemClick - Fires when a day item is clicked.
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
     /**
-     * {{description}}
+     * Gets the leading actions for the date picker.
+     * @returns {Array} The leading actions array.
      */
     get leadingActions() {
         let label;
@@ -33,7 +34,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Gets the child nodes for the date picker.
+     * @returns {Array} The child nodes array.
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -47,13 +49,15 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Sets the child nodes for the date picker.
+     * @param {Array} value - The new child nodes array.
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
+     * Lifecycle method called when the component is connected to the DOM.
      * @private
      */
     connectedCallback() {
@@ -62,7 +66,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Updates the date selection based on the current value.
      * @private
      */
     updateDate() {
@@ -76,6 +80,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the previous icon button click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleCardIconButtonPrevClick(event) {
@@ -92,6 +98,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the next icon button click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleCardIconButtonNextClick(event) {
@@ -108,6 +116,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the label button click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleCardButtonLabelClick(event) {
@@ -122,6 +132,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the cancel button click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleCardButtonCancelClick(event) {
@@ -134,6 +146,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the OK button click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleCardButtonOkClick(event) {
@@ -147,6 +161,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the year item click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleDatetimePickerYearItemClick(event) {
@@ -157,6 +173,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the month item click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleDatetimePickerMonthItemClick(event) {
@@ -168,6 +186,8 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles the day item click event.
+     * @param {Event} event - The click event.
      * @private
      */
     handleDatetimePickerDayItemClick(event) {
@@ -184,12 +204,14 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Gets the current value of the date picker.
+     * @returns {string} The current date value.
      * @private
      */
     getValue() {
         return stringifyDate(this.selected);
     }
 }
+
 customElements.define("md-date-picker", MDDatePickerComponent);
 export { MDDatePickerComponent };

@@ -4,38 +4,44 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
 /**
- * {{description}}
+ * Custom select field component with additional features for selecting options.
  * @element md-select-field
  * @extends MDTextFieldComponent
  */
 class MDSelectFieldComponent extends MDTextFieldComponent {
     static properties = {
         ...MDTextFieldComponent.properties,
+        /**
+         * Mapping object for options.
+         * @type {Object}
+         */
         map: { type: Object },
     };
 
     /**
-     * {{description}}
+     * Returns actions associated with the select field.
+     * @returns {object[]} Array of action objects.
      */
     get actions() {
         return [{ icon: "arrow_drop_down" }];
     }
 
     /**
-     * {{description}}
+     * Setter for actions.
+     * @param {object[]} value - Array of action objects.
      */
     set actions(value) {}
 
     /**
-     * Gets the index of the currently selected item in the menu list.
-     * @type {Number}
+     * Gets the index of the currently selected item in the options list.
+     * @type {number}
      */
     get selectedIndex() {
         return this.options.findIndex((doc) => doc.selected);
     }
 
     /**
-     * Gets the list of selected items in the menu list.
+     * Gets the list of selected options.
      * @type {Array}
      */
     get selectedOptions() {
@@ -43,7 +49,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Gets the list of selected items in the menu list.
+     * Gets the list of default selected options.
      * @type {Array}
      */
     get defaultSelectedOptions() {
@@ -56,13 +62,15 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Renders the select input element.
      * @private
+     * @returns {TemplateResult} Lit HTML template result.
      */
     renderSelect() {
         /* prettier-ignore */
         return html`
             <input 
-            class="md-text-field__native"
+                class="md-text-field__native"
                 aria-label="Label"
                 .name="${ifDefined(this.name)}"
                 .min="${ifDefined(this.min)}"
@@ -89,13 +97,24 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Renders a hidden input element for submitting selected option values.
      * @private
+     * @returns {TemplateResult} Lit HTML template result.
      */
     renderHidden() {
-        return html` <input type="hidden" class="md-text-field__hidden" .name="${ifDefined(this.name)}" .defaultValue="${this.defaultSelectedOptions.map((option) => option.value)}" .value="${this.selectedOptions.map((option) => option.value)}" /> `;
+        return html`
+            <input 
+                type="hidden" 
+                class="md-text-field__hidden" 
+                .name="${ifDefined(this.name)}" 
+                .defaultValue="${this.defaultSelectedOptions.map((option) => option.value)}" 
+                .value="${this.selectedOptions.map((option) => option.value)}"
+            />
+        `;
     }
 
     /**
+     * Lifecycle callback when the element is connected to the DOM.
      * @private
      */
     connectedCallback() {
@@ -106,6 +125,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles focus event on the native text field.
+     * Opens the picker menu.
      * @private
      */
     handleTextFieldNativeFocus() {
@@ -113,6 +134,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles blur event on the native text field.
+     * Closes the picker menu after a delay.
      * @private
      */
     handleTextFieldNativeBlur() {
@@ -120,6 +143,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles input event on the native text field.
+     * Filters options in the picker menu based on input value.
      * @private
      */
     handleTextFieldNativeInput() {
@@ -127,6 +152,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Resets the select field to its default state.
      * @private
      */
     reset() {
@@ -137,6 +163,10 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.requestUpdate();
     }
 
+    /**
+     * Shows the picker menu for selecting options.
+     * @private
+     */
     async showPicker() {
         if (this.pickerOpen) {
             return;
@@ -177,6 +207,12 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         });
     }
 
+    /**
+     * Handles click on an item in the picker menu list.
+     * Updates the select field and closes the picker menu.
+     * @param {Event} event - The click event object.
+     * @private
+     */
     handlePickerMenuListItemClick(event) {
         this.requestUpdate();
         this.picker.close();
@@ -184,9 +220,16 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.emit("onPickerMenuListItemClick", event);
     }
 
+    /**
+     * Handles selection of an item in the picker menu list.
+     * Emits an event for item selection.
+     * @param {Event} event - The selection event object.
+     * @private
+     */
     handlePickerMenuListItemSelected(event) {
         this.emit("onPickerMenuListItemSelected", event);
     }
 }
+
 customElements.define("md-select-field", MDSelectFieldComponent);
 export { MDSelectFieldComponent };

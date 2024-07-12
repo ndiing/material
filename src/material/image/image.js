@@ -101,10 +101,10 @@ class MDImageComponent extends MDComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
-            for (let i = 0; i < this.variants.length; i++) {
-                let variant = this.variants[i];
-                this.classList.toggle(`md-image--${variant}`, (this.variant ?? "").split(" ").includes(variant));
-            }
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-image--${variant}`, variants.includes(variant));
+            });
         }
     }
 

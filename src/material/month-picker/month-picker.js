@@ -3,21 +3,22 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { html } from "lit";
 
 /**
- * {{description}}
+ * Custom month picker component that extends MDDatetimePickerComponent.
  * @element md-month-picker
  * @extends MDDatetimePickerComponent
- * @fires MDMonthPickerComponent#onMonthPickerIconButtonPrevClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerIconButtonNextClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerButtonLabelClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerButtonCancelClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerButtonOkClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerYearItemClick - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerSelection - {{description}}
- * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - {{description}}
+ * @fires MDMonthPickerComponent#onMonthPickerIconButtonPrevClick - Event fired when the previous button is clicked.
+ * @fires MDMonthPickerComponent#onMonthPickerIconButtonNextClick - Event fired when the next button is clicked.
+ * @fires MDMonthPickerComponent#onMonthPickerButtonLabelClick - Event fired when the label button is clicked.
+ * @fires MDMonthPickerComponent#onMonthPickerButtonCancelClick - Event fired when the cancel button is clicked.
+ * @fires MDMonthPickerComponent#onMonthPickerButtonOkClick - Event fired when the OK button is clicked.
+ * @fires MDMonthPickerComponent#onMonthPickerYearItemClick - Event fired when a year item is clicked.
+ * @fires MDMonthPickerComponent#onMonthPickerSelection - Event fired when a selection is made in the month picker.
+ * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - Event fired when a month item is clicked.
  */
 class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
-     * {{description}}
+     * Returns leading actions based on the current index.
+     * @returns {object[]} Array of action objects.
      */
     get leadingActions() {
         let label;
@@ -30,7 +31,8 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Returns child nodes for rendering in the component.
+     * @returns {TemplateResult[]} Array of Lit HTML template results.
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -43,14 +45,15 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Setter for child nodes.
+     * @param {TemplateResult[]} value - Array of Lit HTML template results.
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * {{description}}
+     * Constructor for initializing the component.
      */
     constructor() {
         super();
@@ -58,6 +61,8 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Lifecycle callback when the component is connected to the DOM.
+     * Adds necessary class for styling.
      * @private
      */
     connectedCallback() {
@@ -66,7 +71,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Updates the date selection based on the input value.
      * @private
      */
     updateDate() {
@@ -78,6 +83,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on the previous button in the card.
+     * Updates the selection and emits events.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleCardIconButtonPrevClick(event) {
@@ -92,6 +100,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on the next button in the card.
+     * Updates the selection and emits events.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleCardIconButtonNextClick(event) {
@@ -106,6 +117,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on the label button in the card.
+     * Toggles between year and month view.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleCardButtonLabelClick(event) {
@@ -118,6 +132,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on the cancel button in the card.
+     * Resets the value to default and emits events.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleCardButtonCancelClick(event) {
@@ -129,6 +146,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on the OK button in the card.
+     * Updates the selected value and emits events.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleCardButtonOkClick(event) {
@@ -141,6 +161,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on a year item in the picker.
+     * Updates the selection year and emits events.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleDatetimePickerYearItemClick(event) {
@@ -152,6 +175,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Handles click event on a month item in the picker.
+     * Updates the selected month and emits events.
+     * @param {Event} event - The click event object.
      * @private
      */
     handleDatetimePickerMonthItemClick(event) {
@@ -166,12 +192,14 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * {{description}}
+     * Retrieves the formatted string value of the selected month.
+     * @returns {string} Formatted month string.
      * @private
      */
     getValue() {
         return stringifyMonth(this.selected);
     }
 }
+
 customElements.define("md-month-picker", MDMonthPickerComponent);
 export { MDMonthPickerComponent };

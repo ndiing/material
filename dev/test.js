@@ -400,6 +400,9 @@ function open(pathname) {
                 temp2=temp2.replaceAll('DevExample',className)
                 temp2=temp2.replaceAll('dev-example',tagName)
 
+                temp=''
+                temp2=''
+
                 let code=''
                 code+=temp
                 let space='    '.repeat(6)
@@ -497,8 +500,8 @@ function open(pathname) {
 
                 code+=temp2
 
-                // console.log(code)
-                write('./src/dev/'+name+'/'+name+'.js',code)
+                console.log(code)
+                // write('./src/dev/'+name+'/'+name+'.js',code)
 
             }
         }
