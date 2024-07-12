@@ -2,28 +2,36 @@ import { stringifyDate } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{description}}
+ * A custom date field component extending a text field component.
  * @element md-date-field
  * @extends MDTextFieldComponent
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
     /**
-     * {{description}}
+     * Returns the actions for the date field component.
+     * @returns {Array} - An array of action objects.
      */
     get actions() {
         return [{ icon: "today" }];
     }
 
     /**
-     * {{description}}
+     * Sets the actions for the date field component.
+     * @param {Array} value - An array of action objects.
      */
     set actions(value) {}
+
+    /**
+     * Constructs an instance of MDDateFieldComponent.
+     * Initializes the type of the input to "date".
+     */
     constructor() {
         super();
         this.type = "date";
     }
 
     /**
+     * Invoked when the component is added to the document's DOM.
      * @private
      */
     connectedCallback() {
@@ -33,7 +41,10 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the native click event on the text field.
+     * Prevents the default action and calls the parent method.
      * @private
+     * @param {Event} event - The click event.
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -41,7 +52,10 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the icon button click event on the text field.
+     * Creates and shows a date picker modal.
      * @private
+     * @param {Event} event - The click event.
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
@@ -69,6 +83,8 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the date picker selection event.
+     * Updates the text field value with the selected date.
      * @private
      */
     handlePickerSelection() {
@@ -78,6 +94,8 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the date picker cancel button click event.
+     * Closes the date picker.
      * @private
      */
     handlePickerButtonCancelClick() {
@@ -85,6 +103,8 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the date picker OK button click event.
+     * Updates the text field value with the selected date and closes the date picker.
      * @private
      */
     handlePickerButtonOkClick() {

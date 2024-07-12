@@ -5,20 +5,20 @@ import { styleMap } from "lit/directives/style-map.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * {{description}}
+ * A custom image component that supports various properties and styles.
  * @element md-image
  * @extends MDComponent
- * @fires MDImageComponent#onImageNativeLoad - {{description}}
- * @fires MDImageComponent#onImageNativeError - {{description}}
+ * @fires MDImageComponent#onImageNativeLoad - Fired when the image successfully loads.
+ * @fires MDImageComponent#onImageNativeError - Fired when there is an error loading the image.
  */
 class MDImageComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} src - {{description}}
-     * @property {String} alt - {{description}}
-     * @property {String} loading - {{description}}
-     * @property {String} ratio - {{description}}
-     * @property {String} variant - {{description}}
+     * Properties for the md-image component.
+     * @property {String} src - The source URL of the image.
+     * @property {String} alt - The alternative text for the image.
+     * @property {String} loading - The loading attribute for the image (e.g., "lazy" or "eager").
+     * @property {String} ratio - The aspect ratio of the image (e.g., "16/9").
+     * @property {String} variant - The variant of the image (e.g., "rounded").
      */
     static properties = {
         src: { type: String },
@@ -30,7 +30,8 @@ class MDImageComponent extends MDComponent {
     variants = ["rounded"];
 
     /**
-     * {{description}}
+     * Computes the styles for the image based on its properties.
+     * @returns {Object} The computed styles.
      */
     get imageNativeStyle() {
         let style = {};
@@ -49,7 +50,8 @@ class MDImageComponent extends MDComponent {
     imageNative = createRef();
 
     /**
-     * {{description}}
+     * Constructs an instance of MDImageComponent.
+     * Sets default values for loading and alt properties.
      */
     constructor() {
         super();
@@ -58,7 +60,9 @@ class MDImageComponent extends MDComponent {
     }
 
     /**
+     * Renders the image component.
      * @private
+     * @returns {TemplateResult} - The rendered template.
      */
     render() {
         /* prettier-ignore */
@@ -68,19 +72,7 @@ class MDImageComponent extends MDComponent {
                 style="${styleMap(this.imageNativeStyle)}"
                 .src="${ifDefined(this.src)}"
                 .alt="${ifDefined(this.alt)}"
-                .srcset="${ifDefined(this.srcset)}"
-                .sizes="${ifDefined(this.sizes)}"
-                .crossorigin="${ifDefined(this.crossorigin)}"
-                .usemap="${ifDefined(this.usemap)}"
-                .ismap="${ifDefined(this.ismap)}"
-                .width="${ifDefined(this.width)}"
-                .height="${ifDefined(this.height)}"
-                .referrerpolicy="${ifDefined(this.referrerpolicy)}"
-                .decoding="${ifDefined(this.decoding)}"
                 .loading="${ifDefined(this.loading)}"
-                .title="${ifDefined(this.title)}"
-                .longdesc="${ifDefined(this.longdesc)}"
-                .fetchpriority="${ifDefined(this.fetchpriority)}"
                 ${ref(this.imageNative)}
                 @load="${this.handleImageNativeLoad}"
                 @error="${this.handleImageNativeError}"
@@ -89,6 +81,8 @@ class MDImageComponent extends MDComponent {
     }
 
     /**
+     * Invoked when the component is added to the document's DOM.
+     * Adds the base class for the image component.
      * @private
      */
     connectedCallback() {
@@ -97,7 +91,10 @@ class MDImageComponent extends MDComponent {
     }
 
     /**
+     * Called when properties change.
+     * Updates the image's classes and attributes based on the changed properties.
      * @private
+     * @param {Map} changedProperties - The properties that changed.
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -110,14 +107,20 @@ class MDImageComponent extends MDComponent {
     }
 
     /**
+     * Handles the load event for the image.
+     * Emits the onImageNativeLoad event.
      * @private
+     * @param {Event} event - The load event.
      */
     handleImageNativeLoad(event) {
         this.emit("onImageNativeLoad", event);
     }
 
     /**
+     * Handles the error event for the image.
+     * Emits the onImageNativeError event.
      * @private
+     * @param {Event} event - The error event.
      */
     handleImageNativeError(event) {
         // this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";

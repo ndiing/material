@@ -4,7 +4,7 @@
     display: inline-flex;
     min-width: var(--md-comp-sheet-width);
     margin-right: calc(0px - var(--md-comp-sheet-width));
-    border-radius: var(--md-sys-shape-corner-large);
+    border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
@@ -52,7 +52,6 @@
 
 .md-side-sheet--modal {
     grid-area: auto;
-    border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
     margin-right: 0;
     transform: translate3d(100%, 0%, 0);
     background-color: var(--md-sys-color-surface-container-low);

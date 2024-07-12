@@ -2,28 +2,36 @@ import { stringifyDatetimeLocal } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{description}}
+ * A custom datetime field component extending a text field component.
  * @element md-datetime-field
  * @extends MDTextFieldComponent
  */
 class MDDatetimeFieldComponent extends MDTextFieldComponent {
     /**
-     * {{description}}
+     * Returns the actions for the datetime field component.
+     * @returns {Array} - An array of action objects.
      */
     get actions() {
         return [{ icon: "calendar_clock" }];
     }
 
     /**
-     * {{description}}
+     * Sets the actions for the datetime field component.
+     * @param {Array} value - An array of action objects.
      */
     set actions(value) {}
+
+    /**
+     * Constructs an instance of MDDatetimeFieldComponent.
+     * Initializes the type of the input to "datetime-local".
+     */
     constructor() {
         super();
         this.type = "datetime-local";
     }
 
     /**
+     * Invoked when the component is added to the document's DOM.
      * @private
      */
     connectedCallback() {
@@ -33,7 +41,10 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the native click event on the text field.
+     * Prevents the default action and calls the parent method.
      * @private
+     * @param {Event} event - The click event.
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -41,7 +52,10 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the icon button click event on the text field.
+     * Creates and shows a datetime picker modal.
      * @private
+     * @param {Event} event - The click event.
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
@@ -69,6 +83,8 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the datetime picker selection event.
+     * Updates the text field value with the selected datetime.
      * @private
      */
     handlePickerSelection() {
@@ -78,6 +94,8 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the datetime picker cancel button click event.
+     * Closes the datetime picker.
      * @private
      */
     handlePickerButtonCancelClick() {
@@ -85,12 +103,15 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the datetime picker OK button click event.
+     * Updates the text field value with the selected datetime and closes the datetime picker.
      * @private
      */
     handlePickerButtonOkClick() {
         const value = stringifyDatetimeLocal(this.picker.selection);
         this.textFieldNative.value.value = value;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+        this.picker.close();
     }
 }
 customElements.define("md-datetime-field", MDDatetimeFieldComponent);

@@ -3,18 +3,18 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * {{description}}
+ * A custom floating action button (FAB) component.
  * @element md-fab
  * @extends MDComponent
  */
 class MDFabComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} variant - {{description}}
-     * @property {String} icon - {{description}}
-     * @property {String} label - {{description}}
-     * @property {Boolean} selected - {{description}}
-     * @property {Boolean} disabled - {{description}}
+     * Properties for the md-fab component.
+     * @property {String} variant - The variant of the FAB (e.g., "small", "large", "extended").
+     * @property {String} icon - The icon to display inside the FAB.
+     * @property {String} label - The label to display inside the FAB.
+     * @property {Boolean} selected - Indicates if the FAB is selected.
+     * @property {Boolean} disabled - Indicates if the FAB is disabled.
      */
     static properties = {
         variant: { type: String },
@@ -26,7 +26,8 @@ class MDFabComponent extends MDComponent {
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
 
     /**
-     * {{description}}
+     * Constructs an instance of MDFabComponent.
+     * Initializes the ripple effect for the FAB.
      */
     constructor() {
         super();
@@ -37,7 +38,9 @@ class MDFabComponent extends MDComponent {
     }
 
     /**
+     * Renders the FAB component.
      * @private
+     * @returns {TemplateResult} - The rendered template.
      */
     render() {
         /* prettier-ignore */
@@ -48,6 +51,8 @@ class MDFabComponent extends MDComponent {
     }
 
     /**
+     * Invoked when the component is added to the document's DOM.
+     * Adds the base class for the FAB.
      * @private
      */
     connectedCallback() {
@@ -56,7 +61,10 @@ class MDFabComponent extends MDComponent {
     }
 
     /**
+     * Called when properties change.
+     * Updates the FAB's classes and attributes based on the changed properties.
      * @private
+     * @param {Map} changedProperties - The properties that changed.
      */
     updated(changedProperties) {
         super.updated(changedProperties);

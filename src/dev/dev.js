@@ -2,85 +2,159 @@ import { MDRouter } from "../material/router/router.js";
 
 MDRouter.historyApiFallback = false;
 
+import DevMain from "./main/main.js"
+import DevAttributeObserver from "./attribute-observer/attribute-observer"
+import DevBadge from "./badge/badge"
+import DevBottomAppBar from "./bottom-app-bar/bottom-app-bar"
+import DevBottomSheet from "./bottom-sheet/bottom-sheet"
+import DevButton from "./button/button"
+import DevCard from "./card/card"
+import DevCheckbox from "./checkbox/checkbox"
+import DevChip from "./chip/chip"
+import DevChips from "./chips/chips"
+import DevColorField from "./color-field/color-field"
+import DevColorPicker from "./color-picker/color-picker"
+import DevColor from "./color/color"
+import DevComponent from "./component/component"
+import DevDataTableItem from "./data-table-item/data-table-item"
+import DevDataTable from "./data-table/data-table"
+import DevDateField from "./date-field/date-field"
+import DevDatePicker from "./date-picker/date-picker"
+import DevDatetimeField from "./datetime-field/datetime-field"
+import DevDatetimePicker from "./datetime-picker/datetime-picker"
+import DevDialog from "./dialog/dialog"
+import DevEmojiPicker from "./emoji-picker/emoji-picker"
+import DevEmoji from "./emoji/emoji"
+import DevFab from "./fab/fab"
+import DevForm from "./form/form"
+import DevFunctions from "./functions/functions"
+import DevGesture from "./gesture/gesture"
+import DevIconButton from "./icon-button/icon-button"
+import DevIcon from "./icon/icon"
+import DevImage from "./image/image"
+import DevListItem from "./list-item/list-item"
+import DevList from "./list/list"
+import DevLocalization from "./localization/localization"
+import DevMarkdown from "./markdown/markdown"
+import DevMenu from "./menu/menu"
+import DevMonthField from "./month-field/month-field"
+import DevMonthPicker from "./month-picker/month-picker"
+import DevNavigationBar from "./navigation-bar/navigation-bar"
+import DevNavigationDrawer from "./navigation-drawer/navigation-drawer"
+import DevNavigationRail from "./navigation-rail/navigation-rail"
+import DevNumberField from "./number-field/number-field"
+import DevObserver from "./observer/observer"
+import DevPagination from "./pagination/pagination"
+import DevPasswordField from "./password-field/password-field"
+import DevPopper from "./popper/popper"
+import DevProgressIndicator from "./progress-indicator/progress-indicator"
+import DevProgress from "./progress/progress"
+import DevRadioButton from "./radio-button/radio-button"
+import DevRipple from "./ripple/ripple"
+import DevRouter from "./router/router"
+import DevScrim from "./scrim/scrim"
+import DevSearchField from "./search-field/search-field"
+import DevSegmentedButton from "./segmented-button/segmented-button"
+import DevSelectField from "./select-field/select-field"
+import DevSheet from "./sheet/sheet"
+import DevSideSheet from "./side-sheet/side-sheet"
+import DevSlider from "./slider/slider"
+import DevSnackbar from "./snackbar/snackbar"
+import DevStore from "./store/store"
+import DevSwitch from "./switch/switch"
+import DevTabs from "./tabs/tabs"
+import DevTextField from "./text-field/text-field"
+import DevTextareaField from "./textarea-field/textarea-field"
+import DevTimeField from "./time-field/time-field"
+import DevTimePicker from "./time-picker/time-picker"
+import DevTooltip from "./tooltip/tooltip"
+import DevTopAppBar from "./top-app-bar/top-app-bar"
+import DevTreeItem from "./tree-item/tree-item"
+import DevTree from "./tree/tree"
+import DevVirtual from "./virtual/virtual"
+import DevWeekField from "./week-field/week-field"
+import DevWeekPicker from "./week-picker/week-picker"
+// import DevMain from "./main/main.js"
+
 const routes = [
     {
         path: "",
-        load: () => import("./main/main.js").then((m) => m.default),
+        component: DevMain,
         children: [
-            { path: "attribute-observer", load: () => import("./attribute-observer/attribute-observer").then((m) => m.default) },
-            { path: "badge", load: () => import("./badge/badge").then((m) => m.default) },
-            { path: "bottom-app-bar", load: () => import("./bottom-app-bar/bottom-app-bar").then((m) => m.default) },
-            { path: "bottom-sheet", load: () => import("./bottom-sheet/bottom-sheet").then((m) => m.default) },
-            { path: "button", load: () => import("./button/button").then((m) => m.default) },
-            { path: "card", load: () => import("./card/card").then((m) => m.default) },
-            { path: "checkbox", load: () => import("./checkbox/checkbox").then((m) => m.default) },
-            { path: "chip", load: () => import("./chip/chip").then((m) => m.default) },
-            { path: "chips", load: () => import("./chips/chips").then((m) => m.default) },
-            { path: "color-field", load: () => import("./color-field/color-field").then((m) => m.default) },
-            { path: "color-picker", load: () => import("./color-picker/color-picker").then((m) => m.default) },
-            { path: "color", load: () => import("./color/color").then((m) => m.default) },
-            { path: "component", load: () => import("./component/component").then((m) => m.default) },
-            { path: "data-table-item", load: () => import("./data-table-item/data-table-item").then((m) => m.default) },
-            { path: "data-table", load: () => import("./data-table/data-table").then((m) => m.default) },
-            { path: "date-field", load: () => import("./date-field/date-field").then((m) => m.default) },
-            { path: "date-picker", load: () => import("./date-picker/date-picker").then((m) => m.default) },
-            { path: "datetime-field", load: () => import("./datetime-field/datetime-field").then((m) => m.default) },
-            { path: "datetime-picker", load: () => import("./datetime-picker/datetime-picker").then((m) => m.default) },
-            { path: "dialog", load: () => import("./dialog/dialog").then((m) => m.default) },
-            { path: "emoji-picker", load: () => import("./emoji-picker/emoji-picker").then((m) => m.default) },
-            { path: "emoji", load: () => import("./emoji/emoji").then((m) => m.default) },
-            { path: "fab", load: () => import("./fab/fab").then((m) => m.default) },
-            { path: "form", load: () => import("./form/form").then((m) => m.default) },
-            { path: "functions", load: () => import("./functions/functions").then((m) => m.default) },
-            { path: "gesture", load: () => import("./gesture/gesture").then((m) => m.default) },
-            { path: "icon-button", load: () => import("./icon-button/icon-button").then((m) => m.default) },
-            { path: "icon", load: () => import("./icon/icon").then((m) => m.default) },
-            { path: "image", load: () => import("./image/image").then((m) => m.default) },
-            { path: "list-item", load: () => import("./list-item/list-item").then((m) => m.default) },
-            { path: "list", load: () => import("./list/list").then((m) => m.default) },
-            { path: "localization", load: () => import("./localization/localization").then((m) => m.default) },
-            { path: "markdown", load: () => import("./markdown/markdown").then((m) => m.default) },
-            { path: "menu", load: () => import("./menu/menu").then((m) => m.default) },
-            { path: "month-field", load: () => import("./month-field/month-field").then((m) => m.default) },
-            { path: "month-picker", load: () => import("./month-picker/month-picker").then((m) => m.default) },
-            { path: "navigation-bar", load: () => import("./navigation-bar/navigation-bar").then((m) => m.default) },
-            { path: "navigation-drawer", load: () => import("./navigation-drawer/navigation-drawer").then((m) => m.default) },
-            { path: "navigation-rail", load: () => import("./navigation-rail/navigation-rail").then((m) => m.default) },
-            { path: "number-field", load: () => import("./number-field/number-field").then((m) => m.default) },
-            { path: "observer", load: () => import("./observer/observer").then((m) => m.default) },
-            { path: "pagination", load: () => import("./pagination/pagination").then((m) => m.default) },
-            { path: "password-field", load: () => import("./password-field/password-field").then((m) => m.default) },
-            { path: "popper", load: () => import("./popper/popper").then((m) => m.default) },
-            { path: "progress-indicator", load: () => import("./progress-indicator/progress-indicator").then((m) => m.default) },
-            { path: "progress", load: () => import("./progress/progress").then((m) => m.default) },
-            { path: "radio-button", load: () => import("./radio-button/radio-button").then((m) => m.default) },
-            { path: "ripple", load: () => import("./ripple/ripple").then((m) => m.default) },
-            { path: "router", load: () => import("./router/router").then((m) => m.default) },
-            // { path: "scrim", load: () => import("./scrim/scrim").then((m) => m.default) },
-            { path: "search-field", load: () => import("./search-field/search-field").then((m) => m.default) },
-            { path: "segmented-button", load: () => import("./segmented-button/segmented-button").then((m) => m.default) },
-            { path: "select-field", load: () => import("./select-field/select-field").then((m) => m.default) },
-            { path: "sheet", load: () => import("./sheet/sheet").then((m) => m.default) },
-            { path: "side-sheet", load: () => import("./side-sheet/side-sheet").then((m) => m.default) },
-            { path: "slider", load: () => import("./slider/slider").then((m) => m.default) },
-            { path: "snackbar", load: () => import("./snackbar/snackbar").then((m) => m.default) },
-            { path: "store", load: () => import("./store/store").then((m) => m.default) },
-            { path: "switch", load: () => import("./switch/switch").then((m) => m.default) },
-            { path: "tabs", load: () => import("./tabs/tabs").then((m) => m.default) },
-            { path: "text-field", load: () => import("./text-field/text-field").then((m) => m.default) },
-            { path: "textarea-field", load: () => import("./textarea-field/textarea-field").then((m) => m.default) },
-            { path: "time-field", load: () => import("./time-field/time-field").then((m) => m.default) },
-            { path: "time-picker", load: () => import("./time-picker/time-picker").then((m) => m.default) },
-            { path: "tooltip", load: () => import("./tooltip/tooltip").then((m) => m.default) },
-            { path: "top-app-bar", load: () => import("./top-app-bar/top-app-bar").then((m) => m.default) },
-            { path: "tree-item", load: () => import("./tree-item/tree-item").then((m) => m.default) },
-            { path: "tree", load: () => import("./tree/tree").then((m) => m.default) },
-            { path: "virtual", load: () => import("./virtual/virtual").then((m) => m.default) },
-            { path: "week-field", load: () => import("./week-field/week-field").then((m) => m.default) },
-            { path: "week-picker", load: () => import("./week-picker/week-picker").then((m) => m.default) },
+            { path: "attribute-observer", component: DevAttributeObserver },
+            { path: "badge", component: DevBadge },
+            { path: "bottom-app-bar", component: DevBottomAppBar },
+            { path: "bottom-sheet", component: DevBottomSheet },
+            { path: "button", component: DevButton },
+            { path: "card", component: DevCard },
+            { path: "checkbox", component: DevCheckbox },
+            { path: "chip", component: DevChip },
+            { path: "chips", component: DevChips },
+            { path: "color-field", component: DevColorField },
+            { path: "color-picker", component: DevColorPicker },
+            { path: "color", component: DevColor },
+            { path: "component", component: DevComponent },
+            { path: "data-table-item", component: DevDataTableItem },
+            { path: "data-table", component: DevDataTable },
+            { path: "date-field", component: DevDateField },
+            { path: "date-picker", component: DevDatePicker },
+            { path: "datetime-field", component: DevDatetimeField },
+            { path: "datetime-picker", component: DevDatetimePicker },
+            { path: "dialog", component: DevDialog },
+            { path: "emoji-picker", component: DevEmojiPicker },
+            { path: "emoji", component: DevEmoji },
+            { path: "fab", component: DevFab },
+            { path: "form", component: DevForm },
+            { path: "functions", component: DevFunctions },
+            { path: "gesture", component: DevGesture },
+            { path: "icon-button", component: DevIconButton },
+            { path: "icon", component: DevIcon },
+            { path: "image", component: DevImage },
+            { path: "list-item", component: DevListItem },
+            { path: "list", component: DevList },
+            { path: "localization", component: DevLocalization },
+            { path: "markdown", component: DevMarkdown },
+            { path: "menu", component: DevMenu },
+            { path: "month-field", component: DevMonthField },
+            { path: "month-picker", component: DevMonthPicker },
+            { path: "navigation-bar", component: DevNavigationBar },
+            { path: "navigation-drawer", component: DevNavigationDrawer },
+            { path: "navigation-rail", component: DevNavigationRail },
+            { path: "number-field", component: DevNumberField },
+            { path: "observer", component: DevObserver },
+            { path: "pagination", component: DevPagination },
+            { path: "password-field", component: DevPasswordField },
+            { path: "popper", component: DevPopper },
+            { path: "progress-indicator", component: DevProgressIndicator },
+            { path: "progress", component: DevProgress },
+            { path: "radio-button", component: DevRadioButton },
+            { path: "ripple", component: DevRipple },
+            { path: "router", component: DevRouter },
+            // { path: "scrim", component: DevScrim },
+            { path: "search-field", component: DevSearchField },
+            { path: "segmented-button", component: DevSegmentedButton },
+            { path: "select-field", component: DevSelectField },
+            { path: "sheet", component: DevSheet },
+            { path: "side-sheet", component: DevSideSheet },
+            { path: "slider", component: DevSlider },
+            { path: "snackbar", component: DevSnackbar },
+            { path: "store", component: DevStore },
+            { path: "switch", component: DevSwitch },
+            { path: "tabs", component: DevTabs },
+            { path: "text-field", component: DevTextField },
+            { path: "textarea-field", component: DevTextareaField },
+            { path: "time-field", component: DevTimeField },
+            { path: "time-picker", component: DevTimePicker },
+            { path: "tooltip", component: DevTooltip },
+            { path: "top-app-bar", component: DevTopAppBar },
+            { path: "tree-item", component: DevTreeItem },
+            { path: "tree", component: DevTree },
+            { path: "virtual", component: DevVirtual },
+            { path: "week-field", component: DevWeekField },
+            { path: "week-picker", component: DevWeekPicker },
         ],
     },
-    { path: "*", load: () => import("./main/main.js").then((m) => m.default) },
+    { path: "*", component: DevMain },
 ];
 
 MDRouter.init(routes);

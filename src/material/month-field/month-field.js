@@ -2,28 +2,38 @@ import { stringifyMonth } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * {{description}}
+ * Custom component for selecting a month.
  * @element md-month-field
  * @extends MDTextFieldComponent
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
-     * {{description}}
+     * Gets the actions for the month field.
+     * @returns {Array} Array containing action objects.
      */
     get actions() {
         return [{ icon: "calendar_month" }];
     }
 
     /**
-     * {{description}}
+     * Sets the actions for the month field.
+     * This setter is intentionally left empty.
+     * @param {Array} value - The new actions.
      */
     set actions(value) {}
+
+    /**
+     * Constructs an instance of MDMonthFieldComponent.
+     * Sets the input type to "month".
+     */
     constructor() {
         super();
         this.type = "month";
     }
 
     /**
+     * Invoked when the component is added to the document's DOM.
+     * Adds the necessary classes to the component.
      * @private
      */
     connectedCallback() {
@@ -33,7 +43,10 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the native text field.
+     * Prevents the default action and calls the superclass method.
      * @private
+     * @param {Event} event - The click event.
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -41,7 +54,10 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles click events on the icon button.
+     * Creates and shows the month picker.
      * @private
+     * @param {Event} event - The click event.
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
@@ -69,6 +85,8 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the selection event from the month picker.
+     * Sets the selected value to the native text field.
      * @private
      */
     handlePickerSelection() {
@@ -78,6 +96,8 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the cancel button click event on the month picker.
+     * Closes the picker.
      * @private
      */
     handlePickerButtonCancelClick() {
@@ -85,6 +105,8 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * Handles the OK button click event on the month picker.
+     * Sets the selected value to the native text field and closes the picker.
      * @private
      */
     handlePickerButtonOkClick() {
