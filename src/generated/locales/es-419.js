@@ -9,6 +9,6 @@
     /* eslint-disable @typescript-eslint/no-explicit-any */
 
     export const templates = {
-      'sc958887ef4afecbd': `你好，欢迎来到我们的应用程序！`,
+      'sc958887ef4afecbd': `¡Hola, bienvenido a nuestra aplicación!`,
     };
   

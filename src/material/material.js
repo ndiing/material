@@ -1,6 +1,6 @@
 /* [ ] */import "./functions/functions.js";
 
-/* [ ] */import "./localization/localization.js";
+/* [x] */import "./localization/localization.js";
 /* [ ] */import "./color/color.js";
 /* [ ] */import "./router/router.js";
 /* [ ] */import "./ripple/ripple.js";
