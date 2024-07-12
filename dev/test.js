@@ -1,6 +1,30 @@
 const fs = require("fs");
 const path = require("path");
 
+let template=`import { html } from "lit";
+import { MDComponent } from "../../material/component/component.js";
+
+class DevExample extends MDComponent {
+    render() {
+        return html\`
+            <div class="md-layout-border">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <div class="md-layout-column">
+`
+
+let template2=`
+                    </div>
+                </div>
+            </div>
+        \`;
+    }
+}
+
+customElements.define("dev-example", DevExample);
+
+export default document.createElement("dev-example");
+`
+
 /**
  * Converts a string to `PascalCase` format.
  * @param {string} string - The input string to convert.
@@ -281,6 +305,12 @@ function parse(data) {
         return code;
     });
 
+    data = data.replace(/variants = \[(.*?)\]/, (...args) => {
+        let [text, ] = args;
+        doc.variants=(args[1].split(',').map(s=>s.replace(/"/g,'').trim()))
+        return text;
+    });
+
     // console.log(data);
     // console.log(doc);
     return {doc,data}
@@ -293,27 +323,75 @@ function open(pathname) {
             open(curr);
         } else {
             const extname = path.extname(curr);
+            const {name} = path.parse(curr);
             if (extname === ".js") {
                 if (argvName && !curr.includes(argvName)) {
                     continue;
                 }
                 const text = read(curr);
                 const {doc} = parse(text)
-                if(doc.className){
-                    let name=toKebabCase(doc.className)
-                    name=(name.replace(/^md/,'').replace(/-(component|controller)$/,''))
 
-                    console.log(name)
+                let className=toPascalCase('dev-'+name)
+                let tagName=toKebabCase('dev-'+name)
+                let tagName2=toKebabCase('md-'+name)
+                // if(doc.variants){
+                //     doc.variants.forEach(variant=>{
+                //         console.log(name+'-'+variant)
+                //     })
+                // }
 
-                    if(doc.tagName){
-                        // console.log(doc.tagName)
-                        // console.log(doc.properties)
-                    }else{
-                        // console.log(doc.className)
-                    }
-                }else{
-                    // console.log(doc.functions)
+                let temp=template
+                .replaceAll('DevExample',className)
+                .replaceAll('dev-example',tagName)
+
+                let temp2=template2
+                .replaceAll('DevExample',className)
+                .replaceAll('dev-example',tagName)
+
+                let code=''
+                code+=temp
+                let space='    '.repeat(6)
+
+                code+=`${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`
+                code+=`${space}    <${tagName2}\r\n`
+                if(doc.properties){
+                    doc.properties.forEach(prop => {
+                        if(prop.name=='variant'&&doc.variants){
+                            code+=`${space}        ${prop.name}="${doc.variants[0]}"\r\n`
+
+                        }else{
+                            code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=""`:``}\r\n`
+
+                        }
+                    })
                 }
+                code+=`${space}    ></${tagName2}>\r\n`
+                code+=`${space}</div>\r\n`
+                
+                if(doc.variants){
+                    doc.variants.slice(1).forEach(variant=>{
+                        code+=`${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`
+                        code+=`${space}    <${tagName2}\r\n`
+                        if(doc.properties){
+                            doc.properties.forEach(prop => {
+                                if(prop.name=='variant'){
+                                    code+=`${space}        ${prop.name}="${variant}"\r\n`
+    
+                                }else{
+                                    code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=""`:``}\r\n`
+    
+                                }
+                            })
+                        }
+                        code+=`${space}    ></${tagName2}>\r\n`
+                        code+=`${space}</div>\r\n`
+                    })
+                }
+
+                code+=temp2
+
+                // console.log(code)
+                write('./src/dev/'+name+'/'+name+'.js',code)
 
             }
         }
