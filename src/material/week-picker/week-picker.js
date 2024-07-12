@@ -103,6 +103,33 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * @private
+     */
+    renderDay() {
+        /* prettier-ignore */
+        return html`
+            <div class="md-datetime-picker__grid">
+                <div class="md-datetime-picker__grid-row md-datetime-picker__grid-row--weekdays">
+                    ${this.weekdays.map(item=>html`
+                        <div class="md-datetime-picker__grid-item">
+                            <div class="md-datetime-picker__grid-label">${item.label}</div>
+                        </div>    
+                    `)}
+                </div>
+                ${this.days.map(row=>html`
+                    <div class="md-datetime-picker__grid-row md-datetime-picker__grid-row--days" ?activated="${row.activated}" ?selected="${row.selected}" .data="${row}" @click="${this.handleDatetimePickerDayItemClick}">
+                        ${row.children.map(item=>html`
+                            <div class="md-datetime-picker__grid-item" >
+                                <div class="md-datetime-picker__grid-label">${item.label}</div>
+                            </div>    
+                        `)}
+                    </div>
+                `)}
+            </div>
+        `;
+    }
+
+    /**
      * Invoked when the component is added to the document's DOM.
      * Adds necessary classes to the component.
      * @private

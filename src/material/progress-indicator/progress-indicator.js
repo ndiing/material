@@ -44,8 +44,7 @@ class MDProgressIndicatorComponent extends MDComponent {
         return html`
             <svg class="md-progress-indicator__container" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle class="md-progress-indicator__track" cx="50" cy="50" r="45.833333333333336" />
-                <circle class="md-progress-indicator__indicator" style="stroke-dasharray: var(--md-comp-progress-indicator-percentage, 0%);"
-                    cx="50" cy="50" r="45.833333333333336" />
+                <circle class="md-progress-indicator__indicator" cx="50" cy="50" r="45.833333333333336" />
             </svg>
         `;
     }
