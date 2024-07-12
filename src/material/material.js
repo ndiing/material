@@ -36,8 +36,8 @@ import "./bottom-sheet/bottom-sheet.js";
 import "./snackbar/snackbar.js";
 import "./tooltip/tooltip.js";
 import "./bottom-app-bar/bottom-app-bar.js";
-import "./datetime-picker/datetime-picker.js";
 
+import "./datetime-picker/datetime-picker.js";
 import "./date-picker/date-picker.js";
 import "./month-picker/month-picker.js";
 import "./time-picker/time-picker.js";
