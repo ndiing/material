@@ -11,7 +11,7 @@ const list=[
 class DevNavigationRail extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="width:480px;height:800px;position:relative;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-low);margin:24px;width:480px;height:800px;position:relative;">
                 <md-navigation-rail
                     open
                     .list="${list}"

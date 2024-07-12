@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevSheet extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="width:1280px;height:720px;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-low);margin:24px;width:1280px;height:720px;">
                 <md-sheet
                     open
                     variant="north"
