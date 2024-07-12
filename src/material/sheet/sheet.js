@@ -17,6 +17,7 @@ class MDSheetComponent extends MDCardComponent {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
+
     variants = ["north", "east", "south", "west", "modal"];
 
     /**

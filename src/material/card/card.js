@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-import { MDRippleController } from "../ripple/ripple.js";
 
 /**
  * A custom element representing a card with various interactive elements and actions.
@@ -44,6 +43,7 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
+
     variants = ["elevated", "filled", "outlined"];
 
     /**

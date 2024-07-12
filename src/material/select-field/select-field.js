@@ -49,6 +49,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
+    
     constructor() {
         super();
         this.type = "select";
@@ -143,6 +144,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         });
         this.requestUpdate();
     }
+
     async showPicker() {
         if (this.pickerOpen) {
             return;
@@ -182,12 +184,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             ],
         });
     }
+
     handlePickerMenuListItemClick(event) {
         this.requestUpdate();
         this.picker.close();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.emit("onPickerMenuListItemClick", event);
     }
+
     handlePickerMenuListItemSelected(event) {
         this.emit("onPickerMenuListItemSelected", event);
     }

@@ -150,7 +150,6 @@ class MDListItemComponent extends MDComponent {
             const secondary = this.querySelector(".md-list__label-secondary");
             const style = window.getComputedStyle(secondary);
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
-            console.log(secondary.scrollHeight, lineHeight);
             if (secondary.scrollHeight > lineHeight) {
                 this.classList.add("md-list__item--three");
             } else {

@@ -5,7 +5,6 @@ import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDListComponent } from "../list/list.js";
-import { createRef, ref } from "lit/directives/ref.js";
 
 /**
  * Represents a menu component with virtual scrolling, filtering, and item selection capabilities.
