@@ -78,23 +78,22 @@ class MDMenuComponent extends MDSheetComponent {
         this.popper = new MDPopperController(this, {});
         this.rowHeight = 48;
         this.maxRows = 5;
-        this.store = new MDStore(this.list);
+        this.store = new MDStore([]);
         this.virtual = new MDVirtualController(this);
-        this.updateStore();
-        this.updateVirtual();
+        
     }
 
     /**
      * Updates the store with the current list and applies filters.
      * @private
      */
-    updateStore() {
+    async updateStore() {
         const { total, docs } = this.store.getAll({
             filters: this.filters,
         });
         this.storeTotal = total;
         this.storeList = docs;
-        this.style.height = `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`;
+        this.style.setProperty('height',`${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
 
     /**
@@ -119,6 +118,8 @@ class MDMenuComponent extends MDSheetComponent {
         super.connectedCallback();
         this.classList.add("md-sheet");
         this.classList.add("md-menu");
+        this.updateStore();
+        this.updateVirtual();
     }
 
     /**
@@ -172,9 +173,9 @@ class MDMenuComponent extends MDSheetComponent {
      * @private
      */
     handleMenuListItemSelected(event) {
-        let cache = this.store.docs.findIndex((doc) => doc === event.detail.data);
-        if (this.cache !== cache) {
-            this.cache = cache;
+        let lastSelectedIndex = this.store.docs.findIndex((doc) => doc === event.detail.data);
+        if (this.lastSelectedIndex !== lastSelectedIndex) {
+            this.lastSelectedIndex = lastSelectedIndex;
             this.emit("onMenuListItemSelected", event);
         }
     }

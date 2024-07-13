@@ -131,7 +131,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleTextFieldNativeBlur() {
-        window.setTimeout(() => this.picker.close(), 200);
+        // window.setTimeout(() => this.picker.close(), 200);
     }
 
     /**
@@ -184,6 +184,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
+        console.log(this.picker)
         await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScroll", resolve));
         await this.picker.updateComplete;
         this.picker.style.width = `${this.textFieldContainer.value.clientWidth}px`;
@@ -207,7 +208,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      */
     handlePickerMenuListItemClick(event) {
         this.requestUpdate();
-        this.picker.close();
+        // this.picker.close();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.emit("onPickerMenuListItemClick", event);
     }

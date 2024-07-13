@@ -94,7 +94,7 @@
 }
 
 @mixin ripple-activated() {
-    box-shadow: inset 0 0 0 1px var(--md-sys-color-secondary-container);
+    box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
     &.md-icon,
     .md-icon {
         font-variation-settings:

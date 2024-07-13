@@ -46,6 +46,21 @@ import "./week-picker/week-picker.js";
 import "./color-picker/color-picker.js";
 import "./emoji-picker/emoji-picker.js";
 
+import "./list-item/list-item.js";
+import "./list/list.js";
+
+import "./tree-item/tree-item.js";
+import "./tree/tree.js";
+
+import "./navigation-bar/navigation-bar.js";
+import "./navigation-drawer/navigation-drawer.js";
+import "./navigation-rail/navigation-rail.js";
+import "./menu/menu.js";
+import "./tabs/tabs.js";
+
+import "./chip/chip.js";
+import "./chips/chips.js";
+
 import "./form/form.js";
 import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
@@ -66,21 +81,6 @@ import "./textarea-field/textarea-field.js";
 import "./select-field/select-field.js";
 
 import "./progress-indicator/progress-indicator.js";
-
-import "./list-item/list-item.js";
-import "./list/list.js";
-
-import "./tree-item/tree-item.js";
-import "./tree/tree.js";
-
-import "./navigation-bar/navigation-bar.js";
-import "./navigation-drawer/navigation-drawer.js";
-import "./navigation-rail/navigation-rail.js";
-import "./menu/menu.js";
-import "./tabs/tabs.js";
-
-import "./chip/chip.js";
-import "./chips/chips.js";
 
 import "./pagination/pagination.js";
 import "./data-table-item/data-table-item.js";
