@@ -556,6 +556,33 @@ Date.prototype.getWeek = function () {
     return 1 + Math.round(((tempDate - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
 };
 
+/**
+     * Get the boundary element for the popper.
+     * @param {HTMLElement} element - The element to get the boundary for.
+     * @returns {HTMLElement|null} The boundary element.
+     */
+function getBoundary(element) {
+    let boundary = element.parentElement;
+    let scrollableElement;
+    let relativeElement;
+    while (boundary) {
+        const style = window.getComputedStyle(boundary);
+        const auto = style.getPropertyValue("overflow") === "auto";
+        const relative = style.getPropertyValue("position") === "relative";
+        if (relative) {
+            relativeElement = boundary;
+        }
+        if (auto) {
+            scrollableElement = boundary;
+        }
+        if (scrollableElement && relativeElement) {
+            break;
+        }
+        boundary = boundary.parentElement;
+    }
+    return boundary || scrollableElement;
+}
+
 export {
     /* String Manipulation */
     toPascalCase,
@@ -599,5 +626,6 @@ export {
     isDefined,
     /* Additional Functions */
     createQueue,
+    getBoundary,
     /* Date Prototype Extensions */
 };

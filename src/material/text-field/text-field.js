@@ -253,7 +253,7 @@ class MDTextFieldComponent extends MDComponent {
                                 class="md-text-field__action" 
                                 .name="${action.name}"
                                 .icon="${action.icon}"
-                                @click="${this.handleTextFieldIconButtonClick}"
+                                @click="${this.handleTextFieldActionClick}"
                             ></md-icon-button>
                         `)}
                     </div>
@@ -418,6 +418,7 @@ class MDTextFieldComponent extends MDComponent {
      * Handles the click event for a text field icon button.
      * @private
      * @param {Event} event - The event object.
+     * @deprecated
      */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", event);

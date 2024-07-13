@@ -2,6 +2,7 @@ import { html } from "lit";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
+import { MDMenuComponent } from "../menu/menu.js";
 
 /**
  * Custom select field component with additional features for selecting options.
@@ -11,11 +12,7 @@ import { ref } from "lit/directives/ref.js";
 class MDSelectFieldComponent extends MDTextFieldComponent {
     static properties = {
         ...MDTextFieldComponent.properties,
-        /**
-         * Mapping object for options.
-         * @type {Object}
-         */
-        map: { type: Object },
+        ...MDMenuComponent.properties,
     };
 
     /**

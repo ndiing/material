@@ -1,3 +1,5 @@
+import { getBoundary } from "../functions/functions";
+
 /**
  * Class representing a MDPopperController.
  */
@@ -74,7 +76,7 @@ class MDPopperController {
         };
 
         const container = this.host;
-        const boundary = options.boundary || this.getBoundary(container);
+        const boundary = options.boundary || getBoundary(container);
 
         const div = document.createElement("div");
         div.style.position = "absolute";
@@ -153,32 +155,7 @@ class MDPopperController {
         this.host.style.transformOrigin = `${originX} ${originY}`;
     }
 
-    /**
-     * Get the boundary element for the popper.
-     * @param {HTMLElement} element - The element to get the boundary for.
-     * @returns {HTMLElement|null} The boundary element.
-     */
-    getBoundary(element) {
-        let boundary = element.parentElement;
-        let scrollableElement;
-        let relativeElement;
-        while (boundary) {
-            const style = window.getComputedStyle(boundary);
-            const auto = style.getPropertyValue("overflow") === "auto";
-            const relative = style.getPropertyValue("position") === "relative";
-            if (relative) {
-                relativeElement = boundary;
-            }
-            if (auto) {
-                scrollableElement = boundary;
-            }
-            if (scrollableElement && relativeElement) {
-                break;
-            }
-            boundary = boundary.parentElement;
-        }
-        return boundary || scrollableElement;
-    }
+    
 }
 
 export { MDPopperController };
