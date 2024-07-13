@@ -53,9 +53,7 @@ class MDVirtualController {
             cancelable: true,
             detail,
         });
-        if (this.viewport) {
-            this.viewport.dispatchEvent(event);
-        }
+        this.viewport.dispatchEvent(event);
     }
 
     /**
@@ -98,7 +96,7 @@ class MDVirtualController {
      */
     async hostConnected() {
         await this.host.updateComplete;
-        this.viewport = this.options.viewportSelector ? this.host.querySelector(this.options.viewportSelector) : this.host;
+        this.viewport = this.options.viewportSelector && this.host.querySelector(this.options.viewportSelector) || this.host;
         this.scrollbar = this.options.scrollbarSelector && this.host.querySelector(this.options.scrollbarSelector);
         this.container = this.options.containerSelector && this.host.querySelector(this.options.containerSelector);
         if (this.viewport) {
