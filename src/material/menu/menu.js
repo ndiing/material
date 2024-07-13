@@ -169,7 +169,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {HTMLElement} button - The button element that triggered the menu.
      * @param {Object} options - Additional options for displaying the menu.
      */
-    async showModal(button, options) {
+     showModal(button, options) {
         this.setPlacement(button, options);
         super.showModal();
     }
@@ -179,7 +179,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {HTMLElement} button - The button element that triggered the menu.
      * @param {Object} options - Additional options for displaying the menu.
      */
-    async show(button, options) {
+     show(button, options) {
         this.setPlacement(button, options);
         super.show();
     }
@@ -193,6 +193,7 @@ class MDMenuComponent extends MDSheetComponent {
     setPlacement(button = this.poppperButton, options = this.poppperOptions) {
         this.poppperButton = button;
         this.poppperOptions = options;
+
         this.popper.setPlacement(button, {
             /* prettier-ignore */
             placements: [

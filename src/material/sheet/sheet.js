@@ -32,21 +32,6 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Shows the sheet as a modal.
-     */
-    showModal() {
-        this.style.removeProperty("--md-comp-sheet-animation");
-        this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        this.scrim = document.createElement("md-scrim");
-        this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-        this.handleSheetScrimClick = this.handleSheetScrimClick.bind(this);
-        this.scrim.on("click", this.handleSheetScrimClick);
-        this.scrim.show();
-        this.open = true;
-    }
-
-    /**
      * Handles click events on the sheet scrim.
      * @private
      */
@@ -55,13 +40,28 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetScrimClick", event);
     }
 
+
+    /**
+     * Shows the sheet as a modal.
+     */
+    showModal() {
+        this.show(true)
+    }
+
     /**
      * Shows the sheet.
      */
-    show() {
+    show(modal) {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
+        if(modal){
+            this.scrim = document.createElement("md-scrim");
+            this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+            this.handleSheetScrimClick = this.handleSheetScrimClick.bind(this);
+            this.scrim.on("click", this.handleSheetScrimClick);
+            this.scrim.show();
+        }
         this.open = true;
         this.emit("onSheetShow", this);
     }
