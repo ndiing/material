@@ -20,15 +20,12 @@ class MDRippleController {
         this.options = {
             button: null, // HTMLElement
             container: null, // HTMLElement
-
             buttonSelector: null, // CSS Selector
             containerSelector: null, // CSS Selector
-
             centered: false,
             clipped: false,
             fadeOut: false,
             size: null,
-
             ...options,
         };
     }
@@ -38,41 +35,29 @@ class MDRippleController {
      * @private
      */
     async hostConnected() {
-        console.log('hostConnected',this.host.localName)
         await this.host.updateComplete;
-
         let container = this.options.container || this.host.querySelector(this.options.containerSelector) || this.host;
         this.container = container;
-
-        let button = this.options.button || this.host.querySelector(this.options.buttonSelector) || this.host;
+        let button = this.options.button || this.host.querySelector(this.options.buttonSelector) || this.container;
         this.button = button;
-
-        this.container.classList.add("md-ripple");
-
         this.button.classList.add("md-ripple--button");
-
         this.button.setAttribute("tabIndex", 0);
-
+        this.container.classList.add("md-ripple");
         this.container.classList.toggle("md-ripple--clipped", !!this.options.clipped);
-
         this.container.classList.toggle("md-ripple--fade-out", !!this.options.fadeOut);
-
         if (this.options.size) {
             this.size = (this.options.size / this.container.clientWidth) * 100;
         } else {
             this.size = (Math.sqrt(Math.pow(this.container.clientWidth, 2) + Math.pow(this.container.clientHeight, 2)) / this.container.clientWidth) * 100;
         }
         this.container.style.setProperty("--md-comp-ripple-size", `${this.size}%`);
-
         this.container.style.setProperty("--md-comp-ripple-animation", "none");
-
         this.handleRipplePointerenter = this.handleRipplePointerenter.bind(this);
         this.handleRipplePointerleave = this.handleRipplePointerleave.bind(this);
         this.handleRipplePointerdown = this.handleRipplePointerdown.bind(this);
         this.handleRipplePointerup = this.handleRipplePointerup.bind(this);
         this.handleRippleFocus = this.handleRippleFocus.bind(this);
         this.handleRippleBlur = this.handleRippleBlur.bind(this);
-
         this.button.addEventListener("pointerenter", this.handleRipplePointerenter);
         this.button.addEventListener("pointerleave", this.handleRipplePointerleave);
         this.button.addEventListener("pointerdown", this.handleRipplePointerdown);
@@ -85,7 +70,6 @@ class MDRippleController {
      * @private
      */
     async hostDisconnected() {
-        console.log('hostDisconnected',this.host.localName)
         await this.host.updateComplete;
         this.button.removeEventListener("pointerenter", this.handleRipplePointerenter);
         this.button.removeEventListener("pointerleave", this.handleRipplePointerleave);

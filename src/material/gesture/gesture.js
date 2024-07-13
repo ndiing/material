@@ -37,12 +37,16 @@ class MDGestureController {
         this.options = {
             containerSelector: undefined,
             dragHandleSelector: undefined,
+
             drag: ["x", "y"],
             dragAfterLongPress: false,
+
             resize: ["n", "e", "s", "w", "ne", "se", "sw", "nw"],
             resizeAfterLongPress: false,
+
             selection: false,
             selectionAfterLongPress: false,
+
             updateStyle: false,
             ...options,
         };

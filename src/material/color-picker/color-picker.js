@@ -31,6 +31,56 @@ class MDColorPickerComponent extends MDSheetComponent {
         value: { type: String },
     };
 
+    // Getter and Setter
+
+    /**
+     * Gets the child nodes of the component.
+     * @returns {Array} The child nodes.
+     */
+    get childNodes_() {
+        /* prettier-ignore */
+        return [this.renderMain()];
+    }
+
+    /**
+     * Sets the child nodes of the component.
+     * @param {Array} value - The child nodes.
+     */
+    set childNodes_(value) {
+        this._childNodes = value;
+    }
+
+    /**
+     * Gets the leading actions of the color picker.
+     * @returns {Array} The leading actions.
+     */
+    get leadingActions() {
+        let label = this.selection.hex;
+        return [{ name: "label", component: "button", label }];
+    }
+
+    /**
+     * Gets the actions of the color picker.
+     * @returns {Array} The actions.
+     */
+    get actions() {
+        return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
+    }
+
+    // Constructor
+
+    /**
+     * Creates an instance of the color picker component.
+     */
+    constructor() {
+        super();
+        this.selection = {};
+        this.value = "#000000";
+        this.handleColorPickerGradientTrackPointermove = this.handleColorPickerGradientTrackPointermove.bind(this);
+        this.handleColorPickerGradientTrackPointerup = this.handleColorPickerGradientTrackPointerup.bind(this);
+        this.popper = new MDPopperController(this, {});
+    }
+
     /**
      * Renders the main content of the color picker.
      * @returns {TemplateResult} The main content template.
@@ -74,6 +124,41 @@ class MDColorPickerComponent extends MDSheetComponent {
                 </label>
             </div>
         `;
+    }
+
+    // Lifecycle Callbacks
+
+    /**
+     * Called when the component is connected to the DOM.
+     * @private
+     */
+    async connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-card");
+        this.classList.add("md-color-picker");
+        this.defaultValue = this.value;
+        this.updateHsla();
+        await this.updateComplete;
+        this.init();
+    }
+
+    /**
+     * Called when the component is updated.
+     * @param {Map} changedProperties - The changed properties.
+     * @private
+     */
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("value") && changedProperties.get("value")) {
+            if (this.value) {
+                await this.updateComplete;
+                this.updateHsla();
+                this.draw();
+                this.updateThumb();
+                this.requestUpdate();
+            }
+        }
+        this.style.setProperty("--md-comp-color-picker-base", `rgb(${this.selection.red},${this.selection.green},${this.selection.blue})`);
     }
 
     /**
@@ -257,124 +342,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerOpacityNativeInput", event);
     }
 
-    /**
-     * Sets the placement of the color picker.
-     * @param {HTMLElement} button - The button element.
-     * @param {Object} options - The placement options.
-     * @private
-     */
-    setPlacement(button, options) {
-        this.popper.setPlacement(button, {
-            placements: ["top-start", "top-end", "top", "below-start", "below-end", "below", "bottom-start", "bottom-end", "bottom", "above-start", "above-end", "above", "left-start", "left-end", "left", "after-start", "after-end", "after", "right-start", "right-end", "right", "before-start", "before-end", "before", "center"],
-            ...options,
-        });
-    }
-
-    /**
-     * Displays the modal with the color picker.
-     * @param {HTMLElement} button - The button element.
-     * @param {Object} options - The modal options.
-     */
-    showModal(button, options) {
-        this.setPlacement(button, options);
-        super.showModal();
-    }
-
-    /**
-     * Shows the color picker.
-     * @param {HTMLElement} button - The button element.
-     * @param {Object} options - The display options.
-     */
-    show(button, options) {
-        this.setPlacement(button, options);
-        super.show();
-    }
-
-    // Getter and Setter
-
-    /**
-     * Gets the child nodes of the component.
-     * @returns {Array} The child nodes.
-     */
-    get childNodes_() {
-        /* prettier-ignore */
-        return [this.renderMain()];
-    }
-
-    /**
-     * Sets the child nodes of the component.
-     * @param {Array} value - The child nodes.
-     */
-    set childNodes_(value) {
-        this._childNodes = value;
-    }
-
-    /**
-     * Gets the leading actions of the color picker.
-     * @returns {Array} The leading actions.
-     */
-    get leadingActions() {
-        let label = this.selection.hex;
-        return [{ name: "label", component: "button", label }];
-    }
-
-    /**
-     * Gets the actions of the color picker.
-     * @returns {Array} The actions.
-     */
-    get actions() {
-        return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
-    }
-
-    // Constructor
-
-    /**
-     * Creates an instance of the color picker component.
-     */
-    constructor() {
-        super();
-        this.selection = {};
-        this.value = "#000000";
-        this.handleColorPickerGradientTrackPointermove = this.handleColorPickerGradientTrackPointermove.bind(this);
-        this.handleColorPickerGradientTrackPointerup = this.handleColorPickerGradientTrackPointerup.bind(this);
-        this.popper = new MDPopperController(this, {});
-    }
-
-    // Lifecycle Callbacks
-
-    /**
-     * Called when the component is connected to the DOM.
-     * @private
-     */
-    async connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-card");
-        this.classList.add("md-color-picker");
-        this.defaultValue = this.value;
-        this.updateHsla();
-        await this.updateComplete;
-        this.init();
-    }
-
-    /**
-     * Called when the component is updated.
-     * @param {Map} changedProperties - The changed properties.
-     * @private
-     */
-    async updated(changedProperties) {
-        super.updated(changedProperties);
-        if (changedProperties.has("value") && changedProperties.get("value")) {
-            if (this.value) {
-                await this.updateComplete;
-                this.updateHsla();
-                this.draw();
-                this.updateThumb();
-                this.requestUpdate();
-            }
-        }
-        this.style.setProperty("--md-comp-color-picker-base", `rgb(${this.selection.red},${this.selection.green},${this.selection.blue})`);
-    }
-
     // Event Handlers
 
     /**
@@ -458,6 +425,50 @@ class MDColorPickerComponent extends MDSheetComponent {
     handleColorPickerButtonOkClick(event) {
         this.value = this.selection.hex;
         this.emit("onColorPickerButtonOkClick", event);
+    }
+
+    /**
+     * Displays the modal with the color picker.
+     * @param {HTMLElement} button - The button element.
+     * @param {Object} options - The modal options.
+     */
+    showModal(button, options) {
+        this.setPlacement(button, options);
+        super.showModal();
+    }
+
+    /**
+     * Shows the color picker.
+     * @param {HTMLElement} button - The button element.
+     * @param {Object} options - The display options.
+     */
+    show(button, options) {
+        this.setPlacement(button, options);
+        super.show();
+    }
+
+    /**
+     * Sets the placement of the color picker.
+     * @param {HTMLElement} button - The button element.
+     * @param {Object} options - The placement options.
+     * @private
+     */
+    setPlacement(button, options) {
+        this.popper.setPlacement(button, {
+            /* prettier-ignore */
+            placements: [
+                "below","below-start","below-end",
+                "above","above-start","above-end",
+                "before","before-start","before-end",
+                "after","after-start","after-end",
+
+                "top","top-start","top-end",
+                "bottom","bottom-start","bottom-end",
+                "left","left-start","left-end",
+                "right","right-start","right-end",
+            ],
+            ...options,
+        });
     }
 }
 

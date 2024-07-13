@@ -615,16 +615,15 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.popper.setPlacement(button, {
             /* prettier-ignore */
             placements: [
-                //
-                "below-start", "below-end", "below",
-                "above-start", "above-end", "above",
-                "after-start", "after-end", "after",
-                "before-start", "before-end", "before",
-                "top-start", "top-end", "top",
-                "bottom-start", "bottom-end", "bottom",
-                "left-start", "left-end", "left",
-                "right-start", "right-end", "right",
-                "center",
+                "below","below-start","below-end",
+                "above","above-start","above-end",
+                "before","before-start","before-end",
+                "after","after-start","after-end",
+
+                "top","top-start","top-end",
+                "bottom","bottom-start","bottom-end",
+                "left","left-start","left-end",
+                "right","right-start","right-end",
             ],
             ...options,
         });

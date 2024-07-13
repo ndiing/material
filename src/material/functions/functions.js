@@ -555,6 +555,7 @@ Date.prototype.getWeek = function () {
     let week1 = new Date(tempDate.getFullYear(), 0, 4);
     return 1 + Math.round(((tempDate - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
 };
+
 export {
     /* String Manipulation */
     toPascalCase,

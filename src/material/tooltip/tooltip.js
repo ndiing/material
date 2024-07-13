@@ -58,7 +58,15 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {
-            placements: ["below", "above", "after", "before", "north-east", "south-east", "south-west", "north-west", "center"],
+            /* prettier-ignore */
+            placements: [
+                "below","below-start","below-end",
+                "above","above-start","above-end",
+                "before","before-start","before-end",
+                "after","after-start","after-end",
+
+                "north-east","south-east","south-west","north-west",
+            ],
             offset: 8,
             ...options,
         });

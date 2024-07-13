@@ -13,26 +13,27 @@ class MDPopperController {
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
-            placements: ["center", "top", "top-start", "top-end", "right", "right-start", "right-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "above", "above-start", "above-end", "after", "after-start", "after-end", "below", "below-start", "below-end", "before", "before-start", "before-end", "north-east", "south-east", "south-west", "north-west"],
+            /* prettier-ignore */
+            placements: [
+                "top","top-start","top-end",
+                "right","right-start","right-end",
+                "bottom","bottom-start","bottom-end",
+                "left","left-start","left-end",
+
+                "above","above-start","above-end",
+                "after","after-start","after-end",
+                "below","below-start","below-end",
+                "before","before-start","before-end",
+
+                "north-east","south-east","south-west","north-west",
+
+                "center",
+            ],
             boundary: null,
             offset: 0,
             ...options,
         };
     }
-
-    // /**
-    //  * Handle host connected event.
-    //  */
-    // async hostConnected() {
-    //     await this.host.updateComplete;
-    // }
-
-    // /**
-    //  * Handle host disconnected event.
-    //  */
-    // async hostDisconnected() {
-    //     await this.host.updateComplete;
-    // }
 
     /**
      * Get the bounding rect of an element.

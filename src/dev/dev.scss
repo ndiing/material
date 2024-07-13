@@ -1,14 +1,16 @@
-.dev-ripple{
+.dev-ripple {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    width: 56px;
-    height: 56px;
+    width: 112px;
+    height: 112px;
     background-color: var(--md-sys-color-surface-container);
     color: var(--md-sys-color-on-surface);
+    position: relative;
 }
-.dev-ripple-inner{
+
+.dev-ripple-inner {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -17,4 +19,7 @@
     height: 24px;
     background-color: var(--md-sys-color-surface-container-highest);
     color: var(--md-sys-color-on-surface);
+    position: absolute;
+    left: 24px;
+    top: 24px;
 }

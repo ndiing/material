@@ -274,11 +274,6 @@ class MDCardComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-card");
-        // if (this.variant && this.variant.includes("interactive")) {
-        //     this.ripple = new MDRippleController(this, {
-        //         clipped: true,
-        //     });
-        // }
     }
 
     /**

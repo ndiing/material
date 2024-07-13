@@ -368,7 +368,18 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     setPlacement(button, options) {
         this.popper.setPlacement(button, {
-            placements: ["top-start", "top-end", "top", "below-start", "below-end", "below", "bottom-start", "bottom-end", "bottom", "above-start", "above-end", "above", "left-start", "left-end", "left", "after-start", "after-end", "after", "right-start", "right-end", "right", "before-start", "before-end", "before", "center"],
+            /* prettier-ignore */
+            placements: [
+                "below","below-start","below-end",
+                "above","above-start","above-end",
+                "before","before-start","before-end",
+                "after","after-start","after-end",
+
+                "top","top-start","top-end",
+                "bottom","bottom-start","bottom-end",
+                "left","left-start","left-end",
+                "right","right-start","right-end",
+            ],
             ...options,
         });
     }

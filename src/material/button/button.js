@@ -35,8 +35,8 @@ class MDButtonComponent extends MDComponent {
         super();
         this.type = "button";
         this.ripple = new MDRippleController(this, {
-            buttonSelector: ".md-button__native",
             clipped: true,
+            buttonSelector: ".md-button__native",
         });
     }
 

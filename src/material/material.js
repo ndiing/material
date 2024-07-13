@@ -1,14 +1,15 @@
-/* [ ] */ import "./functions/functions.js";
-
+/* [ ] */ import "./observer/observer.js";
+/* [ ] */ import "./media-observer/media-observer.js";
+/* [ ] */ import "./attribute-observer/attribute-observer.js";
 /* [x] */ import "./localization/localization.js";
 /* [x] */ import "./color/color.js";
+/* [x] */ import "./functions/functions.js";
+
 /* [ ] */ import "./router/router.js";
 /* [x] */ import "./ripple/ripple.js";
 /* [ ] */ import "./popper/popper.js";
 /* [ ] */ import "./progress/progress.js";
 /* [ ] */ import "./gesture/gesture.js";
-/* [ ] */ import "./observer/observer.js";
-/* [ ] */ import "./attribute-observer/attribute-observer.js";
 /* [ ] */ import "./virtual/virtual.js";
 /* [ ] */ import "./store/store.js";
 
