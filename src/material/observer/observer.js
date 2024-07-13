@@ -65,10 +65,3 @@ class MDObserver {
 }
 
 export { MDObserver };
-
-// // Example usage
-// const observer = new MDObserver(() => {
-//     console.log('Observer callback executed');
-//     observer.disconnect();
-// });
-// observer.observe();

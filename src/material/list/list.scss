@@ -9,12 +9,6 @@
     align-items: center;
     padding: 8px 16px;
     gap: 0 16px;
-
-    // &.md-ripple--focused {
-    //     &::after {
-    //         opacity: 0;
-    //     }
-    // }
 }
 
 .md-list__avatar {
@@ -51,14 +45,12 @@
 
 .md-list__label-primary {
     @include typescale-body-large();
-    // white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .md-list__label-secondary {
     @include typescale-body-medium();
-    // white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }

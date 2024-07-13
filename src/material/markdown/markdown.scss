@@ -106,7 +106,6 @@
     code {
         padding: calc((var(--md-sys-typescale-body-large-line-height) - var(--md-sys-typescale-body-medium-line-height)) / 2) 4px;
         border-radius: var(--md-sys-shape-corner-extra-small);
-        // @include typescale-body-medium();
         font-size: 87.5%;
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
@@ -119,7 +118,6 @@
     /* Tables */
 
     table {
-        // width: 100%;
         margin: var(--md-sys-typescale-body-large-line-height) 0;
         border-spacing: 0;
         border-collapse: separate;

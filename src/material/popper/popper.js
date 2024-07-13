@@ -90,7 +90,7 @@ class MDPopperController {
         const buttonRect = this.getRect(button, divRect);
         const boundaryRect = this.getRect(boundary, divRect);
 
-        let originX, originY, left, top, right, bottom; //, matches;
+        let originX, originY, left, top, right, bottom;
 
         const placements = {
             above: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top - containerRect.height - options.offset, originX: "50%", originY: "100%" }),
@@ -131,7 +131,6 @@ class MDPopperController {
             const exceed = left < boundaryRect.left || top < boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
 
             if (!exceed) {
-                // matches = true;
                 break;
             }
         }

@@ -59,9 +59,9 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldIconButtonClick(event) {
         super.handleTextFieldIconButtonClick(event);
-        this.textFieldNative.value.value = ""; // Clears the search field value
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {})); // Dispatches input event
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {})); // Dispatches search event
+        this.textFieldNative.value.value = "";
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));
     }
 }
 

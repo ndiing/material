@@ -32,7 +32,7 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     constructor() {
         super();
-        this.max = 100; // Default maximum value
+        this.max = 100;
     }
 
     /**
@@ -89,7 +89,6 @@ class MDProgressIndicatorComponent extends MDComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
 
-        // Update variant-specific classes
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
             this.variants.forEach((variant) => {
@@ -97,7 +96,6 @@ class MDProgressIndicatorComponent extends MDComponent {
             });
         }
 
-        // Update progress indicator value
         if (changedProperties.has("value")) {
             const percentage = calcPercentage(0, this.max, this.value);
             this.style.setProperty("--md-comp-progress-indicator-percentage", percentage + "%");

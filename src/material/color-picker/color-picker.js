@@ -31,8 +31,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         value: { type: String },
     };
 
-    // Getter and Setter
-
     /**
      * Gets the child nodes of the component.
      * @returns {Array} The child nodes.
@@ -66,8 +64,6 @@ class MDColorPickerComponent extends MDSheetComponent {
     get actions() {
         return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
     }
-
-    // Constructor
 
     /**
      * Creates an instance of the color picker component.
@@ -125,8 +121,6 @@ class MDColorPickerComponent extends MDSheetComponent {
             </div>
         `;
     }
-
-    // Lifecycle Callbacks
 
     /**
      * Called when the component is connected to the DOM.
@@ -341,8 +335,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerSelection", event);
         this.emit("onColorPickerOpacityNativeInput", event);
     }
-
-    // Event Handlers
 
     /**
      * Handles the click event on the card icon button.

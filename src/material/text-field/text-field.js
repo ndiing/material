@@ -213,7 +213,6 @@ class MDTextFieldComponent extends MDComponent {
      */
     renderHidden() {
         /* prettier-ignore */
-        // Implementation for hidden input
     }
 
     /**

@@ -18,10 +18,10 @@ class MDRippleController {
     constructor(host, options = {}) {
         (this.host = host).addController(this);
         this.options = {
-            button: null, // HTMLElement
-            container: null, // HTMLElement
-            buttonSelector: null, // CSS Selector
-            containerSelector: null, // CSS Selector
+            button: null,
+            container: null,
+            buttonSelector: null,
+            containerSelector: null,
             centered: false,
             clipped: false,
             fadeOut: false,
