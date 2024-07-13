@@ -11,3 +11,9 @@ FIX THIS FILE FIRST
 - [ ] [](./src/material/gesture/gesture.js)
 - [ ] [](./src/material/data-table/data-table-native-column.js)
 - [ ] [](./src/material/list-item/list-item.js)
+
+## store
+- [ ] [](./src/material/store/store.js)
+- [ ] [](./src/material/data-table/data-table.js)
+- [ ] [](./src/material/emoji-picker/emoji-picker.js)
+- [ ] [](./src/material/menu/menu.js)
