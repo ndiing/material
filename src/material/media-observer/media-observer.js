@@ -2,6 +2,7 @@ const schemes = [
     { name: "light", query: "(prefers-color-scheme: light)" },
     { name: "dark", query: "(prefers-color-scheme: dark)" },
 ];
+
 const breakpoints = [
     { name: "compact", query: "(max-width: 599px)" },
     { name: "medium", query: "(min-width: 600px) and (max-width: 839px)" },
@@ -9,20 +10,35 @@ const breakpoints = [
 ];
 
 /**
- * MDObserver observes media queries and triggers a callback when a matching query is found.
+ * Class for observing media queries and executing callbacks on changes.
+ * @example
+ * // Example usage with breakpoints
+ * const breakpointObserver = new MDMediaObserver(breakpoint => {
+ *     console.log(`Current breakpoint: ${breakpoint.name}`);
+ * });
+ *
+ * breakpointObserver.observe(breakpoints);
+ *
+ * @example
+ * // Example usage with color schemes
+ * const schemeObserver = new MDMediaObserver(scheme => {
+ *     console.log(`Preferred color scheme: ${scheme.name}`);
+ * });
+ *
+ * schemeObserver.observe(schemes);
  */
-class MDObserver {
+class MDMediaObserver {
     /**
-     * Creates an instance of MDObserver.
-     * @param {Function} [callback=() => {}] - The callback function to be called when a media query matches.
+     * Creates an instance of MDMediaObserver.
+     * @param {Function} [callback=() => {}] - The callback function to execute when conditions change.
      */
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
     /**
-     * Observes a list of media query configurations and triggers the callback when a matching query is found.
-     * @param {Object[]} list - The list of media query configurations to observe. Each object in the list should have a `name` (string) and `query` (string) property.
+     * Observes the provided list of media queries and triggers the callback on changes.
+     * @param {Array} list - List of objects containing `name` and `query` properties.
      */
     observe(list) {
         const handleChange = () => {
@@ -43,4 +59,5 @@ class MDObserver {
         handleChange();
     }
 }
-export { schemes, breakpoints, MDObserver };
+
+export { schemes, breakpoints, MDMediaObserver };

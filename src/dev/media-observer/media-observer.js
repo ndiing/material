@@ -1,15 +1,15 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevAttributeObserver extends MDComponent {
+class DevMediaObserver extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-attribute-observer
-                            ></md-attribute-observer>
+                            <md-media-observer
+                            ></md-media-observer>
                         </div>
 
                     </div>
@@ -19,6 +19,6 @@ class DevAttributeObserver extends MDComponent {
     }
 }
 
-customElements.define("dev-attribute-observer", DevAttributeObserver);
+customElements.define("dev-media-observer", DevMediaObserver);
 
-export default document.createElement("dev-attribute-observer");
+export default document.createElement("dev-media-observer");

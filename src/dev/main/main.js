@@ -31,6 +31,7 @@ class DevMainComponent extends MDComponent {
             "gesture",
             "observer",
             "attribute-observer",
+            "media-observer",
             "virtual",
             "store",
             "markdown",

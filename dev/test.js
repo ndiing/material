@@ -400,8 +400,8 @@ function open(pathname) {
                 temp2=temp2.replaceAll('DevExample',className)
                 temp2=temp2.replaceAll('dev-example',tagName)
 
-                temp=''
-                temp2=''
+                // temp=''
+                // temp2=''
 
                 let code=''
                 code+=temp

@@ -1,7 +1,5 @@
 /**
- * MDObserver class.
- *
- * This class uses the `requestAnimationFrame` method to repeatedly execute a callback function.
+ * Class for observing changes and executing callbacks on animation frames.
  */
 class MDObserver {
     handle;
@@ -9,20 +7,16 @@ class MDObserver {
 
     /**
      * Creates an instance of MDObserver.
-     * @param {function} [callback=()=>{}] - The callback function to be executed in the animation frame.
+     * @param {Function} [callback=() => {}] - The callback function to execute on each animation frame.
      */
     constructor(callback = () => {}) {
-        /**
-         * @private
-         * @type {function}
-         */
         this.callback = callback;
     }
 
     /**
-     * Executes the callback function and sets up the next animation frame.
-     * @param {number} time - The current time, as provided by `requestAnimationFrame`.
+     * Executes the callback function with the given time argument.
      * @private
+     * @param {DOMHighResTimeStamp} time - The time when the callback is executed.
      */
     executeCallback(time) {
         this.handle = undefined;
@@ -33,7 +27,7 @@ class MDObserver {
     }
 
     /**
-     * Schedules the next animation frame.
+     * Schedules the next animation frame for executing the callback.
      * @private
      */
     scheduleNextFrame() {
@@ -43,7 +37,7 @@ class MDObserver {
     }
 
     /**
-     * Starts observing by setting up an animation frame if it hasn't been set up already.
+     * Starts observing changes and schedules the first animation frame.
      */
     observe() {
         if (!this.isObserving) {
@@ -53,7 +47,7 @@ class MDObserver {
     }
 
     /**
-     * Stops observing by canceling the animation frame.
+     * Stops observing changes by canceling the animation frame.
      */
     disconnect() {
         if (this.handle) {

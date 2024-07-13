@@ -4,6 +4,7 @@ MDRouter.historyApiFallback = false;
 
 import DevMain from "./main/main.js";
 import DevAttributeObserver from "./attribute-observer/attribute-observer.js";
+import DevMediaObserver from "./media-observer/media-observer.js";
 import DevBadge from "./badge/badge.js";
 import DevBottomAppBar from "./bottom-app-bar/bottom-app-bar.js";
 import DevBottomSheet from "./bottom-sheet/bottom-sheet.js";
@@ -84,6 +85,7 @@ const routes = [
         children: [
             { path: "example", component: DevExample },
             { path: "attribute-observer", component: DevAttributeObserver },
+            { path: "media-observer", component: DevMediaObserver },
             { path: "badge", component: DevBadge },
             { path: "bottom-app-bar", component: DevBottomAppBar },
             { path: "bottom-sheet", component: DevBottomSheet },
