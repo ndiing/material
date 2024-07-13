@@ -425,7 +425,7 @@ class MDColorPickerComponent extends MDSheetComponent {
      * @param {Object} options - The modal options.
      */
     showModal(button, options) {
-        this.setPlacement(button, options);
+        this.updatePosition(button, options);
         super.showModal();
     }
 
@@ -435,7 +435,7 @@ class MDColorPickerComponent extends MDSheetComponent {
      * @param {Object} options - The display options.
      */
     show(button, options) {
-        this.setPlacement(button, options);
+        this.updatePosition(button, options);
         super.show();
     }
 
@@ -445,8 +445,8 @@ class MDColorPickerComponent extends MDSheetComponent {
      * @param {Object} options - The placement options.
      * @private
      */
-    setPlacement(button, options) {
-        this.popper.setPlacement(button, {
+    updatePosition(button, options) {
+        this.popper.setPosition(button, {
             /* prettier-ignore */
             placements: [
                 "below-start","below-end","below",

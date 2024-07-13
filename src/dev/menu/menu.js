@@ -40,54 +40,13 @@ class DevMenu extends MDComponent {
                                     { label: "Singapore", value: "SG" },
                                     // Dan lain-lain
                                 ]}"
-                                @onMenuViewportVirtualScroll="${console.log}"
-                                @onMenuListItemClick="${() => menu.close()}"
-                                @onMenuListItemSelected="${console.log}"
+                                @onMenuViewportVirtualScroll=""
+                                @onMenuListItemClick=""
+                                @onMenuListItemSelected="${() => menu.close()}"
                             ></md-menu>
                             <md-button label="toggle menu" @click="${(event) => menu.toggle(event.currentTarget)}"></md-button>
-                            <input type="text" @focus="${(event) => menu.show(event.currentTarget)}" @blur="${() => menu.close()}" @input="${(event) => menu.filter(event.currentTarget.value)}" />
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-menu
-                                id="menu2"
-                                rowHeight="48"
-                                maxRows="5"
-                                .list="${[
-                                    { label: "Indonesia", value: "ID" },
-                                    { label: "United States", value: "US" },
-                                    { label: "Germany", value: "DE" },
-                                    { label: "Japan", value: "JP" },
-                                    { label: "Brazil", value: "BR" },
-                                    { label: "Canada", value: "CA" },
-                                    { label: "Australia", value: "AU" },
-                                    { label: "United Kingdom", value: "GB" },
-                                    { label: "France", value: "FR" },
-                                    { label: "South Korea", value: "KR" },
-                                    { label: "India", value: "IN", selected: true },
-                                    { label: "Russia", value: "RU" },
-                                    { label: "Mexico", value: "MX" },
-                                    { label: "Italy", value: "IT" },
-                                    { label: "Spain", value: "ES" },
-                                    { label: "Netherlands", value: "NL" },
-                                    { label: "Switzerland", value: "CH" },
-                                    { label: "Sweden", value: "SE" },
-                                    { label: "Norway", value: "NO" },
-                                    { label: "Denmark", value: "DK" },
-                                    { label: "Argentina", value: "AR" },
-                                    { label: "South Africa", value: "ZA" },
-                                    { label: "Saudi Arabia", value: "SA" },
-                                    { label: "Turkey", value: "TR" },
-                                    { label: "Singapore", value: "SG" },
-                                    // Dan lain-lain
-                                ]}"
-                                @onMenuViewportVirtualScroll="${console.log}"
-                                @onMenuListItemClick="${() => menu2.close()}"
-                                @onMenuListItemSelected="${console.log}"
-                            ></md-menu>
-                            <md-button label="toggle menu 2" @click="${(event) => menu2.toggle(event.currentTarget)}"></md-button>
-                            <input type="text" @focus="${(event) => menu2.show(event.currentTarget)}" @blur="${() => menu2.close()}" @input="${(event) => menu2.filter(event.currentTarget.value)}" />
-                        </div>
                     </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the tooltip.
      */
     showModal(button, options) {
-        this.setPlacement(button, options);
+        this.updatePosition(button, options);
         super.showModal();
     }
 
@@ -46,7 +46,7 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Object} options - Options for positioning the tooltip.
      */
     show(button, options) {
-        this.setPlacement(button, options);
+        this.updatePosition(button, options);
         super.show();
     }
 
@@ -56,8 +56,8 @@ class MDTooltipComponent extends MDSheetComponent {
      * @param {Element} button - The button element to which the tooltip is attached.
      * @param {Object} options - Options for positioning the tooltip.
      */
-    setPlacement(button, options) {
-        this.popper.setPlacement(button, {
+    updatePosition(button, options) {
+        this.popper.setPosition(button, {
             /* prettier-ignore */
             placements: [
                 "below","below-start","below-end",

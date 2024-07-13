@@ -595,7 +595,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * {{description}}
      */
     showModal(button, options) {
-        this.setPlacement(button, options);
+        this.updatePosition(button, options);
         super.showModal();
     }
 
@@ -603,7 +603,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * {{description}}
      */
     show(button, options) {
-        this.setPlacement(button, options);
+        this.updatePosition(button, options);
         super.show();
     }
 
@@ -611,8 +611,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * {{description}}
      * @private
      */
-    setPlacement(button, options) {
-        this.popper.setPlacement(button, {
+    updatePosition(button, options) {
+        this.popper.setPosition(button, {
             /* prettier-ignore */
             placements: [
                 "below-start","below-end","below",

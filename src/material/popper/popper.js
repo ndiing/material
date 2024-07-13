@@ -67,7 +67,7 @@ class MDPopperController {
      * @param {HTMLElement} button - The button element to position relative to.
      * @param {Object} [options={}] - The options for the placement.
      */
-    setPlacement(button, options = {}) {
+    setPosition(button, options = {}) {
         options = {
             ...this.options,
             ...options,
