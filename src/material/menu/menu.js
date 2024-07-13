@@ -74,11 +74,12 @@ class MDMenuComponent extends MDSheetComponent {
      */
     constructor() {
         super();
+        this.list=[]
         this.map={label:'label',value:'value'}
-        this.popper = new MDPopperController(this, {});
         this.rowHeight = 48;
         this.maxRows = 5;
-        this.store = new MDStore([]);
+        this.popper = new MDPopperController(this, {});
+        this.store = new MDStore(this.list);
         this.virtual = new MDVirtualController(this);
         
     }

@@ -76,7 +76,6 @@ import DevVirtual from "./virtual/virtual.js";
 import DevWeekField from "./week-field/week-field.js";
 import DevWeekPicker from "./week-picker/week-picker.js";
 import DevExample from "./example/example.js";
-// import DevMain from "./main/main.js"
 
 const routes = [
     {
