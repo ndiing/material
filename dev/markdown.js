@@ -94,9 +94,12 @@ for (let name in grouped) {
     if (grouped2["member"]) {
         let value = grouped2["member"];
 
-        markdown += `## Instance properties\r\n`;
         if (grouped2?.["class"]?.[0]?.augments?.[0]) {
+            markdown += `## Instance properties\r\n`;
             markdown += `This interface also inherits properties from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
+        }else{
+            markdown += `## Properties\r\n`;
+
         }
         markdown += `\r\n`;
         markdown += `Name | Type | Description\r\n`;
