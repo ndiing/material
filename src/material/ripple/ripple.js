@@ -38,6 +38,7 @@ class MDRippleController {
      * @private
      */
     async hostConnected() {
+        console.log('hostConnected',this.host.localName)
         await this.host.updateComplete;
 
         let container = this.options.container || this.host.querySelector(this.options.containerSelector) || this.host;
@@ -84,6 +85,7 @@ class MDRippleController {
      * @private
      */
     async hostDisconnected() {
+        console.log('hostDisconnected',this.host.localName)
         await this.host.updateComplete;
         this.button.removeEventListener("pointerenter", this.handleRipplePointerenter);
         this.button.removeEventListener("pointerleave", this.handleRipplePointerleave);

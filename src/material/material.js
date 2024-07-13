@@ -3,7 +3,7 @@
 /* [x] */ import "./localization/localization.js";
 /* [x] */ import "./color/color.js";
 /* [ ] */ import "./router/router.js";
-/* [ ] */ import "./ripple/ripple.js";
+/* [x] */ import "./ripple/ripple.js";
 /* [ ] */ import "./popper/popper.js";
 /* [ ] */ import "./progress/progress.js";
 /* [ ] */ import "./gesture/gesture.js";
