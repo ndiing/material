@@ -51,6 +51,23 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
 
+    get selectedOptionLabel(){
+        return this.selectedOptions?.[0]?.[this.map.label]??''
+    }
+    
+    get defaultSelectedOptionLabel(){
+        return this.defaultSelectedOptions?.[0]?.[this.map.label]??''
+    }
+    
+    get selectedOptionValue(){
+        return this.selectedOptions?.[0]?.[this.map.value]??''
+    }
+    
+    get defaultSelectedOptionValue(){
+        return this.defaultSelectedOptions?.[0]?.[this.map.value]??''
+    }
+    
+
     constructor() {
         super();
         this.type = "select";
@@ -71,8 +88,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 aria-label="Label"
                 type="text"
                 .placeholder="${ifDefined(this.placeholder)}"
-                .value="${ifDefined(this.selectedOptions?.[0]?.[this.map.label])}"
-                .defaultValue="${ifDefined(this.defaultSelectedOptions?.[0]?.[this.map.label])}"
+                .value="${ifDefined(this.selectedOptionLabel)}"
+                .defaultValue="${ifDefined(this.defaultSelectedOptionLabel)}"
                 .min="${ifDefined(this.min)}"
                 .max="${ifDefined(this.max)}"
                 .minlength="${ifDefined(this.minLength)}"
@@ -107,8 +124,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 class="md-text-field__hidden"
                 type="hidden"
                 .name="${ifDefined(this.name)}"
-                .value="${ifDefined(this.selectedOptions?.[0]?.[this.map.value])}"
-                .defaultValue="${ifDefined(this.defaultSelectedOptions?.[0]?.[this.map.value])}"
+                .value="${ifDefined(this.selectedOptionValue)}"
+                .defaultValue="${ifDefined(this.defaultSelectedOptionValue)}"
                 ${ref(this.textFieldHidden)}
             >
         `;
@@ -130,6 +147,15 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     handleTextFieldNativeFocus(event) {
         super.handleTextFieldNativeFocus(event);
         this.showPicker();
+    }
+
+    handleTextFieldNativeReset(event) {
+        super.handleTextFieldNativeReset(event);
+        this.options.forEach((option,index) => {
+            option.activated=this.defaultOptions[index].activated
+            option.selected=this.defaultOptions[index].selected
+        })
+        this.requestUpdate()
     }
 
     handleTextFieldNativeKeydown(event) {
@@ -242,7 +268,9 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      */
     handleMenuListSelection() {
         this.textFieldNative.value.value = this.selectedOptions[0][this.map.label];
+        this.textFieldHidden.value.value = this.selectedOptions[0][this.map.value];
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        this.textFieldHidden.value.dispatchEvent(new CustomEvent("input"));
         this.requestUpdate();
         this.picker.close();
     }
