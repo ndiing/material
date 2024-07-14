@@ -127,12 +127,12 @@ class MDSliderComponent extends MDComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-slider");
         const defaultValue = this.max < this.min ? this.min : this.min + (this.max - this.min) / 2;
         for (let index = 0; index < this.value.length; index++) {
             this.value[index] = this.value[index] ?? defaultValue;
         }
         this.defaultValue = this.value.slice();
-        this.classList.add("md-slider");
         await this.updateComplete;
         for (let index = 0; index < this.natives.length; index++) {
             let native = this.natives[index];

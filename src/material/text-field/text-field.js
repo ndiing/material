@@ -129,6 +129,8 @@ class MDTextFieldComponent extends MDComponent {
                 @reset="${this.handleTextFieldNativeReset}"
                 @input="${this.handleTextFieldNativeInput}"
                 @search="${this.handleTextFieldNativeSearch}"
+                @keydown="${this.handleTextFieldNativeKeydown}"
+                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
             >
@@ -163,6 +165,7 @@ class MDTextFieldComponent extends MDComponent {
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
                 @input="${this.handleTextFieldNativeInput}"
+                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
             ></textarea>
@@ -193,6 +196,7 @@ class MDTextFieldComponent extends MDComponent {
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
                 @input="${this.handleTextFieldNativeInput}"
+                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
             >
@@ -364,6 +368,24 @@ class MDTextFieldComponent extends MDComponent {
             this.validationMessage = this.textFieldNative.value.validationMessage;
         }
         this.emit("onTextFieldNativeSearch", event);
+    }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeKeydown(event) {
+        this.emit("onTextFieldNativeKeydown", event);
+    }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeClick(event) {
+        this.emit("onTextFieldNativeClick", event);
     }
 
     /**

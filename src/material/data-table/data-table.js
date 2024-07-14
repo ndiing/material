@@ -280,7 +280,6 @@ class MDDataTableComponent extends MDCardComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-card");
         this.classList.add("md-data-table");
         this.store = new MDStore(this.rows);
         this.virtual = new MDVirtualController(this, {});

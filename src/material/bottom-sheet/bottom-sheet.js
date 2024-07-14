@@ -14,7 +14,6 @@ class MDBottomSheetComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-sheet");
         this.classList.add("md-bottom-sheet");
     }
 }

@@ -78,6 +78,7 @@ class MDRadioButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-radio-button");
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
@@ -87,7 +88,6 @@ class MDRadioButtonComponent extends MDComponent {
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
-        this.classList.add("md-radio-button");
     }
 
     /**

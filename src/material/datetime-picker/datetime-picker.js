@@ -356,7 +356,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-card");
         this.classList.add("md-datetime-picker");
         if(!this.defaultValue){
             if(!this.value){

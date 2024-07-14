@@ -26,9 +26,8 @@ class MDSheetComponent extends MDCardComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.style.setProperty("--md-comp-sheet-animation", "none");
-        this.classList.add("md-card");
         this.classList.add("md-sheet");
+        this.style.setProperty("--md-comp-sheet-animation", "none");
     }
 
     /**
@@ -51,7 +50,7 @@ class MDSheetComponent extends MDCardComponent {
     /**
      * Shows the sheet.
      */
-    show(modal) {
+    async show(modal) {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");

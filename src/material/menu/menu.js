@@ -94,7 +94,7 @@ class MDMenuComponent extends MDSheetComponent {
         });
         this.storeTotal = total;
         this.storeList = docs;
-        this.style.setProperty('height',`${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
+        this.style.setProperty('max-height',`${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
 
     /**
@@ -117,7 +117,6 @@ class MDMenuComponent extends MDSheetComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-sheet");
         this.classList.add("md-menu");
         this.updateStore();
         this.updateVirtual();
@@ -174,6 +173,7 @@ class MDMenuComponent extends MDSheetComponent {
         const data = event.detail.currentTarget.data;
         this.select(data);
         this.requestUpdate();
+        this.emit("onMenuListSelection", event);
         this.emit("onMenuListItemClick", event);
     }
 
@@ -199,10 +199,8 @@ class MDMenuComponent extends MDSheetComponent {
         }
         this.activate(0);
 
-        console.log(this.activatedIndex)
 
         const handleKeydown = (event) => {
-            console.log(this.activatedIndex)
             if (event.key === "ArrowUp") {
                 event.preventDefault();
                 this.activate(-1);
@@ -212,6 +210,7 @@ class MDMenuComponent extends MDSheetComponent {
             } else if (event.key === "Enter") {
                 event.preventDefault();
                 this.activate(0, true);
+                this.emit("onMenuListSelection", event);
                 this.emit("onMenuListItemEnter", event);
             }
         };
@@ -264,7 +263,12 @@ class MDMenuComponent extends MDSheetComponent {
         this.filters = [{ name: this.map.label, value, operator: "_like" }];
         this.updateStore();
         this.updateVirtual();
-        this.updatePosition();
+        if(
+            this.popperButton&&
+            this.popperOptions
+        ){
+            this.updatePosition();
+        }
     }
 
     /**
@@ -286,16 +290,13 @@ class MDMenuComponent extends MDSheetComponent {
         this.activatedIndex = (this.activatedIndex + this.storeTotal + offset) % this.storeTotal;
         let data=this.storeList[this.activatedIndex]
         this.store.docs.forEach((doc, index) => {
-            // console.log(doc,data,doc===data)
             doc.activated = doc===data
-            // index == this.activatedIndex;
             if (selected) {
                 doc.selected = doc===data
-                // index == this.activatedIndex;
             }
         });
         const delta = Math.floor((this.maxRows - 1) / 2);
-        this.virtual.viewport.scrollTop = (this.activatedIndex - delta) * this.rowHeight;
+        this.virtual.viewport.scrollTop =( (this.activatedIndex - delta) * this.rowHeight);
         this.virtual.handleVirtualScroll();
     }
 }

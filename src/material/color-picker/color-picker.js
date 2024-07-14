@@ -128,7 +128,6 @@ class MDColorPickerComponent extends MDSheetComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-card");
         this.classList.add("md-color-picker");
         this.defaultValue = this.value;
         this.updateHsla();

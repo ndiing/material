@@ -14,7 +14,6 @@ class MDTopAppBarComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-card");
         this.classList.add("md-top-app-bar");
     }
 }

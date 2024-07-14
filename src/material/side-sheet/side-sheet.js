@@ -14,7 +14,6 @@ class MDSideSheetComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-card");
         this.classList.add("md-side-sheet");
     }
 }

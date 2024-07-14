@@ -77,6 +77,7 @@ class MDCheckboxComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-checkbox");
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
@@ -86,7 +87,6 @@ class MDCheckboxComponent extends MDComponent {
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
-        this.classList.add("md-checkbox");
     }
 
     /**

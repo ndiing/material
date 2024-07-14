@@ -153,7 +153,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-card");
         this.classList.add("md-emoji-picker");
         this.store = new MDStore(data);
         const { docs } = this.store.getAll();

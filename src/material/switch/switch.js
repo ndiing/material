@@ -80,6 +80,7 @@ class MDSwitchComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-switch");
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
@@ -89,7 +90,6 @@ class MDSwitchComponent extends MDComponent {
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
-        this.classList.add("md-switch");
     }
 
     /**
