@@ -247,7 +247,7 @@ class MDMenuComponent extends MDSheetComponent {
             ],
             ...options,
         };
-        this.popper.setPosition(button, options);
+        this.popper.setPosition(this.popperButton, this.popperOptions);
     }
 
     /**
