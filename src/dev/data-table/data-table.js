@@ -28,7 +28,7 @@ function generateRows(numRows) {
 }
 
 // Contoh menggunakan generator untuk membuat 10 baris data
-const rows = generateRows(100000);
+const rows = generateRows(10000);
 
 
 
