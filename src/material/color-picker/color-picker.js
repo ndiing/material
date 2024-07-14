@@ -462,6 +462,10 @@ class MDColorPickerComponent extends MDSheetComponent {
             ...options,
         });
     }
+
+    getValue(){
+        return this.selection.hex.slice(0,1+6)
+    }
 }
 
 customElements.define("md-color-picker", MDColorPickerComponent);

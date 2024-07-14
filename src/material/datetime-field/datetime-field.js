@@ -59,7 +59,7 @@ class MDDateTimeFieldComponent extends MDTextFieldComponent {
      */
     handleDatetimeFieldActionPickerClick(event) {
         this.showPicker();
-        this.emit("onDatetimeFieldActionPickerClick", event);
+        // this.emit("onDatetimeFieldActionPickerClick", event);
     }
 
     /**
@@ -74,19 +74,19 @@ class MDDateTimeFieldComponent extends MDTextFieldComponent {
         this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
 
-        this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
-        this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-        this.handlePickerSelection = this.handlePickerSelection.bind(this);
-        this.picker.addEventListener("onDatetimePickerButtonCancelClick", this.handlePickerButtonCancelClick);
-        this.picker.addEventListener("onDatetimePickerButtonOkClick", this.handlePickerButtonOkClick);
-        this.picker.addEventListener("onDatetimePickerSelection", this.handlePickerSelection);
+        this.handleDatetimePickerButtonCancelClick = this.handleDatetimePickerButtonCancelClick.bind(this);
+        this.handleDatetimePickerButtonOkClick = this.handleDatetimePickerButtonOkClick.bind(this);
+        this.handleDatetimePickerSelection = this.handleDatetimePickerSelection.bind(this);
+        this.picker.addEventListener("onDatetimePickerButtonCancelClick", this.handleDatetimePickerButtonCancelClick);
+        this.picker.addEventListener("onDatetimePickerButtonOkClick", this.handleDatetimePickerButtonOkClick);
+        this.picker.addEventListener("onDatetimePickerSelection", this.handleDatetimePickerSelection);
         const handleSheetClose = () => {
-            this.picker.removeEventListener("onDatetimePickerButtonCancelClick", this.handlePickerButtonCancelClick);
-            this.picker.removeEventListener("onDatetimePickerButtonOkClick", this.handlePickerButtonOkClick);
-            this.picker.removeEventListener("onDatetimePickerSelection", this.handlePickerSelection);
+            this.picker.removeEventListener("onDatetimePickerButtonCancelClick", this.handleDatetimePickerButtonCancelClick);
+            this.picker.removeEventListener("onDatetimePickerButtonOkClick", this.handleDatetimePickerButtonOkClick);
+            this.picker.removeEventListener("onDatetimePickerSelection", this.handleDatetimePickerSelection);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
-            this.boundary.addEventListener("scroll", handleScroll);
-            this.boundary.addEventListener("click", handleClick);
+            this.boundary.removeEventListener("scroll", handleScroll);
+            this.boundary.removeEventListener("click", handleClick);
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
@@ -121,11 +121,11 @@ class MDDateTimeFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The cancel button click event.
      * @private
      */
-    handlePickerButtonCancelClick(event) {
-        this.textFieldNative.value.value = this.defaultValue;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+    handleDatetimePickerButtonCancelClick(event) {
+        // this.textFieldNative.value.value = this.defaultValue;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
-        this.emit("onDatetimePickerButtonCancelClick", event);
+        // this.emit("onDatetimePickerButtonCancelClick", event);
     }
 
     /**
@@ -133,11 +133,11 @@ class MDDateTimeFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The OK button click event.
      * @private
      */
-    handlePickerButtonOkClick(event) {
+    handleDatetimePickerButtonOkClick(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        this.emit("onDatetimePickerButtonOkClick", event);
+        // this.emit("onDatetimePickerButtonOkClick", event);
     }
 
     /**
@@ -145,10 +145,10 @@ class MDDateTimeFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The date-time selection event.
      * @private
      */
-    handlePickerSelection(event) {
+    handleDatetimePickerSelection(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        this.emit("onDatetimePickerSelection", event);
+        // this.emit("onDatetimePickerSelection", event);
     }
 }
 customElements.define("md-datetime-field", MDDateTimeFieldComponent);

@@ -36,19 +36,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-search-field");
-    }
-
-    /**
-     * Handles click events on the native text field.
-     * Prevents the default action.
-     * @param {Event} event - Click event.
-     * @private
-     */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick(event);
     }
 
     /**
@@ -57,8 +45,8 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - Click event.
      * @private
      */
-    async handleTextFieldIconButtonClick(event) {
-        super.handleTextFieldIconButtonClick(event);
+    async handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
         this.textFieldNative.value.value = "";
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
         this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));

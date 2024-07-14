@@ -1,119 +1,169 @@
-import { stringifyMonth } from "../functions/functions.js";
+import { MDComponent } from "../component/component.js";
+import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * Custom component for selecting a month.
+ * A custom element that provides a month and time picker field.
  * @element md-month-field
  * @extends MDTextFieldComponent
+ * @fires MDMonthFieldComponent#onMonthFieldActionPickerClick - Event fired when the month-time picker icon is clicked.
+ * @fires MDMonthFieldComponent#onMonthPickerButtonCancelClick - Event fired when the cancel button is clicked in the month-time picker.
+ * @fires MDMonthFieldComponent#onMonthPickerButtonOkClick - Event fired when the OK button is clicked in the month-time picker.
+ * @fires MDMonthFieldComponent#onMonthPickerSelection - Event fired when a month-time selection is made in the picker.
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
-     * Gets the actions for the month field.
-     * @returns {Array} Array containing action objects.
+     * Gets the actions for the month-time field.
+     * @returns {Array} - An array of action objects, each containing a name and an icon.
      */
     get actions() {
-        return [{ icon: "calendar_month" }];
+        return [{ name: "picker", icon: "calendar_month" }];
     }
 
     /**
-     * Sets the actions for the month field.
-     * This setter is intentionally left empty.
-     * @param {Array} value - The new actions.
+     * Sets the actions for the month-time field.
+     * @param {Array} value - The new actions for the month-time field.
      */
     set actions(value) {}
 
-    /**
-     * Constructs an instance of MDMonthFieldComponent.
-     * Sets the input type to "month".
-     */
     constructor() {
         super();
         this.type = "month";
     }
 
     /**
-     * Invoked when the component is added to the document's DOM.
-     * Adds the necessary classes to the component.
+     * Callback for when the component is connected to the DOM.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-month-field");
     }
 
     /**
-     * Handles click events on the native text field.
-     * Prevents the default action and calls the superclass method.
-     * @private
+     * Handles the click event on the text field action icon.
      * @param {Event} event - The click event.
+     * @private
      */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick(event);
+    handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        if (event.currentTarget.name === "picker") {
+            this.handleMonthFieldActionPickerClick(event);
+        }
     }
 
     /**
-     * Handles click events on the icon button.
-     * Creates and shows the month picker.
-     * @private
+     * Handles the click event on the month-time picker action icon.
      * @param {Event} event - The click event.
+     * @private
      */
-    async handleTextFieldIconButtonClick(event) {
-        super.handleTextFieldIconButtonClick(event);
-        this.picker = document.createElement("md-month-picker");
-        if (this.value) {
-            this.picker.value = this.value;
+    handleMonthFieldActionPickerClick(event) {
+        this.showPicker();
+        // this.emit("onMonthFieldActionPickerClick", event);
+    }
+
+    /**
+     * Displays the month-time picker.
+     */
+    showPicker() {
+        if (this.pickerOpen) {
+            return;
         }
+        this.pickerOpen = true;
+        this.picker = document.createElement("md-month-picker");
+        this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-        this.handlePickerSelection = this.handlePickerSelection.bind(this);
-        this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
-        this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-        this.picker.addEventListener("onMonthPickerSelection", this.handlePickerSelection);
-        this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-        this.picker.addEventListener("onMonthPickerButtonOkClick", this.handlePickerButtonOkClick);
+
+        this.handleMonthPickerButtonCancelClick = this.handleMonthPickerButtonCancelClick.bind(this);
+        this.handleMonthPickerButtonOkClick = this.handleMonthPickerButtonOkClick.bind(this);
+        this.handleMonthPickerSelection = this.handleMonthPickerSelection.bind(this);
+        this.handleMonthPickerMonthItemClick = this.handleMonthPickerMonthItemClick.bind(this);
+        this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthPickerButtonCancelClick);
+        this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthPickerButtonOkClick);
+        this.picker.addEventListener("onMonthPickerSelection", this.handleMonthPickerSelection);
+        this.picker.addEventListener("onMonthPickerMonthItemClick", this.handleMonthPickerMonthItemClick);
         const handleSheetClose = () => {
-            this.picker.removeEventListener("onMonthPickerSelection", this.handlePickerSelection);
-            this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-            this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handlePickerButtonOkClick);
+            this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handleMonthPickerButtonCancelClick);
+            this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handleMonthPickerButtonOkClick);
+            this.picker.removeEventListener("onMonthPickerSelection", this.handleMonthPickerSelection);
+            this.picker.removeEventListener("onMonthPickerMonthItemClick", this.handleMonthPickerMonthItemClick);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
-            this.picker.remove();
+            this.boundary.removeEventListener("scroll", handleScroll);
+            this.boundary.removeEventListener("click", handleClick);
+            this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-        await this.picker.updateComplete;
-        this.picker.showModal(this.textFieldContainer.value);
+
+        this.boundary = getBoundary(this);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+        this.boundary.addEventListener("scroll", handleScroll);
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+        this.boundary.addEventListener("click", handleClick);
+
+        this.picker.show(this.textFieldContainer.value);
     }
 
     /**
-     * Handles the selection event from the month picker.
-     * Sets the selected value to the native text field.
+     * Handles the cancel button click event in the month-time picker.
+     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handlePickerSelection() {
-        const value = stringifyMonth(this.picker.selection);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-    }
-
-    /**
-     * Handles the cancel button click event on the month picker.
-     * Closes the picker.
-     * @private
-     */
-    handlePickerButtonCancelClick() {
+    handleMonthPickerButtonCancelClick(event) {
+        // this.textFieldNative.value.value = this.defaultValue;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
+        // this.emit("onMonthPickerButtonCancelClick", event);
     }
 
     /**
-     * Handles the OK button click event on the month picker.
-     * Sets the selected value to the native text field and closes the picker.
+     * Handles the OK button click event in the month-time picker.
+     * @param {Event} event - The OK button click event.
      * @private
      */
-    handlePickerButtonOkClick() {
-        const value = stringifyMonth(this.picker.selection);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+    handleMonthPickerButtonOkClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
+        // this.emit("onMonthPickerButtonOkClick", event);
+    }
+
+    /**
+     * Handles the month-time selection event in the picker.
+     * @param {Event} event - The month-time selection event.
+     * @private
+     */
+    handleMonthPickerSelection(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        // this.emit("onMonthPickerSelection", event);
+    }
+
+    /**
+     * Handles the month-time selection event in the picker.
+     * @param {Event} event - The month-time selection event.
+     * @private
+     */
+    handleMonthPickerMonthItemClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        this.picker.close();
+        // this.emit("onMonthPickerMonthItemClick", event);
     }
 }
 customElements.define("md-month-field", MDMonthFieldComponent);

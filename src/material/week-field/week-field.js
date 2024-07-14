@@ -1,121 +1,170 @@
-import { stringifyWeek } from "../functions/functions.js";
+import { MDComponent } from "../component/component.js";
+import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * Custom component for selecting a week.
+ * A custom element that provides a week and time picker field.
  * @element md-week-field
  * @extends MDTextFieldComponent
+ * @fires MDWeekFieldComponent#onWeekFieldActionPickerClick - Event fired when the week-time picker icon is clicked.
+ * @fires MDWeekFieldComponent#onWeekPickerButtonCancelClick - Event fired when the cancel button is clicked in the week-time picker.
+ * @fires MDWeekFieldComponent#onWeekPickerButtonOkClick - Event fired when the OK button is clicked in the week-time picker.
+ * @fires MDWeekFieldComponent#onWeekPickerSelection - Event fired when a week-time selection is made in the picker.
  */
 class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
-     * Gets the actions for the week field.
-     * @returns {Array} Array containing action objects.
+     * Gets the actions for the week-time field.
+     * @returns {Array} - An array of action objects, each containing a name and an icon.
      */
     get actions() {
-        return [{ icon: "date_range" }];
+        return [{ name: "picker", icon: "date_range" }];
     }
 
     /**
-     * Sets the actions for the week field.
-     * This setter is intentionally left empty.
-     * @param {Array} value - The new actions.
+     * Sets the actions for the week-time field.
+     * @param {Array} value - The new actions for the week-time field.
      */
     set actions(value) {}
 
-    /**
-     * Constructs an instance of MDWeekFieldComponent.
-     * Sets the input type to "week".
-     */
     constructor() {
         super();
         this.type = "week";
     }
 
     /**
-     * Invoked when the component is added to the document's DOM.
-     * Adds the necessary classes to the component.
+     * Callback for when the component is connected to the DOM.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-week-field");
     }
 
     /**
-     * Handles click events on the native text field.
-     * Prevents the default action and calls the superclass method.
-     * @private
+     * Handles the click event on the text field action icon.
      * @param {Event} event - The click event.
+     * @private
      */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick(event);
+    handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        if (event.currentTarget.name === "picker") {
+            this.handleWeekFieldActionPickerClick(event);
+        }
     }
 
     /**
-     * Handles click events on the icon button.
-     * Creates and shows the week picker.
-     * @private
+     * Handles the click event on the week-time picker action icon.
      * @param {Event} event - The click event.
+     * @private
      */
-    async handleTextFieldIconButtonClick(event) {
-        super.handleTextFieldIconButtonClick(event);
-        this.picker = document.createElement("md-week-picker");
-        if (this.value) {
-            this.picker.value = this.value;
+    handleWeekFieldActionPickerClick(event) {
+        this.showPicker();
+        // this.emit("onWeekFieldActionPickerClick", event);
+    }
+
+    /**
+     * Displays the week-time picker.
+     */
+    showPicker() {
+        if (this.pickerOpen) {
+            return;
         }
+        this.pickerOpen = true;
+        this.picker = document.createElement("md-week-picker");
+        this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-        this.handlePickerSelection = this.handlePickerSelection.bind(this);
-        this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
-        this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-        this.picker.addEventListener("onWeekPickerSelection", this.handlePickerSelection);
-        this.picker.addEventListener("onWeekPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-        this.picker.addEventListener("onWeekPickerButtonOkClick", this.handlePickerButtonOkClick);
+
+        this.handleWeekPickerButtonCancelClick = this.handleWeekPickerButtonCancelClick.bind(this);
+        this.handleWeekPickerButtonOkClick = this.handleWeekPickerButtonOkClick.bind(this);
+        this.handleWeekPickerSelection = this.handleWeekPickerSelection.bind(this);
+        this.handleWeekPickerDayItemClick = this.handleWeekPickerDayItemClick.bind(this);
+        this.picker.addEventListener("onWeekPickerButtonCancelClick", this.handleWeekPickerButtonCancelClick);
+        this.picker.addEventListener("onWeekPickerButtonOkClick", this.handleWeekPickerButtonOkClick);
+        this.picker.addEventListener("onWeekPickerSelection", this.handleWeekPickerSelection);
+        this.picker.addEventListener("onWeekPickerDayItemClick", this.handleWeekPickerDayItemClick);
         const handleSheetClose = () => {
-            this.picker.removeEventListener("onWeekPickerSelection", this.handlePickerSelection);
-            this.picker.removeEventListener("onWeekPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-            this.picker.removeEventListener("onWeekPickerButtonOkClick", this.handlePickerButtonOkClick);
+            this.picker.removeEventListener("onWeekPickerButtonCancelClick", this.handleWeekPickerButtonCancelClick);
+            this.picker.removeEventListener("onWeekPickerButtonOkClick", this.handleWeekPickerButtonOkClick);
+            this.picker.removeEventListener("onWeekPickerSelection", this.handleWeekPickerSelection);
+            this.picker.removeEventListener("onWeekPickerDayItemClick", this.handleWeekPickerDayItemClick);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
-            this.picker.remove();
+            this.boundary.removeEventListener("scroll", handleScroll);
+            this.boundary.removeEventListener("click", handleClick);
+            this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-        await this.picker.updateComplete;
-        this.picker.showModal(this.textFieldContainer.value);
+
+        this.boundary = getBoundary(this);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+        this.boundary.addEventListener("scroll", handleScroll);
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+        this.boundary.addEventListener("click", handleClick);
+
+        this.picker.show(this.textFieldContainer.value);
     }
 
     /**
-     * Handles the selection event from the week picker.
-     * Sets the selected value to the native text field.
+     * Handles the cancel button click event in the week-time picker.
+     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handlePickerSelection() {
-        const value = stringifyWeek(this.picker.selection);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-    }
-
-    /**
-     * Handles the cancel button click event on the week picker.
-     * Closes the picker.
-     * @private
-     */
-    handlePickerButtonCancelClick() {
+    handleWeekPickerButtonCancelClick(event) {
+        // this.textFieldNative.value.value = this.defaultValue;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
+        // this.emit("onWeekPickerButtonCancelClick", event);
     }
 
     /**
-     * Handles the OK button click event on the week picker.
-     * Sets the selected value to the native text field and closes the picker.
+     * Handles the OK button click event in the week-time picker.
+     * @param {Event} event - The OK button click event.
      * @private
      */
-    handlePickerButtonOkClick() {
-        const value = stringifyWeek(this.picker.selection);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+    handleWeekPickerButtonOkClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
+        // this.emit("onWeekPickerButtonOkClick", event);
+    }
+
+    /**
+     * Handles the week-time selection event in the picker.
+     * @param {Event} event - The week-time selection event.
+     * @private
+     */
+    handleWeekPickerSelection(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        // this.emit("onWeekPickerSelection", event);
+    }
+
+    /**
+     * Handles the week-time selection event in the picker.
+     * @param {Event} event - The week-time selection event.
+     * @private
+     */
+    handleWeekPickerDayItemClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        this.picker.close();
+        // this.emit("onWeekPickerDayItemClick", event);
     }
 }
-
 customElements.define("md-week-field", MDWeekFieldComponent);
 export { MDWeekFieldComponent };

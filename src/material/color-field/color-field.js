@@ -1,135 +1,156 @@
+import { MDComponent } from "../component/component.js";
+import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * A custom color picker input field component.
+ * A custom element that provides a color and color picker field.
  * @element md-color-field
  * @extends MDTextFieldComponent
+ * @fires MDColorFieldComponent#onColorFieldActionPickerClick - Event fired when the color-color picker icon is clicked.
+ * @fires MDColorFieldComponent#onColorPickerButtonCancelClick - Event fired when the cancel button is clicked in the color-color picker.
+ * @fires MDColorFieldComponent#onColorPickerButtonOkClick - Event fired when the OK button is clicked in the color-color picker.
+ * @fires MDColorFieldComponent#onColorPickerSelection - Event fired when a color-color selection is made in the picker.
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
     /**
-     * Returns the actions for the color field.
-     * @return {Array} - An array of actions with an icon.
+     * Gets the actions for the color-color field.
+     * @returns {Array} - An array of action objects, each containing a name and an icon.
      */
     get actions() {
-        return [{ icon: "palette" }];
+        return [{ name: "picker", icon: "palette" }];
     }
 
     /**
-     * No-op setter for actions, included for completeness.
-     * @param {Array} value - The value to set.
+     * Sets the actions for the color-color field.
+     * @param {Array} value - The new actions for the color-color field.
      */
     set actions(value) {}
 
-    /**
-     * Creates an instance of MDColorFieldComponent.
-     */
     constructor() {
         super();
         this.type = "color";
     }
 
     /**
-     * Called when the component is added to the DOM.
+     * Callback for when the component is connected to the DOM.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-color-field");
     }
 
     /**
-     * Handles click events on the native text field.
-     * @param {Event} event - The click event object.
+     * Handles the click event on the text field action icon.
+     * @param {Event} event - The click event.
      * @private
      */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick(event);
+    handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        if (event.currentTarget.name === "picker") {
+            this.handleColorFieldActionPickerClick(event);
+        }
     }
 
     /**
-     * Handles focus events on the native text field.
-     * @param {Event} event - The focus event object.
+     * Handles the click event on the color-color picker action icon.
+     * @param {Event} event - The click event.
      * @private
      */
-    handleTextFieldNativeFocus(event) {
-        super.handleTextFieldNativeFocus(event);
+    handleColorFieldActionPickerClick(event) {
         this.showPicker();
+        // this.emit("onColorFieldActionPickerClick", event);
     }
 
     /**
-     * Handles click events on the text field icon button.
-     * @param {Event} event - The click event object.
-     * @private
+     * Displays the color-color picker.
      */
-    async handleTextFieldIconButtonClick(event) {
-        super.handleTextFieldIconButtonClick(event);
-        this.showPicker();
-    }
-
-    /**
-     * Displays the color picker.
-     * @private
-     */
-    async showPicker() {
+    showPicker() {
         if (this.pickerOpen) {
             return;
         }
         this.pickerOpen = true;
         this.picker = document.createElement("md-color-picker");
-        if (this.value) {
-            this.picker.value = this.value;
-        }
+        this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-        this.handlePickerSelection = this.handlePickerSelection.bind(this);
-        this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
-        this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-        this.picker.addEventListener("onColorPickerSelection", this.handlePickerSelection);
-        this.picker.addEventListener("onColorPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-        this.picker.addEventListener("onColorPickerButtonOkClick", this.handlePickerButtonOkClick);
+
+        this.handleColorPickerButtonCancelClick = this.handleColorPickerButtonCancelClick.bind(this);
+        this.handleColorPickerButtonOkClick = this.handleColorPickerButtonOkClick.bind(this);
+        this.handleColorPickerSelection = this.handleColorPickerSelection.bind(this);
+        this.picker.addEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
+        this.picker.addEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
+        this.picker.addEventListener("onColorPickerSelection", this.handleColorPickerSelection);
         const handleSheetClose = () => {
-            this.picker.removeEventListener("onColorPickerSelection", this.handlePickerSelection);
-            this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handlePickerButtonCancelClick);
-            this.picker.removeEventListener("onColorPickerButtonOkClick", this.handlePickerButtonOkClick);
+            this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
+            this.picker.removeEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
+            this.picker.removeEventListener("onColorPickerSelection", this.handleColorPickerSelection);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
-            this.picker.remove();
+            this.boundary.removeEventListener("scroll", handleScroll);
+            this.boundary.removeEventListener("click", handleClick);
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-        await this.picker.updateComplete;
-        this.picker.showModal(this.textFieldContainer.value);
+
+        this.boundary = getBoundary(this);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+        this.boundary.addEventListener("scroll", handleScroll);
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+        this.boundary.addEventListener("click", handleClick);
+
+        this.picker.show(this.textFieldContainer.value);
     }
 
     /**
-     * Handles color selection from the picker.
+     * Handles the cancel button click event in the color-color picker.
+     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handlePickerSelection() {
-        const value = this.picker.selection.hex.slice(0, 1 + 6);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-    }
-
-    /**
-     * Handles the cancel button click on the picker.
-     * @private
-     */
-    handlePickerButtonCancelClick() {
+    handleColorPickerButtonCancelClick(event) {
+        // this.textFieldNative.value.value = this.defaultValue;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
+        // this.emit("onColorPickerButtonCancelClick", event);
     }
 
     /**
-     * Handles the OK button click on the picker.
+     * Handles the OK button click event in the color-color picker.
+     * @param {Event} event - The OK button click event.
      * @private
      */
-    handlePickerButtonOkClick() {
-        const value = this.picker.selection.hex.slice(0, 1 + 6);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-
+    handleColorPickerButtonOkClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
+        // this.emit("onColorPickerButtonOkClick", event);
     }
+
+    /**
+     * Handles the color-color selection event in the picker.
+     * @param {Event} event - The color-color selection event.
+     * @private
+     */
+    handleColorPickerSelection(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        // this.emit("onColorPickerSelection", event);
+    }
+
 }
 customElements.define("md-color-field", MDColorFieldComponent);
 export { MDColorFieldComponent };

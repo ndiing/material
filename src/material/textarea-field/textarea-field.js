@@ -22,7 +22,6 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-textarea-field");
     }
 }

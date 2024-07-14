@@ -73,6 +73,14 @@
     margin-left: auto;
 }
 
+.md-text-field__hidden{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+}
+
 // .md-text-field--populated {}
 
 .md-text-field--focused {

@@ -153,7 +153,16 @@ class MDMenuComponent extends MDSheetComponent {
     handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
+
         this.emit("onMenuViewportVirtualScroll", event);
+
+        if(!this.initialized){
+            this.initialized=true
+            this.updateComplete
+            .then(() => {
+                this.emit("onMenuViewportVirtualScrollInitialized", event);
+            })
+        }
     }
 
     /**
@@ -166,19 +175,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.select(data);
         this.requestUpdate();
         this.emit("onMenuListItemClick", event);
-    }
-
-    /**
-     * Handles the selection event of a menu list item.
-     * @param {Event} event - The selection event.
-     * @private
-     */
-    handleMenuListItemSelected(event) {
-        let lastSelectedIndex = this.store.docs.findIndex((doc) => doc === event.detail.data);
-        if (this.lastSelectedIndex !== lastSelectedIndex) {
-            this.lastSelectedIndex = lastSelectedIndex;
-            this.emit("onMenuListItemSelected", event);
-        }
     }
 
     /**
@@ -203,7 +199,10 @@ class MDMenuComponent extends MDSheetComponent {
         }
         this.activate(0);
 
+        console.log(this.activatedIndex)
+
         const handleKeydown = (event) => {
+            console.log(this.activatedIndex)
             if (event.key === "ArrowUp") {
                 event.preventDefault();
                 this.activate(-1);
@@ -213,6 +212,7 @@ class MDMenuComponent extends MDSheetComponent {
             } else if (event.key === "Enter") {
                 event.preventDefault();
                 this.activate(0, true);
+                this.emit("onMenuListItemEnter", event);
             }
         };
 
@@ -283,11 +283,15 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {boolean} [selected] - Whether to select the activated item.
      */
     activate(offset, selected) {
-        this.activatedIndex = (this.activatedIndex + this.store.docs.length + offset) % this.store.docs.length;
+        this.activatedIndex = (this.activatedIndex + this.storeTotal + offset) % this.storeTotal;
+        let data=this.storeList[this.activatedIndex]
         this.store.docs.forEach((doc, index) => {
-            doc.activated = index == this.activatedIndex;
+            // console.log(doc,data,doc===data)
+            doc.activated = doc===data
+            // index == this.activatedIndex;
             if (selected) {
-                doc.selected = index == this.activatedIndex;
+                doc.selected = doc===data
+                // index == this.activatedIndex;
             }
         });
         const delta = Math.floor((this.maxRows - 1) / 2);

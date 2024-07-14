@@ -39,19 +39,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-number-field");
-    }
-
-    /**
-     * Handles clicks on the native input field.
-     * Prevents the default action to manage custom behavior.
-     * @param {Event} event - Click event on the native input field.
-     * @private
-     */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick(event);
     }
 
     /**
@@ -60,13 +48,15 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - Click event on the icon buttons.
      * @private
      */
-    async handleTextFieldIconButtonClick(event) {
-        super.handleTextFieldIconButtonClick(event);
+    async handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
         const name = event.currentTarget.name;
         if (name === "subtract") {
-            this.textFieldNative.value = parseFloat(this.textFieldNative.value) - 1;
+            // this.textFieldNative.value = parseFloat(this.textFieldNative.value) - 1;
+            this.textFieldNative.value.stepDown()
         } else if (name === "add") {
-            this.textFieldNative.value = parseFloat(this.textFieldNative.value) + 1;
+            // this.textFieldNative.value = parseFloat(this.textFieldNative.value) + 1;
+            this.textFieldNative.value.stepUp()
         }
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }

@@ -1,117 +1,169 @@
-import { stringifyDate } from "../functions/functions.js";
+import { MDComponent } from "../component/component.js";
+import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * A custom date field component extending a text field component.
+ * A custom element that provides a date and time picker field.
  * @element md-date-field
  * @extends MDTextFieldComponent
+ * @fires MDDateFieldComponent#onDateFieldActionPickerClick - Event fired when the date-time picker icon is clicked.
+ * @fires MDDateFieldComponent#onDatePickerButtonCancelClick - Event fired when the cancel button is clicked in the date-time picker.
+ * @fires MDDateFieldComponent#onDatePickerButtonOkClick - Event fired when the OK button is clicked in the date-time picker.
+ * @fires MDDateFieldComponent#onDatePickerSelection - Event fired when a date-time selection is made in the picker.
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
     /**
-     * Returns the actions for the date field component.
-     * @returns {Array} - An array of action objects.
+     * Gets the actions for the date-time field.
+     * @returns {Array} - An array of action objects, each containing a name and an icon.
      */
     get actions() {
-        return [{ icon: "today" }];
+        return [{ name: "picker", icon: "today" }];
     }
 
     /**
-     * Sets the actions for the date field component.
-     * @param {Array} value - An array of action objects.
+     * Sets the actions for the date-time field.
+     * @param {Array} value - The new actions for the date-time field.
      */
     set actions(value) {}
 
-    /**
-     * Constructs an instance of MDDateFieldComponent.
-     * Initializes the type of the input to "date".
-     */
     constructor() {
         super();
         this.type = "date";
     }
 
     /**
-     * Invoked when the component is added to the document's DOM.
+     * Callback for when the component is connected to the DOM.
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.classList.add("md-date-field");
     }
 
     /**
-     * Handles the native click event on the text field.
-     * Prevents the default action and calls the parent method.
-     * @private
+     * Handles the click event on the text field action icon.
      * @param {Event} event - The click event.
+     * @private
      */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick(event);
+    handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        if (event.currentTarget.name === "picker") {
+            this.handleDateFieldActionPickerClick(event);
+        }
     }
 
     /**
-     * Handles the icon button click event on the text field.
-     * Creates and shows a date picker modal.
-     * @private
+     * Handles the click event on the date-time picker action icon.
      * @param {Event} event - The click event.
+     * @private
      */
-    async handleTextFieldIconButtonClick(event) {
-        super.handleTextFieldIconButtonClick(event);
-        this.picker = document.createElement("md-date-picker");
-        if (this.value) {
-            this.picker.value = this.value;
+    handleDateFieldActionPickerClick(event) {
+        this.showPicker();
+        // this.emit("onDateFieldActionPickerClick", event);
+    }
+
+    /**
+     * Displays the date-time picker.
+     */
+    showPicker() {
+        if (this.pickerOpen) {
+            return;
         }
+        this.pickerOpen = true;
+        this.picker = document.createElement("md-date-picker");
+        this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-        this.handlePickerSelection = this.handlePickerSelection.bind(this);
-        this.handlePickerButtonCancelClick = this.handlePickerButtonCancelClick.bind(this);
-        this.handlePickerButtonOkClick = this.handlePickerButtonOkClick.bind(this);
-        this.picker.addEventListener("onDatePickerSelection", this.handlePickerSelection);
-        this.picker.addEventListener("onDatePickerButtonCancelClick", this.handlePickerButtonCancelClick);
-        this.picker.addEventListener("onDatePickerButtonOkClick", this.handlePickerButtonOkClick);
+
+        this.handleDatePickerButtonCancelClick = this.handleDatePickerButtonCancelClick.bind(this);
+        this.handleDatePickerButtonOkClick = this.handleDatePickerButtonOkClick.bind(this);
+        this.handleDatePickerSelection = this.handleDatePickerSelection.bind(this);
+        this.handleDatePickerDayItemClick = this.handleDatePickerDayItemClick.bind(this);
+        this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDatePickerButtonCancelClick);
+        this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDatePickerButtonOkClick);
+        this.picker.addEventListener("onDatePickerSelection", this.handleDatePickerSelection);
+        this.picker.addEventListener("onDatePickerDayItemClick", this.handleDatePickerDayItemClick);
         const handleSheetClose = () => {
-            this.picker.removeEventListener("onDatePickerSelection", this.handlePickerSelection);
-            this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handlePickerButtonCancelClick);
-            this.picker.removeEventListener("onDatePickerButtonOkClick", this.handlePickerButtonOkClick);
+            this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDatePickerButtonCancelClick);
+            this.picker.removeEventListener("onDatePickerButtonOkClick", this.handleDatePickerButtonOkClick);
+            this.picker.removeEventListener("onDatePickerSelection", this.handleDatePickerSelection);
+            this.picker.removeEventListener("onDatePickerDayItemClick", this.handleDatePickerDayItemClick);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
-            this.picker.remove();
+            this.boundary.removeEventListener("scroll", handleScroll);
+            this.boundary.removeEventListener("click", handleClick);
+            this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-        await this.picker.updateComplete;
-        this.picker.showModal(this.textFieldContainer.value);
+
+        this.boundary = getBoundary(this);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+        this.boundary.addEventListener("scroll", handleScroll);
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+        this.boundary.addEventListener("click", handleClick);
+
+        this.picker.show(this.textFieldContainer.value);
     }
 
     /**
-     * Handles the date picker selection event.
-     * Updates the text field value with the selected date.
+     * Handles the cancel button click event in the date-time picker.
+     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handlePickerSelection() {
-        const value = stringifyDate(this.picker.selection);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
-    }
-
-    /**
-     * Handles the date picker cancel button click event.
-     * Closes the date picker.
-     * @private
-     */
-    handlePickerButtonCancelClick() {
+    handleDatePickerButtonCancelClick(event) {
+        // this.textFieldNative.value.value = this.defaultValue;
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
+        // this.emit("onDatePickerButtonCancelClick", event);
     }
 
     /**
-     * Handles the date picker OK button click event.
-     * Updates the text field value with the selected date and closes the date picker.
+     * Handles the OK button click event in the date-time picker.
+     * @param {Event} event - The OK button click event.
      * @private
      */
-    handlePickerButtonOkClick() {
-        const value = stringifyDate(this.picker.selection);
-        this.textFieldNative.value.value = value;
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+    handleDatePickerButtonOkClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
+        // this.emit("onDatePickerButtonOkClick", event);
+    }
+
+    /**
+     * Handles the date-time selection event in the picker.
+     * @param {Event} event - The date-time selection event.
+     * @private
+     */
+    handleDatePickerSelection(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        // this.emit("onDatePickerSelection", event);
+    }
+
+    /**
+     * Handles the date-time selection event in the picker.
+     * @param {Event} event - The date-time selection event.
+     * @private
+     */
+    handleDatePickerDayItemClick(event) {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        this.picker.close();
+        // this.emit("onDatePickerDayItemClick", event);
     }
 }
 customElements.define("md-date-field", MDDateFieldComponent);
