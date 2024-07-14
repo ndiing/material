@@ -52,6 +52,5 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));
     }
 }
-
 customElements.define("md-search-field", MDSearchFieldComponent);
 export { MDSearchFieldComponent };

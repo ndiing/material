@@ -48,6 +48,5 @@ class MDNavigationRailComponent extends MDSheetComponent {
         this.classList.add("md-navigation-rail");
     }
 }
-
 customElements.define("md-navigation-rail", MDNavigationRailComponent);
 export { MDNavigationRailComponent };

@@ -47,6 +47,5 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
         this.type = this.type === "password" ? "text" : "password";
     }
 }
-
 customElements.define("md-password-field", MDPasswordFieldComponent);
 export { MDPasswordFieldComponent };

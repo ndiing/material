@@ -1,5 +1,4 @@
 /* Casing Conversion */
-
 /**
  * Converts a string to `PascalCase` format.
  * @param {string} string - The input string to convert.
@@ -156,7 +155,6 @@ function toTitleCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 /* Stringify Date */
-
 /**
  * Converts a Date object to a string in the format `YYYY-MM-DDTHH:mm`.
  * @param {Date} date - The Date object to stringify.
@@ -217,7 +215,6 @@ function stringifyWeek(date) {
     return `${year}-W${week < 10 ? "0" + week : week}`;
 }
 /* Parse Date */
-
 /**
  * Parses a datetime-local string into a Date object.
  * @param {string} datetimeLocal - The datetime-local string to parse.
@@ -276,11 +273,13 @@ function parseTime(timeString) {
  */
 function parseWeek(weekStr) {
     let parts = weekStr.split("-W");
+
     if (parts.length !== 2 || parts[1].length !== 2) {
         throw new Error("Invalid week format. Should be in YYYY-WW format.");
     }
     let year = parseInt(parts[0], 10);
     let week = parseInt(parts[1], 10);
+
     if (isNaN(year) || isNaN(week) || week < 1 || week > 53) {
         throw new Error("Invalid year or week number.");
     }
@@ -289,7 +288,6 @@ function parseWeek(weekStr) {
     return startOfWeek;
 }
 /* Color Conversion */
-
 /**
  * Converts a `hexadecimal` color string `to` an `RGBA` object.
  * @param {string} hex - The hexadecimal color string to convert.
@@ -320,12 +318,14 @@ function hexToHsla(hex) {
     let hue,
         saturation,
         lightness = (max + min) / 2;
+
     if (max === min) {
         hue = 0;
         saturation = 0;
     } else {
         const delta = max - min;
         saturation = lightness > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+
         switch (max) {
             case r:
                 hue = ((g - b) / delta + (g < b ? 6 : 0)) * 60;
@@ -360,6 +360,7 @@ function hslaToRgba(h, s, l, a = 1) {
     let r = 0,
         g = 0,
         b = 0;
+
     if (huePrime >= 0 && huePrime < 1) {
         r = chroma;
         g = x;
@@ -435,12 +436,14 @@ function rgbaToHsla(r, g, b, a = 1) {
     let hue,
         saturation,
         lightness = (max + min) / 2;
+
     if (max === min) {
         hue = 0;
         saturation = 0;
     } else {
         const delta = max - min;
         saturation = lightness > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+
         switch (max) {
             case nr:
                 hue = ((ng - nb) / delta + (ng < nb ? 6 : 0)) * 60;
@@ -456,7 +459,6 @@ function rgbaToHsla(r, g, b, a = 1) {
     return { hue: Math.round(hue), saturation, lightness, alpha: a };
 }
 /* Utility Functions */
-
 /**
  * Checks if a string is a valid `hexadecimal` color.
  * @param {string} color - The color string to validate.
@@ -519,13 +521,13 @@ function calcDecimal(min, max, value) {
     return decimal;
 }
 /* Additional Functions */
-
 /**
  * Creates a queue mechanism using Promises where each `callback` executes in sequence.
  * @returns {Function} A function that accepts a callback function to enqueue and execute.
  */
 function createQueue() {
     let pending = Promise.resolve();
+
     const execute = async (callback = () => {}) => {
         let result;
         try {
@@ -535,6 +537,7 @@ function createQueue() {
         }
         return result;
     };
+
     return (callback = () => {}) => (pending = execute(callback));
 }
 /* Date Prototype Extensions */
@@ -548,6 +551,7 @@ Date.prototype.setWeek = function (week) {
     this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000);
     return this;
 };
+
 Date.prototype.getWeek = function () {
     let tempDate = new Date(this.getTime());
     tempDate.setHours(0, 0, 0, 0);
@@ -557,24 +561,28 @@ Date.prototype.getWeek = function () {
 };
 
 /**
-     * Get the boundary element for the popper.
-     * @param {HTMLElement} element - The element to get the boundary for.
-     * @returns {HTMLElement|null} The boundary element.
-     */
+ * Get the boundary element for the popper.
+ * @param {HTMLElement} element - The element to get the boundary for.
+ * @returns {HTMLElement|null} The boundary element.
+ */
 function getBoundary(element) {
     let boundary = element.parentElement;
     let scrollableElement;
     let relativeElement;
+
     while (boundary) {
         const style = window.getComputedStyle(boundary);
         const auto = style.getPropertyValue("overflow") === "auto";
         const relative = style.getPropertyValue("position") === "relative";
+
         if (relative) {
             relativeElement = boundary;
         }
+
         if (auto) {
             scrollableElement = boundary;
         }
+
         if (scrollableElement && relativeElement) {
             break;
         }
@@ -582,7 +590,6 @@ function getBoundary(element) {
     }
     return boundary || scrollableElement;
 }
-
 export {
     /* String Manipulation */
     toPascalCase,

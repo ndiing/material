@@ -281,11 +281,13 @@ class MDTextFieldComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-text-field");
         this.style.setProperty("--md-sys-motion-duration-short4", "0s");
+
         if (this.defaultValue === undefined && this.type !== "file") {
             if (this.type === "color" && !this.value) {
                 this.value = "#000000";
             } else if (this.type === "select" && !this.value) {
                 let selectedIndex = this.options.findIndex((option) => option.selected);
+
                 if (selectedIndex === -1) {
                     selectedIndex = 0;
                 }
@@ -294,7 +296,6 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value || "";
         }
     }
-
     variants = ["filled", "outlined", "rounded"];
 
     /**
@@ -304,12 +305,15 @@ class MDTextFieldComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
+
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-text-field--${variant}`, variants.includes(variant));
             });
         }
+
         if (changedProperties.has("icon")) {
             await this.updateComplete;
             this.style.setProperty("--md-comp-text-field-native-offset-left", `${this.textFieldNative.value.offsetLeft}px`);
@@ -337,6 +341,7 @@ class MDTextFieldComponent extends MDComponent {
      */
     handleTextFieldNativeReset(event) {
         event.preventDefault();
+
         if (this.type !== "file") {
             this.value = this.defaultValue;
             this.validationMessage = "";

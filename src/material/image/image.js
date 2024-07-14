@@ -27,7 +27,6 @@ class MDImageComponent extends MDComponent {
         ratio: { type: String },
         variant: { type: String },
     };
-
     variants = ["rounded"];
 
     /**
@@ -36,9 +35,11 @@ class MDImageComponent extends MDComponent {
      */
     get imageNativeStyle() {
         let style = {};
+
         if (this.ratio) {
             style["aspect-ratio"] = this.ratio;
         }
+
         if (this.variant && this.variant.includes("rounded")) {
             if (this.ratio) {
                 style["border-radius"] = `50% / calc(50% * ${this.ratio})`;
@@ -48,7 +49,6 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
-
     imageNative = createRef();
 
     /**
@@ -100,8 +100,10 @@ class MDImageComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
+
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-image--${variant}`, variants.includes(variant));
             });

@@ -1,4 +1,3 @@
-import { MDComponent } from "../component/component.js";
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
@@ -47,6 +46,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
+
         if (event.currentTarget.name === "picker") {
             this.handleColorFieldActionPickerClick(event);
         }
@@ -57,7 +57,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The click event.
      * @private
      */
-    handleColorFieldActionPickerClick(event) {
+    handleColorFieldActionPickerClick() {
         this.showPicker();
     }
 
@@ -72,13 +72,33 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.picker = document.createElement("md-color-picker");
         this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handleColorPickerButtonCancelClick = this.handleColorPickerButtonCancelClick.bind(this);
         this.handleColorPickerButtonOkClick = this.handleColorPickerButtonOkClick.bind(this);
         this.handleColorPickerSelection = this.handleColorPickerSelection.bind(this);
         this.picker.addEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
         this.picker.addEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
         this.picker.addEventListener("onColorPickerSelection", this.handleColorPickerSelection);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
             this.picker.removeEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
@@ -89,29 +109,9 @@ class MDColorFieldComponent extends MDTextFieldComponent {
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         this.boundary = getBoundary(this);
-
-        const handleScroll = () => {
-            this.picker.close();
-            this.boundary.removeEventListener("scroll", handleScroll);
-        };
         this.boundary.addEventListener("scroll", handleScroll);
-
-        const handleClick = (event) => {
-            let current = event.target;
-            let matches;
-            while (current) {
-                matches = matches || current === this || current === this.picker;
-                current = current.parentElement;
-            }
-            if (!matches) {
-                this.picker.close();
-                this.boundary.removeEventListener("click", handleClick);
-            }
-        };
         this.boundary.addEventListener("click", handleClick);
-
         this.picker.show(this.textFieldContainer.value);
     }
 
@@ -120,7 +120,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The cancel button click event.
      * @private
      */
-    handleColorPickerButtonCancelClick(event) {
+    handleColorPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
@@ -130,7 +130,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The OK button click event.
      * @private
      */
-    handleColorPickerButtonOkClick(event) {
+    handleColorPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
@@ -141,11 +141,10 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The color-color selection event.
      * @private
      */
-    handleColorPickerSelection(event) {
+    handleColorPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
-
 }
 customElements.define("md-color-field", MDColorFieldComponent);
 export { MDColorFieldComponent };

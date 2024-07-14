@@ -45,6 +45,7 @@ class MDRippleController {
         this.container.classList.add("md-ripple");
         this.container.classList.toggle("md-ripple--clipped", !!this.options.clipped);
         this.container.classList.toggle("md-ripple--fade-out", !!this.options.fadeOut);
+
         if (this.options.size) {
             this.size = (this.options.size / this.container.clientWidth) * 100;
         } else {
@@ -106,6 +107,7 @@ class MDRippleController {
         this.container.style.setProperty("--md-comp-ripple-animation", "none");
         const rect = this.container.getBoundingClientRect();
         this.container.style.removeProperty("--md-comp-ripple-animation");
+
         if (!this.options.centered) {
             const size = this.size;
             const left = (event.clientX - rect.left) / rect.width;
@@ -145,5 +147,4 @@ class MDRippleController {
         this.container.classList.remove("md-ripple--focused");
     }
 }
-
 export { MDRippleController };

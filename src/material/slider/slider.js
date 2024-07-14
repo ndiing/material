@@ -33,6 +33,7 @@ class MDSliderComponent extends MDComponent {
                     }
                     return JSON.parse(value);
                 },
+
                 toAttribute: (value) => {
                     return JSON.stringify(value);
                 },
@@ -66,6 +67,7 @@ class MDSliderComponent extends MDComponent {
      */
     renderTrack(value) {
         let length = 2;
+
         if (this.step > 1) {
             length = this.max / this.step;
         }
@@ -79,7 +81,6 @@ class MDSliderComponent extends MDComponent {
             </div>
         `;
     }
-
     sliderNative1 = createRef();
     sliderNative2 = createRef();
 
@@ -129,11 +130,13 @@ class MDSliderComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-slider");
         const defaultValue = this.max < this.min ? this.min : this.min + (this.max - this.min) / 2;
+
         for (let index = 0; index < this.value.length; index++) {
             this.value[index] = this.value[index] ?? defaultValue;
         }
         this.defaultValue = this.value.slice();
         await this.updateComplete;
+
         for (let index = 0; index < this.natives.length; index++) {
             let native = this.natives[index];
             native.value = this.value[index];
@@ -161,16 +164,19 @@ class MDSliderComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("min")) {
             if (this.min < 0) {
                 this.classList.add("md-slider--centered");
             }
         }
+
         if (changedProperties.has("step")) {
             if (this.step > 1) {
                 this.classList.add("md-slider--discrete");
             }
         }
+
         if (changedProperties.has("value")) {
             if (this.value?.length > 1) {
                 this.classList.add("md-slider--range");

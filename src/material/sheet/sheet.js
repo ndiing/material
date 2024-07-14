@@ -17,7 +17,6 @@ class MDSheetComponent extends MDCardComponent {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
-
     variants = ["north", "east", "south", "west", "modal"];
 
     /**
@@ -39,12 +38,11 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetScrimClick", event);
     }
 
-
     /**
      * Shows the sheet as a modal.
      */
     showModal() {
-        this.show(true)
+        this.show(true);
     }
 
     /**
@@ -54,7 +52,8 @@ class MDSheetComponent extends MDCardComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        if(modal){
+
+        if (modal) {
             this.scrim = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
             this.handleSheetScrimClick = this.handleSheetScrimClick.bind(this);
@@ -72,6 +71,7 @@ class MDSheetComponent extends MDCardComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
+
         if (this.scrim) {
             this.scrim.off("click", this.handleSheetScrimClick);
             this.scrim.remove();

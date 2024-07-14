@@ -23,6 +23,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
      */
     get leadingActions() {
         let label;
+
         if (this.index === 0) {
             label = [this.years[0].label, this.years[this.years.length - 1].label].join("-");
         } else if (this.index === 1) {
@@ -212,6 +213,5 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         return stringifyDate(this.selected);
     }
 }
-
 customElements.define("md-date-picker", MDDatePickerComponent);
 export { MDDatePickerComponent };

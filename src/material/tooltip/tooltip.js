@@ -63,7 +63,6 @@ class MDTooltipComponent extends MDSheetComponent {
                 "above","above-start","above-end",
                 "before","before-start","before-end",
                 "after","after-start","after-end",
-
                 "north-east","south-east","south-west","north-west",
             ],
             offset: 8,

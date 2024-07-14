@@ -139,11 +139,13 @@ class MDDataTableItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("subLabel")) {
             await this.requestUpdate;
             const secondary = this.querySelector(".md-data-table__label-secondary");
             const style = window.getComputedStyle(secondary);
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
+
             if (secondary.scrollHeight > lineHeight) {
                 this.classList.add("md-data-table__item--three");
             } else {

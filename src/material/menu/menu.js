@@ -31,7 +31,6 @@ class MDMenuComponent extends MDSheetComponent {
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
-
     menuList = createRef();
 
     /**
@@ -74,14 +73,13 @@ class MDMenuComponent extends MDSheetComponent {
      */
     constructor() {
         super();
-        this.list=[]
-        this.map={label:'label',value:'value'}
+        this.list = [];
+        this.map = { label: "label", value: "value" };
         this.rowHeight = 48;
         this.maxRows = 5;
         this.popper = new MDPopperController(this, {});
         this.store = new MDStore(this.list);
         this.virtual = new MDVirtualController(this);
-        
     }
 
     /**
@@ -94,7 +92,7 @@ class MDMenuComponent extends MDSheetComponent {
         });
         this.storeTotal = total;
         this.storeList = docs;
-        this.style.setProperty('max-height',`${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
+        this.style.setProperty("max-height", `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
 
     /**
@@ -105,6 +103,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.options.rowTotal = this.storeTotal;
         this.virtual.options.rowHeight = this.rowHeight;
         this.virtual.options.rowBuffer = this.maxRows;
+
         if (this.virtual.viewport) {
             this.virtual.viewport.scrollTop = 0;
             this.virtual.handleVirtualScroll();
@@ -137,6 +136,7 @@ class MDMenuComponent extends MDSheetComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("list")) {
             this.store.docs = this.list;
             this.updateStore();
@@ -152,15 +152,14 @@ class MDMenuComponent extends MDSheetComponent {
     handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
-
         this.emit("onMenuViewportVirtualScroll", event);
 
-        if(!this.initialized){
-            this.initialized=true
-            this.updateComplete
-            .then(() => {
+        if (!this.initialized) {
+            this.initialized = true;
+
+            this.updateComplete.then(() => {
                 this.emit("onMenuViewportVirtualScrollInitialized", event);
-            })
+            });
         }
     }
 
@@ -194,11 +193,11 @@ class MDMenuComponent extends MDSheetComponent {
      */
     async show(button, options, modal) {
         this.activatedIndex = this.store.docs.findIndex((doc) => doc.selected);
-        if (this.activatedIndex == -1) {
+
+        if (this.activatedIndex === -1) {
             this.activatedIndex = 0;
         }
         this.activate(0);
-
 
         const handleKeydown = (event) => {
             if (event.key === "ArrowUp") {
@@ -214,16 +213,14 @@ class MDMenuComponent extends MDSheetComponent {
                 this.emit("onMenuListItemEnter", event);
             }
         };
-
         let activeElement = document.activeElement;
-
         activeElement.addEventListener("keydown", handleKeydown);
+
         const handleSheetClose = () => {
             activeElement.removeEventListener("keydown", handleKeydown);
             this.removeEventListener("onSheetClose", handleSheetClose);
         };
         this.addEventListener("onSheetClose", handleSheetClose);
-
         this.updatePosition(button, options);
         super.show(modal);
     }
@@ -237,7 +234,6 @@ class MDMenuComponent extends MDSheetComponent {
     updatePosition(button = this.popperButton, options = this.popperOptions) {
         this.popperButton = button;
         this.popperOptions = options;
-
         this.popper.setPosition(button, {
             /* prettier-ignore */
             placements: [
@@ -245,7 +241,6 @@ class MDMenuComponent extends MDSheetComponent {
                 "above-start","above-end","above",
                 "before-start","before-end","before",
                 "after-start","after-end","after",
-
                 "top-start","top-end","top",
                 "bottom-start","bottom-end","bottom",
                 "left-start","left-end","left",
@@ -263,10 +258,8 @@ class MDMenuComponent extends MDSheetComponent {
         this.filters = [{ name: this.map.label, value, operator: "_like" }];
         this.updateStore();
         this.updateVirtual();
-        if(
-            this.popperButton&&
-            this.popperOptions
-        ){
+
+        if (this.popperButton && this.popperOptions) {
             this.updatePosition();
         }
     }
@@ -276,7 +269,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @param {Object} data - The data of the menu item to select.
      */
     select(data) {
-        this.store.docs.forEach((doc, index) => {
+        this.store.docs.forEach((doc) => {
             doc.selected = doc === data;
         });
     }
@@ -288,18 +281,19 @@ class MDMenuComponent extends MDSheetComponent {
      */
     activate(offset, selected) {
         this.activatedIndex = (this.activatedIndex + this.storeTotal + offset) % this.storeTotal;
-        let data=this.storeList[this.activatedIndex]
-        this.store.docs.forEach((doc, index) => {
-            doc.activated = doc===data
+        let data = this.storeList[this.activatedIndex];
+
+        this.store.docs.forEach((doc) => {
+            doc.activated = doc === data;
+
             if (selected) {
-                doc.selected = doc===data
+                doc.selected = doc === data;
             }
         });
         const delta = Math.floor((this.maxRows - 1) / 2);
-        this.virtual.viewport.scrollTop =( (this.activatedIndex - delta) * this.rowHeight);
+        this.virtual.viewport.scrollTop = (this.activatedIndex - delta) * this.rowHeight;
         this.virtual.handleVirtualScroll();
     }
 }
-
 customElements.define("md-menu", MDMenuComponent);
 export { MDMenuComponent };

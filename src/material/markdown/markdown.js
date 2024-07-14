@@ -52,6 +52,7 @@ class MDMarkdownComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("href")) {
             const response = await fetch(this.href);
             const text = await response.text();

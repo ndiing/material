@@ -45,6 +45,7 @@ class MDStore {
      */
     patch(_id, doc) {
         const index = this.docs.findIndex((d) => d[this.options.primaryKey] === _id);
+
         if (index !== -1) {
             this.docs[index] = this.deepMerge(this.docs[index], doc);
             return this.docs[index];
@@ -59,6 +60,7 @@ class MDStore {
      */
     delete(_id) {
         const index = this.docs.findIndex((doc) => doc[this.options.primaryKey] === _id);
+
         if (index !== -1) {
             const deletedDoc = this.docs[index];
             this.docs.splice(index, 1);
@@ -92,6 +94,7 @@ class MDStore {
             for (const sorter of sorters) {
                 const { name, order } = sorter;
                 const comparison = (a[name] > b[name]) - (a[name] < b[name]);
+
                 if (comparison !== 0) {
                     return order === "asc" ? comparison : -comparison;
                 }
@@ -165,6 +168,7 @@ class MDStore {
     getAll(options = {}) {
         let { _sort, _order, q, _page, _limit, _start, _end, sorters, filters, ...rest } = options;
         let docs = this.docs.slice();
+
         if ((_sort && _order) || sorters) {
             if (!sorters) {
                 const sort = _sort.split(",");
@@ -173,12 +177,15 @@ class MDStore {
             }
             docs = this.sort(docs, sorters);
         }
+
         if (q) {
             docs = this.search(docs, q);
         }
+
         if (Object.keys(rest).length > 0 || filters) {
             if (!filters) {
                 filters = [];
+
                 for (const key in rest) {
                     if (Object.prototype.hasOwnProperty.call(rest, key)) {
                         const value = rest[key];
@@ -190,6 +197,7 @@ class MDStore {
             docs = this.filter(docs, filters);
         }
         let total = docs.length;
+
         if (_page !== undefined && _limit !== undefined) {
             docs = this.paginate(docs, _page, _limit);
         } else if (_start !== undefined && _end !== undefined) {
@@ -209,6 +217,7 @@ class MDStore {
         if (!isObject(target) || !isObject(source)) {
             return source;
         }
+
         for (const key in source) {
             if (isObject(source[key])) {
                 if (!target[key]) {
@@ -244,6 +253,7 @@ class MDStore {
         if (!isObject(obj)) {
             return false;
         }
+
         for (const key in obj) {
             if (isObject(obj[key])) {
                 if (this.deepSearch(obj[key], query)) {
@@ -267,6 +277,7 @@ class MDStore {
         return filters.every((filter) => {
             const { name, value, operator } = filter;
             const objValue = this.getValue(obj, name);
+
             if (Array.isArray(objValue)) {
                 switch (operator) {
                     case "_eq":

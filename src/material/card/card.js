@@ -43,7 +43,6 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
-
     variants = ["elevated", "filled", "outlined"];
 
     /**
@@ -282,8 +281,10 @@ class MDCardComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
+
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-card--${variant}`, variants.includes(variant));
             });

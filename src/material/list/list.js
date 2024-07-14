@@ -136,6 +136,7 @@ class MDListComponent extends MDComponent {
      */
     selectToggle(data) {
         data.selected = !data.selected;
+
         if (this.selectionMode && this.list.findIndex((item) => item.selected) === -1) {
             this.selectionMode = false;
         }
@@ -149,13 +150,16 @@ class MDListComponent extends MDComponent {
         this.endIndex = this.endIndex || 0;
         this.startIndex = this.list.indexOf(data);
         this.swapIndex = this.startIndex > this.endIndex;
+
         if (this.swapIndex) {
             [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
         }
+
         for (let i = 0; i < this.list.length; i++) {
             let item = this.list[i];
             item.selected = i >= this.startIndex && i <= this.endIndex;
         }
+
         if (this.swapIndex) {
             [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
         }
@@ -181,6 +185,7 @@ class MDListComponent extends MDComponent {
             return;
         }
         const data = event.currentTarget.data;
+
         if (this.rangeSelection && event.shiftKey) {
             this.selectRange(data);
         } else if ((this.multiSelection && event.ctrlKey) || this.selectionMode) {
@@ -199,6 +204,7 @@ class MDListComponent extends MDComponent {
      */
     handleListKeydown(event) {
         const activeElement = document.activeElement === event.target.closest(".md-list__item");
+
         if (this.allSelection && activeElement && event.ctrlKey && event.key === "a") {
             this.selectAll();
             this.requestUpdate();
@@ -231,6 +237,7 @@ class MDListComponent extends MDComponent {
             return;
         }
         const data = event.detail.target.closest(".md-list__item")?.data;
+
         if (data && this.data !== data) {
             this.data = data;
             this.selectRange(data);
@@ -248,6 +255,7 @@ class MDListComponent extends MDComponent {
         if (!this.selection) {
             return;
         }
+
         window.requestAnimationFrame(() => {
             this.selectionMode = true;
         });
@@ -290,6 +298,5 @@ class MDListComponent extends MDComponent {
         this.emit("onListItemSwitchNativeInput", event);
     }
 }
-
 customElements.define("md-list", MDListComponent);
 export { MDListComponent };

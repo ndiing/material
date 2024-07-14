@@ -13,7 +13,6 @@ const sourceLocale = sourceLocale_;
  * @type {string[]}
  */
 const targetLocales = targetLocales_;
-
 const { getLocale: getLocale_, setLocale: setLocale_ } = configureLocalization({
     sourceLocale,
     targetLocales,
@@ -32,5 +31,4 @@ const getLocale = getLocale_;
  * @returns {Promise<void>} A promise that resolves when the locale has been set.
  */
 const setLocale = setLocale_;
-
 export { sourceLocale, targetLocales, getLocale, setLocale };

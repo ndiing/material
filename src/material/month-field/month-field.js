@@ -1,4 +1,3 @@
-import { MDComponent } from "../component/component.js";
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
@@ -47,6 +46,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
+
         if (event.currentTarget.name === "picker") {
             this.handleMonthFieldActionPickerClick(event);
         }
@@ -57,7 +57,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The click event.
      * @private
      */
-    handleMonthFieldActionPickerClick(event) {
+    handleMonthFieldActionPickerClick() {
         this.showPicker();
     }
 
@@ -72,7 +72,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker = document.createElement("md-month-picker");
         this.picker.value = this.value;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handleMonthPickerButtonCancelClick = this.handleMonthPickerButtonCancelClick.bind(this);
         this.handleMonthPickerButtonOkClick = this.handleMonthPickerButtonOkClick.bind(this);
         this.handleMonthPickerSelection = this.handleMonthPickerSelection.bind(this);
@@ -81,6 +80,27 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthPickerButtonOkClick);
         this.picker.addEventListener("onMonthPickerSelection", this.handleMonthPickerSelection);
         this.picker.addEventListener("onMonthPickerMonthItemClick", this.handleMonthPickerMonthItemClick);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handleMonthPickerButtonCancelClick);
             this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handleMonthPickerButtonOkClick);
@@ -92,29 +112,9 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         this.boundary = getBoundary(this);
-
-        const handleScroll = () => {
-            this.picker.close();
-            this.boundary.removeEventListener("scroll", handleScroll);
-        };
         this.boundary.addEventListener("scroll", handleScroll);
-
-        const handleClick = (event) => {
-            let current = event.target;
-            let matches;
-            while (current) {
-                matches = matches || current === this || current === this.picker;
-                current = current.parentElement;
-            }
-            if (!matches) {
-                this.picker.close();
-                this.boundary.removeEventListener("click", handleClick);
-            }
-        };
         this.boundary.addEventListener("click", handleClick);
-
         this.picker.show(this.textFieldContainer.value);
     }
 
@@ -123,7 +123,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The cancel button click event.
      * @private
      */
-    handleMonthPickerButtonCancelClick(event) {
+    handleMonthPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
@@ -133,7 +133,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The OK button click event.
      * @private
      */
-    handleMonthPickerButtonOkClick(event) {
+    handleMonthPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
@@ -144,7 +144,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The month-time selection event.
      * @private
      */
-    handleMonthPickerSelection(event) {
+    handleMonthPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
@@ -154,7 +154,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The month-time selection event.
      * @private
      */
-    handleMonthPickerMonthItemClick(event) {
+    handleMonthPickerMonthItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();

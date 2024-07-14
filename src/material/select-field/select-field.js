@@ -1,5 +1,4 @@
 import { createRef, ref } from "lit/directives/ref.js";
-import { MDComponent } from "../component/component.js";
 import { getBoundary } from "../functions/functions.js";
 import { MDMenuComponent } from "../menu/menu.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
@@ -34,7 +33,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @param {Array} value - The new actions for the select-select field.
      */
     set actions(value) {}
-
     textFieldHidden = createRef();
 
     get selectedIndex() {
@@ -123,6 +121,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-select-field");
+
         if (!this.defaultOptions) {
             this.defaultOptions = JSON.parse(JSON.stringify(this.options));
         }
@@ -135,23 +134,28 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     handleTextFieldNativeKeydown(event) {
         super.handleTextFieldNativeKeydown(event);
+
         if (!this.pickerOpen) {
             if (event.key === "ArrowUp" || event.key === "ArrowDown") {
                 event.preventDefault();
                 this.activatedIndex = this.options.findIndex((option) => option.selected);
+
                 if (this.activatedIndex === -1) {
                     this.activatedIndex = 0;
                 }
                 let offset = 0;
+
                 if (event.key === "ArrowUp") {
                     offset = -1;
                 }
+
                 if (event.key === "ArrowDown") {
                     offset = 1;
                 }
                 this.activatedIndex = (this.activatedIndex + this.options.length + offset) % this.options.length;
                 let data = this.options[this.activatedIndex];
-                this.options.forEach((option, index) => {
+
+                this.options.forEach((option) => {
                     option.selected = option === data;
                 });
                 this.requestUpdate();
@@ -167,12 +171,13 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
+
         if (event.currentTarget.name === "picker") {
             this.handleSelectFieldActionPickerClick(event);
         }
     }
 
-    handleSelectFieldActionPickerClick(event) {
+    handleSelectFieldActionPickerClick() {
         this.showPicker();
     }
 
@@ -188,9 +193,29 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.list = this.options;
         this.picker.map = this.map;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handleMenuListSelection = this.handleMenuListSelection.bind(this);
         this.picker.addEventListener("onMenuListSelection", this.handleMenuListSelection);
+
+        const handleScroll = () => {
+            this.picker.close();
+            this.boundary.removeEventListener("scroll", handleScroll);
+        };
+
+        const handleClick = (event) => {
+            let current = event.target;
+            let matches;
+
+            while (current) {
+                matches = matches || current === this || current === this.picker;
+                current = current.parentElement;
+            }
+
+            if (!matches) {
+                this.picker.close();
+                this.boundary.removeEventListener("click", handleClick);
+            }
+        };
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onMenuListSelection", this.handleMenuListSelection);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
@@ -199,29 +224,9 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.pickerOpen = false;
         };
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         this.boundary = getBoundary(this);
-
-        const handleScroll = () => {
-            this.picker.close();
-            this.boundary.removeEventListener("scroll", handleScroll);
-        };
         this.boundary.addEventListener("scroll", handleScroll);
-
-        const handleClick = (event) => {
-            let current = event.target;
-            let matches;
-            while (current) {
-                matches = matches || current === this || current === this.picker;
-                current = current.parentElement;
-            }
-            if (!matches) {
-                this.picker.close();
-                this.boundary.removeEventListener("click", handleClick);
-            }
-        };
         this.boundary.addEventListener("click", handleClick);
-
         await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScrollInitialized", resolve));
         this.picker.style.minWidth = `${this.textFieldContainer.value.clientWidth}px`;
         this.picker.style.maxWidth = `${this.textFieldContainer.value.clientWidth}px`;
@@ -234,7 +239,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @param {Event} event - The select-select selection event.
      * @private
      */
-    handleMenuListSelection(event) {
+    handleMenuListSelection() {
         this.textFieldNative.value.value = this.selectedOptions[0][this.map.label];
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.requestUpdate();

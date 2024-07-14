@@ -75,6 +75,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      * {{description}}
      */
     set emojiPickerTabs(value) {}
+
     constructor() {
         super();
         this.tabs = {
@@ -213,12 +214,14 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.requestUpdate();
         await this.updateComplete;
         const scrollTop = Math.floor(this.virtual.viewport.scrollTop / this.virtual.options.rowHeight);
+
         const data = this.dataTabs.find((item, index, array) => {
             if (array[index + 1]) {
                 return scrollTop >= item.rowIndex && scrollTop < array[index + 1].rowIndex;
             }
             return scrollTop >= item.rowIndex;
         });
+
         if (this.selectedTab !== data) {
             this.selectedTab = data;
             this.updateEmojiPickerTabsIndicator(data);
@@ -258,6 +261,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     generateTabsAndRows(data = [], tabs = {}) {
         const grouped = data.reduce((acc, curr) => {
             const { group = "Frequently Used", emoji } = curr;
+
             if (!acc[group]) {
                 acc[group] = [];
             }
@@ -268,12 +272,14 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         const dataRows = [];
         let rowIndex = 0;
         let index = 0;
+
         for (const name in grouped) {
             const value = grouped[name];
             dataTabs.push({ label: name, emoji: tabs[name] || value[0].emoji, rowIndex, index });
             dataRows.push([{ label: name }]);
             ++rowIndex;
             ++index;
+
             for (let i = 0; i < value.length; i += 7) {
                 dataRows.push(value.slice(i, i + 7));
                 ++rowIndex;
@@ -373,7 +379,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
                 "above-start","above-end","above",
                 "before-start","before-end","before",
                 "after-start","after-end","after",
-
                 "top-start","top-end","top",
                 "bottom-start","bottom-end","bottom",
                 "left-start","left-end","left",

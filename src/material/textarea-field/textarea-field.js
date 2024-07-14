@@ -25,6 +25,5 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-textarea-field");
     }
 }
-
 customElements.define("md-textarea-field", MDTextareaFieldComponent);
 export { MDTextareaFieldComponent };

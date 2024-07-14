@@ -68,6 +68,7 @@ class MDSegmentedButtonComponent extends MDComponent {
     handleSegmentedButtonItemClick(event) {
         if (this.multiSelection || this.singleSelection) {
             const data = event.currentTarget.data;
+
             if (this.multiSelection) {
                 data.selected = !data.selected;
             } else if (this.singleSelection) {

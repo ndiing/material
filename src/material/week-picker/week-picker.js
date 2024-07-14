@@ -23,6 +23,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
      */
     get weekdays() {
         const rows = [];
+
         for (let i = 0; i < 7; i++) {
             const date = new Date(0, 0, i + 1);
             rows.push({
@@ -38,6 +39,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
      */
     get days() {
         const rows = [];
+
         for (let i = 0; i < 6; i++) {
             const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + 0 + 1 - this.first + 1);
             const year = date.getFullYear();
@@ -51,6 +53,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
                 month,
                 week,
             };
+
             for (let j = 0; j < 7; j++) {
                 const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first + 1);
                 children.push({
@@ -92,6 +95,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
      */
     get leadingActions() {
         let label;
+
         if (this.index === 0) {
             label = [this.years[0].label, this.years[this.years.length - 1].label].join("-");
         } else if (this.index === 1) {
@@ -289,6 +293,5 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         return stringifyWeek(this.selected);
     }
 }
-
 customElements.define("md-week-picker", MDWeekPickerComponent);
 export { MDWeekPickerComponent };

@@ -123,11 +123,13 @@ class MDPaginationComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("limit") || changedProperties.has("total")) {
             await this.updateComplete;
             this.page = 1;
         }
         let cache = JSON.stringify([this.total, this.limit, this.page]);
+
         if (this.cache !== cache) {
             this.cache = cache;
             this.emit("onPaginationChange", this);
@@ -185,6 +187,5 @@ class MDPaginationComponent extends MDComponent {
         this.emit("onPaginationLastClick", event);
     }
 }
-
 customElements.define("md-pagination", MDPaginationComponent);
 export { MDPaginationComponent };

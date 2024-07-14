@@ -51,14 +51,14 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
         const name = event.currentTarget.name;
+
         if (name === "subtract") {
-            this.textFieldNative.value.stepDown()
+            this.textFieldNative.value.stepDown();
         } else if (name === "add") {
-            this.textFieldNative.value.stepUp()
+            this.textFieldNative.value.stepUp();
         }
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 }
-
 customElements.define("md-number-field", MDNumberFieldComponent);
 export { MDNumberFieldComponent };

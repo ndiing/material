@@ -32,7 +32,6 @@ class MDFormComponent extends MDComponent {
         novalidate: { type: Boolean },
         target: { type: String },
     };
-
     formNative = createRef();
 
     /**
@@ -112,6 +111,7 @@ class MDFormComponent extends MDComponent {
         const formData = new FormData(this.formNative.value);
         event.formData = formData;
         const data = {};
+
         for (const [name, value] of formData.entries()) {
             if (data[name]) {
                 if (Array.isArray(data[name])) {

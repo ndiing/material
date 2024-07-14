@@ -16,6 +16,7 @@ async function setTheme(colorOrImage, customColors) {
     ]
         .concat(customColors)
         .filter(Boolean);
+
     if (isValidHexColor(colorOrImage)) {
         theme = themeFromSourceColor(argbFromHex(colorOrImage), customColors);
     } else {
@@ -35,6 +36,7 @@ async function setTheme(colorOrImage, customColors) {
     theme.schemes.light.props.surfaceContainer = theme.palettes.neutral.tone(94);
     theme.schemes.light.props.surfaceContainerHigh = theme.palettes.neutral.tone(92);
     theme.schemes.light.props.surfaceContainerHighest = theme.palettes.neutral.tone(90);
+
     theme.customColors.forEach((customColor) => {
         theme.schemes.dark.props[toCamelCase(customColor.color.name)] = customColor.dark.color;
         theme.schemes.dark.props[toCamelCase(`on-${customColor.color.name}`)] = customColor.dark.onColor;

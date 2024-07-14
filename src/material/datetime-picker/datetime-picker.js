@@ -41,6 +41,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         const year = this.selection.getFullYear();
         const start = Math.floor(year / 10) * 10;
         const end = Math.floor((year + 10) / 10) * 10;
+
         for (let i = 0; i < end - start; i++) {
             const date = new Date(start + i, 0);
             const year = date.getFullYear();
@@ -59,6 +60,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get months() {
         const rows = [];
+
         for (let i = 0; i < 12; i++) {
             const date = new Date(this.selection.getFullYear(), i);
             const year = date.getFullYear();
@@ -93,6 +95,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get weekdays() {
         const rows = [];
+
         for (let i = 0; i < 7; i++) {
             const date = new Date(0, 0, i);
             rows.push({
@@ -107,9 +110,11 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get days() {
         const rows = [];
+
         for (let i = 0; i < 6; i++) {
             const column = {};
             const children = [];
+
             for (let j = 0; j < 7; j++) {
                 const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first);
                 const year = date.getFullYear();
@@ -135,6 +140,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get hours() {
         const rows = [];
+
         for (let i = 0; i < 24; i++) {
             const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), this.selection.getDate(), i);
             const year = date.getFullYear();
@@ -159,6 +165,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get minutes() {
         const rows = [];
+
         for (let i = 0; i < 60; i++) {
             const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), this.selection.getDate(), this.selection.getHours(), i);
             const year = date.getFullYear();
@@ -208,6 +215,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get leadingActions() {
         let label;
+
         if (this.index === 0) {
             label = [this.years[0].label, this.years[this.years.length - 1].label].join("-");
         } else if (this.index === 1) {
@@ -357,9 +365,10 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-datetime-picker");
-        if(!this.defaultValue){
-            if(!this.value){
-                this.value=this.getValue()
+
+        if (!this.defaultValue) {
+            if (!this.value) {
+                this.value = this.getValue();
             }
             this.defaultValue = this.value;
         }
@@ -371,9 +380,11 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-datetime-picker-card-index", this.index);
         }
+
         if (changedProperties.has("value") && changedProperties.get("value")) {
             if (this.value) {
                 await this.updateComplete;
@@ -623,7 +634,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
                 "above-start","above-end","above",
                 "before-start","before-end","before",
                 "after-start","after-end","after",
-
                 "top-start","top-end","top",
                 "bottom-start","bottom-end","bottom",
                 "left-start","left-end","left",

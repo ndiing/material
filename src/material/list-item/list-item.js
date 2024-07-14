@@ -158,17 +158,20 @@ class MDListItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("subLabel")) {
             await this.updateComplete;
             const secondary = this.querySelector(".md-list__label-secondary");
             const style = window.getComputedStyle(secondary);
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
+
             if (secondary.scrollHeight > lineHeight) {
                 this.classList.add("md-list__item--three");
             } else {
                 this.classList.add("md-list__item--two");
             }
         }
+
         if (changedProperties.has("selected")) {
             if (this.selected) {
                 this.emit("onListItemSelected", this);
@@ -176,6 +179,5 @@ class MDListItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-list-item", MDListItemComponent);
 export { MDListItemComponent };

@@ -11,6 +11,7 @@ class DevSelectField extends MDComponent {
                             
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
+                                    name="select"
                                     map='{"label":"label","value":"value"}'
                                     .options="${[
                                         { label: "Indonesia", value: "ID" },
@@ -42,11 +43,13 @@ class DevSelectField extends MDComponent {
                                     ]}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
+                                    @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
+                                    name="select2"
                                     map='{"label":"label","value":"value"}'
                                     .options="${[
                                         { label: "Indonesia", value: "ID" },
@@ -78,6 +81,7 @@ class DevSelectField extends MDComponent {
                                     ]}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
+                                    @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
 

@@ -41,13 +41,16 @@ function reset() {
 function observe(resolve) {
     let currentTime = performance.now();
     elapsedTime = currentTime - startTime;
+
     if (progressBar) {
         progressBar.setAttribute("value", elapsedTime);
     }
+
     if (elapsedTime < totalDuration) {
         requestId = requestAnimationFrame(() => observe(resolve));
     } else {
         reset();
+
         if (resolve) {
             resolve();
         }
@@ -64,6 +67,7 @@ function start(duration = 10000) {
         if (!progressBar) {
             create();
         }
+
         if (isAnimating) {
             totalDuration += duration;
             resolve();
@@ -112,11 +116,14 @@ function stop() {
     }
 }
 export { start, pause, resume, stop };
+
 (() => {
     let timeout;
+
     new PerformanceObserver((list) => {
         list.getEntries().forEach((entry) => {
             window.clearTimeout(timeout);
+
             timeout = window.setTimeout(() => {
                 stop();
             }, 100);

@@ -142,6 +142,7 @@ class MDColorPickerComponent extends MDSheetComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("value") && changedProperties.get("value")) {
             if (this.value) {
                 await this.updateComplete;
@@ -199,12 +200,14 @@ class MDColorPickerComponent extends MDSheetComponent {
         const data = this.data;
         let xx;
         let yy;
+
         for (let y = 0; y < this.canvas.height; y++) {
             for (let x = 0; x < this.canvas.width; x++) {
                 const index = (y * this.canvas.width + x) * 4;
                 const red = data[index];
                 const green = data[index + 1];
                 const blue = data[index + 2];
+
                 if (red === r && green === g && blue === b) {
                     xx = x;
                     yy = y;
@@ -452,7 +455,6 @@ class MDColorPickerComponent extends MDSheetComponent {
                 "above-start","above-end","above",
                 "before-start","before-end","before",
                 "after-start","after-end","after",
-
                 "top-start","top-end","top",
                 "bottom-start","bottom-end","bottom",
                 "left-start","left-end","left",
@@ -462,10 +464,9 @@ class MDColorPickerComponent extends MDSheetComponent {
         });
     }
 
-    getValue(){
-        return this.selection.hex.slice(0,1+6)
+    getValue() {
+        return this.selection.hex.slice(0, 1 + 6);
     }
 }
-
 customElements.define("md-color-picker", MDColorPickerComponent);
 export { MDColorPickerComponent };

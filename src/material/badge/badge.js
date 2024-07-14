@@ -23,7 +23,6 @@ class MDBadgeComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.limit = 999;
     }
 

@@ -7,6 +7,7 @@ class MDObserver {
 
     /**
      * Creates an instance of MDObserver.
+
      * @param {Function} [callback=() => {}] - The callback function to execute on each animation frame.
      */
     constructor(callback = () => {}) {
@@ -21,6 +22,7 @@ class MDObserver {
     executeCallback(time) {
         this.handle = undefined;
         this.callback(time);
+
         if (this.isObserving) {
             this.scheduleNextFrame();
         }
@@ -57,5 +59,4 @@ class MDObserver {
         this.isObserving = false;
     }
 }
-
 export { MDObserver };

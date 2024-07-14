@@ -21,14 +21,11 @@ class MDPopperController {
                 "right","right-start","right-end",
                 "bottom","bottom-start","bottom-end",
                 "left","left-start","left-end",
-
                 "above","above-start","above-end",
                 "after","after-start","after-end",
                 "below","below-start","below-end",
                 "before","before-start","before-end",
-
                 "north-east","south-east","south-west","north-west",
-
                 "center",
             ],
             boundary: null,
@@ -55,12 +52,10 @@ class MDPopperController {
             left = event.clientX;
             top = event.clientY;
         }
-
         left -= divRect.left;
         top -= divRect.top;
         right = left + width;
         bottom = top + height;
-
         return { width, height, left, top, right, bottom };
     }
 
@@ -74,10 +69,8 @@ class MDPopperController {
             ...this.options,
             ...options,
         };
-
         const container = this.host;
         const boundary = options.boundary || getBoundary(container);
-
         const div = document.createElement("div");
         div.style.position = "absolute";
         div.style.left = "0px";
@@ -87,13 +80,10 @@ class MDPopperController {
         container.parentElement.insertBefore(div, container.nextElementSibling);
         const divRect = div.getBoundingClientRect();
         div.remove();
-
         const containerRect = this.getRect(container, divRect);
         const buttonRect = this.getRect(button, divRect);
         const boundaryRect = this.getRect(boundary, divRect);
-
         let originX, originY, left, top, right, bottom;
-
         const placements = {
             above: () => ({ left: buttonRect.left + (buttonRect.width - containerRect.width) / 2, top: buttonRect.top - containerRect.height - options.offset, originX: "50%", originY: "100%" }),
             "above-start": () => ({ left: buttonRect.left, top: buttonRect.top - containerRect.height - options.offset, originX: "0%", originY: "100%" }),
@@ -140,22 +130,21 @@ class MDPopperController {
         if (left < boundaryRect.left) {
             left = Math.max(left, boundaryRect.left);
         }
+
         if (top < boundaryRect.top) {
             top = Math.max(top, boundaryRect.top);
         }
+
         if (right > boundaryRect.right) {
             left = Math.min(right - containerRect.width, boundaryRect.right - containerRect.width);
         }
+
         if (bottom > boundaryRect.bottom) {
             top = Math.min(bottom - containerRect.height, boundaryRect.bottom - containerRect.height);
         }
-
         this.host.style.left = `${left}px`;
         this.host.style.top = `${top}px`;
         this.host.style.transformOrigin = `${originX} ${originY}`;
     }
-
-    
 }
-
 export { MDPopperController };

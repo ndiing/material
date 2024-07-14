@@ -69,7 +69,6 @@ class MDComponent extends LitElement {
             cancelable: true,
             detail,
         });
-
         this.dispatchEvent(event);
     }
 }

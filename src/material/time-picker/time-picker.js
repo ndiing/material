@@ -43,6 +43,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     get leadingActions() {
         let label;
+
         if (this.index === 0) {
             label = stringifyTime(this.selection);
         } else if (this.index === 1) {
@@ -195,6 +196,5 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         return stringifyTime(this.selected);
     }
 }
-
 customElements.define("md-time-picker", MDTimePickerComponent);
 export { MDTimePickerComponent };

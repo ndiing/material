@@ -29,7 +29,6 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
-
     switchNative = createRef();
 
     /**
@@ -81,12 +80,15 @@ class MDSwitchComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-switch");
+
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
+
         if (this.defaultChecked === undefined) {
             this.defaultChecked = !!this.checked;
         }
+
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }

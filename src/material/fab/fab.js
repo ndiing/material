@@ -23,7 +23,6 @@ class MDFabComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
 
     /**
@@ -69,12 +68,15 @@ class MDFabComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
+
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-fab--${variant}`, variants.includes(variant));
             });
         }
+
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");

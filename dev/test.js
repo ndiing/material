@@ -348,6 +348,147 @@ function parse(data) {
     // console.log(doc);
     return {doc,data}
 }
+function generate(text, name) {
+    const { doc } = parse(text);
+
+
+    let className = toPascalCase('dev-' + name);
+    let tagName = toKebabCase('dev-' + name);
+    let tagName2 = toKebabCase('md-' + name);
+    // if(doc.variants){
+    //     doc.variants.forEach(variant=>{
+    //         console.log(name+'-'+variant)
+    //     })
+    // }
+    let temp = template;
+    if ([
+        /field$/,
+        /form$/,
+        /checkbox$/,
+        /radio-button$/,
+        /slider$/,
+    ].some(key => key.test(name))) {
+        temp = template3;
+    }
+    temp = temp.replaceAll('DevExample', className);
+    temp = temp.replaceAll('dev-example', tagName);
+
+    let temp2 = template2;
+    if ([
+        /field$/,
+        /form$/,
+        /checkbox$/,
+        /radio-button$/,
+        /slider$/,
+    ].some(key => key.test(name))) {
+        temp2 = template4;
+    }
+    temp2 = temp2.replaceAll('DevExample', className);
+    temp2 = temp2.replaceAll('dev-example', tagName);
+
+    // temp=''
+    // temp2=''
+    let code = '';
+    code += temp;
+    let space = '    '.repeat(6);
+
+    code += `${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`;
+    code += `${space}    <${tagName2}\r\n`;
+    const values = {
+        avatar: '"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+        thumbnail: '"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+        image: '"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+        src: '"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
+        alt: '"alt"',
+        icon: '"image"',
+        label: '"label"',
+        subLabel: '"subLabel"',
+        action: '"image"',
+        leadingActions: `'[{"icon":"image"}]'`,
+        trailingActions: `'[{"icon":"image"}]'`,
+        actions: `'[{"label":"label","icon":"image"}]'`,
+        columns: `'[]'`,
+        rows: `'[]'`,
+        list: `'[]'`,
+        buttons: `'[]'`,
+        chips: `'[]'`,
+        options: `'[{"label":"10","value":10}]'`,
+        tabs: `'{}'`,
+        map: `'{"label":"label","value":"value"}'`,
+        page: `"1"`,
+        total: `"100"`,
+        limit: `"10"`,
+    };
+    if (doc.properties && !name.includes('datetime')) {
+        doc.properties.forEach(prop => {
+            if (prop.name == 'variant' && doc.variants) {
+                code += `${space}        ${prop.name}="${doc.variants[0]}"\r\n`;
+
+            } else {
+                code += `${space}        ${prop.name}${prop.type !== 'Boolean' ? `=${values[prop.name] || '""'}` : ``}\r\n`;
+
+            }
+        });
+    }
+    if (name.includes('datetime')) {
+        code += `${space}        value="1990-10-17T20:30"\r\n`;
+    }
+    if (name.includes('time')) {
+        code += `${space}        value="20:30"\r\n`;
+    }
+    if (name.includes('date')) {
+        code += `${space}        value="1990-10-17"\r\n`;
+    }
+    if (name.includes('month')) {
+        code += `${space}        value="1990-10"\r\n`;
+    }
+    if (name.includes('week')) {
+        code += `${space}        value="1990-W42"\r\n`;
+    }
+    if (name.includes('select')) {
+        code += `${space}        options=${values['options']}\r\n`;
+    }
+    if (doc.fires) {
+        doc.fires.forEach(doc => {
+            code += `${space}        @${doc.name}="\${console.log}"\r\n`;
+
+        });
+    }
+    code += `${space}    ></${tagName2}>\r\n`;
+    code += `${space}</div>\r\n`;
+
+    if (doc.variants) {
+        doc.variants.slice(1).forEach(variant => {
+            code += `${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`;
+            code += `${space}    <${tagName2}\r\n`;
+            if (doc.properties) {
+                doc.properties.forEach(prop => {
+                    if (prop.name == 'variant') {
+                        code += `${space}        ${prop.name}="${variant}"\r\n`;
+
+                    } else {
+                        code += `${space}        ${prop.name}${prop.type !== 'Boolean' ? `=${values[prop.name] || '""'}` : ``}\r\n`;
+
+                    }
+                });
+            }
+            if (doc.fires) {
+                doc.fires.forEach(doc => {
+                    code += `${space}        @${doc.name}="\${console.log}"\r\n`;
+
+                });
+            }
+            code += `${space}    ></${tagName2}>\r\n`;
+            code += `${space}</div>\r\n`;
+        });
+    }
+
+    code += temp2;
+
+    console.log(code);
+    // write('./src/dev/'+name+'/'+name+'.js',code)
+}
+
 function open(pathname) {
     const dirents = fs.readdirSync(pathname, { withFileTypes: true });
     for (const dirent of dirents) {
@@ -361,150 +502,25 @@ function open(pathname) {
                 if (argvName && !curr.includes(argvName)) {
                     continue;
                 }
-                const text = read(curr);
-                const {doc} = parse(text)
-
-
-                let className=toPascalCase('dev-'+name)
-                let tagName=toKebabCase('dev-'+name)
-                let tagName2=toKebabCase('md-'+name)
-                // if(doc.variants){
-                //     doc.variants.forEach(variant=>{
-                //         console.log(name+'-'+variant)
-                //     })
-                // }
-
-                let temp=template
-                if([
-                    /field$/,
-                    /form$/,
-                    /checkbox$/,
-                    /radio-button$/,
-                    /slider$/,
-                ].some(key=>key.test(name))){
-                    temp=template3
-                }
-                temp=temp.replaceAll('DevExample',className)
-                temp=temp.replaceAll('dev-example',tagName)
-
-                let temp2=template2
-                if([
-                    /field$/,
-                    /form$/,
-                    /checkbox$/,
-                    /radio-button$/,
-                    /slider$/,
-                ].some(key=>key.test(name))){
-                    temp2=template4
-                }
-                temp2=temp2.replaceAll('DevExample',className)
-                temp2=temp2.replaceAll('dev-example',tagName)
-
-                // temp=''
-                // temp2=''
-
-                let code=''
-                code+=temp
-                let space='    '.repeat(6)
-
-                code+=`${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`
-                code+=`${space}    <${tagName2}\r\n`
-                const values={
-                    avatar:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
-                    thumbnail:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
-                    image:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
-                    src:'"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
-                    alt:'"alt"',
-                    icon:'"image"',
-                    label:'"label"',
-                    subLabel:'"subLabel"',
-                    action:'"image"',
-                    leadingActions:`'[{"icon":"image"}]'`,
-                    trailingActions:`'[{"icon":"image"}]'`,
-                    actions:`'[{"label":"label","icon":"image"}]'`,
-                    columns:`'[]'`,
-                    rows:`'[]'`,
-                    list:`'[]'`,
-                    buttons:`'[]'`,
-                    chips:`'[]'`,
-                    options:`'[{"label":"10","value":10}]'`,
-                    tabs:`'{}'`,
-                    map:`'{"label":"label","value":"value"}'`,
-                    page:`"1"`,
-                    total:`"100"`,
-                    limit:`"10"`,
-                }
-                if(doc.properties&&!name.includes('datetime')){
-                    doc.properties.forEach(prop => {
-                        if(prop.name=='variant'&&doc.variants){
-                            code+=`${space}        ${prop.name}="${doc.variants[0]}"\r\n`
-                            
-                        }else{
-                            code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=${values[prop.name]||'""'}`:``}\r\n`
-                            
-                        }
-                    })
-                }
-                if(name.includes('datetime')){
-                    code+=`${space}        value="1990-10-17T20:30"\r\n`
-                }
-                if(name.includes('time')){
-                    code+=`${space}        value="20:30"\r\n`
-                }
-                if(name.includes('date')){
-                    code+=`${space}        value="1990-10-17"\r\n`
-                }
-                if(name.includes('month')){
-                    code+=`${space}        value="1990-10"\r\n`
-                }
-                if(name.includes('week')){
-                    code+=`${space}        value="1990-W42"\r\n`
-                }
-                if(name.includes('select')){
-                    code+=`${space}        options=${values['options']}\r\n`
-                }
-                if(doc.fires){
-                    doc.fires.forEach(doc=>{
-                        code+=`${space}        @${doc.name}="\${console.log}"\r\n`
-
-                    })
-                }
-                code+=`${space}    ></${tagName2}>\r\n`
-                code+=`${space}</div>\r\n`
+                let text = read(curr);
+                // generate(text, name);
                 
-                if(doc.variants){
-                    doc.variants.slice(1).forEach(variant=>{
-                        code+=`${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`
-                        code+=`${space}    <${tagName2}\r\n`
-                        if(doc.properties){
-                            doc.properties.forEach(prop => {
-                                if(prop.name=='variant'){
-                                    code+=`${space}        ${prop.name}="${variant}"\r\n`
-                                    
-                                }else{
-                                    code+=`${space}        ${prop.name}${prop.type!=='Boolean'?`=${values[prop.name]||'""'}`:``}\r\n`
-                                    
-                                }
-                            })
-                        }
-                        if(doc.fires){
-                            doc.fires.forEach(doc=>{
-                                code+=`${space}        @${doc.name}="\${console.log}"\r\n`
-
-                            })
-                        }
-                        code+=`${space}    ></${tagName2}>\r\n`
-                        code+=`${space}</div>\r\n`
-                    })
-                }
-
-                code+=temp2
-
-                console.log(code)
-                // write('./src/dev/'+name+'/'+name+'.js',code)
-
+                text = clean(text, curr);
             }
         }
     }
 }
 open("./src/material");
+
+function clean(text, curr) {
+    text = text
+        .replace(/(\r?\n)+/gm, '\n')
+        .replace(/(.*?\/\*\*)/gm, '\n$1')
+        .replace(/(.*?\) \=\> \{)/gm, '\n$1')
+        .replace(/(.*?\) \{)/gm, '\n$1')
+        .replace(/(\*\/)[\n]+/g, '$1\n');
+
+    write(curr, text);
+    return text;
+}
+
