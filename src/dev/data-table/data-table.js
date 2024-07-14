@@ -28,7 +28,7 @@ function generateRows(numRows) {
 }
 
 // Contoh menggunakan generator untuk membuat 10 baris data
-const rows = generateRows(10000);
+const rows = generateRows(100000);
 
 
 
@@ -37,7 +37,7 @@ const rows = generateRows(10000);
 class DevDataTable extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:640px;height:360px;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:0;width:100%;height:100%;">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:24px;" class="md-layout-column">
                         <div style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:0;" class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">

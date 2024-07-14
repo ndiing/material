@@ -127,14 +127,14 @@ class MDTextFieldComponent extends MDComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
-                @invalid="${this.handleTextFieldNativeInvalid}"
-                @reset="${this.handleTextFieldNativeReset}"
-                @input="${this.handleTextFieldNativeInput}"
-                @search="${this.handleTextFieldNativeSearch}"
-                @keydown="${this.handleTextFieldNativeKeydown}"
-                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
+                @click="${this.handleTextFieldNativeClick}"
+                @keydown="${this.handleTextFieldNativeKeydown}"
+                @input="${this.handleTextFieldNativeInput}"
+                @search="${this.handleTextFieldNativeSearch}"
+                @invalid="${this.handleTextFieldNativeInvalid}"
+                @reset="${this.handleTextFieldNativeReset}"
             >
         `;
     }
@@ -164,12 +164,13 @@ class MDTextFieldComponent extends MDComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
-                @invalid="${this.handleTextFieldNativeInvalid}"
-                @reset="${this.handleTextFieldNativeReset}"
-                @input="${this.handleTextFieldNativeInput}"
-                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
+                @click="${this.handleTextFieldNativeClick}"
+                @keydown="${this.handleTextFieldNativeKeydown}"
+                @input="${this.handleTextFieldNativeInput}"
+                @invalid="${this.handleTextFieldNativeInvalid}"
+                @reset="${this.handleTextFieldNativeReset}"
             ></textarea>
         `;
     }
@@ -195,12 +196,13 @@ class MDTextFieldComponent extends MDComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
-                @invalid="${this.handleTextFieldNativeInvalid}"
-                @reset="${this.handleTextFieldNativeReset}"
-                @input="${this.handleTextFieldNativeInput}"
-                @click="${this.handleTextFieldNativeClick}"
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
+                @click="${this.handleTextFieldNativeClick}"
+                @keydown="${this.handleTextFieldNativeKeydown}"
+                @input="${this.handleTextFieldNativeInput}"
+                @invalid="${this.handleTextFieldNativeInvalid}"
+                @reset="${this.handleTextFieldNativeReset}"
             >
                 ${this.options.map(option => html`
                     <option 
@@ -327,97 +329,6 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the invalid event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeInvalid(event) {
-        event.preventDefault();
-        this.validationMessage = this.textFieldNative.value.validationMessage;
-        this.emit("onTextFieldNativeInvalid", event);
-    }
-
-    /**
-     * Handles the reset event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeReset(event) {
-        event.preventDefault();
-
-        if (this.type !== "file") {
-            this.value = this.defaultValue;
-            this.validationMessage = "";
-        }
-        this.emit("onTextFieldNativeReset", event);
-    }
-
-    /**
-     * Handles the input event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeInput(event) {
-        if (this.type !== "file") {
-            this.value = this.textFieldNative.value.value;
-            this.validationMessage = this.textFieldNative.value.validationMessage;
-        }
-        this.emit("onTextFieldNativeInput", event);
-    }
-
-    /**
-     * Handles the search event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeSearch(event) {
-        if (this.type !== "file") {
-            this.value = this.textFieldNative.value.value;
-            this.validationMessage = this.textFieldNative.value.validationMessage;
-        }
-        this.emit("onTextFieldNativeSearch", event);
-    }
-
-    /**
-     * Handles the focus event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeKeydown(event) {
-        this.emit("onTextFieldNativeKeydown", event);
-    }
-
-    /**
-     * Handles the focus event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeClick(event) {
-        this.emit("onTextFieldNativeClick", event);
-    }
-
-    /**
-     * Handles the focus event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeFocus(event) {
-        this.style.removeProperty("--md-sys-motion-duration-short4");
-        this.focused = true;
-        this.emit("onTextFieldNativeFocus", event);
-    }
-
-    /**
-     * Handles the blur event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldNativeBlur(event) {
-        this.focused = false;
-        this.emit("onTextFieldNativeBlur", event);
-    }
-
-    /**
      * Handles the click event for the text field label.
      * @private
      * @param {Event} event - The event object.
@@ -453,6 +364,102 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", event);
     }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeFocus(event) {
+        this.style.removeProperty("--md-sys-motion-duration-short4");
+        this.focused = true;
+        this.emit("onTextFieldNativeFocus", event);
+    }
+
+    /**
+     * Handles the blur event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeBlur(event) {
+        this.focused = false;
+        this.emit("onTextFieldNativeBlur", event);
+    }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeKeydown(event) {
+        this.emit("onTextFieldNativeKeydown", event);
+    }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        this.emit("onTextFieldNativeClick", event);
+    }
+
+    /**
+     * Handles the input event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeInput(event) {
+       
+
+        if (this.type !== "file") {
+            this.value = this.textFieldNative.value.value;
+            this.validationMessage = this.textFieldNative.value.validationMessage;
+        }
+
+        this.emit("onTextFieldNativeInput", event);
+    }
+
+    /**
+     * Handles the search event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeSearch(event) {
+        // if (this.type !== "file") {
+        //     this.value = this.textFieldNative.value.value;
+        //     this.validationMessage = this.textFieldNative.value.validationMessage;
+        // }
+        this.emit("onTextFieldNativeSearch", event);
+    }
+
+    /**
+     * Handles the invalid event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeInvalid(event) {
+        event.preventDefault();
+        this.validationMessage = this.textFieldNative.value.validationMessage;
+        this.emit("onTextFieldNativeInvalid", event);
+    }
+
+    /**
+     * Handles the reset event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
+    handleTextFieldNativeReset(event) {
+        event.preventDefault();
+
+        if (this.type !== "file") {
+            this.value = this.defaultValue;
+            this.validationMessage = "";
+        }
+        this.emit("onTextFieldNativeReset", event);
+    }
+
 }
 customElements.define("md-text-field", MDTextFieldComponent);
 export { MDTextFieldComponent };
