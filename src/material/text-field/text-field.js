@@ -298,6 +298,7 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value || "";
         }
     }
+
     variants = ["filled", "outlined", "rounded"];
 
     /**

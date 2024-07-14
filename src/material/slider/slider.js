@@ -81,6 +81,7 @@ class MDSliderComponent extends MDComponent {
             </div>
         `;
     }
+
     sliderNative1 = createRef();
     sliderNative2 = createRef();
 
