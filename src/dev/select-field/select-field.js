@@ -174,7 +174,6 @@ class DevSelectField extends MDComponent {
                                 <md-select-field
                                     name="select3"
                                     map='{"label":"label","value":"value"}'
-                                    label="Only Select"
                                     readOnly
                                     .options="${options3}"
                                     @onPickerMenuListItemClick="${console.log}"
@@ -187,7 +186,6 @@ class DevSelectField extends MDComponent {
                                 <md-select-field
                                     name="select4"
                                     map='{"label":"label","value":"value"}'
-                                    label="Only Select"
                                     readOnly
                                     .options="${options4}"
                                     @onPickerMenuListItemClick="${console.log}"
@@ -203,7 +201,6 @@ class DevSelectField extends MDComponent {
                                 <md-select-field
                                     name="select"
                                     map='{"label":"label","value":"value"}'
-                                    label="Select"
                                     .options="${options5}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
@@ -215,7 +212,6 @@ class DevSelectField extends MDComponent {
                                 <md-select-field
                                     name="select2"
                                     map='{"label":"label","value":"value"}'
-                                    label="Select"
                                     .options="${options6}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
