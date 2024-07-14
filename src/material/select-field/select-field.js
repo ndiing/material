@@ -230,7 +230,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         await new Promise((resolve) => this.picker.once("onMenuViewportVirtualScrollInitialized", resolve));
         this.picker.style.minWidth = `${this.textFieldContainer.value.clientWidth}px`;
         this.picker.style.maxWidth = `${this.textFieldContainer.value.clientWidth}px`;
-        this.picker.filter(this.textFieldNative.value.value);
+        // this.picker.filter(this.textFieldNative.value.value);
         this.picker.show(this.textFieldContainer.value);
     }
 
