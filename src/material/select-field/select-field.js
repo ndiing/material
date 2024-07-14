@@ -144,18 +144,9 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
     }
 
-    handleTextFieldNativeFocus(event) {
-        super.handleTextFieldNativeFocus(event);
-        this.showPicker();
-    }
-
-    handleTextFieldNativeReset(event) {
-        super.handleTextFieldNativeReset(event);
-        this.options.forEach((option,index) => {
-            option.activated=this.defaultOptions[index].activated
-            option.selected=this.defaultOptions[index].selected
-        })
-        this.requestUpdate()
+    handleTextFieldNativeClick(event) {
+        super.handleTextFieldNativeClick(event);
+        this.togglePicker();
     }
 
     handleTextFieldNativeKeydown(event) {
@@ -184,7 +175,11 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 this.options.forEach((option) => {
                     option.selected = option === data;
                 });
+
                 this.requestUpdate();
+            }else if (event.key === "Enter") {
+                event.preventDefault();
+                this.togglePicker();
             }
         }
     }
@@ -193,6 +188,15 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         super.handleTextFieldNativeInput(event);
         this.picker.filter(this.textFieldNative.value.value);
         this.showPicker();
+    }
+
+    handleTextFieldNativeReset(event) {
+        super.handleTextFieldNativeReset(event);
+        this.options.forEach((option,index) => {
+            option.activated=this.defaultOptions[index].activated
+            option.selected=this.defaultOptions[index].selected
+        })
+        this.requestUpdate()
     }
 
     handleTextFieldActionClick(event) {
@@ -204,7 +208,15 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     }
 
     handleSelectFieldActionPickerClick() {
-        this.showPicker();
+        this.togglePicker();
+    }
+
+    togglePicker() {
+        if (this.pickerOpen) {
+            this.picker.close();
+        } else {
+            this.showPicker();
+        }
     }
 
     /**
@@ -267,8 +279,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleMenuListSelection() {
-        this.textFieldNative.value.value = this.selectedOptions[0][this.map.label];
-        this.textFieldHidden.value.value = this.selectedOptions[0][this.map.value];
+        this.textFieldNative.value.value = this.selectedOptionLabel;
+        this.textFieldHidden.value.value = this.selectedOptionValue;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.textFieldHidden.value.dispatchEvent(new CustomEvent("input"));
         this.requestUpdate();

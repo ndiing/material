@@ -58,7 +58,15 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleMonthFieldActionPickerClick() {
-        this.showPicker();
+        this.togglePicker();
+    }
+
+    togglePicker() {
+        if (this.pickerOpen) {
+            this.picker.close();
+        } else {
+            this.showPicker();
+        }
     }
 
     /**
