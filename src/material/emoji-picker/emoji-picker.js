@@ -96,7 +96,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             Symbols: "🔴",
             Flags: "🏁",
         };
-        this.rows = [];
+        // this.rows = [];
         this.popper = new MDPopperController(this, {});
     }
 

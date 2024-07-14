@@ -50,6 +50,9 @@ class MDCardComponent extends MDComponent {
      */
     constructor() {
         super();
+        // this.leadingActions=[]
+        // this.trailingActions=[]
+        // this.actions=[]
         this.childNodes_ = Array.from(this.childNodes);
         this.renderIconButton = this.renderIconButton.bind(this);
         this.renderIcon = this.renderIcon.bind(this);

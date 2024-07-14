@@ -24,6 +24,7 @@ class MDChipsComponent extends MDComponent {
      */
     constructor() {
         super();
+        // this.list=[]
     }
 
     /**

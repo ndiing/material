@@ -64,7 +64,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
      * Displays the week-time picker.
      */
-    showPicker() {
+    async showPicker() {
         if (this.pickerOpen) {
             return;
         }
@@ -115,6 +115,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.boundary = getBoundary(this);
         this.boundary.addEventListener("scroll", handleScroll);
         this.boundary.addEventListener("click", handleClick);
+        await this.picker.updateComplete
         this.picker.show(this.textFieldContainer.value);
     }
 

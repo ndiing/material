@@ -43,6 +43,7 @@ class MDListComponent extends MDComponent {
      */
     constructor() {
         super();
+        // this.list=[]
         this.map = {
             label: "label",
             value: "value",

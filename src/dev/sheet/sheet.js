@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevSheet extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-low);margin:24px;width:1280px;height:720px;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:640px;height:360px;">
                 <md-sheet open variant="north" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">north</md-sheet>
                 <md-sheet open variant="east" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">east</md-sheet>
                 <md-sheet open variant="south" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">south</md-sheet>

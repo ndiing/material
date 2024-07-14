@@ -11,7 +11,7 @@ const list = [
 class DevNavigationDrawer extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-low);margin:24px;width:480px;height:800px;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:640px;height:360px;">
                 <md-navigation-drawer open .list="${list}"></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">

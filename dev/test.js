@@ -393,6 +393,7 @@ function generate(text, name) {
     let space = '    '.repeat(6);
 
     code += `${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`;
+    code += `${space}    <p>${name}</p>\r\n`;
     code += `${space}    <${tagName2}\r\n`;
     const values = {
         avatar: '"https://api.dicebear.com/9.x/micah/svg?seed=Abby"',
@@ -460,6 +461,7 @@ function generate(text, name) {
     if (doc.variants) {
         doc.variants.slice(1).forEach(variant => {
             code += `${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`;
+            code += `${space}    <p>${name} - ${variant}</p>\r\n`;
             code += `${space}    <${tagName2}\r\n`;
             if (doc.properties) {
                 doc.properties.forEach(prop => {
@@ -485,9 +487,11 @@ function generate(text, name) {
 
     code += temp2;
 
-    console.log(code);
+    // console.log(code);
     // write('./src/dev/'+name+'/'+name+'.js',code)
+    return code
 }
+
 
 function open(pathname) {
     const dirents = fs.readdirSync(pathname, { withFileTypes: true });
@@ -503,14 +507,17 @@ function open(pathname) {
                     continue;
                 }
                 let text = read(curr);
-                generate(text, name);
+                code+=generate(text, name);
+                code+='\r\n'
                 
                 // text = clean(text, curr);
             }
         }
     }
 }
+let code = ''
 open("./src/material");
+write('./src/dev/example/example.html',code)
 
 function clean(text, curr) {
     text = text

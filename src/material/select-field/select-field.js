@@ -231,6 +231,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.style.minWidth = `${this.textFieldContainer.value.clientWidth}px`;
         this.picker.style.maxWidth = `${this.textFieldContainer.value.clientWidth}px`;
         // this.picker.filter(this.textFieldNative.value.value);
+        await this.picker.updateComplete
         this.picker.show(this.textFieldContainer.value);
     }
 

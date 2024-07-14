@@ -97,6 +97,8 @@ class MDTextFieldComponent extends MDComponent {
         this.type = "text";
         this.autocomplete = "off";
         this.rows = 1;
+        // this.actions=[]
+        // this.options=[]
     }
 
     /**

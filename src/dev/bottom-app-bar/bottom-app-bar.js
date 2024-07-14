@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevBottomAppBar extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-low);margin:24px;width:480px;height:800px;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:640px;height:360px;">
                 <md-bottom-app-bar open leadingActions='[{"icon":"search"},{"icon":"delete"},{"icon":"archive"},{"icon":"reply"}]' trailingActions='[{"component":"fab","icon":"add","variant":"unelevated"}]'></md-bottom-app-bar>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">

@@ -64,7 +64,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     /**
      * Displays the color-color picker.
      */
-    showPicker() {
+    async showPicker() {
         if (this.pickerOpen) {
             return;
         }
@@ -112,6 +112,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.boundary = getBoundary(this);
         this.boundary.addEventListener("scroll", handleScroll);
         this.boundary.addEventListener("click", handleClick);
+        await this.picker.updateComplete
         this.picker.show(this.textFieldContainer.value);
     }
 
