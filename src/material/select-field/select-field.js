@@ -174,7 +174,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     handleSelectFieldActionPickerClick(event) {
         this.showPicker();
-        // this.emit("onSelectFieldActionPickerClick", event);
     }
 
     /**

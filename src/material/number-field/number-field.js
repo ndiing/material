@@ -52,10 +52,8 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         super.handleTextFieldActionClick(event);
         const name = event.currentTarget.name;
         if (name === "subtract") {
-            // this.textFieldNative.value = parseFloat(this.textFieldNative.value) - 1;
             this.textFieldNative.value.stepDown()
         } else if (name === "add") {
-            // this.textFieldNative.value = parseFloat(this.textFieldNative.value) + 1;
             this.textFieldNative.value.stepUp()
         }
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));

@@ -59,7 +59,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
      */
     handleWeekFieldActionPickerClick(event) {
         this.showPicker();
-        // this.emit("onWeekFieldActionPickerClick", event);
     }
 
     /**
@@ -125,10 +124,8 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleWeekPickerButtonCancelClick(event) {
-        // this.textFieldNative.value.value = this.defaultValue;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
-        // this.emit("onWeekPickerButtonCancelClick", event);
     }
 
     /**
@@ -140,7 +137,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onWeekPickerButtonOkClick", event);
     }
 
     /**
@@ -151,7 +147,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     handleWeekPickerSelection(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        // this.emit("onWeekPickerSelection", event);
     }
 
     /**
@@ -163,7 +158,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onWeekPickerDayItemClick", event);
     }
 }
 customElements.define("md-week-field", MDWeekFieldComponent);

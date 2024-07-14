@@ -59,7 +59,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      */
     handleMonthFieldActionPickerClick(event) {
         this.showPicker();
-        // this.emit("onMonthFieldActionPickerClick", event);
     }
 
     /**
@@ -125,10 +124,8 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleMonthPickerButtonCancelClick(event) {
-        // this.textFieldNative.value.value = this.defaultValue;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
-        // this.emit("onMonthPickerButtonCancelClick", event);
     }
 
     /**
@@ -140,7 +137,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onMonthPickerButtonOkClick", event);
     }
 
     /**
@@ -151,7 +147,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     handleMonthPickerSelection(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        // this.emit("onMonthPickerSelection", event);
     }
 
     /**
@@ -163,7 +158,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onMonthPickerMonthItemClick", event);
     }
 }
 customElements.define("md-month-field", MDMonthFieldComponent);

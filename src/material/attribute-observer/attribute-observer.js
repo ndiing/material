@@ -29,13 +29,11 @@ class MDAttributeObserver {
      * @param {string} attributeName - The name of the attribute to observe.
      */
     observe(target, attributeName) {
-        // Initial callback with the current attribute value
         this.callback({
             name: attributeName,
             value: target.getAttribute(attributeName),
         });
 
-        // Set up MutationObserver to listen for attribute changes
         new MutationObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.attributeName === attributeName) {

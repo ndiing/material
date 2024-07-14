@@ -59,7 +59,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleColorFieldActionPickerClick(event) {
         this.showPicker();
-        // this.emit("onColorFieldActionPickerClick", event);
     }
 
     /**
@@ -122,10 +121,8 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleColorPickerButtonCancelClick(event) {
-        // this.textFieldNative.value.value = this.defaultValue;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
-        // this.emit("onColorPickerButtonCancelClick", event);
     }
 
     /**
@@ -137,7 +134,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onColorPickerButtonOkClick", event);
     }
 
     /**
@@ -148,7 +144,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     handleColorPickerSelection(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        // this.emit("onColorPickerSelection", event);
     }
 
 }

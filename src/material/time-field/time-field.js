@@ -59,7 +59,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
      */
     handleTimeFieldActionPickerClick(event) {
         this.showPicker();
-        // this.emit("onTimeFieldActionPickerClick", event);
     }
 
     /**
@@ -125,10 +124,8 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleTimePickerButtonCancelClick(event) {
-        // this.textFieldNative.value.value = this.defaultValue;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
-        // this.emit("onTimePickerButtonCancelClick", event);
     }
 
     /**
@@ -140,7 +137,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onTimePickerButtonOkClick", event);
     }
 
     /**
@@ -151,7 +147,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handleTimePickerSelection(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        // this.emit("onTimePickerSelection", event);
     }
 
     /**
@@ -163,7 +158,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onTimePickerMinuteItemClick", event);
     }
 }
 customElements.define("md-time-field", MDTimeFieldComponent);

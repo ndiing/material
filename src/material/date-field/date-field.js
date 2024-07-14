@@ -59,7 +59,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleDateFieldActionPickerClick(event) {
         this.showPicker();
-        // this.emit("onDateFieldActionPickerClick", event);
     }
 
     /**
@@ -125,10 +124,8 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleDatePickerButtonCancelClick(event) {
-        // this.textFieldNative.value.value = this.defaultValue;
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
-        // this.emit("onDatePickerButtonCancelClick", event);
     }
 
     /**
@@ -140,7 +137,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onDatePickerButtonOkClick", event);
     }
 
     /**
@@ -151,7 +147,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     handleDatePickerSelection(event) {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        // this.emit("onDatePickerSelection", event);
     }
 
     /**
@@ -163,7 +158,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-        // this.emit("onDatePickerDayItemClick", event);
     }
 }
 customElements.define("md-date-field", MDDateFieldComponent);
