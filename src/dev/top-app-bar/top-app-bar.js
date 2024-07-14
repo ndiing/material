@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevTopAppBar extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:480px;height:800px;">
+            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-low);margin:24px;width:480px;height:800px;">
                 <md-top-app-bar leadingActions='[{"icon":"image"}]' label="label" trailingActions='[{"icon":"image"}]' variant="center" id="center"></md-top-app-bar>
                 <md-top-app-bar leadingActions='[{"icon":"image"}]' label="label" trailingActions='[{"icon":"image"}]' variant="small" id="small"></md-top-app-bar>
                 <md-top-app-bar leadingActions='[{"icon":"image"}]' label="label" trailingActions='[{"icon":"image"}]' variant="medium" id="medium"></md-top-app-bar>

@@ -233,8 +233,7 @@ class MDMenuComponent extends MDSheetComponent {
      */
     updatePosition(button = this.popperButton, options = this.popperOptions) {
         this.popperButton = button;
-        this.popperOptions = options;
-        this.popper.setPosition(button, {
+        this.popperOptions = {
             /* prettier-ignore */
             placements: [
                 "below-start","below-end","below",
@@ -247,7 +246,8 @@ class MDMenuComponent extends MDSheetComponent {
                 "right-start","right-end","right",
             ],
             ...options,
-        });
+        };
+        this.popper.setPosition(button, options);
     }
 
     /**
