@@ -93,12 +93,12 @@ class MDPaginationComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             <div class="md-pagination__label">Rows per page</div>
-            <md-text-field 
+            <md-select-field 
                 class="md-pagination__select"
-                .type="${"select"}"
                 .options="${this.options}"
-                @onTextFieldNativeChange="${this.handlePaginationLimitChange}"
-            ></md-text-field>
+                .readOnly="${true}"
+                @onTextFieldNativeInput="${this.handlePaginationLimitInput}"
+            ></md-select-field>
             <div class="md-pagination__text">${this.numberStart}-${this.numberEnd} of ${this.total}</div>
             <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===1}" .icon="${"first_page"}" @click="${this.handlePaginationFirstClick}"></md-icon-button>
             <md-icon-button class="md-pagination__icon-button" .disabled="${this.pages===0||this.page===1}" .icon="${"keyboard_arrow_left"}" @click="${this.handlePaginationPrevClick}"></md-icon-button>
@@ -141,7 +141,7 @@ class MDPaginationComponent extends MDComponent {
      * @private
      * @param {Event} event - The change event.
      */
-    handlePaginationLimitChange(event) {
+    handlePaginationLimitInput(event) {
         const limit = Number(event.detail.currentTarget.value);
         this.limit = limit;
         this.emit("onPaginationLimitChange", event);
