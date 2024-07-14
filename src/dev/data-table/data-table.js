@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
+// Kolom-kolom yang telah ditentukan sebelumnya
 const columns = [
     { name: "symbol", label: "Symbol", resizable: true, orderable: true, sortable: true, sticky: true },
     { name: "company", label: "Company Name", resizable: true, orderable: true, sortable: true, sticky: true },
@@ -10,18 +11,28 @@ const columns = [
     { name: "marketCap", label: "Market Cap", type: "currency", resizable: true, orderable: true, sortable: true, sticky: true },
 ];
 
-const rows = [
-    { symbol: "AAPL", company: "Apple Inc.", price: 145.11, change: -1.23, volume: 35678900, marketCap: 2400e9 },
-    { symbol: "MSFT", company: "Microsoft Corporation", price: 279.23, change: 2.45, volume: 24567000, marketCap: 2100e9 },
-    { symbol: "GOOGL", company: "Alphabet Inc.", price: 2689.45, change: -0.75, volume: 1789000, marketCap: 1800e9 },
-    { symbol: "AMZN", company: "Amazon.com Inc.", price: 3425.1, change: 0.89, volume: 4567000, marketCap: 1700e9 },
-    { symbol: "TSLA", company: "Tesla Inc.", price: 677.92, change: -3.21, volume: 12345000, marketCap: 650e9 },
-    { symbol: "FB", company: "Meta Platforms Inc.", price: 332.45, change: 1.67, volume: 9876000, marketCap: 900e9 },
-    { symbol: "NVDA", company: "NVIDIA Corporation", price: 816.78, change: -0.54, volume: 5678000, marketCap: 500e9 },
-    { symbol: "NFLX", company: "Netflix Inc.", price: 620.34, change: 0.32, volume: 3456700, marketCap: 280e9 },
-    { symbol: "PYPL", company: "PayPal Holdings Inc.", price: 298.56, change: 2.11, volume: 2345600, marketCap: 350e9 },
-    { symbol: "CRM", company: "Salesforce.com Inc.", price: 254.89, change: -1.09, volume: 1234500, marketCap: 200e9 },
-];
+// Generator untuk menghasilkan rows dengan data sesuai columns
+function generateRows(numRows) {
+    const rows = [];
+    for (let i = 1; i <= numRows; i++) {
+        rows.push({
+            symbol: `SYM${i}`,
+            company: `Company ${i}`,
+            price: Math.random() * 1000,
+            change: (Math.random() - 0.5) * 10,
+            volume: Math.floor(Math.random() * 10000000),
+            marketCap: Math.random() * 1000e9,
+        });
+    }
+    return rows;
+}
+
+// Contoh menggunakan generator untuk membuat 10 baris data
+const rows = generateRows(10000);
+
+
+
+
 
 class DevDataTable extends MDComponent {
     render() {

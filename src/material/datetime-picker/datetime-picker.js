@@ -4,28 +4,28 @@ import { parseDatetimeLocal, stringifyDatetimeLocal, stringifyTime, stringifyYea
 import { MDPopperController } from "../popper/popper.js";
 
 /**
- * {{description}}
+ * DateTime Picker Component
  * @element md-datetime-picker
  * @extends MDSheetComponent
- * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerButtonClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonPrevClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonNextClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerButtonLabelClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerButtonCancelClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerButtonOkClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerYearItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerMonthItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerDayItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerHourItemClick - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{description}}
- * @fires MDDatetimePickerComponent#onDatetimePickerMinuteItemClick - {{description}}
+ * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonClick - Fired when an icon button in the picker is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerButtonClick - Fired when a button in the picker is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonPrevClick - Fired when the previous icon button is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonNextClick - Fired when the next icon button is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerButtonLabelClick - Fired when the label button is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerButtonCancelClick - Fired when the cancel button is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerButtonOkClick - Fired when the OK button is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerYearItemClick - Fired when a year item is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerMonthItemClick - Fired when a month item is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerDayItemClick - Fired when a day item is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerHourItemClick - Fired when an hour item is clicked.
+ * @fires MDDatetimePickerComponent#onDatetimePickerSelection - Fired when a date selection is made.
+ * @fires MDDatetimePickerComponent#onDatetimePickerMinuteItemClick - Fired when a minute item is clicked.
  */
 class MDDatetimePickerComponent extends MDSheetComponent {
     /**
-     * {{description}}
-     * @property {Number} index - {{description}}
-     * @property {String} value - {{description}}
+     * Properties for the component
+     * @property {Number} index - Current index of the picker view
+     * @property {String} value - Current value of the picker
      */
     static properties = {
         ...MDSheetComponent.properties,
