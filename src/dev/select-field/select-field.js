@@ -141,6 +141,24 @@ options2[17].selected=true
 const options3=JSON.parse(JSON.stringify(options))
 const options4=JSON.parse(JSON.stringify(options))
 options4[17].selected=true
+
+// Generator untuk menghasilkan options dengan pasangan label dan value
+function generateOptions(numOptions) {
+    const options = [];
+    for (let i = 1; i <= numOptions; i++) {
+        options.push({
+            label: `Label ${i}`,
+            value: `Value ${i}`
+        });
+    }
+    return options;
+}
+
+// Contoh menggunakan generator untuk membuat 10 pasangan label dan value
+const options5 = generateOptions(10000);
+const options6 = generateOptions(10000);
+options6[17].selected=true
+
   
 
 class DevSelectField extends MDComponent {
@@ -186,7 +204,7 @@ class DevSelectField extends MDComponent {
                                     name="select"
                                     map='{"label":"label","value":"value"}'
                                     label="Select"
-                                    .options="${options}"
+                                    .options="${options5}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
                                     @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
@@ -198,7 +216,7 @@ class DevSelectField extends MDComponent {
                                     name="select2"
                                     map='{"label":"label","value":"value"}'
                                     label="Select"
-                                    .options="${options2}"
+                                    .options="${options6}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
                                     @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
