@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevSearchField extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:640px;height:360px;">
+            <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">

@@ -164,7 +164,7 @@ options6[17].selected=true
 class DevSelectField extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" style="background-color:var(--md-sys-color-surface-container-lowest);margin:24px;width:640px;height:360px;">
+            <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">
@@ -193,9 +193,6 @@ class DevSelectField extends MDComponent {
                                     @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
-
-                            <!-- <div style="height:400px;" class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            </div> -->
 
                             <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
