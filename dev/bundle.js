@@ -37,11 +37,13 @@ function open(pathname) {
             const {name} = path.parse(curr);
             if(extname==='.txt'){continue}
             const stat=fs.statSync(curr)
-            code+=`[${name}](${curr}) | ${Math.ceil(stat.size/1024)+'KB'}\n`
+            code+=`[${name}](${curr}) | **${Math.ceil(stat.size/1024)+'KB'}**\n`
         }
     }
 }
 let code=''
+code+='## Bundle Sizes\n'
+code+='\n'
 code+='File | Size\n'
 code+='--- | ---\n'
 open("./dist");

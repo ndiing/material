@@ -73,10 +73,9 @@ To optimize loading, include CSS and JavaScript separately for each component:
 <script type="module" src="./dist/icon-button/icon-button.js"></script>
 <!-- Include additional components as needed -->
 ```
-
 ## Bundle Sizes
 
-File | Size
+File | Size    
 --- | ---
 [4092](./dist/4092/4092.js) | **1KB**
 [614](./dist/614/614.js) | **1KB**
@@ -94,11 +93,11 @@ File | Size
 [color-picker](./dist/color-picker/color-picker.js) | **44KB**
 [component](./dist/component/component.js) | **16KB**
 [data-table](./dist/data-table/data-table.js) | **50KB**
-[data-table-item](./dist/data-table-item/data-table-item.js) | **21KB      **
+[data-table-item](./dist/data-table-item/data-table-item.js) | **21KB**
 [date-field](./dist/date-field/date-field.js) | **33KB**
 [date-picker](./dist/date-picker/date-picker.js) | **51KB**
 [datetime-field](./dist/datetime-field/datetime-field.js) | **32KB**
-[datetime-picker](./dist/datetime-picker/datetime-picker.js) | **47KB      **
+[datetime-picker](./dist/datetime-picker/datetime-picker.js) | **47KB**
 [dialog](./dist/dialog/dialog.js) | **28KB**
 [emoji](./dist/emoji/emoji.js) | **16KB**
 [emoji-picker](./dist/emoji-picker/emoji-picker.js) | **381KB**
@@ -121,7 +120,7 @@ File | Size
 [month-picker](./dist/month-picker/month-picker.js) | **50KB**
 [navigation-bar](./dist/navigation-bar/navigation-bar.js) | **32KB**
 [navigation-drawer](./dist/navigation-drawer/navigation-drawer.js) | **32KB**
-[navigation-rail](./dist/navigation-rail/navigation-rail.js) | **32KB      **
+[navigation-rail](./dist/navigation-rail/navigation-rail.js) | **32KB**
 [number-field](./dist/number-field/number-field.js) | **29KB**
 [observer](./dist/observer/observer.js) | **2KB**
 [pagination](./dist/pagination/pagination.js) | **19KB**
@@ -134,7 +133,7 @@ File | Size
 [router](./dist/router/router.js) | **6KB**
 [scrim](./dist/scrim/scrim.js) | **17KB**
 [search-field](./dist/search-field/search-field.js) | **29KB**
-[segmented-button](./dist/segmented-button/segmented-button.js) | **19KB   **
+[segmented-button](./dist/segmented-button/segmented-button.js) | **19KB**
 [select-field](./dist/select-field/select-field.js) | **70KB**
 [sheet](./dist/sheet/sheet.js) | **27KB**
 [side-sheet](./dist/side-sheet/side-sheet.js) | **28KB**
