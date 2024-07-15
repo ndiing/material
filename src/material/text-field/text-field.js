@@ -131,6 +131,7 @@ class MDTextFieldComponent extends MDComponent {
                 @blur="${this.handleTextFieldNativeBlur}"
                 @click="${this.handleTextFieldNativeClick}"
                 @keydown="${this.handleTextFieldNativeKeydown}"
+                @select="${this.handleTextFieldNativeSelect}"
                 @input="${this.handleTextFieldNativeInput}"
                 @search="${this.handleTextFieldNativeSearch}"
                 @invalid="${this.handleTextFieldNativeInvalid}"
@@ -167,7 +168,6 @@ class MDTextFieldComponent extends MDComponent {
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @click="${this.handleTextFieldNativeClick}"
-                @keydown="${this.handleTextFieldNativeKeydown}"
                 @input="${this.handleTextFieldNativeInput}"
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
@@ -199,7 +199,6 @@ class MDTextFieldComponent extends MDComponent {
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @click="${this.handleTextFieldNativeClick}"
-                @keydown="${this.handleTextFieldNativeKeydown}"
                 @input="${this.handleTextFieldNativeInput}"
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
@@ -286,18 +285,19 @@ class MDTextFieldComponent extends MDComponent {
         this.classList.add("md-text-field");
         this.style.setProperty("--md-sys-motion-duration-short4", "0s");
 
-        if (this.defaultValue === undefined && this.type !== "file") {
-            if (this.type === "color" && !this.value) {
-                this.value = "#000000";
-            } else if (this.type === "select" && !this.value) {
-                let selectedIndex = this.options.findIndex((option) => option.selected);
+        const defaultValue = {
+            color: "#000000",
+        };
 
-                if (selectedIndex === -1) {
-                    selectedIndex = 0;
-                }
-                this.value = this.options[selectedIndex].value;
+        this.mask = "XXXX XXXX XXXX XXXX";
+        this.defaultMask = this.mask;
+
+        if (this.defaultValue === undefined) {
+            if (this.value === undefined) {
+                this.value = defaultValue[this.type] || "";
             }
-            this.defaultValue = this.value || "";
+
+            this.defaultValue = this.value;
         }
     }
 
@@ -391,6 +391,17 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      * @param {Event} event - The event object.
      */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault();
+
+        this.emit("onTextFieldNativeClick", event);
+    }
+
+    /**
+     * Handles the focus event for the native input element.
+     * @private
+     * @param {Event} event - The event object.
+     */
     handleTextFieldNativeKeydown(event) {
         this.emit("onTextFieldNativeKeydown", event);
     }
@@ -400,9 +411,8 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      * @param {Event} event - The event object.
      */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault()
-        this.emit("onTextFieldNativeClick", event);
+    handleTextFieldNativeSelect(event) {
+        this.emit("onTextFieldNativeSelect", event);
     }
 
     /**
@@ -411,13 +421,10 @@ class MDTextFieldComponent extends MDComponent {
      * @param {Event} event - The event object.
      */
     handleTextFieldNativeInput(event) {
-       
-
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
             this.validationMessage = this.textFieldNative.value.validationMessage;
         }
-
         this.emit("onTextFieldNativeInput", event);
     }
 
@@ -427,10 +434,10 @@ class MDTextFieldComponent extends MDComponent {
      * @param {Event} event - The event object.
      */
     handleTextFieldNativeSearch(event) {
-        // if (this.type !== "file") {
-        //     this.value = this.textFieldNative.value.value;
-        //     this.validationMessage = this.textFieldNative.value.validationMessage;
-        // }
+        if (this.type !== "file") {
+            this.value = this.textFieldNative.value.value;
+            this.validationMessage = this.textFieldNative.value.validationMessage;
+        }
         this.emit("onTextFieldNativeSearch", event);
     }
 
@@ -452,14 +459,12 @@ class MDTextFieldComponent extends MDComponent {
      */
     handleTextFieldNativeReset(event) {
         event.preventDefault();
-
         if (this.type !== "file") {
             this.value = this.defaultValue;
             this.validationMessage = "";
         }
         this.emit("onTextFieldNativeReset", event);
     }
-
 }
 customElements.define("md-text-field", MDTextFieldComponent);
 export { MDTextFieldComponent };
