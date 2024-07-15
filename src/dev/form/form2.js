@@ -1,171 +1,747 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
+import { choose } from "lit/directives/choose.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { classMap } from "lit/directives/class-map.js";
 
-class DevForm2Component extends MDComponent {
-    render() {
+class DevForm2 extends MDComponent {
+    renderCheckbox(item) {
+        /* prettier-ignore */
         return html`
-            <md-form @onFormNativeReset="${this.handleFormNativeReset}" @onFormNativeSubmit="${this.handleFormNativeSubmit}">
-                <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-datetime-field required name="datetime1" label="Datetime Field"></md-datetime-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-datetime-field required name="datetime2" label="Datetime Field" value="1990-10-17T20:30"></md-datetime-field>
-                    </div>
+            <md-checkbox
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .indeterminate="${ifDefined(item.indeterminate)}"
+                .checked="${ifDefined(item.checked)}"
+                .disabled="${ifDefined(item.disabled)}"
+                @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+                @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
+            ></md-checkbox>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-date-field required name="date1" label="Date Field"></md-date-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-date-field required name="date2" label="Date Field" value="1990-10-17"></md-date-field>
-                    </div>
+    renderColorField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-color-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-color-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-month-field required name="month1" label="Month Field"></md-month-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-month-field required name="month2" label="Month Field" value="1990-10"></md-month-field>
-                    </div>
+    renderDateField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-date-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-date-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-week-field required name="week1" label="Week Field"></md-week-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-week-field required name="week2" label="Week Field" value="1990-W42"></md-week-field>
-                    </div>
+    renderDatetimeField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-datetime-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-datetime-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-time-field required name="time1" label="Time Field"></md-time-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-time-field required name="time2" label="Time Field" value="20:30"></md-time-field>
-                    </div>
+    renderMonthField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-month-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-month-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-color-field required name="color1" label="Color Field"></md-color-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-color-field required name="color2" label="Color Field" value="#6750a4"></md-color-field>
-                    </div>
+    renderNumberField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-number-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-number-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-number-field required name="number1" label="Number Field"></md-number-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-number-field required name="number2" label="Number Field" value="123456789"></md-number-field>
-                    </div>
+    renderPasswordField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-password-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-password-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-search-field required name="search1" label="Search Field"></md-search-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-search-field required name="search2" label="Search Field" value="What day is it today?"></md-search-field>
-                    </div>
+    renderRadioButton(item) {
+        /* prettier-ignore */
+        return html`
+            <md-radio-button
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .indeterminate="${ifDefined(item.indeterminate)}"
+                .checked="${ifDefined(item.checked)}"
+                .disabled="${ifDefined(item.disabled)}"
+                @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+                @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
+            ></md-radio-button>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-password-field required name="password1" label="Password Field"></md-password-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-password-field required name="password2" label="Password Field" value="secret"></md-password-field>
-                    </div>
+    renderSearchField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-search-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-search-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-textarea-field required name="textarea1" label="Textarea Field"></md-textarea-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-textarea-field required name="textarea2" label="Textarea Field" value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ea."></md-textarea-field>
-                    </div>
+    renderSelectField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-select-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-select-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-select-field
-                            required
-                            name="select1"
-                            label="Select Field"
-                            .options="${Array.from({ length: 100 }, (v, k) => ({
-                                label: "label" + k,
-                                value: k,
-                            }))}"
-                        ></md-select-field>
-                    </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-select-field
-                            required
-                            name="select2"
-                            label="Select Field"
-                            .options="${Array.from({ length: 100 }, (v, k) => ({
-                                label: "label" + k,
-                                value: k,
-                                selected: k == 5,
-                            }))}"
-                        ></md-select-field>
-                    </div>
+    renderSlider(item) {
+        /* prettier-ignore */
+        return html`
+            <md-slider
+                .name="${ifDefined(item.name)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .step="${ifDefined(item.step)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                @onSliderNativeInput="${ifDefined(item.onSliderNativeInput)}"
+                @onSliderNativeReset="${ifDefined(item.onSliderNativeReset)}"
+            ></md-slider>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
+    renderSwitch(item) {
+        /* prettier-ignore */
+        return html`
+            <md-switch
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .indeterminate="${ifDefined(item.indeterminate)}"
+                .checked="${ifDefined(item.checked)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .icons="${ifDefined(item.icons)}"
+                @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+                @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+            ></md-switch>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <br />
-                        <br />
-                        <md-slider name="slider1" min="-5000" max="5000"></md-slider>
-                    </div>
+    renderTextField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-text-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-text-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <br />
-                        <br />
-                        <md-slider name="slider2" min="0" max="5000"></md-slider>
-                    </div>
+    renderTextareaField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-textarea-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-textarea-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <br />
-                        <br />
-                        <md-slider name="slider3" min="0" max="5000" step="500"></md-slider>
-                    </div>
+    renderTimeField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-time-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-time-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <br />
-                        <br />
-                        <md-slider name="slider4" min="1000" max="10000" value="[2000,8000]"></md-slider>
-                    </div>
+    renderWeekField(item) {
+        /* prettier-ignore */
+        return html`
+            <md-week-field
+                .label="${ifDefined(item.label)}"
+                .icon="${ifDefined(item.icon)}"
+                .prefix="${ifDefined(item.prefix)}"
+                .suffix="${ifDefined(item.suffix)}"
+                .actions="${ifDefined(item.actions)}"
+                .text="${ifDefined(item.text)}"
+                .type="${ifDefined(item.type)}"
+                .placeholder="${ifDefined(item.placeholder)}"
+                .name="${ifDefined(item.name)}"
+                .value="${ifDefined(item.value)}"
+                .min="${ifDefined(item.min)}"
+                .max="${ifDefined(item.max)}"
+                .cols="${ifDefined(item.cols)}"
+                .rows="${ifDefined(item.rows)}"
+                .minLength="${ifDefined(item.minLength)}"
+                .maxLength="${ifDefined(item.maxLength)}"
+                .pattern="${ifDefined(item.pattern)}"
+                .required="${ifDefined(item.required)}"
+                .readOnly="${ifDefined(item.readOnly)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .autocomplete="${ifDefined(item.autocomplete)}"
+                .multiple="${ifDefined(item.multiple)}"
+                .options="${ifDefined(item.options)}"
+                .validationMessage="${ifDefined(item.validationMessage)}"
+                .focused="${ifDefined(item.focused)}"
+                .variant="${ifDefined(item.variant)}"
+                .mask="${ifDefined(item.mask)}"
+                @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+                @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+                @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+                @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+                @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+                @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+                @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+                @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+                @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+                @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+                @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+                @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+                @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+            ></md-week-field>
+        `
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-switch name="switch1" value="item1" checked></md-switch>
-                        <md-switch name="switch2" value="item2"></md-switch>
-                    </div>
+    renderField(item) {
+        return choose(
+            item.component,
+            [
+                ["checkbox", () => this.renderCheckbox(item)],
+                ["color-field", () => this.renderColorField(item)],
+                ["date-field", () => this.renderDateField(item)],
+                ["datetime-field", () => this.renderDatetimeField(item)],
+                ["month-field", () => this.renderMonthField(item)],
+                ["number-field", () => this.renderNumberField(item)],
+                ["password-field", () => this.renderPasswordField(item)],
+                ["radio-button", () => this.renderRadioButton(item)],
+                ["search-field", () => this.renderSearchField(item)],
+                ["select-field", () => this.renderSelectField(item)],
+                ["slider", () => this.renderSlider(item)],
+                ["switch", () => this.renderSwitch(item)],
+                ["text-field", () => this.renderTextField(item)],
+                ["textarea-field", () => this.renderTextareaField(item)],
+                ["time-field", () => this.renderTimeField(item)],
+                ["week-field", () => this.renderWeekField(item)],
+            ],
+            () => this.renderTextField(item),
+        );
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-switch icons='["close","check"]' name="switch3" value="item1" checked></md-switch>
-                        <md-switch icons='["close","check"]' name="switch4" value="item2"></md-switch>
-                    </div>
+    constructor() {
+        super();
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-radio-button name="radio" value="item1" checked></md-radio-button>
-                        <md-radio-button name="radio" value="item2"></md-radio-button>
-                    </div>
+        this.data = [
+            { component: "color-field", name: "favoriteColor", value: "#ff0000", expanded: 3 },
+            { component: "date-field", name: "birthDate", value: "1990-01-01", expanded: 3 },
+            { component: "datetime-field", name: "appointment", value: "2024-07-16T15:00", expanded: 3 },
+            { component: "month-field", name: "birthMonth", value: "1990-01", expanded: 3 },
+            { component: "number-field", name: "age", value: "30", expanded: 3 },
+            { component: "password-field", name: "password", value: "secret123", expanded: 3 },
+            { component: "search-field", name: "search", value: "JavaScript tutorials", expanded: 3 },
+            {
+                component: "select-field",
+                name: "country",
+                value: "USA",
+                options: [
+                    { label: "United States", value: "USA", selected: true },
+                    { label: "Canada", value: "CAN" },
+                    { label: "United Kingdom", value: "UK" },
+                    { label: "Australia", value: "AUS" },
+                    { label: "Germany", value: "GER" },
+                ],
+                expanded: 3,
+            },
+            { component: "text-field", name: "username", value: "john_doe", expanded: 3 },
+            { component: "textarea-field", name: "comments", value: "This is a comment.", expanded: 3 },
+            { component: "time-field", name: "meetingTime", value: "14:30", expanded: 3 },
+            { component: "week-field", name: "workWeek", value: "2024-W28", expanded: 3 },
+            { component: "slider", name: "volume", value: "75", expanded: 12 },
+            { component: "checkbox", name: "acceptTerms", value: "true", expanded: 12,
+                onCheckboxNativeInput:console.log ,
+                onCheckboxNativeReset:console.log ,
+            },
+            { component: "radio-button", name: "gender", value: "male", expanded: 12 },
+            { component: "switch", name: "darkMode", value: "false", expanded: 12 },
+        ];
+    }
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-checkbox name="checkbox1" value="item0" indeterminate></md-checkbox>
-                        <md-checkbox name="checkbox2" value="item1" checked></md-checkbox>
-                        <md-checkbox name="checkbox3" value="item2"></md-checkbox>
-                    </div>
-
-                    <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-button label="Reset Field" type="reset" variant="outlined"></md-button>
-                        <md-button label="Submit Field" type="submit" variant="filled"></md-button>
-                    </div>
+    render() {
+        /* prettier-ignore */
+        return html`
+            <div class="md-layout-border">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <md-form  
+                        @onFormNativeReset="${(event) => console.log(event)}" 
+                        @onFormNativeSubmit="${this.handleFormNativeSubmit}"
+                    >
+                        <div class="md-layout-column">
+                            ${this.data.map(doc => html`
+                                <div 
+                                    class="${classMap({
+                                        ...(doc.expanded&&{[`md-layout-column__item--expanded${doc.expanded}`]: doc.expanded}),
+                                        ...(doc.medium&&{[`md-layout-column__item--medium${doc.medium}`]: doc.medium}),
+                                        ...(doc.compact&&{[`md-layout-column__item--compact${doc.compact}`]: doc.compact}),
+                                    })}"
+                                >${this.renderField(doc)}</div>
+                            `)}
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                <md-button type="reset" label="Reset" variant="outlined"></md-button>
+                                <md-button type="submit" label="Submit" variant="filled"></md-button>
+                            </div>
+                        </div>
+                    </md-form>
                 </div>
-            </md-form>
+            </div>
         `;
     }
 
-    handleFormNativeReset(event) {
-        console.log(event);
-    }
-
-    handleFormNativeSubmit(event) {
-        console.log(JSON.stringify(event.detail.data, null, 4));
+    handleFormNativeSubmit(event){
+        console.log(event.detail.data)
+        console.log(event.currentTarget)
     }
 }
 
-customElements.define("dev-form2", DevForm2Component);
+customElements.define("dev-form2", DevForm2);
 
 export default document.createElement("dev-form2");

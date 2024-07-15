@@ -28,6 +28,7 @@ import DevEmojiPicker from "./emoji-picker/emoji-picker.js";
 import DevEmoji from "./emoji/emoji.js";
 import DevFab from "./fab/fab.js";
 import DevForm from "./form/form.js";
+import DevForm2 from "./form/form2.js";
 import DevFunctions from "./functions/functions.js";
 import DevGesture from "./gesture/gesture.js";
 import DevIconButton from "./icon-button/icon-button.js";
@@ -108,6 +109,7 @@ const routes = [
             { path: "emoji", component: DevEmoji },
             { path: "fab", component: DevFab },
             { path: "form", component: DevForm },
+            { path: "form2", component: DevForm2 },
             { path: "functions", component: DevFunctions },
             { path: "gesture", component: DevGesture },
             { path: "icon-button", component: DevIconButton },

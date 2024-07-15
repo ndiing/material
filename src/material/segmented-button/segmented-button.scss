@@ -8,7 +8,7 @@
 
 .md-segmented-button__item {
     --md-comp-button-density: var(--md-comp-segmented-button-density);
-    flex: 1;
+    flex: 1 0 auto;
 
     + .md-segmented-button__item {
         margin-left: -1px;

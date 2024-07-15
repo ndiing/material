@@ -17,8 +17,8 @@ class MDSegmentedButtonComponent extends MDComponent {
     static properties = {
         ...MDComponent.properties,
         buttons: { type: Array },
-        singleSelection: { type: Boolean, attribute: "single-select" },
-        multiSelection: { type: Boolean, attribute: "multi-select" },
+        singleSelection: { type: Boolean },
+        multiSelection: { type: Boolean },
     };
 
     constructor() {

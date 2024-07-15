@@ -492,33 +492,6 @@ function generate(text, name) {
     return code
 }
 
-
-function open(pathname) {
-    const dirents = fs.readdirSync(pathname, { withFileTypes: true });
-    for (const dirent of dirents) {
-        const curr = pathname + "/" + dirent.name;
-        if (dirent.isDirectory()) {
-            open(curr);
-        } else {
-            const extname = path.extname(curr);
-            const {name} = path.parse(curr);
-            if (extname === ".js") {
-                if (argvName && !curr.includes(argvName)) {
-                    continue;
-                }
-                let text = read(curr);
-                code+=generate(text, name);
-                code+='\r\n'
-                
-                // text = clean(text, curr);
-            }
-        }
-    }
-}
-let code = ''
-open("./src/material");
-write('./src/dev/example/example.html',code)
-
 function clean(text, curr) {
     text = text
         .replace(/(\r?\n)+/gm, '\n')
@@ -531,3 +504,82 @@ function clean(text, curr) {
     return text;
 }
 
+
+
+function open(pathname,callback = () => {}) {
+    const dirents = fs.readdirSync(pathname, { withFileTypes: true });
+    for (const dirent of dirents) {
+        const curr = pathname + "/" + dirent.name;
+        if (dirent.isDirectory()) {
+            open(curr,callback);
+        } else {
+            callback(curr)
+        }
+    }
+}
+
+let docs={}
+open("./src/material",curr=>{
+    let text=read(curr)
+    let {doc} = parse(text)
+    // docs.push(doc)
+    if(doc.className){
+        docs[doc.className]=doc
+    }
+});
+let code = ''
+open("./src/material",curr=>{
+    let text=read(curr)
+    let {doc} = parse(text)
+
+    if([
+        /field$/,
+        /checkbox$/,
+        /radio-button$/,
+        /switch$/,
+        /slider$/,
+    ].some(reg=>reg.test(doc.tagName))){
+
+        function getExtends(extendName,names=[],properties){
+            if(docs[extendName]?.extendName){
+                names=names.concat(docs[extendName]?.[properties])
+                return getExtends(docs[extendName].extendName,names)
+            }
+            return names.filter(Boolean)
+        }
+    
+        let properties=(getExtends(doc.extendName,doc.properties,'properties'))
+    
+        // console.log()
+    
+        let fires=(getExtends(doc.extendName,doc.fires,'fires'))
+    
+        // console.log({
+        //     tagName:doc.tagName,
+        //     properties,
+        //     fires,
+        // })
+
+        let methodName = toCamelCase('render'+doc.tagName.replace(/^md/,''))
+
+        code+=`${methodName}(item) {\n`
+        code+=`    /* prettier-ignore */\n`
+        code+=`    return html\`\n`
+        code+=`        <${doc.tagName}\n`
+        for(let p of properties){
+            code+=`            .${p.name}="\${ifDefined(item.${p.name})}"\n`
+        }
+        for(let f of fires){
+            code+=`            @${f.name}="\${ifDefined(item.${f.name})}"\n`
+        }
+        code+=`        ></${doc.tagName}>\n`
+        code+=`    \`\n`
+        code+=`}\n`
+        code+=`\n`
+    
+    }
+
+
+});
+
+write('./src/dev/form/template.js',code)

@@ -350,7 +350,7 @@ class MDTextFieldComponent extends MDComponent {
                 if (this.selectionStart === this.selectionEnd) {
                     --this.selectionStart;
                 }
-                
+
                 this.textFieldNative.value.selectionStart = this.selectionStart;
                 this.textFieldNative.value.selectionEnd = this.selectionEnd;
             } else if (!event.ctrlKey && !event.shiftKey && event.key === "ArrowRight") {
