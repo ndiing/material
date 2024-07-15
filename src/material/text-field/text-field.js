@@ -5,48 +5,52 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * Represents a Material Design text field component.
+ * A customizable text field component for Material Design.
  * @element md-text-field
  * @extends MDComponent
- * @fires MDTextFieldComponent#onTextFieldNativeInvalid - Fired when the native input is invalid.
- * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native input is reset.
- * @fires MDTextFieldComponent#onTextFieldNativeInput - Fired when the native input receives input.
- * @fires MDTextFieldComponent#onTextFieldNativeSearch - Fired when the native input triggers a search.
- * @fires MDTextFieldComponent#onTextFieldNativeFocus - Fired when the native input gains focus.
- * @fires MDTextFieldComponent#onTextFieldNativeBlur - Fired when the native input loses focus.
  * @fires MDTextFieldComponent#onTextFieldLabelClick - Fired when the text field label is clicked.
- * @fires MDTextFieldComponent#onTextFieldMetaClick - Fired when the text field meta element is clicked.
- * @fires MDTextFieldComponent#onTextFieldActionClick - Fired when a text field action button is clicked.
- * @fires MDTextFieldComponent#onTextFieldIconButtonClick - Fired when a text field icon button is clicked.
+ * @fires MDTextFieldComponent#onTextFieldMetaClick - Fired when the text field meta area is clicked.
+ * @fires MDTextFieldComponent#onTextFieldActionClick - Fired when an action button within the text field is clicked.
+ * @fires MDTextFieldComponent#onTextFieldIconButtonClick - Fired when an icon button within the text field is clicked.
+ * @fires MDTextFieldComponent#onTextFieldNativeFocus - Fired when the native text field element gains focus.
+ * @fires MDTextFieldComponent#onTextFieldNativeBlur - Fired when the native text field element loses focus.
+ * @fires MDTextFieldComponent#onTextFieldNativeClick - Fired when the native text field element is clicked.
+ * @fires MDTextFieldComponent#onTextFieldNativeKeydown - Fired when a key is pressed down on the native text field element.
+ * @fires MDTextFieldComponent#onTextFieldNativeSelect - Fired when text is selected within the native text field element.
+ * @fires MDTextFieldComponent#onTextFieldNativeInput - Fired when input is entered into the native text field element.
+ * @fires MDTextFieldComponent#onTextFieldNativeSearch - Fired when a search is performed within the native text field element.
+ * @fires MDTextFieldComponent#onTextFieldNativeInvalid - Fired when the native text field element becomes invalid.
+ * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native text field element is reset.
  */
 class MDTextFieldComponent extends MDComponent {
     /**
-     * Defines the component's properties.
-     * @property {String} label - The label text for the text field.
-     * @property {String} icon - The icon to be displayed in the text field.
-     * @property {String} prefix - The prefix text for the text field.
-     * @property {String} suffix - The suffix text for the text field.
-     * @property {Array} actions - The actions available in the text field.
-     * @property {String} text - Additional text for the text field.
-     * @property {String} type - The type of the text field (e.g., text, password).
-     * @property {String} name - The name attribute of the text field.
-     * @property {String} value - The value of the text field.
-     * @property {Number} min - The minimum value for the text field.
-     * @property {Number} max - The maximum value for the text field.
-     * @property {Number} cols - The number of columns for a textarea.
-     * @property {Number} rows - The number of rows for a textarea.
-     * @property {Number} minLength - The minimum length for the text field.
-     * @property {Number} maxLength - The maximum length for the text field.
-     * @property {String} pattern - The pattern attribute for the text field.
-     * @property {Boolean} required - Indicates if the text field is required.
-     * @property {Boolean} readOnly - Indicates if the text field is read-only.
-     * @property {Boolean} disabled - Indicates if the text field is disabled.
-     * @property {String} autocomplete - The autocomplete attribute for the text field.
-     * @property {Boolean} multiple - Indicates if the text field allows multiple values.
-     * @property {Array} options - The options for a select input.
-     * @property {Boolean} validationMessage - The validation message for the text field.
-     * @property {Boolean} focused - Indicates if the text field is focused.
-     * @property {String} variant - The variant of the text field (e.g., filled, outlined).
+     * The properties of the text field component.
+     * @property {String} label - The label of the text field.
+     * @property {String} icon - The icon displayed within the text field.
+     * @property {String} prefix - The prefix text displayed before the input.
+     * @property {String} suffix - The suffix text displayed after the input.
+     * @property {Array} actions - The action buttons associated with the text field.
+     * @property {String} text - The text content of the text field.
+     * @property {String} type - The type of input (e.g., "text", "password", "email").
+     * @property {String} placeholder - The placeholder text for the input.
+     * @property {String} name - The name attribute of the input.
+     * @property {String} value - The current value of the input.
+     * @property {Number} min - The minimum value for numerical inputs.
+     * @property {Number} max - The maximum value for numerical inputs.
+     * @property {Number} cols - The number of columns for textarea inputs.
+     * @property {Number} rows - The number of rows for textarea inputs.
+     * @property {Number} minLength - The minimum length of the input value.
+     * @property {Number} maxLength - The maximum length of the input value.
+     * @property {String} pattern - The regex pattern that the input value must match.
+     * @property {Boolean} required - Whether the input is required.
+     * @property {Boolean} readOnly - Whether the input is read-only.
+     * @property {Boolean} disabled - Whether the input is disabled.
+     * @property {String} autocomplete - The autocomplete attribute for the input.
+     * @property {Boolean} multiple - Whether the select input allows multiple selections.
+     * @property {Array} options - The options for select inputs.
+     * @property {Boolean} validationMessage - The validation message for the input.
+     * @property {Boolean} focused - Whether the input is focused.
+     * @property {String} variant - The visual variant of the text field (e.g., "filled", "outlined").
      */
     static properties = {
         label: { type: String },
@@ -75,22 +79,15 @@ class MDTextFieldComponent extends MDComponent {
         validationMessage: { type: Boolean },
         focused: { type: Boolean },
         variant: { type: String },
+        mask: { type: String },
     };
 
-    /**
-     * A reference to the native text field element.
-     * @type {Object}
-     */
     textFieldNative = createRef();
 
-    /**
-     * A reference to the text field container element.
-     * @type {Object}
-     */
     textFieldContainer = createRef();
 
     /**
-     * Initializes a new instance of the MDTextFieldComponent class.
+     * {{description}}
      */
     constructor() {
         super();
@@ -102,9 +99,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Renders the native input element.
      * @private
-     * @returns {TemplateResult} The rendered input element.
      */
     renderInput() {
         /* prettier-ignore */
@@ -141,9 +136,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Renders the native textarea element.
      * @private
-     * @returns {TemplateResult} The rendered textarea element.
      */
     renderTextarea() {
         /* prettier-ignore */
@@ -176,9 +169,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Renders the native select element.
      * @private
-     * @returns {TemplateResult} The rendered select element.
      */
     renderSelect() {
         /* prettier-ignore */
@@ -215,7 +206,6 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Renders the hidden input element.
      * @private
      */
     renderHidden() {
@@ -223,9 +213,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Renders the native text field element based on the type.
      * @private
-     * @returns {TemplateResult} The rendered native text field element.
      */
     renderTextFieldNative() {
         /* prettier-ignore */
@@ -236,9 +224,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Renders the MDTextFieldComponent.
      * @private
-     * @returns {TemplateResult} The rendered component.
      */
     render() {
         /* prettier-ignore */
@@ -277,7 +263,6 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Called when the component is connected to the DOM.
      * @private
      */
     connectedCallback() {
@@ -288,9 +273,6 @@ class MDTextFieldComponent extends MDComponent {
         const defaultValue = {
             color: "#000000",
         };
-
-        this.mask = "XXXX XXXX XXXX XXXX";
-        this.defaultMask = this.mask;
 
         if (this.defaultValue === undefined) {
             if (this.value === undefined) {
@@ -304,9 +286,7 @@ class MDTextFieldComponent extends MDComponent {
     variants = ["filled", "outlined", "rounded"];
 
     /**
-     * Called when the component is updated.
      * @private
-     * @param {Map} changedProperties - The properties that have changed.
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -329,46 +309,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the click event for the text field label.
      * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldLabelClick(event) {
-        this.emit("onTextFieldLabelClick", event);
-    }
-
-    /**
-     * Handles the click event for the text field meta element.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldMetaClick(event) {
-        this.emit("onTextFieldMetaClick", event);
-    }
-
-    /**
-     * Handles the click event for a text field action button.
-     * @private
-     * @param {Event} event - The event object.
-     */
-    handleTextFieldActionClick(event) {
-        this.emit("onTextFieldActionClick", event);
-    }
-
-    /**
-     * Handles the click event for a text field icon button.
-     * @private
-     * @param {Event} event - The event object.
-     * @deprecated
-     */
-    handleTextFieldIconButtonClick(event) {
-        this.emit("onTextFieldIconButtonClick", event);
-    }
-
-    /**
-     * Handles the focus event for the native input element.
-     * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeFocus(event) {
         this.style.removeProperty("--md-sys-motion-duration-short4");
@@ -377,9 +318,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the blur event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeBlur(event) {
         this.focused = false;
@@ -387,40 +326,95 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the focus event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
+
+        if (this.mask) {
+            this.selectionStart = this.textFieldNative.value.selectionStart;
+            this.selectionEnd = this.textFieldNative.value.selectionEnd;
+        }
 
         this.emit("onTextFieldNativeClick", event);
     }
 
     /**
-     * Handles the focus event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeKeydown(event) {
+        if (this.mask) {
+            if (!event.ctrlKey && !event.shiftKey && event.key === "ArrowLeft") {
+                this.selectionStart = this.textFieldNative.value.selectionStart;
+                this.selectionEnd = this.textFieldNative.value.selectionEnd;
+                if (this.selectionStart === this.selectionEnd) {
+                    --this.selectionStart;
+                }
+                
+                this.textFieldNative.value.selectionStart = this.selectionStart;
+                this.textFieldNative.value.selectionEnd = this.selectionEnd;
+            } else if (!event.ctrlKey && !event.shiftKey && event.key === "ArrowRight") {
+                this.selectionEnd = this.textFieldNative.value.selectionEnd;
+                if (this.selectionStart === this.selectionEnd) {
+                    ++this.selectionStart;
+                }
+
+                this.textFieldNative.value.selectionStart = this.selectionStart;
+                this.textFieldNative.value.selectionEnd = this.selectionEnd;
+            }
+        }
+
         this.emit("onTextFieldNativeKeydown", event);
     }
 
     /**
-     * Handles the focus event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeSelect(event) {
+        if (this.mask) {
+            this.selectionStart = this.textFieldNative.value.selectionStart;
+            this.selectionEnd = this.textFieldNative.value.selectionEnd;
+        }
+
         this.emit("onTextFieldNativeSelect", event);
     }
 
     /**
-     * Handles the input event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeInput(event) {
+        if (this.mask) {
+            if (event.inputType === "insertText") {
+                let value = this.textFieldNative.value.value.substring(this.selectionStart, this.selectionStart + 1);
+                let mask = this.mask.substring(this.selectionStart, this.selectionStart + 1);
+
+                if (/[^a-zA-Z0-9]/.test(mask)) {
+                    this.value = this.value.substring(0, this.selectionStart) + mask + this.value.substring(this.selectionStart + 1);
+                    this.textFieldNative.value.value = this.value.substring(0, this.mask.length);
+
+                    if (mask !== value) {
+                        this.selectionStart = Math.min(++this.selectionStart, this.mask.length);
+                        this.selectionEnd = this.selectionStart;
+                    }
+                }
+
+                this.value = this.value.substring(0, this.selectionStart) + value + this.value.substring(this.selectionStart + 1);
+                this.textFieldNative.value.value = this.value.substring(0, this.mask.length);
+
+                this.selectionStart = Math.min(++this.selectionStart, this.mask.length);
+                this.selectionEnd = this.selectionStart;
+
+                this.textFieldNative.value.selectionStart = this.selectionStart;
+                this.textFieldNative.value.selectionEnd = this.selectionEnd;
+            } else if (event.inputType === "deleteContentBackward") {
+                this.value = this.textFieldNative.value.value;
+                this.textFieldNative.value.value = this.value;
+
+                this.selectionStart = this.textFieldNative.value.selectionStart;
+                this.selectionEnd = this.textFieldNative.value.selectionEnd;
+            }
+        }
+
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
             this.validationMessage = this.textFieldNative.value.validationMessage;
@@ -429,9 +423,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the search event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeSearch(event) {
         if (this.type !== "file") {
@@ -442,9 +434,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the invalid event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
@@ -453,17 +443,42 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * Handles the reset event for the native input element.
      * @private
-     * @param {Event} event - The event object.
      */
     handleTextFieldNativeReset(event) {
-        event.preventDefault();
         if (this.type !== "file") {
             this.value = this.defaultValue;
             this.validationMessage = "";
         }
         this.emit("onTextFieldNativeReset", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldLabelClick(event) {
+        this.emit("onTextFieldLabelClick", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldMetaClick(event) {
+        this.emit("onTextFieldMetaClick", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldActionClick(event) {
+        this.emit("onTextFieldActionClick", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldIconButtonClick(event) {
+        this.emit("onTextFieldIconButtonClick", event);
     }
 }
 customElements.define("md-text-field", MDTextFieldComponent);
