@@ -37,7 +37,7 @@ function open(pathname) {
             const {name} = path.parse(curr);
             if(extname==='.txt'){continue}
             const stat=fs.statSync(curr)
-            code+=`[${name}](${curr}) | **${Math.ceil(stat.size/1024)+'KB'}**\n`
+            code+=`[${name+extname}](${curr}) | **${Math.ceil(stat.size/1024)+'KB'}**\n`
         }
     }
 }
