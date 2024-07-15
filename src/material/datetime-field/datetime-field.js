@@ -5,12 +5,12 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * A custom element that provides a date and time picker field.
  * @element md-datetime-field
  * @extends MDTextFieldComponent
- * @fires MDDateTimeFieldComponent#onDatetimeFieldActionPickerClick - Event fired when the date-time picker icon is clicked.
- * @fires MDDateTimeFieldComponent#onDatetimePickerButtonCancelClick - Event fired when the cancel button is clicked in the date-time picker.
- * @fires MDDateTimeFieldComponent#onDatetimePickerButtonOkClick - Event fired when the OK button is clicked in the date-time picker.
- * @fires MDDateTimeFieldComponent#onDatetimePickerSelection - Event fired when a date-time selection is made in the picker.
+ * @fires MDDatetimeFieldComponent#onDatetimeFieldActionPickerClick - Event fired when the date-time picker icon is clicked.
+ * @fires MDDatetimeFieldComponent#onDatetimePickerButtonCancelClick - Event fired when the cancel button is clicked in the date-time picker.
+ * @fires MDDatetimeFieldComponent#onDatetimePickerButtonOkClick - Event fired when the OK button is clicked in the date-time picker.
+ * @fires MDDatetimeFieldComponent#onDatetimePickerSelection - Event fired when a date-time selection is made in the picker.
  */
-class MDDateTimeFieldComponent extends MDTextFieldComponent {
+class MDDatetimeFieldComponent extends MDTextFieldComponent {
     /**
      * Gets the actions for the date-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -155,5 +155,5 @@ class MDDateTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
 }
-customElements.define("md-datetime-field", MDDateTimeFieldComponent);
-export { MDDateTimeFieldComponent };
+customElements.define("md-datetime-field", MDDatetimeFieldComponent);
+export { MDDatetimeFieldComponent };

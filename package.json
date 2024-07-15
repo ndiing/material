@@ -29,8 +29,11 @@
     "name": "@ndiinginc/material",
     "scripts": {
         "build": "webpack --mode=production --node-env=production",
+
         "build:dev": "webpack --mode=development",
         "build:prod": "webpack --mode=production --node-env=production",
+        "build:dist": "webpack --config webpack.config.dist --mode=production --node-env=production",
+
         "watch": "webpack --watch",
         "serve": "webpack serve",
         "localize:extract": "lit-localize extract",
