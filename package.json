@@ -28,8 +28,8 @@
     "description": "Material Design - Material 3 is the latest version of Google’s open-source design system. Design and build beautiful, usable products with Material 3.",
     "name": "@ndiinginc/material",
     "scripts": {
-        "webpack:docs": "webpack --config docs.config --mode=production --node-env=production",
-        "webpack:dist": "webpack --config dist.config --mode=production --node-env=production",
+        "webpack:development": "webpack --config webpack.config.js --mode=production --node-env=production",
+        "webpack:production": "webpack --config prod.config.js --mode=production --node-env=production",
         "webpack:serve": "webpack serve",
 
         "localize:extract": "lit-localize extract",

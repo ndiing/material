@@ -226,7 +226,7 @@ class MDTreeComponent extends MDComponent {
         const data = event.currentTarget.data;
 
         if (data.isNode || data.isParent) {
-            event.preventDefault();
+            event.stopPropagation();
             this.expand(this.list, data.isParent ? data.parent : data);
         } else {
             this.select(this.list, data);
