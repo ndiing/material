@@ -1,112 +1,76 @@
-# Material Design Front-End Framework
+# Material Design Framework
 
-[![npm version](https://badge.fury.io/js/%40ndiinginc%2Fmaterial.svg)](https://badge.fury.io/js/%40ndiinginc%2Fmaterial)
+Sebuah framework ringan untuk mengimplementasikan komponen Material Design menggunakan Node.js, Webpack, dan Lit.
 
-## Overview
+## Memulai
 
-This project is a front-end framework implementing Material Design principles. It is developed using [Lit](https://lit.dev/), [Webpack](https://webpack.js.org/), and [Node.js](https://nodejs.org/).
+Untuk memulai, masukkan struktur HTML berikut ke dalam proyek Anda:
 
-## Table of Contents
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi Material Design Anda</title>
+    <base href="./">
+    <!-- Sertakan Google Fonts untuk Material Design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+</head>
+<body>
+    <!-- Gunakan md-outlet untuk menginisialisasi komponen Material Design -->
+    <md-outlet></md-outlet>
+</body>
+</html>
+```
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Development](#development)
-- [Contributing](#contributing)
-- [Demo and API Documentation](#demo-and-api-documentation)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+### Instalasi menggunakan NPM
 
-## Getting Started
+#### Impor Semua Komponen
 
-Follow these steps to set up the framework and start developing.
+Untuk integrasi penuh, impor seluruh framework Material Design:
 
-### Prerequisites
+```js
+import "./material/material.scss";
+import "./material/material.js";
+```
 
-Ensure you have the following installed:
+#### Impor Secara Selektif
 
-- [Node.js](https://nodejs.org/) (version 14 or later)
-- npm (version 6 or later)
+Atau, impor komponen tertentu sesuai kebutuhan:
 
-### Installation
+```js
+import "./material/button.scss";
+import "./material/icon-button.scss";
 
-1. Clone the repository:
-    <pre>
-    git clone https://github.com/ndiing/material.git
-    cd material
-    </pre>
+import "./material/button.js";
+import "./material/icon-button.js";
+// Tambahkan komponen lain di sini
+```
 
-2. Install the dependencies:
-    <pre>
-    npm install
-    </pre>
+## Integrasi menggunakan CDN
 
-### Usage
+### Impor Semua Komponen
 
-To use this framework in your project, install it via npm:
+Untuk implementasi berbasis CDN, sertakan file CSS dan JavaScript yang sudah dikompilasi:
 
-<pre>
-npm install @ndiinginc/material
-</pre>
+```html
+<link rel="stylesheet" href="./dist/material/material.css">
+<script type="module" src="./dist/material/material.js"></script>
+```
 
-Then, import the components you need in your project:
+### Impor Secara Selektif
 
-<pre>
-import { MyComponent } from '@ndiinginc/material';
-</pre>
+Untuk optimasi pemuatan, masukkan CSS dan JavaScript secara terpisah untuk setiap komponen:
 
-### Development
+```html
+<link rel="stylesheet" href="./dist/button/button.css">
+<link rel="stylesheet" href="./dist/icon-button/icon-button.css">
 
-To start the development server, run:
+<script type="module" src="./dist/button/button.js"></script>
+<script type="module" src="./dist/icon-button/icon-button.js"></script>
+<!-- Sertakan komponen tambahan sesuai kebutuhan -->
+```
 
-<pre>
-npm run start
-</pre>
-
-This command starts a local development server with hot reloading enabled.
-
-To build the project for production, run:
-
-<pre>
-npm run build
-</pre>
-
-## Contributing
-
-We welcome contributions! To contribute, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch:
-    <pre>
-    git checkout -b feature/YourFeature
-    </pre>
-3. Make your changes.
-4. Commit your changes:
-    <pre>
-    git commit -am 'Add some feature'
-    </pre>
-5. Push to the branch:
-    <pre>
-    git push origin feature/YourFeature
-    </pre>
-6. Create a new Pull Request.
-
-## Demo and API Documentation
-
-You can find the demo and API documentation [here](https://ndiing.github.io/material/dist/).
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any questions or inquiries, please contact [ndiing.inc@gmail.com](mailto:ndiing.inc@gmail.com).
-
-## Acknowledgements
-
-- [Lit](https://lit.dev/)
-- [Webpack](https://webpack.js.org/)
-- [Node.js](https://nodejs.org/)

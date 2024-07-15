@@ -26,8 +26,7 @@ function generateEntries() {
     // }
   });
 
-  entries['material']='./src/material/material.scss'
-  entries['material']='./src/material/material.js'
+  entries['material']=['./src/material/material.scss','./src/material/material.js']
 
   return entries;
 }
