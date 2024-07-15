@@ -1,45 +1,45 @@
 # Material Design Framework
 
-Sebuah framework ringan untuk mengimplementasikan komponen Material Design menggunakan Node.js, Webpack, dan Lit.
+A lightweight framework for implementing Material Design components using Node.js, Webpack, and Lit.
 
-## Memulai
+## Getting Started
 
-Untuk memulai, masukkan struktur HTML berikut ke dalam proyek Anda:
+Integrate this framework into your project with the following HTML structure:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aplikasi Material Design Anda</title>
+    <title>Your Material Design App</title>
     <base href="./">
-    <!-- Sertakan Google Fonts untuk Material Design -->
+    <!-- Include Google Fonts for Material Design -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
 </head>
 <body>
-    <!-- Gunakan md-outlet untuk menginisialisasi komponen Material Design -->
+    <!-- Use md-outlet to initialize your Material Design components -->
     <md-outlet></md-outlet>
 </body>
 </html>
 ```
 
-### Instalasi menggunakan NPM
+## Installation via NPM
 
-#### Impor Semua Komponen
+### Import All Components
 
-Untuk integrasi penuh, impor seluruh framework Material Design:
+For full integration, import the entire Material Design framework:
 
 ```js
 import "./material/material.scss";
 import "./material/material.js";
 ```
 
-#### Impor Secara Selektif
+### Selective Imports
 
-Atau, impor komponen tertentu sesuai kebutuhan:
+Alternatively, import specific components as needed:
 
 ```js
 import "./material/button.scss";
@@ -47,23 +47,23 @@ import "./material/icon-button.scss";
 
 import "./material/button.js";
 import "./material/icon-button.js";
-// Tambahkan komponen lain di sini
+// Add more components here
 ```
 
-## Integrasi menggunakan CDN
+## CDN Integration
 
-### Impor Semua Komponen
+### Import All Components
 
-Untuk implementasi berbasis CDN, sertakan file CSS dan JavaScript yang sudah dikompilasi:
+For CDN-based deployments, link the compiled CSS and JavaScript files:
 
 ```html
 <link rel="stylesheet" href="./dist/material/material.css">
 <script type="module" src="./dist/material/material.js"></script>
 ```
 
-### Impor Secara Selektif
+### Selective Imports
 
-Untuk optimasi pemuatan, masukkan CSS dan JavaScript secara terpisah untuk setiap komponen:
+To optimize loading, include CSS and JavaScript separately for each component:
 
 ```html
 <link rel="stylesheet" href="./dist/button/button.css">
@@ -71,6 +71,5 @@ Untuk optimasi pemuatan, masukkan CSS dan JavaScript secara terpisah untuk setia
 
 <script type="module" src="./dist/button/button.js"></script>
 <script type="module" src="./dist/icon-button/icon-button.js"></script>
-<!-- Sertakan komponen tambahan sesuai kebutuhan -->
+<!-- Include additional components as needed -->
 ```
-
