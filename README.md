@@ -2,7 +2,7 @@
 
 A lightweight framework for implementing Material Design components using Node.js, Webpack, and Lit.
 
-## Getting Started
+## Quick start
 
 Integrate this framework into your project with the following HTML structure:
 
@@ -74,7 +74,7 @@ To optimize loading, include CSS and JavaScript separately for each component:
 <!-- Include additional components as needed -->
 ```
 
-## Bundle
+## Bundle Sizes
 
 File | Size
 --- | ---
@@ -120,7 +120,8 @@ File | Size
 [month-field](./dist/month-field/month-field.js) | 33KB
 [month-picker](./dist/month-picker/month-picker.js) | 50KB
 [navigation-bar](./dist/navigation-bar/navigation-bar.js) | 32KB
-[navigation-drawer](./dist/navigation-drawer/navigation-drawer.js) | 32KB[navigation-rail](./dist/navigation-rail/navigation-rail.js) | 32KB      
+[navigation-drawer](./dist/navigation-drawer/navigation-drawer.js) | 32KB
+[navigation-rail](./dist/navigation-rail/navigation-rail.js) | 32KB      
 [number-field](./dist/number-field/number-field.js) | 29KB
 [observer](./dist/observer/observer.js) | 2KB
 [pagination](./dist/pagination/pagination.js) | 19KB
