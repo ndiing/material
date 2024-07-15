@@ -9,7 +9,7 @@ class DevTextField extends MDComponent {
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-text-field label="label" name="text" mask="0000 0000 0000 0000"></md-text-field>
+                                <md-text-field label="label" name="text" pattern="^(\\d{4} ){3}\\d{4}$" mask="0000 0000 0000 0000" placeholder="0000 0000 0000 0000"></md-text-field>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field label="label" name="text2" variant="filled"></md-text-field>
