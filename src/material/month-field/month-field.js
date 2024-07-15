@@ -123,7 +123,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.boundary = getBoundary(this);
         this.boundary.addEventListener("scroll", handleScroll);
         this.boundary.addEventListener("click", handleClick);
-        await this.picker.updateComplete
+        await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
 

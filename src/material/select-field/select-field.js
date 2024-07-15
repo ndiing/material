@@ -51,22 +51,21 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
 
-    get selectedOptionLabel(){
-        return this.selectedOptions?.[0]?.[this.map.label]??''
+    get selectedOptionLabel() {
+        return this.selectedOptions?.[0]?.[this.map.label] ?? "";
     }
-    
-    get defaultSelectedOptionLabel(){
-        return this.defaultSelectedOptions?.[0]?.[this.map.label]??''
+
+    get defaultSelectedOptionLabel() {
+        return this.defaultSelectedOptions?.[0]?.[this.map.label] ?? "";
     }
-    
-    get selectedOptionValue(){
-        return this.selectedOptions?.[0]?.[this.map.value]??''
+
+    get selectedOptionValue() {
+        return this.selectedOptions?.[0]?.[this.map.value] ?? "";
     }
-    
-    get defaultSelectedOptionValue(){
-        return this.defaultSelectedOptions?.[0]?.[this.map.value]??''
+
+    get defaultSelectedOptionValue() {
+        return this.defaultSelectedOptions?.[0]?.[this.map.value] ?? "";
     }
-    
 
     constructor() {
         super();
@@ -177,7 +176,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 });
 
                 this.requestUpdate();
-            }else if (event.key === "Enter") {
+            } else if (event.key === "Enter") {
                 event.preventDefault();
                 this.togglePicker();
             }
@@ -192,11 +191,11 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     handleTextFieldNativeReset(event) {
         super.handleTextFieldNativeReset(event);
-        this.options.forEach((option,index) => {
-            option.activated=this.defaultOptions[index].activated
-            option.selected=this.defaultOptions[index].selected
-        })
-        this.requestUpdate()
+        this.options.forEach((option, index) => {
+            option.activated = this.defaultOptions[index].activated;
+            option.selected = this.defaultOptions[index].selected;
+        });
+        this.requestUpdate();
     }
 
     handleTextFieldActionClick(event) {
@@ -269,7 +268,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.style.minWidth = `${this.textFieldContainer.value.clientWidth}px`;
         this.picker.style.maxWidth = `${this.textFieldContainer.value.clientWidth}px`;
         // this.picker.filter(this.textFieldNative.value.value);
-        await this.picker.updateComplete
+        await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
 
