@@ -189,12 +189,10 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.showPicker();
     }
 
-
     validate() {
-        this.textFieldNative.value.setCustomValidity(this.selectedIndex===-1?'Please select an item in the list.':'')
-        super.validate()
+        this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
+        super.validate();
     }
-
 
     handleTextFieldNativeReset(event) {
         super.handleTextFieldNativeReset(event);

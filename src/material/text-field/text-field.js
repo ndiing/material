@@ -355,7 +355,7 @@ class MDTextFieldComponent extends MDComponent {
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
         }
-        
+
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }

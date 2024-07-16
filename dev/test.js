@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-let template=`import { html } from "lit";
+let template = `import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
 class DevExample extends MDComponent {
@@ -10,9 +10,9 @@ class DevExample extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-`
+`;
 
-let template2=`
+let template2 = `
                     </div>
                 </div>
             </div>
@@ -23,8 +23,8 @@ let template2=`
 customElements.define("dev-example", DevExample);
 
 export default document.createElement("dev-example");
-`
-let template3=`import { html } from "lit";
+`;
+let template3 = `import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
 class DevExample extends MDComponent {
@@ -38,8 +38,8 @@ class DevExample extends MDComponent {
                     >
                         <div class="md-layout-column">
                             
-`
-let template4=`
+`;
+let template4 = `
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-button type="reset" label="Reset" variant="outlined"></md-button>
                                 <md-button type="submit" label="Submit" variant="filled"></md-button>
@@ -56,7 +56,7 @@ let template4=`
 customElements.define("dev-example", DevExample);
 
 export default document.createElement("dev-example");
-`
+`;
 /**
  * Converts a string to `PascalCase` format.
  * @param {string} string - The input string to convert.
@@ -249,12 +249,12 @@ function parse(data) {
     });
 
     data = data.replace(/^(async )?function (\w+)\((.*?)?\) \{[\s\S]+?^\}/gm, (...args) => {
-        let [text, ,methodName,methodParams] = args;
-        doc.functions.push({methodName,methodParams});
+        let [text, , methodName, methodParams] = args;
+        doc.functions.push({ methodName, methodParams });
         let code = "";
-        code+=`/**\n`
-        code+=` * {{description}}\n`
-        code+=` */\n`
+        code += `/**\n`;
+        code += ` * {{description}}\n`;
+        code += ` */\n`;
         code += text;
         return code;
     });
@@ -267,34 +267,19 @@ function parse(data) {
             let [text, name, params] = args;
             params = params.split(",");
             fires.push({ name, params });
-            if(doc.fires.findIndex(doc=>doc.name==name)==-1)
-            doc.fires.push({ name, params });
+            if (doc.fires.findIndex((doc) => doc.name == name) == -1) doc.fires.push({ name, params });
             return text;
         });
         // console.log(body)
         doc.methods.push({ static, acc, async, methodName, methodParams, fires });
         let code = "";
-        code+=`    /**\n`
-        if(![
-            /^on$/,
-            /^once$/,
-            /^off$/,
-            /^emit$/,
-            /^hostConnected$/,
-            /^hostDisconnected$/,
-            /^handle/,
-            /^createRenderRoot/,
-            /^firstUpdate/,
-            /^updated/,
-            /^connectedCallback/,
-            /^disconnectedCallback/,
-            /^render/,
-        ].some(r=>r.test(methodName))){
-            code+=`     * {{description}}\n`
-        }else{
-            code+=`     * @private\n`
+        code += `    /**\n`;
+        if (![/^on$/, /^once$/, /^off$/, /^emit$/, /^hostConnected$/, /^hostDisconnected$/, /^handle/, /^createRenderRoot/, /^firstUpdate/, /^updated/, /^connectedCallback/, /^disconnectedCallback/, /^render/].some((r) => r.test(methodName))) {
+            code += `     * {{description}}\n`;
+        } else {
+            code += `     * @private\n`;
         }
-        code+=`     */\n`
+        code += `     */\n`;
         code += text;
         return code;
     });
@@ -339,58 +324,45 @@ function parse(data) {
     });
 
     data = data.replace(/variants = \[(.*?)\]/, (...args) => {
-        let [text, ] = args;
-        doc.variants=(args[1].split(',').map(s=>s.replace(/"/g,'').trim()))
+        let [text] = args;
+        doc.variants = args[1].split(",").map((s) => s.replace(/"/g, "").trim());
         return text;
     });
 
     // console.log(data);
     // console.log(doc);
-    return {doc,data}
+    return { doc, data };
 }
 function generate(text, name) {
     const { doc } = parse(text);
 
-
-    let className = toPascalCase('dev-' + name);
-    let tagName = toKebabCase('dev-' + name);
-    let tagName2 = toKebabCase('md-' + name);
+    let className = toPascalCase("dev-" + name);
+    let tagName = toKebabCase("dev-" + name);
+    let tagName2 = toKebabCase("md-" + name);
     // if(doc.variants){
     //     doc.variants.forEach(variant=>{
     //         console.log(name+'-'+variant)
     //     })
     // }
     let temp = template;
-    if ([
-        /field$/,
-        /form$/,
-        /checkbox$/,
-        /radio-button$/,
-        /slider$/,
-    ].some(key => key.test(name))) {
+    if ([/field$/, /form$/, /checkbox$/, /radio-button$/, /slider$/].some((key) => key.test(name))) {
         temp = template3;
     }
-    temp = temp.replaceAll('DevExample', className);
-    temp = temp.replaceAll('dev-example', tagName);
+    temp = temp.replaceAll("DevExample", className);
+    temp = temp.replaceAll("dev-example", tagName);
 
     let temp2 = template2;
-    if ([
-        /field$/,
-        /form$/,
-        /checkbox$/,
-        /radio-button$/,
-        /slider$/,
-    ].some(key => key.test(name))) {
+    if ([/field$/, /form$/, /checkbox$/, /radio-button$/, /slider$/].some((key) => key.test(name))) {
         temp2 = template4;
     }
-    temp2 = temp2.replaceAll('DevExample', className);
-    temp2 = temp2.replaceAll('dev-example', tagName);
+    temp2 = temp2.replaceAll("DevExample", className);
+    temp2 = temp2.replaceAll("dev-example", tagName);
 
-    temp=''
-    temp2=''
-    let code = '';
+    temp = "";
+    temp2 = "";
+    let code = "";
     code += temp;
-    let space = '    '.repeat(6);
+    let space = "    ".repeat(6);
 
     code += `${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`;
     code += `${space}    <p>${name}</p>\r\n`;
@@ -420,64 +392,58 @@ function generate(text, name) {
         total: `"100"`,
         limit: `"10"`,
     };
-    if (doc.properties && !name.includes('datetime')) {
-        doc.properties.forEach(prop => {
-            if (prop.name == 'variant' && doc.variants) {
+    if (doc.properties && !name.includes("datetime")) {
+        doc.properties.forEach((prop) => {
+            if (prop.name == "variant" && doc.variants) {
                 code += `${space}        ${prop.name}="${doc.variants[0]}"\r\n`;
-
             } else {
-                code += `${space}        ${prop.name}${prop.type !== 'Boolean' ? `=${values[prop.name] || '""'}` : ``}\r\n`;
-
+                code += `${space}        ${prop.name}${prop.type !== "Boolean" ? `=${values[prop.name] || '""'}` : ``}\r\n`;
             }
         });
     }
-    if (name.includes('datetime')) {
+    if (name.includes("datetime")) {
         code += `${space}        value="1990-10-17T20:30"\r\n`;
     }
-    if (name.includes('time')) {
+    if (name.includes("time")) {
         code += `${space}        value="20:30"\r\n`;
     }
-    if (name.includes('date')) {
+    if (name.includes("date")) {
         code += `${space}        value="1990-10-17"\r\n`;
     }
-    if (name.includes('month')) {
+    if (name.includes("month")) {
         code += `${space}        value="1990-10"\r\n`;
     }
-    if (name.includes('week')) {
+    if (name.includes("week")) {
         code += `${space}        value="1990-W42"\r\n`;
     }
-    if (name.includes('select')) {
-        code += `${space}        options=${values['options']}\r\n`;
+    if (name.includes("select")) {
+        code += `${space}        options=${values["options"]}\r\n`;
     }
     if (doc.fires) {
-        doc.fires.forEach(doc => {
+        doc.fires.forEach((doc) => {
             code += `${space}        @${doc.name}="\${console.log}"\r\n`;
-
         });
     }
     code += `${space}    ></${tagName2}>\r\n`;
     code += `${space}</div>\r\n`;
 
     if (doc.variants) {
-        doc.variants.slice(1).forEach(variant => {
+        doc.variants.slice(1).forEach((variant) => {
             code += `${space}<div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">\r\n`;
             code += `${space}    <p>${name} - ${variant}</p>\r\n`;
             code += `${space}    <${tagName2}\r\n`;
             if (doc.properties) {
-                doc.properties.forEach(prop => {
-                    if (prop.name == 'variant') {
+                doc.properties.forEach((prop) => {
+                    if (prop.name == "variant") {
                         code += `${space}        ${prop.name}="${variant}"\r\n`;
-
                     } else {
-                        code += `${space}        ${prop.name}${prop.type !== 'Boolean' ? `=${values[prop.name] || '""'}` : ``}\r\n`;
-
+                        code += `${space}        ${prop.name}${prop.type !== "Boolean" ? `=${values[prop.name] || '""'}` : ``}\r\n`;
                     }
                 });
             }
             if (doc.fires) {
-                doc.fires.forEach(doc => {
+                doc.fires.forEach((doc) => {
                     code += `${space}        @${doc.name}="\${console.log}"\r\n`;
-
                 });
             }
             code += `${space}    ></${tagName2}>\r\n`;
@@ -489,97 +455,85 @@ function generate(text, name) {
 
     // console.log(code);
     // write('./src/dev/'+name+'/'+name+'.js',code)
-    return code
+    return code;
 }
 
 function clean(text, curr) {
     text = text
-        .replace(/(\r?\n)+/gm, '\n')
-        .replace(/(.*?\/\*\*)/gm, '\n$1')
-        .replace(/(.*?\) \=\> \{)/gm, '\n$1')
-        .replace(/(.*?\) \{)/gm, '\n$1')
-        .replace(/(\*\/)[\n]+/g, '$1\n');
+        .replace(/(\r?\n)+/gm, "\n")
+        .replace(/(.*?\/\*\*)/gm, "\n$1")
+        .replace(/(.*?\) \=\> \{)/gm, "\n$1")
+        .replace(/(.*?\) \{)/gm, "\n$1")
+        .replace(/(\*\/)[\n]+/g, "$1\n");
 
     write(curr, text);
     return text;
 }
 
-
-
-function open(pathname,callback = () => {}) {
+function open(pathname, callback = () => {}) {
     const dirents = fs.readdirSync(pathname, { withFileTypes: true });
     for (const dirent of dirents) {
         const curr = pathname + "/" + dirent.name;
         if (dirent.isDirectory()) {
-            open(curr,callback);
+            open(curr, callback);
         } else {
-            callback(curr)
+            callback(curr);
         }
     }
 }
 
-let docs={}
-open("./src/material",curr=>{
-    let text=read(curr)
-    let {doc} = parse(text)
+let docs = {};
+open("./src/material", (curr) => {
+    let text = read(curr);
+    let { doc } = parse(text);
     // docs.push(doc)
-    if(doc.className){
-        docs[doc.className]=doc
+    if (doc.className) {
+        docs[doc.className] = doc;
     }
 });
-let code = ''
-open("./src/material",curr=>{
-    let text=read(curr)
-    let {doc} = parse(text)
+let code = "";
+open("./src/material", (curr) => {
+    let text = read(curr);
+    let { doc } = parse(text);
 
-    if([
-        /field$/,
-        /checkbox$/,
-        /radio-button$/,
-        /switch$/,
-        /slider$/,
-    ].some(reg=>reg.test(doc.tagName))){
-
-        function getExtends(extendName,names=[],properties){
-            if(docs[extendName]?.extendName){
-                names=names.concat(docs[extendName]?.[properties])
-                return getExtends(docs[extendName].extendName,names)
+    if ([/field$/, /checkbox$/, /radio-button$/, /switch$/, /slider$/].some((reg) => reg.test(doc.tagName))) {
+        function getExtends(extendName, names = [], properties) {
+            if (docs[extendName]?.extendName) {
+                names = names.concat(docs[extendName]?.[properties]);
+                return getExtends(docs[extendName].extendName, names);
             }
-            return names.filter(Boolean)
+            return names.filter(Boolean);
         }
-    
-        let properties=(getExtends(doc.extendName,doc.properties,'properties'))
-    
+
+        let properties = getExtends(doc.extendName, doc.properties, "properties");
+
         // console.log()
-    
-        let fires=(getExtends(doc.extendName,doc.fires,'fires'))
-    
+
+        let fires = getExtends(doc.extendName, doc.fires, "fires");
+
         // console.log({
         //     tagName:doc.tagName,
         //     properties,
         //     fires,
         // })
 
-        let methodName = toCamelCase('render'+doc.tagName.replace(/^md/,''))
+        let methodName = toCamelCase("render" + doc.tagName.replace(/^md/, ""));
 
-        code+=`${methodName}(item) {\n`
-        code+=`    /* prettier-ignore */\n`
-        code+=`    return html\`\n`
-        code+=`        <${doc.tagName}\n`
-        for(let p of properties){
-            code+=`            .${p.name}="\${ifDefined(item.${p.name})}"\n`
+        code += `${methodName}(item) {\n`;
+        code += `    /* prettier-ignore */\n`;
+        code += `    return html\`\n`;
+        code += `        <${doc.tagName}\n`;
+        for (let p of properties) {
+            code += `            .${p.name}="\${ifDefined(item.${p.name})}"\n`;
         }
-        for(let f of fires){
-            code+=`            @${f.name}="\${ifDefined(item.${f.name})}"\n`
+        for (let f of fires) {
+            code += `            @${f.name}="\${ifDefined(item.${f.name})}"\n`;
         }
-        code+=`        ></${doc.tagName}>\n`
-        code+=`    \`\n`
-        code+=`}\n`
-        code+=`\n`
-    
+        code += `        ></${doc.tagName}>\n`;
+        code += `    \`\n`;
+        code += `}\n`;
+        code += `\n`;
     }
-
-
 });
 
-write('./src/dev/form/template.js',code)
+write("./src/dev/form/template.js", code);

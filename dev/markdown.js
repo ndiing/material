@@ -17,6 +17,8 @@ Object.groupBy = function (array, keyFunction) {
 
 jsdoc = jsdoc.filter((doc) => !(doc.undocumented || doc.access === "private" || doc.inherited));
 
+// console.log(jsdoc)
+
 let grouped = Object.groupBy(jsdoc, (doc) => doc.meta?.filename);
 
 let json = {};
@@ -97,9 +99,8 @@ for (let name in grouped) {
         if (grouped2?.["class"]?.[0]?.augments?.[0]) {
             markdown += `## Instance properties\r\n`;
             markdown += `This interface also inherits properties from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
-        }else{
+        } else {
             markdown += `## Properties\r\n`;
-
         }
         markdown += `\r\n`;
         markdown += `Name | Type | Description\r\n`;
@@ -127,9 +128,8 @@ for (let name in grouped) {
         if (grouped2?.["class"]?.[0]?.augments?.[0]) {
             markdown += `## Instance methods\r\n`;
             markdown += `This interface also inherits methods from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;
-        }else{
+        } else {
             markdown += `## Methods\r\n`;
-
         }
         markdown += `\r\n`;
         for (let val of value) {
@@ -169,8 +169,8 @@ for (let name in grouped) {
             }
         }
     }
-    if (grouped2['constant']) {
-        let value = grouped2['constant'];
+    if (grouped2["constant"]) {
+        let value = grouped2["constant"];
         markdown += `## Constants\r\n`;
         if (grouped2?.["class"]?.[0]?.augments?.[0]) {
             markdown += `This interface also inherits methods from its parent, \`${grouped2?.["class"]?.[0]?.augments?.[0]}\`.\r\n`;

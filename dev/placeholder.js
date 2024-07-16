@@ -36,12 +36,12 @@ function parse(data) {
     });
 
     data = data.replace(/^(async )?function (\w+)\((.*?)?\) \{[\s\S]+?^\}/gm, (...args) => {
-        let [text, ,methodName,methodParams] = args;
-        doc.functions.push({methodName,methodParams});
+        let [text, , methodName, methodParams] = args;
+        doc.functions.push({ methodName, methodParams });
         let code = "";
-        code+=`/**\n`
-        code+=` * {{description}}\n`
-        code+=` */\n`
+        code += `/**\n`;
+        code += ` * {{description}}\n`;
+        code += ` */\n`;
         code += text;
         return code;
     });
@@ -60,27 +60,13 @@ function parse(data) {
         // console.log(body)
         doc.methods.push({ static, acc, async, methodName, methodParams, fires });
         let code = "";
-        code+=`    /**\n`
-        if(![
-            /^on$/,
-            /^once$/,
-            /^off$/,
-            /^emit$/,
-            /^hostConnected$/,
-            /^hostDisconnected$/,
-            /^handle/,
-            /^createRenderRoot/,
-            /^firstUpdate/,
-            /^updated/,
-            /^connectedCallback/,
-            /^disconnectedCallback/,
-            /^render/,
-        ].some(r=>r.test(methodName))){
-            code+=`     * {{description}}\n`
-        }else{
-            code+=`     * @private\n`
+        code += `    /**\n`;
+        if (![/^on$/, /^once$/, /^off$/, /^emit$/, /^hostConnected$/, /^hostDisconnected$/, /^handle/, /^createRenderRoot/, /^firstUpdate/, /^updated/, /^connectedCallback/, /^disconnectedCallback/, /^render/].some((r) => r.test(methodName))) {
+            code += `     * {{description}}\n`;
+        } else {
+            code += `     * @private\n`;
         }
-        code+=`     */\n`
+        code += `     */\n`;
         code += text;
         return code;
     });
@@ -126,9 +112,9 @@ function parse(data) {
 
     // console.log(data);
     // console.log(doc);
-    return {doc,data}
+    return { doc, data };
 }
-const [,,argvName] = process.argv
+const [, , argvName] = process.argv;
 function open(pathname) {
     const dirents = fs.readdirSync(pathname, { withFileTypes: true });
     for (const dirent of dirents) {
@@ -138,14 +124,14 @@ function open(pathname) {
         } else {
             const extname = path.extname(curr);
             if (extname === ".js") {
-                if(argvName&&!curr.includes(argvName)){
-                    continue
+                if (argvName && !curr.includes(argvName)) {
+                    continue;
                 }
-                console.log('generate '+curr)
+                console.log("generate " + curr);
                 const text = read(curr);
-                let {doc,data}=parse(text);
+                let { doc, data } = parse(text);
                 // break
-                write(curr,data)
+                write(curr, data);
             }
         }
     }
