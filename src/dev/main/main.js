@@ -143,6 +143,7 @@ class DevMainComponent extends MDComponent {
         ];
 
         function select(list, routerLink) {
+            list.sort((a,b) => a.label.localeCompare(b.label))
             list.forEach((item) => {
                 item.selected = item.routerLink === routerLink;
                 if (item.children?.length) {
