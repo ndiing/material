@@ -329,12 +329,7 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      */
     handleTextFieldNativeClick(event) {
-        event.preventDefault();
-
-        if (this.mask) {
-            this.selectionStart = this.textFieldNative.value.selectionStart;
-            this.selectionEnd = this.textFieldNative.value.selectionEnd;
-        }
+        // event.preventDefault();
 
         this.emit("onTextFieldNativeClick", event);
     }
@@ -343,27 +338,6 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      */
     handleTextFieldNativeKeydown(event) {
-        if (this.mask) {
-            if (!event.ctrlKey && !event.shiftKey && event.key === "ArrowLeft") {
-                this.selectionStart = this.textFieldNative.value.selectionStart;
-                this.selectionEnd = this.textFieldNative.value.selectionEnd;
-                if (this.selectionStart === this.selectionEnd) {
-                    --this.selectionStart;
-                }
-
-                this.textFieldNative.value.selectionStart = this.selectionStart;
-                this.textFieldNative.value.selectionEnd = this.selectionEnd;
-            } else if (!event.ctrlKey && !event.shiftKey && event.key === "ArrowRight") {
-                this.selectionEnd = this.textFieldNative.value.selectionEnd;
-                if (this.selectionStart === this.selectionEnd) {
-                    ++this.selectionStart;
-                }
-
-                this.textFieldNative.value.selectionStart = this.selectionStart;
-                this.textFieldNative.value.selectionEnd = this.selectionEnd;
-            }
-        }
-
         this.emit("onTextFieldNativeKeydown", event);
     }
 
@@ -371,11 +345,6 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      */
     handleTextFieldNativeSelect(event) {
-        if (this.mask) {
-            this.selectionStart = this.textFieldNative.value.selectionStart;
-            this.selectionEnd = this.textFieldNative.value.selectionEnd;
-        }
-
         this.emit("onTextFieldNativeSelect", event);
     }
 
@@ -383,43 +352,17 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      */
     handleTextFieldNativeInput(event) {
-        if (this.mask) {
-            if (event.inputType === "insertText") {
-                let value = this.textFieldNative.value.value.substring(this.selectionStart, this.selectionStart + 1);
-                let mask = this.mask.substring(this.selectionStart, this.selectionStart + 1);
-
-                if (/[^a-zA-Z0-9]/.test(mask)) {
-                    this.value = this.value.substring(0, this.selectionStart) + mask + this.value.substring(this.selectionStart + 1);
-                    this.textFieldNative.value.value = this.value.substring(0, this.mask.length);
-
-                    if (mask !== value) {
-                        this.selectionStart = Math.min(++this.selectionStart, this.mask.length);
-                        this.selectionEnd = this.selectionStart;
-                    }
-                }
-
-                this.value = this.value.substring(0, this.selectionStart) + value + this.value.substring(this.selectionStart + 1);
-                this.textFieldNative.value.value = this.value.substring(0, this.mask.length);
-
-                this.selectionStart = Math.min(++this.selectionStart, this.mask.length);
-                this.selectionEnd = this.selectionStart;
-
-                this.textFieldNative.value.selectionStart = this.selectionStart;
-                this.textFieldNative.value.selectionEnd = this.selectionEnd;
-            } else if (event.inputType === "deleteContentBackward") {
-                this.value = this.textFieldNative.value.value;
-                this.textFieldNative.value.value = this.value;
-
-                this.selectionStart = this.textFieldNative.value.selectionStart;
-                this.selectionEnd = this.textFieldNative.value.selectionEnd;
-            }
-        }
-
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
-            this.validationMessage = this.textFieldNative.value.validationMessage;
         }
+        
+        this.validate();
         this.emit("onTextFieldNativeInput", event);
+    }
+
+    validate() {
+        // Please select an item in the list.
+        this.validationMessage = this.textFieldNative.value.validationMessage;
     }
 
     /**
@@ -428,8 +371,8 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeSearch(event) {
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
-            this.validationMessage = this.textFieldNative.value.validationMessage;
         }
+        this.validate();
         this.emit("onTextFieldNativeSearch", event);
     }
 
@@ -438,7 +381,7 @@ class MDTextFieldComponent extends MDComponent {
      */
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
-        this.validationMessage = this.textFieldNative.value.validationMessage;
+        this.validate();
         this.emit("onTextFieldNativeInvalid", event);
     }
 
@@ -448,8 +391,8 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeReset(event) {
         if (this.type !== "file") {
             this.value = this.defaultValue;
-            this.validationMessage = "";
         }
+        this.validationMessage = "";
         this.emit("onTextFieldNativeReset", event);
     }
 
