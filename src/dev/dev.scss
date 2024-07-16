@@ -36,6 +36,8 @@
 .dev-emoji-column{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-width: 88px;
     height: 88px;
     gap: 8px 0;
@@ -47,6 +49,8 @@
     font-size: 48px;
 }
 .dev-emoji-text{
+    text-align: center;
+    overflow: hidden;
     font-size: 12px;
     line-height: 16px;
     height: 32px;
@@ -65,6 +69,8 @@
 .dev-icon-column{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-width: 88px;
     height: 88px;
     gap: 8px 0;
@@ -76,6 +82,8 @@
     font-size: 48px;
 }
 .dev-icon-text{
+    text-align: center;
+    overflow: hidden;
     font-size: 12px;
     line-height: 16px;
     height: 32px;
