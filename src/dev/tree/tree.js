@@ -1,252 +1,278 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-
-const list0 = [
-    {
-        label: "Technology",
-        children: [
-            {
-                label: "Hardware",
-                children: [
-                    { label: "Apple", children: [] },
-                    { label: "Dell", children: [] },
-                    { label: "HP", children: [] },
-                ],
-            },
-            {
-                label: "Software",
-                children: [
-                    {
-                        label: "Operating Systems",
-                        children: [
-                            { label: "Microsoft Windows", children: [] },
-                            { label: "Apple macOS", children: [] },
-                            { label: "Linux", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Applications",
-                        children: [
-                            { label: "Microsoft Office", children: [] },
-                            { label: "Adobe Photoshop", children: [] },
-                            { label: "Google Chrome", children: [] },
-                        ],
-                    },
-                ],
-            },
-            {
-                label: "Services",
-                children: [
-                    {
-                        label: "Cloud Computing",
-                        children: [
-                            { label: "Amazon Web Services (AWS)", children: [] },
-                            { label: "Microsoft Azure", children: [] },
-                            { label: "Google Cloud", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Social Media",
-                        children: [
-                            { label: "Facebook", children: [] },
-                            { label: "Twitter", children: [] },
-                            { label: "Instagram", children: [] },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-];
-const list1 = [
-    {
-        label: "Technology",
-        children: [
-            {
-                label: "Hardware",
-                children: [
-                    { label: "Apple", children: [] },
-                    { label: "Dell", children: [] },
-                    { label: "HP", children: [] },
-                ],
-            },
-            {
-                label: "Software",
-                children: [
-                    {
-                        label: "Operating Systems",
-                        children: [
-                            { label: "Microsoft Windows", children: [] },
-                            { label: "Apple macOS", children: [] },
-                            { label: "Linux", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Applications",
-                        children: [
-                            { label: "Microsoft Office", children: [] },
-                            { label: "Adobe Photoshop", children: [] },
-                            { label: "Google Chrome", children: [] },
-                        ],
-                    },
-                ],
-            },
-            {
-                label: "Services",
-                children: [
-                    {
-                        label: "Cloud Computing",
-                        children: [
-                            { label: "Amazon Web Services (AWS)", children: [] },
-                            { label: "Microsoft Azure", children: [] },
-                            { label: "Google Cloud", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Social Media",
-                        children: [
-                            { label: "Facebook", children: [] },
-                            { label: "Twitter", children: [] },
-                            { label: "Instagram", children: [] },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-];
-const list2 = [
-    {
-        label: "Technology",
-        children: [
-            {
-                label: "Hardware",
-                children: [
-                    { label: "Apple", children: [] },
-                    { label: "Dell", children: [] },
-                    { label: "HP", children: [] },
-                ],
-            },
-            {
-                label: "Software",
-                children: [
-                    {
-                        label: "Operating Systems",
-                        children: [
-                            { label: "Microsoft Windows", children: [] },
-                            { label: "Apple macOS", children: [] },
-                            { label: "Linux", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Applications",
-                        children: [
-                            { label: "Microsoft Office", children: [] },
-                            { label: "Adobe Photoshop", children: [] },
-                            { label: "Google Chrome", children: [] },
-                        ],
-                    },
-                ],
-            },
-            {
-                label: "Services",
-                children: [
-                    {
-                        label: "Cloud Computing",
-                        children: [
-                            { label: "Amazon Web Services (AWS)", children: [] },
-                            { label: "Microsoft Azure", children: [] },
-                            { label: "Google Cloud", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Social Media",
-                        children: [
-                            { label: "Facebook", children: [] },
-                            { label: "Twitter", children: [] },
-                            { label: "Instagram", children: [] },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-];
-const list3 = [
-    {
-        label: "Technology",
-        children: [
-            {
-                label: "Hardware",
-                children: [
-                    { label: "Apple", children: [] },
-                    { label: "Dell", children: [] },
-                    { label: "HP", children: [] },
-                ],
-            },
-            {
-                label: "Software",
-                children: [
-                    {
-                        label: "Operating Systems",
-                        children: [
-                            { label: "Microsoft Windows", children: [] },
-                            { label: "Apple macOS", children: [] },
-                            { label: "Linux", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Applications",
-                        children: [
-                            { label: "Microsoft Office", children: [] },
-                            { label: "Adobe Photoshop", children: [] },
-                            { label: "Google Chrome", children: [] },
-                        ],
-                    },
-                ],
-            },
-            {
-                label: "Services",
-                children: [
-                    {
-                        label: "Cloud Computing",
-                        children: [
-                            { label: "Amazon Web Services (AWS)", children: [] },
-                            { label: "Microsoft Azure", children: [] },
-                            { label: "Google Cloud", children: [] },
-                        ],
-                    },
-                    {
-                        label: "Social Media",
-                        children: [
-                            { label: "Facebook", children: [] },
-                            { label: "Twitter", children: [] },
-                            { label: "Instagram", children: [] },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-];
-
 class DevTree extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .list="${list0}" variant="plain" @onTreeItemClick="${console.log}"></md-tree>
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-markdown>Plain</md-markdown>
+                            <md-tree
+                                .list="${[
+                                    {
+                                        label: "Fruits",
+                                        children: [
+                                            {
+                                                label: "Citrus",
+                                                children: [
+                                                    { label: "Orange", children: [] },
+                                                    { label: "Lemon", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Berries",
+                                                children: [
+                                                    { label: "Strawberry", children: [] },
+                                                    { label: "Blueberry", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Vegetables",
+                                        children: [
+                                            {
+                                                label: "Leafy Green",
+                                                expanded:true,
+                                                children: [
+                                                    { label: "Spinach", children: [] },
+                                                    { label: "Kale", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Root",
+                                                children: [
+                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { label: "Beetroot", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Grains",
+                                        children: [
+                                            {
+                                                label: "Cereal",
+                                                children: [
+                                                    { label: "Wheat", children: [] },
+                                                    { label: "Rice", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Legumes",
+                                                children: [
+                                                    { label: "Lentils", children: [] },
+                                                    { label: "Chickpeas", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ]}"
+                                variant="plain"
+                                @onTreeItemClick="${console.log}"
+                            ></md-tree>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .list="${list1}" variant="accordion" @onTreeItemClick="${console.log}"></md-tree>
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-markdown>Accordion</md-markdown>
+                            <md-tree
+                                .list="${[
+                                    {
+                                        label: "Fruits",
+                                        children: [
+                                            {
+                                                label: "Citrus",
+                                                children: [
+                                                    { label: "Orange", children: [] },
+                                                    { label: "Lemon", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Berries",
+                                                children: [
+                                                    { label: "Strawberry", children: [] },
+                                                    { label: "Blueberry", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Vegetables",
+                                        children: [
+                                            {
+                                                label: "Leafy Green",
+                                                expanded:true,
+                                                children: [
+                                                    { label: "Spinach", children: [] },
+                                                    { label: "Kale", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Root",
+                                                children: [
+                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { label: "Beetroot", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Grains",
+                                        children: [
+                                            {
+                                                label: "Cereal",
+                                                children: [
+                                                    { label: "Wheat", children: [] },
+                                                    { label: "Rice", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Legumes",
+                                                children: [
+                                                    { label: "Lentils", children: [] },
+                                                    { label: "Chickpeas", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ]}"
+                                variant="accordion"
+                                @onTreeItemClick="${console.log}"
+                            ></md-tree>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .list="${list2}" variant="tree" @onTreeItemClick="${console.log}"></md-tree>
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-markdown>Tree</md-markdown>
+                            <md-tree
+                                .list="${[
+                                    {
+                                        label: "Fruits",
+                                        children: [
+                                            {
+                                                label: "Citrus",
+                                                children: [
+                                                    { label: "Orange", children: [] },
+                                                    { label: "Lemon", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Berries",
+                                                children: [
+                                                    { label: "Strawberry", children: [] },
+                                                    { label: "Blueberry", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Vegetables",
+                                        children: [
+                                            {
+                                                label: "Leafy Green",
+                                                expanded:true,
+                                                children: [
+                                                    { label: "Spinach", children: [] },
+                                                    { label: "Kale", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Root",
+                                                children: [
+                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { label: "Beetroot", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Grains",
+                                        children: [
+                                            {
+                                                label: "Cereal",
+                                                children: [
+                                                    { label: "Wheat", children: [] },
+                                                    { label: "Rice", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Legumes",
+                                                children: [
+                                                    { label: "Lentils", children: [] },
+                                                    { label: "Chickpeas", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ]}"
+                                variant="tree"
+                                @onTreeItemClick="${console.log}"
+                            ></md-tree>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .list="${list3}" variant="level" @onTreeItemClick="${console.log}"></md-tree>
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-markdown>Level</md-markdown>
+                            <md-tree
+                                .list="${[
+                                    {
+                                        label: "Fruits",
+                                        children: [
+                                            {
+                                                label: "Citrus",
+                                                children: [
+                                                    { label: "Orange", children: [] },
+                                                    { label: "Lemon", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Berries",
+                                                children: [
+                                                    { label: "Strawberry", children: [] },
+                                                    { label: "Blueberry", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Vegetables",
+                                        children: [
+                                            {
+                                                label: "Leafy Green",
+                                                expanded:true,
+                                                children: [
+                                                    { label: "Spinach", children: [] },
+                                                    { label: "Kale", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Root",
+                                                children: [
+                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { label: "Beetroot", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        label: "Grains",
+                                        children: [
+                                            {
+                                                label: "Cereal",
+                                                children: [
+                                                    { label: "Wheat", children: [] },
+                                                    { label: "Rice", children: [] },
+                                                ],
+                                            },
+                                            {
+                                                label: "Legumes",
+                                                children: [
+                                                    { label: "Lentils", children: [] },
+                                                    { label: "Chickpeas", children: [] },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ]}"
+                                variant="level"
+                                @onTreeItemClick="${console.log}"
+                            ></md-tree>
                         </div>
                     </div>
                 </div>
@@ -254,7 +280,5 @@ class DevTree extends MDComponent {
         `;
     }
 }
-
 customElements.define("dev-tree", DevTree);
-
 export default document.createElement("dev-tree");
