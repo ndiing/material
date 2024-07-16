@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import data from "../../assets/icons.json"
 import { MDStore, MDVirtualController } from "../../material/material.js";
+import { toTitleCase } from "../../material/functions/functions.js";
 
 
 class DevIcon extends MDComponent {
@@ -26,7 +27,7 @@ class DevIcon extends MDComponent {
                                                         ${column.label?html`<div class="dev-icon-label">${column.label}</div>`:nothing}
                                                         ${column.icon?html`
                                                             <div class="dev-icon-icon md-icon" title="${column.icon}">${column.icon}</div>
-                                                            <div class="dev-icon-text" title="${column.icon}">${column.icon}</div>
+                                                            <div class="dev-icon-text" title="${column.icon}">${toTitleCase(column.icon)}</div>
                                                         `:nothing}
                                                     </div>
                                                 `)}
@@ -60,7 +61,7 @@ class DevIcon extends MDComponent {
 
         this.virtual=new MDVirtualController(this)
         this.virtual.options.rowTotal=this.generatedRows.length
-        this.virtual.options.rowHeight=72
+        this.virtual.options.rowHeight=84
         // this.virtual.options.rowBuffer=this.generatedTabs.length
     }
 
@@ -94,8 +95,8 @@ class DevIcon extends MDComponent {
             ++rowIndex;
             ++index;
         
-            for (let i = 0; i < value.length; i += 10) {
-                rows.push(value.slice(i, i + 10));
+            for (let i = 0; i < value.length; i += 9) {
+                rows.push(value.slice(i, i + 9));
                 ++rowIndex;
             }
         }

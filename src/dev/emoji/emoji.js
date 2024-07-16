@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import data from "../../assets/emojis.json"
 import { MDStore, MDVirtualController } from "../../material/material.js";
-
+import { toTitleCase } from "../../material/functions/functions.js";
 
 class DevEmoji extends MDComponent {
     render() {
@@ -26,7 +26,7 @@ class DevEmoji extends MDComponent {
                                                         ${column.label?html`<div class="dev-emoji-label">${column.label}</div>`:nothing}
                                                         ${column.emoji?html`
                                                             <div class="dev-emoji-emoji md-emoji" title="${column.emoji}">${column.emoji}</div>
-                                                            <div class="dev-emoji-text" title="${column.shortcodes}">${column.shortcodes}</div>
+                                                            <div class="dev-emoji-text" title="${column.shortcodes}">${toTitleCase(column.shortcodes.join())}</div>
                                                         `:nothing}
                                                     </div>
                                                 `)}
@@ -61,7 +61,7 @@ class DevEmoji extends MDComponent {
 
         this.virtual=new MDVirtualController(this)
         this.virtual.options.rowTotal=this.generatedRows.length
-        this.virtual.options.rowHeight=72
+        this.virtual.options.rowHeight=84
         // this.virtual.options.rowBuffer=this.generatedTabs.length
     }
 
@@ -95,8 +95,8 @@ class DevEmoji extends MDComponent {
             ++rowIndex;
             ++index;
         
-            for (let i = 0; i < value.length; i += 10) {
-                rows.push(value.slice(i, i + 10));
+            for (let i = 0; i < value.length; i += 9) {
+                rows.push(value.slice(i, i + 9));
                 ++rowIndex;
             }
         }
