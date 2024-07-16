@@ -27,31 +27,27 @@
 .dev-icon-grid{
     display: flex;
     flex-direction: column;
-    gap: 84px 0;
+    gap: 88px;
 }
 .dev-icon-row{
     display: flex;
-    gap: 0 84px;
+    gap: 44px;
 }
 .dev-icon-column{
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-width: 84px;
-    height: 84px;
-    gap: 12px 0;
+    gap: 8px;
 }
 // .dev-icon-label{}
 .dev-icon-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     font-size: 12px;
-    line-height: 12px;
-    width: 84px;
-    height: 24px;
+    line-height: 16px;
+    height: 32px;
+    width: 88px;
+    overflow: hidden;
+    text-align: center;
 }
 .dev-icon-icon{
     width: 48px;
@@ -63,31 +59,27 @@
 .dev-emoji-grid{
     display: flex;
     flex-direction: column;
-    gap: 84px 0;
+    gap: 88px;
 }
 .dev-emoji-row{
     display: flex;
-    gap: 0 84px;
+    gap: 44px;
 }
 .dev-emoji-column{
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-width: 84px;
-    height: 84px;
-    gap: 12px 0;
+    gap: 8px;
 }
 // .dev-emoji-label{}
 .dev-emoji-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     font-size: 12px;
-    line-height: 12px;
-    width: 84px;
-    height: 24px;
+    line-height: 16px;
+    height: 32px;
+    width: 88px;
+    overflow: hidden;
+    text-align: center;
 }
 .dev-emoji-emoji{
     width: 48px;

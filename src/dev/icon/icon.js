@@ -61,7 +61,7 @@ class DevIcon extends MDComponent {
 
         this.virtual=new MDVirtualController(this)
         this.virtual.options.rowTotal=this.generatedRows.length
-        this.virtual.options.rowHeight=84
+        this.virtual.options.rowHeight=32+8+48
         // this.virtual.options.rowBuffer=this.generatedTabs.length
     }
 
@@ -95,8 +95,8 @@ class DevIcon extends MDComponent {
             ++rowIndex;
             ++index;
         
-            for (let i = 0; i < value.length; i += 9) {
-                rows.push(value.slice(i, i + 9));
+            for (let i = 0; i < value.length; i += 11) {
+                rows.push(value.slice(i, i + 11));
                 ++rowIndex;
             }
         }
