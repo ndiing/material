@@ -23,7 +23,7 @@ class MDSegmentedButtonComponent extends MDComponent {
 
     constructor() {
         super();
-        // this.buttons=[]
+        
     }
 
     /**

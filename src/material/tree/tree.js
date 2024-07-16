@@ -27,7 +27,7 @@ class MDTreeComponent extends MDComponent {
     constructor() {
         super();
         this.variant = "tree";
-        // this.list=[]
+        
     }
 
     /**

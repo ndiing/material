@@ -94,8 +94,7 @@ class MDTextFieldComponent extends MDComponent {
         this.type = "text";
         this.autocomplete = "off";
         this.rows = 1;
-        // this.actions=[]
-        // this.options=[]
+        
     }
 
     /**
@@ -329,7 +328,7 @@ class MDTextFieldComponent extends MDComponent {
      * @private
      */
     handleTextFieldNativeClick(event) {
-        // event.preventDefault();
+        
 
         this.emit("onTextFieldNativeClick", event);
     }
@@ -361,7 +360,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     validate() {
-        // Please select an item in the list.
+        
         this.validationMessage = this.textFieldNative.value.validationMessage;
     }
 

@@ -38,7 +38,7 @@ class MDSwitchComponent extends MDComponent {
      */
     constructor() {
         super();
-        // this.icons=[]
+        
         this.ripple = new MDRippleController(this, {
             buttonSelector: ".md-switch__native",
             containerSelector: ".md-switch__thumb",
