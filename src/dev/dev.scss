@@ -24,65 +24,60 @@
     top: 24px;
 }
 
-.dev-icon-grid{
+.dev-emoji-grid{
     display: flex;
     flex-direction: column;
-    gap: 88px;
+    gap: 88px 0;
 }
-.dev-icon-row{
+.dev-emoji-row{
     display: flex;
-    gap: 44px;
+    gap: 0 88px;
 }
-.dev-icon-column{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.dev-emoji-column{
+    display: flex;
     flex-direction: column;
-    gap: 8px;
+    min-width: 88px;
+    height: 88px;
+    gap: 8px 0;
 }
-// .dev-icon-label{}
-.dev-icon-text{
-    font-size: 12px;
-    line-height: 16px;
-    height: 32px;
-    width: 88px;
-    overflow: hidden;
-    text-align: center;
-}
-.dev-icon-icon{
+// .dev-emoji-label{}
+.dev-emoji-emoji{
     width: 48px;
     height: 48px;
     font-size: 48px;
 }
-
-
-.dev-emoji-grid{
-    display: flex;
-    flex-direction: column;
-    gap: 88px;
-}
-.dev-emoji-row{
-    display: flex;
-    gap: 44px;
-}
-.dev-emoji-column{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 8px;
-}
-// .dev-emoji-label{}
 .dev-emoji-text{
     font-size: 12px;
     line-height: 16px;
     height: 32px;
     width: 88px;
-    overflow: hidden;
-    text-align: center;
 }
-.dev-emoji-emoji{
+
+.dev-icon-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 88px 0;
+}
+.dev-icon-row{
+    display: flex;
+    gap: 0 88px;
+}
+.dev-icon-column{
+    display: flex;
+    flex-direction: column;
+    min-width: 88px;
+    height: 88px;
+    gap: 8px 0;
+}
+// .dev-icon-label{}
+.dev-icon-icon{
     width: 48px;
     height: 48px;
     font-size: 48px;
+}
+.dev-icon-text{
+    font-size: 12px;
+    line-height: 16px;
+    height: 32px;
+    width: 88px;
 }

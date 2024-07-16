@@ -95,8 +95,8 @@ class DevIcon extends MDComponent {
             ++rowIndex;
             ++index;
         
-            for (let i = 0; i < value.length; i += 11) {
-                rows.push(value.slice(i, i + 11));
+            for (let i = 0; i < value.length; i += 8) {
+                rows.push(value.slice(i, i + 8));
                 ++rowIndex;
             }
         }
