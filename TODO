@@ -17,9 +17,9 @@
 - [x](./src/material/menu/menu.js)
 - [x](./src/material/tooltip/tooltip.js)
 
-- [ ](./src/material/gesture/gesture.js)
-- [ ](./src/material/data-table/data-table-native-column.js)
-- [ ](./src/material/list-item/list-item.js)
+- [x](./src/material/gesture/gesture.js)
+- [x](./src/material/data-table/data-table-native-column.js)
+- [x](./src/material/list-item/list-item.js)
 
 - [x](./src/material/virtual/virtual.js)
 - [ ](./src/material/data-table/data-table.js)
