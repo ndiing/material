@@ -133,7 +133,7 @@ const routes = [
             { path: "progress-indicator", component: DevProgressIndicator },
             // { path: "progress", component: DevProgress },
             { path: "radio-button", component: DevRadioButton },
-            { path: "ripple", component: DevRipple },
+            // { path: "ripple", component: DevRipple },
             // { path: "router", component: DevRouter },
             // { path: "scrim", component: DevScrim },
             { path: "search-field", component: DevSearchField },

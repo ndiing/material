@@ -10,21 +10,6 @@ const breakpoints = [
 
 /**
  * Class for observing media queries and executing callbacks on changes.
- * @example
- * // Example usage with breakpoints
- * const breakpointObserver = new MDMediaObserver(breakpoint => {
- *     console.log(`Current breakpoint: ${breakpoint.name}`);
- * });
- *
- * breakpointObserver.observe(breakpoints);
- *
- * @example
- * // Example usage with color schemes
- * const schemeObserver = new MDMediaObserver(scheme => {
- *     console.log(`Preferred color scheme: ${scheme.name}`);
- * });
- *
- * schemeObserver.observe(schemes);
  */
 class MDMediaObserver {
     /**

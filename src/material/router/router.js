@@ -4,39 +4,6 @@
  * @fires MDRouter#onRouterNavigate - Event fired when navigating to a new route begins.
  * @fires MDRouter#onRouterNavigateError - Event fired when an error occurs during navigation.
  * @fires MDRouter#onRouterNavigateSuccess - Event fired when navigation to a new route succeeds.
- * @example
- * import { MDRouter } from './path/to/MDRouter';
- *
- * // Define your routes
- * const routes = [
- *     {
- *         path: '/',
- *         component: null, // lazy-loaded component
- *         children: [
- *             { path: 'home', component: null },
- *             { path: 'about', component: null },
- *         ],
- *     },
- *     {
- *         path: '/products',
- *         component: null,
- *         children: [
- *             { path: ':productId', component: null },
- *         ],
- *     },
- * ];
- *
- * // Initialize the router
- * MDRouter.init(routes);
- *
- * // Respond to route change events
-
- * window.addEventListener('onRouterNavigate', (event) => {
- *     console.log('Navigating to a new route:', event.detail);
- * });
- *
- * // Navigate programmatically
- * MDRouter.navigate('/about');
  */
 class MDRouter {
     static stacks = []; // Array to store the route stack

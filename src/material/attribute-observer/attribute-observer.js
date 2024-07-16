@@ -1,18 +1,5 @@
 /**
  * Class for observing changes to a specific attribute on a target element.
- * @example
- * // Create an instance of MDAttributeObserver with a callback function
- * const attributeObserver = new MDAttributeObserver(attributeInfo => {
- *     console.log(`Attribute ${attributeInfo.name} changed to: ${attributeInfo.value}`);
- * });
- *
- * // Example usage: observe changes to the 'src' attribute of an image element
- * const imageElement = document.getElementById('myImage');
- * attributeObserver.observe(imageElement, 'src');
- *
- * // Example usage: observe changes to the 'class' attribute of a div element
- * const divElement = document.getElementById('myDiv');
- * attributeObserver.observe(divElement, 'class');
  */
 class MDAttributeObserver {
     /**
