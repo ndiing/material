@@ -5,7 +5,7 @@ import { stringifyDatetimeLocal } from "../../material/functions/functions.js";
 class DevPickerComponent extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-column">
+            <div class="md-layout-column" >
                 <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-datetime-picker id="datetimePicker"></md-datetime-picker>
                     <md-button variant="tonal" label="Datetime Picker" @click="${this.handleDatetimePickerButtonClick}"></md-button>

@@ -165,12 +165,12 @@ class DevMainComponent extends MDComponent {
                 <md-top-app-bar id="topAppBar" leadingActions='[{"icon":"menu"}]' @onCardIconButtonClick="${this.handleCardIconButtonClick}"></md-top-app-bar>
                 <md-navigation-drawer variant="level" id="navigationDrawer" open .list="${this.list}" @onTreeItemClick="${this.handleTreeItemClick}" @onTreeItemSelected="${this.handleTreeItemSelected}"></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
+                    <md-outlet></md-outlet>
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown .text="${this.doc}"></md-markdown>
                         </div>
                     </div>
-                    <md-outlet></md-outlet>
                 </div>
             </div>
         `;
