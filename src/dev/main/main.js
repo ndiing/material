@@ -143,7 +143,7 @@ class DevMainComponent extends MDComponent {
         ];
 
         function select(list, routerLink) {
-            list.sort((a,b) => a.label.localeCompare(b.label))
+            list.sort((a, b) => a.label.localeCompare(b.label));
             list.forEach((item) => {
                 item.selected = item.routerLink === routerLink;
                 if (item.children?.length) {
@@ -163,8 +163,19 @@ class DevMainComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-top-app-bar id="topAppBar" leadingActions='[{"icon":"menu"}]' @onCardIconButtonClick="${this.handleCardIconButtonClick}"></md-top-app-bar>
-                <md-navigation-drawer variant="level" id="navigationDrawer" open .list="${this.list}" @onTreeItemClick="${this.handleTreeItemClick}" @onTreeItemSelected="${this.handleTreeItemSelected}"></md-navigation-drawer>
+                <md-top-app-bar
+                    id="topAppBar"
+                    leadingActions='[{"icon":"menu"}]'
+                    @onCardIconButtonClick="${this.handleCardIconButtonClick}"
+                ></md-top-app-bar>
+                <md-navigation-drawer
+                    variant="level"
+                    id="navigationDrawer"
+                    open
+                    .list="${this.list}"
+                    @onTreeItemClick="${this.handleTreeItemClick}"
+                    @onTreeItemSelected="${this.handleTreeItemSelected}"
+                ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-outlet></md-outlet>
                     <div class="md-layout-column">

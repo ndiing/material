@@ -7,7 +7,6 @@ class DevTabs extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-
                         <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Primary tabs</md-markdown>
                             <md-tabs
@@ -24,12 +23,7 @@ class DevTabs extends MDComponent {
                             <md-markdown>Primary tabs</md-markdown>
                             <md-tabs
                                 variant="primary"
-                                .list="${[
-                                    { label: "label", selected: true },
-                                    { label: "label", },
-                                    { label: "label", },
-                                    { label: "label", },
-                                ]}"
+                                .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
                             ></md-tabs>
                         </div>
 
@@ -49,15 +43,9 @@ class DevTabs extends MDComponent {
                             <md-markdown>Secondary tabs</md-markdown>
                             <md-tabs
                                 variant="secondary"
-                                .list="${[
-                                    { label: "label",  selected: true },
-                                    { label: "label", },
-                                    { label: "label", },
-                                    { label: "label", },
-                                ]}"
+                                .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
                             ></md-tabs>
                         </div>
-
                     </div>
                 </div>
             </div>

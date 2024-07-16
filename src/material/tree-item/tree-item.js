@@ -148,7 +148,7 @@ class MDTreeItemComponent extends MDComponent {
      */
     constructor() {
         super();
-        
+
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });

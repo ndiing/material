@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../../material/component/component.js";
-import data from "../../assets/emojis.json"
+import data from "../../assets/emojis.json";
 import { MDStore, MDVirtualController } from "../../material/material.js";
 import { toTitleCase } from "../../material/functions/functions.js";
 
@@ -9,33 +9,53 @@ class DevEmoji extends MDComponent {
         return html`
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
-                    <div style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:24px;" class="md-layout-column">
-                        <div style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:0;" class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        
-                            <div 
+                    <div
+                        style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:24px;"
+                        class="md-layout-column"
+                    >
+                        <div
+                            style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:0;"
+                            class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"
+                        >
+                            <div
                                 class="md-virtual"
                                 @onVirtualScroll="${this.handleVirtualScroll}"
                             >
                                 <div class="md-virtual__scrollbar"></div>
                                 <div class="md-virtual__container">
                                     <div class="dev-emoji-grid">
-                                        ${this.virtualRows?.map(row=>html`
-                                            <div class="dev-emoji-row">
-                                                ${row.map(column=>html`
-                                                    <div class="dev-emoji-column">
-                                                        ${column.label?html`<div class="dev-emoji-label">${column.label}</div>`:nothing}
-                                                        ${column.emoji?html`
-                                                            <div class="dev-emoji-emoji md-emoji" title="${column.emoji}">${column.emoji}</div>
-                                                            <div class="dev-emoji-text" title="${column.shortcodes}">${toTitleCase(column.shortcodes.join())}</div>
-                                                        `:nothing}
-                                                    </div>
-                                                `)}
-                                            </div>
-                                        `)}
+                                        ${this.virtualRows?.map(
+                                            (row) => html`
+                                                <div class="dev-emoji-row">
+                                                    ${row.map(
+                                                        (column) => html`
+                                                            <div class="dev-emoji-column">
+                                                                ${column.label ? html`<div class="dev-emoji-label">${column.label}</div>` : nothing}
+                                                                ${column.emoji
+                                                                    ? html`
+                                                                          <div
+                                                                              class="dev-emoji-emoji md-emoji"
+                                                                              title="${column.emoji}"
+                                                                          >
+                                                                              ${column.emoji}
+                                                                          </div>
+                                                                          <div
+                                                                              class="dev-emoji-text"
+                                                                              title="${column.shortcodes}"
+                                                                          >
+                                                                              ${toTitleCase(column.shortcodes.join())}
+                                                                          </div>
+                                                                      `
+                                                                    : nothing}
+                                                            </div>
+                                                        `,
+                                                    )}
+                                                </div>
+                                            `,
+                                        )}
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -43,64 +63,60 @@ class DevEmoji extends MDComponent {
         `;
     }
 
-    connectedCallback(){
-        super.connectedCallback()
+    connectedCallback() {
+        super.connectedCallback();
 
-        this.store=new MDStore(data)
-        const {total,docs} = this.store.getAll({
-        })
-        this.storeTotal=total
-        this.storeRows=docs
+        this.store = new MDStore(data);
+        const { total, docs } = this.store.getAll({});
+        this.storeTotal = total;
+        this.storeRows = docs;
 
-        console.log(this.store)
+        console.log(this.store);
 
-        const {tabs,rows}=this.generate(this.storeRows)
+        const { tabs, rows } = this.generate(this.storeRows);
 
-        this.generatedTabs = tabs
-        this.generatedRows = rows
+        this.generatedTabs = tabs;
+        this.generatedRows = rows;
 
-        this.virtual=new MDVirtualController(this)
-        this.virtual.options.rowTotal=this.generatedRows.length
-        this.virtual.options.rowHeight=32+8+48
+        this.virtual = new MDVirtualController(this);
+        this.virtual.options.rowTotal = this.generatedRows.length;
+        this.virtual.options.rowHeight = 32 + 8 + 48;
         // this.virtual.options.rowBuffer=this.generatedTabs.length
     }
 
-    handleVirtualScroll(event){
-        this.virtualRows=this.generatedRows.slice(
-            this.virtual.rowStart,
-            this.virtual.rowEnd,
-        )
-        this.requestUpdate()
+    handleVirtualScroll(event) {
+        this.virtualRows = this.generatedRows.slice(this.virtual.rowStart, this.virtual.rowEnd);
+        this.requestUpdate();
     }
 
-    generate(data){
+    generate(data) {
         const grouped = data.reduce((acc, curr) => {
-            const { group = "", emoji,shortcodes } = curr;
-        
+            const { group = "", emoji, shortcodes } = curr;
+
             if (!acc[group]) {
                 acc[group] = [];
             }
-            acc[group].push({ emoji,shortcodes });
+            acc[group].push({ emoji, shortcodes });
             return acc;
         }, {});
         const tabs = [];
         const rows = [];
         let rowIndex = 0;
         let index = 0;
-        
+
         for (const name in grouped) {
             const value = grouped[name];
             tabs.push({ label: name, emoji: value[0].emoji, rowIndex, index });
             rows.push([{ label: name }]);
             ++rowIndex;
             ++index;
-        
+
             for (let i = 0; i < value.length; i += 8) {
                 rows.push(value.slice(i, i + 8));
                 ++rowIndex;
             }
         }
-        return {tabs,rows}
+        return { tabs, rows };
     }
 }
 

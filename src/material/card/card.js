@@ -51,7 +51,7 @@ class MDCardComponent extends MDComponent {
      */
     constructor() {
         super();
-        
+
         this.childNodes_ = Array.from(this.childNodes);
         this.renderIconButton = this.renderIconButton.bind(this);
         this.renderIcon = this.renderIcon.bind(this);

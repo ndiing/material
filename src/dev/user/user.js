@@ -3,9 +3,7 @@ import { MDComponent } from "../../material/component/component.js";
 
 class DevUserComponent extends MDComponent {
     render() {
-        return html`
-            <md-outlet></md-outlet>
-        `;
+        return html` <md-outlet></md-outlet> `;
     }
 }
 

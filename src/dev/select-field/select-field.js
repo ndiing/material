@@ -134,13 +134,13 @@ const options = [
     { label: "Xhosa", value: "xh" },
     { label: "Yiddish", value: "yi" },
     { label: "Yoruba", value: "yo" },
-    { label: "Zulu", value: "zu" }
-  ];
-const options2=JSON.parse(JSON.stringify(options))
-options2[17].selected=true
-const options3=JSON.parse(JSON.stringify(options))
-const options4=JSON.parse(JSON.stringify(options))
-options4[17].selected=true
+    { label: "Zulu", value: "zu" },
+];
+const options2 = JSON.parse(JSON.stringify(options));
+options2[17].selected = true;
+const options3 = JSON.parse(JSON.stringify(options));
+const options4 = JSON.parse(JSON.stringify(options));
+options4[17].selected = true;
 
 // Generator untuk menghasilkan options dengan pasangan label dan value
 function generateOptions(numOptions) {
@@ -148,7 +148,7 @@ function generateOptions(numOptions) {
     for (let i = 1; i <= numOptions; i++) {
         options.push({
             label: `Label ${i}`,
-            value: `Value ${i}`
+            value: `Value ${i}`,
         });
     }
     return options;
@@ -157,20 +157,19 @@ function generateOptions(numOptions) {
 // Contoh menggunakan generator untuk membuat 10 pasangan label dan value
 const options5 = generateOptions(10000);
 const options6 = generateOptions(10000);
-options6[17].selected=true
-
-  
+options6[17].selected = true;
 
 class DevSelectField extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
-                    <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
+                    <md-form
+                        @onFormNativeReset="${(event) => console.log(event)}"
+                        @onFormNativeSubmit="${(event) => console.log(event.detail.data)}"
+                    >
                         <div class="md-layout-column">
-                            
                             <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                                            
                                 <md-select-field
                                     name="select3"
                                     map='{"label":"label","value":"value"}'
@@ -178,7 +177,7 @@ class DevSelectField extends MDComponent {
                                     .options="${options3}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
-                                    @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
+                                    @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
 
@@ -190,7 +189,7 @@ class DevSelectField extends MDComponent {
                                     .options="${options4}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
-                                    @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
+                                    @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
 
@@ -201,7 +200,7 @@ class DevSelectField extends MDComponent {
                                     .options="${options5}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
-                                    @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
+                                    @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
 
@@ -212,13 +211,21 @@ class DevSelectField extends MDComponent {
                                     .options="${options6}"
                                     @onPickerMenuListItemClick="${console.log}"
                                     @onPickerMenuListItemSelected="${console.log}"
-                                    @onTextFieldNativeInput="${event=>console.log(event.detail.currentTarget.value)}"
+                                    @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"
                                 ></md-select-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-button type="reset" label="Reset" variant="outlined"></md-button>
-                                <md-button type="submit" label="Submit" variant="filled"></md-button>
+                                <md-button
+                                    type="reset"
+                                    label="Reset"
+                                    variant="outlined"
+                                ></md-button>
+                                <md-button
+                                    type="submit"
+                                    label="Submit"
+                                    variant="filled"
+                                ></md-button>
                             </div>
                         </div>
                     </md-form>

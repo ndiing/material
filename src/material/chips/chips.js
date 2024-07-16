@@ -24,7 +24,6 @@ class MDChipsComponent extends MDComponent {
      */
     constructor() {
         super();
-        
     }
 
     /**

@@ -74,7 +74,7 @@ class MDMenuComponent extends MDSheetComponent {
      */
     constructor() {
         super();
-        
+
         this.map = { label: "label", value: "value" };
         this.rowHeight = 48;
         this.maxRows = 5;

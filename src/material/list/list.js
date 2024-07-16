@@ -43,7 +43,7 @@ class MDListComponent extends MDComponent {
      */
     constructor() {
         super();
-        
+
         this.map = {
             label: "label",
             value: "value",

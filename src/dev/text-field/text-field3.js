@@ -4,13 +4,26 @@ import { MDComponent } from "../../material/component/component.js";
 class DevTextField3Component extends MDComponent {
     render() {
         return html`
-            <md-form @onFormNativeReset="${this.handleFormNativeReset}" @onFormNativeSubmit="${this.handleFormNativeSubmit}">
+            <md-form
+                @onFormNativeReset="${this.handleFormNativeReset}"
+                @onFormNativeSubmit="${this.handleFormNativeSubmit}"
+            >
                 <div class="md-layout-column">
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-text-field name="text" label="Text field" type="text" value="text"></md-text-field>
+                        <md-text-field
+                            name="text"
+                            label="Text field"
+                            type="text"
+                            value="text"
+                        ></md-text-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-text-field name="textarea" label="Textarea field" type="textarea" value="textarea"></md-text-field>
+                        <md-text-field
+                            name="textarea"
+                            label="Textarea field"
+                            type="textarea"
+                            value="textarea"
+                        ></md-text-field>
                     </div>
                     <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
@@ -28,8 +41,16 @@ class DevTextField3Component extends MDComponent {
                     </div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                        <md-button label="Reset" type="reset" variant="outlined"></md-button>
-                        <md-button label="Submit" type="submit" variant="filled"></md-button>
+                        <md-button
+                            label="Reset"
+                            type="reset"
+                            variant="outlined"
+                        ></md-button>
+                        <md-button
+                            label="Submit"
+                            type="submit"
+                            variant="filled"
+                        ></md-button>
                     </div>
                 </div>
             </md-form>

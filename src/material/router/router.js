@@ -6,12 +6,12 @@
  * @fires MDRouter#onRouterNavigateSuccess - Event fired when navigation to a new route succeeds.
  */
 class MDRouter {
-    static stacks = []; 
-    static _params = {}; 
-    static controller; 
-    static route; 
-    static routes; 
-    static _historyApiFallback = true; 
+    static stacks = [];
+    static _params = {};
+    static controller;
+    static route;
+    static routes;
+    static _historyApiFallback = true;
 
     /**
      * Sets up routes recursively with parent-child relationships.

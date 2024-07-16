@@ -4,7 +4,7 @@ import { MDComponent } from "../../material/component/component.js";
 class DevMenu extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border" >
+            <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
@@ -43,15 +43,15 @@ class DevMenu extends MDComponent {
                                 @onMenuViewportVirtualScroll=""
                                 @onMenuListItemClick=""
                             ></md-menu>
-                            <md-button label="toggle menu" 
+                            <md-button
+                                label="toggle menu"
                                 @click="${(event) => menu.toggle(event.currentTarget)}"
                             ></md-button>
-                            <input 
+                            <input
                                 @click="${(event) => menu.toggle(event.currentTarget)}"
                                 @input="${(event) => menu.filter(event.currentTarget.value)}"
-                            >
+                            />
                         </div>
-
                     </div>
                 </div>
             </div>

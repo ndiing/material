@@ -9,19 +9,79 @@ class DevCard extends MDComponent {
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Elevated</md-markdown>
-                            <md-card variant="elevated" trailingActions='[{"icon":"more_vert"}]' @onCardIconButtonClick="${console.log}" @onCardIconClick="${console.log}" @onCardButtonClick="${console.log}" @onCardFabClick="${console.log}" @onCardTextFieldNativeFocus="${console.log}" @onCardTextFieldNativeBlur="${console.log}" @onCardTextFieldNativeInput="${console.log}" @onCardTextFieldNativeSearch="${console.log}" @onCardTextFieldNativeInvalid="${console.log}" @onCardTextFieldNativeReset="${console.log}" @onCardTextFieldIconButtonClick="${console.log}" @onCardPaginationChange="${console.log}" @onCardPaginationLimitChange="${console.log}" @onCardPaginationFirstClick="${console.log}" @onCardPaginationPrevClick="${console.log}" @onCardPaginationNextClick="${console.log}" @onCardPaginationLastClick="${console.log}">
+                            <md-card
+                                variant="elevated"
+                                trailingActions='[{"icon":"more_vert"}]'
+                                @onCardIconButtonClick="${console.log}"
+                                @onCardIconClick="${console.log}"
+                                @onCardButtonClick="${console.log}"
+                                @onCardFabClick="${console.log}"
+                                @onCardTextFieldNativeFocus="${console.log}"
+                                @onCardTextFieldNativeBlur="${console.log}"
+                                @onCardTextFieldNativeInput="${console.log}"
+                                @onCardTextFieldNativeSearch="${console.log}"
+                                @onCardTextFieldNativeInvalid="${console.log}"
+                                @onCardTextFieldNativeReset="${console.log}"
+                                @onCardTextFieldIconButtonClick="${console.log}"
+                                @onCardPaginationChange="${console.log}"
+                                @onCardPaginationLimitChange="${console.log}"
+                                @onCardPaginationFirstClick="${console.log}"
+                                @onCardPaginationPrevClick="${console.log}"
+                                @onCardPaginationNextClick="${console.log}"
+                                @onCardPaginationLastClick="${console.log}"
+                            >
                                 Elevated
                             </md-card>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled</md-markdown>
-                            <md-card variant="filled" trailingActions='[{"icon":"more_vert"}]' @onCardIconButtonClick="${console.log}" @onCardIconClick="${console.log}" @onCardButtonClick="${console.log}" @onCardFabClick="${console.log}" @onCardTextFieldNativeFocus="${console.log}" @onCardTextFieldNativeBlur="${console.log}" @onCardTextFieldNativeInput="${console.log}" @onCardTextFieldNativeSearch="${console.log}" @onCardTextFieldNativeInvalid="${console.log}" @onCardTextFieldNativeReset="${console.log}" @onCardTextFieldIconButtonClick="${console.log}" @onCardPaginationChange="${console.log}" @onCardPaginationLimitChange="${console.log}" @onCardPaginationFirstClick="${console.log}" @onCardPaginationPrevClick="${console.log}" @onCardPaginationNextClick="${console.log}" @onCardPaginationLastClick="${console.log}">
+                            <md-card
+                                variant="filled"
+                                trailingActions='[{"icon":"more_vert"}]'
+                                @onCardIconButtonClick="${console.log}"
+                                @onCardIconClick="${console.log}"
+                                @onCardButtonClick="${console.log}"
+                                @onCardFabClick="${console.log}"
+                                @onCardTextFieldNativeFocus="${console.log}"
+                                @onCardTextFieldNativeBlur="${console.log}"
+                                @onCardTextFieldNativeInput="${console.log}"
+                                @onCardTextFieldNativeSearch="${console.log}"
+                                @onCardTextFieldNativeInvalid="${console.log}"
+                                @onCardTextFieldNativeReset="${console.log}"
+                                @onCardTextFieldIconButtonClick="${console.log}"
+                                @onCardPaginationChange="${console.log}"
+                                @onCardPaginationLimitChange="${console.log}"
+                                @onCardPaginationFirstClick="${console.log}"
+                                @onCardPaginationPrevClick="${console.log}"
+                                @onCardPaginationNextClick="${console.log}"
+                                @onCardPaginationLastClick="${console.log}"
+                            >
                                 Filled
                             </md-card>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Outlined</md-markdown>
-                            <md-card variant="outlined" trailingActions='[{"icon":"more_vert"}]' @onCardIconButtonClick="${console.log}" @onCardIconClick="${console.log}" @onCardButtonClick="${console.log}" @onCardFabClick="${console.log}" @onCardTextFieldNativeFocus="${console.log}" @onCardTextFieldNativeBlur="${console.log}" @onCardTextFieldNativeInput="${console.log}" @onCardTextFieldNativeSearch="${console.log}" @onCardTextFieldNativeInvalid="${console.log}" @onCardTextFieldNativeReset="${console.log}" @onCardTextFieldIconButtonClick="${console.log}" @onCardPaginationChange="${console.log}" @onCardPaginationLimitChange="${console.log}" @onCardPaginationFirstClick="${console.log}" @onCardPaginationPrevClick="${console.log}" @onCardPaginationNextClick="${console.log}" @onCardPaginationLastClick="${console.log}">
+                            <md-card
+                                variant="outlined"
+                                trailingActions='[{"icon":"more_vert"}]'
+                                @onCardIconButtonClick="${console.log}"
+                                @onCardIconClick="${console.log}"
+                                @onCardButtonClick="${console.log}"
+                                @onCardFabClick="${console.log}"
+                                @onCardTextFieldNativeFocus="${console.log}"
+                                @onCardTextFieldNativeBlur="${console.log}"
+                                @onCardTextFieldNativeInput="${console.log}"
+                                @onCardTextFieldNativeSearch="${console.log}"
+                                @onCardTextFieldNativeInvalid="${console.log}"
+                                @onCardTextFieldNativeReset="${console.log}"
+                                @onCardTextFieldIconButtonClick="${console.log}"
+                                @onCardPaginationChange="${console.log}"
+                                @onCardPaginationLimitChange="${console.log}"
+                                @onCardPaginationFirstClick="${console.log}"
+                                @onCardPaginationPrevClick="${console.log}"
+                                @onCardPaginationNextClick="${console.log}"
+                                @onCardPaginationLastClick="${console.log}"
+                            >
                                 Outlined
                             </md-card>
                         </div>

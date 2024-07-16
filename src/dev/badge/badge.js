@@ -17,7 +17,10 @@ class DevBadge extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Large badge with max characters</md-markdown>
-                            <md-badge label="1111" limit="999"></md-badge>
+                            <md-badge
+                                label="1111"
+                                limit="999"
+                            ></md-badge>
                         </div>
                     </div>
                 </div>

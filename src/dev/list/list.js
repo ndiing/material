@@ -169,7 +169,19 @@ class DevList extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With text and trailing checkbox</md-markdown>
-                            <md-list .list="${[{ label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." }, { label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet" }, { label: "Lorem ipsum" }]}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list
+                                .list="${[{ label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." }, { label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet" }, { label: "Lorem ipsum" }]}"
+                                map='{"label":"label","value":"value"}'
+                                format=""
+                                @onListItemClick="${console.log}"
+                                @handleListKeydown="${console.log}"
+                                @onListItemSelectionStart="${console.log}"
+                                @onListItemSelection="${console.log}"
+                                @onListItemSelectionEnd="${console.log}"
+                                @onListItemCheckboxNativeInput="${console.log}"
+                                @onListItemRadioButtonNativeInput="${console.log}"
+                                @onListItemSwitchNativeInput="${console.log}"
+                            ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With checkbox</md-markdown>

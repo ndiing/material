@@ -33,7 +33,7 @@
         "serve": "webpack serve",
         "extract": "lit-localize extract",
         "build": "lit-localize build",
-        "prettier": "prettier src/material --write",
+        "prettier": "prettier src/ --write",
         "eslint": "eslint src/material --fix"
     },
     "dependencies": {

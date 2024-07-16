@@ -9,32 +9,32 @@ class DevColor extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <input 
+                            <input
                                 type="color"
-                                @input="${event=>{
-                                    setTheme(event.currentTarget.value)
+                                @input="${(event) => {
+                                    setTheme(event.currentTarget.value);
                                 }}"
-                            >
+                            />
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <input 
+                            <input
                                 type="file"
-                                @input="${event=>{
+                                @input="${(event) => {
                                     const file = event.currentTarget.files[0];
 
                                     if (file) {
-                                        const image = new Image()
+                                        const image = new Image();
                                         const reader = new FileReader();
 
-                                        reader.addEventListener('load', ()=> {
+                                        reader.addEventListener("load", () => {
                                             image.src = reader.result;
-                                            setTheme(image)
+                                            setTheme(image);
                                         });
 
                                         reader.readAsDataURL(file);
                                     }
                                 }}"
-                            >
+                            />
                         </div>
                     </div>
                 </div>

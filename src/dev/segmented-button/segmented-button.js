@@ -24,28 +24,56 @@ class DevSegmentedButton extends MDComponent {
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Single-select segmented button</md-markdown>
-                            <md-segmented-button .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
+                            <md-segmented-button
+                                .buttons="${buttons}"
+                                singleSelection
+                                @onSegmentedButtonItemClick="${console.log}"
+                            ></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Multi-select segmented button</md-markdown>
-                            <md-segmented-button .buttons="${buttons2}" multiSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
+                            <md-segmented-button
+                                .buttons="${buttons2}"
+                                multiSelection
+                                @onSegmentedButtonItemClick="${console.log}"
+                            ></md-segmented-button>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Density 0</md-markdown>
-                            <md-segmented-button style="--md-comp-segmented-button-density:0;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
+                            <md-segmented-button
+                                style="--md-comp-segmented-button-density:0;"
+                                .buttons="${buttons}"
+                                singleSelection
+                                @onSegmentedButtonItemClick="${console.log}"
+                            ></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Density -1</md-markdown>
-                            <md-segmented-button style="--md-comp-segmented-button-density:-1;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
+                            <md-segmented-button
+                                style="--md-comp-segmented-button-density:-1;"
+                                .buttons="${buttons}"
+                                singleSelection
+                                @onSegmentedButtonItemClick="${console.log}"
+                            ></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Density -2</md-markdown>
-                            <md-segmented-button style="--md-comp-segmented-button-density:-2;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
+                            <md-segmented-button
+                                style="--md-comp-segmented-button-density:-2;"
+                                .buttons="${buttons}"
+                                singleSelection
+                                @onSegmentedButtonItemClick="${console.log}"
+                            ></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Density -3</md-markdown>
-                            <md-segmented-button style="--md-comp-segmented-button-density:-3;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
+                            <md-segmented-button
+                                style="--md-comp-segmented-button-density:-3;"
+                                .buttons="${buttons}"
+                                singleSelection
+                                @onSegmentedButtonItemClick="${console.log}"
+                            ></md-segmented-button>
                         </div>
                     </div>
                 </div>

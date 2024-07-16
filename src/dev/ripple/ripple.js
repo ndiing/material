@@ -10,23 +10,23 @@ class DevRipple extends MDComponent {
         super();
 
         this.ripple = new MDRippleController(this, {
-            containerSelector:'.dev-ripple0',
+            containerSelector: ".dev-ripple0",
             centered: true,
         });
         this.ripple2 = new MDRippleController(this, {
-            containerSelector:'.dev-ripple1',
+            containerSelector: ".dev-ripple1",
             clipped: true,
         });
         this.ripple3 = new MDRippleController(this, {
-            containerSelector:'.dev-ripple2',
+            containerSelector: ".dev-ripple2",
             fadeOut: true,
         });
         this.ripple4 = new MDRippleController(this, {
-            containerSelector:'.dev-ripple3',
+            containerSelector: ".dev-ripple3",
             size: 24,
         });
         this.ripple5 = new MDRippleController(this, {
-            containerSelector:'.dev-ripple4',
+            containerSelector: ".dev-ripple4",
             buttonSelector: ".dev-ripple-inner",
         });
     }

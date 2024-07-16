@@ -9,7 +9,17 @@ class DevPagination extends MDComponent {
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Pagination</md-markdown>
-                            <md-pagination total="100" limit="10" page="1" @onPaginationInput="${console.log}" @onPaginationLimitChange="${console.log}" @onPaginationFirstClick="${console.log}" @onPaginationPrevClick="${console.log}" @onPaginationNextClick="${console.log}" @onPaginationLastClick="${console.log}"></md-pagination>
+                            <md-pagination
+                                total="100"
+                                limit="10"
+                                page="1"
+                                @onPaginationInput="${console.log}"
+                                @onPaginationLimitChange="${console.log}"
+                                @onPaginationFirstClick="${console.log}"
+                                @onPaginationPrevClick="${console.log}"
+                                @onPaginationNextClick="${console.log}"
+                                @onPaginationLastClick="${console.log}"
+                            ></md-pagination>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Pagination</md-markdown>

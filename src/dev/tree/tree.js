@@ -34,7 +34,7 @@ class DevTree extends MDComponent {
                                         children: [
                                             {
                                                 label: "Leafy Green",
-                                                expanded:true,
+                                                expanded: true,
                                                 children: [
                                                     { label: "Spinach", children: [] },
                                                     { label: "Kale", children: [] },
@@ -43,7 +43,7 @@ class DevTree extends MDComponent {
                                             {
                                                 label: "Root",
                                                 children: [
-                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { selected: true, label: "Carrot", children: [] },
                                                     { label: "Beetroot", children: [] },
                                                 ],
                                             },
@@ -101,7 +101,7 @@ class DevTree extends MDComponent {
                                         children: [
                                             {
                                                 label: "Leafy Green",
-                                                expanded:true,
+                                                expanded: true,
                                                 children: [
                                                     { label: "Spinach", children: [] },
                                                     { label: "Kale", children: [] },
@@ -110,7 +110,7 @@ class DevTree extends MDComponent {
                                             {
                                                 label: "Root",
                                                 children: [
-                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { selected: true, label: "Carrot", children: [] },
                                                     { label: "Beetroot", children: [] },
                                                 ],
                                             },
@@ -168,7 +168,7 @@ class DevTree extends MDComponent {
                                         children: [
                                             {
                                                 label: "Leafy Green",
-                                                expanded:true,
+                                                expanded: true,
                                                 children: [
                                                     { label: "Spinach", children: [] },
                                                     { label: "Kale", children: [] },
@@ -177,7 +177,7 @@ class DevTree extends MDComponent {
                                             {
                                                 label: "Root",
                                                 children: [
-                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { selected: true, label: "Carrot", children: [] },
                                                     { label: "Beetroot", children: [] },
                                                 ],
                                             },
@@ -235,7 +235,7 @@ class DevTree extends MDComponent {
                                         children: [
                                             {
                                                 label: "Leafy Green",
-                                                expanded:true,
+                                                expanded: true,
                                                 children: [
                                                     { label: "Spinach", children: [] },
                                                     { label: "Kale", children: [] },
@@ -244,7 +244,7 @@ class DevTree extends MDComponent {
                                             {
                                                 label: "Root",
                                                 children: [
-                                                    { selected:true, label: "Carrot", children: [] },
+                                                    { selected: true, label: "Carrot", children: [] },
                                                     { label: "Beetroot", children: [] },
                                                 ],
                                             },

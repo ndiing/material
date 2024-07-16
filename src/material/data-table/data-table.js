@@ -104,7 +104,6 @@ class MDDataTableComponent extends MDCardComponent {
 
     constructor() {
         super();
-        
     }
 
     /**

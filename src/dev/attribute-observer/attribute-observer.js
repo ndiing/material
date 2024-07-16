@@ -5,8 +5,7 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { setTheme } from "../../material/color/color.js";
 
 class DevAttributeObserver extends MDComponent {
-
-    output=createRef()
+    output = createRef();
 
     render() {
         /* prettier-ignore */
@@ -21,8 +20,6 @@ class DevAttributeObserver extends MDComponent {
             </div>
         `;
     }
-
-    
 }
 
 customElements.define("dev-attribute-observer", DevAttributeObserver);

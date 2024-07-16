@@ -11,11 +11,11 @@ class DevChips extends MDComponent {
                             <md-chips
                                 .list="${[
                                     //
-                                    { icon: 'image', label: "Assist 1" },
-                                    { icon: 'image', label: "Assist 2" },
-                                    { icon: 'image', label: "Assist 3" },
-                                    { icon: 'image', label: "Assist 4" },
-                                    { icon: 'image', label: "Assist 5" },
+                                    { icon: "image", label: "Assist 1" },
+                                    { icon: "image", label: "Assist 2" },
+                                    { icon: "image", label: "Assist 3" },
+                                    { icon: "image", label: "Assist 4" },
+                                    { icon: "image", label: "Assist 5" },
                                 ]}"
                                 @onChipClick="${console.log}"
                             ></md-chips>
@@ -38,11 +38,11 @@ class DevChips extends MDComponent {
                             <md-chips
                                 .list="${[
                                     //
-                                    { label: "Input 1",action:'close' },
-                                    { label: "Input 2",action:'close' },
-                                    { label: "Input 3",action:'close' },
-                                    { label: "Input 4",action:'close' },
-                                    { label: "Input 5",action:'close' },
+                                    { label: "Input 1", action: "close" },
+                                    { label: "Input 2", action: "close" },
+                                    { label: "Input 3", action: "close" },
+                                    { label: "Input 4", action: "close" },
+                                    { label: "Input 5", action: "close" },
                                 ]}"
                                 @onChipClick="${console.log}"
                             ></md-chips>
@@ -51,11 +51,11 @@ class DevChips extends MDComponent {
                             <md-chips
                                 .list="${[
                                     //
-                                    { label: "Suggestion 1", },
-                                    { label: "Suggestion 2", },
-                                    { label: "Suggestion 3", },
-                                    { label: "Suggestion 4", },
-                                    { label: "Suggestion 5", },
+                                    { label: "Suggestion 1" },
+                                    { label: "Suggestion 2" },
+                                    { label: "Suggestion 3" },
+                                    { label: "Suggestion 4" },
+                                    { label: "Suggestion 5" },
                                 ]}"
                                 @onChipClick="${console.log}"
                             ></md-chips>
