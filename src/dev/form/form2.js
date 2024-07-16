@@ -697,10 +697,7 @@ class DevForm2 extends MDComponent {
             { component: "time-field", name: "meetingTime", value: "14:30", expanded: 3 },
             { component: "week-field", name: "workWeek", value: "2024-W28", expanded: 3 },
             { component: "slider", name: "volume", value: "75", expanded: 12 },
-            { component: "checkbox", name: "acceptTerms", value: "true", expanded: 12,
-                onCheckboxNativeInput:console.log ,
-                onCheckboxNativeReset:console.log ,
-            },
+            { component: "checkbox", name: "acceptTerms", value: "true", expanded: 12, onCheckboxNativeInput: console.log, onCheckboxNativeReset: console.log },
             { component: "radio-button", name: "gender", value: "male", expanded: 12 },
             { component: "switch", name: "darkMode", value: "false", expanded: 12 },
         ];
@@ -736,9 +733,9 @@ class DevForm2 extends MDComponent {
         `;
     }
 
-    handleFormNativeSubmit(event){
-        console.log(event.detail.data)
-        console.log(event.currentTarget)
+    handleFormNativeSubmit(event) {
+        console.log(event.detail.data);
+        console.log(event.currentTarget);
     }
 }
 
