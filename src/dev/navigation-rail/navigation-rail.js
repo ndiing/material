@@ -28,9 +28,11 @@ class DevNavigationRail extends MDComponent {
                         <div class="md-layout-border__item md-layout-border__item--center">
                             <div class="md-layout-column">
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                    <md-markdown>with text labels</md-markdown>
                                     <md-button label="toggle navigation rail" variant="tonal" @click="${()=>navigationRail0.toggle()}"></md-button>
                                 </div>
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                    <md-markdown>without labels</md-markdown>
                                     <md-button label="toggle navigation rail" variant="tonal" @click="${()=>navigationRail1.toggle()}"></md-button>
                                 </div>
                             </div>
