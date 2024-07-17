@@ -14,15 +14,13 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      * Called when the component is added to the DOM.
      * @private
      */
-    connectedCallback() {
-    }
+    connectedCallback() {}
 
     /**
      * Called when the component is removed from the DOM.
      * @private
      */
-    disconnectedCallback() {
-    }
+    disconnectedCallback() {}
 
     /**
      * Adds a controller to the component. (Currently not implemented)

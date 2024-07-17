@@ -8,7 +8,7 @@ class DevNavigationComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-navigation-bar__tree"
                         variant="plain"
@@ -20,7 +20,7 @@ class DevNavigationComponent extends MDComponent {
                         ]}"
                     ></md-tree>
                 </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-navigation-bar__tree"
                         variant="plain"
@@ -33,7 +33,7 @@ class DevNavigationComponent extends MDComponent {
                     ></md-tree>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-navigation-drawer__tree"
                         variant="plain"
@@ -45,7 +45,7 @@ class DevNavigationComponent extends MDComponent {
                         ]}"
                     ></md-tree>
                 </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-navigation-drawer__tree"
                         variant="plain"
@@ -58,7 +58,7 @@ class DevNavigationComponent extends MDComponent {
                     ></md-tree>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-navigation-rail__tree"
                         variant="plain"
@@ -70,7 +70,7 @@ class DevNavigationComponent extends MDComponent {
                         ]}"
                     ></md-tree>
                 </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-navigation-rail__tree"
                         variant="plain"
@@ -83,7 +83,7 @@ class DevNavigationComponent extends MDComponent {
                     ></md-tree>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-menu__tree"
                         variant="plain"
@@ -95,7 +95,7 @@ class DevNavigationComponent extends MDComponent {
                         ]}"
                     ></md-tree>
                 </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-menu__tree"
                         variant="plain"
@@ -108,7 +108,7 @@ class DevNavigationComponent extends MDComponent {
                     ></md-tree>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--primary"
                         variant="plain"
@@ -120,7 +120,7 @@ class DevNavigationComponent extends MDComponent {
                         ]}"
                     ></md-tree>
                 </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--primary"
                         variant="plain"
@@ -133,7 +133,7 @@ class DevNavigationComponent extends MDComponent {
                     ></md-tree>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--secondary"
                         variant="plain"
@@ -145,7 +145,7 @@ class DevNavigationComponent extends MDComponent {
                         ]}"
                     ></md-tree>
                 </div>
-                <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--secondary"
                         variant="plain"

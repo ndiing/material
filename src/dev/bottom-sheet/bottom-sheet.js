@@ -13,7 +13,7 @@ class DevBottomSheet extends MDComponent {
                 </md-bottom-sheet>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Standard bottom sheet</md-markdown>
                             <md-button
                                 label="toggle bottom sheet"
@@ -21,7 +21,7 @@ class DevBottomSheet extends MDComponent {
                                 @click="${() => bottomSheet.toggle()}"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Modal bottom sheet</md-markdown>
                             <md-button
                                 label="toggle bottom sheet"

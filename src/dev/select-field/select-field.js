@@ -169,7 +169,7 @@ class DevSelectField extends MDComponent {
                         @onFormNativeSubmit="${(event) => console.log(event.detail.data)}"
                     >
                         <div class="md-layout-column">
-                            <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
                                     name="select3"
                                     map='{"label":"label","value":"value"}'
@@ -181,7 +181,7 @@ class DevSelectField extends MDComponent {
                                 ></md-select-field>
                             </div>
 
-                            <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
                                     name="select4"
                                     map='{"label":"label","value":"value"}'
@@ -193,7 +193,7 @@ class DevSelectField extends MDComponent {
                                 ></md-select-field>
                             </div>
 
-                            <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
                                     name="select"
                                     map='{"label":"label","value":"value"}'
@@ -204,7 +204,7 @@ class DevSelectField extends MDComponent {
                                 ></md-select-field>
                             </div>
 
-                            <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-select-field
                                     name="select2"
                                     map='{"label":"label","value":"value"}'

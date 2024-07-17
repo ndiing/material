@@ -9,7 +9,7 @@ class DevTextField2Component extends MDComponent {
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"
             >
                 <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="#ff0000"
                             name="color"
@@ -19,7 +19,7 @@ class DevTextField2Component extends MDComponent {
                             type="color"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="1990-10-17"
                             name="date"
@@ -29,7 +29,7 @@ class DevTextField2Component extends MDComponent {
                             type="date"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="1990-10-17T20:30"
                             name="datetime"
@@ -39,7 +39,7 @@ class DevTextField2Component extends MDComponent {
                             type="datetime-local"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="ndiing.inc@gmail.com"
                             name="email"
@@ -49,7 +49,7 @@ class DevTextField2Component extends MDComponent {
                             type="email"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             name="file"
                             multiple
@@ -59,7 +59,7 @@ class DevTextField2Component extends MDComponent {
                             type="file"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="1990-10"
                             name="month"
@@ -69,7 +69,7 @@ class DevTextField2Component extends MDComponent {
                             type="month"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="1"
                             name="number"
@@ -79,7 +79,7 @@ class DevTextField2Component extends MDComponent {
                             type="number"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="secret"
                             name="password"
@@ -89,7 +89,7 @@ class DevTextField2Component extends MDComponent {
                             type="password"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="what today is it?"
                             name="search"
@@ -99,7 +99,7 @@ class DevTextField2Component extends MDComponent {
                             type="search"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="+6281935155404"
                             name="tel"
@@ -109,7 +109,7 @@ class DevTextField2Component extends MDComponent {
                             type="tel"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="Hello word!"
                             name="text"
@@ -119,7 +119,7 @@ class DevTextField2Component extends MDComponent {
                             type="text"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="20:30"
                             name="time"
@@ -129,7 +129,7 @@ class DevTextField2Component extends MDComponent {
                             type="time"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="https://www.google.com"
                             name="url"
@@ -139,7 +139,7 @@ class DevTextField2Component extends MDComponent {
                             type="url"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             novalue="1990-W42"
                             name="week"
@@ -149,12 +149,12 @@ class DevTextField2Component extends MDComponent {
                             type="week"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="#ff0000"
@@ -165,7 +165,7 @@ class DevTextField2Component extends MDComponent {
                             type="color"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="1990-10-17"
@@ -176,7 +176,7 @@ class DevTextField2Component extends MDComponent {
                             type="date"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="1990-10-17T20:30"
@@ -187,7 +187,7 @@ class DevTextField2Component extends MDComponent {
                             type="datetime-local"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="ndiing.inc@gmail.com"
@@ -198,7 +198,7 @@ class DevTextField2Component extends MDComponent {
                             type="email"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             name="file"
@@ -209,7 +209,7 @@ class DevTextField2Component extends MDComponent {
                             type="file"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="1990-10"
@@ -220,7 +220,7 @@ class DevTextField2Component extends MDComponent {
                             type="month"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="1"
@@ -231,7 +231,7 @@ class DevTextField2Component extends MDComponent {
                             type="number"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="secret"
@@ -242,7 +242,7 @@ class DevTextField2Component extends MDComponent {
                             type="password"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="what today is it?"
@@ -253,7 +253,7 @@ class DevTextField2Component extends MDComponent {
                             type="search"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="+6281935155404"
@@ -264,7 +264,7 @@ class DevTextField2Component extends MDComponent {
                             type="tel"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="Hello word!"
@@ -275,7 +275,7 @@ class DevTextField2Component extends MDComponent {
                             type="text"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="20:30"
@@ -286,7 +286,7 @@ class DevTextField2Component extends MDComponent {
                             type="time"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="https://www.google.com"
@@ -297,7 +297,7 @@ class DevTextField2Component extends MDComponent {
                             type="url"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="filled"
                             novalue="1990-W42"
@@ -308,12 +308,12 @@ class DevTextField2Component extends MDComponent {
                             type="week"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
 
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="#ff0000"
@@ -324,7 +324,7 @@ class DevTextField2Component extends MDComponent {
                             type="color"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="1990-10-17"
@@ -335,7 +335,7 @@ class DevTextField2Component extends MDComponent {
                             type="date"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="1990-10-17T20:30"
@@ -346,7 +346,7 @@ class DevTextField2Component extends MDComponent {
                             type="datetime-local"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="ndiing.inc@gmail.com"
@@ -357,7 +357,7 @@ class DevTextField2Component extends MDComponent {
                             type="email"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             name="file"
@@ -368,7 +368,7 @@ class DevTextField2Component extends MDComponent {
                             type="file"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="1990-10"
@@ -379,7 +379,7 @@ class DevTextField2Component extends MDComponent {
                             type="month"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="1"
@@ -390,7 +390,7 @@ class DevTextField2Component extends MDComponent {
                             type="number"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="secret"
@@ -401,7 +401,7 @@ class DevTextField2Component extends MDComponent {
                             type="password"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="what today is it?"
@@ -412,7 +412,7 @@ class DevTextField2Component extends MDComponent {
                             type="search"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="+6281935155404"
@@ -423,7 +423,7 @@ class DevTextField2Component extends MDComponent {
                             type="tel"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="Hello word!"
@@ -434,7 +434,7 @@ class DevTextField2Component extends MDComponent {
                             type="text"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="20:30"
@@ -445,7 +445,7 @@ class DevTextField2Component extends MDComponent {
                             type="time"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="https://www.google.com"
@@ -456,7 +456,7 @@ class DevTextField2Component extends MDComponent {
                             type="url"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             variant="outlined"
                             novalue="1990-W42"
@@ -467,10 +467,10 @@ class DevTextField2Component extends MDComponent {
                             type="week"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">1</div>
 
                     <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-button

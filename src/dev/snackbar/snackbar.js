@@ -7,7 +7,7 @@ class DevSnackbar extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Single line</md-markdown>
                             <md-snackbar
                                 id="snackbar0"
@@ -22,7 +22,7 @@ class DevSnackbar extends MDComponent {
                                 @click="${() => snackbar0.show()}"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Single line with action</md-markdown>
                             <md-snackbar
                                 id="snackbar1"
@@ -38,7 +38,7 @@ class DevSnackbar extends MDComponent {
                                 @click="${() => snackbar1.show()}"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Two lines</md-markdown>
                             <md-snackbar
                                 id="snackbar2"
@@ -54,7 +54,7 @@ class DevSnackbar extends MDComponent {
                                 @click="${() => snackbar2.show()}"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Two lines with action</md-markdown>
                             <md-snackbar
                                 id="snackbar3"
@@ -71,7 +71,7 @@ class DevSnackbar extends MDComponent {
                                 @click="${() => snackbar3.show()}"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Two lines with longer action</md-markdown>
                             <md-snackbar
                                 id="snackbar4"

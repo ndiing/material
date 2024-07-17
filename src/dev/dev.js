@@ -2,9 +2,7 @@ import { MDRouter } from "../material/router/router.js";
 
 MDRouter.historyApiFallback = false;
 
-import DevMain from "./main/main.js";
 import DevAttributeObserver from "./attribute-observer/attribute-observer.js";
-import DevMediaObserver from "./media-observer/media-observer.js";
 import DevBadge from "./badge/badge.js";
 import DevBottomAppBar from "./bottom-app-bar/bottom-app-bar.js";
 import DevBottomSheet from "./bottom-sheet/bottom-sheet.js";
@@ -13,31 +11,35 @@ import DevCard from "./card/card.js";
 import DevCheckbox from "./checkbox/checkbox.js";
 import DevChip from "./chip/chip.js";
 import DevChips from "./chips/chips.js";
+import DevColor from "./color/color.js";
 import DevColorField from "./color-field/color-field.js";
 import DevColorPicker from "./color-picker/color-picker.js";
-import DevColor from "./color/color.js";
 import DevComponent from "./component/component.js";
-import DevDataTableItem from "./data-table-item/data-table-item.js";
+import DevDataGrid from "./data-grid/data-grid.js";
 import DevDataTable from "./data-table/data-table.js";
+import DevDataTableItem from "./data-table-item/data-table-item.js";
 import DevDateField from "./date-field/date-field.js";
 import DevDatePicker from "./date-picker/date-picker.js";
 import DevDatetimeField from "./datetime-field/datetime-field.js";
 import DevDatetimePicker from "./datetime-picker/datetime-picker.js";
 import DevDialog from "./dialog/dialog.js";
-import DevEmojiPicker from "./emoji-picker/emoji-picker.js";
 import DevEmoji from "./emoji/emoji.js";
+import DevEmojiPicker from "./emoji-picker/emoji-picker.js";
+import DevExample from "./example/example.js";
 import DevFab from "./fab/fab.js";
 import DevForm from "./form/form.js";
 import DevForm2 from "./form/form2.js";
 import DevFunctions from "./functions/functions.js";
 import DevGesture from "./gesture/gesture.js";
-import DevIconButton from "./icon-button/icon-button.js";
 import DevIcon from "./icon/icon.js";
+import DevIconButton from "./icon-button/icon-button.js";
 import DevImage from "./image/image.js";
-import DevListItem from "./list-item/list-item.js";
 import DevList from "./list/list.js";
+import DevListItem from "./list-item/list-item.js";
 import DevLocalization from "./localization/localization.js";
+import DevMain from "./main/main.js";
 import DevMarkdown from "./markdown/markdown.js";
+import DevMediaObserver from "./media-observer/media-observer.js";
 import DevMenu from "./menu/menu.js";
 import DevMonthField from "./month-field/month-field.js";
 import DevMonthPicker from "./month-picker/month-picker.js";
@@ -49,8 +51,8 @@ import DevObserver from "./observer/observer.js";
 import DevPagination from "./pagination/pagination.js";
 import DevPasswordField from "./password-field/password-field.js";
 import DevPopper from "./popper/popper.js";
-import DevProgressIndicator from "./progress-indicator/progress-indicator.js";
 import DevProgress from "./progress/progress.js";
+import DevProgressIndicator from "./progress-indicator/progress-indicator.js";
 import DevRadioButton from "./radio-button/radio-button.js";
 import DevRipple from "./ripple/ripple.js";
 import DevRouter from "./router/router.js";
@@ -65,29 +67,24 @@ import DevSnackbar from "./snackbar/snackbar.js";
 import DevStore from "./store/store.js";
 import DevSwitch from "./switch/switch.js";
 import DevTabs from "./tabs/tabs.js";
-import DevTextField from "./text-field/text-field.js";
 import DevTextareaField from "./textarea-field/textarea-field.js";
+import DevTextField from "./text-field/text-field.js";
 import DevTimeField from "./time-field/time-field.js";
 import DevTimePicker from "./time-picker/time-picker.js";
 import DevTooltip from "./tooltip/tooltip.js";
 import DevTopAppBar from "./top-app-bar/top-app-bar.js";
-import DevTreeItem from "./tree-item/tree-item.js";
 import DevTree from "./tree/tree.js";
+import DevTreeItem from "./tree-item/tree-item.js";
 import DevVirtual from "./virtual/virtual.js";
 import DevWeekField from "./week-field/week-field.js";
 import DevWeekPicker from "./week-picker/week-picker.js";
-import DevExample from "./example/example.js";
-import DevDataGrid from "./data-grid/data-grid.js";
 
 const routes = [
     {
         path: "",
         component: DevMain,
         children: [
-            { path: "data-grid", component: DevDataGrid },
-            { path: "example", component: DevExample },
             // { path: "attribute-observer", component: DevAttributeObserver },
-            // { path: "media-observer", component: DevMediaObserver },
             { path: "badge", component: DevBadge },
             { path: "bottom-app-bar", component: DevBottomAppBar },
             { path: "bottom-sheet", component: DevBottomSheet },
@@ -98,9 +95,10 @@ const routes = [
             { path: "chips", component: DevChips },
             { path: "color-field", component: DevColorField },
             { path: "color-picker", component: DevColorPicker },
-            { path: "color", component: DevColor },
-            // { path: "component", component: DevComponent },
-            // { path: "data-table-item", component: DevDataTableItem },
+            // { path: "color", component: DevColor },
+            { path: "component", component: DevComponent },
+            { path: "data-grid", component: DevDataGrid },
+            { path: "data-table-item", component: DevDataTableItem },
             { path: "data-table", component: DevDataTable },
             { path: "date-field", component: DevDateField },
             { path: "date-picker", component: DevDatePicker },
@@ -109,6 +107,7 @@ const routes = [
             { path: "dialog", component: DevDialog },
             { path: "emoji-picker", component: DevEmojiPicker },
             { path: "emoji", component: DevEmoji },
+            { path: "example", component: DevExample },
             { path: "fab", component: DevFab },
             { path: "form", component: DevForm },
             { path: "form2", component: DevForm2 },
@@ -117,10 +116,11 @@ const routes = [
             { path: "icon-button", component: DevIconButton },
             { path: "icon", component: DevIcon },
             { path: "image", component: DevImage },
-            // { path: "list-item", component: DevListItem },
+            { path: "list-item", component: DevListItem },
             { path: "list", component: DevList },
-            { path: "localization", component: DevLocalization },
+            // { path: "localization", component: DevLocalization },
             { path: "markdown", component: DevMarkdown },
+            // { path: "media-observer", component: DevMediaObserver },
             { path: "menu", component: DevMenu },
             { path: "month-field", component: DevMonthField },
             { path: "month-picker", component: DevMonthPicker },
@@ -141,7 +141,7 @@ const routes = [
             { path: "search-field", component: DevSearchField },
             { path: "segmented-button", component: DevSegmentedButton },
             { path: "select-field", component: DevSelectField },
-            // { path: "sheet", component: DevSheet },
+            { path: "sheet", component: DevSheet },
             { path: "side-sheet", component: DevSideSheet },
             { path: "slider", component: DevSlider },
             { path: "snackbar", component: DevSnackbar },
@@ -154,7 +154,7 @@ const routes = [
             { path: "time-picker", component: DevTimePicker },
             { path: "tooltip", component: DevTooltip },
             { path: "top-app-bar", component: DevTopAppBar },
-            // { path: "tree-item", component: DevTreeItem },
+            { path: "tree-item", component: DevTreeItem },
             { path: "tree", component: DevTree },
             // { path: "virtual", component: DevVirtual },
             { path: "week-field", component: DevWeekField },

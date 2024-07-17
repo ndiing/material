@@ -7,7 +7,7 @@ class DevButton extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Elevated button</md-markdown>
                             <md-button
                                 variant="elevated"
@@ -16,7 +16,7 @@ class DevButton extends MDComponent {
                                 label="Elevated"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled button</md-markdown>
                             <md-button
                                 variant="filled"
@@ -24,7 +24,7 @@ class DevButton extends MDComponent {
                                 label="Filled"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled tonal button</md-markdown>
                             <md-button
                                 variant="tonal"
@@ -32,7 +32,7 @@ class DevButton extends MDComponent {
                                 label="Tonal"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Outlined button</md-markdown>
                             <md-button
                                 variant="outlined"
@@ -40,14 +40,14 @@ class DevButton extends MDComponent {
                                 label="Outlined"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Text button</md-markdown>
                             <md-button
                                 type="button"
                                 label="Text"
                             ></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Icon Right</md-markdown>
                             <md-button
                                 variant="icon-right"

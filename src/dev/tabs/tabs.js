@@ -7,7 +7,7 @@ class DevTabs extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Primary tabs</md-markdown>
                             <md-tabs
                                 variant="primary"
@@ -19,7 +19,7 @@ class DevTabs extends MDComponent {
                                 ]}"
                             ></md-tabs>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Primary tabs</md-markdown>
                             <md-tabs
                                 variant="primary"
@@ -27,7 +27,7 @@ class DevTabs extends MDComponent {
                             ></md-tabs>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Secondary tabs</md-markdown>
                             <md-tabs
                                 variant="secondary"
@@ -39,7 +39,7 @@ class DevTabs extends MDComponent {
                                 ]}"
                             ></md-tabs>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded6 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Secondary tabs</md-markdown>
                             <md-tabs
                                 variant="secondary"

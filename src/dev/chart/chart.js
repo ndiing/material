@@ -5,7 +5,7 @@ class DevChartComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <div id="chart_div"></div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ class DevTextField3Component extends MDComponent {
                 @onFormNativeSubmit="${this.handleFormNativeSubmit}"
             >
                 <div class="md-layout-column">
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             name="text"
                             label="Text field"
@@ -17,7 +17,7 @@ class DevTextField3Component extends MDComponent {
                             value="text"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             name="textarea"
                             label="Textarea field"
@@ -25,7 +25,7 @@ class DevTextField3Component extends MDComponent {
                             value="textarea"
                         ></md-text-field>
                     </div>
-                    <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                    <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                         <md-text-field
                             name="select"
                             label="Select field"

@@ -7,7 +7,7 @@ class DevList extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading avatar</md-markdown>
                             <md-list
                                 .list="${[
@@ -27,7 +27,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading avatar and trailing checkbox</md-markdown>
                             <md-list
                                 .list="${[
@@ -47,7 +47,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading image</md-markdown>
                             <md-list
                                 .list="${[
@@ -67,7 +67,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading image and trailing checkbox</md-markdown>
                             <md-list
                                 .list="${[
@@ -87,7 +87,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading video</md-markdown>
                             <md-list
                                 .list="${[
@@ -107,7 +107,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading video and trailing checkbox</md-markdown>
                             <md-list
                                 .list="${[
@@ -127,7 +127,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading icon</md-markdown>
                             <md-list
                                 .list="${[
@@ -147,7 +147,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading icon and trailing checkbox</md-markdown>
                             <md-list
                                 .list="${[
@@ -167,7 +167,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With text and trailing checkbox</md-markdown>
                             <md-list
                                 .list="${[{ label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." }, { label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet" }, { label: "Lorem ipsum" }]}"
@@ -183,7 +183,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With checkbox</md-markdown>
                             <md-list
                                 .list="${[
@@ -203,7 +203,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading checkbox</md-markdown>
                             <md-list
                                 .list="${[
@@ -223,7 +223,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading checkbox and trailing supporting text</md-markdown>
                             <md-list
                                 .list="${[
@@ -243,7 +243,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading radio button</md-markdown>
                             <md-list
                                 .list="${[
@@ -263,7 +263,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading radio button and trailing supporting text</md-markdown>
                             <md-list
                                 .list="${[
@@ -283,7 +283,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With trailing switch</md-markdown>
                             <md-list
                                 .list="${[
@@ -303,7 +303,7 @@ class DevList extends MDComponent {
                                 @onListItemSwitchNativeInput="${console.log}"
                             ></md-list>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>With leading icon and trailing switch</md-markdown>
                             <md-list
                                 .list="${[

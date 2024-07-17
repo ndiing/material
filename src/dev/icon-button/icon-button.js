@@ -7,7 +7,7 @@ class DevIconButton extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Standard icon button</md-markdown>
                             <md-icon-button
                                 variant=""
@@ -16,7 +16,7 @@ class DevIconButton extends MDComponent {
                             ></md-icon-button>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled icon button</md-markdown>
                             <md-icon-button
                                 variant="filled"
@@ -24,7 +24,7 @@ class DevIconButton extends MDComponent {
                                 @onIconButtonClick="${console.log}"
                             ></md-icon-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled tonal icon button</md-markdown>
                             <md-icon-button
                                 variant="tonal"
@@ -32,7 +32,7 @@ class DevIconButton extends MDComponent {
                                 @onIconButtonClick="${console.log}"
                             ></md-icon-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Outlined icon button</md-markdown>
                             <md-icon-button
                                 variant="outlined"
@@ -41,7 +41,7 @@ class DevIconButton extends MDComponent {
                             ></md-icon-button>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Standard toggle icon button</md-markdown>
                             <md-icon-button
                                 variant="toggle"
@@ -50,7 +50,7 @@ class DevIconButton extends MDComponent {
                             ></md-icon-button>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled toggle icon button</md-markdown>
                             <md-icon-button
                                 variant="toggle filled"
@@ -58,7 +58,7 @@ class DevIconButton extends MDComponent {
                                 @onIconButtonClick="${console.log}"
                             ></md-icon-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Filled tonal toggle icon button</md-markdown>
                             <md-icon-button
                                 variant="toggle tonal"
@@ -66,7 +66,7 @@ class DevIconButton extends MDComponent {
                                 @onIconButtonClick="${console.log}"
                             ></md-icon-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Outlined toggle icon button</md-markdown>
                             <md-icon-button
                                 variant="toggle outlined"

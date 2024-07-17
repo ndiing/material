@@ -7,11 +7,51 @@ class DevCard extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Elevated</md-markdown>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card>body</md-card>
+                        </div>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card label="label">body</md-card>
+                        </div>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
+                                label="label"
+                                subLabel="subLabel"
+                                >body</md-card
+                            >
+                        </div>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card
+                                label="label"
+                                subLabel="subLabel"
+                                actions='[{"component":"spacer"},{"label":"label"}]'
+                                >body</md-card
+                            >
+                        </div>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card
+                                label="label"
+                                subLabel="subLabel"
+                                actions='[{"component":"spacer"},{"label":"label"}]'
+                                leadingActions='[{"icon":"image"}]'
+                                >body</md-card
+                            >
+                        </div>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card
+                                label="label"
+                                subLabel="subLabel"
+                                actions='[{"component":"spacer"},{"label":"label"}]'
+                                leadingActions='[{"icon":"image"}]'
+                                trailingActions='[{"icon":"image"}]'
+                                >body</md-card
+                            >
+                        </div>
+
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card
+                                label="elevated"
                                 variant="elevated"
-                                trailingActions='[{"icon":"more_vert"}]'
                                 @onCardIconButtonClick="${console.log}"
                                 @onCardIconClick="${console.log}"
                                 @onCardButtonClick="${console.log}"
@@ -30,14 +70,12 @@ class DevCard extends MDComponent {
                                 @onCardPaginationNextClick="${console.log}"
                                 @onCardPaginationLastClick="${console.log}"
                             >
-                                Elevated
                             </md-card>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Filled</md-markdown>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
+                                label="filled"
                                 variant="filled"
-                                trailingActions='[{"icon":"more_vert"}]'
                                 @onCardIconButtonClick="${console.log}"
                                 @onCardIconClick="${console.log}"
                                 @onCardButtonClick="${console.log}"
@@ -56,14 +94,12 @@ class DevCard extends MDComponent {
                                 @onCardPaginationNextClick="${console.log}"
                                 @onCardPaginationLastClick="${console.log}"
                             >
-                                Filled
                             </md-card>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Outlined</md-markdown>
+                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
+                                label="outlined"
                                 variant="outlined"
-                                trailingActions='[{"icon":"more_vert"}]'
                                 @onCardIconButtonClick="${console.log}"
                                 @onCardIconClick="${console.log}"
                                 @onCardButtonClick="${console.log}"
@@ -82,7 +118,6 @@ class DevCard extends MDComponent {
                                 @onCardPaginationNextClick="${console.log}"
                                 @onCardPaginationLastClick="${console.log}"
                             >
-                                Outlined
                             </md-card>
                         </div>
                     </div>

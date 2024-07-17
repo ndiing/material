@@ -41,7 +41,7 @@ class DevTopAppBar extends MDComponent {
                                         ></md-top-app-bar>
                                         <div class="md-layout-border__item md-layout-border__item--center">
                                             <div class="md-layout-column">
-                                                <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                                     <md-markdown>Center-aligned</md-markdown>
                                                     <md-button
                                                         variant="tonal"
@@ -49,7 +49,7 @@ class DevTopAppBar extends MDComponent {
                                                         @click="${() => center.toggle()}"
                                                     ></md-button>
                                                 </div>
-                                                <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                                     <md-markdown>Small</md-markdown>
                                                     <md-button
                                                         variant="tonal"
@@ -57,7 +57,7 @@ class DevTopAppBar extends MDComponent {
                                                         @click="${() => small.toggle()}"
                                                     ></md-button>
                                                 </div>
-                                                <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                                     <md-markdown>Medium</md-markdown>
                                                     <md-button
                                                         variant="tonal"
@@ -65,7 +65,7 @@ class DevTopAppBar extends MDComponent {
                                                         @click="${() => medium.toggle()}"
                                                     ></md-button>
                                                 </div>
-                                                <div class="md-layout-column__item md-layout-column__item--expanded2 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                                                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                                     <md-markdown>Large</md-markdown>
                                                     <md-button
                                                         variant="tonal"

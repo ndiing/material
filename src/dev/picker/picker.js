@@ -6,7 +6,7 @@ class DevPickerComponent extends MDComponent {
     render() {
         return html`
             <div class="md-layout-column">
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-datetime-picker id="datetimePicker"></md-datetime-picker>
                     <md-button
                         variant="tonal"
@@ -15,7 +15,7 @@ class DevPickerComponent extends MDComponent {
                     ></md-button>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-date-picker id="datePicker"></md-date-picker>
                     <md-button
                         variant="tonal"
@@ -24,7 +24,7 @@ class DevPickerComponent extends MDComponent {
                     ></md-button>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-month-picker id="monthPicker"></md-month-picker>
                     <md-button
                         variant="tonal"
@@ -33,7 +33,7 @@ class DevPickerComponent extends MDComponent {
                     ></md-button>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-time-picker id="timePicker"></md-time-picker>
                     <md-button
                         variant="tonal"
@@ -42,7 +42,7 @@ class DevPickerComponent extends MDComponent {
                     ></md-button>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-week-picker id="weekPicker"></md-week-picker>
                     <md-button
                         variant="tonal"
@@ -51,7 +51,7 @@ class DevPickerComponent extends MDComponent {
                     ></md-button>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-color-picker id="colorPicker"></md-color-picker>
                     <md-button
                         variant="tonal"
@@ -60,7 +60,7 @@ class DevPickerComponent extends MDComponent {
                     ></md-button>
                 </div>
 
-                <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-emoji-picker id="emojiPicker"></md-emoji-picker>
                     <md-button
                         variant="tonal"
