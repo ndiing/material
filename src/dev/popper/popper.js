@@ -9,7 +9,6 @@ class DevPopper extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <div
                                 class="dev-popper__button"
@@ -26,9 +25,10 @@ class DevPopper extends MDComponent {
                                 @click="${() => {
                                     popper1.style.visibility = "hidden";
                                 }}"
-                            >${JSON.stringify({})}</div>
+                            >
+                                ${JSON.stringify({})}
+                            </div>
                         </div>
-                        
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <div
@@ -46,9 +46,10 @@ class DevPopper extends MDComponent {
                                 @click="${() => {
                                     popper2.style.visibility = "hidden";
                                 }}"
-                            >${JSON.stringify({placements:[]})}</div>
+                            >
+                                ${JSON.stringify({ placements: [] })}
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -69,10 +70,18 @@ class DevPopper extends MDComponent {
                     // "bottom","bottom-start","bottom-end",
                     // "right","right-start","right-end",
                     // "left","left-start","left-end",
-                    "below","below-start","below-end",
-                    "above","above-start","above-end",
-                    "after","after-start","after-end",
-                    "before","before-start","before-end",
+                    "below",
+                    "below-start",
+                    "below-end",
+                    "above",
+                    "above-start",
+                    "above-end",
+                    "after",
+                    "after-start",
+                    "after-end",
+                    "before",
+                    "before-start",
+                    "before-end",
                     // "north-east","south-east","south-west","north-west",
                     // "center",
                 ],

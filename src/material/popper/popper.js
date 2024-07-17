@@ -4,7 +4,6 @@ import { getBoundary } from "../functions/functions";
  * A controller for managing popper elements positioning.
  */
 class MDPopperController {
-    
     /**
      * Initializes the MDPopperController.
      * @param {HTMLElement} host - The host element to which the popper is attached.
@@ -18,23 +17,6 @@ class MDPopperController {
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
-            // container: null,
-            boundary: null,
-            // button: null,
-            /* prettier-ignore */
-            placements: [
-                "top","top-start","top-end",
-                "bottom","bottom-start","bottom-end",
-                "right","right-start","right-end",
-                "left","left-start","left-end",
-                "below","below-start","below-end",
-                "above","above-start","above-end",
-                "after","after-start","after-end",
-                "before","before-start","before-end",
-                "north-east","south-east","south-west","north-west",
-                "center",
-            ],
-            offset: 0,
             ...options,
         };
     }
@@ -128,7 +110,27 @@ class MDPopperController {
      */
     setPosition(button, options = {}) {
         options = {
-            ...this.options,
+            // container: null,
+            boundary: null,
+            // button: null,
+            /* prettier-ignore */
+            placements: [
+                "top","top-start","top-end",
+                "bottom","bottom-start","bottom-end",
+                "right","right-start","right-end",
+                "left","left-start","left-end",
+                
+                "below","below-start","below-end",
+                "above","above-start","above-end",
+                "after","after-start","after-end",
+                "before","before-start","before-end",
+
+                "north-east","south-east",
+                "south-west","north-west",
+
+                "center",
+            ],
+            offset: 0,
             ...options,
         };
         const container = options.container || this.host;

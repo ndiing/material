@@ -402,8 +402,8 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtualRows = this.storeRows.filter((row, index) => {
             return index >= this.virtual.rowStart && index <= this.virtual.rowEnd;
         });
-        console.log(this.virtualColumns)
-        console.log(this.virtualRows)
+        console.log(this.virtualColumns);
+        console.log(this.virtualRows);
         this.requestUpdate();
         this.emit("onDataTableViewportVirtualScroll", event);
     }

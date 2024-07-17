@@ -24,7 +24,6 @@ class MDRippleController {
             size: null,
             ...options,
         };
-        
     }
 
     /**
@@ -41,10 +40,14 @@ class MDRippleController {
      */
     set container(value) {
         if (this._container !== value) {
+            if (this.container) {
+                this.container.classList.remove("md-ripple");
+            }
+
             if (value) {
                 if (typeof value === "string") {
                     this._container = this.host.querySelector(value);
-                } else{
+                } else {
                     this._container = value;
                 }
             } else {
@@ -69,12 +72,17 @@ class MDRippleController {
      */
     set button(value) {
         if (this._button !== value) {
+            if (this.button) {
+                this.button.classList.remove("md-ripple--button");
+                this.button.removeAttribute("tabIndex");
+            }
+
             if (value) {
                 if (typeof value === "string") {
                     this._button = this.host.querySelector(value);
-                } else{
+                } else {
                     this._button = value;
-                } 
+                }
             } else {
                 this._button = this.container;
             }
@@ -98,9 +106,13 @@ class MDRippleController {
      */
     set centered(value) {
         if (this._centered !== value) {
+            if (this.container) {
+                this.container.classList.remove("md-ripple--centered");
+            }
+
             this._centered = value;
 
-            this.container.classList.toggle("md-ripple--centered", !!this.centered);
+            this.container.classList.add("md-ripple--centered");
         }
     }
 
@@ -118,9 +130,13 @@ class MDRippleController {
      */
     set clipped(value) {
         if (this._clipped !== value) {
+            if (this.container) {
+                this.container.classList.remove("md-ripple--clipped");
+            }
+
             this._clipped = value;
 
-            this.container.classList.toggle("md-ripple--clipped", !!this.clipped);
+            this.container.classList.add("md-ripple--clipped");
         }
     }
 
@@ -138,9 +154,13 @@ class MDRippleController {
      */
     set fadeOut(value) {
         if (this._fadeOut !== value) {
+            if (this.container) {
+                this.container.classList.remove("md-ripple--fade-out");
+            }
+
             this._fadeOut = value;
 
-            this.container.classList.toggle("md-ripple--fade-out", !!this.fadeOut);
+            this.container.classList.add("md-ripple--fade-out");
         }
     }
 
@@ -162,7 +182,12 @@ class MDRippleController {
      */
     set size(value) {
         if (this._size !== value) {
+            if (this.container) {
+                this.container.style.removeProperty("--md-comp-ripple-size");
+            }
+
             this._size = value;
+
             this.container.style.setProperty("--md-comp-ripple-size", `${this.size}%`);
         }
     }

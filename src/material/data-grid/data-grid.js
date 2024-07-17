@@ -328,7 +328,6 @@ class MDDataGridComponent extends MDCardComponent {
     async handleDataGridColumnCellRef(th) {
         await this.updateComplete;
         if (th) {
-            
         } else {
         }
     }

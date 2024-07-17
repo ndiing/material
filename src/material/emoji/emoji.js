@@ -22,12 +22,12 @@ class MDEmojiComponent extends MDComponent {
         hover: { type: String },
     };
 
-    get webp(){
-        return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/512.webp`
+    get webp() {
+        return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/512.webp`;
     }
 
-    get svg(){
-        return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`
+    get svg() {
+        return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
     }
 
     // emojiNative=createRef()
@@ -37,7 +37,7 @@ class MDEmojiComponent extends MDComponent {
     }
 
     render() {
-        return this.emoji
+        return this.emoji;
     }
 
     connectedCallback() {
@@ -46,7 +46,7 @@ class MDEmojiComponent extends MDComponent {
         // this.on("pointerenter", this.handleEmojiPointerenter);
         // this.on("pointerleave", this.handleEmojiPointerleave);
     }
-    
+
     disconnectedCallback() {
         super.disconnectedCallback();
         // this.off("pointerenter", this.handleEmojiPointerenter);

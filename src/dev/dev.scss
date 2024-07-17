@@ -1,4 +1,4 @@
-.dev-ripple__container{
+.dev-ripple__container {
     width: 100%;
     aspect-ratio: 16/9;
     padding: 24px;
@@ -7,7 +7,7 @@
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
 }
-.dev-ripple__button{
+.dev-ripple__button {
     width: 100%;
     aspect-ratio: 16/9;
     padding: 24px;
@@ -17,7 +17,7 @@
     box-shadow: var(--md-sys-elevation-level0);
 }
 
-.dev-popper__container{
+.dev-popper__container {
     position: absolute;
     width: 168px;
     height: 240px;
@@ -26,7 +26,7 @@
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
 }
-.dev-popper__button{
+.dev-popper__button {
     width: 80px;
     height: 40px;
     border-radius: var(--md-sys-shape-corner-medium);
