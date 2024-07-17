@@ -1,4 +1,3 @@
-/* Casing Conversion */
 /**
  * Converts a string to `PascalCase` format.
  * @param {string} string - The input string to convert.
@@ -154,7 +153,7 @@ function toTitleCase(string) {
         .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => " " + $2.toUpperCase())
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-/* Stringify Date */
+
 /**
  * Converts a Date object to a string in the format `YYYY-MM-DDTHH:mm`.
  * @param {Date} date - The Date object to stringify.
@@ -214,7 +213,7 @@ function stringifyWeek(date) {
     let week = date.getWeek();
     return `${year}-W${week < 10 ? "0" + week : week}`;
 }
-/* Parse Date */
+
 /**
  * Parses a datetime-local string into a Date object.
  * @param {string} datetimeLocal - The datetime-local string to parse.
@@ -287,7 +286,7 @@ function parseWeek(weekStr) {
     let startOfWeek = new Date(jan4.setDate(jan4.getDate() - ((jan4.getDay() + 6) % 7) + (week - 1) * 7));
     return startOfWeek;
 }
-/* Color Conversion */
+
 /**
  * Converts a `hexadecimal` color string `to` an `RGBA` object.
  * @param {string} hex - The hexadecimal color string to convert.
@@ -458,7 +457,7 @@ function rgbaToHsla(r, g, b, a = 1) {
     }
     return { hue: Math.round(hue), saturation, lightness, alpha: a };
 }
-/* Utility Functions */
+
 /**
  * Checks if a string is a valid `hexadecimal` color.
  * @param {string} color - The color string to validate.
@@ -520,7 +519,7 @@ function calcDecimal(min, max, value) {
     let decimal = (value - min) / (max - min);
     return decimal;
 }
-/* Additional Functions */
+
 /**
  * Creates a queue mechanism using Promises where each `callback` executes in sequence.
  * @returns {Function} A function that accepts a callback function to enqueue and execute.
@@ -540,7 +539,7 @@ function createQueue() {
 
     return (callback = () => {}) => (pending = execute(callback));
 }
-/* Date Prototype Extensions */
+
 Date.prototype.setWeek = function (week) {
     if (typeof week !== "number" || week < 1 || week > 53) {
         throw new Error("Invalid week number. Week number should be between 1 and 53.");
@@ -590,49 +589,4 @@ function getBoundary(element) {
     }
     return boundary || scrollableElement;
 }
-export {
-    /* String Manipulation */
-    toPascalCase,
-    toCamelCase,
-    toSnakeCase,
-    toKebabCase,
-    toFlatCase,
-    toUpperFlatCase,
-    toPascalSnakeCase,
-    toCamelSnakeCase,
-    toScreamingSnakeCase,
-    toTrainCase,
-    toCobolCase,
-    toTitleCase,
-    /* Date Manipulation */
-    stringifyDatetimeLocal,
-    stringifyDate,
-    stringifyYear,
-    stringifyMonth,
-    stringifyTime,
-    stringifyWeek,
-    parseDatetimeLocal,
-    parseDate,
-    parseYear,
-    parseMonth,
-    parseTime,
-    parseWeek,
-    /* Color Manipulation */
-    hexToRgba,
-    hexToHsla,
-    rgbaToHex,
-    rgbaToHsla,
-    hslaToRgba,
-    hslaToHex,
-    /* Utility Functions */
-    calcPercentage,
-    calcDecimal,
-    isValidHexColor,
-    isObject,
-    isArrayString,
-    isDefined,
-    /* Additional Functions */
-    createQueue,
-    getBoundary,
-    /* Date Prototype Extensions */
-};
+export { toPascalCase, toCamelCase, toSnakeCase, toKebabCase, toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, parseWeek, hexToRgba, hexToHsla, rgbaToHex, rgbaToHsla, hslaToRgba, hslaToHex, calcPercentage, calcDecimal, isValidHexColor, isObject, isArrayString, isDefined, createQueue, getBoundary };

@@ -142,7 +142,7 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        // this.list = this.list.map((item) => item.children).flat();
+        this.list = this.list.map((item) => item.children).flat();
 
         function select(list, routerLink) {
             list.sort((a, b) => a.label.localeCompare(b.label));

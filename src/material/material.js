@@ -4,9 +4,20 @@ import { MDAttributeObserver } from "./attribute-observer/attribute-observer.js"
 import { MDStore } from "./store/store.js";
 import { MDRouter } from "./router/router.js";
 
+// sourceLocale, targetLocales, getLocale, setLocale
 import * as localization from "./localization/localization.js";
+// setTheme
 import * as color from "./color/color.js";
+// start, pause, resume, stop
 import * as progress from "./progress/progress.js";
+// toPascalCase, toCamelCase, toSnakeCase, toKebabCase, 
+// toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, 
+// toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, 
+// stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, 
+// parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, 
+// parseWeek, hexToRgba, hexToHsla, rgbaToHex, rgbaToHsla, 
+// hslaToRgba, hslaToHex, calcPercentage, calcDecimal, isValidHexColor, 
+// isObject, isArrayString, isDefined, createQueue, getBoundary
 import * as functions from "./functions/functions.js";
 
 import { MDRippleController } from "./ripple/ripple.js";
