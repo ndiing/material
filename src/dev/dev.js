@@ -112,7 +112,7 @@ const routes = [
             { path: "form", component: DevForm },
             { path: "form2", component: DevForm2 },
             // { path: "functions", component: DevFunctions },
-            // { path: "gesture", component: DevGesture },
+            { path: "gesture", component: DevGesture },
             { path: "icon-button", component: DevIconButton },
             { path: "icon", component: DevIcon },
             { path: "image", component: DevImage },

@@ -22,8 +22,8 @@ class MDGestureController {
      * Creates an instance of MDGestureController.
      * @param {HTMLElement} host - The host element to attach gesture events to.
      * @param {Object} options - Options for configuring gesture behavior.
-     * @property {string} [options.containerSelector] - Selector for the container element within the host.
-     * @property {string} [options.dragHandleSelector] - Selector for the drag handle element within the container.
+     * @property {string} [options.container] - Selector for the container element within the host.
+     * @property {string} [options.draggableHandle] - Selector for the drag handle element within the container.
      * @property {string[]} [options.drag=["x", "y"]] - Directions in which dragging is allowed ('x', 'y', or both).
      * @property {boolean} [options.dragAfterLongPress=false] - Whether dragging should start after a long press.
      * @property {string[]} [options.resize=["n", "e", "s", "w", "ne", "se", "sw", "nw"]] - Directions in which resizing is allowed ('n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw').
@@ -35,15 +35,19 @@ class MDGestureController {
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
-            containerSelector: null,
-            dragHandleSelector: null,
+            container: null,
+            draggableHandle: null,
             drag: ["x", "y"],
             dragAfterLongPress: false,
+
             resize: ["n", "e", "s", "w", "ne", "se", "sw", "nw"],
             resizeAfterLongPress: false,
+
             selection: false,
             selectionAfterLongPress: false,
+
             updateStyle: false,
+
             ...options,
         };
     }
@@ -69,29 +73,48 @@ class MDGestureController {
      */
     async hostConnected() {
         await this.host.updateComplete;
-        this.container = this.options.containerSelector ? this.host.querySelector(this.options.containerSelector) : this.host;
+
+        // container
+        this.container = this.host;
+        if (this.options.container) {
+            if (typeof this.options.container === "string") {
+                this.container = this.host.querySelector(this.options.container);
+            } else {
+                this.container = this.options.container;
+            }
+        }
         this.container.classList.add("md-gesture");
 
-        if (this.options.drag.length) {
-            this.dragHandle = this.options.dragHandleSelector ? this.container.querySelector(this.options.dragHandleSelector) : this.container;
-            this.dragHandle.classList.add("md-draggable");
-        }
-
-        if (this.options.resize.length) {
-            this.resizable = document.createElement("div");
-            this.resizable.classList.add("md-resizable");
-
-            for (const direction of this.options.resize) {
-                const handle = document.createElement("div");
-                handle.classList.add("md-resizable__handle");
-                handle.classList.add("md-resizable__handle--" + direction);
-                this.resizable.append(handle);
+        // draggableHandle
+        this.draggableHandle = this.container;
+        if (this.options.draggableHandle) {
+            if (typeof this.options.draggableHandle === "string") {
+                this.draggableHandle = this.host.querySelector(this.options.draggableHandle);
+            } else {
+                this.draggableHandle = this.options.draggableHandle;
             }
-            this.container.append(this.resizable);
         }
+        this.draggableHandle.classList.add("md-draggable");
+
+        // resizable
+        // resizableContainer
+        // resizableHandle
+        // resizableDirection
+        this.resizableContainer = document.createElement("div");
+        this.resizableContainer.classList.add("md-resizable");
+
+        for (const direction of this.options.resize) {
+            const resizableHandle = document.createElement("div");
+            resizableHandle.classList.add("md-resizable__handle");
+            resizableHandle.classList.add(`md-resizable__handle--${direction}`);
+            this.resizableContainer.append(resizableHandle);
+        }
+        this.container.append(this.resizableContainer);
+
         this.handleGesturePointerdown = this.handleGesturePointerdown.bind(this);
         this.handleGesturePointermove = this.handleGesturePointermove.bind(this);
         this.handleGesturePointerup = this.handleGesturePointerup.bind(this);
+
         this.container.addEventListener("pointerdown", this.handleGesturePointerdown);
     }
 
@@ -101,18 +124,18 @@ class MDGestureController {
      */
     async hostDisconnected() {
         await this.host.updateComplete;
+
         this.container.classList.remove("md-gesture");
 
-        if (this.dragHandle) {
-            this.dragHandle.classList.remove("md-draggable");
-            this.dragHandle.classList.remove("md-draggable--drag");
-        }
+        this.draggableHandle.classList.remove("md-draggable");
+        this.draggableHandle.classList.remove("md-draggable--dragged");
 
-        if (this.resizable) {
-            this.resizable.remove();
-        }
+        this.resizableContainer.remove();
+
         document.body.classList.remove("md-gesture--unselectable");
+
         this.container.removeEventListener("pointerdown", this.handleGesturePointerdown);
+
         window.removeEventListener("pointermove", this.handleGesturePointermove);
         window.removeEventListener("pointerup", this.handleGesturePointerup);
     }
@@ -127,55 +150,70 @@ class MDGestureController {
             return;
         }
 
-        const dragHandle = (this.options.dragHandleSelector ? event.target.closest(this.options.dragHandleSelector) : this.container) === this.dragHandle;
+        let draggableHandle = this.container;
+        if (this.options.draggableHandle) {
+            draggableHandle = event.target.closest(this.options.draggableHandle);
+        }
+        let hasDraggableHandle = draggableHandle === this.draggableHandle;
 
-        const resizeDirection = event.target.closest(".md-resizable__handle")?.classList.value.match(/--(\w+)$/)[1];
+        let resizableHandle = event.target.closest(".md-resizable__handle");
+        let resizableDirection;
+        if (resizableHandle) {
+            resizableDirection = resizableHandle.classList.value.match(/--(\w+)$/)[1];
+        }
 
         window.addEventListener("pointermove", this.handleGesturePointermove);
         window.addEventListener("pointerup", this.handleGesturePointerup);
 
         document.body.classList.add("md-gesture--unselectable");
+
         this.endX = this.endX || 0;
         this.endY = this.endY || 0;
+
         this.startX = event.clientX - this.endX;
         this.startY = event.clientY - this.endY;
+
         this.startWidth = this.container.clientWidth;
         this.startHeight = this.container.clientHeight;
+
         this.swipe = false;
         this.drag = false;
         this.dragged = false;
 
-        if (!this.options.dragAfterLongPress && dragHandle && !resizeDirection) {
+        if (this.options.drag.length && !this.options.dragAfterLongPress && hasDraggableHandle && !resizableDirection) {
             this.drag = true;
-            this.dragHandle.classList.add("md-draggable--drag");
+            this.draggableHandle.classList.add("md-draggable--dragged");
             this.emit("onDragStart", event);
         }
+
         this.resize = false;
 
-        if (!this.options.resizeAfterLongPress && resizeDirection) {
-            this.resize = resizeDirection;
+        if (this.options.resize.length && !this.options.resizeAfterLongPress && resizableDirection) {
+            this.resize = resizableDirection;
             this.emit("onResizeStart", event);
         }
+
         this.selection = false;
 
         if (!this.options.selectionAfterLongPress && this.options.selection) {
             this.selection = true;
             this.emit("onSelectionStart", event);
         }
+
         this.longPress = false;
 
         this.longPressTimeout = window.setTimeout(() => {
             this.longPress = true;
             this.emit("onLongPress", event);
 
-            if (this.options.dragAfterLongPress && dragHandle && !resizeDirection) {
+            if (this.options.drag.length && this.options.dragAfterLongPress && hasDraggableHandle && !resizableDirection) {
                 this.drag = true;
-                this.dragHandle.classList.add("md-draggable--drag");
+                this.draggableHandle.classList.add("md-draggable--dragged");
                 this.emit("onDragStart", event);
             }
 
-            if (this.options.resizeAfterLongPress && resizeDirection) {
-                this.resize = resizeDirection;
+            if (this.options.resize.length && this.options.resizeAfterLongPress && resizableDirection) {
+                this.resize = resizableDirection;
                 this.emit("onResizeStart", event);
             }
 
@@ -193,8 +231,10 @@ class MDGestureController {
      */
     handleGesturePointermove(event) {
         window.clearTimeout(this.longPressTimeout);
+
         const currentX = event.clientX - this.startX;
         const currentY = event.clientY - this.startY;
+
         this.swipe = !this.drag && !this.resize && (currentX - this.endX < -30 ? "Left" : currentY - this.endY < -30 ? "Top" : currentX - this.endX > 30 ? "Right" : currentY - this.endY > 30 ? "Bottom" : "");
 
         if (this.drag) {
@@ -207,6 +247,7 @@ class MDGestureController {
             if (this.options.drag.includes("y")) {
                 this.currentY = currentY;
             }
+
             this.emit("onDrag", event);
         }
 
@@ -228,6 +269,7 @@ class MDGestureController {
                 this.currentY = currentY;
                 this.currentHeight = this.startHeight - this.currentY + this.endY;
             }
+
             this.emit("onResize", event);
         }
 
@@ -263,8 +305,10 @@ class MDGestureController {
                 if (this.lastTap - this.lastDoubleTap !== 0) {
                     this.emit("onDoubleTap", event);
                 }
+
                 this.lastDoubleTap = performance.now();
             }
+
             this.lastTap = performance.now();
         }
 
@@ -277,14 +321,16 @@ class MDGestureController {
         }
 
         if (this.drag) {
-            this.dragHandle.classList.remove("md-draggable--drag");
+            this.draggableHandle.classList.remove("md-draggable--dragged");
             this.emit("onDragEnd", event);
         }
 
         if (this.resize) {
             this.emit("onResizeEnd", event);
         }
+
         document.body.classList.remove("md-gesture--unselectable");
+
         window.removeEventListener("pointermove", this.handleGesturePointermove);
         window.removeEventListener("pointerup", this.handleGesturePointerup);
     }
