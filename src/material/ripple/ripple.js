@@ -18,10 +18,8 @@ class MDRippleController {
     constructor(host, options = {}) {
         (this.host = host).addController(this);
         this.options = {
-            button: null,
             container: null,
-            buttonSelector: null,
-            containerSelector: null,
+            button: null,
             centered: false,
             clipped: false,
             fadeOut: false,
@@ -30,35 +28,111 @@ class MDRippleController {
         };
     }
 
+    get container() {
+        return this._container;
+    }
+
+    set container(value) {
+        if (this._value !== value) {
+            if (typeof value === "string") {
+                this._container = this.host.querySelector(value);
+            } else if (value) {
+                this._container = value;
+            } else {
+                this._container = this.host;
+            }
+            this.container.classList.add("md-ripple");
+        }
+    }
+
+    get button() {
+        return this._button;
+    }
+
+    set button(value) {
+        if (this._value !== value) {
+            if (typeof value === "string") {
+                this._button = this.host.querySelector(value);
+            } else if (value) {
+                this._button = value;
+            } else {
+                this._button = this.container;
+            }
+            this.button.classList.add("md-ripple--button");
+            this.button.setAttribute("tabIndex", 0);
+        }
+    }
+
+    get centered() {
+        return this._centered;
+    }
+
+    set centered(value) {
+        if (this._value !== value) {
+            this._centered = value;
+            this.container.classList.toggle("md-ripple--centered", !!this.centered);
+        }
+    }
+
+    get clipped() {
+        return this._clipped;
+    }
+
+    set clipped(value) {
+        if (this._value !== value) {
+            this._clipped = value;
+            this.container.classList.toggle("md-ripple--clipped", !!this.clipped);
+        }
+    }
+
+    get fadeOut() {
+        return this._fadeOut;
+    }
+
+    set fadeOut(value) {
+        if (this._value !== value) {
+            this._fadeOut = value;
+            this.container.classList.toggle("md-ripple--fade-out", !!this.fadeOut);
+        }
+    }
+
+    get size() {
+        if (this._size) {
+            return (this._size / this.container.clientWidth) * 100;
+        }
+        return (Math.sqrt(Math.pow(this.container.clientWidth, 2) + Math.pow(this.container.clientHeight, 2)) / this.container.clientWidth) * 100;
+    }
+
+    set size(value) {
+        if (this._value !== value) {
+            this._size = value;
+            this.container.style.setProperty("--md-comp-ripple-size", `${this.size}%`);
+        }
+    }
+
     /**
      * Performs tasks when the host element is connected to the DOM.
      * @private
      */
     async hostConnected() {
         await this.host.updateComplete;
-        let container = this.options.container || this.host.querySelector(this.options.containerSelector) || this.host;
-        this.container = container;
-        let button = this.options.button || this.host.querySelector(this.options.buttonSelector) || this.container;
-        this.button = button;
-        this.button.classList.add("md-ripple--button");
-        this.button.setAttribute("tabIndex", 0);
-        this.container.classList.add("md-ripple");
-        this.container.classList.toggle("md-ripple--clipped", !!this.options.clipped);
-        this.container.classList.toggle("md-ripple--fade-out", !!this.options.fadeOut);
 
-        if (this.options.size) {
-            this.size = (this.options.size / this.container.clientWidth) * 100;
-        } else {
-            this.size = (Math.sqrt(Math.pow(this.container.clientWidth, 2) + Math.pow(this.container.clientHeight, 2)) / this.container.clientWidth) * 100;
-        }
-        this.container.style.setProperty("--md-comp-ripple-size", `${this.size}%`);
+        this.container = this.options.container;
+        this.button = this.options.button;
+        this.centered = this.options.centered;
+        this.clipped = this.options.clipped;
+        this.fadeOut = this.options.fadeOut;
+        this.size = this.options.size;
+
         this.container.style.setProperty("--md-comp-ripple-animation", "none");
+
         this.handleRipplePointerenter = this.handleRipplePointerenter.bind(this);
         this.handleRipplePointerleave = this.handleRipplePointerleave.bind(this);
         this.handleRipplePointerdown = this.handleRipplePointerdown.bind(this);
         this.handleRipplePointerup = this.handleRipplePointerup.bind(this);
         this.handleRippleFocus = this.handleRippleFocus.bind(this);
         this.handleRippleBlur = this.handleRippleBlur.bind(this);
+
         this.button.addEventListener("pointerenter", this.handleRipplePointerenter);
         this.button.addEventListener("pointerleave", this.handleRipplePointerleave);
         this.button.addEventListener("pointerdown", this.handleRipplePointerdown);
@@ -72,6 +146,7 @@ class MDRippleController {
      */
     async hostDisconnected() {
         await this.host.updateComplete;
+
         this.button.removeEventListener("pointerenter", this.handleRipplePointerenter);
         this.button.removeEventListener("pointerleave", this.handleRipplePointerleave);
         this.button.removeEventListener("pointerdown", this.handleRipplePointerdown);
@@ -85,6 +160,7 @@ class MDRippleController {
      */
     handleRipplePointerenter() {
         this.container.style.removeProperty("--md-comp-ripple-animation");
+
         this.container.classList.add("md-ripple--hover");
     }
 
@@ -103,9 +179,13 @@ class MDRippleController {
      */
     handleRipplePointerdown(event) {
         this.container.classList.add("md-ripple--pressed");
+
         window.addEventListener("pointerup", this.handleRipplePointerup);
+
         this.container.style.setProperty("--md-comp-ripple-animation", "none");
+
         const rect = this.container.getBoundingClientRect();
+
         this.container.style.removeProperty("--md-comp-ripple-animation");
 
         if (!this.options.centered) {
@@ -114,6 +194,7 @@ class MDRippleController {
             const top = (event.clientY - rect.top) / rect.height;
             const x = (0.5 - left) * (100 / size);
             const y = (0.5 - top) * ((100 / size) * (rect.height / rect.width));
+
             this.container.style.setProperty("--md-comp-ripple-size", `${size}%`);
             this.container.style.setProperty("--md-comp-ripple-left", `${left * 100}%`);
             this.container.style.setProperty("--md-comp-ripple-top", `${top * 100}%`);
@@ -128,6 +209,7 @@ class MDRippleController {
      */
     handleRipplePointerup() {
         this.container.classList.remove("md-ripple--pressed");
+
         window.removeEventListener("pointerup", this.handleRipplePointerup);
     }
 

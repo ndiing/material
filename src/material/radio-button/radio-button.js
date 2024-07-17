@@ -35,8 +35,8 @@ class MDRadioButtonComponent extends MDComponent {
     constructor() {
         super();
         this.ripple = new MDRippleController(this, {
-            buttonSelector: ".md-radio-button__native",
-            containerSelector: ".md-radio-button__track",
+            button: ".md-radio-button__native",
+            container: ".md-radio-button__track",
             size: 40,
             centered: true,
             fadeOut: true,

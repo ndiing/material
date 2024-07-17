@@ -81,11 +81,89 @@ import { MDSelectFieldComponent } from "./select-field/select-field.js";
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
 
 import { MDPaginationComponent } from "./pagination/pagination.js";
+
+/**@deprecated*/
 import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
+/**@deprecated*/
 import { MDDataTableNativeColumnComponent } from "./data-table/data-table-native-column.js";
+/**@deprecated*/
 import { MDDataTableComponent } from "./data-table/data-table.js";
 
 import "./data-grid-item/data-grid-item.js";
 import "./data-grid/data-grid.js";
 
-export { MDObserver, MDMediaObserver, MDAttributeObserver, MDStore, MDRouter, localization, color, progress, functions, MDRippleController, MDPopperController, MDGestureController, MDVirtualController, MDComponent, MDMarkdownComponent, MDIconComponent, MDEmojiComponent, MDImageComponent, MDBadgeComponent, MDButtonComponent, MDIconButtonComponent, MDSegmentedButtonComponent, MDFabComponent, MDCardComponent, MDScrimComponent, MDSheetComponent, MDDialogComponent, MDTopAppBarComponent, MDSideSheetComponent, MDBottomSheetComponent, MDSnackbarComponent, MDTooltipComponent, MDBottomAppBarComponent, MDDatetimePickerComponent, MDDatePickerComponent, MDMonthPickerComponent, MDTimePickerComponent, MDWeekPickerComponent, MDColorPickerComponent, MDEmojiPickerComponent, MDListItemComponent, MDListComponent, MDTreeItemComponent, MDTreeComponent, MDNavigationBarComponent, MDNavigationDrawerComponent, MDNavigationRailComponent, MDMenuComponent, MDTabsComponent, MDChipComponent, MDChipsComponent, MDFormComponent, MDCheckboxComponent, MDRadioButtonComponent, MDSwitchComponent, MDSliderComponent, MDTextFieldComponent, MDDatetimeFieldComponent, MDDateFieldComponent, MDMonthFieldComponent, MDWeekFieldComponent, MDTimeFieldComponent, MDColorFieldComponent, MDNumberFieldComponent, MDSearchFieldComponent, MDPasswordFieldComponent, MDTextareaFieldComponent, MDSelectFieldComponent, MDProgressIndicatorComponent, MDPaginationComponent, MDDataTableItemComponent, MDDataTableNativeColumnComponent, MDDataTableComponent };
+export {
+    MDObserver,
+    MDMediaObserver,
+    MDAttributeObserver,
+    MDStore,
+    MDRouter,
+    localization, // fn
+    color, // fn
+    progress, // fn
+    functions, // fn
+    MDRippleController,
+    MDPopperController,
+    MDGestureController,
+    MDVirtualController,
+    MDComponent,
+    MDMarkdownComponent,
+    MDIconComponent,
+    MDEmojiComponent,
+    MDImageComponent,
+    MDBadgeComponent,
+    MDButtonComponent,
+    MDIconButtonComponent,
+    MDSegmentedButtonComponent,
+    MDFabComponent,
+    MDCardComponent,
+    MDScrimComponent,
+    MDSheetComponent,
+    MDDialogComponent,
+    MDTopAppBarComponent,
+    MDSideSheetComponent,
+    MDBottomSheetComponent,
+    MDSnackbarComponent,
+    MDTooltipComponent,
+    MDBottomAppBarComponent,
+    MDDatetimePickerComponent,
+    MDDatePickerComponent,
+    MDMonthPickerComponent,
+    MDTimePickerComponent,
+    MDWeekPickerComponent,
+    MDColorPickerComponent,
+    MDEmojiPickerComponent,
+    MDListItemComponent,
+    MDListComponent,
+    MDTreeItemComponent,
+    MDTreeComponent,
+    MDNavigationBarComponent,
+    MDNavigationDrawerComponent,
+    MDNavigationRailComponent,
+    MDMenuComponent,
+    MDTabsComponent,
+    MDChipComponent,
+    MDChipsComponent,
+    MDFormComponent,
+    MDCheckboxComponent,
+    MDRadioButtonComponent,
+    MDSwitchComponent,
+    MDSliderComponent,
+    MDTextFieldComponent,
+    MDDatetimeFieldComponent,
+    MDDateFieldComponent,
+    MDMonthFieldComponent,
+    MDWeekFieldComponent,
+    MDTimeFieldComponent,
+    MDColorFieldComponent,
+    MDNumberFieldComponent,
+    MDSearchFieldComponent,
+    MDPasswordFieldComponent,
+    MDTextareaFieldComponent,
+    MDSelectFieldComponent,
+    MDProgressIndicatorComponent,
+    MDPaginationComponent,
+    MDDataTableItemComponent,
+    MDDataTableNativeColumnComponent,
+    MDDataTableComponent,
+};

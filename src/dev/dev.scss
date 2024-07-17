@@ -1,91 +1,18 @@
-.dev-ripple {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    width: 112px;
-    height: 112px;
-    background-color: var(--md-sys-color-surface-container);
-    color: var(--md-sys-color-on-surface);
-    position: relative;
+.dev-ripple__item{
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 24px;
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level0);
 }
-
-.dev-ripple-inner {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    width: 24px;
-    height: 24px;
-    background-color: var(--md-sys-color-surface-container-highest);
-    color: var(--md-sys-color-on-surface);
-    position: absolute;
-    left: 24px;
-    top: 24px;
-}
-
-.dev-emoji-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 88px 0;
-}
-.dev-emoji-row {
-    display: flex;
-    gap: 0 88px;
-}
-.dev-emoji-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 88px;
-    height: 88px;
-    gap: 8px 0;
-}
-// .dev-emoji-label{}
-.dev-emoji-emoji {
-    width: 48px;
-    height: 48px;
-    font-size: 48px;
-}
-.dev-emoji-text {
-    text-align: center;
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 16px;
-    height: 32px;
-    width: 88px;
-}
-
-.dev-icon-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 88px 0;
-}
-.dev-icon-row {
-    display: flex;
-    gap: 0 88px;
-}
-.dev-icon-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 88px;
-    height: 88px;
-    gap: 8px 0;
-}
-// .dev-icon-label{}
-.dev-icon-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 48px;
-}
-.dev-icon-text {
-    text-align: center;
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 16px;
-    height: 32px;
-    width: 88px;
+.dev-ripple__inner{
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 24px;
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level0);
 }

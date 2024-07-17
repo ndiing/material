@@ -35,8 +35,8 @@ class MDCheckboxComponent extends MDComponent {
     constructor() {
         super();
         this.ripple = new MDRippleController(this, {
-            buttonSelector: ".md-checkbox__native",
-            containerSelector: ".md-checkbox__track",
+            button: ".md-checkbox__native",
+            container: ".md-checkbox__track",
             size: 40,
             centered: true,
             fadeOut: true,

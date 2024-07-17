@@ -202,12 +202,12 @@
     }
 }
 
-.md-data-table__sticky--left-end {
+.md-data-grid__sticky--left-end {
     .md-data-grid__item {
         border-right: 1px solid var(--md-sys-color-outline-variant);
     }
 }
-.md-data-table__sticky--right-start {
+.md-data-grid__sticky--right-start {
     .md-data-grid__item {
         border-left: 1px solid var(--md-sys-color-outline-variant);
     }

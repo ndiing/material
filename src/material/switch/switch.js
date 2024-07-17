@@ -40,8 +40,8 @@ class MDSwitchComponent extends MDComponent {
         super();
 
         this.ripple = new MDRippleController(this, {
-            buttonSelector: ".md-switch__native",
-            containerSelector: ".md-switch__thumb",
+            button: ".md-switch__native",
+            container: ".md-switch__thumb",
             size: 40,
             centered: true,
             fadeOut: true,

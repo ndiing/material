@@ -3,6 +3,7 @@ import { MDCardComponent, MDStore, MDVirtualController } from "../material.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
+import { ref } from "lit/directives/ref.js";
 
 class MDDataGridComponent extends MDCardComponent {
     static properties = {
@@ -134,22 +135,22 @@ class MDDataGridComponent extends MDCardComponent {
 
     classDataGridColumnCell(column) {
         return classMap({
-            "md-data-table__sticky--left-end": column.stickyLeftEnd,
-            "md-data-table__sticky--right-start": column.stickyRightStart,
+            "md-data-grid__sticky--left-end": column.stickyLeftEnd,
+            "md-data-grid__sticky--right-start": column.stickyRightStart,
         });
     }
 
     classDataGridRowCell(column) {
         return classMap({
-            "md-data-table__sticky--left-end": column.stickyLeftEnd,
-            "md-data-table__sticky--right-start": column.stickyRightStart,
+            "md-data-grid__sticky--left-end": column.stickyLeftEnd,
+            "md-data-grid__sticky--right-start": column.stickyRightStart,
         });
     }
 
     classDataGridFooterCell(column) {
         return classMap({
-            "md-data-table__sticky--left-end": column.stickyLeftEnd,
-            "md-data-table__sticky--right-start": column.stickyRightStart,
+            "md-data-grid__sticky--left-end": column.stickyLeftEnd,
+            "md-data-grid__sticky--right-start": column.stickyRightStart,
         });
     }
 
@@ -174,6 +175,7 @@ class MDDataGridComponent extends MDCardComponent {
                             <th
                                 style="${this.styleDataGridColumnCell(column)}"
                                 class="${this.classDataGridColumnCell(column)}"
+                                ${ref(this.handleDataGridColumnCellRef)}
                             >${this.renderDataGridItem({
                                 label: column.label
                             })}</th>
@@ -319,7 +321,15 @@ class MDDataGridComponent extends MDCardComponent {
         }
 
         if (changedProperties.has("rows")) {
-            console.log(this.rows);
+            // console.log(this.rows);
+        }
+    }
+
+    async handleDataGridColumnCellRef(th) {
+        await this.updateComplete;
+        if (th) {
+            
+        } else {
         }
     }
 
