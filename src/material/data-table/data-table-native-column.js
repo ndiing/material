@@ -15,7 +15,6 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      * @private
      */
     connectedCallback() {
-        this.gesture.hostConnected();
     }
 
     /**
@@ -23,7 +22,6 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      * @private
      */
     disconnectedCallback() {
-        this.gesture.hostDisconnected();
     }
 
     /**
