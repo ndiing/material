@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
-import { MDGestureController } from "../gesture/gesture.js";
 
 /**
  * List item component for displaying items in a list with optional selection and actions.
@@ -57,14 +56,6 @@ class MDListItemComponent extends MDComponent {
         super();
         this.ripple = new MDRippleController(this, {
             clipped: true,
-        });
-        this.gesture = new MDGestureController(this, {
-            drag: [],
-            dragAfterLongPress: true,
-            resize: [],
-            resizeAfterLongPress: true,
-            selection: true,
-            selectionAfterLongPress: true,
         });
     }
 

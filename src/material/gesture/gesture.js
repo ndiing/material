@@ -126,10 +126,14 @@ class MDGestureController {
         if (event.button !== 0) {
             return;
         }
+
         const dragHandle = (this.options.dragHandleSelector ? event.target.closest(this.options.dragHandleSelector) : this.container) === this.dragHandle;
+
         const resizeDirection = event.target.closest(".md-resizable__handle")?.classList.value.match(/--(\w+)$/)[1];
+
         window.addEventListener("pointermove", this.handleGesturePointermove);
         window.addEventListener("pointerup", this.handleGesturePointerup);
+
         document.body.classList.add("md-gesture--unselectable");
         this.endX = this.endX || 0;
         this.endY = this.endY || 0;

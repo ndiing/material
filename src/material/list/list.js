@@ -21,7 +21,6 @@ class MDListComponent extends MDComponent {
      * @property {Array} list - List of items to display.
      * @property {Object} map - Mapping configuration for list items.
      * @property {Function} format - Function for formatting list item labels.
-     * @property {Boolean} selection - Indicates if selection mode is enabled.
      * @property {Boolean} rangeSelection - Indicates if range selection mode is enabled.
      * @property {Boolean} multiSelection - Indicates if multi-selection mode is enabled.
      * @property {Boolean} singleSelection - Indicates if single-selection mode is enabled.
@@ -31,7 +30,6 @@ class MDListComponent extends MDComponent {
         list: { type: Array },
         map: { type: Object },
         format: { type: Function },
-        selection: { type: Boolean },
         rangeSelection: { type: Boolean },
         multiSelection: { type: Boolean },
         singleSelection: { type: Boolean },
@@ -135,10 +133,6 @@ class MDListComponent extends MDComponent {
      */
     selectToggle(data) {
         data.selected = !data.selected;
-
-        if (this.selectionMode && this.list.findIndex((item) => item.selected) === -1) {
-            this.selectionMode = false;
-        }
     }
 
     /**
@@ -185,7 +179,7 @@ class MDListComponent extends MDComponent {
 
         if (this.rangeSelection && event.shiftKey) {
             this.selectRange(data);
-        } else if ((this.multiSelection && event.ctrlKey) || this.selectionMode) {
+        } else if (this.multiSelection && event.ctrlKey) {
             this.selectToggle(data);
         } else if (this.singleSelection) {
             this.select(data);
@@ -207,56 +201,6 @@ class MDListComponent extends MDComponent {
             this.requestUpdate();
         }
         this.emit("onListKeydown", event);
-    }
-
-    /**
-     * Handles the start of item selection.
-     * @private
-     * @param {CustomEvent} event - The selection start event.
-     */
-    handleListItemSelectionStart(event) {
-        if (!this.selection) {
-            return;
-        }
-        const data = event.currentTarget.data;
-        this.select(data);
-        this.requestUpdate();
-        this.emit("onListItemSelectionStart", event);
-    }
-
-    /**
-     * Handles ongoing item selection.
-     * @private
-     * @param {CustomEvent} event - The selection event.
-     */
-    handleListItemSelection(event) {
-        if (!this.selection) {
-            return;
-        }
-        const data = event.detail.target.closest(".md-list__item")?.data;
-
-        if (data && this.data !== data) {
-            this.data = data;
-            this.selectRange(data);
-            this.requestUpdate();
-        }
-        this.emit("onListItemSelection", event);
-    }
-
-    /**
-     * Handles the end of item selection.
-     * @private
-     * @param {CustomEvent} event - The selection end event.
-     */
-    async handleListItemSelectionEnd(event) {
-        if (!this.selection) {
-            return;
-        }
-
-        window.requestAnimationFrame(() => {
-            this.selectionMode = true;
-        });
-        this.emit("onListItemSelectionEnd", event);
     }
 
     /**

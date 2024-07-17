@@ -54,24 +54,24 @@ class MDVirtualController {
      */
     async hostConnected() {
         await this.host.updateComplete;
-        
-        this.viewport = this.host
-        if(typeof this.options.viewport === 'string'){
-            this.viewport = this.host.querySelector(this.options.viewport)
-        }else{
-            this.viewport=this.options.viewport
+
+        this.viewport = this.host;
+        if (typeof this.options.viewport === "string") {
+            this.viewport = this.host.querySelector(this.options.viewport);
+        } else {
+            this.viewport = this.options.viewport;
         }
 
-        if(typeof this.options.scrollbar === 'string'){
-            this.scrollbar = this.host.querySelector(this.options.scrollbar)
-        }else{
-            this.scrollbar=this.options.scrollbar
+        if (typeof this.options.scrollbar === "string") {
+            this.scrollbar = this.host.querySelector(this.options.scrollbar);
+        } else {
+            this.scrollbar = this.options.scrollbar;
         }
-        
-        if(typeof this.options.container === 'string'){
-            this.container = this.host.querySelector(this.options.container)
-        }else{
-            this.container=this.options.container
+
+        if (typeof this.options.container === "string") {
+            this.container = this.host.querySelector(this.options.container);
+        } else {
+            this.container = this.options.container;
         }
 
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);

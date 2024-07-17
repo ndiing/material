@@ -1,5 +1,3 @@
-import { MDGestureController } from "../gesture/gesture.js";
-
 /**
  * Represents a data table column with gesture controls for dragging and resizing.
  * @extends HTMLTableCellElement
@@ -10,10 +8,6 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      */
     constructor() {
         super();
-        this.gesture = new MDGestureController(this, {
-            drag: ["x"],
-            resize: ["e"],
-        });
     }
 
     /**

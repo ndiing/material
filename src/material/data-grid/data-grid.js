@@ -341,10 +341,6 @@ class MDDataGridComponent extends MDCardComponent {
 
     selectToggle(data) {
         data.selected = !data.selected;
-
-        if (this.selectionMode && this.rows.findIndex((item) => item.selected) === -1) {
-            this.selectionMode = false;
-        }
     }
 
     selectRange(data) {
