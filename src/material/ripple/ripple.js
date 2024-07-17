@@ -168,8 +168,8 @@ class MDRippleController {
     }
 
     /**
-     * @private
      * Called when the host element is connected to the DOM.
+     * @private
      */
     async hostConnected() {
         await this.host.updateComplete;
@@ -198,8 +198,8 @@ class MDRippleController {
     }
 
     /**
-     * @private
      * Called when the host element is disconnected from the DOM.
+     * @private
      */
     async hostDisconnected() {
         await this.host.updateComplete;
@@ -212,8 +212,8 @@ class MDRippleController {
     }
 
     /**
-     * @private
      * Handles the pointerenter event for the ripple effect.
+     * @private
      */
     handleRipplePointerenter() {
         this.container.style.removeProperty("--md-comp-ripple-animation");
@@ -222,16 +222,16 @@ class MDRippleController {
     }
 
     /**
-     * @private
      * Handles the pointerleave event for the ripple effect.
+     * @private
      */
     handleRipplePointerleave() {
         this.container.classList.remove("md-ripple--hover");
     }
 
     /**
-     * @private
      * Handles the pointerdown event for the ripple effect.
+     * @private
      * @param {PointerEvent} event - The pointerdown event.
      */
     handleRipplePointerdown(event) {
@@ -261,8 +261,8 @@ class MDRippleController {
     }
 
     /**
-     * @private
      * Handles the pointerup event for the ripple effect.
+     * @private
      */
     handleRipplePointerup() {
         this.container.classList.remove("md-ripple--pressed");
@@ -271,16 +271,16 @@ class MDRippleController {
     }
 
     /**
-     * @private
      * Handles the focus event for the ripple effect.
+     * @private
      */
     handleRippleFocus() {
         this.container.classList.add("md-ripple--focused");
     }
 
     /**
-     * @private
      * Handles the blur event for the ripple effect.
+     * @private
      */
     handleRippleBlur() {
         this.container.classList.remove("md-ripple--focused");

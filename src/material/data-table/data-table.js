@@ -310,9 +310,9 @@ class MDDataTableComponent extends MDCardComponent {
         });
         this.storeTotal = total;
         this.storeRows = docs;
-        this.virtual.options.rowTotal = this._end - this._start;
-        this.virtual.options.rowHeight = 52;
-        this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
+        this.virtual.rowTotal = this._end - this._start;
+        this.virtual.rowHeight = 52;
+        this.virtual.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
     }
 
     /**
@@ -320,9 +320,10 @@ class MDDataTableComponent extends MDCardComponent {
      * @private
      */
     updateVirtualColumns() {
-        this.virtual.options.columnTotal = this.columns.length;
-        this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + prev.width, 0) / this.columns.length;
-        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);
+        // console.log(this.columns.length)
+        this.virtual.columnTotal = this.columns.length;
+        this.virtual.columnWidth = this.columns.reduce((acc, prev) => acc + prev.width, 0) / this.columns.length;
+        this.virtual.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);
     }
 
     /**
@@ -401,6 +402,8 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtualRows = this.storeRows.filter((row, index) => {
             return index >= this.virtual.rowStart && index <= this.virtual.rowEnd;
         });
+        console.log(this.virtualColumns)
+        console.log(this.virtualRows)
         this.requestUpdate();
         this.emit("onDataTableViewportVirtualScroll", event);
     }

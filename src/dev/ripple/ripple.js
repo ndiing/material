@@ -13,44 +13,44 @@ class DevRipple extends MDComponent {
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>centered ripple</md-markdown>
                             <pre
-                                class="dev-ripple__item"
+                                class="dev-ripple__container"
                                 ${ref(this.handleRipple1Ref)}
                             >${JSON.stringify({ centered: true }, null, 4)}</pre>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>clipped ripple</md-markdown>
                             <pre
-                                class="dev-ripple__item"
+                                class="dev-ripple__container"
                                 ${ref(this.handleRipple2Ref)}
                             >${JSON.stringify({ clipped: true }, null, 4)}</pre>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>fade out ripple</md-markdown>
                             <pre
-                                class="dev-ripple__item"
+                                class="dev-ripple__container"
                                 ${ref(this.handleRipple3Ref)}
                             >${JSON.stringify({ fadeOut: true }, null, 4)}</pre>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>ripple with custom size</md-markdown>
                             <pre
-                                class="dev-ripple__item"
+                                class="dev-ripple__container"
                                 ${ref(this.handleRipple4Ref)}
                             >${JSON.stringify({ size: 100 }, null, 4)}</pre>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>show ripple when interact with button</md-markdown>
                             <div
-                                class="dev-ripple__item"
+                                class="dev-ripple__container"
                                 ${ref(this.handleRipple5Ref)}
-                            ><pre class="dev-ripple__inner">${JSON.stringify({ button: ".dev-ripple__inner" }, null, 4)}</pre></div>
+                            ><pre class="dev-ripple__button">${JSON.stringify({ button: ".dev-ripple__button" }, null, 4)}</pre></div>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>show ripple in container</md-markdown>
                             <div
-                                class="dev-ripple__item"
+                                class="dev-ripple__container"
                                 ${ref(this.handleRipple6Ref)}
-                            ><pre class="dev-ripple__inner">${JSON.stringify({ container: ".dev-ripple__inner" }, null, 4)}</pre></div>
+                            ><pre class="dev-ripple__button">${JSON.stringify({ container: ".dev-ripple__button" }, null, 4)}</pre></div>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ class DevRipple extends MDComponent {
     async handleRipple5Ref(element) {
         if (element) {
             element.addController = (element) => element;
-            this.ripple5 = new MDRippleController(element, { button: ".dev-ripple__inner" });
+            this.ripple5 = new MDRippleController(element, { button: ".dev-ripple__button" });
             this.ripple5.hostConnected();
         } else {
             this.ripple5.hostDisconnected();
@@ -111,7 +111,7 @@ class DevRipple extends MDComponent {
     async handleRipple6Ref(element) {
         if (element) {
             element.addController = (element) => element;
-            this.ripple6 = new MDRippleController(element, { container: ".dev-ripple__inner" });
+            this.ripple6 = new MDRippleController(element, { container: ".dev-ripple__button" });
             this.ripple6.hostConnected();
         } else {
             this.ripple6.hostDisconnected();
