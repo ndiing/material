@@ -167,6 +167,7 @@
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
         background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface-variant);
+        vertical-align: top;
 
         &:first-child {
             border-left: 1px solid var(--md-sys-color-outline-variant);
@@ -178,6 +179,7 @@
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
         padding: calc(((52px - var(--md-sys-typescale-body-large-line-height)) / 2) + (4px * 0)) 24px;
         @include typescale-body-large();
+        vertical-align: top;
 
         &:first-child {
             border-left: 1px solid var(--md-sys-color-outline-variant);

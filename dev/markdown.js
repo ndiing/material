@@ -45,18 +45,18 @@ for (let name in grouped) {
                 markdown += `${val.description}\r\n`;
                 markdown += `\r\n`;
                 if (val?.params?.length) {
-                    markdown += `Name | Type | Description\r\n`;
-                    markdown += `--- | --- | ---\r\n`;
+                    markdown += `Name | Type | Default | Description\r\n`;
+                    markdown += `--- | --- | --- | ---\r\n`;
                     for (let param of val?.params || []) {
-                        markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                        markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.defaultvalue,param.description].join(" | ")}\r\n`;
                     }
                     markdown += `\r\n`;
                 }
                 if (val?.properties?.length) {
-                    markdown += `Name | Type | Description\r\n`;
-                    markdown += `--- | --- | ---\r\n`;
+                    markdown += `Name | Type | Default | Description\r\n`;
+                    markdown += `--- | --- | --- | ---\r\n`;
                     for (let param of val?.properties || []) {
-                        markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                        markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``),param.defaultvalue, param.description].join(" | ")}\r\n`;
                     }
                     markdown += `\r\n`;
                 }
@@ -77,7 +77,7 @@ for (let name in grouped) {
                 for (let fire of val?.fires || []) {
                     let [longname, desc] = fire.split(" - ");
                     let [, name] = longname.split(":");
-                    markdown += `${[`\`${name}\``, desc].filter(Boolean).join(" | ")}\r\n`;
+                    markdown += `${[`\`${name}\``, desc].join(" | ")}\r\n`;
                 }
                 markdown += `\r\n`;
             }
@@ -103,23 +103,23 @@ for (let name in grouped) {
             markdown += `## Properties\r\n`;
         }
         markdown += `\r\n`;
-        markdown += `Name | Type | Description\r\n`;
-        markdown += `--- | --- | ---\r\n`;
+        markdown += `Name | Type | Default | Description\r\n`;
+        markdown += `--- | --- | --- | ---\r\n`;
 
         for (let val of value) {
             // markdown += `### ${val.name}\r\n`;
             // markdown += `${val.description}\r\n`;
             // markdown += `\r\n`;
             if (val?.properties?.length) {
-                // markdown += `Name | Type | Description\r\n`;
-                // markdown += `--- | --- | ---\r\n`;
+                // markdown += `Name | Type | Default | Description\r\n`;
+                // markdown += `--- | --- | --- | ---\r\n`;
                 for (let prop of val?.properties || []) {
-                    markdown += `${[`\`${prop.name}\``, prop.type.names.map((name) => `\`${name}\``), prop.description].filter(Boolean).join(" | ")}\r\n`;
+                    markdown += `${[`\`${prop.name}\``, prop.type.names.map((name) => `\`${name}\``),prop.defaultvalue, prop.description].join(" | ")}\r\n`;
                 }
                 // markdown += `\r\n`;
             } else {
                 let acc = val.meta.code.paramnames?.length ? "set" : "get";
-                markdown += `${[`\`${val.name}\``, `\`${acc}\``, val.description].filter(Boolean).join(" | ")}\r\n`;
+                markdown += `${[`\`${val.name}\``, `\`${acc}\``, '',val.description].join(" | ")}\r\n`;
             }
         }
     }
@@ -138,24 +138,25 @@ for (let name in grouped) {
             markdown += `\r\n`;
 
             if (val?.params?.length) {
-                markdown += `Name | Type | Description\r\n`;
-                markdown += `--- | --- | ---\r\n`;
+                markdown += `Name | Type | Default | Description\r\n`;
+                markdown += `--- | --- | --- | ---\r\n`;
                 for (let param of val?.params || []) {
-                    markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                    console.log(param)
+                    markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``),param.defaultvalue, param.description].join(" | ")}\r\n`;
                 }
                 markdown += `\r\n`;
             }
             markdown += `\r\n`;
             if (val?.properties?.length) {
-                markdown += `Name | Type | Description\r\n`;
-                markdown += `--- | --- | ---\r\n`;
+                markdown += `Name | Type | Default | Description\r\n`;
+                markdown += `--- | --- | --- | ---\r\n`;
                 for (let param of val?.properties || []) {
-                    markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                    markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``),param.defaultvalue, param.description].join(" | ")}\r\n`;
                 }
                 markdown += `\r\n`;
             }
             if (val.returns?.length) {
-                markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``), val.returns?.[0]?.description].filter(Boolean).join("\r\n")}\r\n`;
+                markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``),'', val.returns?.[0]?.description].join("\r\n")}\r\n`;
                 markdown += `\r\n`;
             }
             if (val?.examples?.length) {
@@ -182,24 +183,24 @@ for (let name in grouped) {
             markdown += `\r\n`;
 
             if (val?.params?.length) {
-                markdown += `Name | Type | Description\r\n`;
-                markdown += `--- | --- | ---\r\n`;
+                markdown += `Name | Type | Default | Description\r\n`;
+                markdown += `--- | --- | --- | ---\r\n`;
                 for (let param of val?.params || []) {
-                    markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                    markdown += `${[`\`${param.name}\``, param.type.names.map((name) => `\`${name}\``),param.defaultvalue, param.description].join(" | ")}\r\n`;
                 }
                 markdown += `\r\n`;
             }
             markdown += `\r\n`;
             if (val?.properties?.length) {
-                markdown += `Name | Type | Description\r\n`;
-                markdown += `--- | --- | ---\r\n`;
+                markdown += `Name | Type | Default | Description\r\n`;
+                markdown += `--- | --- | --- | ---\r\n`;
                 for (let param of val?.properties || []) {
-                    markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``), param.description].filter(Boolean).join(" | ")}\r\n`;
+                    markdown += `${[param.name, param.type.names.map((name) => `\`${name}\``), param.defaultvalue, param.description].join(" | ")}\r\n`;
                 }
                 markdown += `\r\n`;
             }
             if (val.returns?.length) {
-                markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``), val.returns?.[0]?.description].filter(Boolean).join("\r\n")}\r\n`;
+                markdown += `${["Return", val.returns?.[0]?.type?.names.map((name) => `\`${name}\``), '',val.returns?.[0]?.description].join("\r\n")}\r\n`;
                 markdown += `\r\n`;
             }
             if (val?.examples?.length) {
