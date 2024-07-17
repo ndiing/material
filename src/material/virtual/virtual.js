@@ -113,8 +113,6 @@ class MDVirtualController {
             this.columnLimit = Math.min(this.options.columnTotal - this.columnStart, this.columnLimit);
             this.columnEnd = this.columnStart + this.columnLimit;
             this.translateX = this.columnStart * this.options.columnWidth;
-
-            // console.log(this)
         }
 
         this.scrollbar.style.width = `${this.scrollbarWidth || 1}px`;

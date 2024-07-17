@@ -110,9 +110,9 @@ class MDPopperController {
      */
     setPosition(button, options = {}) {
         options = {
-            // container: null,
+            container: null,
             boundary: null,
-            // button: null,
+            button: null,
             /* prettier-ignore */
             placements: [
                 "top","top-start","top-end",

@@ -1,6 +1,4 @@
-// import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-// import { createRef, ref } from "lit/directives/ref.js";
 
 function emojiToHexadecimal(emoji) {
     const codePoint = emoji.codePointAt(0);
@@ -30,8 +28,6 @@ class MDEmojiComponent extends MDComponent {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
     }
 
-    // emojiNative=createRef()
-
     constructor() {
         super();
     }
@@ -43,28 +39,11 @@ class MDEmojiComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-emoji");
-        // this.on("pointerenter", this.handleEmojiPointerenter);
-        // this.on("pointerleave", this.handleEmojiPointerleave);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        // this.off("pointerenter", this.handleEmojiPointerenter);
-        // this.off("pointerleave", this.handleEmojiPointerleave);
     }
-
-    // handleEmojiPointerenter() {
-    //     this.hover = true;
-    // }
-
-    // handleEmojiPointerleave() {
-    //     this.hover = false;
-    // }
-
-    // handleEmojiNativeError(event){
-    //     event.currentTarget.src=this.svg
-    //     event.currentTarget.onerror=null
-    // }
 }
 customElements.define("md-emoji", MDEmojiComponent);
 export { MDEmojiComponent };

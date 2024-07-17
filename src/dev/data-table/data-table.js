@@ -1,7 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-// Kolom-kolom yang telah ditentukan sebelumnya
 const columns = [
     { name: "symbol", label: "Symbol", resizable: true, orderable: true, sortable: true, sticky: true },
     { name: "company", label: "Company Name", resizable: true, orderable: true, sortable: true, sticky: true },
@@ -11,7 +10,6 @@ const columns = [
     { name: "marketCap", label: "Market Cap", type: "currency", resizable: true, orderable: true, sortable: true, sticky: true },
 ];
 
-// Generator untuk menghasilkan rows dengan data sesuai columns
 function generateRows(numRows) {
     const rows = [];
     for (let i = 1; i <= numRows; i++) {
@@ -26,8 +24,6 @@ function generateRows(numRows) {
     }
     return rows;
 }
-
-// Contoh menggunakan generator untuk membuat 10 baris data
 const rows = generateRows(10000);
 
 class DevDataTable extends MDComponent {

@@ -142,7 +142,6 @@ const options3 = JSON.parse(JSON.stringify(options));
 const options4 = JSON.parse(JSON.stringify(options));
 options4[17].selected = true;
 
-// Generator untuk menghasilkan options dengan pasangan label dan value
 function generateOptions(numOptions) {
     const options = [];
     for (let i = 1; i <= numOptions; i++) {
@@ -154,7 +153,6 @@ function generateOptions(numOptions) {
     return options;
 }
 
-// Contoh menggunakan generator untuk membuat 10 pasangan label dan value
 const options5 = generateOptions(10000);
 const options6 = generateOptions(10000);
 options6[17].selected = true;

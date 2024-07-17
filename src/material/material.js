@@ -10,13 +10,13 @@ import * as localization from "./localization/localization.js";
 import * as color from "./color/color.js";
 // start, pause, resume, stop
 import * as progress from "./progress/progress.js";
-// toPascalCase, toCamelCase, toSnakeCase, toKebabCase, 
-// toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase, 
-// toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal, 
-// stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek, 
-// parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime, 
-// parseWeek, hexToRgba, hexToHsla, rgbaToHex, rgbaToHsla, 
-// hslaToRgba, hslaToHex, calcPercentage, calcDecimal, isValidHexColor, 
+// toPascalCase, toCamelCase, toSnakeCase, toKebabCase,
+// toFlatCase, toUpperFlatCase, toPascalSnakeCase, toCamelSnakeCase,
+// toScreamingSnakeCase, toTrainCase, toCobolCase, toTitleCase, stringifyDatetimeLocal,
+// stringifyDate, stringifyYear, stringifyMonth, stringifyTime, stringifyWeek,
+// parseDatetimeLocal, parseDate, parseYear, parseMonth, parseTime,
+// parseWeek, hexToRgba, hexToHsla, rgbaToHex, rgbaToHsla,
+// hslaToRgba, hslaToHex, calcPercentage, calcDecimal, isValidHexColor,
 // isObject, isArrayString, isDefined, createQueue, getBoundary
 import * as functions from "./functions/functions.js";
 

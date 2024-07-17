@@ -320,7 +320,6 @@ class MDDataTableComponent extends MDCardComponent {
      * @private
      */
     updateVirtualColumns() {
-        // console.log(this.columns.length)
         this.virtual.options.columnTotal = this.columns.length;
         this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + prev.width, 0) / this.columns.length;
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);

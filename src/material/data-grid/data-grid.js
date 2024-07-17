@@ -90,7 +90,6 @@ class MDDataGridComponent extends MDCardComponent {
     }
 
     styleDataGridColumnCell(column) {
-        // console.log(column)
         return styleMap({
             "min-width": `${column.width}px`,
             ...(this.stickyHeader && {
@@ -107,7 +106,6 @@ class MDDataGridComponent extends MDCardComponent {
     }
 
     styleDataGridRowCell(column) {
-        // console.log(column)
         return styleMap({
             ...(column.sticky && {
                 position: "sticky",
@@ -118,7 +116,6 @@ class MDDataGridComponent extends MDCardComponent {
     }
 
     styleDataGridFooterCell(column) {
-        // console.log(column)
         return styleMap({
             ...(this.stickyFooter && {
                 position: "sticky",
@@ -321,7 +318,6 @@ class MDDataGridComponent extends MDCardComponent {
         }
 
         if (changedProperties.has("rows")) {
-            // console.log(this.rows);
         }
     }
 

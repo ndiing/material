@@ -38,7 +38,6 @@ class DevMenu extends MDComponent {
                                     { label: "Saudi Arabia", value: "SA" },
                                     { label: "Turkey", value: "TR" },
                                     { label: "Singapore", value: "SG" },
-                                    // Dan lain-lain
                                 ]}"
                                 @onMenuViewportVirtualScroll=""
                                 @onMenuListItemClick=""

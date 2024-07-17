@@ -33,15 +33,30 @@ class DevGesture extends MDComponent {
         this.gesture5 = new MDGestureController(this, {
             container: "#gesture5",
             resize: [],
-            dragAfterLongPress:true,
+            dragAfterLongPress: true,
             updateStyle: true,
         });
 
         this.gesture6 = new MDGestureController(this, {
             container: "#gesture6",
             drag: [],
-            resizeAfterLongPress:true,
+            resizeAfterLongPress: true,
             updateStyle: true,
+        });
+
+        this.gesture7 = new MDGestureController(this, {
+            container: "#gesture7",
+            drag: [],
+            resize: [],
+            selection: true,
+        });
+
+        this.gesture8 = new MDGestureController(this, {
+            container: "#gesture8",
+            drag: [],
+            resize: [],
+            selection: true,
+            selectionAfterLongPress: true,
         });
     }
 
@@ -50,26 +65,26 @@ class DevGesture extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
                                 id="gesture1"
                                 style="width:224px;height:224px;"
-                                @onTap="${event=>console.log(event.type)}"
-                                @onDoubleTap="${event=>console.log(event.type)}"
-                                @onLongPress="${event=>console.log(event.type)}"
-                                @onSwipeLeft="${event=>console.log(event.type)}"
-                                @onSwipeRight="${event=>console.log(event.type)}"
-                                @onSwipeTop="${event=>console.log(event.type)}"
-                                @onSwipeBottom="${event=>console.log(event.type)}"
-                                @onDragStart="${event=>console.log(event.type)}"
-                                @onDrag="${event=>console.log(event.type)}"
-                                @onDragEnd="${event=>console.log(event.type)}"
-                                @onResizeStart="${event=>console.log(event.type)}"
-                                @onResize="${event=>console.log(event.type)}"
-                                @onResizeEnd="${event=>console.log(event.type)}"
-                                @onSelectionStart="${event=>console.log(event.type)}"
-                                @onSelection="${event=>console.log(event.type)}"
-                                @onSelectionEnd="${event=>console.log(event.type)}"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
                                 .childNodes_="${JSON.stringify(
                                     {
                                         container: "#gesture1",
@@ -81,26 +96,26 @@ class DevGesture extends MDComponent {
                             ></md-card>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
                                 id="gesture2"
                                 style="width:224px;height:224px;"
-                                @onTap="${event=>console.log(event.type)}"
-                                @onDoubleTap="${event=>console.log(event.type)}"
-                                @onLongPress="${event=>console.log(event.type)}"
-                                @onSwipeLeft="${event=>console.log(event.type)}"
-                                @onSwipeRight="${event=>console.log(event.type)}"
-                                @onSwipeTop="${event=>console.log(event.type)}"
-                                @onSwipeBottom="${event=>console.log(event.type)}"
-                                @onDragStart="${event=>console.log(event.type)}"
-                                @onDrag="${event=>console.log(event.type)}"
-                                @onDragEnd="${event=>console.log(event.type)}"
-                                @onResizeStart="${event=>console.log(event.type)}"
-                                @onResize="${event=>console.log(event.type)}"
-                                @onResizeEnd="${event=>console.log(event.type)}"
-                                @onSelectionStart="${event=>console.log(event.type)}"
-                                @onSelection="${event=>console.log(event.type)}"
-                                @onSelectionEnd="${event=>console.log(event.type)}"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
                                 .childNodes_="${JSON.stringify(
                                     {
                                         container: "#gesture2",
@@ -113,26 +128,26 @@ class DevGesture extends MDComponent {
                             ></md-card>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
                                 id="gesture3"
                                 style="width:224px;height:224px;"
-                                @onTap="${event=>console.log(event.type)}"
-                                @onDoubleTap="${event=>console.log(event.type)}"
-                                @onLongPress="${event=>console.log(event.type)}"
-                                @onSwipeLeft="${event=>console.log(event.type)}"
-                                @onSwipeRight="${event=>console.log(event.type)}"
-                                @onSwipeTop="${event=>console.log(event.type)}"
-                                @onSwipeBottom="${event=>console.log(event.type)}"
-                                @onDragStart="${event=>console.log(event.type)}"
-                                @onDrag="${event=>console.log(event.type)}"
-                                @onDragEnd="${event=>console.log(event.type)}"
-                                @onResizeStart="${event=>console.log(event.type)}"
-                                @onResize="${event=>console.log(event.type)}"
-                                @onResizeEnd="${event=>console.log(event.type)}"
-                                @onSelectionStart="${event=>console.log(event.type)}"
-                                @onSelection="${event=>console.log(event.type)}"
-                                @onSelectionEnd="${event=>console.log(event.type)}"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
                                 .childNodes_="${JSON.stringify(
                                     {
                                         container: "#gesture3",
@@ -145,26 +160,26 @@ class DevGesture extends MDComponent {
                             ></md-card>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
                                 id="gesture4"
                                 style="width:224px;height:224px;"
-                                @onTap="${event=>console.log(event.type)}"
-                                @onDoubleTap="${event=>console.log(event.type)}"
-                                @onLongPress="${event=>console.log(event.type)}"
-                                @onSwipeLeft="${event=>console.log(event.type)}"
-                                @onSwipeRight="${event=>console.log(event.type)}"
-                                @onSwipeTop="${event=>console.log(event.type)}"
-                                @onSwipeBottom="${event=>console.log(event.type)}"
-                                @onDragStart="${event=>console.log(event.type)}"
-                                @onDrag="${event=>console.log(event.type)}"
-                                @onDragEnd="${event=>console.log(event.type)}"
-                                @onResizeStart="${event=>console.log(event.type)}"
-                                @onResize="${event=>console.log(event.type)}"
-                                @onResizeEnd="${event=>console.log(event.type)}"
-                                @onSelectionStart="${event=>console.log(event.type)}"
-                                @onSelection="${event=>console.log(event.type)}"
-                                @onSelectionEnd="${event=>console.log(event.type)}"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
                                 .childNodes_="${JSON.stringify(
                                     {
                                         container: "#gesture4",
@@ -177,33 +192,32 @@ class DevGesture extends MDComponent {
                                 )}"
                             ></md-card>
                         </div>
-                        
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
                                 id="gesture5"
                                 style="width:224px;height:224px;"
-                                @onTap="${event=>console.log(event.type)}"
-                                @onDoubleTap="${event=>console.log(event.type)}"
-                                @onLongPress="${event=>console.log(event.type)}"
-                                @onSwipeLeft="${event=>console.log(event.type)}"
-                                @onSwipeRight="${event=>console.log(event.type)}"
-                                @onSwipeTop="${event=>console.log(event.type)}"
-                                @onSwipeBottom="${event=>console.log(event.type)}"
-                                @onDragStart="${event=>console.log(event.type)}"
-                                @onDrag="${event=>console.log(event.type)}"
-                                @onDragEnd="${event=>console.log(event.type)}"
-                                @onResizeStart="${event=>console.log(event.type)}"
-                                @onResize="${event=>console.log(event.type)}"
-                                @onResizeEnd="${event=>console.log(event.type)}"
-                                @onSelectionStart="${event=>console.log(event.type)}"
-                                @onSelection="${event=>console.log(event.type)}"
-                                @onSelectionEnd="${event=>console.log(event.type)}"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
                                 .childNodes_="${JSON.stringify(
                                     {
                                         container: "#gesture5",
                                         resize: [],
-                                        dragAfterLongPress:true,
+                                        dragAfterLongPress: true,
                                         updateStyle: true,
                                     },
                                     null,
@@ -212,31 +226,31 @@ class DevGesture extends MDComponent {
                             ></md-card>
                         </div>
 
-                        <div class="md-layout-column__item md-layout-column__item--expanded4 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-card
                                 id="gesture6"
                                 style="width:224px;height:224px;"
-                                @onTap="${event=>console.log(event.type)}"
-                                @onDoubleTap="${event=>console.log(event.type)}"
-                                @onLongPress="${event=>console.log(event.type)}"
-                                @onSwipeLeft="${event=>console.log(event.type)}"
-                                @onSwipeRight="${event=>console.log(event.type)}"
-                                @onSwipeTop="${event=>console.log(event.type)}"
-                                @onSwipeBottom="${event=>console.log(event.type)}"
-                                @onDragStart="${event=>console.log(event.type)}"
-                                @onDrag="${event=>console.log(event.type)}"
-                                @onDragEnd="${event=>console.log(event.type)}"
-                                @onResizeStart="${event=>console.log(event.type)}"
-                                @onResize="${event=>console.log(event.type)}"
-                                @onResizeEnd="${event=>console.log(event.type)}"
-                                @onSelectionStart="${event=>console.log(event.type)}"
-                                @onSelection="${event=>console.log(event.type)}"
-                                @onSelectionEnd="${event=>console.log(event.type)}"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
                                 .childNodes_="${JSON.stringify(
                                     {
                                         container: "#gesture6",
                                         drag: [],
-                                        resizeAfterLongPress:true,
+                                        resizeAfterLongPress: true,
                                         updateStyle: true,
                                     },
                                     null,
@@ -245,6 +259,74 @@ class DevGesture extends MDComponent {
                             ></md-card>
                         </div>
 
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card
+                                id="gesture7"
+                                style="width:224px;height:224px;"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
+                                .childNodes_="${JSON.stringify(
+                                    {
+                                        container: "#gesture7",
+                                        drag: [],
+                                        resize: [],
+                                        selection: true,
+                                        updateStyle: true,
+                                    },
+                                    null,
+                                    4,
+                                )}"
+                            ></md-card>
+                        </div>
+
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-card
+                                id="gesture8"
+                                style="width:224px;height:224px;"
+                                @onTap="${(event) => console.log(event.type)}"
+                                @onDoubleTap="${(event) => console.log(event.type)}"
+                                @onLongPress="${(event) => console.log(event.type)}"
+                                @onSwipeLeft="${(event) => console.log(event.type)}"
+                                @onSwipeRight="${(event) => console.log(event.type)}"
+                                @onSwipeTop="${(event) => console.log(event.type)}"
+                                @onSwipeBottom="${(event) => console.log(event.type)}"
+                                @onDragStart="${(event) => console.log(event.type)}"
+                                @onDrag="${(event) => console.log(event.type)}"
+                                @onDragEnd="${(event) => console.log(event.type)}"
+                                @onResizeStart="${(event) => console.log(event.type)}"
+                                @onResize="${(event) => console.log(event.type)}"
+                                @onResizeEnd="${(event) => console.log(event.type)}"
+                                @onSelectionStart="${(event) => console.log(event.type)}"
+                                @onSelection="${(event) => console.log(event.type)}"
+                                @onSelectionEnd="${(event) => console.log(event.type)}"
+                                .childNodes_="${JSON.stringify(
+                                    {
+                                        container: "#gesture8",
+                                        drag: [],
+                                        resize: [],
+                                        selection: true,
+                                        selectionAfterLongPress: true,
+                                        updateStyle: true,
+                                    },
+                                    null,
+                                    4,
+                                )}"
+                            ></md-card>
+                        </div>
                     </div>
                 </div>
             </div>
