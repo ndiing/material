@@ -112,9 +112,7 @@ class MDTreeComponent extends MDComponent {
     getList(list) {
         let children;
 
-        for (let i = 0; i < list.length; i++) {
-            let item = list[i];
-
+        list.forEach((item) => {
             if (item.expanded) {
                 children = item.children;
             }
@@ -126,7 +124,8 @@ class MDTreeComponent extends MDComponent {
                     children = children_;
                 }
             }
-        }
+        });
+
         return children;
     }
 
@@ -141,8 +140,7 @@ class MDTreeComponent extends MDComponent {
         let expanded;
         let activated;
 
-        for (let index = 0; index < list.length; index++) {
-            let item = list[index];
+        list.forEach((item) => {
             item.indent = indent;
 
             if (item.expanded || item.selected) {
@@ -174,7 +172,8 @@ class MDTreeComponent extends MDComponent {
                     item.activated = true;
                 }
             }
-        }
+        });
+
         return { expanded, activated };
     }
 
@@ -187,8 +186,7 @@ class MDTreeComponent extends MDComponent {
     select(list, data) {
         let activated;
 
-        for (let i = 0; i < list.length; i++) {
-            let item = list[i];
+        list.forEach((item) => {
             item.selected = item === data;
             item.activated = false;
 
@@ -202,7 +200,8 @@ class MDTreeComponent extends MDComponent {
                     item.activated = true;
                 }
             }
-        }
+        });
+
         return activated;
     }
 

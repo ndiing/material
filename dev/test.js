@@ -491,12 +491,14 @@ open("./src/material", (curr) => {
         docs[doc.className] = doc;
     }
 });
+const [,,...names] = process.argv
 let code = "";
 open("./src/material", (curr) => {
     let text = read(curr);
     let { doc } = parse(text);
 
-    if ([/field$/, /checkbox$/, /radio-button$/, /switch$/, /slider$/].some((reg) => reg.test(doc.tagName))) {
+    // console.log(names,doc.tagName)
+    if (names.includes(doc.tagName)) {
         function getExtends(extendName, names = [], properties) {
             if (docs[extendName]?.extendName) {
                 names = names.concat(docs[extendName]?.[properties]);
@@ -536,4 +538,4 @@ open("./src/material", (curr) => {
     }
 });
 
-write("./src/dev/form/template.js", code);
+write("./dev/template.js", code);

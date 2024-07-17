@@ -198,3 +198,21 @@
 .md-ripple[disabled] {
     @include ripple-disabled();
 }
+
+/* 
+@include ripple();
+@include ripple-button();
+&:focus,
+&:hover,
+&:active,
+&[selected],
+&[dragged],
+&[disabled] {@include ripple-size();@include ripple-clipped();}
+&:focus {@include ripple-focused();}
+&:hover {@include ripple-hover();}
+&:active {@include ripple-pressed();}
+&[activated] {@include ripple-activated();}
+&[selected] {@include ripple-selected();}
+&[dragged] {@include ripple-dragged();}
+&[disabled] {@include ripple-disabled();}
+*/

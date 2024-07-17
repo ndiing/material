@@ -118,16 +118,14 @@ class MDListComponent extends MDComponent {
         super.disconnectedCallback();
         this.off("keydown", this.handleListKeydown);
     }
-
     /**
      * Selects a specific item in the list.
      * @param {Object} data - The data object of the item to select.
      */
     select(data) {
-        for (let i = 0; i < this.list.length; i++) {
-            let item = this.list[i];
+        this.list.forEach((item) => {
             item.selected = item === data;
-        }
+        });
         this.endIndex = this.list.indexOf(data);
     }
 
@@ -156,10 +154,9 @@ class MDListComponent extends MDComponent {
             [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
         }
 
-        for (let i = 0; i < this.list.length; i++) {
-            let item = this.list[i];
+        this.list.forEach((item, i) => {
             item.selected = i >= this.startIndex && i <= this.endIndex;
-        }
+        });
 
         if (this.swapIndex) {
             [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
@@ -170,10 +167,9 @@ class MDListComponent extends MDComponent {
      * Selects all items in the list.
      */
     selectAll() {
-        for (let i = 0; i < this.list.length; i++) {
-            let item = this.list[i];
+        this.list.forEach((item) => {
             item.selected = true;
-        }
+        });
     }
 
     /**
@@ -210,7 +206,7 @@ class MDListComponent extends MDComponent {
             this.selectAll();
             this.requestUpdate();
         }
-        this.emit("handleListKeydown", event);
+        this.emit("onListKeydown", event);
     }
 
     /**

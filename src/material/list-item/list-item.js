@@ -147,7 +147,6 @@ class MDListItemComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
-        this.list = this.closest("md-list");
     }
 
     /**

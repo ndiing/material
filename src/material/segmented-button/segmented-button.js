@@ -76,10 +76,9 @@ class MDSegmentedButtonComponent extends MDComponent {
             if (this.multiSelection) {
                 data.selected = !data.selected;
             } else if (this.singleSelection) {
-                for (let i = 0; i < this.buttons.length; i++) {
-                    let item = this.buttons[i];
+                this.buttons.forEach((item) => {
                     item.selected = item === data;
-                }
+                });
             }
             this.requestUpdate();
         }
