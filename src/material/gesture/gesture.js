@@ -35,8 +35,8 @@ class MDGestureController {
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
-            containerSelector: undefined,
-            dragHandleSelector: undefined,
+            containerSelector: null,
+            dragHandleSelector: null,
             drag: ["x", "y"],
             dragAfterLongPress: false,
             resize: ["n", "e", "s", "w", "ne", "se", "sw", "nw"],
