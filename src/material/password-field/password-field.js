@@ -32,8 +32,8 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleTextFieldNativeClick(event) {
-        event.preventDefault()
-        super.handleTextFieldNativeClick()
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
     }
 
     /**

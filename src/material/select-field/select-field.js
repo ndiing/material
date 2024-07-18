@@ -147,8 +147,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleTextFieldNativeClick(event) {
-        event.preventDefault()
-        super.handleTextFieldNativeClick()
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
     }
 
     handleTextFieldContainerClick(event) {

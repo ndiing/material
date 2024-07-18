@@ -180,7 +180,10 @@ class DevMainComponent extends MDComponent {
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-outlet></md-outlet>
-                    <md-markdown .text="${this.doc}" style="margin:24px;"></md-markdown>
+                    <md-markdown
+                        .text="${this.doc}"
+                        style="margin:24px;"
+                    ></md-markdown>
                 </div>
             </div>
         `;

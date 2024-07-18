@@ -54,16 +54,15 @@ class DevCard extends MDComponent {
                                 actions='[{"component":"spacer"},{"label":"label"}]'
                                 leadingActions='[{"icon":"image"}]'
                                 trailingActions='[{"icon":"image"}]'
-                                >
-                                    <div class="md-layout-border">
-                                        <div class="md-layout-border__item md-layout-border__item--north">north</div>
-                                        <div class="md-layout-border__item md-layout-border__item--south">south</div>
-                                        <div class="md-layout-border__item md-layout-border__item--west">west</div>
-                                        <div class="md-layout-border__item md-layout-border__item--east">east</div>
-                                        <div class="md-layout-border__item md-layout-border__item--center">center</div>
-                                    </div>
-                                </md-card
                             >
+                                <div class="md-layout-border">
+                                    <div class="md-layout-border__item md-layout-border__item--north">north</div>
+                                    <div class="md-layout-border__item md-layout-border__item--south">south</div>
+                                    <div class="md-layout-border__item md-layout-border__item--west">west</div>
+                                    <div class="md-layout-border__item md-layout-border__item--east">east</div>
+                                    <div class="md-layout-border__item md-layout-border__item--center">center</div>
+                                </div>
+                            </md-card>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">

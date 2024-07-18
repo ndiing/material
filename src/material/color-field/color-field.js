@@ -43,19 +43,18 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleTextFieldNativeClick(event) {
-        event.preventDefault()
-        
-        super.handleTextFieldNativeClick()
+        event.preventDefault();
+
+        super.handleTextFieldNativeClick();
     }
 
     /**
      * @private
      */
     handleTextFieldContainerClick(event) {
-        super.handleTextFieldContainerClick()
-        this.togglePicker()
+        super.handleTextFieldContainerClick();
+        this.togglePicker();
     }
-
 
     togglePicker() {
         if (this.pickerOpen) {
