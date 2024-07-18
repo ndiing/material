@@ -40,25 +40,29 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the click event on the text field action icon.
-     * @param {Event} event - The click event.
      * @private
      */
-    handleTextFieldActionClick(event) {
-        super.handleTextFieldActionClick(event);
-
-        if (event.currentTarget.name === "picker") {
-            this.handleColorFieldActionPickerClick(event);
-        }
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        
+        super.handleTextFieldNativeClick()
     }
 
     /**
-     * Handles the click event on the color-color picker action icon.
-     * @param {Event} event - The click event.
      * @private
      */
-    handleColorFieldActionPickerClick() {
-        this.showPicker();
+    handleTextFieldContainerClick(event) {
+        super.handleTextFieldContainerClick()
+        this.togglePicker()
+    }
+
+
+    togglePicker() {
+        if (this.pickerOpen) {
+            this.picker.close();
+        } else {
+            this.showPicker();
+        }
     }
 
     /**

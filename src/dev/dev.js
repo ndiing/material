@@ -15,7 +15,6 @@ import DevColor from "./color/color.js";
 import DevColorField from "./color-field/color-field.js";
 import DevColorPicker from "./color-picker/color-picker.js";
 import DevComponent from "./component/component.js";
-// import DevDataGrid from "./data-grid/data-grid.js";
 import DevDataTable from "./data-table/data-table.js";
 import DevDataTableItem from "./data-table-item/data-table-item.js";
 import DevDateField from "./date-field/date-field.js";
@@ -25,10 +24,8 @@ import DevDatetimePicker from "./datetime-picker/datetime-picker.js";
 import DevDialog from "./dialog/dialog.js";
 import DevEmoji from "./emoji/emoji.js";
 import DevEmojiPicker from "./emoji-picker/emoji-picker.js";
-import DevExample from "./example/example.js";
 import DevFab from "./fab/fab.js";
 import DevForm from "./form/form.js";
-import DevForm2 from "./form/form2.js";
 import DevFunctions from "./functions/functions.js";
 import DevGesture from "./gesture/gesture.js";
 import DevIcon from "./icon/icon.js";
@@ -84,7 +81,7 @@ const routes = [
         path: "",
         component: DevMain,
         children: [
-            // { path: "attribute-observer", component: DevAttributeObserver },
+            { path: "attribute-observer", component: DevAttributeObserver },
             { path: "badge", component: DevBadge },
             { path: "bottom-app-bar", component: DevBottomAppBar },
             { path: "bottom-sheet", component: DevBottomSheet },
@@ -95,9 +92,8 @@ const routes = [
             { path: "chips", component: DevChips },
             { path: "color-field", component: DevColorField },
             { path: "color-picker", component: DevColorPicker },
-            // { path: "color", component: DevColor },
+            { path: "color", component: DevColor },
             { path: "component", component: DevComponent },
-            // { path: "data-grid", component: DevDataGrid },
             { path: "data-table-item", component: DevDataTableItem },
             { path: "data-table", component: DevDataTable },
             { path: "date-field", component: DevDateField },
@@ -107,20 +103,18 @@ const routes = [
             { path: "dialog", component: DevDialog },
             { path: "emoji-picker", component: DevEmojiPicker },
             { path: "emoji", component: DevEmoji },
-            { path: "example", component: DevExample },
             { path: "fab", component: DevFab },
             { path: "form", component: DevForm },
-            { path: "form2", component: DevForm2 },
-            // { path: "functions", component: DevFunctions },
+            { path: "functions", component: DevFunctions },
             { path: "gesture", component: DevGesture },
             { path: "icon-button", component: DevIconButton },
             { path: "icon", component: DevIcon },
             { path: "image", component: DevImage },
             { path: "list-item", component: DevListItem },
             { path: "list", component: DevList },
-            // { path: "localization", component: DevLocalization },
+            { path: "localization", component: DevLocalization },
             { path: "markdown", component: DevMarkdown },
-            // { path: "media-observer", component: DevMediaObserver },
+            { path: "media-observer", component: DevMediaObserver },
             { path: "menu", component: DevMenu },
             { path: "month-field", component: DevMonthField },
             { path: "month-picker", component: DevMonthPicker },
@@ -128,16 +122,16 @@ const routes = [
             { path: "navigation-drawer", component: DevNavigationDrawer },
             { path: "navigation-rail", component: DevNavigationRail },
             { path: "number-field", component: DevNumberField },
-            // { path: "observer", component: DevObserver },
+            { path: "observer", component: DevObserver },
             { path: "pagination", component: DevPagination },
             { path: "password-field", component: DevPasswordField },
-            // { path: "popper", component: DevPopper },
+            { path: "popper", component: DevPopper },
             { path: "progress-indicator", component: DevProgressIndicator },
-            // { path: "progress", component: DevProgress },
+            { path: "progress", component: DevProgress },
             { path: "radio-button", component: DevRadioButton },
-            // { path: "ripple", component: DevRipple },
-            // { path: "router", component: DevRouter },
-            // { path: "scrim", component: DevScrim },
+            { path: "ripple", component: DevRipple },
+            { path: "router", component: DevRouter },
+            { path: "scrim", component: DevScrim },
             { path: "search-field", component: DevSearchField },
             { path: "segmented-button", component: DevSegmentedButton },
             { path: "select-field", component: DevSelectField },
@@ -145,7 +139,7 @@ const routes = [
             { path: "side-sheet", component: DevSideSheet },
             { path: "slider", component: DevSlider },
             { path: "snackbar", component: DevSnackbar },
-            // { path: "store", component: DevStore },
+            { path: "store", component: DevStore },
             { path: "switch", component: DevSwitch },
             { path: "tabs", component: DevTabs },
             { path: "text-field", component: DevTextField },
@@ -156,7 +150,7 @@ const routes = [
             { path: "top-app-bar", component: DevTopAppBar },
             { path: "tree-item", component: DevTreeItem },
             { path: "tree", component: DevTree },
-            // { path: "virtual", component: DevVirtual },
+            { path: "virtual", component: DevVirtual },
             { path: "week-field", component: DevWeekField },
             { path: "week-picker", component: DevWeekPicker },
         ],

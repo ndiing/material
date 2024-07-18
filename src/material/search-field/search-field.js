@@ -40,6 +40,14 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        super.handleTextFieldNativeClick()
+    }
+
+    /**
      * Handles click events on the icon button associated with the search field.
      * Clears the search field value and dispatches input and search events.
      * @param {Event} event - Click event.

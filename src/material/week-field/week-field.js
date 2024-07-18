@@ -40,6 +40,14 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        super.handleTextFieldNativeClick()
+    }
+
+    /**
      * Handles the click event on the text field action icon.
      * @param {Event} event - The click event.
      * @private

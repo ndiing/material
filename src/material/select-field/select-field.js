@@ -143,6 +143,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
     }
 
+    /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        super.handleTextFieldNativeClick()
+    }
+
     handleTextFieldContainerClick(event) {
         super.handleTextFieldContainerClick(event);
         this.togglePicker();

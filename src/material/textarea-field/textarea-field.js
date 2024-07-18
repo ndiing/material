@@ -24,6 +24,16 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-textarea-field");
     }
+
+    
+    /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        super.handleTextFieldNativeClick()
+    }
+
 }
 customElements.define("md-textarea-field", MDTextareaFieldComponent);
 export { MDTextareaFieldComponent };

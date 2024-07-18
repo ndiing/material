@@ -43,6 +43,14 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
     }
 
     /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault()
+        super.handleTextFieldNativeClick()
+    }
+
+    /**
      * Handles clicks on the icon buttons associated with the number field.
      * Adjusts the value of the input field based on the button clicked.
      * @param {Event} event - Click event on the icon buttons.
