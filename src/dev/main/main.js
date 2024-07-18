@@ -45,7 +45,6 @@ class DevMainComponent extends MDComponent {
                     { routerLink: "/component", label: "Component", icon: "widgets" },
                     { routerLink: "/data-table", label: "Data Table", icon: "table_chart" },
                     { routerLink: "/data-table-item", label: "Data Table Item", icon: "view_list" },
-                    // { routerLink: "/data-table-native-column", label: "Data Table Native Column", icon: "view_column" },
                     { routerLink: "/emoji", label: "Emoji", icon: "emoji_emotions" },
                     { routerLink: "/icon", label: "Icon", icon: "insert_emoticon" },
                     { routerLink: "/image", label: "Image", icon: "image" },
@@ -142,19 +141,19 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        this.list = this.list.map((item) => item.children).flat();
+        // this.list = this.list.map((item) => item.children).flat();
 
-        function select(list, routerLink) {
-            list.sort((a, b) => a.label.localeCompare(b.label));
-            list.forEach((item) => {
-                item.selected = item.routerLink === routerLink;
-                if (item.children?.length) {
-                    select(item.children, routerLink);
-                }
-            });
-        }
+        this.select(this.list, MDRouter.path);
+    }
 
-        select(this.list, MDRouter.path);
+    select(list, routerLink) {
+        list.sort((a, b) => a.label.localeCompare(b.label));
+        list.forEach((item) => {
+            item.selected = item.routerLink === routerLink;
+            if (item.children?.length) {
+                this.select(item.children, routerLink);
+            }
+        });
     }
 
     get doc() {
@@ -171,7 +170,7 @@ class DevMainComponent extends MDComponent {
                     @onCardIconButtonClick="${this.handleCardIconButtonClick}"
                 ></md-top-app-bar>
                 <md-navigation-drawer
-                    variant="level"
+                    variant="tree"
                     id="navigationDrawer"
                     open
                     .list="${this.list}"

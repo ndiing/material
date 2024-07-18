@@ -131,7 +131,7 @@ const routes = [
             { path: "radio-button", component: DevRadioButton },
             { path: "ripple", component: DevRipple },
             { path: "router", component: DevRouter },
-            { path: "scrim", component: DevScrim },
+            // { path: "scrim", component: DevScrim },
             { path: "search-field", component: DevSearchField },
             { path: "segmented-button", component: DevSegmentedButton },
             { path: "select-field", component: DevSelectField },
