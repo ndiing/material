@@ -299,22 +299,21 @@ class MDCardComponent extends MDComponent {
         }
     }
 
-    handleCardButtonClick(event){
-        this.emit('onCardButtonClick',event)
+    handleCardButtonClick(event) {
+        this.emit("onCardButtonClick", event);
     }
 
-    handleCardFabClick(event){
-        this.emit('onCardFabClick',event)
+    handleCardFabClick(event) {
+        this.emit("onCardFabClick", event);
     }
 
-    handleCardIconClick(event){
-        this.emit('onCardIconClick',event)
+    handleCardIconClick(event) {
+        this.emit("onCardIconClick", event);
     }
 
-    handleCardIconButtonClick(event){
-        this.emit('onCardIconButtonClick',event)
+    handleCardIconButtonClick(event) {
+        this.emit("onCardIconButtonClick", event);
     }
-
 }
 customElements.define("md-card", MDCardComponent);
 export { MDCardComponent };

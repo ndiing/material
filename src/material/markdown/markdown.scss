@@ -6,7 +6,6 @@
 
 .md-markdown__body {
     flex: 1;
-    /* Headings */
 
     h1 {
         margin: var(--md-sys-typescale-headline-large-line-height) 0;
@@ -43,7 +42,6 @@
         @include typescale-title-small();
         font-weight: 600;
     }
-    /* Text Elements */
 
     p {
         margin: var(--md-sys-typescale-body-large-line-height) 0;
@@ -57,7 +55,6 @@
     strong {
         font-weight: 600;
     }
-    /* Block Elements */
 
     blockquote {
         margin: var(--md-sys-typescale-body-large-line-height) 0;
@@ -80,7 +77,6 @@
         background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface-variant);
     }
-    /* Lists */
 
     ul {
         margin: var(--md-sys-typescale-body-large-line-height) 24px;
@@ -101,7 +97,6 @@
     li {
         @include typescale-body-large();
     }
-    /* Code */
 
     code {
         padding: calc((var(--md-sys-typescale-body-large-line-height) - var(--md-sys-typescale-body-medium-line-height)) / 2) 4px;
@@ -110,12 +105,12 @@
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
     }
-    /* Images and Links */
 
-    // img {}
+    img {
+    }
 
-    // a {}
-    /* Tables */
+    a {
+    }
 
     table {
         margin: var(--md-sys-typescale-body-large-line-height) 0;
@@ -157,7 +152,8 @@
         }
     }
 
-    // tr {}
+    tr {
+    }
 
     th {
         text-align: left;

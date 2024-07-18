@@ -3,7 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { MDGestureController } from "../material.js";
 import { isDefined } from "../functions/functions.js";
 
-
 class MDDataTableItemComponent extends MDComponent {
     static properties = {
         avatar: { type: String },
@@ -117,7 +116,6 @@ class MDDataTableItemComponent extends MDComponent {
                 this.emit("onDataTableItemSelected", this);
             }
         }
-
     }
 }
 customElements.define("md-data-table-item", MDDataTableItemComponent);

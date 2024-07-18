@@ -66,7 +66,6 @@ class MDRippleController {
             this.container.classList.add("md-ripple--fade-out");
         }
 
-
         this.size = (Math.sqrt(Math.pow(this.container.clientWidth, 2) + Math.pow(this.container.clientHeight, 2)) / this.container.clientWidth) * 100;
         if (this.options.size) {
             this.size = (this.options.size / this.container.clientWidth) * 100;

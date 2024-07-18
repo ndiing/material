@@ -2,10 +2,8 @@ import { MDComponent } from "../component/component.js";
 
 function emojiToHexadecimal(emoji) {
     const codePoint = emoji.codePointAt(0);
-    const hexString = codePoint.toString(16); //.toUpperCase();
-    const paddedHexString =
-        // 'U+' +
-        hexString.padStart(4, "0");
+    const hexString = codePoint.toString(16);
+    const paddedHexString = hexString.padStart(4, "0");
     return paddedHexString;
 }
 

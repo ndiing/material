@@ -1,5 +1,4 @@
 .md-text-field {
-
     --md-comp-text-field-density: 0;
     --md-comp-text-field-density-height: calc(56 + (4 * var(--md-comp-text-field-density)));
     --md-comp-text-field-density-ratio: calc(var(--md-comp-text-field-density-height) / 56);
@@ -64,16 +63,12 @@
     margin-right: -4px;
 }
 
-// .md-text-field__action {}
-
 .md-text-field__text {
     display: flex;
     padding: 0 16px;
     gap: 0 16px;
     @include typescale-body-small();
 }
-
-// .md-text-field__text-start {}
 
 .md-text-field__text-end {
     margin-left: auto;
@@ -86,8 +81,6 @@
     width: 0;
     height: 0;
 }
-
-// .md-text-field--populated {}
 
 .md-text-field--focused {
     .md-text-field__label {

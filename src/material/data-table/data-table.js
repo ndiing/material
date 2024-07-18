@@ -45,11 +45,7 @@ class MDDataTableComponent extends MDCardComponent {
     set trailingActions(value) {}
 
     get actions() {
-        return [
-            //
-            { component: "spacer" },
-            { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total:this.total,limit:this.limit,page:this.page, onPaginationChange: this.handleDataTablePaginationChange },
-        ];
+        return [{ component: "spacer" }, { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total: this.total, limit: this.limit, page: this.page, onPaginationChange: this.handleDataTablePaginationChange }];
     }
 
     set actions(value) {}
@@ -66,9 +62,9 @@ class MDDataTableComponent extends MDCardComponent {
 
     constructor() {
         super();
-        this.total=0
-        this.limit=50
-        this.page=1
+        this.total = 0;
+        this.limit = 50;
+        this.page = 1;
         this.store = new MDStore();
         this.virtual = new MDVirtualController(this);
     }
@@ -340,8 +336,6 @@ class MDDataTableComponent extends MDCardComponent {
         }
 
         if (changedProperties.has("rows")) {
-            
-
             this.store.docs = this.rows;
 
             this.updateStore();
@@ -351,8 +345,7 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     updateVirtual() {
-        // this.virtual.options.rowTotal = this.storeRowsTotal;
-        this.virtual.options.rowTotal = this._end-this._start;
+        this.virtual.options.rowTotal = this._end - this._start;
         this.virtual.options.rowHeight = 52;
         this.virtual.options.rowBuffer = 0 + (this.stickyFooter ? 1 : 0);
 
@@ -373,7 +366,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.storeRowsTotal = total;
         this.storeRows = docs;
 
-        this.total=this.storeRowsTotal
+        this.total = this.storeRowsTotal;
     }
 
     updateColumns() {
@@ -436,11 +429,11 @@ class MDDataTableComponent extends MDCardComponent {
     }
 
     handleDataTablePaginationChange(event) {
-        this._start=event.detail.start
-        this._end=event.detail.end
+        this._start = event.detail.start;
+        this._end = event.detail.end;
         this.updateStore();
         this.updateVirtual();
-        
+
         this.emit("onDataTablePaginationChange", event);
     }
 

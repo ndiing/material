@@ -1,5 +1,4 @@
 .md-data-table {
-
     --md-comp-data-table-item-density: 0;
 
     --md-comp-data-table-column-cell-density-height: calc(56 + (4 * var(--md-comp-data-table-item-density)));
@@ -54,10 +53,8 @@
     align-items: center;
     padding: 8px 24px;
     gap: 0 24px;
-    // border-radius: var(--md-sys-shape-corner-medium);
     background-color: var(--md-sys-color-surface-container-lowest);
     color: var(--md-sys-color-on-surface-variant);
-    // box-shadow: var(--md-sys-elevation-level0);
     user-select: none;
 }
 
@@ -80,13 +77,11 @@
     flex: 1;
     display: flex;
     align-items: center;
-    // gap: 0 4px;
     min-width: 0;
     min-height: 0;
 }
 
 .md-data-table__label {
-    // flex: 1;
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -138,7 +133,6 @@
 .md-data-table__native {
     border-spacing: 0;
     border-collapse: collapse;
-    // thead{}
     tbody {
         .md-data-table__item {
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
@@ -202,21 +196,20 @@
             border-top: 1px solid var(--md-sys-color-outline-variant);
         }
     }
-    // tr{}
     th {
         text-align: left;
         .md-data-table__item {
             min-height: var(--md-comp-data-table-column-cell-height);
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
         }
-        &:not([reorderable]){
+        &:not([reorderable]) {
             cursor: default;
         }
-        &:not([resizable]){
+        &:not([resizable]) {
             cursor: default;
         }
-        &[resizable]{
-            .md-resizable__handle--e{
+        &[resizable] {
+            .md-resizable__handle--e {
                 border-right: 1px solid var(--md-sys-color-outline-variant);
             }
         }
@@ -240,13 +233,13 @@
     }
 }
 
-.md-data-table__search{
-    --md-comp-text-field-density:-2;
+.md-data-table__search {
+    --md-comp-text-field-density: -2;
     min-width: calc(48px * 5);
 }
-.md-data-table__pagination{
-    .md-text-field{
-        --md-comp-text-field-density:-2;
+.md-data-table__pagination {
+    .md-text-field {
+        --md-comp-text-field-density: -2;
         min-width: calc(48px * 2);
     }
 }

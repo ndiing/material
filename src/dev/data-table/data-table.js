@@ -17,9 +17,9 @@ class DevDataTable extends MDComponent {
             name: "name" + k,
             label: "label" + k,
             sticky: k === 0 || k === 1 || k === length - 2 || k === length - 1,
-            reorderable:k>1&&k<length-2,
-            resizable:k>1&&k<length-2,
-            sortable:true,
+            reorderable: k > 1 && k < length - 2,
+            resizable: k > 1 && k < length - 2,
+            sortable: true,
         }));
 
         this.rows = Array.from({ length: 500 }, (_, k) => {

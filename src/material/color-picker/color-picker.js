@@ -96,7 +96,6 @@ class MDColorPickerComponent extends MDSheetComponent {
                     <div class="md-color-picker__gradient-thumb"></div>
                 </div>
                 <label class="md-color-picker__hue">
-                    <!-- <div class="md-color-picker__hue-label">Hue</div> -->
                     <input 
                         aria-label="Hue"
                         type="range" 
@@ -108,7 +107,6 @@ class MDColorPickerComponent extends MDSheetComponent {
                     >
                 </label>
                 <label class="md-color-picker__opacity">
-                    <!-- <div class="md-color-picker__opacity-label">Opacity</div> -->
                     <input 
                         aria-label="Opacity"
                         type="range" 
