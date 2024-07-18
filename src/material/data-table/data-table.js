@@ -23,7 +23,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     get childNodes_() {
         /* prettier-ignore */
-        return [this.renderDataTableViewport()]
+        return [this.renderViewport()]
     }
 
     set childNodes_(value) {}
@@ -73,7 +73,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual = new MDVirtualController(this);
     }
 
-    renderDataTableColumnCell(item) {
+    renderColumnCell(item) {
         /* prettier-ignore */
         return html`
             <md-data-table-column-cell
@@ -104,7 +104,7 @@ class MDDataTableComponent extends MDCardComponent {
         `
     }
 
-    renderDataTableRowCell(item) {
+    renderRowCell(item) {
         /* prettier-ignore */
         return html`
             <md-data-table-row-cell
@@ -199,7 +199,7 @@ class MDDataTableComponent extends MDCardComponent {
         });
     }
 
-    renderDataTableNative() {
+    renderNative() {
         /* prettier-ignore */
         return html`
             <table class="md-data-table__native">
@@ -210,7 +210,7 @@ class MDDataTableComponent extends MDCardComponent {
                                 style="${this.styleDataTableColumnCell(this.styleStickyCheckboxSelection())}"
                                 class="${this.classDataTableColumnCell({stickyLeftEnd:this.stickyLeftEnd})}"
                                 @onCheckboxNativeInput="${this.handleDataTableColumnCellCheckboxNativeInput}"
-                            >${this.renderDataTableColumnCell({
+                            >${this.renderColumnCell({
                                 leadingCheckbox:true,
                                 selected:this.selected,
                                 indeterminate:this.indeterminate,
@@ -232,7 +232,7 @@ class MDDataTableComponent extends MDCardComponent {
                                 @pointerenter="${this.handleDataTableColumnCellPointerenter}"
                                 @pointerleave="${this.handleDataTableColumnCellPointerleave}"
                                 @click="${this.handleDataTableColumnCellClick}"
-                            >${this.renderDataTableColumnCell({
+                            >${this.renderColumnCell({
                                 label: column.label,
                                 reorderable: column.reorderable,
                                 resizable: column.resizable,
@@ -256,7 +256,7 @@ class MDDataTableComponent extends MDCardComponent {
                                     style="${this.styleDataTableRowCell(this.styleStickyCheckboxSelection())}"
                                     class="${this.classDataTableRowCell({stickyLeftEnd:this.stickyLeftEnd})}"
                                     @onCheckboxNativeInput="${this.handleDataTableRowCellCheckboxNativeInput}"
-                                >${this.renderDataTableRowCell({
+                                >${this.renderRowCell({
                                     leadingCheckbox:true,
                                     selected:row.selected,
                                 })}</td>
@@ -265,7 +265,7 @@ class MDDataTableComponent extends MDCardComponent {
                                 <td
                                     style="${this.styleDataTableRowCell(column)}"
                                     class="${this.classDataTableRowCell(column)}"
-                                >${this.renderDataTableRowCell({
+                                >${this.renderRowCell({
                                     label: row[column.name]
                                 })}</td>
                             `)}
@@ -279,14 +279,14 @@ class MDDataTableComponent extends MDCardComponent {
                                 <td
                                     style="${this.styleDataTableFooterCell(this.styleStickyCheckboxSelection())}"
                                     class="${this.classDataTableFooterCell({stickyLeftEnd:this.stickyLeftEnd})}"
-                                >${this.renderDataTableRowCell({
+                                >${this.renderRowCell({
                                 })}</td>
                             `:nothing}
                             ${this.virtualColumns?.map(column => html`
                                 <td
                                     style="${this.styleDataTableFooterCell(column)}"
                                     class="${this.classDataTableFooterCell(column)}"
-                                >${this.renderDataTableRowCell({
+                                >${this.renderRowCell({
                                     label: row[column.name]
                                 })}</td>
                             `)}
@@ -297,7 +297,7 @@ class MDDataTableComponent extends MDCardComponent {
         `
     }
 
-    renderDataTableViewport() {
+    renderViewport() {
         /* prettier-ignore */
         return html`
             <div 
@@ -305,7 +305,7 @@ class MDDataTableComponent extends MDCardComponent {
                 @onVirtualScroll="${this.handleDataTableVirtualScroll}"
             >
                 <div class="md-virtual__scrollbar md-data-table__scrollbar"></div>
-                <div class="md-virtual__container md-data-table__container">${this.renderDataTableNative()}</div>
+                <div class="md-virtual__container md-data-table__container">${this.renderNative()}</div>
             </div>
         `
     }
