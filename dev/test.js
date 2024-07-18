@@ -521,7 +521,7 @@ open("./src/material", (curr) => {
 
         let methodName = toCamelCase("render" + doc.tagName.replace(/^md/, ""));
 
-        code += `${methodName}(item) {\n`;
+        code += `${methodName}(item={}) {\n`;
         code += `    /* prettier-ignore */\n`;
         code += `    return html\`\n`;
         code += `        <${doc.tagName}\n`;

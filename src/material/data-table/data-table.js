@@ -37,8 +37,8 @@ class MDDataTableComponent extends MDCardComponent {
     get trailingActions() {
         return [
             { name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch },
-            { name: "filter", classMap: { "md-data-table__filter": true }, component: "icon-button", icon: "filter_list" },
-            { name: "more", classMap: { "md-data-table__more": true }, component: "icon-button", icon: "more_vert" },
+            // { name: "filter", classMap: { "md-data-table__filter": true }, component: "icon-button", icon: "filter_list" },
+            // { name: "more", classMap: { "md-data-table__more": true }, component: "icon-button", icon: "more_vert" },
         ];
     }
 
@@ -296,12 +296,16 @@ class MDDataTableComponent extends MDCardComponent {
     renderViewport() {
         /* prettier-ignore */
         return html`
-            <div 
-                class="md-virtual md-data-table__viewport"
-                @onVirtualScroll="${this.handleDataTableVirtualScroll}"
-            >
-                <div class="md-virtual__scrollbar md-data-table__scrollbar"></div>
-                <div class="md-virtual__container md-data-table__container">${this.renderNative()}</div>
+            <div class="md-layout-border">
+                <div class="md-layout-border__item md-layout-border__item--center">
+                    <div 
+                        class="md-virtual md-data-table__viewport"
+                        @onVirtualScroll="${this.handleDataTableVirtualScroll}"
+                    >
+                        <div class="md-virtual__scrollbar md-data-table__scrollbar"></div>
+                        <div class="md-virtual__container md-data-table__container">${this.renderNative()}</div>
+                    </div>
+                </div>
             </div>
         `
     }
