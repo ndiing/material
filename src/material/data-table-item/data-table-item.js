@@ -1,6 +1,8 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDGestureController } from "../material.js";
+import { isDefined } from "../functions/functions.js";
+
 
 class MDDataTableItemComponent extends MDComponent {
     static properties = {
@@ -24,6 +26,8 @@ class MDDataTableItemComponent extends MDComponent {
         indeterminate: { type: Boolean },
         reorderable: { type: Boolean, reflect: true },
         resizable: { type: Boolean, reflect: true },
+        sortable: { type: Boolean },
+        sortableIcon: { type: String },
     };
 
     constructor() {
@@ -64,18 +68,22 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.avatar ? html`<md-image class="md-data-table__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
             ${this.thumbnail ? html`<md-image class="md-data-table__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>` : nothing}
             ${this.video ? html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>` : nothing}
+            
             ${this.icon ? html`<div class="md-icon md-data-table__icon">${this.icon}</div>` : nothing}
-            ${this.label || this.subLabel || this.badge ? html`
+
+            ${isDefined(this.label) || this.subLabel || this.sortable|| this.badge ? html`
                 <div class="md-data-table__inner">
-                    ${this.label || this.subLabel ? html`
+                    ${isDefined(this.label) || this.subLabel ? html`
                         <div class="md-data-table__label">
-                            ${this.label ? html`<div class="md-data-table__label-primary">${this.label}</div>` : nothing}
+                            ${isDefined(this.label) ? html`<div class="md-data-table__label-primary">${this.label}</div>` : nothing}
                             ${this.subLabel ? html`<div class="md-data-table__label-secondary">${this.subLabel}</div>` : nothing}
                         </div>
+                        ${this.sortable ? html`<div class="md-icon md-data-table__icon">${this.sortableIcon}</div>` : nothing}
                     ` : nothing}
                     ${this.badge ? html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>` : nothing}
                 </div>
             ` : nothing}
+
             ${this.text ? html`<div class="md-data-table__text">${this.text}</div>` : nothing}
             ${this.trailingCheckbox ? this.renderCheckbox() : nothing}
             ${this.trailingRadioButton ? this.renderRadioButton() : nothing}

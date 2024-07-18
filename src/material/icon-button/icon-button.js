@@ -44,7 +44,7 @@ class MDIconButtonComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return this.icon ? html`<div class="md-icon md-icon-button__icon">${this.icon}</div>` : nothing;
+        return this.icon ? html`<md-icon class="md-icon-button__icon">${this.icon}</md-icon>` : nothing;
     }
 
     /**

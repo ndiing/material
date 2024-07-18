@@ -29,13 +29,27 @@ class MDDataTableComponent extends MDCardComponent {
     set childNodes_(value) {}
 
     get label() {
-        return " ";
+        return "Data table";
     }
 
     set label(value) {}
 
+    get trailingActions() {
+        return [
+            { name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch },
+            { name: "filter", classMap: { "md-data-table__filter": true }, component: "icon-button", icon: "filter_list" },
+            { name: "more", classMap: { "md-data-table__more": true }, component: "icon-button", icon: "more_vert" },
+        ];
+    }
+
+    set trailingActions(value) {}
+
     get actions() {
-        return [{ component: "spacer" }];
+        return [
+            //
+            { component: "spacer" },
+            { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total:this.total,limit:this.limit,page:this.page, onPaginationChange: this.handleDataTablePaginationChange },
+        ];
     }
 
     set actions(value) {}
@@ -52,6 +66,9 @@ class MDDataTableComponent extends MDCardComponent {
 
     constructor() {
         super();
+        this.total=0
+        this.limit=50
+        this.page=1
         this.store = new MDStore();
         this.virtual = new MDVirtualController(this);
     }
@@ -80,6 +97,8 @@ class MDDataTableComponent extends MDCardComponent {
                 .indeterminate="${ifDefined(item.indeterminate)}"
                 .reorderable="${ifDefined(item.reorderable)}"
                 .resizable="${ifDefined(item.resizable)}"
+                .sortable="${ifDefined(item.sortable)}"
+                .sortableIcon="${ifDefined(item.sortableIcon)}"
                 @onDataTableItemSelected="${ifDefined(item.onDataTableItemSelected)}"
             ></md-data-table-column-cell>
         `
@@ -128,7 +147,7 @@ class MDDataTableComponent extends MDCardComponent {
             }),
             ...(column.sticky && {
                 position: "sticky",
-                [column.flow]: `${(column.flow==='left'?0 - this.virtual.translateX:this.virtual.translateX) + column[column.flow]}px`,
+                [column.flow]: `${(column.flow === "left" ? 0 - this.virtual.translateX : this.virtual.translateX) + column[column.flow]}px`,
                 "z-index": "3",
             }),
         });
@@ -138,7 +157,7 @@ class MDDataTableComponent extends MDCardComponent {
         return styleMap({
             ...(column.sticky && {
                 position: "sticky",
-                [column.flow]: `${(column.flow==='left'?0 - this.virtual.translateX:this.virtual.translateX) + column[column.flow]}px`,
+                [column.flow]: `${(column.flow === "left" ? 0 - this.virtual.translateX : this.virtual.translateX) + column[column.flow]}px`,
                 "z-index": "1",
             }),
         });
@@ -153,7 +172,7 @@ class MDDataTableComponent extends MDCardComponent {
             }),
             ...(column.sticky && {
                 position: "sticky",
-                [column.flow]: `${(column.flow==='left'?0 - this.virtual.translateX:this.virtual.translateX) + column[column.flow]}px`,
+                [column.flow]: `${(column.flow === "left" ? 0 - this.virtual.translateX : this.virtual.translateX) + column[column.flow]}px`,
                 "z-index": "3",
             }),
         });
@@ -210,10 +229,15 @@ class MDDataTableComponent extends MDCardComponent {
                                 @onResizeStart="${this.handleDataTableColumnCellResizeStart}"
                                 @onResize="${this.handleDataTableColumnCellResize}"
                                 @onResizeEnd="${this.handleDataTableColumnCellResizeEnd}"
+                                @pointerenter="${this.handleDataTableColumnCellPointerenter}"
+                                @pointerleave="${this.handleDataTableColumnCellPointerleave}"
+                                @click="${this.handleDataTableColumnCellClick}"
                             >${this.renderDataTableColumnCell({
                                 label: column.label,
                                 reorderable: column.reorderable,
                                 resizable: column.resizable,
+                                sortable: column.sortable,
+                                sortableIcon: column.sortableIcon,
                             })}</th>
                         `)}
                     </tr>
@@ -316,21 +340,40 @@ class MDDataTableComponent extends MDCardComponent {
         }
 
         if (changedProperties.has("rows")) {
+            
+
             this.store.docs = this.rows;
-            const { total, docs } = this.store.getAll();
-            this.storeRowsTotal = total;
-            this.storeRows = docs;
 
-            this.virtual.options.rowTotal = this.storeRowsTotal;
-            this.virtual.options.rowHeight = 52;
-            this.virtual.options.rowBuffer = 0 + (this.stickyFooter ? 1 : 0);
+            this.updateStore();
 
-            this.virtual.options.columnTotal = this.columns.length;
-            this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
-            this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
-
-            this.virtual.handleVirtualScroll();
+            this.updateVirtual();
         }
+    }
+
+    updateVirtual() {
+        // this.virtual.options.rowTotal = this.storeRowsTotal;
+        this.virtual.options.rowTotal = this._end-this._start;
+        this.virtual.options.rowHeight = 52;
+        this.virtual.options.rowBuffer = 0 + (this.stickyFooter ? 1 : 0);
+
+        this.virtual.options.columnTotal = this.columns.length;
+        this.virtual.options.columnWidth = this.columns.reduce((acc, curr) => acc + curr.width, 0) / this.columns.length;
+        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
+
+        this.virtual.handleVirtualScroll();
+    }
+
+    updateStore() {
+        const { total, docs } = this.store.getAll({
+            sorters: this.sorters,
+            q: this.q,
+            _start: this._start,
+            _end: this._end,
+        });
+        this.storeRowsTotal = total;
+        this.storeRows = docs;
+
+        this.total=this.storeRowsTotal
     }
 
     updateColumns() {
@@ -340,8 +383,8 @@ class MDDataTableComponent extends MDCardComponent {
         let stickyLeftEnd = undefined;
 
         this.columns.forEach((column, index) => {
-            column.stickyRightStart=false
-            column.stickyLeftEnd=false
+            column.stickyRightStart = false;
+            column.stickyLeftEnd = false;
             if (column.sticky) {
                 let flow;
                 let from;
@@ -384,6 +427,23 @@ class MDDataTableComponent extends MDCardComponent {
         this.stickyLeftEnd = this.stickyCheckboxSelection && stickyLeftEnd === undefined;
     }
 
+    handleDataTableTextFieldNativeSearch(event) {
+        this.q = event.detail.currentTarget.value;
+        this.updateStore();
+        this.updateVirtual();
+
+        this.emit("onDataTableTextFieldNativeSearch", event);
+    }
+
+    handleDataTablePaginationChange(event) {
+        this._start=event.detail.start
+        this._end=event.detail.end
+        this.updateStore();
+        this.updateVirtual();
+        
+        this.emit("onDataTablePaginationChange", event);
+    }
+
     handleDataTableVirtualScroll(event) {
         if (!this.storeRows) {
             return;
@@ -400,45 +460,98 @@ class MDDataTableComponent extends MDCardComponent {
         this.requestUpdate();
     }
 
-    handleDataTableColumnCellDragStart(event){
-        this.emit('onDataTableColumnCellDragStart',event)
+    handleDataTableColumnCellDragStart(event) {
+        this.emit("onDataTableColumnCellDragStart", event);
     }
 
-    handleDataTableColumnCellDrag(event){
-        this.emit('onDataTableColumnCellDrag',event)
+    handleDataTableColumnCellDrag(event) {
+        this.drag = true;
+        this.emit("onDataTableColumnCellDrag", event);
     }
 
-    handleDataTableColumnCellDragEnd(event){
-        const fromData=(event.currentTarget.data)
-        const toData=(event.detail.target.closest('th')?.data)
-        if(toData){
-            const fromIndex=this.columns.indexOf(fromData)
-            const toIndex=this.columns.indexOf(toData)
-            const [column]=this.columns.splice(fromIndex,1)
-            this.columns.splice(toIndex,0,column)
-            this.updateColumns()
-            this.virtual.handleVirtualScroll()
+    handleDataTableColumnCellDragEnd(event) {
+        const fromData = event.currentTarget.data;
+        const toData = event.detail.target.closest("th")?.data;
+        if (toData) {
+            const fromIndex = this.columns.indexOf(fromData);
+            const toIndex = this.columns.indexOf(toData);
+            const [column] = this.columns.splice(fromIndex, 1);
+            this.columns.splice(toIndex, 0, column);
+            this.updateColumns();
+            this.virtual.handleVirtualScroll();
         }
-        this.emit('onDataTableColumnCellDragEnd',event)
+        window.requestAnimationFrame(() => {
+            this.drag = false;
+        });
+        this.emit("onDataTableColumnCellDragEnd", event);
     }
 
-    handleDataTableColumnCellResizeStart(event){
-        this.emit('onDataTableColumnCellResizeStart',event)
+    handleDataTableColumnCellResizeStart(event) {
+        this.emit("onDataTableColumnCellResizeStart", event);
     }
 
-    handleDataTableColumnCellResize(event){
-        const item=event.currentTarget.children[0]
-        const data=(event.currentTarget.data)
-        data.width=(item.gesture.currentWidth)
-        this.updateColumns()
-        this.virtual.handleVirtualScroll()
-        this.emit('onDataTableColumnCellResize',event)
+    handleDataTableColumnCellResize(event) {
+        this.resize = true;
+        const item = event.currentTarget.children[0];
+        const data = event.currentTarget.data;
+        data.width = item.gesture.currentWidth;
+        this.updateColumns();
+        this.virtual.handleVirtualScroll();
+        this.emit("onDataTableColumnCellResize", event);
     }
 
-    handleDataTableColumnCellResizeEnd(event){
-        this.emit('onDataTableColumnCellResizeEnd',event)
+    handleDataTableColumnCellResizeEnd(event) {
+        window.requestAnimationFrame(() => {
+            this.resize = false;
+        });
+        this.emit("onDataTableColumnCellResizeEnd", event);
     }
 
+    handleDataTableColumnCellPointerenter(event) {
+        const data = event.currentTarget.data;
+
+        if (data.sortable && !this.drag && !this.resize) {
+            if (!data.order) {
+                data.sortableIcon = "arrow_upward";
+                this.requestUpdate();
+            }
+        }
+
+        this.emit("onDataTableColumnCellPointerenter", event);
+    }
+    handleDataTableColumnCellPointerleave(event) {
+        const data = event.currentTarget.data;
+
+        if (data.sortable) {
+            if (!data.order) {
+                data.sortableIcon = "";
+                this.requestUpdate();
+            }
+        }
+
+        this.emit("onDataTableColumnCellPointerleave", event);
+    }
+    handleDataTableColumnCellClick(event) {
+        const data = event.currentTarget.data;
+
+        if (data.sortable && !this.drag && !this.resize) {
+            if (!data.order) {
+                data.sortableIcon = "arrow_upward";
+                data.order = "asc";
+            } else if (data.order === "asc") {
+                data.sortableIcon = "arrow_downward";
+                data.order = "desc";
+            } else {
+                data.sortableIcon = "";
+                data.order = "";
+            }
+            this.sorters = this.columns.filter((column) => column.order);
+            this.updateStore();
+            this.updateVirtual();
+        }
+
+        this.emit("onDataTableColumnCellClick", event);
+    }
 
     select(data) {
         this.store.docs.forEach((item) => {

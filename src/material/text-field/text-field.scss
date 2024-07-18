@@ -1,4 +1,10 @@
 .md-text-field {
+
+    --md-comp-text-field-density: 0;
+    --md-comp-text-field-density-height: calc(56 + (4 * var(--md-comp-text-field-density)));
+    --md-comp-text-field-density-ratio: calc(var(--md-comp-text-field-density-height) / 56);
+    --md-comp-text-field-height: calc(var(--md-comp-text-field-density-height) * 1px);
+
     display: inline-flex;
     flex-direction: column;
     vertical-align: middle;
@@ -28,7 +34,7 @@
 }
 
 .md-text-field__meta {
-    padding: calc((56px - 24px) / 2) 0;
+    padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 0;
     @include typescale-body-large();
 }
 
@@ -45,8 +51,8 @@
     resize: none;
     field-sizing: content;
     width: 100%;
-    min-height: 56px;
-    padding: calc((56px - 24px) / 2) 0;
+    min-height: var(--md-comp-text-field-height);
+    padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 0;
     @include typescale-body-large();
     background: transparent;
     color: inherit;
@@ -105,7 +111,7 @@
 
 .md-text-field--filled {
     .md-text-field__label {
-        padding: calc((56px - 24px) / 2) 16px;
+        padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 16px;
         @include typescale-body-large();
         position: absolute;
         left: calc(var(--md-comp-text-field-native-offset-left, 16px) - 16px);
@@ -138,20 +144,20 @@
     &.md-text-field--populated,
     &.md-text-field--focused {
         .md-text-field__label {
-            padding-top: calc(((56px - 16px) / 2) - 12px);
-            padding-bottom: calc(((56px - 16px) / 2) + 12px);
+            padding-top: calc(((var(--md-comp-text-field-height) - 16px) / 2) - 12px);
+            padding-bottom: calc(((var(--md-comp-text-field-height) - 16px) / 2) + 12px);
             @include typescale-body-small();
 
             + .md-text-field__container {
                 .md-text-field__meta {
                     visibility: visible;
-                    padding-top: calc(((56px - 24px) / 2) + 8px);
-                    padding-bottom: calc(((56px - 24px) / 2) - 8px);
+                    padding-top: calc(((var(--md-comp-text-field-height) - 24px) / 2) + 8px);
+                    padding-bottom: calc(((var(--md-comp-text-field-height) - 24px) / 2) - 8px);
                 }
 
                 .md-text-field__native {
-                    padding-top: calc(((56px - 24px) / 2) + 8px);
-                    padding-bottom: calc(((56px - 24px) / 2) - 8px);
+                    padding-top: calc(((var(--md-comp-text-field-height) - 24px) / 2) + 8px);
+                    padding-bottom: calc(((var(--md-comp-text-field-height) - 24px) / 2) - 8px);
 
                     &::placeholder {
                         visibility: visible;
@@ -180,7 +186,7 @@
 
 .md-text-field--outlined {
     .md-text-field__label {
-        padding: calc((56px - 24px) / 2) 16px;
+        padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 16px;
         @include typescale-body-large();
         position: absolute;
         left: calc(var(--md-comp-text-field-native-offset-left, 16px) - 16px);
@@ -265,7 +271,7 @@
 
 .md-text-field--rounded {
     .md-text-field__container {
-        border-radius: calc(56px / 2);
+        border-radius: calc(var(--md-comp-text-field-height) / 2);
     }
 }
 

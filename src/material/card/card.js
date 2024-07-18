@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+import { classMap } from "lit/directives/class-map.js";
 
 /**
  * A custom element representing a card with various interactive elements and actions.
@@ -53,143 +54,149 @@ class MDCardComponent extends MDComponent {
         super();
 
         this.childNodes_ = Array.from(this.childNodes);
-        this.renderIconButton = this.renderIconButton.bind(this);
-        this.renderIcon = this.renderIcon.bind(this);
+
         this.renderButton = this.renderButton.bind(this);
         this.renderFab = this.renderFab.bind(this);
-        this.renderTextField = this.renderTextField.bind(this);
+        this.renderIcon = this.renderIcon.bind(this);
+        this.renderIconButton = this.renderIconButton.bind(this);
+        this.renderPagination = this.renderPagination.bind(this);
+        this.renderSearchField = this.renderSearchField.bind(this);
     }
 
-    /**
-     * Renders the pagination component.
-     * @private
-     */
-    renderPagination(item) {
-        /* prettier-ignore */
-        return html`
-            <md-pagination
-                class="md-card__pagination"
-                .name="${ifDefined(item.name)}"
-                .total="${ifDefined(item.total)}"
-                .limit="${ifDefined(item.limit)}"
-                .page="${ifDefined(item.page)}"
-                .options="${ifDefined(item.options)}"
-                @onPaginationChange="${this.handleCardPaginationChange}"
-                @onPaginationLimitChange="${this.handleCardPaginationLimitChange}"
-                @onPaginationFirstClick="${this.handleCardPaginationFirstClick}"
-                @onPaginationPrevClick="${this.handleCardPaginationPrevClick}"
-                @onPaginationNextClick="${this.handleCardPaginationNextClick}"
-                @onPaginationLastClick="${this.handleCardPaginationLastClick}"
-            ></md-pagination>
-        `;
-    }
-
-    /**
-     * Renders an icon button component.
-     * @private
-     */
-    renderIconButton(item) {
-        /* prettier-ignore */
-        return html`
-            <md-icon-button
-                class="md-card__icon-button"
-                name="${ifDefined(item.name)}"
-                .variant="${ifDefined(item.variant)}"
-                .icon="${ifDefined(item.icon)}"
-                .selected="${ifDefined(item.selected)}"
-                .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleCardIconButtonClick}"
-            ></md-icon-button>
-        `;
-    }
-
-    /**
-     * Renders an icon component.
-     * @private
-     */
-    renderIcon(item) {
-        /* prettier-ignore */
-        return html`
-            <md-icon
-                class="md-card__icon"
-                name="${ifDefined(item.name)}"
-                @click="${this.handleCardIconClick}"
-            >${item.icon}</md-icon>
-        `;
-    }
-
-    /**
-     * Renders a button component.
-     * @private
-     */
     renderButton(item) {
         /* prettier-ignore */
         return html`
-            <md-button
-                class="md-card__button"
-                .name="${ifDefined(item.name)}"
-                .variant="${ifDefined(item.variant)}"
-                .type="${ifDefined(item.type)}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item.label)}"
-                .selected="${ifDefined(item.selected)}"
-                .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleCardButtonClick}"
-            ></md-button>
-        `;
+        <md-button
+            class="${classMap({...item.classMap})}"
+            name="${ifDefined(item.name)}"
+            .variant="${ifDefined(item.variant)}"
+            .type="${ifDefined(item.type)}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onButtonClick||this.handleCardButtonClick)}"
+        ></md-button>
+    `
     }
 
-    /**
-     * Renders a FAB (Floating Action Button) component.
-     * @private
-     */
     renderFab(item) {
         /* prettier-ignore */
         return html`
-            <md-fab
-                class="md-card__fab"
-                .name="${ifDefined(item.name)}"
-                .variant="${ifDefined(item.variant)}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item.label)}"
-                @click="${this.handleCardFabClick}"
-            ></md-fab>
-        `;
+        <md-fab
+            class="${classMap({...item.classMap})}"
+            name="${ifDefined(item.name)}"
+            .variant="${ifDefined(item.variant)}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onFabClick||this.handleCardFabClick)}"
+        ></md-fab>
+    `
     }
 
-    /**
-     * Renders a text field component.
-     * @private
-     */
-    renderTextField(item) {
+    renderIcon(item) {
         /* prettier-ignore */
         return html`
-            <md-text-field
-                class="md-card__text-field"
-                .name="${ifDefined(item.name)}"
-                .icon="${ifDefined(item.icon)}"
-                .placeholder="${ifDefined(item.placeholder)}"
-                @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
-            ></md-text-field>
-        `;
+        <md-icon
+            class="${classMap({...item.classMap})}"
+            name="${ifDefined(item.name)}"
+            @click="${ifDefined(item.onIconClick||this.handleCardIconClick)}"
+        ></md-icon>
+    `
     }
 
-    /**
-     * Renders a search field component.
-     * @private
-     */
+    renderIconButton(item) {
+        /* prettier-ignore */
+        return html`
+        <md-icon-button
+            class="${classMap({...item.classMap})}"
+            name="${ifDefined(item.name)}"
+            .variant="${ifDefined(item.variant)}"
+            .icon="${ifDefined(item.icon)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @onIconButtonClick="${ifDefined(item.onIconButtonClick)}"
+            @click="${ifDefined(item.onIconButtonClick||this.handleCardIconButtonClick)}"
+        ></md-icon-button>
+    `
+    }
+
+    renderPagination(item) {
+        /* prettier-ignore */
+        return html`
+        <md-pagination
+            class="${classMap({...item.classMap})}"
+            name="${ifDefined(item.name)}"
+            .total="${ifDefined(item.total)}"
+            .limit="${ifDefined(item.limit)}"
+            .page="${ifDefined(item.page)}"
+            .label="${ifDefined(item.label)}"
+            .options="${ifDefined(item.options)}"
+            .text="${ifDefined(item.text)}"
+            .firstPage="${ifDefined(item.firstPage)}"
+            .prevPage="${ifDefined(item.prevPage)}"
+            .nextPage="${ifDefined(item.nextPage)}"
+            .lastPage="${ifDefined(item.lastPage)}"
+            @onPaginationChange="${ifDefined(item.onPaginationChange)}"
+            @onPaginationLimitChange="${ifDefined(item.onPaginationLimitChange)}"
+            @onPaginationFirstClick="${ifDefined(item.onPaginationFirstClick)}"
+            @onPaginationPrevClick="${ifDefined(item.onPaginationPrevClick)}"
+            @onPaginationNextClick="${ifDefined(item.onPaginationNextClick)}"
+            @onPaginationLastClick="${ifDefined(item.onPaginationLastClick)}"
+        ></md-pagination>
+    `
+    }
+
     renderSearchField(item) {
         /* prettier-ignore */
         return html`
-            <md-search-field
-                class="md-card__search-field"
-                .name="${ifDefined(item.name)}"
-                .icon="${ifDefined(item.icon)}"
-                .placeholder="${ifDefined(item.placeholder)}"
-                @onTextFieldNativeInput="${this.handleCardTextFieldNativeInput}"
-                @onTextFieldNativeSearch="${this.handleCardTextFieldNativeSearch}"
-            ></md-search-field>
-        `;
+        <md-search-field
+            class="${classMap({...item.classMap})}"
+            name="${ifDefined(item.name)}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-search-field>
+    `
     }
 
     /**
@@ -199,13 +206,12 @@ class MDCardComponent extends MDComponent {
     renderAction(item, defaultAction = this.renderButton) {
         /* prettier-ignore */
         return choose(item.component, [
-            ['text-field', () => this.renderTextField(item)],
-            ['search-field', () => this.renderSearchField(item)],
-            ['icon-button', () => this.renderIconButton(item)],
-            ['icon', () => this.renderIcon(item)],
             ['button', () => this.renderButton(item)],
             ['fab', () => this.renderFab(item)],
+            ['icon', () => this.renderIcon(item)],
+            ['icon-button', () => this.renderIconButton(item)],
             ['pagination', () => this.renderPagination(item)],
+            ['search-field', () => this.renderSearchField(item)],
             ['spacer', () => html`<div class="md-pane__spacer"></div>`],
         ], () => defaultAction(item));
     }
@@ -293,141 +299,22 @@ class MDCardComponent extends MDComponent {
         }
     }
 
-    /**
-     * Handles click events on icon buttons within the card.
-     * @private
-     */
-    handleCardIconButtonClick(event) {
-        this.emit("onCardIconButtonClick", event);
+    handleCardButtonClick(event){
+        this.emit('onCardButtonClick',event)
     }
 
-    /**
-     * Handles click events on icons within the card.
-     * @private
-     */
-    handleCardIconClick(event) {
-        this.emit("onCardIconClick", event);
+    handleCardFabClick(event){
+        this.emit('onCardFabClick',event)
     }
 
-    /**
-     * Handles click events on buttons within the card.
-     * @private
-     */
-    handleCardButtonClick(event) {
-        this.emit("onCardButtonClick", event);
+    handleCardIconClick(event){
+        this.emit('onCardIconClick',event)
     }
 
-    /**
-     * Handles click events on FABs within the card.
-     * @private
-     */
-    handleCardFabClick(event) {
-        this.emit("onCardFabClick", event);
+    handleCardIconButtonClick(event){
+        this.emit('onCardIconButtonClick',event)
     }
 
-    /**
-     * Handles focus events on native text fields within the card.
-     * @private
-     */
-    handleCardTextFieldNativeFocus(event) {
-        this.emit("onCardTextFieldNativeFocus", event);
-    }
-
-    /**
-     * Handles blur events on native text fields within the card.
-     * @private
-     */
-    handleCardTextFieldNativeBlur(event) {
-        this.emit("onCardTextFieldNativeBlur", event);
-    }
-
-    /**
-     * Handles input events on native text fields within the card.
-     * @private
-     */
-    handleCardTextFieldNativeInput(event) {
-        this.emit("onCardTextFieldNativeInput", event);
-    }
-
-    /**
-     * Handles search events on native text fields within the card.
-     * @private
-     */
-    handleCardTextFieldNativeSearch(event) {
-        this.emit("onCardTextFieldNativeSearch", event);
-    }
-
-    /**
-     * Handles invalid events on native text fields within the card.
-     * @private
-     */
-    handleCardTextFieldNativeInvalid(event) {
-        this.emit("onCardTextFieldNativeInvalid", event);
-    }
-
-    /**
-     * Handles reset events on native text fields within the card.
-     * @private
-     */
-    handleCardTextFieldNativeReset(event) {
-        this.emit("onCardTextFieldNativeReset", event);
-    }
-
-    /**
-     * Handles click events on icon buttons within text fields in the card.
-     * @private
-     */
-    handleCardTextFieldIconButtonClick(event) {
-        this.emit("onCardTextFieldIconButtonClick", event);
-    }
-
-    /**
-     * Handles pagination change events within the card.
-     * @private
-     */
-    handleCardPaginationChange(event) {
-        this.emit("onCardPaginationChange", event);
-    }
-
-    /**
-     * Handles pagination limit change events within the card.
-     * @private
-     */
-    handleCardPaginationLimitChange(event) {
-        this.emit("onCardPaginationLimitChange", event);
-    }
-
-    /**
-     * Handles first page click events within pagination in the card.
-     * @private
-     */
-    handleCardPaginationFirstClick(event) {
-        this.emit("onCardPaginationFirstClick", event);
-    }
-
-    /**
-     * Handles previous page click events within pagination in the card.
-     * @private
-     */
-    handleCardPaginationPrevClick(event) {
-        this.emit("onCardPaginationPrevClick", event);
-    }
-
-    /**
-     * Handles next page click events within pagination in the card.
-     * @private
-     */
-    handleCardPaginationNextClick(event) {
-        this.emit("onCardPaginationNextClick", event);
-    }
-
-    /**
-     * Handles last page click events within pagination in the card.
-     * @private
-     */
-    handleCardPaginationLastClick(event) {
-        this.emit("onCardPaginationLastClick", event);
-    }
 }
 customElements.define("md-card", MDCardComponent);
 export { MDCardComponent };

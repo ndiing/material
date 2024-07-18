@@ -171,5 +171,7 @@ export {
     MDProgressIndicatorComponent,
     MDPaginationComponent,
     MDDataTableItemComponent,
+    MDDataTableColumnCellComponent,
+    MDDataTableRowCellComponent,
     MDDataTableComponent,
 };
