@@ -26,13 +26,13 @@
 
 ### virtual
 - [x](./src/material/virtual/virtual.js)
-- [ ](./src/material/data-table/data-table.js)
+- [x](./src/material/data-table/data-table.js)
 - [ ](./src/material/emoji-picker/emoji-picker.js)
 - [x](./src/material/menu/menu.js)
 
 ### store
 - [x](./src/material/store/store.js)
-- [ ](./src/material/data-table/data-table.js)
+- [x](./src/material/data-table/data-table.js)
 - [ ](./src/material/emoji-picker/emoji-picker.js)
 - [x](./src/material/menu/menu.js)
 
