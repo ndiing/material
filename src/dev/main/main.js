@@ -45,7 +45,7 @@ class DevMainComponent extends MDComponent {
                     { routerLink: "/component", label: "Component", icon: "widgets" },
                     { routerLink: "/data-table", label: "Data Table", icon: "table_chart" },
                     { routerLink: "/data-table-item", label: "Data Table Item", icon: "view_list" },
-                    { routerLink: "/data-table-native-column", label: "Data Table Native Column", icon: "view_column" },
+                    // { routerLink: "/data-table-native-column", label: "Data Table Native Column", icon: "view_column" },
                     { routerLink: "/emoji", label: "Emoji", icon: "emoji_emotions" },
                     { routerLink: "/icon", label: "Icon", icon: "insert_emoticon" },
                     { routerLink: "/image", label: "Image", icon: "image" },
@@ -142,7 +142,7 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        // this.list = this.list.map((item) => item.children).flat();
+        this.list = this.list.map((item) => item.children).flat();
 
         function select(list, routerLink) {
             list.sort((a, b) => a.label.localeCompare(b.label));

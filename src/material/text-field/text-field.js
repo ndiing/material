@@ -231,6 +231,7 @@ class MDTextFieldComponent extends MDComponent {
             <div 
                 class="md-text-field__container"
                 ${ref(this.textFieldContainer)}
+                @click="${this.handleTextFieldContainerClick}"
             >
                 ${this.icon ? html`<md-icon class="md-text-field__icon">${this.icon}</md-icon>` : nothing}
                 ${this.prefix ? html`<div class="md-text-field__meta md-text-field__meta-prefix" @click="${this.handleTextFieldMetaClick}">${this.prefix}</div>` : nothing}
@@ -389,6 +390,13 @@ class MDTextFieldComponent extends MDComponent {
         }
         this.validationMessage = "";
         this.emit("onTextFieldNativeReset", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldContainerClick(event) {
+        this.emit("onTextFieldContainerClick", event);
     }
 
     /**

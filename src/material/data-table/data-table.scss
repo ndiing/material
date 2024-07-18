@@ -126,7 +126,7 @@
     // thead{}
     tbody {
         .md-data-table__item {
-            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+            // border-bottom: 1px solid var(--md-sys-color-outline-variant);
 
             @include ripple();
             @include ripple-button();
@@ -184,14 +184,25 @@
     }
     tfoot {
         .md-data-table__item {
-            border-top: 1px solid var(--md-sys-color-outline-variant);
+            // border-top: 1px solid var(--md-sys-color-outline-variant);
         }
     }
     // tr{}
     th {
         text-align: left;
         .md-data-table__item {
-            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+            // border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        }
+        &:not([reorderable]){
+            cursor: default;
+        }
+        &:not([resizable]){
+            cursor: default;
+        }
+        &[resizable]{
+            .md-resizable__handle--e{
+                border-right: 1px solid var(--md-sys-color-outline-variant);
+            }
         }
     }
     td {

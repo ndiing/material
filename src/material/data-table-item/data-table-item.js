@@ -22,7 +22,8 @@ class MDDataTableItemComponent extends MDComponent {
         routerLink: { type: String, reflect: true },
         activated: { type: Boolean, reflect: true },
         indeterminate: { type: Boolean },
-        resizable: { type: Boolean },
+        reorderable: { type: Boolean, reflect: true },
+        resizable: { type: Boolean, reflect: true },
     };
 
     constructor() {
@@ -108,6 +109,7 @@ class MDDataTableItemComponent extends MDComponent {
                 this.emit("onDataTableItemSelected", this);
             }
         }
+
     }
 }
 customElements.define("md-data-table-item", MDDataTableItemComponent);

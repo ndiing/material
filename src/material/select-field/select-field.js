@@ -143,10 +143,20 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
     }
 
-    handleTextFieldNativeClick(event) {
-        super.handleTextFieldNativeClick(event);
+    handleTextFieldContainerClick(event) {
+        super.handleTextFieldContainerClick(event);
+        // if(this.pickerOpen){
+        //     this.textFieldNative.value.blur()
+        // }else{
+        //     this.textFieldNative.value.focus()
+        // }
         this.togglePicker();
     }
+
+    // handleTextFieldNativeClick(event) {
+    //     super.handleTextFieldNativeClick(event);
+    //     this.togglePicker();
+    // }
 
     handleTextFieldNativeKeydown(event) {
         super.handleTextFieldNativeKeydown(event);
@@ -203,17 +213,17 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.requestUpdate();
     }
 
-    handleTextFieldActionClick(event) {
-        super.handleTextFieldActionClick(event);
+    // handleTextFieldActionClick(event) {
+    //     super.handleTextFieldActionClick(event);
 
-        if (event.currentTarget.name === "picker") {
-            this.handleSelectFieldActionPickerClick(event);
-        }
-    }
+    //     if (event.currentTarget.name === "picker") {
+    //         this.handleSelectFieldActionPickerClick(event);
+    //     }
+    // }
 
-    handleSelectFieldActionPickerClick() {
-        this.togglePicker();
-    }
+    // handleSelectFieldActionPickerClick() {
+    //     this.togglePicker();
+    // }
 
     togglePicker() {
         if (this.pickerOpen) {

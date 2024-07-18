@@ -12,14 +12,16 @@ class DevDataTable extends MDComponent {
         let lorem = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis blanditiis recusandae iste dicta eius! Nihil eos, labore reiciendis quidem officiis reprehenderit tempora veritatis error voluptatem porro sequi. Asperiores, ratione quisquam?".split(" ");
 
         // window.setInterval(() => {
-        let length = 10;
+        let length = 20;
         this.columns = Array.from({ length }, (_, k) => ({
             name: "name" + k,
             label: "label" + k,
             sticky: k === 0 || k === 1 || k === length - 2 || k === length - 1,
+            reorderable:k>1&&k<length-2,
+            resizable:k>1&&k<length-2,
         }));
 
-        this.rows = Array.from({ length: 100 }, (_, k) => {
+        this.rows = Array.from({ length: 200 }, (_, k) => {
             let row = {};
             this.columns.forEach((column, index) => {
                 if (index % 2 === 0) {
