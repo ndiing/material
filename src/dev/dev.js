@@ -15,7 +15,7 @@ import DevColor from "./color/color.js";
 import DevColorField from "./color-field/color-field.js";
 import DevColorPicker from "./color-picker/color-picker.js";
 import DevComponent from "./component/component.js";
-import DevDataGrid from "./data-grid/data-grid.js";
+// import DevDataGrid from "./data-grid/data-grid.js";
 import DevDataTable from "./data-table/data-table.js";
 import DevDataTableItem from "./data-table-item/data-table-item.js";
 import DevDateField from "./date-field/date-field.js";
@@ -97,7 +97,7 @@ const routes = [
             { path: "color-picker", component: DevColorPicker },
             // { path: "color", component: DevColor },
             { path: "component", component: DevComponent },
-            { path: "data-grid", component: DevDataGrid },
+            // { path: "data-grid", component: DevDataGrid },
             { path: "data-table-item", component: DevDataTableItem },
             { path: "data-table", component: DevDataTable },
             { path: "date-field", component: DevDateField },

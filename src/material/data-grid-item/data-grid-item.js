@@ -1,5 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
+import { MDGestureController } from "../material.js";
 
 class MDDataGridItemComponent extends MDComponent {
     static properties = {
@@ -21,6 +22,7 @@ class MDDataGridItemComponent extends MDComponent {
         routerLink: { type: String, reflect: true },
         activated: { type: Boolean, reflect: true },
         indeterminate: { type: Boolean },
+        resizable: { type: Boolean },
     };
 
     constructor() {

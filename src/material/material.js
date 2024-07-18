@@ -93,15 +93,9 @@ import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indi
 
 import { MDPaginationComponent } from "./pagination/pagination.js";
 
-/**@deprecated*/
 import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
-/**@deprecated*/
-import { MDDataTableNativeColumnComponent } from "./data-table/data-table-native-column.js";
-/**@deprecated*/
 import { MDDataTableComponent } from "./data-table/data-table.js";
 
-import "./data-grid-item/data-grid-item.js";
-import "./data-grid/data-grid.js";
 
 export {
     MDObserver,
@@ -175,6 +169,5 @@ export {
     MDProgressIndicatorComponent,
     MDPaginationComponent,
     MDDataTableItemComponent,
-    MDDataTableNativeColumnComponent,
     MDDataTableComponent,
 };

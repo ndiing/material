@@ -78,6 +78,7 @@ class MDDataGridComponent extends MDCardComponent {
                 .routerLink="${ifDefined(item.routerLink)}"
                 .activated="${ifDefined(item.activated)}"
                 .indeterminate="${ifDefined(item.indeterminate)}"
+                .resizable="${ifDefined(item.resizable)}"
                 @onDataGridItemSelected="${ifDefined(item.onDataGridItemSelected)}"
             ></md-data-grid-item>
         `
@@ -174,7 +175,8 @@ class MDDataGridComponent extends MDCardComponent {
                                 class="${this.classDataGridColumnCell(column)}"
                                 ${ref(this.handleDataGridColumnCellRef)}
                             >${this.renderDataGridItem({
-                                label: column.label
+                                label: column.label,
+                                resizable: true,
                             })}</th>
                         `)}
                     </tr>
@@ -318,13 +320,6 @@ class MDDataGridComponent extends MDCardComponent {
         }
 
         if (changedProperties.has("rows")) {
-        }
-    }
-
-    async handleDataGridColumnCellRef(th) {
-        await this.updateComplete;
-        if (th) {
-        } else {
         }
     }
 

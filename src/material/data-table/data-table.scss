@@ -5,10 +5,9 @@
     background-color: var(--md-sys-color-surface-container-lowest);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
-    user-select: none;
 
     .md-card__header {
-        padding: 16px 24px;
+        padding: 24px;
         gap: 0 24px;
 
         + .md-card__body {
@@ -18,16 +17,6 @@
 
     .md-card__actions {
         gap: 0 24px;
-
-        .md-card__search-field {
-            --md-comp-text-field-density: -2;
-            width: auto;
-            min-width: 288px;
-        }
-    }
-
-    .md-card__label-primary {
-        @include typescale-title-large();
     }
 
     .md-card__inner {
@@ -40,24 +29,110 @@
     }
 
     .md-card__footer {
-        padding: 16px 24px;
-        gap: 0 24px;
+        padding: 24px;
+        gap: 0 8px;
     }
 }
 
-// .md-data-table__viewport {}
+.md-data-table__item {
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 0 24px;
+    // border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface-variant);
+    // box-shadow: var(--md-sys-elevation-level0);
+    user-select: none;
+}
 
-// .md-data-table__scrollbar {}
+.md-data-table__avatar {
+    width: 40px;
+    height: 40px;
+}
 
-// .md-data-table__container {}
+.md-data-table__thumbnail {
+    width: 56px;
+    height: 56px;
+}
+
+.md-data-table__video {
+    height: 64px;
+    margin: 4px 0 4px -24px;
+}
+
+.md-data-table__inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.md-data-table__label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+}
+
+.md-data-table__label-primary {
+    @include typescale-body-large();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.md-data-table__label-secondary {
+    @include typescale-body-medium();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.md-data-table__text {
+    @include typescale-body-small();
+}
+
+.md-data-table__item {
+    min-height: 56px;
+}
+
+.md-data-table__item--two {
+    min-height: 72px;
+}
+
+.md-data-table__item--three {
+    align-items: flex-start;
+    min-height: 88px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    .md-data-table__video {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .md-data-table__label-secondary {
+        height: calc(var(--md-sys-typescale-body-medium-line-height) * 2);
+    }
+}
 
 .md-data-table__native {
-    border-collapse: collapse;
     border-spacing: 0;
-
+    border-collapse: collapse;
     // thead{}
-
     tbody {
+        .md-data-table__item {
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+
+            @include ripple();
+            @include ripple-button();
+            --md-comp-ripple-size: 200%;
+            --md-comp-ripple-animation: none;
+        }
         tr {
             &:focus,
             &:hover,
@@ -67,57 +142,39 @@
             &[disabled] {
                 .md-data-table__item {
                     @include ripple-size();
-                }
-            }
-            &:focus,
-            &:hover,
-            &:active,
-            &[selected],
-            &[dragged],
-            &[disabled] {
-                .md-data-table__item {
                     @include ripple-clipped();
                 }
             }
-
             &:focus {
                 .md-data-table__item {
                     @include ripple-focused();
                 }
             }
-
-            // &:focus {.md-data-table__item{@include ripple-fade-out();}}
-
             &:hover {
                 .md-data-table__item {
                     @include ripple-hover();
                 }
             }
-
             &:active {
                 .md-data-table__item {
                     @include ripple-pressed();
                 }
             }
-
             &[activated] {
                 .md-data-table__item {
                     @include ripple-activated();
                 }
             }
-
             &[selected] {
                 .md-data-table__item {
                     @include ripple-selected();
                 }
             }
-
             &[dragged] {
                 .md-data-table__item {
                     @include ripple-dragged();
                 }
             }
-
             &[disabled] {
                 .md-data-table__item {
                     @include ripple-disabled();
@@ -125,53 +182,33 @@
             }
         }
     }
-
+    tfoot {
+        .md-data-table__item {
+            border-top: 1px solid var(--md-sys-color-outline-variant);
+        }
+    }
     // tr{}
-
     th {
         text-align: left;
-
-        &.md-draggable {
-            cursor: default;
-        }
-
-        &.md-draggable--drag {
-            cursor: default;
-        }
-
-        .md-resizable__handle--e {
-            cursor: default;
-        }
-
-        &:hover {
-            .md-resizable__handle--e {
-                border-right: 1px dashed var(--md-sys-color-outline-variant);
-                cursor: col-resize;
-            }
+        .md-data-table__item {
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
         }
     }
-
     td {
         max-width: 0;
-
         .md-data-table__item {
             min-height: 52px;
-            @include ripple();
-            @include ripple-button();
-            --md-comp-ripple-size: 200%;
-            --md-comp-ripple-animation: none;
         }
     }
 }
 
-.md-data-table__item {
-    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+.md-data-table__sticky--left-end {
+    .md-data-table__item {
+        border-right: 1px solid var(--md-sys-color-outline-variant);
+    }
 }
-
-.md-data-table__column--sticky-left-end .md-data-table__item {
-    border-right: 1px dashed var(--md-sys-color-outline-variant);
-}
-
-.md-data-table__column--sticky-right-start .md-data-table__item {
-    border-left: 1px dashed var(--md-sys-color-outline-variant);
+.md-data-table__sticky--right-start {
+    .md-data-table__item {
+        border-left: 1px solid var(--md-sys-color-outline-variant);
+    }
 }

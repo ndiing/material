@@ -1,52 +1,18 @@
-import { ifDefined } from "lit/directives/if-defined.js";
-import { MDCardComponent } from "../card/card.js";
 import { html, nothing } from "lit";
-import { MDStore } from "../store/store.js";
-import { MDVirtualController } from "../virtual/virtual.js";
+import { MDCardComponent, MDStore, MDVirtualController } from "../material.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
+import { ref } from "lit/directives/ref.js";
 
-/**
- * {{description}}
- * @element md-data-table
- * @extends MDCardComponent
- * @fires MDDataTableComponent#onDataTableViewportVirtualScroll - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnCheckboxNativeInput - {{description}}
- * @fires MDDataTableComponent#onDataTableRowCheckboxNativeInput - {{description}}
- * @fires MDDataTableComponent#onDataTableRowClick - {{description}}
- * @fires MDDataTableComponent#handleDataTableKeydown - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnResizeStart - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnResize - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnResizeEnd - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnPointerenter - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnPointerleave - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnTap - {{description}}
- * @fires MDDataTableComponent#onDataTableTextFieldNativeSearch - {{description}}
- * @fires MDDataTableComponent#onDataTablePaginationChange - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnDoubleTap - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnResizeDoubleTap - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnDragStart - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnDrag - {{description}}
- * @fires MDDataTableComponent#onDataTableColumnDragEnd - {{description}}
- */
 class MDDataTableComponent extends MDCardComponent {
-    /**
-     * {{description}}
-     * @property {Array} columns - {{description}}
-     * @property {Array} rows - {{description}}
-     * @property {Boolean} stickyHeader - {{description}}
-     * @property {Boolean} checkboxSelection - {{description}}
-     * @property {Boolean} stickyCheckboxSelection - {{description}}
-     * @property {Boolean} rangeSelection - {{description}}
-     * @property {Boolean} multiSelection - {{description}}
-     * @property {Boolean} singleSelection - {{description}}
-     * @property {Boolean} allSelection - {{description}}
-     */
     static properties = {
         ...MDCardComponent.properties,
         columns: { type: Array },
         rows: { type: Array },
+        footer: { type: Array },
         stickyHeader: { type: Boolean },
+        stickyFooter: { type: Boolean },
         checkboxSelection: { type: Boolean },
         stickyCheckboxSelection: { type: Boolean },
         rangeSelection: { type: Boolean },
@@ -55,65 +21,45 @@ class MDDataTableComponent extends MDCardComponent {
         allSelection: { type: Boolean },
     };
 
-    /**
-     * {{description}}
-     */
-    get label() {
-        return "label";
-    }
-
-    /**
-     * {{description}}
-     */
-    set label(value) {}
-
-    get trailingActions() {
-        return [
-            { name: "search", component: "search-field", icon: "search", placeholder: "Search" },
-            { name: "filter", icon: "filter_list" },
-            { name: "add", icon: "add" },
-            { name: "more", icon: "more_vert" },
-        ];
-    }
-
-    /**
-     * {{description}}
-     */
-    set trailingActions(value) {}
-
     get childNodes_() {
-        return [this.renderViewport()];
+        /* prettier-ignore */
+        return [this.renderDataTableViewport()]
     }
 
-    /**
-     * {{description}}
-     */
     set childNodes_(value) {}
 
-    get actions() {
-        return [
-            { name: "spacer", component: "spacer" },
-            { name: "pagination", component: "pagination", total: this.storeTotal },
-        ];
+    get label() {
+        return " ";
     }
 
-    /**
-     * {{description}}
-     */
+    set label(value) {}
+
+    get actions() {
+        return [{ component: "spacer" }];
+    }
+
     set actions(value) {}
+
+    get selected() {
+        let total = this.store.docs?.filter((row) => row.selected)?.length;
+        return total > 0 && total === this.store.docs.length;
+    }
+
+    get indeterminate() {
+        let total = this.store.docs?.filter((row) => row.selected)?.length;
+        return total > 0 && total < this.store.docs.length;
+    }
 
     constructor() {
         super();
+        this.store = new MDStore();
+        this.virtual = new MDVirtualController(this);
     }
 
-    /**
-     * @private
-     */
     renderDataTableItem(item) {
         /* prettier-ignore */
         return html`
             <md-data-table-item
-                .data="${item}"
                 .avatar="${ifDefined(item.avatar)}"
                 .thumbnail="${ifDefined(item.thumbnail)}"
                 .video="${ifDefined(item.video)}"
@@ -129,339 +75,293 @@ class MDDataTableComponent extends MDCardComponent {
                 .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
                 .trailingSwitch="${ifDefined(item.trailingSwitch)}"
                 .selected="${ifDefined(item.selected)}"
-                .indeterminate="${ifDefined(item.indeterminate)}"
                 .routerLink="${ifDefined(item.routerLink)}"
-                .sortable="${ifDefined(item.sortable)}"
-                .sortableIcon="${ifDefined(item.sortableIcon)}"
+                .activated="${ifDefined(item.activated)}"
+                .indeterminate="${ifDefined(item.indeterminate)}"
+                .resizable="${ifDefined(item.resizable)}"
+                @onDataTableItemSelected="${ifDefined(item.onDataTableItemSelected)}"
             ></md-data-table-item>
-        `;
+        `
     }
 
-    /**
-     * @private
-     */
-    renderDataTable() {
+    styleStickyCheckboxSelection() {
+        return {
+            ...(this.stickyCheckboxSelection && { sticky: true, flow: "left", left: 0 }),
+        };
+    }
+
+    styleDataTableColumnCell(column) {
+        return styleMap({
+            "min-width": `${column.width}px`,
+            ...(this.stickyHeader && {
+                position: "sticky",
+                top: `${0-this.virtual.translateY}px`,
+                "z-index": "2",
+            }),
+            ...(column.sticky && {
+                position: "sticky",
+                [column.flow]: `${column[column.flow]}px`,
+                "z-index": "3",
+            }),
+        });
+    }
+
+    styleDataTableRowCell(column) {
+        return styleMap({
+            ...(column.sticky && {
+                position: "sticky",
+                [column.flow]: `${column[column.flow]}px`,
+                "z-index": "1",
+            }),
+        });
+    }
+
+    styleDataTableFooterCell(column) {
+        return styleMap({
+            ...(this.stickyFooter && {
+                position: "sticky",
+                bottom: `${0+this.virtual.translateY}px`,
+                "z-index": "2",
+            }),
+            ...(column.sticky && {
+                position: "sticky",
+                [column.flow]: `${column[column.flow]}px`,
+                "z-index": "3",
+            }),
+        });
+    }
+
+    classDataTableColumnCell(column) {
+        return classMap({
+            "md-data-table__sticky--left-end": column.stickyLeftEnd,
+            "md-data-table__sticky--right-start": column.stickyRightStart,
+        });
+    }
+
+    classDataTableRowCell(column) {
+        return classMap({
+            "md-data-table__sticky--left-end": column.stickyLeftEnd,
+            "md-data-table__sticky--right-start": column.stickyRightStart,
+        });
+    }
+
+    classDataTableFooterCell(column) {
+        return classMap({
+            "md-data-table__sticky--left-end": column.stickyLeftEnd,
+            "md-data-table__sticky--right-start": column.stickyRightStart,
+        });
+    }
+
+    renderDataTableNative() {
         /* prettier-ignore */
         return html`
             <table class="md-data-table__native">
                 <thead>
                     <tr>
-                        ${this.virtualColumns?.length&&this.checkboxSelection?html`
+                        ${this.checkboxSelection&&this.columns?.length?html`
                             <th
-                                style="${styleMap({
-                                    ...(this.stickyHeader&&{
-                                        "position": "sticky",
-                                        "top": `${0 - this.virtual.translateY}px`,
-                                        "z-index": "2",
-                                    }),
-                                    ...(this.stickyCheckboxSelection&&{
-                                        "position": "sticky",
-                                        "left": `${0 - this.virtual.translateX}px`,
-                                        "z-index": "3",
-                                    }),
-                                })}"
-                                class="${classMap({
-                                    "md-data-table__column--sticky-left-end": this.stickyLeftEnd,
-                                })}"
-                                @onCheckboxNativeInput="${this.handleDataTableColumnCheckboxNativeInput}"
+                                style="${this.styleDataTableColumnCell(this.styleStickyCheckboxSelection())}"
+                                class="${this.classDataTableColumnCell({stickyLeftEnd:this.stickyLeftEnd})}"
+                                @onCheckboxNativeInput="${this.handleDataTableColumnCellCheckboxNativeInput}"
                             >${this.renderDataTableItem({
-                                leadingCheckbox: true,
-                                selected: this.isSelectedAll,
-                                indeterminate: this.isSelectedPartial,
+                                leadingCheckbox:true,
+                                selected:this.selected,
+                                indeterminate:this.indeterminate,
                             })}</th>
                         `:nothing}
-                        ${this.virtualColumns?.map(column=>html`
+                        ${this.columns?.map(column => html`
                             <th
-                                .data="${column}"
-                                is="md-data-table-native-column"
-                                ?resizable="${column.resizable}"
-                                ?orderable="${column.orderable}"
-                                style="${styleMap({
-                                    "min-width": `${column.width}px`,
-                                    ...(this.stickyHeader&&{
-                                        "position": "sticky",
-                                        "top": `${0 - this.virtual.translateY}px`,
-                                        "z-index": "2",
-                                    }),
-                                    ...(column.sticky&&{
-                                        "position": "sticky",
-                                        [column.flow]: `${(column.flow==='left'?0 - this.virtual.translateX:this.virtual.translateX) + column[column.flow]}px`,
-                                        "z-index": "3",
-                                    }),
-                                })}"
-                                class="${classMap({
-                                    "md-data-table__column--sticky-left-end": column.stickyLeftEnd,
-                                    "md-data-table__column--sticky-right-start": column.stickyRightStart,
-                                })}"
-                                @onResizeStart="${this.handleDataTableColumnResizeStart}"
-                                @onResize="${this.handleDataTableColumnResize}"
-                                @onResizeEnd="${this.handleDataTableColumnResizeEnd}"
-                                @pointerenter="${this.handleDataTableColumnPointerenter}"
-                                @pointerleave="${this.handleDataTableColumnPointerleave}"
-                                @onTap="${this.handleDataTableColumnTap}"
-                                @onDoubleTap="${this.handleDataTableColumnDoubleTap}"
-                                
-                                @onDragStart="${this.handleDataTableColumnDragStart}"
-                                @onDrag="${this.handleDataTableColumnDrag}"
-                                @onDragEnd="${this.handleDataTableColumnDragEnd}"
+                                style="${this.styleDataTableColumnCell(column)}"
+                                class="${this.classDataTableColumnCell(column)}"
+                                ${ref(this.handleDataTableColumnCellRef)}
                             >${this.renderDataTableItem({
                                 label: column.label,
-                                sortable: column.sortable,
-                                sortableIcon: column.sortableIcon,
-                            })}</th> 
+                                resizable: true,
+                            })}</th>
                         `)}
                     </tr>
                 </thead>
                 <tbody>
-                    ${this.virtualRows?.map(row=>html`
+                    ${this.virtualRows?.map(row => html`
                         <tr
                             .data="${row}"
                             .tabIndex="${0}"
                             ?selected="${row.selected}"
-                            @onCheckboxNativeInput="${this.handleDataTableRowCheckboxNativeInput}"
                             @click="${this.handleDataTableRowClick}"
                         >
-                            ${this.checkboxSelection?html`
+                            ${this.checkboxSelection&&this.columns?.length?html`
                                 <td
-                                    style="${styleMap({
-                                        ...(this.stickyCheckboxSelection&&{
-                                            "position": "sticky",
-                                            "left": `${0 - this.virtual.translateX}px`,
-                                            "z-index": "1",
-                                        }),
-                                        
-                                    })}"
-                                    class="${classMap({
-                                        "md-data-table__column--sticky-left-end": this.stickyLeftEnd,
-                                    })}"
+                                    .data="${row}"
+                                    style="${this.styleDataTableRowCell(this.styleStickyCheckboxSelection())}"
+                                    class="${this.classDataTableRowCell({stickyLeftEnd:this.stickyLeftEnd})}"
+                                    @onCheckboxNativeInput="${this.handleDataTableRowCellCheckboxNativeInput}"
                                 >${this.renderDataTableItem({
-                                    leadingCheckbox: true,
-                                    selected: row.selected
+                                    leadingCheckbox:true,
+                                    selected:row.selected,
                                 })}</td>
                             `:nothing}
-                            ${this.virtualColumns?.map(column=>html`
+                            ${this.columns?.map(column => html`
                                 <td
-                                    style="${styleMap({
-                                        ...(column.sticky&&{
-                                            "position": "sticky",
-                                            [column.flow]: `${(column.flow==='left'?0 - this.virtual.translateX:this.virtual.translateX) + column[column.flow]}px`,
-                                            "z-index": "1",
-                                        }),
-                                    })}"
-                                    class="${classMap({
-                                        "md-data-table__column--sticky-left-end": column.stickyLeftEnd,
-                                        "md-data-table__column--sticky-right-start": column.stickyRightStart,
-                                    })}"
+                                    style="${this.styleDataTableRowCell(column)}"
+                                    class="${this.classDataTableRowCell(column)}"
                                 >${this.renderDataTableItem({
-                                    label: (column.format||(value=>value))(row[column.name])
+                                    label: row[column.name]
                                 })}</td>
                             `)}
-                        </tr>    
+                        </tr>
                     `)}
                 </tbody>
+                <tfoot>
+                    ${this.footer?.map(row => html`
+                        <tr>
+                            ${this.checkboxSelection&&this.columns?.length?html`
+                                <td
+                                    style="${this.styleDataTableFooterCell(this.styleStickyCheckboxSelection())}"
+                                    class="${this.classDataTableFooterCell({stickyLeftEnd:this.stickyLeftEnd})}"
+                                >${this.renderDataTableItem({
+                                })}</td>
+                            `:nothing}
+                            ${this.columns?.map(column => html`
+                                <td
+                                    style="${this.styleDataTableFooterCell(column)}"
+                                    class="${this.classDataTableFooterCell(column)}"
+                                >${this.renderDataTableItem({
+                                    label: row[column.name]
+                                })}</td>
+                            `)}
+                        </tr>
+                    `)}
+                </tfoot>
             </table>
-        `;
+        `
     }
 
-    /**
-     * @private
-     */
-    renderViewport() {
+    renderDataTableViewport() {
         /* prettier-ignore */
         return html`
             <div 
                 class="md-virtual md-data-table__viewport"
-                @onVirtualScroll="${this.handleDataTableViewportVirtualScroll}"
+                @onVirtualScroll="${this.handleDataTableVirtualScroll}"
             >
                 <div class="md-virtual__scrollbar md-data-table__scrollbar"></div>
-                <div class="md-virtual__container md-data-table__container">${this.renderDataTable()}</div>
+                <div class="md-virtual__container md-data-table__container">${this.renderDataTableNative()}</div>
             </div>
-        `;
+        `
     }
 
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
-        this.store = new MDStore(this.rows);
-        this.virtual = new MDVirtualController(this, {});
-
-        this.columns.forEach((column) => {
-            column.width = column.width || 52 * 4;
-        });
-        this.updateColumns();
-        this.updateVirtualRows();
-        this.updateVirtualColumns();
-        this.on("keydown", this.handleDataTableKeydown);
+        this.handleDataTableKeydown = this.handleDataTableKeydown.bind(this);
+        this.addEventListener("keydown", this.handleDataTableKeydown);
     }
 
-    /**
-     * {{description}}
-     * @private
-     */
-    updateVirtualRows() {
-        const { total, docs } = this.store.getAll({
-            sorters: this.sorters,
-            q: this.q,
-            _page: this._page,
-            _limit: this._limit,
-        });
-        this.storeTotal = total;
-        this.storeRows = docs;
-        this.virtual.options.rowTotal = this._end - this._start;
-        this.virtual.options.rowHeight = 52;
-        this.virtual.options.rowBuffer = 0 + (this.stickyHeader ? 1 : 0);
-    }
-
-    /**
-     * {{description}}
-     * @private
-     */
-    updateVirtualColumns() {
-        this.virtual.options.columnTotal = this.columns.length;
-        this.virtual.options.columnWidth = this.columns.reduce((acc, prev) => acc + prev.width, 0) / this.columns.length;
-        this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length + (this.stickyCheckboxSelection ? 1 : 0);
-    }
-
-    /**
-     * {{description}}
-     * @private
-     */
-    updateColumns() {
-        const half = Math.floor(this.columns.length / 2);
-        let stickyLeftEnd;
-        let stickyRightStart;
-
-        this.columns.forEach((column, index) => {
-            if (column.sticky) {
-                let flow;
-                let from;
-                let to;
-                let value;
-
-                if (index <= half) {
-                    flow = "left";
-                    from = 0;
-                    to = index;
-                    value = 0 + (this.stickyCheckboxSelection ? 72 : 0);
-                    stickyLeftEnd = index;
-                } else {
-                    flow = "right";
-                    from = index + 1;
-                    to = this.columns.length;
-                    value = 0;
-
-                    if (stickyRightStart === undefined) {
-                        stickyRightStart = index;
-                    }
-                }
-
-                for (let i = from; i < to; i++) {
-                    const column = this.columns[i];
-
-                    if (column.sticky) {
-                        value += column.width;
-                    }
-                }
-                column.flow = flow;
-                column[flow] = value;
-            }
-            column.stickyLeftEnd = false;
-            column.stickyRightStart = false;
-        });
-
-        if (stickyLeftEnd !== undefined) {
-            this.columns[stickyLeftEnd].stickyLeftEnd = true;
-        }
-
-        if (stickyRightStart !== undefined) {
-            this.columns[stickyRightStart].stickyRightStart = true;
-        }
-        this.stickyLeftEnd = this.stickyCheckboxSelection && stickyLeftEnd === undefined;
-    }
-
-    /**
-     * @private
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.off("keydown", this.handleDataTableKeydown);
+        this.removeEventListener("keydown", this.handleDataTableKeydown);
     }
 
-    /**
-     * @private
-     */
-    handleDataTableViewportVirtualScroll(event) {
-        this.virtualColumns = this.columns.filter((column, index) => {
-            return (index >= this.virtual.columnStart && index <= this.virtual.columnEnd) || column.sticky;
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+
+        if (changedProperties.has("columns")) {
+            await this.updateComplete;
+            this.columns.forEach((column) => {
+                if (column.width === undefined) {
+                    column.width = 56 * 3;
+                }
+            });
+            this.requestUpdate();
+            await this.updateComplete;
+            const total = this.columns.length;
+            const half = Math.floor(total / 2);
+            let stickyRightStart = undefined;
+            let stickyLeftEnd = undefined;
+
+            this.columns.forEach((column, index) => {
+                if (column.sticky) {
+                    let flow;
+                    let from;
+                    let to;
+                    let value = 0;
+
+                    if (index > half) {
+                        flow = "right";
+                        from = index + 1;
+                        to = total;
+                        if (stickyRightStart === undefined) {
+                            stickyRightStart = index;
+                        }
+                    } else {
+                        flow = "left";
+                        from = 0;
+                        to = index;
+                        if (this.stickyCheckboxSelection) {
+                            value += 72;
+                        }
+                        stickyLeftEnd = index;
+                    }
+
+                    for (let i = from; i < to; i++) {
+                        let column = this.columns[i];
+                        if (column.sticky) {
+                            value += column.width;
+                        }
+                    }
+                    column.flow = flow;
+                    column[flow] = value;
+                }
+            });
+            if (stickyRightStart !== undefined) {
+                this.columns[stickyRightStart].stickyRightStart = true;
+            }
+            if (stickyLeftEnd !== undefined) {
+                this.columns[stickyLeftEnd].stickyLeftEnd = true;
+            }
+            this.stickyLeftEnd = this.stickyCheckboxSelection && stickyLeftEnd === undefined;
+            this.requestUpdate();
+        }
+
+        if (changedProperties.has("rows")) {
+            this.store.docs = this.rows;
+            const { total, docs } = this.store.getAll();
+            this.storeRowsTotal = total;
+            this.storeRows = docs;
+
+            this.virtual.options.rowTotal = this.storeRowsTotal;
+            this.virtual.options.rowHeight = 52;
+            this.virtual.options.rowBuffer = 1;
+            this.virtual.handleVirtualScroll();
+        }
+    }
+
+    handleDataTableVirtualScroll(event) {
+        if(!this.storeRows){return}
+        this.virtualRows=this.storeRows.slice(this.virtual.rowStart,this.virtual.rowEnd)
+        this.requestUpdate()
+    }
+
+    select(data) {
+        this.store.docs.forEach((item) => {
+            item.selected = item === data;
         });
-
-        this.virtualRows = this.storeRows.filter((row, index) => {
-            return index >= this.virtual.rowStart && index <= this.virtual.rowEnd;
-        });
-        console.log(this.virtualColumns);
-        console.log(this.virtualRows);
-        this.requestUpdate();
-        this.emit("onDataTableViewportVirtualScroll", event);
+        this.endIndex = this.store.docs.indexOf(data);
     }
 
-    /**
-     * {{description}}
-     */
-    get isSelectedAll() {
-        const selectedTotal = this.storeRows.filter((row) => row.selected).length;
-        return selectedTotal > 0 && selectedTotal === this.storeTotal;
-    }
-
-    /**
-     * {{description}}
-     */
-    get isSelectedPartial() {
-        const selectedTotal = this.storeRows.filter((row) => row.selected).length;
-        return selectedTotal > 0 && selectedTotal < this.storeTotal;
-    }
-
-    /**
-     * {{description}}
-     */
-    selectAllToggle(checked) {
-        this.storeRows.forEach((row) => {
-            row.selected = checked;
-        });
-    }
-
-    /**
-     * {{description}}
-     */
     selectToggle(data) {
         data.selected = !data.selected;
     }
 
-    /**
-     * {{description}}
-     */
-    select(data) {
-        this.storeRows.forEach((item) => {
-            item.selected = item === data;
-        });
-        this.endIndex = this.storeRows.indexOf(data);
-    }
-
-    /**
-     * {{description}}
-     */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
-        this.startIndex = this.storeRows.indexOf(data);
+        this.startIndex = this.store.docs.indexOf(data);
         this.swapIndex = this.startIndex > this.endIndex;
 
         if (this.swapIndex) {
             [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
         }
 
-        this.storeRows.forEach((item, i) => {
+        this.store.docs.forEach((item, i) => {
             item.selected = i >= this.startIndex && i <= this.endIndex;
         });
 
@@ -470,40 +370,26 @@ class MDDataTableComponent extends MDCardComponent {
         }
     }
 
-    /**
-     * {{description}}
-     */
-    selectAll() {
-        this.storeRows.forEach((item) => {
-            item.selected = true;
+    selectAll(selected = true) {
+        this.store.docs.forEach((item) => {
+            item.selected = selected;
         });
     }
 
-    /**
-     * @private
-     */
-    handleDataTableColumnCheckboxNativeInput(event) {
-        event.preventDefault();
+    handleDataTableColumnCellCheckboxNativeInput(event) {
         const checked = event.detail.currentTarget.checked;
-        this.selectAllToggle(checked);
+        this.selectAll(checked);
         this.requestUpdate();
-        this.emit("onDataTableColumnCheckboxNativeInput", event);
+        this.emit("onDataTableColumnCellCheckboxNativeInput", event);
     }
 
-    /**
-     * @private
-     */
-    handleDataTableRowCheckboxNativeInput(event) {
-        event.preventDefault();
+    handleDataTableRowCellCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
         this.selectToggle(data);
         this.requestUpdate();
-        this.emit("onDataTableRowCheckboxNativeInput", event);
+        this.emit("onDataTableRowCellCheckboxNativeInput", event);
     }
 
-    /**
-     * @private
-     */
     handleDataTableRowClick(event) {
         if (event.target.closest(".md-data-table__checkbox," + ".md-data-table__radio-button," + ".md-data-table__switch")) {
             return;
@@ -521,9 +407,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableRowClick", event);
     }
 
-    /**
-     * @private
-     */
     handleDataTableKeydown(event) {
         const activeElement = document.activeElement === event.target.closest("tr");
 
@@ -531,219 +414,7 @@ class MDDataTableComponent extends MDCardComponent {
             this.selectAll();
             this.requestUpdate();
         }
-        this.emit("handleDataTableKeydown", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnResizeStart(event) {
-        if (!event.currentTarget.hasAttribute("resizable")) {
-            return;
-        }
-        this.resizing = true;
-        this.emit("onDataTableColumnResizeStart", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnResize(event) {
-        if (!event.currentTarget.hasAttribute("resizable")) {
-            return;
-        }
-        const data = event.currentTarget.data;
-        const gesture = event.currentTarget.gesture;
-        data.width = gesture.currentWidth;
-        this.requestUpdate();
-        this.emit("onDataTableColumnResize", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnResizeEnd(event) {
-        if (!event.currentTarget.hasAttribute("resizable")) {
-            return;
-        }
-        this.resizing = false;
-        this.updateColumns();
-        this.updateVirtualColumns();
-        this.virtual.handleVirtualScroll();
-        this.emit("onDataTableColumnResizeEnd", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnPointerenter(event) {
-        const data = event.currentTarget.data;
-
-        if (data.sortable && !this.dragging && !this.resizing) {
-            if (!data.order) {
-                data.sortableIcon = "arrow_upward";
-                this.requestUpdate();
-            }
-        }
-        this.emit("onDataTableColumnPointerenter", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnPointerleave(event) {
-        const data = event.currentTarget.data;
-
-        if (data.sortable) {
-            if (!data.order) {
-                data.sortableIcon = "";
-                this.requestUpdate();
-            }
-        }
-        this.emit("onDataTableColumnPointerleave", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnTap(event) {
-        const data = event.currentTarget.data;
-
-        if (data.sortable && !this.dragging && !this.resizing) {
-            if (!data.order) {
-                data.order = "asc";
-                data.sortableIcon = "arrow_upward";
-            } else if (data.order === "asc") {
-                data.order = "desc";
-                data.sortableIcon = "arrow_downward";
-            } else {
-                data.order = "";
-                data.sortableIcon = "";
-            }
-            const sorters = this.columns.filter((column) => column.order);
-            this.sorters = sorters;
-            this.updateVirtualRows();
-            this.virtual.viewport.scrollTop = 0;
-            this.virtual.viewport.scrollLeft = 0;
-            this.virtual.handleVirtualScroll();
-        }
-        this.emit("onDataTableColumnTap", event);
-    }
-
-    /**
-     * @private
-     */
-    handleCardTextFieldNativeSearch(event) {
-        const q = event.currentTarget.value;
-        this.q = q;
-        this.updateVirtualRows();
-        this.virtual.viewport.scrollTop = 0;
-        this.virtual.viewport.scrollLeft = 0;
-        this.virtual.handleVirtualScroll();
-        this.emit("onDataTableTextFieldNativeSearch", event);
-    }
-
-    /**
-     * @private
-     */
-    handleCardPaginationChange(event) {
-        const page = event.currentTarget.page;
-        const limit = event.currentTarget.limit;
-        const start = event.currentTarget.start;
-        const end = event.currentTarget.end;
-        this._page = page;
-        this._limit = limit;
-        this._start = start;
-        this._end = end;
-        this.updateVirtualRows();
-        this.virtual.viewport.scrollTop = 0;
-        this.virtual.viewport.scrollLeft = 0;
-        this.virtual.handleVirtualScroll();
-        this.emit("onDataTablePaginationChange", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnDoubleTap(event) {
-        const gesture = event.currentTarget.gesture;
-
-        if (gesture.resize) {
-            return this.handleDataTableColumnResizeDoubleTap(event);
-        }
-        this.emit("onDataTableColumnDoubleTap", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnResizeDoubleTap(event) {
-        const th = event.currentTarget;
-        const data = th.data;
-        const n = Array.from(th.parentElement.children).indexOf(th) + 1;
-        let width = 0;
-
-        this.querySelectorAll(`td:nth-child(${n}) .md-data-table__item`).forEach((item) => {
-            const style = window.getComputedStyle(item);
-            const paddingLeft = parseFloat(style.getPropertyValue("padding-left"));
-            const paddingRight = parseFloat(style.getPropertyValue("padding-right"));
-            const label = item.querySelector(".md-data-table__label-primary");
-            const currentWidth = paddingLeft + label.scrollWidth + paddingRight;
-
-            if (width < currentWidth) {
-                width = currentWidth;
-            }
-        });
-        data.width = width;
-        this.updateColumns();
-        this.updateVirtualColumns();
-        this.virtual.handleVirtualScroll();
-        this.emit("onDataTableColumnResizeDoubleTap", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnDragStart(event) {
-        if (!event.currentTarget.hasAttribute("orderable")) {
-            return;
-        }
-        this.fromData = event.currentTarget.data;
-        this.emit("onDataTableColumnDragStart", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnDrag(event) {
-        if (!event.currentTarget.hasAttribute("orderable")) {
-            return;
-        }
-        this.dragging = true;
-        const data = event.detail.target.closest("th")?.data;
-
-        if (data && this.toData !== data) {
-            this.toData = data;
-            this.fromIndex = this.columns.indexOf(this.fromData);
-            this.toIndex = this.columns.indexOf(this.toData);
-            const [column] = this.columns.splice(this.fromIndex, 1);
-            this.columns.splice(this.toIndex, 0, column);
-            this.updateColumns();
-            this.updateVirtualColumns();
-            this.virtual.handleVirtualScroll();
-        }
-        this.emit("onDataTableColumnDrag", event);
-    }
-
-    /**
-     * @private
-     */
-    handleDataTableColumnDragEnd(event) {
-        if (!event.currentTarget.hasAttribute("orderable")) {
-            return;
-        }
-        this.dragging = false;
-        this.emit("onDataTableColumnDragEnd", event);
+        this.emit("onDataTableKeydown", event);
     }
 }
 customElements.define("md-data-table", MDDataTableComponent);

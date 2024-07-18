@@ -1,32 +1,48 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-const columns = [
-    { name: "symbol", label: "Symbol", resizable: true, orderable: true, sortable: true, sticky: true },
-    { name: "company", label: "Company Name", resizable: true, orderable: true, sortable: true, sticky: true },
-    { name: "price", label: "Price", type: "currency", resizable: true, orderable: true, sortable: true },
-    { name: "change", label: "Change", type: "percent", resizable: true, orderable: true, sortable: true },
-    { name: "volume", label: "Volume", type: "number", resizable: true, orderable: true, sortable: true, sticky: true },
-    { name: "marketCap", label: "Market Cap", type: "currency", resizable: true, orderable: true, sortable: true, sticky: true },
-];
-
-function generateRows(numRows) {
-    const rows = [];
-    for (let i = 1; i <= numRows; i++) {
-        rows.push({
-            symbol: `SYM${i}`,
-            company: `Company ${i}`,
-            price: Math.random() * 1000,
-            change: (Math.random() - 0.5) * 10,
-            volume: Math.floor(Math.random() * 10000000),
-            marketCap: Math.random() * 1000e9,
-        });
-    }
-    return rows;
-}
-const rows = generateRows(10000);
-
 class DevDataTable extends MDComponent {
+    constructor() {
+        super();
+
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let lorem = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis blanditiis recusandae iste dicta eius! Nihil eos, labore reiciendis quidem officiis reprehenderit tempora veritatis error voluptatem porro sequi. Asperiores, ratione quisquam?".split(" ");
+
+        // window.setInterval(() => {
+        let length = 10;
+        this.columns = Array.from({ length }, (_, k) => ({
+            name: "name" + k,
+            label: "label" + k,
+            sticky: k === 0 || k === 1 || k === length - 2 || k === length - 1,
+        }));
+
+        this.rows = Array.from({ length: 100 }, (_, k) => {
+            let row = {};
+            this.columns.forEach((column, index) => {
+                if (index % 2 === 0) {
+                    row[column.name] = lorem[getRandomNumber(0, lorem.length)];
+                } else {
+                    row[column.name] = getRandomNumber(0, 100);
+                }
+            });
+            return row;
+        });
+
+        this.footer = Array.from({ length: 1 }, (_, k) => {
+            let row = {};
+            this.columns.forEach((column) => {
+                row[column.name] = "sum" + k;
+            });
+            return row;
+        });
+
+        this.requestUpdate();
+        // }, 1000*5)
+    }
+
     render() {
         return html`
             <div class="md-layout-border">
@@ -40,33 +56,17 @@ class DevDataTable extends MDComponent {
                             class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"
                         >
                             <md-data-table
-                                .columns=${columns}
-                                .rows=${rows}
+                                .columns="${this.columns}"
+                                .rows="${this.rows}"
+                                .footer="${this.footer}"
                                 stickyHeader
+                                stickyFooter
                                 checkboxSelection
                                 stickyCheckboxSelection
                                 rangeSelection
                                 multiSelection
                                 singleSelection
                                 allSelection
-                                @onDataTableViewportVirtualScroll="${console.log}"
-                                @onDataTableColumnCheckboxNativeInput="${console.log}"
-                                @onDataTableRowCheckboxNativeInput="${console.log}"
-                                @onDataTableRowClick="${console.log}"
-                                @handleDataTableKeydown="${console.log}"
-                                @onDataTableColumnResizeStart="${console.log}"
-                                @onDataTableColumnResize="${console.log}"
-                                @onDataTableColumnResizeEnd="${console.log}"
-                                @onDataTableColumnPointerenter="${console.log}"
-                                @onDataTableColumnPointerleave="${console.log}"
-                                @onDataTableColumnTap="${console.log}"
-                                @onDataTableTextFieldNativeSearch="${console.log}"
-                                @onDataTablePaginationChange="${console.log}"
-                                @onDataTableColumnDoubleTap="${console.log}"
-                                @onDataTableColumnResizeDoubleTap="${console.log}"
-                                @onDataTableColumnDragStart="${console.log}"
-                                @onDataTableColumnDrag="${console.log}"
-                                @onDataTableColumnDragEnd="${console.log}"
                             ></md-data-table>
                         </div>
                     </div>

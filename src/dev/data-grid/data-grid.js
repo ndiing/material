@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-class DevDataGrid extends MDComponent {
+class DevDataTable extends MDComponent {
     constructor() {
         super();
 
@@ -55,7 +55,7 @@ class DevDataGrid extends MDComponent {
                             style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:0;"
                             class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"
                         >
-                            <md-data-grid
+                            <md-data-table
                                 .columns="${this.columns}"
                                 .rows="${this.rows}"
                                 .footer="${this.footer}"
@@ -67,7 +67,7 @@ class DevDataGrid extends MDComponent {
                                 multiSelection
                                 singleSelection
                                 allSelection
-                            ></md-data-grid>
+                            ></md-data-table>
                         </div>
                     </div>
                 </div>
@@ -76,6 +76,6 @@ class DevDataGrid extends MDComponent {
     }
 }
 
-customElements.define("dev-data-grid", DevDataGrid);
+customElements.define("dev-data-table", DevDataTable);
 
-export default document.createElement("dev-data-grid");
+export default document.createElement("dev-data-table");
