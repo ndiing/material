@@ -1,24 +1,18 @@
 /**
  * @license
- * Copyright 2014 Travis Webb
- * SPDX-License-Identifier: MIT
- */
-
-/**
- * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 /**
  * @license
- * Copyright 2019 Google LLC
+ * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 /**
  * @license
- * Copyright 2020 Google LLC
+ * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
 

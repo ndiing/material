@@ -21,7 +21,7 @@ var t={8548:(t,e,i)=>{i.d(e,{z:()=>r});var s=i(6684),n=i(4993);class r extends s
             ${0}
             ${0}
             ${0}
-        `),this.leadingCheckbox?this.renderCheckbox():n.s6,this.leadingRadioButton?this.renderRadioButton():n.s6,this.leadingSwitch?this.renderSwitch():n.s6,this.avatar?(0,n.qy)(c||(c=g`<md-image class="md-list__avatar" .src="${0}" .alt="${0}" .variant="${0}"></md-image>`),this.avatar,"avatar","rounded"):n.s6,this.thumbnail?(0,n.qy)(p||(p=g`<md-image class="md-list__thumbnail" .src="${0}" .alt="${0}"></md-image>`),this.thumbnail,"thumbnail"):n.s6,this.video?(0,n.qy)(u||(u=g`<md-image class="md-list__video" .src="${0}" .alt="${0}" .ratio="${0}"></md-image>`),this.video,"video","3/2"):n.s6,this.icon?(0,n.qy)(m||(m=g`<div class="md-icon md-list__icon">${0}</div>`),this.icon):n.s6,this.label||this.subLabel||this.badge?(0,n.qy)($||($=g`
+        `),this.leadingCheckbox?this.renderCheckbox():n.s6,this.leadingRadioButton?this.renderRadioButton():n.s6,this.leadingSwitch?this.renderSwitch():n.s6,this.avatar?(0,n.qy)(c||(c=g`<md-image class="md-list__avatar" .src="${0}" .alt="${0}" .variant="${0}"></md-image>`),this.avatar,"avatar","rounded"):n.s6,this.thumbnail?(0,n.qy)(p||(p=g`<md-image class="md-list__thumbnail" .src="${0}" .alt="${0}"></md-image>`),this.thumbnail,"thumbnail"):n.s6,this.video?(0,n.qy)(u||(u=g`<md-image class="md-list__video" .src="${0}" .alt="${0}" .ratio="${0}"></md-image>`),this.video,"video","3/2"):n.s6,this.icon?(0,n.qy)(m||(m=g`<md-icon class="md-list__icon">${0}</md-icon>`),this.icon):n.s6,this.label||this.subLabel||this.badge?(0,n.qy)($||($=g`
                 <div class="md-list__inner">
                     ${0}
                     ${0}
