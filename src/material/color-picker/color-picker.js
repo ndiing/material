@@ -318,26 +318,6 @@ class MDColorPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles the previous icon button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleColorPickerIconButtonPrevClick(event) {
-        this.emit("onColorPickerSelection", event);
-        this.emit("onColorPickerIconButtonPrevClick", event);
-    }
-
-    /**
-     * Handles the next icon button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleColorPickerIconButtonNextClick(event) {
-        this.emit("onColorPickerSelection", event);
-        this.emit("onColorPickerIconButtonNextClick", event);
-    }
-
-    /**
      * Handles the pointer down event on the gradient track.
      * @param {Event} event - The pointer down event.
      * @private
