@@ -287,6 +287,9 @@ class MDDataTableComponent extends MDCardComponent {
         /* prettier-ignore */
         return html`
             <div class="md-layout-border">
+                <div class="md-layout-border__item md-layout-border__item--north">
+                    toolbar
+                </div>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div 
                         class="md-virtual md-data-table__viewport"
@@ -403,19 +406,43 @@ class MDDataTableComponent extends MDCardComponent {
         this.stickyLeftEnd = this.stickyCheckboxSelection && stickyLeftEnd === undefined;
     }
 
+    select(data) {
+        this.store.docs.forEach((item) => {
+            item.selected = item === data;
+        });
+        this.endIndex = this.store.docs.indexOf(data);
+    }
+
+    selectToggle(data) {
+        data.selected = !data.selected;
+    }
+
+    selectRange(data) {
+        this.endIndex = this.endIndex || 0;
+        this.startIndex = this.store.docs.indexOf(data);
+        this.swapIndex = this.startIndex > this.endIndex;
+        if (this.swapIndex) {
+            [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
+        }
+        this.store.docs.forEach((item, i) => {
+            item.selected = i >= this.startIndex && i <= this.endIndex;
+        });
+        if (this.swapIndex) {
+            [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
+        }
+    }
+
+    selectAll(selected = true) {
+        this.store.docs.forEach((item) => {
+            item.selected = selected;
+        });
+    }
+
     handleDataTableTextFieldNativeSearch(event) {
         this.q = event.detail.currentTarget.value;
         this.updateStore();
         this.updateVirtual();
         this.emit("onDataTableTextFieldNativeSearch", event);
-    }
-
-    handleDataTablePaginationChange(event) {
-        this._start = event.detail.start;
-        this._end = event.detail.end;
-        this.updateStore();
-        this.updateVirtual();
-        this.emit("onDataTablePaginationChange", event);
     }
 
     handleDataTableVirtualScroll() {
@@ -520,38 +547,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.emit("onDataTableColumnCellClick", event);
     }
 
-    select(data) {
-        this.store.docs.forEach((item) => {
-            item.selected = item === data;
-        });
-        this.endIndex = this.store.docs.indexOf(data);
-    }
-
-    selectToggle(data) {
-        data.selected = !data.selected;
-    }
-
-    selectRange(data) {
-        this.endIndex = this.endIndex || 0;
-        this.startIndex = this.store.docs.indexOf(data);
-        this.swapIndex = this.startIndex > this.endIndex;
-        if (this.swapIndex) {
-            [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
-        }
-        this.store.docs.forEach((item, i) => {
-            item.selected = i >= this.startIndex && i <= this.endIndex;
-        });
-        if (this.swapIndex) {
-            [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
-        }
-    }
-
-    selectAll(selected = true) {
-        this.store.docs.forEach((item) => {
-            item.selected = selected;
-        });
-    }
-
     handleDataTableColumnCellCheckboxNativeInput(event) {
         const checked = event.detail.currentTarget.checked;
         this.selectAll(checked);
@@ -589,6 +584,14 @@ class MDDataTableComponent extends MDCardComponent {
             this.requestUpdate();
         }
         this.emit("onDataTableKeydown", event);
+    }
+
+    handleDataTablePaginationChange(event) {
+        this._start = event.detail.start;
+        this._end = event.detail.end;
+        this.updateStore();
+        this.updateVirtual();
+        this.emit("onDataTablePaginationChange", event);
     }
 }
 customElements.define("md-data-table", MDDataTableComponent);

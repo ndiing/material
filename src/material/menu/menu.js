@@ -83,33 +83,6 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Updates the store with the current list and applies filters.
-     * @private
-     */
-    async updateStore() {
-        const { total, docs } = this.store.getAll({
-            filters: this.filters,
-        });
-        this.storeTotal = total;
-        this.storeList = docs;
-        this.style.setProperty("max-height", `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
-    }
-
-    /**
-     * Updates the virtual scrolling options and viewport.
-     * @private
-     */
-    updateVirtual() {
-        this.virtual.options.rowTotal = this.storeTotal;
-        this.virtual.options.rowHeight = this.rowHeight;
-        this.virtual.options.rowBuffer = this.maxRows;
-        if (this.virtual.viewport) {
-            this.virtual.viewport.scrollTop = 0;
-            this.virtual.handleVirtualScroll();
-        }
-    }
-
-    /**
      * Callback for when the component is connected to the DOM.
      * @private
      */
@@ -143,33 +116,30 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles the virtual scroll event for the menu viewport.
-     * @param {Event} event - The virtual scroll event.
+     * Updates the store with the current list and applies filters.
      * @private
      */
-    handleMenuViewportVirtualScroll(event) {
-        this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
-        this.requestUpdate();
-        this.emit("onMenuViewportVirtualScroll", event);
-        if (!this.initialized) {
-            this.initialized = true;
-            this.updateComplete.then(() => {
-                this.emit("onMenuViewportVirtualScrollInitialized", event);
-            });
-        }
+    async updateStore() {
+        const { total, docs } = this.store.getAll({
+            filters: this.filters,
+        });
+        this.storeTotal = total;
+        this.storeList = docs;
+        this.style.setProperty("max-height", `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
 
     /**
-     * Handles the click event on a menu list item.
-     * @param {Event} event - The click event.
+     * Updates the virtual scrolling options and viewport.
      * @private
      */
-    handleMenuListItemClick(event) {
-        const data = event.detail.currentTarget.data;
-        this.select(data);
-        this.requestUpdate();
-        this.emit("onMenuListSelection", event);
-        this.emit("onMenuListItemClick", event);
+    updateVirtual() {
+        this.virtual.options.rowTotal = this.storeTotal;
+        this.virtual.options.rowHeight = this.rowHeight;
+        this.virtual.options.rowBuffer = this.maxRows;
+        if (this.virtual.viewport) {
+            this.virtual.viewport.scrollTop = 0;
+            this.virtual.handleVirtualScroll();
+        }
     }
 
     /**
@@ -283,6 +253,36 @@ class MDMenuComponent extends MDSheetComponent {
         const delta = Math.floor((this.maxRows - 1) / 2);
         this.virtual.viewport.scrollTop = (this.activatedIndex - delta) * this.rowHeight;
         this.virtual.handleVirtualScroll();
+    }
+
+    /**
+     * Handles the virtual scroll event for the menu viewport.
+     * @param {Event} event - The virtual scroll event.
+     * @private
+     */
+    handleMenuViewportVirtualScroll(event) {
+        this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
+        this.requestUpdate();
+        this.emit("onMenuViewportVirtualScroll", event);
+        if (!this.initialized) {
+            this.initialized = true;
+            this.updateComplete.then(() => {
+                this.emit("onMenuViewportVirtualScrollInitialized", event);
+            });
+        }
+    }
+
+    /**
+     * Handles the click event on a menu list item.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleMenuListItemClick(event) {
+        const data = event.detail.currentTarget.data;
+        this.select(data);
+        this.requestUpdate();
+        this.emit("onMenuListSelection", event);
+        this.emit("onMenuListItemClick", event);
     }
 }
 customElements.define("md-menu", MDMenuComponent);

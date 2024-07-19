@@ -141,66 +141,9 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
     }
 
-    /**
-     * @private
-     */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick();
-    }
-
-    handleTextFieldContainerClick(event) {
-        super.handleTextFieldContainerClick(event);
-        this.togglePicker();
-    }
-
-    handleTextFieldNativeKeydown(event) {
-        super.handleTextFieldNativeKeydown(event);
-        if (!this.pickerOpen) {
-            if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-                event.preventDefault();
-                this.activatedIndex = this.options.findIndex((option) => option.selected);
-                if (this.activatedIndex === -1) {
-                    this.activatedIndex = 0;
-                }
-                let offset = 0;
-                if (event.key === "ArrowUp") {
-                    offset = -1;
-                }
-                if (event.key === "ArrowDown") {
-                    offset = 1;
-                }
-                this.activatedIndex = (this.activatedIndex + this.options.length + offset) % this.options.length;
-                let data = this.options[this.activatedIndex];
-                this.options.forEach((option) => {
-                    option.selected = option === data;
-                });
-                this.requestUpdate();
-            } else if (event.key === "Enter") {
-                event.preventDefault();
-                this.togglePicker();
-            }
-        }
-    }
-
-    handleTextFieldNativeInput(event) {
-        super.handleTextFieldNativeInput(event);
-        this.picker.filter(this.textFieldNative.value.value);
-        this.showPicker();
-    }
-
     validate() {
         this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
         super.validate();
-    }
-
-    handleTextFieldNativeReset(event) {
-        super.handleTextFieldNativeReset(event);
-        this.options.forEach((option, index) => {
-            option.activated = this.defaultOptions[index].activated;
-            option.selected = this.defaultOptions[index].selected;
-        });
-        this.requestUpdate();
     }
 
     togglePicker() {
@@ -257,6 +200,63 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.style.maxWidth = `${this.textFieldContainer.value.clientWidth}px`;
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
+    }
+
+    handleTextFieldContainerClick(event) {
+        super.handleTextFieldContainerClick(event);
+        this.togglePicker();
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
+    }
+
+    handleTextFieldNativeKeydown(event) {
+        super.handleTextFieldNativeKeydown(event);
+        if (!this.pickerOpen) {
+            if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+                event.preventDefault();
+                this.activatedIndex = this.options.findIndex((option) => option.selected);
+                if (this.activatedIndex === -1) {
+                    this.activatedIndex = 0;
+                }
+                let offset = 0;
+                if (event.key === "ArrowUp") {
+                    offset = -1;
+                }
+                if (event.key === "ArrowDown") {
+                    offset = 1;
+                }
+                this.activatedIndex = (this.activatedIndex + this.options.length + offset) % this.options.length;
+                let data = this.options[this.activatedIndex];
+                this.options.forEach((option) => {
+                    option.selected = option === data;
+                });
+                this.requestUpdate();
+            } else if (event.key === "Enter") {
+                event.preventDefault();
+                this.togglePicker();
+            }
+        }
+    }
+
+    handleTextFieldNativeInput(event) {
+        super.handleTextFieldNativeInput(event);
+        this.picker.filter(this.textFieldNative.value.value);
+        this.showPicker();
+    }
+
+    handleTextFieldNativeReset(event) {
+        super.handleTextFieldNativeReset(event);
+        this.options.forEach((option, index) => {
+            option.activated = this.defaultOptions[index].activated;
+            option.selected = this.defaultOptions[index].selected;
+        });
+        this.requestUpdate();
     }
 
     /**

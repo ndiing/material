@@ -38,15 +38,6 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Handles click events on the sheet scrim.
-     * @private
-     */
-    handleSheetScrimClick(event) {
-        this.close();
-        this.emit("onSheetScrimClick", event);
-    }
-
-    /**
      * Shows the sheet.
      */
     async show(modal) {
@@ -89,6 +80,15 @@ class MDSheetComponent extends MDCardComponent {
         } else {
             this.show(...args);
         }
+    }
+
+    /**
+     * Handles click events on the sheet scrim.
+     * @private
+     */
+    handleSheetScrimClick(event) {
+        this.close();
+        this.emit("onSheetScrimClick", event);
     }
 }
 customElements.define("md-sheet", MDSheetComponent);

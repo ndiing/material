@@ -81,6 +81,29 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Returns the formatted time value.
+     * @returns {string} Formatted time string.
+     * @private
+     */
+    getValue() {
+        return stringifyTime(this.selected);
+    }
+
+    /**
+     * Handles click on the label button in the time picker.
+     * @param {Event} event - The click event object.
+     * @private
+     */
+    handleCardButtonLabelClick(event) {
+        if (this.index === 0) {
+            this.index = 1;
+        } else if (this.index === 1) {
+            this.index = 0;
+        }
+        this.emit("onTimePickerButtonLabelClick", event);
+    }
+
+    /**
      * Handles click on the previous button in the time picker.
      * @param {Event} event - The click event object.
      * @private
@@ -117,46 +140,6 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the label button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
-     */
-    handleCardButtonLabelClick(event) {
-        if (this.index === 0) {
-            this.index = 1;
-        } else if (this.index === 1) {
-            this.index = 0;
-        }
-        this.emit("onTimePickerButtonLabelClick", event);
-    }
-
-    /**
-     * Handles click on the cancel button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
-     */
-    handleCardButtonCancelClick(event) {
-        this.value = this.defaultValue;
-        this.updateDate();
-        this.requestUpdate();
-        this.index = 0;
-        this.emit("onTimePickerButtonCancelClick", event);
-    }
-
-    /**
-     * Handles click on the OK button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
-     */
-    handleCardButtonOkClick(event) {
-        this.selected.setMinutes(this.selection.getMinutes());
-        this.value = this.getValue();
-        this.requestUpdate();
-        this.index = 0;
-        this.emit("onTimePickerButtonOkClick", event);
-    }
-
-    /**
      * Handles click on the hour item in the time picker.
      * @param {Event} event - The click event object.
      * @private
@@ -187,12 +170,29 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Returns the formatted time value.
-     * @returns {string} Formatted time string.
+     * Handles click on the cancel button in the time picker.
+     * @param {Event} event - The click event object.
      * @private
      */
-    getValue() {
-        return stringifyTime(this.selected);
+    handleCardButtonCancelClick(event) {
+        this.value = this.defaultValue;
+        this.updateDate();
+        this.requestUpdate();
+        this.index = 0;
+        this.emit("onTimePickerButtonCancelClick", event);
+    }
+
+    /**
+     * Handles click on the OK button in the time picker.
+     * @param {Event} event - The click event object.
+     * @private
+     */
+    handleCardButtonOkClick(event) {
+        this.selected.setMinutes(this.selection.getMinutes());
+        this.value = this.getValue();
+        this.requestUpdate();
+        this.index = 0;
+        this.emit("onTimePickerButtonOkClick", event);
     }
 }
 customElements.define("md-time-picker", MDTimePickerComponent);

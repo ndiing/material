@@ -185,6 +185,103 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
+     * Generates tabs and rows for the emoji picker
+     * @param {Array} data - Data for the emoji picker.
+     * @param {Object} tabs - Tabs object.
+     * @returns {Object} - Data tabs and data rows.
+     * @private
+     */
+    generateTabsAndRows(data = [], tabs = {}) {
+        const grouped = data.reduce((acc, curr) => {
+            const { group = "Frequently Used", emoji } = curr;
+            if (!acc[group]) {
+                acc[group] = [];
+            }
+            acc[group].push({ emoji });
+            return acc;
+        }, {});
+        const dataTabs = [];
+        const dataRows = [];
+        let rowIndex = 0;
+        let index = 0;
+        for (const name in grouped) {
+            const value = grouped[name];
+            dataTabs.push({ label: name, emoji: tabs[name] || value[0].emoji, rowIndex, index });
+            dataRows.push([{ label: name }]);
+            ++rowIndex;
+            ++index;
+            for (let i = 0; i < value.length; i += 7) {
+                dataRows.push(value.slice(i, i + 7));
+                ++rowIndex;
+            }
+        }
+        return { dataTabs, dataRows };
+    }
+
+    /**
+     * Shows the emoji picker as a modal
+     * @param {HTMLElement} button - Button element that triggers the modal.
+     * @param {Object} options - Options for positioning the modal.
+     */
+    showModal(button, options) {
+        this.updatePosition(button, options);
+        super.showModal();
+    }
+
+    /**
+     * Shows the emoji picker
+     * @param {HTMLElement} button - Button element that triggers the picker.
+     * @param {Object} options - Options for positioning the picker.
+     */
+    show(button, options) {
+        this.updatePosition(button, options);
+        super.show();
+    }
+
+    /**
+     * Updates the position of the emoji picker
+     * @param {HTMLElement} button - Button element that triggers the picker.
+     * @param {Object} options - Options for positioning the picker.
+     * @private
+     */
+    updatePosition(button, options) {
+        this.popper.setPosition(button, {
+            /* prettier-ignore */
+            placements: [
+                "below-start","below-end","below",
+                "above-start","above-end","above",
+                "before-start","before-end","before",
+                "after-start","after-end","after",
+                "top-start","top-end","top",
+                "bottom-start","bottom-end","bottom",
+                "left-start","left-end","left",
+                "right-start","right-end","right",
+            ],
+            ...options,
+        });
+    }
+
+    /**
+     * Handles text field native input event
+     * @param {Event} event - Input event.
+     * @private
+     */
+    handleEmojiPickerTextFieldNativeInput(event) {
+        const value = event.detail.currentTarget.value;
+        const { docs } = this.store.getAll({
+            shortcodes_like: value,
+        });
+        const data = value ? docs : this.rows.concat(docs);
+        const { dataTabs, dataRows } = this.generateTabsAndRows(data, this.tabs);
+        this.dataTabs = dataTabs;
+        this.dataRows = dataRows;
+        this.virtual.options.rowTotal = this.dataRows.length;
+        this.virtual.options.rowBuffer = this.dataTabs.length;
+        this.virtual.handleVirtualScroll();
+        this.emit("onEmojiPickerTextFieldNativeInput", event);
+    }
+
+    /**
      * Handles emoji picker tabs item click event
      * @param {Event} event - Click event.
      * @private
@@ -241,80 +338,12 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles text field native input event
-     * @param {Event} event - Input event.
-     * @private
-     */
-    handleEmojiPickerTextFieldNativeInput(event) {
-        const value = event.detail.currentTarget.value;
-        const { docs } = this.store.getAll({
-            shortcodes_like: value,
-        });
-        const data = value ? docs : this.rows.concat(docs);
-        const { dataTabs, dataRows } = this.generateTabsAndRows(data, this.tabs);
-        this.dataTabs = dataTabs;
-        this.dataRows = dataRows;
-        this.virtual.options.rowTotal = this.dataRows.length;
-        this.virtual.options.rowBuffer = this.dataTabs.length;
-        this.virtual.handleVirtualScroll();
-        this.emit("onEmojiPickerTextFieldNativeInput", event);
-    }
-
-    /**
      * Handles emoji picker grid column click event
      * @param {Event} event - Click event.
      * @private
      */
     handleEmojiPickerGridColumnClick(event) {
         this.emit("onEmojiPickerGridColumnClick", event);
-    }
-
-    /**
-     * Generates tabs and rows for the emoji picker
-     * @param {Array} data - Data for the emoji picker.
-     * @param {Object} tabs - Tabs object.
-     * @returns {Object} - Data tabs and data rows.
-     * @private
-     */
-    generateTabsAndRows(data = [], tabs = {}) {
-        const grouped = data.reduce((acc, curr) => {
-            const { group = "Frequently Used", emoji } = curr;
-            if (!acc[group]) {
-                acc[group] = [];
-            }
-            acc[group].push({ emoji });
-            return acc;
-        }, {});
-        const dataTabs = [];
-        const dataRows = [];
-        let rowIndex = 0;
-        let index = 0;
-        for (const name in grouped) {
-            const value = grouped[name];
-            dataTabs.push({ label: name, emoji: tabs[name] || value[0].emoji, rowIndex, index });
-            dataRows.push([{ label: name }]);
-            ++rowIndex;
-            ++index;
-            for (let i = 0; i < value.length; i += 7) {
-                dataRows.push(value.slice(i, i + 7));
-                ++rowIndex;
-            }
-        }
-        return { dataTabs, dataRows };
-    }
-
-    /**
-     * Handles card icon button click event
-     * @param {Event} event - Click event.
-     * @private
-     */
-    handleCardIconButtonClick(event) {
-        if (event.currentTarget.name === "prev") {
-            this.handleEmojiPickerIconButtonPrevClick(event);
-        } else if (event.currentTarget.name === "next") {
-            this.handleEmojiPickerIconButtonNextClick(event);
-        }
-        this.emit("onEmojiPickerIconButtonClick", event);
     }
 
     /**
@@ -334,35 +363,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles previous icon button click event
-     * @param {Event} event - Click event.
-     * @private
-     */
-    handleEmojiPickerIconButtonPrevClick(event) {
-        this.emit("onEmojiPickerSelection", event);
-        this.emit("onEmojiPickerIconButtonPrevClick", event);
-    }
-
-    /**
-     * Handles next icon button click event
-     * @param {Event} event - Click event.
-     * @private
-     */
-    handleEmojiPickerIconButtonNextClick(event) {
-        this.emit("onEmojiPickerSelection", event);
-        this.emit("onEmojiPickerIconButtonNextClick", event);
-    }
-
-    /**
-     * Handles label button click event
-     * @param {Event} event - Click event.
-     * @private
-     */
-    handleEmojiPickerButtonLabelClick(event) {
-        this.emit("onEmojiPickerButtonLabelClick", event);
-    }
-
-    /**
      * Handles cancel button click event
      * @param {Event} event - Click event.
      * @private
@@ -378,49 +378,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     handleEmojiPickerButtonOkClick(event) {
         this.emit("onEmojiPickerButtonOkClick", event);
-    }
-
-    /**
-     * Shows the emoji picker as a modal
-     * @param {HTMLElement} button - Button element that triggers the modal.
-     * @param {Object} options - Options for positioning the modal.
-     */
-    showModal(button, options) {
-        this.updatePosition(button, options);
-        super.showModal();
-    }
-
-    /**
-     * Shows the emoji picker
-     * @param {HTMLElement} button - Button element that triggers the picker.
-     * @param {Object} options - Options for positioning the picker.
-     */
-    show(button, options) {
-        this.updatePosition(button, options);
-        super.show();
-    }
-
-    /**
-     * Updates the position of the emoji picker
-     * @param {HTMLElement} button - Button element that triggers the picker.
-     * @param {Object} options - Options for positioning the picker.
-     * @private
-     */
-    updatePosition(button, options) {
-        this.popper.setPosition(button, {
-            /* prettier-ignore */
-            placements: [
-                "below-start","below-end","below",
-                "above-start","above-end","above",
-                "before-start","before-end","before",
-                "after-start","after-end","after",
-                "top-start","top-end","top",
-                "bottom-start","bottom-end","bottom",
-                "left-start","left-end","left",
-                "right-start","right-end","right",
-            ],
-            ...options,
-        });
     }
 }
 customElements.define("md-emoji-picker", MDEmojiPickerComponent);

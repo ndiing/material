@@ -38,35 +38,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-week-field");
     }
 
-    /**
-     * @private
-     */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick();
-    }
-
-    /**
-     * Handles the click event on the text field action icon.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleTextFieldActionClick(event) {
-        super.handleTextFieldActionClick(event);
-        if (event.currentTarget.name === "picker") {
-            this.handleWeekFieldActionPickerClick(event);
-        }
-    }
-
-    /**
-     * Handles the click event on the week-time picker action icon.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleWeekFieldActionPickerClick() {
-        this.togglePicker();
-    }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -129,24 +100,32 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the cancel button click event in the week-time picker.
-     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handleWeekPickerButtonCancelClick() {
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
-        this.picker.close();
+    handleTextFieldNativeClick(event) {
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
     }
 
     /**
-     * Handles the OK button click event in the week-time picker.
-     * @param {Event} event - The OK button click event.
+     * Handles the click event on the text field action icon.
+     * @param {Event} event - The click event.
      * @private
      */
-    handleWeekPickerButtonOkClick() {
-        this.textFieldNative.value.value = this.picker.getValue();
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-        this.picker.close();
+    handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        if (event.currentTarget.name === "picker") {
+            this.handleWeekFieldActionPickerClick(event);
+        }
+    }
+
+    /**
+     * Handles the click event on the week-time picker action icon.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleWeekFieldActionPickerClick() {
+        this.togglePicker();
     }
 
     /**
@@ -165,6 +144,27 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
      * @private
      */
     handleWeekPickerDayItemClick() {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+        this.picker.close();
+    }
+
+    /**
+     * Handles the cancel button click event in the week-time picker.
+     * @param {Event} event - The cancel button click event.
+     * @private
+     */
+    handleWeekPickerButtonCancelClick() {
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
+        this.picker.close();
+    }
+
+    /**
+     * Handles the OK button click event in the week-time picker.
+     * @param {Event} event - The OK button click event.
+     * @private
+     */
+    handleWeekPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();

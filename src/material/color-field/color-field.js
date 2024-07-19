@@ -39,30 +39,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
-     */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick();
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldContainerClick() {
-        super.handleTextFieldContainerClick();
-        this.togglePicker();
-    }
-
-    togglePicker() {
-        if (this.pickerOpen) {
-            this.picker.close();
-        } else {
-            this.showPicker();
-        }
-    }
-
-    /**
      * Displays the color-color picker.
      */
     async showPicker() {
@@ -112,6 +88,40 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
 
+    togglePicker() {
+        if (this.pickerOpen) {
+            this.picker.close();
+        } else {
+            this.showPicker();
+        }
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldContainerClick() {
+        super.handleTextFieldContainerClick();
+        this.togglePicker();
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
+    }
+
+    /**
+     * Handles the color-color selection event in the picker.
+     * @param {Event} event - The color-color selection event.
+     * @private
+     */
+    handleColorPickerSelection() {
+        this.textFieldNative.value.value = this.picker.getValue();
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+    }
+
     /**
      * Handles the cancel button click event in the color-color picker.
      * @param {Event} event - The cancel button click event.
@@ -131,16 +141,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
-    }
-
-    /**
-     * Handles the color-color selection event in the picker.
-     * @param {Event} event - The color-color selection event.
-     * @private
-     */
-    handleColorPickerSelection() {
-        this.textFieldNative.value.value = this.picker.getValue();
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
 }
 customElements.define("md-color-field", MDColorFieldComponent);

@@ -84,6 +84,22 @@ class MDFormComponent extends MDComponent {
     }
 
     /**
+     * Resets the form programmatically.
+     * Equivalent to clicking the reset button.
+     */
+    reset() {
+        this.formNative.value.reset();
+    }
+
+    /**
+     * Submits the form programmatically.
+     * Equivalent to clicking the submit button.
+     */
+    submit() {
+        this.formNative.value.submit();
+    }
+
+    /**
      * Event handler for the form reset event.
      * Resets all form elements and emits the onFormNativeReset event.
      * @param {Event} event - The reset event.
@@ -125,22 +141,6 @@ class MDFormComponent extends MDComponent {
         }
         event.data = data;
         this.emit("onFormNativeSubmit", event);
-    }
-
-    /**
-     * Resets the form programmatically.
-     * Equivalent to clicking the reset button.
-     */
-    reset() {
-        this.formNative.value.reset();
-    }
-
-    /**
-     * Submits the form programmatically.
-     * Equivalent to clicking the submit button.
-     */
-    submit() {
-        this.formNative.value.submit();
     }
 }
 customElements.define("md-form", MDFormComponent);

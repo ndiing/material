@@ -303,6 +303,27 @@ class MDTextFieldComponent extends MDComponent {
     /**
      * @private
      */
+    handleTextFieldContainerClick(event) {
+        this.emit("onTextFieldContainerClick", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldLabelClick(event) {
+        this.emit("onTextFieldLabelClick", event);
+    }
+
+    /**
+     * @private
+     */
+    handleTextFieldMetaClick(event) {
+        this.emit("onTextFieldMetaClick", event);
+    }
+
+    /**
+     * @private
+     */
     handleTextFieldNativeFocus(event) {
         this.style.removeProperty("--md-sys-motion-duration-short4");
         this.focused = true;
@@ -382,27 +403,6 @@ class MDTextFieldComponent extends MDComponent {
         }
         this.validationMessage = "";
         this.emit("onTextFieldNativeReset", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldContainerClick(event) {
-        this.emit("onTextFieldContainerClick", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldLabelClick(event) {
-        this.emit("onTextFieldLabelClick", event);
-    }
-
-    /**
-     * @private
-     */
-    handleTextFieldMetaClick(event) {
-        this.emit("onTextFieldMetaClick", event);
     }
 
     /**

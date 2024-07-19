@@ -38,35 +38,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.classList.add("md-date-field");
     }
 
-    /**
-     * @private
-     */
-    handleTextFieldNativeClick(event) {
-        event.preventDefault();
-        super.handleTextFieldNativeClick();
-    }
-
-    /**
-     * Handles the click event on the text field action icon.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleTextFieldActionClick(event) {
-        super.handleTextFieldActionClick(event);
-        if (event.currentTarget.name === "picker") {
-            this.handleDateFieldActionPickerClick(event);
-        }
-    }
-
-    /**
-     * Handles the click event on the date-time picker action icon.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleDateFieldActionPickerClick() {
-        this.togglePicker();
-    }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -129,21 +100,40 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the cancel button click event in the date-time picker.
-     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handleDatePickerButtonCancelClick() {
-        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
-        this.picker.close();
+    handleTextFieldNativeClick(event) {
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
     }
 
     /**
-     * Handles the OK button click event in the date-time picker.
-     * @param {Event} event - The OK button click event.
+     * Handles the click event on the text field action icon.
+     * @param {Event} event - The click event.
      * @private
      */
-    handleDatePickerButtonOkClick() {
+    handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        if (event.currentTarget.name === "picker") {
+            this.handleDateFieldActionPickerClick(event);
+        }
+    }
+
+    /**
+     * Handles the click event on the date-time picker action icon.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleDateFieldActionPickerClick() {
+        this.togglePicker();
+    }
+
+    /**
+     * Handles the date-time selection event in the picker.
+     * @param {Event} event - The date-time selection event.
+     * @private
+     */
+    handleDatePickerDayItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
@@ -160,11 +150,21 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the date-time selection event in the picker.
-     * @param {Event} event - The date-time selection event.
+     * Handles the cancel button click event in the date-time picker.
+     * @param {Event} event - The cancel button click event.
      * @private
      */
-    handleDatePickerDayItemClick() {
+    handleDatePickerButtonCancelClick() {
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
+        this.picker.close();
+    }
+
+    /**
+     * Handles the OK button click event in the date-time picker.
+     * @param {Event} event - The OK button click event.
+     * @private
+     */
+    handleDatePickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();

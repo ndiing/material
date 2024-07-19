@@ -152,6 +152,32 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Retrieves the string representation of the selected week.
+     * @returns {string} String representation of the selected week.
+     * @private
+     */
+    getValue() {
+        return stringifyWeek(this.selected);
+    }
+
+    /**
+     * Handles click events on the label button of the card.
+     * Changes the displayed content based on the current index.
+     * @private
+     * @param {Event} event - The click event.
+     */
+    handleCardButtonLabelClick(event) {
+        if (this.index === 0) {
+            this.index = 2;
+        } else if (this.index === 1) {
+            this.index = 0;
+        } else if (this.index === 2) {
+            this.index = 1;
+        }
+        this.emit("onWeekPickerButtonLabelClick", event);
+    }
+
+    /**
      * Handles click events on the previous button of the card.
      * Adjusts the selection based on the current index.
      * @private
@@ -187,52 +213,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.requestUpdate();
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerIconButtonNextClick", event);
-    }
-
-    /**
-     * Handles click events on the label button of the card.
-     * Changes the displayed content based on the current index.
-     * @private
-     * @param {Event} event - The click event.
-     */
-    handleCardButtonLabelClick(event) {
-        if (this.index === 0) {
-            this.index = 2;
-        } else if (this.index === 1) {
-            this.index = 0;
-        } else if (this.index === 2) {
-            this.index = 1;
-        }
-        this.emit("onWeekPickerButtonLabelClick", event);
-    }
-
-    /**
-     * Handles click events on the cancel button of the card.
-     * Resets the value and updates the display accordingly.
-     * @private
-     * @param {Event} event - The click event.
-     */
-    handleCardButtonCancelClick(event) {
-        this.value = this.defaultValue;
-        this.updateDate();
-        this.requestUpdate();
-        this.index = 2;
-        this.emit("onWeekPickerButtonCancelClick", event);
-    }
-
-    /**
-     * Handles click events on the OK button of the card.
-     * Sets the selected value and updates the display accordingly.
-     * @private
-     * @param {Event} event - The click event.
-     */
-    handleCardButtonOkClick(event) {
-        this.selected.setFullYear(this.selection.getFullYear());
-        this.selected.setWeek(this.selection.getWeek());
-        this.value = this.getValue();
-        this.requestUpdate();
-        this.index = 2;
-        this.emit("onWeekPickerButtonOkClick", event);
     }
 
     /**
@@ -281,12 +261,32 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Retrieves the string representation of the selected week.
-     * @returns {string} String representation of the selected week.
+     * Handles click events on the cancel button of the card.
+     * Resets the value and updates the display accordingly.
      * @private
+     * @param {Event} event - The click event.
      */
-    getValue() {
-        return stringifyWeek(this.selected);
+    handleCardButtonCancelClick(event) {
+        this.value = this.defaultValue;
+        this.updateDate();
+        this.requestUpdate();
+        this.index = 2;
+        this.emit("onWeekPickerButtonCancelClick", event);
+    }
+
+    /**
+     * Handles click events on the OK button of the card.
+     * Sets the selected value and updates the display accordingly.
+     * @private
+     * @param {Event} event - The click event.
+     */
+    handleCardButtonOkClick(event) {
+        this.selected.setFullYear(this.selection.getFullYear());
+        this.selected.setWeek(this.selection.getWeek());
+        this.value = this.getValue();
+        this.requestUpdate();
+        this.index = 2;
+        this.emit("onWeekPickerButtonOkClick", event);
     }
 }
 customElements.define("md-week-picker", MDWeekPickerComponent);

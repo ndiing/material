@@ -80,6 +80,31 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
+     * Gets the current value of the date picker.
+     * @returns {string} The current date value.
+     * @private
+     */
+    getValue() {
+        return stringifyDate(this.selected);
+    }
+
+    /**
+     * Handles the label button click event.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleCardButtonLabelClick(event) {
+        if (this.index === 0) {
+            this.index = 2;
+        } else if (this.index === 1) {
+            this.index = 0;
+        } else if (this.index === 2) {
+            this.index = 1;
+        }
+        this.emit("onDatePickerButtonLabelClick", event);
+    }
+
+    /**
      * Handles the previous icon button click event.
      * @param {Event} event - The click event.
      * @private
@@ -113,51 +138,6 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.requestUpdate();
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerIconButtonNextClick", event);
-    }
-
-    /**
-     * Handles the label button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleCardButtonLabelClick(event) {
-        if (this.index === 0) {
-            this.index = 2;
-        } else if (this.index === 1) {
-            this.index = 0;
-        } else if (this.index === 2) {
-            this.index = 1;
-        }
-        this.emit("onDatePickerButtonLabelClick", event);
-    }
-
-    /**
-     * Handles the cancel button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleCardButtonCancelClick(event) {
-        this.value = this.defaultValue;
-        this.updateDate();
-        this.requestUpdate();
-        this.index = 2;
-        this.emit("onDatePickerSelection", event);
-        this.emit("onDatePickerButtonCancelClick", event);
-    }
-
-    /**
-     * Handles the OK button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleCardButtonOkClick(event) {
-        this.selected.setFullYear(this.selection.getFullYear());
-        this.selected.setMonth(this.selection.getMonth());
-        this.selected.setDate(this.selection.getDate());
-        this.value = this.getValue();
-        this.requestUpdate();
-        this.index = 2;
-        this.emit("onDatePickerButtonOkClick", event);
     }
 
     /**
@@ -204,12 +184,32 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Gets the current value of the date picker.
-     * @returns {string} The current date value.
+     * Handles the cancel button click event.
+     * @param {Event} event - The click event.
      * @private
      */
-    getValue() {
-        return stringifyDate(this.selected);
+    handleCardButtonCancelClick(event) {
+        this.value = this.defaultValue;
+        this.updateDate();
+        this.requestUpdate();
+        this.index = 2;
+        this.emit("onDatePickerSelection", event);
+        this.emit("onDatePickerButtonCancelClick", event);
+    }
+
+    /**
+     * Handles the OK button click event.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleCardButtonOkClick(event) {
+        this.selected.setFullYear(this.selection.getFullYear());
+        this.selected.setMonth(this.selection.getMonth());
+        this.selected.setDate(this.selection.getDate());
+        this.value = this.getValue();
+        this.requestUpdate();
+        this.index = 2;
+        this.emit("onDatePickerButtonOkClick", event);
     }
 }
 customElements.define("md-date-picker", MDDatePickerComponent);

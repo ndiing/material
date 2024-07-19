@@ -261,6 +261,82 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.requestUpdate();
     }
 
+    getValue() {
+        return this.selection.hex.slice(0, 1 + 6);
+    }
+
+    /**
+     * Displays the modal with the color picker.
+     * @param {HTMLElement} button - The button element.
+     * @param {Object} options - The modal options.
+     */
+    showModal(button, options) {
+        this.updatePosition(button, options);
+        super.showModal();
+    }
+
+    /**
+     * Shows the color picker.
+     * @param {HTMLElement} button - The button element.
+     * @param {Object} options - The display options.
+     */
+    show(button, options) {
+        this.updatePosition(button, options);
+        super.show();
+    }
+
+    /**
+     * Sets the placement of the color picker.
+     * @param {HTMLElement} button - The button element.
+     * @param {Object} options - The placement options.
+     * @private
+     */
+    updatePosition(button, options) {
+        this.popper.setPosition(button, {
+            /* prettier-ignore */
+            placements: [
+                "below-start","below-end","below",
+                "above-start","above-end","above",
+                "before-start","before-end","before",
+                "after-start","after-end","after",
+                "top-start","top-end","top",
+                "bottom-start","bottom-end","bottom",
+                "left-start","left-end","left",
+                "right-start","right-end","right",
+            ],
+            ...options,
+        });
+    }
+
+    /**
+     * Handles the label button click event.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleColorPickerButtonLabelClick(event) {
+        this.emit("onColorPickerButtonLabelClick", event);
+    }
+
+    /**
+     * Handles the previous icon button click event.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleColorPickerIconButtonPrevClick(event) {
+        this.emit("onColorPickerSelection", event);
+        this.emit("onColorPickerIconButtonPrevClick", event);
+    }
+
+    /**
+     * Handles the next icon button click event.
+     * @param {Event} event - The click event.
+     * @private
+     */
+    handleColorPickerIconButtonNextClick(event) {
+        this.emit("onColorPickerSelection", event);
+        this.emit("onColorPickerIconButtonNextClick", event);
+    }
+
     /**
      * Handles the pointer down event on the gradient track.
      * @param {Event} event - The pointer down event.
@@ -335,35 +411,6 @@ class MDColorPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles the previous icon button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleColorPickerIconButtonPrevClick(event) {
-        this.emit("onColorPickerSelection", event);
-        this.emit("onColorPickerIconButtonPrevClick", event);
-    }
-
-    /**
-     * Handles the next icon button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleColorPickerIconButtonNextClick(event) {
-        this.emit("onColorPickerSelection", event);
-        this.emit("onColorPickerIconButtonNextClick", event);
-    }
-
-    /**
-     * Handles the label button click event.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleColorPickerButtonLabelClick(event) {
-        this.emit("onColorPickerButtonLabelClick", event);
-    }
-
-    /**
      * Handles the cancel button click event.
      * @param {Event} event - The click event.
      * @private
@@ -385,53 +432,6 @@ class MDColorPickerComponent extends MDSheetComponent {
     handleColorPickerButtonOkClick(event) {
         this.value = this.selection.hex;
         this.emit("onColorPickerButtonOkClick", event);
-    }
-
-    /**
-     * Displays the modal with the color picker.
-     * @param {HTMLElement} button - The button element.
-     * @param {Object} options - The modal options.
-     */
-    showModal(button, options) {
-        this.updatePosition(button, options);
-        super.showModal();
-    }
-
-    /**
-     * Shows the color picker.
-     * @param {HTMLElement} button - The button element.
-     * @param {Object} options - The display options.
-     */
-    show(button, options) {
-        this.updatePosition(button, options);
-        super.show();
-    }
-
-    /**
-     * Sets the placement of the color picker.
-     * @param {HTMLElement} button - The button element.
-     * @param {Object} options - The placement options.
-     * @private
-     */
-    updatePosition(button, options) {
-        this.popper.setPosition(button, {
-            /* prettier-ignore */
-            placements: [
-                "below-start","below-end","below",
-                "above-start","above-end","above",
-                "before-start","before-end","before",
-                "after-start","after-end","after",
-                "top-start","top-end","top",
-                "bottom-start","bottom-end","bottom",
-                "left-start","left-end","left",
-                "right-start","right-end","right",
-            ],
-            ...options,
-        });
-    }
-
-    getValue() {
-        return this.selection.hex.slice(0, 1 + 6);
     }
 }
 customElements.define("md-color-picker", MDColorPickerComponent);
