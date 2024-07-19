@@ -29,12 +29,12 @@ class MDDataTableComponent extends MDCardComponent {
 
     set childNodes_(value) {}
     get label() {
-        return "Data table";
+        return "Label";
     }
 
     set label(value) {}
     get trailingActions() {
-        return [{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch }];
+        return [{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant:'outlined', onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch }];
     }
 
     set trailingActions(value) {}
@@ -240,7 +240,7 @@ class MDDataTableComponent extends MDCardComponent {
             <div class="md-layout-border">
                 ${this.toolbarItems?.length?html`
                     <div class="md-layout-border__item md-layout-border__item--north">
-                        <md-toolbar .items="${this.toolbarItems}"></md-toolbar>
+                        <md-toolbar class="md-data-table__toolbar" .items="${this.toolbarItems}"></md-toolbar>
                     </div>
                 `:nothing}
                 <div class="md-layout-border__item md-layout-border__item--center">

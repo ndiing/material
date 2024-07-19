@@ -125,6 +125,7 @@ class MDPaginationComponent extends MDComponent {
             ${this.options?.length ? html`
                 <md-select-field 
                     class="md-pagination__select"
+                    .variant="${"outlined"}"
                     .options="${this.options}"
                     .readOnly="${true}"
                     @onTextFieldNativeInput="${this.handlePaginationLimitInput}"
