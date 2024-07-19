@@ -44,6 +44,8 @@ class DevDataTable extends MDComponent {
 
         this.requestUpdate();
         // }, 1000*5)
+
+        this.toolbarItems=[{ component: "button", disabled: true, icon: "add_circle", label: "New" }, { component: "divider", variant: "vertical" }, { component: "icon-button", disabled: true, icon: "content_cut" }, { component: "icon-button", disabled: true, icon: "content_copy" }, { component: "icon-button", disabled: true, icon: "content_paste" }, { component: "icon-button", disabled: true, icon: "edit" }, { component: "icon-button", disabled: true, icon: "share" }, { component: "icon-button", disabled: true, icon: "delete" }, { component: "divider", variant: "vertical" }, { component: "button", icon: "swap_vert", label: "Sort" }, { component: "button", icon: "view_list", label: "View" }, { component: "divider", variant: "vertical" }, { component: "icon-button", icon: "more_vert" }, { component: "spacer" }, { component: "button", icon: "side_navigation", label: "Details" }]
     }
 
     render() {
@@ -70,6 +72,7 @@ class DevDataTable extends MDComponent {
                                 multiSelection
                                 singleSelection
                                 allSelection
+                                .toolbarItems="${this.toolbarItems}"
                             ></md-data-table>
                         </div>
                     </div>

@@ -18,6 +18,29 @@
 @import "./segmented-button/segmented-button.scss";
 @import "./fab/fab.scss";
 
+@import "./form/form.scss";
+@import "./checkbox/checkbox.scss";
+@import "./radio-button/radio-button.scss";
+@import "./switch/switch.scss";
+@import "./slider/slider.scss";
+
+@import "./text-field/text-field.scss";
+@import "./datetime-field/datetime-field.scss";
+@import "./date-field/date-field.scss";
+@import "./month-field/month-field.scss";
+@import "./week-field/week-field.scss";
+@import "./time-field/time-field.scss";
+@import "./color-field/color-field.scss";
+@import "./number-field/number-field.scss";
+@import "./search-field/search-field.scss";
+@import "./password-field/password-field.scss";
+@import "./textarea-field/textarea-field.scss";
+@import "./select-field/select-field.scss";
+
+@import "./progress-indicator/progress-indicator.scss";
+
+@import "./toolbar/toolbar.scss";
+
 @import "./card/card.scss";
 @import "./scrim/scrim.scss";
 @import "./sheet/sheet.scss";
@@ -45,27 +68,6 @@
 @import "./menu/menu.scss";
 @import "./tabs/tabs.scss";
 @import "./chips/chips.scss";
-
-@import "./form/form.scss";
-@import "./checkbox/checkbox.scss";
-@import "./radio-button/radio-button.scss";
-@import "./switch/switch.scss";
-@import "./slider/slider.scss";
-
-@import "./text-field/text-field.scss";
-@import "./datetime-field/datetime-field.scss";
-@import "./date-field/date-field.scss";
-@import "./month-field/month-field.scss";
-@import "./week-field/week-field.scss";
-@import "./time-field/time-field.scss";
-@import "./color-field/color-field.scss";
-@import "./number-field/number-field.scss";
-@import "./search-field/search-field.scss";
-@import "./password-field/password-field.scss";
-@import "./textarea-field/textarea-field.scss";
-@import "./select-field/select-field.scss";
-
-@import "./progress-indicator/progress-indicator.scss";
 
 @import "./pagination/pagination.scss";
 @import "./data-table/data-table.scss";

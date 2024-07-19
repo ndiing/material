@@ -19,6 +19,7 @@ class MDDataTableComponent extends MDCardComponent {
         multiSelection: { type: Boolean },
         singleSelection: { type: Boolean },
         allSelection: { type: Boolean },
+        toolbarItems: { type: Array },
     };
 
     get childNodes_() {
@@ -237,9 +238,11 @@ class MDDataTableComponent extends MDCardComponent {
         /* prettier-ignore */
         return html`
             <div class="md-layout-border">
-                <div class="md-layout-border__item md-layout-border__item--north">
-                    toolbar
-                </div>
+                ${this.toolbarItems?.length?html`
+                    <div class="md-layout-border__item md-layout-border__item--north">
+                        <md-toolbar .items="${this.toolbarItems}"></md-toolbar>
+                    </div>
+                `:nothing}
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div 
                         class="md-virtual md-data-table__viewport"

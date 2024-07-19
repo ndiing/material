@@ -27,6 +27,29 @@ import { MDIconButtonComponent } from "./icon-button/icon-button.js";
 import { MDSegmentedButtonComponent } from "./segmented-button/segmented-button.js";
 import { MDFabComponent } from "./fab/fab.js";
 
+import { MDFormComponent } from "./form/form.js";
+import { MDCheckboxComponent } from "./checkbox/checkbox.js";
+import { MDRadioButtonComponent } from "./radio-button/radio-button.js";
+import { MDSwitchComponent } from "./switch/switch.js";
+import { MDSliderComponent } from "./slider/slider.js";
+
+import { MDTextFieldComponent } from "./text-field/text-field.js";
+import { MDDatetimeFieldComponent } from "./datetime-field/datetime-field.js";
+import { MDDateFieldComponent } from "./date-field/date-field.js";
+import { MDMonthFieldComponent } from "./month-field/month-field.js";
+import { MDWeekFieldComponent } from "./week-field/week-field.js";
+import { MDTimeFieldComponent } from "./time-field/time-field.js";
+import { MDColorFieldComponent } from "./color-field/color-field.js";
+import { MDNumberFieldComponent } from "./number-field/number-field.js";
+import { MDSearchFieldComponent } from "./search-field/search-field.js";
+import { MDPasswordFieldComponent } from "./password-field/password-field.js";
+import { MDTextareaFieldComponent } from "./textarea-field/textarea-field.js";
+import { MDSelectFieldComponent } from "./select-field/select-field.js";
+
+import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
+
+import { MDToolbarComponent } from "./toolbar/toolbar.js";
+
 import { MDCardComponent } from "./card/card.js";
 import { MDScrimComponent } from "./scrim/scrim.js";
 import { MDSheetComponent } from "./sheet/sheet.js";
@@ -58,27 +81,6 @@ import { MDNavigationRailComponent } from "./navigation-rail/navigation-rail.js"
 import { MDMenuComponent } from "./menu/menu.js";
 import { MDTabsComponent } from "./tabs/tabs.js";
 
-import { MDFormComponent } from "./form/form.js";
-import { MDCheckboxComponent } from "./checkbox/checkbox.js";
-import { MDRadioButtonComponent } from "./radio-button/radio-button.js";
-import { MDSwitchComponent } from "./switch/switch.js";
-import { MDSliderComponent } from "./slider/slider.js";
-
-import { MDTextFieldComponent } from "./text-field/text-field.js";
-import { MDDatetimeFieldComponent } from "./datetime-field/datetime-field.js";
-import { MDDateFieldComponent } from "./date-field/date-field.js";
-import { MDMonthFieldComponent } from "./month-field/month-field.js";
-import { MDWeekFieldComponent } from "./week-field/week-field.js";
-import { MDTimeFieldComponent } from "./time-field/time-field.js";
-import { MDColorFieldComponent } from "./color-field/color-field.js";
-import { MDNumberFieldComponent } from "./number-field/number-field.js";
-import { MDSearchFieldComponent } from "./search-field/search-field.js";
-import { MDPasswordFieldComponent } from "./password-field/password-field.js";
-import { MDTextareaFieldComponent } from "./textarea-field/textarea-field.js";
-import { MDSelectFieldComponent } from "./select-field/select-field.js";
-
-import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
-
 import { MDPaginationComponent } from "./pagination/pagination.js";
 
 import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
@@ -105,6 +107,7 @@ export {
     template,
     MDMarkdownComponent,
     MDDividerComponent,
+    MDSpacerComponent,
     MDIconComponent,
     MDEmojiComponent,
     MDImageComponent,
@@ -113,6 +116,7 @@ export {
     MDIconButtonComponent,
     MDSegmentedButtonComponent,
     MDFabComponent,
+    MDToolbarComponent,
     MDCardComponent,
     MDScrimComponent,
     MDSheetComponent,
