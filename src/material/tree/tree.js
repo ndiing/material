@@ -39,6 +39,7 @@ class MDTreeComponent extends MDComponent {
         item.component = item.component || "tree-item";
         item.variant = this.variant;
         item.onTreeItemClick = this.handleTreeItemClick;
+        item.onTreeItemSelected = this.handleTreeItemSelected;
         /* prettier-ignore */
         return html`
             ${renderComponent(item)}
@@ -198,6 +199,8 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
+
+    handleTreeItemSelected(){}
 }
 customElements.define("md-tree", MDTreeComponent);
 export { MDTreeComponent };
