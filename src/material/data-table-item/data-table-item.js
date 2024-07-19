@@ -27,8 +27,6 @@ class MDDataTableItemComponent extends MDComponent {
         sortableIcon: { type: String },
     };
 
-    
-
     renderCheckbox() {
         /* prettier-ignore */
         return html`<md-checkbox 

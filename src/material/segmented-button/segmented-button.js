@@ -21,8 +21,6 @@ class MDSegmentedButtonComponent extends MDComponent {
         multiSelection: { type: Boolean },
     };
 
-    
-
     /**
      * Renders a single segmented button item.
      * @private

@@ -25,7 +25,6 @@ class MDEmojiComponent extends MDComponent {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
     }
 
-    
     render() {
         return this.emoji;
     }

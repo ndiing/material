@@ -1,6 +1,4 @@
-import { html } from "lit";
 import { MDComponent } from "../component/component.js";
-import { ifDefined } from "lit/directives/if-defined.js";
 import { renderComponent } from "../template/template.js";
 
 /**
@@ -19,8 +17,6 @@ class MDChipsComponent extends MDComponent {
         list: { type: Array },
         multiSelection: { type: Boolean },
     };
-
-    
 
     /**
      * Renders the list of chips.
