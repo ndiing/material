@@ -342,7 +342,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerOpacityNativeInput", event);
     }
 
-    
     /**
      * Handles the previous icon button click event.
      * @param {Event} event - The click event.

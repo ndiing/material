@@ -846,8 +846,8 @@ function renderPagination(item = {}) {
         <md-pagination
             .data="${item}"
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .total="${ifDefined(item.total)}"
             .limit="${ifDefined(item.limit)}"
             .page="${ifDefined(item.page)}"
@@ -865,9 +865,8 @@ function renderPagination(item = {}) {
             @onPaginationNextClick="${ifDefined(item.onPaginationNextClick)}"
             @onPaginationLastClick="${ifDefined(item.onPaginationLastClick)}"
         ></md-pagination>
-    `
+    `;
 }
-
 
 function renderComponent(item) {
     return choose(

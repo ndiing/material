@@ -6,7 +6,7 @@ class DevTree extends MDComponent {
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Plain</md-markdown>
                             <md-tree
                                 .list="${[
@@ -73,7 +73,7 @@ class DevTree extends MDComponent {
                                 @onTreeItemClick="${console.log}"
                             ></md-tree>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Accordion</md-markdown>
                             <md-tree
                                 .list="${[
@@ -140,7 +140,7 @@ class DevTree extends MDComponent {
                                 @onTreeItemClick="${console.log}"
                             ></md-tree>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Tree</md-markdown>
                             <md-tree
                                 .list="${[
@@ -207,7 +207,7 @@ class DevTree extends MDComponent {
                                 @onTreeItemClick="${console.log}"
                             ></md-tree>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                        <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-markdown>Level</md-markdown>
                             <md-tree
                                 .list="${[
