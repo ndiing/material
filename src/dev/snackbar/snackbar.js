@@ -26,7 +26,14 @@ class DevSnackbar extends MDComponent {
                             <md-markdown>Single line with action</md-markdown>
                             <md-snackbar
                                 id="snackbar1"
-                                .actions="${[{"label":"label",onButtonClick:() => {snackbar1.close()}}]}"
+                                .actions="${[
+                                    {
+                                        label: "label",
+                                        onButtonClick: () => {
+                                            snackbar1.close();
+                                        },
+                                    },
+                                ]}"
                                 @onSnackbarShow="${console.log}"
                                 @onSnackbarClose="${console.log}"
                                 >Lorem, ipsum dolor.</md-snackbar
@@ -57,7 +64,14 @@ class DevSnackbar extends MDComponent {
                             <md-markdown>Two lines with action</md-markdown>
                             <md-snackbar
                                 id="snackbar3"
-                                .actions="${[{"label":"label",onButtonClick:() => {snackbar3.close()}}]}"
+                                .actions="${[
+                                    {
+                                        label: "label",
+                                        onButtonClick: () => {
+                                            snackbar3.close();
+                                        },
+                                    },
+                                ]}"
                                 @onSnackbarShow="${console.log}"
                                 @onSnackbarClose="${console.log}"
                             >
@@ -73,7 +87,14 @@ class DevSnackbar extends MDComponent {
                             <md-markdown>Two lines with longer action</md-markdown>
                             <md-snackbar
                                 id="snackbar4"
-                                .actions="${[{"label":"Lorem, ipsum",onButtonClick:() => {snackbar4.close()}}]}"
+                                .actions="${[
+                                    {
+                                        label: "Lorem, ipsum",
+                                        onButtonClick: () => {
+                                            snackbar4.close();
+                                        },
+                                    },
+                                ]}"
                                 @onSnackbarShow="${console.log}"
                                 @onSnackbarClose="${console.log}"
                             >

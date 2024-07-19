@@ -16,6 +16,7 @@ import * as template from "./template/template.js";
 
 import { MDMarkdownComponent } from "./markdown/markdown.js";
 import { MDDividerComponent } from "./divider/divider.js";
+import { MDSpacerComponent } from "./spacer/spacer.js";
 import { MDIconComponent } from "./icon/icon.js";
 import { MDEmojiComponent } from "./emoji/emoji.js";
 import { MDImageComponent } from "./image/image.js";

@@ -200,7 +200,7 @@ class MDTreeComponent extends MDComponent {
         this.emit("onTreeItemClick", event);
     }
 
-    handleTreeItemSelected(){}
+    handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);
 export { MDTreeComponent };

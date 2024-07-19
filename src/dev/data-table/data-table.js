@@ -26,9 +26,9 @@ class DevDataTable extends MDComponent {
             let row = {};
             this.columns.forEach((column, index) => {
                 if (index % 2 === 0) {
-                    row[column.name] = lorem[getRandomNumber(0, lorem.length-1)];
+                    row[column.name] = lorem[getRandomNumber(0, lorem.length - 1)];
                 } else {
-                    row[column.name] = getRandomNumber(0, lorem.length-1);
+                    row[column.name] = getRandomNumber(0, lorem.length - 1);
                 }
             });
             return row;

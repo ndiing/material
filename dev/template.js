@@ -33,9 +33,9 @@ function renderBottomAppBar(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-bottom-app-bar>
     `
 }
@@ -55,9 +55,9 @@ function renderBottomSheet(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-bottom-sheet>
     `
 }
@@ -189,6 +189,9 @@ function renderColorField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -198,9 +201,6 @@ function renderColorField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-color-field>
@@ -223,18 +223,16 @@ function renderColorPicker(item = {}) {
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .value="${ifDefined(item.value)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onColorPickerButtonLabelClick="${ifDefined(item.onColorPickerButtonLabelClick)}"
             @onColorPickerSelection="${ifDefined(item.onColorPickerSelection)}"
             @onColorPickerGradientTrackPointerdown="${ifDefined(item.onColorPickerGradientTrackPointerdown)}"
             @onColorPickerGradientTrackPointermove="${ifDefined(item.onColorPickerGradientTrackPointermove)}"
             @onColorPickerGradientTrackPointerup="${ifDefined(item.onColorPickerGradientTrackPointerup)}"
             @onColorPickerHueNativeInput="${ifDefined(item.onColorPickerHueNativeInput)}"
             @onColorPickerOpacityNativeInput="${ifDefined(item.onColorPickerOpacityNativeInput)}"
-            @onColorPickerIconButtonPrevClick="${ifDefined(item.onColorPickerIconButtonPrevClick)}"
-            @onColorPickerIconButtonNextClick="${ifDefined(item.onColorPickerIconButtonNextClick)}"
-            @onColorPickerButtonLabelClick="${ifDefined(item.onColorPickerButtonLabelClick)}"
             @onColorPickerButtonCancelClick="${ifDefined(item.onColorPickerButtonCancelClick)}"
             @onColorPickerButtonOkClick="${ifDefined(item.onColorPickerButtonOkClick)}"
         ></md-color-picker>
@@ -267,7 +265,6 @@ function renderDataTable(item = {}) {
             .singleSelection="${ifDefined(item.singleSelection)}"
             .allSelection="${ifDefined(item.allSelection)}"
             @onDataTableTextFieldNativeSearch="${ifDefined(item.onDataTableTextFieldNativeSearch)}"
-            @onDataTablePaginationChange="${ifDefined(item.onDataTablePaginationChange)}"
             @onDataTableColumnCellDragStart="${ifDefined(item.onDataTableColumnCellDragStart)}"
             @onDataTableColumnCellDrag="${ifDefined(item.onDataTableColumnCellDrag)}"
             @onDataTableColumnCellDragEnd="${ifDefined(item.onDataTableColumnCellDragEnd)}"
@@ -281,6 +278,7 @@ function renderDataTable(item = {}) {
             @onDataTableRowCellCheckboxNativeInput="${ifDefined(item.onDataTableRowCellCheckboxNativeInput)}"
             @onDataTableRowClick="${ifDefined(item.onDataTableRowClick)}"
             @onDataTableKeydown="${ifDefined(item.onDataTableKeydown)}"
+            @onDataTablePaginationChange="${ifDefined(item.onDataTablePaginationChange)}"
         ></md-data-table>
     `
 }
@@ -425,6 +423,9 @@ function renderDateField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -434,9 +435,6 @@ function renderDateField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-date-field>
@@ -471,18 +469,18 @@ function renderDatePicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onDatePickerButtonLabelClick="${ifDefined(item.onDatePickerButtonLabelClick)}"
             @onDatePickerSelection="${ifDefined(item.onDatePickerSelection)}"
             @onDatePickerIconButtonPrevClick="${ifDefined(item.onDatePickerIconButtonPrevClick)}"
             @onDatePickerIconButtonNextClick="${ifDefined(item.onDatePickerIconButtonNextClick)}"
-            @onDatePickerButtonLabelClick="${ifDefined(item.onDatePickerButtonLabelClick)}"
-            @onDatePickerButtonCancelClick="${ifDefined(item.onDatePickerButtonCancelClick)}"
-            @onDatePickerButtonOkClick="${ifDefined(item.onDatePickerButtonOkClick)}"
             @onDatePickerYearItemClick="${ifDefined(item.onDatePickerYearItemClick)}"
             @onDatePickerMonthItemClick="${ifDefined(item.onDatePickerMonthItemClick)}"
             @onDatePickerDayItemClick="${ifDefined(item.onDatePickerDayItemClick)}"
+            @onDatePickerButtonCancelClick="${ifDefined(item.onDatePickerButtonCancelClick)}"
+            @onDatePickerButtonOkClick="${ifDefined(item.onDatePickerButtonOkClick)}"
         ></md-date-picker>
     `
 }
@@ -522,6 +520,9 @@ function renderDatetimeField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -531,9 +532,6 @@ function renderDatetimeField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-datetime-field>
@@ -557,9 +555,9 @@ function renderDatetimePicker(item = {}) {
             .actions="${ifDefined(item.actions)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -590,10 +588,23 @@ function renderDialog(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-dialog>
+    `
+}
+
+function renderDivider(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-divider
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .variant="${ifDefined(item.variant)}"
+        ></md-divider>
     `
 }
 
@@ -629,19 +640,14 @@ function renderEmojiPicker(item = {}) {
             .actions="${ifDefined(item.actions)}"
             .tabs="${ifDefined(item.tabs)}"
             .rows="${ifDefined(item.rows)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onEmojiPickerTextFieldNativeInput="${ifDefined(item.onEmojiPickerTextFieldNativeInput)}"
             @onEmojiPickerTabsItemClick="${ifDefined(item.onEmojiPickerTabsItemClick)}"
             @onEmojiPickerViewportVirtualScroll="${ifDefined(item.onEmojiPickerViewportVirtualScroll)}"
-            @onEmojiPickerTextFieldNativeInput="${ifDefined(item.onEmojiPickerTextFieldNativeInput)}"
             @onEmojiPickerGridColumnClick="${ifDefined(item.onEmojiPickerGridColumnClick)}"
-            @onEmojiPickerIconButtonClick="${ifDefined(item.onEmojiPickerIconButtonClick)}"
             @onEmojiPickerButtonClick="${ifDefined(item.onEmojiPickerButtonClick)}"
-            @onEmojiPickerSelection="${ifDefined(item.onEmojiPickerSelection)}"
-            @onEmojiPickerIconButtonPrevClick="${ifDefined(item.onEmojiPickerIconButtonPrevClick)}"
-            @onEmojiPickerIconButtonNextClick="${ifDefined(item.onEmojiPickerIconButtonNextClick)}"
-            @onEmojiPickerButtonLabelClick="${ifDefined(item.onEmojiPickerButtonLabelClick)}"
             @onEmojiPickerButtonCancelClick="${ifDefined(item.onEmojiPickerButtonCancelClick)}"
             @onEmojiPickerButtonOkClick="${ifDefined(item.onEmojiPickerButtonOkClick)}"
         ></md-emoji-picker>
@@ -827,14 +833,14 @@ function renderMenu(item = {}) {
             .map="${ifDefined(item.map)}"
             .rowHeight="${ifDefined(item.rowHeight)}"
             .maxRows="${ifDefined(item.maxRows)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onMenuListSelection="${ifDefined(item.onMenuListSelection)}"
+            @onMenuListItemEnter="${ifDefined(item.onMenuListItemEnter)}"
             @onMenuViewportVirtualScroll="${ifDefined(item.onMenuViewportVirtualScroll)}"
             @onMenuViewportVirtualScrollInitialized="${ifDefined(item.onMenuViewportVirtualScrollInitialized)}"
-            @onMenuListSelection="${ifDefined(item.onMenuListSelection)}"
             @onMenuListItemClick="${ifDefined(item.onMenuListItemClick)}"
-            @onMenuListItemEnter="${ifDefined(item.onMenuListItemEnter)}"
         ></md-menu>
     `
 }
@@ -874,6 +880,9 @@ function renderMonthField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -883,9 +892,6 @@ function renderMonthField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-month-field>
@@ -920,17 +926,17 @@ function renderMonthPicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onMonthPickerButtonLabelClick="${ifDefined(item.onMonthPickerButtonLabelClick)}"
             @onMonthPickerSelection="${ifDefined(item.onMonthPickerSelection)}"
             @onMonthPickerIconButtonPrevClick="${ifDefined(item.onMonthPickerIconButtonPrevClick)}"
             @onMonthPickerIconButtonNextClick="${ifDefined(item.onMonthPickerIconButtonNextClick)}"
-            @onMonthPickerButtonLabelClick="${ifDefined(item.onMonthPickerButtonLabelClick)}"
-            @onMonthPickerButtonCancelClick="${ifDefined(item.onMonthPickerButtonCancelClick)}"
-            @onMonthPickerButtonOkClick="${ifDefined(item.onMonthPickerButtonOkClick)}"
             @onMonthPickerYearItemClick="${ifDefined(item.onMonthPickerYearItemClick)}"
             @onMonthPickerMonthItemClick="${ifDefined(item.onMonthPickerMonthItemClick)}"
+            @onMonthPickerButtonCancelClick="${ifDefined(item.onMonthPickerButtonCancelClick)}"
+            @onMonthPickerButtonOkClick="${ifDefined(item.onMonthPickerButtonOkClick)}"
         ></md-month-picker>
     `
 }
@@ -950,9 +956,9 @@ function renderNavigationBar(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-navigation-bar>
     `
 }
@@ -972,9 +978,9 @@ function renderNavigationDrawer(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-navigation-drawer>
     `
 }
@@ -994,9 +1000,9 @@ function renderNavigationRail(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-navigation-rail>
     `
 }
@@ -1036,6 +1042,9 @@ function renderNumberField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1045,9 +1054,6 @@ function renderNumberField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-number-field>
@@ -1117,6 +1123,9 @@ function renderPasswordField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1126,9 +1135,6 @@ function renderPasswordField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-password-field>
@@ -1217,6 +1223,9 @@ function renderSearchField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1226,9 +1235,6 @@ function renderSearchField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-search-field>
@@ -1286,6 +1292,9 @@ function renderSelectField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1295,9 +1304,6 @@ function renderSelectField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-select-field>
@@ -1319,9 +1325,9 @@ function renderSheet(item = {}) {
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-sheet>
     `
 }
@@ -1341,9 +1347,9 @@ function renderSideSheet(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-side-sheet>
     `
 }
@@ -1383,12 +1389,24 @@ function renderSnackbar(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSnackbarShow="${ifDefined(item.onSnackbarShow)}"
             @onSnackbarClose="${ifDefined(item.onSnackbarClose)}"
         ></md-snackbar>
+    `
+}
+
+function renderSpacer(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-spacer
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+        ></md-spacer>
     `
 }
 
@@ -1462,6 +1480,9 @@ function renderTextField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1471,9 +1492,6 @@ function renderTextField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-text-field>
@@ -1515,6 +1533,9 @@ function renderTextareaField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1524,9 +1545,6 @@ function renderTextareaField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-textarea-field>
@@ -1568,6 +1586,9 @@ function renderTimeField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1577,9 +1598,6 @@ function renderTimeField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-time-field>
@@ -1614,17 +1632,17 @@ function renderTimePicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onTimePickerButtonLabelClick="${ifDefined(item.onTimePickerButtonLabelClick)}"
             @onTimePickerSelection="${ifDefined(item.onTimePickerSelection)}"
             @onTimePickerIconButtonPrevClick="${ifDefined(item.onTimePickerIconButtonPrevClick)}"
             @onTimePickerIconButtonNextClick="${ifDefined(item.onTimePickerIconButtonNextClick)}"
-            @onTimePickerButtonLabelClick="${ifDefined(item.onTimePickerButtonLabelClick)}"
-            @onTimePickerButtonCancelClick="${ifDefined(item.onTimePickerButtonCancelClick)}"
-            @onTimePickerButtonOkClick="${ifDefined(item.onTimePickerButtonOkClick)}"
             @onTimePickerHourItemClick="${ifDefined(item.onTimePickerHourItemClick)}"
             @onTimePickerMinuteItemClick="${ifDefined(item.onTimePickerMinuteItemClick)}"
+            @onTimePickerButtonCancelClick="${ifDefined(item.onTimePickerButtonCancelClick)}"
+            @onTimePickerButtonOkClick="${ifDefined(item.onTimePickerButtonOkClick)}"
         ></md-time-picker>
     `
 }
@@ -1644,9 +1662,9 @@ function renderTooltip(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-tooltip>
     `
 }
@@ -1666,9 +1684,9 @@ function renderTopAppBar(item = {}) {
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-top-app-bar>
     `
 }
@@ -1751,6 +1769,9 @@ function renderWeekField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
             @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
             @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
@@ -1760,9 +1781,6 @@ function renderWeekField(item = {}) {
             @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
             @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
             @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
-            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
-            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
-            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-week-field>
@@ -1797,18 +1815,18 @@ function renderWeekPicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onWeekPickerButtonLabelClick="${ifDefined(item.onWeekPickerButtonLabelClick)}"
             @onWeekPickerSelection="${ifDefined(item.onWeekPickerSelection)}"
             @onWeekPickerIconButtonPrevClick="${ifDefined(item.onWeekPickerIconButtonPrevClick)}"
             @onWeekPickerIconButtonNextClick="${ifDefined(item.onWeekPickerIconButtonNextClick)}"
-            @onWeekPickerButtonLabelClick="${ifDefined(item.onWeekPickerButtonLabelClick)}"
-            @onWeekPickerButtonCancelClick="${ifDefined(item.onWeekPickerButtonCancelClick)}"
-            @onWeekPickerButtonOkClick="${ifDefined(item.onWeekPickerButtonOkClick)}"
             @onWeekPickerYearItemClick="${ifDefined(item.onWeekPickerYearItemClick)}"
             @onWeekPickerMonthItemClick="${ifDefined(item.onWeekPickerMonthItemClick)}"
             @onWeekPickerDayItemClick="${ifDefined(item.onWeekPickerDayItemClick)}"
+            @onWeekPickerButtonCancelClick="${ifDefined(item.onWeekPickerButtonCancelClick)}"
+            @onWeekPickerButtonOkClick="${ifDefined(item.onWeekPickerButtonOkClick)}"
         ></md-week-picker>
     `
 }
@@ -1835,6 +1853,7 @@ function renderComponent(item) {
         ["datetime-field", () => renderDatetimeField(item)],
         ["datetime-picker", () => renderDatetimePicker(item)],
         ["dialog", () => renderDialog(item)],
+        ["divider", () => renderDivider(item)],
         ["emoji", () => renderEmoji(item)],
         ["emoji-picker", () => renderEmojiPicker(item)],
         ["fab", () => renderFab(item)],
@@ -1864,6 +1883,7 @@ function renderComponent(item) {
         ["side-sheet", () => renderSideSheet(item)],
         ["slider", () => renderSlider(item)],
         ["snackbar", () => renderSnackbar(item)],
+        ["spacer", () => renderSpacer(item)],
         ["switch", () => renderSwitch(item)],
         ["tabs", () => renderTabs(item)],
         ["text-field", () => renderTextField(item)],
@@ -1876,7 +1896,6 @@ function renderComponent(item) {
         ["tree-item", () => renderTreeItem(item)],
         ["week-field", () => renderWeekField(item)],
         ["week-picker", () => renderWeekPicker(item)],
-        ["spacer", () => html`<div class="md-pane__spacer"></div>`],
     ], () => nothing)
 }
 

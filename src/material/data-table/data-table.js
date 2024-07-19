@@ -5,7 +5,6 @@ import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 import { renderComponent } from "../template/template.js";
 
-
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
         ...MDCardComponent.properties,
@@ -62,7 +61,6 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual = new MDVirtualController(this);
     }
 
-    
     styleStickyCheckboxSelection() {
         return {
             ...(this.stickyCheckboxSelection && { sticky: true, flow: "left", left: 0 }),
