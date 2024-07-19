@@ -120,131 +120,133 @@ function parse(data) {
 
 let docs = [];
 open("./src/material", (file) => {
-    if (file.endsWith(".js")) {
+    if (file.endsWith(".scss")) {
         let data = read(file);
         let result = parse(data);
         docs.push(result.doc);
         // write(file,result.data)
+        // console.log(result.data)
     }
 });
-const docMap = new Map(docs.map((doc) => [doc.className, doc]));
 
-function loop(doc) {
-    const acc = [];
-    while (doc && doc.extendsName) {
-        doc = docMap.get(doc.extendsName);
-        if (doc) acc.push(doc);
-    }
-    return acc;
-}
+// const docMap = new Map(docs.map((doc) => [doc.className, doc]));
 
-let code = "";
-code+=`import { html, nothing } from "lit"\n`
-code+=`import { choose } from "lit/directives/choose.js"\n`
-code+=`import { classMap } from "lit/directives/class-map.js"\n`
-code+=`import { ifDefined } from "lit/directives/if-defined.js"\n`
-code+=`import { styleMap } from "lit/directives/style-map.js"\n`
-code+=`\n`
-let code2= ''
-code2 += `function renderComponent(item) {\n`
-code2 += `    /* prettier-ignore */\n`
-code2 += `    return choose(item.component, [\n`
+// function loop(doc) {
+//     const acc = [];
+//     while (doc && doc.extendsName) {
+//         doc = docMap.get(doc.extendsName);
+//         if (doc) acc.push(doc);
+//     }
+//     return acc;
+// }
 
-for (const doc of docs) {
+// let code = "";
+// code+=`import { html, nothing } from "lit"\n`
+// code+=`import { choose } from "lit/directives/choose.js"\n`
+// code+=`import { classMap } from "lit/directives/class-map.js"\n`
+// code+=`import { ifDefined } from "lit/directives/if-defined.js"\n`
+// code+=`import { styleMap } from "lit/directives/style-map.js"\n`
+// code+=`\n`
+// let code2= ''
+// code2 += `function renderComponent(item) {\n`
+// code2 += `    /* prettier-ignore */\n`
+// code2 += `    return choose(item.component, [\n`
 
-    // if(![
-    //     /tree$/,
-    //     /list$/,
-    // ].some(reg=>reg.test(doc.tagName)))
-    //     continue
+// for (const doc of docs) {
 
-    doc.parents = loop(doc);
-    let properties = new Map(
-        []
-            .concat(
-                doc.parents
-                    .map((p) => p.properties)
-                    .flat()
-                    .filter(Boolean),
-            )
-            .concat(doc?.properties || [])
-            .map((p) => [p.name, p]),
-    );
-    let methods = new Map(
-        []
-            .concat(
-                doc.parents
-                    .map((p) => p.methods)
-                    .flat()
-                    .filter(Boolean),
-            )
-            .concat(doc?.methods || [])
-            .map((p) => [p.name, p]),
-    );
-    let emits = new Map(
-        []
-            .concat(
-                doc.parents
-                    .map((p) => p.emits)
-                    .flat()
-                    .filter(Boolean),
-            )
-            .concat(doc?.emits || [])
-            .map((p) => [p.name, p]),
-    );
+//     // if(![
+//     //     /tree$/,
+//     //     /list$/,
+//     // ].some(reg=>reg.test(doc.tagName)))
+//     //     continue
 
-    properties = Array.from(properties.values());
-    methods = Array.from(methods.values());
-    emits = Array.from(emits.values());
+//     doc.parents = loop(doc);
+//     let properties = new Map(
+//         []
+//             .concat(
+//                 doc.parents
+//                     .map((p) => p.properties)
+//                     .flat()
+//                     .filter(Boolean),
+//             )
+//             .concat(doc?.properties || [])
+//             .map((p) => [p.name, p]),
+//     );
+//     let methods = new Map(
+//         []
+//             .concat(
+//                 doc.parents
+//                     .map((p) => p.methods)
+//                     .flat()
+//                     .filter(Boolean),
+//             )
+//             .concat(doc?.methods || [])
+//             .map((p) => [p.name, p]),
+//     );
+//     let emits = new Map(
+//         []
+//             .concat(
+//                 doc.parents
+//                     .map((p) => p.emits)
+//                     .flat()
+//                     .filter(Boolean),
+//             )
+//             .concat(doc?.emits || [])
+//             .map((p) => [p.name, p]),
+//     );
 
-    // console.log(properties);
-    // console.log(methods);
-    // console.log(emits);
+//     properties = Array.from(properties.values());
+//     methods = Array.from(methods.values());
+//     emits = Array.from(emits.values());
 
-    if(doc.tagName){
+//     // console.log(properties);
+//     // console.log(methods);
+//     // console.log(emits);
 
-        let name=doc.tagName.replace('md-','')
-        let methodName=toCamelCase('render-'+(name))
+//     if(doc.tagName){
 
-        code += `function ${methodName}(item = {}) {\n`
-        code += `    /* prettier-ignore */\n`
-        code += `    return html\`\n`
-        code += `        <${doc.tagName}\n`;
-        code += `            .data="\${item}"\n`;
-        code += `            id="\${ifDefined(item.id)}"\n`;
-        code += `            class="\${classMap({...item.classMap})}"\n`;
-        code += `            style="\${styleMap({...item.styleMap})}"\n`;
-        for(const {name} of properties){
-            code += `            .${name}="\${ifDefined(item.${name})}"\n`;
-        }
-        if([
-            'button',
-            'chip',
-            'emoji',
-            'fab',
-            'icon',
-            'icon-button',
-            'list-item',
-            'tree-item',
-        ].includes(name)){
-            code += `            @click="\${ifDefined(item.${toCamelCase('on-'+name+'-click')})}"\n`;
-        }
-        for(const {name} of emits){
-            code += `            @${name}="\${ifDefined(item.${name})}"\n`;
-        }
-        code += `        ></${doc.tagName}>\n`;
-        code += `    \`\n`
-        code += `}\n`
-        code += `\n`
+//         let name=doc.tagName.replace('md-','')
+//         let methodName=toCamelCase('render-'+(name))
 
-        code2 += `        ["${name}", () => ${methodName}(item)],\n`
-    }
+//         code += `function ${methodName}(item = {}) {\n`
+//         code += `    /* prettier-ignore */\n`
+//         code += `    return html\`\n`
+//         code += `        <${doc.tagName}\n`;
+//         code += `            .data="\${item}"\n`;
+//         code += `            id="\${ifDefined(item.id)}"\n`;
+//         code += `            class="\${classMap({...item.classMap})}"\n`;
+//         code += `            style="\${styleMap({...item.styleMap})}"\n`;
+//         for(const {name} of properties){
+//             code += `            .${name}="\${ifDefined(item.${name})}"\n`;
+//         }
+//         if([
+//             'button',
+//             'chip',
+//             'emoji',
+//             'fab',
+//             'icon',
+//             'icon-button',
+//             'list-item',
+//             'tree-item',
+//         ].includes(name)){
+//             code += `            @click="\${ifDefined(item.${toCamelCase('on-'+name+'-click')})}"\n`;
+//         }
+//         for(const {name} of emits){
+//             code += `            @${name}="\${ifDefined(item.${name})}"\n`;
+//         }
+//         code += `        ></${doc.tagName}>\n`;
+//         code += `    \`\n`
+//         code += `}\n`
+//         code += `\n`
+
+//         code2 += `        ["${name}", () => ${methodName}(item)],\n`
+//     }
     
-}
-code2 += `        ["spacer", () => html\`<div class="md-pane__spacer"></div>\`],\n`
-code2 += `    ], () => nothing)\n`
-code2 += `}\n`
-code+=code2
-code+=`\n`
-code+=`export { renderComponent }\n`
-write('./dev/template.js',code);
+// }
+// code2 += `        ["spacer", () => html\`<div class="md-pane__spacer"></div>\`],\n`
+// code2 += `    ], () => nothing)\n`
+// code2 += `}\n`
+// code+=code2
+// code+=`\n`
+// code+=`export { renderComponent }\n`
+// write('./dev/template.js',code);

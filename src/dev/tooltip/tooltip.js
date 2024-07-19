@@ -46,8 +46,18 @@ class DevTooltip extends MDComponent {
                                 label="Lorem ipsum"
                                 .actions="${[
                                     //
-                                    { label: "action",onButtonClick: () => {tooltip2.close()} },
-                                    { label: "action",onButtonClick: () => {tooltip2.close()} },
+                                    {
+                                        label: "action",
+                                        onButtonClick: () => {
+                                            tooltip2.close();
+                                        },
+                                    },
+                                    {
+                                        label: "action",
+                                        onButtonClick: () => {
+                                            tooltip2.close();
+                                        },
+                                    },
                                 ]}"
                                 style="width: 280px;"
                             >
@@ -68,7 +78,12 @@ class DevTooltip extends MDComponent {
                                 label="Lorem ipsum"
                                 .actions="${[
                                     //
-                                    { label: "action",onButtonClick: () => {tooltip3.close()} },
+                                    {
+                                        label: "action",
+                                        onButtonClick: () => {
+                                            tooltip3.close();
+                                        },
+                                    },
                                 ]}"
                                 style="width: 280px;"
                             >
@@ -105,7 +120,12 @@ class DevTooltip extends MDComponent {
                                 variant="rich"
                                 .actions="${[
                                     //
-                                    { label: "action",onButtonClick: () => {tooltip5.close()} },
+                                    {
+                                        label: "action",
+                                        onButtonClick: () => {
+                                            tooltip5.close();
+                                        },
+                                    },
                                 ]}"
                                 style="width: 280px;"
                             >
@@ -126,8 +146,18 @@ class DevTooltip extends MDComponent {
                                 label="Lorem ipsum"
                                 .actions="${[
                                     //
-                                    { label: "action",onButtonClick: () => {tooltip6.close()} },
-                                    { label: "action",onButtonClick: () => {tooltip6.close()} },
+                                    {
+                                        label: "action",
+                                        onButtonClick: () => {
+                                            tooltip6.close();
+                                        },
+                                    },
+                                    {
+                                        label: "action",
+                                        onButtonClick: () => {
+                                            tooltip6.close();
+                                        },
+                                    },
                                 ]}"
                                 style="width: 280px;"
                             >

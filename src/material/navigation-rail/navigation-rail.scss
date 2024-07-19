@@ -2,55 +2,38 @@
     --md-comp-sheet-width: 80px;
     grid-area: west;
     display: inline-flex;
-
     min-width: var(--md-comp-sheet-width);
-
     margin-left: calc(0px - var(--md-comp-sheet-width));
-
     border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
-
     background-color: var(--md-sys-color-surface);
-
     color: var(--md-sys-color-on-surface-variant);
-
     box-shadow: var(--md-sys-elevation-level0);
-
     animation-name: var(--md-comp-sheet-animation, sheetWestOut);
-
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     animation-duration: var(--md-sys-motion-duration-short4);
-
     &[open] {
         margin-left: 0;
-
         animation-name: var(--md-comp-sheet-animation, sheetWestIn);
     }
-
     .md-card__inner {
         padding: 0;
         margin: 0;
     }
 }
-
 .md-navigation-rail__tree {
     gap: 12px 0;
-
     .md-tree__item {
         flex-direction: column;
         justify-content: center;
         padding: 0 12px;
-
         &.md-ripple {
             @include ripple-reset();
         }
-
         &.md-ripple {
             .md-tree__icon {
                 @include ripple();
             }
         }
-
         &.md-ripple--button {
             .md-tree__icon {
                 @include ripple-button();
@@ -76,88 +59,71 @@
                 @include ripple-clipped();
             }
         }
-
         &.md-ripple--focused {
             .md-tree__icon {
                 @include ripple-focused();
             }
         }
-
         &.md-ripple--fade-out.md-ripple--focused {
             .md-tree__icon {
                 @include ripple-fade-out();
             }
         }
-
         &.md-ripple--hover {
             .md-tree__icon {
                 @include ripple-hover();
             }
         }
-
         &.md-ripple--pressed {
             .md-tree__icon {
                 @include ripple-pressed();
             }
         }
-
         &.md-ripple[activated] {
             .md-tree__icon {
                 @include ripple-activated();
             }
         }
-
         &.md-ripple[selected] {
             .md-tree__icon {
                 @include ripple-selected();
             }
         }
-
         &.md-ripple[dragged] {
             .md-tree__icon {
                 @include ripple-dragged();
             }
         }
-
         &.md-ripple[disabled] {
             .md-tree__icon {
                 @include ripple-disabled();
             }
         }
     }
-
     .md-tree__icon {
         width: 56px;
         height: 32px;
         border-radius: 16px;
     }
-
     .md-tree__inner {
         flex: 0;
     }
-
     .md-tree__label {
         margin: 4px 0;
     }
-
     .md-tree__label-primary {
         @include typescale-label-medium();
     }
-
     .md-tree__badge {
         margin-top: -8px;
-
         transform: translate3d(-0%, -50%, 0);
-
         position: absolute;
         left: 50%;
         top: 50%;
-
         &:empty {
             margin-left: 5px;
         }
     }
-
     .md-tree__inner {
         .md-tree__label {
             + .md-tree__badge {

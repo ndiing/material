@@ -3,7 +3,6 @@ import { MDCardComponent, MDStore, MDVirtualController } from "../material.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
-
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
         ...MDCardComponent.properties,

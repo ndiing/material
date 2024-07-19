@@ -18,9 +18,7 @@
         --md-sys-color-on-error-container: #410e0b;
         --md-sys-color-surface: #fef7ff;
         --md-sys-color-on-surface: #1d1b20;
-
         --md-sys-color-on-surface38: #{rgba(#1d1b20, 38%)};
-
         --md-sys-color-on-surface12: #{rgba(#1d1b20, 12%)};
         --md-sys-color-surface-variant: #e7e0ec;
         --md-sys-color-on-surface-variant: #49454f;
@@ -55,7 +53,6 @@
         --md-sys-color-scrim: #000000;
         --md-sys-color-shadow: #000000;
     }
-
     @include scheme-dark() {
         --md-sys-color-primary: #d0bcff;
         --md-sys-color-on-primary: #381e72;
@@ -75,9 +72,7 @@
         --md-sys-color-on-error-container: #f9dedc;
         --md-sys-color-surface: #141218;
         --md-sys-color-on-surface: #e6e0e9;
-
         --md-sys-color-on-surface38: #{rgba(#e6e0e9, 38%)};
-
         --md-sys-color-on-surface12: #{rgba(#e6e0e9, 12%)};
         --md-sys-color-surface-variant: #49454f;
         --md-sys-color-on-surface-variant: #cac4d0;
@@ -113,7 +108,6 @@
         --md-sys-color-shadow: #000000;
     }
 }
-
 :root {
     --md-sys-elevation-level5: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px;
     --md-sys-elevation-level4: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
@@ -122,7 +116,6 @@
     --md-sys-elevation-level1: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
     --md-sys-elevation-level0: rgba(0, 0, 0, 0.2) 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 0px 0px 0px;
 }
-
 :root {
     --md-sys-motion-easing-emphasized: 0.2, 0, 0, 1;
     --md-sys-motion-easing-emphasized-accelerate: 0.3, 0, 0.8, 0.15;
@@ -151,7 +144,6 @@
     --md-sys-motion-duration-extra-long3: 900ms;
     --md-sys-motion-duration-extra-long4: 1000ms;
 }
-
 :root {
     --md-sys-shape-corner-extra-large-top: 28px 28px 0 0;
     --md-sys-shape-corner-extra-large: 28px;
@@ -165,7 +157,6 @@
     --md-sys-shape-corner-extra-small: 4px;
     --md-sys-shape-corner-none: 0;
 }
-
 :root {
     --md-sys-typescale-display-large-font: "Noto Sans";
     --md-sys-typescale-display-large-weight: 400;

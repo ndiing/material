@@ -1,32 +1,21 @@
 .md-button {
     --md-comp-button-density: 0;
-
     --md-comp-button-density-height: calc(40 + (4 * var(--md-comp-button-density)));
-
     --md-comp-button-density-ratio: calc(var(--md-comp-button-density-height) / 40);
-
     --md-comp-button-height: calc(var(--md-comp-button-density-height) * 1px);
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-
     height: var(--md-comp-button-height);
-
     border-radius: calc(var(--md-comp-button-height) / 2);
-
     background-color: transparent;
-
     color: var(--md-sys-color-primary);
-
     &[disabled] {
         background-color: transparent;
-
         color: var(--md-sys-color-on-surface38);
     }
 }
-
 .md-button__native {
     appearance: none;
     display: flex;
@@ -39,29 +28,23 @@
     background-color: transparent;
     color: inherit;
 }
-
 .md-button__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
-
     + .md-button__label {
         margin-right: 4px;
     }
 }
-
 .md-button__label {
     @include typescale-label-large();
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-button--icon-right {
     .md-button__icon {
         order: 1;
-
         + .md-button__label {
             margin-right: 0;
             margin-left: 4px;
@@ -75,128 +58,89 @@
     .md-button__native {
         padding: 0 24px;
     }
-
     .md-button__icon {
         margin-left: -8px;
-
         + .md-button__label {
             margin-right: 0;
         }
     }
-
     &.md-button--icon-right {
         .md-button__icon {
             margin-left: 0;
             margin-right: -8px;
-
             + .md-button__label {
                 margin-right: 0;
                 margin-left: 0;
             }
         }
     }
-
     &[disabled] {
         background-color: var(--md-sys-color-on-surface12);
-
         border-color: var(--md-sys-color-on-surface12);
-
         color: var(--md-sys-color-on-surface38);
-
         box-shadow: var(--md-sys-elevation-level0);
     }
 }
-
 .md-button--elevated {
     background-color: var(--md-sys-color-surface-container-low);
-
     color: var(--md-sys-color-primary);
-
     box-shadow: var(--md-sys-elevation-level1);
-
     transition-property: box-shadow;
-
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     transition-duration: var(--md-sys-motion-duration-short4);
-
     &.md-ripple--hover {
         box-shadow: var(--md-sys-elevation-level2);
     }
-
     &.md-ripple--pressed {
         box-shadow: var(--md-sys-elevation-level1);
     }
-
     &.md-ripple--focused {
         box-shadow: var(--md-sys-elevation-level1);
     }
 }
-
 .md-button--filled {
     background-color: var(--md-sys-color-primary);
-
     color: var(--md-sys-color-on-primary);
-
     transition-property: box-shadow;
-
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     transition-duration: var(--md-sys-motion-duration-short4);
-
     &.md-ripple--hover {
         box-shadow: var(--md-sys-elevation-level1);
     }
-
     &.md-ripple--pressed {
         box-shadow: var(--md-sys-elevation-level0);
     }
-
     &.md-ripple--focused {
         box-shadow: var(--md-sys-elevation-level0);
     }
-
     &.md-ripple {
         &::after {
             background-color: var(--md-sys-color-surface);
         }
     }
 }
-
 .md-button--tonal {
     background-color: var(--md-sys-color-secondary-container);
-
     color: var(--md-sys-color-on-secondary-container);
-
     transition-property: box-shadow;
-
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     transition-duration: var(--md-sys-motion-duration-short4);
-
     &.md-ripple--hover {
         box-shadow: var(--md-sys-elevation-level1);
     }
-
     &.md-ripple--pressed {
         box-shadow: var(--md-sys-elevation-level0);
     }
-
     &.md-ripple--focused {
         box-shadow: var(--md-sys-elevation-level0);
     }
 }
-
 .md-button--outlined {
     background-color: transparent;
-
     color: var(--md-sys-color-primary);
-
     box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
-
     &[disabled] {
         background-color: transparent;
-
         color: var(--md-sys-color-on-surface38);
     }
 }

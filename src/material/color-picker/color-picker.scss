@@ -1,88 +1,63 @@
 .md-color-picker {
     display: inline-flex;
-
     border-radius: var(--md-sys-shape-corner-large);
-
     background-color: var(--md-sys-color-surface-container-high);
-
     color: var(--md-sys-color-on-surface-variant);
-
     box-shadow: var(--md-sys-elevation-level0);
-
     position: absolute;
     z-index: 7;
     visibility: hidden;
-
     animation-name: var(--md-comp-sheet-animation, datetimePickerOut);
-
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     animation-duration: var(--md-sys-motion-duration-short4);
-
     &[open] {
         visibility: visible;
-
         animation-name: var(--md-comp-sheet-animation, datetimePickerIn);
-
         > * {
             animation-name: var(--md-comp-sheet-animation, datetimePickerWrapperIn);
-
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
             animation-duration: var(--md-sys-motion-duration-short4);
         }
     }
-
     + .md-scrim {
         opacity: 0;
     }
-
     .md-card__header {
         padding: 12px 12px;
         gap: 0 16px;
-
         + .md-card__body {
             margin-top: -4px;
         }
     }
-
     .md-card__actions {
         gap: 0 24px;
-
         .md-button {
             color: var(--md-sys-color-on-surface-variant);
-
             .md-button__native {
                 gap: 0;
             }
         }
     }
-
     .md-card__inner {
         overflow: hidden;
         padding: 0;
         margin: 0;
-
         @include typescale-body-large();
-
         + .md-card__footer {
             margin-top: -4px;
         }
     }
-
     .md-card__footer {
         padding: 12px 12px;
         gap: 0 8px;
     }
 }
-
 .md-color-picker__main {
     display: flex;
     flex-direction: column;
     width: 360px;
     height: 336px;
 }
-
 .md-color-picker__gradient {
     flex: 1;
     display: flex;
@@ -90,13 +65,11 @@
     position: relative;
     overflow: hidden;
 }
-
 .md-color-picker__gradient-track {
     width: 360px;
     height: 256px;
     background: linear-gradient(to bottom, transparent, #000000), linear-gradient(to right, #ffffff, transparent), #ff0000;
 }
-
 .md-color-picker__gradient-thumb {
     width: 40px;
     height: 40px;
@@ -106,7 +79,6 @@
     box-shadow:
         inset 0 0 0 4px var(--md-sys-color-surface-container-lowest),
         var(--md-sys-elevation-level1);
-
     position: absolute;
     left: 0;
     top: 0;
@@ -119,25 +91,21 @@
     height: 40px;
     position: relative;
 }
-
 .md-color-picker__hue-native,
 .md-color-picker__opacity-native {
     appearance: none;
     width: 100%;
     height: 100%;
     background: transparent;
-
     &::-webkit-slider-container {
         appearance: none;
         width: 100%;
         height: 100%;
     }
-
     &::-webkit-slider-runnable-track {
         width: 100%;
         height: 100%;
     }
-
     &::-webkit-slider-thumb {
         appearance: none;
         width: 40px;
@@ -148,13 +116,10 @@
             var(--md-sys-elevation-level1);
     }
 }
-
 .md-color-picker__hue-native {
     transform: rotate(-180deg);
-
     background: linear-gradient(to right, hsl(0deg, 100%, 50%), hsl(60deg, 100%, 50%), hsl(120deg, 100%, 50%), hsl(180deg, 100%, 50%), hsl(240deg, 100%, 50%), hsl(300deg, 100%, 50%), hsl(360deg, 100%, 50%));
 }
-
 .md-color-picker__opacity-native {
     background:
         linear-gradient(to left, var(--md-comp-color-picker-base), rgba(0, 204, 255, 0)),

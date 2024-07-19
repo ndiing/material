@@ -4,119 +4,87 @@
         height: 64px;
         opacity: 0;
     }
-
     100% {
         height: var(--md-comp-sheet-height);
-
         opacity: 1;
     }
 }
-
 @keyframes menuOut {
     0% {
         visibility: visible;
-
         height: var(--md-comp-sheet-height);
-
         opacity: 1;
     }
-
     100% {
         visibility: hidden;
         height: 64px;
         opacity: 0;
     }
 }
-
 @keyframes menuInnerOut {
     0% {
         overflow: hidden;
     }
-
     100% {
         overflow: hidden;
     }
 }
-
 @keyframes menuInnerIn {
     0% {
         overflow: hidden;
     }
-
     100% {
         overflow: hidden;
     }
 }
-
 .md-menu {
     display: inline-flex;
     min-width: 112px;
     max-width: 280px;
     height: 256px;
-
     border-radius: var(--md-sys-shape-corner-extra-small);
-
     background-color: var(--md-sys-color-surface-container);
-
     color: var(--md-sys-color-on-surface-variant);
-
     box-shadow: var(--md-sys-elevation-level2);
-
     position: absolute;
     z-index: 7;
     visibility: hidden;
-
     animation-name: var(--md-comp-sheet-animation, menuOut);
-
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     animation-duration: var(--md-sys-motion-duration-short4);
-
     .md-virtual {
         overflow: hidden;
-
         animation-name: var(--md-comp-sheet-animation, menuInnerOut);
-
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
         animation-duration: var(--md-sys-motion-duration-short4);
     }
-
     &[open] {
         visibility: visible;
-
         animation-name: var(--md-comp-sheet-animation, menuIn);
-
         .md-virtual {
             overflow: auto;
-
             animation-name: var(--md-comp-sheet-animation, menuInnerIn);
         }
     }
-
     .md-card__inner {
         padding: 0;
         margin: 0;
     }
-
     + .md-scrim {
         opacity: 0;
     }
 }
-
 .md-menu__tree {
     .md-tree__item {
         padding: 0 12px;
         min-height: 48px;
     }
 }
-
 .md-menu__list {
     .md-list__item {
         padding: 0 12px;
         min-height: 48px;
     }
-
     .md-list__label-primary {
         @include typescale-label-large();
     }

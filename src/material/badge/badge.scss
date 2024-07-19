@@ -7,13 +7,9 @@
     height: 16px;
     border-radius: 8px;
     padding: 0 4px;
-
     @include typescale-label-small();
-
     background-color: var(--md-sys-color-error);
-
     color: var(--md-sys-color-on-error);
-
     &:empty {
         min-width: 6px;
         height: 6px;

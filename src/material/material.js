@@ -3,17 +3,14 @@ import { MDMediaObserver } from "./media-observer/media-observer.js";
 import { MDAttributeObserver } from "./attribute-observer/attribute-observer.js";
 import { MDStore } from "./store/store.js";
 import { MDRouter } from "./router/router.js";
-
 import * as localization from "./localization/localization.js";
 import * as color from "./color/color.js";
 import * as progress from "./progress/progress.js";
 import * as functions from "./functions/functions.js";
-
 import { MDRippleController } from "./ripple/ripple.js";
 import { MDPopperController } from "./popper/popper.js";
 import { MDGestureController } from "./gesture/gesture.js";
 import { MDVirtualController } from "./virtual/virtual.js";
-
 import { MDComponent } from "./component/component.js";
 import * as template from "./template/template.js";
 
@@ -63,6 +60,7 @@ import { MDCheckboxComponent } from "./checkbox/checkbox.js";
 import { MDRadioButtonComponent } from "./radio-button/radio-button.js";
 import { MDSwitchComponent } from "./switch/switch.js";
 import { MDSliderComponent } from "./slider/slider.js";
+
 import { MDTextFieldComponent } from "./text-field/text-field.js";
 import { MDDatetimeFieldComponent } from "./datetime-field/datetime-field.js";
 import { MDDateFieldComponent } from "./date-field/date-field.js";
@@ -79,9 +77,9 @@ import { MDSelectFieldComponent } from "./select-field/select-field.js";
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
 
 import { MDPaginationComponent } from "./pagination/pagination.js";
+
 import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
 import { MDDataTableColumnCellComponent } from "./data-table-column-cell/data-table-column-cell.js";
 import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-row-cell.js";
 import { MDDataTableComponent } from "./data-table/data-table.js";
-
 export { MDObserver, MDMediaObserver, MDAttributeObserver, MDStore, MDRouter, localization, color, progress, functions, MDRippleController, MDPopperController, MDGestureController, MDVirtualController, MDComponent, template, MDMarkdownComponent, MDIconComponent, MDEmojiComponent, MDImageComponent, MDBadgeComponent, MDButtonComponent, MDIconButtonComponent, MDSegmentedButtonComponent, MDFabComponent, MDCardComponent, MDScrimComponent, MDSheetComponent, MDDialogComponent, MDTopAppBarComponent, MDSideSheetComponent, MDBottomSheetComponent, MDSnackbarComponent, MDTooltipComponent, MDBottomAppBarComponent, MDDatetimePickerComponent, MDDatePickerComponent, MDMonthPickerComponent, MDTimePickerComponent, MDWeekPickerComponent, MDColorPickerComponent, MDEmojiPickerComponent, MDListItemComponent, MDListComponent, MDTreeItemComponent, MDTreeComponent, MDNavigationBarComponent, MDNavigationDrawerComponent, MDNavigationRailComponent, MDMenuComponent, MDTabsComponent, MDChipComponent, MDChipsComponent, MDFormComponent, MDCheckboxComponent, MDRadioButtonComponent, MDSwitchComponent, MDSliderComponent, MDTextFieldComponent, MDDatetimeFieldComponent, MDDateFieldComponent, MDMonthFieldComponent, MDWeekFieldComponent, MDTimeFieldComponent, MDColorFieldComponent, MDNumberFieldComponent, MDSearchFieldComponent, MDPasswordFieldComponent, MDTextareaFieldComponent, MDSelectFieldComponent, MDProgressIndicatorComponent, MDPaginationComponent, MDDataTableItemComponent, MDDataTableColumnCellComponent, MDDataTableRowCellComponent, MDDataTableComponent };

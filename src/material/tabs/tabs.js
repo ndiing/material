@@ -20,7 +20,6 @@ class MDTabsComponent extends MDTreeComponent {
     /**
      * Available variants for the tabs component.
      */
-
     variants = ["primary", "secondary"];
 
     /**

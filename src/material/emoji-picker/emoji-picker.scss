@@ -1,137 +1,96 @@
 .md-emoji-picker {
     display: inline-flex;
-
     border-radius: var(--md-sys-shape-corner-large);
-
     background-color: var(--md-sys-color-surface-container-high);
-
     color: var(--md-sys-color-on-surface-variant);
-
     box-shadow: var(--md-sys-elevation-level0);
-
     position: absolute;
     z-index: 7;
     visibility: hidden;
-
     animation-name: var(--md-comp-sheet-animation, datetimePickerOut);
-
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     animation-duration: var(--md-sys-motion-duration-short4);
-
     &[open] {
         visibility: visible;
-
         animation-name: var(--md-comp-sheet-animation, datetimePickerIn);
-
         > * {
             animation-name: var(--md-comp-sheet-animation, datetimePickerWrapperIn);
-
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
             animation-duration: var(--md-sys-motion-duration-short4);
         }
     }
-
     + .md-scrim {
         opacity: 0;
     }
-
     .md-card__header {
         padding: 12px 12px;
         gap: 0 16px;
-
         + .md-card__body {
             margin-top: -4px;
         }
     }
-
     .md-card__actions {
         width: 100%;
         gap: 0 24px;
-
         .md-card__button {
             color: var(--md-sys-color-on-surface-variant);
-
             .md-button__native {
                 gap: 0;
             }
         }
-
         .md-card__text-field {
             --md-comp-text-field-density: -4;
-
             .md-text-field__container {
                 background-color: var(--md-sys-color-surface-container-highest);
-
                 color: var(--md-sys-color-on-surface-variant);
             }
         }
     }
-
     .md-card__inner {
         overflow: hidden;
         padding: 0;
         margin: 0;
-
         @include typescale-body-large();
-
         + .md-card__footer {
             margin-top: -4px;
         }
     }
-
     .md-card__footer {
         padding: 12px 12px;
         gap: 0 8px;
     }
 }
-
 .md-emoji-picker__main {
     display: flex;
     flex-direction: column;
     width: 360px;
     height: 336px;
 }
-
 .md-emoji-picker__tabs {
     display: flex;
     align-items: center;
     overflow: auto;
     padding: 0 12px;
     position: relative;
-
     &::-webkit-scrollbar {
         display: none;
     }
-
     &::before {
         content: "";
-
         width: var(--md-comp-emoji-picker-tabs-indicator-width);
-
         height: 3px;
         border-radius: 3px 3px 0 0;
-
         background-color: var(--md-sys-color-primary);
-
         position: absolute;
-
         left: var(--md-comp-emoji-picker-tabs-indicator-left);
-
         right: var(--md-comp-emoji-picker-tabs-indicator-right);
-
         bottom: 0;
         transition-property: width, left, right;
-
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
         transition-duration: var(--md-sys-motion-duration-short4);
-
         transition-delay: 0s, var(--md-comp-emoji-picker-tabs-indicator-transition-left, var(--md-sys-motion-duration-short2)), var(--md-comp-tabs-indicator-transition-right, var(--md-sys-motion-duration-short2));
     }
 }
-
 .md-emoji-picker__tabs-item {
     flex: 0 0 auto;
     display: inline-flex;
@@ -139,7 +98,6 @@
     justify-content: center;
     vertical-align: middle;
 }
-
 .md-emoji-picker__tabs-emoji {
     display: inline-flex;
     align-items: center;
@@ -149,11 +107,8 @@
     padding: 8px;
     width: 40px;
     height: 40px;
-
     @include ripple();
-
     @include ripple-button();
-
     &:focus,
     &:hover,
     &:active,
@@ -170,50 +125,39 @@
     &[disabled] {
         @include ripple-clipped();
     }
-
     &:focus {
         @include ripple-focused();
     }
-
     &:hover {
         @include ripple-hover();
     }
-
     &:active {
         @include ripple-pressed();
     }
-
     &[activated] {
         box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
     }
-
     &[selected] {
         background-color: var(--md-sys-color-surface-variant);
-
         color: var(--md-sys-color-on-surface-variant);
     }
-
     &[dragged] {
         @include ripple-dragged();
     }
-
     &[disabled] {
         @include ripple-disabled();
     }
 }
-
 .md-emoji-picker__viewport {
     flex: 1;
     overflow: auto;
     width: 100%;
     height: 100%;
     position: relative;
-
     &::-webkit-scrollbar {
         display: none;
     }
 }
-
 .md-emoji-picker__scrollbar {
     position: absolute;
     left: 0;
@@ -222,38 +166,30 @@
     height: 1px;
     pointer-events: none;
 }
-
 .md-emoji-picker__container {
     transform: translate3d(0, 0, 0);
 }
-
 .md-emoji-picker__grid {
     display: flex;
     flex-direction: column;
     padding: 0 12px;
 }
-
 .md-emoji-picker__grid-row {
     display: flex;
     align-items: center;
-
     background-color: var(--md-sys-color-surface-container-high);
-
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-emoji-picker__grid-column {
     display: flex;
     align-items: center;
 }
-
 .md-emoji-picker__grid-label {
     display: flex;
     align-items: center;
     height: 48px;
     padding: 0 12px;
 }
-
 .md-emoji-picker__grid-emoji {
     display: inline-flex;
     align-items: center;
@@ -263,11 +199,8 @@
     padding: 8px;
     width: 40px;
     height: 40px;
-
     @include ripple();
-
     @include ripple-button();
-
     &:focus,
     &:hover,
     &:active,
@@ -284,33 +217,25 @@
     &[disabled] {
         @include ripple-clipped();
     }
-
     &:focus {
         @include ripple-focused();
     }
-
     &:hover {
         @include ripple-hover();
     }
-
     &:active {
         @include ripple-pressed();
     }
-
     &[activated] {
         box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
     }
-
     &[selected] {
         background-color: var(--md-sys-color-surface-variant);
-
         color: var(--md-sys-color-on-surface-variant);
     }
-
     &[dragged] {
         @include ripple-dragged();
     }
-
     &[disabled] {
         @include ripple-disabled();
     }

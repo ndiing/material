@@ -3,13 +3,11 @@
         width: 0;
     }
 }
-
 @keyframes rippleOut {
     0% {
         opacity: 10%;
     }
 }
-
 @mixin ripple() {
     --md-comp-ripple-size: 100%;
     --md-comp-ripple-x: 0%;
@@ -17,70 +15,51 @@
     --md-comp-ripple-left: 50%;
     --md-comp-ripple-top: 50%;
     position: relative;
-
     &::after {
         content: "";
         aspect-ratio: 1/1;
         border-radius: 50%;
-
         transform: translate3d(-50%, -50%, 0) translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0);
-
         background-color: var(--md-sys-color-on-surface);
-
         opacity: 0%;
         position: absolute;
-
         left: var(--md-comp-ripple-left);
-
         top: var(--md-comp-ripple-top);
-
         pointer-events: none;
-
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
         animation-duration: var(--md-sys-motion-duration-short4);
     }
 }
-
 @mixin ripple-size() {
     &::after {
         width: var(--md-comp-ripple-size);
     }
 }
-
 @mixin ripple-button() {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 @mixin ripple-clipped() {
     overflow: hidden;
 }
-
 @mixin ripple-focused() {
     &::after {
         opacity: 10%;
-
         animation-name: var(--md-comp-ripple-animation, rippleIn);
     }
 }
-
 @mixin ripple-fade-out() {
     &::after {
         opacity: 0%;
-
         animation-name: var(--md-comp-ripple-animation, rippleIn), var(--md-comp-ripple-animation, rippleOut);
-
         animation-duration: var(--md-sys-motion-duration-short4), var(--md-sys-motion-duration-long4);
     }
 }
-
 @mixin ripple-hover() {
     &::after {
         opacity: 8%;
     }
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -90,12 +69,10 @@
             "opsz" 24;
     }
 }
-
 @mixin ripple-pressed() {
     &::after {
         opacity: 10%;
     }
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -105,10 +82,8 @@
             "opsz" 24;
     }
 }
-
 @mixin ripple-activated() {
     box-shadow: inset 0 0 0 1px var(--md-sys-color-surface-variant);
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -118,12 +93,9 @@
             "opsz" 24;
     }
 }
-
 @mixin ripple-selected() {
     background-color: var(--md-sys-color-secondary-container);
-
     color: var(--md-sys-color-on-secondary-container);
-
     &.md-icon,
     .md-icon {
         font-variation-settings:
@@ -133,39 +105,29 @@
             "opsz" 24;
     }
 }
-
 @mixin ripple-dragged() {
     &::after {
         opacity: 16%;
     }
 }
-
 @mixin ripple-disabled() {
     background-color: var(--md-sys-color-on-surface12);
-
     border-color: var(--md-sys-color-on-surface12);
-
     color: var(--md-sys-color-on-surface38);
-
     box-shadow: var(--md-sys-elevation-level0);
-
     transition: none;
     pointer-events: none;
 }
-
 @mixin ripple-reset() {
     background-color: inherit;
     color: inherit;
-
     &::after {
         content: none;
     }
 }
-
 .md-ripple {
     @include ripple();
 }
-
 .md-ripple--button {
     @include ripple-button();
 }
@@ -185,47 +147,34 @@
 .md-ripple--clipped.md-ripple[disabled] {
     @include ripple-clipped();
 }
-
 .md-ripple--focused {
     @include ripple-focused();
 }
-
 .md-ripple--fade-out.md-ripple--focused {
     @include ripple-fade-out();
 }
-
 .md-ripple--hover {
     @include ripple-hover();
 }
-
 .md-ripple--pressed {
     @include ripple-pressed();
 }
-
 .md-ripple[activated] {
     @include ripple-activated();
 }
-
 .md-ripple[selected] {
     @include ripple-selected();
 }
-
 .md-ripple[dragged] {
     @include ripple-dragged();
 }
-
 [disabled],
 .md-ripple[disabled] {
     @include ripple-disabled();
 }
-
 /* 
-
 @include ripple();
-
-
 @include ripple-button();
-
 &:focus,
 &:hover,
 &:active,

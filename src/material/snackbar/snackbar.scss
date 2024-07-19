@@ -3,116 +3,86 @@
         visibility: visible;
         height: 0;
     }
-
     100% {
         height: var(--md-comp-sheet-height);
     }
 }
-
 @keyframes snackbarOut {
     0% {
         visibility: visible;
         opacity: 1;
     }
-
     100% {
         visibility: hidden;
         opacity: 0;
     }
 }
-
 @keyframes snackbarWrapperIn {
     0% {
         transform: translate3d(0, calc(0px - var(--md-comp-sheet-height)), 0);
     }
-
     100% {
         transform: translate3d(0, 0, 0);
     }
 }
-
 .md-snackbar {
     display: inline-flex;
     width: 344px;
-
     border-radius: var(--md-sys-shape-corner-extra-small);
-
     background-color: var(--md-sys-color-inverse-surface);
-
     color: var(--md-sys-color-inverse-on-surface);
-
     box-shadow: var(--md-sys-elevation-level3);
-
     position: absolute;
     left: 8px;
     bottom: 8px;
     z-index: 7;
     visibility: hidden;
-
     animation-name: var(--md-comp-sheet-animation, snackbarOut);
-
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     animation-duration: var(--md-sys-motion-duration-short4);
-
     &[open] {
         visibility: visible;
-
         animation-name: var(--md-comp-sheet-animation, snackbarIn);
-
         > * {
             animation-name: var(--md-comp-sheet-animation, snackbarWrapperIn);
-
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
             animation-duration: var(--md-sys-motion-duration-short4);
         }
     }
-
     .md-card__body {
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 0 8px 0;
         gap: 4px 0;
     }
-
     .md-card__inner {
         flex: 1 0 64%;
         padding: 0 0 0 16px;
         margin: 14px 0 6px 0;
         letter-spacing: 0;
-
         + .md-card__footer {
             margin-top: 0;
         }
     }
-
     .md-card__footer {
         padding: 8px 8px 0 0;
         gap: 0 8px;
         margin-left: auto;
-
         .md-button {
             --md-comp-button-density: -2;
-
             color: var(--md-sys-color-inverse-primary);
-
             &.md-ripple {
                 &::after {
                     background-color: var(--md-sys-color-surface);
                 }
             }
         }
-
         .md-icon-button {
             margin: 0 4px;
-
             color: var(--md-sys-color-inverse-on-surface);
-
             &.md-ripple {
                 &::after {
                     width: 32px;
-
                     background-color: var(--md-sys-color-surface);
                 }
             }

@@ -2,90 +2,62 @@
     --md-comp-sheet-width: 256px;
     grid-area: east;
     display: inline-flex;
-
     min-width: var(--md-comp-sheet-width);
-
     margin-right: calc(0px - var(--md-comp-sheet-width));
-
     border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
-
     background-color: var(--md-sys-color-surface);
-
     color: var(--md-sys-color-on-surface-variant);
-
     box-shadow: var(--md-sys-elevation-level0);
-
     animation-name: var(--md-comp-sheet-animation, sheetEastOut);
-
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-
     animation-duration: var(--md-sys-motion-duration-short4);
-
     &[open] {
         margin-right: 0;
-
         animation-name: var(--md-comp-sheet-animation, sheetEastIn);
     }
-
     .md-card__header {
         padding: 24px;
         gap: 0 12px;
-
         + .md-card__body {
             margin-top: -24px;
         }
     }
-
     .md-card__actions {
         gap: 0 12px;
     }
-
     .md-card__label-primary {
         @include typescale-title-large();
     }
-
     .md-card__inner {
         padding: 0 24px;
         margin: 24px 0;
-
         + .md-card__footer {
             margin-top: -24px;
         }
     }
-
     .md-card__footer {
         padding: 24px;
         gap: 0 8px;
         margin-top: auto;
     }
 }
-
 .md-side-sheet.md-card--modal {
     grid-area: auto;
     margin-right: 0;
-
     transform: translate3d(100%, 0%, 0);
-
     background-color: var(--md-sys-color-surface-container-low);
-
     color: var(--md-sys-color-on-surface-variant);
-
     box-shadow: var(--md-sys-elevation-level0);
-
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
     z-index: 7;
-
     animation-name: var(--md-comp-sheet-animation, sheetEastModalOut);
-
     &[open] {
         transform: translate3d(0, 0, 0);
-
         animation-name: var(--md-comp-sheet-animation, sheetEastModalIn);
     }
-
     .md-card__header {
         padding: 24px 24px 24px 16px;
     }

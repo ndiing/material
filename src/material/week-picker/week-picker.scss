@@ -1,11 +1,8 @@
 .md-week-picker {
     .md-datetime-picker__grid-row--days {
         border-radius: 20px;
-
         @include ripple();
-
         @include ripple-button();
-
         &:focus,
         &:hover,
         &:active,
@@ -22,38 +19,29 @@
         &[disabled] {
             @include ripple-clipped();
         }
-
         &:focus {
             @include ripple-focused();
         }
-
         &:hover {
             @include ripple-hover();
         }
-
         &:active {
             @include ripple-pressed();
         }
-
         &[activated] {
             box-shadow: inset 0 0 0 1px var(--md-sys-color-primary);
         }
-
         &[selected] {
             background-color: var(--md-sys-color-primary);
-
             color: var(--md-sys-color-on-primary);
         }
-
         &[dragged] {
             @include ripple-dragged();
         }
-
         &[disabled] {
             @include ripple-disabled();
         }
     }
-
     .md-datetime-picker__grid-item {
         @include ripple-reset();
     }
