@@ -13,7 +13,7 @@
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
     .md-card__header {
-        padding: 24px;
+        padding: 16px 24px;
         gap: 0 24px;
         + .md-card__body {
             margin-top: 0;
@@ -33,7 +33,7 @@
         }
     }
     .md-card__footer {
-        padding: 24px;
+        padding: 16px 24px;
         gap: 0 8px;
     }
 }
