@@ -56,7 +56,19 @@ class MDColorPickerComponent extends MDSheetComponent {
         let label = this.selection.hex;
         return [
             //
-            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick },
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleColorPickerButtonLabelClick },
+        ];
+    }
+
+    /**
+     * {{description}}
+     */
+    get actions() {
+        return [
+            //
+            { component: "spacer" },
+            { label: "Cancel", onButtonClick: this.handleColorPickerButtonCancelClick },
+            { label: "Ok", onButtonClick: this.handleColorPickerButtonOkClick },
         ];
     }
 
@@ -330,36 +342,7 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.emit("onColorPickerOpacityNativeInput", event);
     }
 
-    /**
-     * Handles the click event on the card icon button.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleCardIconButtonClick(event) {
-        if (event.currentTarget.name === "prev") {
-            this.handleColorPickerIconButtonPrevClick(event);
-        } else if (event.currentTarget.name === "next") {
-            this.handleColorPickerIconButtonNextClick(event);
-        }
-        this.emit("onColorPickerIconButtonClick", event);
-    }
-
-    /**
-     * Handles the click event on the card button.
-     * @param {Event} event - The click event.
-     * @private
-     */
-    handleCardButtonClick(event) {
-        if (event.currentTarget.name === "label") {
-            this.handleColorPickerButtonLabelClick(event);
-        } else if (event.currentTarget.name === "cancel") {
-            this.handleColorPickerButtonCancelClick(event);
-        } else if (event.currentTarget.name === "ok") {
-            this.handleColorPickerButtonOkClick(event);
-        }
-        this.emit("onColorPickerButtonClick", event);
-    }
-
+    
     /**
      * Handles the previous icon button click event.
      * @param {Event} event - The click event.

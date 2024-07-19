@@ -143,7 +143,8 @@ for (const doc of docs) {
 
     if(![
         // /list-item$/,
-        /chip$/,
+        // /chip$/,
+        /pagination$/,
         // /icon$/,
         // /button$/,
         // /fab$/,

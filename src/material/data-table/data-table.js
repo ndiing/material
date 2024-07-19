@@ -41,7 +41,11 @@ class MDDataTableComponent extends MDCardComponent {
 
     set trailingActions(value) {}
     get actions() {
-        return [{ component: "spacer" }, { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total: this.total, limit: this.limit, page: this.page, onPaginationChange: this.handleDataTablePaginationChange }];
+        return [
+            //
+            { component: "spacer" },
+            { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total: this.total, limit: this.limit, page: this.page, onPaginationChange: this.handleDataTablePaginationChange },
+        ];
     }
 
     set actions(value) {}
