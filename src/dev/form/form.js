@@ -4816,7 +4816,7 @@ class DevForm extends MDComponent {
                                             id: "Transportation",
                                             name: "Transportation",
                                             options: {},
-                                            selected:true
+                                            selected: true,
                                         },
                                         {
                                             id: "Utilities",

@@ -1584,7 +1584,7 @@ class DevMenu extends MDComponent {
                                         options: {},
                                     },
                                 ]}"
-                                .map="${{label:'name',value:'id'}}"
+                                .map="${{ label: "name", value: "id" }}"
                                 @onMenuViewportVirtualScroll=""
                                 @onMenuListItemClick=""
                             ></md-menu>

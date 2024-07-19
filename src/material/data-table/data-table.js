@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MDCardComponent, MDStore, MDVirtualController } from "../material.js";
-import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 import { renderComponent } from "../template/template.js";
@@ -34,7 +33,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     set label(value) {}
     get trailingActions() {
-        return [{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant:'outlined', onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch }];
+        return [{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant: "outlined", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch }];
     }
 
     set trailingActions(value) {}

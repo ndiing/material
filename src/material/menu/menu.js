@@ -91,7 +91,6 @@ class MDMenuComponent extends MDSheetComponent {
         this.classList.add("md-menu");
         this.updateStore();
         this.updateVirtual();
-
     }
 
     /**

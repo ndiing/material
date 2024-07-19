@@ -1,4 +1,3 @@
-import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
@@ -8,15 +7,15 @@ import { renderComponent } from "../template/template.js";
  * @extends MDComponent
  */
 class MDToolbarComponent extends MDComponent {
-    static properties={
-        items:{type:Array}
-    }
+    static properties = {
+        items: { type: Array },
+    };
 
-    render(){
-        return this.items?.map(item=>{
-            item.component=item.component||'icon-button'
-            return renderComponent(item)
-        })
+    render() {
+        return this.items?.map((item) => {
+            item.component = item.component || "icon-button";
+            return renderComponent(item);
+        });
     }
 
     /**
@@ -28,7 +27,6 @@ class MDToolbarComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-toolbar");
     }
-
 }
 customElements.define("md-toolbar", MDToolbarComponent);
 export { MDToolbarComponent };

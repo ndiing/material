@@ -15,7 +15,6 @@ class MDSpacerComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-spacer");
     }
-
 }
 customElements.define("md-spacer", MDSpacerComponent);
 export { MDSpacerComponent };
