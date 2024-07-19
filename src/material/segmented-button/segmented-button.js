@@ -30,7 +30,7 @@ class MDSegmentedButtonComponent extends MDComponent {
             item.classMap={'md-segmented-button__item':true}
             item.component=item.component||'button'
             item.variant=item.variant||'outlined'
-            item.icon=item.selected?'check':item.icon
+            item.icon=item.selected?'check':''
             item.onButtonClick=this.handleSegmentedButtonItemClick
             return renderComponent(item)
         });

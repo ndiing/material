@@ -22,13 +22,13 @@ class DevDataTable extends MDComponent {
             sortable: true,
         }));
 
-        this.rows = Array.from({ length: 500 }, (_, k) => {
+        this.rows = Array.from({ length: 5000 }, (_, k) => {
             let row = {};
             this.columns.forEach((column, index) => {
                 if (index % 2 === 0) {
-                    row[column.name] = lorem[getRandomNumber(0, lorem.length)];
+                    row[column.name] = lorem[getRandomNumber(0, lorem.length-1)];
                 } else {
-                    row[column.name] = getRandomNumber(0, 100);
+                    row[column.name] = getRandomNumber(0, lorem.length-1);
                 }
             });
             return row;

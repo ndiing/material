@@ -3,6 +3,9 @@ import { MDCardComponent, MDStore, MDVirtualController } from "../material.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
+import { renderComponent } from "../template/template.js";
+
+
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
         ...MDCardComponent.properties,
@@ -59,64 +62,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual = new MDVirtualController(this);
     }
 
-    renderColumnCell(item) {
-        /* prettier-ignore */
-        return html`
-            <md-data-table-column-cell
-                .avatar="${ifDefined(item.avatar)}"
-                .thumbnail="${ifDefined(item.thumbnail)}"
-                .video="${ifDefined(item.video)}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item.label)}"
-                .subLabel="${ifDefined(item.subLabel)}"
-                .badge="${ifDefined(item.badge)}"
-                .text="${ifDefined(item.text)}"
-                .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-                .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
-                .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-                .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-                .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
-                .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-                .selected="${ifDefined(item.selected)}"
-                .routerLink="${ifDefined(item.routerLink)}"
-                .activated="${ifDefined(item.activated)}"
-                .indeterminate="${ifDefined(item.indeterminate)}"
-                .reorderable="${ifDefined(item.reorderable)}"
-                .resizable="${ifDefined(item.resizable)}"
-                .sortable="${ifDefined(item.sortable)}"
-                .sortableIcon="${ifDefined(item.sortableIcon)}"
-                @onDataTableItemSelected="${ifDefined(item.onDataTableItemSelected)}"
-            ></md-data-table-column-cell>
-        `
-    }
-
-    renderRowCell(item) {
-        /* prettier-ignore */
-        return html`
-            <md-data-table-row-cell
-                .avatar="${ifDefined(item.avatar)}"
-                .thumbnail="${ifDefined(item.thumbnail)}"
-                .video="${ifDefined(item.video)}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item.label)}"
-                .subLabel="${ifDefined(item.subLabel)}"
-                .badge="${ifDefined(item.badge)}"
-                .text="${ifDefined(item.text)}"
-                .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-                .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
-                .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-                .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-                .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
-                .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-                .selected="${ifDefined(item.selected)}"
-                .routerLink="${ifDefined(item.routerLink)}"
-                .activated="${ifDefined(item.activated)}"
-                .indeterminate="${ifDefined(item.indeterminate)}"
-                @onDataTableItemSelected="${ifDefined(item.onDataTableItemSelected)}"
-            ></md-data-table-row-cell>
-        `
-    }
-
+    
     styleStickyCheckboxSelection() {
         return {
             ...(this.stickyCheckboxSelection && { sticky: true, flow: "left", left: 0 }),
@@ -196,7 +142,8 @@ class MDDataTableComponent extends MDCardComponent {
                                 style="${this.styleDataTableColumnCell(this.styleStickyCheckboxSelection())}"
                                 class="${this.classDataTableColumnCell({stickyLeftEnd:this.stickyLeftEnd})}"
                                 @onCheckboxNativeInput="${this.handleDataTableColumnCellCheckboxNativeInput}"
-                            >${this.renderColumnCell({
+                            >${renderComponent({
+                                component: 'data-table-column-cell',
                                 leadingCheckbox:true,
                                 selected:this.selected,
                                 indeterminate:this.indeterminate,
@@ -218,7 +165,8 @@ class MDDataTableComponent extends MDCardComponent {
                                 @pointerenter="${this.handleDataTableColumnCellPointerenter}"
                                 @pointerleave="${this.handleDataTableColumnCellPointerleave}"
                                 @click="${this.handleDataTableColumnCellClick}"
-                            >${this.renderColumnCell({
+                            >${renderComponent({
+                                component: 'data-table-column-cell',
                                 label: column.label,
                                 reorderable: column.reorderable,
                                 resizable: column.resizable,
@@ -242,7 +190,8 @@ class MDDataTableComponent extends MDCardComponent {
                                     style="${this.styleDataTableRowCell(this.styleStickyCheckboxSelection())}"
                                     class="${this.classDataTableRowCell({stickyLeftEnd:this.stickyLeftEnd})}"
                                     @onCheckboxNativeInput="${this.handleDataTableRowCellCheckboxNativeInput}"
-                                >${this.renderRowCell({
+                                >${renderComponent({
+                                    component: 'data-table-row-cell',
                                     leadingCheckbox:true,
                                     selected:row.selected,
                                 })}</td>
@@ -251,7 +200,8 @@ class MDDataTableComponent extends MDCardComponent {
                                 <td
                                     style="${this.styleDataTableRowCell(column)}"
                                     class="${this.classDataTableRowCell(column)}"
-                                >${this.renderRowCell({
+                                >${renderComponent({
+                                    component: 'data-table-row-cell',
                                     label: row[column.name]
                                 })}</td>
                             `)}
@@ -265,14 +215,16 @@ class MDDataTableComponent extends MDCardComponent {
                                 <td
                                     style="${this.styleDataTableFooterCell(this.styleStickyCheckboxSelection())}"
                                     class="${this.classDataTableFooterCell({stickyLeftEnd:this.stickyLeftEnd})}"
-                                >${this.renderRowCell({
+                                >${renderComponent({
+                                    component: 'data-table-row-cell',
                                 })}</td>
                             `:nothing}
                             ${this.virtualColumns?.map(column => html`
                                 <td
                                     style="${this.styleDataTableFooterCell(column)}"
                                     class="${this.classDataTableFooterCell(column)}"
-                                >${this.renderRowCell({
+                                >${renderComponent({
+                                    component: 'data-table-row-cell',
                                     label: row[column.name]
                                 })}</td>
                             `)}

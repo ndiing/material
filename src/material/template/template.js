@@ -1813,7 +1813,7 @@ function renderWeekPicker(item = {}) {
     `
 }
 
-function renderComponent(item) {
+function renderComponent(item = {}) {
     /* prettier-ignore */
     return choose(item.component, [
         ["badge", () => renderBadge(item)],
@@ -1879,4 +1879,5 @@ function renderComponent(item) {
         ["spacer", () => html`<div class="md-pane__spacer"></div>`],
     ], () => nothing)
 }
+
 export { renderComponent };
