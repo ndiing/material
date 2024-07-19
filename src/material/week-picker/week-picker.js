@@ -99,7 +99,10 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             label = stringifyWeek(this.selection);
         }
-        return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
+        return [
+            //
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down",  label, onButtonClick:this.handleCardButtonLabelClick },
+        ];
     }
 
     /**

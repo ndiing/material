@@ -7,6 +7,7 @@ import { styleMap } from "lit/directives/style-map.js";
 function renderButton(item = {}) {
     return html`
         <md-button
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -16,6 +17,7 @@ function renderButton(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onButtonClick)}"
         ></md-button>
     `;
 }
@@ -23,6 +25,7 @@ function renderButton(item = {}) {
 function renderCheckbox(item = {}) {
     return html`
         <md-checkbox
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -40,6 +43,7 @@ function renderCheckbox(item = {}) {
 function renderColorField(item = {}) {
     return html`
         <md-color-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -91,6 +95,7 @@ function renderColorField(item = {}) {
 function renderDateField(item = {}) {
     return html`
         <md-date-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -142,6 +147,7 @@ function renderDateField(item = {}) {
 function renderDatetimeField(item = {}) {
     return html`
         <md-datetime-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -193,6 +199,7 @@ function renderDatetimeField(item = {}) {
 function renderFab(item = {}) {
     return html`
         <md-fab
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -208,6 +215,7 @@ function renderFab(item = {}) {
 function renderIconButton(item = {}) {
     return html`
         <md-icon-button
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -224,6 +232,7 @@ function renderIconButton(item = {}) {
 function renderMonthField(item = {}) {
     return html`
         <md-month-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -275,6 +284,7 @@ function renderMonthField(item = {}) {
 function renderNumberField(item = {}) {
     return html`
         <md-number-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -326,6 +336,7 @@ function renderNumberField(item = {}) {
 function renderPasswordField(item = {}) {
     return html`
         <md-password-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -377,6 +388,7 @@ function renderPasswordField(item = {}) {
 function renderRadioButton(item = {}) {
     return html`
         <md-radio-button
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -394,6 +406,7 @@ function renderRadioButton(item = {}) {
 function renderSearchField(item = {}) {
     return html`
         <md-search-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -445,6 +458,7 @@ function renderSearchField(item = {}) {
 function renderSegmentedButton(item = {}) {
     return html`
         <md-segmented-button
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -459,6 +473,7 @@ function renderSegmentedButton(item = {}) {
 function renderSelectField(item = {}) {
     return html`
         <md-select-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -510,6 +525,7 @@ function renderSelectField(item = {}) {
 function renderSwitch(item = {}) {
     return html`
         <md-switch
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -528,6 +544,7 @@ function renderSwitch(item = {}) {
 function renderTextField(item = {}) {
     return html`
         <md-text-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -579,6 +596,7 @@ function renderTextField(item = {}) {
 function renderTextareaField(item = {}) {
     return html`
         <md-textarea-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -630,6 +648,7 @@ function renderTextareaField(item = {}) {
 function renderTimeField(item = {}) {
     return html`
         <md-time-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -681,6 +700,7 @@ function renderTimeField(item = {}) {
 function renderWeekField(item = {}) {
     return html`
         <md-week-field
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -732,6 +752,7 @@ function renderWeekField(item = {}) {
 function renderIcon(item = {}) {
     return html`
         <md-icon
+            .data="${item}"
             id="${ifDefined(item.id)}"
             class="${classMap({ ...item.classMap })}"
             style="${styleMap({ ...item.styleMap })}"
@@ -740,19 +761,100 @@ function renderIcon(item = {}) {
     `;
 }
 
+function renderListItem(item = {}) {
+    return html`
+        <md-list-item
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
+            .avatar="${ifDefined(item.avatar)}"
+            .thumbnail="${ifDefined(item.thumbnail)}"
+            .video="${ifDefined(item.video)}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .subLabel="${ifDefined(item.subLabel)}"
+            .badge="${ifDefined(item.badge)}"
+            .text="${ifDefined(item.text)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .selected="${ifDefined(item.selected)}"
+            .routerLink="${ifDefined(item.routerLink)}"
+            .activated="${ifDefined(item.activated)}"
+            @click="${ifDefined(item.onListItemClick)}"
+            @onListItemSelected="${ifDefined(item.onListItemSelected)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+        ></md-list-item>
+    `;
+}
+
+function renderTreeItem(item = {}) {
+    return html`
+        <md-tree-item
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .badge="${ifDefined(item.badge)}"
+            .selected="${ifDefined(item.selected)}"
+            .routerLink="${ifDefined(item.routerLink)}"
+            .indent="${ifDefined(item.indent)}"
+            .isNode="${ifDefined(item.isNode)}"
+            .expanded="${ifDefined(item.expanded)}"
+            .activated="${ifDefined(item.activated)}"
+            .variant="${ifDefined(item.variant)}"
+            .isParent="${ifDefined(item.isParent)}"
+            .nodeActions="${ifDefined(item.nodeActions)}"
+            .nodeIcons="${ifDefined(item.nodeIcons)}"
+            .leafIcons="${ifDefined(item.leafIcons)}"
+            @click="${ifDefined(item.onTreeItemClick)}"
+            @onTreeItemSelected="${ifDefined(item.onTreeItemSelected)}"
+        ></md-tree-item>
+    `;
+}
+
+function renderChip(item = {}) {
+    return html`
+        <md-chip
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
+            .variant="${ifDefined(item.variant)}"
+            .avatar="${ifDefined(item.avatar)}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .action="${ifDefined(item.action)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onChipClick)}"
+            @onChipActionClick="${ifDefined(item.onChipActionClick)}"
+        ></md-chip>
+    `;
+}
+
 function renderComponent(item) {
     return choose(
         item.component,
         [
-            ["spacer", () => html`<div class="md-pane__spacer"></div>`],
-            ["icon", () => renderIcon(item)],
             ["button", () => renderButton(item)],
             ["checkbox", () => renderCheckbox(item)],
+            ["chip", () => renderChip(item)],
             ["color-field", () => renderColorField(item)],
             ["date-field", () => renderDateField(item)],
             ["datetime-field", () => renderDatetimeField(item)],
             ["fab", () => renderFab(item)],
             ["icon-button", () => renderIconButton(item)],
+            ["icon", () => renderIcon(item)],
+            ["list-item", () => renderListItem(item)],
             ["month-field", () => renderMonthField(item)],
             ["number-field", () => renderNumberField(item)],
             ["password-field", () => renderPasswordField(item)],
@@ -760,14 +862,16 @@ function renderComponent(item) {
             ["search-field", () => renderSearchField(item)],
             ["segmented-button", () => renderSegmentedButton(item)],
             ["select-field", () => renderSelectField(item)],
+            ["spacer", () => html`<div class="md-pane__spacer"></div>`],
             ["switch", () => renderSwitch(item)],
             ["text-field", () => renderTextField(item)],
             ["textarea-field", () => renderTextareaField(item)],
             ["time-field", () => renderTimeField(item)],
+            ["tree-item", () => renderTreeItem(item)],
             ["week-field", () => renderWeekField(item)],
         ],
         () => nothing,
     );
 }
 
-export { renderComponent, renderIcon, renderButton, renderCheckbox, renderColorField, renderDateField, renderDatetimeField, renderFab, renderIconButton, renderMonthField, renderNumberField, renderPasswordField, renderRadioButton, renderSearchField, renderSegmentedButton, renderSelectField, renderSwitch, renderTextField, renderTextareaField, renderTimeField, renderWeekField };
+export { renderComponent };

@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { renderComponent } from "../template/template.js";
 
 /**
  * List component for managing lists with selectable items.
@@ -48,53 +49,20 @@ class MDListComponent extends MDComponent {
     }
 
     /**
-     * Renders a single list item.
-     * @private
-     * @param {Object} item - The list item to render.
-     * @returns {TemplateResult} The HTML template for the list item.
-     */
-    renderListItem(item) {
-        /* prettier-ignore */
-        return html`
-            <md-list-item
-                .data="${item}"
-                .avatar="${ifDefined(item.avatar)}"
-                .thumbnail="${ifDefined(item.thumbnail)}"
-                .video="${ifDefined(item.video)}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined((this.format||(value=>value))(item[this.map.label]))}"
-                .subLabel="${ifDefined(item.subLabel)}"
-                .badge="${ifDefined(item.badge)}"
-                .text="${ifDefined(item.text)}"
-                .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-                .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
-                .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-                .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-                .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
-                .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-                .selected="${ifDefined(item.selected)}"
-                .routerLink="${ifDefined(item.routerLink)}"
-                .value="${ifDefined(item[this.map.value])}"
-                .activated="${ifDefined(item.activated)}"
-                @click="${this.handleListItemClick}"
-                @onCheckboxNativeInput="${this.handleListItemCheckboxNativeInput}"
-                @onRadioButtonNativeInput="${this.handleListItemRadioButtonNativeInput}"
-                @onSwitchNativeInput="${this.handleListItemSwitchNativeInput}"
-                @onSelectionStart="${this.handleListItemSelectionStart}"
-                @onSelection="${this.handleListItemSelection}"
-                @onSelectionEnd="${this.handleListItemSelectionEnd}"
-            ></md-list-item>
-        `;
-    }
-
-    /**
      * Renders the list of items.
      * @private
      * @returns {TemplateResult[]} Array of HTML templates for list items.
      */
     render() {
         /* prettier-ignore */
-        return this.list?.map(item => this.renderListItem(item));
+        return this.list?.map((item) => {
+            item.component = item.component||"list-item";
+            item.onListItemClick = this.handleListItemClick;
+            item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
+            item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
+            item.onSwitchNativeInput = this.handleListItemSwitchNativeInput;
+            return renderComponent(item);
+        });
     }
 
     /**

@@ -142,7 +142,9 @@ let code = "";
 for (const doc of docs) {
 
     if(![
-        /icon$/,
+        // /list-item$/,
+        /chip$/,
+        // /icon$/,
         // /button$/,
         // /fab$/,
         // /field$/,
@@ -200,6 +202,7 @@ for (const doc of docs) {
         code += `${toCamelCase('render-'+(doc.tagName.replace('md-','')))}(item = {}) {\n`
         code += `    return html\`\n`
         code += `        <${doc.tagName}\n`;
+        code += `            .data="\${item}"\n`;
         code += `            id="\${ifDefined(item.id)}"\n`;
         code += `            class="\${classMap({...item.classMap})}"\n`;
         code += `            style="\${styleMap({...item.styleMap})}"\n`;

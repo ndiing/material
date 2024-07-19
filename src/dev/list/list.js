@@ -37,6 +37,10 @@ class DevList extends MDComponent {
                                 ]}"
                                 map='{"label":"label","value":"value"}'
                                 format=""
+                                rangeSelection
+                                multiSelection
+                                singleSelection
+                                allSelection
                                 @onListItemClick="${console.log}"
                                 @handleListKeydown="${console.log}"
                                 @onListItemSelectionStart="${console.log}"

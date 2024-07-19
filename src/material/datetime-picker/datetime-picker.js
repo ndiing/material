@@ -219,16 +219,25 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         } else if (this.index === 4) {
             label = stringifyTime(this.selection);
         }
-        return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
+        return [
+            //
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down",  label, onButtonClick:this.handleCardButtonLabelClick },
+        ];
     }
+
+    // handleCardButtonLabelClick
+    // handleCardIconButtonPrevClick
+    // handleCardIconButtonNextClick
+    // handleCardButtonCancelClick
+    // handleCardButtonOkClick
 
     /**
      * {{description}}
      */
     get trailingActions() {
         return [
-            { name: "prev", icon: "keyboard_arrow_left" },
-            { name: "next", icon: "keyboard_arrow_right" },
+            {  icon: "keyboard_arrow_left", onIconButtonClick:this.handleCardIconButtonPrevClick },
+            {  icon: "keyboard_arrow_right", onIconButtonClick:this.handleCardIconButtonNextClick },
         ];
     }
 
@@ -236,7 +245,12 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * {{description}}
      */
     get actions() {
-        return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
+        return [
+            //
+            { component: "spacer" },
+            {  label: "Cancel", onButtonClick:this.handleCardButtonCancelClick },
+            {  label: "Ok", onButtonClick:this.handleCardButtonOkClick },
+        ];
     }
 
     /**
@@ -384,32 +398,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     }
 
     /**
-     * @private
-     */
-    handleCardIconButtonClick(event) {
-        if (event.currentTarget.name === "prev") {
-            this.handleCardIconButtonPrevClick(event);
-        } else if (event.currentTarget.name === "next") {
-            this.handleCardIconButtonNextClick(event);
-        }
-        this.emit("onDatetimePickerIconButtonClick", event);
-    }
-
-    /**
-     * @private
-     */
-    handleCardButtonClick(event) {
-        if (event.currentTarget.name === "label") {
-            this.handleCardButtonLabelClick(event);
-        } else if (event.currentTarget.name === "cancel") {
-            this.handleCardButtonCancelClick(event);
-        } else if (event.currentTarget.name === "ok") {
-            this.handleCardButtonOkClick(event);
-        }
-        this.emit("onDatetimePickerButtonClick", event);
-    }
-
-    /**
      * {{description}}
      * @private
      */
@@ -425,6 +413,14 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.selected.setDate(date.getDate());
         this.selected.setHours(date.getHours());
         this.selected.setMinutes(date.getMinutes());
+    }
+
+    /**
+     * {{description}}
+     * @private
+     */
+    getValue() {
+        return stringifyDatetimeLocal(this.selected);
     }
 
     /**
@@ -585,14 +581,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         this.index = 2;
         this.emit("onDatetimePickerSelection", event);
         this.emit("onDatetimePickerMinuteItemClick", event);
-    }
-
-    /**
-     * {{description}}
-     * @private
-     */
-    getValue() {
-        return stringifyDatetimeLocal(this.selected);
     }
 
     /**

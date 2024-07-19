@@ -54,15 +54,10 @@ class MDColorPickerComponent extends MDSheetComponent {
      */
     get leadingActions() {
         let label = this.selection.hex;
-        return [{ name: "label", component: "button", label }];
-    }
-
-    /**
-     * Gets the actions of the color picker.
-     * @returns {Array} The actions.
-     */
-    get actions() {
-        return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
+        return [
+            //
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down",  label, onButtonClick:this.handleCardButtonLabelClick },
+        ];
     }
 
     /**

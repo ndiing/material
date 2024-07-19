@@ -48,7 +48,10 @@ class MDCardComponent extends MDComponent {
             <div class="md-card__header">
                 ${this.leadingActions?.length ? html`
                     <div class="md-card__actions">
-                        ${this.leadingActions.map(item => renderComponent({component:'icon',...item}))}
+                        ${this.leadingActions.map(item => {
+                            item.component=item.component||'icon'
+                            return renderComponent(item)    
+                        })}
                     </div>
                 ` : nothing}
                 ${this.label || this.subLabel ? html`
@@ -59,7 +62,10 @@ class MDCardComponent extends MDComponent {
                 ` : nothing}
                 ${this.trailingActions?.length ? html`
                     <div class="md-card__actions md-card__actions--end">
-                        ${this.trailingActions.map(item => renderComponent({component:'icon-button',...item}))}
+                        ${this.trailingActions.map(item=> {
+                            item.component=item.component||'icon-button'
+                            return renderComponent(item)    
+                        })}
                     </div>
                 ` : nothing}
             </div>
@@ -76,7 +82,10 @@ class MDCardComponent extends MDComponent {
                 ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
                 ${this.actions?.length ? html`
                     <div class="md-card__footer">
-                        ${this.actions.map(item => renderComponent({component:'button',...item}))}
+                        ${this.actions.map(item => {
+                            item.component=item.component||'button'
+                            return renderComponent(item)    
+                        })}
                     </div>
                 ` : nothing}
             </div>
