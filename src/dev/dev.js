@@ -111,7 +111,7 @@ const routes = [
             { path: "segmented-button", component: DevSegmentedButton },
             { path: "fab", component: DevFab },
             { path: "card", component: DevCard },
-            { path: "scrim", component: DevScrim },
+            // { path: "scrim", component: DevScrim },
             { path: "sheet", component: DevSheet },
             { path: "dialog", component: DevDialog },
             { path: "top-app-bar", component: DevTopAppBar },
