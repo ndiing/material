@@ -15,6 +15,7 @@ import { MDGestureController } from "./gesture/gesture.js";
 import { MDVirtualController } from "./virtual/virtual.js";
 
 import { MDComponent } from "./component/component.js";
+import * as template from "./template/template.js";
 
 import { MDMarkdownComponent } from "./markdown/markdown.js";
 import { MDIconComponent } from "./icon/icon.js";

@@ -1,0 +1,746 @@
+function renderButton(item = {}) {
+    return html`
+        <md-button
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .variant="${ifDefined(item.variant)}"
+            .type="${ifDefined(item.type)}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+        ></md-button>
+    `
+}
+
+function renderCheckbox(item = {}) {
+    return html`
+        <md-checkbox
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .checked="${ifDefined(item.checked)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
+        ></md-checkbox>
+    `
+}
+
+function renderColorField(item = {}) {
+    return html`
+        <md-color-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-color-field>
+    `
+}
+
+function renderDateField(item = {}) {
+    return html`
+        <md-date-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-date-field>
+    `
+}
+
+function renderDatetimeField(item = {}) {
+    return html`
+        <md-datetime-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-datetime-field>
+    `
+}
+
+function renderFab(item = {}) {
+    return html`
+        <md-fab
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .variant="${ifDefined(item.variant)}"
+            .icon="${ifDefined(item.icon)}"
+            .label="${ifDefined(item.label)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+        ></md-fab>
+    `
+}
+
+function renderIconButton(item = {}) {
+    return html`
+        <md-icon-button
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .variant="${ifDefined(item.variant)}"
+            .icon="${ifDefined(item.icon)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .name="${ifDefined(item.name)}"
+            @onIconButtonClick="${ifDefined(item.onIconButtonClick)}"
+        ></md-icon-button>
+    `
+}
+
+function renderMonthField(item = {}) {
+    return html`
+        <md-month-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-month-field>
+    `
+}
+
+function renderNumberField(item = {}) {
+    return html`
+        <md-number-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-number-field>
+    `
+}
+
+function renderPasswordField(item = {}) {
+    return html`
+        <md-password-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-password-field>
+    `
+}
+
+function renderRadioButton(item = {}) {
+    return html`
+        <md-radio-button
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .checked="${ifDefined(item.checked)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
+        ></md-radio-button>
+    `
+}
+
+function renderSearchField(item = {}) {
+    return html`
+        <md-search-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-search-field>
+    `
+}
+
+function renderSegmentedButton(item = {}) {
+    return html`
+        <md-segmented-button
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .buttons="${ifDefined(item.buttons)}"
+            .singleSelection="${ifDefined(item.singleSelection)}"
+            .multiSelection="${ifDefined(item.multiSelection)}"
+            @onSegmentedButtonItemClick="${ifDefined(item.onSegmentedButtonItemClick)}"
+        ></md-segmented-button>
+    `
+}
+
+function renderSelectField(item = {}) {
+    return html`
+        <md-select-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-select-field>
+    `
+}
+
+function renderSwitch(item = {}) {
+    return html`
+        <md-switch
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .checked="${ifDefined(item.checked)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .icons="${ifDefined(item.icons)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+        ></md-switch>
+    `
+}
+
+function renderTextField(item = {}) {
+    return html`
+        <md-text-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-text-field>
+    `
+}
+
+function renderTextareaField(item = {}) {
+    return html`
+        <md-textarea-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-textarea-field>
+    `
+}
+
+function renderTimeField(item = {}) {
+    return html`
+        <md-time-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-time-field>
+    `
+}
+
+function renderWeekField(item = {}) {
+    return html`
+        <md-week-field
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .label="${ifDefined(item.label)}"
+            .icon="${ifDefined(item.icon)}"
+            .prefix="${ifDefined(item.prefix)}"
+            .suffix="${ifDefined(item.suffix)}"
+            .actions="${ifDefined(item.actions)}"
+            .text="${ifDefined(item.text)}"
+            .type="${ifDefined(item.type)}"
+            .placeholder="${ifDefined(item.placeholder)}"
+            .name="${ifDefined(item.name)}"
+            .value="${ifDefined(item.value)}"
+            .min="${ifDefined(item.min)}"
+            .max="${ifDefined(item.max)}"
+            .cols="${ifDefined(item.cols)}"
+            .rows="${ifDefined(item.rows)}"
+            .minLength="${ifDefined(item.minLength)}"
+            .maxLength="${ifDefined(item.maxLength)}"
+            .pattern="${ifDefined(item.pattern)}"
+            .required="${ifDefined(item.required)}"
+            .readOnly="${ifDefined(item.readOnly)}"
+            .disabled="${ifDefined(item.disabled)}"
+            .autocomplete="${ifDefined(item.autocomplete)}"
+            .multiple="${ifDefined(item.multiple)}"
+            .options="${ifDefined(item.options)}"
+            .validationMessage="${ifDefined(item.validationMessage)}"
+            .focused="${ifDefined(item.focused)}"
+            .variant="${ifDefined(item.variant)}"
+            .mask="${ifDefined(item.mask)}"
+            @onTextFieldNativeFocus="${ifDefined(item.onTextFieldNativeFocus)}"
+            @onTextFieldNativeBlur="${ifDefined(item.onTextFieldNativeBlur)}"
+            @onTextFieldNativeClick="${ifDefined(item.onTextFieldNativeClick)}"
+            @onTextFieldNativeKeydown="${ifDefined(item.onTextFieldNativeKeydown)}"
+            @onTextFieldNativeSelect="${ifDefined(item.onTextFieldNativeSelect)}"
+            @onTextFieldNativeInput="${ifDefined(item.onTextFieldNativeInput)}"
+            @onTextFieldNativeSearch="${ifDefined(item.onTextFieldNativeSearch)}"
+            @onTextFieldNativeInvalid="${ifDefined(item.onTextFieldNativeInvalid)}"
+            @onTextFieldNativeReset="${ifDefined(item.onTextFieldNativeReset)}"
+            @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
+            @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
+            @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
+            @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
+            @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
+        ></md-week-field>
+    `
+}
+
+export{
+    renderButton,
+    renderCheckbox,
+    renderColorField,
+    renderDateField,
+    renderDatetimeField,
+    renderFab,
+    renderIconButton,
+    renderMonthField,
+    renderNumberField,
+    renderPasswordField,
+    renderRadioButton,
+    renderSearchField,
+    renderSegmentedButton,
+    renderSelectField,
+    renderSwitch,
+    renderTextField,
+    renderTextareaField,
+    renderTimeField,
+    renderWeekField,
+}
