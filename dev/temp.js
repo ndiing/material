@@ -139,21 +139,24 @@ function loop(doc) {
 }
 
 let code = "";
+code+=`import { html, nothing } from "lit"\n`
+code+=`import { choose } from "lit/directives/choose.js"\n`
+code+=`import { classMap } from "lit/directives/class-map.js"\n`
+code+=`import { ifDefined } from "lit/directives/if-defined.js"\n`
+code+=`import { styleMap } from "lit/directives/style-map.js"\n`
+code+=`\n`
+let code2= ''
+code2 += `function renderComponent(item) {\n`
+code2 += `    /* prettier-ignore */\n`
+code2 += `    return choose(item.component, [\n`
+
 for (const doc of docs) {
 
-    if(![
-        // /list-item$/,
-        // /chip$/,
-        /pagination$/,
-        // /icon$/,
-        // /button$/,
-        // /fab$/,
-        // /field$/,
-        // /checkbox$/,
-        // /radio-button$/,
-        // /switch$/,
-    ].some(reg=>reg.test(doc.tagName)))
-        continue
+    // if(![
+    //     /tree$/,
+    //     /list$/,
+    // ].some(reg=>reg.test(doc.tagName)))
+    //     continue
 
     doc.parents = loop(doc);
     let properties = new Map(
@@ -200,7 +203,11 @@ for (const doc of docs) {
 
     if(doc.tagName){
 
-        code += `${toCamelCase('render-'+(doc.tagName.replace('md-','')))}(item = {}) {\n`
+        let name=doc.tagName.replace('md-','')
+        let methodName=toCamelCase('render-'+(name))
+
+        code += `function ${methodName}(item = {}) {\n`
+        code += `    /* prettier-ignore */\n`
         code += `    return html\`\n`
         code += `        <${doc.tagName}\n`;
         code += `            .data="\${item}"\n`;
@@ -217,7 +224,15 @@ for (const doc of docs) {
         code += `    \`\n`
         code += `}\n`
         code += `\n`
-    }
 
+        code2 += `        ["${name}", () => ${methodName}(item)],\n`
+    }
+    
 }
+code2 += `        ["spacer", () => html\`<div class="md-pane__spacer"></div>\`],\n`
+code2 += `    ], () => nothing)\n`
+code2 += `}\n`
+code+=code2
+code+=`\n`
+code+=`export { renderComponent }\n`
 write('./dev/template.js',code);
