@@ -91,30 +91,30 @@
         padding: 8px 8px 0 0;
         gap: 0 8px;
         margin-left: auto;
-    }
 
-    .md-card__button {
-        --md-comp-button-density: -2;
+        .md-button {
+            --md-comp-button-density: -2;
 
-        color: var(--md-sys-color-inverse-primary);
+            color: var(--md-sys-color-inverse-primary);
 
-        &.md-ripple {
-            &::after {
-                background-color: var(--md-sys-color-surface);
+            &.md-ripple {
+                &::after {
+                    background-color: var(--md-sys-color-surface);
+                }
             }
         }
-    }
 
-    .md-card__icon-button {
-        margin: 0 4px;
+        .md-icon-button {
+            margin: 0 4px;
 
-        color: var(--md-sys-color-inverse-on-surface);
+            color: var(--md-sys-color-inverse-on-surface);
 
-        &.md-ripple {
-            &::after {
-                width: 32px;
+            &.md-ripple {
+                &::after {
+                    width: 32px;
 
-                background-color: var(--md-sys-color-surface);
+                    background-color: var(--md-sys-color-surface);
+                }
             }
         }
     }

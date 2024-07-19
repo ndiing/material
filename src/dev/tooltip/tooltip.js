@@ -44,8 +44,11 @@ class DevTooltip extends MDComponent {
                                 id="tooltip2"
                                 variant="rich"
                                 label="Lorem ipsum"
-                                @onCardButtonClick="${() => tooltip2.close()}"
-                                actions='[{"label":"action"},{"label":"action"}]'
+                                .actions="${[
+                                    //
+                                    { label: "action",onButtonClick: () => {tooltip2.close()} },
+                                    { label: "action",onButtonClick: () => {tooltip2.close()} },
+                                ]}"
                                 style="width: 280px;"
                             >
                                 Lorem ipsum dolor sit amet. Doloribus delectus autem temporibus saepe. Corrupti, similique incidunt. Quod, nisi.
@@ -63,8 +66,10 @@ class DevTooltip extends MDComponent {
                                 id="tooltip3"
                                 variant="rich"
                                 label="Lorem ipsum"
-                                @onCardButtonClick="${() => tooltip3.close()}"
-                                actions='[{"label":"action"}]'
+                                .actions="${[
+                                    //
+                                    { label: "action",onButtonClick: () => {tooltip3.close()} },
+                                ]}"
                                 style="width: 280px;"
                             >
                                 Lorem ipsum dolor sit amet. Doloribus delectus autem temporibus saepe. Corrupti, similique incidunt. Quod, nisi.
@@ -98,8 +103,10 @@ class DevTooltip extends MDComponent {
                             <md-tooltip
                                 id="tooltip5"
                                 variant="rich"
-                                @onCardButtonClick="${() => tooltip5.close()}"
-                                actions='[{"label":"action"}]'
+                                .actions="${[
+                                    //
+                                    { label: "action",onButtonClick: () => {tooltip5.close()} },
+                                ]}"
                                 style="width: 280px;"
                             >
                                 Lorem ipsum dolor sit amet. Doloribus delectus autem temporibus saepe. Corrupti, similique incidunt. Quod, nisi.
@@ -117,8 +124,11 @@ class DevTooltip extends MDComponent {
                                 id="tooltip6"
                                 variant="rich"
                                 label="Lorem ipsum"
-                                @onCardButtonClick="${() => tooltip6.close()}"
-                                actions='[{"label":"action"},{"label":"action"}]'
+                                .actions="${[
+                                    //
+                                    { label: "action",onButtonClick: () => {tooltip6.close()} },
+                                    { label: "action",onButtonClick: () => {tooltip6.close()} },
+                                ]}"
                                 style="width: 280px;"
                             >
                                 Lorem ipsum dolor sit amet. Doloribus delectus autem temporibus saepe. Corrupti, similique incidunt. Quod, nisi.
