@@ -51,7 +51,7 @@ class MDButtonComponent extends MDComponent {
                 class="md-button__native" 
                 .type="${this.type}"
             >
-                ${this.icon ? html`<div class="md-icon md-button__icon">${this.icon}</div>` : nothing}
+                ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing}
                 <div class="md-button__label">${this.label}</div>
             </button>
         `;

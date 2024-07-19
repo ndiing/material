@@ -48,9 +48,9 @@ class MDChipComponent extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${this.selected ? html`<div class="md-icon md-chip__icon">check</div>` : nothing}
+            ${this.selected ? html`<md-icon class="md-chip__icon">check</md-icon>` : nothing}
             ${!this.selected && this.avatar ? html`<md-image class="md-chip__avatar" .src="${this.avatar}" .alt="${"Avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
-            ${!this.selected && this.icon ? html`<div class="md-icon md-chip__icon">${this.icon}</div>` : nothing}
+            ${!this.selected && this.icon ? html`<md-icon class="md-chip__icon">${this.icon}</md-icon>` : nothing}
             <div class="md-chip__label">${this.label}</div>
             ${this.action ? html`<md-icon-button class="md-chip__action" .icon="${this.action}" @click="${this.handleChipActionClick}"></md-icon-button>` : nothing}
         `;

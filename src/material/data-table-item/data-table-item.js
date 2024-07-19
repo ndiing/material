@@ -62,7 +62,7 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.thumbnail ? html`<md-image class="md-data-table__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>` : nothing}
             ${this.video ? html`<md-image class="md-data-table__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>` : nothing}
             
-            ${this.icon ? html`<div class="md-icon md-data-table__icon">${this.icon}</div>` : nothing}
+            ${this.icon ? html`<md-icon class="md-data-table__icon">${this.icon}</md-icon>` : nothing}
             ${isDefined(this.label) || this.subLabel || this.sortable|| this.badge ? html`
                 <div class="md-data-table__inner">
                     ${isDefined(this.label) || this.subLabel ? html`
@@ -70,7 +70,7 @@ class MDDataTableItemComponent extends MDComponent {
                             ${isDefined(this.label) ? html`<div class="md-data-table__label-primary">${this.label}</div>` : nothing}
                             ${this.subLabel ? html`<div class="md-data-table__label-secondary">${this.subLabel}</div>` : nothing}
                         </div>
-                        ${this.sortable ? html`<div class="md-icon md-data-table__icon">${this.sortableIcon}</div>` : nothing}
+                        ${this.sortable ? html`<md-icon class="md-data-table__icon">${this.sortableIcon}</md-icon>` : nothing}
                     ` : nothing}
                     ${this.badge ? html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>` : nothing}
                 </div>
