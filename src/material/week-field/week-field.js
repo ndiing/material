@@ -66,6 +66,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     handleWeekFieldActionPickerClick() {
         this.togglePicker();
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

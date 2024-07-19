@@ -6,7 +6,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @extends MDSheetComponent
  */
 class MDBottomSheetComponent extends MDSheetComponent {
-
     variants = ["modal"];
 
     /**

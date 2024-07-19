@@ -4,6 +4,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
     constructor() {
         super();
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table-column-cell");
@@ -13,6 +14,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
             resize: ["e"],
         });
     }
+
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("reorderable")) {

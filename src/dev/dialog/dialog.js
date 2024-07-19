@@ -11,10 +11,24 @@ class DevDialog extends MDComponent {
                             <md-markdown>Basic dialog</md-markdown>
                             <md-dialog
                                 id="dialog0"
-                                @onCardButtonClick="${() => dialog0.close()}"
                                 style="width:280px;"
                                 label="Lorem ipsum dolor"
-                                actions='[{"component":"spacer"},{"label":"label"},{"label":"label"}]'
+                                .actions="${[
+                                    //
+                                    { component: "spacer" },
+                                    {
+                                        label: "label",
+                                        onButtonClick: () => {
+                                            dialog0.close();
+                                        },
+                                    },
+                                    {
+                                        label: "label",
+                                        onButtonClick: () => {
+                                            dialog0.close();
+                                        },
+                                    },
+                                ]}"
                             >
                                 Lorem ipsum dolor sit amet. Beatae commodi eos eligendi est? Illo tempora a rerum ex.
                             </md-dialog>
@@ -29,10 +43,18 @@ class DevDialog extends MDComponent {
                             <md-markdown>Full-screen dialog</md-markdown>
                             <md-dialog
                                 id="dialog1"
-                                @onCardIconButtonClick="${() => dialog1.close()}"
                                 variant="full"
                                 label="Lorem ipsum dolor"
-                                leadingActions='[{"icon":"close"}]'
+                                .leadingActions="${[
+                                    //
+                                    {
+                                        component: "icon-button",
+                                        icon: "close",
+                                        onIconButtonClick: () => {
+                                            dialog1.close();
+                                        },
+                                    },
+                                ]}"
                                 trailingActions='[{"component":"button","label":"save"}]'
                             >
                                 Lorem ipsum dolor sit amet. Beatae commodi eos eligendi est? Illo tempora a rerum ex.

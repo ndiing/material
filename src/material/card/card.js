@@ -1,8 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { ifDefined } from "lit/directives/if-defined.js";
-import { choose } from "lit/directives/choose.js";
-import { classMap } from "lit/directives/class-map.js";
 import { renderComponent } from "../template/template.js";
 
 /**

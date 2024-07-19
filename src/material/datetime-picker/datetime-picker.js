@@ -221,7 +221,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         }
         return [
             //
-            { component: "button", variant: "icon-right", icon: "arrow_drop_down",  label, onButtonClick:this.handleCardButtonLabelClick },
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick },
         ];
     }
 
@@ -236,8 +236,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      */
     get trailingActions() {
         return [
-            {  icon: "keyboard_arrow_left", onIconButtonClick:this.handleCardIconButtonPrevClick },
-            {  icon: "keyboard_arrow_right", onIconButtonClick:this.handleCardIconButtonNextClick },
+            { icon: "keyboard_arrow_left", onIconButtonClick: this.handleCardIconButtonPrevClick },
+            { icon: "keyboard_arrow_right", onIconButtonClick: this.handleCardIconButtonNextClick },
         ];
     }
 
@@ -248,8 +248,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         return [
             //
             { component: "spacer" },
-            {  label: "Cancel", onButtonClick:this.handleCardButtonCancelClick },
-            {  label: "Ok", onButtonClick:this.handleCardButtonOkClick },
+            { label: "Cancel", onButtonClick: this.handleCardButtonCancelClick },
+            { label: "Ok", onButtonClick: this.handleCardButtonOkClick },
         ];
     }
 

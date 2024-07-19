@@ -6,7 +6,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @extends MDSheetComponent
  */
 class MDSideSheetComponent extends MDSheetComponent {
-
     variants = ["modal"];
 
     /**

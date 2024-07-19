@@ -56,7 +56,7 @@ class MDColorPickerComponent extends MDSheetComponent {
         let label = this.selection.hex;
         return [
             //
-            { component: "button", variant: "icon-right", icon: "arrow_drop_down",  label, onButtonClick:this.handleCardButtonLabelClick },
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick },
         ];
     }
 
@@ -455,6 +455,7 @@ class MDColorPickerComponent extends MDSheetComponent {
             ...options,
         });
     }
+
     getValue() {
         return this.selection.hex.slice(0, 1 + 6);
     }

@@ -49,10 +49,11 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     /**
      * @private
      */
-    handleTextFieldContainerClick(event) {
+    handleTextFieldContainerClick() {
         super.handleTextFieldContainerClick();
         this.togglePicker();
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

@@ -3,7 +3,7 @@ import { MDCardComponent, MDStore, MDVirtualController } from "../material.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
-import { ref } from "lit/directives/ref.js";
+
 class MDDataTableComponent extends MDCardComponent {
     static properties = {
         ...MDCardComponent.properties,
@@ -19,14 +19,17 @@ class MDDataTableComponent extends MDCardComponent {
         singleSelection: { type: Boolean },
         allSelection: { type: Boolean },
     };
+
     get childNodes_() {
         /* prettier-ignore */
         return [this.renderViewport()]
     }
+
     set childNodes_(value) {}
     get label() {
         return "Data table";
     }
+
     set label(value) {}
     get trailingActions() {
         return [
@@ -35,19 +38,23 @@ class MDDataTableComponent extends MDCardComponent {
             // { name: "more", classMap: { "md-data-table__more": true }, component: "icon-button", icon: "more_vert" },
         ];
     }
+
     set trailingActions(value) {}
     get actions() {
         return [{ component: "spacer" }, { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total: this.total, limit: this.limit, page: this.page, onPaginationChange: this.handleDataTablePaginationChange }];
     }
+
     set actions(value) {}
     get selected() {
         let total = this.store.docs?.filter((row) => row.selected)?.length;
         return total > 0 && total === this.store.docs.length;
     }
+
     get indeterminate() {
         let total = this.store.docs?.filter((row) => row.selected)?.length;
         return total > 0 && total < this.store.docs.length;
     }
+
     constructor() {
         super();
         this.total = 0;
@@ -56,6 +63,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.store = new MDStore();
         this.virtual = new MDVirtualController(this);
     }
+
     renderColumnCell(item) {
         /* prettier-ignore */
         return html`
@@ -86,6 +94,7 @@ class MDDataTableComponent extends MDCardComponent {
             ></md-data-table-column-cell>
         `
     }
+
     renderRowCell(item) {
         /* prettier-ignore */
         return html`
@@ -112,11 +121,13 @@ class MDDataTableComponent extends MDCardComponent {
             ></md-data-table-row-cell>
         `
     }
+
     styleStickyCheckboxSelection() {
         return {
             ...(this.stickyCheckboxSelection && { sticky: true, flow: "left", left: 0 }),
         };
     }
+
     styleDataTableColumnCell(column) {
         return styleMap({
             "min-width": `${column.width}px`,
@@ -132,6 +143,7 @@ class MDDataTableComponent extends MDCardComponent {
             }),
         });
     }
+
     styleDataTableRowCell(column) {
         return styleMap({
             ...(column.sticky && {
@@ -141,6 +153,7 @@ class MDDataTableComponent extends MDCardComponent {
             }),
         });
     }
+
     styleDataTableFooterCell(column) {
         return styleMap({
             ...(this.stickyFooter && {
@@ -155,24 +168,28 @@ class MDDataTableComponent extends MDCardComponent {
             }),
         });
     }
+
     classDataTableColumnCell(column) {
         return classMap({
             "md-data-table__sticky--left-end": column.stickyLeftEnd,
             "md-data-table__sticky--right-start": column.stickyRightStart,
         });
     }
+
     classDataTableRowCell(column) {
         return classMap({
             "md-data-table__sticky--left-end": column.stickyLeftEnd,
             "md-data-table__sticky--right-start": column.stickyRightStart,
         });
     }
+
     classDataTableFooterCell(column) {
         return classMap({
             "md-data-table__sticky--left-end": column.stickyLeftEnd,
             "md-data-table__sticky--right-start": column.stickyRightStart,
         });
     }
+
     renderNative() {
         /* prettier-ignore */
         return html`
@@ -270,6 +287,7 @@ class MDDataTableComponent extends MDCardComponent {
             </table>
         `
     }
+
     renderViewport() {
         /* prettier-ignore */
         return html`
@@ -286,16 +304,19 @@ class MDDataTableComponent extends MDCardComponent {
             </div>
         `
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
         this.handleDataTableKeydown = this.handleDataTableKeydown.bind(this);
         this.addEventListener("keydown", this.handleDataTableKeydown);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("keydown", this.handleDataTableKeydown);
     }
+
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("columns")) {
@@ -316,6 +337,7 @@ class MDDataTableComponent extends MDCardComponent {
             this.updateVirtual();
         }
     }
+
     updateVirtual() {
         this.virtual.options.rowTotal = this._end - this._start;
         this.virtual.options.rowHeight = 52;
@@ -325,6 +347,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.options.columnBuffer = this.columns.filter((column) => column.sticky).length;
         this.virtual.handleVirtualScroll();
     }
+
     updateStore() {
         const { total, docs } = this.store.getAll({
             sorters: this.sorters,
@@ -336,6 +359,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.storeRows = docs;
         this.total = this.storeRowsTotal;
     }
+
     updateColumns() {
         const total = this.columns.length;
         const half = Math.floor(total / 2);
@@ -383,12 +407,14 @@ class MDDataTableComponent extends MDCardComponent {
         }
         this.stickyLeftEnd = this.stickyCheckboxSelection && stickyLeftEnd === undefined;
     }
+
     handleDataTableTextFieldNativeSearch(event) {
         this.q = event.detail.currentTarget.value;
         this.updateStore();
         this.updateVirtual();
         this.emit("onDataTableTextFieldNativeSearch", event);
     }
+
     handleDataTablePaginationChange(event) {
         this._start = event.detail.start;
         this._end = event.detail.end;
@@ -396,7 +422,8 @@ class MDDataTableComponent extends MDCardComponent {
         this.updateVirtual();
         this.emit("onDataTablePaginationChange", event);
     }
-    handleDataTableVirtualScroll(event) {
+
+    handleDataTableVirtualScroll() {
         if (!this.storeRows) {
             return;
         }
@@ -408,13 +435,16 @@ class MDDataTableComponent extends MDCardComponent {
         });
         this.requestUpdate();
     }
+
     handleDataTableColumnCellDragStart(event) {
         this.emit("onDataTableColumnCellDragStart", event);
     }
+
     handleDataTableColumnCellDrag(event) {
         this.drag = true;
         this.emit("onDataTableColumnCellDrag", event);
     }
+
     handleDataTableColumnCellDragEnd(event) {
         const fromData = event.currentTarget.data;
         const toData = event.detail.target.closest("th")?.data;
@@ -431,9 +461,11 @@ class MDDataTableComponent extends MDCardComponent {
         });
         this.emit("onDataTableColumnCellDragEnd", event);
     }
+
     handleDataTableColumnCellResizeStart(event) {
         this.emit("onDataTableColumnCellResizeStart", event);
     }
+
     handleDataTableColumnCellResize(event) {
         this.resize = true;
         const item = event.currentTarget.children[0];
@@ -443,12 +475,14 @@ class MDDataTableComponent extends MDCardComponent {
         this.virtual.handleVirtualScroll();
         this.emit("onDataTableColumnCellResize", event);
     }
+
     handleDataTableColumnCellResizeEnd(event) {
         window.requestAnimationFrame(() => {
             this.resize = false;
         });
         this.emit("onDataTableColumnCellResizeEnd", event);
     }
+
     handleDataTableColumnCellPointerenter(event) {
         const data = event.currentTarget.data;
         if (data.sortable && !this.drag && !this.resize) {
@@ -459,6 +493,7 @@ class MDDataTableComponent extends MDCardComponent {
         }
         this.emit("onDataTableColumnCellPointerenter", event);
     }
+
     handleDataTableColumnCellPointerleave(event) {
         const data = event.currentTarget.data;
         if (data.sortable) {
@@ -469,6 +504,7 @@ class MDDataTableComponent extends MDCardComponent {
         }
         this.emit("onDataTableColumnCellPointerleave", event);
     }
+
     handleDataTableColumnCellClick(event) {
         const data = event.currentTarget.data;
         if (data.sortable && !this.drag && !this.resize) {
@@ -488,15 +524,18 @@ class MDDataTableComponent extends MDCardComponent {
         }
         this.emit("onDataTableColumnCellClick", event);
     }
+
     select(data) {
         this.store.docs.forEach((item) => {
             item.selected = item === data;
         });
         this.endIndex = this.store.docs.indexOf(data);
     }
+
     selectToggle(data) {
         data.selected = !data.selected;
     }
+
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
         this.startIndex = this.store.docs.indexOf(data);
@@ -511,23 +550,27 @@ class MDDataTableComponent extends MDCardComponent {
             [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
         }
     }
+
     selectAll(selected = true) {
         this.store.docs.forEach((item) => {
             item.selected = selected;
         });
     }
+
     handleDataTableColumnCellCheckboxNativeInput(event) {
         const checked = event.detail.currentTarget.checked;
         this.selectAll(checked);
         this.requestUpdate();
         this.emit("onDataTableColumnCellCheckboxNativeInput", event);
     }
+
     handleDataTableRowCellCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
         this.selectToggle(data);
         this.requestUpdate();
         this.emit("onDataTableRowCellCheckboxNativeInput", event);
     }
+
     handleDataTableRowClick(event) {
         if (event.target.closest(".md-data-table__checkbox," + ".md-data-table__radio-button," + ".md-data-table__switch")) {
             return;
@@ -543,6 +586,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.requestUpdate();
         this.emit("onDataTableRowClick", event);
     }
+
     handleDataTableKeydown(event) {
         const activeElement = document.activeElement === event.target.closest("tr");
         if (this.allSelection && activeElement && event.ctrlKey && event.key === "a") {

@@ -141,7 +141,7 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        // this.list = this.list.map((item) => item.children).flat();
+        this.list = this.list.map((item) => item.children).flat();
 
         this.select(this.list, MDRouter.path);
     }

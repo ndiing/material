@@ -20,6 +20,7 @@ class MDSegmentedButtonComponent extends MDComponent {
         singleSelection: { type: Boolean },
         multiSelection: { type: Boolean },
     };
+
     constructor() {
         super();
     }

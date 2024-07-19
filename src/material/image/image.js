@@ -48,6 +48,7 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
+
     imageNative = createRef();
 
     /**

@@ -66,6 +66,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     handleDateFieldActionPickerClick() {
         this.togglePicker();
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

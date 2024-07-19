@@ -32,7 +32,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         }
         return [
             //
-            { component: "button", variant: "icon-right", icon: "arrow_drop_down",  label, onButtonClick:this.handleCardButtonLabelClick },
+            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick },
         ];
     }
 

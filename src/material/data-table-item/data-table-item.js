@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { MDGestureController } from "../material.js";
 import { isDefined } from "../functions/functions.js";
 class MDDataTableItemComponent extends MDComponent {
     static properties = {
@@ -27,9 +26,11 @@ class MDDataTableItemComponent extends MDComponent {
         sortable: { type: Boolean },
         sortableIcon: { type: String },
     };
+
     constructor() {
         super();
     }
+
     renderCheckbox() {
         /* prettier-ignore */
         return html`<md-checkbox 
@@ -38,6 +39,7 @@ class MDDataTableItemComponent extends MDComponent {
             .indeterminate="${this.indeterminate}"
         ></md-checkbox>`;
     }
+
     renderRadioButton() {
         /* prettier-ignore */
         return html`<md-radio-button 
@@ -45,6 +47,7 @@ class MDDataTableItemComponent extends MDComponent {
             .checked="${this.selected}"
         ></md-radio-button>`;
     }
+
     renderSwitch() {
         /* prettier-ignore */
         return html`<md-switch 
@@ -52,6 +55,7 @@ class MDDataTableItemComponent extends MDComponent {
             .checked="${this.selected}"
         ></md-switch>`;
     }
+
     render() {
         /* prettier-ignore */
         return html`
@@ -81,10 +85,12 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.trailingSwitch ? this.renderSwitch() : nothing}
         `;
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__item");
     }
+
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("subLabel")) {
