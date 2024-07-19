@@ -20,6 +20,7 @@ import { MDIconComponent } from "./icon/icon.js";
 import { MDEmojiComponent } from "./emoji/emoji.js";
 import { MDImageComponent } from "./image/image.js";
 import { MDBadgeComponent } from "./badge/badge.js";
+
 import { MDButtonComponent } from "./button/button.js";
 import { MDIconButtonComponent } from "./icon-button/icon-button.js";
 import { MDSegmentedButtonComponent } from "./segmented-button/segmented-button.js";
