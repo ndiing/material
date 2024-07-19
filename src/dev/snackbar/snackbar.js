@@ -26,10 +26,9 @@ class DevSnackbar extends MDComponent {
                             <md-markdown>Single line with action</md-markdown>
                             <md-snackbar
                                 id="snackbar1"
-                                actions='[{"label":"label"}]'
+                                .actions="${[{"label":"label",onButtonClick:() => {snackbar1.close()}}]}"
                                 @onSnackbarShow="${console.log}"
                                 @onSnackbarClose="${console.log}"
-                                @onCardButtonClick="${() => snackbar1.close()}"
                                 >Lorem, ipsum dolor.</md-snackbar
                             >
                             <md-button
@@ -58,10 +57,9 @@ class DevSnackbar extends MDComponent {
                             <md-markdown>Two lines with action</md-markdown>
                             <md-snackbar
                                 id="snackbar3"
-                                actions='[{"label":"label"}]'
+                                .actions="${[{"label":"label",onButtonClick:() => {snackbar3.close()}}]}"
                                 @onSnackbarShow="${console.log}"
                                 @onSnackbarClose="${console.log}"
-                                @onCardButtonClick="${() => snackbar3.close()}"
                             >
                                 Lorem, ipsum dolor. Natus, praesentium provident?
                             </md-snackbar>
@@ -75,10 +73,9 @@ class DevSnackbar extends MDComponent {
                             <md-markdown>Two lines with longer action</md-markdown>
                             <md-snackbar
                                 id="snackbar4"
-                                actions='[{"label":"Lorem, ipsum"}]'
+                                .actions="${[{"label":"Lorem, ipsum",onButtonClick:() => {snackbar4.close()}}]}"
                                 @onSnackbarShow="${console.log}"
                                 @onSnackbarClose="${console.log}"
-                                @onCardButtonClick="${() => snackbar4.close()}"
                             >
                                 Lorem, ipsum dolor. Natus, praesentium provident?
                             </md-snackbar>
