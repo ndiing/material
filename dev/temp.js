@@ -217,6 +217,18 @@ for (const doc of docs) {
         for(const {name} of properties){
             code += `            .${name}="\${ifDefined(item.${name})}"\n`;
         }
+        if([
+            'button',
+            'chip',
+            'emoji',
+            'fab',
+            'icon',
+            'icon-button',
+            'list-item',
+            'tree-item',
+        ].includes(name)){
+            code += `            @click="\${ifDefined(item.${toCamelCase('on-'+name+'-click')})}"\n`;
+        }
         for(const {name} of emits){
             code += `            @${name}="\${ifDefined(item.${name})}"\n`;
         }

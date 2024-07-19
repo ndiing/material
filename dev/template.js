@@ -76,6 +76,7 @@ function renderButton(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onButtonClick)}"
         ></md-button>
     `
 }
@@ -132,6 +133,7 @@ function renderChip(item = {}) {
             .action="${ifDefined(item.action)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onChipClick)}"
             @onChipActionClick="${ifDefined(item.onChipActionClick)}"
         ></md-chip>
     `
@@ -605,6 +607,7 @@ function renderEmoji(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .emoji="${ifDefined(item.emoji)}"
             .hover="${ifDefined(item.hover)}"
+            @click="${ifDefined(item.onEmojiClick)}"
         ></md-emoji>
     `
 }
@@ -658,6 +661,7 @@ function renderFab(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onFabClick)}"
         ></md-fab>
     `
 }
@@ -692,6 +696,7 @@ function renderIcon(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            @click="${ifDefined(item.onIconClick)}"
         ></md-icon>
     `
 }
@@ -709,6 +714,7 @@ function renderIconButton(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
             .name="${ifDefined(item.name)}"
+            @click="${ifDefined(item.onIconButtonClick)}"
             @onIconButtonClick="${ifDefined(item.onIconButtonClick)}"
         ></md-icon-button>
     `
@@ -782,6 +788,7 @@ function renderListItem(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .routerLink="${ifDefined(item.routerLink)}"
             .activated="${ifDefined(item.activated)}"
+            @click="${ifDefined(item.onListItemClick)}"
             @onListItemSelected="${ifDefined(item.onListItemSelected)}"
         ></md-list-item>
     `
@@ -1703,6 +1710,7 @@ function renderTreeItem(item = {}) {
             .nodeActions="${ifDefined(item.nodeActions)}"
             .nodeIcons="${ifDefined(item.nodeIcons)}"
             .leafIcons="${ifDefined(item.leafIcons)}"
+            @click="${ifDefined(item.onTreeItemClick)}"
             @onTreeItemSelected="${ifDefined(item.onTreeItemSelected)}"
         ></md-tree-item>
     `
@@ -1808,66 +1816,67 @@ function renderWeekPicker(item = {}) {
 function renderComponent(item) {
     /* prettier-ignore */
     return choose(item.component, [
-        ["badge", () => renderBadge(item)]
-        ["bottom-app-bar", () => renderBottomAppBar(item)]
-        ["bottom-sheet", () => renderBottomSheet(item)]
-        ["button", () => renderButton(item)]
-        ["card", () => renderCard(item)]
-        ["checkbox", () => renderCheckbox(item)]
-        ["chip", () => renderChip(item)]
-        ["chips", () => renderChips(item)]
-        ["color-field", () => renderColorField(item)]
-        ["color-picker", () => renderColorPicker(item)]
-        ["data-table", () => renderDataTable(item)]
-        ["data-table-column-cell", () => renderDataTableColumnCell(item)]
-        ["data-table-item", () => renderDataTableItem(item)]
-        ["data-table-row-cell", () => renderDataTableRowCell(item)]
-        ["date-field", () => renderDateField(item)]
-        ["date-picker", () => renderDatePicker(item)]
-        ["datetime-field", () => renderDatetimeField(item)]
-        ["datetime-picker", () => renderDatetimePicker(item)]
-        ["dialog", () => renderDialog(item)]
-        ["emoji", () => renderEmoji(item)]
-        ["emoji-picker", () => renderEmojiPicker(item)]
-        ["fab", () => renderFab(item)]
-        ["form", () => renderForm(item)]
-        ["icon", () => renderIcon(item)]
-        ["icon-button", () => renderIconButton(item)]
-        ["image", () => renderImage(item)]
-        ["list", () => renderList(item)]
-        ["list-item", () => renderListItem(item)]
-        ["markdown", () => renderMarkdown(item)]
-        ["menu", () => renderMenu(item)]
-        ["month-field", () => renderMonthField(item)]
-        ["month-picker", () => renderMonthPicker(item)]
-        ["navigation-bar", () => renderNavigationBar(item)]
-        ["navigation-drawer", () => renderNavigationDrawer(item)]
-        ["navigation-rail", () => renderNavigationRail(item)]
-        ["number-field", () => renderNumberField(item)]
-        ["pagination", () => renderPagination(item)]
-        ["password-field", () => renderPasswordField(item)]
-        ["progress-indicator", () => renderProgressIndicator(item)]
-        ["radio-button", () => renderRadioButton(item)]
-        ["scrim", () => renderScrim(item)]
-        ["search-field", () => renderSearchField(item)]
-        ["segmented-button", () => renderSegmentedButton(item)]
-        ["select-field", () => renderSelectField(item)]
-        ["sheet", () => renderSheet(item)]
-        ["side-sheet", () => renderSideSheet(item)]
-        ["slider", () => renderSlider(item)]
-        ["snackbar", () => renderSnackbar(item)]
-        ["switch", () => renderSwitch(item)]
-        ["tabs", () => renderTabs(item)]
-        ["text-field", () => renderTextField(item)]
-        ["textarea-field", () => renderTextareaField(item)]
-        ["time-field", () => renderTimeField(item)]
-        ["time-picker", () => renderTimePicker(item)]
-        ["tooltip", () => renderTooltip(item)]
-        ["top-app-bar", () => renderTopAppBar(item)]
-        ["tree", () => renderTree(item)]
-        ["tree-item", () => renderTreeItem(item)]
-        ["week-field", () => renderWeekField(item)]
-        ["week-picker", () => renderWeekPicker(item)]
+        ["badge", () => renderBadge(item)],
+        ["bottom-app-bar", () => renderBottomAppBar(item)],
+        ["bottom-sheet", () => renderBottomSheet(item)],
+        ["button", () => renderButton(item)],
+        ["card", () => renderCard(item)],
+        ["checkbox", () => renderCheckbox(item)],
+        ["chip", () => renderChip(item)],
+        ["chips", () => renderChips(item)],
+        ["color-field", () => renderColorField(item)],
+        ["color-picker", () => renderColorPicker(item)],
+        ["data-table", () => renderDataTable(item)],
+        ["data-table-column-cell", () => renderDataTableColumnCell(item)],
+        ["data-table-item", () => renderDataTableItem(item)],
+        ["data-table-row-cell", () => renderDataTableRowCell(item)],
+        ["date-field", () => renderDateField(item)],
+        ["date-picker", () => renderDatePicker(item)],
+        ["datetime-field", () => renderDatetimeField(item)],
+        ["datetime-picker", () => renderDatetimePicker(item)],
+        ["dialog", () => renderDialog(item)],
+        ["emoji", () => renderEmoji(item)],
+        ["emoji-picker", () => renderEmojiPicker(item)],
+        ["fab", () => renderFab(item)],
+        ["form", () => renderForm(item)],
+        ["icon", () => renderIcon(item)],
+        ["icon-button", () => renderIconButton(item)],
+        ["image", () => renderImage(item)],
+        ["list", () => renderList(item)],
+        ["list-item", () => renderListItem(item)],
+        ["markdown", () => renderMarkdown(item)],
+        ["menu", () => renderMenu(item)],
+        ["month-field", () => renderMonthField(item)],
+        ["month-picker", () => renderMonthPicker(item)],
+        ["navigation-bar", () => renderNavigationBar(item)],
+        ["navigation-drawer", () => renderNavigationDrawer(item)],
+        ["navigation-rail", () => renderNavigationRail(item)],
+        ["number-field", () => renderNumberField(item)],
+        ["pagination", () => renderPagination(item)],
+        ["password-field", () => renderPasswordField(item)],
+        ["progress-indicator", () => renderProgressIndicator(item)],
+        ["radio-button", () => renderRadioButton(item)],
+        ["scrim", () => renderScrim(item)],
+        ["search-field", () => renderSearchField(item)],
+        ["segmented-button", () => renderSegmentedButton(item)],
+        ["select-field", () => renderSelectField(item)],
+        ["sheet", () => renderSheet(item)],
+        ["side-sheet", () => renderSideSheet(item)],
+        ["slider", () => renderSlider(item)],
+        ["snackbar", () => renderSnackbar(item)],
+        ["switch", () => renderSwitch(item)],
+        ["tabs", () => renderTabs(item)],
+        ["text-field", () => renderTextField(item)],
+        ["textarea-field", () => renderTextareaField(item)],
+        ["time-field", () => renderTimeField(item)],
+        ["time-picker", () => renderTimePicker(item)],
+        ["tooltip", () => renderTooltip(item)],
+        ["top-app-bar", () => renderTopAppBar(item)],
+        ["tree", () => renderTree(item)],
+        ["tree-item", () => renderTreeItem(item)],
+        ["week-field", () => renderWeekField(item)],
+        ["week-picker", () => renderWeekPicker(item)],
+        ["spacer", () => html`<div class="md-pane__spacer"></div>`],
     ], () => nothing)
 }
 

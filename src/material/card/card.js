@@ -46,7 +46,7 @@ class MDCardComponent extends MDComponent {
                 ${this.leadingActions?.length ? html`
                     <div class="md-card__actions">
                         ${this.leadingActions.map(item => {
-                            item.component=item.component||'icon'
+                            item.component=item.component||'icon-button'
                             return renderComponent(item)    
                         })}
                     </div>

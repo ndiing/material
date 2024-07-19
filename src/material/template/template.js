@@ -76,6 +76,7 @@ function renderButton(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onButtonClick)}"
         ></md-button>
     `
 }
@@ -132,6 +133,7 @@ function renderChip(item = {}) {
             .action="${ifDefined(item.action)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onChipClick)}"
             @onChipActionClick="${ifDefined(item.onChipActionClick)}"
         ></md-chip>
     `
@@ -605,6 +607,7 @@ function renderEmoji(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .emoji="${ifDefined(item.emoji)}"
             .hover="${ifDefined(item.hover)}"
+            @click="${ifDefined(item.onEmojiClick)}"
         ></md-emoji>
     `
 }
@@ -658,6 +661,7 @@ function renderFab(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @click="${ifDefined(item.onFabClick)}"
         ></md-fab>
     `
 }
@@ -692,6 +696,7 @@ function renderIcon(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            @click="${ifDefined(item.onIconClick)}"
         ></md-icon>
     `
 }
@@ -709,6 +714,7 @@ function renderIconButton(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
             .name="${ifDefined(item.name)}"
+            @click="${ifDefined(item.onIconButtonClick)}"
             @onIconButtonClick="${ifDefined(item.onIconButtonClick)}"
         ></md-icon-button>
     `
@@ -782,6 +788,7 @@ function renderListItem(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .routerLink="${ifDefined(item.routerLink)}"
             .activated="${ifDefined(item.activated)}"
+            @click="${ifDefined(item.onListItemClick)}"
             @onListItemSelected="${ifDefined(item.onListItemSelected)}"
         ></md-list-item>
     `
@@ -1703,6 +1710,7 @@ function renderTreeItem(item = {}) {
             .nodeActions="${ifDefined(item.nodeActions)}"
             .nodeIcons="${ifDefined(item.nodeIcons)}"
             .leafIcons="${ifDefined(item.leafIcons)}"
+            @click="${ifDefined(item.onTreeItemClick)}"
             @onTreeItemSelected="${ifDefined(item.onTreeItemSelected)}"
         ></md-tree-item>
     `
