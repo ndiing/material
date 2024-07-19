@@ -1,7 +1,6 @@
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
-
 /**
  * Represents a segmented button component that allows single or multiple selection of its items.
  * @element md-segmented-button
@@ -21,7 +20,6 @@ class MDSegmentedButtonComponent extends MDComponent {
         multiSelection: { type: Boolean },
     };
 
-    
     /**
      * Renders the segmented button component.
      * @private

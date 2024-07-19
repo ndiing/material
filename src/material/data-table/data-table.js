@@ -32,20 +32,12 @@ class MDDataTableComponent extends MDCardComponent {
 
     set label(value) {}
     get trailingActions() {
-        return [
-            { name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch },
-            // { name: "filter", classMap: { "md-data-table__filter": true }, component: "icon-button", icon: "filter_list" },
-            // { name: "more", classMap: { "md-data-table__more": true }, component: "icon-button", icon: "more_vert" },
-        ];
+        return [{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch }];
     }
 
     set trailingActions(value) {}
     get actions() {
-        return [
-            //
-            { component: "spacer" },
-            { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total: this.total, limit: this.limit, page: this.page, onPaginationChange: this.handleDataTablePaginationChange },
-        ];
+        return [{ component: "spacer" }, { name: "pagination", classMap: { "md-data-table__pagination": true }, component: "pagination", total: this.total, limit: this.limit, page: this.page, onPaginationChange: this.handleDataTablePaginationChange }];
     }
 
     set actions(value) {}

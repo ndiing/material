@@ -219,17 +219,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         } else if (this.index === 4) {
             label = stringifyTime(this.selection);
         }
-        return [
-            //
-            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick },
-        ];
+        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
-
-    // handleCardButtonLabelClick
-    // handleCardIconButtonPrevClick
-    // handleCardIconButtonNextClick
-    // handleCardButtonCancelClick
-    // handleCardButtonOkClick
 
     /**
      * {{description}}
@@ -245,12 +236,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * {{description}}
      */
     get actions() {
-        return [
-            //
-            { component: "spacer" },
-            { label: "Cancel", onButtonClick: this.handleCardButtonCancelClick },
-            { label: "Ok", onButtonClick: this.handleCardButtonOkClick },
-        ];
+        return [{ component: "spacer" }, { label: "Cancel", onButtonClick: this.handleCardButtonCancelClick }, { label: "Ok", onButtonClick: this.handleCardButtonOkClick }];
     }
 
     /**

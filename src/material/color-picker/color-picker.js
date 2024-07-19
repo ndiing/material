@@ -54,22 +54,14 @@ class MDColorPickerComponent extends MDSheetComponent {
      */
     get leadingActions() {
         let label = this.selection.hex;
-        return [
-            //
-            { component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleColorPickerButtonLabelClick },
-        ];
+        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleColorPickerButtonLabelClick }];
     }
 
     /**
      * {{description}}
      */
     get actions() {
-        return [
-            //
-            { component: "spacer" },
-            { label: "Cancel", onButtonClick: this.handleColorPickerButtonCancelClick },
-            { label: "Ok", onButtonClick: this.handleColorPickerButtonOkClick },
-        ];
+        return [{ component: "spacer" }, { label: "Cancel", onButtonClick: this.handleColorPickerButtonCancelClick }, { label: "Ok", onButtonClick: this.handleColorPickerButtonOkClick }];
     }
 
     /**
