@@ -1,3 +1,4 @@
+
 /**
  * A class for managing routing in a web application.
  * @fires MDRouter#onRouterCurrentEntryChange - Event fired when the current route changes.
@@ -7,13 +8,10 @@
  */
 class MDRouter {
     static stacks = [];
-
     static _params = {};
-
     static controller;
     static route;
     static routes;
-
     static _historyApiFallback = true;
 
     /**
@@ -26,15 +24,11 @@ class MDRouter {
     static setRoutes(routes, parent) {
         return routes.reduce((acc, curr) => {
             curr.parent = parent;
-
             curr.pathname = `${parent?.pathname ?? ""}/${curr.path}`.replace(/\/+/g, "/");
-
             acc.push(curr);
-
             if (curr.children?.length) {
                 acc.push(...this.setRoutes(curr.children, curr));
             }
-
             return acc;
         }, []);
     }
@@ -57,15 +51,12 @@ class MDRouter {
      */
     static get query() {
         let search;
-
         if (this.historyApiFallback) {
             search = window.location.search;
         } else {
             search = window.location.hash.replace(/^#/, "").match(/(\?.*)$/)?.[1] || "";
         }
-
         const query = {};
-
         for (const [name, value] of new URLSearchParams(search).entries()) {
             if (query[name]) {
                 if (Array.isArray(query[name])) {
@@ -89,17 +80,12 @@ class MDRouter {
     static getRoute(path) {
         return this.stacks.find((route) => {
             const pattern = `^${route.pathname.replace(/:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)")}(?:/?$)`;
-
             const regexp = new RegExp(pattern, "i");
-
             const matches = path.match(regexp);
-
             if (matches) {
                 this.params = { ...matches.groups };
-
                 return true;
             }
-
             return false;
         });
     }
@@ -115,9 +101,7 @@ class MDRouter {
             if (curr.parent) {
                 acc.push(...this.getRoutes(curr.parent));
             }
-
             acc.push(curr);
-
             return acc;
         }, []);
     }
@@ -133,34 +117,24 @@ class MDRouter {
         return new Promise((resolve) => {
             let outlet;
             let observer;
-
             let target = container;
-
             let selector = "md-outlet:not([name])";
-
             if (route.outlet) {
                 target = document.body;
-
                 selector = `md-outlet[name="${route.outlet}"]`;
             }
-
             const callback = () => {
                 outlet = target.querySelector(selector);
-
                 if (outlet) {
                     if (observer) {
                         observer.disconnect();
                     }
-
                     resolve(outlet);
                 }
             };
-
             callback();
-
             if (!outlet) {
                 observer = new MutationObserver(callback);
-
                 observer.observe(target, {
                     childList: true,
                     subtree: true,
@@ -193,101 +167,68 @@ class MDRouter {
      */
     static async handleLoad(event) {
         this.emit("onRouterCurrentEntryChange", event);
-
         performance.mark("markRouterCurrentEntryChange");
-
         this.params = {};
-
         this.route = this.getRoute(this.path);
-
         this.routes = this.getRoutes(this.route);
-
         if (this.controller && !this.controller.signal.aborted) {
             this.controller.abort();
         }
-
         if (!this.controller || (this.controller && this.controller.signal.aborted)) {
             this.controller = new AbortController();
         }
-
         for (const route of this.routes) {
             this.emit("onRouterNavigate", event);
-
             performance.mark("markRouterNavigate");
-
             if (route.beforeLoad) {
                 try {
                     await new Promise((resolve, reject) => {
                         const next = (err) => {
                             this.controller.signal.removeEventListener("abort", next);
-
                             if (err) {
                                 reject(err);
                             } else {
                                 resolve();
                             }
                         };
-
                         this.controller.signal.addEventListener("abort", next);
-
                         route.beforeLoad(next);
                     });
                 } catch (error) {
                     this.emit("onRouterNavigateError", event);
-
                     performance.mark("markRouterNavigateError");
-
                     throw error;
                 }
             }
-
             if (!route.component) {
                 route.component = await route.load();
             }
-
             const container = route.parent?.component ?? document.body;
-
             const outlet = await this.getOutlet(container, route);
-
             if (!route.component.isConnected) {
                 route.component.isComponent = true;
-
                 outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
             }
-
             const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
-
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
-
                 while (nextElement) {
                     const unusedComponent = !this.routes.find((route) => route.component === nextElement) && nextElement.isComponent;
-
                     const unusedOutlet = !outlets.find((outlet) => outlet === nextElement);
-
                     if (unusedComponent && unusedOutlet) {
                         nextElement.remove();
                     }
-
                     nextElement = nextElement.nextElementSibling;
                 }
             }
         }
-
         this.emit("onRouterNavigateSuccess", event);
-
         performance.mark("markRouterNavigateSuccess");
-
         performance.measure("measureRouterNavigateSuccess", "markRouterCurrentEntryChange", "markRouterNavigateSuccess");
-
         performance.clearMarks("markRouterCurrentEntryChange");
-
         performance.clearMarks("markRouterNavigate");
-
         performance.clearMarks("markRouterNavigateError");
-
         performance.clearMarks("markRouterNavigateSuccess");
-
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
 
@@ -310,10 +251,8 @@ class MDRouter {
      */
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
-
         if (routerLink) {
             const url = routerLink.getAttribute("routerLink");
-
             this.navigate(url);
         }
     }
@@ -324,27 +263,19 @@ class MDRouter {
      */
     static init(routes) {
         this.stacks = this.setRoutes(routes);
-
         this.handleLoad = this.handleLoad.bind(this);
-
         window.addEventListener("DOMContentLoaded", this.handleLoad);
-
         if (this.historyApiFallback) {
             window.addEventListener("popstate", this.handleLoad);
-
             const pushState = window.history.pushState;
-
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
-
                 MDRouter.emit("popstate");
             };
         } else {
             window.addEventListener("hashchange", this.handleLoad);
         }
-
         this.handleClick = this.handleClick.bind(this);
-
         window.addEventListener("click", this.handleClick);
     }
 
@@ -376,7 +307,6 @@ class MDRouter {
             cancelable: true,
             detail,
         });
-
         window.dispatchEvent(event);
     }
 }

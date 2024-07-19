@@ -9,6 +9,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDChipComponent#onChipActionClick - Event emitted when the chip action button is clicked.
  */
 class MDChipComponent extends MDComponent {
+
     /**
      * Defines the properties of the MDChipComponent.
      * @property {String} variant - The variant of the chip, which can be one of "assist", "filter", "input", or "suggestion".
@@ -28,7 +29,6 @@ class MDChipComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["assist", "filter", "input", "suggestion"];
 
     /**
@@ -36,7 +36,6 @@ class MDChipComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
@@ -50,7 +49,6 @@ class MDChipComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.selected ? html`<div class="md-icon md-chip__icon">check</div>` : nothing}
-
             ${!this.selected && this.avatar ? html`<md-image class="md-chip__avatar" .src="${this.avatar}" .alt="${"Avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
             ${!this.selected && this.icon ? html`<div class="md-icon md-chip__icon">${this.icon}</div>` : nothing}
             <div class="md-chip__label">${this.label}</div>
@@ -64,7 +62,6 @@ class MDChipComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-chip");
     }
 
@@ -75,23 +72,18 @@ class MDChipComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
-
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-chip--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
-
                 this.setAttribute("tabindex", "-1");
             } else {
                 this.removeAttribute("aria-disabled");
-
                 this.removeAttribute("tabindex");
             }
         }
@@ -106,7 +98,5 @@ class MDChipComponent extends MDComponent {
         this.emit("onChipActionClick", event);
     }
 }
-
 customElements.define("md-chip", MDChipComponent);
-
 export { MDChipComponent };

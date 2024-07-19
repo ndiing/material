@@ -9,6 +9,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDTreeComponent#onTreeItemClick - Triggered when an item in the tree is clicked.
  */
 class MDTreeComponent extends MDComponent {
+
     /**
      * Properties defining the structure and behavior of the tree component.
      * @property {Array} list - The hierarchical list of tree items.
@@ -18,7 +19,6 @@ class MDTreeComponent extends MDComponent {
         list: { type: Array },
         variant: { type: String },
     };
-
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
@@ -26,7 +26,6 @@ class MDTreeComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.variant = "tree";
     }
 
@@ -59,7 +58,6 @@ class MDTreeComponent extends MDComponent {
                 @onTreeItemSelected="${this.handleTreeItemSelected}"
             ></md-tree-item>
             ${item.expanded && item.children?.length ? item.children.map(item => this.renderTreeItem(item)) : nothing}
-
         `;
     }
 
@@ -70,7 +68,6 @@ class MDTreeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-
         return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTreeItem(item));
     }
 
@@ -80,7 +77,6 @@ class MDTreeComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-tree");
     }
 
@@ -91,20 +87,15 @@ class MDTreeComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
-
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-tree--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("list")) {
             await this.updateComplete;
-
             this.setList(this.list);
-
             this.requestUpdate();
         }
     }
@@ -117,21 +108,17 @@ class MDTreeComponent extends MDComponent {
      */
     getList(list) {
         let children;
-
         list.forEach((item) => {
             if (item.expanded) {
                 children = item.children;
             }
-
             if (item.children?.length) {
                 const children_ = this.getList(item.children);
-
                 if (children_) {
                     children = children_;
                 }
             }
         });
-
         return children;
     }
 
@@ -145,18 +132,14 @@ class MDTreeComponent extends MDComponent {
     setList(list, indent = 0) {
         let expanded;
         let activated;
-
         list.forEach((item) => {
             item.indent = indent;
-
             if (item.expanded || item.selected) {
                 expanded = true;
             }
-
             if (item.selected) {
                 activated = true;
             }
-
             if (item.children?.length) {
                 if (this.variant === "level") {
                     item.children.unshift({
@@ -165,25 +148,18 @@ class MDTreeComponent extends MDComponent {
                         isParent: true,
                     });
                 }
-
                 item.isNode = true;
-
                 const { expanded: isExpanded, activated: isActivated } = this.setList(item.children, indent + 1);
-
                 if (isExpanded) {
                     expanded = true;
-
                     item.expanded = true;
                 }
-
                 if (isActivated) {
                     activated = true;
-
                     item.activated = true;
                 }
             }
         });
-
         return { expanded, activated };
     }
 
@@ -195,25 +171,19 @@ class MDTreeComponent extends MDComponent {
      */
     select(list, data) {
         let activated;
-
         list.forEach((item) => {
             item.selected = item === data;
-
             item.activated = false;
-
             if (item.selected) {
                 activated = true;
             }
-
             if (item.children?.length) {
                 if (this.select(item.children, data)) {
                     activated = true;
-
                     item.activated = true;
                 }
             }
         });
-
         return activated;
     }
 
@@ -234,17 +204,13 @@ class MDTreeComponent extends MDComponent {
      */
     handleTreeItemClick(event) {
         const data = event.currentTarget.data;
-
         if (data.isNode || data.isParent) {
             event.stopPropagation();
-
             this.expand(this.list, data.isParent ? data.parent : data);
         } else {
             this.select(this.list, data);
         }
-
         this.requestUpdate();
-
         this.emit("onTreeItemClick", event);
     }
 
@@ -255,7 +221,5 @@ class MDTreeComponent extends MDComponent {
      */
     handleTreeItemSelected() {}
 }
-
 customElements.define("md-tree", MDTreeComponent);
-
 export { MDTreeComponent };

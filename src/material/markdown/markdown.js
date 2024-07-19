@@ -9,6 +9,7 @@ import { html, nothing } from "lit";
  * @extends MDComponent
  */
 class MDMarkdownComponent extends MDComponent {
+
     /**
      * Defines the properties of the element.
      * @property {String} href - The URL to fetch Markdown content from.
@@ -24,9 +25,7 @@ class MDMarkdownComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.text = this.textContent;
-
         this.textContent = "";
     }
 
@@ -44,7 +43,6 @@ class MDMarkdownComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-markdown");
     }
 
@@ -55,19 +53,13 @@ class MDMarkdownComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("href")) {
             const response = await fetch(this.href);
-
             const text = await response.text();
-
             this.text = text;
-
             this.requestUpdate();
         }
     }
 }
-
 customElements.define("md-markdown", MDMarkdownComponent);
-
 export { MDMarkdownComponent };

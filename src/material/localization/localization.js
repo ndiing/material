@@ -5,7 +5,6 @@ import { sourceLocale as sourceLocale_, targetLocales as targetLocales_ } from "
  * The locale code that templates in this source code are written in.
  * @type {string}
  */
-
 const sourceLocale = sourceLocale_;
 
 /**
@@ -13,9 +12,7 @@ const sourceLocale = sourceLocale_;
  * lexicographically.
  * @type {string[]}
  */
-
 const targetLocales = targetLocales_;
-
 const { getLocale: getLocale_, setLocale: setLocale_ } = configureLocalization({
     sourceLocale,
     targetLocales,
@@ -26,7 +23,6 @@ const { getLocale: getLocale_, setLocale: setLocale_ } = configureLocalization({
  * Return the active locale code.
  * @returns {string} The active locale code.
  */
-
 const getLocale = getLocale_;
 
 /**
@@ -34,7 +30,5 @@ const getLocale = getLocale_;
  * @param {string} locale - The locale code to set as active.
  * @returns {Promise<void>} A promise that resolves when the locale has been set.
  */
-
 const setLocale = setLocale_;
-
 export { sourceLocale, targetLocales, getLocale, setLocale };

@@ -12,6 +12,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDCheckboxComponent#onCheckboxNativeReset - Fired when the checkbox is reset to its default state.
  */
 class MDCheckboxComponent extends MDComponent {
+
     /**
      * Properties for the MDCheckboxComponent.
      * @property {String} name - The name of the checkbox input.
@@ -34,7 +35,6 @@ class MDCheckboxComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             button: ".md-checkbox__native",
             container: ".md-checkbox__track",
@@ -43,7 +43,6 @@ class MDCheckboxComponent extends MDComponent {
             fadeOut: true,
         });
     }
-
     checkboxNative = createRef();
 
     /**
@@ -65,7 +64,6 @@ class MDCheckboxComponent extends MDComponent {
                 .checked="${ifDefined(this.checked)}"
                 ?disabled="${ifDefined(this.disabled)}"
                 ${ref(this.checkboxNative)}
-
                 @input="${this.handleCheckboxNativeInput}"
                 @reset="${this.handleCheckboxNativeReset}"
             >
@@ -79,17 +77,13 @@ class MDCheckboxComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-checkbox");
-
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
-
         if (this.defaultChecked === undefined) {
             this.defaultChecked = !!this.checked;
         }
-
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
@@ -103,11 +97,8 @@ class MDCheckboxComponent extends MDComponent {
      */
     handleCheckboxNativeInput(event) {
         this.value = this.checkboxNative.value.value;
-
         this.checked = this.checkboxNative.value.checked;
-
         this.indeterminate = this.checkboxNative.value.indeterminate;
-
         this.emit("onCheckboxNativeInput", event);
     }
 
@@ -119,21 +110,13 @@ class MDCheckboxComponent extends MDComponent {
      */
     handleCheckboxNativeReset(event) {
         this.checkboxNative.value.value = this.defaultValue;
-
         this.checkboxNative.value.checked = this.defaultChecked;
-
         this.checkboxNative.value.indeterminate = this.defaultIndeterminate;
-
         this.value = this.defaultValue;
-
         this.checked = this.defaultChecked;
-
         this.indeterminate = this.defaultIndeterminate;
-
         this.emit("onCheckboxNativeReset", event);
     }
 }
-
 customElements.define("md-checkbox", MDCheckboxComponent);
-
 export { MDCheckboxComponent };

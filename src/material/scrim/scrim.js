@@ -6,6 +6,7 @@ import { MDComponent } from "../component/component.js";
  * @extends MDComponent
  */
 class MDScrimComponent extends MDComponent {
+
     /**
      * Properties of the MDScrimComponent.
      * @property {Boolean} open - Reflects whether the scrim is open.
@@ -21,7 +22,6 @@ class MDScrimComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-scrim");
     }
 
@@ -50,7 +50,5 @@ class MDScrimComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-scrim", MDScrimComponent);
-
 export { MDScrimComponent };

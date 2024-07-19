@@ -8,6 +8,7 @@ import { MDTreeComponent } from "../tree/tree.js";
  * @extends MDSheetComponent
  */
 class MDNavigationRailComponent extends MDSheetComponent {
+
     /**
      * Properties inherited from MDSheetComponent and MDTreeComponent.
      */
@@ -45,11 +46,8 @@ class MDNavigationRailComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-navigation-rail");
     }
 }
-
 customElements.define("md-navigation-rail", MDNavigationRailComponent);
-
 export { MDNavigationRailComponent };

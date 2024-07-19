@@ -6,12 +6,12 @@ import { updateWhenLocaleChanges } from "@lit/localize";
  * @extends LitElement
  */
 class MDComponent extends LitElement {
+
     /**
      * Initializes the component.
      */
     constructor() {
         super();
-
         updateWhenLocaleChanges(this);
     }
 
@@ -31,7 +31,6 @@ class MDComponent extends LitElement {
      */
     on(type, listener) {
         listener = listener.bind(this);
-
         this.addEventListener(type, listener);
     }
 
@@ -44,10 +43,8 @@ class MDComponent extends LitElement {
     once(type, listener) {
         const handleListener = (event) => {
             listener(event);
-
             this.off(type, handleListener);
         };
-
         this.on(type, handleListener);
     }
 
@@ -73,7 +70,6 @@ class MDComponent extends LitElement {
             cancelable: true,
             detail,
         });
-
         this.dispatchEvent(event);
     }
 }

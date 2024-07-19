@@ -56,6 +56,9 @@ function open(pathname, callback) {
 function parse(data) {
     let doc = {};
 
+    data=data.replace(/\n+/gm,'\n')
+    data=data.replace(/.*?\/\*\*/gm,m=>`\n${m}`)
+
     data = data.replace(/customElements\.define\("(.*?)", /gm, (...args) => {
         let [match, tagName] = args;
         doc.tagName = tagName;
@@ -121,6 +124,7 @@ open("./src/material", (file) => {
         let data = read(file);
         let result = parse(data);
         docs.push(result.doc);
+        // write(file,result.data)
     }
 });
 const docMap = new Map(docs.map((doc) => [doc.className, doc]));
@@ -138,12 +142,13 @@ let code = "";
 for (const doc of docs) {
 
     if(![
-        /button$/,
-        /fab$/,
-        /field$/,
-        /checkbox$/,
-        /radio-button$/,
-        /switch$/,
+        /icon$/,
+        // /button$/,
+        // /fab$/,
+        // /field$/,
+        // /checkbox$/,
+        // /radio-button$/,
+        // /switch$/,
     ].some(reg=>reg.test(doc.tagName)))
         continue
 

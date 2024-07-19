@@ -11,6 +11,7 @@ import { isDefined } from "../functions/functions.js";
  * @fires MDTreeItemComponent#onTreeItemSelected - Triggered when a tree item is selected.
  */
 class MDTreeItemComponent extends MDComponent {
+
     /**
      * Properties defining the structure and behavior of the tree item component.
      * @property {String} icon - The icon name or URL for the tree item.
@@ -52,7 +53,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     get nodeActions_() {
         let icons = [];
-
         if (this.variant === "accordion") {
             icons = ["keyboard_arrow_down", "keyboard_arrow_up"];
         } else if (this.variant === "tree") {
@@ -60,11 +60,9 @@ class MDTreeItemComponent extends MDComponent {
         } else if (this.variant === "level") {
             icons = ["arrow_forward", "arrow_back"];
         }
-
         if (this.nodeActions) {
             icons = this.nodeActions;
         }
-
         return icons;
     }
 
@@ -75,17 +73,14 @@ class MDTreeItemComponent extends MDComponent {
      */
     get nodeIcons_() {
         let icons = [];
-
         if (this.variant === "tree") {
             icons = ["folder", "folder_open"];
         }
-
         if (this.nodeIcons) {
             icons = this.nodeIcons;
         } else if (this.icon) {
             icons = [this.icon, this.icon];
         }
-
         return icons;
     }
 
@@ -96,17 +91,14 @@ class MDTreeItemComponent extends MDComponent {
      */
     get leafIcons_() {
         let icons = [];
-
         if (this.variant === "tree") {
             icons = ["draft", "draft"];
         }
-
         if (this.leafIcons) {
             icons = this.leafIcons;
         } else if (this.icon) {
             icons = [this.icon, this.icon];
         }
-
         return icons;
     }
 
@@ -151,7 +143,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
@@ -166,12 +157,10 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : nothing}
-
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
-
                 </div>
             ` : nothing}
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : nothing}
@@ -187,12 +176,10 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : this.indent > 0 ? html`<div class="md-tree__indent"></div>` : nothing}
-
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
-
                 </div>
             ` : nothing}
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : nothing}
@@ -208,14 +195,12 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)}
-
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : this.indent > 0 ? html`<div class="md-tree__indent"></div>` : nothing}
             ${this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : nothing}
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
-
                 </div>
             ` : nothing}
         `;
@@ -230,12 +215,10 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.isParent ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeActions_[1]}"></md-icon-button>` : this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : this.indent > 0 ? html`<div class="md-tree__indent"></div>` : nothing}
-
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
-
                 </div>
             ` : nothing}
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeActions_[0]}"></md-icon-button>` : nothing}
@@ -253,8 +236,6 @@ class MDTreeItemComponent extends MDComponent {
             ['accordion', () => this.renderAccordion()],
             ['tree', () => this.renderTree()],
             ['level', () => this.renderLevel()],
-
-
         ], () => this.renderPlain());
     }
 
@@ -264,7 +245,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-tree__item");
     }
 
@@ -275,7 +255,6 @@ class MDTreeItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("selected")) {
             if (this.selected) {
                 this.emit("onTreeItemSelected", this);
@@ -283,7 +262,5 @@ class MDTreeItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-tree-item", MDTreeItemComponent);
-
 export { MDTreeItemComponent };

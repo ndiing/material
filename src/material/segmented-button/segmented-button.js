@@ -9,6 +9,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - Triggered when a segmented button item is clicked.
  */
 class MDSegmentedButtonComponent extends MDComponent {
+
     /**
      * @property {Array} buttons - Array of button items to render.
      * @property {Boolean} singleSelection - Indicates single selection mode.
@@ -20,7 +21,6 @@ class MDSegmentedButtonComponent extends MDComponent {
         singleSelection: { type: Boolean },
         multiSelection: { type: Boolean },
     };
-
     constructor() {
         super();
     }
@@ -53,7 +53,6 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-
         return this.buttons.map(item => this.renderButton(item));
     }
 
@@ -63,7 +62,6 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-segmented-button");
     }
 
@@ -74,7 +72,6 @@ class MDSegmentedButtonComponent extends MDComponent {
     handleSegmentedButtonItemClick(event) {
         if (this.multiSelection || this.singleSelection) {
             const data = event.currentTarget.data;
-
             if (this.multiSelection) {
                 data.selected = !data.selected;
             } else if (this.singleSelection) {
@@ -82,14 +79,10 @@ class MDSegmentedButtonComponent extends MDComponent {
                     item.selected = item === data;
                 });
             }
-
             this.requestUpdate();
         }
-
         this.emit("onSegmentedButtonItemClick", event);
     }
 }
-
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
-
 export { MDSegmentedButtonComponent };

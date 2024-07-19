@@ -8,6 +8,7 @@ import { calcPercentage } from "../functions/functions.js";
  * @extends MDComponent
  */
 class MDProgressIndicatorComponent extends MDComponent {
+
     /**
      * Defines the properties and their types for the component.
      * @property {String} variant - The variant of the progress indicator.
@@ -24,7 +25,6 @@ class MDProgressIndicatorComponent extends MDComponent {
      * Array of supported variants for the progress indicator.
      * @type {Array<String>}
      */
-
     variants = ["circular", "linear"];
 
     /**
@@ -33,7 +33,6 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.max = 100;
     }
 
@@ -79,7 +78,6 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-progress-indicator");
     }
 
@@ -91,25 +89,18 @@ class MDProgressIndicatorComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
-
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-progress-indicator--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("value")) {
             const percentage = calcPercentage(0, this.max, this.value);
-
             this.style.setProperty("--md-comp-progress-indicator-percentage", percentage + "%");
-
             this.style.setProperty("--md-comp-progress-indicator-value", percentage);
         }
     }
 }
-
 customElements.define("md-progress-indicator", MDProgressIndicatorComponent);
-
 export { MDProgressIndicatorComponent };

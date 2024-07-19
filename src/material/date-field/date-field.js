@@ -11,6 +11,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDDateFieldComponent#onDatePickerSelection - Event fired when a date-time selection is made in the picker.
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
+
     /**
      * Gets the actions for the date-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -24,10 +25,8 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      * @param {Array} value - The new actions for the date-time field.
      */
     set actions(value) {}
-
     constructor() {
         super();
-
         this.type = "date";
     }
 
@@ -37,7 +36,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-date-field");
     }
 
@@ -46,7 +44,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
-
         super.handleTextFieldNativeClick();
     }
 
@@ -57,7 +54,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
-
         if (event.currentTarget.name === "picker") {
             this.handleDateFieldActionPickerClick(event);
         }
@@ -71,7 +67,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     handleDateFieldActionPickerClick() {
         this.togglePicker();
     }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -87,83 +82,49 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
-
         this.pickerOpen = true;
-
         this.picker = document.createElement("md-date-picker");
-
         this.picker.value = this.value;
-
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-
         this.handleDatePickerButtonCancelClick = this.handleDatePickerButtonCancelClick.bind(this);
-
         this.handleDatePickerButtonOkClick = this.handleDatePickerButtonOkClick.bind(this);
-
         this.handleDatePickerSelection = this.handleDatePickerSelection.bind(this);
-
         this.handleDatePickerDayItemClick = this.handleDatePickerDayItemClick.bind(this);
-
         this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDatePickerButtonCancelClick);
-
         this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDatePickerButtonOkClick);
-
         this.picker.addEventListener("onDatePickerSelection", this.handleDatePickerSelection);
-
         this.picker.addEventListener("onDatePickerDayItemClick", this.handleDatePickerDayItemClick);
-
         const handleScroll = () => {
             this.picker.close();
-
             this.boundary.removeEventListener("scroll", handleScroll);
         };
-
         const handleClick = (event) => {
             let current = event.target;
-
             let matches;
-
             while (current) {
                 matches = matches || current === this || current === this.picker;
-
                 current = current.parentElement;
             }
-
             if (!matches) {
                 this.picker.close();
-
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDatePickerButtonCancelClick);
-
             this.picker.removeEventListener("onDatePickerButtonOkClick", this.handleDatePickerButtonOkClick);
-
             this.picker.removeEventListener("onDatePickerSelection", this.handleDatePickerSelection);
-
             this.picker.removeEventListener("onDatePickerDayItemClick", this.handleDatePickerDayItemClick);
-
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
-
             this.boundary.removeEventListener("scroll", handleScroll);
-
             this.boundary.removeEventListener("click", handleClick);
-
             this.pickerOpen = false;
         };
-
         this.picker.addEventListener("onSheetClose", handleSheetClose);
-
         this.boundary = getBoundary(this);
-
         this.boundary.addEventListener("scroll", handleScroll);
-
         this.boundary.addEventListener("click", handleClick);
-
         await this.picker.updateComplete;
-
         this.picker.show(this.textFieldContainer.value);
     }
 
@@ -174,7 +135,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleDatePickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
-
         this.picker.close();
     }
 
@@ -185,9 +145,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleDatePickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-
         this.picker.close();
     }
 
@@ -198,7 +156,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleDatePickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
 
@@ -209,13 +166,9 @@ class MDDateFieldComponent extends MDTextFieldComponent {
      */
     handleDatePickerDayItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
-
         this.picker.close();
     }
 }
-
 customElements.define("md-date-field", MDDateFieldComponent);
-
 export { MDDateFieldComponent };

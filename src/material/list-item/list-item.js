@@ -9,6 +9,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDListItemComponent#onListItemSelected - Triggered when the list item is selected.
  */
 class MDListItemComponent extends MDComponent {
+
     /**
      * Properties defining the structure and behavior of the list item.
      * @property {String} avatar - URL of the avatar image.
@@ -54,7 +55,6 @@ class MDListItemComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
@@ -108,7 +108,6 @@ class MDListItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.leadingCheckbox ? this.renderCheckbox() : nothing}
-
             ${this.leadingRadioButton ? this.renderRadioButton() : nothing}
             ${this.leadingSwitch ? this.renderSwitch() : nothing}
             ${this.avatar ? html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
@@ -139,7 +138,6 @@ class MDListItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-list__item");
     }
 
@@ -151,23 +149,17 @@ class MDListItemComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("subLabel")) {
             await this.updateComplete;
-
             const secondary = this.querySelector(".md-list__label-secondary");
-
             const style = window.getComputedStyle(secondary);
-
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
-
             if (secondary.scrollHeight > lineHeight) {
                 this.classList.add("md-list__item--three");
             } else {
                 this.classList.add("md-list__item--two");
             }
         }
-
         if (changedProperties.has("selected")) {
             if (this.selected) {
                 this.emit("onListItemSelected", this);
@@ -175,7 +167,5 @@ class MDListItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-list-item", MDListItemComponent);
-
 export { MDListItemComponent };

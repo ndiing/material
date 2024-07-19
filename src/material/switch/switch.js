@@ -12,6 +12,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDSwitchComponent#onSwitchNativeReset - Fired when the switch is reset.
  */
 class MDSwitchComponent extends MDComponent {
+
     /**
      * Defines the properties of the switch component.
      * @property {String} name - The name attribute of the switch input.
@@ -29,7 +30,6 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
-
     switchNative = createRef();
 
     /**
@@ -38,7 +38,6 @@ class MDSwitchComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.ripple = new MDRippleController(this, {
             button: ".md-switch__native",
             container: ".md-switch__thumb",
@@ -67,7 +66,6 @@ class MDSwitchComponent extends MDComponent {
                 .checked="${ifDefined(this.checked)}"
                 ?disabled="${ifDefined(this.disabled)}"
                 ${ref(this.switchNative)}
-
                 @input="${this.handleSwitchNativeInput}"
                 @reset="${this.handleSwitchNativeReset}"
             >
@@ -82,17 +80,13 @@ class MDSwitchComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-switch");
-
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
-
         if (this.defaultChecked === undefined) {
             this.defaultChecked = !!this.checked;
         }
-
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
@@ -106,11 +100,8 @@ class MDSwitchComponent extends MDComponent {
      */
     handleSwitchNativeInput(event) {
         this.value = this.switchNative.value.value;
-
         this.checked = this.switchNative.value.checked;
-
         this.indeterminate = this.switchNative.value.indeterminate;
-
         this.emit("onSwitchNativeInput", event);
     }
 
@@ -122,21 +113,13 @@ class MDSwitchComponent extends MDComponent {
      */
     handleSwitchNativeReset(event) {
         this.switchNative.value.value = this.defaultValue;
-
         this.switchNative.value.checked = this.defaultChecked;
-
         this.switchNative.value.indeterminate = this.defaultIndeterminate;
-
         this.value = this.defaultValue;
-
         this.checked = this.defaultChecked;
-
         this.indeterminate = this.defaultIndeterminate;
-
         this.emit("onSwitchNativeReset", event);
     }
 }
-
 customElements.define("md-switch", MDSwitchComponent);
-
 export { MDSwitchComponent };

@@ -12,6 +12,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDSliderComponent#onSliderNativeReset - Fired when the slider is reset.
  */
 class MDSliderComponent extends MDComponent {
+
     /**
      * Defines the properties of the slider component.
      * @property {String} name - The name attribute of the slider input.
@@ -31,10 +32,8 @@ class MDSliderComponent extends MDComponent {
                     if (!isArrayString(value)) {
                         value = `[${value}]`;
                     }
-
                     return JSON.parse(value);
                 },
-
                 toAttribute: (value) => {
                     return JSON.stringify(value);
                 },
@@ -53,15 +52,10 @@ class MDSliderComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.autocomplete = "off";
-
         this.min = 0;
-
         this.max = 100;
-
         this.step = 1;
-
         this.value = [undefined];
     }
 
@@ -73,13 +67,10 @@ class MDSliderComponent extends MDComponent {
      */
     renderTrack(value) {
         let length = 2;
-
         if (this.step > 1) {
             length = this.max / this.step;
         }
-
         length = length + 1;
-
         /* prettier-ignore */
         return html`
             <div class="md-slider__track">
@@ -89,9 +80,7 @@ class MDSliderComponent extends MDComponent {
             </div>
         `;
     }
-
     sliderNative1 = createRef();
-
     sliderNative2 = createRef();
 
     /**
@@ -115,7 +104,6 @@ class MDSliderComponent extends MDComponent {
                         ?disabled="${ifDefined(this.disabled)}"
                         .autocomplete="${ifDefined(this.autocomplete)}"
                         ${ref(this[`sliderNative${index + 1}`])}
-
                         @input="${this.handleSliderNativeInput}"
                         @reset="${this.handleSliderNativeReset}"
                     >
@@ -139,24 +127,16 @@ class MDSliderComponent extends MDComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-slider");
-
         const defaultValue = this.max < this.min ? this.min : this.min + (this.max - this.min) / 2;
-
         for (let index = 0; index < this.value.length; index++) {
             this.value[index] = this.value[index] ?? defaultValue;
         }
-
         this.defaultValue = this.value.slice();
-
         await this.updateComplete;
-
         for (let index = 0; index < this.natives.length; index++) {
             let native = this.natives[index];
-
             native.value = this.value[index];
-
             this.updateStyle(index);
         }
     }
@@ -168,11 +148,8 @@ class MDSliderComponent extends MDComponent {
      */
     updateStyle(index) {
         const percentage = calcPercentage(this.min, this.max, this.value[index]);
-
         const decimal = calcDecimal(this.min, this.max, this.value[index]);
-
         this.style.setProperty("--md-comp-slider-percentage" + (index + 1), percentage + "%");
-
         this.style.setProperty("--md-comp-slider-decimal" + (index + 1), decimal);
     }
 
@@ -184,19 +161,16 @@ class MDSliderComponent extends MDComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("min")) {
             if (this.min < 0) {
                 this.classList.add("md-slider--centered");
             }
         }
-
         if (changedProperties.has("step")) {
             if (this.step > 1) {
                 this.classList.add("md-slider--discrete");
             }
         }
-
         if (changedProperties.has("value")) {
             if (this.value?.length > 1) {
                 this.classList.add("md-slider--range");
@@ -222,24 +196,16 @@ class MDSliderComponent extends MDComponent {
     handleSliderNativeInput(event) {
         if (this.value?.length > 1) {
             this.natives[0].value = Math.min(this.natives[0].value, this.value[1]);
-
             this.natives[1].value = Math.max(this.natives[1].value, this.value[0]);
-
             this.value[0] = this.natives[0].value;
-
             this.value[1] = this.natives[1].value;
-
             this.updateStyle(0);
-
             this.updateStyle(1);
         } else {
             this.value[0] = this.natives[0].value;
-
             this.updateStyle(0);
         }
-
         this.requestUpdate();
-
         this.emit("onSliderNativeInput", event);
     }
 
@@ -252,20 +218,13 @@ class MDSliderComponent extends MDComponent {
     handleSliderNativeReset(event) {
         for (let index = 0; index < this.natives.length; index++) {
             let native = this.natives[index];
-
             native.value = this.defaultValue[index];
-
             this.value[index] = this.defaultValue[index];
-
             this.updateStyle(index);
         }
-
         this.requestUpdate();
-
         this.emit("onSliderNativeReset", event);
     }
 }
-
 customElements.define("md-slider", MDSliderComponent);
-
 export { MDSliderComponent };

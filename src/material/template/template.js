@@ -1,9 +1,15 @@
+import { html, nothing } from "lit";
+import { choose } from "lit/directives/choose.js";
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { styleMap } from "lit/directives/style-map.js";
+
 function renderButton(item = {}) {
     return html`
         <md-button
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .variant="${ifDefined(item.variant)}"
             .type="${ifDefined(item.type)}"
             .icon="${ifDefined(item.icon)}"
@@ -11,15 +17,15 @@ function renderButton(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
         ></md-button>
-    `
+    `;
 }
 
 function renderCheckbox(item = {}) {
     return html`
         <md-checkbox
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
@@ -28,15 +34,15 @@ function renderCheckbox(item = {}) {
             @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
             @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
         ></md-checkbox>
-    `
+    `;
 }
 
 function renderColorField(item = {}) {
     return html`
         <md-color-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -79,15 +85,15 @@ function renderColorField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-color-field>
-    `
+    `;
 }
 
 function renderDateField(item = {}) {
     return html`
         <md-date-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -130,15 +136,15 @@ function renderDateField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-date-field>
-    `
+    `;
 }
 
 function renderDatetimeField(item = {}) {
     return html`
         <md-datetime-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -181,30 +187,30 @@ function renderDatetimeField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-datetime-field>
-    `
+    `;
 }
 
 function renderFab(item = {}) {
     return html`
         <md-fab
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .variant="${ifDefined(item.variant)}"
             .icon="${ifDefined(item.icon)}"
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
         ></md-fab>
-    `
+    `;
 }
 
 function renderIconButton(item = {}) {
     return html`
         <md-icon-button
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .variant="${ifDefined(item.variant)}"
             .icon="${ifDefined(item.icon)}"
             .selected="${ifDefined(item.selected)}"
@@ -212,15 +218,15 @@ function renderIconButton(item = {}) {
             .name="${ifDefined(item.name)}"
             @onIconButtonClick="${ifDefined(item.onIconButtonClick)}"
         ></md-icon-button>
-    `
+    `;
 }
 
 function renderMonthField(item = {}) {
     return html`
         <md-month-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -263,15 +269,15 @@ function renderMonthField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-month-field>
-    `
+    `;
 }
 
 function renderNumberField(item = {}) {
     return html`
         <md-number-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -314,15 +320,15 @@ function renderNumberField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-number-field>
-    `
+    `;
 }
 
 function renderPasswordField(item = {}) {
     return html`
         <md-password-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -365,15 +371,15 @@ function renderPasswordField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-password-field>
-    `
+    `;
 }
 
 function renderRadioButton(item = {}) {
     return html`
         <md-radio-button
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
@@ -382,15 +388,15 @@ function renderRadioButton(item = {}) {
             @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
             @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
         ></md-radio-button>
-    `
+    `;
 }
 
 function renderSearchField(item = {}) {
     return html`
         <md-search-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -433,29 +439,29 @@ function renderSearchField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-search-field>
-    `
+    `;
 }
 
 function renderSegmentedButton(item = {}) {
     return html`
         <md-segmented-button
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .buttons="${ifDefined(item.buttons)}"
             .singleSelection="${ifDefined(item.singleSelection)}"
             .multiSelection="${ifDefined(item.multiSelection)}"
             @onSegmentedButtonItemClick="${ifDefined(item.onSegmentedButtonItemClick)}"
         ></md-segmented-button>
-    `
+    `;
 }
 
 function renderSelectField(item = {}) {
     return html`
         <md-select-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -498,15 +504,15 @@ function renderSelectField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-select-field>
-    `
+    `;
 }
 
 function renderSwitch(item = {}) {
     return html`
         <md-switch
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
@@ -516,15 +522,15 @@ function renderSwitch(item = {}) {
             @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
             @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
         ></md-switch>
-    `
+    `;
 }
 
 function renderTextField(item = {}) {
     return html`
         <md-text-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -567,15 +573,15 @@ function renderTextField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-text-field>
-    `
+    `;
 }
 
 function renderTextareaField(item = {}) {
     return html`
         <md-textarea-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -618,15 +624,15 @@ function renderTextareaField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-textarea-field>
-    `
+    `;
 }
 
 function renderTimeField(item = {}) {
     return html`
         <md-time-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -669,15 +675,15 @@ function renderTimeField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-time-field>
-    `
+    `;
 }
 
 function renderWeekField(item = {}) {
     return html`
         <md-week-field
             id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -720,27 +726,48 @@ function renderWeekField(item = {}) {
             @onTextFieldActionClick="${ifDefined(item.onTextFieldActionClick)}"
             @onTextFieldIconButtonClick="${ifDefined(item.onTextFieldIconButtonClick)}"
         ></md-week-field>
-    `
+    `;
 }
 
-export{
-    renderButton,
-    renderCheckbox,
-    renderColorField,
-    renderDateField,
-    renderDatetimeField,
-    renderFab,
-    renderIconButton,
-    renderMonthField,
-    renderNumberField,
-    renderPasswordField,
-    renderRadioButton,
-    renderSearchField,
-    renderSegmentedButton,
-    renderSelectField,
-    renderSwitch,
-    renderTextField,
-    renderTextareaField,
-    renderTimeField,
-    renderWeekField,
+function renderIcon(item = {}) {
+    return html`
+        <md-icon
+            id="${ifDefined(item.id)}"
+            class="${classMap({ ...item.classMap })}"
+            style="${styleMap({ ...item.styleMap })}"
+            >${item.icon}</md-icon
+        >
+    `;
 }
+
+function renderComponent(item) {
+    return choose(
+        item.component,
+        [
+            ["spacer", () => html`<div class="md-pane__spacer"></div>`],
+            ["icon", () => renderIcon(item)],
+            ["button", () => renderButton(item)],
+            ["checkbox", () => renderCheckbox(item)],
+            ["color-field", () => renderColorField(item)],
+            ["date-field", () => renderDateField(item)],
+            ["datetime-field", () => renderDatetimeField(item)],
+            ["fab", () => renderFab(item)],
+            ["icon-button", () => renderIconButton(item)],
+            ["month-field", () => renderMonthField(item)],
+            ["number-field", () => renderNumberField(item)],
+            ["password-field", () => renderPasswordField(item)],
+            ["radio-button", () => renderRadioButton(item)],
+            ["search-field", () => renderSearchField(item)],
+            ["segmented-button", () => renderSegmentedButton(item)],
+            ["select-field", () => renderSelectField(item)],
+            ["switch", () => renderSwitch(item)],
+            ["text-field", () => renderTextField(item)],
+            ["textarea-field", () => renderTextareaField(item)],
+            ["time-field", () => renderTimeField(item)],
+            ["week-field", () => renderWeekField(item)],
+        ],
+        () => nothing,
+    );
+}
+
+export { renderComponent, renderIcon, renderButton, renderCheckbox, renderColorField, renderDateField, renderDatetimeField, renderFab, renderIconButton, renderMonthField, renderNumberField, renderPasswordField, renderRadioButton, renderSearchField, renderSegmentedButton, renderSelectField, renderSwitch, renderTextField, renderTextareaField, renderTimeField, renderWeekField };

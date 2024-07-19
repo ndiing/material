@@ -6,6 +6,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
+
     /**
      * Defines the actions available for the password field.
      * @returns {Object[]} Array of action objects.
@@ -25,7 +26,6 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      */
     constructor() {
         super();
-
         this.type = "password";
     }
 
@@ -34,7 +34,6 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
-
         super.handleTextFieldNativeClick();
     }
 
@@ -44,7 +43,6 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-password-field");
     }
 
@@ -55,11 +53,8 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
-
         this.type = this.type === "password" ? "text" : "password";
     }
 }
-
 customElements.define("md-password-field", MDPasswordFieldComponent);
-
 export { MDPasswordFieldComponent };

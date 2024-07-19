@@ -6,13 +6,13 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDTextareaFieldComponent extends MDTextFieldComponent {
+
     /**
      * Initializes the component.
      * Sets the type of the component to "textarea".
      */
     constructor() {
         super();
-
         this.type = "textarea";
     }
 
@@ -23,7 +23,6 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-textarea-field");
     }
 
@@ -32,11 +31,8 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
-
         super.handleTextFieldNativeClick();
     }
 }
-
 customElements.define("md-textarea-field", MDTextareaFieldComponent);
-
 export { MDTextareaFieldComponent };

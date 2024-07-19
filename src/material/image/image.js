@@ -12,6 +12,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDImageComponent#onImageNativeError - Fired when there is an error loading the image.
  */
 class MDImageComponent extends MDComponent {
+
     /**
      * Properties for the md-image component.
      * @property {String} src - The source URL of the image.
@@ -27,7 +28,6 @@ class MDImageComponent extends MDComponent {
         ratio: { type: String },
         variant: { type: String },
     };
-
     variants = ["rounded"];
 
     /**
@@ -36,11 +36,9 @@ class MDImageComponent extends MDComponent {
      */
     get imageNativeStyle() {
         let style = {};
-
         if (this.ratio) {
             style["aspect-ratio"] = this.ratio;
         }
-
         if (this.variant && this.variant.includes("rounded")) {
             if (this.ratio) {
                 style["border-radius"] = `50% / calc(50% * ${this.ratio})`;
@@ -50,7 +48,6 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
-
     imageNative = createRef();
 
     /**
@@ -59,9 +56,7 @@ class MDImageComponent extends MDComponent {
      */
     constructor() {
         super();
-
         this.loading = "lazy";
-
         this.alt = "alt";
     }
 
@@ -80,7 +75,6 @@ class MDImageComponent extends MDComponent {
                 .alt="${ifDefined(this.alt)}"
                 .loading="${ifDefined(this.loading)}"
                 ${ref(this.imageNative)}
-
                 @load="${this.handleImageNativeLoad}"
                 @error="${this.handleImageNativeError}"
             >
@@ -94,7 +88,6 @@ class MDImageComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-image");
     }
 
@@ -106,10 +99,8 @@ class MDImageComponent extends MDComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             const variants = (this.variant ?? "").split(" ").filter(Boolean);
-
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-image--${variant}`, variants.includes(variant));
             });
@@ -134,11 +125,8 @@ class MDImageComponent extends MDComponent {
      */
     handleImageNativeError(event) {
         this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
-
         this.emit("onImageNativeError", event);
     }
 }
-
 customElements.define("md-image", MDImageComponent);
-
 export { MDImageComponent };

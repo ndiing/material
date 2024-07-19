@@ -1,8 +1,10 @@
+
 /**
  * Represents a data table column with gesture controls for dragging and resizing.
  * @extends HTMLTableCellElement
  */
 class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
+
     /**
      * Initializes the component and sets up the gesture controller.
      */
@@ -27,7 +29,5 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      */
     addController() {}
 }
-
 customElements.define("md-data-table-native-column", MDDataTableNativeColumnComponent, { extends: "th" });
-
 export { MDDataTableNativeColumnComponent };
