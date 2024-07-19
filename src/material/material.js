@@ -27,6 +27,25 @@ import { MDIconButtonComponent } from "./icon-button/icon-button.js";
 import { MDSegmentedButtonComponent } from "./segmented-button/segmented-button.js";
 import { MDFabComponent } from "./fab/fab.js";
 
+import { MDCardComponent } from "./card/card.js";
+import { MDScrimComponent } from "./scrim/scrim.js";
+import { MDSheetComponent } from "./sheet/sheet.js";
+import { MDDialogComponent } from "./dialog/dialog.js";
+import { MDTopAppBarComponent } from "./top-app-bar/top-app-bar.js";
+import { MDSideSheetComponent } from "./side-sheet/side-sheet.js";
+import { MDBottomSheetComponent } from "./bottom-sheet/bottom-sheet.js";
+import { MDSnackbarComponent } from "./snackbar/snackbar.js";
+import { MDTooltipComponent } from "./tooltip/tooltip.js";
+import { MDBottomAppBarComponent } from "./bottom-app-bar/bottom-app-bar.js";
+
+import { MDDatetimePickerComponent } from "./datetime-picker/datetime-picker.js";
+import { MDDatePickerComponent } from "./date-picker/date-picker.js";
+import { MDMonthPickerComponent } from "./month-picker/month-picker.js";
+import { MDTimePickerComponent } from "./time-picker/time-picker.js";
+import { MDWeekPickerComponent } from "./week-picker/week-picker.js";
+import { MDColorPickerComponent } from "./color-picker/color-picker.js";
+import { MDEmojiPickerComponent } from "./emoji-picker/emoji-picker.js";
+
 import { MDFormComponent } from "./form/form.js";
 import { MDCheckboxComponent } from "./checkbox/checkbox.js";
 import { MDRadioButtonComponent } from "./radio-button/radio-button.js";
@@ -49,25 +68,6 @@ import { MDSelectFieldComponent } from "./select-field/select-field.js";
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
 
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
-
-import { MDCardComponent } from "./card/card.js";
-import { MDScrimComponent } from "./scrim/scrim.js";
-import { MDSheetComponent } from "./sheet/sheet.js";
-import { MDDialogComponent } from "./dialog/dialog.js";
-import { MDTopAppBarComponent } from "./top-app-bar/top-app-bar.js";
-import { MDSideSheetComponent } from "./side-sheet/side-sheet.js";
-import { MDBottomSheetComponent } from "./bottom-sheet/bottom-sheet.js";
-import { MDSnackbarComponent } from "./snackbar/snackbar.js";
-import { MDTooltipComponent } from "./tooltip/tooltip.js";
-import { MDBottomAppBarComponent } from "./bottom-app-bar/bottom-app-bar.js";
-
-import { MDDatetimePickerComponent } from "./datetime-picker/datetime-picker.js";
-import { MDDatePickerComponent } from "./date-picker/date-picker.js";
-import { MDMonthPickerComponent } from "./month-picker/month-picker.js";
-import { MDTimePickerComponent } from "./time-picker/time-picker.js";
-import { MDWeekPickerComponent } from "./week-picker/week-picker.js";
-import { MDColorPickerComponent } from "./color-picker/color-picker.js";
-import { MDEmojiPickerComponent } from "./emoji-picker/emoji-picker.js";
 
 import { MDListItemComponent } from "./list-item/list-item.js";
 import { MDListComponent } from "./list/list.js";

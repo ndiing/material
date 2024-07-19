@@ -18,6 +18,25 @@
 @import "./segmented-button/segmented-button.scss";
 @import "./fab/fab.scss";
 
+@import "./card/card.scss";
+@import "./scrim/scrim.scss";
+@import "./sheet/sheet.scss";
+@import "./dialog/dialog.scss";
+@import "./top-app-bar/top-app-bar.scss";
+@import "./side-sheet/side-sheet.scss";
+@import "./bottom-sheet/bottom-sheet.scss";
+@import "./snackbar/snackbar.scss";
+@import "./tooltip/tooltip.scss";
+@import "./bottom-app-bar/bottom-app-bar.scss";
+
+@import "./datetime-picker/datetime-picker.scss";
+@import "./date-picker/date-picker.scss";
+@import "./month-picker/month-picker.scss";
+@import "./time-picker/time-picker.scss";
+@import "./week-picker/week-picker.scss";
+@import "./color-picker/color-picker.scss";
+@import "./emoji-picker/emoji-picker.scss";
+
 @import "./form/form.scss";
 @import "./checkbox/checkbox.scss";
 @import "./radio-button/radio-button.scss";
@@ -40,25 +59,6 @@
 @import "./progress-indicator/progress-indicator.scss";
 
 @import "./toolbar/toolbar.scss";
-
-@import "./card/card.scss";
-@import "./scrim/scrim.scss";
-@import "./sheet/sheet.scss";
-@import "./dialog/dialog.scss";
-@import "./top-app-bar/top-app-bar.scss";
-@import "./side-sheet/side-sheet.scss";
-@import "./bottom-sheet/bottom-sheet.scss";
-@import "./snackbar/snackbar.scss";
-@import "./tooltip/tooltip.scss";
-@import "./bottom-app-bar/bottom-app-bar.scss";
-
-@import "./datetime-picker/datetime-picker.scss";
-@import "./date-picker/date-picker.scss";
-@import "./month-picker/month-picker.scss";
-@import "./time-picker/time-picker.scss";
-@import "./week-picker/week-picker.scss";
-@import "./color-picker/color-picker.scss";
-@import "./emoji-picker/emoji-picker.scss";
 
 @import "./list/list.scss";
 @import "./tree/tree.scss";

@@ -18,6 +18,7 @@ class MDButtonComponent extends MDComponent {
      * @property {Boolean} disabled - Indicates whether the button is disabled.
      */
     static properties = {
+        ...MDComponent.properties,
         variant: { type: String },
         type: { type: String },
         icon: { type: String },

@@ -424,7 +424,24 @@ class DevDataTable extends MDComponent {
             return acc;
         }, []);
 
-        this.toolbarItems = [{ component: "button", disabled: true, icon: "add_circle", label: "New" }, { component: "divider", variant: "vertical" }, { component: "icon-button", disabled: true, icon: "content_cut" }, { component: "icon-button", disabled: true, icon: "content_copy" }, { component: "icon-button", disabled: true, icon: "content_paste" }, { component: "icon-button", disabled: true, icon: "edit" }, { component: "icon-button", disabled: true, icon: "share" }, { component: "icon-button", disabled: true, icon: "delete" }, { component: "divider", variant: "vertical" }, { component: "button", icon: "swap_vert", label: "Sort" }, { component: "button", icon: "view_list", label: "View" }, { component: "divider", variant: "vertical" }, { component: "icon-button", icon: "more_vert" }, { component: "spacer" }, { component: "button", icon: "side_navigation", label: "Details" }];
+        this.toolbarItems = [
+            //
+            { component: "button", _disabled: true, icon: "add_circle", label: "New", tooltip: "New" },
+            { component: "divider", variant: "vertical" },
+            { component: "icon-button", _disabled: true, icon: "content_cut", tooltip:'Cut' },
+            { component: "icon-button", _disabled: true, icon: "content_copy", tooltip:'Copy' },
+            { component: "icon-button", _disabled: true, icon: "content_paste", tooltip:'Paste' },
+            { component: "icon-button", _disabled: true, icon: "edit", tooltip:'Edit' },
+            { component: "icon-button", _disabled: true, icon: "share", tooltip:'Share' },
+            { component: "icon-button", _disabled: true, icon: "delete", tooltip:'Delete' },
+            { component: "divider", variant: "vertical" },
+            { component: "button", icon: "swap_vert", label: "Sort", tooltip: "Sort" },
+            { component: "button", icon: "view_list", label: "View", tooltip: "View" },
+            { component: "divider", variant: "vertical" },
+            { component: "icon-button", icon: "more_vert", tooltip:'More' },
+            { component: "spacer" },
+            { component: "button", icon: "side_navigation", label: "Details", tooltip: "Details" },
+        ];
     }
 
     render() {

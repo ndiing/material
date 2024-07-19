@@ -6,6 +6,10 @@ import { updateWhenLocaleChanges } from "@lit/localize";
  * @extends LitElement
  */
 class MDComponent extends LitElement {
+    static properties = {
+        tooltip: { type: String },
+    };
+
     /**
      * Initializes the component.
      */
@@ -20,6 +24,49 @@ class MDComponent extends LitElement {
      */
     createRenderRoot() {
         return this;
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.on("pointerenter", this.handlePointerenter);
+        this.on("pointerleave", this.handlePointerleave);
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.off("pointerenter", this.handlePointerenter);
+        this.off("pointerleave", this.handlePointerleave);
+    }
+
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        // if(changedProperties.has('tooltip')){
+        //     if(this.tooltip){
+        //         console.log(this.tooltip)
+        //     }else{
+        //         console.log(this.tooltip)
+        //     }
+        // }
+    }
+
+    async handlePointerenter(event) {
+        if (this.tooltip && !this.tooltipElement) {
+            this.tooltipElement = document.createElement("md-tooltip");
+            this.tooltipElement.childNodes_ = [this.tooltip];
+            this.tooltipElement.variant = "plain";
+            document.body.append(this.tooltipElement);
+            await this.tooltipElement.updateComplete;
+            this.tooltipElement.show(this);
+        }
+    }
+
+    handlePointerleave(event) {
+        if (this.tooltip && this.tooltipElement) {
+            this.tooltipElement.remove();
+            this.tooltipElement = null;
+        }
     }
 
     /**

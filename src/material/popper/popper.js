@@ -32,14 +32,14 @@ class MDPopperController {
      */
     getRect(element, absoluteRect = { left: 0, top: 0 }) {
         let width, height, left, top, right, bottom;
-        if (element instanceof HTMLElement) {
-            ({ width, height, left, top, right, bottom } = element.getBoundingClientRect());
-        } else {
+        if (element instanceof Event) {
             const event = element;
             width = event.width;
             height = event.height;
             left = event.clientX;
             top = event.clientY;
+        } else {
+            ({ width, height, left, top, right, bottom } = element.getBoundingClientRect());
         }
         left -= absoluteRect.left;
         top -= absoluteRect.top;
