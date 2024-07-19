@@ -17,6 +17,7 @@ class MDSheetComponent extends MDCardComponent {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
+
     variants = ["north", "east", "south", "west", "modal"];
 
     /**
@@ -30,19 +31,19 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
+     * Shows the sheet as a modal.
+     */
+    showModal() {
+        this.show(true);
+    }
+
+    /**
      * Handles click events on the sheet scrim.
      * @private
      */
     handleSheetScrimClick(event) {
         this.close();
         this.emit("onSheetScrimClick", event);
-    }
-
-    /**
-     * Shows the sheet as a modal.
-     */
-    showModal() {
-        this.show(true);
     }
 
     /**

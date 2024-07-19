@@ -18,6 +18,7 @@ class MDTreeComponent extends MDComponent {
         list: { type: Array },
         variant: { type: String },
     };
+
     variants = ["plain", "accordion", "tree", "level"];
 
     /**

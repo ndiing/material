@@ -10,6 +10,7 @@ class MDTooltipComponent extends MDSheetComponent {
     /**
      * Variants of the tooltip component.
      */
+
     variants = ["plain", "rich"];
 
     /**

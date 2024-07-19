@@ -6,6 +6,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @extends MDSheetComponent
  */
 class MDTopAppBarComponent extends MDSheetComponent {
+
     variants = ["center", "small", "medium", "large"];
 
     /**

@@ -28,6 +28,7 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
+
     variants = ["elevated", "filled", "outlined"];
 
     /**

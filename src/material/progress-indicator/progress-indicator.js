@@ -24,6 +24,7 @@ class MDProgressIndicatorComponent extends MDComponent {
      * Array of supported variants for the progress indicator.
      * @type {Array<String>}
      */
+
     variants = ["circular", "linear"];
 
     /**

@@ -27,6 +27,7 @@ class MDImageComponent extends MDComponent {
         ratio: { type: String },
         variant: { type: String },
     };
+
     variants = ["rounded"];
 
     /**
