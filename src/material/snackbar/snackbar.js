@@ -19,6 +19,7 @@ class MDSnackbarComponent extends MDSheetComponent {
     /**
      * Queue for managing sequential showing of snackbar instances.
      */
+
     static queue = createQueue();
 
     /**
@@ -27,6 +28,7 @@ class MDSnackbarComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-snackbar");
     }
 
@@ -44,11 +46,15 @@ class MDSnackbarComponent extends MDSheetComponent {
                 const handleSnackbarClose = (event) => {
                     if (event.animationName === "snackbarOut") {
                         window.clearTimeout(this.timeout);
+
                         resolve();
                     }
                 };
+
                 this.once("animationend", handleSnackbarClose);
+
                 super.show();
+
                 this.emit("onSnackbarShow", this);
             });
         });
@@ -59,8 +65,11 @@ class MDSnackbarComponent extends MDSheetComponent {
      */
     close() {
         super.close();
+
         this.emit("onSnackbarClose", this);
     }
 }
+
 customElements.define("md-snackbar", MDSnackbarComponent);
+
 export { MDSnackbarComponent };

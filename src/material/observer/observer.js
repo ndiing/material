@@ -3,6 +3,7 @@
  */
 class MDObserver {
     handle;
+
     isObserving = false;
 
     /**
@@ -21,6 +22,7 @@ class MDObserver {
      */
     executeCallback(time) {
         this.handle = undefined;
+
         this.callback(time);
 
         if (this.isObserving) {
@@ -44,6 +46,7 @@ class MDObserver {
     observe() {
         if (!this.isObserving) {
             this.isObserving = true;
+
             this.scheduleNextFrame();
         }
     }
@@ -54,8 +57,10 @@ class MDObserver {
     disconnect() {
         if (this.handle) {
             window.cancelAnimationFrame(this.handle);
+
             this.handle = undefined;
         }
+
         this.isObserving = false;
     }
 }

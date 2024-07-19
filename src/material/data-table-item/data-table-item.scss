@@ -3,7 +3,9 @@
     align-items: center;
     padding: 8px 24px;
     gap: 0 24px;
+
     background-color: var(--md-sys-color-surface-container-lowest);
+
     color: var(--md-sys-color-on-surface-variant);
 }
 
@@ -38,6 +40,7 @@
 
 .md-data-table__label-primary {
     @include typescale-body-medium();
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,6 +48,7 @@
 
 .md-data-table__label-secondary {
     @include typescale-body-medium();
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

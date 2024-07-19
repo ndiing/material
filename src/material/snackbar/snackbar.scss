@@ -34,26 +34,37 @@
 .md-snackbar {
     display: inline-flex;
     width: 344px;
+
     border-radius: var(--md-sys-shape-corner-extra-small);
+
     background-color: var(--md-sys-color-inverse-surface);
+
     color: var(--md-sys-color-inverse-on-surface);
+
     box-shadow: var(--md-sys-elevation-level3);
+
     position: absolute;
     left: 8px;
     bottom: 8px;
     z-index: 7;
     visibility: hidden;
+
     animation-name: var(--md-comp-sheet-animation, snackbarOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     &[open] {
         visibility: visible;
+
         animation-name: var(--md-comp-sheet-animation, snackbarIn);
 
         > * {
             animation-name: var(--md-comp-sheet-animation, snackbarWrapperIn);
+
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
             animation-duration: var(--md-sys-motion-duration-short4);
         }
     }
@@ -84,6 +95,7 @@
 
     .md-card__button {
         --md-comp-button-density: -2;
+
         color: var(--md-sys-color-inverse-primary);
 
         &.md-ripple {
@@ -95,11 +107,13 @@
 
     .md-card__icon-button {
         margin: 0 4px;
+
         color: var(--md-sys-color-inverse-on-surface);
 
         &.md-ripple {
             &::after {
                 width: 32px;
+
                 background-color: var(--md-sys-color-surface);
             }
         }

@@ -84,6 +84,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     constructor() {
         super();
+
         this.tabs = {
             "Frequently Used": "🕛",
             "Smileys and emotions": "😀",
@@ -117,6 +118,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
                             @click="${this.handleEmojiPickerTabsItemClick}"
                         >
                             ${item.emoji?html`<md-emoji class="md-emoji-picker__tabs-emoji md-emoji" emoji="${item.emoji}"></md-emoji>`:nothing}
+
                         </div>
                     `)}
                 </div>
@@ -163,17 +165,25 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-emoji-picker");
+
         this.store = new MDStore(data);
+
         const { docs } = this.store.getAll();
+
         const { dataTabs, dataRows } = this.generateTabsAndRows(this.rows.concat(docs), this.tabs);
+
         this.dataTabs = dataTabs;
+
         this.dataRows = dataRows;
+
         this.virtual = new MDVirtualController(this, {
             rowTotal: this.dataRows.length,
             rowHeight: 48,
             rowBuffer: this.dataTabs.length,
         });
+
         this.on("onTextFieldNativeInput", this.handleEmojiPickerTextFieldNativeInput);
     }
 
@@ -183,6 +193,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         this.off("onTextFieldNativeInput", this.handleEmojiPickerTextFieldNativeInput);
     }
 
@@ -193,9 +204,13 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     handleEmojiPickerTabsItemClick(event) {
         const data = event.currentTarget.data;
+
         const { viewport } = this.virtual;
+
         viewport.scrollTop = data.rowIndex * 48 + data.index * 48;
+
         this.updateEmojiPickerTabsIndicator(data);
+
         this.emit("onEmojiPickerTabsItemClick", event);
     }
 
@@ -208,12 +223,19 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         if (!data) {
             return;
         }
+
         let left = 12 + 12 + data.index * 48;
+
         let scrollWidth = 12 + this.dataTabs.length * 48 + 12;
+
         let clientWidth = 360;
+
         let right = scrollWidth - left - 24 - (scrollWidth - clientWidth);
+
         this.emojiPickerTabs.scrollLeft = scrollWidth - clientWidth - right + 24;
+
         this.style.setProperty("--md-comp-emoji-picker-tabs-indicator-left", left + "px");
+
         this.style.setProperty("--md-comp-emoji-picker-tabs-indicator-right", right + "px");
     }
 
@@ -226,21 +248,27 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.virtualRows = this.dataRows.filter((row, index) => {
             return (index >= this.virtual.rowStart && index < this.virtual.rowEnd) || !!row[0]?.label;
         });
+
         this.requestUpdate();
+
         await this.updateComplete;
+
         const scrollTop = Math.floor(this.virtual.viewport.scrollTop / this.virtual.options.rowHeight);
 
         const data = this.dataTabs.find((item, index, array) => {
             if (array[index + 1]) {
                 return scrollTop >= item.rowIndex && scrollTop < array[index + 1].rowIndex;
             }
+
             return scrollTop >= item.rowIndex;
         });
 
         if (this.selectedTab !== data) {
             this.selectedTab = data;
+
             this.updateEmojiPickerTabsIndicator(data);
         }
+
         this.emit("onEmojiPickerViewportVirtualScroll", event);
     }
 
@@ -251,16 +279,25 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     handleEmojiPickerTextFieldNativeInput(event) {
         const value = event.detail.currentTarget.value;
+
         const { docs } = this.store.getAll({
             shortcodes_like: value,
         });
+
         const data = value ? docs : this.rows.concat(docs);
+
         const { dataTabs, dataRows } = this.generateTabsAndRows(data, this.tabs);
+
         this.dataTabs = dataTabs;
+
         this.dataRows = dataRows;
+
         this.virtual.options.rowTotal = this.dataRows.length;
+
         this.virtual.options.rowBuffer = this.dataTabs.length;
+
         this.virtual.handleVirtualScroll();
+
         this.emit("onEmojiPickerTextFieldNativeInput", event);
     }
 
@@ -287,23 +324,33 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             if (!acc[group]) {
                 acc[group] = [];
             }
+
             acc[group].push({ emoji });
+
             return acc;
         }, {});
+
         const dataTabs = [];
+
         const dataRows = [];
+
         let rowIndex = 0;
+
         let index = 0;
 
         for (const name in grouped) {
             const value = grouped[name];
+
             dataTabs.push({ label: name, emoji: tabs[name] || value[0].emoji, rowIndex, index });
+
             dataRows.push([{ label: name }]);
+
             ++rowIndex;
             ++index;
 
             for (let i = 0; i < value.length; i += 7) {
                 dataRows.push(value.slice(i, i + 7));
+
                 ++rowIndex;
             }
         }
@@ -321,6 +368,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         } else if (event.currentTarget.name === "next") {
             this.handleEmojiPickerIconButtonNextClick(event);
         }
+
         this.emit("onEmojiPickerIconButtonClick", event);
     }
 
@@ -337,6 +385,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         } else if (event.currentTarget.name === "ok") {
             this.handleEmojiPickerButtonOkClick(event);
         }
+
         this.emit("onEmojiPickerButtonClick", event);
     }
 
@@ -347,6 +396,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     handleEmojiPickerIconButtonPrevClick(event) {
         this.emit("onEmojiPickerSelection", event);
+
         this.emit("onEmojiPickerIconButtonPrevClick", event);
     }
 
@@ -357,6 +407,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     handleEmojiPickerIconButtonNextClick(event) {
         this.emit("onEmojiPickerSelection", event);
+
         this.emit("onEmojiPickerIconButtonNextClick", event);
     }
 
@@ -394,6 +445,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     showModal(button, options) {
         this.updatePosition(button, options);
+
         super.showModal();
     }
 
@@ -404,6 +456,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      */
     show(button, options) {
         this.updatePosition(button, options);
+
         super.show();
     }
 
@@ -430,5 +483,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         });
     }
 }
+
 customElements.define("md-emoji-picker", MDEmojiPickerComponent);
+
 export { MDEmojiPickerComponent };

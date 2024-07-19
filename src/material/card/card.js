@@ -56,10 +56,15 @@ class MDCardComponent extends MDComponent {
         this.childNodes_ = Array.from(this.childNodes);
 
         this.renderButton = this.renderButton.bind(this);
+
         this.renderFab = this.renderFab.bind(this);
+
         this.renderIcon = this.renderIcon.bind(this);
+
         this.renderIconButton = this.renderIconButton.bind(this);
+
         this.renderPagination = this.renderPagination.bind(this);
+
         this.renderSearchField = this.renderSearchField.bind(this);
     }
 
@@ -213,6 +218,8 @@ class MDCardComponent extends MDComponent {
             ['pagination', () => this.renderPagination(item)],
             ['search-field', () => this.renderSearchField(item)],
             ['spacer', () => html`<div class="md-pane__spacer"></div>`],
+
+
         ], () => defaultAction(item));
     }
 
@@ -227,6 +234,7 @@ class MDCardComponent extends MDComponent {
                 ${this.leadingActions?.length ? html`
                     <div class="md-card__actions">
                         ${this.leadingActions.map(item => this.renderAction(item, this.renderIconButton))}
+
                     </div>
                 ` : nothing}
                 ${this.label || this.subLabel ? html`
@@ -253,6 +261,7 @@ class MDCardComponent extends MDComponent {
         return this.childNodes_?.length || this.actions?.length ? html`
             <div class="md-card__body">
                 ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
+
                 ${this.actions?.length ? html`
                     <div class="md-card__footer">
                         ${this.actions.map(item => this.renderAction(item, this.renderButton))}
@@ -270,6 +279,7 @@ class MDCardComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.renderHeader()}
+
             ${this.renderBody()}
         `;
     }
@@ -280,6 +290,7 @@ class MDCardComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-card");
     }
 
@@ -315,5 +326,7 @@ class MDCardComponent extends MDComponent {
         this.emit("onCardIconButtonClick", event);
     }
 }
+
 customElements.define("md-card", MDCardComponent);
+
 export { MDCardComponent };

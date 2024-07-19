@@ -2,18 +2,28 @@
     --md-comp-sheet-width: 80px;
     grid-area: west;
     display: inline-flex;
+
     min-width: var(--md-comp-sheet-width);
+
     margin-left: calc(0px - var(--md-comp-sheet-width));
+
     border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
+
     background-color: var(--md-sys-color-surface);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     animation-name: var(--md-comp-sheet-animation, sheetWestOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     &[open] {
         margin-left: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetWestIn);
     }
 
@@ -136,7 +146,9 @@
 
     .md-tree__badge {
         margin-top: -8px;
+
         transform: translate3d(-0%, -50%, 0);
+
         position: absolute;
         left: 50%;
         top: 50%;

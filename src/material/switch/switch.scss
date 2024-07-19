@@ -12,7 +12,9 @@
     appearance: none;
     width: 52px;
     height: 32px;
+
     transform: translate3d(-50%, -50%, 0);
+
     position: absolute;
     left: 50%;
     top: 50%;
@@ -21,6 +23,7 @@
     &:checked {
         + .md-switch__track {
             background-color: var(--md-sys-color-primary);
+
             border-color: var(--md-sys-color-primary);
 
             .md-switch__thumb {
@@ -28,7 +31,9 @@
                 height: 24px;
                 border-radius: 12px;
                 left: 24px;
+
                 background-color: var(--md-sys-color-on-primary);
+
                 color: var(--md-sys-color-primary);
             }
         }
@@ -62,10 +67,15 @@
     width: 52px;
     height: 32px;
     border-radius: 16px;
+
     border: 2px solid var(--md-sys-color-outline);
+
     background-color: var(--md-sys-color-surface-container-low);
+
     transition-property: background-color, border-color;
+
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     transition-duration: var(--md-sys-motion-duration-short4);
 }
 
@@ -73,13 +83,18 @@
     width: 16px;
     height: 16px;
     border-radius: 8px;
+
     background-color: var(--md-sys-color-outline);
+
     color: var(--md-sys-color-surface-container-low);
+
     font-size: 16px;
     position: absolute;
     left: 8px;
     transition-property: left, background-color, color, width, height, border-radius;
+
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     transition-duration: var(--md-sys-motion-duration-short4);
 
     &.md-ripple {

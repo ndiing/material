@@ -5,14 +5,22 @@
     vertical-align: middle;
     width: 56px;
     height: 56px;
+
     border-radius: var(--md-sys-shape-corner-large);
+
     padding: 0 16px;
     gap: 0 8px;
+
     background-color: var(--md-sys-color-primary-container);
+
     color: var(--md-sys-color-on-primary-container);
+
     box-shadow: var(--md-sys-elevation-level1);
+
     transition-property: box-shadow;
+
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     transition-duration: var(--md-sys-motion-duration-short4);
 
     &.md-ripple--hover {
@@ -30,6 +38,7 @@
 
 .md-fab__label {
     @include typescale-label-large();
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -37,16 +46,19 @@
 
 .md-fab--surface {
     background-color: var(--md-sys-color-surface-container);
+
     color: var(--md-sys-color-on-surface-container);
 }
 
 .md-fab--secondary {
     background-color: var(--md-sys-color-secondary-container);
+
     color: var(--md-sys-color-on-secondary-container);
 }
 
 .md-fab--tertiary {
     background-color: var(--md-sys-color-tertiary-container);
+
     color: var(--md-sys-color-on-tertiary-container);
 }
 
@@ -69,12 +81,14 @@
 .md-fab--small {
     width: 40px;
     height: 40px;
+
     border-radius: var(--md-sys-shape-corner-medium);
 }
 
 .md-fab--large {
     width: 96px;
     height: 96px;
+
     border-radius: var(--md-sys-shape-corner-extra-large);
 
     .md-fab__icon {
@@ -87,6 +101,7 @@
 .md-fab--extended {
     width: auto;
     height: 56px;
+
     border-radius: var(--md-sys-shape-corner-large);
 
     .md-fab__icon {

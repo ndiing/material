@@ -33,7 +33,9 @@ class MDButtonComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.type = "button";
+
         this.ripple = new MDRippleController(this, {
             clipped: true,
             button: ".md-button__native",
@@ -52,6 +54,7 @@ class MDButtonComponent extends MDComponent {
                 .type="${this.type}"
             >
                 ${this.icon ? html`<div class="md-icon md-button__icon">${this.icon}</div>` : nothing}
+
                 <div class="md-button__label">${this.label}</div>
             </button>
         `;
@@ -64,6 +67,7 @@ class MDButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-button");
     }
 
@@ -87,13 +91,17 @@ class MDButtonComponent extends MDComponent {
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
+
                 this.setAttribute("tabindex", "-1");
             } else {
                 this.removeAttribute("aria-disabled");
+
                 this.removeAttribute("tabindex");
             }
         }
     }
 }
+
 customElements.define("md-button", MDButtonComponent);
+
 export { MDButtonComponent };

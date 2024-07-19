@@ -1,26 +1,39 @@
 .md-bottom-sheet {
     display: inline-flex;
     max-width: 640px;
+
     max-height: calc(100% - 72px);
+
     width: 100%;
     margin: 72px auto 0 auto;
+
     transform: translate3d(0%, 100%, 0);
+
     border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
+
     background-color: var(--md-sys-color-surface-container-low);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 7;
+
     animation-name: var(--md-comp-sheet-animation, sheetSouthModalOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
+
         transform: translate3d(0, 0, 0);
+
         animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
     }
 

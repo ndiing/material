@@ -31,6 +31,7 @@ class MDIconButtonComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.ripple = new MDRippleController(this, {
             size: 40,
             centered: true,
@@ -44,6 +45,7 @@ class MDIconButtonComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
+
         return this.icon ? html`<md-icon class="md-icon-button__icon">${this.icon}</md-icon>` : nothing;
     }
 
@@ -54,7 +56,9 @@ class MDIconButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon-button");
+
         this.on("click", this.handleIconButtonClick);
     }
 
@@ -65,6 +69,7 @@ class MDIconButtonComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.off("click", this.handleIconButtonClick);
     }
 
@@ -88,9 +93,11 @@ class MDIconButtonComponent extends MDComponent {
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
+
                 this.setAttribute("tabindex", "-1");
             } else {
                 this.removeAttribute("aria-disabled");
+
                 this.removeAttribute("tabindex");
             }
         }
@@ -106,8 +113,11 @@ class MDIconButtonComponent extends MDComponent {
         if (this.variant && this.variant.includes("toggle")) {
             this.selected = !this.selected;
         }
+
         this.emit("onIconButtonClick", event);
     }
 }
+
 customElements.define("md-icon-button", MDIconButtonComponent);
+
 export { MDIconButtonComponent };

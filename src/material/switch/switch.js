@@ -67,6 +67,7 @@ class MDSwitchComponent extends MDComponent {
                 .checked="${ifDefined(this.checked)}"
                 ?disabled="${ifDefined(this.disabled)}"
                 ${ref(this.switchNative)}
+
                 @input="${this.handleSwitchNativeInput}"
                 @reset="${this.handleSwitchNativeReset}"
             >
@@ -81,6 +82,7 @@ class MDSwitchComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-switch");
 
         if (this.defaultValue === undefined) {
@@ -104,8 +106,11 @@ class MDSwitchComponent extends MDComponent {
      */
     handleSwitchNativeInput(event) {
         this.value = this.switchNative.value.value;
+
         this.checked = this.switchNative.value.checked;
+
         this.indeterminate = this.switchNative.value.indeterminate;
+
         this.emit("onSwitchNativeInput", event);
     }
 
@@ -117,13 +122,21 @@ class MDSwitchComponent extends MDComponent {
      */
     handleSwitchNativeReset(event) {
         this.switchNative.value.value = this.defaultValue;
+
         this.switchNative.value.checked = this.defaultChecked;
+
         this.switchNative.value.indeterminate = this.defaultIndeterminate;
+
         this.value = this.defaultValue;
+
         this.checked = this.defaultChecked;
+
         this.indeterminate = this.defaultIndeterminate;
+
         this.emit("onSwitchNativeReset", event);
     }
 }
+
 customElements.define("md-switch", MDSwitchComponent);
+
 export { MDSwitchComponent };

@@ -1,14 +1,19 @@
 @keyframes dialogIn {
     0% {
         visibility: visible;
+
         height: calc(var(--md-comp-sheet-height) - (56px * 2));
+
         transform: translate3d(-50%, calc(-50% - (56px * 2)), 0);
+
         opacity: 0;
     }
 
     100% {
         height: var(--md-comp-sheet-height);
+
         transform: translate3d(-50%, -50%, 0);
+
         opacity: 1;
     }
 }
@@ -16,13 +21,17 @@
 @keyframes dialogOut {
     0% {
         visibility: visible;
+
         transform: translate3d(-50%, -50%, 0);
+
         opacity: 1;
     }
 
     100% {
         visibility: hidden;
+
         transform: translate3d(-50%, calc(-50% - (56px * 2)), 0);
+
         opacity: 0;
     }
 }
@@ -50,6 +59,7 @@
 @keyframes dialogFullIn {
     0% {
         visibility: visible;
+
         transform: translate3d(-50%, -100%, 0);
     }
 
@@ -61,11 +71,13 @@
 @keyframes dialogFullOut {
     0% {
         visibility: visible;
+
         transform: translate3d(-50%, -50%, 0);
     }
 
     100% {
         visibility: hidden;
+
         transform: translate3d(-50%, 50%, 0);
     }
 }
@@ -74,33 +86,47 @@
     display: inline-flex;
     min-width: 280px;
     max-width: 560px;
+
     transform: translate3d(-50%, -50%, 0);
+
     border-radius: var(--md-sys-shape-corner-extra-large);
+
     background-color: var(--md-sys-color-surface-container-high);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level3);
+
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 7;
     visibility: hidden;
+
     animation-name: var(--md-comp-sheet-animation, dialogOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     .md-card__inner {
         overflow: hidden;
+
         animation-name: var(--md-comp-sheet-animation, dialogInnerOut);
+
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
         animation-duration: var(--md-sys-motion-duration-short4);
     }
 
     &[open] {
         visibility: visible;
+
         animation-name: var(--md-comp-sheet-animation, dialogIn);
 
         .md-card__inner {
             overflow: auto;
+
             animation-name: var(--md-comp-sheet-animation, dialogInnerIn);
         }
     }
@@ -148,10 +174,15 @@
     width: 100%;
     height: 100%;
     max-width: 100%;
+
     border-radius: var(--md-sys-shape-corner-none);
+
     background-color: var(--md-sys-color-surface);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     animation-name: var(--md-comp-sheet-animation, dialogFullOut);
 
     &[open] {

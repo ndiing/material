@@ -10,6 +10,7 @@ class MDTooltipComponent extends MDSheetComponent {
     /**
      * Variants of the tooltip component.
      */
+
     variants = ["plain", "rich"];
 
     /**
@@ -17,6 +18,7 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     constructor() {
         super();
+
         this.popper = new MDPopperController(this, {});
     }
 
@@ -26,6 +28,7 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-tooltip");
     }
 
@@ -36,6 +39,7 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     showModal(button, options) {
         this.updatePosition(button, options);
+
         super.showModal();
     }
 
@@ -46,6 +50,7 @@ class MDTooltipComponent extends MDSheetComponent {
      */
     show(button, options) {
         this.updatePosition(button, options);
+
         super.show();
     }
 
@@ -70,5 +75,7 @@ class MDTooltipComponent extends MDSheetComponent {
         });
     }
 }
+
 customElements.define("md-tooltip", MDTooltipComponent);
+
 export { MDTooltipComponent };

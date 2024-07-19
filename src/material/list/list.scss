@@ -45,12 +45,14 @@
 
 .md-list__label-primary {
     @include typescale-body-large();
+
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .md-list__label-secondary {
     @include typescale-body-medium();
+
     overflow: hidden;
     text-overflow: ellipsis;
 }

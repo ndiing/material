@@ -36,6 +36,7 @@ class MDChipComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
@@ -49,6 +50,7 @@ class MDChipComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.selected ? html`<div class="md-icon md-chip__icon">check</div>` : nothing}
+
             ${!this.selected && this.avatar ? html`<md-image class="md-chip__avatar" .src="${this.avatar}" .alt="${"Avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
             ${!this.selected && this.icon ? html`<div class="md-icon md-chip__icon">${this.icon}</div>` : nothing}
             <div class="md-chip__label">${this.label}</div>
@@ -62,6 +64,7 @@ class MDChipComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-chip");
     }
 
@@ -84,9 +87,11 @@ class MDChipComponent extends MDComponent {
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
+
                 this.setAttribute("tabindex", "-1");
             } else {
                 this.removeAttribute("aria-disabled");
+
                 this.removeAttribute("tabindex");
             }
         }
@@ -101,5 +106,7 @@ class MDChipComponent extends MDComponent {
         this.emit("onChipActionClick", event);
     }
 }
+
 customElements.define("md-chip", MDChipComponent);
+
 export { MDChipComponent };

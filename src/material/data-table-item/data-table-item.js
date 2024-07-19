@@ -62,6 +62,7 @@ class MDDataTableItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.leadingCheckbox ? this.renderCheckbox() : nothing}
+
             ${this.leadingRadioButton ? this.renderRadioButton() : nothing}
             ${this.leadingSwitch ? this.renderSwitch() : nothing}
             ${this.avatar ? html`<md-image class="md-data-table__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
@@ -75,6 +76,7 @@ class MDDataTableItemComponent extends MDComponent {
                     ${isDefined(this.label) || this.subLabel ? html`
                         <div class="md-data-table__label">
                             ${isDefined(this.label) ? html`<div class="md-data-table__label-primary">${this.label}</div>` : nothing}
+
                             ${this.subLabel ? html`<div class="md-data-table__label-secondary">${this.subLabel}</div>` : nothing}
                         </div>
                         ${this.sortable ? html`<div class="md-icon md-data-table__icon">${this.sortableIcon}</div>` : nothing}
@@ -92,6 +94,7 @@ class MDDataTableItemComponent extends MDComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-data-table__item");
     }
 
@@ -100,8 +103,11 @@ class MDDataTableItemComponent extends MDComponent {
 
         if (changedProperties.has("subLabel")) {
             await this.updateComplete;
+
             const secondary = this.querySelector(".md-data-table__label-secondary");
+
             const style = window.getComputedStyle(secondary);
+
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
 
             if (secondary.scrollHeight > lineHeight) {
@@ -118,5 +124,7 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 }
+
 customElements.define("md-data-table-item", MDDataTableItemComponent);
+
 export { MDDataTableItemComponent };

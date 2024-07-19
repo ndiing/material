@@ -8,6 +8,7 @@
 
 .md-pagination__label {
     margin-right: -20px;
+
     @include typescale-body-medium();
 }
 
@@ -20,5 +21,6 @@
 .md-pagination__text {
     margin-left: 8px;
     margin-right: 8px;
+
     @include typescale-body-medium();
 }

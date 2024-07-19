@@ -16,6 +16,7 @@ class MDPopperController {
      */
     constructor(host, options = {}) {
         this.host = host;
+
         this.options = {
             ...options,
         };
@@ -37,15 +38,24 @@ class MDPopperController {
             ({ width, height, left, top, right, bottom } = element.getBoundingClientRect());
         } else {
             const event = element;
+
             width = event.width;
+
             height = event.height;
+
             left = event.clientX;
+
             top = event.clientY;
         }
+
         left -= absoluteRect.left;
+
         top -= absoluteRect.top;
+
         right = left + width;
+
         bottom = top + height;
+
         return { width, height, left, top, right, bottom };
     }
 
@@ -57,14 +67,23 @@ class MDPopperController {
      */
     getAbsoluteRect(container) {
         const absolute = document.createElement("div");
+
         absolute.style.position = "absolute";
+
         absolute.style.left = "0px";
+
         absolute.style.top = "0px";
+
         absolute.style.right = "0px";
+
         absolute.style.bottom = "0px";
+
         container.parentElement.insertBefore(absolute, container.nextElementSibling);
+
         const { width, height, left, top, right, bottom } = absolute.getBoundingClientRect();
+
         absolute.remove();
+
         return { width, height, left, top, right, bottom };
     }
 
@@ -96,6 +115,7 @@ class MDPopperController {
         if (bottom > boundaryRect.bottom) {
             top = Math.min(bottom - containerRect.height, boundaryRect.bottom - containerRect.height);
         }
+
         return { left, top };
     }
 
@@ -133,12 +153,17 @@ class MDPopperController {
             offset: 0,
             ...options,
         };
+
         const container = options.container || this.host;
+
         const boundary = options.boundary || getBoundary(container);
 
         const absoluteRect = this.getAbsoluteRect(container);
+
         const containerRect = this.getRect(container, absoluteRect);
+
         const buttonRect = this.getRect(button, absoluteRect);
+
         const boundaryRect = this.getRect(boundary, absoluteRect);
 
         const offset = options.offset;
@@ -179,8 +204,11 @@ class MDPopperController {
 
         for (const placement of options.placements) {
             ({ left, top, x, y } = calc[placement]());
+
             right = left + containerRect.width;
+
             bottom = top + containerRect.height;
+
             const exceed = left < boundaryRect.left || top < boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
 
             if (!exceed) {
@@ -198,7 +226,9 @@ class MDPopperController {
         }));
 
         container.style.left = `${left}px`;
+
         container.style.top = `${top}px`;
+
         container.style.transformOrigin = `${x} ${y}`;
     }
 }

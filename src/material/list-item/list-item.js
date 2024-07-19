@@ -54,6 +54,7 @@ class MDListItemComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.ripple = new MDRippleController(this, {
             clipped: true,
         });
@@ -107,6 +108,7 @@ class MDListItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.leadingCheckbox ? this.renderCheckbox() : nothing}
+
             ${this.leadingRadioButton ? this.renderRadioButton() : nothing}
             ${this.leadingSwitch ? this.renderSwitch() : nothing}
             ${this.avatar ? html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
@@ -137,6 +139,7 @@ class MDListItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-list__item");
     }
 
@@ -151,8 +154,11 @@ class MDListItemComponent extends MDComponent {
 
         if (changedProperties.has("subLabel")) {
             await this.updateComplete;
+
             const secondary = this.querySelector(".md-list__label-secondary");
+
             const style = window.getComputedStyle(secondary);
+
             const lineHeight = parseFloat(style.getPropertyValue("line-height"));
 
             if (secondary.scrollHeight > lineHeight) {
@@ -169,5 +175,7 @@ class MDListItemComponent extends MDComponent {
         }
     }
 }
+
 customElements.define("md-list-item", MDListItemComponent);
+
 export { MDListItemComponent };

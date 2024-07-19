@@ -49,6 +49,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             label = stringifyTime(this.selection);
         }
+
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
@@ -57,6 +58,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     constructor() {
         super();
+
         this.index = 0;
     }
 
@@ -66,6 +68,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-time-picker");
     }
 
@@ -75,9 +78,13 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     updateDate() {
         const date = parseTime(this.value);
+
         this.selection.setHours(date.getHours());
+
         this.selection.setMinutes(date.getMinutes());
+
         this.selected.setHours(date.getHours());
+
         this.selected.setMinutes(date.getMinutes());
     }
 
@@ -89,13 +96,18 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
             this.selection.setHours(this.selection.getHours() - 1);
+
             this.selected.setHours(this.selection.getHours());
         } else if (this.index === 1) {
             this.selection.setMinutes(this.selection.getMinutes() - 1);
+
             this.selected.setMinutes(this.selection.getMinutes());
         }
+
         this.requestUpdate();
+
         this.emit("onTimePickerSelection", event);
+
         this.emit("onTimePickerIconButtonPrevClick", event);
     }
 
@@ -107,13 +119,18 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
             this.selection.setHours(this.selection.getHours() + 1);
+
             this.selected.setHours(this.selection.getHours());
         } else if (this.index === 1) {
             this.selection.setMinutes(this.selection.getMinutes() + 1);
+
             this.selected.setMinutes(this.selection.getMinutes());
         }
+
         this.requestUpdate();
+
         this.emit("onTimePickerSelection", event);
+
         this.emit("onTimePickerIconButtonNextClick", event);
     }
 
@@ -128,6 +145,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.index = 0;
         }
+
         this.emit("onTimePickerButtonLabelClick", event);
     }
 
@@ -138,9 +156,13 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
+
         this.updateDate();
+
         this.requestUpdate();
+
         this.index = 0;
+
         this.emit("onTimePickerButtonCancelClick", event);
     }
 
@@ -151,9 +173,13 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     handleCardButtonOkClick(event) {
         this.selected.setMinutes(this.selection.getMinutes());
+
         this.value = this.getValue();
+
         this.requestUpdate();
+
         this.index = 0;
+
         this.emit("onTimePickerButtonOkClick", event);
     }
 
@@ -164,10 +190,15 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
+
         this.selected.setHours(data.hour);
+
         this.selection.setHours(data.hour);
+
         this.index = 1;
+
         this.emit("onTimePickerSelection", event);
+
         this.emit("onTimePickerHourItemClick", event);
     }
 
@@ -178,12 +209,19 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
      */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
+
         this.selected.setHours(data.hour);
+
         this.selected.setMinutes(data.minute);
+
         this.selection.setHours(data.hour);
+
         this.selection.setMinutes(data.minute);
+
         this.index = 0;
+
         this.emit("onTimePickerSelection", event);
+
         this.emit("onTimePickerMinuteItemClick", event);
     }
 
@@ -196,5 +234,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         return stringifyTime(this.selected);
     }
 }
+
 customElements.define("md-time-picker", MDTimePickerComponent);
+
 export { MDTimePickerComponent };

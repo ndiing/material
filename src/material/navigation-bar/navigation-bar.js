@@ -45,8 +45,11 @@ class MDNavigationBarComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-navigation-bar");
     }
 }
+
 customElements.define("md-navigation-bar", MDNavigationBarComponent);
+
 export { MDNavigationBarComponent };

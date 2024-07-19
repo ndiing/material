@@ -1,8 +1,11 @@
 .md-week-picker {
     .md-datetime-picker__grid-row--days {
         border-radius: 20px;
+
         @include ripple();
+
         @include ripple-button();
+
         &:focus,
         &:hover,
         &:active,
@@ -38,6 +41,7 @@
 
         &[selected] {
             background-color: var(--md-sys-color-primary);
+
             color: var(--md-sys-color-on-primary);
         }
 

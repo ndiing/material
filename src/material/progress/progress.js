@@ -3,10 +3,15 @@
  */
 let requestId;
 let startTime;
+
 let pausedTime = 0;
+
 let totalDuration = 10000;
+
 let isAnimating = false;
+
 let elapsedTime = 0;
+
 let progressBar;
 
 /**
@@ -14,11 +19,17 @@ let progressBar;
  */
 function create() {
     progressBar = document.createElement("md-progress-indicator");
+
     progressBar.setAttribute("max", totalDuration);
+
     progressBar.setAttribute("value", 0);
+
     document.body.insertAdjacentElement("afterbegin", progressBar);
+
     progressBar.style.position = "absolute";
+
     progressBar.style.left = "0px";
+
     progressBar.style.top = "0px";
 }
 
@@ -27,10 +38,15 @@ function create() {
  */
 function reset() {
     isAnimating = false;
+
     pausedTime = 0;
+
     totalDuration = 10000;
+
     elapsedTime = 0;
+
     progressBar.parentNode.removeChild(progressBar);
+
     progressBar = null;
 }
 
@@ -40,6 +56,7 @@ function reset() {
  */
 function observe(resolve) {
     let currentTime = performance.now();
+
     elapsedTime = currentTime - startTime;
 
     if (progressBar) {
@@ -70,13 +87,20 @@ function start(duration = 10000) {
 
         if (isAnimating) {
             totalDuration += duration;
+
             resolve();
+
             return;
         }
+
         totalDuration = duration;
+
         isAnimating = true;
+
         startTime = performance.now() - pausedTime;
+
         progressBar.setAttribute("max", totalDuration);
+
         observe(resolve);
     });
 }
@@ -87,7 +111,9 @@ function start(duration = 10000) {
 function pause() {
     if (isAnimating) {
         cancelAnimationFrame(requestId);
+
         pausedTime = performance.now() - startTime;
+
         isAnimating = false;
     }
 }
@@ -98,7 +124,9 @@ function pause() {
 function resume() {
     if (!isAnimating) {
         isAnimating = true;
+
         startTime = performance.now() - pausedTime;
+
         observe();
     }
 }
@@ -111,7 +139,9 @@ function stop() {
         if (progressBar) {
             progressBar.setAttribute("value", totalDuration);
         }
+
         cancelAnimationFrame(requestId);
+
         reset();
     }
 }
@@ -127,6 +157,7 @@ export { start, pause, resume, stop };
             timeout = window.setTimeout(() => {
                 stop();
             }, 100);
+
             start(entry.duration);
         });
     }).observe({

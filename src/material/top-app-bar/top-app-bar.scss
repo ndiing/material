@@ -2,23 +2,34 @@
     --md-comp-sheet-height: 64px;
     grid-area: north;
     display: inline-flex;
+
     min-height: var(--md-comp-sheet-height);
+
     margin-top: calc(0px - var(--md-comp-sheet-height));
+
     border-radius: var(--md-sys-shape-corner-none);
+
     background-color: var(--md-sys-color-surface);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     animation-name: var(--md-comp-sheet-animation, sheetNorthOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     &[open] {
         margin-top: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetNorthIn);
     }
 
     .md-card__header {
         height: var(--md-comp-sheet-height);
+
         padding: 18px 16px;
         gap: 0 16px;
     }
@@ -89,7 +100,10 @@
 
 .md-top-app-bar.md-card--scroll {
     border-radius: var(--md-sys-shape-corner-none);
+
     background-color: var(--md-sys-color-surface-container);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level2);
 }

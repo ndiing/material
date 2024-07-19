@@ -27,6 +27,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     constructor() {
         super();
+
         this.type = "color";
     }
 
@@ -36,6 +37,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-color-field");
     }
 
@@ -53,6 +55,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldContainerClick(event) {
         super.handleTextFieldContainerClick();
+
         this.togglePicker();
     }
 
@@ -71,51 +74,77 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
+
         this.pickerOpen = true;
+
         this.picker = document.createElement("md-color-picker");
+
         this.picker.value = this.value;
+
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
+
         this.handleColorPickerButtonCancelClick = this.handleColorPickerButtonCancelClick.bind(this);
+
         this.handleColorPickerButtonOkClick = this.handleColorPickerButtonOkClick.bind(this);
+
         this.handleColorPickerSelection = this.handleColorPickerSelection.bind(this);
+
         this.picker.addEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
+
         this.picker.addEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
+
         this.picker.addEventListener("onColorPickerSelection", this.handleColorPickerSelection);
 
         const handleScroll = () => {
             this.picker.close();
+
             this.boundary.removeEventListener("scroll", handleScroll);
         };
 
         const handleClick = (event) => {
             let current = event.target;
+
             let matches;
 
             while (current) {
                 matches = matches || current === this || current === this.picker;
+
                 current = current.parentElement;
             }
 
             if (!matches) {
                 this.picker.close();
+
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
 
         const handleSheetClose = () => {
             this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
+
             this.picker.removeEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
+
             this.picker.removeEventListener("onColorPickerSelection", this.handleColorPickerSelection);
+
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
+
             this.boundary.removeEventListener("scroll", handleScroll);
+
             this.boundary.removeEventListener("click", handleClick);
+
             this.pickerOpen = false;
         };
+
         this.picker.addEventListener("onSheetClose", handleSheetClose);
+
         this.boundary = getBoundary(this);
+
         this.boundary.addEventListener("scroll", handleScroll);
+
         this.boundary.addEventListener("click", handleClick);
+
         await this.picker.updateComplete;
+
         this.picker.show(this.textFieldContainer.value);
     }
 
@@ -126,6 +155,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleColorPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
+
         this.picker.close();
     }
 
@@ -136,7 +166,9 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleColorPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
+
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
+
         this.picker.close();
     }
 
@@ -147,8 +179,11 @@ class MDColorFieldComponent extends MDTextFieldComponent {
      */
     handleColorPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
+
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
 }
+
 customElements.define("md-color-field", MDColorFieldComponent);
+
 export { MDColorFieldComponent };

@@ -28,6 +28,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             label = stringifyMonth(this.selection);
         }
+
         return [{ icon: "arrow_drop_down", variant: "icon-right", name: "label", component: "button", label }];
     }
 
@@ -58,6 +59,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     constructor() {
         super();
+
         this.index = 1;
     }
 
@@ -68,6 +70,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-month-picker");
     }
 
@@ -77,9 +80,13 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     updateDate() {
         const date = parseMonth(this.value);
+
         this.selection.setFullYear(date.getFullYear());
+
         this.selection.setMonth(date.getMonth());
+
         this.selected.setFullYear(date.getFullYear());
+
         this.selected.setMonth(date.getMonth());
     }
 
@@ -95,8 +102,11 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() - 1);
         }
+
         this.requestUpdate();
+
         this.emit("onMonthPickerSelection", event);
+
         this.emit("onMonthPickerIconButtonPrevClick", event);
     }
 
@@ -112,8 +122,11 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() + 1);
         }
+
         this.requestUpdate();
+
         this.emit("onMonthPickerSelection", event);
+
         this.emit("onMonthPickerIconButtonNextClick", event);
     }
 
@@ -129,6 +142,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.index = 0;
         }
+
         this.emit("onMonthPickerButtonLabelClick", event);
     }
 
@@ -140,9 +154,13 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
+
         this.updateDate();
+
         this.requestUpdate();
+
         this.index = 1;
+
         this.emit("onMonthPickerButtonCancelClick", event);
     }
 
@@ -154,10 +172,15 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
+
         this.selected.setMonth(this.selection.getMonth());
+
         this.value = this.getValue();
+
         this.requestUpdate();
+
         this.index = 1;
+
         this.emit("onMonthPickerButtonOkClick", event);
     }
 
@@ -169,9 +192,13 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
+
         this.selection.setFullYear(data.year);
+
         this.index = 1;
+
         this.emit("onMonthPickerSelection", event);
+
         this.emit("onMonthPickerYearItemClick", event);
     }
 
@@ -183,12 +210,19 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
+
         this.selected.setFullYear(data.year);
+
         this.selected.setMonth(data.month);
+
         this.selection.setFullYear(data.year);
+
         this.selection.setMonth(data.month);
+
         this.requestUpdate();
+
         this.emit("onMonthPickerSelection", event);
+
         this.emit("onMonthPickerMonthItemClick", event);
     }
 
@@ -201,5 +235,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         return stringifyMonth(this.selected);
     }
 }
+
 customElements.define("md-month-picker", MDMonthPickerComponent);
+
 export { MDMonthPickerComponent };

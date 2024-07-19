@@ -8,42 +8,55 @@
 
     h1 {
         margin: var(--md-sys-typescale-headline-large-line-height) 0;
+
         @include typescale-headline-large();
+
         font-weight: 600;
     }
 
     h2 {
         margin: var(--md-sys-typescale-headline-medium-line-height) 0;
+
         @include typescale-headline-medium();
+
         font-weight: 600;
     }
 
     h3 {
         margin: var(--md-sys-typescale-headline-small-line-height) 0;
+
         @include typescale-headline-small();
+
         font-weight: 600;
     }
 
     h4 {
         margin: var(--md-sys-typescale-title-large-line-height) 0;
+
         @include typescale-title-large();
+
         font-weight: 600;
     }
 
     h5 {
         margin: var(--md-sys-typescale-title-medium-line-height) 0;
+
         @include typescale-title-medium();
+
         font-weight: 600;
     }
 
     h6 {
         margin: var(--md-sys-typescale-title-small-line-height) 0;
+
         @include typescale-title-small();
+
         font-weight: 600;
     }
 
     p {
         margin: var(--md-sys-typescale-body-large-line-height) 0;
+
         @include typescale-body-large();
     }
 
@@ -58,9 +71,13 @@
     blockquote {
         margin: var(--md-sys-typescale-body-large-line-height) 0;
         padding: var(--md-sys-typescale-body-large-line-height) 24px;
+
         border-radius: var(--md-sys-shape-corner-medium);
+
         @include typescale-body-large();
+
         background-color: var(--md-sys-color-surface-container);
+
         color: var(--md-sys-color-on-surface-variant);
 
         blockquote {
@@ -71,9 +88,13 @@
     pre {
         margin: var(--md-sys-typescale-body-large-line-height) 0;
         padding: var(--md-sys-typescale-body-large-line-height) 24px;
+
         border-radius: var(--md-sys-shape-corner-medium);
+
         @include typescale-body-large();
+
         background-color: var(--md-sys-color-surface-container);
+
         color: var(--md-sys-color-on-surface-variant);
     }
 
@@ -99,9 +120,13 @@
 
     code {
         padding: calc((var(--md-sys-typescale-body-large-line-height) - var(--md-sys-typescale-body-medium-line-height)) / 2) 4px;
+
         border-radius: var(--md-sys-shape-corner-extra-small);
+
         font-size: 87.5%;
+
         background-color: var(--md-sys-color-surface-container-high);
+
         color: var(--md-sys-color-on-surface-variant);
     }
 
@@ -157,11 +182,17 @@
     th {
         text-align: left;
         padding: calc(((56px - var(--md-sys-typescale-body-large-line-height)) / 2) + (4px * 0)) 24px;
+
         @include typescale-body-large();
+
         border-right: 1px solid var(--md-sys-color-outline-variant);
+
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
+
         background-color: var(--md-sys-color-surface-container);
+
         color: var(--md-sys-color-on-surface-variant);
+
         vertical-align: top;
 
         &:first-child {
@@ -171,9 +202,13 @@
 
     td {
         border-right: 1px solid var(--md-sys-color-outline-variant);
+
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
+
         padding: calc(((52px - var(--md-sys-typescale-body-large-line-height)) / 2) + (4px * 0)) 24px;
+
         @include typescale-body-large();
+
         vertical-align: top;
 
         &:first-child {

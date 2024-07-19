@@ -23,6 +23,7 @@ class MDBadgeComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.limit = 999;
     }
 
@@ -33,6 +34,7 @@ class MDBadgeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
+
         return this.label ? html`<div class="md-badge__label">${this.label > this.limit ? this.limit + '+' : this.label}</div>` : nothing;
     }
 
@@ -42,8 +44,11 @@ class MDBadgeComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-badge");
     }
 }
+
 customElements.define("md-badge", MDBadgeComponent);
+
 export { MDBadgeComponent };

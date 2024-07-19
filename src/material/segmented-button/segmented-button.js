@@ -53,6 +53,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
+
         return this.buttons.map(item => this.renderButton(item));
     }
 
@@ -62,6 +63,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-segmented-button");
     }
 
@@ -80,10 +82,14 @@ class MDSegmentedButtonComponent extends MDComponent {
                     item.selected = item === data;
                 });
             }
+
             this.requestUpdate();
         }
+
         this.emit("onSegmentedButtonItemClick", event);
     }
 }
+
 customElements.define("md-segmented-button", MDSegmentedButtonComponent);
+
 export { MDSegmentedButtonComponent };

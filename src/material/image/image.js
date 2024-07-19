@@ -59,7 +59,9 @@ class MDImageComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.loading = "lazy";
+
         this.alt = "alt";
     }
 
@@ -78,6 +80,7 @@ class MDImageComponent extends MDComponent {
                 .alt="${ifDefined(this.alt)}"
                 .loading="${ifDefined(this.loading)}"
                 ${ref(this.imageNative)}
+
                 @load="${this.handleImageNativeLoad}"
                 @error="${this.handleImageNativeError}"
             >
@@ -91,6 +94,7 @@ class MDImageComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-image");
     }
 
@@ -130,8 +134,11 @@ class MDImageComponent extends MDComponent {
      */
     handleImageNativeError(event) {
         this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+
         this.emit("onImageNativeError", event);
     }
 }
+
 customElements.define("md-image", MDImageComponent);
+
 export { MDImageComponent };

@@ -41,11 +41,17 @@ class MDFormComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.method = "post";
+
         this.enctype = "application/x-www-form-urlencoded";
+
         this.acceptCharset = "UTF-8";
+
         this.autocomplete = "off";
+
         this.novalidate = true;
+
         this.childNodes_ = Array.from(this.childNodes);
     }
 
@@ -67,6 +73,7 @@ class MDFormComponent extends MDComponent {
                 .novalidate="${ifDefined(this.novalidate)}"
                 .target="${ifDefined(this.target)}"
                 ${ref(this.formNative)}
+
                 @reset="${this.handleFormNativeReset}"
                 @submit="${this.handleFormNativeSubmit}"
             >${this.childNodes_}</form>
@@ -80,6 +87,7 @@ class MDFormComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-form");
     }
 
@@ -96,8 +104,10 @@ class MDFormComponent extends MDComponent {
                 cancelable: true,
                 detail: event,
             });
+
             element.dispatchEvent(customEvent);
         }
+
         this.emit("onFormNativeReset", event);
     }
 
@@ -109,8 +119,11 @@ class MDFormComponent extends MDComponent {
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();
+
         const formData = new FormData(this.formNative.value);
+
         event.formData = formData;
+
         const data = {};
 
         for (const [name, value] of formData.entries()) {
@@ -124,7 +137,9 @@ class MDFormComponent extends MDComponent {
                 data[name] = value;
             }
         }
+
         event.data = data;
+
         this.emit("onFormNativeSubmit", event);
     }
 
@@ -144,5 +159,7 @@ class MDFormComponent extends MDComponent {
         this.formNative.value.submit();
     }
 }
+
 customElements.define("md-form", MDFormComponent);
+
 export { MDFormComponent };

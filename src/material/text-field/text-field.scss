@@ -1,7 +1,10 @@
 .md-text-field {
     --md-comp-text-field-density: 0;
+
     --md-comp-text-field-density-height: calc(56 + (4 * var(--md-comp-text-field-density)));
+
     --md-comp-text-field-density-ratio: calc(var(--md-comp-text-field-density-height) / 56);
+
     --md-comp-text-field-height: calc(var(--md-comp-text-field-density-height) * 1px);
 
     display: inline-flex;
@@ -15,6 +18,7 @@
 .md-text-field__label {
     display: flex;
     padding: 0 16px;
+
     @include typescale-body-small();
 }
 
@@ -23,8 +27,11 @@
     align-items: center;
     padding: 0 16px;
     gap: 0 16px;
+
     border-radius: var(--md-sys-shape-corner-extra-small);
+
     background-color: var(--md-sys-color-surface-container-highest);
+
     color: var(--md-sys-color-on-surface);
 }
 
@@ -34,6 +41,7 @@
 
 .md-text-field__meta {
     padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 0;
+
     @include typescale-body-large();
 }
 
@@ -50,9 +58,13 @@
     resize: none;
     field-sizing: content;
     width: 100%;
+
     min-height: var(--md-comp-text-field-height);
+
     padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 0;
+
     @include typescale-body-large();
+
     background: transparent;
     color: inherit;
 }
@@ -67,6 +79,7 @@
     display: flex;
     padding: 0 16px;
     gap: 0 16px;
+
     @include typescale-body-small();
 }
 
@@ -105,12 +118,19 @@
 .md-text-field--filled {
     .md-text-field__label {
         padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 16px;
+
         @include typescale-body-large();
+
         position: absolute;
+
         left: calc(var(--md-comp-text-field-native-offset-left, 16px) - 16px);
+
         transition-property: font-size, line-height, letter-spacing, padding;
+
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
         transition-duration: var(--md-sys-motion-duration-short4);
+
         pointer-events: none;
 
         + .md-text-field__container {
@@ -132,24 +152,30 @@
 
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
+
         box-shadow: inset 0 -1px 0 0 var(--md-sys-color-on-surface-variant);
     }
     &.md-text-field--populated,
     &.md-text-field--focused {
         .md-text-field__label {
             padding-top: calc(((var(--md-comp-text-field-height) - 16px) / 2) - 12px);
+
             padding-bottom: calc(((var(--md-comp-text-field-height) - 16px) / 2) + 12px);
+
             @include typescale-body-small();
 
             + .md-text-field__container {
                 .md-text-field__meta {
                     visibility: visible;
+
                     padding-top: calc(((var(--md-comp-text-field-height) - 24px) / 2) + 8px);
+
                     padding-bottom: calc(((var(--md-comp-text-field-height) - 24px) / 2) - 8px);
                 }
 
                 .md-text-field__native {
                     padding-top: calc(((var(--md-comp-text-field-height) - 24px) / 2) + 8px);
+
                     padding-bottom: calc(((var(--md-comp-text-field-height) - 24px) / 2) - 8px);
 
                     &::placeholder {
@@ -180,26 +206,38 @@
 .md-text-field--outlined {
     .md-text-field__label {
         padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 16px;
+
         @include typescale-body-large();
+
         position: absolute;
+
         left: calc(var(--md-comp-text-field-native-offset-left, 16px) - 16px);
+
         transition-property: font-size, line-height, letter-spacing, padding, margin, left, transform;
+
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
         transition-duration: var(--md-sys-motion-duration-short4);
+
         pointer-events: none;
 
         &::before {
             content: "";
             width: 0%;
             height: 0%;
+
             transform: translate3d(-50%, -50%, 0);
+
             background: var(--md-sys-color-background);
+
             position: absolute;
             left: 50%;
             top: 50%;
             z-index: -1;
             transition-property: width;
+
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
             transition-duration: var(--md-sys-motion-duration-short4);
         }
 
@@ -218,7 +256,9 @@
 
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small);
+
         box-shadow: inset 0 0 0 1px var(--md-sys-color-on-surface-variant);
+
         background-color: transparent;
     }
     &.md-text-field--populated,
@@ -226,8 +266,11 @@
         .md-text-field__label {
             padding: 0 4px;
             margin: 0 12px;
+
             transform: translate3d(0, -50%, 0);
+
             @include typescale-body-small();
+
             left: 0;
 
             &::before {

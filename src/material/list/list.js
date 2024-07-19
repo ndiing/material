@@ -95,6 +95,7 @@ class MDListComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
+
         return this.list?.map(item => this.renderListItem(item));
     }
 
@@ -104,7 +105,9 @@ class MDListComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-list");
+
         this.on("keydown", this.handleListKeydown);
     }
 
@@ -114,8 +117,10 @@ class MDListComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.off("keydown", this.handleListKeydown);
     }
+
     /**
      * Selects a specific item in the list.
      * @param {Object} data - The data object of the item to select.
@@ -124,6 +129,7 @@ class MDListComponent extends MDComponent {
         this.list.forEach((item) => {
             item.selected = item === data;
         });
+
         this.endIndex = this.list.indexOf(data);
     }
 
@@ -141,7 +147,9 @@ class MDListComponent extends MDComponent {
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
+
         this.startIndex = this.list.indexOf(data);
+
         this.swapIndex = this.startIndex > this.endIndex;
 
         if (this.swapIndex) {
@@ -175,6 +183,7 @@ class MDListComponent extends MDComponent {
         if (event.target.closest(".md-list__checkbox," + ".md-list__radio-button," + ".md-list__switch")) {
             return;
         }
+
         const data = event.currentTarget.data;
 
         if (this.rangeSelection && event.shiftKey) {
@@ -184,7 +193,9 @@ class MDListComponent extends MDComponent {
         } else if (this.singleSelection) {
             this.select(data);
         }
+
         this.requestUpdate();
+
         this.emit("onListItemClick", event);
     }
 
@@ -198,8 +209,10 @@ class MDListComponent extends MDComponent {
 
         if (this.allSelection && activeElement && event.ctrlKey && event.key === "a") {
             this.selectAll();
+
             this.requestUpdate();
         }
+
         this.emit("onListKeydown", event);
     }
 
@@ -210,8 +223,11 @@ class MDListComponent extends MDComponent {
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
+
         this.selectToggle(data);
+
         this.requestUpdate();
+
         this.emit("onListItemCheckboxNativeInput", event);
     }
 
@@ -222,8 +238,11 @@ class MDListComponent extends MDComponent {
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
+
         this.select(data);
+
         this.requestUpdate();
+
         this.emit("onListItemRadioButtonNativeInput", event);
     }
 
@@ -234,10 +253,15 @@ class MDListComponent extends MDComponent {
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
+
         this.selectToggle(data);
+
         this.requestUpdate();
+
         this.emit("onListItemSwitchNativeInput", event);
     }
 }
+
 customElements.define("md-list", MDListComponent);
+
 export { MDListComponent };

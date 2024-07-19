@@ -12,7 +12,9 @@
     appearance: none;
     width: 40px;
     height: 40px;
+
     transform: translate3d(-50%, -50%, 0);
+
     position: absolute;
     left: 50%;
     top: 50%;
@@ -26,6 +28,7 @@
                 width: 10px;
                 height: 10px;
                 border-radius: 5px;
+
                 background-color: var(--md-sys-color-primary);
             }
         }
@@ -40,5 +43,6 @@
     width: 20px;
     height: 20px;
     border-radius: 10px;
+
     border: 2px solid var(--md-sys-color-outline);
 }

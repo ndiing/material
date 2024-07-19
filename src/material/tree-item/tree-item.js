@@ -64,6 +64,7 @@ class MDTreeItemComponent extends MDComponent {
         if (this.nodeActions) {
             icons = this.nodeActions;
         }
+
         return icons;
     }
 
@@ -84,6 +85,7 @@ class MDTreeItemComponent extends MDComponent {
         } else if (this.icon) {
             icons = [this.icon, this.icon];
         }
+
         return icons;
     }
 
@@ -104,6 +106,7 @@ class MDTreeItemComponent extends MDComponent {
         } else if (this.icon) {
             icons = [this.icon, this.icon];
         }
+
         return icons;
     }
 
@@ -163,10 +166,12 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : nothing}
+
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
+
                 </div>
             ` : nothing}
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : nothing}
@@ -182,10 +187,12 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : this.indent > 0 ? html`<div class="md-tree__indent"></div>` : nothing}
+
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
+
                 </div>
             ` : nothing}
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : nothing}
@@ -201,12 +208,14 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)}
+
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : this.indent > 0 ? html`<div class="md-tree__indent"></div>` : nothing}
             ${this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : nothing}
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
+
                 </div>
             ` : nothing}
         `;
@@ -221,10 +230,12 @@ class MDTreeItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.isParent ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeActions_[1]}"></md-icon-button>` : this.icon_ ? html`<div class="md-icon md-tree__icon">${this.icon_}</div>` : this.indent > 0 ? html`<div class="md-tree__indent"></div>` : nothing}
+
             ${this.label || isDefined(this.badge) ? html`
                 <div class="md-tree__inner">
                     ${this.label ? html`<div class="md-tree__label"><div class="md-tree__label-primary">${this.label}</div></div>` : nothing}
                     ${isDefined(this.badge) ? html`<md-badge class="md-tree__badge" .label="${this.badge}"></md-badge>` : nothing}
+
                 </div>
             ` : nothing}
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeActions_[0]}"></md-icon-button>` : nothing}
@@ -242,6 +253,8 @@ class MDTreeItemComponent extends MDComponent {
             ['accordion', () => this.renderAccordion()],
             ['tree', () => this.renderTree()],
             ['level', () => this.renderLevel()],
+
+
         ], () => this.renderPlain());
     }
 
@@ -251,6 +264,7 @@ class MDTreeItemComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-tree__item");
     }
 
@@ -269,5 +283,7 @@ class MDTreeItemComponent extends MDComponent {
         }
     }
 }
+
 customElements.define("md-tree-item", MDTreeItemComponent);
+
 export { MDTreeItemComponent };

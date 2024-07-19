@@ -19,6 +19,7 @@ class MDVirtualController {
      */
     constructor(host, options) {
         (this.host = host).addController(this);
+
         this.options = {
             viewport: ".md-virtual",
             scrollbar: ".md-virtual__scrollbar",
@@ -45,6 +46,7 @@ class MDVirtualController {
             cancelable: true,
             detail,
         });
+
         this.viewport.dispatchEvent(event);
     }
 
@@ -56,6 +58,7 @@ class MDVirtualController {
         await this.host.updateComplete;
 
         this.viewport = this.host;
+
         if (typeof this.options.viewport === "string") {
             this.viewport = this.host.querySelector(this.options.viewport);
         } else {
@@ -75,7 +78,9 @@ class MDVirtualController {
         }
 
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
+
         this.viewport.addEventListener("scroll", this.handleVirtualScroll);
+
         this.handleVirtualScroll();
     }
 
@@ -97,27 +102,42 @@ class MDVirtualController {
     async handleVirtualScroll(event) {
         if (this.options.rowTotal) {
             this.scrollbarHeight = this.options.rowTotal * this.options.rowHeight;
+
             this.rowStart = Math.floor(this.viewport.scrollTop / this.options.rowHeight) - this.options.rowBuffer;
+
             this.rowStart = Math.max(0, this.rowStart);
+
             this.rowLimit = Math.ceil(this.viewport.clientHeight / this.options.rowHeight) + 2 * this.options.rowBuffer;
+
             this.rowLimit = Math.min(this.options.rowTotal - this.rowStart, this.rowLimit);
+
             this.rowEnd = this.rowStart + this.rowLimit;
+
             this.translateY = this.rowStart * this.options.rowHeight;
         }
 
         if (this.options.columnTotal) {
             this.scrollbarWidth = this.options.columnTotal * this.options.columnWidth;
+
             this.columnStart = Math.floor(this.viewport.scrollLeft / this.options.columnWidth) - this.options.columnBuffer;
+
             this.columnStart = Math.max(0, this.columnStart);
+
             this.columnLimit = Math.ceil(this.viewport.clientWidth / this.options.columnWidth) + 2 * this.options.columnBuffer;
+
             this.columnLimit = Math.min(this.options.columnTotal - this.columnStart, this.columnLimit);
+
             this.columnEnd = this.columnStart + this.columnLimit;
+
             this.translateX = this.columnStart * this.options.columnWidth;
         }
 
         this.scrollbar.style.width = `${this.scrollbarWidth || 1}px`;
+
         this.scrollbar.style.height = `${this.scrollbarHeight || 1}px`;
+
         this.container.style.transform = `translate3d(${this.translateX || 0}px,${this.translateY || 0}px,0)`;
+
         this.emit("onVirtualScroll", event);
     }
 }

@@ -160,11 +160,17 @@
 
 .md-sheet {
     display: inline-flex;
+
     border-radius: var(--md-sys-shape-corner-large);
+
     background-color: var(--md-sys-color-surface);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     .md-card__header {
@@ -201,24 +207,32 @@
 
 .md-sheet.md-card--north {
     grid-area: north;
+
     border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
+
     margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
+
     animation-name: var(--md-comp-sheet-animation, sheetNorthOut);
 
     &[open] {
         margin-top: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetNorthIn);
     }
 }
 
 .md-sheet.md-card--east {
     border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
+
     grid-area: east;
+
     margin-right: calc(0px - var(--md-comp-sheet-width, 100vw));
+
     animation-name: var(--md-comp-sheet-animation, sheetEastOut);
 
     &[open] {
         margin-right: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetEastIn);
     }
 }
@@ -226,11 +240,14 @@
 .md-sheet.md-card--south {
     grid-area: south;
     border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
+
     margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
+
     animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
 
     &[open] {
         margin-bottom: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
     }
 }
@@ -238,19 +255,25 @@
 .md-sheet.md-card--west {
     grid-area: west;
     border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
+
     margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
+
     animation-name: var(--md-comp-sheet-animation, sheetWestOut);
 
     &[open] {
         margin-left: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetWestIn);
     }
 }
 
 .md-sheet.md-card--modal {
     background-color: var(--md-sys-color-surface-container-low);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     position: absolute;
     z-index: 7;
 
@@ -265,14 +288,18 @@
     &.md-sheet.md-card--north {
         grid-area: auto;
         margin-top: 0;
+
         transform: translate3d(0%, -100%, 0);
+
         top: 0;
         left: 0;
         right: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetNorthModalOut);
 
         &[open] {
             transform: translate3d(0, 0, 0);
+
             animation-name: var(--md-comp-sheet-animation, sheetNorthModalIn);
         }
     }
@@ -280,14 +307,18 @@
     &.md-sheet.md-card--east {
         grid-area: auto;
         margin-right: 0;
+
         transform: translate3d(100%, 0%, 0);
+
         right: 0;
         top: 0;
         bottom: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetEastModalOut);
 
         &[open] {
             transform: translate3d(0, 0, 0);
+
             animation-name: var(--md-comp-sheet-animation, sheetEastModalIn);
         }
     }
@@ -295,14 +326,18 @@
     &.md-sheet.md-card--south {
         grid-area: auto;
         margin-bottom: 0;
+
         transform: translate3d(0%, 100%, 0);
+
         bottom: 0;
         left: 0;
         right: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetSouthModalOut);
 
         &[open] {
             transform: translate3d(0, 0, 0);
+
             animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
         }
     }
@@ -310,14 +345,18 @@
     &.md-sheet.md-card--west {
         grid-area: auto;
         margin-left: 0;
+
         transform: translate3d(-100%, 0%, 0);
+
         left: 0;
         top: 0;
         bottom: 0;
+
         animation-name: var(--md-comp-sheet-animation, sheetWestModalOut);
 
         &[open] {
             transform: translate3d(0, 0, 0);
+
             animation-name: var(--md-comp-sheet-animation, sheetWestModalIn);
         }
     }

@@ -32,6 +32,7 @@ class MDFabComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.ripple = new MDRippleController(this, {
             clipped: true,
             fadeOut: true,
@@ -47,6 +48,7 @@ class MDFabComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon ? html`<div class="md-icon md-fab__icon">${this.icon}</div>` : nothing}
+
             ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing}
         `;
     }
@@ -58,6 +60,7 @@ class MDFabComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-fab");
     }
 
@@ -81,13 +84,17 @@ class MDFabComponent extends MDComponent {
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
+
                 this.setAttribute("tabindex", "-1");
             } else {
                 this.removeAttribute("aria-disabled");
+
                 this.removeAttribute("tabindex");
             }
         }
     }
 }
+
 customElements.define("md-fab", MDFabComponent);
+
 export { MDFabComponent };

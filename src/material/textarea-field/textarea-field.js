@@ -12,6 +12,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
      */
     constructor() {
         super();
+
         this.type = "textarea";
     }
 
@@ -22,6 +23,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-textarea-field");
     }
 
@@ -30,8 +32,11 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
+
         super.handleTextFieldNativeClick();
     }
 }
+
 customElements.define("md-textarea-field", MDTextareaFieldComponent);
+
 export { MDTextareaFieldComponent };

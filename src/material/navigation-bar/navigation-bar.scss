@@ -2,19 +2,30 @@
     --md-comp-sheet-height: 80px;
     grid-area: south;
     display: inline-flex;
+
     min-height: var(--md-comp-sheet-height);
+
     margin-bottom: calc(0px - var(--md-comp-sheet-height));
+
     border-radius: var(--md-sys-shape-corner-none);
+
     background-color: var(--md-sys-color-surface-container);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     &[open] {
         margin-bottom: 0;
+
         box-shadow: var(--md-sys-elevation-level2);
+
         animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
     }
 
@@ -142,7 +153,9 @@
 
     .md-tree__badge {
         margin-top: -8px;
+
         transform: translate3d(-0%, -50%, 0);
+
         position: absolute;
         left: 50%;
         top: 50%;

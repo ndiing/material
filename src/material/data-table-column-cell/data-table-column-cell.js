@@ -8,7 +8,9 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-data-table-column-cell");
+
         this.gesture = new MDGestureController(this, {
             container: this.parentElement,
             drag: ["x"],
@@ -36,5 +38,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
         }
     }
 }
+
 customElements.define("md-data-table-column-cell", MDDataTableColumnCellComponent);
+
 export { MDDataTableColumnCellComponent };

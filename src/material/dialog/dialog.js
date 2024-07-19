@@ -14,8 +14,11 @@ class MDDialogComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-dialog");
     }
 }
+
 customElements.define("md-dialog", MDDialogComponent);
+
 export { MDDialogComponent };

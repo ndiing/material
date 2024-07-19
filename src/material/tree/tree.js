@@ -26,6 +26,7 @@ class MDTreeComponent extends MDComponent {
      */
     constructor() {
         super();
+
         this.variant = "tree";
     }
 
@@ -58,6 +59,7 @@ class MDTreeComponent extends MDComponent {
                 @onTreeItemSelected="${this.handleTreeItemSelected}"
             ></md-tree-item>
             ${item.expanded && item.children?.length ? item.children.map(item => this.renderTreeItem(item)) : nothing}
+
         `;
     }
 
@@ -68,6 +70,7 @@ class MDTreeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
+
         return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTreeItem(item));
     }
 
@@ -77,6 +80,7 @@ class MDTreeComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-tree");
     }
 
@@ -98,7 +102,9 @@ class MDTreeComponent extends MDComponent {
 
         if (changedProperties.has("list")) {
             await this.updateComplete;
+
             this.setList(this.list);
+
             this.requestUpdate();
         }
     }
@@ -159,16 +165,20 @@ class MDTreeComponent extends MDComponent {
                         isParent: true,
                     });
                 }
+
                 item.isNode = true;
+
                 const { expanded: isExpanded, activated: isActivated } = this.setList(item.children, indent + 1);
 
                 if (isExpanded) {
                     expanded = true;
+
                     item.expanded = true;
                 }
 
                 if (isActivated) {
                     activated = true;
+
                     item.activated = true;
                 }
             }
@@ -188,6 +198,7 @@ class MDTreeComponent extends MDComponent {
 
         list.forEach((item) => {
             item.selected = item === data;
+
             item.activated = false;
 
             if (item.selected) {
@@ -197,6 +208,7 @@ class MDTreeComponent extends MDComponent {
             if (item.children?.length) {
                 if (this.select(item.children, data)) {
                     activated = true;
+
                     item.activated = true;
                 }
             }
@@ -225,11 +237,14 @@ class MDTreeComponent extends MDComponent {
 
         if (data.isNode || data.isParent) {
             event.stopPropagation();
+
             this.expand(this.list, data.isParent ? data.parent : data);
         } else {
             this.select(this.list, data);
         }
+
         this.requestUpdate();
+
         this.emit("onTreeItemClick", event);
     }
 
@@ -240,5 +255,7 @@ class MDTreeComponent extends MDComponent {
      */
     handleTreeItemSelected() {}
 }
+
 customElements.define("md-tree", MDTreeComponent);
+
 export { MDTreeComponent };

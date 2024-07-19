@@ -1,14 +1,19 @@
 @keyframes datetimePickerIn {
     0% {
         visibility: visible;
+
         height: calc(456px - (56px * 2));
+
         transform: translate3d(0, 56px, 0);
+
         opacity: 0;
     }
 
     100% {
         height: 456px;
+
         transform: translate3d(0, 0, 0);
+
         opacity: 1;
     }
 }
@@ -37,24 +42,35 @@
 
 .md-datetime-picker {
     display: inline-flex;
+
     border-radius: var(--md-sys-shape-corner-large);
+
     background-color: var(--md-sys-color-surface-container-high);
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: var(--md-sys-elevation-level0);
+
     position: absolute;
     z-index: 7;
     visibility: hidden;
+
     animation-name: var(--md-comp-sheet-animation, datetimePickerOut);
+
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     animation-duration: var(--md-sys-motion-duration-short4);
 
     &[open] {
         visibility: visible;
+
         animation-name: var(--md-comp-sheet-animation, datetimePickerIn);
 
         > * {
             animation-name: var(--md-comp-sheet-animation, datetimePickerWrapperIn);
+
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
             animation-duration: var(--md-sys-motion-duration-short4);
         }
     }
@@ -88,6 +104,7 @@
         overflow: hidden;
         padding: 0;
         margin: 0;
+
         @include typescale-body-large();
 
         + .md-card__footer {
@@ -111,6 +128,7 @@
 .md-datetime-picker__card-item {
     flex: 1 0 100%;
     overflow: auto;
+
     transform: translate3d(calc((0 - var(--md-comp-datetime-picker-card-index)) * 100%), 0, 0);
 }
 
@@ -125,8 +143,11 @@
     height: 48px;
     padding: 0 16px;
     gap: 0 16px;
+
     @include ripple();
+
     @include ripple-button();
+
     &:focus,
     &:hover,
     &:active,
@@ -162,6 +183,7 @@
 
     &[selected] {
         background-color: var(--md-sys-color-surface-variant);
+
         color: var(--md-sys-color-on-surface-variant);
     }
 
@@ -189,7 +211,9 @@
 .md-datetime-picker__grid-row--days {
     .md-datetime-picker__grid-item {
         @include ripple();
+
         @include ripple-button();
+
         &:focus,
         &:hover,
         &:active,
@@ -225,6 +249,7 @@
 
         &[selected] {
             background-color: var(--md-sys-color-primary);
+
             color: var(--md-sys-color-on-primary);
         }
 
@@ -254,16 +279,22 @@
     height: 256px;
     margin: 40px 52px;
     border-radius: 128px;
+
     background-color: var(--md-sys-color-surface-container-highest);
+
     color: var(--md-sys-color-on-surface-variant);
 
     &::before {
         content: "";
         width: 8px;
         height: 8px;
+
         transform: translate3d(-50%, -50%, 0);
+
         border-radius: 4px;
+
         background-color: var(--md-sys-color-primary);
+
         position: absolute;
         left: 50%;
         top: 50%;
@@ -275,10 +306,12 @@
         @for $i from 1 through 12 {
             &:nth-child(#{$i}) {
                 left: calc(100px * cos((($i - 4) / 12) * 2 * pi) + 104px);
+
                 top: calc(100px * sin((($i - 4) / 12) * 2 * pi) + 104px);
 
                 &::before {
                     width: 100px;
+
                     transform: rotate(calc((360deg / 12) * ($i - 4)));
                 }
             }
@@ -287,10 +320,12 @@
         @for $i from 1 through 12 {
             &:nth-child(#{$i + 12}) {
                 left: calc(76px * cos((($i - 4) / 12) * 2 * pi) + 104px);
+
                 top: calc(76px * sin((($i - 4) / 12) * 2 * pi) + 104px);
 
                 &::before {
                     width: 76px;
+
                     transform: rotate(calc((360deg / 12) * ($i - 4)));
                 }
             }
@@ -303,10 +338,12 @@
         @for $i from 1 through 60 {
             &:nth-child(#{$i}) {
                 left: calc(100px * cos((($i - 16) / 60) * 2 * pi) + 104px);
+
                 top: calc(100px * sin((($i - 16) / 60) * 2 * pi) + 104px);
 
                 &::before {
                     width: 100px;
+
                     transform: rotate(calc((360deg / 60) * ($i - 16)));
                 }
             }
@@ -328,9 +365,13 @@
     width: 48px;
     height: 48px;
     border-radius: 24px;
+
     @include ripple();
+
     position: absolute;
+
     @include ripple-button();
+
     &:focus,
     &:hover,
     &:active,
@@ -346,10 +387,12 @@
 
     &:hover {
         @include ripple-hover();
+
         color: var(--md-sys-color-on-surface-variant);
 
         &::before {
             background-color: var(--md-sys-color-on-surface);
+
             opacity: 8%;
         }
     }
@@ -364,6 +407,7 @@
 
     &[selected] {
         background-color: var(--md-sys-color-primary);
+
         color: var(--md-sys-color-on-primary);
 
         &::before {
@@ -383,7 +427,9 @@
         content: "";
         height: 2px;
         transform-origin: 100% 100%;
+
         background-color: var(--md-sys-color-primary);
+
         opacity: 0;
         position: absolute;
         right: 50%;

@@ -6,20 +6,26 @@
     width: 24px;
     height: 24px;
     background-color: transparent;
+
     color: var(--md-sys-color-on-surface-variant);
+
     transition-property: background-color, color, border-color;
+
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+
     transition-duration: var(--md-sys-motion-duration-short4);
 
     &.md-icon-button--toggle {
         &[selected] {
             background-color: transparent;
+
             color: var(--md-sys-color-primary);
         }
     }
 
     &[disabled] {
         background-color: transparent;
+
         color: var(--md-sys-color-on-surface38);
     }
 }
@@ -28,26 +34,33 @@
 .md-icon-button--outlined {
     width: 40px;
     height: 40px;
+
     border-radius: calc(40px / 2);
 
     &[disabled] {
         background-color: var(--md-sys-color-on-surface12);
+
         border-color: var(--md-sys-color-on-surface12);
+
         color: var(--md-sys-color-on-surface38);
+
         box-shadow: var(--md-sys-elevation-level0);
     }
 }
 
 .md-icon-button--filled {
     background-color: var(--md-sys-color-primary);
+
     color: var(--md-sys-color-on-primary);
 
     &.md-icon-button--toggle {
         background-color: var(--md-sys-color-surface-container-highest);
+
         color: var(--md-sys-color-primary);
 
         &[selected] {
             background-color: var(--md-sys-color-primary);
+
             color: var(--md-sys-color-on-primary);
 
             &.md-ripple {
@@ -73,14 +86,17 @@
 
 .md-icon-button--tonal {
     background-color: var(--md-sys-color-secondary-container);
+
     color: var(--md-sys-color-on-secondary-container);
 
     &.md-icon-button--toggle {
         background-color: var(--md-sys-color-surface-container-highest);
+
         color: var(--md-sys-color-on-surface-variant);
 
         &[selected] {
             background-color: var(--md-sys-color-secondary-container);
+
             color: var(--md-sys-color-on-secondary-container);
         }
     }
@@ -88,16 +104,21 @@
 
 .md-icon-button--outlined {
     background-color: transparent;
+
     color: var(--md-sys-color-on-surface-variant);
+
     box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
 
     &.md-icon-button--toggle {
         background-color: transparent;
+
         color: var(--md-sys-color-on-surface-variant);
 
         &[selected] {
             border-color: var(--md-sys-color-inverse-surface);
+
             background-color: var(--md-sys-color-inverse-surface);
+
             color: var(--md-sys-color-inverse-on-surface);
 
             &.md-ripple {
@@ -110,6 +131,7 @@
 
     &[disabled] {
         background-color: transparent;
+
         color: var(--md-sys-color-on-surface38);
     }
 }

@@ -2,8 +2,11 @@ import { MDComponent } from "../component/component.js";
 
 function emojiToHexadecimal(emoji) {
     const codePoint = emoji.codePointAt(0);
+
     const hexString = codePoint.toString(16);
+
     const paddedHexString = hexString.padStart(4, "0");
+
     return paddedHexString;
 }
 
@@ -36,6 +39,7 @@ class MDEmojiComponent extends MDComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-emoji");
     }
 
@@ -43,5 +47,7 @@ class MDEmojiComponent extends MDComponent {
         super.disconnectedCallback();
     }
 }
+
 customElements.define("md-emoji", MDEmojiComponent);
+
 export { MDEmojiComponent };

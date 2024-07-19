@@ -14,8 +14,11 @@ class MDSideSheetComponent extends MDSheetComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-side-sheet");
     }
 }
+
 customElements.define("md-side-sheet", MDSideSheetComponent);
+
 export { MDSideSheetComponent };

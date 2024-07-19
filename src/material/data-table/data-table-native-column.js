@@ -27,5 +27,7 @@ class MDDataTableNativeColumnComponent extends HTMLTableCellElement {
      */
     addController() {}
 }
+
 customElements.define("md-data-table-native-column", MDDataTableNativeColumnComponent, { extends: "th" });
+
 export { MDDataTableNativeColumnComponent };

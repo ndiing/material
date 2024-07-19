@@ -21,6 +21,7 @@ class MDScrimComponent extends MDComponent {
      */
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-scrim");
     }
 
@@ -49,5 +50,7 @@ class MDScrimComponent extends MDComponent {
         }
     }
 }
+
 customElements.define("md-scrim", MDScrimComponent);
+
 export { MDScrimComponent };
