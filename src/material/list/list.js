@@ -55,6 +55,8 @@ class MDListComponent extends MDComponent {
         /* prettier-ignore */
         return this.list?.map((item) => {
             item.component = item.component||"list-item";
+            item.label=item[this.map.label]
+            item.value=item[this.map.value]
             item.onListItemClick = this.handleListItemClick;
             item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
             item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
