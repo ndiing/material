@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { renderComponent } from "../template/template.js";
 
 /**
  * Tree component for displaying hierarchical data with expandable nodes and selection.
@@ -35,29 +36,14 @@ class MDTreeComponent extends MDComponent {
      * @param {Object} item - The tree item data object.
      * @returns {TemplateResult} The rendered HTML template for the tree item.
      */
-    renderTreeItem(item) {
+    renderTree(item) {
+        item.component = item.component || "tree-item";
+        item.variant = this.variant;
+        item.onTreeItemClick = this.handleTreeItemClick;
         /* prettier-ignore */
         return html`
-            <md-tree-item
-                .data="${item}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item.label)}"
-                .badge="${ifDefined(item.badge)}"
-                .selected="${ifDefined(item.selected)}"
-                .routerLink="${ifDefined(item.routerLink)}"
-                .indent="${ifDefined(item.indent)}"
-                .isNode="${ifDefined(item.isNode)}"
-                .expanded="${ifDefined(item.expanded)}"
-                .activated="${ifDefined(item.activated)}"
-                .variant="${ifDefined(this.variant)}"
-                .isParent="${ifDefined(item.isParent)}"
-                .nodeActions="${ifDefined(item.nodeActions)}"
-                .nodeIcons="${ifDefined(item.nodeIcons)}"
-                .leafIcons="${ifDefined(item.leafIcons)}"
-                @click="${this.handleTreeItemClick}"
-                @onTreeItemSelected="${this.handleTreeItemSelected}"
-            ></md-tree-item>
-            ${item.expanded && item.children?.length ? item.children.map(item => this.renderTreeItem(item)) : nothing}
+            ${renderComponent(item)}
+            ${item.expanded && item.children?.length ? item.children.map((item) => this.renderTree(item)) : nothing}
         `;
     }
 
@@ -68,7 +54,7 @@ class MDTreeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTreeItem(item));
+        return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTree(item));
     }
 
     /**
@@ -213,13 +199,6 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-
-    /**
-     * Placeholder method for handling tree item selection events.
-     * To be implemented as needed.
-     * @private
-     */
-    handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);
 export { MDTreeComponent };

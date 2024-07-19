@@ -53,7 +53,6 @@ import { MDTreeComponent } from "./tree/tree.js";
 import { MDNavigationBarComponent } from "./navigation-bar/navigation-bar.js";
 import { MDNavigationDrawerComponent } from "./navigation-drawer/navigation-drawer.js";
 import { MDNavigationRailComponent } from "./navigation-rail/navigation-rail.js";
-
 import { MDMenuComponent } from "./menu/menu.js";
 import { MDTabsComponent } from "./tabs/tabs.js";
 import { MDChipComponent } from "./chip/chip.js";

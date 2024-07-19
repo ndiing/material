@@ -1,9 +1,8 @@
 import { MDDataTableItemComponent } from "../data-table-item/data-table-item.js";
 import { MDGestureController } from "../material.js";
 class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
-    constructor() {
-        super();
-    }
+ 
+    
 
     connectedCallback() {
         super.connectedCallback();

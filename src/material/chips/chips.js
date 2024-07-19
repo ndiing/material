@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { renderComponent } from "../template/template.js";
 
 /**
  * A container component for displaying a list of chips.
@@ -19,35 +20,7 @@ class MDChipsComponent extends MDComponent {
         multiSelection: { type: Boolean },
     };
 
-    /**
-     * Creates an instance of MDChipsComponent.
-     */
-    constructor() {
-        super();
-    }
-
-    /**
-     * Renders a single chip component.
-     * @param {Object} item - The data object for the chip.
-     * @private
-     */
-    renderChip(item) {
-        /* prettier-ignore */
-        return html`
-            <md-chip
-                .data="${item}"
-                .variant="${ifDefined(item.variant)}"
-                .avatar="${ifDefined(item.avatar)}"
-                .icon="${ifDefined(item.icon)}"
-                .label="${ifDefined(item.label)}"
-                .action="${ifDefined(item.action)}"
-                .selected="${ifDefined(item.selected)}"
-                .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleChipClick}"
-                @onChipActionClick="${this.handleChipActionClick}"
-            ></md-chip>
-        `;
-    }
+    
 
     /**
      * Renders the list of chips.
@@ -55,7 +28,12 @@ class MDChipsComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return this.list?.map(item => this.renderChip(item));
+        return this.list?.map(item => {
+            item.component=item.component||'chip'
+            item.onChipClick=this.handleChipClick
+            item.onChipActionClick=this.handleChipActionClick
+            return renderComponent(item)
+        });
     }
 
     /**
