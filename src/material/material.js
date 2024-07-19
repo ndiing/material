@@ -50,13 +50,13 @@ import { MDListItemComponent } from "./list-item/list-item.js";
 import { MDListComponent } from "./list/list.js";
 import { MDTreeItemComponent } from "./tree-item/tree-item.js";
 import { MDTreeComponent } from "./tree/tree.js";
+import { MDChipComponent } from "./chip/chip.js";
+import { MDChipsComponent } from "./chips/chips.js";
 import { MDNavigationBarComponent } from "./navigation-bar/navigation-bar.js";
 import { MDNavigationDrawerComponent } from "./navigation-drawer/navigation-drawer.js";
 import { MDNavigationRailComponent } from "./navigation-rail/navigation-rail.js";
 import { MDMenuComponent } from "./menu/menu.js";
 import { MDTabsComponent } from "./tabs/tabs.js";
-import { MDChipComponent } from "./chip/chip.js";
-import { MDChipsComponent } from "./chips/chips.js";
 
 import { MDFormComponent } from "./form/form.js";
 import { MDCheckboxComponent } from "./checkbox/checkbox.js";

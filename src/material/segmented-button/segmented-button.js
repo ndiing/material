@@ -1,6 +1,6 @@
-import { html } from "lit";
 import { MDComponent } from "../component/component.js";
-import { ifDefined } from "lit/directives/if-defined.js";
+import { renderComponent } from "../template/template.js";
+
 
 /**
  * Represents a segmented button component that allows single or multiple selection of its items.
@@ -21,35 +21,21 @@ class MDSegmentedButtonComponent extends MDComponent {
         multiSelection: { type: Boolean },
     };
 
-    /**
-     * Renders a single segmented button item.
-     * @private
-     */
-    renderButton(item) {
-        /* prettier-ignore */
-        return html`
-            <md-button
-                class="md-segmented-button__item"
-                .data="${item}"
-                .name="${ifDefined(item.name)}"
-                .variant="${item.variant ?? "outlined"}"
-                .type="${ifDefined(item.type)}"
-                .icon="${ifDefined(item.selected ? "check" : item.icon)}"
-                .label="${ifDefined(item.label)}"
-                .selected="${ifDefined(item.selected)}"
-                .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleSegmentedButtonItemClick}"
-            ></md-button>
-        `;
-    }
-
+    
     /**
      * Renders the segmented button component.
      * @private
      */
     render() {
         /* prettier-ignore */
-        return this.buttons.map(item => this.renderButton(item));
+        return this.buttons.map(item => {
+            item.classMap={'md-segmented-button__item':true}
+            item.component=item.component||'button'
+            item.variant=item.variant||'outlined'
+            item.icon=item.selected?'check':item.icon
+            item.onButtonClick=this.handleSegmentedButtonItemClick
+            return renderComponent(item)
+        });
     }
 
     /**
