@@ -12,7 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDImageComponent#onImageNativeError - Fired when there is an error loading the image.
  */
 class MDImageComponent extends MDComponent {
-
     /**
      * Properties for the md-image component.
      * @property {String} src - The source URL of the image.

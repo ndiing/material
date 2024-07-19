@@ -6,7 +6,6 @@ import { updateWhenLocaleChanges } from "@lit/localize";
  * @extends LitElement
  */
 class MDComponent extends LitElement {
-
     /**
      * Initializes the component.
      */

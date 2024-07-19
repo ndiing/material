@@ -22,7 +22,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerOpacityNativeInput - Fired when the opacity input changes.
  */
 class MDColorPickerComponent extends MDSheetComponent {
-
     /**
      * Properties of the component.
      * @property {String} value - The currently selected color value in hex format.

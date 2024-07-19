@@ -1,4 +1,3 @@
-
 /**
  * {{description}}
  * @fires MDGestureController#onDragStart - {{description}}
@@ -18,7 +17,6 @@
  * @fires MDGestureController#onResizeEnd - {{description}}
  */
 class MDGestureController {
-
     /**
      * {{description}}
      */

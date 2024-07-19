@@ -12,7 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDCheckboxComponent#onCheckboxNativeReset - Fired when the checkbox is reset to its default state.
  */
 class MDCheckboxComponent extends MDComponent {
-
     /**
      * Properties for the MDCheckboxComponent.
      * @property {String} name - The name of the checkbox input.

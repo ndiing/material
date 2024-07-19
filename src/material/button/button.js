@@ -8,7 +8,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @extends MDComponent
  */
 class MDButtonComponent extends MDComponent {
-
     /**
      * Defines the properties of the element.
      * @property {String} variant - The style variant of the button (e.g., "elevated", "filled", "tonal", "outlined", "icon-right").

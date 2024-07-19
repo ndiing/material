@@ -12,7 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDRadioButtonComponent#onRadioButtonNativeReset - Fired when the radio button input is reset.
  */
 class MDRadioButtonComponent extends MDComponent {
-
     /**
      * Defines the properties of the radio button component.
      * @property {String} name - The name attribute of the radio button.

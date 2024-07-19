@@ -11,7 +11,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDFormComponent#onFormNativeSubmit - Fired when the form is submitted.
  */
 class MDFormComponent extends MDComponent {
-
     /**
      * Defines the properties of the form component.
      * @property {String} acceptCharset - The character encodings that are to be used for the form submission.

@@ -6,7 +6,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
-
     /**
      * Returns actions based on the current state of the search field.
      * Includes a clear action when there is a value present.

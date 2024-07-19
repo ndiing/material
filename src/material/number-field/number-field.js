@@ -6,7 +6,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDNumberFieldComponent extends MDTextFieldComponent {
-
     /**
      * Defines the actions for the number field component.
      * @returns {Array<Object>} Actions array with name and icon properties.

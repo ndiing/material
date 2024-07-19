@@ -11,8 +11,6 @@ import { renderComponent } from "../template/template.js";
  * @extends MDComponent
  */
 class MDCardComponent extends MDComponent {
-    
-
     /**
      * {{description}}
      * @property {String} variant - {{description}}
@@ -31,7 +29,6 @@ class MDCardComponent extends MDComponent {
         actions: { type: Array },
     };
     variants = ["elevated", "filled", "outlined"];
-    
 
     /**
      * {{description}}
@@ -40,7 +37,6 @@ class MDCardComponent extends MDComponent {
         super();
         this.childNodes_ = Array.from(this.childNodes);
     }
-    
 
     /**
      * @private
@@ -68,7 +64,6 @@ class MDCardComponent extends MDComponent {
             </div>
         ` : nothing;
     }
-    
 
     /**
      * @private
@@ -86,7 +81,6 @@ class MDCardComponent extends MDComponent {
             </div>
         ` : nothing;
     }
-    
 
     /**
      * @private
@@ -98,7 +92,6 @@ class MDCardComponent extends MDComponent {
             ${this.renderBody()}
         `;
     }
-    
 
     /**
      * @private
@@ -107,7 +100,6 @@ class MDCardComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-card");
     }
-    
 
     /**
      * @private

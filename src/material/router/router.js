@@ -1,4 +1,3 @@
-
 /**
  * A class for managing routing in a web application.
  * @fires MDRouter#onRouterCurrentEntryChange - Event fired when the current route changes.

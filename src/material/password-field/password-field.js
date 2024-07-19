@@ -6,7 +6,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
-
     /**
      * Defines the actions available for the password field.
      * @returns {Object[]} Array of action objects.

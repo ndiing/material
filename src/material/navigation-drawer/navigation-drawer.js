@@ -8,7 +8,6 @@ import { MDTreeComponent } from "../tree/tree.js";
  * @extends MDSheetComponent
  */
 class MDNavigationDrawerComponent extends MDSheetComponent {
-
     /**
      * Properties inherited from MDSheetComponent and MDTreeComponent.
      */

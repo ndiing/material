@@ -22,7 +22,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDDatetimePickerComponent#onDatetimePickerMinuteItemClick - Fired when a minute item is clicked.
  */
 class MDDatetimePickerComponent extends MDSheetComponent {
-
     /**
      * Properties for the component
      * @property {Number} index - Current index of the picker view

@@ -9,7 +9,6 @@ import { html, nothing } from "lit";
  * @extends MDComponent
  */
 class MDMarkdownComponent extends MDComponent {
-
     /**
      * Defines the properties of the element.
      * @property {String} href - The URL to fetch Markdown content from.

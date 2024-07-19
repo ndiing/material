@@ -11,7 +11,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDWeekFieldComponent#onWeekPickerSelection - Event fired when a week-time selection is made in the picker.
  */
 class MDWeekFieldComponent extends MDTextFieldComponent {
-
     /**
      * Gets the actions for the week-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.

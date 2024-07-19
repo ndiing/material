@@ -11,7 +11,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDDateFieldComponent#onDatePickerSelection - Event fired when a date-time selection is made in the picker.
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
-
     /**
      * Gets the actions for the date-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.

@@ -6,7 +6,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @extends MDSheetComponent
  */
 class MDBottomAppBarComponent extends MDSheetComponent {
-
     /**
      * Called when the component is added to the DOM.
      * @private

@@ -9,7 +9,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDTreeComponent#onTreeItemClick - Triggered when an item in the tree is clicked.
  */
 class MDTreeComponent extends MDComponent {
-
     /**
      * Properties defining the structure and behavior of the tree component.
      * @property {Array} list - The hierarchical list of tree items.

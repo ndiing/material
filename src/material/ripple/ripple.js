@@ -1,9 +1,7 @@
-
 /**
  * The MDRippleController class provides ripple effects for Material Design components.
  */
 class MDRippleController {
-
     /**
      * Creates an instance of MDRippleController.
      * @param {HTMLElement} host - The host element that this controller will be attached to.

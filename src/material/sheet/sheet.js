@@ -9,7 +9,6 @@ import { MDCardComponent } from "../card/card.js";
  * @fires MDSheetComponent#onSheetClose - Triggered when the sheet is closed.
  */
 class MDSheetComponent extends MDCardComponent {
-
     /**
      * Properties of the MDSheetComponent.
      * @property {Boolean} open - Reflects whether the sheet is open.

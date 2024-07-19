@@ -1,10 +1,8 @@
-
 /**
  * Controller for managing virtual scrolling functionality.
  * @fires MDVirtualController#onVirtualScroll - Emitted during virtual scrolling.
  */
 class MDVirtualController {
-
     /**
      * Creates an instance of MDVirtualController.
      * @param {HTMLElement} host - The host element to which the controller is attached.

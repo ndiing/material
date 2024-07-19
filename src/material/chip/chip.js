@@ -9,7 +9,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDChipComponent#onChipActionClick - Event emitted when the chip action button is clicked.
  */
 class MDChipComponent extends MDComponent {
-
     /**
      * Defines the properties of the MDChipComponent.
      * @property {String} variant - The variant of the chip, which can be one of "assist", "filter", "input", or "suggestion".

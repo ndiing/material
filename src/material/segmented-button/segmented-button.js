@@ -9,7 +9,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDSegmentedButtonComponent#onSegmentedButtonItemClick - Triggered when a segmented button item is clicked.
  */
 class MDSegmentedButtonComponent extends MDComponent {
-
     /**
      * @property {Array} buttons - Array of button items to render.
      * @property {Boolean} singleSelection - Indicates single selection mode.

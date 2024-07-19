@@ -9,7 +9,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDIconButtonComponent#onIconButtonClick - Event fired when the icon button is clicked.
  */
 class MDIconButtonComponent extends MDComponent {
-
     /**
      * Defines the properties of the element.
      * @property {String} variant - The style variant of the icon button (e.g., "filled", "tonal", "outlined", "toggle").

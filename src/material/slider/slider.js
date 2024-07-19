@@ -12,7 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDSliderComponent#onSliderNativeReset - Fired when the slider is reset.
  */
 class MDSliderComponent extends MDComponent {
-
     /**
      * Defines the properties of the slider component.
      * @property {String} name - The name attribute of the slider input.

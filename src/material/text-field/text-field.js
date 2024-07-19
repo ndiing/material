@@ -23,7 +23,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native text field element is reset.
  */
 class MDTextFieldComponent extends MDComponent {
-
     /**
      * The properties of the text field component.
      * @property {String} label - The label of the text field.
