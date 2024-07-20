@@ -13,6 +13,7 @@ import { MDComponent } from "../component/component.js";
  * @fires MDPaginationComponent#onPaginationLastClick - Triggered when last page button is clicked.
  */
 class MDPaginationComponent extends MDComponent {
+
     /**
      * Properties for MDPaginationComponent.
      * @property {Number} [total=0] - Total number of items.

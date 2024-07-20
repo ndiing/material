@@ -17,6 +17,7 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
  * @fires MDDatePickerComponent#onDatePickerDayItemClick - Fires when a day item is clicked.
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
+
     /**
      * Gets the leading actions for the date picker.
      * @returns {Array} The leading actions array.

@@ -8,6 +8,7 @@ import { calcPercentage } from "../functions/functions.js";
  * @extends MDComponent
  */
 class MDProgressIndicatorComponent extends MDComponent {
+
     /**
      * Defines the properties and their types for the component.
      * @property {String} variant - The variant of the progress indicator.

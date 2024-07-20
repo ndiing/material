@@ -6,6 +6,7 @@ import { MDComponent } from "../component/component.js";
  * @extends MDComponent
  */
 class MDScrimComponent extends MDComponent {
+
     /**
      * Properties of the MDScrimComponent.
      * @property {Boolean} open - Reflects whether the scrim is open.

@@ -8,6 +8,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @extends MDComponent
  */
 class MDFabComponent extends MDComponent {
+
     /**
      * Properties for the md-fab component.
      * @property {String} variant - The variant of the FAB (e.g., "small", "large", "extended").
@@ -23,7 +24,6 @@ class MDFabComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
 
     /**

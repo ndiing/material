@@ -4,6 +4,7 @@ import { isObject } from "../functions/functions.js";
  * MDStore provides CRUD operations and advanced querying capabilities for an array of documents.
  */
 class MDStore {
+
     /**
      * Creates an instance of MDStore.
      * @param {Array} [docs=[]] - Initial array of documents.

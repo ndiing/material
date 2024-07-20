@@ -22,6 +22,7 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerOpacityNativeInput - Fired when the opacity input changes.
  */
 class MDColorPickerComponent extends MDSheetComponent {
+
     /**
      * Properties of the component.
      * @property {String} value - The currently selected color value in hex format.
@@ -260,7 +261,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.thumb.style.top = y + "px";
         this.requestUpdate();
     }
-
     getValue() {
         return this.selection.hex.slice(0, 1 + 6);
     }

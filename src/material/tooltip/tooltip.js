@@ -7,6 +7,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @extends MDSheetComponent
  */
 class MDTooltipComponent extends MDSheetComponent {
+
     /**
      * Variants of the tooltip component.
      */

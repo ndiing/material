@@ -8,6 +8,7 @@ import { renderComponent } from "../template/template.js";
  * @fires MDChipsComponent#onChipClick - Event emitted when a chip is clicked.
  */
 class MDChipsComponent extends MDComponent {
+
     /**
      * Defines the properties of the MDChipsComponent.
      * @property {Array} list - The list of chip data objects to render.

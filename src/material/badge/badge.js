@@ -8,6 +8,7 @@ import { MDComponent } from "../component/component.js";
  * @extends MDComponent
  */
 class MDBadgeComponent extends MDComponent {
+
     /**
      * Defines the properties of the MDBadgeComponent.
      * @property {Number} label - The numeric label to display inside the badge.

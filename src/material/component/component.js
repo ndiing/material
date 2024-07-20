@@ -25,21 +25,16 @@ class MDComponent extends LitElement {
     createRenderRoot() {
         return this;
     }
-
     connectedCallback() {
         super.connectedCallback();
-
         this.on("pointerenter", this.handlePointerenter);
         this.on("pointerleave", this.handlePointerleave);
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.off("pointerenter", this.handlePointerenter);
         this.off("pointerleave", this.handlePointerleave);
     }
-
     updated(changedProperties) {
         super.updated(changedProperties);
         // if(changedProperties.has('tooltip')){
@@ -50,7 +45,6 @@ class MDComponent extends LitElement {
         //     }
         // }
     }
-
     async handlePointerenter(event) {
         if (this.tooltip && !this.tooltipElement) {
             this.tooltipElement = document.createElement("md-tooltip");
@@ -61,7 +55,6 @@ class MDComponent extends LitElement {
             this.tooltipElement.show(this);
         }
     }
-
     handlePointerleave(event) {
         if (this.tooltip && this.tooltipElement) {
             this.tooltipElement.remove();

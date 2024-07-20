@@ -1,3 +1,4 @@
+
 /**
  * Represents a controller for managing a progress indicator.
  */

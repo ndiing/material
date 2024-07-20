@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
+import { renderComponent } from "../template/template.js";
 
 /**
  * A custom element for creating various styles of buttons with optional ripple effects.
@@ -8,6 +9,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @extends MDComponent
  */
 class MDButtonComponent extends MDComponent {
+
     /**
      * Defines the properties of the element.
      * @property {String} variant - The style variant of the button (e.g., "elevated", "filled", "tonal", "outlined", "icon-right").
@@ -26,7 +28,6 @@ class MDButtonComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
 
     /**
@@ -52,7 +53,7 @@ class MDButtonComponent extends MDComponent {
                 class="md-button__native" 
                 .type="${this.type}"
             >
-                ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing}
+                ${this.icon ? renderComponent({component:'icon',classMap:{'md-button__icon':true},icon:this.icon}) : nothing}
                 <div class="md-button__label">${this.label}</div>
             </button>
         `;

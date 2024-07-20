@@ -17,6 +17,7 @@ import { html } from "lit";
  * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - Event fired when a day item is clicked.
  */
 class MDWeekPickerComponent extends MDDatetimePickerComponent {
+
     /**
      * Retrieves the weekdays for display.
      * @returns {Array} Array containing weekday objects with labels.

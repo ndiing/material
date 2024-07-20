@@ -713,6 +713,7 @@ function renderForm(item = {}) {
             .name="${ifDefined(item.name)}"
             .novalidate="${ifDefined(item.novalidate)}"
             .target="${ifDefined(item.target)}"
+            .items="${ifDefined(item.items)}"
             @onFormNativeReset="${ifDefined(item.onFormNativeReset)}"
             @onFormNativeSubmit="${ifDefined(item.onFormNativeSubmit)}"
         ></md-form>
@@ -1735,6 +1736,44 @@ function renderTimePicker(item = {}) {
     `
 }
 
+function renderTool(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-tool
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+        ></md-tool>
+    `
+}
+
 function renderToolbar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -2000,6 +2039,7 @@ function renderComponent(item) {
         ["textarea-field", () => renderTextareaField(item)],
         ["time-field", () => renderTimeField(item)],
         ["time-picker", () => renderTimePicker(item)],
+        ["tool", () => renderTool(item)],
         ["toolbar", () => renderToolbar(item)],
         ["tooltip", () => renderTooltip(item)],
         ["top-app-bar", () => renderTopAppBar(item)],
@@ -2007,29 +2047,6 @@ function renderComponent(item) {
         ["tree-item", () => renderTreeItem(item)],
         ["week-field", () => renderWeekField(item)],
         ["week-picker", () => renderWeekPicker(item)],
-
-    
-        ["email-field", () => {
-            item.type='email'
-            return renderTextField(item)
-        }],
-        ["number-field", () => {
-            item.type='number'
-            return renderTextField(item)
-        }],
-        ["tel-field", () => {
-            item.type='tel'
-            return renderTextField(item)
-        }],
-        ["url-field", () => {
-            item.type='url'
-            return renderTextField(item)
-        }],
-        ["file-field", () => {
-            item.type='file'
-            return renderTextField(item)
-        }],
-
     ], () => nothing)
 }
 

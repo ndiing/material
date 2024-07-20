@@ -11,6 +11,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDColorFieldComponent#onColorPickerSelection - Event fired when a color-color selection is made in the picker.
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
+
     /**
      * Gets the actions for the color-color field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -87,7 +88,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

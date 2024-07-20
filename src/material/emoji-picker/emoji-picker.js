@@ -24,6 +24,7 @@ import data from "../../assets/emojis.json";
  * @fires MDEmojiPickerComponent#onEmojiPickerButtonOkClick - Emitted when the ok button is clicked.
  */
 class MDEmojiPickerComponent extends MDSheetComponent {
+
     /**
      * Properties of the component
      * @property {Object} tabs - Tabs object containing category names and emojis.

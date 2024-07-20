@@ -1,3 +1,4 @@
+
 /**
  * Class for observing changes and executing callbacks on animation frames.
  */

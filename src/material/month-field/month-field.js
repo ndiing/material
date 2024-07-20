@@ -11,6 +11,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDMonthFieldComponent#onMonthPickerSelection - Event fired when a month-time selection is made in the picker.
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
+
     /**
      * Gets the actions for the month-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -37,7 +38,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

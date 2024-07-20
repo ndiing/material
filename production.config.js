@@ -75,4 +75,7 @@ module.exports = {
 //       root: 'lit',
 //     },
 //   },
+optimization: {
+  minimize: true, // Ensure JS files are minified
+},
 };

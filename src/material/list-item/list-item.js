@@ -9,6 +9,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDListItemComponent#onListItemSelected - Triggered when the list item is selected.
  */
 class MDListItemComponent extends MDComponent {
+
     /**
      * Properties defining the structure and behavior of the list item.
      * @property {String} avatar - URL of the avatar image.

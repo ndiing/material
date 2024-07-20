@@ -16,6 +16,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDMenuComponent#onMenuListItemSelected - Event fired when a menu list item is selected.
  */
 class MDMenuComponent extends MDSheetComponent {
+
     /**
      * Properties of the MDMenuComponent.
      * @property {Array} list - Array of items to be displayed in the menu.
@@ -31,7 +32,6 @@ class MDMenuComponent extends MDSheetComponent {
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
-
     menuList = createRef();
 
     /**

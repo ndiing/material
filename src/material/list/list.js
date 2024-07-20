@@ -15,6 +15,7 @@ import { renderComponent } from "../template/template.js";
  * @fires MDListComponent#onListItemSwitchNativeInput - Triggered when a switch within a list item is interacted with.
  */
 class MDListComponent extends MDComponent {
+
     /**
      * Properties for MDListComponent.
      * @property {Array} list - List of items to display.

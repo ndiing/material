@@ -9,6 +9,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @fires MDSnackbarComponent#onSnackbarClose - Triggered when the snackbar is closed.
  */
 class MDSnackbarComponent extends MDSheetComponent {
+
     /**
      * Inherit properties from MDSheetComponent.
      */

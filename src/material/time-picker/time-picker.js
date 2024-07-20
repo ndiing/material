@@ -15,6 +15,7 @@ import { html } from "lit";
  * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - When a minute item is clicked.
  */
 class MDTimePickerComponent extends MDDatetimePickerComponent {
+
     /**
      * Returns the child nodes for rendering hours and minutes.
      * @returns {TemplateResult[]} Array of Lit HTML template results.

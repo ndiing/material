@@ -1,3 +1,4 @@
+
 /**
  * Converts a string to `PascalCase` format.
  * @param {string} string - The input string to convert.

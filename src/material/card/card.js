@@ -8,6 +8,7 @@ import { renderComponent } from "../template/template.js";
  * @extends MDComponent
  */
 class MDCardComponent extends MDComponent {
+
     /**
      * {{description}}
      * @property {String} variant - {{description}}
@@ -25,7 +26,6 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
-
     variants = ["elevated", "filled", "outlined"];
 
     /**

@@ -16,6 +16,7 @@ import { html } from "lit";
  * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - Event fired when a month item is clicked.
  */
 class MDMonthPickerComponent extends MDDatetimePickerComponent {
+
     /**
      * Returns leading actions based on the current index.
      * @returns {object[]} Array of action objects.

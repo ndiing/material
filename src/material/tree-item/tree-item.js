@@ -11,6 +11,7 @@ import { isDefined } from "../functions/functions.js";
  * @fires MDTreeItemComponent#onTreeItemSelected - Triggered when a tree item is selected.
  */
 class MDTreeItemComponent extends MDComponent {
+
     /**
      * Properties defining the structure and behavior of the tree item component.
      * @property {String} icon - The icon name or URL for the tree item.

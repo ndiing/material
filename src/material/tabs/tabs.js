@@ -6,6 +6,7 @@ import { MDTreeComponent } from "../tree/tree.js";
  * @extends MDTreeComponent
  */
 class MDTabsComponent extends MDTreeComponent {
+
     /**
      * Initializes the tabs component.
      * Sets the default variant to "primary".

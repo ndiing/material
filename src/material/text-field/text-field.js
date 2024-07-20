@@ -23,6 +23,7 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native text field element is reset.
  */
 class MDTextFieldComponent extends MDComponent {
+
     /**
      * The properties of the text field component.
      * @property {String} label - The label of the text field.
@@ -81,7 +82,6 @@ class MDTextFieldComponent extends MDComponent {
         variant: { type: String },
         mask: { type: String },
     };
-
     textFieldNative = createRef();
     textFieldContainer = createRef();
 
@@ -277,7 +277,6 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value;
         }
     }
-
     variants = ["filled", "outlined", "rounded"];
 
     /**
@@ -369,7 +368,6 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }
-
     validate() {
         this.validationMessage = this.textFieldNative.value.validationMessage;
     }

@@ -4,6 +4,7 @@ import { getBoundary } from "../functions/functions";
  * A controller for managing popper elements positioning.
  */
 class MDPopperController {
+
     /**
      * Initializes the MDPopperController.
      * @param {HTMLElement} host - The host element to which the popper is attached.

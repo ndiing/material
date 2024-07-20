@@ -6,6 +6,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @extends MDTextFieldComponent
  */
 class MDTextareaFieldComponent extends MDTextFieldComponent {
+
     /**
      * Initializes the component.
      * Sets the type of the component to "textarea".

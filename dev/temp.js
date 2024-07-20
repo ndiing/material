@@ -129,22 +129,22 @@ function parse(data) {
 }
 
 let docs = [];
-// let code3=''
-// code3+='name|size\n'
-// code3+='---|---\n'
+let code3=''
+code3+='name|size\n'
+code3+='---|---\n'
 open("./src/material", (file) => {
     if (file.endsWith(".js")) {
         let data = read(file);
         let result = parse(data);
         docs.push(result.doc);
-        // let name= path.parse(file).name
-        // let size=getFileSizeInKB(file).toFixed(2)
-        // code3+=`${name}|${size}KB\n`
-        // write(file,result.data)
+        let name= path.parse(file).name
+        let size=getFileSizeInKB(file).toFixed(2)
+        code3+=`${name}|${size}KB\n`
+        write(file,result.data)
         // console.log(result.data)
     }
 });
-// write("./dev/size.md", code3);
+write("./dev/size.md", code3);
 
 const docMap = new Map(docs.map((doc) => [doc.className, doc]));
 
