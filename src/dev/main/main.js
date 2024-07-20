@@ -98,6 +98,7 @@ class DevMainComponent extends MDComponent {
             "data-table-column-cell",
             "data-table-row-cell",
             "data-table",
+            "layout",
         ];
 
         this.list = this.list.map((item) => {

@@ -80,6 +80,7 @@ import DevDataTableItem from "./data-table-item/data-table-item.js";
 // import DevDataTableColumnCell from "./data-table-column-cell/data-table-column-cell.js";
 // import DevDataTableRowCell from "./data-table-row-cell/data-table-row-cell.js";
 import DevDataTable from "./data-table/data-table.js";
+import DevLayout from "./layout/layout.js";
 
 import DevMain from "./main/main.js";
 
@@ -88,6 +89,7 @@ const routes = [
         path: "",
         component: DevMain,
         children: [
+            { component: DevLayout, path: "layout" },
             { component: DevObserver, path: "observer" },
             { component: DevMediaObserver, path: "media-observer" },
             { component: DevAttributeObserver, path: "attribute-observer" },

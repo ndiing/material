@@ -14,6 +14,9 @@ import { MDVirtualController } from "./virtual/virtual.js";
 import { MDComponent } from "./component/component.js";
 import * as template from "./template/template.js";
 
+import { MDLayoutItemComponent } from "./layout-item/layout-item.js";
+import { MDLayoutComponent } from "./layout/layout.js";
+
 import { MDMarkdownComponent } from "./markdown/markdown.js";
 import { MDDividerComponent } from "./divider/divider.js";
 import { MDSpacerComponent } from "./spacer/spacer.js";
@@ -105,6 +108,8 @@ export {
     MDVirtualController,
     MDComponent,
     template,
+    MDLayoutItemComponent,
+    MDLayoutComponent,
     MDMarkdownComponent,
     MDDividerComponent,
     MDSpacerComponent,
