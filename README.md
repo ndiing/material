@@ -2,6 +2,7 @@
 
 ![NPM Version](https://img.shields.io/npm/v/%40ndiinginc%2Fmaterial)
 ![NPM Downloads](https://img.shields.io/npm/d18m/%40ndiinginc%2Fmaterial)
+![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/%40ndiinginc%2Fmaterial)
 ![GitHub License](https://img.shields.io/github/license/ndiing/material)
 
 
