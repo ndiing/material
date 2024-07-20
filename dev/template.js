@@ -773,6 +773,37 @@ function renderImage(item = {}) {
     `
 }
 
+function renderLayout(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-layout
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .variant="${ifDefined(item.variant)}"
+        ></md-layout>
+    `
+}
+
+function renderLayoutItem(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-layout-item
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .expanded="${ifDefined(item.expanded)}"
+            .medium="${ifDefined(item.medium)}"
+            .compact="${ifDefined(item.compact)}"
+            .region="${ifDefined(item.region)}"
+        ></md-layout-item>
+    `
+}
+
 function renderList(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1938,6 +1969,8 @@ function renderComponent(item) {
         ["icon", () => renderIcon(item)],
         ["icon-button", () => renderIconButton(item)],
         ["image", () => renderImage(item)],
+        ["layout", () => renderLayout(item)],
+        ["layout-item", () => renderLayoutItem(item)],
         ["list", () => renderList(item)],
         ["list-item", () => renderListItem(item)],
         ["markdown", () => renderMarkdown(item)],
@@ -1974,6 +2007,29 @@ function renderComponent(item) {
         ["tree-item", () => renderTreeItem(item)],
         ["week-field", () => renderWeekField(item)],
         ["week-picker", () => renderWeekPicker(item)],
+
+    
+        ["email-field", () => {
+            item.type='email'
+            return renderTextField(item)
+        }],
+        ["number-field", () => {
+            item.type='number'
+            return renderTextField(item)
+        }],
+        ["tel-field", () => {
+            item.type='tel'
+            return renderTextField(item)
+        }],
+        ["url-field", () => {
+            item.type='url'
+            return renderTextField(item)
+        }],
+        ["file-field", () => {
+            item.type='file'
+            return renderTextField(item)
+        }],
+
     ], () => nothing)
 }
 

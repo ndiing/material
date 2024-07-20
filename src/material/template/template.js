@@ -1,8 +1,8 @@
-import { html, nothing } from "lit";
-import { choose } from "lit/directives/choose.js";
-import { classMap } from "lit/directives/class-map.js";
-import { ifDefined } from "lit/directives/if-defined.js";
-import { styleMap } from "lit/directives/style-map.js";
+import { html, nothing } from "lit"
+import { choose } from "lit/directives/choose.js"
+import { classMap } from "lit/directives/class-map.js"
+import { ifDefined } from "lit/directives/if-defined.js"
+import { styleMap } from "lit/directives/style-map.js"
 
 function renderBadge(item = {}) {
     /* prettier-ignore */
@@ -770,6 +770,37 @@ function renderImage(item = {}) {
             @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
             @onImageNativeError="${ifDefined(item.onImageNativeError)}"
         ></md-image>
+    `
+}
+
+function renderLayout(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-layout
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .variant="${ifDefined(item.variant)}"
+        ></md-layout>
+    `
+}
+
+function renderLayoutItem(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-layout-item
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .expanded="${ifDefined(item.expanded)}"
+            .medium="${ifDefined(item.medium)}"
+            .compact="${ifDefined(item.compact)}"
+            .region="${ifDefined(item.region)}"
+        ></md-layout-item>
     `
 }
 
@@ -1938,6 +1969,8 @@ function renderComponent(item) {
         ["icon", () => renderIcon(item)],
         ["icon-button", () => renderIconButton(item)],
         ["image", () => renderImage(item)],
+        ["layout", () => renderLayout(item)],
+        ["layout-item", () => renderLayoutItem(item)],
         ["list", () => renderList(item)],
         ["list-item", () => renderListItem(item)],
         ["markdown", () => renderMarkdown(item)],
@@ -1963,9 +1996,19 @@ function renderComponent(item) {
         ["spacer", () => renderSpacer(item)],
         ["switch", () => renderSwitch(item)],
         ["tabs", () => renderTabs(item)],
-
         ["text-field", () => renderTextField(item)],
+        ["textarea-field", () => renderTextareaField(item)],
+        ["time-field", () => renderTimeField(item)],
+        ["time-picker", () => renderTimePicker(item)],
+        ["toolbar", () => renderToolbar(item)],
+        ["tooltip", () => renderTooltip(item)],
+        ["top-app-bar", () => renderTopAppBar(item)],
+        ["tree", () => renderTree(item)],
+        ["tree-item", () => renderTreeItem(item)],
+        ["week-field", () => renderWeekField(item)],
+        ["week-picker", () => renderWeekPicker(item)],
 
+    
         ["email-field", () => {
             item.type='email'
             return renderTextField(item)
@@ -1987,38 +2030,7 @@ function renderComponent(item) {
             return renderTextField(item)
         }],
 
-        ["textarea-field", () => renderTextareaField(item)],
-        ["time-field", () => renderTimeField(item)],
-        ["time-picker", () => renderTimePicker(item)],
-        ["toolbar", () => renderToolbar(item)],
-        ["tooltip", () => renderTooltip(item)],
-        ["top-app-bar", () => renderTopAppBar(item)],
-        ["tree", () => renderTree(item)],
-        ["tree-item", () => renderTreeItem(item)],
-        ["week-field", () => renderWeekField(item)],
-        ["week-picker", () => renderWeekPicker(item)],
     ], () => nothing)
 }
 
-export { renderComponent };
-
-// email-field
-// number-field
-// tel-field
-// text-field
-// url-field
-// password-field
-// search-field
-// date-field
-// datetime-field
-// month-field
-// time-field
-// week-field
-// color-field
-// file-field
-// textarea-field
-// select-field
-// slider
-// checkbox
-// radio-button
-// switch
+export { renderComponent }
