@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 import { MDRouter } from "../../material/router/router.js";
 import { toTitleCase } from "../../material/functions/functions.js";
-import jsdoc from "../../assets/jsdoc.json";
+// import jsdoc from "../../assets/jsdoc.json";
 
 MDRouter.historyApiFallback = false;
 
@@ -120,10 +120,10 @@ class DevMainComponent extends MDComponent {
         });
     }
 
-    get doc() {
-        const name = MDRouter.path.slice(1) + ".js";
-        return jsdoc[name];
-    }
+    // get doc() {
+    //     const name = MDRouter.path.slice(1) + ".js";
+    //     return jsdoc[name];
+    // }
 
     render() {
         return html`
@@ -143,10 +143,10 @@ class DevMainComponent extends MDComponent {
                 ></md-navigation-drawer>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <md-outlet></md-outlet>
-                    <md-markdown
+                    <!-- <md-markdown
                         .text="${this.doc}"
                         style="margin:24px;"
-                    ></md-markdown>
+                    ></md-markdown> -->
                 </div>
             </div>
         `;
@@ -155,9 +155,9 @@ class DevMainComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        window.addEventListener("onRouterCurrentEntryChange", () => {
-            this.requestUpdate();
-        });
+        // window.addEventListener("onRouterCurrentEntryChange", () => {
+        //     this.requestUpdate();
+        // });
     }
 
     handleCardIconButtonClick(event) {
