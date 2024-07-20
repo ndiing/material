@@ -1,8 +1,8 @@
-import { html, nothing } from "lit"
-import { choose } from "lit/directives/choose.js"
-import { classMap } from "lit/directives/class-map.js"
-import { ifDefined } from "lit/directives/if-defined.js"
-import { styleMap } from "lit/directives/style-map.js"
+import { html, nothing } from "lit";
+import { choose } from "lit/directives/choose.js";
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { styleMap } from "lit/directives/style-map.js";
 
 function renderBadge(item = {}) {
     /* prettier-ignore */
@@ -1908,6 +1908,30 @@ function renderWeekPicker(item = {}) {
     `
 }
 
+// email-field? <input type="email">
+// number-field? <input type="number">
+// tel-field? <input type="tel">
+// md-text-field <input type="text">
+// url-field? <input type="url">
+
+// md-password-field <input type="password">
+// md-search-field <input type="search">
+
+// md-date-field <input type="date">
+// md-datetime-field <input type="datetime-local">
+// md-month-field <input type="month">
+// md-time-field <input type="time">
+// md-week-field <input type="week">
+
+// md-color-field <input type="color">
+// file-field? <input type="file">
+
+// md-slider <input type="range">
+
+// md-checkbox <input type="checkbox">
+// md-radio-button <input type="radio">
+// md-switch
+
 function renderComponent(item) {
     /* prettier-ignore */
     return choose(item.component, [
@@ -1963,7 +1987,30 @@ function renderComponent(item) {
         ["spacer", () => renderSpacer(item)],
         ["switch", () => renderSwitch(item)],
         ["tabs", () => renderTabs(item)],
+
         ["text-field", () => renderTextField(item)],
+
+        ["email-field", () => {
+            item.type='email'
+            return renderTextField(item)
+        }],
+        ["number-field", () => {
+            item.type='number'
+            return renderTextField(item)
+        }],
+        ["tel-field", () => {
+            item.type='tel'
+            return renderTextField(item)
+        }],
+        ["url-field", () => {
+            item.type='url'
+            return renderTextField(item)
+        }],
+        ["file-field", () => {
+            item.type='file'
+            return renderTextField(item)
+        }],
+
         ["textarea-field", () => renderTextareaField(item)],
         ["time-field", () => renderTimeField(item)],
         ["time-picker", () => renderTimePicker(item)],
@@ -1977,4 +2024,4 @@ function renderComponent(item) {
     ], () => nothing)
 }
 
-export { renderComponent }
+export { renderComponent };
