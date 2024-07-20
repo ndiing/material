@@ -1,51 +1,49 @@
 # Material Design Framework
 
 ![NPM Version](https://img.shields.io/npm/v/%40ndiinginc%2Fmaterial)
-![NPM Downloads](https://img.shields.io/npm/d18m/%40ndiinginc%2Fmaterial)
+![NPM Downloads](https://img.shields.io/npm/dm/%40ndiinginc%2Fmaterial)
 ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/%40ndiinginc%2Fmaterial)
 ![GitHub License](https://img.shields.io/github/license/ndiing/material)
 
+Framework ringan untuk membuat komponen Material Design menggunakan Node.js, Webpack, dan Lit.
 
+## Instalasi melalui NPM
 
-A lightweight framework for creating Material Design components using Node.js, Webpack, and Lit.
+Untuk mulai menggunakan framework Material Design, instal paket `@ndiinginc/material` melalui npm:
 
-## Installation via NPM
-
-To begin using the Material Design framework, install the `@ndiinginc/material` package via npm:
-
-```bash
+<pre>
 npm install @ndiinginc/material
-```
+</pre>
 
-### Importing All Components
+### Mengimpor Semua Komponen
 
-For comprehensive integration, import the entire framework into your project:
+Untuk integrasi menyeluruh, impor seluruh framework ke dalam proyek Anda:
 
-```js
+<pre>
 import "@ndiinginc/material/dist/material/material.css";
 import "@ndiinginc/material/dist/material/material.js";
-```
+</pre>
 
-### Selective Imports
+### Impor Selektif
 
-Alternatively, selectively import specific components as required:
+Sebagai alternatif, impor komponen tertentu sesuai kebutuhan:
 
-```js
+<pre>
 import "@ndiinginc/material/dist/button/button.css";
 import "@ndiinginc/material/dist/icon-button/icon-button.css";
 
 import "@ndiinginc/material/dist/button/button.js";
 import "@ndiinginc/material/dist/icon-button/icon-button.js";
-// Add more components as needed
-```
+// Tambahkan komponen lainnya sesuai kebutuhan
+</pre>
 
-## CDN Integration
+## Integrasi CDN
 
-### Importing All Components
+### Mengimpor Semua Komponen
 
-For deployments using a Content Delivery Network (CDN), link to the compiled CSS and JavaScript files:
+Untuk deployment menggunakan Content Delivery Network (CDN), tautkan ke file CSS dan JavaScript yang telah dikompilasi:
 
-```html
+<pre>
 <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@ndiinginc/material/dist/material/material.css"
@@ -54,13 +52,13 @@ For deployments using a Content Delivery Network (CDN), link to the compiled CSS
     type="module"
     src="https://cdn.jsdelivr.net/npm/@ndiinginc/material/dist/material/material.js"
 ></script>
-```
+</pre>
 
-### Selective Imports
+### Impor Selektif
 
-To optimize loading, include CSS and JavaScript files separately for each component:
+Untuk mengoptimalkan pemuatan, sertakan file CSS dan JavaScript secara terpisah untuk setiap komponen:
 
-```html
+<pre>
 <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@ndiinginc/material/dist/button/button.css"
@@ -78,12 +76,12 @@ To optimize loading, include CSS and JavaScript files separately for each compon
     type="module"
     src="https://cdn.jsdelivr.net/npm/@ndiinginc/material/dist/icon-button/icon-button.js"
 ></script>
-<!-- Include additional components as needed -->
-```
+<!-- Sertakan komponen tambahan sesuai kebutuhan -->
+</pre>
 
-## Sizes
+## Ukuran Komponen
 
-| Name                   | Size    |
+| Nama Komponen          | Ukuran  |
 | ---------------------- | ------- |
 | attribute-observer     | 1.25KB  |
 | badge                  | 1.47KB  |
