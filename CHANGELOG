@@ -1,0 +1,121 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+### Added
+- New feature or enhancement
+- New components or modules
+
+### Changed
+- Updates or improvements to existing features
+- Changes to API or behavior
+
+### Fixed
+- Bug fixes and issue resolutions
+
+### Deprecated
+- Features or APIs that are deprecated and will be removed in future releases
+
+### Removed
+- Features or components that have been removed
+
+## [1.0.0] - 2024-07-20
+
+### Added
+- Initial release of the project
+- Core components including Button, Icon Button, Card, and more
+
+### Changed
+- Improved component styling and layout
+- Updated documentation with usage examples
+
+### Fixed
+- Resolved minor bugs in Button component
+- Fixed issues with CSS conflicts in the Icon Button component
+
+## [0.9.0] - 2024-06-15
+
+### Added
+- Added experimental components for feedback
+- Included basic theming support
+
+### Changed
+- Refactored internal codebase for better maintainability
+- Improved performance for data-table component
+
+### Fixed
+- Corrected display issues in the data-table header
+- Fixed alignment issues in the navigation bar
+
+## [0.8.0] - 2024-05-01
+
+### Added
+- New data-grid component with customizable columns
+- Integration with external CSS frameworks
+
+### Changed
+- Updated design system for consistency
+- Improved accessibility features
+
+### Fixed
+- Resolved layout issues in the modal component
+- Fixed bugs related to dynamic content loading
+
+## [0.7.0] - 2024-03-10
+
+### Added
+- Added support for multiple languages
+- Introduced user-friendly form components
+
+### Changed
+- Refined component API for ease of use
+- Enhanced performance for large data sets
+
+### Fixed
+- Fixed bugs in the date-picker component
+- Corrected minor styling issues
+
+## [0.6.0] - 2024-01-15
+
+### Added
+- Added documentation for API usage
+- Introduced new icons and visual assets
+
+### Changed
+- Improved responsiveness of layout components
+- Updated build process for faster development
+
+### Fixed
+- Addressed security vulnerabilities
+- Fixed issues with form validation
+
+## [0.5.0] - 2023-11-20
+
+### Added
+- Added support for custom themes
+- Included new utility functions for easier development
+
+### Changed
+- Refactored component code for better readability
+- Updated dependencies to latest versions
+
+### Fixed
+- Resolved minor bugs and issues from previous releases
+- Fixed performance issues in the grid component
+
+## [0.4.0] - 2023-09-05
+
+### Added
+- Initial alpha release of core components
+- Basic setup for project structure and build tools
+
+### Changed
+- Improved initial setup instructions
+- Enhanced compatibility with popular browsers
+
+### Fixed
+- Fixed initial bugs reported during alpha testing
+- Addressed setup issues for new contributors
+
