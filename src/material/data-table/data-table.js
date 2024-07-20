@@ -308,6 +308,7 @@ class MDDataTableComponent extends MDCardComponent {
         this.storeRowsTotal = total;
         this.storeRows = docs;
         this.total = this.storeRowsTotal;
+        this.virtual.viewport.scrollTop=0
     }
 
     updateColumns() {
