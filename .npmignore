@@ -2,3 +2,5 @@ dev/
 dist/
 docs/
 TODO
+src/index.js
+src/dev/
