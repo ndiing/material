@@ -83,10 +83,12 @@ import { MDMenuComponent } from "./menu/menu.js";
 import { MDTabsComponent } from "./tabs/tabs.js";
 
 import { MDPaginationComponent } from "./pagination/pagination.js";
+import { MDDataTableCellComponent } from "./data-table-cell/data-table-cell.js";
 import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
 import { MDDataTableColumnCellComponent } from "./data-table-column-cell/data-table-column-cell.js";
 import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-row-cell.js";
 import { MDDataTableComponent } from "./data-table/data-table.js";
+
 export {
     //
     MDObserver,
@@ -170,3 +172,4 @@ export {
     MDDataTableRowCellComponent,
     MDDataTableComponent,
 };
+
