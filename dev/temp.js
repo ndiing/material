@@ -140,7 +140,7 @@ open("./src/material", (file) => {
         let name= path.parse(file).name
         let size=getFileSizeInKB(file).toFixed(2)
         code3+=`${name}|${size}KB\n`
-        write(file,result.data)
+        // write(file,result.data)
         // console.log(result.data)
     }
 });
