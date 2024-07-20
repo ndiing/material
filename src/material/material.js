@@ -50,7 +50,6 @@ import { MDSelectFieldComponent } from "./select-field/select-field.js";
 
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
-import { MDToolComponent } from "./tool/tool.js";
 
 import { MDCardComponent } from "./card/card.js";
 import { MDScrimComponent } from "./scrim/scrim.js";
