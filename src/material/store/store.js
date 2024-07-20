@@ -196,6 +196,8 @@ class MDStore {
         } else if (_start !== undefined && _end !== undefined) {
             docs = this.slice(docs, _start, _end);
         }
+
+
         return { total, docs: docs };
     }
 
