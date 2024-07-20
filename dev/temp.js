@@ -15,7 +15,17 @@ function toCamelCase(string) {
 
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
-
+function getFileSizeInKB(filePath) {
+    try {
+      const stats = fs.statSync(filePath);
+      const fileSizeInBytes = stats.size;
+      const fileSizeInKB = fileSizeInBytes / 1024;
+      return fileSizeInKB;
+    } catch (error) {
+      console.error(`Error getting file size: ${error.message}`);
+      return null;
+    }
+  }
 function read(file, data) {
     try {
         data = fs.readFileSync(file, {
@@ -119,122 +129,129 @@ function parse(data) {
 }
 
 let docs = [];
-open("./src/material", (file) => {
+// let code3=''
+// code3+='name|size\n'
+// code3+='---|---\n'
+open("./dist", (file) => {
     if (file.endsWith(".js")) {
         let data = read(file);
         let result = parse(data);
         docs.push(result.doc);
+        // let name= path.parse(file).name
+        // let size=getFileSizeInKB(file).toFixed(2)
+        // code3+=`${name}|${size}KB\n`
         // write(file,result.data)
         // console.log(result.data)
     }
 });
+// write("./dev/size.md", code3);
 
-const docMap = new Map(docs.map((doc) => [doc.className, doc]));
+// const docMap = new Map(docs.map((doc) => [doc.className, doc]));
 
-function loop(doc) {
-    const acc = [];
-    while (doc && doc.extendsName) {
-        doc = docMap.get(doc.extendsName);
-        if (doc) acc.push(doc);
-    }
-    return acc;
-}
+// function loop(doc) {
+//     const acc = [];
+//     while (doc && doc.extendsName) {
+//         doc = docMap.get(doc.extendsName);
+//         if (doc) acc.push(doc);
+//     }
+//     return acc;
+// }
 
-let code = "";
-code += `import { html, nothing } from "lit"\n`;
-code += `import { choose } from "lit/directives/choose.js"\n`;
-code += `import { classMap } from "lit/directives/class-map.js"\n`;
-code += `import { ifDefined } from "lit/directives/if-defined.js"\n`;
-code += `import { styleMap } from "lit/directives/style-map.js"\n`;
-code += `\n`;
-let code2 = "";
-code2 += `function renderComponent(item) {\n`;
-code2 += `    /* prettier-ignore */\n`;
-code2 += `    return choose(item.component, [\n`;
+// let code = "";
+// code += `import { html, nothing } from "lit"\n`;
+// code += `import { choose } from "lit/directives/choose.js"\n`;
+// code += `import { classMap } from "lit/directives/class-map.js"\n`;
+// code += `import { ifDefined } from "lit/directives/if-defined.js"\n`;
+// code += `import { styleMap } from "lit/directives/style-map.js"\n`;
+// code += `\n`;
+// let code2 = "";
+// code2 += `function renderComponent(item) {\n`;
+// code2 += `    /* prettier-ignore */\n`;
+// code2 += `    return choose(item.component, [\n`;
 
-for (const doc of docs) {
-    // if(![
-    //     /tree$/,
-    //     /list$/,
-    // ].some(reg=>reg.test(doc.tagName)))
-    //     continue
+// for (const doc of docs) {
+//     // if(![
+//     //     /tree$/,
+//     //     /list$/,
+//     // ].some(reg=>reg.test(doc.tagName)))
+//     //     continue
 
-    doc.parents = loop(doc);
-    let properties = new Map(
-        []
-            .concat(
-                doc.parents
-                    .map((p) => p.properties)
-                    .flat()
-                    .filter(Boolean),
-            )
-            .concat(doc?.properties || [])
-            .map((p) => [p.name, p]),
-    );
-    let methods = new Map(
-        []
-            .concat(
-                doc.parents
-                    .map((p) => p.methods)
-                    .flat()
-                    .filter(Boolean),
-            )
-            .concat(doc?.methods || [])
-            .map((p) => [p.name, p]),
-    );
-    let emits = new Map(
-        []
-            .concat(
-                doc.parents
-                    .map((p) => p.emits)
-                    .flat()
-                    .filter(Boolean),
-            )
-            .concat(doc?.emits || [])
-            .map((p) => [p.name, p]),
-    );
+//     doc.parents = loop(doc);
+//     let properties = new Map(
+//         []
+//             .concat(
+//                 doc.parents
+//                     .map((p) => p.properties)
+//                     .flat()
+//                     .filter(Boolean),
+//             )
+//             .concat(doc?.properties || [])
+//             .map((p) => [p.name, p]),
+//     );
+//     let methods = new Map(
+//         []
+//             .concat(
+//                 doc.parents
+//                     .map((p) => p.methods)
+//                     .flat()
+//                     .filter(Boolean),
+//             )
+//             .concat(doc?.methods || [])
+//             .map((p) => [p.name, p]),
+//     );
+//     let emits = new Map(
+//         []
+//             .concat(
+//                 doc.parents
+//                     .map((p) => p.emits)
+//                     .flat()
+//                     .filter(Boolean),
+//             )
+//             .concat(doc?.emits || [])
+//             .map((p) => [p.name, p]),
+//     );
 
-    properties = Array.from(properties.values());
-    methods = Array.from(methods.values());
-    emits = Array.from(emits.values());
+//     properties = Array.from(properties.values());
+//     methods = Array.from(methods.values());
+//     emits = Array.from(emits.values());
 
-    // console.log(properties);
-    // console.log(methods);
-    // console.log(emits);
+//     // console.log(properties);
+//     // console.log(methods);
+//     // console.log(emits);
 
-    if (doc.tagName) {
-        let name = doc.tagName.replace("md-", "");
-        let methodName = toCamelCase("render-" + name);
+//     if (doc.tagName) {
+//         let name = doc.tagName.replace("md-", "");
+//         let methodName = toCamelCase("render-" + name);
 
-        code += `function ${methodName}(item = {}) {\n`;
-        code += `    /* prettier-ignore */\n`;
-        code += `    return html\`\n`;
-        code += `        <${doc.tagName}\n`;
-        code += `            .data="\${item}"\n`;
-        code += `            id="\${ifDefined(item.id)}"\n`;
-        code += `            class="\${classMap({...item.classMap})}"\n`;
-        code += `            style="\${styleMap({...item.styleMap})}"\n`;
-        for (const { name } of properties) {
-            code += `            .${name}="\${ifDefined(item.${name})}"\n`;
-        }
-        if (["button", "chip", "emoji", "fab", "icon", "icon-button", "list-item", "tree-item"].includes(name)) {
-            code += `            @click="\${ifDefined(item.${toCamelCase("on-" + name + "-click")})}"\n`;
-        }
-        for (const { name } of emits) {
-            code += `            @${name}="\${ifDefined(item.${name})}"\n`;
-        }
-        code += `        ></${doc.tagName}>\n`;
-        code += `    \`\n`;
-        code += `}\n`;
-        code += `\n`;
+//         code += `function ${methodName}(item = {}) {\n`;
+//         code += `    /* prettier-ignore */\n`;
+//         code += `    return html\`\n`;
+//         code += `        <${doc.tagName}\n`;
+//         code += `            .data="\${item}"\n`;
+//         code += `            id="\${ifDefined(item.id)}"\n`;
+//         code += `            class="\${classMap({...item.classMap})}"\n`;
+//         code += `            style="\${styleMap({...item.styleMap})}"\n`;
+//         for (const { name } of properties) {
+//             code += `            .${name}="\${ifDefined(item.${name})}"\n`;
+//         }
+//         if (["button", "chip", "emoji", "fab", "icon", "icon-button", "list-item", "tree-item"].includes(name)) {
+//             code += `            @click="\${ifDefined(item.${toCamelCase("on-" + name + "-click")})}"\n`;
+//         }
+//         for (const { name } of emits) {
+//             code += `            @${name}="\${ifDefined(item.${name})}"\n`;
+//         }
+//         code += `        ></${doc.tagName}>\n`;
+//         code += `    \`\n`;
+//         code += `}\n`;
+//         code += `\n`;
 
-        code2 += `        ["${name}", () => ${methodName}(item)],\n`;
-    }
-}
-// code2 += `        ["spacer", () => html\`<div class="md-pane__spacer"></div>\`],\n`;
-code2 += `    ], () => nothing)\n`;
-code2 += `}\n`;
-code += code2;
-code += `\n`;
-code += `export { renderComponent }\n`;
-write("./dev/template.js", code);
+//         code2 += `        ["${name}", () => ${methodName}(item)],\n`;
+//     }
+// }
+// // code2 += `        ["spacer", () => html\`<div class="md-pane__spacer"></div>\`],\n`;
+// code2 += `    ], () => nothing)\n`;
+// code2 += `}\n`;
+// code += code2;
+// code += `\n`;
+// code += `export { renderComponent }\n`;
+// write("./dev/template.js", code);
