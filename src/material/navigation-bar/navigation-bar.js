@@ -43,6 +43,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;

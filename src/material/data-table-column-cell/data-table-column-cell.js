@@ -22,6 +22,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

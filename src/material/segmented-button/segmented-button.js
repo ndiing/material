@@ -47,6 +47,7 @@ class MDSegmentedButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleSegmentedButtonItemClick(event) {
         if (this.multiSelection || this.singleSelection) {

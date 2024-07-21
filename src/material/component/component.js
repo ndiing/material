@@ -4,7 +4,6 @@ import { updateWhenLocaleChanges } from "@lit/localize";
 /**
  * {{desc}}
  * @extends LitElement
- * @element undefined
  */
 class MDComponent extends LitElement {
     /**
@@ -50,6 +49,7 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -81,6 +81,8 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} listener - {{desc}}
      */
     on(type, listener) {
         listener = listener.bind(this);
@@ -89,6 +91,8 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} listener - {{desc}}
      */
     once(type, listener) {
         const handleListener = (event) => {
@@ -100,6 +104,8 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} listener - {{desc}}
      */
     off(type, listener) {
         this.removeEventListener(type, listener);
@@ -107,6 +113,8 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} detail - {{desc}}
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

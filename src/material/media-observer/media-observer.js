@@ -10,12 +10,11 @@ const breakpoints = [
 
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  */
 class MDMediaObserver {
     /**
      * {{desc}}
+     * @param {Any} callback = () => {} - {{desc}}
      */
     constructor(callback = () => {}) {
         this.callback = callback;
@@ -23,6 +22,7 @@ class MDMediaObserver {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
      */
     observe(items) {
         const handleChange = () => {

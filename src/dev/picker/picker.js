@@ -75,6 +75,7 @@ class DevPickerComponent extends MDComponent {
     get datetimePicker() {
         return this.querySelector("#datetimePicker");
     }
+
     handleDatetimePickerButtonClick(event) {
         this.datetimePicker.showModal(event.currentTarget);
     }
@@ -82,6 +83,7 @@ class DevPickerComponent extends MDComponent {
     get datePicker() {
         return this.querySelector("#datePicker");
     }
+
     handleDatePickerButtonClick(event) {
         this.datePicker.showModal(event.currentTarget);
     }
@@ -89,6 +91,7 @@ class DevPickerComponent extends MDComponent {
     get monthPicker() {
         return this.querySelector("#monthPicker");
     }
+
     handleMonthPickerButtonClick(event) {
         this.monthPicker.showModal(event.currentTarget);
     }
@@ -96,6 +99,7 @@ class DevPickerComponent extends MDComponent {
     get timePicker() {
         return this.querySelector("#timePicker");
     }
+
     handleTimePickerButtonClick(event) {
         this.timePicker.showModal(event.currentTarget);
     }
@@ -103,6 +107,7 @@ class DevPickerComponent extends MDComponent {
     get weekPicker() {
         return this.querySelector("#weekPicker");
     }
+
     handleWeekPickerButtonClick(event) {
         this.weekPicker.showModal(event.currentTarget);
     }
@@ -110,6 +115,7 @@ class DevPickerComponent extends MDComponent {
     get colorPicker() {
         return this.querySelector("#colorPicker");
     }
+
     handleColorPickerButtonClick(event) {
         this.colorPicker.showModal(event.currentTarget);
     }
@@ -117,6 +123,7 @@ class DevPickerComponent extends MDComponent {
     get emojiPicker() {
         return this.querySelector("#emojiPicker");
     }
+
     handleEmojiPickerButtonClick(event) {
         this.emojiPicker.showModal(event.currentTarget);
     }

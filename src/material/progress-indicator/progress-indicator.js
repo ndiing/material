@@ -20,6 +20,7 @@ class MDProgressIndicatorComponent extends MDComponent {
         value: { type: Number },
         max: { type: Number },
     };
+
     variants = ["circular", "linear"];
 
     /**
@@ -72,6 +73,7 @@ class MDProgressIndicatorComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

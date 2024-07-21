@@ -2,12 +2,12 @@ import { getBoundary } from "../functions/functions";
 
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  */
 class MDPopperController {
     /**
      * {{desc}}
+     * @param {Any} host - {{desc}}
+     * @param {Any} options = {} - {{desc}}
      */
     constructor(host, options = {}) {
         this.host = host;
@@ -18,6 +18,9 @@ class MDPopperController {
 
     /**
      * {{desc}}
+     * @param {Any} element - {{desc}}
+     * @param {Any} absoluteRect = { left: 0 - {{desc}}
+     * @param {Any} top: 0 } - {{desc}}
      */
     getRect(element, absoluteRect = { left: 0, top: 0 }) {
         let width, height, left, top, right, bottom;
@@ -39,6 +42,7 @@ class MDPopperController {
 
     /**
      * {{desc}}
+     * @param {Any} container - {{desc}}
      */
     getAbsoluteRect(container) {
         const absolute = document.createElement("div");
@@ -55,6 +59,12 @@ class MDPopperController {
 
     /**
      * {{desc}}
+     * @param {Any} { left - {{desc}}
+     * @param {Any} boundaryRect - {{desc}}
+     * @param {Any} top - {{desc}}
+     * @param {Any} right - {{desc}}
+     * @param {Any} containerRect - {{desc}}
+     * @param {Any} bottom } - {{desc}}
      */
     adjustMaxBoundaryRect({ left, boundaryRect, top, right, containerRect, bottom }) {
         if (left < boundaryRect.left) {
@@ -74,6 +84,8 @@ class MDPopperController {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options = {} - {{desc}}
      */
     setPosition(button, options = {}) {
         options = {

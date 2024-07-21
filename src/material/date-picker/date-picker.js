@@ -62,6 +62,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
@@ -97,6 +98,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -111,6 +113,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -127,6 +130,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -143,6 +147,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -153,6 +158,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -164,6 +170,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -180,6 +187,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -192,6 +200,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());

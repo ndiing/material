@@ -84,6 +84,7 @@ class MDTextFieldComponent extends MDComponent {
         variant: { type: String },
         mask: { type: String },
     };
+
     textFieldNative = createRef();
     textFieldContainer = createRef();
 
@@ -279,10 +280,12 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value;
         }
     }
+
     variants = ["filled", "outlined", "rounded"];
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -303,6 +306,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldContainerClick(event) {
         this.emit("onTextFieldContainerClick", event);
@@ -310,6 +314,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldLabelClick(event) {
         this.emit("onTextFieldLabelClick", event);
@@ -317,6 +322,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldMetaClick(event) {
         this.emit("onTextFieldMetaClick", event);
@@ -324,6 +330,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeFocus(event) {
         this.style.removeProperty("--md-sys-motion-duration-short4");
@@ -333,6 +340,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeBlur(event) {
         this.focused = false;
@@ -341,6 +349,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         this.emit("onTextFieldNativeClick", event);
@@ -348,6 +357,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeKeydown(event) {
         this.emit("onTextFieldNativeKeydown", event);
@@ -355,6 +365,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeSelect(event) {
         this.emit("onTextFieldNativeSelect", event);
@@ -362,6 +373,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeInput(event) {
         if (this.type !== "file") {
@@ -380,6 +392,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeSearch(event) {
         if (this.type !== "file") {
@@ -391,6 +404,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
@@ -400,6 +414,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeReset(event) {
         if (this.type !== "file") {
@@ -411,6 +426,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldActionClick(event) {
         this.emit("onTextFieldActionClick", event);
@@ -418,6 +434,7 @@ class MDTextFieldComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", event);

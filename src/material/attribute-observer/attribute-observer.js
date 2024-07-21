@@ -1,11 +1,10 @@
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  */
 class MDAttributeObserver {
     /**
      * {{desc}}
+     * @param {Any} callback = () => {} - {{desc}}
      */
     constructor(callback = () => {}) {
         this.callback = callback;
@@ -13,6 +12,8 @@ class MDAttributeObserver {
 
     /**
      * {{desc}}
+     * @param {Any} target - {{desc}}
+     * @param {Any} attributeName - {{desc}}
      */
     observe(target, attributeName) {
         this.callback({

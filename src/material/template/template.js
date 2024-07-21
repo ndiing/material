@@ -5,7 +5,11 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 
 /**
- * {{desc}}
+ * Render Badge
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Number} [item.label] - {{desc}}
+ * @property {Number} [item.limit] - {{desc}}
  */
 function renderBadge(item = {}) {
     /* prettier-ignore */
@@ -23,7 +27,19 @@ function renderBadge(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Bottom App Bar
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderBottomAppBar(item = {}) {
     /* prettier-ignore */
@@ -49,7 +65,19 @@ function renderBottomAppBar(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Bottom Sheet
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderBottomSheet(item = {}) {
     /* prettier-ignore */
@@ -75,7 +103,34 @@ function renderBottomSheet(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Box
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadio] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadio] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  */
 function renderBox(item = {}) {
     /* prettier-ignore */
@@ -116,7 +171,15 @@ function renderBox(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Button
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  */
 function renderButton(item = {}) {
     /* prettier-ignore */
@@ -139,7 +202,15 @@ function renderButton(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Card
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
  */
 function renderCard(item = {}) {
     /* prettier-ignore */
@@ -161,7 +232,16 @@ function renderCard(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Checkbox
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.checked] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
  */
 function renderCheckbox(item = {}) {
     /* prettier-ignore */
@@ -183,7 +263,17 @@ function renderCheckbox(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Chip
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.avatar] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.action] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onChipActionClick] - {{desc}}
  */
 function renderChip(item = {}) {
     /* prettier-ignore */
@@ -208,7 +298,12 @@ function renderChip(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Chips
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
+ * @property {Boolean} [item.multiSelection] - {{desc}}
+ * @property {Function} [item.onChipClick] - {{desc}}
  */
 function renderChips(item = {}) {
     /* prettier-ignore */
@@ -227,7 +322,50 @@ function renderChips(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Color Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderColorField(item = {}) {
     /* prettier-ignore */
@@ -283,7 +421,29 @@ function renderColorField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Color Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onColorPickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onColorPickerSelection] - {{desc}}
+ * @property {Function} [item.onColorPickerGradientTrackPointerdown] - {{desc}}
+ * @property {Function} [item.onColorPickerGradientTrackPointermove] - {{desc}}
+ * @property {Function} [item.onColorPickerGradientTrackPointerup] - {{desc}}
+ * @property {Function} [item.onColorPickerHueNativeInput] - {{desc}}
+ * @property {Function} [item.onColorPickerOpacityNativeInput] - {{desc}}
+ * @property {Function} [item.onColorPickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onColorPickerButtonOkClick] - {{desc}}
  */
 function renderColorPicker(item = {}) {
     /* prettier-ignore */
@@ -319,7 +479,42 @@ function renderColorPicker(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Data Table
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Array} [item.columns] - {{desc}}
+ * @property {Array} [item.rows] - {{desc}}
+ * @property {Array} [item.footer] - {{desc}}
+ * @property {Boolean} [item.stickyHeader] - {{desc}}
+ * @property {Boolean} [item.stickyFooter] - {{desc}}
+ * @property {Boolean} [item.checkboxSelection] - {{desc}}
+ * @property {Boolean} [item.stickyCheckboxSelection] - {{desc}}
+ * @property {Boolean} [item.rangeSelection] - {{desc}}
+ * @property {Boolean} [item.multiSelection] - {{desc}}
+ * @property {Boolean} [item.singleSelection] - {{desc}}
+ * @property {Boolean} [item.allSelection] - {{desc}}
+ * @property {Array} [item.toolbarItems] - {{desc}}
+ * @property {Function} [item.onDataTableTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellDragStart] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellDrag] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellDragEnd] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellResizeStart] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellResize] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellResizeEnd] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellPointerenter] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellPointerleave] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellClick] - {{desc}}
+ * @property {Function} [item.onDataTableColumnCellCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onDataTableRowCellCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onDataTableRowClick] - {{desc}}
+ * @property {Function} [item.onDataTableKeydown] - {{desc}}
+ * @property {Function} [item.onDataTablePaginationChange] - {{desc}}
  */
 function renderDataTable(item = {}) {
     /* prettier-ignore */
@@ -368,7 +563,34 @@ function renderDataTable(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Data Table Column Cell
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadio] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadio] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  */
 function renderDataTableColumnCell(item = {}) {
     /* prettier-ignore */
@@ -409,7 +631,34 @@ function renderDataTableColumnCell(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Data Table Item
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadio] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadio] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  */
 function renderDataTableItem(item = {}) {
     /* prettier-ignore */
@@ -450,7 +699,34 @@ function renderDataTableItem(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Data Table Row Cell
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadio] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadio] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  */
 function renderDataTableRowCell(item = {}) {
     /* prettier-ignore */
@@ -491,7 +767,50 @@ function renderDataTableRowCell(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Date Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderDateField(item = {}) {
     /* prettier-ignore */
@@ -547,7 +866,41 @@ function renderDateField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Date Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Number} [item.index] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerSelection] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonOkClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerHourItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMinuteItemClick] - {{desc}}
+ * @property {Function} [item.onDatePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onDatePickerSelection] - {{desc}}
+ * @property {Function} [item.onDatePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onDatePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onDatePickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onDatePickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onDatePickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onDatePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onDatePickerButtonOkClick] - {{desc}}
  */
 function renderDatePicker(item = {}) {
     /* prettier-ignore */
@@ -595,7 +948,50 @@ function renderDatePicker(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Datetime Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderDatetimeField(item = {}) {
     /* prettier-ignore */
@@ -651,7 +1047,32 @@ function renderDatetimeField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Datetime Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Number} [item.index] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerSelection] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonOkClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerHourItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMinuteItemClick] - {{desc}}
  */
 function renderDatetimePicker(item = {}) {
     /* prettier-ignore */
@@ -690,7 +1111,19 @@ function renderDatetimePicker(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Dialog
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderDialog(item = {}) {
     /* prettier-ignore */
@@ -716,7 +1149,10 @@ function renderDialog(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Divider
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
  */
 function renderDivider(item = {}) {
     /* prettier-ignore */
@@ -733,7 +1169,10 @@ function renderDivider(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Emoji
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.emoji] - {{desc}}
  */
 function renderEmoji(item = {}) {
     /* prettier-ignore */
@@ -751,7 +1190,28 @@ function renderEmoji(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Emoji Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Object} [item.tabs] - {{desc}}
+ * @property {Array} [item.rows] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onEmojiPickerTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onEmojiPickerTabsItemClick] - {{desc}}
+ * @property {Function} [item.onEmojiPickerViewportVirtualScroll] - {{desc}}
+ * @property {Function} [item.onEmojiPickerGridColumnClick] - {{desc}}
+ * @property {Function} [item.onEmojiPickerButtonClick] - {{desc}}
+ * @property {Function} [item.onEmojiPickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onEmojiPickerButtonOkClick] - {{desc}}
  */
 function renderEmojiPicker(item = {}) {
     /* prettier-ignore */
@@ -786,7 +1246,14 @@ function renderEmojiPicker(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Fab
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  */
 function renderFab(item = {}) {
     /* prettier-ignore */
@@ -808,7 +1275,20 @@ function renderFab(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Form
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.acceptCharset] - {{desc}}
+ * @property {String} [item.action] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {String} [item.enctype] - {{desc}}
+ * @property {String} [item.method] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {Boolean} [item.novalidate] - {{desc}}
+ * @property {String} [item.target] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
+ * @property {Function} [item.onFormNativeReset] - {{desc}}
+ * @property {Function} [item.onFormNativeSubmit] - {{desc}}
  */
 function renderForm(item = {}) {
     /* prettier-ignore */
@@ -834,7 +1314,10 @@ function renderForm(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Icon
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
  */
 function renderIcon(item = {}) {
     /* prettier-ignore */
@@ -852,7 +1335,15 @@ function renderIcon(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Icon Button
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {Function} [item.onIconButtonToggleClick] - {{desc}}
  */
 function renderIconButton(item = {}) {
     /* prettier-ignore */
@@ -874,7 +1365,16 @@ function renderIconButton(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Image
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.src] - {{desc}}
+ * @property {String} [item.alt] - {{desc}}
+ * @property {String} [item.loading] - {{desc}}
+ * @property {String} [item.ratio] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Function} [item.onImageNativeLoad] - {{desc}}
+ * @property {Function} [item.onImageNativeError] - {{desc}}
  */
 function renderImage(item = {}) {
     /* prettier-ignore */
@@ -897,7 +1397,10 @@ function renderImage(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Layout
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
  */
 function renderLayout(item = {}) {
     /* prettier-ignore */
@@ -914,7 +1417,13 @@ function renderLayout(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Layout Item
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Number} [item.expanded] - {{desc}}
+ * @property {Number} [item.medium] - {{desc}}
+ * @property {Number} [item.compact] - {{desc}}
+ * @property {String} [item.region] - {{desc}}
  */
 function renderLayoutItem(item = {}) {
     /* prettier-ignore */
@@ -934,7 +1443,21 @@ function renderLayoutItem(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render List
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
+ * @property {Object} [item.map] - {{desc}}
+ * @property {Function} [item.format] - {{desc}}
+ * @property {Boolean} [item.rangeSelection] - {{desc}}
+ * @property {Boolean} [item.multiSelection] - {{desc}}
+ * @property {Boolean} [item.singleSelection] - {{desc}}
+ * @property {Boolean} [item.allSelection] - {{desc}}
+ * @property {Function} [item.onListItemClick] - {{desc}}
+ * @property {Function} [item.onListKeydown] - {{desc}}
+ * @property {Function} [item.onListItemCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onListItemRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onListItemSwitchNativeInput] - {{desc}}
  */
 function renderList(item = {}) {
     /* prettier-ignore */
@@ -962,7 +1485,27 @@ function renderList(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render List Item
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.avatar] - {{desc}}
+ * @property {String} [item.thumbnail] - {{desc}}
+ * @property {String} [item.video] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadioButton] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Boolean} [item.trailingRadioButton] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {String} [item.routerLink] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Function} [item.onListItemSelected] - {{desc}}
  */
 function renderListItem(item = {}) {
     /* prettier-ignore */
@@ -997,7 +1540,11 @@ function renderListItem(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Markdown
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.href] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
  */
 function renderMarkdown(item = {}) {
     /* prettier-ignore */
@@ -1015,7 +1562,28 @@ function renderMarkdown(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Menu
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
+ * @property {Object} [item.map] - {{desc}}
+ * @property {Number} [item.rowHeight] - {{desc}}
+ * @property {Number} [item.maxRows] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onMenuListSelection] - {{desc}}
+ * @property {Function} [item.onMenuListItemEnter] - {{desc}}
+ * @property {Function} [item.onMenuViewportVirtualScroll] - {{desc}}
+ * @property {Function} [item.onMenuViewportVirtualScrollInitialized] - {{desc}}
+ * @property {Function} [item.onMenuListItemClick] - {{desc}}
  */
 function renderMenu(item = {}) {
     /* prettier-ignore */
@@ -1050,7 +1618,50 @@ function renderMenu(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Month Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderMonthField(item = {}) {
     /* prettier-ignore */
@@ -1106,7 +1717,40 @@ function renderMonthField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Month Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Number} [item.index] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerSelection] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonOkClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerHourItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMinuteItemClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerSelection] - {{desc}}
+ * @property {Function} [item.onMonthPickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onMonthPickerButtonOkClick] - {{desc}}
  */
 function renderMonthPicker(item = {}) {
     /* prettier-ignore */
@@ -1153,7 +1797,19 @@ function renderMonthPicker(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Navigation Bar
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderNavigationBar(item = {}) {
     /* prettier-ignore */
@@ -1179,7 +1835,19 @@ function renderNavigationBar(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Navigation Drawer
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderNavigationDrawer(item = {}) {
     /* prettier-ignore */
@@ -1205,7 +1873,19 @@ function renderNavigationDrawer(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Navigation Rail
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderNavigationRail(item = {}) {
     /* prettier-ignore */
@@ -1231,7 +1911,50 @@ function renderNavigationRail(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Number Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderNumberField(item = {}) {
     /* prettier-ignore */
@@ -1287,7 +2010,25 @@ function renderNumberField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Pagination
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Number} [item.total] - {{desc}}
+ * @property {Number} [item.limit] - {{desc}}
+ * @property {Number} [item.page] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {Boolean} [item.firstPage] - {{desc}}
+ * @property {Boolean} [item.prevPage] - {{desc}}
+ * @property {Boolean} [item.nextPage] - {{desc}}
+ * @property {Boolean} [item.lastPage] - {{desc}}
+ * @property {Function} [item.onPaginationChange] - {{desc}}
+ * @property {Function} [item.onPaginationLimitChange] - {{desc}}
+ * @property {Function} [item.onPaginationFirstClick] - {{desc}}
+ * @property {Function} [item.onPaginationPrevClick] - {{desc}}
+ * @property {Function} [item.onPaginationNextClick] - {{desc}}
+ * @property {Function} [item.onPaginationLastClick] - {{desc}}
  */
 function renderPagination(item = {}) {
     /* prettier-ignore */
@@ -1319,7 +2060,50 @@ function renderPagination(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Password Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderPasswordField(item = {}) {
     /* prettier-ignore */
@@ -1375,7 +2159,12 @@ function renderPasswordField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Progress Indicator
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Number} [item.value] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
  */
 function renderProgressIndicator(item = {}) {
     /* prettier-ignore */
@@ -1394,7 +2183,16 @@ function renderProgressIndicator(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Radio Button
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.checked] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
  */
 function renderRadioButton(item = {}) {
     /* prettier-ignore */
@@ -1416,7 +2214,10 @@ function renderRadioButton(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Scrim
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
  */
 function renderScrim(item = {}) {
     /* prettier-ignore */
@@ -1433,7 +2234,50 @@ function renderScrim(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Search Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderSearchField(item = {}) {
     /* prettier-ignore */
@@ -1489,7 +2333,13 @@ function renderSearchField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Segmented Button
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.buttons] - {{desc}}
+ * @property {Boolean} [item.singleSelection] - {{desc}}
+ * @property {Boolean} [item.multiSelection] - {{desc}}
+ * @property {Function} [item.onSegmentedButtonItemClick] - {{desc}}
  */
 function renderSegmentedButton(item = {}) {
     /* prettier-ignore */
@@ -1509,7 +2359,50 @@ function renderSegmentedButton(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Select Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderSelectField(item = {}) {
     /* prettier-ignore */
@@ -1565,7 +2458,19 @@ function renderSelectField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Sheet
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderSheet(item = {}) {
     /* prettier-ignore */
@@ -1591,7 +2496,19 @@ function renderSheet(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Side Sheet
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderSideSheet(item = {}) {
     /* prettier-ignore */
@@ -1617,7 +2534,17 @@ function renderSideSheet(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Slider
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.step] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Function} [item.onSliderNativeInput] - {{desc}}
+ * @property {Function} [item.onSliderNativeReset] - {{desc}}
  */
 function renderSlider(item = {}) {
     /* prettier-ignore */
@@ -1640,7 +2567,21 @@ function renderSlider(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Snackbar
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onSnackbarShow] - {{desc}}
+ * @property {Function} [item.onSnackbarClose] - {{desc}}
  */
 function renderSnackbar(item = {}) {
     /* prettier-ignore */
@@ -1668,7 +2609,9 @@ function renderSnackbar(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Spacer
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
  */
 function renderSpacer(item = {}) {
     /* prettier-ignore */
@@ -1684,7 +2627,17 @@ function renderSpacer(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Switch
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.checked] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Array} [item.icons] - {{desc}}
+ * @property {Function} [item.onSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onSwitchNativeReset] - {{desc}}
  */
 function renderSwitch(item = {}) {
     /* prettier-ignore */
@@ -1707,7 +2660,12 @@ function renderSwitch(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Tabs
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Function} [item.onTreeItemClick] - {{desc}}
  */
 function renderTabs(item = {}) {
     /* prettier-ignore */
@@ -1726,7 +2684,50 @@ function renderTabs(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Text Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderTextField(item = {}) {
     /* prettier-ignore */
@@ -1782,7 +2783,50 @@ function renderTextField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Textarea Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderTextareaField(item = {}) {
     /* prettier-ignore */
@@ -1838,7 +2882,50 @@ function renderTextareaField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Time Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderTimeField(item = {}) {
     /* prettier-ignore */
@@ -1894,7 +2981,40 @@ function renderTimeField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Time Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Number} [item.index] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerSelection] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonOkClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerHourItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMinuteItemClick] - {{desc}}
+ * @property {Function} [item.onTimePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onTimePickerSelection] - {{desc}}
+ * @property {Function} [item.onTimePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onTimePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onTimePickerHourItemClick] - {{desc}}
+ * @property {Function} [item.onTimePickerMinuteItemClick] - {{desc}}
+ * @property {Function} [item.onTimePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onTimePickerButtonOkClick] - {{desc}}
  */
 function renderTimePicker(item = {}) {
     /* prettier-ignore */
@@ -1941,7 +3061,10 @@ function renderTimePicker(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Toolbar
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
  */
 function renderToolbar(item = {}) {
     /* prettier-ignore */
@@ -1958,7 +3081,19 @@ function renderToolbar(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Tooltip
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderTooltip(item = {}) {
     /* prettier-ignore */
@@ -1984,7 +3119,19 @@ function renderTooltip(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Top App Bar
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
  */
 function renderTopAppBar(item = {}) {
     /* prettier-ignore */
@@ -2010,7 +3157,12 @@ function renderTopAppBar(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Tree
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Function} [item.onTreeItemClick] - {{desc}}
  */
 function renderTree(item = {}) {
     /* prettier-ignore */
@@ -2029,7 +3181,24 @@ function renderTree(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Tree Item
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {String} [item.routerLink] - {{desc}}
+ * @property {Number} [item.indent] - {{desc}}
+ * @property {Boolean} [item.isNode] - {{desc}}
+ * @property {Boolean} [item.expanded] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Boolean} [item.isParent] - {{desc}}
+ * @property {Array} [item.nodeActions] - {{desc}}
+ * @property {Array} [item.nodeIcons] - {{desc}}
+ * @property {Array} [item.leafIcons] - {{desc}}
+ * @property {Function} [item.onTreeItemSelected] - {{desc}}
  */
 function renderTreeItem(item = {}) {
     /* prettier-ignore */
@@ -2061,7 +3230,50 @@ function renderTreeItem(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Week Field
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.icon] - {{desc}}
+ * @property {String} [item.prefix] - {{desc}}
+ * @property {String} [item.suffix] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {String} [item.text] - {{desc}}
+ * @property {String} [item.type] - {{desc}}
+ * @property {String} [item.placeholder] - {{desc}}
+ * @property {String} [item.name] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Number} [item.min] - {{desc}}
+ * @property {Number} [item.max] - {{desc}}
+ * @property {Number} [item.cols] - {{desc}}
+ * @property {Number} [item.rows] - {{desc}}
+ * @property {Number} [item.minLength] - {{desc}}
+ * @property {Number} [item.maxLength] - {{desc}}
+ * @property {String} [item.pattern] - {{desc}}
+ * @property {Boolean} [item.required] - {{desc}}
+ * @property {Boolean} [item.readOnly] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {String} [item.autocomplete] - {{desc}}
+ * @property {Boolean} [item.multiple] - {{desc}}
+ * @property {Array} [item.options] - {{desc}}
+ * @property {Boolean} [item.validationMessage] - {{desc}}
+ * @property {Boolean} [item.focused] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {String} [item.mask] - {{desc}}
+ * @property {Function} [item.onTextFieldContainerClick] - {{desc}}
+ * @property {Function} [item.onTextFieldLabelClick] - {{desc}}
+ * @property {Function} [item.onTextFieldMetaClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeFocus] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeBlur] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeClick] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeKeydown] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSelect] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInput] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeSearch] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeInvalid] - {{desc}}
+ * @property {Function} [item.onTextFieldNativeReset] - {{desc}}
+ * @property {Function} [item.onTextFieldActionClick] - {{desc}}
+ * @property {Function} [item.onTextFieldIconButtonClick] - {{desc}}
  */
 function renderWeekField(item = {}) {
     /* prettier-ignore */
@@ -2117,7 +3329,41 @@ function renderWeekField(item = {}) {
 }
 
 /**
- * {{desc}}
+ * Render Week Picker
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {String} [item.variant] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {String} [item.label] - {{desc}}
+ * @property {String} [item.subLabel] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Array} [item.actions] - {{desc}}
+ * @property {Boolean} [item.open] - {{desc}}
+ * @property {Number} [item.index] - {{desc}}
+ * @property {String} [item.value] - {{desc}}
+ * @property {Function} [item.onSheetShow] - {{desc}}
+ * @property {Function} [item.onSheetClose] - {{desc}}
+ * @property {Function} [item.onSheetScrimClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerSelection] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerButtonOkClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerHourItemClick] - {{desc}}
+ * @property {Function} [item.onDatetimePickerMinuteItemClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerButtonLabelClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerSelection] - {{desc}}
+ * @property {Function} [item.onWeekPickerIconButtonPrevClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerIconButtonNextClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerYearItemClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerMonthItemClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerDayItemClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerButtonCancelClick] - {{desc}}
+ * @property {Function} [item.onWeekPickerButtonOkClick] - {{desc}}
  */
 function renderWeekPicker(item = {}) {
     /* prettier-ignore */

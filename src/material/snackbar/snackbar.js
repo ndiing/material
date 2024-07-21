@@ -26,6 +26,7 @@ class MDSnackbarComponent extends MDSheetComponent {
     static properties = {
         ...MDSheetComponent.properties,
     };
+
     static queue = createQueue();
 
     /**

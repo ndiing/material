@@ -48,6 +48,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
@@ -137,6 +138,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -185,6 +187,9 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} r - {{desc}}
+     * @param {Any} g - {{desc}}
+     * @param {Any} b - {{desc}}
      */
     findPixel(r, g, b) {
         const data = this.data;
@@ -231,6 +236,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     updateRgba(event) {
         const { width, height, left, top } = this.canvasRect;
@@ -258,6 +264,8 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -266,6 +274,8 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -274,6 +284,8 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {
@@ -294,6 +306,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerButtonLabelClick(event) {
         this.emit("onColorPickerButtonLabelClick", event);
@@ -301,6 +314,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerGradientTrackPointerdown(event) {
         window.addEventListener("pointermove", this.handleColorPickerGradientTrackPointermove);
@@ -314,6 +328,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerGradientTrackPointermove(event) {
         this.updateRgba(event);
@@ -323,6 +338,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerGradientTrackPointerup(event) {
         this.updateRgba(event);
@@ -335,6 +351,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerHueNativeInput(event) {
         const hue = parseFloat(event.currentTarget.value);
@@ -352,6 +369,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerOpacityNativeInput(event) {
         const alpha = parseFloat(event.currentTarget.value);
@@ -364,6 +382,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -376,6 +395,7 @@ class MDColorPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleColorPickerButtonOkClick(event) {
         this.value = this.selection.hex;

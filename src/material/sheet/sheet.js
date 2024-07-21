@@ -24,6 +24,7 @@ class MDSheetComponent extends MDCardComponent {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
+
     variants = ["north", "east", "south", "west", "modal"];
 
     /**
@@ -44,6 +45,7 @@ class MDSheetComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @param {Any} modal - {{desc}}
      */
     async show(modal) {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -78,6 +80,7 @@ class MDSheetComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @param {Any} ...args - {{desc}}
      */
     toggle(...args) {
         if (this.open) {
@@ -89,6 +92,7 @@ class MDSheetComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleSheetScrimClick(event) {
         this.close();

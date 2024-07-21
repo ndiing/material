@@ -2,12 +2,12 @@ import { isObject } from "../functions/functions.js";
 
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  */
 class MDStore {
     /**
      * {{desc}}
+     * @param {Any} docs = [] - {{desc}}
+     * @param {Any} options = {} - {{desc}}
      */
     constructor(docs = [], options = {}) {
         this.docs = docs;
@@ -19,6 +19,7 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} doc - {{desc}}
      */
     post(doc) {
         this.docs.push(doc);
@@ -27,6 +28,7 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} _id - {{desc}}
      */
     get(_id) {
         return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
@@ -34,6 +36,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} _id - {{desc}}
+     * @param {Any} doc - {{desc}}
      */
     patch(_id, doc) {
         const index = this.docs.findIndex((d) => d[this.options.primaryKey] === _id);
@@ -46,6 +50,7 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} _id - {{desc}}
      */
     delete(_id) {
         const index = this.docs.findIndex((doc) => doc[this.options.primaryKey] === _id);
@@ -59,6 +64,7 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} doc - {{desc}}
      */
     put(doc) {
         if (doc[this.options.primaryKey]) {
@@ -70,6 +76,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} docs - {{desc}}
+     * @param {Any} sorters - {{desc}}
      */
     sort(docs, sorters) {
         return docs.sort((a, b) => {
@@ -86,6 +94,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} docs - {{desc}}
+     * @param {Any} q - {{desc}}
      */
     search(docs, q) {
         const query = q.toLowerCase().trim();
@@ -94,6 +104,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} docs - {{desc}}
+     * @param {Any} filters - {{desc}}
      */
     filter(docs, filters) {
         return docs.filter((doc) => this.deepFilter(doc, filters));
@@ -101,6 +113,9 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} docs - {{desc}}
+     * @param {Any} _page - {{desc}}
+     * @param {Any} _limit - {{desc}}
      */
     paginate(docs, _page, _limit) {
         const startIndex = (_page - 1) * _limit;
@@ -109,6 +124,9 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} docs - {{desc}}
+     * @param {Any} _start - {{desc}}
+     * @param {Any} _end - {{desc}}
      */
     slice(docs, _start, _end) {
         return docs.slice(_start, _end);
@@ -116,6 +134,7 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} options = {} - {{desc}}
      */
     getAll(options = {}) {
         let { _sort, _order, q, _page, _limit, _start, _end, sorters, filters, ...rest } = options;
@@ -155,6 +174,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} target - {{desc}}
+     * @param {Any} source - {{desc}}
      */
     deepMerge(target, source) {
         if (!isObject(target) || !isObject(source)) {
@@ -175,6 +196,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} obj - {{desc}}
+     * @param {Any} path - {{desc}}
      */
     getValue(obj, path) {
         return path.split(".").reduce((acc, part) => acc && acc[part], obj);
@@ -182,6 +205,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} obj - {{desc}}
+     * @param {Any} query - {{desc}}
      */
     deepSearch(obj, query) {
         if (!isObject(obj)) {
@@ -201,6 +226,8 @@ class MDStore {
 
     /**
      * {{desc}}
+     * @param {Any} obj - {{desc}}
+     * @param {Any} filters - {{desc}}
      */
     deepFilter(obj, filters) {
         return filters.every((filter) => {

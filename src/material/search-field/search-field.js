@@ -29,6 +29,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -46,6 +47,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -54,6 +56,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

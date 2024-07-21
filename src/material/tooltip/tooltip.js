@@ -30,6 +30,8 @@ class MDTooltipComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -38,6 +40,8 @@ class MDTooltipComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -46,6 +50,8 @@ class MDTooltipComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {

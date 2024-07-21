@@ -1,5 +1,6 @@
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toPascalCase(string) {
     return string
@@ -11,6 +12,7 @@ function toPascalCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toCamelCase(string) {
     return string
@@ -22,6 +24,7 @@ function toCamelCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toSnakeCase(string) {
     return string
@@ -33,6 +36,7 @@ function toSnakeCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toKebabCase(string) {
     return string
@@ -44,6 +48,7 @@ function toKebabCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toFlatCase(string) {
     return string
@@ -55,6 +60,7 @@ function toFlatCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toUpperFlatCase(string) {
     return string
@@ -66,6 +72,7 @@ function toUpperFlatCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toPascalSnakeCase(string) {
     return string
@@ -77,6 +84,7 @@ function toPascalSnakeCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toCamelSnakeCase(string) {
     return string
@@ -88,6 +96,7 @@ function toCamelSnakeCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toScreamingSnakeCase(string) {
     return string
@@ -99,6 +108,7 @@ function toScreamingSnakeCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toTrainCase(string) {
     return string
@@ -110,6 +120,7 @@ function toTrainCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toCobolCase(string) {
     return string
@@ -121,6 +132,7 @@ function toCobolCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} string - {{desc}}
  */
 function toTitleCase(string) {
     return string
@@ -132,6 +144,7 @@ function toTitleCase(string) {
 
 /**
  * {{desc}}
+ * @param {Any} date - {{desc}}
  */
 function stringifyDatetimeLocal(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -140,6 +153,7 @@ function stringifyDatetimeLocal(date) {
 
 /**
  * {{desc}}
+ * @param {Any} date - {{desc}}
  */
 function stringifyDate(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -148,6 +162,7 @@ function stringifyDate(date) {
 
 /**
  * {{desc}}
+ * @param {Any} date - {{desc}}
  */
 function stringifyYear(date) {
     return `${date.getFullYear()}`;
@@ -155,6 +170,7 @@ function stringifyYear(date) {
 
 /**
  * {{desc}}
+ * @param {Any} date - {{desc}}
  */
 function stringifyMonth(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -163,6 +179,7 @@ function stringifyMonth(date) {
 
 /**
  * {{desc}}
+ * @param {Any} date - {{desc}}
  */
 function stringifyTime(date) {
     const pad = (n) => String(n).padStart(2, "0");
@@ -171,6 +188,7 @@ function stringifyTime(date) {
 
 /**
  * {{desc}}
+ * @param {Any} date - {{desc}}
  */
 function stringifyWeek(date) {
     let year = date.getFullYear();
@@ -180,6 +198,7 @@ function stringifyWeek(date) {
 
 /**
  * {{desc}}
+ * @param {Any} datetimeLocal - {{desc}}
  */
 function parseDatetimeLocal(datetimeLocal) {
     return new Date(datetimeLocal);
@@ -187,6 +206,7 @@ function parseDatetimeLocal(datetimeLocal) {
 
 /**
  * {{desc}}
+ * @param {Any} dateString - {{desc}}
  */
 function parseDate(dateString) {
     var [year, month, day] = dateString.split("-").map(Number);
@@ -195,6 +215,7 @@ function parseDate(dateString) {
 
 /**
  * {{desc}}
+ * @param {Any} yearString - {{desc}}
  */
 function parseYear(yearString) {
     return new Date(yearString);
@@ -202,6 +223,7 @@ function parseYear(yearString) {
 
 /**
  * {{desc}}
+ * @param {Any} monthString - {{desc}}
  */
 function parseMonth(monthString) {
     var [year, month] = monthString.split("-").map(Number);
@@ -210,6 +232,7 @@ function parseMonth(monthString) {
 
 /**
  * {{desc}}
+ * @param {Any} timeString - {{desc}}
  */
 function parseTime(timeString) {
     var [hours, minutes] = timeString.split(":").map(Number);
@@ -220,6 +243,7 @@ function parseTime(timeString) {
 
 /**
  * {{desc}}
+ * @param {Any} weekStr - {{desc}}
  */
 function parseWeek(weekStr) {
     let parts = weekStr.split("-W");
@@ -238,6 +262,7 @@ function parseWeek(weekStr) {
 
 /**
  * {{desc}}
+ * @param {Any} hex - {{desc}}
  */
 function hexToRgba(hex) {
     hex = hex.replace(/^#/, "");
@@ -250,6 +275,7 @@ function hexToRgba(hex) {
 
 /**
  * {{desc}}
+ * @param {Any} hex - {{desc}}
  */
 function hexToHsla(hex) {
     const rgba = hexToRgba(hex);
@@ -285,6 +311,10 @@ function hexToHsla(hex) {
 
 /**
  * {{desc}}
+ * @param {Any} h - {{desc}}
+ * @param {Any} s - {{desc}}
+ * @param {Any} l - {{desc}}
+ * @param {Any} a = 1 - {{desc}}
  */
 function hslaToRgba(h, s, l, a = 1) {
     h = ((h % 360) + 360) % 360;
@@ -324,6 +354,10 @@ function hslaToRgba(h, s, l, a = 1) {
 
 /**
  * {{desc}}
+ * @param {Any} r - {{desc}}
+ * @param {Any} g - {{desc}}
+ * @param {Any} b - {{desc}}
+ * @param {Any} a = 1 - {{desc}}
  */
 function rgbaToHex(r, g, b, a = 1) {
     r = Math.round(Math.min(255, Math.max(0, r)));
@@ -339,6 +373,10 @@ function rgbaToHex(r, g, b, a = 1) {
 
 /**
  * {{desc}}
+ * @param {Any} h - {{desc}}
+ * @param {Any} s - {{desc}}
+ * @param {Any} l - {{desc}}
+ * @param {Any} a = 1 - {{desc}}
  */
 function hslaToHex(h, s, l, a = 1) {
     const { red, green, blue } = hslaToRgba(h, s, l, a);
@@ -347,6 +385,10 @@ function hslaToHex(h, s, l, a = 1) {
 
 /**
  * {{desc}}
+ * @param {Any} r - {{desc}}
+ * @param {Any} g - {{desc}}
+ * @param {Any} b - {{desc}}
+ * @param {Any} a = 1 - {{desc}}
  */
 function rgbaToHsla(r, g, b, a = 1) {
     const nr = r / 255;
@@ -380,6 +422,7 @@ function rgbaToHsla(r, g, b, a = 1) {
 
 /**
  * {{desc}}
+ * @param {Any} color - {{desc}}
  */
 function isValidHexColor(color) {
     const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -388,6 +431,7 @@ function isValidHexColor(color) {
 
 /**
  * {{desc}}
+ * @param {Any} obj - {{desc}}
  */
 function isObject(obj) {
     return obj !== null && typeof obj === "object";
@@ -395,6 +439,7 @@ function isObject(obj) {
 
 /**
  * {{desc}}
+ * @param {Any} str - {{desc}}
  */
 function isArrayString(str) {
     const arrayRegex = /^\s*\[.*\]\s*$/;
@@ -403,6 +448,7 @@ function isArrayString(str) {
 
 /**
  * {{desc}}
+ * @param {Any} value - {{desc}}
  */
 function isDefined(value) {
     return value !== undefined && value !== null;
@@ -410,6 +456,9 @@ function isDefined(value) {
 
 /**
  * {{desc}}
+ * @param {Any} min - {{desc}}
+ * @param {Any} max - {{desc}}
+ * @param {Any} value - {{desc}}
  */
 function calcPercentage(min, max, value) {
     let percentage = ((value - min) / (max - min)) * 100;
@@ -418,6 +467,9 @@ function calcPercentage(min, max, value) {
 
 /**
  * {{desc}}
+ * @param {Any} min - {{desc}}
+ * @param {Any} max - {{desc}}
+ * @param {Any} value - {{desc}}
  */
 function calcDecimal(min, max, value) {
     let decimal = (value - min) / (max - min);
@@ -460,6 +512,7 @@ Date.prototype.getWeek = function () {
 
 /**
  * {{desc}}
+ * @param {Any} element - {{desc}}
  */
 function getBoundary(element) {
     let boundary = element.parentElement;

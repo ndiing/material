@@ -1,7 +1,5 @@
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
  * @fires MDRouter#onRouterNavigate - {{desc}}
  * @fires MDRouter#onRouterNavigateError - {{desc}}
@@ -17,6 +15,8 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} routes - {{desc}}
+     * @param {Any} parent - {{desc}}
      */
     static setRoutes(routes, parent) {
         return routes.reduce((acc, curr) => {
@@ -68,6 +68,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} path - {{desc}}
      */
     static getRoute(path) {
         return this.stacks.find((route) => {
@@ -84,6 +85,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} route - {{desc}}
      */
     static getRoutes(route) {
         return [route].reduce((acc, curr) => {
@@ -97,6 +99,8 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} container - {{desc}}
+     * @param {Any} route - {{desc}}
      */
     static async getOutlet(container, route) {
         return new Promise((resolve) => {
@@ -137,6 +141,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     static set params(value) {
         this._params = value;
@@ -144,6 +149,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     static async handleLoad(event) {
         this.emit("onRouterCurrentEntryChange", event);
@@ -214,6 +220,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} url - {{desc}}
      */
     static navigate(url) {
         if (this.historyApiFallback) {
@@ -225,6 +232,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
@@ -236,6 +244,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} routes - {{desc}}
      */
     static init(routes) {
         this.stacks = this.setRoutes(routes);
@@ -264,6 +273,7 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     static set historyApiFallback(value) {
         this._historyApiFallback = value;
@@ -271,6 +281,8 @@ class MDRouter {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} detail - {{desc}}
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {

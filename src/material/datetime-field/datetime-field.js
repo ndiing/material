@@ -30,6 +30,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -108,6 +109,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -116,6 +118,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

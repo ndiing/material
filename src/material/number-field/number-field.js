@@ -32,6 +32,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -49,6 +50,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -57,6 +59,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

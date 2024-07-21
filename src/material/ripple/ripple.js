@@ -1,11 +1,11 @@
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  */
 class MDRippleController {
     /**
      * {{desc}}
+     * @param {Any} host - {{desc}}
+     * @param {Any} options = {} - {{desc}}
      */
     constructor(host, options = {}) {
         (this.host = host).addController(this);
@@ -101,6 +101,7 @@ class MDRippleController {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleRipplePointerdown(event) {
         this.container.classList.add("md-ripple--pressed");

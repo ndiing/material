@@ -42,6 +42,7 @@ class MDRadioButtonComponent extends MDComponent {
             fadeOut: true,
         });
     }
+
     radioButtonNative = createRef();
 
     /**
@@ -88,6 +89,7 @@ class MDRadioButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleRadioButtonNativeInput(event) {
         this.value = this.radioButtonNative.value.value;
@@ -98,6 +100,7 @@ class MDRadioButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleRadioButtonNativeReset(event) {
         this.radioButtonNative.value.value = this.defaultValue;

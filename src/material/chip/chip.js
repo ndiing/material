@@ -29,6 +29,7 @@ class MDChipComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     variants = ["assist", "filter", "input", "suggestion"];
 
     /**
@@ -65,6 +66,7 @@ class MDChipComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -87,6 +89,7 @@ class MDChipComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", event);

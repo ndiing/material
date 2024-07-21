@@ -42,6 +42,7 @@ class MDChipsComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleChipClick(event) {
         const data = event.currentTarget.data;
@@ -54,6 +55,7 @@ class MDChipsComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleChipActionClick(event) {
         const data = event.currentTarget.data;

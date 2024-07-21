@@ -80,6 +80,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} data - {{desc}}
      */
     select(data) {
         this.items.forEach((item) => {
@@ -90,6 +91,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} data - {{desc}}
      */
     selectToggle(data) {
         data.selected = !data.selected;
@@ -97,6 +99,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} data - {{desc}}
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
@@ -124,6 +127,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleListItemClick(event) {
         if (event.target.closest(".md-list__checkbox," + ".md-list__radio-button," + ".md-list__switch")) {
@@ -143,6 +147,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleListKeydown(event) {
         const activeElement = document.activeElement === event.target.closest(".md-list__item");
@@ -155,6 +160,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -165,6 +171,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
@@ -175,6 +182,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;

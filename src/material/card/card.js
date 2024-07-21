@@ -26,6 +26,7 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
+
     variants = ["elevated", "filled", "outlined"];
 
     /**
@@ -94,6 +95,7 @@ class MDCardComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

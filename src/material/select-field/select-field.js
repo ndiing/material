@@ -70,6 +70,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set actions(value) {}
     textFieldHidden = createRef();
@@ -268,6 +269,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldContainerClick(event) {
         super.handleTextFieldContainerClick(event);
@@ -276,6 +278,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -284,6 +287,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeKeydown(event) {
         super.handleTextFieldNativeKeydown(event);
@@ -316,6 +320,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeInput(event) {
         super.handleTextFieldNativeInput(event);
@@ -325,6 +330,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeReset(event) {
         super.handleTextFieldNativeReset(event);

@@ -18,6 +18,14 @@ function toPascalCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+function toTitleCase(string) {
+    return string
+        .replace(/([a-z])([A-Z])/g, (_$, $1, $2) => $1 + " " + $2)
+        .toLowerCase()
+        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => " " + $2.toUpperCase())
+        .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
+}
+
 function read(file, data) {
     try {
         data = fs.readFileSync(file, { encoding: "utf8" });
@@ -89,9 +97,9 @@ function parse(data, options = {}, replacer = false) {
             let code = "";
             code += `    /**\n`;
             code += `     * {{desc}}\n`;
-            // params?.forEach(param=>{
-            //     code += `     * @param {type} ${param} - {{desc}}\n`;
-            // })
+            params?.forEach(param=>{
+                code += `     * @param {Any} ${param} - {{desc}}\n`;
+            })
             code += `     */\n`;
             code += match;
             return code;
@@ -133,8 +141,12 @@ function parse(data, options = {}, replacer = false) {
             let code = "";
             code += `/**\n`;
             code += ` * {{desc}}\n`;
-            code += ` * @extends ${doc.extendsName}\n`;
-            code += ` * @element ${doc.tagName}\n`;
+            if(doc.extendsName){
+                code += ` * @extends ${doc.extendsName}\n`;
+            }
+            if(doc.tagName){
+                code += ` * @element ${doc.tagName}\n`;
+            }
             doc.emits.forEach((value) => {
                 if (value) {
                     code += ` * @fires ${doc.className}#${value.name} - {{desc}}\n`;
@@ -147,8 +159,8 @@ function parse(data, options = {}, replacer = false) {
         return match;
     });
 
-    data = data.replace(/.*?function (\w+)((.*?)?) \{[\s\S]+?\}/gm, (...args) => {
-        let [match, name, , params] = args;
+    data = data.replace(/.*?function (\w+)\((.*?)?\) \{[\s\S]+?\}/gm, (...args) => {
+        let [match, name, params] = args;
         params = params?.split(",").map((string) => string.trim());
         // functions
         doc.functions.set(name, { name, params });
@@ -156,6 +168,9 @@ function parse(data, options = {}, replacer = false) {
             let code = "";
             code += `/**\n`;
             code += ` * {{desc}}\n`;
+            params?.forEach(param=>{
+                code += ` * @param {Any} ${param} - {{desc}}\n`;
+            })
             code += ` */\n`;
             code += match;
             return code;
@@ -195,14 +210,14 @@ for (const doc of docs) {
     }
 }
 
-let [, , argvMethod, argvName] = process.argv;
+let [, , argvMethod, argvName, ...argvFiles] = process.argv;
 
 let cli = {
     create: {
         placeholder: () => {
             // create placeholder
             open("./src/material", (file) => {
-                if (file.endsWith(".js")) {
+                if(argvFiles.length&&argvFiles.some(filename=>file.endsWith(filename))||!argvFiles.length){
                     let data = read(file);
                     let doc = docs.find((doc) => doc.file === file);
                     let result = parse(data, doc, true);
@@ -227,7 +242,18 @@ let cli = {
                     let methodName = toCamelCase("render-" + name);
 
                     code += `/**\n`;
-                    code += ` * {{desc}}\n`;
+                    code += ` * ${toTitleCase(methodName)}\n`;
+                    code += ` * @param {Object} item - {{desc}}\n`;
+                    doc.properties.forEach((value) => {
+                        if (value && value.name) {
+                            code += ` * @property {${value.type}} [item.${value.name}] - {{desc}}\n`;
+                        }
+                    });
+                    doc.emits.forEach((value) => {
+                        if (value) {
+                            code += ` * @property {Function} [item.${value.name}] - {{desc}}\n`;
+                        }
+                    });
                     code += ` */\n`;
                     code += `function ${methodName}(item = {}) {\n`;
                     code += `    /* prettier-ignore */\n`;

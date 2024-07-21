@@ -40,13 +40,14 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
-     * @property {Array} list - {{desc}}
+     * @property {Array} items - {{desc}}
      * @property {String} variant - {{desc}}
      */
     static properties = {
-        list: { type: Array },
+        items: { type: Array },
         variant: { type: String },
     };
+
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
@@ -59,6 +60,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} item - {{desc}}
      */
     renderTree(item) {
         item.component = item.component || "tree-item";
@@ -68,7 +70,7 @@ class MDTreeComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${renderComponent(item)}
-            ${item.expanded &amp;&amp; item.children?.length ? item.children.map((item) => this.renderTree(item)) : nothing}
+            ${item.expanded &amp;&amp; item.items?.length ? item.items.map((item) => this.renderTree(item)) : nothing}
         `;
     }
 
@@ -77,7 +79,7 @@ class MDTreeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTree(item));
+        return (this.variant === 'level' ? this.getList(this.items) || this.items : this.items)?.map(item => this.renderTree(item));
     }
 
     /**
@@ -90,6 +92,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -99,39 +102,42 @@ class MDTreeComponent extends MDComponent {
                 this.classList.toggle(`md-tree--${variant}`, variants.includes(variant));
             });
         }
-        if (changedProperties.has("list")) {
+        if (changedProperties.has("items")) {
             await this.updateComplete;
-            this.setList(this.list);
+            this.setList(this.items);
             this.requestUpdate();
         }
     }
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
      */
-    getList(list) {
-        let children;
-        list.forEach((item) => {
+    getList(items) {
+        let temp;
+        items.forEach((item) => {
             if (item.expanded) {
-                children = item.children;
+                temp = item.items;
             }
-            if (item.children?.length) {
-                const children_ = this.getList(item.children);
-                if (children_) {
-                    children = children_;
+            if (item.items?.length) {
+                const temp2 = this.getList(item.items);
+                if (temp2) {
+                    temp = temp2;
                 }
             }
         });
-        return children;
+        return temp;
     }
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} indent = 0 - {{desc}}
      */
-    setList(list, indent = 0) {
+    setList(items, indent = 0) {
         let expanded;
         let activated;
-        list.forEach((item) => {
+        items.forEach((item) => {
             item.indent = indent;
             if (item.expanded || item.selected) {
                 expanded = true;
@@ -139,16 +145,16 @@ class MDTreeComponent extends MDComponent {
             if (item.selected) {
                 activated = true;
             }
-            if (item.children?.length) {
+            if (item.items?.length) {
                 if (this.variant === "level") {
-                    item.children.unshift({
+                    item.items.unshift({
                         label: item.label,
                         parent: item,
                         isParent: true,
                     });
                 }
                 item.isNode = true;
-                const { expanded: isExpanded, activated: isActivated } = this.setList(item.children, indent + 1);
+                const { expanded: isExpanded, activated: isActivated } = this.setList(item.items, indent + 1);
                 if (isExpanded) {
                     expanded = true;
                     item.expanded = true;
@@ -164,17 +170,19 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} data - {{desc}}
      */
-    select(list, data) {
+    select(items, data) {
         let activated;
-        list.forEach((item) => {
+        items.forEach((item) => {
             item.selected = item === data;
             item.activated = false;
             if (item.selected) {
                 activated = true;
             }
-            if (item.children?.length) {
-                if (this.select(item.children, data)) {
+            if (item.items?.length) {
+                if (this.select(item.items, data)) {
                     activated = true;
                     item.activated = true;
                 }
@@ -185,25 +193,29 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} data - {{desc}}
      */
-    expand(list, data) {
+    expand(items, data) {
         data.expanded = !data.expanded;
     }
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTreeItemClick(event) {
         const data = event.currentTarget.data;
         if (data.isNode || data.isParent) {
             event.stopPropagation();
-            this.expand(this.list, data.isParent ? data.parent : data);
+            this.expand(this.items, data.isParent ? data.parent : data);
         } else {
-            this.select(this.list, data);
+            this.select(this.items, data);
         }
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
+
     handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);
@@ -224,7 +236,7 @@ export { MDTreeComponent };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Jul 22 2024 03:30:17 GMT+0700 (Western Indonesia Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Jul 22 2024 05:29:11 GMT+0700 (Western Indonesia Time)
 </footer>
 
 <script> prettyPrint(); </script>

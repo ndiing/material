@@ -35,6 +35,7 @@ class MDFormComponent extends MDComponent {
         target: { type: String },
         items: { type: Array },
     };
+
     formNative = createRef();
 
     /**
@@ -97,6 +98,7 @@ class MDFormComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.value.elements) {
@@ -112,6 +114,7 @@ class MDFormComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();

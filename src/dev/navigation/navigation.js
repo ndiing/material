@@ -5,6 +5,7 @@ class DevNavigationComponent extends MDComponent {
     constructor() {
         super();
     }
+
     render() {
         return html`
             <div class="md-layout-column">

@@ -51,6 +51,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
@@ -79,6 +80,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set emojiPickerTabs(value) {}
     constructor() {
@@ -182,6 +184,8 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} data = [] - {{desc}}
+     * @param {Any} tabs = {} - {{desc}}
      */
     generateTabsAndRows(data = [], tabs = {}) {
         const grouped = data.reduce((acc, curr) => {
@@ -212,6 +216,8 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -220,6 +226,8 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -228,6 +236,8 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {
@@ -248,6 +258,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleEmojiPickerTextFieldNativeInput(event) {
         const value = event.detail.currentTarget.value;
@@ -266,6 +277,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleEmojiPickerTabsItemClick(event) {
         const data = event.currentTarget.data;
@@ -277,6 +289,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} data - {{desc}}
      */
     updateEmojiPickerTabsIndicator(data) {
         if (!data) {
@@ -293,6 +306,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     async handleEmojiPickerViewportVirtualScroll(event) {
         this.virtualRows = this.dataRows.filter((row, index) => {
@@ -316,6 +330,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleEmojiPickerGridColumnClick(event) {
         this.emit("onEmojiPickerGridColumnClick", event);
@@ -323,6 +338,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonClick(event) {
         if (event.currentTarget.name === "label") {
@@ -337,6 +353,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleEmojiPickerButtonCancelClick(event) {
         this.emit("onEmojiPickerButtonCancelClick", event);
@@ -344,6 +361,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleEmojiPickerButtonOkClick(event) {
         this.emit("onEmojiPickerButtonOkClick", event);

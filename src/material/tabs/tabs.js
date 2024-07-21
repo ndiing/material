@@ -16,6 +16,7 @@ class MDTabsComponent extends MDTreeComponent {
         this.currentSelectedIndex = -1;
         this.lastSelectedIndex = -1;
     }
+
     variants = ["primary", "secondary"];
 
     /**
@@ -28,6 +29,7 @@ class MDTabsComponent extends MDTreeComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     async handleTreeItemSelected(event) {
         await this.updateComplete;

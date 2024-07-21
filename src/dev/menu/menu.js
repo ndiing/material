@@ -1602,15 +1602,18 @@ class DevMenu extends MDComponent {
             </div>
         `;
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.handleContextmenu = this.handleContextmenu.bind(this);
         window.addEventListener("contextmenu", this.handleContextmenu);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         window.removeEventListener("contextmenu", this.handleContextmenu);
     }
+
     handleContextmenu(event) {
         event.preventDefault();
         menu.show(event);

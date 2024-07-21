@@ -1,7 +1,5 @@
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  * @fires MDGestureController#onDragStart - {{desc}}
  * @fires MDGestureController#onResizeStart - {{desc}}
  * @fires MDGestureController#onSelectionStart - {{desc}}
@@ -18,6 +16,8 @@
 class MDGestureController {
     /**
      * {{desc}}
+     * @param {Any} host - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     constructor(host, options) {
         (this.host = host).addController(this);
@@ -37,6 +37,8 @@ class MDGestureController {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} detail - {{desc}}
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -102,6 +104,7 @@ class MDGestureController {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleGesturePointerdown(event) {
         if (event.button !== 0) {
@@ -166,6 +169,7 @@ class MDGestureController {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleGesturePointermove(event) {
         window.clearTimeout(this.longPressTimeout);
@@ -212,6 +216,7 @@ class MDGestureController {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleGesturePointerup(event) {
         window.clearTimeout(this.longPressTimeout);

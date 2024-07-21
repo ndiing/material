@@ -1,7 +1,5 @@
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  */
 class MDObserver {
     handle;
@@ -9,6 +7,7 @@ class MDObserver {
 
     /**
      * {{desc}}
+     * @param {Any} callback = () => {} - {{desc}}
      */
     constructor(callback = () => {}) {
         this.callback = callback;
@@ -16,6 +15,7 @@ class MDObserver {
 
     /**
      * {{desc}}
+     * @param {Any} time - {{desc}}
      */
     executeCallback(time) {
         this.handle = undefined;

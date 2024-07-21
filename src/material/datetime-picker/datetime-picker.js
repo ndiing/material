@@ -207,6 +207,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
@@ -377,6 +378,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -418,6 +420,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -438,6 +441,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -458,6 +462,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -476,6 +481,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -487,6 +493,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
@@ -502,6 +509,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -513,6 +521,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -524,6 +533,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -540,6 +550,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
@@ -558,6 +569,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
@@ -578,6 +590,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -586,6 +600,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -594,6 +610,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {

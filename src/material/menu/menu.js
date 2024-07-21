@@ -44,6 +44,7 @@ class MDMenuComponent extends MDSheetComponent {
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
+
     menuList = createRef();
 
     /**
@@ -73,6 +74,7 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
@@ -110,6 +112,7 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -147,6 +150,8 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     showModal(button, options) {
         this.show(button, options, true);
@@ -154,6 +159,9 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
+     * @param {Any} modal - {{desc}}
      */
     async show(button, options, modal) {
         this.activatedIndex = this.store.docs.findIndex((doc) => doc.selected);
@@ -188,6 +196,8 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button = this.popperButton - {{desc}}
+     * @param {Any} options = this.popperOptions - {{desc}}
      */
     updatePosition(button = this.popperButton, options = this.popperOptions) {
         this.popperButton = button;
@@ -210,6 +220,7 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     filter(value) {
         this.filters = [{ name: this.map.label, value, operator: "_like" }];
@@ -222,6 +233,7 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} data - {{desc}}
      */
     select(data) {
         this.store.docs.forEach((doc) => {
@@ -231,6 +243,8 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} offset - {{desc}}
+     * @param {Any} selected - {{desc}}
      */
     activate(offset, selected) {
         this.activatedIndex = (this.activatedIndex + this.storeTotal + offset) % this.storeTotal;
@@ -248,6 +262,7 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
@@ -263,6 +278,7 @@ class MDMenuComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleMenuListItemClick(event) {
         const data = event.detail.currentTarget.data;

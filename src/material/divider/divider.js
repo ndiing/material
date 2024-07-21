@@ -14,6 +14,7 @@ class MDDividerComponent extends MDComponent {
     static properties = {
         variant: { type: String },
     };
+
     variants = ["vertical", "horizontal"];
 
     /**
@@ -26,6 +27,7 @@ class MDDividerComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

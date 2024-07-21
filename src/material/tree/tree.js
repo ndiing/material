@@ -19,6 +19,7 @@ class MDTreeComponent extends MDComponent {
         items: { type: Array },
         variant: { type: String },
     };
+
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
@@ -31,6 +32,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} item - {{desc}}
      */
     renderTree(item) {
         item.component = item.component || "tree-item";
@@ -62,6 +64,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -80,25 +83,28 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
      */
     getList(items) {
-        let items;
+        let temp;
         items.forEach((item) => {
             if (item.expanded) {
-                items = item.items;
+                temp = item.items;
             }
             if (item.items?.length) {
-                const items_ = this.getList(item.items);
-                if (items_) {
-                    items = items_;
+                const temp2 = this.getList(item.items);
+                if (temp2) {
+                    temp = temp2;
                 }
             }
         });
-        return items;
+        return temp;
     }
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} indent = 0 - {{desc}}
      */
     setList(items, indent = 0) {
         let expanded;
@@ -136,6 +142,8 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} data - {{desc}}
      */
     select(items, data) {
         let activated;
@@ -157,6 +165,8 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} data - {{desc}}
      */
     expand(items, data) {
         data.expanded = !data.expanded;
@@ -164,6 +174,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTreeItemClick(event) {
         const data = event.currentTarget.data;
@@ -176,6 +187,7 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
+
     handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);

@@ -33,6 +33,7 @@ function reset() {
 
 /**
  * {{desc}}
+ * @param {Any} resolve - {{desc}}
  */
 function observe(resolve) {
     let currentTime = performance.now();
@@ -52,6 +53,7 @@ function observe(resolve) {
 
 /**
  * {{desc}}
+ * @param {Any} duration = 10000 - {{desc}}
  */
 function start(duration = 10000) {
     return new Promise((resolve) => {

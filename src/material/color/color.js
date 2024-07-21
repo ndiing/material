@@ -3,6 +3,8 @@ import { isValidHexColor, toCamelCase } from "../functions/functions.js";
 
 /**
  * {{desc}}
+ * @param {Any} colorOrImage - {{desc}}
+ * @param {Any} customColors - {{desc}}
  */
 async function setTheme(colorOrImage, customColors) {
     let theme;

@@ -42,6 +42,7 @@ class MDCheckboxComponent extends MDComponent {
             fadeOut: true,
         });
     }
+
     checkboxNative = createRef();
 
     /**
@@ -88,6 +89,7 @@ class MDCheckboxComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCheckboxNativeInput(event) {
         this.value = this.checkboxNative.value.value;
@@ -98,6 +100,7 @@ class MDCheckboxComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCheckboxNativeReset(event) {
         this.checkboxNative.value.value = this.defaultValue;

@@ -30,6 +30,7 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
+
     switchNative = createRef();
 
     /**
@@ -90,6 +91,7 @@ class MDSwitchComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleSwitchNativeInput(event) {
         this.value = this.switchNative.value.value;
@@ -100,6 +102,7 @@ class MDSwitchComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleSwitchNativeReset(event) {
         this.switchNative.value.value = this.defaultValue;

@@ -146,13 +146,13 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         const rows = [];
         for (let i = 0; i &lt; 6; i++) {
             const column = {};
-            const children = [];
+            const items = [];
             for (let j = 0; j &lt; 7; j++) {
                 const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first);
                 const year = date.getFullYear();
                 const month = date.getMonth();
                 const day = date.getDate();
-                children.push({
+                items.push({
                     label: this.dayFormat(date),
                     activated: year === this.activated.getFullYear() &amp;&amp; month === this.activated.getMonth() &amp;&amp; day === this.activated.getDate(),
                     selected: year === this.selected.getFullYear() &amp;&amp; month === this.selected.getMonth() &amp;&amp; day === this.selected.getDate(),
@@ -161,7 +161,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
                     day,
                 });
             }
-            column.children = children;
+            column.items = items;
             rows.push(column);
         }
         return rows;
@@ -235,6 +235,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
@@ -345,7 +346,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
                 &lt;/div>
                 ${this.days.map(row=>html`
                     &lt;div class="md-datetime-picker__grid-row md-datetime-picker__grid-row--days">
-                        ${row.children.map(item=>html`
+                        ${row.items.map(item=>html`
                             &lt;div class="md-datetime-picker__grid-item" ?activated="${item.activated}" ?selected="${item.selected}" .data="${item}" @click="${this.handleDatetimePickerDayItemClick}">
                                 &lt;div class="md-datetime-picker__grid-label">${item.label}&lt;/div>
                             &lt;/div>    
@@ -405,6 +406,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -446,6 +448,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -466,6 +469,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -486,6 +490,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -504,6 +509,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -515,6 +521,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
@@ -530,6 +537,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -541,6 +549,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -552,6 +561,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -568,6 +578,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
@@ -586,6 +597,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
@@ -606,6 +618,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -614,6 +628,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -622,6 +638,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
 
     /**
      * {{desc}}
+     * @param {Any} button - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {
@@ -658,7 +676,7 @@ export { MDDatetimePickerComponent };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Jul 22 2024 03:30:17 GMT+0700 (Western Indonesia Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Jul 22 2024 05:29:11 GMT+0700 (Western Indonesia Time)
 </footer>
 
 <script> prettyPrint(); </script>

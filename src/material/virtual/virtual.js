@@ -1,12 +1,12 @@
 /**
  * {{desc}}
- * @extends undefined
- * @element undefined
  * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
     /**
      * {{desc}}
+     * @param {Any} host - {{desc}}
+     * @param {Any} options - {{desc}}
      */
     constructor(host, options) {
         (this.host = host).addController(this);
@@ -26,6 +26,8 @@ class MDVirtualController {
 
     /**
      * {{desc}}
+     * @param {Any} type - {{desc}}
+     * @param {Any} detail - {{desc}}
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -72,6 +74,7 @@ class MDVirtualController {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     async handleVirtualScroll(event) {
         if (this.options.rowTotal) {

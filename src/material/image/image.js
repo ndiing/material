@@ -28,6 +28,7 @@ class MDImageComponent extends MDComponent {
         ratio: { type: String },
         variant: { type: String },
     };
+
     variants = ["rounded"];
 
     /**
@@ -47,6 +48,7 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
+
     imageNative = createRef();
 
     /**
@@ -87,6 +89,7 @@ class MDImageComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -100,6 +103,7 @@ class MDImageComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleImageNativeLoad(event) {
         this.emit("onImageNativeLoad", event);
@@ -107,6 +111,7 @@ class MDImageComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleImageNativeError(event) {
         this.imageNative.value.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";

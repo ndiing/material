@@ -27,6 +27,7 @@ class MDButtonComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
 
     /**
@@ -67,6 +68,7 @@ class MDButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

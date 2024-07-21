@@ -141,6 +141,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -157,6 +158,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handlePaginationLimitInput(event) {
         const limit = Number(event.detail.currentTarget.value);
@@ -166,6 +168,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handlePaginationFirstClick(event) {
         this.page = 1;
@@ -174,6 +177,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handlePaginationPrevClick(event) {
         this.page = Math.max(--this.page, 1);
@@ -182,6 +186,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handlePaginationNextClick(event) {
         this.page = Math.min(++this.page, this.pages);
@@ -190,6 +195,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handlePaginationLastClick(event) {
         this.page = this.pages;

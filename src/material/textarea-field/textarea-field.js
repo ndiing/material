@@ -38,6 +38,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();

@@ -2,6 +2,7 @@ import { MDComponent } from "../component/component.js";
 
 /**
  * {{desc}}
+ * @param {Any} emoji - {{desc}}
  */
 function emojiToHexadecimal(emoji) {
     const codePoint = emoji.codePointAt(0);

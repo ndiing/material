@@ -25,6 +25,7 @@ class MDIconButtonComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
         name: { type: String, reflect: true },
     };
+
     variants = ["filled", "tonal", "outlined", "toggle"];
 
     /**
@@ -66,6 +67,7 @@ class MDIconButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -88,6 +90,7 @@ class MDIconButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleIconButtonToggleClick(event) {
         if (this.variant && this.variant.includes("toggle")) {

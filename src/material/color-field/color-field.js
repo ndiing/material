@@ -30,6 +30,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -116,6 +117,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();

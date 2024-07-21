@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { calcDecimal, calcPercentage, isArrayString } from "../functions/functions.js";
-import { createRef, ref } from "lit/directives/ref.js";
 
 /**
  * {{desc}}
@@ -66,6 +65,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
     renderTrack(value) {
         let length = 2;
@@ -139,6 +139,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} index - {{desc}}
      */
     updateStyle(index) {
         const percentage = calcPercentage(this.min, this.max, this.value[index]);
@@ -149,6 +150,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -171,6 +173,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleSliderNativeInput(event) {
         if (this.value?.length > 1) {
@@ -190,6 +193,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} event - {{desc}}
      */
     handleSliderNativeReset(event) {
         for (let index = 0; index < this.sliderNativeAll.length; index++) {
