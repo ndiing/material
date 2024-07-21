@@ -126,7 +126,9 @@ class DevMainComponent extends MDComponent {
                     variant="tree"
                     open
                 ></md-navigation-drawer>
-                <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
+                <md-layout-item region="center">
+                    <md-outlet></md-outlet>
+                </md-layout-item>
             </md-layout>
         `;
     }
