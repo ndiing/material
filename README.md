@@ -85,6 +85,37 @@ To optimize loading, include the CSS and JavaScript files separately for each co
 /&gt;
 </pre>
 
+## Contributing
+
+We welcome contributions to the Material Design framework! To get started, follow these steps:
+
+1. Fork the repository.
+2. Clone your fork:
+
+<pre>
+git clone https://github.com/your-username/material.git
+</pre>
+
+3. Create a new branch for your feature or bugfix:
+
+<pre>
+git checkout -b feature-name
+</pre>
+
+4. Make your changes and commit them with descriptive messages:
+
+<pre>
+git commit -m "Description of changes"
+</pre>
+
+5. Push your changes to your fork:
+
+<pre>
+git push origin feature-name
+</pre>
+
+6. Create a pull request on the main repository.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
