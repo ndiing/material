@@ -1,5 +1,4 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
-
 /**
  * Represents a side sheet component that extends MDSheetComponent.
  * @element md-side-sheet
@@ -7,7 +6,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDSideSheetComponent extends MDSheetComponent {
     variants = ["modal"];
-
     /**
      * Enhances connectedCallback to add specific CSS classes for side sheet styling.
      * @private

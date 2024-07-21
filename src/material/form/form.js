@@ -3,7 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { renderComponent } from "../template/template.js";
-
 /**
  * Form component that extends the MDComponent base class.
  * @element md-form
@@ -12,7 +11,6 @@ import { renderComponent } from "../template/template.js";
  * @fires MDFormComponent#onFormNativeSubmit - Fired when the form is submitted.
  */
 class MDFormComponent extends MDComponent {
-
     /**
      * Defines the properties of the form component.
      * @property {String} acceptCharset - The character encodings that are to be used for the form submission.
@@ -36,7 +34,6 @@ class MDFormComponent extends MDComponent {
         items: { type: Array },
     };
     formNative = createRef();
-
     /**
      * Initializes a new instance of the MDFormComponent.
      * Sets default values for form attributes.
@@ -50,6 +47,7 @@ class MDFormComponent extends MDComponent {
         this.novalidate = true;
         this.childNodes_ = Array.from(this.childNodes);
     }
+
     // renderItems(items) {
     //     return items.map((item) => {
     //         if (item.items?.length) item.items = this.renderItems(item.items);
@@ -75,12 +73,12 @@ class MDFormComponent extends MDComponent {
                 .novalidate="${ifDefined(this.novalidate)}"
                 .target="${ifDefined(this.target)}"
                 ${ref(this.formNative)}
+
                 @reset="${this.handleFormNativeReset}"
                 @submit="${this.handleFormNativeSubmit}"
             >${this.childNodes_}</form>
         `;
     }
-
     /**
      * Lifecycle method called when the component is added to the DOM.
      * Adds necessary classes to the form element.
@@ -122,9 +120,9 @@ class MDFormComponent extends MDComponent {
             });
             element.dispatchEvent(customEvent);
         }
+
         this.emit("onFormNativeReset", event);
     }
-
     /**
      * Event handler for the form submit event.
      * Prevents default submission, collects form data, and emits the onFormNativeSubmit event.

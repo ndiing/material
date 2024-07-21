@@ -1,14 +1,12 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
-
 /**
  * {{description}}
  * @element md-card
  * @extends MDComponent
  */
 class MDCardComponent extends MDComponent {
-
     /**
      * {{description}}
      * @property {String} variant - {{description}}
@@ -27,7 +25,6 @@ class MDCardComponent extends MDComponent {
         actions: { type: Array },
     };
     variants = ["elevated", "filled", "outlined"];
-
     /**
      * {{description}}
      */
@@ -49,6 +46,7 @@ class MDCardComponent extends MDComponent {
                             item.component=item.component||'icon-button'
                             return renderComponent(item)    
                         })}
+
                     </div>
                 ` : nothing}
                 ${this.label || this.subLabel ? html`
@@ -68,7 +66,6 @@ class MDCardComponent extends MDComponent {
             </div>
         ` : nothing;
     }
-
     /**
      * @private
      */
@@ -77,6 +74,7 @@ class MDCardComponent extends MDComponent {
         return this.childNodes_?.length || this.actions?.length ? html`
             <div class="md-card__body">
                 ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
+
                 ${this.actions?.length ? html`
                     <div class="md-card__footer">
                         ${this.actions.map(item => {
@@ -88,7 +86,6 @@ class MDCardComponent extends MDComponent {
             </div>
         ` : nothing;
     }
-
     /**
      * @private
      */
@@ -96,10 +93,10 @@ class MDCardComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.renderHeader()}
+
             ${this.renderBody()}
         `;
     }
-
     /**
      * @private
      */

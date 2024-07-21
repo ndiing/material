@@ -1,18 +1,15 @@
 import { MDPopperController } from "../popper/popper.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
-
 /**
  * Represents a tooltip component.
  * @element md-tooltip
  * @extends MDSheetComponent
  */
 class MDTooltipComponent extends MDSheetComponent {
-
     /**
      * Variants of the tooltip component.
      */
     variants = ["plain", "rich"];
-
     /**
      * Initializes the tooltip component.
      */

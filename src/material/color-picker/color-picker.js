@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { hexToHsla, hslaToRgba, rgbaToHex, rgbaToHsla } from "../functions/functions.js";
 import { MDPopperController } from "../popper/popper.js";
-
 /**
  * Color picker component for selecting colors.
  * @element md-color-picker
@@ -22,7 +21,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerOpacityNativeInput - Fired when the opacity input changes.
  */
 class MDColorPickerComponent extends MDSheetComponent {
-
     /**
      * Properties of the component.
      * @property {String} value - The currently selected color value in hex format.
@@ -31,7 +29,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         value: { type: String },
     };
-
     /**
      * Gets the child nodes of the component.
      * @returns {Array} The child nodes.
@@ -153,7 +150,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         }
         this.style.setProperty("--md-comp-color-picker-base", `rgb(${this.selection.red},${this.selection.green},${this.selection.blue})`);
     }
-
     /**
      * Initializes the color picker.
      * @private
@@ -213,7 +209,6 @@ class MDColorPickerComponent extends MDSheetComponent {
         }
         return { x: xx, y: yy };
     }
-
     /**
      * Updates the HSLA selection based on the current color value.
      * @private
@@ -261,6 +256,7 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.thumb.style.top = y + "px";
         this.requestUpdate();
     }
+
     getValue() {
         return this.selection.hex.slice(0, 1 + 6);
     }

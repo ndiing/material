@@ -11,14 +11,22 @@ class DevForm extends MDComponent {
                         @onFormNativeSubmit="${(event) => console.log(event.detail.data)}"
                     >
                         <md-layout variant="column">
-                            <md-layout-item expanded="12" medium="8" compact="4">
+                            <md-layout-item
+                                expanded="12"
+                                medium="8"
+                                compact="4"
+                            >
                                 <md-text-field
                                     label="email0"
                                     name="email0"
                                     type="email"
                                 ></md-text-field>
                             </md-layout-item>
-                            <md-layout-item expanded="12" medium="8" compact="4">
+                            <md-layout-item
+                                expanded="12"
+                                medium="8"
+                                compact="4"
+                            >
                                 <md-text-field
                                     label="email1"
                                     name="email1"
@@ -29,7 +37,6 @@ class DevForm extends MDComponent {
                         </md-layout>
 
                         <div class="md-layout-column">
-
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-text-field
                                     label="tel2"

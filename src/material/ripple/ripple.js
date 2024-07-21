@@ -1,9 +1,7 @@
-
 /**
  * The MDRippleController class provides ripple effects for Material Design components.
  */
 class MDRippleController {
-
     /**
      * Creates an instance of MDRippleController.
      * @param {HTMLElement} host - The host element that this controller will be attached to.
@@ -44,6 +42,7 @@ class MDRippleController {
         }
         this.container.classList.add("md-ripple");
         this.button = this.container;
+
         if (this.options.button) {
             if (typeof this.options.button === "string") {
                 this.button = this.host.querySelector(this.options.button);
@@ -53,19 +52,25 @@ class MDRippleController {
         }
         this.button.setAttribute("tabIndex", 0);
         this.button.classList.add("md-ripple--button");
+
         if (this.options.centered) {
             this.container.classList.add("md-ripple--centered");
         }
+
         if (this.options.clipped) {
             this.container.classList.add("md-ripple--clipped");
         }
+
         if (this.options.fadeOut) {
             this.container.classList.add("md-ripple--fade-out");
         }
+
         this.size = (Math.sqrt(Math.pow(this.container.clientWidth, 2) + Math.pow(this.container.clientHeight, 2)) / this.container.clientWidth) * 100;
+
         if (this.options.size) {
             this.size = (this.options.size / this.container.clientWidth) * 100;
         }
+
         this.container.style.setProperty("--md-comp-ripple-size", `${this.size}%`);
         this.container.style.setProperty("--md-comp-ripple-animation", "none");
         this.handleRipplePointerenter = this.handleRipplePointerenter.bind(this);
@@ -80,7 +85,6 @@ class MDRippleController {
         this.button.addEventListener("focus", this.handleRippleFocus);
         this.button.addEventListener("blur", this.handleRippleBlur);
     }
-
     /**
      * Called when the host element is disconnected from the DOM.
      * @private
@@ -135,7 +139,6 @@ class MDRippleController {
             this.container.style.setProperty("--md-comp-ripple-y", `${y * 100}%`);
         }
     }
-
     /**
      * Handles the pointerup event for the ripple effect.
      * @private

@@ -1,12 +1,10 @@
 import { MDComponent } from "../component/component.js";
-
 /**
  * Represents a scrim component that extends MDComponent.
  * @element md-scrim
  * @extends MDComponent
  */
 class MDScrimComponent extends MDComponent {
-
     /**
      * Properties of the MDScrimComponent.
      * @property {Boolean} open - Reflects whether the scrim is open.
@@ -15,7 +13,6 @@ class MDScrimComponent extends MDComponent {
         ...MDComponent.properties,
         open: { type: Boolean, reflect: true },
     };
-
     /**
      * Enhances connectedCallback to add specific CSS class.
      * @private

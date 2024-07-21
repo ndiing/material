@@ -2,14 +2,12 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { renderComponent } from "../template/template.js";
-
 /**
  * A custom element for creating various styles of buttons with optional ripple effects.
  * @element md-button
  * @extends MDComponent
  */
 class MDButtonComponent extends MDComponent {
-
     /**
      * Defines the properties of the element.
      * @property {String} variant - The style variant of the button (e.g., "elevated", "filled", "tonal", "outlined", "icon-right").
@@ -29,7 +27,6 @@ class MDButtonComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
-
     /**
      * Creates an instance of MDButtonComponent.
      */
@@ -53,12 +50,12 @@ class MDButtonComponent extends MDComponent {
                 class="md-button__native" 
                 .type="${this.type}"
             >
-                ${this.icon ? renderComponent({component:'icon',classMap:{'md-button__icon':true},icon:this.icon}) : nothing}
+                ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing}
+
                 <div class="md-button__label">${this.label}</div>
             </button>
         `;
     }
-
     /**
      * Invoked each time the custom element is appended into a document-connected element.
      * Adds the 'md-button' class to the element.
@@ -83,6 +80,7 @@ class MDButtonComponent extends MDComponent {
                 this.classList.toggle(`md-button--${variant}`, variants.includes(variant));
             });
         }
+
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");

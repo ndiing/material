@@ -1,5 +1,4 @@
 import { MDCardComponent } from "../card/card.js";
-
 /**
  * Represents a sheet component that extends MDCardComponent.
  * @element md-sheet
@@ -9,7 +8,6 @@ import { MDCardComponent } from "../card/card.js";
  * @fires MDSheetComponent#onSheetClose - Triggered when the sheet is closed.
  */
 class MDSheetComponent extends MDCardComponent {
-
     /**
      * Properties of the MDSheetComponent.
      * @property {Boolean} open - Reflects whether the sheet is open.
@@ -19,7 +17,6 @@ class MDSheetComponent extends MDCardComponent {
         open: { type: Boolean, reflect: true },
     };
     variants = ["north", "east", "south", "west", "modal"];
-
     /**
      * Enhances connectedCallback to initialize sheet styling and add necessary classes.
      * @private
@@ -51,10 +48,10 @@ class MDSheetComponent extends MDCardComponent {
             this.scrim.on("click", this.handleSheetScrimClick);
             this.scrim.show();
         }
+
         this.open = true;
         this.emit("onSheetShow", this);
     }
-
     /**
      * Closes the sheet.
      */
@@ -67,10 +64,10 @@ class MDSheetComponent extends MDCardComponent {
             this.scrim.remove();
             this.scrim = null;
         }
+
         this.open = false;
         this.emit("onSheetClose", this);
     }
-
     /**
      * Toggles the sheet visibility.
      */
@@ -81,7 +78,6 @@ class MDSheetComponent extends MDCardComponent {
             this.show(...args);
         }
     }
-
     /**
      * Handles click events on the sheet scrim.
      * @private

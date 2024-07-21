@@ -7,14 +7,13 @@ const breakpoints = [
     { name: "medium", query: "(min-width: 600px) and (max-width: 839px)" },
     { name: "expanded", query: "(min-width: 840px)" },
 ];
-
 /**
  * Class for observing media queries and executing callbacks on changes.
  */
 class MDMediaObserver {
-
     /**
      * Creates an instance of MDMediaObserver.
+
      * @param {Function} [callback=() => {}] - The callback function to execute when conditions change.
      */
     constructor(callback = () => {}) {
@@ -35,6 +34,7 @@ class MDMediaObserver {
                     break;
                 }
             }
+
             if (this.item) {
                 this.media = window.matchMedia(this.item.query);
                 this.callback(this.item);

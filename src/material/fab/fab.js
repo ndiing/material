@@ -1,14 +1,12 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
-
 /**
  * A custom floating action button (FAB) component.
  * @element md-fab
  * @extends MDComponent
  */
 class MDFabComponent extends MDComponent {
-
     /**
      * Properties for the md-fab component.
      * @property {String} variant - The variant of the FAB (e.g., "small", "large", "extended").
@@ -25,7 +23,6 @@ class MDFabComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
-
     /**
      * Constructs an instance of MDFabComponent.
      * Initializes the ripple effect for the FAB.
@@ -47,10 +44,10 @@ class MDFabComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing}
+
             ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing}
         `;
     }
-
     /**
      * Invoked when the component is added to the document's DOM.
      * Adds the base class for the FAB.
@@ -75,6 +72,7 @@ class MDFabComponent extends MDComponent {
                 this.classList.toggle(`md-fab--${variant}`, variants.includes(variant));
             });
         }
+
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");

@@ -1,6 +1,5 @@
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
-
 /**
  * A custom element that provides a date and time picker field.
  * @element md-date-field
@@ -11,7 +10,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDDateFieldComponent#onDatePickerSelection - Event fired when a date-time selection is made in the picker.
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
-
     /**
      * Gets the actions for the date-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -38,6 +36,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-date-field");
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -45,7 +44,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-
     /**
      * Displays the date-time picker.
      */
@@ -53,6 +51,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
+
         this.pickerOpen = true;
         this.picker = document.createElement("md-date-picker");
         this.picker.value = this.value;
@@ -65,6 +64,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDatePickerButtonOkClick);
         this.picker.addEventListener("onDatePickerSelection", this.handleDatePickerSelection);
         this.picker.addEventListener("onDatePickerDayItemClick", this.handleDatePickerDayItemClick);
+
         const handleScroll = () => {
             this.picker.close();
             this.boundary.removeEventListener("scroll", handleScroll);
@@ -76,11 +76,13 @@ class MDDateFieldComponent extends MDTextFieldComponent {
                 matches = matches || current === this || current === this.picker;
                 current = current.parentElement;
             }
+
             if (!matches) {
                 this.picker.close();
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDatePickerButtonCancelClick);
             this.picker.removeEventListener("onDatePickerButtonOkClick", this.handleDatePickerButtonOkClick);
@@ -118,7 +120,6 @@ class MDDateFieldComponent extends MDTextFieldComponent {
             this.handleDateFieldActionPickerClick(event);
         }
     }
-
     /**
      * Handles the click event on the date-time picker action icon.
      * @param {Event} event - The click event.

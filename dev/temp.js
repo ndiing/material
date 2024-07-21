@@ -17,15 +17,15 @@ function toCamelCase(string) {
 }
 function getFileSizeInKB(filePath) {
     try {
-      const stats = fs.statSync(filePath);
-      const fileSizeInBytes = stats.size;
-      const fileSizeInKB = fileSizeInBytes / 1024;
-      return fileSizeInKB;
+        const stats = fs.statSync(filePath);
+        const fileSizeInBytes = stats.size;
+        const fileSizeInKB = fileSizeInBytes / 1024;
+        return fileSizeInKB;
     } catch (error) {
-      console.error(`Error getting file size: ${error.message}`);
-      return null;
+        console.error(`Error getting file size: ${error.message}`);
+        return null;
     }
-  }
+}
 function read(file, data) {
     try {
         data = fs.readFileSync(file, {
@@ -67,8 +67,9 @@ function parse(data) {
     let doc = {};
 
     data = data.replace(/\n+/gm, "\n");
-    data = data.replace(/.*?\/\*\*/gm, (m) => `\n${m}`);
-
+    data = data.replace(/.*?\((.*?)?\).*?\{[\s\S]+?\}\n+/gm, ($) => `\n${$}\n`);
+    data = data.replace(/.*?\*\/\n+/gm, ($) => `${$.trimEnd()}\n`);
+    
     data = data.replace(/customElements\.define\("(.*?)", /gm, (...args) => {
         let [match, tagName] = args;
         doc.tagName = tagName;
@@ -129,19 +130,19 @@ function parse(data) {
 }
 
 let docs = [];
-let code3=''
-code3+='name|size\n'
-code3+='---|---\n'
+let code3 = "";
+code3 += "name|size\n";
+code3 += "---|---\n";
 open("./src/material", (file) => {
     if (file.endsWith(".js")) {
         let data = read(file);
         let result = parse(data);
         docs.push(result.doc);
-        let name= path.parse(file).name
-        let size=getFileSizeInKB(file).toFixed(2)
-        code3+=`${name}|${size}KB\n`
+        let name = path.parse(file).name;
+        let size = getFileSizeInKB(file).toFixed(2);
+        code3 += `${name}|${size}KB\n`;
         // write(file,result.data)
-        // console.log(result.data)
+        // console.log(result.data);
     }
 });
 write("./dev/size.md", code3);

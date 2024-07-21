@@ -28,7 +28,7 @@ class MDToolComponent extends MDComponent {
         trailingActions: { type: Array },
 
         badge: { type: Number },
-        
+
         activated: { type: Boolean },
         indeterminate: { type: Boolean },
         selected: { type: Boolean },

@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-
 /**
  * MDBadgeComponent is a custom element that represents a badge component
  * for displaying labels or counts with an optional limit.
@@ -8,7 +7,6 @@ import { MDComponent } from "../component/component.js";
  * @extends MDComponent
  */
 class MDBadgeComponent extends MDComponent {
-
     /**
      * Defines the properties of the MDBadgeComponent.
      * @property {Number} label - The numeric label to display inside the badge.
@@ -18,7 +16,6 @@ class MDBadgeComponent extends MDComponent {
         label: { type: Number },
         limit: { type: Number },
     };
-
     /**
      * Constructs an instance of MDBadgeComponent, initializing the limit to 999.
      */

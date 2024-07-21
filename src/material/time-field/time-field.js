@@ -1,6 +1,5 @@
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
-
 /**
  * A custom element that provides a time and time picker field.
  * @element md-time-field
@@ -11,7 +10,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDTimeFieldComponent#onTimePickerSelection - Event fired when a time-time selection is made in the picker.
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
-
     /**
      * Gets the actions for the time-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -58,7 +56,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.handleTimeFieldActionPickerClick(event);
         }
     }
-
     /**
      * Handles the click event on the time-time picker action icon.
      * @param {Event} event - The click event.
@@ -67,6 +64,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handleTimeFieldActionPickerClick() {
         this.togglePicker();
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -74,7 +72,6 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-
     /**
      * Displays the time-time picker.
      */
@@ -82,6 +79,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
+
         this.pickerOpen = true;
         this.picker = document.createElement("md-time-picker");
         this.picker.value = this.value;
@@ -94,6 +92,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onTimePickerButtonOkClick", this.handleTimePickerButtonOkClick);
         this.picker.addEventListener("onTimePickerSelection", this.handleTimePickerSelection);
         this.picker.addEventListener("onTimePickerMinuteItemClick", this.handleTimePickerMinuteItemClick);
+
         const handleScroll = () => {
             this.picker.close();
             this.boundary.removeEventListener("scroll", handleScroll);
@@ -105,11 +104,13 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
                 matches = matches || current === this || current === this.picker;
                 current = current.parentElement;
             }
+
             if (!matches) {
                 this.picker.close();
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onTimePickerButtonCancelClick", this.handleTimePickerButtonCancelClick);
             this.picker.removeEventListener("onTimePickerButtonOkClick", this.handleTimePickerButtonOkClick);

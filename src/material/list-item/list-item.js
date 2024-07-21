@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
-
 /**
  * List item component for displaying items in a list with optional selection and actions.
  * @element md-list-item
@@ -9,7 +8,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDListItemComponent#onListItemSelected - Triggered when the list item is selected.
  */
 class MDListItemComponent extends MDComponent {
-
     /**
      * Properties defining the structure and behavior of the list item.
      * @property {String} avatar - URL of the avatar image.
@@ -49,7 +47,6 @@ class MDListItemComponent extends MDComponent {
         routerLink: { type: String, reflect: true },
         activated: { type: Boolean, reflect: true },
     };
-
     /**
      * Initializes MDListItemComponent with ripple and gesture controllers.
      */
@@ -108,6 +105,7 @@ class MDListItemComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.leadingCheckbox ? this.renderCheckbox() : nothing}
+
             ${this.leadingRadioButton ? this.renderRadioButton() : nothing}
             ${this.leadingSwitch ? this.renderSwitch() : nothing}
             ${this.avatar ? html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
@@ -131,7 +129,6 @@ class MDListItemComponent extends MDComponent {
             ${this.trailingSwitch ? this.renderSwitch() : nothing}
         `;
     }
-
     /**
      * Adds CSS classes to the component on connection.
      * @private
@@ -160,6 +157,7 @@ class MDListItemComponent extends MDComponent {
                 this.classList.add("md-list__item--two");
             }
         }
+
         if (changedProperties.has("selected")) {
             if (this.selected) {
                 this.emit("onListItemSelected", this);

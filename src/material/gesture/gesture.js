@@ -1,4 +1,3 @@
-
 /**
  * {{description}}
  * @fires MDGestureController#onDragStart - {{description}}
@@ -18,7 +17,6 @@
  * @fires MDGestureController#onResizeEnd - {{description}}
  */
 class MDGestureController {
-
     /**
      * {{description}}
      */
@@ -65,6 +63,7 @@ class MDGestureController {
         }
         this.container.classList.add("md-gesture");
         this.draggableHandle = this.container;
+
         if (this.options.draggableHandle) {
             if (typeof this.options.draggableHandle === "string") {
                 this.draggableHandle = this.host.querySelector(this.options.draggableHandle);
@@ -75,19 +74,20 @@ class MDGestureController {
         this.draggableHandle.classList.add("md-draggable");
         this.resizableContainer = document.createElement("div");
         this.resizableContainer.classList.add("md-resizable");
+
         for (const direction of this.options.resize) {
             const resizableHandle = document.createElement("div");
             resizableHandle.classList.add("md-resizable__handle");
             resizableHandle.classList.add(`md-resizable__handle--${direction}`);
             this.resizableContainer.append(resizableHandle);
         }
+
         this.container.append(this.resizableContainer);
         this.handleGesturePointerdown = this.handleGesturePointerdown.bind(this);
         this.handleGesturePointermove = this.handleGesturePointermove.bind(this);
         this.handleGesturePointerup = this.handleGesturePointerup.bind(this);
         this.container.addEventListener("pointerdown", this.handleGesturePointerdown);
     }
-
     /**
      * @private
      */
@@ -110,16 +110,21 @@ class MDGestureController {
         if (event.button !== 0) {
             return;
         }
+
         let draggableHandle = this.container;
+
         if (this.options.draggableHandle) {
             draggableHandle = event.target.closest(this.options.draggableHandle);
         }
+
         let hasDraggableHandle = draggableHandle === this.draggableHandle;
         let resizableHandle = event.target.closest(".md-resizable__handle");
         let resizableDirection;
+
         if (resizableHandle) {
             resizableDirection = resizableHandle.classList.value.match(/--(\w+)$/)[1];
         }
+
         window.addEventListener("pointermove", this.handleGesturePointermove);
         window.addEventListener("pointerup", this.handleGesturePointerup);
         document.body.classList.add("md-gesture--unselectable");
@@ -132,22 +137,29 @@ class MDGestureController {
         this.swipe = false;
         this.drag = false;
         this.dragged = false;
+
         if (this.options.drag.length && !this.options.dragAfterLongPress && hasDraggableHandle && !resizableDirection) {
             this.drag = true;
             this.draggableHandle.classList.add("md-draggable--dragged");
             this.emit("onDragStart", event);
         }
+
         this.resize = false;
+
         if (this.options.resize.length && !this.options.resizeAfterLongPress && resizableDirection) {
             this.resize = resizableDirection;
             this.emit("onResizeStart", event);
         }
+
         this.selection = false;
+
         if (!this.options.selectionAfterLongPress && this.options.selection) {
             this.selection = true;
             this.emit("onSelectionStart", event);
         }
+
         this.longPress = false;
+
         this.longPressTimeout = window.setTimeout(() => {
             this.longPress = true;
             this.emit("onLongPress", event);
@@ -156,17 +168,18 @@ class MDGestureController {
                 this.draggableHandle.classList.add("md-draggable--dragged");
                 this.emit("onDragStart", event);
             }
+
             if (this.options.resize.length && this.options.resizeAfterLongPress && resizableDirection) {
                 this.resize = resizableDirection;
                 this.emit("onResizeStart", event);
             }
+
             if (!this.drag && !this.resize && this.options.selectionAfterLongPress && this.options.selection) {
                 this.selection = true;
                 this.emit("onSelectionStart", event);
             }
         }, 300);
     }
-
     /**
      * @private
      */
@@ -180,31 +193,40 @@ class MDGestureController {
             if (this.options.drag.includes("x")) {
                 this.currentX = currentX;
             }
+
             if (this.options.drag.includes("y")) {
                 this.currentY = currentY;
             }
+
             this.emit("onDrag", event);
         }
+
         if (this.resize) {
             if (this.resize.includes("e")) {
                 this.currentWidth = this.startWidth + currentX - this.endX;
             }
+
             if (this.resize.includes("s")) {
                 this.currentHeight = this.startHeight + currentY - this.endY;
             }
+
             if (this.resize.includes("w")) {
                 this.currentX = currentX;
                 this.currentWidth = this.startWidth - this.currentX + this.endX;
             }
+
             if (this.resize.includes("n")) {
                 this.currentY = currentY;
                 this.currentHeight = this.startHeight - this.currentY + this.endY;
             }
+
             this.emit("onResize", event);
         }
+
         if (this.selection) {
             this.emit("onSelection", event);
         }
+
         if (this.options.updateStyle) {
             this.container.style.left = (this.currentX ?? 0) + "px";
             this.container.style.top = (this.currentY ?? 0) + "px";
@@ -212,7 +234,6 @@ class MDGestureController {
             this.container.style.height = (this.currentHeight ?? this.startHeight) + "px";
         }
     }
-
     /**
      * @private
      */
@@ -222,29 +243,36 @@ class MDGestureController {
             this.endX = this.currentX;
             this.endY = this.currentY;
         }
+
         if (!this.longPress && !this.swipe && !this.dragged) {
             this.emit("onTap", event);
             if (performance.now() - this.lastTap < 300) {
                 if (this.lastTap - this.lastDoubleTap !== 0) {
                     this.emit("onDoubleTap", event);
                 }
+
                 this.lastDoubleTap = performance.now();
             }
             this.lastTap = performance.now();
         }
+
         if (this.swipe && !this.selection) {
             this.emit("onSwipe" + this.swipe, event);
         }
+
         if (this.selection) {
             this.emit("onSelectionEnd", event);
         }
+
         if (this.drag) {
             this.draggableHandle.classList.remove("md-draggable--dragged");
             this.emit("onDragEnd", event);
         }
+
         if (this.resize) {
             this.emit("onResizeEnd", event);
         }
+
         document.body.classList.remove("md-gesture--unselectable");
         window.removeEventListener("pointermove", this.handleGesturePointermove);
         window.removeEventListener("pointerup", this.handleGesturePointerup);

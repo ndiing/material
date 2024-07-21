@@ -1,6 +1,5 @@
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
-
 /**
  * A custom element for displaying toolbars.
  * @element md-toolbar
@@ -10,6 +9,7 @@ class MDToolbarComponent extends MDComponent {
     static properties = {
         items: { type: Array },
     };
+
     render() {
         return this.items?.map((item) => {
             item.component = item.component || "icon-button";

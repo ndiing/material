@@ -1,7 +1,6 @@
 import { html } from "lit";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.js";
-
 /**
  * Custom date picker component.
  * @element md-date-picker
@@ -17,7 +16,6 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
  * @fires MDDatePickerComponent#onDatePickerDayItemClick - Fires when a day item is clicked.
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
-
     /**
      * Gets the leading actions for the date picker.
      * @returns {Array} The leading actions array.
@@ -31,9 +29,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             label = stringifyDate(this.selection);
         }
+
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
-
     /**
      * Gets the child nodes for the date picker.
      * @returns {Array} The child nodes array.
@@ -102,9 +100,9 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             this.index = 1;
         }
+
         this.emit("onDatePickerButtonLabelClick", event);
     }
-
     /**
      * Handles the previous icon button click event.
      * @param {Event} event - The click event.
@@ -118,11 +116,11 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             this.selection.setMonth(this.selection.getMonth() - 1);
         }
+
         this.requestUpdate();
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerIconButtonPrevClick", event);
     }
-
     /**
      * Handles the next icon button click event.
      * @param {Event} event - The click event.
@@ -136,11 +134,11 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             this.selection.setMonth(this.selection.getMonth() + 1);
         }
+
         this.requestUpdate();
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerIconButtonNextClick", event);
     }
-
     /**
      * Handles the year item click event.
      * @param {Event} event - The click event.

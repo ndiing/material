@@ -1,6 +1,5 @@
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
-
 /**
  * A custom element that provides a week and time picker field.
  * @element md-week-field
@@ -11,7 +10,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDWeekFieldComponent#onWeekPickerSelection - Event fired when a week-time selection is made in the picker.
  */
 class MDWeekFieldComponent extends MDTextFieldComponent {
-
     /**
      * Gets the actions for the week-time field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -38,6 +36,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-week-field");
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -45,7 +44,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-
     /**
      * Displays the week-time picker.
      */
@@ -53,6 +51,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
+
         this.pickerOpen = true;
         this.picker = document.createElement("md-week-picker");
         this.picker.value = this.value;
@@ -65,6 +64,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onWeekPickerButtonOkClick", this.handleWeekPickerButtonOkClick);
         this.picker.addEventListener("onWeekPickerSelection", this.handleWeekPickerSelection);
         this.picker.addEventListener("onWeekPickerDayItemClick", this.handleWeekPickerDayItemClick);
+
         const handleScroll = () => {
             this.picker.close();
             this.boundary.removeEventListener("scroll", handleScroll);
@@ -76,11 +76,13 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
                 matches = matches || current === this || current === this.picker;
                 current = current.parentElement;
             }
+
             if (!matches) {
                 this.picker.close();
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
+
         const handleSheetClose = () => {
             this.picker.removeEventListener("onWeekPickerButtonCancelClick", this.handleWeekPickerButtonCancelClick);
             this.picker.removeEventListener("onWeekPickerButtonOkClick", this.handleWeekPickerButtonOkClick);
@@ -118,7 +120,6 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
             this.handleWeekFieldActionPickerClick(event);
         }
     }
-
     /**
      * Handles the click event on the week-time picker action icon.
      * @param {Event} event - The click event.

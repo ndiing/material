@@ -3,7 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { createRef, ref } from "lit/directives/ref.js";
-
 /**
  * A custom checkbox component with ripple effect.
  * @element md-checkbox
@@ -12,7 +11,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDCheckboxComponent#onCheckboxNativeReset - Fired when the checkbox is reset to its default state.
  */
 class MDCheckboxComponent extends MDComponent {
-
     /**
      * Properties for the MDCheckboxComponent.
      * @property {String} name - The name of the checkbox input.
@@ -28,7 +26,6 @@ class MDCheckboxComponent extends MDComponent {
         checked: { type: Boolean },
         disabled: { type: Boolean },
     };
-
     /**
      * Constructs an instance of MDCheckboxComponent.
      * Initializes the ripple effect for the checkbox.
@@ -43,8 +40,8 @@ class MDCheckboxComponent extends MDComponent {
             fadeOut: true,
         });
     }
-    checkboxNative = createRef();
 
+    checkboxNative = createRef();
     /**
      * Renders the HTML template for the checkbox component.
      * @private
@@ -64,13 +61,13 @@ class MDCheckboxComponent extends MDComponent {
                 .checked="${ifDefined(this.checked)}"
                 ?disabled="${ifDefined(this.disabled)}"
                 ${ref(this.checkboxNative)}
+
                 @input="${this.handleCheckboxNativeInput}"
                 @reset="${this.handleCheckboxNativeReset}"
             >
             <div class="md-checkbox__track"><div class="md-checkbox__thumb"></div></div>
         `;
     }
-
     /**
      * Invoked when the component is added to the document's DOM.
      * @private
@@ -81,14 +78,15 @@ class MDCheckboxComponent extends MDComponent {
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
+
         if (this.defaultChecked === undefined) {
             this.defaultChecked = !!this.checked;
         }
+
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
     }
-
     /**
      * Handles the input event of the checkbox.
      * Updates the component's properties based on the input's state.

@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
-
 /**
  * A custom chip component with enhanced functionality.
  * @element md-chip
@@ -9,7 +8,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDChipComponent#onChipActionClick - Event emitted when the chip action button is clicked.
  */
 class MDChipComponent extends MDComponent {
-
     /**
      * Defines the properties of the MDChipComponent.
      * @property {String} variant - The variant of the chip, which can be one of "assist", "filter", "input", or "suggestion".
@@ -30,7 +28,6 @@ class MDChipComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["assist", "filter", "input", "suggestion"];
-
     /**
      * Creates an instance of MDChipComponent.
      */
@@ -49,13 +46,13 @@ class MDChipComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.selected ? html`<md-icon class="md-chip__icon">check</md-icon>` : nothing}
+
             ${!this.selected && this.avatar ? html`<md-image class="md-chip__avatar" .src="${this.avatar}" .alt="${"Avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
             ${!this.selected && this.icon ? html`<md-icon class="md-chip__icon">${this.icon}</md-icon>` : nothing}
             <div class="md-chip__label">${this.label}</div>
             ${this.action ? html`<md-icon-button class="md-chip__action" .icon="${this.action}" @click="${this.handleChipActionClick}"></md-icon-button>` : nothing}
         `;
     }
-
     /**
      * Called when the component is added to the DOM.
      * @private
@@ -78,6 +75,7 @@ class MDChipComponent extends MDComponent {
                 this.classList.toggle(`md-chip--${variant}`, variants.includes(variant));
             });
         }
+
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
@@ -88,7 +86,6 @@ class MDChipComponent extends MDComponent {
             }
         }
     }
-
     /**
      * Handles the click event on the chip action button.
      * @param {Event} event - The click event object.

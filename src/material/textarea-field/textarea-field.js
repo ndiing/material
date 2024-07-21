@@ -1,12 +1,10 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
-
 /**
  * Custom component for textarea input.
  * @element md-textarea-field
  * @extends MDTextFieldComponent
  */
 class MDTextareaFieldComponent extends MDTextFieldComponent {
-
     /**
      * Initializes the component.
      * Sets the type of the component to "textarea".

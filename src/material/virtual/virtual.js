@@ -1,10 +1,8 @@
-
 /**
  * Controller for managing virtual scrolling functionality.
  * @fires MDVirtualController#onVirtualScroll - Emitted during virtual scrolling.
  */
 class MDVirtualController {
-
     /**
      * Creates an instance of MDVirtualController.
      * @param {HTMLElement} host - The host element to which the controller is attached.
@@ -62,21 +60,23 @@ class MDVirtualController {
         } else {
             this.viewport = this.options.viewport;
         }
+
         if (typeof this.options.scrollbar === "string") {
             this.scrollbar = this.host.querySelector(this.options.scrollbar);
         } else {
             this.scrollbar = this.options.scrollbar;
         }
+
         if (typeof this.options.container === "string") {
             this.container = this.host.querySelector(this.options.container);
         } else {
             this.container = this.options.container;
         }
+
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.viewport.addEventListener("scroll", this.handleVirtualScroll);
         this.handleVirtualScroll();
     }
-
     /**
      * Handles the disconnection of the host element.
      * @private
@@ -101,6 +101,7 @@ class MDVirtualController {
             this.rowEnd = this.rowStart + this.rowLimit;
             this.translateY = this.rowStart * this.options.rowHeight;
         }
+
         if (this.options.columnTotal) {
             this.scrollbarWidth = this.options.columnTotal * this.options.columnWidth;
             this.columnStart = Math.floor(this.viewport.scrollLeft / this.options.columnWidth) - this.options.columnBuffer;
@@ -110,6 +111,7 @@ class MDVirtualController {
             this.columnEnd = this.columnStart + this.columnLimit;
             this.translateX = this.columnStart * this.options.columnWidth;
         }
+
         this.scrollbar.style.width = `${this.scrollbarWidth || 1}px`;
         this.scrollbar.style.height = `${this.scrollbarHeight || 1}px`;
         this.container.style.transform = `translate3d(${this.translateX || 0}px,${this.translateY || 0}px,0)`;

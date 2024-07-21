@@ -1,12 +1,10 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
-
 /**
  * Password field component for handling password input with visibility toggle.
  * @element md-password-field
  * @extends MDTextFieldComponent
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
-
     /**
      * Defines the actions available for the password field.
      * @returns {Object[]} Array of action objects.
@@ -20,7 +18,6 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      * @param {Object[]} value - The value to set.
      */
     set actions(value) {}
-
     /**
      * Initializes MDPasswordFieldComponent with default type as "password".
      */

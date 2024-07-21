@@ -1,14 +1,12 @@
 import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
-
 /**
  * Navigation bar component that extends MDSheetComponent and includes MDTreeComponent properties.
  * @element md-navigation-bar
  * @extends MDSheetComponent
  */
 class MDNavigationBarComponent extends MDSheetComponent {
-
     /**
      * Properties inherited from MDSheetComponent and MDTreeComponent.
      */
@@ -16,7 +14,6 @@ class MDNavigationBarComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
-
     /**
      * Retrieves the child nodes for the navigation bar, which includes an MDTree component.
      * @returns {TemplateResult[]} Array of child nodes for rendering.

@@ -1,11 +1,10 @@
-
 /**
  * Class for observing changes to a specific attribute on a target element.
  */
 class MDAttributeObserver {
-
     /**
      * Creates an instance of MDAttributeObserver.
+
      * @param {Function} [callback=() => {}] - The callback function to execute when attribute changes are detected.
      */
     constructor(callback = () => {}) {

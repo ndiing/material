@@ -3,7 +3,6 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * A customizable text field component for Material Design.
  * @element md-text-field
@@ -23,7 +22,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native text field element is reset.
  */
 class MDTextFieldComponent extends MDComponent {
-
     /**
      * The properties of the text field component.
      * @property {String} label - The label of the text field.
@@ -84,7 +82,6 @@ class MDTextFieldComponent extends MDComponent {
     };
     textFieldNative = createRef();
     textFieldContainer = createRef();
-
     /**
      * {{description}}
      */
@@ -119,6 +116,7 @@ class MDTextFieldComponent extends MDComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
+
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @click="${this.handleTextFieldNativeClick}"
@@ -131,7 +129,6 @@ class MDTextFieldComponent extends MDComponent {
             >
         `;
     }
-
     /**
      * @private
      */
@@ -155,6 +152,7 @@ class MDTextFieldComponent extends MDComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
+
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @click="${this.handleTextFieldNativeClick}"
@@ -164,7 +162,6 @@ class MDTextFieldComponent extends MDComponent {
             ></textarea>
         `;
     }
-
     /**
      * @private
      */
@@ -184,6 +181,7 @@ class MDTextFieldComponent extends MDComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
+
                 @focus="${this.handleTextFieldNativeFocus}"
                 @blur="${this.handleTextFieldNativeBlur}"
                 @click="${this.handleTextFieldNativeClick}"
@@ -201,7 +199,6 @@ class MDTextFieldComponent extends MDComponent {
             </select>
         `;
     }
-
     /**
      * @private
      */
@@ -227,6 +224,7 @@ class MDTextFieldComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.label ? html`<div class="md-text-field__label" @click="${this.handleTextFieldLabelClick}">${this.label}</div>` : nothing}
+
             <div 
                 class="md-text-field__container"
                 ${ref(this.textFieldContainer)}
@@ -252,14 +250,15 @@ class MDTextFieldComponent extends MDComponent {
             </div>
             ${(this.validationMessage || this.text || this.maxLength) ? html`
                 <div class="md-text-field__text">
+
                     ${(this.validationMessage || this.text) ? html`<div class="md-text-field__text-start">${this.validationMessage || this.text}</div>` : nothing}
+
                     ${this.maxLength ? html`<div class="md-text-field__text-end">${this.value?.length || 0}/${this.maxLength}</div>` : nothing}
                 </div>
             ` : nothing}
             ${this.renderHidden()}
         `;
     }
-
     /**
      * @private
      */
@@ -274,11 +273,11 @@ class MDTextFieldComponent extends MDComponent {
             if (this.value === undefined) {
                 this.value = defaultValue[this.type] || "";
             }
+
             this.defaultValue = this.value;
         }
     }
     variants = ["filled", "outlined", "rounded"];
-
     /**
      * @private
      */
@@ -290,15 +289,16 @@ class MDTextFieldComponent extends MDComponent {
                 this.classList.toggle(`md-text-field--${variant}`, variants.includes(variant));
             });
         }
+
         if (changedProperties.has("icon")) {
             await this.updateComplete;
             this.style.setProperty("--md-comp-text-field-native-offset-left", `${this.textFieldNative.value.offsetLeft}px`);
         }
+
         this.classList.toggle("md-text-field--populated", !!this.value || this.type === "file");
         this.classList.toggle("md-text-field--error", !!this.validationMessage);
         this.classList.toggle("md-text-field--focused", !!this.focused);
     }
-
     /**
      * @private
      */
@@ -365,9 +365,11 @@ class MDTextFieldComponent extends MDComponent {
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
         }
+
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }
+
     validate() {
         this.validationMessage = this.textFieldNative.value.validationMessage;
     }
@@ -379,10 +381,10 @@ class MDTextFieldComponent extends MDComponent {
         if (this.type !== "file") {
             this.value = this.textFieldNative.value.value;
         }
+
         this.validate();
         this.emit("onTextFieldNativeSearch", event);
     }
-
     /**
      * @private
      */
@@ -399,10 +401,10 @@ class MDTextFieldComponent extends MDComponent {
         if (this.type !== "file") {
             this.value = this.defaultValue;
         }
+
         this.validationMessage = "";
         this.emit("onTextFieldNativeReset", event);
     }
-
     /**
      * @private
      */

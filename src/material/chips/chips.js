@@ -1,6 +1,5 @@
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
-
 /**
  * A container component for displaying a list of chips.
  * @element md-chips
@@ -8,7 +7,6 @@ import { renderComponent } from "../template/template.js";
  * @fires MDChipsComponent#onChipClick - Event emitted when a chip is clicked.
  */
 class MDChipsComponent extends MDComponent {
-
     /**
      * Defines the properties of the MDChipsComponent.
      * @property {Array} list - The list of chip data objects to render.
@@ -18,7 +16,6 @@ class MDChipsComponent extends MDComponent {
         list: { type: Array },
         multiSelection: { type: Boolean },
     };
-
     /**
      * Renders the list of chips.
      * @private
@@ -53,9 +50,9 @@ class MDChipsComponent extends MDComponent {
             data.selected = !data.selected;
             this.requestUpdate();
         }
+
         this.emit("onChipClick", event);
     }
-
     /**
      * Handles the chip action click event.
      * @param {Event} event - The chip action click event object.
@@ -67,6 +64,7 @@ class MDChipsComponent extends MDComponent {
         if (index > -1) {
             this.list.splice(index, 1);
         }
+
         this.requestUpdate();
     }
 }

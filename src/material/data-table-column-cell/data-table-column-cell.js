@@ -3,13 +3,14 @@ import { MDGestureController } from "../material.js";
 class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-data-table-column-cell");
+        this.classList.add("md-data-table__column-cell");
         this.gesture = new MDGestureController(this, {
             container: this.parentElement,
             drag: ["x"],
             resize: ["e"],
         });
     }
+
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("reorderable")) {
@@ -19,6 +20,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
                 this.gesture.options.drag = [];
             }
         }
+
         if (changedProperties.has("resizable")) {
             if (this.resizable) {
                 this.gesture.options.resize = ["e"];
