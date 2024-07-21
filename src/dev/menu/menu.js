@@ -1588,8 +1588,14 @@ class DevMenu extends MDComponent {
                                 @onMenuViewportVirtualScroll=""
                                 @onMenuListItemClick=""
                             ></md-menu>
-                            <md-button label="toggle menu" @click="${(event) => menu.toggle(event.currentTarget)}"></md-button>
-                            <input @click="${(event) => menu.toggle(event.currentTarget)}" @input="${(event) => menu.filter(event.currentTarget.value)}" />
+                            <md-button
+                                label="toggle menu"
+                                @click="${(event) => menu.toggle(event.currentTarget)}"
+                            ></md-button>
+                            <input
+                                @click="${(event) => menu.toggle(event.currentTarget)}"
+                                @input="${(event) => menu.filter(event.currentTarget.value)}"
+                            />
                         </div>
                     </div>
                 </div>

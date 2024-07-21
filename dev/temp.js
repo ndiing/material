@@ -130,24 +130,24 @@ let code3 = "";
 code3 += "name|size\n";
 code3 += "---|---\n";
 open("./src/material", (file) => {
-    // if (file.endsWith(".js")) {
+    if (file.endsWith(".js")) {
         let data = read(file);
 
-        // let result = parse(data);
-        // docs.push(result.doc);
-        // let name = path.parse(file).name;
-        // let size = getFileSizeInKB(file).toFixed(2);
-        // code3 += `${name}|${size}KB\n`;
+        let result = parse(data);
+        docs.push(result.doc);
+        let name = path.parse(file).name;
+        let size = getFileSizeInKB(file).toFixed(2);
+        code3 += `${name}|${size}KB\n`;
 
     
-        data = data.replace(/\n+/gm, "\n");
-        // data = data.replace(/.*?\((.*?)?\).*?\{[\s\S]+?\}\n+/gm, ($) => `\n${$}\n`);
-        // data = data.replace(/.*?\*\/\n+/gm, ($) => `${$.trimEnd()}\n`);
-        data = data.replace(/.*?\/\*\*[\s\S]+?\*\//gm, ($) => `\n${$}`);
+        // data = data.replace(/\n+/gm, "\n");
+        // // data = data.replace(/.*?\((.*?)?\).*?\{[\s\S]+?\}\n+/gm, ($) => `\n${$}\n`);
+        // // data = data.replace(/.*?\*\/\n+/gm, ($) => `${$.trimEnd()}\n`);
+        // data = data.replace(/.*?\/\*\*[\s\S]+?\*\//gm, ($) => `\n${$}`);
         
-        write(file,data)
+        // write(file,data)
         
-    // }
+    }
 });
 write("./dev/size.md", code3);
 

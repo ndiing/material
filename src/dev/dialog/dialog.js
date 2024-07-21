@@ -31,7 +31,11 @@ class DevDialog extends MDComponent {
                             >
                                 Lorem ipsum dolor sit amet. Beatae commodi eos eligendi est? Illo tempora a rerum ex.
                             </md-dialog>
-                            <md-button label="show dialog" variant="tonal" @click="${() => dialog0.show(true)}"></md-button>
+                            <md-button
+                                label="show dialog"
+                                variant="tonal"
+                                @click="${() => dialog0.show(true)}"
+                            ></md-button>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
@@ -53,7 +57,11 @@ class DevDialog extends MDComponent {
                             >
                                 Lorem ipsum dolor sit amet. Beatae commodi eos eligendi est? Illo tempora a rerum ex.
                             </md-dialog>
-                            <md-button label="show dialog" variant="tonal" @click="${() => dialog1.show(true)}"></md-button>
+                            <md-button
+                                label="show dialog"
+                                variant="tonal"
+                                @click="${() => dialog1.show(true)}"
+                            ></md-button>
                         </div>
                     </div>
                 </div>

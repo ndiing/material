@@ -7,9 +7,24 @@ class DevLayout extends MDComponent {
             <md-layout variant="border">
                 <md-layout-item region="center">
                     <md-layout variant="column">
-                        <md-layout-item expanded="4" medium="4" compact="4">4/4/4</md-layout-item>
-                        <md-layout-item expanded="4" medium="4" compact="4">4/4/4</md-layout-item>
-                        <md-layout-item expanded="4" medium="4" compact="4">4/4/4</md-layout-item>
+                        <md-layout-item
+                            expanded="4"
+                            medium="4"
+                            compact="4"
+                            >4/4/4</md-layout-item
+                        >
+                        <md-layout-item
+                            expanded="4"
+                            medium="4"
+                            compact="4"
+                            >4/4/4</md-layout-item
+                        >
+                        <md-layout-item
+                            expanded="4"
+                            medium="4"
+                            compact="4"
+                            >4/4/4</md-layout-item
+                        >
                     </md-layout>
                 </md-layout-item>
             </md-layout>

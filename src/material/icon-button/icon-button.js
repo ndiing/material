@@ -55,7 +55,7 @@ class MDIconButtonComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
-        this.on("click", this.handleIconButtonClick);
+        this.on("click", this.handleIconButtonToggleClick);
     }
 
     /**
@@ -65,7 +65,7 @@ class MDIconButtonComponent extends MDComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.off("click", this.handleIconButtonClick);
+        this.off("click", this.handleIconButtonToggleClick);
     }
 
     /**
@@ -99,11 +99,11 @@ class MDIconButtonComponent extends MDComponent {
      * @private
      * @param {Event} event - The click event.
      */
-    handleIconButtonClick(event) {
+    handleIconButtonToggleClick(event) {
         if (this.variant && this.variant.includes("toggle")) {
             this.selected = !this.selected;
+            this.emit("onIconButtonToggleClick", event);
         }
-        this.emit("onIconButtonClick", event);
     }
 }
 customElements.define("md-icon-button", MDIconButtonComponent);
