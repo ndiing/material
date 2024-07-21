@@ -51,7 +51,6 @@ import { MDTextareaFieldComponent } from "./textarea-field/textarea-field.js";
 import { MDSelectFieldComponent } from "./select-field/select-field.js";
 
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
-
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
 
 import { MDCardComponent } from "./card/card.js";
@@ -75,17 +74,13 @@ import { MDEmojiPickerComponent } from "./emoji-picker/emoji-picker.js";
 
 import { MDListItemComponent } from "./list-item/list-item.js";
 import { MDListComponent } from "./list/list.js";
-
 import { MDTreeItemComponent } from "./tree-item/tree-item.js";
 import { MDTreeComponent } from "./tree/tree.js";
-
 import { MDChipComponent } from "./chip/chip.js";
 import { MDChipsComponent } from "./chips/chips.js";
-
 import { MDNavigationBarComponent } from "./navigation-bar/navigation-bar.js";
 import { MDNavigationDrawerComponent } from "./navigation-drawer/navigation-drawer.js";
 import { MDNavigationRailComponent } from "./navigation-rail/navigation-rail.js";
-
 import { MDMenuComponent } from "./menu/menu.js";
 import { MDTabsComponent } from "./tabs/tabs.js";
 
@@ -94,6 +89,7 @@ import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
 import { MDDataTableColumnCellComponent } from "./data-table-column-cell/data-table-column-cell.js";
 import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-row-cell.js";
 import { MDDataTableComponent } from "./data-table/data-table.js";
+
 export {
     //
     MDObserver,
