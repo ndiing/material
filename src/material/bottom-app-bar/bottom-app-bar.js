@@ -4,6 +4,9 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-bottom-app-bar
+ * @fires MDBottomAppBarComponent#onSheetShow - {{desc}}
+ * @fires MDBottomAppBarComponent#onSheetClose - {{desc}}
+ * @fires MDBottomAppBarComponent#onSheetScrimClick - {{desc}}
  */
 class MDBottomAppBarComponent extends MDSheetComponent {
     /**

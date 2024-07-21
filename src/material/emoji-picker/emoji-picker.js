@@ -10,6 +10,9 @@ import data from "../../assets/emojis.json";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-emoji-picker
+ * @fires MDEmojiPickerComponent#onSheetShow - {{desc}}
+ * @fires MDEmojiPickerComponent#onSheetClose - {{desc}}
+ * @fires MDEmojiPickerComponent#onSheetScrimClick - {{desc}}
  * @fires MDEmojiPickerComponent#onEmojiPickerTextFieldNativeInput - {{desc}}
  * @fires MDEmojiPickerComponent#onEmojiPickerTabsItemClick - {{desc}}
  * @fires MDEmojiPickerComponent#onEmojiPickerViewportVirtualScroll - {{desc}}
@@ -21,6 +24,14 @@ import data from "../../assets/emojis.json";
 class MDEmojiPickerComponent extends MDSheetComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
      * @property {Object} tabs - {{desc}}
      * @property {Array} rows - {{desc}}
      */

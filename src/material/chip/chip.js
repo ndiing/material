@@ -11,6 +11,7 @@ import { MDRippleController } from "../ripple/ripple.js";
 class MDChipComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {String} avatar - {{desc}}
      * @property {String} icon - {{desc}}

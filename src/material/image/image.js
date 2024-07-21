@@ -14,6 +14,7 @@ import { createRef, ref } from "lit/directives/ref.js";
 class MDImageComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} src - {{desc}}
      * @property {String} alt - {{desc}}
      * @property {String} loading - {{desc}}

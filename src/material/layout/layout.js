@@ -1,4 +1,5 @@
 import { MDComponent } from "../component/component.js";
+
 /**
  * {{desc}}
  * @extends MDComponent
@@ -7,17 +8,20 @@ import { MDComponent } from "../component/component.js";
 class MDLayoutComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      */
     static properties = {
         variant: { type: String },
     };
+
     /**
      * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
     }
+
     /**
      * {{desc}}
      */

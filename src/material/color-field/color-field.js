@@ -5,6 +5,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-color-field
+ * @fires MDColorFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDColorFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
     /**
@@ -80,6 +94,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
+
     /**
      * {{desc}}
      */

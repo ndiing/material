@@ -9,6 +9,7 @@ import { MDComponent } from "../component/component.js";
 class MDBadgeComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Number} label - {{desc}}
      * @property {Number} limit - {{desc}}
      */

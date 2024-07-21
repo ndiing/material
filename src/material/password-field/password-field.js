@@ -4,6 +4,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-password-field
+ * @fires MDPasswordFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDPasswordFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
     /**
@@ -17,7 +31,6 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
      * {{desc}}
      */
     set actions(value) {}
-
     constructor() {
         super();
         this.type = "password";

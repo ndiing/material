@@ -9,11 +9,13 @@ import { renderComponent } from "../template/template.js";
 class MDToolbarComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Array} items - {{desc}}
      */
     static properties = {
         items: { type: Array },
     };
+
     /**
      * {{desc}}
      */

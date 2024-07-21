@@ -6,10 +6,21 @@ import { MDTreeComponent } from "../tree/tree.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-navigation-bar
+ * @fires MDNavigationBarComponent#onSheetShow - {{desc}}
+ * @fires MDNavigationBarComponent#onSheetClose - {{desc}}
+ * @fires MDNavigationBarComponent#onSheetScrimClick - {{desc}}
  */
 class MDNavigationBarComponent extends MDSheetComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,

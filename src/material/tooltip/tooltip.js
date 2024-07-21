@@ -5,6 +5,9 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-tooltip
+ * @fires MDTooltipComponent#onSheetShow - {{desc}}
+ * @fires MDTooltipComponent#onSheetClose - {{desc}}
+ * @fires MDTooltipComponent#onSheetScrimClick - {{desc}}
  */
 class MDTooltipComponent extends MDSheetComponent {
     variants = ["plain", "rich"];

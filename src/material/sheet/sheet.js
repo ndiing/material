@@ -11,6 +11,13 @@ import { MDCardComponent } from "../card/card.js";
 class MDSheetComponent extends MDCardComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
      * @property {Boolean} open - {{desc}}
      */
     static properties = {

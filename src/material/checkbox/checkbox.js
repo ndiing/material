@@ -14,6 +14,7 @@ import { createRef, ref } from "lit/directives/ref.js";
 class MDCheckboxComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} name - {{desc}}
      * @property {String} value - {{desc}}
      * @property {Boolean} indeterminate - {{desc}}

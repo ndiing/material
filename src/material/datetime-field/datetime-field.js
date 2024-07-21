@@ -5,6 +5,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-datetime-field
+ * @fires MDDatetimeFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDDatetimeFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDDatetimeFieldComponent extends MDTextFieldComponent {
     /**
@@ -30,6 +44,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-datetime-field");
     }
+
     /**
      * {{desc}}
      */

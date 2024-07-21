@@ -190,17 +190,90 @@ for (const doc of docs) {
         if (doc.extendsName) {
             doc.parents = parent(doc);
         }
-        doc.emits = Array.from(new Map(doc.parents.map((p) => Array.from(p.emits.entries())).flat()).values()).filter(Boolean);
-        doc.properties = Array.from(new Map(doc.parents.map((p) => Array.from(p.properties.entries())).flat()).values()).filter(Boolean);
+        doc.emits = new Map(doc.parents.map((p) => Array.from(p.emits.entries())).flat());
+        doc.properties = new Map(doc.parents.map((p) => Array.from(p.properties.entries())).flat());
     }
 }
 
-// // create placeholder
-// open("./src/material", (file) => {
-//     if (file.endsWith(".js")) {
-//         let data = read(file);
-//         let doc = docs.find((doc) => doc.file === file);
-//         let result = parse(data, doc, true);
-//         write(file,result.data)
-//     }
-// });
+let [, , argvMethod, argvName] = process.argv;
+
+let cli = {
+    create: {
+        placeholder: () => {
+            // create placeholder
+            open("./src/material", (file) => {
+                if (file.endsWith(".js")) {
+                    let data = read(file);
+                    let doc = docs.find((doc) => doc.file === file);
+                    let result = parse(data, doc, true);
+                    write(file, result.data);
+                }
+            });
+        },
+        template: () => {
+            // create template
+            let code = "";
+            let code2 = "";
+            code += `import { html, nothing } from "lit";\n`;
+            code += `import { choose } from "lit/directives/choose.js";\n`;
+            code += `import { classMap } from "lit/directives/class-map.js";\n`;
+            code += `import { ifDefined } from "lit/directives/if-defined.js";\n`;
+            code += `import { styleMap } from "lit/directives/style-map.js";\n`;
+            code += `\n`;
+
+            for (const doc of docs) {
+                if (doc.tagName) {
+                    let name = doc.tagName.replace("md-", "");
+                    let methodName = toCamelCase("render-" + name);
+
+                    code += `/**\n`;
+                    code += ` * {{desc}}\n`;
+                    code += ` */\n`;
+                    code += `function ${methodName}(item = {}) {\n`;
+                    code += `    /* prettier-ignore */\n`;
+                    code += `    return html\`\n`;
+                    code += `        <md-${name}\n`;
+                    code += `            .data="\${item}"\n`;
+                    code += `            id="\${ifDefined(item.id)}"\n`;
+                    code += `            class="\${classMap({...item.classMap})}"\n`;
+                    code += `            style="\${styleMap({...item.styleMap})}"\n`;
+                    doc.properties.forEach((value) => {
+                        if (value && !["id", "name", "classMap", "styleMap", "data"].includes(value.name)) {
+                            code += `            .${value.name}="\${ifDefined(item.${value.name})}"\n`;
+                        }
+                    });
+                    doc.emits.forEach((value) => {
+                        if (value) {
+                            code += `            @${value.name}="\${ifDefined(item.${value.name})}"\n`;
+                        }
+                    });
+                    if (["button", "icon", "icon-button", "emoji", "fab"].includes(name)) {
+                        code += `            @click="\${ifDefined(item.${toCamelCase(`handle-${name}-Click`)})}"\n`;
+                    }
+                    code += `        ></md-${name}>\n`;
+                    code += `    \`\n`;
+                    code += `}\n`;
+                    code += `\n`;
+
+                    code2 += `        ["${name}", () => ${methodName}(item)],\n`;
+                }
+            }
+
+            code += `/**\n`;
+            code += ` * {{desc}}\n`;
+            code += ` */\n`;
+            code += `function renderComponent(item) {\n`;
+            code += `    /* prettier-ignore */\n`;
+            code += `    return choose(item.component, [\n`;
+            code += code2;
+            code += `    ], () => nothing)\n`;
+            code += `}\n`;
+            code += `\n`;
+            code += `export { renderComponent };\n`;
+
+            write("./src/material/template/template.js", code);
+        },
+    },
+};
+
+cli[argvMethod][argvName]();

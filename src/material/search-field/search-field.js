@@ -4,6 +4,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-search-field
+ * @fires MDSearchFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
     /**
@@ -17,7 +31,6 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      * {{desc}}
      */
     set actions(value) {}
-
     constructor() {
         super();
         this.type = "search";

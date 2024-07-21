@@ -34,7 +34,8 @@
         "extract": "lit-localize extract",
         "build": "lit-localize build",
         "prettier": "prettier src/ --write",
-        "eslint": "eslint src/material --fix"
+        "eslint": "eslint src/material --fix",
+        "jsdoc": "jsdoc -r ./src/material -d ./out"
     },
     "dependencies": {
         "@lit/localize": "^0.12.1",

@@ -10,6 +10,7 @@ import { renderComponent } from "../template/template.js";
 class MDSegmentedButtonComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Array} buttons - {{desc}}
      * @property {Boolean} singleSelection - {{desc}}
      * @property {Boolean} multiSelection - {{desc}}

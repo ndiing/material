@@ -26,6 +26,7 @@ import { choose } from "lit/directives/choose.js";
 class MDTextFieldComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} label - {{desc}}
      * @property {String} icon - {{desc}}
      * @property {String} prefix - {{desc}}
@@ -369,6 +370,7 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }
+
     /**
      * {{desc}}
      */

@@ -8,11 +8,13 @@ import { MDComponent } from "../component/component.js";
 class MDIconComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} icon - {{desc}}
      */
     static properties = {
         icon: { type: String },
     };
+
     /**
      * {{desc}}
      */

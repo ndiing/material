@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
+
 /**
  * {{desc}}
  * @extends MDComponent
@@ -9,6 +10,7 @@ import { renderComponent } from "../template/template.js";
 class MDDataTableItemComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {Boolean} leadingCheckbox - {{desc}}
      * @property {Boolean} leadingRadio - {{desc}}
@@ -62,12 +64,14 @@ class MDDataTableItemComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     /**
      * {{desc}}
      */
     constructor() {
         super();
     }
+
     /**
      * {{desc}}
      */
@@ -107,6 +111,7 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.badge!==undefined?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
         `;
     }
+
     /**
      * {{desc}}
      */
@@ -114,6 +119,7 @@ class MDDataTableItemComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-data-table__item");
     }
+
     /**
      * {{desc}}
      */

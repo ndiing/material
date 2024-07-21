@@ -11,6 +11,7 @@ import { renderComponent } from "../template/template.js";
 class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Array} list - {{desc}}
      * @property {String} variant - {{desc}}
      */

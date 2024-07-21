@@ -11,6 +11,7 @@ import { html, nothing } from "lit";
 class MDMarkdownComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} href - {{desc}}
      * @property {String} text - {{desc}}
      */

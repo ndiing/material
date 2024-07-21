@@ -9,10 +9,52 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-select-field
+ * @fires MDSelectFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDSelectFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} prefix - {{desc}}
+     * @property {String} suffix - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {String} type - {{desc}}
+     * @property {String} placeholder - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {String} value - {{desc}}
+     * @property {Number} min - {{desc}}
+     * @property {Number} max - {{desc}}
+     * @property {Number} cols - {{desc}}
+     * @property {Number} rows - {{desc}}
+     * @property {Number} minLength - {{desc}}
+     * @property {Number} maxLength - {{desc}}
+     * @property {String} pattern - {{desc}}
+     * @property {Boolean} required - {{desc}}
+     * @property {Boolean} readOnly - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {String} autocomplete - {{desc}}
+     * @property {Boolean} multiple - {{desc}}
+     * @property {Array} options - {{desc}}
+     * @property {Boolean} validationMessage - {{desc}}
+     * @property {Boolean} focused - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {String} mask - {{desc}}
      */
     static properties = {
         ...MDTextFieldComponent.properties,
@@ -34,48 +76,56 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get selectedIndex() {
         return this.options.findIndex((doc) => doc.selected);
     }
+
     /**
      * {{desc}}
      */
     get selectedOptions() {
         return this.options.filter((doc) => doc.selected);
     }
+
     /**
      * {{desc}}
      */
     get defaultSelectedIndex() {
         return this.defaultOptions.findIndex((doc) => doc.selected);
     }
+
     /**
      * {{desc}}
      */
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
+
     /**
      * {{desc}}
      */
     get selectedOptionLabel() {
         return this.selectedOptions?.[0]?.[this.map.label] ?? "";
     }
+
     /**
      * {{desc}}
      */
     get defaultSelectedOptionLabel() {
         return this.defaultSelectedOptions?.[0]?.[this.map.label] ?? "";
     }
+
     /**
      * {{desc}}
      */
     get selectedOptionValue() {
         return this.selectedOptions?.[0]?.[this.map.value] ?? "";
     }
+
     /**
      * {{desc}}
      */
     get defaultSelectedOptionValue() {
         return this.defaultSelectedOptions?.[0]?.[this.map.value] ?? "";
     }
+
     /**
      * {{desc}}
      */
@@ -148,6 +198,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.defaultOptions = JSON.parse(JSON.stringify(this.options));
         }
     }
+
     /**
      * {{desc}}
      */
@@ -155,6 +206,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
         super.validate();
     }
+
     /**
      * {{desc}}
      */
@@ -213,6 +265,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
+
     /**
      * {{desc}}
      */
@@ -228,6 +281,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+
     /**
      * {{desc}}
      */
@@ -259,6 +313,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             }
         }
     }
+
     /**
      * {{desc}}
      */
@@ -267,6 +322,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.filter(this.textFieldNative.value.value);
         this.showPicker();
     }
+
     /**
      * {{desc}}
      */

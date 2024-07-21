@@ -6,6 +6,20 @@ import { html } from "lit";
  * {{desc}}
  * @extends MDDatetimePickerComponent
  * @element md-time-picker
+ * @fires MDTimePickerComponent#onSheetShow - {{desc}}
+ * @fires MDTimePickerComponent#onSheetClose - {{desc}}
+ * @fires MDTimePickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerSelection - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerIconButtonPrevClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerIconButtonNextClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerButtonLabelClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerButtonCancelClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerButtonOkClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerYearItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerMonthItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerDayItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerHourItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onDatetimePickerMinuteItemClick - {{desc}}
  * @fires MDTimePickerComponent#onTimePickerButtonLabelClick - {{desc}}
  * @fires MDTimePickerComponent#onTimePickerSelection - {{desc}}
  * @fires MDTimePickerComponent#onTimePickerIconButtonPrevClick - {{desc}}

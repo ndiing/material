@@ -1,4 +1,5 @@
 import { MDComponent } from "../component/component.js";
+
 /**
  * {{desc}}
  * @extends MDComponent
@@ -7,6 +8,7 @@ import { MDComponent } from "../component/component.js";
 class MDLayoutItemComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Number} expanded - {{desc}}
      * @property {Number} medium - {{desc}}
      * @property {Number} compact - {{desc}}
@@ -18,12 +20,14 @@ class MDLayoutItemComponent extends MDComponent {
         compact: { type: Number },
         region: { type: String },
     };
+
     /**
      * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
     }
+
     /**
      * {{desc}}
      */

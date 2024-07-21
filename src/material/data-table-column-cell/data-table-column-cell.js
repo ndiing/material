@@ -1,5 +1,6 @@
 import { MDDataTableItemComponent } from "../data-table-item/data-table-item.js";
 import { MDGestureController } from "../material.js";
+
 /**
  * {{desc}}
  * @extends MDDataTableItemComponent
@@ -18,6 +19,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
             resize: ["e"],
         });
     }
+
     /**
      * {{desc}}
      */

@@ -3,6 +3,7 @@ import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
+
 /**
  * {{desc}}
  */
@@ -20,6 +21,7 @@ function renderBadge(item = {}) {
         ></md-badge>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -31,20 +33,21 @@ function renderBottomAppBar(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-bottom-app-bar>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -56,20 +59,21 @@ function renderBottomSheet(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-bottom-sheet>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -110,6 +114,7 @@ function renderBox(item = {}) {
         ></md-box>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -128,10 +133,11 @@ function renderButton(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            @click="${ifDefined(item.onButtonClick)}"
+            @click="${ifDefined(item.handleButtonClick)}"
         ></md-button>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -153,6 +159,7 @@ function renderCard(item = {}) {
         ></md-card>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -165,7 +172,6 @@ function renderCheckbox(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .checked="${ifDefined(item.checked)}"
@@ -175,6 +181,7 @@ function renderCheckbox(item = {}) {
         ></md-checkbox>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -194,11 +201,11 @@ function renderChip(item = {}) {
             .action="${ifDefined(item.action)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            @click="${ifDefined(item.onChipClick)}"
             @onChipActionClick="${ifDefined(item.onChipActionClick)}"
         ></md-chip>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -217,6 +224,7 @@ function renderChips(item = {}) {
         ></md-chips>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -228,6 +236,7 @@ function renderColorField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -236,7 +245,6 @@ function renderColorField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -255,7 +263,6 @@ function renderColorField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -273,6 +280,7 @@ function renderColorField(item = {}) {
         ></md-color-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -284,14 +292,14 @@ function renderColorPicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             .value="${ifDefined(item.value)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
@@ -308,6 +316,7 @@ function renderColorPicker(item = {}) {
         ></md-color-picker>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -319,13 +328,13 @@ function renderDataTable(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             .columns="${ifDefined(item.columns)}"
             .rows="${ifDefined(item.rows)}"
             .footer="${ifDefined(item.footer)}"
@@ -356,6 +365,7 @@ function renderDataTable(item = {}) {
         ></md-data-table>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -367,6 +377,7 @@ function renderDataTableColumnCell(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
             .leadingRadio="${ifDefined(item.leadingRadio)}"
@@ -392,10 +403,10 @@ function renderDataTableColumnCell(item = {}) {
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            .tooltip="${ifDefined(item.tooltip)}"
         ></md-data-table-column-cell>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -436,6 +447,7 @@ function renderDataTableItem(item = {}) {
         ></md-data-table-item>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -447,6 +459,7 @@ function renderDataTableRowCell(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
             .leadingRadio="${ifDefined(item.leadingRadio)}"
@@ -472,10 +485,10 @@ function renderDataTableRowCell(item = {}) {
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            .tooltip="${ifDefined(item.tooltip)}"
         ></md-data-table-row-cell>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -487,6 +500,7 @@ function renderDateField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -495,7 +509,6 @@ function renderDateField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -514,7 +527,6 @@ function renderDateField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -532,6 +544,7 @@ function renderDateField(item = {}) {
         ></md-date-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -543,16 +556,19 @@ function renderDatePicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .index="${ifDefined(item.index)}"
-            .value="${ifDefined(item.value)}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
+            .index="${ifDefined(item.index)}"
+            .value="${ifDefined(item.value)}"
+            @onSheetShow="${ifDefined(item.onSheetShow)}"
+            @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -564,9 +580,6 @@ function renderDatePicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onDatePickerButtonLabelClick="${ifDefined(item.onDatePickerButtonLabelClick)}"
             @onDatePickerSelection="${ifDefined(item.onDatePickerSelection)}"
             @onDatePickerIconButtonPrevClick="${ifDefined(item.onDatePickerIconButtonPrevClick)}"
@@ -579,6 +592,7 @@ function renderDatePicker(item = {}) {
         ></md-date-picker>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -590,6 +604,7 @@ function renderDatetimeField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -598,7 +613,6 @@ function renderDatetimeField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -617,7 +631,6 @@ function renderDatetimeField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -635,6 +648,7 @@ function renderDatetimeField(item = {}) {
         ></md-datetime-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -646,14 +660,14 @@ function renderDatetimePicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
@@ -673,6 +687,7 @@ function renderDatetimePicker(item = {}) {
         ></md-datetime-picker>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -684,20 +699,21 @@ function renderDialog(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-dialog>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -714,6 +730,7 @@ function renderDivider(item = {}) {
         ></md-divider>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -727,10 +744,11 @@ function renderEmoji(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .emoji="${ifDefined(item.emoji)}"
-            @click="${ifDefined(item.onEmojiClick)}"
+            @click="${ifDefined(item.handleEmojiClick)}"
         ></md-emoji>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -742,14 +760,14 @@ function renderEmojiPicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             .tabs="${ifDefined(item.tabs)}"
             .rows="${ifDefined(item.rows)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
@@ -765,6 +783,7 @@ function renderEmojiPicker(item = {}) {
         ></md-emoji-picker>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -782,10 +801,11 @@ function renderFab(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            @click="${ifDefined(item.onFabClick)}"
+            @click="${ifDefined(item.handleFabClick)}"
         ></md-fab>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -803,7 +823,6 @@ function renderForm(item = {}) {
             .autocomplete="${ifDefined(item.autocomplete)}"
             .enctype="${ifDefined(item.enctype)}"
             .method="${ifDefined(item.method)}"
-            .name="${ifDefined(item.name)}"
             .novalidate="${ifDefined(item.novalidate)}"
             .target="${ifDefined(item.target)}"
             .items="${ifDefined(item.items)}"
@@ -812,6 +831,7 @@ function renderForm(item = {}) {
         ></md-form>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -825,10 +845,11 @@ function renderIcon(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .icon="${ifDefined(item.icon)}"
-            @click="${ifDefined(item.onIconClick)}"
+            @click="${ifDefined(item.handleIconClick)}"
         ></md-icon>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -845,12 +866,12 @@ function renderIconButton(item = {}) {
             .icon="${ifDefined(item.icon)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            .name="${ifDefined(item.name)}"
-            @click="${ifDefined(item.onIconButtonClick)}"
             @onIconButtonToggleClick="${ifDefined(item.onIconButtonToggleClick)}"
+            @click="${ifDefined(item.handleIconButtonClick)}"
         ></md-icon-button>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -873,6 +894,7 @@ function renderImage(item = {}) {
         ></md-image>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -889,6 +911,7 @@ function renderLayout(item = {}) {
         ></md-layout>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -908,6 +931,7 @@ function renderLayoutItem(item = {}) {
         ></md-layout-item>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -935,6 +959,7 @@ function renderList(item = {}) {
         ></md-list>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -964,11 +989,11 @@ function renderListItem(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .routerLink="${ifDefined(item.routerLink)}"
             .activated="${ifDefined(item.activated)}"
-            @click="${ifDefined(item.onListItemClick)}"
             @onListItemSelected="${ifDefined(item.onListItemSelected)}"
         ></md-list-item>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -986,6 +1011,7 @@ function renderMarkdown(item = {}) {
         ></md-markdown>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -997,14 +1023,14 @@ function renderMenu(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             .list="${ifDefined(item.list)}"
             .map="${ifDefined(item.map)}"
             .rowHeight="${ifDefined(item.rowHeight)}"
@@ -1020,6 +1046,7 @@ function renderMenu(item = {}) {
         ></md-menu>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1031,6 +1058,7 @@ function renderMonthField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1039,7 +1067,6 @@ function renderMonthField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1058,7 +1085,6 @@ function renderMonthField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1076,6 +1102,7 @@ function renderMonthField(item = {}) {
         ></md-month-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1087,16 +1114,19 @@ function renderMonthPicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .index="${ifDefined(item.index)}"
-            .value="${ifDefined(item.value)}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
+            .index="${ifDefined(item.index)}"
+            .value="${ifDefined(item.value)}"
+            @onSheetShow="${ifDefined(item.onSheetShow)}"
+            @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -1108,9 +1138,6 @@ function renderMonthPicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onMonthPickerButtonLabelClick="${ifDefined(item.onMonthPickerButtonLabelClick)}"
             @onMonthPickerSelection="${ifDefined(item.onMonthPickerSelection)}"
             @onMonthPickerIconButtonPrevClick="${ifDefined(item.onMonthPickerIconButtonPrevClick)}"
@@ -1122,6 +1149,7 @@ function renderMonthPicker(item = {}) {
         ></md-month-picker>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1133,20 +1161,21 @@ function renderNavigationBar(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-navigation-bar>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1158,20 +1187,21 @@ function renderNavigationDrawer(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-navigation-drawer>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1183,20 +1213,21 @@ function renderNavigationRail(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-navigation-rail>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1208,6 +1239,7 @@ function renderNumberField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1216,7 +1248,6 @@ function renderNumberField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1235,7 +1266,6 @@ function renderNumberField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1253,6 +1283,7 @@ function renderNumberField(item = {}) {
         ></md-number-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1284,6 +1315,7 @@ function renderPagination(item = {}) {
         ></md-pagination>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1295,6 +1327,7 @@ function renderPasswordField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1303,7 +1336,6 @@ function renderPasswordField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1322,7 +1354,6 @@ function renderPasswordField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1340,6 +1371,7 @@ function renderPasswordField(item = {}) {
         ></md-password-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1358,6 +1390,7 @@ function renderProgressIndicator(item = {}) {
         ></md-progress-indicator>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1370,7 +1403,6 @@ function renderRadioButton(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .checked="${ifDefined(item.checked)}"
@@ -1380,6 +1412,7 @@ function renderRadioButton(item = {}) {
         ></md-radio-button>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1396,6 +1429,7 @@ function renderScrim(item = {}) {
         ></md-scrim>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1407,6 +1441,7 @@ function renderSearchField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1415,7 +1450,6 @@ function renderSearchField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1434,7 +1468,6 @@ function renderSearchField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1452,6 +1485,7 @@ function renderSearchField(item = {}) {
         ></md-search-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1471,6 +1505,7 @@ function renderSegmentedButton(item = {}) {
         ></md-segmented-button>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1482,6 +1517,7 @@ function renderSelectField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1490,7 +1526,6 @@ function renderSelectField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1509,7 +1544,6 @@ function renderSelectField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1527,6 +1561,7 @@ function renderSelectField(item = {}) {
         ></md-select-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1538,13 +1573,13 @@ function renderSheet(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
@@ -1552,6 +1587,7 @@ function renderSheet(item = {}) {
         ></md-sheet>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1563,20 +1599,21 @@ function renderSideSheet(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-side-sheet>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1589,7 +1626,6 @@ function renderSlider(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .name="${ifDefined(item.name)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
             .step="${ifDefined(item.step)}"
@@ -1600,6 +1636,7 @@ function renderSlider(item = {}) {
         ></md-slider>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1611,14 +1648,14 @@ function renderSnackbar(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
@@ -1627,6 +1664,7 @@ function renderSnackbar(item = {}) {
         ></md-snackbar>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1642,6 +1680,7 @@ function renderSpacer(item = {}) {
         ></md-spacer>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1654,7 +1693,6 @@ function renderSwitch(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .checked="${ifDefined(item.checked)}"
@@ -1665,6 +1703,7 @@ function renderSwitch(item = {}) {
         ></md-switch>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1676,13 +1715,14 @@ function renderTabs(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .list="${ifDefined(item.list)}"
             .variant="${ifDefined(item.variant)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTreeItemClick="${ifDefined(item.onTreeItemClick)}"
         ></md-tabs>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1703,7 +1743,6 @@ function renderTextField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1739,6 +1778,7 @@ function renderTextField(item = {}) {
         ></md-text-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1750,6 +1790,7 @@ function renderTextareaField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1758,7 +1799,6 @@ function renderTextareaField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1777,7 +1817,6 @@ function renderTextareaField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1795,6 +1834,7 @@ function renderTextareaField(item = {}) {
         ></md-textarea-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1806,6 +1846,7 @@ function renderTimeField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -1814,7 +1855,6 @@ function renderTimeField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -1833,7 +1873,6 @@ function renderTimeField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -1851,6 +1890,7 @@ function renderTimeField(item = {}) {
         ></md-time-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1862,16 +1902,19 @@ function renderTimePicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .index="${ifDefined(item.index)}"
-            .value="${ifDefined(item.value)}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
+            .index="${ifDefined(item.index)}"
+            .value="${ifDefined(item.value)}"
+            @onSheetShow="${ifDefined(item.onSheetShow)}"
+            @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -1883,9 +1926,6 @@ function renderTimePicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onTimePickerButtonLabelClick="${ifDefined(item.onTimePickerButtonLabelClick)}"
             @onTimePickerSelection="${ifDefined(item.onTimePickerSelection)}"
             @onTimePickerIconButtonPrevClick="${ifDefined(item.onTimePickerIconButtonPrevClick)}"
@@ -1897,6 +1937,7 @@ function renderTimePicker(item = {}) {
         ></md-time-picker>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1913,6 +1954,7 @@ function renderToolbar(item = {}) {
         ></md-toolbar>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1924,20 +1966,21 @@ function renderTooltip(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-tooltip>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1949,20 +1992,21 @@ function renderTopAppBar(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
             @onSheetShow="${ifDefined(item.onSheetShow)}"
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-top-app-bar>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -1981,6 +2025,7 @@ function renderTree(item = {}) {
         ></md-tree>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -2007,11 +2052,11 @@ function renderTreeItem(item = {}) {
             .nodeActions="${ifDefined(item.nodeActions)}"
             .nodeIcons="${ifDefined(item.nodeIcons)}"
             .leafIcons="${ifDefined(item.leafIcons)}"
-            @click="${ifDefined(item.onTreeItemClick)}"
             @onTreeItemSelected="${ifDefined(item.onTreeItemSelected)}"
         ></md-tree-item>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -2023,6 +2068,7 @@ function renderWeekField(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .label="${ifDefined(item.label)}"
             .icon="${ifDefined(item.icon)}"
             .prefix="${ifDefined(item.prefix)}"
@@ -2031,7 +2077,6 @@ function renderWeekField(item = {}) {
             .text="${ifDefined(item.text)}"
             .type="${ifDefined(item.type)}"
             .placeholder="${ifDefined(item.placeholder)}"
-            .name="${ifDefined(item.name)}"
             .value="${ifDefined(item.value)}"
             .min="${ifDefined(item.min)}"
             .max="${ifDefined(item.max)}"
@@ -2050,7 +2095,6 @@ function renderWeekField(item = {}) {
             .focused="${ifDefined(item.focused)}"
             .variant="${ifDefined(item.variant)}"
             .mask="${ifDefined(item.mask)}"
-            .tooltip="${ifDefined(item.tooltip)}"
             @onTextFieldContainerClick="${ifDefined(item.onTextFieldContainerClick)}"
             @onTextFieldLabelClick="${ifDefined(item.onTextFieldLabelClick)}"
             @onTextFieldMetaClick="${ifDefined(item.onTextFieldMetaClick)}"
@@ -2068,6 +2112,7 @@ function renderWeekField(item = {}) {
         ></md-week-field>
     `
 }
+
 /**
  * {{desc}}
  */
@@ -2079,16 +2124,19 @@ function renderWeekPicker(item = {}) {
             id="${ifDefined(item.id)}"
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
-            .index="${ifDefined(item.index)}"
-            .value="${ifDefined(item.value)}"
-            .open="${ifDefined(item.open)}"
+            .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .label="${ifDefined(item.label)}"
             .subLabel="${ifDefined(item.subLabel)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
-            .tooltip="${ifDefined(item.tooltip)}"
+            .open="${ifDefined(item.open)}"
+            .index="${ifDefined(item.index)}"
+            .value="${ifDefined(item.value)}"
+            @onSheetShow="${ifDefined(item.onSheetShow)}"
+            @onSheetClose="${ifDefined(item.onSheetClose)}"
+            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -2100,9 +2148,6 @@ function renderWeekPicker(item = {}) {
             @onDatetimePickerDayItemClick="${ifDefined(item.onDatetimePickerDayItemClick)}"
             @onDatetimePickerHourItemClick="${ifDefined(item.onDatetimePickerHourItemClick)}"
             @onDatetimePickerMinuteItemClick="${ifDefined(item.onDatetimePickerMinuteItemClick)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
             @onWeekPickerButtonLabelClick="${ifDefined(item.onWeekPickerButtonLabelClick)}"
             @onWeekPickerSelection="${ifDefined(item.onWeekPickerSelection)}"
             @onWeekPickerIconButtonPrevClick="${ifDefined(item.onWeekPickerIconButtonPrevClick)}"
@@ -2115,6 +2160,7 @@ function renderWeekPicker(item = {}) {
         ></md-week-picker>
     `
 }
+
 /**
  * {{desc}}
  */

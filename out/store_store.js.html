@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: store/store.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: store/store.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { isObject } from "../functions/functions.js";
+
+/**
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ */
+class MDStore {
+    /**
+     * {{desc}}
+     */
+    constructor(docs = [], options = {}) {
+        this.docs = docs;
+        this.options = {
+            primaryKey: "_id",
+            ...options,
+        };
+    }
+
+    /**
+     * {{desc}}
+     */
+    post(doc) {
+        this.docs.push(doc);
+        return doc;
+    }
+
+    /**
+     * {{desc}}
+     */
+    get(_id) {
+        return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
+    }
+
+    /**
+     * {{desc}}
+     */
+    patch(_id, doc) {
+        const index = this.docs.findIndex((d) => d[this.options.primaryKey] === _id);
+        if (index !== -1) {
+            this.docs[index] = this.deepMerge(this.docs[index], doc);
+            return this.docs[index];
+        }
+        return null;
+    }
+
+    /**
+     * {{desc}}
+     */
+    delete(_id) {
+        const index = this.docs.findIndex((doc) => doc[this.options.primaryKey] === _id);
+        if (index !== -1) {
+            const deletedDoc = this.docs[index];
+            this.docs.splice(index, 1);
+            return deletedDoc;
+        }
+        return null;
+    }
+
+    /**
+     * {{desc}}
+     */
+    put(doc) {
+        if (doc[this.options.primaryKey]) {
+            return this.patch(doc[this.options.primaryKey], doc);
+        } else {
+            return this.post(doc);
+        }
+    }
+
+    /**
+     * {{desc}}
+     */
+    sort(docs, sorters) {
+        return docs.sort((a, b) => {
+            for (const sorter of sorters) {
+                const { name, order } = sorter;
+                const comparison = (a[name] > b[name]) - (a[name] &lt; b[name]);
+                if (comparison !== 0) {
+                    return order === "asc" ? comparison : -comparison;
+                }
+            }
+            return 0;
+        });
+    }
+
+    /**
+     * {{desc}}
+     */
+    search(docs, q) {
+        const query = q.toLowerCase().trim();
+        return docs.filter((doc) => this.deepSearch(doc, query));
+    }
+
+    /**
+     * {{desc}}
+     */
+    filter(docs, filters) {
+        return docs.filter((doc) => this.deepFilter(doc, filters));
+    }
+
+    /**
+     * {{desc}}
+     */
+    paginate(docs, _page, _limit) {
+        const startIndex = (_page - 1) * _limit;
+        return docs.slice(startIndex, startIndex + _limit);
+    }
+
+    /**
+     * {{desc}}
+     */
+    slice(docs, _start, _end) {
+        return docs.slice(_start, _end);
+    }
+
+    /**
+     * {{desc}}
+     */
+    getAll(options = {}) {
+        let { _sort, _order, q, _page, _limit, _start, _end, sorters, filters, ...rest } = options;
+        let docs = this.docs.slice();
+        if ((_sort &amp;&amp; _order) || sorters) {
+            if (!sorters) {
+                const sort = _sort.split(",");
+                const order = _order.split(",");
+                sorters = sort.map((name, index) => ({ name, order: order[index] }));
+            }
+            docs = this.sort(docs, sorters);
+        }
+        if (q) {
+            docs = this.search(docs, q);
+        }
+        if (Object.keys(rest).length > 0 || filters) {
+            if (!filters) {
+                filters = [];
+                for (const key in rest) {
+                    if (Object.prototype.hasOwnProperty.call(rest, key)) {
+                        const value = rest[key];
+                        const [, name, operator = "_eq"] = key.match(/^(.*?)(_eq|_ne|_lt|_lte|_gt|_gte|_like|_in|_nin)?$/) || [];
+                        filters.push({ name, value, operator });
+                    }
+                }
+            }
+            docs = this.filter(docs, filters);
+        }
+        let total = docs.length;
+        if (_page !== undefined &amp;&amp; _limit !== undefined) {
+            docs = this.paginate(docs, _page, _limit);
+        } else if (_start !== undefined &amp;&amp; _end !== undefined) {
+            docs = this.slice(docs, _start, _end);
+        }
+        return { total, docs: docs };
+    }
+
+    /**
+     * {{desc}}
+     */
+    deepMerge(target, source) {
+        if (!isObject(target) || !isObject(source)) {
+            return source;
+        }
+        for (const key in source) {
+            if (isObject(source[key])) {
+                if (!target[key]) {
+                    Object.assign(target, { [key]: {} });
+                }
+                this.deepMerge(target[key], source[key]);
+            } else {
+                Object.assign(target, { [key]: source[key] });
+            }
+        }
+        return target;
+    }
+
+    /**
+     * {{desc}}
+     */
+    getValue(obj, path) {
+        return path.split(".").reduce((acc, part) => acc &amp;&amp; acc[part], obj);
+    }
+
+    /**
+     * {{desc}}
+     */
+    deepSearch(obj, query) {
+        if (!isObject(obj)) {
+            return false;
+        }
+        for (const key in obj) {
+            if (isObject(obj[key])) {
+                if (this.deepSearch(obj[key], query)) {
+                    return true;
+                }
+            } else if (typeof obj[key] === "string" &amp;&amp; obj[key].toLowerCase().includes(query)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * {{desc}}
+     */
+    deepFilter(obj, filters) {
+        return filters.every((filter) => {
+            const { name, value, operator } = filter;
+            const objValue = this.getValue(obj, name);
+            if (Array.isArray(objValue)) {
+                switch (operator) {
+                    case "_eq":
+                        return objValue.includes(value);
+                    case "_ne":
+                        return !objValue.includes(value);
+                    case "_like":
+                        return objValue.some((item) => typeof item === "string" &amp;&amp; item.toLowerCase().includes(value.toLowerCase()));
+                    case "_in":
+                        return objValue.some((item) => value.includes(item));
+                    case "_nin":
+                        return objValue.every((item) => !value.includes(item));
+                    default:
+                        return false;
+                }
+            } else {
+                switch (operator) {
+                    case "_eq":
+                        return objValue === value;
+                    case "_ne":
+                        return objValue !== value;
+                    case "_lt":
+                        return objValue &lt; value;
+                    case "_lte":
+                        return objValue &lt;= value;
+                    case "_gt":
+                        return objValue > value;
+                    case "_gte":
+                        return objValue >= value;
+                    case "_like":
+                        return typeof objValue === "string" &amp;&amp; objValue.toLowerCase().includes(value.toLowerCase());
+                    case "_in":
+                        return Array.isArray(value) &amp;&amp; value.includes(objValue);
+                    case "_nin":
+                        return Array.isArray(value) &amp;&amp; !value.includes(objValue);
+                    default:
+                        return false;
+                }
+            }
+        });
+    }
+}
+export { MDStore };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MDAttributeObserver.html">MDAttributeObserver</a></li><li><a href="MDBadgeComponent.html">MDBadgeComponent</a></li><li><a href="MDBottomAppBarComponent.html">MDBottomAppBarComponent</a></li><li><a href="MDBottomSheetComponent.html">MDBottomSheetComponent</a></li><li><a href="MDBoxComponent.html">MDBoxComponent</a></li><li><a href="MDButtonComponent.html">MDButtonComponent</a></li><li><a href="MDCardComponent.html">MDCardComponent</a></li><li><a href="MDCheckboxComponent.html">MDCheckboxComponent</a></li><li><a href="MDChipComponent.html">MDChipComponent</a></li><li><a href="MDChipsComponent.html">MDChipsComponent</a></li><li><a href="MDColorFieldComponent.html">MDColorFieldComponent</a></li><li><a href="MDColorPickerComponent.html">MDColorPickerComponent</a></li><li><a href="MDComponent.html">MDComponent</a></li><li><a href="MDDataTableColumnCellComponent.html">MDDataTableColumnCellComponent</a></li><li><a href="MDDataTableComponent.html">MDDataTableComponent</a></li><li><a href="MDDataTableItemComponent.html">MDDataTableItemComponent</a></li><li><a href="MDDataTableRowCellComponent.html">MDDataTableRowCellComponent</a></li><li><a href="MDDateFieldComponent.html">MDDateFieldComponent</a></li><li><a href="MDDatePickerComponent.html">MDDatePickerComponent</a></li><li><a href="MDDatetimeFieldComponent.html">MDDatetimeFieldComponent</a></li><li><a href="MDDatetimePickerComponent.html">MDDatetimePickerComponent</a></li><li><a href="MDDialogComponent.html">MDDialogComponent</a></li><li><a href="MDDividerComponent.html">MDDividerComponent</a></li><li><a href="MDEmojiComponent.html">MDEmojiComponent</a></li><li><a href="MDEmojiPickerComponent.html">MDEmojiPickerComponent</a></li><li><a href="MDFabComponent.html">MDFabComponent</a></li><li><a href="MDFormComponent.html">MDFormComponent</a></li><li><a href="MDGestureController.html">MDGestureController</a></li><li><a href="MDIconButtonComponent.html">MDIconButtonComponent</a></li><li><a href="MDIconComponent.html">MDIconComponent</a></li><li><a href="MDImageComponent.html">MDImageComponent</a></li><li><a href="MDLayoutComponent.html">MDLayoutComponent</a></li><li><a href="MDLayoutItemComponent.html">MDLayoutItemComponent</a></li><li><a href="MDListComponent.html">MDListComponent</a></li><li><a href="MDListItemComponent.html">MDListItemComponent</a></li><li><a href="MDMarkdownComponent.html">MDMarkdownComponent</a></li><li><a href="MDMediaObserver.html">MDMediaObserver</a></li><li><a href="MDMenuComponent.html">MDMenuComponent</a></li><li><a href="MDMonthFieldComponent.html">MDMonthFieldComponent</a></li><li><a href="MDMonthPickerComponent.html">MDMonthPickerComponent</a></li><li><a href="MDNavigationBarComponent.html">MDNavigationBarComponent</a></li><li><a href="MDNavigationDrawerComponent.html">MDNavigationDrawerComponent</a></li><li><a href="MDNavigationRailComponent.html">MDNavigationRailComponent</a></li><li><a href="MDNumberFieldComponent.html">MDNumberFieldComponent</a></li><li><a href="MDObserver.html">MDObserver</a></li><li><a href="MDPaginationComponent.html">MDPaginationComponent</a></li><li><a href="MDPasswordFieldComponent.html">MDPasswordFieldComponent</a></li><li><a href="MDPopperController.html">MDPopperController</a></li><li><a href="MDProgressIndicatorComponent.html">MDProgressIndicatorComponent</a></li><li><a href="MDRadioButtonComponent.html">MDRadioButtonComponent</a></li><li><a href="MDRippleController.html">MDRippleController</a></li><li><a href="MDRouter.html">MDRouter</a></li><li><a href="MDScrimComponent.html">MDScrimComponent</a></li><li><a href="MDSearchFieldComponent.html">MDSearchFieldComponent</a></li><li><a href="MDSegmentedButtonComponent.html">MDSegmentedButtonComponent</a></li><li><a href="MDSelectFieldComponent.html">MDSelectFieldComponent</a></li><li><a href="MDSheetComponent.html">MDSheetComponent</a></li><li><a href="MDSideSheetComponent.html">MDSideSheetComponent</a></li><li><a href="MDSliderComponent.html">MDSliderComponent</a></li><li><a href="MDSnackbarComponent.html">MDSnackbarComponent</a></li><li><a href="MDSpacerComponent.html">MDSpacerComponent</a></li><li><a href="MDStore.html">MDStore</a></li><li><a href="MDSwitchComponent.html">MDSwitchComponent</a></li><li><a href="MDTabsComponent.html">MDTabsComponent</a></li><li><a href="MDTextFieldComponent.html">MDTextFieldComponent</a></li><li><a href="MDTextareaFieldComponent.html">MDTextareaFieldComponent</a></li><li><a href="MDTimeFieldComponent.html">MDTimeFieldComponent</a></li><li><a href="MDTimePickerComponent.html">MDTimePickerComponent</a></li><li><a href="MDToolbarComponent.html">MDToolbarComponent</a></li><li><a href="MDTooltipComponent.html">MDTooltipComponent</a></li><li><a href="MDTopAppBarComponent.html">MDTopAppBarComponent</a></li><li><a href="MDTreeComponent.html">MDTreeComponent</a></li><li><a href="MDTreeItemComponent.html">MDTreeItemComponent</a></li><li><a href="MDVirtualController.html">MDVirtualController</a></li><li><a href="MDWeekFieldComponent.html">MDWeekFieldComponent</a></li><li><a href="MDWeekPickerComponent.html">MDWeekPickerComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calcDecimal">calcDecimal</a></li><li><a href="global.html#calcPercentage">calcPercentage</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#createQueue">createQueue</a></li><li><a href="global.html#emojiToHexadecimal">emojiToHexadecimal</a></li><li><a href="global.html#getBoundary">getBoundary</a></li><li><a href="global.html#hexToHsla">hexToHsla</a></li><li><a href="global.html#hexToRgba">hexToRgba</a></li><li><a href="global.html#hslaToHex">hslaToHex</a></li><li><a href="global.html#hslaToRgba">hslaToRgba</a></li><li><a href="global.html#isArrayString">isArrayString</a></li><li><a href="global.html#isDefined">isDefined</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isValidHexColor">isValidHexColor</a></li><li><a href="global.html#observe">observe</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#parseYear">parseYear</a></li><li><a href="global.html#pause">pause</a></li><li><a href="global.html#renderBadge">renderBadge</a></li><li><a href="global.html#renderBottomAppBar">renderBottomAppBar</a></li><li><a href="global.html#renderBottomSheet">renderBottomSheet</a></li><li><a href="global.html#renderBox">renderBox</a></li><li><a href="global.html#renderButton">renderButton</a></li><li><a href="global.html#renderCard">renderCard</a></li><li><a href="global.html#renderCheckbox">renderCheckbox</a></li><li><a href="global.html#renderChip">renderChip</a></li><li><a href="global.html#renderChips">renderChips</a></li><li><a href="global.html#renderColorField">renderColorField</a></li><li><a href="global.html#renderColorPicker">renderColorPicker</a></li><li><a href="global.html#renderComponent">renderComponent</a></li><li><a href="global.html#renderDataTable">renderDataTable</a></li><li><a href="global.html#renderDataTableColumnCell">renderDataTableColumnCell</a></li><li><a href="global.html#renderDataTableItem">renderDataTableItem</a></li><li><a href="global.html#renderDataTableRowCell">renderDataTableRowCell</a></li><li><a href="global.html#renderDateField">renderDateField</a></li><li><a href="global.html#renderDatePicker">renderDatePicker</a></li><li><a href="global.html#renderDatetimeField">renderDatetimeField</a></li><li><a href="global.html#renderDatetimePicker">renderDatetimePicker</a></li><li><a href="global.html#renderDialog">renderDialog</a></li><li><a href="global.html#renderDivider">renderDivider</a></li><li><a href="global.html#renderEmoji">renderEmoji</a></li><li><a href="global.html#renderEmojiPicker">renderEmojiPicker</a></li><li><a href="global.html#renderFab">renderFab</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#renderIcon">renderIcon</a></li><li><a href="global.html#renderIconButton">renderIconButton</a></li><li><a href="global.html#renderImage">renderImage</a></li><li><a href="global.html#renderLayout">renderLayout</a></li><li><a href="global.html#renderLayoutItem">renderLayoutItem</a></li><li><a href="global.html#renderList">renderList</a></li><li><a href="global.html#renderListItem">renderListItem</a></li><li><a href="global.html#renderMarkdown">renderMarkdown</a></li><li><a href="global.html#renderMenu">renderMenu</a></li><li><a href="global.html#renderMonthField">renderMonthField</a></li><li><a href="global.html#renderMonthPicker">renderMonthPicker</a></li><li><a href="global.html#renderNavigationBar">renderNavigationBar</a></li><li><a href="global.html#renderNavigationDrawer">renderNavigationDrawer</a></li><li><a href="global.html#renderNavigationRail">renderNavigationRail</a></li><li><a href="global.html#renderNumberField">renderNumberField</a></li><li><a href="global.html#renderPagination">renderPagination</a></li><li><a href="global.html#renderPasswordField">renderPasswordField</a></li><li><a href="global.html#renderProgressIndicator">renderProgressIndicator</a></li><li><a href="global.html#renderRadioButton">renderRadioButton</a></li><li><a href="global.html#renderScrim">renderScrim</a></li><li><a href="global.html#renderSearchField">renderSearchField</a></li><li><a href="global.html#renderSegmentedButton">renderSegmentedButton</a></li><li><a href="global.html#renderSelectField">renderSelectField</a></li><li><a href="global.html#renderSheet">renderSheet</a></li><li><a href="global.html#renderSideSheet">renderSideSheet</a></li><li><a href="global.html#renderSlider">renderSlider</a></li><li><a href="global.html#renderSnackbar">renderSnackbar</a></li><li><a href="global.html#renderSpacer">renderSpacer</a></li><li><a href="global.html#renderSwitch">renderSwitch</a></li><li><a href="global.html#renderTabs">renderTabs</a></li><li><a href="global.html#renderTextField">renderTextField</a></li><li><a href="global.html#renderTextareaField">renderTextareaField</a></li><li><a href="global.html#renderTimeField">renderTimeField</a></li><li><a href="global.html#renderTimePicker">renderTimePicker</a></li><li><a href="global.html#renderToolbar">renderToolbar</a></li><li><a href="global.html#renderTooltip">renderTooltip</a></li><li><a href="global.html#renderTopAppBar">renderTopAppBar</a></li><li><a href="global.html#renderTree">renderTree</a></li><li><a href="global.html#renderTreeItem">renderTreeItem</a></li><li><a href="global.html#renderWeekField">renderWeekField</a></li><li><a href="global.html#renderWeekPicker">renderWeekPicker</a></li><li><a href="global.html#reset">reset</a></li><li><a href="global.html#resume">resume</a></li><li><a href="global.html#rgbaToHex">rgbaToHex</a></li><li><a href="global.html#rgbaToHsla">rgbaToHsla</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#stop">stop</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li><li><a href="global.html#stringifyYear">stringifyYear</a></li><li><a href="global.html#toCamelCase">toCamelCase</a></li><li><a href="global.html#toCamelSnakeCase">toCamelSnakeCase</a></li><li><a href="global.html#toCobolCase">toCobolCase</a></li><li><a href="global.html#toFlatCase">toFlatCase</a></li><li><a href="global.html#toKebabCase">toKebabCase</a></li><li><a href="global.html#toPascalCase">toPascalCase</a></li><li><a href="global.html#toPascalSnakeCase">toPascalSnakeCase</a></li><li><a href="global.html#toScreamingSnakeCase">toScreamingSnakeCase</a></li><li><a href="global.html#toSnakeCase">toSnakeCase</a></li><li><a href="global.html#toTitleCase">toTitleCase</a></li><li><a href="global.html#toTrainCase">toTrainCase</a></li><li><a href="global.html#toUpperFlatCase">toUpperFlatCase</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Mon Jul 22 2024 03:19:29 GMT+0700 (Western Indonesia Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

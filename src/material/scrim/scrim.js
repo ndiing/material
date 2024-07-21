@@ -8,6 +8,7 @@ import { MDComponent } from "../component/component.js";
 class MDScrimComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Boolean} open - {{desc}}
      */
     static properties = {

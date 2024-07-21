@@ -1,4 +1,5 @@
 import { MDDataTableItemComponent } from "../data-table-item/data-table-item.js";
+
 /**
  * {{desc}}
  * @extends MDDataTableItemComponent

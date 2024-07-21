@@ -10,6 +10,7 @@ import { MDRippleController } from "../ripple/ripple.js";
 class MDButtonComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {String} type - {{desc}}
      * @property {String} icon - {{desc}}

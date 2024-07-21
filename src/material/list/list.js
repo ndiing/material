@@ -14,6 +14,7 @@ import { renderComponent } from "../template/template.js";
 class MDListComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Array} list - {{desc}}
      * @property {Object} map - {{desc}}
      * @property {Function} format - {{desc}}

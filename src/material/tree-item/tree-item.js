@@ -13,6 +13,7 @@ import { isDefined } from "../functions/functions.js";
 class MDTreeItemComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} icon - {{desc}}
      * @property {String} label - {{desc}}
      * @property {Number} badge - {{desc}}

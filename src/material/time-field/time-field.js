@@ -5,6 +5,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-time-field
+ * @fires MDTimeFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDTimeFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
@@ -55,6 +69,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     handleTimeFieldActionPickerClick() {
         this.togglePicker();
     }
+
     /**
      * {{desc}}
      */

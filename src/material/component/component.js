@@ -29,6 +29,7 @@ class MDComponent extends LitElement {
     createRenderRoot() {
         return this;
     }
+
     /**
      * {{desc}}
      */
@@ -37,6 +38,7 @@ class MDComponent extends LitElement {
         this.on("pointerenter", this.handlePointerenter);
         this.on("pointerleave", this.handlePointerleave);
     }
+
     /**
      * {{desc}}
      */
@@ -45,12 +47,14 @@ class MDComponent extends LitElement {
         this.off("pointerenter", this.handlePointerenter);
         this.off("pointerleave", this.handlePointerleave);
     }
+
     /**
      * {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
+
     /**
      * {{desc}}
      */
@@ -64,6 +68,7 @@ class MDComponent extends LitElement {
             this.tooltipElement.show(this);
         }
     }
+
     /**
      * {{desc}}
      */

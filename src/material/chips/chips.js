@@ -10,6 +10,7 @@ import { renderComponent } from "../template/template.js";
 class MDChipsComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Array} list - {{desc}}
      * @property {Boolean} multiSelection - {{desc}}
      */

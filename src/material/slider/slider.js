@@ -14,6 +14,7 @@ import { createRef, ref } from "lit/directives/ref.js";
 class MDSliderComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} name - {{desc}}
      * @property {Number} min - {{desc}}
      * @property {Number} max - {{desc}}

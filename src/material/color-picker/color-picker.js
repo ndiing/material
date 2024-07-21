@@ -7,6 +7,9 @@ import { MDPopperController } from "../popper/popper.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-color-picker
+ * @fires MDColorPickerComponent#onSheetShow - {{desc}}
+ * @fires MDColorPickerComponent#onSheetClose - {{desc}}
+ * @fires MDColorPickerComponent#onSheetScrimClick - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerButtonLabelClick - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerSelection - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerGradientTrackPointerdown - {{desc}}
@@ -20,6 +23,14 @@ import { MDPopperController } from "../popper/popper.js";
 class MDColorPickerComponent extends MDSheetComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
      * @property {String} value - {{desc}}
      */
     static properties = {
@@ -237,6 +248,7 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.thumb.style.top = y + "px";
         this.requestUpdate();
     }
+
     /**
      * {{desc}}
      */

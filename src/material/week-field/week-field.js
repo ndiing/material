@@ -5,6 +5,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-week-field
+ * @fires MDWeekFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDWeekFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
@@ -30,6 +44,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-week-field");
     }
+
     /**
      * {{desc}}
      */

@@ -15,6 +15,7 @@ import { MDComponent } from "../component/component.js";
 class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {Number} total - {{desc}}
      * @property {Number} limit - {{desc}}
      * @property {Number} page - {{desc}}

@@ -10,6 +10,7 @@ import { renderComponent } from "../template/template.js";
 class MDCardComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} label - {{desc}}

@@ -6,6 +6,20 @@ import { html } from "lit";
  * {{desc}}
  * @extends MDDatetimePickerComponent
  * @element md-month-picker
+ * @fires MDMonthPickerComponent#onSheetShow - {{desc}}
+ * @fires MDMonthPickerComponent#onSheetClose - {{desc}}
+ * @fires MDMonthPickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerSelection - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerIconButtonPrevClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerIconButtonNextClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerButtonLabelClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerButtonCancelClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerButtonOkClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerYearItemClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerMonthItemClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerDayItemClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerHourItemClick - {{desc}}
+ * @fires MDMonthPickerComponent#onDatetimePickerMinuteItemClick - {{desc}}
  * @fires MDMonthPickerComponent#onMonthPickerButtonLabelClick - {{desc}}
  * @fires MDMonthPickerComponent#onMonthPickerSelection - {{desc}}
  * @fires MDMonthPickerComponent#onMonthPickerIconButtonPrevClick - {{desc}}

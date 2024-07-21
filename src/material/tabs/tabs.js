@@ -4,6 +4,7 @@ import { MDTreeComponent } from "../tree/tree.js";
  * {{desc}}
  * @extends MDTreeComponent
  * @element md-tabs
+ * @fires MDTabsComponent#onTreeItemClick - {{desc}}
  */
 class MDTabsComponent extends MDTreeComponent {
     /**
@@ -15,7 +16,6 @@ class MDTabsComponent extends MDTreeComponent {
         this.currentSelectedIndex = -1;
         this.lastSelectedIndex = -1;
     }
-
     variants = ["primary", "secondary"];
 
     /**

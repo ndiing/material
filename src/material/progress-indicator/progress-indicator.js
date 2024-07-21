@@ -10,6 +10,7 @@ import { calcPercentage } from "../functions/functions.js";
 class MDProgressIndicatorComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {Number} value - {{desc}}
      * @property {Number} max - {{desc}}
@@ -19,7 +20,6 @@ class MDProgressIndicatorComponent extends MDComponent {
         value: { type: Number },
         max: { type: Number },
     };
-
     variants = ["circular", "linear"];
 
     /**

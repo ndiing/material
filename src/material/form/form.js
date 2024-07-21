@@ -13,6 +13,7 @@ import { createRef, ref } from "lit/directives/ref.js";
 class MDFormComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} acceptCharset - {{desc}}
      * @property {String} action - {{desc}}
      * @property {String} autocomplete - {{desc}}

@@ -5,17 +5,27 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-snackbar
+ * @fires MDSnackbarComponent#onSheetShow - {{desc}}
+ * @fires MDSnackbarComponent#onSheetClose - {{desc}}
+ * @fires MDSnackbarComponent#onSheetScrimClick - {{desc}}
  * @fires MDSnackbarComponent#onSnackbarShow - {{desc}}
  * @fires MDSnackbarComponent#onSnackbarClose - {{desc}}
  */
 class MDSnackbarComponent extends MDSheetComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,
     };
-
     static queue = createQueue();
 
     /**

@@ -8,6 +8,7 @@ import { MDComponent } from "../component/component.js";
 class MDDividerComponent extends MDComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      */
     static properties = {
@@ -22,6 +23,7 @@ class MDDividerComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-divider");
     }
+
     /**
      * {{desc}}
      */

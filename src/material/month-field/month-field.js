@@ -5,6 +5,20 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * {{desc}}
  * @extends MDTextFieldComponent
  * @element md-month-field
+ * @fires MDMonthFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDMonthFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
@@ -30,6 +44,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
+
     /**
      * {{desc}}
      */
