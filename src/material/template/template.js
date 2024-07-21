@@ -1,8 +1,8 @@
-import { html, nothing } from "lit";
-import { choose } from "lit/directives/choose.js";
-import { classMap } from "lit/directives/class-map.js";
-import { ifDefined } from "lit/directives/if-defined.js";
-import { styleMap } from "lit/directives/style-map.js";
+import { html, nothing } from "lit"
+import { choose } from "lit/directives/choose.js"
+import { classMap } from "lit/directives/class-map.js"
+import { ifDefined } from "lit/directives/if-defined.js"
+import { styleMap } from "lit/directives/style-map.js"
 
 function renderBadge(item = {}) {
     /* prettier-ignore */
@@ -62,6 +62,44 @@ function renderBottomSheet(item = {}) {
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-bottom-sheet>
+    `
+}
+
+function renderBox(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-box
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadio="${ifDefined(item.leadingRadio)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadio="${ifDefined(item.trailingRadio)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+        ></md-box>
     `
 }
 
@@ -644,10 +682,8 @@ function renderEmoji(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .emoji="${ifDefined(item.emoji)}"
-            .hover="${ifDefined(item.hover)}"
             @click="${ifDefined(item.onEmojiClick)}"
-        >${item.emoji}</md-emoji>
+        ></md-emoji>
     `
 }
 
@@ -736,7 +772,7 @@ function renderIcon(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             @click="${ifDefined(item.onIconClick)}"
-        >${item.icon}</md-icon>
+        ></md-icon>
     `
 }
 
@@ -1742,44 +1778,6 @@ function renderTimePicker(item = {}) {
     `
 }
 
-function renderTool(item = {}) {
-    /* prettier-ignore */
-    return html`
-        <md-tool
-            .data="${item}"
-            id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
-            .tooltip="${ifDefined(item.tooltip)}"
-            .leadingActions="${ifDefined(item.leadingActions)}"
-            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
-            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
-            .leadingImage="${ifDefined(item.leadingImage)}"
-            .leadingVideo="${ifDefined(item.leadingVideo)}"
-            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
-            .headline="${ifDefined(item.headline)}"
-            .supportingText="${ifDefined(item.supportingText)}"
-            .trailingIcon="${ifDefined(item.trailingIcon)}"
-            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
-            .trailingVideo="${ifDefined(item.trailingVideo)}"
-            .trailingImage="${ifDefined(item.trailingImage)}"
-            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
-            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
-            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-            .trailingActions="${ifDefined(item.trailingActions)}"
-            .badge="${ifDefined(item.badge)}"
-            .activated="${ifDefined(item.activated)}"
-            .indeterminate="${ifDefined(item.indeterminate)}"
-            .selected="${ifDefined(item.selected)}"
-            .disabled="${ifDefined(item.disabled)}"
-        ></md-tool>
-    `
-}
-
 function renderToolbar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1990,6 +1988,7 @@ function renderComponent(item) {
         ["badge", () => renderBadge(item)],
         ["bottom-app-bar", () => renderBottomAppBar(item)],
         ["bottom-sheet", () => renderBottomSheet(item)],
+        ["box", () => renderBox(item)],
         ["button", () => renderButton(item)],
         ["card", () => renderCard(item)],
         ["checkbox", () => renderCheckbox(item)],
@@ -2045,7 +2044,6 @@ function renderComponent(item) {
         ["textarea-field", () => renderTextareaField(item)],
         ["time-field", () => renderTimeField(item)],
         ["time-picker", () => renderTimePicker(item)],
-        ["tool", () => renderTool(item)],
         ["toolbar", () => renderToolbar(item)],
         ["tooltip", () => renderTooltip(item)],
         ["top-app-bar", () => renderTopAppBar(item)],
@@ -2056,4 +2054,4 @@ function renderComponent(item) {
     ], () => nothing)
 }
 
-export { renderComponent };
+export { renderComponent }

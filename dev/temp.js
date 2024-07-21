@@ -242,9 +242,9 @@ for (const doc of docs) {
             code += `            @${name}="\${ifDefined(item.${name})}"\n`;
         }
         code += `        >`;
-        if(['icon','emoji'].includes(name)){
-            code += `\${item.${name}}`;
-        }
+        // if(['icon','emoji'].includes(name)){
+        //     code += `\${item.${name}}`;
+        // }
         code += `</${doc.tagName}>\n`;
         code += `    \`\n`;
         code += `}\n`;
