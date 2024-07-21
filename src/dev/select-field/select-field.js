@@ -2201,6 +2201,7 @@ class DevSelectField extends MDComponent {
                                             options: {},
                                         },
                                         {
+                                            selected:true,
                                             id: "SCR",
                                             name: "SCR",
                                             options: {},
@@ -4144,6 +4145,7 @@ class DevSelectField extends MDComponent {
                                             },
                                         },
                                         {
+                                            selected:true,
                                             id: "SYML:TVC;STI",
                                             name: "Straits Times Index",
                                             options: {
