@@ -247,8 +247,20 @@ let cli = {
                             code += `            @${value.name}="\${ifDefined(item.${value.name})}"\n`;
                         }
                     });
-                    if (["button", "icon", "icon-button", "emoji", "fab"].includes(name)) {
-                        code += `            @click="\${ifDefined(item.${toCamelCase(`handle-${name}-Click`)})}"\n`;
+                    if (
+                        [
+                            //
+                            "button",
+                            "icon",
+                            "icon-button",
+                            "emoji",
+                            "fab",
+                            "chip",
+                            "list-item",
+                            "tree-item",
+                        ].includes(name)
+                    ) {
+                        code += `            @click="\${ifDefined(item.${toCamelCase(`on-${name}-Click`)})}"\n`;
                     }
                     code += `        ></md-${name}>\n`;
                     code += `    \`\n`;

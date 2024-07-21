@@ -133,7 +133,7 @@ function renderButton(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            @click="${ifDefined(item.handleButtonClick)}"
+            @click="${ifDefined(item.onButtonClick)}"
         ></md-button>
     `
 }
@@ -202,6 +202,7 @@ function renderChip(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
             @onChipActionClick="${ifDefined(item.onChipActionClick)}"
+            @click="${ifDefined(item.onChipClick)}"
         ></md-chip>
     `
 }
@@ -744,7 +745,7 @@ function renderEmoji(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .emoji="${ifDefined(item.emoji)}"
-            @click="${ifDefined(item.handleEmojiClick)}"
+            @click="${ifDefined(item.onEmojiClick)}"
         ></md-emoji>
     `
 }
@@ -801,7 +802,7 @@ function renderFab(item = {}) {
             .label="${ifDefined(item.label)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            @click="${ifDefined(item.handleFabClick)}"
+            @click="${ifDefined(item.onFabClick)}"
         ></md-fab>
     `
 }
@@ -845,7 +846,7 @@ function renderIcon(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .icon="${ifDefined(item.icon)}"
-            @click="${ifDefined(item.handleIconClick)}"
+            @click="${ifDefined(item.onIconClick)}"
         ></md-icon>
     `
 }
@@ -867,7 +868,7 @@ function renderIconButton(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
             @onIconButtonToggleClick="${ifDefined(item.onIconButtonToggleClick)}"
-            @click="${ifDefined(item.handleIconButtonClick)}"
+            @click="${ifDefined(item.onIconButtonClick)}"
         ></md-icon-button>
     `
 }
@@ -990,6 +991,7 @@ function renderListItem(item = {}) {
             .routerLink="${ifDefined(item.routerLink)}"
             .activated="${ifDefined(item.activated)}"
             @onListItemSelected="${ifDefined(item.onListItemSelected)}"
+            @click="${ifDefined(item.onListItemClick)}"
         ></md-list-item>
     `
 }
@@ -2053,6 +2055,7 @@ function renderTreeItem(item = {}) {
             .nodeIcons="${ifDefined(item.nodeIcons)}"
             .leafIcons="${ifDefined(item.leafIcons)}"
             @onTreeItemSelected="${ifDefined(item.onTreeItemSelected)}"
+            @click="${ifDefined(item.onTreeItemClick)}"
         ></md-tree-item>
     `
 }
@@ -2235,4 +2238,5 @@ function renderComponent(item) {
         ["week-picker", () => renderWeekPicker(item)],
     ], () => nothing)
 }
+
 export { renderComponent };
