@@ -2,18 +2,15 @@ import { MDPopperController } from "../popper/popper.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * Represents a tooltip component.
- * @element md-tooltip
+ * {{desc}}
  * @extends MDSheetComponent
+ * @element md-tooltip
  */
 class MDTooltipComponent extends MDSheetComponent {
-    /**
-     * Variants of the tooltip component.
-     */
     variants = ["plain", "rich"];
 
     /**
-     * Initializes the tooltip component.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -21,8 +18,7 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * Enhances connectedCallback to add specific CSS classes for tooltip styling.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -30,9 +26,7 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * Shows the tooltip as a modal.
-     * @param {Element} button - The button element to which the tooltip is attached.
-     * @param {Object} options - Options for positioning the tooltip.
+     * {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -40,9 +34,7 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * Shows the tooltip.
-     * @param {Element} button - The button element to which the tooltip is attached.
-     * @param {Object} options - Options for positioning the tooltip.
+     * {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -50,10 +42,7 @@ class MDTooltipComponent extends MDSheetComponent {
     }
 
     /**
-     * Sets the placement of the tooltip relative to the provided button element.
-     * @private
-     * @param {Element} button - The button element to which the tooltip is attached.
-     * @param {Object} options - Options for positioning the tooltip.
+     * {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {

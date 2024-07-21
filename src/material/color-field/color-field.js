@@ -2,26 +2,20 @@ import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * A custom element that provides a color and color picker field.
- * @element md-color-field
+ * {{desc}}
  * @extends MDTextFieldComponent
- * @fires MDColorFieldComponent#onColorFieldActionPickerClick - Event fired when the color-color picker icon is clicked.
- * @fires MDColorFieldComponent#onColorPickerButtonCancelClick - Event fired when the cancel button is clicked in the color-color picker.
- * @fires MDColorFieldComponent#onColorPickerButtonOkClick - Event fired when the OK button is clicked in the color-color picker.
- * @fires MDColorFieldComponent#onColorPickerSelection - Event fired when a color-color selection is made in the picker.
+ * @element md-color-field
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
     /**
-     * Gets the actions for the color-color field.
-     * @returns {Array} - An array of action objects, each containing a name and an icon.
+     * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "palette" }];
     }
 
     /**
-     * Sets the actions for the color-color field.
-     * @param {Array} value - The new actions for the color-color field.
+     * {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -30,8 +24,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Callback for when the component is connected to the DOM.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -39,7 +32,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Displays the color-color picker.
+     * {{desc}}
      */
     async showPicker() {
         if (this.pickerOpen) {
@@ -87,7 +80,9 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-
+    /**
+     * {{desc}}
+     */
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -97,7 +92,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldContainerClick() {
         super.handleTextFieldContainerClick();
@@ -105,7 +100,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -113,9 +108,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the color-color selection event in the picker.
-     * @param {Event} event - The color-color selection event.
-     * @private
+     * {{desc}}
      */
     handleColorPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -123,9 +116,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the cancel button click event in the color-color picker.
-     * @param {Event} event - The cancel button click event.
-     * @private
+     * {{desc}}
      */
     handleColorPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -133,9 +124,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the OK button click event in the color-color picker.
-     * @param {Event} event - The OK button click event.
-     * @private
+     * {{desc}}
      */
     handleColorPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();

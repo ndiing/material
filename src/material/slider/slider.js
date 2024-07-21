@@ -5,22 +5,21 @@ import { calcDecimal, calcPercentage, isArrayString } from "../functions/functio
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * Slider component that extends the MDComponent base class.
- * @element md-slider
+ * {{desc}}
  * @extends MDComponent
- * @fires MDSliderComponent#onSliderNativeInput - Fired when the slider input changes.
- * @fires MDSliderComponent#onSliderNativeReset - Fired when the slider is reset.
+ * @element md-slider
+ * @fires MDSliderComponent#onSliderNativeInput - {{desc}}
+ * @fires MDSliderComponent#onSliderNativeReset - {{desc}}
  */
 class MDSliderComponent extends MDComponent {
     /**
-     * Defines the properties of the slider component.
-     * @property {String} name - The name attribute of the slider input.
-     * @property {Array} value - The value of the slider, can be an array for range sliders.
-     * @property {Number} min - The minimum value of the slider.
-     * @property {Number} max - The maximum value of the slider.
-     * @property {Number} step - The step value of the slider.
-     * @property {Boolean} disabled - The disabled state of the slider.
-     * @property {String} autocomplete - The autocomplete attribute of the slider.
+     * {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {Number} min - {{desc}}
+     * @property {Number} max - {{desc}}
+     * @property {Number} step - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {String} autocomplete - {{desc}}
      */
     static properties = {
         name: { type: String },
@@ -46,17 +45,14 @@ class MDSliderComponent extends MDComponent {
     };
 
     /**
-     * Returns a NodeList of slider input elements.
-     * @returns {NodeList} The slider input elements.
-     * @private
+     * {{desc}}
      */
     get sliderNativeAll() {
         return this.querySelectorAll(".md-slider__native");
     }
 
     /**
-     * Initializes a new instance of the MDSliderComponent.
-     * Sets up default properties.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -68,10 +64,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Renders the slider track with indicators.
-     * @private
-     * @param {Number} value - The current value of the slider.
-     * @returns {TemplateResult} The HTML template for the track.
+     * {{desc}}
      */
     renderTrack(value) {
         let length = 2;
@@ -90,8 +83,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Renders the slider component template.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -126,9 +118,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the component is added to the DOM.
-     * Sets default values and updates styles.
-     * @private
+     * {{desc}}
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -147,9 +137,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Updates the style of the slider based on its value.
-     * @param {Number} index - The index of the slider value to update.
-     * @private
+     * {{desc}}
      */
     updateStyle(index) {
         const percentage = calcPercentage(this.min, this.max, this.value[index]);
@@ -159,10 +147,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the component is updated.
-     * Updates classes based on properties.
-     * @param {Map} changedProperties - Map of changed properties.
-     * @private
+     * {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -184,10 +169,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the slider input event.
-     * Updates the component's value and emits the onSliderNativeInput event.
-     * @param {Event} event - The input event.
-     * @private
+     * {{desc}}
      */
     handleSliderNativeInput(event) {
         if (this.value?.length > 1) {
@@ -206,10 +188,7 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the slider reset event.
-     * Resets the component's value and emits the onSliderNativeReset event.
-     * @param {Event} event - The reset event.
-     * @private
+     * {{desc}}
      */
     handleSliderNativeReset(event) {
         for (let index = 0; index < this.sliderNativeAll.length; index++) {

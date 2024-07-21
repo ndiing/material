@@ -1,21 +1,12 @@
 /**
- * Controller for managing virtual scrolling functionality.
- * @fires MDVirtualController#onVirtualScroll - Emitted during virtual scrolling.
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
     /**
-     * Creates an instance of MDVirtualController.
-     * @param {HTMLElement} host - The host element to which the controller is attached.
-     * @param {Object} options - Configuration options for the virtual controller.
-     * @property {string} [options.viewport=".md-virtual"] - Selector for the viewport element.
-     * @property {string} [options.scrollbar=".md-virtual__scrollbar"] - Selector for the scrollbar element.
-     * @property {string} [options.container=".md-virtual__container"] - Selector for the container element.
-     * @property {number} [options.rowTotal=0] - Total number of rows.
-     * @property {number} [options.rowHeight=0] - Height of each row.
-     * @property {number} [options.rowBuffer=0] - Number of buffer rows.
-     * @property {number} [options.columnTotal=0] - Total number of columns.
-     * @property {number} [options.columnWidth=0] - Width of each column.
-     * @property {number} [options.columnBuffer=0] - Number of buffer columns.
+     * {{desc}}
      */
     constructor(host, options) {
         (this.host = host).addController(this);
@@ -34,10 +25,7 @@ class MDVirtualController {
     }
 
     /**
-     * Emits a custom event.
-     * @private
-     * @param {string} type - The type of event.
-     * @param {Object} detail - The detail of the event.
+     * {{desc}}
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -49,8 +37,7 @@ class MDVirtualController {
     }
 
     /**
-     * Handles the connection of the host element.
-     * @private
+     * {{desc}}
      */
     async hostConnected() {
         await this.host.updateComplete;
@@ -76,8 +63,7 @@ class MDVirtualController {
     }
 
     /**
-     * Handles the disconnection of the host element.
-     * @private
+     * {{desc}}
      */
     async hostDisconnected() {
         await this.host.updateComplete;
@@ -85,9 +71,7 @@ class MDVirtualController {
     }
 
     /**
-     * Handles the virtual scrolling logic.
-     * @private
-     * @param {Event} event - The scroll event.
+     * {{desc}}
      */
     async handleVirtualScroll(event) {
         if (this.options.rowTotal) {

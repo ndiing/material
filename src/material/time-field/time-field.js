@@ -2,26 +2,20 @@ import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * A custom element that provides a time and time picker field.
- * @element md-time-field
+ * {{desc}}
  * @extends MDTextFieldComponent
- * @fires MDTimeFieldComponent#onTimeFieldActionPickerClick - Event fired when the time-time picker icon is clicked.
- * @fires MDTimeFieldComponent#onTimePickerButtonCancelClick - Event fired when the cancel button is clicked in the time-time picker.
- * @fires MDTimeFieldComponent#onTimePickerButtonOkClick - Event fired when the OK button is clicked in the time-time picker.
- * @fires MDTimeFieldComponent#onTimePickerSelection - Event fired when a time-time selection is made in the picker.
+ * @element md-time-field
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
-     * Gets the actions for the time-time field.
-     * @returns {Array} - An array of action objects, each containing a name and an icon.
+     * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "schedule" }];
     }
 
     /**
-     * Sets the actions for the time-time field.
-     * @param {Array} value - The new actions for the time-time field.
+     * {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -30,8 +24,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Callback for when the component is connected to the DOM.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -39,7 +32,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -47,9 +40,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the click event on the text field action icon.
-     * @param {Event} event - The click event.
-     * @private
+     * {{desc}}
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
@@ -59,14 +50,14 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the click event on the time-time picker action icon.
-     * @param {Event} event - The click event.
-     * @private
+     * {{desc}}
      */
     handleTimeFieldActionPickerClick() {
         this.togglePicker();
     }
-
+    /**
+     * {{desc}}
+     */
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -76,7 +67,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Displays the time-time picker.
+     * {{desc}}
      */
     async showPicker() {
         if (this.pickerOpen) {
@@ -129,9 +120,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the cancel button click event in the time-time picker.
-     * @param {Event} event - The cancel button click event.
-     * @private
+     * {{desc}}
      */
     handleTimePickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -139,9 +128,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the OK button click event in the time-time picker.
-     * @param {Event} event - The OK button click event.
-     * @private
+     * {{desc}}
      */
     handleTimePickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -150,9 +137,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the time-time selection event in the picker.
-     * @param {Event} event - The time-time selection event.
-     * @private
+     * {{desc}}
      */
     handleTimePickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -160,9 +145,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the time-time selection event in the picker.
-     * @param {Event} event - The time-time selection event.
-     * @private
+     * {{desc}}
      */
     handleTimePickerMinuteItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();

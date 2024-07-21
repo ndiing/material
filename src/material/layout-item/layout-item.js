@@ -1,16 +1,32 @@
 import { MDComponent } from "../component/component.js";
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-layout-item
+ */
 class MDLayoutItemComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {Number} expanded - {{desc}}
+     * @property {Number} medium - {{desc}}
+     * @property {Number} compact - {{desc}}
+     * @property {String} region - {{desc}}
+     */
     static properties = {
         expanded: { type: Number },
         medium: { type: Number },
         compact: { type: Number },
         region: { type: String },
     };
-
+    /**
+     * {{desc}}
+     */
     connectedCallback() {
         super.connectedCallback();
     }
-
+    /**
+     * {{desc}}
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("region")) {

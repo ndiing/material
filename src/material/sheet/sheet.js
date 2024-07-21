@@ -1,28 +1,26 @@
 import { MDCardComponent } from "../card/card.js";
 
 /**
- * Represents a sheet component that extends MDCardComponent.
- * @element md-sheet
+ * {{desc}}
  * @extends MDCardComponent
- * @fires MDSheetComponent#onSheetScrimClick - Triggered when the sheet scrim is clicked.
- * @fires MDSheetComponent#onSheetShow - Triggered when the sheet is shown.
- * @fires MDSheetComponent#onSheetClose - Triggered when the sheet is closed.
+ * @element md-sheet
+ * @fires MDSheetComponent#onSheetShow - {{desc}}
+ * @fires MDSheetComponent#onSheetClose - {{desc}}
+ * @fires MDSheetComponent#onSheetScrimClick - {{desc}}
  */
 class MDSheetComponent extends MDCardComponent {
     /**
-     * Properties of the MDSheetComponent.
-     * @property {Boolean} open - Reflects whether the sheet is open.
+     * {{desc}}
+     * @property {Boolean} open - {{desc}}
      */
     static properties = {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
-
     variants = ["north", "east", "south", "west", "modal"];
 
     /**
-     * Enhances connectedCallback to initialize sheet styling and add necessary classes.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -31,14 +29,14 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Shows the sheet as a modal.
+     * {{desc}}
      */
     showModal() {
         this.show(true);
     }
 
     /**
-     * Shows the sheet.
+     * {{desc}}
      */
     async show(modal) {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -56,7 +54,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Closes the sheet.
+     * {{desc}}
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -72,7 +70,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Toggles the sheet visibility.
+     * {{desc}}
      */
     toggle(...args) {
         if (this.open) {
@@ -83,8 +81,7 @@ class MDSheetComponent extends MDCardComponent {
     }
 
     /**
-     * Handles click events on the sheet scrim.
-     * @private
+     * {{desc}}
      */
     handleSheetScrimClick(event) {
         this.close();

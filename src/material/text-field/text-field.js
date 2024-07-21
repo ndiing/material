@@ -5,52 +5,54 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * A customizable text field component for Material Design.
- * @element md-text-field
+ * {{desc}}
  * @extends MDComponent
- * @fires MDTextFieldComponent#onTextFieldLabelClick - Fired when the text field label is clicked.
- * @fires MDTextFieldComponent#onTextFieldMetaClick - Fired when the text field meta area is clicked.
- * @fires MDTextFieldComponent#onTextFieldActionClick - Fired when an action button within the text field is clicked.
- * @fires MDTextFieldComponent#onTextFieldIconButtonClick - Fired when an icon button within the text field is clicked.
- * @fires MDTextFieldComponent#onTextFieldNativeFocus - Fired when the native text field element gains focus.
- * @fires MDTextFieldComponent#onTextFieldNativeBlur - Fired when the native text field element loses focus.
- * @fires MDTextFieldComponent#onTextFieldNativeClick - Fired when the native text field element is clicked.
- * @fires MDTextFieldComponent#onTextFieldNativeKeydown - Fired when a key is pressed down on the native text field element.
- * @fires MDTextFieldComponent#onTextFieldNativeSelect - Fired when text is selected within the native text field element.
- * @fires MDTextFieldComponent#onTextFieldNativeInput - Fired when input is entered into the native text field element.
- * @fires MDTextFieldComponent#onTextFieldNativeSearch - Fired when a search is performed within the native text field element.
- * @fires MDTextFieldComponent#onTextFieldNativeInvalid - Fired when the native text field element becomes invalid.
- * @fires MDTextFieldComponent#onTextFieldNativeReset - Fired when the native text field element is reset.
+ * @element md-text-field
+ * @fires MDTextFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDTextFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDTextFieldComponent extends MDComponent {
     /**
-     * The properties of the text field component.
-     * @property {String} label - The label of the text field.
-     * @property {String} icon - The icon displayed within the text field.
-     * @property {String} prefix - The prefix text displayed before the input.
-     * @property {String} suffix - The suffix text displayed after the input.
-     * @property {Array} actions - The action buttons associated with the text field.
-     * @property {String} text - The text content of the text field.
-     * @property {String} type - The type of input (e.g., "text", "password", "email").
-     * @property {String} placeholder - The placeholder text for the input.
-     * @property {String} name - The name attribute of the input.
-     * @property {String} value - The current value of the input.
-     * @property {Number} min - The minimum value for numerical inputs.
-     * @property {Number} max - The maximum value for numerical inputs.
-     * @property {Number} cols - The number of columns for textarea inputs.
-     * @property {Number} rows - The number of rows for textarea inputs.
-     * @property {Number} minLength - The minimum length of the input value.
-     * @property {Number} maxLength - The maximum length of the input value.
-     * @property {String} pattern - The regex pattern that the input value must match.
-     * @property {Boolean} required - Whether the input is required.
-     * @property {Boolean} readOnly - Whether the input is read-only.
-     * @property {Boolean} disabled - Whether the input is disabled.
-     * @property {String} autocomplete - The autocomplete attribute for the input.
-     * @property {Boolean} multiple - Whether the select input allows multiple selections.
-     * @property {Array} options - The options for select inputs.
-     * @property {Boolean} validationMessage - The validation message for the input.
-     * @property {Boolean} focused - Whether the input is focused.
-     * @property {String} variant - The visual variant of the text field (e.g., "filled", "outlined").
+     * {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} prefix - {{desc}}
+     * @property {String} suffix - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {String} type - {{desc}}
+     * @property {String} placeholder - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {String} value - {{desc}}
+     * @property {Number} min - {{desc}}
+     * @property {Number} max - {{desc}}
+     * @property {Number} cols - {{desc}}
+     * @property {Number} rows - {{desc}}
+     * @property {Number} minLength - {{desc}}
+     * @property {Number} maxLength - {{desc}}
+     * @property {String} pattern - {{desc}}
+     * @property {Boolean} required - {{desc}}
+     * @property {Boolean} readOnly - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {String} autocomplete - {{desc}}
+     * @property {Boolean} multiple - {{desc}}
+     * @property {Array} options - {{desc}}
+     * @property {Boolean} validationMessage - {{desc}}
+     * @property {Boolean} focused - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {String} mask - {{desc}}
      */
     static properties = {
         label: { type: String },
@@ -81,12 +83,11 @@ class MDTextFieldComponent extends MDComponent {
         variant: { type: String },
         mask: { type: String },
     };
-
     textFieldNative = createRef();
     textFieldContainer = createRef();
 
     /**
-     * {{description}}
+     * {{desc}}
      */
     constructor() {
         super();
@@ -96,7 +97,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     renderInput() {
         /* prettier-ignore */
@@ -133,7 +134,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     renderTextarea() {
         /* prettier-ignore */
@@ -166,7 +167,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     renderSelect() {
         /* prettier-ignore */
@@ -203,14 +204,14 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     renderHidden() {
         /* prettier-ignore */
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     renderTextFieldNative() {
         /* prettier-ignore */
@@ -221,7 +222,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -261,7 +262,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -277,11 +278,10 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value;
         }
     }
-
     variants = ["filled", "outlined", "rounded"];
 
     /**
-     * @private
+     * {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -301,28 +301,28 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldContainerClick(event) {
         this.emit("onTextFieldContainerClick", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldLabelClick(event) {
         this.emit("onTextFieldLabelClick", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldMetaClick(event) {
         this.emit("onTextFieldMetaClick", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeFocus(event) {
         this.style.removeProperty("--md-sys-motion-duration-short4");
@@ -331,7 +331,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeBlur(event) {
         this.focused = false;
@@ -339,28 +339,28 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         this.emit("onTextFieldNativeClick", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeKeydown(event) {
         this.emit("onTextFieldNativeKeydown", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeSelect(event) {
         this.emit("onTextFieldNativeSelect", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeInput(event) {
         if (this.type !== "file") {
@@ -369,13 +369,15 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }
-
+    /**
+     * {{desc}}
+     */
     validate() {
         this.validationMessage = this.textFieldNative.value.validationMessage;
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeSearch(event) {
         if (this.type !== "file") {
@@ -386,7 +388,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeInvalid(event) {
         event.preventDefault();
@@ -395,7 +397,7 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeReset(event) {
         if (this.type !== "file") {
@@ -406,14 +408,14 @@ class MDTextFieldComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldActionClick(event) {
         this.emit("onTextFieldActionClick", event);
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", event);

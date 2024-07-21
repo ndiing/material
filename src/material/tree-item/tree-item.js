@@ -5,28 +5,28 @@ import { choose } from "lit/directives/choose.js";
 import { isDefined } from "../functions/functions.js";
 
 /**
- * Tree item component for displaying items within a tree structure.
- * @element md-tree-item
+ * {{desc}}
  * @extends MDComponent
- * @fires MDTreeItemComponent#onTreeItemSelected - Triggered when a tree item is selected.
+ * @element md-tree-item
+ * @fires MDTreeItemComponent#onTreeItemSelected - {{desc}}
  */
 class MDTreeItemComponent extends MDComponent {
     /**
-     * Properties defining the structure and behavior of the tree item component.
-     * @property {String} icon - The icon name or URL for the tree item.
-     * @property {String} label - The label or text content of the tree item.
-     * @property {Number} badge - The badge number associated with the tree item.
-     * @property {Boolean} selected - Indicates if the tree item is currently selected.
-     * @property {String} routerLink - The URL or path to navigate when the tree item is clicked.
-     * @property {Number} indent - The level of indentation for the tree item.
-     * @property {Boolean} isNode - Indicates if the tree item is a node (expandable).
-     * @property {Boolean} expanded - Indicates if the tree item is currently expanded.
-     * @property {Boolean} activated - Indicates if the tree item is currently activated.
-     * @property {String} variant - The display variant of the tree item ('plain', 'accordion', 'tree', 'level').
-     * @property {Boolean} isParent - Indicates if the tree item is a parent node.
-     * @property {Array} nodeActions - Actions/icons associated with the node.
-     * @property {Array} nodeIcons - Icons associated with the node.
-     * @property {Array} leafIcons - Icons associated with the leaf node.
+     * {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {String} routerLink - {{desc}}
+     * @property {Number} indent - {{desc}}
+     * @property {Boolean} isNode - {{desc}}
+     * @property {Boolean} expanded - {{desc}}
+     * @property {Boolean} activated - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Boolean} isParent - {{desc}}
+     * @property {Array} nodeActions - {{desc}}
+     * @property {Array} nodeIcons - {{desc}}
+     * @property {Array} leafIcons - {{desc}}
      */
     static properties = {
         icon: { type: String },
@@ -46,9 +46,7 @@ class MDTreeItemComponent extends MDComponent {
     };
 
     /**
-     * Retrieves the node actions/icons based on the current variant.
-     * @private
-     * @returns {Array} Array of node action/icon names.
+     * {{desc}}
      */
     get nodeActions_() {
         let icons = [];
@@ -66,9 +64,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Retrieves the node icons based on the current variant.
-     * @private
-     * @returns {Array} Array of node icon names.
+     * {{desc}}
      */
     get nodeIcons_() {
         let icons = [];
@@ -84,9 +80,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Retrieves the leaf icons based on the current variant.
-     * @private
-     * @returns {Array} Array of leaf icon names.
+     * {{desc}}
      */
     get leafIcons_() {
         let icons = [];
@@ -102,43 +96,35 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Retrieves the current node action/icon based on the expanded state.
-     * @private
-     * @returns {String} Current node action/icon name.
+     * {{desc}}
      */
     get nodeAction() {
         return this.nodeActions_[~~this.expanded];
     }
 
     /**
-     * Retrieves the current node icon based on the expanded state.
-     * @private
-     * @returns {String} Current node icon name.
+     * {{desc}}
      */
     get nodeicon() {
         return this.nodeIcons_[~~this.expanded];
     }
 
     /**
-     * Retrieves the current leaf icon based on the selected state.
-     * @private
-     * @returns {String} Current leaf icon name.
+     * {{desc}}
      */
     get leafIcon() {
         return this.leafIcons_[~~this.selected];
     }
 
     /**
-     * Retrieves the current icon based on whether the item is a node or leaf.
-     * @private
-     * @returns {String} Current icon name.
+     * {{desc}}
      */
     get icon_() {
         return this.isNode ? this.nodeicon : this.leafIcon;
     }
 
     /**
-     * Initializes MDTreeItemComponent and sets up ripple effect for interaction.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -148,9 +134,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Renders the tree item in 'plain' variant.
-     * @private
-     * @returns {TemplateResult} Rendered HTML template for plain variant.
+     * {{desc}}
      */
     renderPlain() {
         /* prettier-ignore */
@@ -167,9 +151,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Renders the tree item in 'accordion' variant.
-     * @private
-     * @returns {TemplateResult} Rendered HTML template for accordion variant.
+     * {{desc}}
      */
     renderAccordion() {
         /* prettier-ignore */
@@ -186,9 +168,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Renders the tree item in 'tree' variant.
-     * @private
-     * @returns {TemplateResult} Rendered HTML template for tree variant.
+     * {{desc}}
      */
     renderTree() {
         /* prettier-ignore */
@@ -206,9 +186,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Renders the tree item in 'level' variant.
-     * @private
-     * @returns {TemplateResult} Rendered HTML template for level variant.
+     * {{desc}}
      */
     renderLevel() {
         /* prettier-ignore */
@@ -225,9 +203,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Renders the tree item based on its variant.
-     * @private
-     * @returns {TemplateResult} Rendered HTML template for the tree item.
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -239,8 +215,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Adds CSS classes to the component on connection.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -248,9 +223,7 @@ class MDTreeItemComponent extends MDComponent {
     }
 
     /**
-     * Handles updates to the component properties.
-     * @private
-     * @param {Map} changedProperties - Map of changed properties.
+     * {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

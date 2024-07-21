@@ -1,14 +1,13 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * Represents a bottom app bar component.
- * @element md-bottom-app-bar
+ * {{desc}}
  * @extends MDSheetComponent
+ * @element md-bottom-app-bar
  */
 class MDBottomAppBarComponent extends MDSheetComponent {
     /**
-     * Called when the component is added to the DOM.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

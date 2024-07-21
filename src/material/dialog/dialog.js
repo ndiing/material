@@ -1,16 +1,15 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * Represents a dialog component that extends MDSheetComponent.
- * @element md-dialog
+ * {{desc}}
  * @extends MDSheetComponent
+ * @element md-dialog
  */
 class MDDialogComponent extends MDSheetComponent {
     variants = ["full"];
 
     /**
-     * Enhances connectedCallback to add specific CSS classes for dialog styling.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

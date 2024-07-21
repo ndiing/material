@@ -3,19 +3,19 @@ import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
 /**
- * A custom element for creating various styles of buttons with optional ripple effects.
- * @element md-button
+ * {{desc}}
  * @extends MDComponent
+ * @element md-button
  */
 class MDButtonComponent extends MDComponent {
     /**
-     * Defines the properties of the element.
-     * @property {String} variant - The style variant of the button (e.g., "elevated", "filled", "tonal", "outlined", "icon-right").
-     * @property {String} type - The type attribute of the button element (default is "button").
-     * @property {String} icon - The icon to display within the button.
-     * @property {String} label - The label text to display within the button.
-     * @property {Boolean} selected - Indicates whether the button is selected.
-     * @property {Boolean} disabled - Indicates whether the button is disabled.
+     * {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {String} type - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
      */
     static properties = {
         ...MDComponent.properties,
@@ -26,11 +26,10 @@ class MDButtonComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
 
     /**
-     * Creates an instance of MDButtonComponent.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -42,8 +41,7 @@ class MDButtonComponent extends MDComponent {
     }
 
     /**
-     * Renders the button element with optional icon and label.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -59,9 +57,7 @@ class MDButtonComponent extends MDComponent {
     }
 
     /**
-     * Invoked each time the custom element is appended into a document-connected element.
-     * Adds the 'md-button' class to the element.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -69,10 +65,7 @@ class MDButtonComponent extends MDComponent {
     }
 
     /**
-     * Called when the element's properties are updated.
-     * Toggles the button's variant classes and handles the disabled state.
-     * @private
-     * @param {Map} changedProperties - The properties that changed.
+     * {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

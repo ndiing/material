@@ -1,6 +1,14 @@
 import { MDDataTableItemComponent } from "../data-table-item/data-table-item.js";
 import { MDGestureController } from "../material.js";
+/**
+ * {{desc}}
+ * @extends MDDataTableItemComponent
+ * @element md-data-table-column-cell
+ */
 class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
+    /**
+     * {{desc}}
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__column-cell");
@@ -10,7 +18,9 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
             resize: ["e"],
         });
     }
-
+    /**
+     * {{desc}}
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("reorderable")) {

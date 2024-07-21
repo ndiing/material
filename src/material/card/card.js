@@ -3,19 +3,19 @@ import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
 /**
- * {{description}}
- * @element md-card
+ * {{desc}}
  * @extends MDComponent
+ * @element md-card
  */
 class MDCardComponent extends MDComponent {
     /**
-     * {{description}}
-     * @property {String} variant - {{description}}
-     * @property {Array} leadingActions - {{description}}
-     * @property {String} label - {{description}}
-     * @property {String} subLabel - {{description}}
-     * @property {Array} trailingActions - {{description}}
-     * @property {Array} actions - {{description}}
+     * {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
      */
     static properties = {
         variant: { type: String },
@@ -25,11 +25,10 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
-
     variants = ["elevated", "filled", "outlined"];
 
     /**
-     * {{description}}
+     * {{desc}}
      */
     constructor() {
         super();
@@ -37,7 +36,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -85,7 +84,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -93,7 +92,7 @@ class MDCardComponent extends MDComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

@@ -1,36 +1,30 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * Password field component for handling password input with visibility toggle.
- * @element md-password-field
+ * {{desc}}
  * @extends MDTextFieldComponent
+ * @element md-password-field
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
     /**
-     * Defines the actions available for the password field.
-     * @returns {Object[]} Array of action objects.
+     * {{desc}}
      */
     get actions() {
         return [{ name: "password", icon: this.type === "password" ? "visibility_off" : "visibility" }];
     }
 
     /**
-     * Setter for actions (no operation).
-     * @param {Object[]} value - The value to set.
+     * {{desc}}
      */
     set actions(value) {}
 
-    /**
-     * Initializes MDPasswordFieldComponent with default type as "password".
-     */
     constructor() {
         super();
         this.type = "password";
     }
 
     /**
-     * Adds CSS classes to the component on connection.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -38,7 +32,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -46,9 +40,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Toggles the visibility of the password text on icon button click.
-     * @private
-     * @param {MouseEvent} event - The click event on the icon button.
+     * {{desc}}
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

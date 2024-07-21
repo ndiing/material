@@ -1,14 +1,13 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * Custom component for number input fields.
- * @element md-number-field
+ * {{desc}}
  * @extends MDTextFieldComponent
+ * @element md-number-field
  */
 class MDNumberFieldComponent extends MDTextFieldComponent {
     /**
-     * Defines the actions for the number field component.
-     * @returns {Array<Object>} Actions array with name and icon properties.
+     * {{desc}}
      */
     get actions() {
         return [
@@ -18,24 +17,17 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Setter for the actions property.
-     * @param {Array<Object>} value - New value for actions.
+     * {{desc}}
      */
     set actions(value) {}
 
-    /**
-     * Initializes the number field component.
-     * Sets the type of the input field to "number".
-     */
     constructor() {
         super();
         this.type = "number";
     }
 
     /**
-     * Callback when the component is connected to the DOM.
-     * Adds necessary classes to the component.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -43,7 +35,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -51,10 +43,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles clicks on the icon buttons associated with the number field.
-     * Adjusts the value of the input field based on the button clicked.
-     * @param {Event} event - Click event on the icon buttons.
-     * @private
+     * {{desc}}
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

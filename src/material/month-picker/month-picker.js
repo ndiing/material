@@ -3,22 +3,21 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { html } from "lit";
 
 /**
- * Custom month picker component that extends MDDatetimePickerComponent.
- * @element md-month-picker
+ * {{desc}}
  * @extends MDDatetimePickerComponent
- * @fires MDMonthPickerComponent#onMonthPickerIconButtonPrevClick - Event fired when the previous button is clicked.
- * @fires MDMonthPickerComponent#onMonthPickerIconButtonNextClick - Event fired when the next button is clicked.
- * @fires MDMonthPickerComponent#onMonthPickerButtonLabelClick - Event fired when the label button is clicked.
- * @fires MDMonthPickerComponent#onMonthPickerButtonCancelClick - Event fired when the cancel button is clicked.
- * @fires MDMonthPickerComponent#onMonthPickerButtonOkClick - Event fired when the OK button is clicked.
- * @fires MDMonthPickerComponent#onMonthPickerYearItemClick - Event fired when a year item is clicked.
- * @fires MDMonthPickerComponent#onMonthPickerSelection - Event fired when a selection is made in the month picker.
- * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - Event fired when a month item is clicked.
+ * @element md-month-picker
+ * @fires MDMonthPickerComponent#onMonthPickerButtonLabelClick - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerSelection - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerIconButtonPrevClick - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerIconButtonNextClick - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerYearItemClick - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerMonthItemClick - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerButtonCancelClick - {{desc}}
+ * @fires MDMonthPickerComponent#onMonthPickerButtonOkClick - {{desc}}
  */
 class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
-     * Returns leading actions based on the current index.
-     * @returns {object[]} Array of action objects.
+     * {{desc}}
      */
     get leadingActions() {
         let label;
@@ -31,8 +30,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Returns child nodes for rendering in the component.
-     * @returns {TemplateResult[]} Array of Lit HTML template results.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -45,15 +43,14 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Setter for child nodes.
-     * @param {TemplateResult[]} value - Array of Lit HTML template results.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Constructor for initializing the component.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -61,9 +58,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Lifecycle callback when the component is connected to the DOM.
-     * Adds necessary class for styling.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -71,8 +66,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Updates the date selection based on the input value.
-     * @private
+     * {{desc}}
      */
     updateDate() {
         const date = parseMonth(this.value);
@@ -83,19 +77,14 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Retrieves the formatted string value of the selected month.
-     * @returns {string} Formatted month string.
-     * @private
+     * {{desc}}
      */
     getValue() {
         return stringifyMonth(this.selected);
     }
 
     /**
-     * Handles click event on the label button in the card.
-     * Toggles between year and month view.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -107,10 +96,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click event on the previous button in the card.
-     * Updates the selection and emits events.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -124,10 +110,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click event on the next button in the card.
-     * Updates the selection and emits events.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -141,10 +124,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click event on a year item in the picker.
-     * Updates the selection year and emits events.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -155,10 +135,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click event on a month item in the picker.
-     * Updates the selected month and emits events.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -172,10 +149,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click event on the cancel button in the card.
-     * Resets the value to default and emits events.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -186,10 +160,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click event on the OK button in the card.
-     * Updates the selected value and emits events.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());

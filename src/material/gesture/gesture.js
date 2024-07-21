@@ -1,24 +1,23 @@
 /**
- * {{description}}
- * @fires MDGestureController#onDragStart - {{description}}
- * @fires MDGestureController#onResizeStart - {{description}}
- * @fires MDGestureController#onSelectionStart - {{description}}
- * @fires MDGestureController#onLongPress - {{description}}
- * @fires MDGestureController#onDragStart - {{description}}
- * @fires MDGestureController#onResizeStart - {{description}}
- * @fires MDGestureController#onSelectionStart - {{description}}
- * @fires MDGestureController#onDrag - {{description}}
- * @fires MDGestureController#onResize - {{description}}
- * @fires MDGestureController#onSelection - {{description}}
- * @fires MDGestureController#onTap - {{description}}
- * @fires MDGestureController#onDoubleTap - {{description}}
- * @fires MDGestureController#onSelectionEnd - {{description}}
- * @fires MDGestureController#onDragEnd - {{description}}
- * @fires MDGestureController#onResizeEnd - {{description}}
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ * @fires MDGestureController#onDragStart - {{desc}}
+ * @fires MDGestureController#onResizeStart - {{desc}}
+ * @fires MDGestureController#onSelectionStart - {{desc}}
+ * @fires MDGestureController#onLongPress - {{desc}}
+ * @fires MDGestureController#onDrag - {{desc}}
+ * @fires MDGestureController#onResize - {{desc}}
+ * @fires MDGestureController#onSelection - {{desc}}
+ * @fires MDGestureController#onTap - {{desc}}
+ * @fires MDGestureController#onDoubleTap - {{desc}}
+ * @fires MDGestureController#onSelectionEnd - {{desc}}
+ * @fires MDGestureController#onDragEnd - {{desc}}
+ * @fires MDGestureController#onResizeEnd - {{desc}}
  */
 class MDGestureController {
     /**
-     * {{description}}
+     * {{desc}}
      */
     constructor(host, options) {
         (this.host = host).addController(this);
@@ -37,7 +36,7 @@ class MDGestureController {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -49,7 +48,7 @@ class MDGestureController {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     async hostConnected() {
         await this.host.updateComplete;
@@ -87,7 +86,7 @@ class MDGestureController {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     async hostDisconnected() {
         await this.host.updateComplete;
@@ -102,7 +101,7 @@ class MDGestureController {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleGesturePointerdown(event) {
         if (event.button !== 0) {
@@ -166,7 +165,7 @@ class MDGestureController {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleGesturePointermove(event) {
         window.clearTimeout(this.longPressTimeout);
@@ -212,7 +211,7 @@ class MDGestureController {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleGesturePointerup(event) {
         window.clearTimeout(this.longPressTimeout);

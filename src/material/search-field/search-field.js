@@ -1,38 +1,30 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * Custom component for managing a search field with clear action.
- * @element md-search-field
+ * {{desc}}
  * @extends MDTextFieldComponent
+ * @element md-search-field
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
     /**
-     * Returns actions based on the current state of the search field.
-     * Includes a clear action when there is a value present.
+     * {{desc}}
      */
     get actions() {
         return [...((this.value && [{ name: "clear", icon: "close" }]) || [])];
     }
 
     /**
-     * Setter for actions property.
-     * @param {any} value - Value to set.
+     * {{desc}}
      */
     set actions(value) {}
 
-    /**
-     * Initializes the search field component.
-     * Sets the input type to "search".
-     */
     constructor() {
         super();
         this.type = "search";
     }
 
     /**
-     * Callback when the component is connected to the DOM.
-     * Adds necessary classes to style the component.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -40,7 +32,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -48,10 +40,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles click events on the icon button associated with the search field.
-     * Clears the search field value and dispatches input and search events.
-     * @param {Event} event - Click event.
-     * @private
+     * {{desc}}
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

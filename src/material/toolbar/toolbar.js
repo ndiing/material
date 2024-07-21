@@ -2,15 +2,21 @@ import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
 /**
- * A custom element for displaying toolbars.
- * @element md-toolbar
+ * {{desc}}
  * @extends MDComponent
+ * @element md-toolbar
  */
 class MDToolbarComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {Array} items - {{desc}}
+     */
     static properties = {
         items: { type: Array },
     };
-
+    /**
+     * {{desc}}
+     */
     render() {
         return this.items?.map((item) => {
             item.component = item.component || "icon-button";
@@ -19,9 +25,7 @@ class MDToolbarComponent extends MDComponent {
     }
 
     /**
-     * Invoked each time the custom element is appended into a document-connected element.
-     * Adds the 'md-toolbar' class to the element.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

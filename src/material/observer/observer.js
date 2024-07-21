@@ -1,22 +1,21 @@
 /**
- * Class for observing changes and executing callbacks on animation frames.
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
  */
 class MDObserver {
     handle;
     isObserving = false;
 
     /**
-     * Creates an instance of MDObserver.
-     * @param {Function} [callback=() => {}] - The callback function to execute on each animation frame.
+     * {{desc}}
      */
     constructor(callback = () => {}) {
         this.callback = callback;
     }
 
     /**
-     * Executes the callback function with the given time argument.
-     * @private
-     * @param {DOMHighResTimeStamp} time - The time when the callback is executed.
+     * {{desc}}
      */
     executeCallback(time) {
         this.handle = undefined;
@@ -27,8 +26,7 @@ class MDObserver {
     }
 
     /**
-     * Schedules the next animation frame for executing the callback.
-     * @private
+     * {{desc}}
      */
     scheduleNextFrame() {
         if (!this.handle && this.isObserving) {
@@ -37,7 +35,7 @@ class MDObserver {
     }
 
     /**
-     * Starts observing changes and schedules the first animation frame.
+     * {{desc}}
      */
     observe() {
         if (!this.isObserving) {
@@ -47,7 +45,7 @@ class MDObserver {
     }
 
     /**
-     * Stops observing changes by canceling the animation frame.
+     * {{desc}}
      */
     disconnect() {
         if (this.handle) {

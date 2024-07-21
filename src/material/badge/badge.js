@@ -2,16 +2,15 @@ import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 
 /**
- * MDBadgeComponent is a custom element that represents a badge component
- * for displaying labels or counts with an optional limit.
- * @element md-badge
+ * {{desc}}
  * @extends MDComponent
+ * @element md-badge
  */
 class MDBadgeComponent extends MDComponent {
     /**
-     * Defines the properties of the MDBadgeComponent.
-     * @property {Number} label - The numeric label to display inside the badge.
-     * @property {Number} limit - The maximum number to display before showing "999+".
+     * {{desc}}
+     * @property {Number} label - {{desc}}
+     * @property {Number} limit - {{desc}}
      */
     static properties = {
         label: { type: Number },
@@ -19,7 +18,7 @@ class MDBadgeComponent extends MDComponent {
     };
 
     /**
-     * Constructs an instance of MDBadgeComponent, initializing the limit to 999.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -27,9 +26,7 @@ class MDBadgeComponent extends MDComponent {
     }
 
     /**
-     * Renders the badge's HTML content. If the label is greater than the limit,
-     * it displays the limit followed by a plus sign.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -37,8 +34,7 @@ class MDBadgeComponent extends MDComponent {
     }
 
     /**
-     * Handles the connection of the component to the DOM, adding the "md-badge" class.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

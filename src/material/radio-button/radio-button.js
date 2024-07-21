@@ -5,20 +5,20 @@ import { MDRippleController } from "../ripple/ripple.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * Radio button component that extends the MDComponent base class.
- * @element md-radio-button
+ * {{desc}}
  * @extends MDComponent
- * @fires MDRadioButtonComponent#onRadioButtonNativeInput - Fired when the radio button input is changed.
- * @fires MDRadioButtonComponent#onRadioButtonNativeReset - Fired when the radio button input is reset.
+ * @element md-radio-button
+ * @fires MDRadioButtonComponent#onRadioButtonNativeInput - {{desc}}
+ * @fires MDRadioButtonComponent#onRadioButtonNativeReset - {{desc}}
  */
 class MDRadioButtonComponent extends MDComponent {
     /**
-     * Defines the properties of the radio button component.
-     * @property {String} name - The name attribute of the radio button.
-     * @property {String} value - The value attribute of the radio button.
-     * @property {Boolean} indeterminate - The indeterminate state of the radio button.
-     * @property {Boolean} checked - The checked state of the radio button.
-     * @property {Boolean} disabled - The disabled state of the radio button.
+     * {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {String} value - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {Boolean} checked - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
      */
     static properties = {
         name: { type: String },
@@ -29,8 +29,7 @@ class MDRadioButtonComponent extends MDComponent {
     };
 
     /**
-     * Initializes a new instance of the MDRadioButtonComponent.
-     * Sets up the ripple effect and initializes component properties.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -42,12 +41,10 @@ class MDRadioButtonComponent extends MDComponent {
             fadeOut: true,
         });
     }
-
     radioButtonNative = createRef();
 
     /**
-     * Renders the radio button component template.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -72,9 +69,7 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the component is added to the DOM.
-     * Initializes default values and adds necessary classes.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -91,10 +86,7 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the radio button input event.
-     * Updates component properties and emits the onRadioButtonNativeInput event.
-     * @param {Event} event - The input event.
-     * @private
+     * {{desc}}
      */
     handleRadioButtonNativeInput(event) {
         this.value = this.radioButtonNative.value.value;
@@ -104,10 +96,7 @@ class MDRadioButtonComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the radio button reset event.
-     * Resets component properties to their default values and emits the onRadioButtonNativeReset event.
-     * @param {Event} event - The reset event.
-     * @private
+     * {{desc}}
      */
     handleRadioButtonNativeReset(event) {
         this.radioButtonNative.value.value = this.defaultValue;

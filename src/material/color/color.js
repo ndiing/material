@@ -2,9 +2,7 @@ import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@
 import { isValidHexColor, toCamelCase } from "../functions/functions.js";
 
 /**
- * Sets the theme of the application based on a color or image.
- * @param {string} colorOrImage - Hexadecimal color or URL of an image.
- * @param {object} customColors - Custom color configurations.
+ * {{desc}}
  */
 async function setTheme(colorOrImage, customColors) {
     let theme;
@@ -38,11 +36,11 @@ async function setTheme(colorOrImage, customColors) {
     theme.customColors.forEach((customColor) => {
         theme.schemes.dark.props[toCamelCase(customColor.color.name)] = customColor.dark.color;
         theme.schemes.dark.props[toCamelCase(`on-${customColor.color.name}`)] = customColor.dark.onColor;
-        theme.schemes.dark.props[toCamelCase(customColor.color.name + "-container")] = customColor.dark.colorContainer;
+        theme.schemes.dark.props[toCamelCase(`${customColor.color.name}-container`)] = customColor.dark.colorContainer;
         theme.schemes.dark.props[toCamelCase(`on-${customColor.color.name}-container`)] = customColor.dark.onColorContainer;
         theme.schemes.light.props[toCamelCase(customColor.color.name)] = customColor.light.color;
         theme.schemes.light.props[toCamelCase(`on-${customColor.color.name}`)] = customColor.light.onColor;
-        theme.schemes.light.props[toCamelCase(customColor.color.name + "-container")] = customColor.light.colorContainer;
+        theme.schemes.light.props[toCamelCase(`${customColor.color.name}-container`)] = customColor.light.colorContainer;
         theme.schemes.light.props[toCamelCase(`on-${customColor.color.name}-container`)] = customColor.light.onColorContainer;
     });
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

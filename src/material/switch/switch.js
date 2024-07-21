@@ -5,21 +5,21 @@ import { MDRippleController } from "../ripple/ripple.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * Switch component that extends the MDComponent base class.
- * @element md-switch
+ * {{desc}}
  * @extends MDComponent
- * @fires MDSwitchComponent#onSwitchNativeInput - Fired when the switch input changes.
- * @fires MDSwitchComponent#onSwitchNativeReset - Fired when the switch is reset.
+ * @element md-switch
+ * @fires MDSwitchComponent#onSwitchNativeInput - {{desc}}
+ * @fires MDSwitchComponent#onSwitchNativeReset - {{desc}}
  */
 class MDSwitchComponent extends MDComponent {
     /**
-     * Defines the properties of the switch component.
-     * @property {String} name - The name attribute of the switch input.
-     * @property {String} value - The value attribute of the switch input.
-     * @property {Boolean} indeterminate - The indeterminate state of the switch.
-     * @property {Boolean} checked - The checked state of the switch.
-     * @property {Boolean} disabled - The disabled state of the switch.
-     * @property {Array} icons - Array of icons to display based on the checked state.
+     * {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {String} value - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {Boolean} checked - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {Array} icons - {{desc}}
      */
     static properties = {
         name: { type: String },
@@ -29,12 +29,10 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
-
     switchNative = createRef();
 
     /**
-     * Initializes a new instance of the MDSwitchComponent.
-     * Sets up the ripple controller.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -48,8 +46,7 @@ class MDSwitchComponent extends MDComponent {
     }
 
     /**
-     * Renders the switch component template.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -74,9 +71,7 @@ class MDSwitchComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the component is added to the DOM.
-     * Adds necessary classes to the switch element and sets default properties.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -93,10 +88,7 @@ class MDSwitchComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the switch input event.
-     * Updates the component's properties and emits the onSwitchNativeInput event.
-     * @param {Event} event - The input event.
-     * @private
+     * {{desc}}
      */
     handleSwitchNativeInput(event) {
         this.value = this.switchNative.value.value;
@@ -106,10 +98,7 @@ class MDSwitchComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the switch reset event.
-     * Resets the component's properties and emits the onSwitchNativeReset event.
-     * @param {Event} event - The reset event.
-     * @private
+     * {{desc}}
      */
     handleSwitchNativeReset(event) {
         this.switchNative.value.value = this.defaultValue;

@@ -3,13 +3,13 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * Navigation drawer component that extends MDSheetComponent and includes MDTreeComponent properties.
- * @element md-navigation-drawer
+ * {{desc}}
  * @extends MDSheetComponent
+ * @element md-navigation-drawer
  */
 class MDNavigationDrawerComponent extends MDSheetComponent {
     /**
-     * Properties inherited from MDSheetComponent and MDTreeComponent.
+     * {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -17,8 +17,7 @@ class MDNavigationDrawerComponent extends MDSheetComponent {
     };
 
     /**
-     * Retrieves the child nodes for the navigation drawer, which includes an MDTree component.
-     * @returns {TemplateResult[]} Array of child nodes for rendering.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -32,16 +31,14 @@ class MDNavigationDrawerComponent extends MDSheetComponent {
     }
 
     /**
-     * Sets the child nodes of the navigation drawer.
-     * @param {TemplateResult[]} value - Array of child nodes to set.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Adds CSS classes to the component on connection.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

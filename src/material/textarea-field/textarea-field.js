@@ -1,14 +1,13 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * Custom component for textarea input.
- * @element md-textarea-field
+ * {{desc}}
  * @extends MDTextFieldComponent
+ * @element md-textarea-field
  */
 class MDTextareaFieldComponent extends MDTextFieldComponent {
     /**
-     * Initializes the component.
-     * Sets the type of the component to "textarea".
+     * {{desc}}
      */
     constructor() {
         super();
@@ -16,9 +15,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Callback invoked when the component is added to the document's DOM.
-     * Adds necessary classes to the component.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -26,7 +23,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();

@@ -3,7 +3,9 @@ import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
-
+/**
+ * {{desc}}
+ */
 function renderBadge(item = {}) {
     /* prettier-ignore */
     return html`
@@ -18,7 +20,9 @@ function renderBadge(item = {}) {
         ></md-badge>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderBottomAppBar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -41,7 +45,9 @@ function renderBottomAppBar(item = {}) {
         ></md-bottom-app-bar>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderBottomSheet(item = {}) {
     /* prettier-ignore */
     return html`
@@ -64,7 +70,9 @@ function renderBottomSheet(item = {}) {
         ></md-bottom-sheet>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderBox(item = {}) {
     /* prettier-ignore */
     return html`
@@ -102,7 +110,9 @@ function renderBox(item = {}) {
         ></md-box>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderButton(item = {}) {
     /* prettier-ignore */
     return html`
@@ -122,7 +132,9 @@ function renderButton(item = {}) {
         ></md-button>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderCard(item = {}) {
     /* prettier-ignore */
     return html`
@@ -141,7 +153,9 @@ function renderCard(item = {}) {
         ></md-card>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderCheckbox(item = {}) {
     /* prettier-ignore */
     return html`
@@ -161,7 +175,9 @@ function renderCheckbox(item = {}) {
         ></md-checkbox>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderChip(item = {}) {
     /* prettier-ignore */
     return html`
@@ -183,7 +199,9 @@ function renderChip(item = {}) {
         ></md-chip>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderChips(item = {}) {
     /* prettier-ignore */
     return html`
@@ -199,7 +217,9 @@ function renderChips(item = {}) {
         ></md-chips>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderColorField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -253,7 +273,9 @@ function renderColorField(item = {}) {
         ></md-color-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderColorPicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -286,7 +308,9 @@ function renderColorPicker(item = {}) {
         ></md-color-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDataTable(item = {}) {
     /* prettier-ignore */
     return html`
@@ -332,7 +356,9 @@ function renderDataTable(item = {}) {
         ></md-data-table>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDataTableColumnCell(item = {}) {
     /* prettier-ignore */
     return html`
@@ -370,7 +396,9 @@ function renderDataTableColumnCell(item = {}) {
         ></md-data-table-column-cell>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDataTableItem(item = {}) {
     /* prettier-ignore */
     return html`
@@ -408,7 +436,9 @@ function renderDataTableItem(item = {}) {
         ></md-data-table-item>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDataTableRowCell(item = {}) {
     /* prettier-ignore */
     return html`
@@ -446,7 +476,9 @@ function renderDataTableRowCell(item = {}) {
         ></md-data-table-row-cell>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDateField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -500,7 +532,9 @@ function renderDateField(item = {}) {
         ></md-date-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDatePicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -545,7 +579,9 @@ function renderDatePicker(item = {}) {
         ></md-date-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDatetimeField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -599,7 +635,9 @@ function renderDatetimeField(item = {}) {
         ></md-datetime-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDatetimePicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -635,7 +673,9 @@ function renderDatetimePicker(item = {}) {
         ></md-datetime-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDialog(item = {}) {
     /* prettier-ignore */
     return html`
@@ -658,7 +698,9 @@ function renderDialog(item = {}) {
         ></md-dialog>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderDivider(item = {}) {
     /* prettier-ignore */
     return html`
@@ -672,7 +714,9 @@ function renderDivider(item = {}) {
         ></md-divider>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderEmoji(item = {}) {
     /* prettier-ignore */
     return html`
@@ -687,7 +731,9 @@ function renderEmoji(item = {}) {
         ></md-emoji>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderEmojiPicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -719,7 +765,9 @@ function renderEmojiPicker(item = {}) {
         ></md-emoji-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderFab(item = {}) {
     /* prettier-ignore */
     return html`
@@ -738,7 +786,9 @@ function renderFab(item = {}) {
         ></md-fab>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderForm(item = {}) {
     /* prettier-ignore */
     return html`
@@ -762,7 +812,9 @@ function renderForm(item = {}) {
         ></md-form>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderIcon(item = {}) {
     /* prettier-ignore */
     return html`
@@ -777,7 +829,9 @@ function renderIcon(item = {}) {
         ></md-icon>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderIconButton(item = {}) {
     /* prettier-ignore */
     return html`
@@ -797,7 +851,9 @@ function renderIconButton(item = {}) {
         ></md-icon-button>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderImage(item = {}) {
     /* prettier-ignore */
     return html`
@@ -817,7 +873,9 @@ function renderImage(item = {}) {
         ></md-image>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderLayout(item = {}) {
     /* prettier-ignore */
     return html`
@@ -831,7 +889,9 @@ function renderLayout(item = {}) {
         ></md-layout>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderLayoutItem(item = {}) {
     /* prettier-ignore */
     return html`
@@ -848,7 +908,9 @@ function renderLayoutItem(item = {}) {
         ></md-layout-item>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderList(item = {}) {
     /* prettier-ignore */
     return html`
@@ -873,7 +935,9 @@ function renderList(item = {}) {
         ></md-list>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderListItem(item = {}) {
     /* prettier-ignore */
     return html`
@@ -905,7 +969,9 @@ function renderListItem(item = {}) {
         ></md-list-item>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderMarkdown(item = {}) {
     /* prettier-ignore */
     return html`
@@ -920,7 +986,9 @@ function renderMarkdown(item = {}) {
         ></md-markdown>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderMenu(item = {}) {
     /* prettier-ignore */
     return html`
@@ -952,7 +1020,9 @@ function renderMenu(item = {}) {
         ></md-menu>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderMonthField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1006,7 +1076,9 @@ function renderMonthField(item = {}) {
         ></md-month-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderMonthPicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1050,7 +1122,9 @@ function renderMonthPicker(item = {}) {
         ></md-month-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderNavigationBar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1073,7 +1147,9 @@ function renderNavigationBar(item = {}) {
         ></md-navigation-bar>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderNavigationDrawer(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1096,7 +1172,9 @@ function renderNavigationDrawer(item = {}) {
         ></md-navigation-drawer>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderNavigationRail(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1119,7 +1197,9 @@ function renderNavigationRail(item = {}) {
         ></md-navigation-rail>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderNumberField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1173,7 +1253,9 @@ function renderNumberField(item = {}) {
         ></md-number-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderPagination(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1202,7 +1284,9 @@ function renderPagination(item = {}) {
         ></md-pagination>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderPasswordField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1256,7 +1340,9 @@ function renderPasswordField(item = {}) {
         ></md-password-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderProgressIndicator(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1272,7 +1358,9 @@ function renderProgressIndicator(item = {}) {
         ></md-progress-indicator>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderRadioButton(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1292,7 +1380,9 @@ function renderRadioButton(item = {}) {
         ></md-radio-button>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderScrim(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1306,7 +1396,9 @@ function renderScrim(item = {}) {
         ></md-scrim>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSearchField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1360,7 +1452,9 @@ function renderSearchField(item = {}) {
         ></md-search-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSegmentedButton(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1377,7 +1471,9 @@ function renderSegmentedButton(item = {}) {
         ></md-segmented-button>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSelectField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1431,7 +1527,9 @@ function renderSelectField(item = {}) {
         ></md-select-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSheet(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1454,7 +1552,9 @@ function renderSheet(item = {}) {
         ></md-sheet>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSideSheet(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1477,7 +1577,9 @@ function renderSideSheet(item = {}) {
         ></md-side-sheet>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSlider(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1498,7 +1600,9 @@ function renderSlider(item = {}) {
         ></md-slider>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSnackbar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1523,7 +1627,9 @@ function renderSnackbar(item = {}) {
         ></md-snackbar>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSpacer(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1536,7 +1642,9 @@ function renderSpacer(item = {}) {
         ></md-spacer>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderSwitch(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1557,7 +1665,9 @@ function renderSwitch(item = {}) {
         ></md-switch>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTabs(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1573,7 +1683,9 @@ function renderTabs(item = {}) {
         ></md-tabs>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTextField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1627,7 +1739,9 @@ function renderTextField(item = {}) {
         ></md-text-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTextareaField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1681,7 +1795,9 @@ function renderTextareaField(item = {}) {
         ></md-textarea-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTimeField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1735,7 +1851,9 @@ function renderTimeField(item = {}) {
         ></md-time-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTimePicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1779,7 +1897,9 @@ function renderTimePicker(item = {}) {
         ></md-time-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderToolbar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1793,7 +1913,9 @@ function renderToolbar(item = {}) {
         ></md-toolbar>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTooltip(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1816,7 +1938,9 @@ function renderTooltip(item = {}) {
         ></md-tooltip>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTopAppBar(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1839,7 +1963,9 @@ function renderTopAppBar(item = {}) {
         ></md-top-app-bar>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTree(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1855,7 +1981,9 @@ function renderTree(item = {}) {
         ></md-tree>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderTreeItem(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1884,7 +2012,9 @@ function renderTreeItem(item = {}) {
         ></md-tree-item>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderWeekField(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1938,7 +2068,9 @@ function renderWeekField(item = {}) {
         ></md-week-field>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderWeekPicker(item = {}) {
     /* prettier-ignore */
     return html`
@@ -1983,7 +2115,9 @@ function renderWeekPicker(item = {}) {
         ></md-week-picker>
     `
 }
-
+/**
+ * {{desc}}
+ */
 function renderComponent(item) {
     /* prettier-ignore */
     return choose(item.component, [
@@ -2055,5 +2189,4 @@ function renderComponent(item) {
         ["week-picker", () => renderWeekPicker(item)],
     ], () => nothing)
 }
-
 export { renderComponent };

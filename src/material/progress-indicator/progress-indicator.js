@@ -3,16 +3,16 @@ import { MDComponent } from "../component/component.js";
 import { calcPercentage } from "../functions/functions.js";
 
 /**
- * Custom component for rendering progress indicators.
- * @element md-progress-indicator
+ * {{desc}}
  * @extends MDComponent
+ * @element md-progress-indicator
  */
 class MDProgressIndicatorComponent extends MDComponent {
     /**
-     * Defines the properties and their types for the component.
-     * @property {String} variant - The variant of the progress indicator.
-     * @property {Number} value - The current value of the progress indicator.
-     * @property {Number} max - The maximum value of the progress indicator.
+     * {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Number} value - {{desc}}
+     * @property {Number} max - {{desc}}
      */
     static properties = {
         variant: { type: String },
@@ -20,15 +20,10 @@ class MDProgressIndicatorComponent extends MDComponent {
         max: { type: Number },
     };
 
-    /**
-     * Array of supported variants for the progress indicator.
-     * @type {Array<String>}
-     */
     variants = ["circular", "linear"];
 
     /**
-     * Initializes the component.
-     * Sets the default maximum value for the progress indicator.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -36,8 +31,7 @@ class MDProgressIndicatorComponent extends MDComponent {
     }
 
     /**
-     * Renders the circular progress indicator.
-     * @private
+     * {{desc}}
      */
     renderCircular() {
         /* prettier-ignore */
@@ -50,8 +44,7 @@ class MDProgressIndicatorComponent extends MDComponent {
     }
 
     /**
-     * Renders the linear progress indicator.
-     * @private
+     * {{desc}}
      */
     renderLinear() {
         /* prettier-ignore */
@@ -63,17 +56,14 @@ class MDProgressIndicatorComponent extends MDComponent {
     }
 
     /**
-     * Renders the appropriate progress indicator based on the variant.
-     * @private
+     * {{desc}}
      */
     render() {
         return this.variant && this.variant.includes("circular") ? this.renderCircular() : this.renderLinear();
     }
 
     /**
-     * Callback when the component is connected to the DOM.
-     * Adds necessary classes to the component.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -81,10 +71,7 @@ class MDProgressIndicatorComponent extends MDComponent {
     }
 
     /**
-     * Handles updates to the component's properties.
-     * Updates the progress indicator's visuals based on property changes.
-     * @param {Map} changedProperties - Map of properties that have changed
-     * @private
+     * {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);

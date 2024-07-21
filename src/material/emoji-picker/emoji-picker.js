@@ -7,27 +7,22 @@ import { MDStore } from "../store/store.js";
 import data from "../../assets/emojis.json";
 
 /**
- * Emoji Picker Component
- * @element md-emoji-picker
+ * {{desc}}
  * @extends MDSheetComponent
- * @fires MDEmojiPickerComponent#onEmojiPickerTabsItemClick - Emitted when a tab item is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerViewportVirtualScroll - Emitted on virtual scroll.
- * @fires MDEmojiPickerComponent#onEmojiPickerTextFieldNativeInput - Emitted when input is provided to the search field.
- * @fires MDEmojiPickerComponent#onEmojiPickerGridColumnClick - Emitted when a grid column is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerIconButtonClick - Emitted when an icon button is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerButtonClick - Emitted when a button is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerIconButtonPrevClick - Emitted when the previous icon button is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerSelection - Emitted on emoji selection.
- * @fires MDEmojiPickerComponent#onEmojiPickerIconButtonNextClick - Emitted when the next icon button is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerButtonLabelClick - Emitted when the label button is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerButtonCancelClick - Emitted when the cancel button is clicked.
- * @fires MDEmojiPickerComponent#onEmojiPickerButtonOkClick - Emitted when the ok button is clicked.
+ * @element md-emoji-picker
+ * @fires MDEmojiPickerComponent#onEmojiPickerTextFieldNativeInput - {{desc}}
+ * @fires MDEmojiPickerComponent#onEmojiPickerTabsItemClick - {{desc}}
+ * @fires MDEmojiPickerComponent#onEmojiPickerViewportVirtualScroll - {{desc}}
+ * @fires MDEmojiPickerComponent#onEmojiPickerGridColumnClick - {{desc}}
+ * @fires MDEmojiPickerComponent#onEmojiPickerButtonClick - {{desc}}
+ * @fires MDEmojiPickerComponent#onEmojiPickerButtonCancelClick - {{desc}}
+ * @fires MDEmojiPickerComponent#onEmojiPickerButtonOkClick - {{desc}}
  */
 class MDEmojiPickerComponent extends MDSheetComponent {
     /**
-     * Properties of the component
-     * @property {Object} tabs - Tabs object containing category names and emojis.
-     * @property {Array} rows - Rows of emoji data.
+     * {{desc}}
+     * @property {Object} tabs - {{desc}}
+     * @property {Array} rows - {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -36,8 +31,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     };
 
     /**
-     * Renders the main content of the component
-     * @returns {TemplateResult} - Template for the main content.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -45,40 +39,35 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Sets the child nodes
-     * @param {Array} value - Array of child nodes.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Leading actions for the emoji picker
-     * @returns {Array} - Array of leading actions.
+     * {{desc}}
      */
     get leadingActions() {
         return [{ name: "label", component: "text-field", icon: "search", placeholder: "Search", type: "search", variant: "rounded" }];
     }
 
     /**
-     * Actions for the emoji picker
-     * @returns {Array} - Array of actions.
+     * {{desc}}
      */
     get actions() {
         return [{ component: "spacer" }, { name: "cancel", label: "Cancel" }, { name: "ok", label: "Ok" }];
     }
 
     /**
-     * The emoji picker tabs element
-     * @returns {HTMLElement} - The tabs element.
+     * {{desc}}
      */
     get emojiPickerTabs() {
         return this.querySelector(".md-emoji-picker__tabs");
     }
 
     /**
-     * Sets the emoji picker tabs element
-     * @param {HTMLElement} value - The tabs element.
+     * {{desc}}
      */
     set emojiPickerTabs(value) {}
     constructor() {
@@ -99,9 +88,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Renders the main section of the emoji picker
-     * @returns {TemplateResult} - Template for the main section.
-     * @private
+     * {{desc}}
      */
     renderMain() {
         /* prettier-ignore */
@@ -156,8 +143,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Connected callback lifecycle method
-     * @private
+     * {{desc}}
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -176,8 +162,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Disconnected callback lifecycle method
-     * @private
+     * {{desc}}
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
@@ -185,11 +170,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Generates tabs and rows for the emoji picker
-     * @param {Array} data - Data for the emoji picker.
-     * @param {Object} tabs - Tabs object.
-     * @returns {Object} - Data tabs and data rows.
-     * @private
+     * {{desc}}
      */
     generateTabsAndRows(data = [], tabs = {}) {
         const grouped = data.reduce((acc, curr) => {
@@ -219,9 +200,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Shows the emoji picker as a modal
-     * @param {HTMLElement} button - Button element that triggers the modal.
-     * @param {Object} options - Options for positioning the modal.
+     * {{desc}}
      */
     showModal(button, options) {
         this.updatePosition(button, options);
@@ -229,9 +208,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Shows the emoji picker
-     * @param {HTMLElement} button - Button element that triggers the picker.
-     * @param {Object} options - Options for positioning the picker.
+     * {{desc}}
      */
     show(button, options) {
         this.updatePosition(button, options);
@@ -239,10 +216,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Updates the position of the emoji picker
-     * @param {HTMLElement} button - Button element that triggers the picker.
-     * @param {Object} options - Options for positioning the picker.
-     * @private
+     * {{desc}}
      */
     updatePosition(button, options) {
         this.popper.setPosition(button, {
@@ -262,9 +236,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles text field native input event
-     * @param {Event} event - Input event.
-     * @private
+     * {{desc}}
      */
     handleEmojiPickerTextFieldNativeInput(event) {
         const value = event.detail.currentTarget.value;
@@ -282,9 +254,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles emoji picker tabs item click event
-     * @param {Event} event - Click event.
-     * @private
+     * {{desc}}
      */
     handleEmojiPickerTabsItemClick(event) {
         const data = event.currentTarget.data;
@@ -295,9 +265,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Updates the emoji picker tabs indicator
-     * @param {Object} data - Data for the indicator.
-     * @private
+     * {{desc}}
      */
     updateEmojiPickerTabsIndicator(data) {
         if (!data) {
@@ -313,9 +281,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles virtual scroll event
-     * @param {Event} event - Scroll event.
-     * @private
+     * {{desc}}
      */
     async handleEmojiPickerViewportVirtualScroll(event) {
         this.virtualRows = this.dataRows.filter((row, index) => {
@@ -338,18 +304,14 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles emoji picker grid column click event
-     * @param {Event} event - Click event.
-     * @private
+     * {{desc}}
      */
     handleEmojiPickerGridColumnClick(event) {
         this.emit("onEmojiPickerGridColumnClick", event);
     }
 
     /**
-     * Handles card button click event
-     * @param {Event} event - Click event.
-     * @private
+     * {{desc}}
      */
     handleCardButtonClick(event) {
         if (event.currentTarget.name === "label") {
@@ -363,18 +325,14 @@ class MDEmojiPickerComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles cancel button click event
-     * @param {Event} event - Click event.
-     * @private
+     * {{desc}}
      */
     handleEmojiPickerButtonCancelClick(event) {
         this.emit("onEmojiPickerButtonCancelClick", event);
     }
 
     /**
-     * Handles ok button click event
-     * @param {Event} event - Click event.
-     * @private
+     * {{desc}}
      */
     handleEmojiPickerButtonOkClick(event) {
         this.emit("onEmojiPickerButtonOkClick", event);

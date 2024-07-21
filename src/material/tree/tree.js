@@ -3,26 +3,25 @@ import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
 /**
- * Tree component for displaying hierarchical data with expandable nodes and selection.
- * @element md-tree
+ * {{desc}}
  * @extends MDComponent
- * @fires MDTreeComponent#onTreeItemClick - Triggered when an item in the tree is clicked.
+ * @element md-tree
+ * @fires MDTreeComponent#onTreeItemClick - {{desc}}
  */
 class MDTreeComponent extends MDComponent {
     /**
-     * Properties defining the structure and behavior of the tree component.
-     * @property {Array} list - The hierarchical list of tree items.
-     * @property {String} variant - The display variant of the tree component ('plain', 'accordion', 'tree', 'level').
+     * {{desc}}
+     * @property {Array} list - {{desc}}
+     * @property {String} variant - {{desc}}
      */
     static properties = {
         list: { type: Array },
         variant: { type: String },
     };
-
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
-     * Initializes MDTreeComponent with default variant 'tree'.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -30,10 +29,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Renders a tree item based on its properties.
-     * @private
-     * @param {Object} item - The tree item data object.
-     * @returns {TemplateResult} The rendered HTML template for the tree item.
+     * {{desc}}
      */
     renderTree(item) {
         item.component = item.component || "tree-item";
@@ -48,9 +44,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Renders the tree component based on the current variant and list.
-     * @private
-     * @returns {TemplateResult[]} Array of rendered HTML templates for tree items.
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -58,8 +52,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Adds CSS classes to the component on connection.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -67,9 +60,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Handles updates to the component properties.
-     * @private
-     * @param {Map} changedProperties - Map of changed properties.
+     * {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -87,10 +78,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Retrieves a list of children for a given list item.
-     * @private
-     * @param {Array} list - The hierarchical list of tree items.
-     * @returns {Array} The list of children items.
+     * {{desc}}
      */
     getList(list) {
         let children;
@@ -109,11 +97,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Recursively sets properties on tree items, such as indentation and state.
-     * @private
-     * @param {Array} list - The hierarchical list of tree items.
-     * @param {Number} indent - The current indentation level.
-     * @returns {Object} Object with `expanded` and `activated` flags.
+     * {{desc}}
      */
     setList(list, indent = 0) {
         let expanded;
@@ -150,10 +134,7 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Selects a tree item and updates its state.
-     * @param {Array} list - The hierarchical list of tree items.
-     * @param {Object} data - The data object representing the item to be selected.
-     * @returns {Boolean} True if the item is activated.
+     * {{desc}}
      */
     select(list, data) {
         let activated;
@@ -174,19 +155,14 @@ class MDTreeComponent extends MDComponent {
     }
 
     /**
-     * Toggles the expansion state of a tree node.
-     * @param {Array} list - The hierarchical list of tree items.
-     * @param {Object} data - The data object representing the node to expand/collapse.
+     * {{desc}}
      */
     expand(list, data) {
         data.expanded = !data.expanded;
     }
 
     /**
-     * Handles the click event on a tree item.
-     * Expands or selects the item based on its properties.
-     * @private
-     * @param {Event} event - The click event object.
+     * {{desc}}
      */
     handleTreeItemClick(event) {
         const data = event.currentTarget.data;
@@ -199,7 +175,6 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-
     handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);

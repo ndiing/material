@@ -3,13 +3,13 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * Navigation rail component that extends MDSheetComponent and includes MDTreeComponent properties.
- * @element md-navigation-rail
+ * {{desc}}
  * @extends MDSheetComponent
+ * @element md-navigation-rail
  */
 class MDNavigationRailComponent extends MDSheetComponent {
     /**
-     * Properties inherited from MDSheetComponent and MDTreeComponent.
+     * {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -17,8 +17,7 @@ class MDNavigationRailComponent extends MDSheetComponent {
     };
 
     /**
-     * Retrieves the child nodes for the navigation rail, which includes an MDTree component.
-     * @returns {TemplateResult[]} Array of child nodes for rendering.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -32,16 +31,14 @@ class MDNavigationRailComponent extends MDSheetComponent {
     }
 
     /**
-     * Sets the child nodes of the navigation rail.
-     * @param {TemplateResult[]} value - Array of child nodes to set.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Adds CSS classes to the component on connection.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

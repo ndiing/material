@@ -2,16 +2,21 @@ import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
 
 /**
- * Represents a base component class.
+ * {{desc}}
  * @extends LitElement
+ * @element undefined
  */
 class MDComponent extends LitElement {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     */
     static properties = {
         tooltip: { type: String },
     };
 
     /**
-     * Initializes the component.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -19,29 +24,36 @@ class MDComponent extends LitElement {
     }
 
     /**
-     * Overrides LitElement's method to use the component itself as the render root.
-     * @private
+     * {{desc}}
      */
     createRenderRoot() {
         return this;
     }
-
+    /**
+     * {{desc}}
+     */
     connectedCallback() {
         super.connectedCallback();
         this.on("pointerenter", this.handlePointerenter);
         this.on("pointerleave", this.handlePointerleave);
     }
-
+    /**
+     * {{desc}}
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.off("pointerenter", this.handlePointerenter);
         this.off("pointerleave", this.handlePointerleave);
     }
-
+    /**
+     * {{desc}}
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
-
+    /**
+     * {{desc}}
+     */
     async handlePointerenter() {
         if (this.tooltip && !this.tooltipElement) {
             this.tooltipElement = document.createElement("md-tooltip");
@@ -52,7 +64,9 @@ class MDComponent extends LitElement {
             this.tooltipElement.show(this);
         }
     }
-
+    /**
+     * {{desc}}
+     */
     handlePointerleave() {
         if (this.tooltipElement) {
             this.tooltipElement.remove();
@@ -61,10 +75,7 @@ class MDComponent extends LitElement {
     }
 
     /**
-     * Attaches an event listener that is bound to the component instance.
-     * @param {String} type - The type of event to listen for.
-     * @param {Function} listener - The callback function to execute when the event occurs.
-     * @private
+     * {{desc}}
      */
     on(type, listener) {
         listener = listener.bind(this);
@@ -72,10 +83,7 @@ class MDComponent extends LitElement {
     }
 
     /**
-     * Attaches an event listener that listens once and automatically removes itself after handling the event.
-     * @param {String} type - The type of event to listen for.
-     * @param {Function} listener - The callback function to execute when the event occurs.
-     * @private
+     * {{desc}}
      */
     once(type, listener) {
         const handleListener = (event) => {
@@ -86,20 +94,14 @@ class MDComponent extends LitElement {
     }
 
     /**
-     * Removes an event listener from the component.
-     * @param {String} type - The type of event the listener was attached to.
-     * @param {Function} listener - The callback function to remove.
-     * @private
+     * {{desc}}
      */
     off(type, listener) {
         this.removeEventListener(type, listener);
     }
 
     /**
-     * Dispatches a custom event from the component with optional detail.
-     * @param {String} type - The type of event to dispatch.
-     * @param {any} detail - Optional data to include with the event.
-     * @private
+     * {{desc}}
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

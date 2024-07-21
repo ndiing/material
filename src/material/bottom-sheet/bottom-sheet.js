@@ -1,16 +1,15 @@
 import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
- * Represents a bottom sheet component that extends MDSheetComponent.
- * @element md-bottom-sheet
+ * {{desc}}
  * @extends MDSheetComponent
+ * @element md-bottom-sheet
  */
 class MDBottomSheetComponent extends MDSheetComponent {
     variants = ["modal"];
 
     /**
-     * Enhances connectedCallback to add specific CSS classes for bottom sheet styling.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

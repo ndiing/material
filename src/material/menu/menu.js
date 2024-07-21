@@ -8,20 +8,22 @@ import { MDListComponent } from "../list/list.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * Menu component that extends MDSheetComponent to provide additional functionalities for displaying and managing menu items.
- * @element md-menu
+ * {{desc}}
  * @extends MDSheetComponent
- * @fires MDMenuComponent#onMenuViewportVirtualScroll - Event fired when the menu's virtual viewport scrolls.
- * @fires MDMenuComponent#onMenuListItemClick - Event fired when a menu list item is clicked.
- * @fires MDMenuComponent#onMenuListItemSelected - Event fired when a menu list item is selected.
+ * @element md-menu
+ * @fires MDMenuComponent#onMenuListSelection - {{desc}}
+ * @fires MDMenuComponent#onMenuListItemEnter - {{desc}}
+ * @fires MDMenuComponent#onMenuViewportVirtualScroll - {{desc}}
+ * @fires MDMenuComponent#onMenuViewportVirtualScrollInitialized - {{desc}}
+ * @fires MDMenuComponent#onMenuListItemClick - {{desc}}
  */
 class MDMenuComponent extends MDSheetComponent {
     /**
-     * Properties of the MDMenuComponent.
-     * @property {Array} list - Array of items to be displayed in the menu.
-     * @property {Object} map - Mapping configuration for the menu items.
-     * @property {Number} rowHeight - Height of each row in the menu.
-     * @property {Number} maxRows - Maximum number of rows to display in the menu.
+     * {{desc}}
+     * @property {Array} list - {{desc}}
+     * @property {Object} map - {{desc}}
+     * @property {Number} rowHeight - {{desc}}
+     * @property {Number} maxRows - {{desc}}
      */
     static properties = {
         ...MDSheetComponent.properties,
@@ -31,12 +33,10 @@ class MDMenuComponent extends MDSheetComponent {
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
-
     menuList = createRef();
 
     /**
-     * Gets the child nodes for the menu component.
-     * @returns {Array} - Template result containing the virtual scroll and list elements.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -61,16 +61,14 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Sets the child nodes for the menu component.
-     * @param {Array} value - Template result to set as child nodes.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Constructor for the MDMenuComponent.
-     * Initializes properties and controllers for popper, store, and virtual scrolling.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -83,8 +81,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Callback for when the component is connected to the DOM.
-     * @private
+     * {{desc}}
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -94,17 +91,14 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Callback for when the component is disconnected from the DOM.
-     * @private
+     * {{desc}}
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
 
     /**
-     * Callback for when the component is updated.
-     * Updates the store and virtual scrolling when the list property changes.
-     * @private
+     * {{desc}}
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -116,8 +110,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Updates the store with the current list and applies filters.
-     * @private
+     * {{desc}}
      */
     async updateStore() {
         const { total, docs } = this.store.getAll({
@@ -129,8 +122,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Updates the virtual scrolling options and viewport.
-     * @private
+     * {{desc}}
      */
     updateVirtual() {
         this.virtual.options.rowTotal = this.storeTotal;
@@ -143,19 +135,14 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Shows the menu as a modal.
-     * @param {HTMLElement} button - The button that triggers the menu.
-     * @param {Object} options - Options for showing the modal.
+     * {{desc}}
      */
     showModal(button, options) {
         this.show(button, options, true);
     }
 
     /**
-     * Shows the menu.
-     * @param {HTMLElement} button - The button that triggers the menu.
-     * @param {Object} options - Options for showing the menu.
-     * @param {Boolean} modal - Flag to indicate if the menu is modal.
+     * {{desc}}
      */
     async show(button, options, modal) {
         this.activatedIndex = this.store.docs.findIndex((doc) => doc.selected);
@@ -189,10 +176,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Updates the position of the menu based on the trigger button and options.
-     * @param {HTMLElement} button - The button that triggers the menu.
-     * @param {Object} options - Options for positioning the menu.
-     * @private
+     * {{desc}}
      */
     updatePosition(button = this.popperButton, options = this.popperOptions) {
         this.popperButton = button;
@@ -214,8 +198,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Applies a filter to the menu items.
-     * @param {string} value - The value to filter the menu items by.
+     * {{desc}}
      */
     filter(value) {
         this.filters = [{ name: this.map.label, value, operator: "_like" }];
@@ -227,8 +210,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Selects a menu item.
-     * @param {Object} data - The data of the menu item to select.
+     * {{desc}}
      */
     select(data) {
         this.store.docs.forEach((doc) => {
@@ -237,9 +219,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Activates a menu item based on an offset and optionally selects it.
-     * @param {number} offset - The offset to move the activation.
-     * @param {boolean} [selected] - Whether to select the activated item.
+     * {{desc}}
      */
     activate(offset, selected) {
         this.activatedIndex = (this.activatedIndex + this.storeTotal + offset) % this.storeTotal;
@@ -256,9 +236,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles the virtual scroll event for the menu viewport.
-     * @param {Event} event - The virtual scroll event.
-     * @private
+     * {{desc}}
      */
     handleMenuViewportVirtualScroll(event) {
         this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
@@ -273,9 +251,7 @@ class MDMenuComponent extends MDSheetComponent {
     }
 
     /**
-     * Handles the click event on a menu list item.
-     * @param {Event} event - The click event.
-     * @private
+     * {{desc}}
      */
     handleMenuListItemClick(event) {
         const data = event.detail.currentTarget.data;

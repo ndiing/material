@@ -10,6 +10,14 @@ function toCamelCase(string) {
         .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 }
 
+function toPascalCase(string) {
+    return string
+        .replace(/([a-z])([A-Z])/g, (_$, $1, $2) => $1 + " " + $2)
+        .toLowerCase()
+        .replace(/(^|[^a-zA-Z0-9]+)([a-zA-Z])/g, (_$, _$1, $2) => $2.toUpperCase())
+        .replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
+}
+
 function read(file, data) {
     try {
         data = fs.readFileSync(file, { encoding: "utf8" });
@@ -39,12 +47,24 @@ function open(pathname, callback) {
     }
 }
 
-function parse(data) {
+function parse(data, options = {}, replacer = false) {
     let doc = {};
-    doc.methods = [];
-    doc.emits = [];
-    doc.functions = [];
-    doc.properties = [];
+    options = {
+        methods: [],
+        emits: [],
+        functions: [],
+        properties: [],
+        ...options,
+    };
+    doc.methods = new Map(options.methods);
+    doc.emits = new Map(options.emits);
+    doc.functions = new Map(options.functions);
+    doc.properties = new Map(options.properties);
+
+    if (replacer) {
+        data = data.replace(/\n+/gm, "\n");
+        data = data.replace(/\/\*\*[\s\S]+?\*\//gm, "");
+    }
 
     data = data.replace(/customElements\.define\("(.*?)", /gm, (...args) => {
         let [match, tagName] = args;
@@ -59,12 +79,47 @@ function parse(data) {
             let [match, name, params] = args;
             params = [params];
             // emits
-            doc.emits.push({ name, params });
+            doc.emits.set(name, { name, params });
             return match;
         });
         params = params?.split(",").map((string) => string.trim());
         // methods
-        doc.methods.push({ isStatic, isAcc, isAsync, name, params });
+        doc.methods.set(name, { isStatic, isAcc, isAsync, name, params });
+        if (replacer) {
+            let code = "";
+            code += `    /**\n`;
+            code += `     * {{desc}}\n`;
+            // params?.forEach(param=>{
+            //     code += `     * @param {type} ${param} - {{desc}}\n`;
+            // })
+            code += `     */\n`;
+            code += match;
+            return code;
+        }
+        return match;
+    });
+
+    data = data.replace(/^    static properties = \{([\s\S]+?)^    \};/gm, (...args) => {
+        let [match, data2] = args;
+        data2 = data2.replace(/(\w+): \{ type: (\w+)/gm, (...args) => {
+            let [match, name, type] = args;
+            // properties
+            doc.properties.set(name, { name, type });
+            return match;
+        });
+        if (replacer) {
+            let code = "";
+            code += `    /**\n`;
+            code += `     * {{desc}}\n`;
+            doc.properties.forEach((value) => {
+                if (value) {
+                    code += `     * @property {${value.type}} ${value.name} - {{desc}}\n`;
+                }
+            });
+            code += `     */\n`;
+            code += match;
+            return code;
+        }
         return match;
     });
 
@@ -74,25 +129,37 @@ function parse(data) {
         doc.className = className;
         // extendsName
         doc.extendsName = extendsName;
+        if (replacer) {
+            let code = "";
+            code += `/**\n`;
+            code += ` * {{desc}}\n`;
+            code += ` * @extends ${doc.extendsName}\n`;
+            code += ` * @element ${doc.tagName}\n`;
+            doc.emits.forEach((value) => {
+                if (value) {
+                    code += ` * @fires ${doc.className}#${value.name} - {{desc}}\n`;
+                }
+            });
+            code += ` */\n`;
+            code += match;
+            return code;
+        }
         return match;
     });
 
-    data = data.replace(/^    static properties = \{([\s\S]+?)^    \};/gm, (...args) => {
-        let [match, data2] = args;
-        data2 = data2.replace(/(\w+): \{ type: (\w+)/gm, (...args) => {
-            let [match, name, type] = args;
-            // properties
-            doc.properties.push({ name, type });
-            return match;
-        });
-        return match;
-    });
-
-    data = data.replace(/function (\w+)((.*?)?) \{[\s\S]+?\}/gm, (...args) => {
+    data = data.replace(/.*?function (\w+)((.*?)?) \{[\s\S]+?\}/gm, (...args) => {
         let [match, name, , params] = args;
         params = params?.split(",").map((string) => string.trim());
         // functions
-        doc.functions.push({ name, params });
+        doc.functions.set(name, { name, params });
+        if (replacer) {
+            let code = "";
+            code += `/**\n`;
+            code += ` * {{desc}}\n`;
+            code += ` */\n`;
+            code += match;
+            return code;
+        }
         return match;
     });
     return { doc, data };
@@ -100,10 +167,40 @@ function parse(data) {
 
 let docs = [];
 open("./src/material", (file) => {
-    if (file.endsWith("button.js")) {
-        let data = read(file);
-        let result = parse(data);
-        docs.push(result.doc);
-    }
+    let data = read(file);
+    let result = parse(data);
+    result.doc.file = file;
+    docs.push(result.doc);
 });
-console.log(docs);
+function parent(doc) {
+    return [doc].reduce((acc, curr) => {
+        if (curr.extendsName) {
+            let doc2 = docs.find((doc2) => doc2.className === curr.extendsName);
+            if (doc2) {
+                acc.push(...parent(doc2));
+            }
+        }
+        acc.push(curr);
+        return acc;
+    }, []);
+}
+for (const doc of docs) {
+    if (doc.tagName) {
+        doc.parents = [];
+        if (doc.extendsName) {
+            doc.parents = parent(doc);
+        }
+        doc.emits = Array.from(new Map(doc.parents.map((p) => Array.from(p.emits.entries())).flat()).values()).filter(Boolean);
+        doc.properties = Array.from(new Map(doc.parents.map((p) => Array.from(p.properties.entries())).flat()).values()).filter(Boolean);
+    }
+}
+
+// // create placeholder
+// open("./src/material", (file) => {
+//     if (file.endsWith(".js")) {
+//         let data = read(file);
+//         let doc = docs.find((doc) => doc.file === file);
+//         let result = parse(data, doc, true);
+//         write(file,result.data)
+//     }
+// });

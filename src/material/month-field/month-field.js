@@ -2,26 +2,20 @@ import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 
 /**
- * A custom element that provides a month and time picker field.
- * @element md-month-field
+ * {{desc}}
  * @extends MDTextFieldComponent
- * @fires MDMonthFieldComponent#onMonthFieldActionPickerClick - Event fired when the month-time picker icon is clicked.
- * @fires MDMonthFieldComponent#onMonthPickerButtonCancelClick - Event fired when the cancel button is clicked in the month-time picker.
- * @fires MDMonthFieldComponent#onMonthPickerButtonOkClick - Event fired when the OK button is clicked in the month-time picker.
- * @fires MDMonthFieldComponent#onMonthPickerSelection - Event fired when a month-time selection is made in the picker.
+ * @element md-month-field
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
-     * Gets the actions for the month-time field.
-     * @returns {Array} - An array of action objects, each containing a name and an icon.
+     * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "calendar_month" }];
     }
 
     /**
-     * Sets the actions for the month-time field.
-     * @param {Array} value - The new actions for the month-time field.
+     * {{desc}}
      */
     set actions(value) {}
     constructor() {
@@ -30,14 +24,15 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Callback for when the component is connected to the DOM.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
-
+    /**
+     * {{desc}}
+     */
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -47,7 +42,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Displays the month-time picker.
+     * {{desc}}
      */
     async showPicker() {
         if (this.pickerOpen) {
@@ -100,7 +95,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -108,9 +103,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the click event on the text field action icon.
-     * @param {Event} event - The click event.
-     * @private
+     * {{desc}}
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
@@ -120,9 +113,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the month-time selection event in the picker.
-     * @param {Event} event - The month-time selection event.
-     * @private
+     * {{desc}}
      */
     handleMonthPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -130,9 +121,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the month-time selection event in the picker.
-     * @param {Event} event - The month-time selection event.
-     * @private
+     * {{desc}}
      */
     handleMonthPickerMonthItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -141,18 +130,14 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the click event on the month-time picker action icon.
-     * @param {Event} event - The click event.
-     * @private
+     * {{desc}}
      */
     handleMonthFieldActionPickerClick() {
         this.togglePicker();
     }
 
     /**
-     * Handles the cancel button click event in the month-time picker.
-     * @param {Event} event - The cancel button click event.
-     * @private
+     * {{desc}}
      */
     handleMonthPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -160,9 +145,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     }
 
     /**
-     * Handles the OK button click event in the month-time picker.
-     * @param {Event} event - The OK button click event.
-     * @private
+     * {{desc}}
      */
     handleMonthPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();

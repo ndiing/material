@@ -1,23 +1,27 @@
 import { MDComponent } from "../component/component.js";
 
 /**
- * A custom element for displaying icons.
- * @element md-icon
+ * {{desc}}
  * @extends MDComponent
+ * @element md-icon
  */
 class MDIconComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} icon - {{desc}}
+     */
     static properties = {
         icon: { type: String },
     };
-
+    /**
+     * {{desc}}
+     */
     render() {
         return this.icon;
     }
 
     /**
-     * Invoked each time the custom element is appended into a document-connected element.
-     * Adds the 'md-icon' class to the element.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();

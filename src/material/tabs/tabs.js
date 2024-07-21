@@ -1,14 +1,13 @@
 import { MDTreeComponent } from "../tree/tree.js";
 
 /**
- * Custom component for managing tabs with indicators.
- * @element md-tabs
+ * {{desc}}
  * @extends MDTreeComponent
+ * @element md-tabs
  */
 class MDTabsComponent extends MDTreeComponent {
     /**
-     * Initializes the tabs component.
-     * Sets the default variant to "primary".
+     * {{desc}}
      */
     constructor() {
         super();
@@ -17,15 +16,10 @@ class MDTabsComponent extends MDTreeComponent {
         this.lastSelectedIndex = -1;
     }
 
-    /**
-     * Available variants for the tabs component.
-     */
     variants = ["primary", "secondary"];
 
     /**
-     * Callback when the component is connected to the DOM.
-     * Adds necessary classes to style the component.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -33,10 +27,7 @@ class MDTabsComponent extends MDTreeComponent {
     }
 
     /**
-     * Handles the selection of a tree item (tab).
-     * Updates the indicator position based on the selected tab.
-     * @param {CustomEvent} event - Custom event containing the selected tree item.
-     * @private
+     * {{desc}}
      */
     async handleTreeItemSelected(event) {
         await this.updateComplete;

@@ -3,23 +3,22 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { html } from "lit";
 
 /**
- * Custom component for selecting a week.
- * @element md-week-picker
+ * {{desc}}
  * @extends MDDatetimePickerComponent
- * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - Event fired when the previous button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - Event fired when the next button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - Event fired when the label button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - Event fired when the cancel button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - Event fired when the OK button is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - Event fired when a year item is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - Event fired when a month item is clicked.
- * @fires MDWeekPickerComponent#onWeekPickerSelection - Event fired when a week selection is made.
- * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - Event fired when a day item is clicked.
+ * @element md-week-picker
+ * @fires MDWeekPickerComponent#onWeekPickerButtonLabelClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerSelection - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerIconButtonPrevClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerIconButtonNextClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerYearItemClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerMonthItemClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerDayItemClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonCancelClick - {{desc}}
+ * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - {{desc}}
  */
 class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
-     * Retrieves the weekdays for display.
-     * @returns {Array} Array containing weekday objects with labels.
+     * {{desc}}
      */
     get weekdays() {
         const rows = [];
@@ -33,8 +32,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Retrieves the days for display.
-     * @returns {Array} Array containing day objects for the week grid.
+     * {{desc}}
      */
     get days() {
         const rows = [];
@@ -64,8 +62,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Retrieves the child nodes to render.
-     * @returns {Array} Array containing HTML templates for child nodes.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -79,16 +76,14 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Sets the child nodes for rendering.
-     * @param {Array} value - Array containing HTML templates for child nodes.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Retrieves the leading actions for display.
-     * @returns {Array} Array containing action objects for leading actions.
+     * {{desc}}
      */
     get leadingActions() {
         let label;
@@ -103,7 +98,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * @private
+     * {{desc}}
      */
     renderDay() {
         /* prettier-ignore */
@@ -130,9 +125,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Invoked when the component is added to the document's DOM.
-     * Adds necessary classes to the component.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -140,8 +133,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Updates the selected date based on the input value.
-     * @private
+     * {{desc}}
      */
     updateDate() {
         const date = parseWeek(this.value);
@@ -152,19 +144,14 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Retrieves the string representation of the selected week.
-     * @returns {string} String representation of the selected week.
-     * @private
+     * {{desc}}
      */
     getValue() {
         return stringifyWeek(this.selected);
     }
 
     /**
-     * Handles click events on the label button of the card.
-     * Changes the displayed content based on the current index.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -178,10 +165,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on the previous button of the card.
-     * Adjusts the selection based on the current index.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -197,10 +181,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on the next button of the card.
-     * Adjusts the selection based on the current index.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -216,10 +197,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on a year item in the date picker.
-     * Updates the selection to the clicked year and switches focus.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -230,10 +208,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on a month item in the date picker.
-     * Updates the selection to the clicked month and switches focus.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -244,10 +219,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on a day item in the week picker.
-     * Updates the selected week and triggers an update in the display.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -261,10 +233,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on the cancel button of the card.
-     * Resets the value and updates the display accordingly.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -275,10 +244,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click events on the OK button of the card.
-     * Sets the selected value and updates the display accordingly.
-     * @private
-     * @param {Event} event - The click event.
+     * {{desc}}
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());

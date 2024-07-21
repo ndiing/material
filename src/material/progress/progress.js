@@ -1,6 +1,3 @@
-/**
- * Represents a controller for managing a progress indicator.
- */
 let requestId;
 let startTime;
 let pausedTime = 0;
@@ -10,7 +7,7 @@ let elapsedTime = 0;
 let progressBar;
 
 /**
- * Creates a new progress indicator element and appends it to the document body.
+ * {{desc}}
  */
 function create() {
     progressBar = document.createElement("md-progress-indicator");
@@ -23,7 +20,7 @@ function create() {
 }
 
 /**
- * Resets the progress indicator and animation state.
+ * {{desc}}
  */
 function reset() {
     isAnimating = false;
@@ -35,8 +32,7 @@ function reset() {
 }
 
 /**
- * Observes the progress of the animation.
- * @param {Function} resolve - Callback function to execute when animation completes.
+ * {{desc}}
  */
 function observe(resolve) {
     let currentTime = performance.now();
@@ -55,9 +51,7 @@ function observe(resolve) {
 }
 
 /**
- * Starts the progress animation with a specified duration.
- * @param {number} duration - Duration of the animation in milliseconds.
- * @returns {Promise} Promise that resolves when the animation completes.
+ * {{desc}}
  */
 function start(duration = 10000) {
     return new Promise((resolve) => {
@@ -78,7 +72,7 @@ function start(duration = 10000) {
 }
 
 /**
- * Pauses the current animation.
+ * {{desc}}
  */
 function pause() {
     if (isAnimating) {
@@ -89,7 +83,7 @@ function pause() {
 }
 
 /**
- * Resumes a paused animation.
+ * {{desc}}
  */
 function resume() {
     if (!isAnimating) {
@@ -100,7 +94,7 @@ function resume() {
 }
 
 /**
- * Stops the current animation and resets the progress indicator.
+ * {{desc}}
  */
 function stop() {
     if (isAnimating) {

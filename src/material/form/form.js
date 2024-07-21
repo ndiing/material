@@ -4,23 +4,24 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * Form component that extends the MDComponent base class.
- * @element md-form
+ * {{desc}}
  * @extends MDComponent
- * @fires MDFormComponent#onFormNativeReset - Fired when the form is reset.
- * @fires MDFormComponent#onFormNativeSubmit - Fired when the form is submitted.
+ * @element md-form
+ * @fires MDFormComponent#onFormNativeReset - {{desc}}
+ * @fires MDFormComponent#onFormNativeSubmit - {{desc}}
  */
 class MDFormComponent extends MDComponent {
     /**
-     * Defines the properties of the form component.
-     * @property {String} acceptCharset - The character encodings that are to be used for the form submission.
-     * @property {String} action - The URL that processes the form submission.
-     * @property {String} autocomplete - Indicates whether the form should have autocomplete on or off.
-     * @property {String} enctype - The encoding type of the form.
-     * @property {String} method - The HTTP method used to submit the form.
-     * @property {String} name - The name of the form.
-     * @property {Boolean} novalidate - Indicates that the form should not be validated when submitted.
-     * @property {String} target - The browsing context in which to display the response received after submitting the form.
+     * {{desc}}
+     * @property {String} acceptCharset - {{desc}}
+     * @property {String} action - {{desc}}
+     * @property {String} autocomplete - {{desc}}
+     * @property {String} enctype - {{desc}}
+     * @property {String} method - {{desc}}
+     * @property {String} name - {{desc}}
+     * @property {Boolean} novalidate - {{desc}}
+     * @property {String} target - {{desc}}
+     * @property {Array} items - {{desc}}
      */
     static properties = {
         acceptCharset: { type: String },
@@ -33,12 +34,10 @@ class MDFormComponent extends MDComponent {
         target: { type: String },
         items: { type: Array },
     };
-
     formNative = createRef();
 
     /**
-     * Initializes a new instance of the MDFormComponent.
-     * Sets default values for form attributes.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -51,8 +50,7 @@ class MDFormComponent extends MDComponent {
     }
 
     /**
-     * Renders the form component template.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -75,9 +73,7 @@ class MDFormComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the component is added to the DOM.
-     * Adds necessary classes to the form element.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -85,26 +81,21 @@ class MDFormComponent extends MDComponent {
     }
 
     /**
-     * Resets the form programmatically.
-     * Equivalent to clicking the reset button.
+     * {{desc}}
      */
     reset() {
         this.formNative.value.reset();
     }
 
     /**
-     * Submits the form programmatically.
-     * Equivalent to clicking the submit button.
+     * {{desc}}
      */
     submit() {
         this.formNative.value.submit();
     }
 
     /**
-     * Event handler for the form reset event.
-     * Resets all form elements and emits the onFormNativeReset event.
-     * @param {Event} event - The reset event.
-     * @private
+     * {{desc}}
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.value.elements) {
@@ -119,10 +110,7 @@ class MDFormComponent extends MDComponent {
     }
 
     /**
-     * Event handler for the form submit event.
-     * Prevents default submission, collects form data, and emits the onFormNativeSubmit event.
-     * @param {Event} event - The submit event.
-     * @private
+     * {{desc}}
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();

@@ -3,21 +3,21 @@ import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js
 import { html } from "lit";
 
 /**
- * Custom time picker component for selecting hours and minutes.
- * @element md-time-picker
+ * {{desc}}
  * @extends MDDatetimePickerComponent
- * @fires MDTimePickerComponent#onTimePickerIconButtonPrevClick - When the previous button is clicked.
- * @fires MDTimePickerComponent#onTimePickerIconButtonNextClick - When the next button is clicked.
- * @fires MDTimePickerComponent#onTimePickerButtonLabelClick - When the label button is clicked.
- * @fires MDTimePickerComponent#onTimePickerButtonCancelClick - When the cancel button is clicked.
- * @fires MDTimePickerComponent#onTimePickerButtonOkClick - When the OK button is clicked.
- * @fires MDTimePickerComponent#onTimePickerHourItemClick - When an hour item is clicked.
- * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - When a minute item is clicked.
+ * @element md-time-picker
+ * @fires MDTimePickerComponent#onTimePickerButtonLabelClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerSelection - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerIconButtonPrevClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerIconButtonNextClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerHourItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerMinuteItemClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerButtonCancelClick - {{desc}}
+ * @fires MDTimePickerComponent#onTimePickerButtonOkClick - {{desc}}
  */
 class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
-     * Returns the child nodes for rendering hours and minutes.
-     * @returns {TemplateResult[]} Array of Lit HTML template results.
+     * {{desc}}
      */
     get childNodes_() {
         /* prettier-ignore */
@@ -30,16 +30,14 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Sets the child nodes.
-     * @param {TemplateResult[]} value - Array of Lit HTML template results.
+     * {{desc}}
      */
     set childNodes_(value) {
         this._childNodes = value;
     }
 
     /**
-     * Returns the leading actions with the current time label.
-     * @returns {object[]} Array of action objects with icon, variant, name, component, and label properties.
+     * {{desc}}
      */
     get leadingActions() {
         let label;
@@ -52,7 +50,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Initializes the component with default index.
+     * {{desc}}
      */
     constructor() {
         super();
@@ -60,8 +58,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Lifecycle callback when the element is connected to the DOM.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -69,8 +66,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Updates the date selection based on the input value.
-     * @private
+     * {{desc}}
      */
     updateDate() {
         const date = parseTime(this.value);
@@ -81,18 +77,14 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Returns the formatted time value.
-     * @returns {string} Formatted time string.
-     * @private
+     * {{desc}}
      */
     getValue() {
         return stringifyTime(this.selected);
     }
 
     /**
-     * Handles click on the label button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -104,9 +96,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the previous button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -122,9 +112,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the next button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -140,9 +128,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the hour item in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
@@ -154,9 +140,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the minute item in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
@@ -170,9 +154,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the cancel button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -183,9 +165,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     }
 
     /**
-     * Handles click on the OK button in the time picker.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleCardButtonOkClick(event) {
         this.selected.setMinutes(this.selection.getMinutes());

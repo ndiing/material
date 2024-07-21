@@ -2,16 +2,16 @@ import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
 /**
- * A container component for displaying a list of chips.
- * @element md-chips
+ * {{desc}}
  * @extends MDComponent
- * @fires MDChipsComponent#onChipClick - Event emitted when a chip is clicked.
+ * @element md-chips
+ * @fires MDChipsComponent#onChipClick - {{desc}}
  */
 class MDChipsComponent extends MDComponent {
     /**
-     * Defines the properties of the MDChipsComponent.
-     * @property {Array} list - The list of chip data objects to render.
-     * @property {Boolean} multiSelection - Indicates whether multiple chips can be selected.
+     * {{desc}}
+     * @property {Array} list - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
      */
     static properties = {
         list: { type: Array },
@@ -19,8 +19,7 @@ class MDChipsComponent extends MDComponent {
     };
 
     /**
-     * Renders the list of chips.
-     * @private
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -33,8 +32,7 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
-     * Called when the component is added to the DOM.
-     * @private
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -42,9 +40,7 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
-     * Handles the click event on a chip.
-     * @param {Event} event - The click event object.
-     * @private
+     * {{desc}}
      */
     handleChipClick(event) {
         const data = event.currentTarget.data;
@@ -56,9 +52,7 @@ class MDChipsComponent extends MDComponent {
     }
 
     /**
-     * Handles the chip action click event.
-     * @param {Event} event - The chip action click event object.
-     * @private
+     * {{desc}}
      */
     handleChipActionClick(event) {
         const data = event.currentTarget.data;
