@@ -24,7 +24,7 @@ class DevNavigationDrawer extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Standard navigation drawer</md-markdown>
+                            
                             <md-button
                                 label="toggle navigation drawer"
                                 variant="tonal"
@@ -32,7 +32,7 @@ class DevNavigationDrawer extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Modal navigation drawer</md-markdown>
+                            
                             <md-button
                                 label="toggle navigation drawer"
                                 variant="tonal"

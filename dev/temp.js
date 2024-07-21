@@ -241,7 +241,11 @@ for (const doc of docs) {
         for (const { name } of emits) {
             code += `            @${name}="\${ifDefined(item.${name})}"\n`;
         }
-        code += `        ></${doc.tagName}>\n`;
+        code += `        >`;
+        if(['icon','emoji'].includes(name)){
+            code += `\${item.${name}}`;
+        }
+        code += `</${doc.tagName}>\n`;
         code += `    \`\n`;
         code += `}\n`;
         code += `\n`;

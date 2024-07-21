@@ -8,7 +8,7 @@ class DevDialog extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Basic dialog</md-markdown>
+                            
                             <md-dialog
                                 id="dialog0"
                                 style="width:280px;"
@@ -40,7 +40,7 @@ class DevDialog extends MDComponent {
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Full-screen dialog</md-markdown>
+                            
                             <md-dialog
                                 id="dialog1"
                                 variant="full"

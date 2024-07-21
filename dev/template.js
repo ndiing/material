@@ -65,6 +65,44 @@ function renderBottomSheet(item = {}) {
     `
 }
 
+function renderBox(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-box
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadio="${ifDefined(item.leadingRadio)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadio="${ifDefined(item.trailingRadio)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+        ></md-box>
+    `
+}
+
 function renderButton(item = {}) {
     /* prettier-ignore */
     return html`
@@ -644,10 +682,8 @@ function renderEmoji(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .emoji="${ifDefined(item.emoji)}"
-            .hover="${ifDefined(item.hover)}"
             @click="${ifDefined(item.onEmojiClick)}"
-        ></md-emoji>
+        >${item.emoji}</md-emoji>
     `
 }
 
@@ -736,7 +772,7 @@ function renderIcon(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             @click="${ifDefined(item.onIconClick)}"
-        ></md-icon>
+        >${item.icon}</md-icon>
     `
 }
 
@@ -1990,6 +2026,7 @@ function renderComponent(item) {
         ["badge", () => renderBadge(item)],
         ["bottom-app-bar", () => renderBottomAppBar(item)],
         ["bottom-sheet", () => renderBottomSheet(item)],
+        ["box", () => renderBox(item)],
         ["button", () => renderButton(item)],
         ["card", () => renderCard(item)],
         ["checkbox", () => renderCheckbox(item)],

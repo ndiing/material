@@ -8,7 +8,7 @@ class DevTooltip extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Plain tooltipz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip0"
                                 variant="plain"
@@ -23,7 +23,7 @@ class DevTooltip extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Plain tooltipz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip1"
                                 variant="plain"
@@ -39,7 +39,7 @@ class DevTooltip extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Subhead, supporting text, and two buttonsz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip2"
                                 variant="rich"
@@ -71,7 +71,7 @@ class DevTooltip extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Subhead, supporting text, and one buttonz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip3"
                                 variant="rich"
@@ -97,7 +97,7 @@ class DevTooltip extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Subhead and supporting textz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip4"
                                 variant="rich"
@@ -114,7 +114,7 @@ class DevTooltip extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Supporting text and one buttonz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip5"
                                 variant="rich"
@@ -139,7 +139,7 @@ class DevTooltip extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Button text and two buttonz</md-markdown>
+                            
                             <md-tooltip
                                 id="tooltip6"
                                 variant="rich"

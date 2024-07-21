@@ -90,6 +90,8 @@ import { MDDataTableColumnCellComponent } from "./data-table-column-cell/data-ta
 import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-row-cell.js";
 import { MDDataTableComponent } from "./data-table/data-table.js";
 
+import { MDBoxComponent } from "./box/box.js";
+
 export {
     //
     MDObserver,

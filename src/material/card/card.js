@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
+
 /**
  * {{description}}
  * @element md-card
@@ -24,7 +25,9 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
+
     variants = ["elevated", "filled", "outlined"];
+
     /**
      * {{description}}
      */
@@ -36,67 +39,51 @@ class MDCardComponent extends MDComponent {
     /**
      * @private
      */
-    renderHeader() {
-        /* prettier-ignore */
-        return this.leadingActions?.length || this.label || this.subLabel || this.trailingActions?.length ? html`
-            <div class="md-card__header">
-                ${this.leadingActions?.length ? html`
-                    <div class="md-card__actions">
-                        ${this.leadingActions.map(item => {
-                            item.component=item.component||'icon-button'
-                            return renderComponent(item)    
-                        })}
-
-                    </div>
-                ` : nothing}
-                ${this.label || this.subLabel ? html`
-                    <div class="md-card__label">
-                        ${this.label ? html`<div class="md-card__label-primary">${this.label}</div>` : nothing}
-                        ${this.subLabel ? html`<div class="md-card__label-secondary">${this.subLabel}</div>` : nothing}
-                    </div>
-                ` : nothing}
-                ${this.trailingActions?.length ? html`
-                    <div class="md-card__actions md-card__actions--end">
-                        ${this.trailingActions.map(item=> {
-                            item.component=item.component||'icon-button'
-                            return renderComponent(item)    
-                        })}
-                    </div>
-                ` : nothing}
-            </div>
-        ` : nothing;
-    }
-    /**
-     * @private
-     */
-    renderBody() {
-        /* prettier-ignore */
-        return this.childNodes_?.length || this.actions?.length ? html`
-            <div class="md-card__body">
-                ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
-
-                ${this.actions?.length ? html`
-                    <div class="md-card__footer">
-                        ${this.actions.map(item => {
-                            item.component=item.component||'button'
-                            return renderComponent(item)    
-                        })}
-                    </div>
-                ` : nothing}
-            </div>
-        ` : nothing;
-    }
-    /**
-     * @private
-     */
     render() {
         /* prettier-ignore */
         return html`
-            ${this.renderHeader()}
-
-            ${this.renderBody()}
+            ${this.leadingActions?.length || this.label || this.subLabel || this.trailingActions?.length?html`
+                <div class="md-card__header">
+                    ${this.leadingActions?.length ? html`
+                        <div class="md-card__actions">
+                            ${this.leadingActions.map(item => {
+                                item.component=item.component||'icon-button'
+                                return renderComponent(item)    
+                            })}
+                        </div>
+                    ` : nothing}
+                    ${this.label || this.subLabel ? html`
+                        <div class="md-card__label">
+                            ${this.label ? html`<div class="md-card__label-primary">${this.label}</div>` : nothing}
+                            ${this.subLabel ? html`<div class="md-card__label-secondary">${this.subLabel}</div>` : nothing}
+                        </div>
+                    ` : nothing}
+                    ${this.trailingActions?.length ? html`
+                        <div class="md-card__actions md-card__actions--end">
+                            ${this.trailingActions.map(item=> {
+                                item.component=item.component||'icon-button'
+                                return renderComponent(item)    
+                            })}
+                        </div>
+                    ` : nothing}
+                </div>
+            `:nothing}
+            ${this.childNodes_?.length || this.actions?.length?html`
+                <div class="md-card__body">
+                    ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
+                    ${this.actions?.length ? html`
+                        <div class="md-card__footer">
+                            ${this.actions.map(item => {
+                                item.component=item.component||'button'
+                                return renderComponent(item)    
+                            })}
+                        </div>
+                    ` : nothing}
+                </div>
+            `:nothing}
         `;
     }
+
     /**
      * @private
      */

@@ -647,7 +647,7 @@ function renderEmoji(item = {}) {
             .emoji="${ifDefined(item.emoji)}"
             .hover="${ifDefined(item.hover)}"
             @click="${ifDefined(item.onEmojiClick)}"
-        ></md-emoji>
+        >${item.emoji}</md-emoji>
     `
 }
 
@@ -736,7 +736,7 @@ function renderIcon(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             @click="${ifDefined(item.onIconClick)}"
-        ></md-icon>
+        >${item.icon}</md-icon>
     `
 }
 

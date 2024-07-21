@@ -8,7 +8,7 @@ class DevImage extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Ratio 16/9, 3/2, 4/3, 1/1, 3/4, 2/3 from width</md-markdown>
+                            
                             <md-image
                                 style="width:96px;"
                                 ratio="16/9"
@@ -59,7 +59,7 @@ class DevImage extends MDComponent {
                             ></md-image>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Ratio 16/9, 3/2, 4/3, 1/1, 3/4, 2/3 from height</md-markdown>
+                            
                             <md-image
                                 style="height:96px;"
                                 ratio="16/9"
@@ -110,7 +110,7 @@ class DevImage extends MDComponent {
                             ></md-image>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Ratio+Rounded 16/9, 3/2, 4/3, 1/1, 3/4, 2/3 from width</md-markdown>
+                            
                             <md-image
                                 style="width:96px;"
                                 variant="rounded"
@@ -167,7 +167,7 @@ class DevImage extends MDComponent {
                             ></md-image>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Ratio+Rounded 16/9, 3/2, 4/3, 1/1, 3/4, 2/3 from height</md-markdown>
+                            
                             <md-image
                                 style="height:96px;"
                                 variant="rounded"

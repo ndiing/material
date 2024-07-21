@@ -23,7 +23,7 @@ class DevSideSheet extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Standard side sheet</md-markdown>
+                            
                             <md-button
                                 label="toggle side sheet"
                                 variant="tonal"
@@ -31,7 +31,7 @@ class DevSideSheet extends MDComponent {
                             ></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-markdown>Modal side sheet</md-markdown>
+                            
                             <md-button
                                 label="toggle side sheet"
                                 variant="tonal"

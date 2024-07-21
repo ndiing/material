@@ -25,7 +25,7 @@ class DevNavigationBar extends MDComponent {
                         <div class="md-layout-border__item md-layout-border__item--center">
                             <div class="md-layout-column">
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                    <md-markdown>label text</md-markdown>
+                                    
                                     <md-button
                                         @click="${() => navigationBar0.toggle()}"
                                         label="toggle navigation bar"
@@ -33,7 +33,7 @@ class DevNavigationBar extends MDComponent {
                                     ></md-button>
                                 </div>
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                    <md-markdown>no label text</md-markdown>
+                                    
                                     <md-button
                                         @click="${() => navigationBar1.toggle()}"
                                         label="toggle navigation bar"

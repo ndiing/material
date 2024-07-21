@@ -78,12 +78,14 @@ import DevTreeItem from "./tree-item/tree-item.js";
 import DevVirtual from "./virtual/virtual.js";
 import DevWeekField from "./week-field/week-field.js";
 import DevWeekPicker from "./week-picker/week-picker.js";
+import DevBox from "./box/box.js";
 
 const routes = [
     {
         path: "",
         component: DevMain,
         children: [
+            { component: DevBox, path: "box" },
             { component: DevAttributeObserver, path: "attribute-observer" },
             { component: DevBadge, path: "badge" },
             { component: DevBottomAppBar, path: "bottom-app-bar" },
@@ -136,7 +138,7 @@ const routes = [
             { component: DevRadioButton, path: "radio-button" },
             { component: DevRipple, path: "ripple" },
             { component: DevRouter, path: "router" },
-            { component: DevScrim, path: "scrim" },
+            // { component: DevScrim, path: "scrim" },
             { component: DevSearchField, path: "search-field" },
             { component: DevSegmentedButton, path: "segmented-button" },
             { component: DevSelectField, path: "select-field" },
