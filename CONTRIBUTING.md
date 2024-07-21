@@ -1,66 +1,66 @@
-# Contributing
+# Berkontribusi
 
-We welcome contributions to our project! By participating in this project, you agree to abide by our [Code of Conduct](link-to-code-of-conduct) and follow the guidelines outlined in this document.
+Kami menyambut kontribusi untuk proyek kami! Dengan berpartisipasi dalam proyek ini, Anda setuju untuk mematuhi [Kode Etik](link-to-code-of-conduct) kami dan mengikuti pedoman yang dijelaskan dalam dokumen ini.
 
-## How to Contribute
+## Cara Berkontribusi
 
-### Reporting Issues
+### Melaporkan Masalah
 
-If you find a bug or have a feature request, please follow these steps:
+Jika Anda menemukan bug atau memiliki permintaan fitur, ikuti langkah-langkah berikut:
 
-1. **Search Existing Issues**: Check the [issue tracker](link-to-issue-tracker) to see if the issue or feature request has already been reported.
-2. **Create a New Issue**: If you do not find an existing issue, create a new issue in the issue tracker with a clear description of the problem or enhancement. Provide as much detail as possible, including:
-   - A description of the issue or feature.
-   - Steps to reproduce the issue, if applicable.
-   - Screenshots or examples, if relevant.
+1. **Cari Masalah yang Ada**: Periksa [pelacak masalah](link-to-issue-tracker) untuk melihat apakah masalah atau permintaan fitur sudah dilaporkan.
+2. **Buat Masalah Baru**: Jika Anda tidak menemukan masalah yang ada, buat masalah baru di pelacak masalah dengan deskripsi yang jelas tentang masalah atau peningkatan. Berikan detail sebanyak mungkin, termasuk:
+   - Deskripsi masalah atau fitur.
+   - Langkah-langkah untuk mereproduksi masalah, jika ada.
+   - Tangkapan layar atau contoh, jika relevan.
 
-### Pull Requests
+### Permintaan Penarikan
 
-To contribute code or documentation improvements, please follow these steps:
+Untuk berkontribusi kode atau peningkatan dokumentasi, ikuti langkah-langkah berikut:
 
-1. **Fork the Repository**: Create a fork of the repository to work on your changes.
-2. **Clone Your Fork**: Clone the forked repository to your local machine:
+1. **Fork Repositori**: Buat fork dari repositori untuk mengerjakan perubahan Anda.
+2. **Klon Fork Anda**: Klon repositori yang telah difork ke mesin lokal Anda:
    <pre>
-   git clone https://github.com/your-username/repository.git
+   git clone https://github.com/username-anda/repository.git
    </pre>
-3. **Create a Branch**: Create a new branch for your changes:
+3. **Buat Cabang**: Buat cabang baru untuk perubahan Anda:
    <pre>
    git checkout -b my-feature-branch
    </pre>
-4. **Make Changes**: Implement your changes and ensure that they follow our coding standards and guidelines.
-5. **Commit Changes**: Commit your changes with a clear and concise commit message:
+4. **Buat Perubahan**: Lakukan perubahan Anda dan pastikan mereka mengikuti standar dan pedoman pengkodean kami.
+5. **Commit Perubahan**: Commit perubahan Anda dengan pesan commit yang jelas dan ringkas:
    <pre>
    git add .
-   git commit -m "Add feature or fix bug"
+   git commit -m "Tambah fitur atau perbaiki bug"
    </pre>
-6. **Push Changes**: Push your changes to your forked repository:
+6. **Push Perubahan**: Push perubahan Anda ke repositori fork Anda:
    <pre>
    git push origin my-feature-branch
    </pre>
-7. **Create a Pull Request**: Open a pull request in the original repository. Include a description of your changes and any relevant details. Link to the issue your pull request addresses, if applicable.
+7. **Buat Permintaan Penarikan**: Buka permintaan penarikan di repositori asli. Sertakan deskripsi perubahan Anda dan detail yang relevan. Tautkan ke masalah yang ditangani oleh permintaan penarikan Anda, jika ada.
 
-### Code of Conduct
+### Kode Etik
 
-Please ensure that your contributions align with our [Code of Conduct](link-to-code-of-conduct). We value respectful and constructive collaboration and strive to create a positive environment for all contributors.
+Pastikan bahwa kontribusi Anda sesuai dengan [Kode Etik](link-to-code-of-conduct) kami. Kami menghargai kolaborasi yang hormat dan konstruktif serta berusaha menciptakan lingkungan yang positif bagi semua kontributor.
 
-### Coding Standards
+### Standar Pengkodean
 
-- **Follow Existing Style**: Adhere to the coding style and conventions used in the project.
-- **Write Tests**: Include tests for new features or bug fixes when applicable.
-- **Document Changes**: Update documentation to reflect any changes made to the project.
+- **Ikuti Gaya yang Ada**: Patuhi gaya pengkodean dan konvensi yang digunakan dalam proyek.
+- **Tulis Tes**: Sertakan tes untuk fitur baru atau perbaikan bug jika memungkinkan.
+- **Dokumentasikan Perubahan**: Perbarui dokumentasi untuk mencerminkan perubahan yang dilakukan pada proyek.
 
-### Review Process
+### Proses Tinjauan
 
-Once you submit a pull request, it will be reviewed by project maintainers. The review process may involve:
+Setelah Anda mengirimkan permintaan penarikan, itu akan ditinjau oleh pemelihara proyek. Proses tinjauan mungkin melibatkan:
 
-- **Code Review**: Reviewing code for correctness, readability, and adherence to coding standards.
-- **Testing**: Ensuring that changes do not introduce new issues and that they work as expected.
-- **Feedback**: Providing feedback and requesting changes if necessary.
+- **Tinjauan Kode**: Meninjau kode untuk memastikan kebenaran, keterbacaan, dan kepatuhan terhadap standar pengkodean.
+- **Pengujian**: Memastikan bahwa perubahan tidak memperkenalkan masalah baru dan bekerja sebagaimana mestinya.
+- **Umpan Balik**: Memberikan umpan balik dan meminta perubahan jika diperlukan.
 
-## Additional Resources
+## Sumber Daya Tambahan
 
-- [Project Documentation](link-to-project-documentation)
-- [Issue Tracker](link-to-issue-tracker)
-- [Community Forum](link-to-community-forum) (if applicable)
+- [Dokumentasi Proyek](link-to-project-documentation)
+- [Pelacak Masalah](link-to-issue-tracker)
+- [Forum Komunitas](link-to-community-forum) (jika ada)
 
-Thank you for contributing to our project! Your efforts are greatly appreciated and help us improve the project for everyone.
+Terima kasih telah berkontribusi pada proyek kami! Upaya Anda sangat dihargai dan membantu kami meningkatkan proyek untuk semua orang.

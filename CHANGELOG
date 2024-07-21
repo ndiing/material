@@ -1,121 +1,120 @@
-# Changelog
+# Catatan Perubahan
 
-All notable changes to this project will be documented in this file.
+Semua perubahan penting pada proyek ini akan didokumentasikan dalam file ini.
 
-## [Unreleased]
+## [Belum Dirilis]
 
-### Added
-- New feature or enhancement
-- New components or modules
+### Ditambahkan
+- Fitur baru atau peningkatan
+- Komponen atau modul baru
 
-### Changed
-- Updates or improvements to existing features
-- Changes to API or behavior
+### Diubah
+- Pembaruan atau perbaikan pada fitur yang sudah ada
+- Perubahan pada API atau perilaku
 
-### Fixed
-- Bug fixes and issue resolutions
+### Diperbaiki
+- Perbaikan bug dan resolusi masalah
 
-### Deprecated
-- Features or APIs that are deprecated and will be removed in future releases
+### Didepresiasi
+- Fitur atau API yang didepresiasi dan akan dihapus pada rilis mendatang
 
-### Removed
-- Features or components that have been removed
+### Dihapus
+- Fitur atau komponen yang telah dihapus
 
 ## [1.0.0] - 2024-07-20
 
-### Added
-- Initial release of the project
-- Core components including Button, Icon Button, Card, and more
+### Ditambahkan
+- Rilis awal proyek
+- Komponen inti termasuk Button, Icon Button, Card, dan lainnya
 
-### Changed
-- Improved component styling and layout
-- Updated documentation with usage examples
+### Diubah
+- Peningkatan gaya dan tata letak komponen
+- Pembaruan dokumentasi dengan contoh penggunaan
 
-### Fixed
-- Resolved minor bugs in Button component
-- Fixed issues with CSS conflicts in the Icon Button component
+### Diperbaiki
+- Perbaikan bug kecil pada komponen Button
+- Memperbaiki masalah konflik CSS pada komponen Icon Button
 
 ## [0.9.0] - 2024-06-15
 
-### Added
-- Added experimental components for feedback
-- Included basic theming support
+### Ditambahkan
+- Penambahan komponen eksperimental untuk umpan balik
+- Dukungan dasar untuk tema
 
-### Changed
-- Refactored internal codebase for better maintainability
-- Improved performance for data-table component
+### Diubah
+- Refaktor kode internal untuk pemeliharaan yang lebih baik
+- Peningkatan kinerja untuk komponen data-table
 
-### Fixed
-- Corrected display issues in the data-table header
-- Fixed alignment issues in the navigation bar
+### Diperbaiki
+- Koreksi masalah tampilan pada header data-table
+- Memperbaiki masalah penyelarasan pada navigation bar
 
 ## [0.8.0] - 2024-05-01
 
-### Added
-- New data-grid component with customizable columns
-- Integration with external CSS frameworks
+### Ditambahkan
+- Komponen data-grid baru dengan kolom yang dapat disesuaikan
+- Integrasi dengan kerangka kerja CSS eksternal
 
-### Changed
-- Updated design system for consistency
-- Improved accessibility features
+### Diubah
+- Pembaruan sistem desain untuk konsistensi
+- Peningkatan fitur aksesibilitas
 
-### Fixed
-- Resolved layout issues in the modal component
-- Fixed bugs related to dynamic content loading
+### Diperbaiki
+- Menyelesaikan masalah tata letak pada komponen modal
+- Memperbaiki bug terkait pemuatan konten dinamis
 
 ## [0.7.0] - 2024-03-10
 
-### Added
-- Added support for multiple languages
-- Introduced user-friendly form components
+### Ditambahkan
+- Dukungan untuk beberapa bahasa
+- Komponen formulir yang ramah pengguna
 
-### Changed
-- Refined component API for ease of use
-- Enhanced performance for large data sets
+### Diubah
+- Penyempurnaan API komponen untuk kemudahan penggunaan
+- Peningkatan kinerja untuk set data besar
 
-### Fixed
-- Fixed bugs in the date-picker component
-- Corrected minor styling issues
+### Diperbaiki
+- Memperbaiki bug pada komponen date-picker
+- Koreksi masalah gaya minor
 
 ## [0.6.0] - 2024-01-15
 
-### Added
-- Added documentation for API usage
-- Introduced new icons and visual assets
+### Ditambahkan
+- Dokumentasi penggunaan API
+- Ikon dan aset visual baru
 
-### Changed
-- Improved responsiveness of layout components
-- Updated build process for faster development
+### Diubah
+- Peningkatan responsivitas komponen tata letak
+- Pembaruan proses build untuk pengembangan yang lebih cepat
 
-### Fixed
-- Addressed security vulnerabilities
-- Fixed issues with form validation
+### Diperbaiki
+- Mengatasi kerentanan keamanan
+- Memperbaiki masalah validasi formulir
 
 ## [0.5.0] - 2023-11-20
 
-### Added
-- Added support for custom themes
-- Included new utility functions for easier development
+### Ditambahkan
+- Dukungan untuk tema kustom
+- Fungsi utilitas baru untuk pengembangan yang lebih mudah
 
-### Changed
-- Refactored component code for better readability
-- Updated dependencies to latest versions
+### Diubah
+- Refaktor kode komponen untuk keterbacaan yang lebih baik
+- Pembaruan dependensi ke versi terbaru
 
-### Fixed
-- Resolved minor bugs and issues from previous releases
-- Fixed performance issues in the grid component
+### Diperbaiki
+- Penyelesaian bug kecil dan masalah dari rilis sebelumnya
+- Memperbaiki masalah kinerja pada komponen grid
 
 ## [0.4.0] - 2023-09-05
 
-### Added
-- Initial alpha release of core components
-- Basic setup for project structure and build tools
+### Ditambahkan
+- Rilis alpha awal dari komponen inti
+- Pengaturan dasar untuk struktur proyek dan alat build
 
-### Changed
-- Improved initial setup instructions
-- Enhanced compatibility with popular browsers
+### Diubah
+- Peningkatan petunjuk pengaturan awal
+- Peningkatan kompatibilitas dengan browser populer
 
-### Fixed
-- Fixed initial bugs reported during alpha testing
-- Addressed setup issues for new contributors
-
+### Diperbaiki
+- Memperbaiki bug awal yang dilaporkan selama pengujian alpha
+- Mengatasi masalah pengaturan untuk kontributor baru

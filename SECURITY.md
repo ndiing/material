@@ -1,48 +1,48 @@
-# Security
+# Keamanan
 
-## Introduction
+## Pendahuluan
 
-We take the security of our project and its users very seriously. This document outlines how to report security vulnerabilities, as well as our approach to handling security issues. 
+Kami sangat serius dalam menjaga keamanan proyek dan penggunanya. Dokumen ini menjelaskan cara melaporkan kerentanan keamanan, serta pendekatan kami dalam menangani masalah keamanan.
 
-## Reporting Security Vulnerabilities
+## Melaporkan Kerentanan Keamanan
 
-If you discover a security vulnerability in our project, please follow the guidelines below to report it:
+Jika Anda menemukan kerentanan keamanan dalam proyek kami, ikuti pedoman di bawah ini untuk melaporkannya:
 
-1. **Do Not Post**: Do not post any security vulnerabilities or sensitive information publicly. This ensures that the issue is addressed promptly and does not put users at risk.
-2. **Report Privately**: Contact us privately through the designated security contact channel. Please use the following methods:
+1. **Jangan Dipublikasikan**: Jangan mempublikasikan kerentanan keamanan atau informasi sensitif secara publik. Ini untuk memastikan bahwa masalah ditangani dengan cepat dan tidak membahayakan pengguna.
+2. **Lapor Secara Pribadi**: Hubungi kami secara pribadi melalui saluran kontak keamanan yang ditentukan. Silakan gunakan metode berikut:
    - **Email**: [security@example.com](mailto:security@example.com)
-   - **Issue Tracker**: If our issue tracker supports private issues or has a specific security issue label, use that.
+   - **Pelacak Masalah**: Jika pelacak masalah kami mendukung masalah pribadi atau memiliki label khusus untuk masalah keamanan, gunakan itu.
 
-When reporting a vulnerability, please include the following information:
-- A detailed description of the vulnerability, including steps to reproduce it.
-- Any potential impact or exploitation details.
-- Your contact information so we can reach you if needed.
+Saat melaporkan kerentanan, sertakan informasi berikut:
+- Deskripsi rinci tentang kerentanan, termasuk langkah-langkah untuk mereproduksinya.
+- Potensi dampak atau detail eksploitasi.
+- Informasi kontak Anda agar kami dapat menghubungi Anda jika diperlukan.
 
-## Response and Disclosure
+## Tanggapan dan Pengungkapan
 
-Once we receive your report:
-1. **Acknowledgment**: We will acknowledge receipt of your report within 48 hours.
-2. **Investigation**: We will investigate the issue as quickly as possible and provide updates on our progress.
-3. **Resolution**: Once the issue is confirmed, we will work to develop a fix and release it in a timely manner. We will also provide details on how the issue was resolved.
-4. **Disclosure**: We will coordinate with you regarding public disclosure of the vulnerability. Our goal is to ensure that users are informed about security issues while minimizing the risk of exploitation.
+Setelah kami menerima laporan Anda:
+1. **Pengakuan**: Kami akan mengakui penerimaan laporan Anda dalam waktu 48 jam.
+2. **Investigasi**: Kami akan menyelidiki masalah tersebut secepat mungkin dan memberikan pembaruan tentang kemajuan kami.
+3. **Penyelesaian**: Setelah masalah dikonfirmasi, kami akan bekerja untuk mengembangkan perbaikan dan merilisnya dalam waktu yang tepat. Kami juga akan memberikan rincian tentang bagaimana masalah tersebut diselesaikan.
+4. **Pengungkapan**: Kami akan berkoordinasi dengan Anda mengenai pengungkapan publik tentang kerentanan. Tujuan kami adalah untuk memastikan bahwa pengguna diberitahu tentang masalah keamanan sambil meminimalkan risiko eksploitasi.
 
-## Responsible Disclosure
+## Pengungkapan yang Bertanggung Jawab
 
-We encourage responsible disclosure of vulnerabilities. This means:
-- **Private Reporting**: Report issues privately to allow us to address them before public disclosure.
-- **Cooperation**: Work with us to ensure that any security issues are resolved in a way that minimizes risk to users.
+Kami mendorong pengungkapan kerentanan yang bertanggung jawab. Ini berarti:
+- **Pelaporan Pribadi**: Laporkan masalah secara pribadi untuk memungkinkan kami menangani mereka sebelum pengungkapan publik.
+- **Kerja Sama**: Bekerja sama dengan kami untuk memastikan bahwa masalah keamanan diselesaikan dengan cara yang meminimalkan risiko bagi pengguna.
 
-## Security Best Practices
+## Praktik Terbaik Keamanan
 
-To help ensure the security of our project:
-- **Keep Your Dependencies Updated**: Regularly update dependencies to include the latest security patches.
-- **Use Strong Authentication**: Implement strong authentication and authorization mechanisms.
-- **Follow Secure Coding Practices**: Follow secure coding practices and regularly review code for security issues.
+Untuk membantu memastikan keamanan proyek kami:
+- **Perbarui Ketergantungan Anda**: Secara berkala perbarui ketergantungan untuk menyertakan patch keamanan terbaru.
+- **Gunakan Otentikasi yang Kuat**: Terapkan mekanisme otentikasi dan otorisasi yang kuat.
+- **Ikuti Praktik Pengkodean yang Aman**: Ikuti praktik pengkodean yang aman dan secara berkala tinjau kode untuk masalah keamanan.
 
-## Contact Information
+## Informasi Kontak
 
-For any security-related concerns or to report vulnerabilities, please use the following contact details:
+Untuk setiap masalah terkait keamanan atau untuk melaporkan kerentanan, silakan gunakan detail kontak berikut:
 - **Email**: [security@example.com](mailto:security@example.com)
-- **Issue Tracker**: [Link to Issue Tracker]
+- **Pelacak Masalah**: [Link to Issue Tracker]
 
-Thank you for helping us maintain a secure and reliable project!
+Terima kasih telah membantu kami menjaga proyek yang aman dan andal!
