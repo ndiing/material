@@ -80,7 +80,7 @@ import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-ro
 import { MDDataTableComponent } from "./data-table/data-table.js";
 import { MDBoxComponent } from "./box/box.js";
 export {
-    //
+
     MDObserver,
     MDMediaObserver,
     MDAttributeObserver,

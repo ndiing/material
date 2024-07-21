@@ -37,13 +37,7 @@ class MDComponent extends LitElement {
     }
     updated(changedProperties) {
         super.updated(changedProperties);
-        // if(changedProperties.has('tooltip')){
-        //     if(this.tooltip){
-        //         console.log(this.tooltip)
-        //     }else{
-        //         console.log(this.tooltip)
-        //     }
-        // }
+
     }
     async handlePointerenter(event) {
         if (this.tooltip && !this.tooltipElement) {
@@ -56,7 +50,7 @@ class MDComponent extends LitElement {
         }
     }
     handlePointerleave(event) {
-        if (this.tooltip && this.tooltipElement) {
+        if (this.tooltipElement) {
             this.tooltipElement.remove();
             this.tooltipElement = null;
         }

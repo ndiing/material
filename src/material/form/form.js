@@ -49,12 +49,6 @@ class MDFormComponent extends MDComponent {
         this.novalidate = true;
         this.childNodes_ = Array.from(this.childNodes);
     }
-    // renderItems(items) {
-    //     return items.map((item) => {
-    //         if (item.items?.length) item.items = this.renderItems(item.items);
-    //         return renderComponent(item);
-    //     });
-    // }
 
     /**
      * Renders the form component template.
