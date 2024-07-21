@@ -35,7 +35,7 @@
         "build": "lit-localize build",
         "prettier": "prettier src/ --write",
         "eslint": "eslint src/material --fix",
-        "jsdoc": "jsdoc -r ./src/material -d ./docs"
+        "jsdoc": "jsdoc -c .jsdoc.json -r ./src/material -d ./docs"
     },
     "dependencies": {
         "@lit/localize": "^0.12.1",
