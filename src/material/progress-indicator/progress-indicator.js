@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { calcPercentage } from "../functions/functions.js";
+
 /**
  * Custom component for rendering progress indicators.
  * @element md-progress-indicator
@@ -18,11 +19,13 @@ class MDProgressIndicatorComponent extends MDComponent {
         value: { type: Number },
         max: { type: Number },
     };
+
     /**
      * Array of supported variants for the progress indicator.
      * @type {Array<String>}
      */
     variants = ["circular", "linear"];
+
     /**
      * Initializes the component.
      * Sets the default maximum value for the progress indicator.
@@ -91,7 +94,6 @@ class MDProgressIndicatorComponent extends MDComponent {
                 this.classList.toggle(`md-progress-indicator--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("value")) {
             const percentage = calcPercentage(0, this.max, this.value);
             this.style.setProperty("--md-comp-progress-indicator-percentage", percentage + "%");

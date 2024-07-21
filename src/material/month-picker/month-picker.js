@@ -1,6 +1,7 @@
 import { parseMonth, stringifyMonth } from "../functions/functions.js";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
+
 /**
  * Custom month picker component that extends MDDatetimePickerComponent.
  * @element md-month-picker
@@ -26,9 +27,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             label = stringifyMonth(this.selection);
         }
-
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
+
     /**
      * Returns child nodes for rendering in the component.
      * @returns {TemplateResult[]} Array of Lit HTML template results.
@@ -102,9 +103,9 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.index = 0;
         }
-
         this.emit("onMonthPickerButtonLabelClick", event);
     }
+
     /**
      * Handles click event on the previous button in the card.
      * Updates the selection and emits events.
@@ -117,11 +118,11 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() - 1);
         }
-
         this.requestUpdate();
         this.emit("onMonthPickerSelection", event);
         this.emit("onMonthPickerIconButtonPrevClick", event);
     }
+
     /**
      * Handles click event on the next button in the card.
      * Updates the selection and emits events.
@@ -134,11 +135,11 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.selection.setFullYear(this.selection.getFullYear() + 1);
         }
-
         this.requestUpdate();
         this.emit("onMonthPickerSelection", event);
         this.emit("onMonthPickerIconButtonNextClick", event);
     }
+
     /**
      * Handles click event on a year item in the picker.
      * Updates the selection year and emits events.

@@ -47,27 +47,9 @@ class DevDataTable extends MDComponent {
         return html`
             <div class="md-layout-border">
                 <div class="md-layout-border__item md-layout-border__item--center">
-                    <div
-                        style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:24px;"
-                        class="md-layout-column"
-                    >
-                        <div
-                            style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:0;"
-                            class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"
-                        >
-                            <md-data-table
-                                .columns="${this.columns}"
-                                .rows="${this.rows}"
-                                .footer="${this.footer}"
-                                stickyHeader
-                                stickyFooter
-                                checkboxSelection
-                                stickyCheckboxSelection
-                                rangeSelection
-                                multiSelection
-                                singleSelection
-                                allSelection
-                            ></md-data-table>
+                    <div style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:24px;" class="md-layout-column">
+                        <div style="margin:0;min-width:0;min-height:0;width:100%;height:100%;padding:0;" class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
+                            <md-data-table .columns="${this.columns}" .rows="${this.rows}" .footer="${this.footer}" stickyHeader stickyFooter checkboxSelection stickyCheckboxSelection rangeSelection multiSelection singleSelection allSelection></md-data-table>
                         </div>
                     </div>
                 </div>

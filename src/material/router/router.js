@@ -12,6 +12,7 @@ class MDRouter {
     static route;
     static routes;
     static _historyApiFallback = true;
+
     /**
      * Sets up routes recursively with parent-child relationships.
      * @private
@@ -27,10 +28,10 @@ class MDRouter {
             if (curr.children?.length) {
                 acc.push(...this.setRoutes(curr.children, curr));
             }
-
             return acc;
         }, []);
     }
+
     /**
      * Retrieves the current path based on history API or hash routing.
      * @returns {string} - The current path.
@@ -42,6 +43,7 @@ class MDRouter {
             return window.location.hash.replace(/^#/, "").replace(/\?.*$/, "") || "/";
         }
     }
+
     /**
      * Retrieves query parameters from the current URL.
      * @returns {Object} - The query parameters as key-value pairs.
@@ -53,9 +55,7 @@ class MDRouter {
         } else {
             search = window.location.hash.replace(/^#/, "").match(/(\?.*)$/)?.[1] || "";
         }
-
         const query = {};
-
         for (const [name, value] of new URLSearchParams(search).entries()) {
             if (query[name]) {
                 if (Array.isArray(query[name])) {
@@ -69,6 +69,7 @@ class MDRouter {
         }
         return query;
     }
+
     /**
      * Retrieves a route object that matches the given path.
      * @private
@@ -84,10 +85,10 @@ class MDRouter {
                 this.params = { ...matches.groups };
                 return true;
             }
-
             return false;
         });
     }
+
     /**
      * Retrieves all routes leading up to the specified route, including parent routes.
      * @private
@@ -99,11 +100,11 @@ class MDRouter {
             if (curr.parent) {
                 acc.push(...this.getRoutes(curr.parent));
             }
-
             acc.push(curr);
             return acc;
         }, []);
     }
+
     /**
      * Retrieves the outlet element where route components are rendered.
      * @private
@@ -121,19 +122,16 @@ class MDRouter {
                 target = document.body;
                 selector = `md-outlet[name="${route.outlet}"]`;
             }
-
             const callback = () => {
                 outlet = target.querySelector(selector);
                 if (outlet) {
                     if (observer) {
                         observer.disconnect();
                     }
-
                     resolve(outlet);
                 }
             };
             callback();
-
             if (!outlet) {
                 observer = new MutationObserver(callback);
                 observer.observe(target, {
@@ -143,6 +141,7 @@ class MDRouter {
             }
         });
     }
+
     /**
      * Retrieves route parameters from the current route.
      * @returns {Object} - The route parameters as key-value pairs.
@@ -174,11 +173,9 @@ class MDRouter {
         if (this.controller && !this.controller.signal.aborted) {
             this.controller.abort();
         }
-
         if (!this.controller || (this.controller && this.controller.signal.aborted)) {
             this.controller = new AbortController();
         }
-
         for (const route of this.routes) {
             this.emit("onRouterNavigate", event);
             performance.mark("markRouterNavigate");
@@ -202,21 +199,16 @@ class MDRouter {
                     throw error;
                 }
             }
-
             if (!route.component) {
                 route.component = await route.load();
             }
-
             const container = route.parent?.component ?? document.body;
             const outlet = await this.getOutlet(container, route);
-
             if (!route.component.isConnected) {
                 route.component.isComponent = true;
                 outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
             }
-
             const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
-
             for (const outlet of outlets) {
                 let nextElement = outlet.nextElementSibling;
                 while (nextElement) {
@@ -225,7 +217,6 @@ class MDRouter {
                     if (unusedComponent && unusedOutlet) {
                         nextElement.remove();
                     }
-
                     nextElement = nextElement.nextElementSibling;
                 }
             }
@@ -239,6 +230,7 @@ class MDRouter {
         performance.clearMarks("markRouterNavigateSuccess");
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
+
     /**
      * Navigates to a specified URL using history API or hash routing.
      * @param {string} url - The URL to navigate to.
@@ -250,6 +242,7 @@ class MDRouter {
             window.location.hash = url;
         }
     }
+
     /**
      * Handles click events on elements with a `routerLink` attribute to navigate.
      * @private
@@ -262,6 +255,7 @@ class MDRouter {
             this.navigate(url);
         }
     }
+
     /**
      * Initializes the router with the specified routes and sets up event listeners.
      * @param {Array} routes - The array of route objects to initialize the router with.
@@ -280,10 +274,10 @@ class MDRouter {
         } else {
             window.addEventListener("hashchange", this.handleLoad);
         }
-
         this.handleClick = this.handleClick.bind(this);
         window.addEventListener("click", this.handleClick);
     }
+
     /**
      * Retrieves the flag indicating if history API fallback is used.
      * @returns {boolean} - The flag indicating if history API fallback is used.

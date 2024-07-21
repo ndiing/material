@@ -8,26 +8,7 @@ class DevListItem extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list-item
-                                avatar="https://api.dicebear.com/9.x/micah/svg?seed=Abby"
-                                thumbnail="https://api.dicebear.com/9.x/micah/svg?seed=Abby"
-                                video=""
-                                icon="image"
-                                label="label"
-                                subLabel="subLabel"
-                                badge=""
-                                text=""
-                                leadingCheckbox
-                                leadingRadioButton
-                                leadingSwitch
-                                trailingCheckbox
-                                trailingRadioButton
-                                trailingSwitch
-                                selected
-                                routerLink=""
-                                activated
-                                @onListItemSelected="${console.log}"
-                            ></md-list-item>
+                            <md-list-item avatar="https://api.dicebear.com/9.x/micah/svg?seed=Abby" thumbnail="https://api.dicebear.com/9.x/micah/svg?seed=Abby" video="" icon="image" label="label" subLabel="subLabel" badge="" text="" leadingCheckbox leadingRadioButton leadingSwitch trailingCheckbox trailingRadioButton trailingSwitch selected routerLink="" activated @onListItemSelected="${console.log}"></md-list-item>
                         </div>
                     </div>
                 </div>

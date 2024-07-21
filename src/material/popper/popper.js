@@ -1,4 +1,5 @@
 import { getBoundary } from "../functions/functions";
+
 /**
  * A controller for managing popper elements positioning.
  */
@@ -40,13 +41,13 @@ class MDPopperController {
         } else {
             ({ width, height, left, top, right, bottom } = element.getBoundingClientRect());
         }
-
         left -= absoluteRect.left;
         top -= absoluteRect.top;
         right = left + width;
         bottom = top + height;
         return { width, height, left, top, right, bottom };
     }
+
     /**
      * Gets the absolute rectangle boundaries of a container.
      * @private
@@ -82,21 +83,18 @@ class MDPopperController {
         if (left < boundaryRect.left) {
             left = Math.max(left, boundaryRect.left);
         }
-
         if (top < boundaryRect.top) {
             top = Math.max(top, boundaryRect.top);
         }
-
         if (right > boundaryRect.right) {
             left = Math.min(right - containerRect.width, boundaryRect.right - containerRect.width);
         }
-
         if (bottom > boundaryRect.bottom) {
             top = Math.min(bottom - containerRect.height, boundaryRect.bottom - containerRect.height);
         }
-
         return { left, top };
     }
+
     /**
      * Sets the position of the popper element relative to the button and container.
      * @param {HTMLElement} button - The button element that triggers the popper.

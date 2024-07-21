@@ -2,6 +2,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { MDComponent } from "../component/component.js";
 import { marked } from "marked";
 import { html, nothing } from "lit";
+
 /**
  * A custom element for rendering Markdown content.
  * @element md-markdown
@@ -17,6 +18,7 @@ class MDMarkdownComponent extends MDComponent {
         href: { type: String },
         text: { type: String },
     };
+
     /**
      * Creates an instance of MDMarkdownComponent.
      */

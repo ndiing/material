@@ -8,6 +8,7 @@ let totalDuration = 10000;
 let isAnimating = false;
 let elapsedTime = 0;
 let progressBar;
+
 /**
  * Creates a new progress indicator element and appends it to the document body.
  */
@@ -43,7 +44,6 @@ function observe(resolve) {
     if (progressBar) {
         progressBar.setAttribute("value", elapsedTime);
     }
-
     if (elapsedTime < totalDuration) {
         requestId = requestAnimationFrame(() => observe(resolve));
     } else {
@@ -53,6 +53,7 @@ function observe(resolve) {
         }
     }
 }
+
 /**
  * Starts the progress animation with a specified duration.
  * @param {number} duration - Duration of the animation in milliseconds.
@@ -63,13 +64,11 @@ function start(duration = 10000) {
         if (!progressBar) {
             create();
         }
-
         if (isAnimating) {
             totalDuration += duration;
             resolve();
             return;
         }
-
         totalDuration = duration;
         isAnimating = true;
         startTime = performance.now() - pausedTime;
@@ -77,6 +76,7 @@ function start(duration = 10000) {
         observe(resolve);
     });
 }
+
 /**
  * Pauses the current animation.
  */
@@ -87,6 +87,7 @@ function pause() {
         isAnimating = false;
     }
 }
+
 /**
  * Resumes a paused animation.
  */
@@ -97,6 +98,7 @@ function resume() {
         observe();
     }
 }
+
 /**
  * Stops the current animation and resets the progress indicator.
  */
@@ -105,7 +107,6 @@ function stop() {
         if (progressBar) {
             progressBar.setAttribute("value", totalDuration);
         }
-
         cancelAnimationFrame(requestId);
         reset();
     }

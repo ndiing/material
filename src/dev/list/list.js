@@ -8,7 +8,6 @@ class DevList extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -28,7 +27,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -52,7 +50,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -72,7 +69,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -92,7 +88,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -112,7 +107,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -132,7 +126,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -152,7 +145,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingCheckbox: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -172,7 +164,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     //
@@ -193,7 +184,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -213,7 +203,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { leadingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -233,7 +222,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { leadingCheckbox: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -253,7 +241,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { leadingRadioButton: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -273,7 +260,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { leadingRadioButton: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -293,7 +279,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingSwitch: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
@@ -313,7 +298,6 @@ class DevList extends MDComponent {
                             ></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-list
                                 .list="${[
                                     { trailingSwitch: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },

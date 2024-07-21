@@ -8,7 +8,6 @@ class DevTabs extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-tabs
                                 variant="primary"
                                 .list="${[
@@ -20,15 +19,10 @@ class DevTabs extends MDComponent {
                             ></md-tabs>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-tabs
-                                variant="primary"
-                                .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
-                            ></md-tabs>
+                            <md-tabs variant="primary" .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"></md-tabs>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-tabs
                                 variant="secondary"
                                 .list="${[
@@ -40,11 +34,7 @@ class DevTabs extends MDComponent {
                             ></md-tabs>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-tabs
-                                variant="secondary"
-                                .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
-                            ></md-tabs>
+                            <md-tabs variant="secondary" .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"></md-tabs>
                         </div>
                     </div>
                 </div>

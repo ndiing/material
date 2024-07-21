@@ -1,5 +1,6 @@
 import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
+
 /**
  * Represents a base component class.
  * @extends LitElement
@@ -8,6 +9,7 @@ class MDComponent extends LitElement {
     static properties = {
         tooltip: { type: String },
     };
+
     /**
      * Initializes the component.
      */
@@ -23,19 +25,16 @@ class MDComponent extends LitElement {
     createRenderRoot() {
         return this;
     }
-
     connectedCallback() {
         super.connectedCallback();
         this.on("pointerenter", this.handlePointerenter);
         this.on("pointerleave", this.handlePointerleave);
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
         this.off("pointerenter", this.handlePointerenter);
         this.off("pointerleave", this.handlePointerleave);
     }
-
     updated(changedProperties) {
         super.updated(changedProperties);
         // if(changedProperties.has('tooltip')){
@@ -44,10 +43,8 @@ class MDComponent extends LitElement {
         //     }else{
         //         console.log(this.tooltip)
         //     }
-
         // }
     }
-
     async handlePointerenter(event) {
         if (this.tooltip && !this.tooltipElement) {
             this.tooltipElement = document.createElement("md-tooltip");
@@ -58,13 +55,13 @@ class MDComponent extends LitElement {
             this.tooltipElement.show(this);
         }
     }
-
     handlePointerleave(event) {
         if (this.tooltip && this.tooltipElement) {
             this.tooltipElement.remove();
             this.tooltipElement = null;
         }
     }
+
     /**
      * Attaches an event listener that is bound to the component instance.
      * @param {String} type - The type of event to listen for.

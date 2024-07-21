@@ -23,57 +23,23 @@ class DevSegmentedButton extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-segmented-button
-                                .buttons="${buttons}"
-                                singleSelection
-                                @onSegmentedButtonItemClick="${console.log}"
-                            ></md-segmented-button>
+                            <md-segmented-button .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-segmented-button
-                                .buttons="${buttons2}"
-                                multiSelection
-                                @onSegmentedButtonItemClick="${console.log}"
-                            ></md-segmented-button>
+                            <md-segmented-button .buttons="${buttons2}" multiSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-segmented-button
-                                style="--md-comp-segmented-button-density:0;"
-                                .buttons="${buttons}"
-                                singleSelection
-                                @onSegmentedButtonItemClick="${console.log}"
-                            ></md-segmented-button>
+                            <md-segmented-button style="--md-comp-segmented-button-density:0;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-segmented-button
-                                style="--md-comp-segmented-button-density:-1;"
-                                .buttons="${buttons}"
-                                singleSelection
-                                @onSegmentedButtonItemClick="${console.log}"
-                            ></md-segmented-button>
+                            <md-segmented-button style="--md-comp-segmented-button-density:-1;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-segmented-button
-                                style="--md-comp-segmented-button-density:-2;"
-                                .buttons="${buttons}"
-                                singleSelection
-                                @onSegmentedButtonItemClick="${console.log}"
-                            ></md-segmented-button>
+                            <md-segmented-button style="--md-comp-segmented-button-density:-2;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
-                            <md-segmented-button
-                                style="--md-comp-segmented-button-density:-3;"
-                                .buttons="${buttons}"
-                                singleSelection
-                                @onSegmentedButtonItemClick="${console.log}"
-                            ></md-segmented-button>
+                            <md-segmented-button style="--md-comp-segmented-button-density:-3;" .buttons="${buttons}" singleSelection @onSegmentedButtonItemClick="${console.log}"></md-segmented-button>
                         </div>
                     </div>
                 </div>

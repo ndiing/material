@@ -1,16 +1,16 @@
 import { MDComponent } from "../component/component.js";
+
 /**
  * A custom element for displaying icons.
  * @element md-icon
  * @extends MDComponent
  */
 class MDIconComponent extends MDComponent {
-    static properties={
-        icon:{type:String},
-    }
-
-    render(){
-        return this.icon
+    static properties = {
+        icon: { type: String },
+    };
+    render() {
+        return this.icon;
     }
 
     /**

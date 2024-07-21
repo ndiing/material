@@ -1,6 +1,7 @@
 import { parseWeek, stringifyWeek, stringifyYear } from "../functions/functions.js";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
+
 /**
  * Custom component for selecting a week.
  * @element md-week-picker
@@ -28,9 +29,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
                 label: this.weekdayFormat(date),
             });
         }
-
         return rows;
     }
+
     /**
      * Retrieves the days for display.
      * @returns {Array} Array containing day objects for the week grid.
@@ -56,12 +57,12 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
                     label: this.dayFormat(date),
                 });
             }
-
             column.children = children;
             rows.push(column);
         }
         return rows;
     }
+
     /**
      * Retrieves the child nodes to render.
      * @returns {Array} Array containing HTML templates for child nodes.
@@ -98,9 +99,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             label = stringifyWeek(this.selection);
         }
-
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
+
     /**
      * @private
      */
@@ -114,7 +115,6 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
                             <div class="md-datetime-picker__grid-label">${item.label}</div>
                         </div>    
                     `)}
-
                 </div>
                 ${this.days.map(row=>html`
                     <div class="md-datetime-picker__grid-row md-datetime-picker__grid-row--days" ?activated="${row.activated}" ?selected="${row.selected}" .data="${row}" @click="${this.handleDatetimePickerDayItemClick}">
@@ -128,6 +128,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
             </div>
         `;
     }
+
     /**
      * Invoked when the component is added to the document's DOM.
      * Adds necessary classes to the component.
@@ -173,9 +174,9 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             this.index = 1;
         }
-
         this.emit("onWeekPickerButtonLabelClick", event);
     }
+
     /**
      * Handles click events on the previous button of the card.
      * Adjusts the selection based on the current index.
@@ -190,11 +191,11 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             this.selection.setMonth(this.selection.getMonth() - 1);
         }
-
         this.requestUpdate();
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerIconButtonPrevClick", event);
     }
+
     /**
      * Handles click events on the next button of the card.
      * Adjusts the selection based on the current index.
@@ -209,11 +210,11 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 2) {
             this.selection.setMonth(this.selection.getMonth() + 1);
         }
-
         this.requestUpdate();
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerIconButtonNextClick", event);
     }
+
     /**
      * Handles click events on a year item in the date picker.
      * Updates the selection to the clicked year and switches focus.

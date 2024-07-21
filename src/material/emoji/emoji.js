@@ -1,5 +1,4 @@
 import { MDComponent } from "../component/component.js";
-
 function emojiToHexadecimal(emoji) {
     const codePoint = emoji.codePointAt(0);
     const hexString = codePoint.toString(16);
@@ -13,22 +12,18 @@ function emojiToHexadecimal(emoji) {
  * @extends MDComponent
  */
 class MDEmojiComponent extends MDComponent {
-    static properties={
-        emoji:{type:String}
-    }
-
+    static properties = {
+        emoji: { type: String },
+    };
     get webp() {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/512.webp`;
     }
-
     get svg() {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
     }
-
-    render(){
-        return this.emoji
+    render() {
+        return this.emoji;
     }
-
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-emoji");

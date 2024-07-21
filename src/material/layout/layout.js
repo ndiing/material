@@ -1,14 +1,11 @@
 import { MDComponent } from "../component/component.js";
-
 class MDLayoutComponent extends MDComponent {
     static properties = {
         variant: { type: String },
     };
-
     connectedCallback() {
         super.connectedCallback();
     }
-
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {

@@ -1,4 +1,5 @@
 import { MDTreeComponent } from "../tree/tree.js";
+
 /**
  * Custom component for managing tabs with indicators.
  * @element md-tabs
@@ -20,6 +21,7 @@ class MDTabsComponent extends MDTreeComponent {
      * Available variants for the tabs component.
      */
     variants = ["primary", "secondary"];
+
     /**
      * Callback when the component is connected to the DOM.
      * Adds necessary classes to style the component.
@@ -46,7 +48,6 @@ class MDTabsComponent extends MDTreeComponent {
             width = treeInner.clientWidth;
             left += treeInner.offsetLeft;
         }
-
         let right = this.scrollWidth - (left + width);
         this.currentSelectedIndex = this.list.indexOf(treeItem.data);
         const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";

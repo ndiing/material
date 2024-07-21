@@ -6,6 +6,7 @@ import { MDVirtualController } from "../virtual/virtual.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDListComponent } from "../list/list.js";
 import { createRef, ref } from "lit/directives/ref.js";
+
 /**
  * Menu component that extends MDSheetComponent to provide additional functionalities for displaying and managing menu items.
  * @element md-menu
@@ -31,6 +32,7 @@ class MDMenuComponent extends MDSheetComponent {
         maxRows: { type: Number },
     };
     menuList = createRef();
+
     /**
      * Gets the child nodes for the menu component.
      * @returns {Array} - Template result containing the virtual scroll and list elements.
@@ -49,7 +51,6 @@ class MDMenuComponent extends MDSheetComponent {
                         .list="${ifDefined(this.virtualList)}"
                         .map="${ifDefined(this.map)}"
                         ${ref(this.menuList)}
-
                         @onListItemClick="${this.handleMenuListItemClick}"
                         @onListItemSelected="${this.handleMenuListItemSelected}"
                     ></md-list>
@@ -57,6 +58,7 @@ class MDMenuComponent extends MDSheetComponent {
             </div>
         `];
     }
+
     /**
      * Sets the child nodes for the menu component.
      * @param {Array} value - Template result to set as child nodes.
@@ -111,6 +113,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.updateVirtual();
         }
     }
+
     /**
      * Updates the store with the current list and applies filters.
      * @private
@@ -137,6 +140,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.virtual.handleVirtualScroll();
         }
     }
+
     /**
      * Shows the menu as a modal.
      * @param {HTMLElement} button - The button that triggers the menu.
@@ -157,9 +161,7 @@ class MDMenuComponent extends MDSheetComponent {
         if (this.activatedIndex === -1) {
             this.activatedIndex = 0;
         }
-
         this.activate(0);
-
         const handleKeydown = (event) => {
             if (event.key === "ArrowUp") {
                 event.preventDefault();
@@ -176,7 +178,6 @@ class MDMenuComponent extends MDSheetComponent {
         };
         let activeElement = document.activeElement;
         activeElement.addEventListener("keydown", handleKeydown);
-
         const handleSheetClose = () => {
             activeElement.removeEventListener("keydown", handleKeydown);
             this.removeEventListener("onSheetClose", handleSheetClose);
@@ -223,6 +224,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.updatePosition();
         }
     }
+
     /**
      * Selects a menu item.
      * @param {Object} data - The data of the menu item to select.
@@ -251,6 +253,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.viewport.scrollTop = (this.activatedIndex - delta) * this.rowHeight;
         this.virtual.handleVirtualScroll();
     }
+
     /**
      * Handles the virtual scroll event for the menu viewport.
      * @param {Event} event - The virtual scroll event.
@@ -267,6 +270,7 @@ class MDMenuComponent extends MDSheetComponent {
             });
         }
     }
+
     /**
      * Handles the click event on a menu list item.
      * @param {Event} event - The click event.

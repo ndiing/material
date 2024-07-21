@@ -1,4 +1,5 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
+
 /**
  * Custom component for number input fields.
  * @element md-number-field
@@ -21,6 +22,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
      * @param {Array<Object>} value - New value for actions.
      */
     set actions(value) {}
+
     /**
      * Initializes the number field component.
      * Sets the type of the input field to "number".
@@ -62,7 +64,6 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         } else if (name === "add") {
             this.textFieldNative.value.stepUp();
         }
-
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
     }
 }

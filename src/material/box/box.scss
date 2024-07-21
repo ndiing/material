@@ -1,15 +1,11 @@
-
 .md-box {
-    display: flex;
-    background-color: var(--md-sys-color-surface-container-lowest);
-    color: var(--md-sys-color-on-surface-variant);    
-}
-.md-box__container {
-    flex: 1;
-    display: flex;
+    display: inline-flex;
+    vertical-align: middle;
     align-items: center;
     padding: 8px 16px;
     gap: 0 16px;
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface-variant);
 }
 // .md-box__icon-button{}
 .md-box__section {
@@ -63,11 +59,9 @@
 }
 .md-box--three-line {
     min-height: 88px;
-    .md-box__inner {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        align-items: flex-start;
-    }
+    padding-top: 12px;
+    padding-bottom: 12px;
+    align-items: flex-start;
     .md-box__video {
         margin-top: 0;
         margin-bottom: 0;

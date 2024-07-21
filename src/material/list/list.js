@@ -1,5 +1,6 @@
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
+
 /**
  * List component for managing lists with selectable items.
  * @element md-list
@@ -33,6 +34,7 @@ class MDListComponent extends MDComponent {
         singleSelection: { type: Boolean },
         allSelection: { type: Boolean },
     };
+
     /**
      * Initializes MDListComponent with default values.
      */
@@ -112,7 +114,6 @@ class MDListComponent extends MDComponent {
         if (this.swapIndex) {
             [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
         }
-
         this.list.forEach((item, i) => {
             item.selected = i >= this.startIndex && i <= this.endIndex;
         });
@@ -120,6 +121,7 @@ class MDListComponent extends MDComponent {
             [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
         }
     }
+
     /**
      * Selects all items in the list.
      */
@@ -138,9 +140,7 @@ class MDListComponent extends MDComponent {
         if (event.target.closest(".md-list__checkbox," + ".md-list__radio-button," + ".md-list__switch")) {
             return;
         }
-
         const data = event.currentTarget.data;
-
         if (this.rangeSelection && event.shiftKey) {
             this.selectRange(data);
         } else if (this.multiSelection && event.ctrlKey) {
@@ -148,10 +148,10 @@ class MDListComponent extends MDComponent {
         } else if (this.singleSelection) {
             this.select(data);
         }
-
         this.requestUpdate();
         this.emit("onListItemClick", event);
     }
+
     /**
      * Handles keydown events within the list.
      * @private
@@ -163,9 +163,9 @@ class MDListComponent extends MDComponent {
             this.selectAll();
             this.requestUpdate();
         }
-
         this.emit("onListKeydown", event);
     }
+
     /**
      * Handles native input events on list item checkboxes.
      * @private

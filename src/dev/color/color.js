@@ -9,7 +9,6 @@ class DevColor extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-color-field
                                 @onTextFieldNativeInput="${(event) => {
                                     setTheme(event.detail.currentTarget.value);
@@ -17,7 +16,6 @@ class DevColor extends MDComponent {
                             ></md-color-field>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            
                             <md-text-field
                                 type="file"
                                 @onTextFieldNativeInput="${(event) => {

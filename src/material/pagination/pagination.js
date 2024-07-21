@@ -1,5 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
+
 /**
  * Represents a pagination component.
  * @element md-pagination
@@ -37,6 +38,7 @@ class MDPaginationComponent extends MDComponent {
         nextPage: { type: Boolean },
         lastPage: { type: Boolean },
     };
+
     /**
      * Calculates the total number of pages based on total items and limit.
      * @returns {Number} The total number of pages.
@@ -120,7 +122,6 @@ class MDPaginationComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.label ? html`<div class="md-pagination__label">${this.label}</div>` : nothing}
-
             ${this.options?.length ? html`
                 <md-select-field 
                     class="md-pagination__select"
@@ -137,6 +138,7 @@ class MDPaginationComponent extends MDComponent {
             ${this.lastPage ? html`<md-icon-button class="md-pagination__icon-button" .disabled="${this.pages === 0 || this.page === this.pages}" .icon="${"last_page"}" @click="${this.handlePaginationLastClick}"></md-icon-button>` : nothing}
         `;
     }
+
     /**
      * Initializes the component when connected to the DOM.
      * @private
@@ -157,14 +159,13 @@ class MDPaginationComponent extends MDComponent {
             await this.updateComplete;
             this.page = 1;
         }
-
         let cache = JSON.stringify([this.total, this.limit, this.page]);
-
         if (this.cache !== cache) {
             this.cache = cache;
             this.emit("onPaginationChange", this);
         }
     }
+
     /**
      * Handles input event when pagination limit changes.
      * @param {Event} event - The input event.

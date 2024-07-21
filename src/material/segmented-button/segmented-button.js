@@ -1,5 +1,6 @@
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
+
 /**
  * Represents a segmented button component that allows single or multiple selection of its items.
  * @element md-segmented-button
@@ -18,6 +19,7 @@ class MDSegmentedButtonComponent extends MDComponent {
         singleSelection: { type: Boolean },
         multiSelection: { type: Boolean },
     };
+
     /**
      * Renders the segmented button component.
      * @private
@@ -26,7 +28,6 @@ class MDSegmentedButtonComponent extends MDComponent {
         /* prettier-ignore */
         return this.buttons.map(item => {
             item.classMap={'md-segmented-button__item':true}
-
             item.component=item.component||'button'
             item.variant=item.variant||'outlined'
             item.icon=item.selected?'check':''
@@ -34,6 +35,7 @@ class MDSegmentedButtonComponent extends MDComponent {
             return renderComponent(item)
         });
     }
+
     /**
      * Enhances connectedCallback to add specific CSS classes for segmented button styling.
      * @private
@@ -57,7 +59,6 @@ class MDSegmentedButtonComponent extends MDComponent {
                     item.selected = item === data;
                 });
             }
-
             this.requestUpdate();
         }
         this.emit("onSegmentedButtonItemClick", event);

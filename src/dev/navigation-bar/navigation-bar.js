@@ -17,28 +17,15 @@ class DevNavigationBar extends MDComponent {
 
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">
-                        <md-navigation-bar
-                            id="navigationBar1"
-                            .list="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
-                        ></md-navigation-bar>
+                        <md-navigation-bar id="navigationBar1" .list="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"></md-navigation-bar>
 
                         <div class="md-layout-border__item md-layout-border__item--center">
                             <div class="md-layout-column">
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                    
-                                    <md-button
-                                        @click="${() => navigationBar0.toggle()}"
-                                        label="toggle navigation bar"
-                                        variant="tonal"
-                                    ></md-button>
+                                    <md-button @click="${() => navigationBar0.toggle()}" label="toggle navigation bar" variant="tonal"></md-button>
                                 </div>
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                    
-                                    <md-button
-                                        @click="${() => navigationBar1.toggle()}"
-                                        label="toggle navigation bar"
-                                        variant="tonal"
-                                    ></md-button>
+                                    <md-button @click="${() => navigationBar1.toggle()}" label="toggle navigation bar" variant="tonal"></md-button>
                                 </div>
                             </div>
                         </div>

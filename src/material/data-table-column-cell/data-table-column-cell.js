@@ -10,7 +10,6 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
             resize: ["e"],
         });
     }
-
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("reorderable")) {
@@ -20,7 +19,6 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
                 this.gesture.options.drag = [];
             }
         }
-
         if (changedProperties.has("resizable")) {
             if (this.resizable) {
                 this.gesture.options.resize = ["e"];

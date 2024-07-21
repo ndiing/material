@@ -1,5 +1,6 @@
 import { createQueue } from "../functions/functions.js";
 import { MDSheetComponent } from "../sheet/sheet.js";
+
 /**
  * Represents a snackbar component for displaying temporary messages.
  * @element md-snackbar
@@ -14,10 +15,12 @@ class MDSnackbarComponent extends MDSheetComponent {
     static properties = {
         ...MDSheetComponent.properties,
     };
+
     /**
      * Queue for managing sequential showing of snackbar instances.
      */
     static queue = createQueue();
+
     /**
      * Enhances connectedCallback to add specific CSS classes for snackbar styling.
      * @private
@@ -49,6 +52,7 @@ class MDSnackbarComponent extends MDSheetComponent {
             });
         });
     }
+
     /**
      * Closes the snackbar.
      */

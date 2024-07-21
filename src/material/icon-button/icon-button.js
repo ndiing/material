@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
+
 /**
  * A custom element for creating icon buttons with various styles and ripple effects.
  * @element md-icon-button
@@ -23,6 +24,7 @@ class MDIconButtonComponent extends MDComponent {
         name: { type: String, reflect: true },
     };
     variants = ["filled", "tonal", "outlined", "toggle"];
+
     /**
      * Creates an instance of MDIconButtonComponent.
      */
@@ -79,7 +81,6 @@ class MDIconButtonComponent extends MDComponent {
                 this.classList.toggle(`md-icon-button--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("disabled")) {
             if (this.disabled) {
                 this.setAttribute("aria-disabled", "true");
@@ -90,6 +91,7 @@ class MDIconButtonComponent extends MDComponent {
             }
         }
     }
+
     /**
      * Handles the click event on the icon button.
      * Toggles the selected state for toggle buttons and emits a custom event.
@@ -100,7 +102,6 @@ class MDIconButtonComponent extends MDComponent {
         if (this.variant && this.variant.includes("toggle")) {
             this.selected = !this.selected;
         }
-
         this.emit("onIconButtonClick", event);
     }
 }

@@ -4,7 +4,6 @@
 class MDAttributeObserver {
     /**
      * Creates an instance of MDAttributeObserver.
-
      * @param {Function} [callback=() => {}] - The callback function to execute when attribute changes are detected.
      */
     constructor(callback = () => {}) {

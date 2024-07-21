@@ -275,18 +275,16 @@ function parseWeek(weekStr) {
     if (parts.length !== 2 || parts[1].length !== 2) {
         throw new Error("Invalid week format. Should be in YYYY-WW format.");
     }
-
     let year = parseInt(parts[0], 10);
     let week = parseInt(parts[1], 10);
-
     if (isNaN(year) || isNaN(week) || week < 1 || week > 53) {
         throw new Error("Invalid year or week number.");
     }
-
     let jan4 = new Date(year, 0, 4);
     let startOfWeek = new Date(jan4.setDate(jan4.getDate() - ((jan4.getDay() + 6) % 7) + (week - 1) * 7));
     return startOfWeek;
 }
+
 /**
  * Converts a `hexadecimal` color string `to` an `RGBA` object.
  * @param {string} hex - The hexadecimal color string to convert.
@@ -337,6 +335,7 @@ function hexToHsla(hex) {
     }
     return { hue: Math.round(hue), saturation, lightness, red, green, blue, alpha };
 }
+
 /**
  * Converts `HSLA` values `to` `RGBA` values.
  * @param {number} h - The hue value (0-360).
@@ -375,12 +374,12 @@ function hslaToRgba(h, s, l, a = 1) {
         r = chroma;
         b = x;
     }
-
     r = Math.round((r + m) * 255);
     g = Math.round((g + m) * 255);
     b = Math.round((b + m) * 255);
     return { red: r, green: g, blue: b, alpha: a };
 }
+
 /**
  * Converts `RGBA` values `to` a `hexadecimal` color string.
  * @param {number} r - The red value (0-255).
@@ -451,6 +450,7 @@ function rgbaToHsla(r, g, b, a = 1) {
     }
     return { hue: Math.round(hue), saturation, lightness, alpha: a };
 }
+
 /**
  * Checks if a string is a valid `hexadecimal` color.
  * @param {string} color - The color string to validate.
@@ -526,25 +526,20 @@ function createQueue() {
         } finally {
             result = callback();
         }
-
         return result;
     };
-
     return (callback = () => {}) => (pending = execute(callback));
 }
-
 Date.prototype.setWeek = function (week) {
     if (typeof week !== "number" || week < 1 || week > 53) {
         throw new Error("Invalid week number. Week number should be between 1 and 53.");
     }
-
     let jan4 = new Date(this.getFullYear(), 0, 4);
     let jan4Day = (jan4.getDay() + 6) % 7;
     let startOfWeek1 = new Date(jan4.getFullYear(), 0, 4 - jan4Day);
     this.setTime(startOfWeek1.getTime() + (week - 1) * 7 * 86400000);
     return this;
 };
-
 Date.prototype.getWeek = function () {
     let tempDate = new Date(this.getTime());
     tempDate.setHours(0, 0, 0, 0);
@@ -552,6 +547,7 @@ Date.prototype.getWeek = function () {
     let week1 = new Date(tempDate.getFullYear(), 0, 4);
     return 1 + Math.round(((tempDate - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
 };
+
 /**
  * Get the boundary element for the popper.
  * @param {HTMLElement} element - The element to get the boundary for.
@@ -568,15 +564,12 @@ function getBoundary(element) {
         if (relative) {
             relativeElement = boundary;
         }
-
         if (auto) {
             scrollableElement = boundary;
         }
-
         if (scrollableElement && relativeElement) {
             break;
         }
-
         boundary = boundary.parentElement;
     }
     return boundary || scrollableElement || document.body;

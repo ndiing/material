@@ -1,5 +1,6 @@
 import { argbFromHex, themeFromSourceColor, applyTheme, themeFromImage } from "@material/material-color-utilities";
 import { isValidHexColor, toCamelCase } from "../functions/functions.js";
+
 /**
  * Sets the theme of the application based on a color or image.
  * @param {string} colorOrImage - Hexadecimal color or URL of an image.
@@ -20,7 +21,6 @@ async function setTheme(colorOrImage, customColors) {
     } else {
         theme = await themeFromImage(colorOrImage, customColors);
     }
-
     theme.schemes.dark.props.surfaceDim = theme.palettes.neutral.tone(6);
     theme.schemes.dark.props.surfaceBright = theme.palettes.neutral.tone(24);
     theme.schemes.dark.props.surfaceContainerLowest = theme.palettes.neutral.tone(4);
@@ -35,7 +35,6 @@ async function setTheme(colorOrImage, customColors) {
     theme.schemes.light.props.surfaceContainer = theme.palettes.neutral.tone(94);
     theme.schemes.light.props.surfaceContainerHigh = theme.palettes.neutral.tone(92);
     theme.schemes.light.props.surfaceContainerHighest = theme.palettes.neutral.tone(90);
-
     theme.customColors.forEach((customColor) => {
         theme.schemes.dark.props[toCamelCase(customColor.color.name)] = customColor.dark.color;
         theme.schemes.dark.props[toCamelCase(`on-${customColor.color.name}`)] = customColor.dark.onColor;
@@ -49,5 +48,4 @@ async function setTheme(colorOrImage, customColors) {
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     applyTheme(theme, { target: document.body, dark: systemDark });
 }
-
 export { setTheme };

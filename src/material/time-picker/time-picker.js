@@ -1,6 +1,7 @@
 import { parseTime, stringifyTime } from "../functions/functions.js";
 import { MDDatetimePickerComponent } from "../datetime-picker/datetime-picker.js";
 import { html } from "lit";
+
 /**
  * Custom time picker component for selecting hours and minutes.
  * @element md-time-picker
@@ -47,9 +48,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             label = stringifyTime(this.selection);
         }
-
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
+
     /**
      * Initializes the component with default index.
      */
@@ -99,9 +100,9 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             this.index = 0;
         }
-
         this.emit("onTimePickerButtonLabelClick", event);
     }
+
     /**
      * Handles click on the previous button in the time picker.
      * @param {Event} event - The click event object.
@@ -115,11 +116,11 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
             this.selection.setMinutes(this.selection.getMinutes() - 1);
             this.selected.setMinutes(this.selection.getMinutes());
         }
-
         this.requestUpdate();
         this.emit("onTimePickerSelection", event);
         this.emit("onTimePickerIconButtonPrevClick", event);
     }
+
     /**
      * Handles click on the next button in the time picker.
      * @param {Event} event - The click event object.
@@ -133,11 +134,11 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
             this.selection.setMinutes(this.selection.getMinutes() + 1);
             this.selected.setMinutes(this.selection.getMinutes());
         }
-
         this.requestUpdate();
         this.emit("onTimePickerSelection", event);
         this.emit("onTimePickerIconButtonNextClick", event);
     }
+
     /**
      * Handles click on the hour item in the time picker.
      * @param {Event} event - The click event object.

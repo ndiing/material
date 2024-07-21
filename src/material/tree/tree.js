@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
+
 /**
  * Tree component for displaying hierarchical data with expandable nodes and selection.
  * @element md-tree
@@ -18,6 +19,7 @@ class MDTreeComponent extends MDComponent {
         variant: { type: String },
     };
     variants = ["plain", "accordion", "tree", "level"];
+
     /**
      * Initializes MDTreeComponent with default variant 'tree'.
      */
@@ -40,10 +42,10 @@ class MDTreeComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${renderComponent(item)}
-
             ${item.expanded && item.children?.length ? item.children.map((item) => this.renderTree(item)) : nothing}
         `;
     }
+
     /**
      * Renders the tree component based on the current variant and list.
      * @private
@@ -76,13 +78,13 @@ class MDTreeComponent extends MDComponent {
                 this.classList.toggle(`md-tree--${variant}`, variants.includes(variant));
             });
         }
-
         if (changedProperties.has("list")) {
             await this.updateComplete;
             this.setList(this.list);
             this.requestUpdate();
         }
     }
+
     /**
      * Retrieves a list of children for a given list item.
      * @private
@@ -95,7 +97,6 @@ class MDTreeComponent extends MDComponent {
             if (item.expanded) {
                 children = item.children;
             }
-
             if (item.children?.length) {
                 const children_ = this.getList(item.children);
                 if (children_) {
@@ -105,6 +106,7 @@ class MDTreeComponent extends MDComponent {
         });
         return children;
     }
+
     /**
      * Recursively sets properties on tree items, such as indentation and state.
      * @private
@@ -120,11 +122,9 @@ class MDTreeComponent extends MDComponent {
             if (item.expanded || item.selected) {
                 expanded = true;
             }
-
             if (item.selected) {
                 activated = true;
             }
-
             if (item.children?.length) {
                 if (this.variant === "level") {
                     item.children.unshift({
@@ -133,15 +133,12 @@ class MDTreeComponent extends MDComponent {
                         isParent: true,
                     });
                 }
-
                 item.isNode = true;
                 const { expanded: isExpanded, activated: isActivated } = this.setList(item.children, indent + 1);
-
                 if (isExpanded) {
                     expanded = true;
                     item.expanded = true;
                 }
-
                 if (isActivated) {
                     activated = true;
                     item.activated = true;
@@ -150,6 +147,7 @@ class MDTreeComponent extends MDComponent {
         });
         return { expanded, activated };
     }
+
     /**
      * Selects a tree item and updates its state.
      * @param {Array} list - The hierarchical list of tree items.
@@ -164,7 +162,6 @@ class MDTreeComponent extends MDComponent {
             if (item.selected) {
                 activated = true;
             }
-
             if (item.children?.length) {
                 if (this.select(item.children, data)) {
                     activated = true;
@@ -174,6 +171,7 @@ class MDTreeComponent extends MDComponent {
         });
         return activated;
     }
+
     /**
      * Toggles the expansion state of a tree node.
      * @param {Array} list - The hierarchical list of tree items.
@@ -197,13 +195,10 @@ class MDTreeComponent extends MDComponent {
         } else {
             this.select(this.list, data);
         }
-
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-
     handleTreeItemSelected() {}
 }
-
 customElements.define("md-tree", MDTreeComponent);
 export { MDTreeComponent };

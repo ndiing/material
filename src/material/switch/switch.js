@@ -3,6 +3,7 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDRippleController } from "../ripple/ripple.js";
 import { createRef, ref } from "lit/directives/ref.js";
+
 /**
  * Switch component that extends the MDComponent base class.
  * @element md-switch
@@ -29,6 +30,7 @@ class MDSwitchComponent extends MDComponent {
         icons: { type: Array },
     };
     switchNative = createRef();
+
     /**
      * Initializes a new instance of the MDSwitchComponent.
      * Sets up the ripple controller.
@@ -63,13 +65,13 @@ class MDSwitchComponent extends MDComponent {
                 .checked="${ifDefined(this.checked)}"
                 ?disabled="${ifDefined(this.disabled)}"
                 ${ref(this.switchNative)}
-
                 @input="${this.handleSwitchNativeInput}"
                 @reset="${this.handleSwitchNativeReset}"
             >
             <div class="md-switch__track"><md-icon class="md-switch__thumb" .icon="${this.icons?.length ? this.icons[~~this.checked] : nothing}"></md-icon></div>
         `;
     }
+
     /**
      * Lifecycle method called when the component is added to the DOM.
      * Adds necessary classes to the switch element and sets default properties.
@@ -81,15 +83,14 @@ class MDSwitchComponent extends MDComponent {
         if (this.defaultValue === undefined) {
             this.defaultValue = this.value || "on";
         }
-
         if (this.defaultChecked === undefined) {
             this.defaultChecked = !!this.checked;
         }
-
         if (this.defaultIndeterminate === undefined) {
             this.defaultIndeterminate = !!this.indeterminate;
         }
     }
+
     /**
      * Event handler for the switch input event.
      * Updates the component's properties and emits the onSwitchNativeInput event.

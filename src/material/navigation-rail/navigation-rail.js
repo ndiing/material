@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
+
 /**
  * Navigation rail component that extends MDSheetComponent and includes MDTreeComponent properties.
  * @element md-navigation-rail
@@ -14,6 +15,7 @@ class MDNavigationRailComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
+
     /**
      * Retrieves the child nodes for the navigation rail, which includes an MDTree component.
      * @returns {TemplateResult[]} Array of child nodes for rendering.

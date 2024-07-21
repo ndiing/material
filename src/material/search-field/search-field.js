@@ -1,4 +1,5 @@
 import { MDTextFieldComponent } from "../text-field/text-field.js";
+
 /**
  * Custom component for managing a search field with clear action.
  * @element md-search-field
@@ -18,6 +19,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
      * @param {any} value - Value to set.
      */
     set actions(value) {}
+
     /**
      * Initializes the search field component.
      * Sets the input type to "search".

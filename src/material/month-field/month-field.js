@@ -1,5 +1,6 @@
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
+
 /**
  * A custom element that provides a month and time picker field.
  * @element md-month-field
@@ -36,7 +37,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -44,6 +44,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+
     /**
      * Displays the month-time picker.
      */
@@ -51,7 +52,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
-
         this.pickerOpen = true;
         this.picker = document.createElement("md-month-picker");
         this.picker.value = this.value;
@@ -64,7 +64,6 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthPickerButtonOkClick);
         this.picker.addEventListener("onMonthPickerSelection", this.handleMonthPickerSelection);
         this.picker.addEventListener("onMonthPickerMonthItemClick", this.handleMonthPickerMonthItemClick);
-
         const handleScroll = () => {
             this.picker.close();
             this.boundary.removeEventListener("scroll", handleScroll);
@@ -76,13 +75,11 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
                 matches = matches || current === this || current === this.picker;
                 current = current.parentElement;
             }
-
             if (!matches) {
                 this.picker.close();
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handleMonthPickerButtonCancelClick);
             this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handleMonthPickerButtonOkClick);
@@ -120,6 +117,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.handleMonthFieldActionPickerClick(event);
         }
     }
+
     /**
      * Handles the month-time selection event in the picker.
      * @param {Event} event - The month-time selection event.

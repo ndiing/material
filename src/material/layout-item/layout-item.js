@@ -1,5 +1,4 @@
 import { MDComponent } from "../component/component.js";
-
 class MDLayoutItemComponent extends MDComponent {
     static properties = {
         expanded: { type: Number },
@@ -7,11 +6,9 @@ class MDLayoutItemComponent extends MDComponent {
         compact: { type: Number },
         region: { type: String },
     };
-
     connectedCallback() {
         super.connectedCallback();
     }
-
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("region")) {

@@ -5,6 +5,7 @@ import { styleMap } from "lit/directives/style-map.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { MDStore } from "../store/store.js";
 import data from "../../assets/emojis.json";
+
 /**
  * Emoji Picker Component
  * @element md-emoji-picker
@@ -33,6 +34,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         tabs: { type: Object },
         rows: { type: Array },
     };
+
     /**
      * Renders the main content of the component
      * @returns {TemplateResult} - Template for the main content.
@@ -113,7 +115,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
                             @click="${this.handleEmojiPickerTabsItemClick}"
                         >
                             ${item.emoji?html`<md-emoji class="md-emoji-picker__tabs-emoji" .emoji="${item.emoji}"></md-emoji>`:nothing}
-
                         </div>
                     `)}
                 </div>
@@ -153,6 +154,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             </div>
         `;
     }
+
     /**
      * Connected callback lifecycle method
      * @private
@@ -195,7 +197,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             if (!acc[group]) {
                 acc[group] = [];
             }
-
             acc[group].push({ emoji });
             return acc;
         }, {});
@@ -203,7 +204,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         const dataRows = [];
         let rowIndex = 0;
         let index = 0;
-
         for (const name in grouped) {
             const value = grouped[name];
             dataTabs.push({ label: name, emoji: tabs[name] || value[0].emoji, rowIndex, index });
@@ -217,6 +217,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         }
         return { dataTabs, dataRows };
     }
+
     /**
      * Shows the emoji picker as a modal
      * @param {HTMLElement} button - Button element that triggers the modal.
@@ -302,7 +303,6 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         if (!data) {
             return;
         }
-
         let left = 12 + 12 + data.index * 48;
         let scrollWidth = 12 + this.dataTabs.length * 48 + 12;
         let clientWidth = 360;
@@ -311,6 +311,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         this.style.setProperty("--md-comp-emoji-picker-tabs-indicator-left", left + "px");
         this.style.setProperty("--md-comp-emoji-picker-tabs-indicator-right", right + "px");
     }
+
     /**
      * Handles virtual scroll event
      * @param {Event} event - Scroll event.
@@ -327,17 +328,15 @@ class MDEmojiPickerComponent extends MDSheetComponent {
             if (array[index + 1]) {
                 return scrollTop >= item.rowIndex && scrollTop < array[index + 1].rowIndex;
             }
-
             return scrollTop >= item.rowIndex;
         });
-
         if (this.selectedTab !== data) {
             this.selectedTab = data;
             this.updateEmojiPickerTabsIndicator(data);
         }
-
         this.emit("onEmojiPickerViewportVirtualScroll", event);
     }
+
     /**
      * Handles emoji picker grid column click event
      * @param {Event} event - Click event.
@@ -360,9 +359,9 @@ class MDEmojiPickerComponent extends MDSheetComponent {
         } else if (event.currentTarget.name === "ok") {
             this.handleEmojiPickerButtonOkClick(event);
         }
-
         this.emit("onEmojiPickerButtonClick", event);
     }
+
     /**
      * Handles cancel button click event
      * @param {Event} event - Click event.

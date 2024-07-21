@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
+
 /**
  * Navigation drawer component that extends MDSheetComponent and includes MDTreeComponent properties.
  * @element md-navigation-drawer
@@ -14,6 +15,7 @@ class MDNavigationDrawerComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
+
     /**
      * Retrieves the child nodes for the navigation drawer, which includes an MDTree component.
      * @returns {TemplateResult[]} Array of child nodes for rendering.

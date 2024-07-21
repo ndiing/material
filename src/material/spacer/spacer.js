@@ -1,4 +1,5 @@
 import { MDComponent } from "../component/component.js";
+
 /**
  * A custom element for displaying spacers.
  * @element md-spacer

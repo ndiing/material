@@ -1,5 +1,6 @@
 import { getBoundary } from "../functions/functions.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
+
 /**
  * A custom element that provides a color and color picker field.
  * @element md-color-field
@@ -44,7 +45,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
-
         this.pickerOpen = true;
         this.picker = document.createElement("md-color-picker");
         this.picker.value = this.value;
@@ -55,7 +55,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.picker.addEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
         this.picker.addEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
         this.picker.addEventListener("onColorPickerSelection", this.handleColorPickerSelection);
-
         const handleScroll = () => {
             this.picker.close();
             this.boundary.removeEventListener("scroll", handleScroll);
@@ -67,13 +66,11 @@ class MDColorFieldComponent extends MDTextFieldComponent {
                 matches = matches || current === this || current === this.picker;
                 current = current.parentElement;
             }
-
             if (!matches) {
                 this.picker.close();
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onColorPickerButtonCancelClick", this.handleColorPickerButtonCancelClick);
             this.picker.removeEventListener("onColorPickerButtonOkClick", this.handleColorPickerButtonOkClick);
@@ -90,7 +87,6 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -98,6 +94,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+
     /**
      * @private
      */

@@ -3,6 +3,7 @@ import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { createRef, ref } from "lit/directives/ref.js";
+
 /**
  * A custom image component that supports various properties and styles.
  * @element md-image
@@ -27,6 +28,7 @@ class MDImageComponent extends MDComponent {
         variant: { type: String },
     };
     variants = ["rounded"];
+
     /**
      * Computes the styles for the image based on its properties.
      * @returns {Object} The computed styles.
@@ -36,7 +38,6 @@ class MDImageComponent extends MDComponent {
         if (this.ratio) {
             style["aspect-ratio"] = this.ratio;
         }
-
         if (this.variant && this.variant.includes("rounded")) {
             if (this.ratio) {
                 style["border-radius"] = `50% / calc(50% * ${this.ratio})`;
@@ -47,6 +48,7 @@ class MDImageComponent extends MDComponent {
         return style;
     }
     imageNative = createRef();
+
     /**
      * Constructs an instance of MDImageComponent.
      * Sets default values for loading and alt properties.
@@ -72,12 +74,12 @@ class MDImageComponent extends MDComponent {
                 .alt="${ifDefined(this.alt)}"
                 .loading="${ifDefined(this.loading)}"
                 ${ref(this.imageNative)}
-
                 @load="${this.handleImageNativeLoad}"
                 @error="${this.handleImageNativeError}"
             >
         `;
     }
+
     /**
      * Invoked when the component is added to the document's DOM.
      * Adds the base class for the image component.
@@ -103,6 +105,7 @@ class MDImageComponent extends MDComponent {
             });
         }
     }
+
     /**
      * Handles the load event for the image.
      * Emits the onImageNativeLoad event.

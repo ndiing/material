@@ -1,4 +1,5 @@
 import { isObject } from "../functions/functions.js";
+
 /**
  * MDStore provides CRUD operations and advanced querying capabilities for an array of documents.
  */
@@ -48,9 +49,9 @@ class MDStore {
             this.docs[index] = this.deepMerge(this.docs[index], doc);
             return this.docs[index];
         }
-
         return null;
     }
+
     /**
      * Deletes a document by its primary key.
      * @param {*} _id - The value of the primary key.
@@ -63,9 +64,9 @@ class MDStore {
             this.docs.splice(index, 1);
             return deletedDoc;
         }
-
         return null;
     }
+
     /**
      * Adds or updates a document based on its primary key.
      * @param {Object} doc - The document to put.
@@ -78,6 +79,7 @@ class MDStore {
             return this.post(doc);
         }
     }
+
     /**
      * Sorts an array of documents based on given sort criteria.
      * @private
@@ -97,6 +99,7 @@ class MDStore {
             return 0;
         });
     }
+
     /**
      * Searches an array of documents for a query string.
      * @private
@@ -168,14 +171,11 @@ class MDStore {
                 const order = _order.split(",");
                 sorters = sort.map((name, index) => ({ name, order: order[index] }));
             }
-
             docs = this.sort(docs, sorters);
         }
-
         if (q) {
             docs = this.search(docs, q);
         }
-
         if (Object.keys(rest).length > 0 || filters) {
             if (!filters) {
                 filters = [];
@@ -190,15 +190,14 @@ class MDStore {
             docs = this.filter(docs, filters);
         }
         let total = docs.length;
-
         if (_page !== undefined && _limit !== undefined) {
             docs = this.paginate(docs, _page, _limit);
         } else if (_start !== undefined && _end !== undefined) {
             docs = this.slice(docs, _start, _end);
         }
-
         return { total, docs: docs };
     }
+
     /**
      * Recursively merges properties of two objects.
      * @private
@@ -210,13 +209,11 @@ class MDStore {
         if (!isObject(target) || !isObject(source)) {
             return source;
         }
-
         for (const key in source) {
             if (isObject(source[key])) {
                 if (!target[key]) {
                     Object.assign(target, { [key]: {} });
                 }
-
                 this.deepMerge(target[key], source[key]);
             } else {
                 Object.assign(target, { [key]: source[key] });
@@ -224,6 +221,7 @@ class MDStore {
         }
         return target;
     }
+
     /**
      * Retrieves the value of a nested property from an object based on dot notation path.
      * @private
@@ -246,7 +244,6 @@ class MDStore {
         if (!isObject(obj)) {
             return false;
         }
-
         for (const key in obj) {
             if (isObject(obj[key])) {
                 if (this.deepSearch(obj[key], query)) {
@@ -258,6 +255,7 @@ class MDStore {
         }
         return false;
     }
+
     /**
      * Applies a set of filters to an object based on filter criteria.
      * @private

@@ -4,6 +4,7 @@ import { MDMenuComponent } from "../menu/menu.js";
 import { MDTextFieldComponent } from "../text-field/text-field.js";
 import { html } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
  * A custom element that provides a select and select picker field.
  * @element md-select-field
@@ -18,6 +19,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         ...MDTextFieldComponent.properties,
         ...MDMenuComponent.properties,
     };
+
     /**
      * Gets the actions for the select-select field.
      * @returns {Array} - An array of action objects, each containing a name and an icon.
@@ -35,35 +37,27 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get selectedIndex() {
         return this.options.findIndex((doc) => doc.selected);
     }
-
     get selectedOptions() {
         return this.options.filter((doc) => doc.selected);
     }
-
     get defaultSelectedIndex() {
         return this.defaultOptions.findIndex((doc) => doc.selected);
     }
-
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
-
     get selectedOptionLabel() {
         return this.selectedOptions?.[0]?.[this.map.label] ?? "";
     }
-
     get defaultSelectedOptionLabel() {
         return this.defaultSelectedOptions?.[0]?.[this.map.label] ?? "";
     }
-
     get selectedOptionValue() {
         return this.selectedOptions?.[0]?.[this.map.value] ?? "";
     }
-
     get defaultSelectedOptionValue() {
         return this.defaultSelectedOptions?.[0]?.[this.map.value] ?? "";
     }
-
     constructor() {
         super();
         this.type = "select";
@@ -96,7 +90,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 ?disabled="${ifDefined(this.disabled)}"
                 .autocomplete="${ifDefined(this.autocomplete)}"
                 ${ref(this.textFieldNative)}
-
                 @invalid="${this.handleTextFieldNativeInvalid}"
                 @reset="${this.handleTextFieldNativeReset}"
                 @input="${this.handleTextFieldNativeInput}"
@@ -108,6 +101,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             >
         `;
     }
+
     /**
      * Renders the native select element.
      * @private
@@ -123,10 +117,10 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 .value="${ifDefined(this.selectedOptionValue)}"
                 .defaultValue="${ifDefined(this.defaultSelectedOptionValue)}"
                 ${ref(this.textFieldHidden)}
-
             >
         `;
     }
+
     /**
      * Callback for when the component is connected to the DOM.
      * @private
@@ -138,12 +132,10 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.defaultOptions = JSON.parse(JSON.stringify(this.options));
         }
     }
-
     validate() {
         this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
         super.validate();
     }
-
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -151,6 +143,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+
     /**
      * Displays the select-select picker.
      */
@@ -158,7 +151,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         if (this.pickerOpen) {
             return;
         }
-
         this.pickerOpen = true;
         this.picker = document.createElement("md-menu");
         this.picker.list = this.options;
@@ -166,7 +158,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
         this.handleMenuListSelection = this.handleMenuListSelection.bind(this);
         this.picker.addEventListener("onMenuListSelection", this.handleMenuListSelection);
-
         const handleScroll = () => {
             this.picker.close();
             this.boundary.removeEventListener("scroll", handleScroll);
@@ -178,13 +169,11 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 matches = matches || current === this || current === this.picker;
                 current = current.parentElement;
             }
-
             if (!matches) {
                 this.picker.close();
                 this.boundary.removeEventListener("click", handleClick);
             }
         };
-
         const handleSheetClose = () => {
             this.picker.removeEventListener("onMenuListSelection", this.handleMenuListSelection);
             this.picker.removeEventListener("onSheetClose", handleSheetClose);
@@ -202,7 +191,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-
     handleTextFieldContainerClick(event) {
         super.handleTextFieldContainerClick(event);
         this.togglePicker();
@@ -215,7 +203,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-
     handleTextFieldNativeKeydown(event) {
         super.handleTextFieldNativeKeydown(event);
         if (!this.pickerOpen) {
@@ -225,20 +212,15 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
                 if (this.activatedIndex === -1) {
                     this.activatedIndex = 0;
                 }
-
                 let offset = 0;
-
                 if (event.key === "ArrowUp") {
                     offset = -1;
                 }
-
                 if (event.key === "ArrowDown") {
                     offset = 1;
                 }
-
                 this.activatedIndex = (this.activatedIndex + this.options.length + offset) % this.options.length;
                 let data = this.options[this.activatedIndex];
-
                 this.options.forEach((option) => {
                     option.selected = option === data;
                 });
@@ -249,13 +231,11 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             }
         }
     }
-
     handleTextFieldNativeInput(event) {
         super.handleTextFieldNativeInput(event);
         this.picker.filter(this.textFieldNative.value.value);
         this.showPicker();
     }
-
     handleTextFieldNativeReset(event) {
         super.handleTextFieldNativeReset(event);
         this.options.forEach((option, index) => {
