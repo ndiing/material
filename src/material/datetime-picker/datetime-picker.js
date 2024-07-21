@@ -118,13 +118,13 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         const rows = [];
         for (let i = 0; i < 6; i++) {
             const column = {};
-            const children = [];
+            const items = [];
             for (let j = 0; j < 7; j++) {
                 const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first);
                 const year = date.getFullYear();
                 const month = date.getMonth();
                 const day = date.getDate();
-                children.push({
+                items.push({
                     label: this.dayFormat(date),
                     activated: year === this.activated.getFullYear() && month === this.activated.getMonth() && day === this.activated.getDate(),
                     selected: year === this.selected.getFullYear() && month === this.selected.getMonth() && day === this.selected.getDate(),
@@ -133,7 +133,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
                     day,
                 });
             }
-            column.children = children;
+            column.items = items;
             rows.push(column);
         }
         return rows;
@@ -317,7 +317,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
                 </div>
                 ${this.days.map(row=>html`
                     <div class="md-datetime-picker__grid-row md-datetime-picker__grid-row--days">
-                        ${row.children.map(item=>html`
+                        ${row.items.map(item=>html`
                             <div class="md-datetime-picker__grid-item" ?activated="${item.activated}" ?selected="${item.selected}" .data="${item}" @click="${this.handleDatetimePickerDayItemClick}">
                                 <div class="md-datetime-picker__grid-label">${item.label}</div>
                             </div>    

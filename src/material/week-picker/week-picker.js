@@ -55,7 +55,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
             const year = date.getFullYear();
             const month = date.getMonth();
             const week = date.getWeek();
-            const children = [];
+            const items = [];
             const column = {
                 activated: year === this.activated.getFullYear() && week === this.activated.getWeek(),
                 selected: year === this.selected.getFullYear() && week === this.selected.getWeek(),
@@ -65,11 +65,11 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
             };
             for (let j = 0; j < 7; j++) {
                 const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), i * 7 + j + 1 - this.first + 1);
-                children.push({
+                items.push({
                     label: this.dayFormat(date),
                 });
             }
-            column.children = children;
+            column.items = items;
             rows.push(column);
         }
         return rows;
@@ -127,7 +127,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
                 </div>
                 ${this.days.map(row=>html`
                     <div class="md-datetime-picker__grid-row md-datetime-picker__grid-row--days" ?activated="${row.activated}" ?selected="${row.selected}" .data="${row}" @click="${this.handleDatetimePickerDayItemClick}">
-                        ${row.children.map(item=>html`
+                        ${row.items.map(item=>html`
                             <div class="md-datetime-picker__grid-item" >
                                 <div class="md-datetime-picker__grid-label">${item.label}</div>
                             </div>    

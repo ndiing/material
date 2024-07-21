@@ -21,7 +21,7 @@ class DevMainComponent extends MDComponent {
             
             {
                 label: "Components",
-                children: [
+                items: [
                     { label: "Badge", routerLink: "/badge" },
                     { label: "Bottom App Bar", routerLink: "/bottom-app-bar" },
                     { label: "Bottom Sheet", routerLink: "/bottom-sheet" },
@@ -90,7 +90,7 @@ class DevMainComponent extends MDComponent {
             },
             {
                 label: "Foundations",
-                children: [
+                items: [
                     { label: "Attribute Observer", routerLink: "/attribute-observer" },
                     { label: "Color", routerLink: "/color" },
                     { label: "Component", routerLink: "/component" },
@@ -117,8 +117,8 @@ class DevMainComponent extends MDComponent {
         list.sort((a, b) => a.label.localeCompare(b.label));
         list.forEach((item) => {
             item.selected = item.routerLink === routerLink;
-            if (item.children?.length) {
-                this.select(item.children, routerLink);
+            if (item.items?.length) {
+                this.select(item.items, routerLink);
             }
         });
     }

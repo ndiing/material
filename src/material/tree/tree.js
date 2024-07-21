@@ -40,7 +40,7 @@ class MDTreeComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${renderComponent(item)}
-            ${item.expanded && item.children?.length ? item.children.map((item) => this.renderTree(item)) : nothing}
+            ${item.expanded && item.items?.length ? item.items.map((item) => this.renderTree(item)) : nothing}
         `;
     }
 
@@ -82,19 +82,19 @@ class MDTreeComponent extends MDComponent {
      * {{desc}}
      */
     getList(list) {
-        let children;
+        let items;
         list.forEach((item) => {
             if (item.expanded) {
-                children = item.children;
+                items = item.items;
             }
-            if (item.children?.length) {
-                const children_ = this.getList(item.children);
-                if (children_) {
-                    children = children_;
+            if (item.items?.length) {
+                const items_ = this.getList(item.items);
+                if (items_) {
+                    items = items_;
                 }
             }
         });
-        return children;
+        return items;
     }
 
     /**
@@ -111,16 +111,16 @@ class MDTreeComponent extends MDComponent {
             if (item.selected) {
                 activated = true;
             }
-            if (item.children?.length) {
+            if (item.items?.length) {
                 if (this.variant === "level") {
-                    item.children.unshift({
+                    item.items.unshift({
                         label: item.label,
                         parent: item,
                         isParent: true,
                     });
                 }
                 item.isNode = true;
-                const { expanded: isExpanded, activated: isActivated } = this.setList(item.children, indent + 1);
+                const { expanded: isExpanded, activated: isActivated } = this.setList(item.items, indent + 1);
                 if (isExpanded) {
                     expanded = true;
                     item.expanded = true;
@@ -145,8 +145,8 @@ class MDTreeComponent extends MDComponent {
             if (item.selected) {
                 activated = true;
             }
-            if (item.children?.length) {
-                if (this.select(item.children, data)) {
+            if (item.items?.length) {
+                if (this.select(item.items, data)) {
                     activated = true;
                     item.activated = true;
                 }
