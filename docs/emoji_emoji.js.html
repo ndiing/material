@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: emoji/emoji.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,76 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: emoji/emoji.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDComponent } from "../component/component.js";
 
+/**
+ * {{desc}}
+ */
+function emojiToHexadecimal(emoji) {
+    const codePoint = emoji.codePointAt(0);
+    const hexString = codePoint.toString(16);
+    const paddedHexString = hexString.padStart(4, "0");
+    return paddedHexString;
+}
 
-    <h3> </h3>
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-emoji
+ */
+class MDEmojiComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} emoji - {{desc}}
+     */
+    static properties = {
+        emoji: { type: String },
+    };
 
+    /**
+     * {{desc}}
+     */
+    get webp() {
+        return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/512.webp`;
+    }
 
+    /**
+     * {{desc}}
+     */
+    get svg() {
+        return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        return this.emoji;
+    }
 
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-emoji");
+    }
+}
+customElements.define("md-emoji", MDEmojiComponent);
+export { MDEmojiComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

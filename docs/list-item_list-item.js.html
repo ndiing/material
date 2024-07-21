@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: list-item/list-item.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,177 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: list-item/list-item.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../component/component.js";
+import { MDRippleController } from "../ripple/ripple.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-list-item
+ * @fires MDListItemComponent#onListItemSelected - {{desc}}
+ */
+class MDListItemComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} avatar - {{desc}}
+     * @property {String} thumbnail - {{desc}}
+     * @property {String} video - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {String} text - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadioButton - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Boolean} trailingRadioButton - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {String} routerLink - {{desc}}
+     * @property {Boolean} activated - {{desc}}
+     */
+    static properties = {
+        avatar: { type: String },
+        thumbnail: { type: String },
+        video: { type: String },
+        icon: { type: String },
+        label: { type: String },
+        subLabel: { type: String },
+        badge: { type: Number },
+        text: { type: String },
+        leadingCheckbox: { type: Boolean },
+        leadingRadioButton: { type: Boolean },
+        leadingSwitch: { type: Boolean },
+        trailingCheckbox: { type: Boolean },
+        trailingRadioButton: { type: Boolean },
+        trailingSwitch: { type: Boolean },
+        selected: { type: Boolean, reflect: true },
+        routerLink: { type: String, reflect: true },
+        activated: { type: Boolean, reflect: true },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.ripple = new MDRippleController(this, {
+            clipped: true,
+        });
+    }
 
+    /**
+     * {{desc}}
+     */
+    renderCheckbox() {
+        /* prettier-ignore */
+        return html`&lt;md-checkbox 
+            class="md-list__checkbox"
+            .checked="${this.selected}"
+        >&lt;/md-checkbox>`;
+    }
 
+    /**
+     * {{desc}}
+     */
+    renderRadioButton() {
+        /* prettier-ignore */
+        return html`&lt;md-radio-button 
+            class="md-list__radio-button"
+            .checked="${this.selected}"
+        >&lt;/md-radio-button>`;
+    }
 
+    /**
+     * {{desc}}
+     */
+    renderSwitch() {
+        /* prettier-ignore */
+        return html`&lt;md-switch 
+            class="md-list__switch"
+            .checked="${this.selected}"
+        >&lt;/md-switch>`;
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        /* prettier-ignore */
+        return html`
+            ${this.leadingCheckbox ? this.renderCheckbox() : nothing}
+            ${this.leadingRadioButton ? this.renderRadioButton() : nothing}
+            ${this.leadingSwitch ? this.renderSwitch() : nothing}
+            ${this.avatar ? html`&lt;md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}">&lt;/md-image>` : nothing}
+            ${this.thumbnail ? html`&lt;md-image class="md-list__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}">&lt;/md-image>` : nothing}
+            ${this.video ? html`&lt;md-image class="md-list__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}">&lt;/md-image>` : nothing}
+            ${this.icon ? html`&lt;md-icon class="md-list__icon" .icon="${this.icon}">&lt;/md-icon>` : nothing}
+            ${this.label || this.subLabel || this.badge ? html`
+                &lt;div class="md-list__inner">
+                    ${this.label || this.subLabel ? html`
+                        &lt;div class="md-list__label">
+                            ${this.label ? html`&lt;div class="md-list__label-primary">${this.label}&lt;/div>` : nothing}
+                            ${this.subLabel ? html`&lt;div class="md-list__label-secondary">${this.subLabel}&lt;/div>` : nothing}
+                        &lt;/div>
+                    ` : nothing}
+                    ${this.badge ? html`&lt;md-badge class="md-list__badge" .label="${this.badge}">&lt;/md-badge>` : nothing}
+                &lt;/div>
+            ` : nothing}
+            ${this.text ? html`&lt;div class="md-list__text">${this.text}&lt;/div>` : nothing}
+            ${this.trailingCheckbox ? this.renderCheckbox() : nothing}
+            ${this.trailingRadioButton ? this.renderRadioButton() : nothing}
+            ${this.trailingSwitch ? this.renderSwitch() : nothing}
+        `;
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-list__item");
+    }
 
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("subLabel")) {
+            await this.updateComplete;
+            const secondary = this.querySelector(".md-list__label-secondary");
+            const style = window.getComputedStyle(secondary);
+            const lineHeight = parseFloat(style.getPropertyValue("line-height"));
+            if (secondary.scrollHeight > lineHeight) {
+                this.classList.add("md-list__item--three");
+            } else {
+                this.classList.add("md-list__item--two");
+            }
+        }
+        if (changedProperties.has("selected")) {
+            if (this.selected) {
+                this.emit("onListItemSelected", this);
+            }
+        }
+    }
+}
+customElements.define("md-list-item", MDListItemComponent);
+export { MDListItemComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

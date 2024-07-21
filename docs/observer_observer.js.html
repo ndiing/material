@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: observer/observer.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,76 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: observer/observer.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ */
+class MDObserver {
+    handle;
+    isObserving = false;
 
+    /**
+     * {{desc}}
+     */
+    constructor(callback = () => {}) {
+        this.callback = callback;
+    }
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    executeCallback(time) {
+        this.handle = undefined;
+        this.callback(time);
+        if (this.isObserving) {
+            this.scheduleNextFrame();
+        }
+    }
 
+    /**
+     * {{desc}}
+     */
+    scheduleNextFrame() {
+        if (!this.handle &amp;&amp; this.isObserving) {
+            this.handle = window.requestAnimationFrame(this.executeCallback.bind(this));
+        }
+    }
 
+    /**
+     * {{desc}}
+     */
+    observe() {
+        if (!this.isObserving) {
+            this.isObserving = true;
+            this.scheduleNextFrame();
+        }
+    }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    disconnect() {
+        if (this.handle) {
+            window.cancelAnimationFrame(this.handle);
+            this.handle = undefined;
+        }
+        this.isObserving = false;
+    }
+}
+export { MDObserver };
+</code></pre>
+        </article>
+    </section>
 
 
 

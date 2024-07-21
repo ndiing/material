@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: card/card.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,127 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: card/card.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../component/component.js";
+import { renderComponent } from "../template/template.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-card
+ */
+class MDCardComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     */
+    static properties = {
+        variant: { type: String },
+        leadingActions: { type: Array },
+        label: { type: String },
+        subLabel: { type: String },
+        trailingActions: { type: Array },
+        actions: { type: Array },
+    };
+    variants = ["elevated", "filled", "outlined"];
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.childNodes_ = Array.from(this.childNodes);
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        /* prettier-ignore */
+        return html`
+            ${this.leadingActions?.length || this.label || this.subLabel || this.trailingActions?.length?html`
+                &lt;div class="md-card__header">
+                    ${this.leadingActions?.length ? html`
+                        &lt;div class="md-card__actions">
+                            ${this.leadingActions.map(item => {
+                                item.component=item.component||'icon-button'
+                                return renderComponent(item)    
+                            })}
+                        &lt;/div>
+                    ` : nothing}
+                    ${this.label || this.subLabel ? html`
+                        &lt;div class="md-card__label">
+                            ${this.label ? html`&lt;div class="md-card__label-primary">${this.label}&lt;/div>` : nothing}
+                            ${this.subLabel ? html`&lt;div class="md-card__label-secondary">${this.subLabel}&lt;/div>` : nothing}
+                        &lt;/div>
+                    ` : nothing}
+                    ${this.trailingActions?.length ? html`
+                        &lt;div class="md-card__actions md-card__actions--end">
+                            ${this.trailingActions.map(item=> {
+                                item.component=item.component||'icon-button'
+                                return renderComponent(item)    
+                            })}
+                        &lt;/div>
+                    ` : nothing}
+                &lt;/div>
+            `:nothing}
+            ${this.childNodes_?.length || this.actions?.length?html`
+                &lt;div class="md-card__body">
+                    ${this.childNodes_?.length ? html`&lt;div class="md-card__inner">${this.childNodes_}&lt;/div>` : nothing}
+                    ${this.actions?.length ? html`
+                        &lt;div class="md-card__footer">
+                            ${this.actions.map(item => {
+                                item.component=item.component||'button'
+                                return renderComponent(item)    
+                            })}
+                        &lt;/div>
+                    ` : nothing}
+                &lt;/div>
+            `:nothing}
+        `;
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-card");
+    }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-card--${variant}`, variants.includes(variant));
+            });
+        }
+    }
+}
+customElements.define("md-card", MDCardComponent);
+export { MDCardComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

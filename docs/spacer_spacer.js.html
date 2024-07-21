@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: spacer/spacer.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,36 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: spacer/spacer.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDComponent } from "../component/component.js";
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-spacer
+ */
+class MDSpacerComponent extends MDComponent {
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-spacer");
+    }
+}
+customElements.define("md-spacer", MDSpacerComponent);
+export { MDSpacerComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -24,18 +24,18 @@
         "webpack-dev-server": "^5.0.4",
         "workbox-webpack-plugin": "^7.1.0"
     },
-    "version": "2.2.2",
+    "version": "2.3.0",
     "description": "Material Design - Material 3 is the latest version of Google’s open-source design system. Design and build beautiful, usable products with Material 3.",
     "name": "@ndiinginc/material",
     "scripts": {
-        "docs": "webpack --config webpack.config.js --mode=production --node-env=production",
+        "demo": "webpack --config webpack.config.js --mode=production --node-env=production",
         "dist": "webpack --config production.config.js --mode=production --node-env=production",
         "serve": "webpack serve",
         "extract": "lit-localize extract",
         "build": "lit-localize build",
         "prettier": "prettier src/ --write",
         "eslint": "eslint src/material --fix",
-        "jsdoc": "jsdoc -r ./src/material -d ./out"
+        "jsdoc": "jsdoc -r ./src/material -d ./docs"
     },
     "dependencies": {
         "@lit/localize": "^0.12.1",

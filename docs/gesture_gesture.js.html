@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: gesture/gesture.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,268 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: gesture/gesture.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ * @fires MDGestureController#onDragStart - {{desc}}
+ * @fires MDGestureController#onResizeStart - {{desc}}
+ * @fires MDGestureController#onSelectionStart - {{desc}}
+ * @fires MDGestureController#onLongPress - {{desc}}
+ * @fires MDGestureController#onDrag - {{desc}}
+ * @fires MDGestureController#onResize - {{desc}}
+ * @fires MDGestureController#onSelection - {{desc}}
+ * @fires MDGestureController#onTap - {{desc}}
+ * @fires MDGestureController#onDoubleTap - {{desc}}
+ * @fires MDGestureController#onSelectionEnd - {{desc}}
+ * @fires MDGestureController#onDragEnd - {{desc}}
+ * @fires MDGestureController#onResizeEnd - {{desc}}
+ */
+class MDGestureController {
+    /**
+     * {{desc}}
+     */
+    constructor(host, options) {
+        (this.host = host).addController(this);
+        this.options = {
+            container: null,
+            draggableHandle: null,
+            drag: ["x", "y"],
+            dragAfterLongPress: false,
+            resize: ["n", "e", "s", "w", "ne", "se", "sw", "nw"],
+            resizeAfterLongPress: false,
+            selection: false,
+            selectionAfterLongPress: false,
+            updateStyle: false,
+            ...options,
+        };
+    }
 
+    /**
+     * {{desc}}
+     */
+    emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+        this.container.dispatchEvent(event);
+    }
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    async hostConnected() {
+        await this.host.updateComplete;
+        this.container = this.host;
+        if (this.options.container) {
+            if (typeof this.options.container === "string") {
+                this.container = this.host.querySelector(this.options.container);
+            } else {
+                this.container = this.options.container;
+            }
+        }
+        this.container.classList.add("md-gesture");
+        this.draggableHandle = this.container;
+        if (this.options.draggableHandle) {
+            if (typeof this.options.draggableHandle === "string") {
+                this.draggableHandle = this.host.querySelector(this.options.draggableHandle);
+            } else {
+                this.draggableHandle = this.options.draggableHandle;
+            }
+        }
+        this.draggableHandle.classList.add("md-draggable");
+        this.resizableContainer = document.createElement("div");
+        this.resizableContainer.classList.add("md-resizable");
+        for (const direction of this.options.resize) {
+            const resizableHandle = document.createElement("div");
+            resizableHandle.classList.add("md-resizable__handle");
+            resizableHandle.classList.add(`md-resizable__handle--${direction}`);
+            this.resizableContainer.append(resizableHandle);
+        }
+        this.container.append(this.resizableContainer);
+        this.handleGesturePointerdown = this.handleGesturePointerdown.bind(this);
+        this.handleGesturePointermove = this.handleGesturePointermove.bind(this);
+        this.handleGesturePointerup = this.handleGesturePointerup.bind(this);
+        this.container.addEventListener("pointerdown", this.handleGesturePointerdown);
+    }
 
+    /**
+     * {{desc}}
+     */
+    async hostDisconnected() {
+        await this.host.updateComplete;
+        this.container.classList.remove("md-gesture");
+        this.draggableHandle.classList.remove("md-draggable");
+        this.draggableHandle.classList.remove("md-draggable--dragged");
+        this.resizableContainer.remove();
+        document.body.classList.remove("md-gesture--unselectable");
+        this.container.removeEventListener("pointerdown", this.handleGesturePointerdown);
+        window.removeEventListener("pointermove", this.handleGesturePointermove);
+        window.removeEventListener("pointerup", this.handleGesturePointerup);
+    }
 
+    /**
+     * {{desc}}
+     */
+    handleGesturePointerdown(event) {
+        if (event.button !== 0) {
+            return;
+        }
+        let draggableHandle = this.container;
+        if (this.options.draggableHandle) {
+            draggableHandle = event.target.closest(this.options.draggableHandle);
+        }
+        let hasDraggableHandle = draggableHandle === this.draggableHandle;
+        let resizableHandle = event.target.closest(".md-resizable__handle");
+        let resizableDirection;
+        if (resizableHandle) {
+            resizableDirection = resizableHandle.classList.value.match(/--(\w+)$/)[1];
+        }
+        window.addEventListener("pointermove", this.handleGesturePointermove);
+        window.addEventListener("pointerup", this.handleGesturePointerup);
+        document.body.classList.add("md-gesture--unselectable");
+        this.endX = this.endX || 0;
+        this.endY = this.endY || 0;
+        this.startX = event.clientX - this.endX;
+        this.startY = event.clientY - this.endY;
+        this.startWidth = this.container.clientWidth;
+        this.startHeight = this.container.clientHeight;
+        this.swipe = false;
+        this.drag = false;
+        this.dragged = false;
+        if (this.options.drag.length &amp;&amp; !this.options.dragAfterLongPress &amp;&amp; hasDraggableHandle &amp;&amp; !resizableDirection) {
+            this.drag = true;
+            this.draggableHandle.classList.add("md-draggable--dragged");
+            this.emit("onDragStart", event);
+        }
+        this.resize = false;
+        if (this.options.resize.length &amp;&amp; !this.options.resizeAfterLongPress &amp;&amp; resizableDirection) {
+            this.resize = resizableDirection;
+            this.emit("onResizeStart", event);
+        }
+        this.selection = false;
+        if (!this.options.selectionAfterLongPress &amp;&amp; this.options.selection) {
+            this.selection = true;
+            this.emit("onSelectionStart", event);
+        }
+        this.longPress = false;
+        this.longPressTimeout = window.setTimeout(() => {
+            this.longPress = true;
+            this.emit("onLongPress", event);
+            if (this.options.drag.length &amp;&amp; this.options.dragAfterLongPress &amp;&amp; hasDraggableHandle &amp;&amp; !resizableDirection) {
+                this.drag = true;
+                this.draggableHandle.classList.add("md-draggable--dragged");
+                this.emit("onDragStart", event);
+            }
+            if (this.options.resize.length &amp;&amp; this.options.resizeAfterLongPress &amp;&amp; resizableDirection) {
+                this.resize = resizableDirection;
+                this.emit("onResizeStart", event);
+            }
+            if (!this.drag &amp;&amp; !this.resize &amp;&amp; this.options.selectionAfterLongPress &amp;&amp; this.options.selection) {
+                this.selection = true;
+                this.emit("onSelectionStart", event);
+            }
+        }, 300);
+    }
 
+    /**
+     * {{desc}}
+     */
+    handleGesturePointermove(event) {
+        window.clearTimeout(this.longPressTimeout);
+        const currentX = event.clientX - this.startX;
+        const currentY = event.clientY - this.startY;
+        this.swipe = !this.drag &amp;&amp; !this.resize &amp;&amp; (currentX - this.endX &lt; -30 ? "Left" : currentY - this.endY &lt; -30 ? "Top" : currentX - this.endX > 30 ? "Right" : currentY - this.endY > 30 ? "Bottom" : "");
+        if (this.drag) {
+            this.dragged = true;
+            if (this.options.drag.includes("x")) {
+                this.currentX = currentX;
+            }
+            if (this.options.drag.includes("y")) {
+                this.currentY = currentY;
+            }
+            this.emit("onDrag", event);
+        }
+        if (this.resize) {
+            if (this.resize.includes("e")) {
+                this.currentWidth = this.startWidth + currentX - this.endX;
+            }
+            if (this.resize.includes("s")) {
+                this.currentHeight = this.startHeight + currentY - this.endY;
+            }
+            if (this.resize.includes("w")) {
+                this.currentX = currentX;
+                this.currentWidth = this.startWidth - this.currentX + this.endX;
+            }
+            if (this.resize.includes("n")) {
+                this.currentY = currentY;
+                this.currentHeight = this.startHeight - this.currentY + this.endY;
+            }
+            this.emit("onResize", event);
+        }
+        if (this.selection) {
+            this.emit("onSelection", event);
+        }
+        if (this.options.updateStyle) {
+            this.container.style.left = (this.currentX ?? 0) + "px";
+            this.container.style.top = (this.currentY ?? 0) + "px";
+            this.container.style.width = (this.currentWidth ?? this.startWidth) + "px";
+            this.container.style.height = (this.currentHeight ?? this.startHeight) + "px";
+        }
+    }
 
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    handleGesturePointerup(event) {
+        window.clearTimeout(this.longPressTimeout);
+        if (this.options.updateStyle) {
+            this.endX = this.currentX;
+            this.endY = this.currentY;
+        }
+        if (!this.longPress &amp;&amp; !this.swipe &amp;&amp; !this.dragged) {
+            this.emit("onTap", event);
+            if (performance.now() - this.lastTap &lt; 300) {
+                if (this.lastTap - this.lastDoubleTap !== 0) {
+                    this.emit("onDoubleTap", event);
+                }
+                this.lastDoubleTap = performance.now();
+            }
+            this.lastTap = performance.now();
+        }
+        if (this.swipe &amp;&amp; !this.selection) {
+            this.emit("onSwipe" + this.swipe, event);
+        }
+        if (this.selection) {
+            this.emit("onSelectionEnd", event);
+        }
+        if (this.drag) {
+            this.draggableHandle.classList.remove("md-draggable--dragged");
+            this.emit("onDragEnd", event);
+        }
+        if (this.resize) {
+            this.emit("onResizeEnd", event);
+        }
+        document.body.classList.remove("md-gesture--unselectable");
+        window.removeEventListener("pointermove", this.handleGesturePointermove);
+        window.removeEventListener("pointerup", this.handleGesturePointerup);
+    }
+}
+export { MDGestureController };
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: snackbar/snackbar.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,88 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: snackbar/snackbar.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { createQueue } from "../functions/functions.js";
+import { MDSheetComponent } from "../sheet/sheet.js";
 
+/**
+ * {{desc}}
+ * @extends MDSheetComponent
+ * @element md-snackbar
+ * @fires MDSnackbarComponent#onSheetShow - {{desc}}
+ * @fires MDSnackbarComponent#onSheetClose - {{desc}}
+ * @fires MDSnackbarComponent#onSheetScrimClick - {{desc}}
+ * @fires MDSnackbarComponent#onSnackbarShow - {{desc}}
+ * @fires MDSnackbarComponent#onSnackbarClose - {{desc}}
+ */
+class MDSnackbarComponent extends MDSheetComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
+     */
+    static properties = {
+        ...MDSheetComponent.properties,
+    };
+    static queue = createQueue();
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-snackbar");
+    }
 
+    /**
+     * {{desc}}
+     */
+    show() {
+        return MDSnackbarComponent.queue(() => {
+            return new Promise((resolve) => {
+                this.timeout = window.setTimeout(() => {
+                    this.close();
+                }, 4000);
+                const handleSnackbarClose = (event) => {
+                    if (event.animationName === "snackbarOut") {
+                        window.clearTimeout(this.timeout);
+                        resolve();
+                    }
+                };
+                this.once("animationend", handleSnackbarClose);
+                super.show();
+                this.emit("onSnackbarShow", this);
+            });
+        });
+    }
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    close() {
+        super.close();
+        this.emit("onSnackbarClose", this);
+    }
+}
+customElements.define("md-snackbar", MDSnackbarComponent);
+export { MDSnackbarComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

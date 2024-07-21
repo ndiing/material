@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: search-field/search-field.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,84 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: search-field/search-field.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDTextFieldComponent } from "../text-field/text-field.js";
 
+/**
+ * {{desc}}
+ * @extends MDTextFieldComponent
+ * @element md-search-field
+ * @fires MDSearchFieldComponent#onTextFieldContainerClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldLabelClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldMetaClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeFocus - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeBlur - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeKeydown - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeSelect - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeInput - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeSearch - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeInvalid - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldNativeReset - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldActionClick - {{desc}}
+ * @fires MDSearchFieldComponent#onTextFieldIconButtonClick - {{desc}}
+ */
+class MDSearchFieldComponent extends MDTextFieldComponent {
+    /**
+     * {{desc}}
+     */
+    get actions() {
+        return [...((this.value &amp;&amp; [{ name: "clear", icon: "close" }]) || [])];
+    }
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    set actions(value) {}
+    constructor() {
+        super();
+        this.type = "search";
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-search-field");
+    }
 
+    /**
+     * {{desc}}
+     */
+    handleTextFieldNativeClick(event) {
+        event.preventDefault();
+        super.handleTextFieldNativeClick();
+    }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    async handleTextFieldActionClick(event) {
+        super.handleTextFieldActionClick(event);
+        this.textFieldNative.value.value = "";
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("input", {}));
+        this.textFieldNative.value.dispatchEvent(new CustomEvent("search", {}));
+    }
+}
+customElements.define("md-search-field", MDSearchFieldComponent);
+export { MDSearchFieldComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

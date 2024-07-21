@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: bottom-app-bar/bottom-app-bar.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,39 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: bottom-app-bar/bottom-app-bar.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDSheetComponent } from "../sheet/sheet.js";
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * {{desc}}
+ * @extends MDSheetComponent
+ * @element md-bottom-app-bar
+ * @fires MDBottomAppBarComponent#onSheetShow - {{desc}}
+ * @fires MDBottomAppBarComponent#onSheetClose - {{desc}}
+ * @fires MDBottomAppBarComponent#onSheetScrimClick - {{desc}}
+ */
+class MDBottomAppBarComponent extends MDSheetComponent {
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-bottom-app-bar");
+    }
+}
+customElements.define("md-bottom-app-bar", MDBottomAppBarComponent);
+export { MDBottomAppBarComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

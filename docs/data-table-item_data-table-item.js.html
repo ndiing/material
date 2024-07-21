@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: data-table-item/data-table-item.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,160 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: data-table-item/data-table-item.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../component/component.js";
+import { renderComponent } from "../template/template.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-data-table-item
+ */
+class MDDataTableItemComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadio - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {String} leadingAvatar - {{desc}}
+     * @property {String} leadingImage - {{desc}}
+     * @property {String} leadingVideo - {{desc}}
+     * @property {String} leadingIcon - {{desc}}
+     * @property {String} leadingSupportingText - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} supportingText - {{desc}}
+     * @property {String} trailingSupportingText - {{desc}}
+     * @property {String} trailingIcon - {{desc}}
+     * @property {String} trailingVideo - {{desc}}
+     * @property {String} trailingImage - {{desc}}
+     * @property {String} trailingAvatar - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} trailingRadio - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {Boolean} activated - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     */
+    static properties = {
+        leadingActions: { type: Array },
+        leadingCheckbox: { type: Boolean },
+        leadingRadio: { type: Boolean },
+        leadingSwitch: { type: Boolean },
+        leadingAvatar: { type: String },
+        leadingImage: { type: String },
+        leadingVideo: { type: String },
+        leadingIcon: { type: String },
+        leadingSupportingText: { type: String },
+        headline: { type: String },
+        supportingText: { type: String },
+        trailingSupportingText: { type: String },
+        trailingIcon: { type: String },
+        trailingVideo: { type: String },
+        trailingImage: { type: String },
+        trailingAvatar: { type: String },
+        trailingSwitch: { type: Boolean },
+        trailingRadio: { type: Boolean },
+        trailingCheckbox: { type: Boolean },
+        trailingActions: { type: Array },
+        badge: { type: Number },
+        activated: { type: Boolean, reflect: true },
+        indeterminate: { type: Boolean },
+        selected: { type: Boolean, reflect: true },
+        disabled: { type: Boolean, reflect: true },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        /* prettier-ignore */
+        return html`
+            ${this.leadingActions?.length?this.leadingActions.map(item=>{
+                item.component=item.component||'icon-button'
+                return renderComponent(item)
+            }):nothing}
+            ${this.leadingCheckbox?html`&lt;md-checkbox class="md-data-table__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}">&lt;/md-checkbox>`:nothing}
+            ${this.leadingRadio?html`&lt;md-radio-button class="md-data-table__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}">&lt;/md-radio-button>`:nothing}
+            ${this.leadingSwitch?html`&lt;md-switch class="md-data-table__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}">&lt;/md-switch>`:nothing}
+            ${this.leadingAvatar?html`&lt;md-image class="md-data-table__avatar" .variant="${"rounded"}" .src="${this.leadingAvatar}">&lt;/md-image>`:nothing}
+            ${this.leadingImage?html`&lt;md-image class="md-data-table__image" .src="${this.leadingImage}">&lt;/md-image>`:nothing}
+            ${this.leadingVideo?html`&lt;md-image class="md-data-table__video" .ratio="${"3/2"}" .src="${this.leadingVideo}">&lt;/md-image>`:nothing}
+            ${this.leadingIcon?html`&lt;md-icon class="md-data-table__icon" .icon="${this.leadingIcon}">&lt;/md-icon>`:nothing}
+            ${this.leadingSupportingText?html`&lt;div class="md-data-table__supporting-text">${this.leadingSupportingText}&lt;/div>`:nothing}
+            ${this.headline||this.supportingText?html`
+                &lt;div class="md-data-table__section">
+                    ${this.headline?html`&lt;div class="md-data-table__headline">${this.headline}&lt;/div>`:nothing}
+                    ${this.supportingText?html`&lt;div class="md-data-table__supporting-text">${this.supportingText}&lt;/div>`:nothing}
+                &lt;/div>
+            `:nothing}
+            ${this.trailingSupportingText?html`&lt;div class="md-data-table__supporting-text">${this.trailingSupportingText}&lt;/div>`:nothing}
+            ${this.trailingIcon?html`&lt;md-icon class="md-data-table__icon" .icon="${this.trailingIcon}">&lt;/md-icon>`:nothing}
+            ${this.trailingVideo?html`&lt;md-image class="md-data-table__video" .ratio="${"3/2"}" .src="${this.trailingVideo}">&lt;/md-image>`:nothing}
+            ${this.trailingImage?html`&lt;md-image class="md-data-table__image" .src="${this.trailingImage}">&lt;/md-image>`:nothing}
+            ${this.trailingAvatar?html`&lt;md-image class="md-data-table__avatar" .variant="${"rounded"}" .src="${this.trailingAvatar}">&lt;/md-image>`:nothing}
+            ${this.trailingSwitch?html`&lt;md-switch class="md-data-table__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}">&lt;/md-switch>`:nothing}
+            ${this.trailingRadio?html`&lt;md-radio-button class="md-data-table__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}">&lt;/md-radio-button>`:nothing}
+            ${this.trailingCheckbox?html`&lt;md-checkbox class="md-data-table__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}">&lt;/md-checkbox>`:nothing}
+            ${this.trailingActions?.length?this.trailingActions.map(item=>{
+                item.component=item.component||'icon-button'
+                return renderComponent(item)
+            }):nothing}
+            ${this.badge!==undefined?html`&lt;md-badge class="md-data-table__badge" .label="${this.badge}">&lt;/md-badge>`:nothing}
+        `;
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-data-table__item");
+    }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("supportingText")) {
+            await this.updateComplete;
+            const supportingTextElement = this.querySelector(".md-data-table__section .md-data-table__supporting-text");
+            const style = window.getComputedStyle(supportingTextElement);
+            const lineHeight = parseFloat(style.getPropertyValue("line-height"));
+            if (supportingTextElement.scrollHeight > lineHeight) {
+                this.classList.add("md-data-table__item--three-line");
+            } else {
+                this.classList.add("md-data-table__item--two-line");
+            }
+        }
+    }
+}
+customElements.define("md-data-table-item", MDDataTableItemComponent);
+export { MDDataTableItemComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

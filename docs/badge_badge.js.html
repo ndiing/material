@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: badge/badge.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,64 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: badge/badge.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../component/component.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-badge
+ */
+class MDBadgeComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Number} label - {{desc}}
+     * @property {Number} limit - {{desc}}
+     */
+    static properties = {
+        label: { type: Number },
+        limit: { type: Number },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.limit = 999;
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        /* prettier-ignore */
+        return this.label ? html`&lt;div class="md-badge__label">${this.label > this.limit ? this.limit + '+' : this.label}&lt;/div>` : nothing;
+    }
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-badge");
+    }
+}
+customElements.define("md-badge", MDBadgeComponent);
+export { MDBadgeComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

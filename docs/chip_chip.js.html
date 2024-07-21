@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: chip/chip.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,114 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: chip/chip.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MDComponent } from "../component/component.js";
+import { MDRippleController } from "../ripple/ripple.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-chip
+ * @fires MDChipComponent#onChipActionClick - {{desc}}
+ */
+class MDChipComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {String} avatar - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} action - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     */
+    static properties = {
+        variant: { type: String },
+        avatar: { type: String },
+        icon: { type: String },
+        label: { type: String },
+        action: { type: String },
+        selected: { type: Boolean, reflect: true },
+        disabled: { type: Boolean, reflect: true },
+    };
+    variants = ["assist", "filter", "input", "suggestion"];
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.ripple = new MDRippleController(this, {
+            clipped: true,
+        });
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        /* prettier-ignore */
+        return html`
+            ${this.selected ? html`&lt;md-icon class="md-chip__icon" .icon="${"check"}">&lt;/md-icon>` : nothing}
+            ${!this.selected &amp;&amp; this.avatar ? html`&lt;md-image class="md-chip__avatar" .src="${this.avatar}" .alt="${"Avatar"}" .variant="${"rounded"}">&lt;/md-image>` : nothing}
+            ${!this.selected &amp;&amp; this.icon ? html`&lt;md-icon class="md-chip__icon" .icon="${this.icon}">&lt;/md-icon>` : nothing}
+            &lt;div class="md-chip__label">${this.label}&lt;/div>
+            ${this.action ? html`&lt;md-icon-button class="md-chip__action" .icon="${this.action}" @click="${this.handleChipActionClick}">&lt;/md-icon-button>` : nothing}
+        `;
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-chip");
+    }
 
+    /**
+     * {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-chip--${variant}`, variants.includes(variant));
+            });
+        }
+        if (changedProperties.has("disabled")) {
+            if (this.disabled) {
+                this.setAttribute("aria-disabled", "true");
+                this.setAttribute("tabindex", "-1");
+            } else {
+                this.removeAttribute("aria-disabled");
+                this.removeAttribute("tabindex");
+            }
+        }
+    }
 
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    handleChipActionClick(event) {
+        this.emit("onChipActionClick", event);
+    }
+}
+customElements.define("md-chip", MDChipComponent);
+export { MDChipComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

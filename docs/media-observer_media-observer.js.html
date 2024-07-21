@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: media-observer/media-observer.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,64 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: media-observer/media-observer.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const schemes = [
+    { name: "light", query: "(prefers-color-scheme: light)" },
+    { name: "dark", query: "(prefers-color-scheme: dark)" },
+];
+const breakpoints = [
+    { name: "compact", query: "(max-width: 599px)" },
+    { name: "medium", query: "(min-width: 600px) and (max-width: 839px)" },
+    { name: "expanded", query: "(min-width: 840px)" },
+];
 
+/**
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ */
+class MDMediaObserver {
+    /**
+     * {{desc}}
+     */
+    constructor(callback = () => {}) {
+        this.callback = callback;
+    }
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    observe(list) {
+        const handleChange = () => {
+            this.media?.removeEventListener("change", handleChange);
+            this.item = null;
+            for (let i = 0; i &lt; list.length; i++) {
+                if (window.matchMedia(list[i].query).matches) {
+                    this.item = list[i];
+                    break;
+                }
+            }
+            if (this.item) {
+                this.media = window.matchMedia(this.item.query);
+                this.callback(this.item);
+                this.media.addEventListener("change", handleChange);
+            }
+        };
+        handleChange();
+    }
+}
+export { schemes, breakpoints, MDMediaObserver };
+</code></pre>
+        </article>
+    </section>
 
 
 

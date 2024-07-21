@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: router/router.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,302 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: router/router.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
+ * @fires MDRouter#onRouterNavigate - {{desc}}
+ * @fires MDRouter#onRouterNavigateError - {{desc}}
+ * @fires MDRouter#onRouterNavigateSuccess - {{desc}}
+ */
+class MDRouter {
+    static stacks = [];
+    static _params = {};
+    static controller;
+    static route;
+    static routes;
+    static _historyApiFallback = true;
 
+    /**
+     * {{desc}}
+     */
+    static setRoutes(routes, parent) {
+        return routes.reduce((acc, curr) => {
+            curr.parent = parent;
+            curr.pathname = `${parent?.pathname ?? ""}/${curr.path}`.replace(/\/+/g, "/");
+            acc.push(curr);
+            if (curr.children?.length) {
+                acc.push(...this.setRoutes(curr.children, curr));
+            }
+            return acc;
+        }, []);
+    }
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    static get path() {
+        if (this.historyApiFallback) {
+            return window.location.pathname;
+        } else {
+            return window.location.hash.replace(/^#/, "").replace(/\?.*$/, "") || "/";
+        }
+    }
 
+    /**
+     * {{desc}}
+     */
+    static get query() {
+        let search;
+        if (this.historyApiFallback) {
+            search = window.location.search;
+        } else {
+            search = window.location.hash.replace(/^#/, "").match(/(\?.*)$/)?.[1] || "";
+        }
+        const query = {};
+        for (const [name, value] of new URLSearchParams(search).entries()) {
+            if (query[name]) {
+                if (Array.isArray(query[name])) {
+                    query[name].push(value);
+                } else {
+                    query[name] = [query[name], value];
+                }
+            } else {
+                query[name] = value;
+            }
+        }
+        return query;
+    }
 
+    /**
+     * {{desc}}
+     */
+    static getRoute(path) {
+        return this.stacks.find((route) => {
+            const pattern = `^${route.pathname.replace(/:(\w+)/g, "(?&lt;$1>[^/]+)").replace(/\*/, "(?:.*)")}(?:/?$)`;
+            const regexp = new RegExp(pattern, "i");
+            const matches = path.match(regexp);
+            if (matches) {
+                this.params = { ...matches.groups };
+                return true;
+            }
+            return false;
+        });
+    }
 
+    /**
+     * {{desc}}
+     */
+    static getRoutes(route) {
+        return [route].reduce((acc, curr) => {
+            if (curr.parent) {
+                acc.push(...this.getRoutes(curr.parent));
+            }
+            acc.push(curr);
+            return acc;
+        }, []);
+    }
 
+    /**
+     * {{desc}}
+     */
+    static async getOutlet(container, route) {
+        return new Promise((resolve) => {
+            let outlet;
+            let observer;
+            let target = container;
+            let selector = "md-outlet:not([name])";
+            if (route.outlet) {
+                target = document.body;
+                selector = `md-outlet[name="${route.outlet}"]`;
+            }
+            const callback = () => {
+                outlet = target.querySelector(selector);
+                if (outlet) {
+                    if (observer) {
+                        observer.disconnect();
+                    }
+                    resolve(outlet);
+                }
+            };
+            callback();
+            if (!outlet) {
+                observer = new MutationObserver(callback);
+                observer.observe(target, {
+                    childList: true,
+                    subtree: true,
+                });
+            }
+        });
+    }
 
+    /**
+     * {{desc}}
+     */
+    static get params() {
+        return this._params;
+    }
 
+    /**
+     * {{desc}}
+     */
+    static set params(value) {
+        this._params = value;
+    }
 
+    /**
+     * {{desc}}
+     */
+    static async handleLoad(event) {
+        this.emit("onRouterCurrentEntryChange", event);
+        performance.mark("markRouterCurrentEntryChange");
+        this.params = {};
+        this.route = this.getRoute(this.path);
+        this.routes = this.getRoutes(this.route);
+        if (this.controller &amp;&amp; !this.controller.signal.aborted) {
+            this.controller.abort();
+        }
+        if (!this.controller || (this.controller &amp;&amp; this.controller.signal.aborted)) {
+            this.controller = new AbortController();
+        }
+        for (const route of this.routes) {
+            this.emit("onRouterNavigate", event);
+            performance.mark("markRouterNavigate");
+            if (route.beforeLoad) {
+                try {
+                    await new Promise((resolve, reject) => {
+                        const next = (err) => {
+                            this.controller.signal.removeEventListener("abort", next);
+                            if (err) {
+                                reject(err);
+                            } else {
+                                resolve();
+                            }
+                        };
+                        this.controller.signal.addEventListener("abort", next);
+                        route.beforeLoad(next);
+                    });
+                } catch (error) {
+                    this.emit("onRouterNavigateError", event);
+                    performance.mark("markRouterNavigateError");
+                    throw error;
+                }
+            }
+            if (!route.component) {
+                route.component = await route.load();
+            }
+            const container = route.parent?.component ?? document.body;
+            const outlet = await this.getOutlet(container, route);
+            if (!route.component.isConnected) {
+                route.component.isComponent = true;
+                outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
+            }
+            const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
+            for (const outlet of outlets) {
+                let nextElement = outlet.nextElementSibling;
+                while (nextElement) {
+                    const unusedComponent = !this.routes.find((route) => route.component === nextElement) &amp;&amp; nextElement.isComponent;
+                    const unusedOutlet = !outlets.find((outlet) => outlet === nextElement);
+                    if (unusedComponent &amp;&amp; unusedOutlet) {
+                        nextElement.remove();
+                    }
+                    nextElement = nextElement.nextElementSibling;
+                }
+            }
+        }
+        this.emit("onRouterNavigateSuccess", event);
+        performance.mark("markRouterNavigateSuccess");
+        performance.measure("measureRouterNavigateSuccess", "markRouterCurrentEntryChange", "markRouterNavigateSuccess");
+        performance.clearMarks("markRouterCurrentEntryChange");
+        performance.clearMarks("markRouterNavigate");
+        performance.clearMarks("markRouterNavigateError");
+        performance.clearMarks("markRouterNavigateSuccess");
+        performance.clearMeasures("measureRouterNavigateSuccess");
+    }
 
+    /**
+     * {{desc}}
+     */
+    static navigate(url) {
+        if (this.historyApiFallback) {
+            window.history.pushState({}, "", url);
+        } else {
+            window.location.hash = url;
+        }
+    }
 
+    /**
+     * {{desc}}
+     */
+    static handleClick(event) {
+        const routerLink = event.target.closest("[routerLink]");
+        if (routerLink) {
+            const url = routerLink.getAttribute("routerLink");
+            this.navigate(url);
+        }
+    }
 
-    
+    /**
+     * {{desc}}
+     */
+    static init(routes) {
+        this.stacks = this.setRoutes(routes);
+        this.handleLoad = this.handleLoad.bind(this);
+        window.addEventListener("DOMContentLoaded", this.handleLoad);
+        if (this.historyApiFallback) {
+            window.addEventListener("popstate", this.handleLoad);
+            const pushState = window.history.pushState;
+            window.history.pushState = function () {
+                pushState.apply(this, arguments);
+                MDRouter.emit("popstate");
+            };
+        } else {
+            window.addEventListener("hashchange", this.handleLoad);
+        }
+        this.handleClick = this.handleClick.bind(this);
+        window.addEventListener("click", this.handleClick);
+    }
 
+    /**
+     * {{desc}}
+     */
+    static get historyApiFallback() {
+        return this._historyApiFallback;
+    }
 
+    /**
+     * {{desc}}
+     */
+    static set historyApiFallback(value) {
+        this._historyApiFallback = value;
+    }
 
-
-
+    /**
+     * {{desc}}
+     */
+    static emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+        window.dispatchEvent(event);
+    }
+}
+export { MDRouter };
+</code></pre>
+        </article>
+    </section>
 
 
 

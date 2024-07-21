@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: tabs/tabs.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,72 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: tabs/tabs.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDTreeComponent } from "../tree/tree.js";
 
+/**
+ * {{desc}}
+ * @extends MDTreeComponent
+ * @element md-tabs
+ * @fires MDTabsComponent#onTreeItemClick - {{desc}}
+ */
+class MDTabsComponent extends MDTreeComponent {
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.variant = "primary";
+        this.currentSelectedIndex = -1;
+        this.lastSelectedIndex = -1;
+    }
+    variants = ["primary", "secondary"];
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-tabs");
+    }
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    async handleTreeItemSelected(event) {
+        await this.updateComplete;
+        const treeItem = event.detail;
+        let width = treeItem.clientWidth;
+        let left = treeItem.offsetLeft;
+        if (this.variant === "primary") {
+            const treeInner = treeItem.querySelector(".md-tree__inner");
+            width = treeInner.clientWidth;
+            left += treeInner.offsetLeft;
+        }
+        let right = this.scrollWidth - (left + width);
+        this.currentSelectedIndex = this.list.indexOf(treeItem.data);
+        const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";
+        this.style.removeProperty(`--md-comp-tabs-indicator-transition-left`);
+        this.style.removeProperty(`--md-comp-tabs-indicator-transition-right`);
+        this.style.setProperty(`--md-comp-tabs-indicator-transition-${direction}`, "0ms");
+        this.lastSelectedIndex = this.currentSelectedIndex;
+        this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
+        this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
+    }
+}
+customElements.define("md-tabs", MDTabsComponent);
+export { MDTabsComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

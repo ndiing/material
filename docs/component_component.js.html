@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: component/component.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,138 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: component/component.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { LitElement } from "lit";
+import { updateWhenLocaleChanges } from "@lit/localize";
 
+/**
+ * {{desc}}
+ * @extends LitElement
+ * @element undefined
+ */
+class MDComponent extends LitElement {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     */
+    static properties = {
+        tooltip: { type: String },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        updateWhenLocaleChanges(this);
+    }
 
+    /**
+     * {{desc}}
+     */
+    createRenderRoot() {
+        return this;
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.on("pointerenter", this.handlePointerenter);
+        this.on("pointerleave", this.handlePointerleave);
+    }
 
+    /**
+     * {{desc}}
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.off("pointerenter", this.handlePointerenter);
+        this.off("pointerleave", this.handlePointerleave);
+    }
 
+    /**
+     * {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+    }
 
+    /**
+     * {{desc}}
+     */
+    async handlePointerenter() {
+        if (this.tooltip &amp;&amp; !this.tooltipElement) {
+            this.tooltipElement = document.createElement("md-tooltip");
+            this.tooltipElement.childNodes_ = [this.tooltip];
+            this.tooltipElement.variant = "plain";
+            document.body.append(this.tooltipElement);
+            await this.tooltipElement.updateComplete;
+            this.tooltipElement.show(this);
+        }
+    }
 
+    /**
+     * {{desc}}
+     */
+    handlePointerleave() {
+        if (this.tooltipElement) {
+            this.tooltipElement.remove();
+            this.tooltipElement = null;
+        }
+    }
 
+    /**
+     * {{desc}}
+     */
+    on(type, listener) {
+        listener = listener.bind(this);
+        this.addEventListener(type, listener);
+    }
 
+    /**
+     * {{desc}}
+     */
+    once(type, listener) {
+        const handleListener = (event) => {
+            listener(event);
+            this.off(type, handleListener);
+        };
+        this.on(type, handleListener);
+    }
 
+    /**
+     * {{desc}}
+     */
+    off(type, listener) {
+        this.removeEventListener(type, listener);
+    }
 
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+        this.dispatchEvent(event);
+    }
+}
+export { MDComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

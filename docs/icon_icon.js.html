@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: icon/icon.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,52 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: icon/icon.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDComponent } from "../component/component.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-icon
+ */
+class MDIconComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} icon - {{desc}}
+     */
+    static properties = {
+        icon: { type: String },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    render() {
+        return this.icon;
+    }
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-icon");
+    }
+}
+customElements.define("md-icon", MDIconComponent);
+export { MDIconComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: scrim/scrim.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,71 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: scrim/scrim.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDComponent } from "../component/component.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-scrim
+ */
+class MDScrimComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Boolean} open - {{desc}}
+     */
+    static properties = {
+        ...MDComponent.properties,
+        open: { type: Boolean, reflect: true },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-scrim");
+    }
 
+    /**
+     * {{desc}}
+     */
+    show() {
+        this.open = true;
+    }
 
+    /**
+     * {{desc}}
+     */
+    close() {
+        this.open = false;
+    }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    toggle() {
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
+    }
+}
+customElements.define("md-scrim", MDScrimComponent);
+export { MDScrimComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

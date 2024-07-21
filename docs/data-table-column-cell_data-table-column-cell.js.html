@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: data-table-column-cell/data-table-column-cell.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,63 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: data-table-column-cell/data-table-column-cell.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDDataTableItemComponent } from "../data-table-item/data-table-item.js";
+import { MDGestureController } from "../material.js";
 
+/**
+ * {{desc}}
+ * @extends MDDataTableItemComponent
+ * @element md-data-table-column-cell
+ */
+class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-data-table__column-cell");
+        this.gesture = new MDGestureController(this, {
+            container: this.parentElement,
+            drag: ["x"],
+            resize: ["e"],
+        });
+    }
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("reorderable")) {
+            if (this.reorderable) {
+                this.gesture.options.drag = ["x"];
+            } else {
+                this.gesture.options.drag = [];
+            }
+        }
+        if (changedProperties.has("resizable")) {
+            if (this.resizable) {
+                this.gesture.options.resize = ["e"];
+            } else {
+                this.gesture.options.resize = [];
+            }
+        }
+    }
+}
+customElements.define("md-data-table-column-cell", MDDataTableColumnCellComponent);
+export { MDDataTableColumnCellComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

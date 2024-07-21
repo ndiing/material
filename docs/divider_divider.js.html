@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: divider/divider.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,59 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: divider/divider.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDComponent } from "../component/component.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-divider
+ */
+class MDDividerComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     */
+    static properties = {
+        variant: { type: String },
+    };
+    variants = ["vertical", "horizontal"];
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-divider");
+    }
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-divider--${variant}`, variants.includes(variant));
+            });
+        }
+    }
+}
+customElements.define("md-divider", MDDividerComponent);
+export { MDDividerComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: navigation-rail/navigation-rail.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,78 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: navigation-rail/navigation-rail.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html } from "lit";
+import { MDSheetComponent } from "../sheet/sheet.js";
+import { MDTreeComponent } from "../tree/tree.js";
 
+/**
+ * {{desc}}
+ * @extends MDSheetComponent
+ * @element md-navigation-rail
+ * @fires MDNavigationRailComponent#onSheetShow - {{desc}}
+ * @fires MDNavigationRailComponent#onSheetClose - {{desc}}
+ * @fires MDNavigationRailComponent#onSheetScrimClick - {{desc}}
+ */
+class MDNavigationRailComponent extends MDSheetComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {String} label - {{desc}}
+     * @property {String} subLabel - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
+     */
+    static properties = {
+        ...MDSheetComponent.properties,
+        ...MDTreeComponent.properties,
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    get childNodes_() {
+        /* prettier-ignore */
+        return [html`
+            &lt;md-tree
+                class="md-navigation-rail__tree"
+                .variant="${"plain"}"
+                .list="${this.list}"
+            >&lt;/md-tree>
+        `];
+    }
 
+    /**
+     * {{desc}}
+     */
+    set childNodes_(value) {
+        this._childNodes = value;
+    }
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-navigation-rail");
+    }
+}
+customElements.define("md-navigation-rail", MDNavigationRailComponent);
+export { MDNavigationRailComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

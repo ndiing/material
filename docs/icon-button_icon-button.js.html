@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: icon-button/icon-button.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,118 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: icon-button/icon-button.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html } from "lit";
+import { MDComponent } from "../component/component.js";
+import { MDRippleController } from "../ripple/ripple.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-icon-button
+ * @fires MDIconButtonComponent#onIconButtonToggleClick - {{desc}}
+ */
+class MDIconButtonComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
+     * @property {String} icon - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {String} name - {{desc}}
+     */
+    static properties = {
+        variant: { type: String },
+        icon: { type: String },
+        selected: { type: Boolean, reflect: true },
+        disabled: { type: Boolean, reflect: true },
+        name: { type: String, reflect: true },
+    };
+    variants = ["filled", "tonal", "outlined", "toggle"];
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.ripple = new MDRippleController(this, {
+            size: 40,
+            centered: true,
+            fadeOut: true,
+        });
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        /* prettier-ignore */
+        return html`&lt;md-icon class="md-icon-button__icon" .icon="${this.icon}">&lt;/md-icon>`
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-icon-button");
+        this.on("click", this.handleIconButtonToggleClick);
+    }
 
+    /**
+     * {{desc}}
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.off("click", this.handleIconButtonToggleClick);
+    }
 
+    /**
+     * {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-icon-button--${variant}`, variants.includes(variant));
+            });
+        }
+        if (changedProperties.has("disabled")) {
+            if (this.disabled) {
+                this.setAttribute("aria-disabled", "true");
+                this.setAttribute("tabindex", "-1");
+            } else {
+                this.removeAttribute("aria-disabled");
+                this.removeAttribute("tabindex");
+            }
+        }
+    }
 
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    handleIconButtonToggleClick(event) {
+        if (this.variant &amp;&amp; this.variant.includes("toggle")) {
+            this.selected = !this.selected;
+            this.emit("onIconButtonToggleClick", event);
+        }
+    }
+}
+customElements.define("md-icon-button", MDIconButtonComponent);
+export { MDIconButtonComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

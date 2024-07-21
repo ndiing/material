@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: markdown/markdown.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,79 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: markdown/markdown.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { MDComponent } from "../component/component.js";
+import { marked } from "marked";
+import { html, nothing } from "lit";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-markdown
+ */
+class MDMarkdownComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {String} href - {{desc}}
+     * @property {String} text - {{desc}}
+     */
+    static properties = {
+        href: { type: String },
+        text: { type: String },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    constructor() {
+        super();
+        this.text = this.textContent;
+        this.textContent = "";
+    }
 
+    /**
+     * {{desc}}
+     */
+    render() {
+        return html` ${this.text ? html`&lt;div class="md-markdown__body">${unsafeHTML(marked(this.text))}&lt;/div>` : nothing} `;
+    }
 
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-markdown");
+    }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("href")) {
+            const response = await fetch(this.href);
+            const text = await response.text();
+            this.text = text;
+            this.requestUpdate();
+        }
+    }
+}
+customElements.define("md-markdown", MDMarkdownComponent);
+export { MDMarkdownComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

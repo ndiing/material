@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: attribute-observer/attribute-observer.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,55 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: attribute-observer/attribute-observer.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * {{desc}}
+ * @extends undefined
+ * @element undefined
+ */
+class MDAttributeObserver {
+    /**
+     * {{desc}}
+     */
+    constructor(callback = () => {}) {
+        this.callback = callback;
+    }
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    observe(target, attributeName) {
+        this.callback({
+            name: attributeName,
+            value: target.getAttribute(attributeName),
+        });
+        new MutationObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.attributeName === attributeName) {
+                    this.callback({
+                        name: attributeName,
+                        value: target.getAttribute(attributeName),
+                    });
+                }
+            });
+        }).observe(target, {
+            attributes: true,
+            attributeFilter: [attributeName],
+        });
+    }
+}
+export { MDAttributeObserver };
+</code></pre>
+        </article>
+    </section>
 
 
 

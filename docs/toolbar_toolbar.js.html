@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: toolbar/toolbar.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,56 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: toolbar/toolbar.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { MDComponent } from "../component/component.js";
+import { renderComponent } from "../template/template.js";
 
+/**
+ * {{desc}}
+ * @extends MDComponent
+ * @element md-toolbar
+ */
+class MDToolbarComponent extends MDComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Array} items - {{desc}}
+     */
+    static properties = {
+        items: { type: Array },
+    };
 
-    <h3> </h3>
+    /**
+     * {{desc}}
+     */
+    render() {
+        return this.items?.map((item) => {
+            item.component = item.component || "icon-button";
+            return renderComponent(item);
+        });
+    }
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    /**
+     * {{desc}}
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-toolbar");
+    }
+}
+customElements.define("md-toolbar", MDToolbarComponent);
+export { MDToolbarComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 
