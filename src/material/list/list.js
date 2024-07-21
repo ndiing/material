@@ -15,7 +15,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
-     * @property {Array} list - {{desc}}
+     * @property {Array} items - {{desc}}
      * @property {Object} map - {{desc}}
      * @property {Function} format - {{desc}}
      * @property {Boolean} rangeSelection - {{desc}}
@@ -24,7 +24,7 @@ class MDListComponent extends MDComponent {
      * @property {Boolean} allSelection - {{desc}}
      */
     static properties = {
-        list: { type: Array },
+        items: { type: Array },
         map: { type: Object },
         format: { type: Function },
         rangeSelection: { type: Boolean },
@@ -49,7 +49,7 @@ class MDListComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return this.list?.map((item) => {
+        return this.items?.map((item) => {
             item.component = item.component||"list-item";
             item.label=item[this.map.label]
             item.value=item[this.map.value]
@@ -82,10 +82,10 @@ class MDListComponent extends MDComponent {
      * {{desc}}
      */
     select(data) {
-        this.list.forEach((item) => {
+        this.items.forEach((item) => {
             item.selected = item === data;
         });
-        this.endIndex = this.list.indexOf(data);
+        this.endIndex = this.items.indexOf(data);
     }
 
     /**
@@ -100,12 +100,12 @@ class MDListComponent extends MDComponent {
      */
     selectRange(data) {
         this.endIndex = this.endIndex || 0;
-        this.startIndex = this.list.indexOf(data);
+        this.startIndex = this.items.indexOf(data);
         this.swapIndex = this.startIndex > this.endIndex;
         if (this.swapIndex) {
             [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
         }
-        this.list.forEach((item, i) => {
+        this.items.forEach((item, i) => {
             item.selected = i >= this.startIndex && i <= this.endIndex;
         });
         if (this.swapIndex) {
@@ -117,7 +117,7 @@ class MDListComponent extends MDComponent {
      * {{desc}}
      */
     selectAll() {
-        this.list.forEach((item) => {
+        this.items.forEach((item) => {
             item.selected = true;
         });
     }

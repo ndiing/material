@@ -108,8 +108,8 @@ function stop() {
 export { start, pause, resume, stop };
 (() => {
     let timeout;
-    new PerformanceObserver((list) => {
-        list.getEntries().forEach((entry) => {
+    new PerformanceObserver((items) => {
+        items.getEntries().forEach((entry) => {
             window.clearTimeout(timeout);
             timeout = window.setTimeout(() => {
                 stop();

@@ -12,7 +12,7 @@ class DevMenu extends MDComponent {
                                 id="menu"
                                 rowHeight="48"
                                 maxRows="5"
-                                .list="${[
+                                .items="${[
                                     {
                                         id: "Africa",
                                         name: "Africa",

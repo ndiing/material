@@ -7,7 +7,7 @@ class DevNavigationBar extends MDComponent {
             <div class="md-layout-border">
                 <md-navigation-bar
                     id="navigationBar0"
-                    .list="${[
+                    .items="${[
                         { label: "label", icon: "image", selected: true },
                         { label: "label", icon: "image" },
                         { label: "label", icon: "image" },
@@ -19,7 +19,7 @@ class DevNavigationBar extends MDComponent {
                     <div class="md-layout-border">
                         <md-navigation-bar
                             id="navigationBar1"
-                            .list="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
+                            .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
                         ></md-navigation-bar>
 
                         <div class="md-layout-border__item md-layout-border__item--center">

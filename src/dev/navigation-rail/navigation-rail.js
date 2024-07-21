@@ -7,7 +7,7 @@ class DevNavigationRail extends MDComponent {
             <div class="md-layout-border">
                 <md-navigation-rail
                     id="navigationRail0"
-                    .list="${[
+                    .items="${[
                         { label: "label", icon: "image", selected: true },
                         { label: "label", icon: "image" },
                         { label: "label", icon: "image" },
@@ -18,7 +18,7 @@ class DevNavigationRail extends MDComponent {
                     <div class="md-layout-border">
                         <md-navigation-rail
                             id="navigationRail1"
-                            .list="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
+                            .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
                         ></md-navigation-rail>
                         <div class="md-layout-border__item md-layout-border__item--center">
                             <div class="md-layout-column">

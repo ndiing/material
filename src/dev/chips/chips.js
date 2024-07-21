@@ -9,7 +9,7 @@ class DevChips extends MDComponent {
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-chips
-                                .list="${[
+                                .items="${[
                                     //
                                     { icon: "image", label: "Assist 1" },
                                     { icon: "image", label: "Assist 2" },
@@ -22,7 +22,7 @@ class DevChips extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-chips
-                                .list="${[
+                                .items="${[
                                     //
                                     { label: "Filter 1", selected: true },
                                     { label: "Filter 2" },
@@ -36,7 +36,7 @@ class DevChips extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-chips
-                                .list="${[
+                                .items="${[
                                     //
                                     { label: "Input 1", action: "close" },
                                     { label: "Input 2", action: "close" },
@@ -49,7 +49,7 @@ class DevChips extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-chips
-                                .list="${[
+                                .items="${[
                                     //
                                     { label: "Suggestion 1" },
                                     { label: "Suggestion 2" },

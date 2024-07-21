@@ -17,8 +17,7 @@ class DevMainComponent extends MDComponent {
     constructor() {
         super();
 
-        this.list = [
-            
+        this.items = [
             {
                 label: "Components",
                 items: [
@@ -110,7 +109,7 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        this.select(this.list, MDRouter.path);
+        this.select(this.items, MDRouter.path);
     }
 
     select(list, routerLink) {
@@ -133,7 +132,7 @@ class DevMainComponent extends MDComponent {
                 ></md-top-app-bar> -->
                 <md-navigation-drawer
                     id="navigationDrawer"
-                    .list="${this.list}"
+                    .items="${this.items}"
                     variant="tree"
                     open
                 ></md-navigation-drawer>

@@ -31,7 +31,7 @@ class MDMenuComponent extends MDSheetComponent {
      * @property {Array} trailingActions - {{desc}}
      * @property {Array} actions - {{desc}}
      * @property {Boolean} open - {{desc}}
-     * @property {Array} list - {{desc}}
+     * @property {Array} items - {{desc}}
      * @property {Object} map - {{desc}}
      * @property {Number} rowHeight - {{desc}}
      * @property {Number} maxRows - {{desc}}
@@ -39,7 +39,7 @@ class MDMenuComponent extends MDSheetComponent {
     static properties = {
         ...MDSheetComponent.properties,
         ...MDListComponent.properties,
-        list: { type: Array },
+        items: { type: Array },
         map: { type: Object },
         rowHeight: { type: Number },
         maxRows: { type: Number },
@@ -60,7 +60,7 @@ class MDMenuComponent extends MDSheetComponent {
                 <div class="md-virtual__container">
                     <md-list
                         class="md-menu__list"
-                        .list="${ifDefined(this.virtualList)}"
+                        .items="${ifDefined(this.virtualList)}"
                         .map="${ifDefined(this.map)}"
                         ${ref(this.menuList)}
                         @onListItemClick="${this.handleMenuListItemClick}"
@@ -87,7 +87,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.rowHeight = 48;
         this.maxRows = 5;
         this.popper = new MDPopperController(this, {});
-        this.store = new MDStore(this.list);
+        this.store = new MDStore(this.items);
         this.virtual = new MDVirtualController(this);
     }
 
@@ -114,7 +114,7 @@ class MDMenuComponent extends MDSheetComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("list")) {
-            this.store.docs = this.list;
+            this.store.docs = this.items;
             this.updateStore();
             this.updateVirtual();
         }

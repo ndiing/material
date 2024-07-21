@@ -12,11 +12,11 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
-     * @property {Array} list - {{desc}}
+     * @property {Array} items - {{desc}}
      * @property {String} variant - {{desc}}
      */
     static properties = {
-        list: { type: Array },
+        items: { type: Array },
         variant: { type: String },
     };
     variants = ["plain", "accordion", "tree", "level"];
@@ -49,7 +49,7 @@ class MDTreeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return (this.variant === 'level' ? this.getList(this.list) || this.list : this.list)?.map(item => this.renderTree(item));
+        return (this.variant === 'level' ? this.getList(this.items) || this.items : this.items)?.map(item => this.renderTree(item));
     }
 
     /**
@@ -71,9 +71,9 @@ class MDTreeComponent extends MDComponent {
                 this.classList.toggle(`md-tree--${variant}`, variants.includes(variant));
             });
         }
-        if (changedProperties.has("list")) {
+        if (changedProperties.has("items")) {
             await this.updateComplete;
-            this.setList(this.list);
+            this.setList(this.items);
             this.requestUpdate();
         }
     }
@@ -81,9 +81,9 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      */
-    getList(list) {
+    getList(items) {
         let items;
-        list.forEach((item) => {
+        items.forEach((item) => {
             if (item.expanded) {
                 items = item.items;
             }
@@ -100,10 +100,10 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      */
-    setList(list, indent = 0) {
+    setList(items, indent = 0) {
         let expanded;
         let activated;
-        list.forEach((item) => {
+        items.forEach((item) => {
             item.indent = indent;
             if (item.expanded || item.selected) {
                 expanded = true;
@@ -137,9 +137,9 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      */
-    select(list, data) {
+    select(items, data) {
         let activated;
-        list.forEach((item) => {
+        items.forEach((item) => {
             item.selected = item === data;
             item.activated = false;
             if (item.selected) {
@@ -158,7 +158,7 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      */
-    expand(list, data) {
+    expand(items, data) {
         data.expanded = !data.expanded;
     }
 
@@ -169,9 +169,9 @@ class MDTreeComponent extends MDComponent {
         const data = event.currentTarget.data;
         if (data.isNode || data.isParent) {
             event.stopPropagation();
-            this.expand(this.list, data.isParent ? data.parent : data);
+            this.expand(this.items, data.isParent ? data.parent : data);
         } else {
-            this.select(this.list, data);
+            this.select(this.items, data);
         }
         this.requestUpdate();
         this.emit("onTreeItemClick", event);

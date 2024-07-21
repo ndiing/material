@@ -24,13 +24,13 @@ class MDMediaObserver {
     /**
      * {{desc}}
      */
-    observe(list) {
+    observe(items) {
         const handleChange = () => {
             this.media?.removeEventListener("change", handleChange);
             this.item = null;
-            for (let i = 0; i < list.length; i++) {
-                if (window.matchMedia(list[i].query).matches) {
-                    this.item = list[i];
+            for (let i = 0; i < items.length; i++) {
+                if (window.matchMedia(items[i].query).matches) {
+                    this.item = items[i];
                     break;
                 }
             }

@@ -227,7 +227,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
         this.pickerOpen = true;
         this.picker = document.createElement("md-menu");
-        this.picker.list = this.options;
+        this.picker.items = this.options;
         this.picker.map = this.map;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
         this.handleMenuListSelection = this.handleMenuListSelection.bind(this);

@@ -12,7 +12,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-navigation-bar__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", label: "Item 1", selected: true },
                             { icon: "image", label: "Item 2", badge: 0 },
                             { icon: "image", label: "Item 3", badge: 1 },
@@ -24,7 +24,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-navigation-bar__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", selected: true },
                             { icon: "image", badge: 0 },
                             { icon: "image", badge: 1 },
@@ -37,7 +37,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-navigation-drawer__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", label: "Item 1", selected: true },
                             { icon: "image", label: "Item 2", badge: 0 },
                             { icon: "image", label: "Item 3", badge: 1 },
@@ -49,7 +49,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-navigation-drawer__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { label: "Item 1", selected: true },
                             { label: "Item 2", badge: 0 },
                             { label: "Item 3", badge: 1 },
@@ -62,7 +62,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-navigation-rail__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", label: "Item 1", selected: true },
                             { icon: "image", label: "Item 2", badge: 0 },
                             { icon: "image", label: "Item 3", badge: 1 },
@@ -74,7 +74,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-navigation-rail__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", selected: true },
                             { icon: "image", badge: 0 },
                             { icon: "image", badge: 1 },
@@ -87,7 +87,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-menu__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", label: "Item 1", selected: true },
                             { icon: "image", label: "Item 2", badge: 0 },
                             { icon: "image", label: "Item 3", badge: 1 },
@@ -99,7 +99,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-menu__tree"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { label: "Item 1", selected: true },
                             { label: "Item 2", badge: 0 },
                             { label: "Item 3", badge: 1 },
@@ -112,7 +112,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--primary"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", label: "Item 1", selected: true },
                             { icon: "image", label: "Item 2", badge: 0 },
                             { icon: "image", label: "Item 3", badge: 1 },
@@ -124,7 +124,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--primary"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { label: "Item 1", selected: true },
                             { label: "Item 2", badge: 0 },
                             { label: "Item 3", badge: 1 },
@@ -137,7 +137,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--secondary"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { icon: "image", label: "Item 1", selected: true },
                             { icon: "image", label: "Item 2", badge: 0 },
                             { icon: "image", label: "Item 3", badge: 1 },
@@ -149,7 +149,7 @@ class DevNavigationComponent extends MDComponent {
                     <md-tree
                         class="md-tabs__tree md-tabs__tree--secondary"
                         variant="plain"
-                        .list="${[
+                        .items="${[
                             { label: "Item 1", selected: true },
                             { label: "Item 2", badge: 0 },
                             { label: "Item 3", badge: 1 },

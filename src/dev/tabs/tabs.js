@@ -10,7 +10,7 @@ class DevTabs extends MDComponent {
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tabs
                                 variant="primary"
-                                .list="${[
+                                .items="${[
                                     { label: "label", icon: "image", selected: true },
                                     { label: "label", icon: "image" },
                                     { label: "label", icon: "image" },
@@ -21,14 +21,14 @@ class DevTabs extends MDComponent {
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tabs
                                 variant="primary"
-                                .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
+                                .items="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
                             ></md-tabs>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tabs
                                 variant="secondary"
-                                .list="${[
+                                .items="${[
                                     { label: "label", icon: "image", selected: true },
                                     { label: "label", icon: "image" },
                                     { label: "label", icon: "image" },
@@ -39,7 +39,7 @@ class DevTabs extends MDComponent {
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tabs
                                 variant="secondary"
-                                .list="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
+                                .items="${[{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }]}"
                             ></md-tabs>
                         </div>
                     </div>

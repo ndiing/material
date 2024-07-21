@@ -11,11 +11,11 @@ class MDChipsComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
-     * @property {Array} list - {{desc}}
+     * @property {Array} items - {{desc}}
      * @property {Boolean} multiSelection - {{desc}}
      */
     static properties = {
-        list: { type: Array },
+        items: { type: Array },
         multiSelection: { type: Boolean },
     };
 
@@ -24,7 +24,7 @@ class MDChipsComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return this.list?.map(item => {
+        return this.items?.map(item => {
             item.component=item.component||'chip'
             item.onChipClick=this.handleChipClick
             item.onChipActionClick=this.handleChipActionClick
@@ -57,9 +57,9 @@ class MDChipsComponent extends MDComponent {
      */
     handleChipActionClick(event) {
         const data = event.currentTarget.data;
-        const index = this.list.indexOf(data);
+        const index = this.items.indexOf(data);
         if (index > -1) {
-            this.list.splice(index, 1);
+            this.items.splice(index, 1);
         }
         this.requestUpdate();
     }

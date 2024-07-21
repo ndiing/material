@@ -8,61 +8,61 @@ class DevTree extends MDComponent {
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tree
-                                .list="${[
+                                .items="${[
                                     {
                                         label: "Fruits",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Citrus",
-                                                children: [
-                                                    { label: "Orange", children: [] },
-                                                    { label: "Lemon", children: [] },
+                                                items: [
+                                                    { label: "Orange", items: [] },
+                                                    { label: "Lemon", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Berries",
-                                                children: [
-                                                    { label: "Strawberry", children: [] },
-                                                    { label: "Blueberry", children: [] },
+                                                items: [
+                                                    { label: "Strawberry", items: [] },
+                                                    { label: "Blueberry", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Vegetables",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Leafy Green",
                                                 expanded: true,
-                                                children: [
-                                                    { label: "Spinach", children: [] },
-                                                    { label: "Kale", children: [] },
+                                                items: [
+                                                    { label: "Spinach", items: [] },
+                                                    { label: "Kale", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Root",
-                                                children: [
-                                                    { selected: true, label: "Carrot", children: [] },
-                                                    { label: "Beetroot", children: [] },
+                                                items: [
+                                                    { selected: true, label: "Carrot", items: [] },
+                                                    { label: "Beetroot", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Grains",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Cereal",
-                                                children: [
-                                                    { label: "Wheat", children: [] },
-                                                    { label: "Rice", children: [] },
+                                                items: [
+                                                    { label: "Wheat", items: [] },
+                                                    { label: "Rice", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Legumes",
-                                                children: [
-                                                    { label: "Lentils", children: [] },
-                                                    { label: "Chickpeas", children: [] },
+                                                items: [
+                                                    { label: "Lentils", items: [] },
+                                                    { label: "Chickpeas", items: [] },
                                                 ],
                                             },
                                         ],
@@ -74,61 +74,61 @@ class DevTree extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tree
-                                .list="${[
+                                .items="${[
                                     {
                                         label: "Fruits",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Citrus",
-                                                children: [
-                                                    { label: "Orange", children: [] },
-                                                    { label: "Lemon", children: [] },
+                                                items: [
+                                                    { label: "Orange", items: [] },
+                                                    { label: "Lemon", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Berries",
-                                                children: [
-                                                    { label: "Strawberry", children: [] },
-                                                    { label: "Blueberry", children: [] },
+                                                items: [
+                                                    { label: "Strawberry", items: [] },
+                                                    { label: "Blueberry", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Vegetables",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Leafy Green",
                                                 expanded: true,
-                                                children: [
-                                                    { label: "Spinach", children: [] },
-                                                    { label: "Kale", children: [] },
+                                                items: [
+                                                    { label: "Spinach", items: [] },
+                                                    { label: "Kale", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Root",
-                                                children: [
-                                                    { selected: true, label: "Carrot", children: [] },
-                                                    { label: "Beetroot", children: [] },
+                                                items: [
+                                                    { selected: true, label: "Carrot", items: [] },
+                                                    { label: "Beetroot", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Grains",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Cereal",
-                                                children: [
-                                                    { label: "Wheat", children: [] },
-                                                    { label: "Rice", children: [] },
+                                                items: [
+                                                    { label: "Wheat", items: [] },
+                                                    { label: "Rice", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Legumes",
-                                                children: [
-                                                    { label: "Lentils", children: [] },
-                                                    { label: "Chickpeas", children: [] },
+                                                items: [
+                                                    { label: "Lentils", items: [] },
+                                                    { label: "Chickpeas", items: [] },
                                                 ],
                                             },
                                         ],
@@ -140,61 +140,61 @@ class DevTree extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tree
-                                .list="${[
+                                .items="${[
                                     {
                                         label: "Fruits",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Citrus",
-                                                children: [
-                                                    { label: "Orange", children: [] },
-                                                    { label: "Lemon", children: [] },
+                                                items: [
+                                                    { label: "Orange", items: [] },
+                                                    { label: "Lemon", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Berries",
-                                                children: [
-                                                    { label: "Strawberry", children: [] },
-                                                    { label: "Blueberry", children: [] },
+                                                items: [
+                                                    { label: "Strawberry", items: [] },
+                                                    { label: "Blueberry", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Vegetables",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Leafy Green",
                                                 expanded: true,
-                                                children: [
-                                                    { label: "Spinach", children: [] },
-                                                    { label: "Kale", children: [] },
+                                                items: [
+                                                    { label: "Spinach", items: [] },
+                                                    { label: "Kale", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Root",
-                                                children: [
-                                                    { selected: true, label: "Carrot", children: [] },
-                                                    { label: "Beetroot", children: [] },
+                                                items: [
+                                                    { selected: true, label: "Carrot", items: [] },
+                                                    { label: "Beetroot", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Grains",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Cereal",
-                                                children: [
-                                                    { label: "Wheat", children: [] },
-                                                    { label: "Rice", children: [] },
+                                                items: [
+                                                    { label: "Wheat", items: [] },
+                                                    { label: "Rice", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Legumes",
-                                                children: [
-                                                    { label: "Lentils", children: [] },
-                                                    { label: "Chickpeas", children: [] },
+                                                items: [
+                                                    { label: "Lentils", items: [] },
+                                                    { label: "Chickpeas", items: [] },
                                                 ],
                                             },
                                         ],
@@ -206,61 +206,61 @@ class DevTree extends MDComponent {
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-tree
-                                .list="${[
+                                .items="${[
                                     {
                                         label: "Fruits",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Citrus",
-                                                children: [
-                                                    { label: "Orange", children: [] },
-                                                    { label: "Lemon", children: [] },
+                                                items: [
+                                                    { label: "Orange", items: [] },
+                                                    { label: "Lemon", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Berries",
-                                                children: [
-                                                    { label: "Strawberry", children: [] },
-                                                    { label: "Blueberry", children: [] },
+                                                items: [
+                                                    { label: "Strawberry", items: [] },
+                                                    { label: "Blueberry", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Vegetables",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Leafy Green",
                                                 expanded: true,
-                                                children: [
-                                                    { label: "Spinach", children: [] },
-                                                    { label: "Kale", children: [] },
+                                                items: [
+                                                    { label: "Spinach", items: [] },
+                                                    { label: "Kale", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Root",
-                                                children: [
-                                                    { selected: true, label: "Carrot", children: [] },
-                                                    { label: "Beetroot", children: [] },
+                                                items: [
+                                                    { selected: true, label: "Carrot", items: [] },
+                                                    { label: "Beetroot", items: [] },
                                                 ],
                                             },
                                         ],
                                     },
                                     {
                                         label: "Grains",
-                                        children: [
+                                        items: [
                                             {
                                                 label: "Cereal",
-                                                children: [
-                                                    { label: "Wheat", children: [] },
-                                                    { label: "Rice", children: [] },
+                                                items: [
+                                                    { label: "Wheat", items: [] },
+                                                    { label: "Rice", items: [] },
                                                 ],
                                             },
                                             {
                                                 label: "Legumes",
-                                                children: [
-                                                    { label: "Lentils", children: [] },
-                                                    { label: "Chickpeas", children: [] },
+                                                items: [
+                                                    { label: "Lentils", items: [] },
+                                                    { label: "Chickpeas", items: [] },
                                                 ],
                                             },
                                         ],

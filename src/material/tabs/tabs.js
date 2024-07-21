@@ -40,7 +40,7 @@ class MDTabsComponent extends MDTreeComponent {
             left += treeInner.offsetLeft;
         }
         let right = this.scrollWidth - (left + width);
-        this.currentSelectedIndex = this.list.indexOf(treeItem.data);
+        this.currentSelectedIndex = this.items.indexOf(treeItem.data);
         const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";
         this.style.removeProperty(`--md-comp-tabs-indicator-transition-left`);
         this.style.removeProperty(`--md-comp-tabs-indicator-transition-right`);
