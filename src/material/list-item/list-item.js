@@ -111,7 +111,7 @@ class MDListItemComponent extends MDComponent {
             ${this.avatar ? html`<md-image class="md-list__avatar" .src="${this.avatar}" .alt="${"avatar"}" .variant="${"rounded"}"></md-image>` : nothing}
             ${this.thumbnail ? html`<md-image class="md-list__thumbnail" .src="${this.thumbnail}" .alt="${"thumbnail"}"></md-image>` : nothing}
             ${this.video ? html`<md-image class="md-list__video" .src="${this.video}" .alt="${"video"}" .ratio="${"3/2"}"></md-image>` : nothing}
-            ${this.icon ? html`<md-icon class="md-list__icon">${this.icon}</md-icon>` : nothing}
+            ${this.icon ? html`<md-icon class="md-list__icon" .icon="${this.icon}"></md-icon>` : nothing}
             ${this.label || this.subLabel || this.badge ? html`
                 <div class="md-list__inner">
                     ${this.label || this.subLabel ? html`

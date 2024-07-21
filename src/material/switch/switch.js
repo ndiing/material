@@ -67,7 +67,7 @@ class MDSwitchComponent extends MDComponent {
                 @input="${this.handleSwitchNativeInput}"
                 @reset="${this.handleSwitchNativeReset}"
             >
-            <div class="md-switch__track"><md-icon class="md-switch__thumb">${this.icons?.length ? this.icons[~~this.checked] : nothing}</md-icon></div>
+            <div class="md-switch__track"><md-icon class="md-switch__thumb" .icon="${this.icons?.length ? this.icons[~~this.checked] : nothing}"></md-icon></div>
         `;
     }
     /**

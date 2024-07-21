@@ -112,7 +112,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
                             .data="${item}"
                             @click="${this.handleEmojiPickerTabsItemClick}"
                         >
-                            ${item.emoji?html`<md-emoji class="md-emoji-picker__tabs-emoji" emoji="${item.emoji}"></md-emoji>`:nothing}
+                            ${item.emoji?html`<md-emoji class="md-emoji-picker__tabs-emoji" .emoji="${item.emoji}"></md-emoji>`:nothing}
 
                         </div>
                     `)}
@@ -142,7 +142,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
                                             @click="${this.handleEmojiPickerGridColumnClick}"
                                         >
                                             ${item.label?html`<div class="md-emoji-picker__grid-label">${item.label}</div>`:nothing}
-                                            ${item.emoji?html`<md-emoji class="md-emoji-picker__grid-emoji" emoji="${item.emoji}"></md-emoji>`:nothing}
+                                            ${item.emoji?html`<md-emoji class="md-emoji-picker__grid-emoji" .emoji="${item.emoji}"></md-emoji>`:nothing}
                                         </div>
                                     `)}
                                 </div>

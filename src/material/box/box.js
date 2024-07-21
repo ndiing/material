@@ -37,7 +37,7 @@ class MDBoxComponent extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <div class="md-box__inner">
+            <div class="md-box__container">
                 ${this.leadingActions?.length?this.leadingActions.map(item=>{
                     item.component=item.component||'icon-button'
                     return renderComponent(item)
@@ -49,7 +49,7 @@ class MDBoxComponent extends MDComponent {
                 ${this.leadingAvatar?html`<md-image class="md-box__avatar" .variant="${"rounded"}" .src="${this.leadingAvatar}"></md-image>`:nothing}
                 ${this.leadingImage?html`<md-image class="md-box__image" .src="${this.leadingImage}"></md-image>`:nothing}
                 ${this.leadingVideo?html`<md-image class="md-box__video" .ratio="${"3/2"}" .src="${this.leadingVideo}"></md-image>`:nothing}
-                ${this.leadingIcon?html`<md-icon class="md-box__icon">${this.leadingIcon}</md-icon>`:nothing}
+                ${this.leadingIcon?html`<md-icon class="md-box__icon" .icon="${this.leadingIcon}"></md-icon>`:nothing}
                 ${this.leadingSupportingText?html`<div class="md-box__supporting-text">${this.leadingSupportingText}</div>`:nothing}
                 ${this.headline||this.supportingText?html`
                     <div class="md-box__section">
@@ -58,7 +58,7 @@ class MDBoxComponent extends MDComponent {
                     </div>
                 `:nothing}
                 ${this.trailingSupportingText?html`<div class="md-box__supporting-text">${this.trailingSupportingText}</div>`:nothing}
-                ${this.trailingIcon?html`<md-icon class="md-box__icon">${this.trailingIcon}</md-icon>`:nothing}
+                ${this.trailingIcon?html`<md-icon class="md-box__icon" .icon="${this.trailingIcon}"></md-icon>`:nothing}
                 ${this.trailingVideo?html`<md-image class="md-box__video" .ratio="${"3/2"}" .src="${this.trailingVideo}"></md-image>`:nothing}
                 ${this.trailingImage?html`<md-image class="md-box__image" .src="${this.trailingImage}"></md-image>`:nothing}
                 ${this.trailingAvatar?html`<md-image class="md-box__avatar" .variant="${"rounded"}" .src="${this.trailingAvatar}"></md-image>`:nothing}

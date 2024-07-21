@@ -230,13 +230,13 @@ class MDTextFieldComponent extends MDComponent {
                 ${ref(this.textFieldContainer)}
                 @click="${this.handleTextFieldContainerClick}"
             >
-                ${this.icon ? html`<md-icon class="md-text-field__icon">${this.icon}</md-icon>` : nothing}
+                ${this.icon ? html`<md-icon class="md-text-field__icon" .icon="${this.icon}"></md-icon>` : nothing}
                 ${this.prefix ? html`<div class="md-text-field__meta md-text-field__meta-prefix" @click="${this.handleTextFieldMetaClick}">${this.prefix}</div>` : nothing}
                 ${this.renderTextFieldNative()}
                 ${this.suffix ? html`<div class="md-text-field__meta md-text-field__meta-suffix" @click="${this.handleTextFieldMetaClick}">${this.suffix}</div>` : nothing}
                 ${(this.validationMessage || this.actions?.length) ? html`
                     <div class="md-text-field__actions">
-                        ${this.validationMessage ? html`<md-icon class="md-text-field__icon md-text-field__icon--error">error</md-icon>` : nothing}
+                        ${this.validationMessage ? html`<md-icon class="md-text-field__icon md-text-field__icon--error" .icon="${"error"}"></md-icon>` : nothing}
                         ${this.actions?.map(action => html`
                             <md-icon-button 
                                 class="md-text-field__action" 
