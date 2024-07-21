@@ -37,6 +37,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-datetime-field");
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

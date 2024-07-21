@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
-import { renderComponent } from "../template/template.js";
 
 /**
  * A custom element for creating various styles of buttons with optional ripple effects.
@@ -27,6 +26,7 @@ class MDButtonComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
 
     /**

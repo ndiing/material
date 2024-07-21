@@ -9,6 +9,7 @@ class MDIconComponent extends MDComponent {
     static properties = {
         icon: { type: String },
     };
+
     render() {
         return this.icon;
     }

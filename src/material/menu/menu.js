@@ -31,6 +31,7 @@ class MDMenuComponent extends MDSheetComponent {
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
+
     menuList = createRef();
 
     /**

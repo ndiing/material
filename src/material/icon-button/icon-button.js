@@ -1,4 +1,4 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { MDRippleController } from "../ripple/ripple.js";
 
@@ -23,6 +23,7 @@ class MDIconButtonComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
         name: { type: String, reflect: true },
     };
+
     variants = ["filled", "tonal", "outlined", "toggle"];
 
     /**

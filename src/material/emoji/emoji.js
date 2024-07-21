@@ -15,15 +15,19 @@ class MDEmojiComponent extends MDComponent {
     static properties = {
         emoji: { type: String },
     };
+
     get webp() {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/512.webp`;
     }
+
     get svg() {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
     }
+
     render() {
         return this.emoji;
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-emoji");

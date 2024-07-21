@@ -9,6 +9,7 @@ class MDDividerComponent extends MDComponent {
     static properties = {
         variant: { type: String },
     };
+
     variants = ["vertical", "horizontal"];
 
     /**
@@ -20,6 +21,7 @@ class MDDividerComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-divider");
     }
+
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {

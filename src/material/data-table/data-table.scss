@@ -38,7 +38,6 @@
         gap: 0 8px;
     }
 }
-
 .md-data-table__item {
     display: flex;
     align-items: center;
@@ -107,7 +106,6 @@
         margin-bottom: 0;
     }
 }
-
 .md-data-table__native {
     border-spacing: 0;
     border-collapse: collapse;
@@ -197,7 +195,6 @@
         max-width: 0;
     }
 }
-
 // .md-data-table__sticky--left-end {
 //     .md-data-table__item {
 //         border-right: 1px dashed var(--md-sys-color-outline-variant);
@@ -208,19 +205,16 @@
 //         border-left: 1px dashed var(--md-sys-color-outline-variant);
 //     }
 // }
-
 .md-data-table__search {
     --md-comp-text-field-density: -2;
     min-width: calc(48px * 5);
 }
-
 .md-data-table__pagination {
     .md-text-field {
         --md-comp-text-field-density: -2;
         min-width: calc(48px * 2);
     }
 }
-
 .md-data-table__toolbar {
     padding: 16px 16px;
     gap: 0 16px;

@@ -37,27 +37,35 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get selectedIndex() {
         return this.options.findIndex((doc) => doc.selected);
     }
+
     get selectedOptions() {
         return this.options.filter((doc) => doc.selected);
     }
+
     get defaultSelectedIndex() {
         return this.defaultOptions.findIndex((doc) => doc.selected);
     }
+
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
+
     get selectedOptionLabel() {
         return this.selectedOptions?.[0]?.[this.map.label] ?? "";
     }
+
     get defaultSelectedOptionLabel() {
         return this.defaultSelectedOptions?.[0]?.[this.map.label] ?? "";
     }
+
     get selectedOptionValue() {
         return this.selectedOptions?.[0]?.[this.map.value] ?? "";
     }
+
     get defaultSelectedOptionValue() {
         return this.defaultSelectedOptions?.[0]?.[this.map.value] ?? "";
     }
+
     constructor() {
         super();
         this.type = "select";
@@ -132,10 +140,12 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.defaultOptions = JSON.parse(JSON.stringify(this.options));
         }
     }
+
     validate() {
         this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
         super.validate();
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();
@@ -191,6 +201,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
+
     handleTextFieldContainerClick(event) {
         super.handleTextFieldContainerClick(event);
         this.togglePicker();
@@ -203,6 +214,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+
     handleTextFieldNativeKeydown(event) {
         super.handleTextFieldNativeKeydown(event);
         if (!this.pickerOpen) {
@@ -231,11 +243,13 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             }
         }
     }
+
     handleTextFieldNativeInput(event) {
         super.handleTextFieldNativeInput(event);
         this.picker.filter(this.textFieldNative.value.value);
         this.showPicker();
     }
+
     handleTextFieldNativeReset(event) {
         super.handleTextFieldNativeReset(event);
         this.options.forEach((option, index) => {

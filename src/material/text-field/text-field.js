@@ -81,6 +81,7 @@ class MDTextFieldComponent extends MDComponent {
         variant: { type: String },
         mask: { type: String },
     };
+
     textFieldNative = createRef();
     textFieldContainer = createRef();
 
@@ -276,6 +277,7 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value;
         }
     }
+
     variants = ["filled", "outlined", "rounded"];
 
     /**
@@ -367,6 +369,7 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }
+
     validate() {
         this.validationMessage = this.textFieldNative.value.validationMessage;
     }

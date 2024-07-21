@@ -10,6 +10,7 @@ class MDToolbarComponent extends MDComponent {
     static properties = {
         items: { type: Array },
     };
+
     render() {
         return this.items?.map((item) => {
             item.component = item.component || "icon-button";

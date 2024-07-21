@@ -87,6 +87,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

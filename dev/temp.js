@@ -130,7 +130,7 @@ let code3 = "";
 code3 += "name|size\n";
 code3 += "---|---\n";
 open("./src/material", (file) => {
-    if (file.endsWith(".js")) {
+    // if (file.endsWith(".js")) {
         let data = read(file);
 
         // let result = parse(data);
@@ -147,7 +147,7 @@ open("./src/material", (file) => {
         
         write(file,data)
         
-    }
+    // }
 });
 write("./dev/size.md", code3);
 

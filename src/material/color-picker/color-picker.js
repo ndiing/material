@@ -260,6 +260,7 @@ class MDColorPickerComponent extends MDSheetComponent {
         this.thumb.style.top = y + "px";
         this.requestUpdate();
     }
+
     getValue() {
         return this.selection.hex.slice(0, 1 + 6);
     }

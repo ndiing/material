@@ -10,6 +10,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
             resize: ["e"],
         });
     }
+
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("reorderable")) {

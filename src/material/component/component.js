@@ -25,21 +25,24 @@ class MDComponent extends LitElement {
     createRenderRoot() {
         return this;
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.on("pointerenter", this.handlePointerenter);
         this.on("pointerleave", this.handlePointerleave);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.off("pointerenter", this.handlePointerenter);
         this.off("pointerleave", this.handlePointerleave);
     }
+
     updated(changedProperties) {
         super.updated(changedProperties);
-
     }
-    async handlePointerenter(event) {
+
+    async handlePointerenter() {
         if (this.tooltip && !this.tooltipElement) {
             this.tooltipElement = document.createElement("md-tooltip");
             this.tooltipElement.childNodes_ = [this.tooltip];
@@ -49,7 +52,8 @@ class MDComponent extends LitElement {
             this.tooltipElement.show(this);
         }
     }
-    handlePointerleave(event) {
+
+    handlePointerleave() {
         if (this.tooltipElement) {
             this.tooltipElement.remove();
             this.tooltipElement = null;

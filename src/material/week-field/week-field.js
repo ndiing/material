@@ -37,6 +37,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-week-field");
     }
+
     togglePicker() {
         if (this.pickerOpen) {
             this.picker.close();

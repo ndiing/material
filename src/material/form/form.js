@@ -1,8 +1,7 @@
-import { html, nothing } from "lit";
+import { html } from "lit";
 import { MDComponent } from "../component/component.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { renderComponent } from "../template/template.js";
 
 /**
  * Form component that extends the MDComponent base class.
@@ -34,6 +33,7 @@ class MDFormComponent extends MDComponent {
         target: { type: String },
         items: { type: Array },
     };
+
     formNative = createRef();
 
     /**

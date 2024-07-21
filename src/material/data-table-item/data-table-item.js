@@ -29,9 +29,11 @@ class MDDataTableItemComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     constructor() {
         super();
     }
+
     render() {
         /* prettier-ignore */
         return html`
@@ -68,10 +70,12 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.badge!==undefined?html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>`:nothing}
         `;
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__item");
     }
+
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("supportingText")) {
