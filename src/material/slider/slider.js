@@ -46,6 +46,15 @@ class MDSliderComponent extends MDComponent {
     };
 
     /**
+     * Returns a NodeList of slider input elements.
+     * @returns {NodeList} The slider input elements.
+     * @private
+     */
+    get sliderNativeAll() {
+        return this.querySelectorAll(".md-slider__native");
+    }
+
+    /**
      * Initializes a new instance of the MDSliderComponent.
      * Sets up default properties.
      */
@@ -80,9 +89,6 @@ class MDSliderComponent extends MDComponent {
         `;
     }
 
-    sliderNative1 = createRef();
-    sliderNative2 = createRef();
-
     /**
      * Renders the slider component template.
      * @private
@@ -103,7 +109,6 @@ class MDSliderComponent extends MDComponent {
                         .step="${ifDefined(this.step)}"
                         ?disabled="${ifDefined(this.disabled)}"
                         .autocomplete="${ifDefined(this.autocomplete)}"
-                        ${ref(this[`sliderNative${index + 1}`])}
                         @input="${this.handleSliderNativeInput}"
                         @reset="${this.handleSliderNativeReset}"
                     >
@@ -134,8 +139,8 @@ class MDSliderComponent extends MDComponent {
         }
         this.defaultValue = this.value.slice();
         await this.updateComplete;
-        for (let index = 0; index < this.natives.length; index++) {
-            let native = this.natives[index];
+        for (let index = 0; index < this.sliderNativeAll.length; index++) {
+            let native = this.sliderNativeAll[index];
             native.value = this.value[index];
             this.updateStyle(index);
         }
@@ -179,15 +184,6 @@ class MDSliderComponent extends MDComponent {
     }
 
     /**
-     * Returns a NodeList of slider input elements.
-     * @returns {NodeList} The slider input elements.
-     * @private
-     */
-    get natives() {
-        return this.querySelectorAll(".md-slider__native");
-    }
-
-    /**
      * Event handler for the slider input event.
      * Updates the component's value and emits the onSliderNativeInput event.
      * @param {Event} event - The input event.
@@ -195,14 +191,14 @@ class MDSliderComponent extends MDComponent {
      */
     handleSliderNativeInput(event) {
         if (this.value?.length > 1) {
-            this.natives[0].value = Math.min(this.natives[0].value, this.value[1]);
-            this.natives[1].value = Math.max(this.natives[1].value, this.value[0]);
-            this.value[0] = this.natives[0].value;
-            this.value[1] = this.natives[1].value;
+            this.sliderNativeAll[0].value = Math.min(this.sliderNativeAll[0].value, this.value[1]);
+            this.sliderNativeAll[1].value = Math.max(this.sliderNativeAll[1].value, this.value[0]);
+            this.value[0] = this.sliderNativeAll[0].value;
+            this.value[1] = this.sliderNativeAll[1].value;
             this.updateStyle(0);
             this.updateStyle(1);
         } else {
-            this.value[0] = this.natives[0].value;
+            this.value[0] = this.sliderNativeAll[0].value;
             this.updateStyle(0);
         }
         this.requestUpdate();
@@ -216,8 +212,8 @@ class MDSliderComponent extends MDComponent {
      * @private
      */
     handleSliderNativeReset(event) {
-        for (let index = 0; index < this.natives.length; index++) {
-            let native = this.natives[index];
+        for (let index = 0; index < this.sliderNativeAll.length; index++) {
+            let native = this.sliderNativeAll[index];
             native.value = this.defaultValue[index];
             this.value[index] = this.defaultValue[index];
             this.updateStyle(index);
