@@ -93,7 +93,7 @@ We welcome contributions to the Material Design framework! To get started, follo
 2. Clone your fork:
 
 <pre>
-git clone https://github.com/your-username/material.git
+git clone https://github.com/ndiing/material.git
 </pre>
 
 3. Create a new branch for your feature or bugfix:
@@ -119,3 +119,7 @@ git push origin feature-name
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any questions or support, please contact [ndiing.inc@gmail.com](mailto:ndiing.inc@gmail.com).
