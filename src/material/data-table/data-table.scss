@@ -46,7 +46,6 @@
     background-color: var(--md-sys-color-surface-container-lowest);
     color: var(--md-sys-color-on-surface-variant);
 }
-// .md-data-table__icon-button{}
 .md-data-table__section {
     flex: 1;
     display: flex;
@@ -62,14 +61,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-// .md-data-table__badge{}
-// .md-data-table__checkbox{}
-// .md-checkbox{}
-// .md-checkbox__native{}
-// .md-checkbox__track{}
-// .md-checkbox__thumb{}
-// .md-data-table__radio-button{}
-// .md-data-table__switch{}
 .md-data-table__avatar {
     width: 40px;
     height: 40px;
@@ -83,7 +74,6 @@
     margin: 4px 0;
     margin-left: -16px;
 }
-// .md-data-table__icon{}
 .md-data-table__supporting-text {
     @include typescale-body-medium();
     max-height: 40px;
@@ -111,7 +101,6 @@
     border-collapse: collapse;
     tbody {
         .md-data-table__item {
-            // border-bottom: 1px solid var(--md-sys-color-outline-variant);
             @include ripple();
             @include ripple-button();
             --md-comp-ripple-size: 200%;
@@ -166,16 +155,8 @@
             }
         }
     }
-    // tfoot {
-    //     .md-data-table__item {
-    //         border-top: 1px solid var(--md-sys-color-outline-variant);
-    //     }
-    // }
     th {
         text-align: left;
-        // .md-data-table__item {
-        //     border-bottom: 1px solid var(--md-sys-color-outline-variant);
-        // }
         .md-data-table__label-primary {
             @include typescale-label-large();
         }
@@ -195,16 +176,6 @@
         max-width: 0;
     }
 }
-// .md-data-table__sticky--left-end {
-//     .md-data-table__item {
-//         border-right: 1px dashed var(--md-sys-color-outline-variant);
-//     }
-// }
-// .md-data-table__sticky--right-start {
-//     .md-data-table__item {
-//         border-left: 1px dashed var(--md-sys-color-outline-variant);
-//     }
-// }
 .md-data-table__search {
     --md-comp-text-field-density: -2;
     min-width: calc(48px * 5);

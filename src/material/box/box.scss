@@ -7,7 +7,6 @@
     background-color: var(--md-sys-color-surface-container-lowest);
     color: var(--md-sys-color-on-surface-variant);
 }
-// .md-box__icon-button{}
 .md-box__section {
     flex: 1;
     display: flex;
@@ -23,14 +22,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-// .md-box__badge{}
-// .md-box__checkbox{}
-// .md-checkbox{}
-// .md-checkbox__native{}
-// .md-checkbox__track{}
-// .md-checkbox__thumb{}
-// .md-box__radio-button{}
-// .md-box__switch{}
 .md-box__avatar {
     width: 40px;
     height: 40px;
@@ -44,7 +35,6 @@
     margin: 4px 0;
     margin-left: -16px;
 }
-// .md-box__icon{}
 .md-box__supporting-text {
     @include typescale-body-medium();
     max-height: 40px;

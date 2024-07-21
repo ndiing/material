@@ -111,7 +111,6 @@
     }
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
-        // box-shadow: inset 0 -1px 0 0 var(--md-sys-color-on-surface-variant);
         box-shadow: inset 0 -1px 0 0 var(--md-sys-color-outline-variant);
     }
     &.md-text-field--populated,
@@ -187,7 +186,6 @@
     }
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small);
-        // box-shadow: inset 0 0 0 1px var(--md-sys-color-on-surface-variant);
         box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
         background-color: transparent;
     }
