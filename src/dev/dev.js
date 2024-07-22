@@ -76,6 +76,7 @@ import DevEmojiPicker from "./emoji-picker/emoji-picker.js";
 // list
 import DevListItem from "./list-item/list-item.js";
 import DevList from "./list/list.js";
+import DevList2 from "./list/list2.js";
 import DevTreeItem from "./tree-item/tree-item.js";
 import DevTree from "./tree/tree.js";
 import DevChip from "./chip/chip.js";
@@ -132,6 +133,7 @@ const routes = [
             { component: DevImage, path: "image" },
             { component: DevLayout, path: "layout" },
             { component: DevList, path: "list" },
+            { component: DevList2, path: "list2" },
             { component: DevListItem, path: "list-item" },
             { component: DevLocalization, path: "localization" },
             { component: DevMarkdown, path: "markdown" },

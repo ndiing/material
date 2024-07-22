@@ -68,3 +68,10 @@
 //         height: calc(var(--md-sys-typescale-body-medium-line-height) * 2);
 //     }
 // }
+// .md-list__item{}
+.md-list__section{
+    .md-block__headline{
+        @include typescale-label-large();
+    }
+}
+.md-list__divider{}

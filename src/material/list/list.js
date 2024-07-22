@@ -1,5 +1,7 @@
+import { html } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderComponent } from "../template/template.js";
+import { renderComponent, renderDivider, renderListItem } from "../template/template.js";
+import { choose } from "lit/directives/choose.js";
 
 /**
  * {{desc}}
@@ -70,22 +72,43 @@ class MDListComponent extends MDComponent {
         super();
     }
 
+    renderListItem(item={}){
+        // item.component = item.component||"list-item";
+        // for(const name in this.computedMap){
+        //     const value=this.computedMap[name]
+        //     item[name]=item[value]
+        // }
+        item.onListItemClick = this.handleListItemClick;
+        item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
+        item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
+        item.onSwitchNativeInput = this.handleListItemSwitchNativeInput;
+        return renderListItem(item)
+    }
+    renderListSection(item={}){
+        return html`
+            <div class="md-block md-list__section">
+                <div class="md-block__group">
+                    <div class="md-block__headline">${item.section}</div>
+                </div>
+            </div>
+        `
+    }
+    renderListDivider(item={}){
+        item.classMap={'md-list__divider':true}
+        return renderDivider(item)
+    }
+
     /**
      * {{desc}}
      */
     render() {
         /* prettier-ignore */
         return this.items?.map((item) => {
-            item.component = item.component||"list-item";
-            // for(const name in this.computedMap){
-            //     const value=this.computedMap[name]
-            //     item[name]=item[value]
-            // }
-            item.onListItemClick = this.handleListItemClick;
-            item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
-            item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
-            item.onSwitchNativeInput = this.handleListItemSwitchNativeInput;
-            return renderComponent(item);
+            
+            return choose(item.component, [
+                ['section', () => this.renderListSection(item)],
+                ['divider', () => this.renderListDivider(item)],
+            ], () => this.renderListItem(item))
         });
     }
 
