@@ -53,7 +53,7 @@ import DevTextareaField from "./textarea-field/textarea-field.js";
 import DevSelectField from "./select-field/select-field.js";
 import DevProgressIndicator from "./progress-indicator/progress-indicator.js";
 // card
-import DevBox from "./box/box.js";
+import DevBlock from "./block/block.js";
 import DevToolbar from "./toolbar/toolbar.js";
 import DevCard from "./card/card.js";
 import DevScrim from "./scrim/scrim.js";
@@ -99,7 +99,7 @@ const routes = [
         path: "",
         component: DevMain,
         children: [
-            { component: DevBox, path: "box" },
+            { component: DevBlock, path: "block" },
             { component: DevAttributeObserver, path: "attribute-observer" },
             { component: DevBadge, path: "badge" },
             { component: DevBottomAppBar, path: "bottom-app-bar" },
