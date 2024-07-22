@@ -33,23 +33,6 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
 class MDDatePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
-     * @property {String} tooltip - {{desc}}
-     * @property {String} variant - {{desc}}
-     * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Array} trailingActions - {{desc}}
-     * @property {Array} actions - {{desc}}
-     * @property {Boolean} open - {{desc}}
-     * @property {Number} index - {{desc}}
-     * @property {String} value - {{desc}}
-     */
-    static properties = {
-        ...MDDatetimePickerComponent.properties,
-    };
-
-    /**
-     * {{desc}}
      */
     get leadingActions() {
         let label;

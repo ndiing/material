@@ -9,20 +9,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @fires MDDialogComponent#onSheetScrimClick - {{desc}}
  */
 class MDDialogComponent extends MDSheetComponent {
-    /**
-     * {{desc}}
-     * @property {String} tooltip - {{desc}}
-     * @property {String} variant - {{desc}}
-     * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Array} trailingActions - {{desc}}
-     * @property {Array} actions - {{desc}}
-     * @property {Boolean} open - {{desc}}
-     */
-    static properties = {
-        ...MDSheetComponent.properties,
-    };
     variants = ["full"];
 
     /**

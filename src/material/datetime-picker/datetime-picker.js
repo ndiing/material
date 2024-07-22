@@ -248,10 +248,12 @@ class MDDatetimePickerComponent extends MDSheetComponent {
     get actions() {
         return [{ component: "spacer" }, { label: "Cancel", onButtonClick: this.handleCardButtonCancelClick }, { label: "Ok", onButtonClick: this.handleCardButtonOkClick }];
     }
-
     /**
      * {{desc}}
+     * @param {Any} value - {{desc}}
      */
+    set actions(value) {}
+
     constructor() {
         super();
         this.yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;

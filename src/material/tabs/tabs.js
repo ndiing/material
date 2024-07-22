@@ -9,16 +9,6 @@ import { MDTreeComponent } from "../tree/tree.js";
 class MDTabsComponent extends MDTreeComponent {
     /**
      * {{desc}}
-     * @property {String} tooltip - {{desc}}
-     * @property {Array} items - {{desc}}
-     * @property {String} variant - {{desc}}
-     */
-    static properties = {
-        ...MDTreeComponent.properties,
-    };
-
-    /**
-     * {{desc}}
      */
     constructor() {
         super();

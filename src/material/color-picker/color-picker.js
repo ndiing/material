@@ -21,7 +21,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerButtonOkClick - {{desc}}
  */
 class MDColorPickerComponent extends MDSheetComponent {
-
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}

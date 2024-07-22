@@ -19,92 +19,367 @@ class DevMainComponent extends MDComponent {
 
         this.items = [
             {
-                label: "Components",
+                label: "cdk",
                 items: [
-                    { label: "Badge", routerLink: "/badge" },
-                    { label: "Bottom App Bar", routerLink: "/bottom-app-bar" },
-                    { label: "Bottom Sheet", routerLink: "/bottom-sheet" },
-                    { label: "Button", routerLink: "/button" },
-                    { label: "Card", routerLink: "/card" },
-                    { label: "Checkbox", routerLink: "/checkbox" },
-                    { label: "Chip", routerLink: "/chip" },
-                    { label: "Chips", routerLink: "/chips" },
-                    { label: "Color Field", routerLink: "/color-field" },
-                    { label: "Color Picker", routerLink: "/color-picker" },
-                    { label: "Data Table Column Cell", routerLink: "/data-table-column-cell" },
-                    { label: "Data Table Item", routerLink: "/data-table-item" },
-                    { label: "Data Table Row Cell", routerLink: "/data-table-row-cell" },
-                    { label: "Data Table", routerLink: "/data-table" },
-                    { label: "Date Field", routerLink: "/date-field" },
-                    { label: "Date Picker", routerLink: "/date-picker" },
-                    { label: "Datetime Field", routerLink: "/datetime-field" },
-                    { label: "Datetime Picker", routerLink: "/datetime-picker" },
-                    { label: "Dialog", routerLink: "/dialog" },
-                    { label: "Divider", routerLink: "/divider" },
-                    { label: "Emoji Picker", routerLink: "/emoji-picker" },
-                    { label: "Emoji", routerLink: "/emoji" },
-                    { label: "Fab", routerLink: "/fab" },
-                    { label: "Form", routerLink: "/form" },
-                    { label: "Icon Button", routerLink: "/icon-button" },
-                    { label: "Icon", routerLink: "/icon" },
-                    { label: "Image", routerLink: "/image" },
-                    { label: "Layout", routerLink: "/layout" },
-                    { label: "List Item", routerLink: "/list-item" },
-                    { label: "List", routerLink: "/list" },
-                    { label: "Markdown", routerLink: "/markdown" },
-                    { label: "Menu", routerLink: "/menu" },
-                    { label: "Month Field", routerLink: "/month-field" },
-                    { label: "Month Picker", routerLink: "/month-picker" },
-                    { label: "Navigation Bar", routerLink: "/navigation-bar" },
-                    { label: "Navigation Drawer", routerLink: "/navigation-drawer" },
-                    { label: "Navigation Rail", routerLink: "/navigation-rail" },
-                    { label: "Number Field", routerLink: "/number-field" },
-                    { label: "Pagination", routerLink: "/pagination" },
-                    { label: "Password Field", routerLink: "/password-field" },
-                    { label: "Progress Indicator", routerLink: "/progress-indicator" },
-                    { label: "Radio Button", routerLink: "/radio-button" },
-                    { label: "Scrim", routerLink: "/scrim" },
-                    { label: "Search Field", routerLink: "/search-field" },
-                    { label: "Segmented Button", routerLink: "/segmented-button" },
-                    { label: "Select Field", routerLink: "/select-field" },
-                    { label: "Sheet", routerLink: "/sheet" },
-                    { label: "Side Sheet", routerLink: "/side-sheet" },
-                    { label: "Slider", routerLink: "/slider" },
-                    { label: "Snackbar", routerLink: "/snackbar" },
-                    { label: "Spacer", routerLink: "/spacer" },
-                    { label: "Switch", routerLink: "/switch" },
-                    { label: "Tabs", routerLink: "/tabs" },
-                    { label: "Text Field", routerLink: "/text-field" },
-                    { label: "Textarea Field", routerLink: "/textarea-field" },
-                    { label: "Time Field", routerLink: "/time-field" },
-                    { label: "Time Picker", routerLink: "/time-picker" },
-                    { label: "Toolbar", routerLink: "/toolbar" },
-                    { label: "Tooltip", routerLink: "/tooltip" },
-                    { label: "Top App Bar", routerLink: "/top-app-bar" },
-                    { label: "Tree Item", routerLink: "/tree-item" },
-                    { label: "Tree", routerLink: "/tree" },
-                    { label: "Week Field", routerLink: "/week-field" },
-                    { label: "Week Picker", routerLink: "/week-picker" },
+                    {
+                        label: "observer",
+                        routerLink: "/observer",
+                    },
+                    {
+                        label: "media-observer",
+                        routerLink: "/media-observer",
+                    },
+                    {
+                        label: "attribute-observer",
+                        routerLink: "/attribute-observer",
+                    },
+                    {
+                        label: "store",
+                        routerLink: "/store",
+                    },
+                    {
+                        label: "router",
+                        routerLink: "/router",
+                    },
+                    {
+                        label: "localization",
+                        routerLink: "/localization",
+                    },
+                    {
+                        label: "color",
+                        routerLink: "/color",
+                    },
+                    {
+                        label: "progress",
+                        routerLink: "/progress",
+                    },
+                    {
+                        label: "functions",
+                        routerLink: "/functions",
+                    },
+                    {
+                        label: "ripple",
+                        routerLink: "/ripple",
+                    },
+                    {
+                        label: "popper",
+                        routerLink: "/popper",
+                    },
+                    {
+                        label: "gesture",
+                        routerLink: "/gesture",
+                    },
+                    {
+                        label: "virtual",
+                        routerLink: "/virtual",
+                    },
+                    {
+                        label: "component",
+                        routerLink: "/component",
+                    },
+                    {
+                        label: "template",
+                        routerLink: "/template",
+                    },
                 ],
             },
             {
-                label: "Foundations",
+                label: "base",
                 items: [
-                    { label: "Attribute Observer", routerLink: "/attribute-observer" },
-                    { label: "Color", routerLink: "/color" },
-                    { label: "Component", routerLink: "/component" },
-                    { label: "Functions", routerLink: "/functions" },
-                    { label: "Gesture", routerLink: "/gesture" },
-                    { label: "Localization", routerLink: "/localization" },
-                    { label: "Media Observer", routerLink: "/media-observer" },
-                    { label: "Observer", routerLink: "/observer" },
-                    { label: "Popper", routerLink: "/popper" },
-                    { label: "Progress", routerLink: "/progress" },
-                    { label: "Ripple", routerLink: "/ripple" },
-                    { label: "Router", routerLink: "/router" },
-                    { label: "Store", routerLink: "/store" },
-                    { label: "Template", routerLink: "/template" },
-                    { label: "Virtual", routerLink: "/virtual" },
+                    {
+                        label: "layout-item",
+                        routerLink: "/layout-item",
+                    },
+                    {
+                        label: "layout",
+                        routerLink: "/layout",
+                    },
+                    {
+                        label: "markdown",
+                        routerLink: "/markdown",
+                    },
+                    {
+                        label: "divider",
+                        routerLink: "/divider",
+                    },
+                    {
+                        label: "spacer",
+                        routerLink: "/spacer",
+                    },
+                    {
+                        label: "icon",
+                        routerLink: "/icon",
+                    },
+                    {
+                        label: "emoji",
+                        routerLink: "/emoji",
+                    },
+                    {
+                        label: "image",
+                        routerLink: "/image",
+                    },
+                    {
+                        label: "badge",
+                        routerLink: "/badge",
+                    },
+                ],
+            },
+            {
+                label: "button",
+                items: [
+                    {
+                        label: "button",
+                        routerLink: "/button",
+                    },
+                    {
+                        label: "icon-button",
+                        routerLink: "/icon-button",
+                    },
+                    {
+                        label: "segmented-button",
+                        routerLink: "/segmented-button",
+                    },
+                    {
+                        label: "fab",
+                        routerLink: "/fab",
+                    },
+                ],
+            },
+            {
+                label: "form",
+                items: [
+                    {
+                        label: "form",
+                        routerLink: "/form",
+                    },
+                    {
+                        label: "checkbox",
+                        routerLink: "/checkbox",
+                    },
+                    {
+                        label: "radio-button",
+                        routerLink: "/radio-button",
+                    },
+                    {
+                        label: "switch",
+                        routerLink: "/switch",
+                    },
+                    {
+                        label: "slider",
+                        routerLink: "/slider",
+                    },
+                    {
+                        label: "text-field",
+                        routerLink: "/text-field",
+                    },
+                    {
+                        label: "datetime-field",
+                        routerLink: "/datetime-field",
+                    },
+                    {
+                        label: "date-field",
+                        routerLink: "/date-field",
+                    },
+                    {
+                        label: "month-field",
+                        routerLink: "/month-field",
+                    },
+                    {
+                        label: "week-field",
+                        routerLink: "/week-field",
+                    },
+                    {
+                        label: "time-field",
+                        routerLink: "/time-field",
+                    },
+                    {
+                        label: "color-field",
+                        routerLink: "/color-field",
+                    },
+                    {
+                        label: "number-field",
+                        routerLink: "/number-field",
+                    },
+                    {
+                        label: "search-field",
+                        routerLink: "/search-field",
+                    },
+                    {
+                        label: "password-field",
+                        routerLink: "/password-field",
+                    },
+                    {
+                        label: "textarea-field",
+                        routerLink: "/textarea-field",
+                    },
+                    {
+                        label: "select-field",
+                        routerLink: "/select-field",
+                    },
+                    {
+                        label: "progress-indicator",
+                        routerLink: "/progress-indicator",
+                    },
+                ],
+            },
+            {
+                label: "card",
+                items: [
+                    {
+                        label: "box",
+                        routerLink: "/box",
+                    },
+                    {
+                        label: "toolbar",
+                        routerLink: "/toolbar",
+                    },
+                    {
+                        label: "card",
+                        routerLink: "/card",
+                    },
+                    {
+                        label: "scrim",
+                        routerLink: "/scrim",
+                    },
+                    {
+                        label: "sheet",
+                        routerLink: "/sheet",
+                    },
+                    {
+                        label: "dialog",
+                        routerLink: "/dialog",
+                    },
+                    {
+                        label: "top-app-bar",
+                        routerLink: "/top-app-bar",
+                    },
+                    {
+                        label: "side-sheet",
+                        routerLink: "/side-sheet",
+                    },
+                    {
+                        label: "bottom-sheet",
+                        routerLink: "/bottom-sheet",
+                    },
+                    {
+                        label: "snackbar",
+                        routerLink: "/snackbar",
+                    },
+                    {
+                        label: "tooltip",
+                        routerLink: "/tooltip",
+                    },
+                    {
+                        label: "bottom-app-bar",
+                        routerLink: "/bottom-app-bar",
+                    },
+                ],
+            },
+            {
+                label: "picker",
+                items: [
+                    {
+                        label: "datetime-picker",
+                        routerLink: "/datetime-picker",
+                    },
+                    {
+                        label: "date-picker",
+                        routerLink: "/date-picker",
+                    },
+                    {
+                        label: "month-picker",
+                        routerLink: "/month-picker",
+                    },
+                    {
+                        label: "time-picker",
+                        routerLink: "/time-picker",
+                    },
+                    {
+                        label: "week-picker",
+                        routerLink: "/week-picker",
+                    },
+                    {
+                        label: "color-picker",
+                        routerLink: "/color-picker",
+                    },
+                    {
+                        label: "emoji-picker",
+                        routerLink: "/emoji-picker",
+                    },
+                ],
+            },
+            {
+                label: "list",
+                items: [
+                    {
+                        label: "list-item",
+                        routerLink: "/list-item",
+                    },
+                    {
+                        label: "list",
+                        routerLink: "/list",
+                    },
+                    {
+                        label: "tree-item",
+                        routerLink: "/tree-item",
+                    },
+                    {
+                        label: "tree",
+                        routerLink: "/tree",
+                    },
+                    {
+                        label: "chip",
+                        routerLink: "/chip",
+                    },
+                    {
+                        label: "chips",
+                        routerLink: "/chips",
+                    },
+                    {
+                        label: "navigation-bar",
+                        routerLink: "/navigation-bar",
+                    },
+                    {
+                        label: "navigation-drawer",
+                        routerLink: "/navigation-drawer",
+                    },
+                    {
+                        label: "navigation-rail",
+                        routerLink: "/navigation-rail",
+                    },
+                    {
+                        label: "menu",
+                        routerLink: "/menu",
+                    },
+                    {
+                        label: "tabs",
+                        routerLink: "/tabs",
+                    },
+                ],
+            },
+            {
+                label: "table",
+                items: [
+                    {
+                        label: "pagination",
+                        routerLink: "/pagination",
+                    },
+                    {
+                        label: "data-table-item",
+                        routerLink: "/data-table-item",
+                    },
+                    {
+                        label: "data-table-column-cell",
+                        routerLink: "/data-table-column-cell",
+                    },
+                    {
+                        label: "data-table-row-cell",
+                        routerLink: "/data-table-row-cell",
+                    },
+                    {
+                        label: "data-table",
+                        routerLink: "/data-table",
+                    },
                 ],
             },
         ];
