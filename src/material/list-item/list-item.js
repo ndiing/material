@@ -122,6 +122,9 @@ class MDListItemComponent extends MDComponent {
             ${this.trailingRadioButton ? this.renderRadioButton() : nothing}
             ${this.trailingSwitch ? this.renderSwitch() : nothing}
         `;
+        // this.emit("onCheckboxNativeInput", this);
+        // this.emit("onRadioButtonNativeInput", this);
+        // this.emit("onSwitchNativeInput", this);
     }
 
     /**

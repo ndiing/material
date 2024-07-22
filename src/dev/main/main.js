@@ -40,7 +40,7 @@ class DevMainComponent extends MDComponent {
             {
                 label: "base",
                 items: [
-                    { label: "layout-item", routerLink: "/layout-item" },
+                    // { label: "layout-item", routerLink: "/layout-item" },
                     { label: "layout", routerLink: "/layout" },
                     { label: "markdown", routerLink: "/markdown" },
                     { label: "divider", routerLink: "/divider" },
@@ -115,9 +115,9 @@ class DevMainComponent extends MDComponent {
             {
                 label: "list",
                 items: [
-                    { label: "list-item", routerLink: "/list-item" },
+                    // { label: "list-item", routerLink: "/list-item" },
                     { label: "list", routerLink: "/list" },
-                    { label: "tree-item", routerLink: "/tree-item" },
+                    // { label: "tree-item", routerLink: "/tree-item" },
                     { label: "tree", routerLink: "/tree" },
                     { label: "chip", routerLink: "/chip" },
                     { label: "chips", routerLink: "/chips" },
@@ -132,9 +132,9 @@ class DevMainComponent extends MDComponent {
                 label: "table",
                 items: [
                     { label: "pagination", routerLink: "/pagination" },
-                    { label: "data-table-item", routerLink: "/data-table-item" },
-                    { label: "data-table-column-cell", routerLink: "/data-table-column-cell" },
-                    { label: "data-table-row-cell", routerLink: "/data-table-row-cell" },
+                    // { label: "data-table-item", routerLink: "/data-table-item" },
+                    // { label: "data-table-column-cell", routerLink: "/data-table-column-cell" },
+                    // { label: "data-table-row-cell", routerLink: "/data-table-row-cell" },
                     { label: "data-table", routerLink: "/data-table" },
                 ],
             },

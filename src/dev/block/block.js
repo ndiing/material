@@ -80,8 +80,6 @@ class DevBlock extends MDComponent {
                             <md-block headline="headline" supportingText="supporting Text supporting Text supporting Text"></md-block>
                         </md-layout-item>
                     </md-layout>
-
-                    
                 </md-layout-item>
             </md-layout>
         `;

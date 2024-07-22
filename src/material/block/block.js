@@ -3,40 +3,39 @@ import { MDComponent } from "../component/component.js";
 import { renderComponent } from "../template/template.js";
 
 /**
- * MDBlockComponent represents a complex component with multiple properties for leading and trailing actions, icons, and various other elements.
+ * {{desc}}
  * @extends MDComponent
  * @element md-block
  */
 class MDBlockComponent extends MDComponent {
     /**
-     * Defines properties for MDBlockComponent.
-     * @property {String} tooltip - Tooltip text for the component.
-     * @property {Array} leadingActions - Array of leading actions.
-     * @property {Boolean} leadingCheckbox - Display leading checkblock.
-     * @property {Boolean} leadingRadio - Display leading radio button.
-     * @property {Boolean} leadingSwitch - Display leading switch.
-     * @property {String} leadingAvatar - URL for leading avatar image.
-     * @property {String} leadingImage - URL for leading image.
-     * @property {String} leadingVideo - URL for leading video.
-     * @property {String} leadingIcon - Leading icon name.
-     * @property {String} leadingSupportingText - Supporting text for the leading section.
-     * @property {String} headline - Headline text.
-     * @property {String} supportingText - Supporting text.
-     * @property {String} trailingSupportingText - Supporting text for the trailing section.
-     * @property {String} trailingIcon - Trailing icon name.
-     * @property {String} trailingVideo - URL for trailing video.
-     * @property {String} trailingImage - URL for trailing image.
-     * @property {String} trailingAvatar - URL for trailing avatar image.
-     * @property {Boolean} trailingSwitch - Display trailing switch.
-     * @property {Boolean} trailingRadio - Display trailing radio button.
-     * @property {Boolean} trailingCheckbox - Display trailing checkblock.
-     * @property {Array} trailingActions - Array of trailing actions.
-     * @property {Number} badge - Badge number.
-     * @property {Boolean} activated - Activated state.
-     * @property {Boolean} indeterminate - Indeterminate state for checkblockes or switches.
-     * @property {Boolean} selected - Selected state.
-     * @property {Boolean} disabled - Disabled state.
-     * @property {Object} map - Mapping of component properties.
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadio - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {String} leadingAvatar - {{desc}}
+     * @property {String} leadingImage - {{desc}}
+     * @property {String} leadingVideo - {{desc}}
+     * @property {String} leadingIcon - {{desc}}
+     * @property {String} leadingSupportingText - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} supportingText - {{desc}}
+     * @property {String} trailingSupportingText - {{desc}}
+     * @property {String} trailingIcon - {{desc}}
+     * @property {String} trailingVideo - {{desc}}
+     * @property {String} trailingImage - {{desc}}
+     * @property {String} trailingAvatar - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} trailingRadio - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {Boolean} activated - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
      */
     static properties = {
         leadingActions: { type: Array },
@@ -64,19 +63,22 @@ class MDBlockComponent extends MDComponent {
         indeterminate: { type: Boolean },
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
-        
     };
 
     /**
-     * Initializes the MDBlockComponent and sets up the property mapping.
+     * {{desc}}
      */
     constructor() {
         super();
-        
+
+        // Confused material!!!
+        // headline/section
+        // headline/label
+        // supportingText/subhead
     }
 
     /**
-     * Renders the component using Lit's html template literal.
+     * {{desc}}
      */
     render() {
         /* prettier-ignore */
@@ -117,7 +119,7 @@ class MDBlockComponent extends MDComponent {
     }
 
     /**
-     * Lifecycle method called when the element is connected to the DOM.
+     * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
@@ -125,8 +127,8 @@ class MDBlockComponent extends MDComponent {
     }
 
     /**
-     * Called whenever the element's properties are updated.
-     * @param {Map} changedProperties - Map of changed properties.
+     * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

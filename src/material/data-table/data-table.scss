@@ -40,13 +40,15 @@
 }
 .md-data-table__item {
     display: flex;
+    // display: inline-flex;
+    // vertical-align: middle;
     align-items: center;
     padding: 8px 16px;
     gap: 0 16px;
     background-color: var(--md-sys-color-surface-container-lowest);
     color: var(--md-sys-color-on-surface-variant);
 }
-.md-data-table__section {
+.md-data-table__wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -96,6 +98,7 @@
         margin-bottom: 0;
     }
 }
+
 .md-data-table__native {
     border-spacing: 0;
     border-collapse: collapse;

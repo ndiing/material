@@ -97,9 +97,9 @@ function parse(data, options = {}, replacer = false) {
             let code = "";
             code += `    /**\n`;
             code += `     * {{desc}}\n`;
-            params?.forEach(param=>{
+            params?.forEach((param) => {
                 code += `     * @param {Any} ${param} - {{desc}}\n`;
-            })
+            });
             code += `     */\n`;
             code += match;
             return code;
@@ -141,10 +141,10 @@ function parse(data, options = {}, replacer = false) {
             let code = "";
             code += `/**\n`;
             code += ` * {{desc}}\n`;
-            if(doc.extendsName){
+            if (doc.extendsName) {
                 code += ` * @extends ${doc.extendsName}\n`;
             }
-            if(doc.tagName){
+            if (doc.tagName) {
                 code += ` * @element ${doc.tagName}\n`;
             }
             doc.emits.forEach((value) => {
@@ -168,9 +168,9 @@ function parse(data, options = {}, replacer = false) {
             let code = "";
             code += `/**\n`;
             code += ` * {{desc}}\n`;
-            params?.forEach(param=>{
+            params?.forEach((param) => {
                 code += ` * @param {Any} ${param} - {{desc}}\n`;
-            })
+            });
             code += ` */\n`;
             code += match;
             return code;
@@ -217,7 +217,7 @@ let cli = {
         placeholder: () => {
             // create placeholder
             open("./src/material", (file) => {
-                if(argvFiles.length&&argvFiles.some(filename=>file.endsWith(filename))||!argvFiles.length){
+                if ((argvFiles.length && argvFiles.some((filename) => file.endsWith(filename))) || !argvFiles.length) {
                     let data = read(file);
                     let doc = docs.find((doc) => doc.file === file);
                     let result = parse(data, doc, true);
@@ -229,7 +229,7 @@ let cli = {
             // create template
             let code = "";
             let code2 = "";
-            let code3=''
+            let code3 = "";
             code += `import { html, nothing } from "lit";\n`;
             code += `import { choose } from "lit/directives/choose.js";\n`;
             code += `import { classMap } from "lit/directives/class-map.js";\n`;
@@ -265,7 +265,17 @@ let cli = {
                     code += `            class="\${classMap({...item.classMap})}"\n`;
                     code += `            style="\${styleMap({...item.styleMap})}"\n`;
                     doc.properties.forEach((value) => {
-                        if (value && !["id", "name", "classMap", "styleMap", "data"].includes(value.name)) {
+                        if (
+                            value &&
+                            ![
+                                //
+                                "id",
+                                "name",
+                                "classMap",
+                                "styleMap",
+                                "data",
+                            ].includes(value.name)
+                        ) {
                             code += `            .${value.name}="\${ifDefined(item.${value.name})}"\n`;
                         }
                     });
@@ -277,10 +287,10 @@ let cli = {
                     if (
                         [
                             //
-                            "button",
                             "icon",
-                            "icon-button",
                             "emoji",
+                            "button",
+                            "icon-button",
                             "fab",
                             "chip",
                             "list-item",

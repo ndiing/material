@@ -27,6 +27,74 @@ function renderBadge(item = {}) {
 }
 
 /**
+ * Render Block
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadio] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadio] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ */
+function renderBlock(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-block
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadio="${ifDefined(item.leadingRadio)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadio="${ifDefined(item.trailingRadio)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+        ></md-block>
+    `
+}
+
+/**
  * Render Bottom App Bar
  * @param {Object} item - {{desc}}
  * @property {String} [item.tooltip] - {{desc}}
@@ -99,76 +167,6 @@ function renderBottomSheet(item = {}) {
             @onSheetClose="${ifDefined(item.onSheetClose)}"
             @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
         ></md-bottom-sheet>
-    `
-}
-
-/**
- * Render Box
- * @param {Object} item - {{desc}}
- * @property {String} [item.tooltip] - {{desc}}
- * @property {Array} [item.leadingActions] - {{desc}}
- * @property {Boolean} [item.leadingCheckbox] - {{desc}}
- * @property {Boolean} [item.leadingRadio] - {{desc}}
- * @property {Boolean} [item.leadingSwitch] - {{desc}}
- * @property {String} [item.leadingAvatar] - {{desc}}
- * @property {String} [item.leadingImage] - {{desc}}
- * @property {String} [item.leadingVideo] - {{desc}}
- * @property {String} [item.leadingIcon] - {{desc}}
- * @property {String} [item.leadingSupportingText] - {{desc}}
- * @property {String} [item.headline] - {{desc}}
- * @property {String} [item.supportingText] - {{desc}}
- * @property {String} [item.trailingSupportingText] - {{desc}}
- * @property {String} [item.trailingIcon] - {{desc}}
- * @property {String} [item.trailingVideo] - {{desc}}
- * @property {String} [item.trailingImage] - {{desc}}
- * @property {String} [item.trailingAvatar] - {{desc}}
- * @property {Boolean} [item.trailingSwitch] - {{desc}}
- * @property {Boolean} [item.trailingRadio] - {{desc}}
- * @property {Boolean} [item.trailingCheckbox] - {{desc}}
- * @property {Array} [item.trailingActions] - {{desc}}
- * @property {Number} [item.badge] - {{desc}}
- * @property {Boolean} [item.activated] - {{desc}}
- * @property {Boolean} [item.indeterminate] - {{desc}}
- * @property {Boolean} [item.selected] - {{desc}}
- * @property {Boolean} [item.disabled] - {{desc}}
- * @property {Object} [item.map] - {{desc}}
- */
-function renderBox(item = {}) {
-    /* prettier-ignore */
-    return html`
-        <md-box
-            .data="${item}"
-            id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
-            .tooltip="${ifDefined(item.tooltip)}"
-            .leadingActions="${ifDefined(item.leadingActions)}"
-            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-            .leadingRadio="${ifDefined(item.leadingRadio)}"
-            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
-            .leadingImage="${ifDefined(item.leadingImage)}"
-            .leadingVideo="${ifDefined(item.leadingVideo)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
-            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
-            .headline="${ifDefined(item.headline)}"
-            .supportingText="${ifDefined(item.supportingText)}"
-            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
-            .trailingIcon="${ifDefined(item.trailingIcon)}"
-            .trailingVideo="${ifDefined(item.trailingVideo)}"
-            .trailingImage="${ifDefined(item.trailingImage)}"
-            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
-            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-            .trailingRadio="${ifDefined(item.trailingRadio)}"
-            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-            .trailingActions="${ifDefined(item.trailingActions)}"
-            .badge="${ifDefined(item.badge)}"
-            .activated="${ifDefined(item.activated)}"
-            .indeterminate="${ifDefined(item.indeterminate)}"
-            .selected="${ifDefined(item.selected)}"
-            .disabled="${ifDefined(item.disabled)}"
-            .map="${ifDefined(item.map)}"
-        ></md-box>
     `
 }
 
@@ -1507,6 +1505,9 @@ function renderList(item = {}) {
  * @property {Boolean} [item.selected] - {{desc}}
  * @property {String} [item.routerLink] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onSwitchNativeInput] - {{desc}}
  * @property {Function} [item.onListItemSelected] - {{desc}}
  */
 function renderListItem(item = {}) {
@@ -1535,6 +1536,9 @@ function renderListItem(item = {}) {
             .selected="${ifDefined(item.selected)}"
             .routerLink="${ifDefined(item.routerLink)}"
             .activated="${ifDefined(item.activated)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
             @onListItemSelected="${ifDefined(item.onListItemSelected)}"
             @click="${ifDefined(item.onListItemClick)}"
         ></md-list-item>
@@ -3419,9 +3423,9 @@ function renderComponent(item) {
     /* prettier-ignore */
     return choose(item.component, [
         ["badge", () => renderBadge(item)],
+        ["block", () => renderBlock(item)],
         ["bottom-app-bar", () => renderBottomAppBar(item)],
         ["bottom-sheet", () => renderBottomSheet(item)],
-        ["box", () => renderBox(item)],
         ["button", () => renderButton(item)],
         ["card", () => renderCard(item)],
         ["checkbox", () => renderCheckbox(item)],
@@ -3487,4 +3491,72 @@ function renderComponent(item) {
     ], () => nothing)
 }
 
-export { renderComponent };
+export {
+    renderBadge,
+    renderBlock,
+    renderBottomAppBar,
+    renderBottomSheet,
+    renderButton,
+    renderCard,
+    renderCheckbox,
+    renderChip,
+    renderChips,
+    renderColorField,
+    renderColorPicker,
+    renderDataTable,
+    renderDataTableColumnCell,
+    renderDataTableItem,
+    renderDataTableRowCell,
+    renderDateField,
+    renderDatePicker,
+    renderDatetimeField,
+    renderDatetimePicker,
+    renderDialog,
+    renderDivider,
+    renderEmoji,
+    renderEmojiPicker,
+    renderFab,
+    renderForm,
+    renderIcon,
+    renderIconButton,
+    renderImage,
+    renderLayout,
+    renderLayoutItem,
+    renderList,
+    renderListItem,
+    renderMarkdown,
+    renderMenu,
+    renderMonthField,
+    renderMonthPicker,
+    renderNavigationBar,
+    renderNavigationDrawer,
+    renderNavigationRail,
+    renderNumberField,
+    renderPagination,
+    renderPasswordField,
+    renderProgressIndicator,
+    renderRadioButton,
+    renderScrim,
+    renderSearchField,
+    renderSegmentedButton,
+    renderSelectField,
+    renderSheet,
+    renderSideSheet,
+    renderSlider,
+    renderSnackbar,
+    renderSpacer,
+    renderSwitch,
+    renderTabs,
+    renderTextField,
+    renderTextareaField,
+    renderTimeField,
+    renderTimePicker,
+    renderToolbar,
+    renderTooltip,
+    renderTopAppBar,
+    renderTree,
+    renderTreeItem,
+    renderWeekField,
+    renderWeekPicker,
+    renderComponent,
+};
