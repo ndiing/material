@@ -25,7 +25,6 @@ class MDChipsComponent extends MDComponent {
     render() {
         /* prettier-ignore */
         return this.items?.map(item => {
-            // item.component=item.component||'chip'
             item.onChipClick=this.handleChipClick.bind(this)
             item.onChipActionClick=this.handleChipActionClick.bind(this)
             return renderChip(item)

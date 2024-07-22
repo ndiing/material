@@ -34,7 +34,6 @@ class MDTreeComponent extends MDComponent {
      * @param {Any} item - {{desc}}
      */
     renderTree(item) {
-        // item.component = item.component || "tree-item";
         item.variant = this.variant;
         item.onTreeItemClick = this.handleTreeItemClick.bind(this);
         item.onTreeItemSelected = this.handleTreeItemSelected.bind(this);

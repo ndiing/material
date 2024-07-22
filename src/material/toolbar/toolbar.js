@@ -1,4 +1,5 @@
 import { MDComponent } from "../component/component.js";
+import { MDBlockComponent } from "../material.js";
 import { renderComponent } from "../template/template.js";
 
 /**
@@ -6,24 +7,15 @@ import { renderComponent } from "../template/template.js";
  * @extends MDComponent
  * @element md-toolbar
  */
-class MDToolbarComponent extends MDComponent {
-    /**
-     * {{desc}}
-     * @property {String} tooltip - {{desc}}
-     * @property {Array} items - {{desc}}
-     */
-    static properties = {
-        items: { type: Array },
-    };
+class MDToolbarComponent extends MDBlockComponent {
+    static properties={
+        items:{type:Array},
+    }
 
-    /**
-     * {{desc}}
-     */
-    render() {
-        return this.items?.map((item) => {
-            item.component = item.component || "icon-button";
-            return renderComponent(item);
-        });
+    get leadingActions() {
+        return this.items;
+    }
+    set leadingActions(value) {
     }
 
     /**
