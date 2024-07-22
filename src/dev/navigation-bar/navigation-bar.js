@@ -1,23 +1,23 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
+const items0 = [
+    { label: "label", icon: "image", selected: true },
+    { label: "label", icon: "image" },
+    { label: "label", icon: "image" },
+    { label: "label", icon: "image" },
+];
+const items1 = [{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }];
+
 class DevNavigationBar extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-navigation-bar
-                    id="navigationBar0"
-                    .items="${[
-                        { label: "label", icon: "image", selected: true },
-                        { label: "label", icon: "image" },
-                        { label: "label", icon: "image" },
-                        { label: "label", icon: "image" },
-                    ]}"
-                ></md-navigation-bar>
+                <md-navigation-bar id="navigationBar0" .items="${items0}"></md-navigation-bar>
 
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">
-                        <md-navigation-bar id="navigationBar1" .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"></md-navigation-bar>
+                        <md-navigation-bar id="navigationBar1" .items="${items1}"></md-navigation-bar>
 
                         <div class="md-layout-border__item md-layout-border__item--center">
                             <div class="md-layout-column">

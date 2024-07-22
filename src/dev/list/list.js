@@ -1,6 +1,88 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
+const items0 = [
+    { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
+];
+const items1 = [
+    { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
+];
+const items2 = [
+    { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
+];
+const items3 = [
+    { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
+];
+const items4 = [
+    { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
+];
+const items5 = [
+    { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
+];
+const items6 = [
+    { icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { icon: "image", label: "Lorem ipsum" },
+];
+const items7 = [
+    { trailingCheckbox: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingCheckbox: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingCheckbox: true, icon: "image", label: "Lorem ipsum" },
+];
+const items8 = [
+    //
+    { label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { label: "Lorem ipsum" },
+];
+const items9 = [
+    { trailingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingCheckbox: true, label: "Lorem ipsum" },
+];
+const items10 = [
+    { leadingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { leadingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { leadingCheckbox: true, label: "Lorem ipsum" },
+];
+const items11 = [
+    { leadingCheckbox: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { leadingCheckbox: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { leadingCheckbox: true, text: "100", label: "Lorem ipsum" },
+];
+const items12 = [
+    { leadingRadioButton: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { leadingRadioButton: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { leadingRadioButton: true, label: "Lorem ipsum" },
+];
+const items13 = [
+    { leadingRadioButton: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { leadingRadioButton: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { leadingRadioButton: true, text: "100", label: "Lorem ipsum" },
+];
+const items14 = [
+    { trailingSwitch: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingSwitch: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingSwitch: true, label: "Lorem ipsum" },
+];
+const items15 = [
+    { trailingSwitch: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
+    { trailingSwitch: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
+    { trailingSwitch: true, icon: "image", label: "Lorem ipsum" },
+];
+
 class DevList extends MDComponent {
     render() {
         return html`
@@ -8,313 +90,52 @@ class DevList extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items0}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                rangeSelection
-                                multiSelection
-                                singleSelection
-                                allSelection
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items1}" map='{"label":"label","value":"value"}' format="" rangeSelection multiSelection singleSelection allSelection @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items2}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingCheckbox: true, thumbnail: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items3}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items4}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/micah/svg?seed=Abby", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items5}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { icon: "image", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items6}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingCheckbox: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingCheckbox: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingCheckbox: true, icon: "image", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items7}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    //
-                                    { label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items8}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingCheckbox: true, label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items9}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { leadingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { leadingCheckbox: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { leadingCheckbox: true, label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items10}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { leadingCheckbox: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { leadingCheckbox: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { leadingCheckbox: true, text: "100", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items11}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { leadingRadioButton: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { leadingRadioButton: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { leadingRadioButton: true, label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items12}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { leadingRadioButton: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { leadingRadioButton: true, text: "100", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { leadingRadioButton: true, text: "100", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items13}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingSwitch: true, label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingSwitch: true, label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingSwitch: true, label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items14}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list
-                                .items="${[
-                                    { trailingSwitch: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, aliquam." },
-                                    { trailingSwitch: true, icon: "image", label: "Lorem ipsum", subLabel: "Lorem ipsum" },
-                                    { trailingSwitch: true, icon: "image", label: "Lorem ipsum" },
-                                ]}"
-                                map='{"label":"label","value":"value"}'
-                                format=""
-                                @onListItemClick="${console.log}"
-                                @handleListKeydown="${console.log}"
-                                @onListItemSelectionStart="${console.log}"
-                                @onListItemSelection="${console.log}"
-                                @onListItemSelectionEnd="${console.log}"
-                                @onListItemCheckboxNativeInput="${console.log}"
-                                @onListItemRadioButtonNativeInput="${console.log}"
-                                @onListItemSwitchNativeInput="${console.log}"
-                            ></md-list>
+                            <md-list .items="${items15}" map='{"label":"label","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
                         </div>
                     </div>
                 </div>
