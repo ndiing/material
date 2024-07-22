@@ -55,6 +55,14 @@ function renderBadge(item = {}) {
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
  * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
+ * @property {Function} [item.onSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onSwitchNativeReset] - {{desc}}
+ * @property {Function} [item.onImageNativeLoad] - {{desc}}
+ * @property {Function} [item.onImageNativeError] - {{desc}}
  */
 function renderBlock(item = {}) {
     /* prettier-ignore */
@@ -90,6 +98,14 @@ function renderBlock(item = {}) {
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+            @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
+            @onImageNativeError="${ifDefined(item.onImageNativeError)}"
         ></md-block>
     `
 }

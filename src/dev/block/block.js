@@ -6,12 +6,13 @@ class DevBlock extends MDComponent {
         return html`
             <md-layout variant="border">
                 <md-layout-item region="center">
+                    
                     <md-layout variant="column">
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" leadingActions='[{"icon":"favorite"}]'></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline" leadingCheckblock></md-block>
+                            <md-block headline="headline" leadingCheckbox></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" leadingRadio></md-block>
@@ -34,12 +35,20 @@ class DevBlock extends MDComponent {
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" leadingSupportingText="leadingSupportingText"></md-block>
                         </md-layout-item>
+                        
+                    </md-layout>
+                    
+                    <md-layout variant="column">
+                        
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline"></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" supportingText="supportingText"></md-block>
                         </md-layout-item>
+                    </md-layout>
+
+                    <md-layout variant="column">
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" trailingSupportingText="trailingSupportingText"></md-block>
                         </md-layout-item>
@@ -62,24 +71,14 @@ class DevBlock extends MDComponent {
                             <md-block headline="headline" trailingRadio></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline" trailingCheckblock></md-block>
+                            <md-block headline="headline" trailingCheckbox></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" trailingActions='[{"icon":"favorite"}]'></md-block>
                         </md-layout-item>
                     </md-layout>
 
-                    <md-layout variant="column">
-                        <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline"></md-block>
-                        </md-layout-item>
-                        <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline" supportingText="supportingText"></md-block>
-                        </md-layout-item>
-                        <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline" supportingText="supporting Text supporting Text supporting Text"></md-block>
-                        </md-layout-item>
-                    </md-layout>
+                    
                 </md-layout-item>
             </md-layout>
         `;

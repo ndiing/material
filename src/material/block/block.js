@@ -87,12 +87,14 @@ class MDBlockComponent extends MDComponent {
                 item.component = item.component || 'icon-button';
                 return renderComponent(item);
             }) : nothing}
-            ${this.leadingCheckbox ? html`<md-checkblock class="md-block__checkblock" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkblock>` : nothing}
+            ${this.leadingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
             ${this.leadingRadio ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
             ${this.leadingSwitch ? html`<md-switch class="md-block__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-switch>` : nothing}
+
             ${this.leadingAvatar ? html`<md-image class="md-block__avatar" .variant="${"rounded"}" .src="${this.leadingAvatar}"></md-image>` : nothing}
             ${this.leadingImage ? html`<md-image class="md-block__image" .src="${this.leadingImage}"></md-image>` : nothing}
             ${this.leadingVideo ? html`<md-image class="md-block__video" .ratio="${"3/2"}" .src="${this.leadingVideo}"></md-image>` : nothing}
+
             ${this.leadingIcon ? html`<md-icon class="md-block__icon" .icon="${this.leadingIcon}"></md-icon>` : nothing}
             ${this.leadingSupportingText ? html`<div class="md-block__supporting-text">${this.leadingSupportingText}</div>` : nothing}
             ${this.headline || this.supportingText ? html`
@@ -103,12 +105,14 @@ class MDBlockComponent extends MDComponent {
             ` : nothing}
             ${this.trailingSupportingText ? html`<div class="md-block__supporting-text">${this.trailingSupportingText}</div>` : nothing}
             ${this.trailingIcon ? html`<md-icon class="md-block__icon" .icon="${this.trailingIcon}"></md-icon>` : nothing}
+
             ${this.trailingVideo ? html`<md-image class="md-block__video" .ratio="${"3/2"}" .src="${this.trailingVideo}"></md-image>` : nothing}
             ${this.trailingImage ? html`<md-image class="md-block__image" .src="${this.trailingImage}"></md-image>` : nothing}
             ${this.trailingAvatar ? html`<md-image class="md-block__avatar" .variant="${"rounded"}" .src="${this.trailingAvatar}"></md-image>` : nothing}
+
             ${this.trailingSwitch ? html`<md-switch class="md-block__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-switch>` : nothing}
             ${this.trailingRadio ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
-            ${this.trailingCheckbox ? html`<md-checkblock class="md-block__checkblock" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkblock>` : nothing}
+            ${this.trailingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
             ${this.trailingActions?.length ? this.trailingActions.map(item => {
                 item.component = item.component || 'icon-button';
                 return renderComponent(item);
@@ -116,6 +120,15 @@ class MDBlockComponent extends MDComponent {
             
             ${this.badge !== undefined ? html`<md-badge class="md-block__badge" .label="${this.badge}"></md-badge>` : nothing}
         `;
+
+        // this.emit("onCheckboxNativeInput", this);
+        // this.emit("onCheckboxNativeReset", this);
+        // this.emit("onRadioButtonNativeInput", this);
+        // this.emit("onRadioButtonNativeReset", this);
+        // this.emit("onSwitchNativeInput", this);
+        // this.emit("onSwitchNativeReset", this);
+        // this.emit("onImageNativeLoad", this);
+        // this.emit("onImageNativeError", this);
     }
 
     /**

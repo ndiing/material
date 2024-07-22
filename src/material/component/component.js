@@ -43,6 +43,7 @@ class MDComponent extends LitElement {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
+        this.removeTooltip();
         this.off("pointerenter", this.handlePointerenter);
         this.off("pointerleave", this.handlePointerleave);
     }
@@ -53,30 +54,6 @@ class MDComponent extends LitElement {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-    }
-
-    /**
-     * {{desc}}
-     */
-    async handlePointerenter() {
-        if (this.tooltip && !this.tooltipElement) {
-            this.tooltipElement = document.createElement("md-tooltip");
-            this.tooltipElement.childNodes_ = [this.tooltip];
-            this.tooltipElement.variant = "plain";
-            document.body.append(this.tooltipElement);
-            await this.tooltipElement.updateComplete;
-            this.tooltipElement.show(this);
-        }
-    }
-
-    /**
-     * {{desc}}
-     */
-    handlePointerleave() {
-        if (this.tooltipElement) {
-            this.tooltipElement.remove();
-            this.tooltipElement = null;
-        }
     }
 
     /**
@@ -123,6 +100,38 @@ class MDComponent extends LitElement {
             detail,
         });
         this.dispatchEvent(event);
+    }
+    /**
+     * {{desc}}
+     */
+    async handlePointerenter() {
+        await this.createTooltip();
+    }
+
+    /**
+     * {{desc}}
+     */
+    handlePointerleave() {
+        this.removeTooltip();
+    }
+
+
+    async createTooltip() {
+        if (this.tooltip && !this.tooltipElement) {
+            this.tooltipElement = document.createElement("md-tooltip");
+            this.tooltipElement.childNodes_ = [this.tooltip];
+            this.tooltipElement.variant = "plain";
+            document.body.append(this.tooltipElement);
+            await this.tooltipElement.updateComplete;
+            this.tooltipElement.show(this);
+        }
+    }
+
+    removeTooltip() {
+        if (this.tooltipElement) {
+            this.tooltipElement.remove();
+            this.tooltipElement = null;
+        }
     }
 }
 export { MDComponent };
