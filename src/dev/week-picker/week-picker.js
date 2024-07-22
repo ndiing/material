@@ -8,7 +8,7 @@ class DevWeekPicker extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-week-picker open value="1990-W42" @onWeekPickerSelection="${console.log}" @onWeekPickerIconButtonPrevClick="${console.log}" @onWeekPickerIconButtonNextClick="${console.log}" @onWeekPickerButtonLabelClick="${console.log}" @onWeekPickerButtonCancelClick="${console.log}" @onWeekPickerButtonOkClick="${console.log}" @onWeekPickerYearItemClick="${console.log}" @onWeekPickerMonthItemClick="${console.log}" @onWeekPickerDayItemClick="${console.log}"></md-week-picker>
+                            <md-week-picker open value="1990-W42"></md-week-picker>
                         </div>
                     </div>
                 </div>

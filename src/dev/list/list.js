@@ -90,52 +90,52 @@ class DevList extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items0}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items0}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items1}" map='{"headline":"headline","value":"value"}' format="" rangeSelection multiSelection singleSelection allSelection @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items1}" map='{"headline":"headline","value":"value"}' format="" rangeSelection multiSelection singleSelection allSelection></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items2}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items2}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items3}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items3}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items4}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items4}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items5}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items5}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items6}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items6}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items7}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items7}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items8}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items8}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items9}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items9}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items10}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items10}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items11}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items11}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items12}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items12}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items13}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items13}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items14}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items14}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-list .items="${items15}" map='{"headline":"headline","value":"value"}' format="" @onListItemClick="${console.log}" @handleListKeydown="${console.log}" @onListItemSelectionStart="${console.log}" @onListItemSelection="${console.log}" @onListItemSelectionEnd="${console.log}" @onListItemCheckboxNativeInput="${console.log}" @onListItemRadioButtonNativeInput="${console.log}" @onListItemSwitchNativeInput="${console.log}"></md-list>
+                            <md-list .items="${items15}" map='{"headline":"headline","value":"value"}' format=""></md-list>
                         </div>
                     </div>
                 </div>

@@ -85,11 +85,11 @@ class MDPaginationComponent extends MDComponent {
         this.page = 1;
         this.label = "Rows per page";
         this.options = [
-            { value: 50, label: "50", selected: true },
-            { value: 100, label: "100" },
-            { value: 250, label: "250" },
-            { value: 500, label: "500" },
-            { value: 1000, label: "1000" },
+            { value: 50, headline: "50", selected: true },
+            { value: 100, headline: "100" },
+            { value: 250, headline: "250" },
+            { value: 500, headline: "500" },
+            { value: 1000, headline: "1000" },
         ];
         this.text = "$numberStart-$numberEnd of $total";
         this.firstPage = true;

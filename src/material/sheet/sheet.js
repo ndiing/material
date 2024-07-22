@@ -14,8 +14,8 @@ class MDSheetComponent extends MDCardComponent {
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} subhead - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Array} actions - {{desc}}
      * @property {Boolean} open - {{desc}}
@@ -24,7 +24,6 @@ class MDSheetComponent extends MDCardComponent {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
-
     variants = ["north", "east", "south", "west", "modal"];
 
     /**

@@ -9,13 +9,13 @@ class DevRadioButton extends MDComponent {
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-radio-button name="radio" value="1" @onRadioButtonNativeInput="${console.log}" @onRadioButtonNativeReset="${console.log}"></md-radio-button>
+                                <md-radio-button name="radio" value="1"></md-radio-button>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-radio-button name="radio" value="2" @onRadioButtonNativeInput="${console.log}" @onRadioButtonNativeReset="${console.log}"></md-radio-button>
+                                <md-radio-button name="radio" value="2"></md-radio-button>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-radio-button name="radio" value="3" checked @onRadioButtonNativeInput="${console.log}" @onRadioButtonNativeReset="${console.log}"></md-radio-button>
+                                <md-radio-button name="radio" value="3" checked></md-radio-button>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">

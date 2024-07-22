@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderComponent } from "../template/template.js";
+import { renderComponent, renderTreeItem } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -19,7 +19,6 @@ class MDTreeComponent extends MDComponent {
         items: { type: Array },
         variant: { type: String },
     };
-
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
@@ -35,13 +34,13 @@ class MDTreeComponent extends MDComponent {
      * @param {Any} item - {{desc}}
      */
     renderTree(item) {
-        item.component = item.component || "tree-item";
+        // item.component = item.component || "tree-item";
         item.variant = this.variant;
-        item.onTreeItemClick = this.handleTreeItemClick;
-        item.onTreeItemSelected = this.handleTreeItemSelected;
+        item.onTreeItemClick = this.handleTreeItemClick.bind(this);
+        item.onTreeItemSelected = this.handleTreeItemSelected.bind(this);
         /* prettier-ignore */
         return html`
-            ${renderComponent(item)}
+            ${renderTreeItem(item)}
             ${item.expanded && item.items?.length ? item.items.map((item) => this.renderTree(item)) : nothing}
         `;
     }
@@ -187,7 +186,6 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-
     handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);

@@ -25,8 +25,8 @@ class MDMenuComponent extends MDSheetComponent {
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} subhead - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Array} actions - {{desc}}
      * @property {Boolean} open - {{desc}}
@@ -41,7 +41,9 @@ class MDMenuComponent extends MDSheetComponent {
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
-
+    /**
+     * {{desc}}
+     */
     get menuList() {
         return this.querySelector(".md-menu__list");
     }

@@ -29,7 +29,6 @@ class MDChipComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["assist", "filter", "input", "suggestion"];
 
     /**

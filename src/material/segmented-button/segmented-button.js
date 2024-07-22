@@ -1,5 +1,5 @@
 import { MDComponent } from "../component/component.js";
-import { renderComponent } from "../template/template.js";
+import { renderButton, renderComponent } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -29,11 +29,11 @@ class MDSegmentedButtonComponent extends MDComponent {
         /* prettier-ignore */
         return this.buttons.map(item => {
             item.classMap={'md-segmented-button__item':true}
-            item.component=item.component||'button'
+            // item.component=item.component||'button'
             item.variant=item.variant||'outlined'
             item.icon=item.selected?'check':''
-            item.onButtonClick=this.handleSegmentedButtonItemClick
-            return renderComponent(item)
+            item.onButtonClick=this.handleSegmentedButtonItemClick.bind(this)
+            return renderButton(item)
         });
     }
 

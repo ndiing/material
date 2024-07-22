@@ -6594,19 +6594,19 @@ class DevSelectField extends MDComponent {
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-select-field name="select3" map='{"label":"name","value":"id"}' readOnly .options="${options0}" @onPickerMenuListItemClick="${console.log}" @onPickerMenuListItemSelected="${console.log}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
+                                <md-select-field name="select3" map='{"label":"name","value":"id"}' readOnly .options="${options0}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-select-field name="select4" map='{"label":"name","value":"id"}' readOnly .options="${options1}" @onPickerMenuListItemClick="${console.log}" @onPickerMenuListItemSelected="${console.log}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
+                                <md-select-field name="select4" map='{"label":"name","value":"id"}' readOnly .options="${options1}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-select-field name="select" map='{"label":"name","value":"id"}' .options="${options2}" @onPickerMenuListItemClick="${console.log}" @onPickerMenuListItemSelected="${console.log}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
+                                <md-select-field name="select" map='{"label":"name","value":"id"}' .options="${options2}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-select-field name="select2" map='{"label":"name","value":"id"}' .options="${options3}" @onPickerMenuListItemClick="${console.log}" @onPickerMenuListItemSelected="${console.log}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
+                                <md-select-field name="select2" map='{"label":"name","value":"id"}' .options="${options3}" @onTextFieldNativeInput="${(event) => console.log(event.detail.currentTarget.value)}"></md-select-field>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">

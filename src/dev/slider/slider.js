@@ -9,16 +9,16 @@ class DevSlider extends MDComponent {
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-slider name="slider" @onSliderNativeInput="${console.log}" @onSliderNativeReset="${console.log}"></md-slider>
+                                <md-slider name="slider"></md-slider>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-slider name="slider2" step="10" @onSliderNativeInput="${console.log}" @onSliderNativeReset="${console.log}"></md-slider>
+                                <md-slider name="slider2" step="10"></md-slider>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-slider name="slider3" min="-50" @onSliderNativeInput="${console.log}" @onSliderNativeReset="${console.log}"></md-slider>
+                                <md-slider name="slider3" min="-50"></md-slider>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-slider name="slider4" value="[20,60]" @onSliderNativeInput="${console.log}" @onSliderNativeReset="${console.log}"></md-slider>
+                                <md-slider name="slider4" value="[20,60]"></md-slider>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">

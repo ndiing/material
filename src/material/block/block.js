@@ -40,6 +40,8 @@ class MDBlockComponent extends MDComponent {
      * @property {Boolean} trailingCheckbox - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Number} badge - {{desc}}
+     * @property {String} defaultLeadingActionComponent - {{desc}}
+     * @property {String} defaultTrailingActionComponent - {{desc}}
      * @property {Boolean} activated - {{desc}}
      * @property {Boolean} indeterminate - {{desc}}
      * @property {Boolean} selected - {{desc}}
@@ -67,6 +69,8 @@ class MDBlockComponent extends MDComponent {
         trailingCheckbox: { type: Boolean },
         trailingActions: { type: Array },
         badge: { type: Number },
+        defaultLeadingActionComponent: { type: String },
+        defaultTrailingActionComponent: { type: String },
         activated: { type: Boolean, reflect: true },
         indeterminate: { type: Boolean },
         selected: { type: Boolean, reflect: true },
@@ -78,6 +82,8 @@ class MDBlockComponent extends MDComponent {
      */
     constructor() {
         super();
+        this.defaultLeadingActionComponent = "icon-button";
+        this.defaultTrailingActionComponent = "icon-button";
     }
 
     /**
@@ -87,7 +93,7 @@ class MDBlockComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.leadingActions?.length ? this.leadingActions.map(item => {
-                item.component = item.component || 'icon-button';
+                item.component = item.component || this.defaultLeadingActionComponent;
                 return renderComponent(item);
             }) : nothing}
             ${this.leadingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
@@ -113,7 +119,7 @@ class MDBlockComponent extends MDComponent {
             ${this.trailingRadioButton ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
             ${this.trailingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
             ${this.trailingActions?.length ? this.trailingActions.map(item => {
-                item.component = item.component || 'icon-button';
+                item.component = item.component || this.defaultTrailingActionComponent;
                 return renderComponent(item);
             }) : nothing}
             

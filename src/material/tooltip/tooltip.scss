@@ -21,9 +21,11 @@
         + .md-card__body {
             margin-top: -20px;
         }
-    }
-    .md-card__label-primary {
-        @include typescale-title-small();
+        > .md-block__group {
+            > .md-block__headline {
+                @include typescale-title-small();
+            }
+        }
     }
     .md-card__inner {
         padding: 0 16px;

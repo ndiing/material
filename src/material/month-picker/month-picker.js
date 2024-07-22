@@ -40,7 +40,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             label = stringifyMonth(this.selection);
         }
-        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
+        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick.bind(this) }];
     }
 
     /**

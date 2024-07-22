@@ -9,13 +9,13 @@ class DevCheckbox extends MDComponent {
                     <md-form @onFormNativeReset="${(event) => console.log(event)}" @onFormNativeSubmit="${(event) => console.log(event.detail.data)}">
                         <div class="md-layout-column">
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-checkbox name="checkbox" value="1" @onCheckboxNativeInput="${console.log}" @onCheckboxNativeReset="${console.log}"></md-checkbox>
+                                <md-checkbox name="checkbox" value="1"></md-checkbox>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-checkbox name="checkbox" value="2" checked @onCheckboxNativeInput="${console.log}" @onCheckboxNativeReset="${console.log}"></md-checkbox>
+                                <md-checkbox name="checkbox" value="2" checked></md-checkbox>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-checkbox name="checkbox" value="3" indeterminate @onCheckboxNativeInput="${console.log}" @onCheckboxNativeReset="${console.log}"></md-checkbox>
+                                <md-checkbox name="checkbox" value="3" indeterminate></md-checkbox>
                             </div>
 
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">

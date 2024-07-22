@@ -28,7 +28,6 @@ class MDImageComponent extends MDComponent {
         ratio: { type: String },
         variant: { type: String },
     };
-
     variants = ["rounded"];
 
     /**
@@ -48,7 +47,6 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
-
     imageNative = createRef();
 
     /**

@@ -30,7 +30,6 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
-
     switchNative = createRef();
 
     /**

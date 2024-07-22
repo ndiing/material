@@ -28,8 +28,8 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} subhead - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Array} actions - {{desc}}
      * @property {Boolean} open - {{desc}}
@@ -229,24 +229,21 @@ class MDDatetimePickerComponent extends MDSheetComponent {
         } else if (this.index === 4) {
             label = stringifyTime(this.selection);
         }
-        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
+        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick.bind(this) }];
     }
 
     /**
      * {{desc}}
      */
     get trailingActions() {
-        return [
-            { icon: "keyboard_arrow_left", onIconButtonClick: this.handleCardIconButtonPrevClick },
-            { icon: "keyboard_arrow_right", onIconButtonClick: this.handleCardIconButtonNextClick },
-        ];
+        return [{ component: "spacer" }, { icon: "keyboard_arrow_left", onIconButtonClick: this.handleCardIconButtonPrevClick.bind(this) }, { icon: "keyboard_arrow_right", onIconButtonClick: this.handleCardIconButtonNextClick.bind(this) }];
     }
 
     /**
      * {{desc}}
      */
     get actions() {
-        return [{ component: "spacer" }, { label: "Cancel", onButtonClick: this.handleCardButtonCancelClick }, { label: "Ok", onButtonClick: this.handleCardButtonOkClick }];
+        return [{ component: "spacer" }, { label: "Cancel", onButtonClick: this.handleCardButtonCancelClick.bind(this) }, { label: "Ok", onButtonClick: this.handleCardButtonOkClick.bind(this) }];
     }
 
     /**

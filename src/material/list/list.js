@@ -37,15 +37,21 @@ class MDListComponent extends MDComponent {
     constructor() {
         super();
     }
-
+    /**
+     * {{desc}}
+     * @param {Any} item = {} - {{desc}}
+     */
     renderListItem(item = {}) {
-        item.onListItemClick = this.handleListItemClick;
-        item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
-        item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
-        item.onSwitchNativeInput = this.handleListItemSwitchNativeInput;
+        item.onListItemClick = this.handleListItemClick.bind(this);
+        item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput.bind(this);
+        item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput.bind(this);
+        item.onSwitchNativeInput = this.handleListItemSwitchNativeInput.bind(this);
         return renderListItem(item);
     }
-
+    /**
+     * {{desc}}
+     * @param {Any} item = {} - {{desc}}
+     */
     renderListSection(item = {}) {
         return html`
             <div class="md-block md-list__section">
@@ -55,7 +61,10 @@ class MDListComponent extends MDComponent {
             </div>
         `;
     }
-
+    /**
+     * {{desc}}
+     * @param {Any} item = {} - {{desc}}
+     */
     renderListDivider(item = {}) {
         item.classMap = { "md-list__divider": true };
         return renderDivider(item);

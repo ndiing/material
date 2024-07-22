@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderComponent } from "../template/template.js";
+import { renderCardFooter, renderCardHeader, renderComponent } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -13,20 +13,19 @@ class MDCardComponent extends MDComponent {
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} subhead - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Array} actions - {{desc}}
      */
     static properties = {
         variant: { type: String },
         leadingActions: { type: Array },
-        label: { type: String },
-        subLabel: { type: String },
+        headline: { type: String },
+        subhead: { type: String },
         trailingActions: { type: Array },
         actions: { type: Array },
     };
-
     variants = ["elevated", "filled", "outlined"];
 
     /**
@@ -43,43 +42,19 @@ class MDCardComponent extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${this.leadingActions?.length || this.label || this.subLabel || this.trailingActions?.length?html`
-                <div class="md-card__header">
-                    ${this.leadingActions?.length ? html`
-                        <div class="md-card__actions">
-                            ${this.leadingActions.map(item => {
-                                item.component=item.component||'icon-button'
-                                return renderComponent(item)    
-                            })}
-                        </div>
-                    ` : nothing}
-                    ${this.label || this.subLabel ? html`
-                        <div class="md-card__label">
-                            ${this.label ? html`<div class="md-card__label-primary">${this.label}</div>` : nothing}
-                            ${this.subLabel ? html`<div class="md-card__label-secondary">${this.subLabel}</div>` : nothing}
-                        </div>
-                    ` : nothing}
-                    ${this.trailingActions?.length ? html`
-                        <div class="md-card__actions md-card__actions--end">
-                            ${this.trailingActions.map(item=> {
-                                item.component=item.component||'icon-button'
-                                return renderComponent(item)    
-                            })}
-                        </div>
-                    ` : nothing}
-                </div>
-            `:nothing}
+            ${this.leadingActions?.length || this.headline || this.subhead || this.trailingActions?.length?renderCardHeader({
+                leadingActions: this.leadingActions,
+                headline: this.headline,
+                supportingText: this.subhead,
+                trailingActions: this.trailingActions,
+            }):nothing}
             ${this.childNodes_?.length || this.actions?.length?html`
                 <div class="md-card__body">
                     ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
-                    ${this.actions?.length ? html`
-                        <div class="md-card__footer">
-                            ${this.actions.map(item => {
-                                item.component=item.component||'button'
-                                return renderComponent(item)    
-                            })}
-                        </div>
-                    ` : nothing}
+                    ${this.actions?.length ? renderCardFooter({
+                        defaultTrailingActionComponent: 'button',
+                        trailingActions:this.actions
+                    }): nothing}
                 </div>
             `:nothing}
         `;

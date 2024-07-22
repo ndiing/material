@@ -51,6 +51,8 @@ function renderBadge(item = {}) {
  * @property {Boolean} [item.trailingCheckbox] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Number} [item.badge] - {{desc}}
+ * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
+ * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
@@ -94,6 +96,8 @@ function renderBlock(item = {}) {
             .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .badge="${ifDefined(item.badge)}"
+            .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
+            .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
             .activated="${ifDefined(item.activated)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
@@ -117,8 +121,8 @@ function renderBlock(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -137,8 +141,8 @@ function renderBottomAppBar(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -155,8 +159,8 @@ function renderBottomAppBar(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -175,8 +179,8 @@ function renderBottomSheet(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -224,8 +228,8 @@ function renderButton(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  */
@@ -240,11 +244,187 @@ function renderCard(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
         ></md-card>
+    `
+}
+
+/**
+ * Render Card Footer
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadioButton] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadioButton] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
+ * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
+ * @property {Function} [item.onSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onSwitchNativeReset] - {{desc}}
+ * @property {Function} [item.onImageNativeLoad] - {{desc}}
+ * @property {Function} [item.onImageNativeError] - {{desc}}
+ */
+function renderCardFooter(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-card-footer
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
+            .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+            @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
+            @onImageNativeError="${ifDefined(item.onImageNativeError)}"
+        ></md-card-footer>
+    `
+}
+
+/**
+ * Render Card Header
+ * @param {Object} item - {{desc}}
+ * @property {String} [item.tooltip] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadioButton] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadioButton] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
+ * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
+ * @property {Function} [item.onSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onSwitchNativeReset] - {{desc}}
+ * @property {Function} [item.onImageNativeLoad] - {{desc}}
+ * @property {Function} [item.onImageNativeError] - {{desc}}
+ */
+function renderCardHeader(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-card-header
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
+            .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+            @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
+            @onImageNativeError="${ifDefined(item.onImageNativeError)}"
+        ></md-card-header>
     `
 }
 
@@ -443,8 +623,8 @@ function renderColorField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -473,8 +653,8 @@ function renderColorPicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -501,8 +681,8 @@ function renderColorPicker(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Array} [item.columns] - {{desc}}
@@ -544,8 +724,8 @@ function renderDataTable(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .columns="${ifDefined(item.columns)}"
@@ -888,8 +1068,8 @@ function renderDateField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -930,8 +1110,8 @@ function renderDatePicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1069,8 +1249,8 @@ function renderDatetimeField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1102,8 +1282,8 @@ function renderDatetimePicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1133,8 +1313,8 @@ function renderDatetimePicker(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1153,8 +1333,8 @@ function renderDialog(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1212,8 +1392,8 @@ function renderEmoji(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1241,8 +1421,8 @@ function renderEmojiPicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1522,6 +1702,8 @@ function renderList(item = {}) {
  * @property {Boolean} [item.trailingCheckbox] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Number} [item.badge] - {{desc}}
+ * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
+ * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
@@ -1565,6 +1747,8 @@ function renderListItem(item = {}) {
             .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .badge="${ifDefined(item.badge)}"
+            .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
+            .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
             .activated="${ifDefined(item.activated)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
@@ -1610,8 +1794,8 @@ function renderMarkdown(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1638,8 +1822,8 @@ function renderMenu(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1763,8 +1947,8 @@ function renderMonthField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1804,8 +1988,8 @@ function renderMonthPicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1843,8 +2027,8 @@ function renderMonthPicker(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1863,8 +2047,8 @@ function renderNavigationBar(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1881,8 +2065,8 @@ function renderNavigationBar(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1901,8 +2085,8 @@ function renderNavigationDrawer(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -1919,8 +2103,8 @@ function renderNavigationDrawer(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -1939,8 +2123,8 @@ function renderNavigationRail(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -2504,8 +2688,8 @@ function renderSelectField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -2524,8 +2708,8 @@ function renderSheet(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -2542,8 +2726,8 @@ function renderSheet(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -2562,8 +2746,8 @@ function renderSideSheet(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -2613,8 +2797,8 @@ function renderSlider(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -2635,8 +2819,8 @@ function renderSnackbar(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -3027,8 +3211,8 @@ function renderTimeField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -3068,8 +3252,8 @@ function renderTimePicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -3127,8 +3311,8 @@ function renderToolbar(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -3147,8 +3331,8 @@ function renderTooltip(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -3165,8 +3349,8 @@ function renderTooltip(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -3185,8 +3369,8 @@ function renderTopAppBar(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -3375,8 +3559,8 @@ function renderWeekField(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {String} [item.variant] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.subhead] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Array} [item.actions] - {{desc}}
  * @property {Boolean} [item.open] - {{desc}}
@@ -3417,8 +3601,8 @@ function renderWeekPicker(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
@@ -3463,6 +3647,8 @@ function renderComponent(item) {
         ["bottom-sheet", () => renderBottomSheet(item)],
         ["button", () => renderButton(item)],
         ["card", () => renderCard(item)],
+        ["card-footer", () => renderCardFooter(item)],
+        ["card-header", () => renderCardHeader(item)],
         ["checkbox", () => renderCheckbox(item)],
         ["chip", () => renderChip(item)],
         ["chips", () => renderChips(item)],
@@ -3526,4 +3712,4 @@ function renderComponent(item) {
     ], () => nothing)
 }
 
-export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMarkdown, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };
+export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCardFooter, renderCardHeader, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMarkdown, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };

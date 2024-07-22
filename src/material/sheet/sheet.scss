@@ -140,12 +140,11 @@
         + .md-card__body {
             margin-top: -24px;
         }
-    }
-    .md-card__actions {
-        gap: 0 12px;
-    }
-    .md-card__label-primary {
-        @include typescale-title-large();
+        > .md-block__group {
+            > .md-block__headline {
+                @include typescale-title-large();
+            }
+        }
     }
     .md-card__inner {
         padding: 0 24px;

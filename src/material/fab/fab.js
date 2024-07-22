@@ -24,7 +24,6 @@ class MDFabComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
 
     /**

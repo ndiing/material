@@ -5,7 +5,7 @@ class DevBottomAppBar extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-bottom-app-bar id="bottomAppBar0" leadingActions='[{"icon":"search"},{"icon":"delete"},{"icon":"archive"},{"icon":"reply"}]' trailingActions='[{"component":"fab","icon":"add","variant":"unelevated"}]'></md-bottom-app-bar>
+                <md-bottom-app-bar id="bottomAppBar0" leadingActions='[{"icon":"search"},{"icon":"delete"},{"icon":"archive"},{"icon":"reply"}]' trailingActions='[{"component":"spacer"},{"component":"fab","icon":"add","variant":"unelevated"}]'></md-bottom-app-bar>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">
                         <md-bottom-app-bar id="bottomAppBar1" leadingActions='[{"icon":"search"},{"icon":"delete"},{"icon":"archive"},{"icon":"reply"}]'></md-bottom-app-bar>

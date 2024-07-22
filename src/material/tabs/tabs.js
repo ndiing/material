@@ -16,7 +16,6 @@ class MDTabsComponent extends MDTreeComponent {
         this.currentSelectedIndex = -1;
         this.lastSelectedIndex = -1;
     }
-
     variants = ["primary", "secondary"];
 
     /**

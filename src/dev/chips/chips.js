@@ -41,16 +41,16 @@ class DevChips extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-chips .items="${items0}" @onChipClick="${console.log}"></md-chips>
+                            <md-chips .items="${items0}"></md-chips>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-chips .items="${items1}" multiSelection @onChipClick="${console.log}"></md-chips>
+                            <md-chips .items="${items1}" multiSelection></md-chips>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-chips .items="${items2}" @onChipClick="${console.log}"></md-chips>
+                            <md-chips .items="${items2}"></md-chips>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-chips .items="${items3}" @onChipClick="${console.log}"></md-chips>
+                            <md-chips .items="${items3}"></md-chips>
                         </div>
                     </div>
                 </div>

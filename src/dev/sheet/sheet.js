@@ -4,22 +4,21 @@ import { MDComponent } from "../../material/component/component.js";
 class DevSheet extends MDComponent {
     render() {
         return html`
-            <div class="md-layout-border">
-                <md-sheet open variant="north" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">north</md-sheet>
-                <md-sheet open variant="east" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">east</md-sheet>
-                <md-sheet open variant="south" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">south</md-sheet>
-                <md-sheet open variant="west" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">west</md-sheet>
-
-                <div class="md-layout-border__item md-layout-border__item--center">
-                    <div class="md-layout-column">
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">center</div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4"></div>
-                    </div>
-                </div>
-            </div>
+            <md-layout variant="border">
+                <md-sheet open variant="north" headline="north"></md-sheet>
+                <md-sheet open variant="east" headline="east"></md-sheet>
+                <md-sheet open variant="south" headline="south"></md-sheet>
+                <md-sheet open variant="west" headline="west"></md-sheet>
+                <md-layout-item region="center">
+                    <md-layout variant="column">
+                        <md-layout-item expanded="12" medium="8" compact="4">center</md-layout-item>
+                        <md-layout-item expanded="12" medium="8" compact="4"></md-layout-item>
+                        <md-layout-item expanded="12" medium="8" compact="4"></md-layout-item>
+                        <md-layout-item expanded="12" medium="8" compact="4"></md-layout-item>
+                        <md-layout-item expanded="12" medium="8" compact="4"></md-layout-item>
+                    </md-layout>
+                </md-layout-item>
+            </md-layout>
         `;
     }
 }

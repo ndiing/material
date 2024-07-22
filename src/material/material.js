@@ -51,6 +51,8 @@ import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indi
 // card
 import { MDBlockComponent } from "./block/block.js";
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
+import { MDCardHeaderComponent } from "./card-header/card-header.js";
+import { MDCardFooterComponent } from "./card-footer/card-footer.js";
 import { MDCardComponent } from "./card/card.js";
 import { MDScrimComponent } from "./scrim/scrim.js";
 import { MDSheetComponent } from "./sheet/sheet.js";

@@ -249,16 +249,16 @@ class DevTree extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .items="${items0}" variant="plain" @onTreeItemClick="${console.log}"></md-tree>
+                            <md-tree .items="${items0}" variant="plain"></md-tree>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .items="${items1}" variant="accordion" @onTreeItemClick="${console.log}"></md-tree>
+                            <md-tree .items="${items1}" variant="accordion"></md-tree>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .items="${items2}" variant="tree" @onTreeItemClick="${console.log}"></md-tree>
+                            <md-tree .items="${items2}" variant="tree"></md-tree>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded3 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tree .items="${items3}" variant="level" @onTreeItemClick="${console.log}"></md-tree>
+                            <md-tree .items="${items3}" variant="level"></md-tree>
                         </div>
                     </div>
                 </div>
