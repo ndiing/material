@@ -229,6 +229,7 @@ let cli = {
             // create template
             let code = "";
             let code2 = "";
+            let code3=''
             code += `import { html, nothing } from "lit";\n`;
             code += `import { choose } from "lit/directives/choose.js";\n`;
             code += `import { classMap } from "lit/directives/class-map.js";\n`;
@@ -294,6 +295,8 @@ let cli = {
                     code += `\n`;
 
                     code2 += `        ["${name}", () => ${methodName}(item)],\n`;
+
+                    code3 += `    ${methodName},\n`;
                 }
             }
 
@@ -307,7 +310,10 @@ let cli = {
             code += `    ], () => nothing)\n`;
             code += `}\n`;
             code += `\n`;
-            code += `export { renderComponent };\n`;
+            code += `export {\n`;
+            code += code3;
+            code += `    renderComponent,\n`;
+            code += `};\n`;
 
             write("./src/material/template/template.js", code);
         },
