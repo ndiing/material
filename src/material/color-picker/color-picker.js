@@ -21,21 +21,6 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerButtonOkClick - {{desc}}
  */
 class MDColorPickerComponent extends MDSheetComponent {
-    /**
-     * {{desc}}
-     * @property {String} tooltip - {{desc}}
-     * @property {String} variant - {{desc}}
-     * @property {Array} leadingActions - {{desc}}
-     * @property {String} label - {{desc}}
-     * @property {String} subLabel - {{desc}}
-     * @property {Array} trailingActions - {{desc}}
-     * @property {Array} actions - {{desc}}
-     * @property {Boolean} open - {{desc}}
-     * @property {String} value - {{desc}}
-     */
-    static properties = {
-        ...MDSheetComponent.properties,
-    };
 
     /**
      * {{desc}}
