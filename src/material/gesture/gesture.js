@@ -1,5 +1,3 @@
-
-
 /**
  * {{desc}}
  * @fires MDGestureController#onDragStart - {{desc}}
@@ -16,8 +14,6 @@
  * @fires MDGestureController#onResizeEnd - {{desc}}
  */
 class MDGestureController {
-    
-    
     /**
      * {{desc}}
      * @param {Any} host - {{desc}}
@@ -38,8 +34,7 @@ class MDGestureController {
             ...options,
         };
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} type - {{desc}}
@@ -53,8 +48,7 @@ class MDGestureController {
         });
         this.container.dispatchEvent(event);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -92,8 +86,7 @@ class MDGestureController {
         this.handleGesturePointerup = this.handleGesturePointerup.bind(this);
         this.container.addEventListener("pointerdown", this.handleGesturePointerdown);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -108,8 +101,7 @@ class MDGestureController {
         window.removeEventListener("pointermove", this.handleGesturePointermove);
         window.removeEventListener("pointerup", this.handleGesturePointerup);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -174,8 +166,7 @@ class MDGestureController {
             }
         }, 300);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -222,8 +213,7 @@ class MDGestureController {
             this.container.style.height = (this.currentHeight ?? this.startHeight) + "px";
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

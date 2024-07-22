@@ -3,9 +3,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDPopperController } from "../popper/popper.js";
 import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
-import { ifDefined } from "lit/directives/if-defined.js";
 import { MDListComponent } from "../list/list.js";
-import { createRef, ref } from "lit/directives/ref.js";
 import { renderList } from "../template/template.js";
 
 /**
@@ -22,8 +20,6 @@ import { renderList } from "../template/template.js";
  * @fires MDMenuComponent#onMenuListItemClick - {{desc}}
  */
 class MDMenuComponent extends MDSheetComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -35,7 +31,6 @@ class MDMenuComponent extends MDSheetComponent {
      * @property {Array} actions - {{desc}}
      * @property {Boolean} open - {{desc}}
      * @property {Array} items - {{desc}}
-     * @property {Object} map - {{desc}}
      * @property {Number} rowHeight - {{desc}}
      * @property {Number} maxRows - {{desc}}
      */
@@ -43,14 +38,14 @@ class MDMenuComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         ...MDListComponent.properties,
         items: { type: Array },
-        // map: { type: Object },
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
-    // menuList = createRef();
-    get menuList(){return this.querySelector('.md-menu__list')}
-    
-    
+
+    get menuList() {
+        return this.querySelector(".md-menu__list");
+    }
+
     /**
      * {{desc}}
      */
@@ -65,8 +60,6 @@ class MDMenuComponent extends MDSheetComponent {
                 <div class="md-virtual__container">${renderList({
                     classMap:{'md-menu__list':true},
                     items:this.vitualItems,
-                    // map:this.map,
-                    // format:this.format,
                     rangeSelection:this.rangeSelection,
                     multiSelection:this.multiSelection,
                     singleSelection:this.singleSelection,
@@ -76,8 +69,7 @@ class MDMenuComponent extends MDSheetComponent {
             </div>
         `];
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -85,22 +77,19 @@ class MDMenuComponent extends MDSheetComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
-    
-    
+
     /**
      * {{desc}}
      */
     constructor() {
         super();
-        // this.map = { label: "label", value: "value" };
         this.rowHeight = 48;
         this.maxRows = 5;
         this.popper = new MDPopperController(this, {});
         this.store = new MDStore(this.items);
         this.virtual = new MDVirtualController(this);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -110,16 +99,14 @@ class MDMenuComponent extends MDSheetComponent {
         this.updateStore();
         this.updateVirtual();
     }
-    
-    
+
     /**
      * {{desc}}
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -132,8 +119,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.updateVirtual();
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -145,8 +131,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.storeItems = docs;
         this.style.setProperty("max-height", `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -159,8 +144,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.virtual.handleVirtualScroll();
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -169,8 +153,7 @@ class MDMenuComponent extends MDSheetComponent {
     showModal(button, options) {
         this.show(button, options, true);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -207,8 +190,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.updatePosition(button, options);
         super.show(modal);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} button = this.popperButton - {{desc}}
@@ -232,22 +214,20 @@ class MDMenuComponent extends MDSheetComponent {
         };
         this.popper.setPosition(this.popperButton, this.popperOptions);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
      */
     filter(value) {
-        this.filters = [{ name: 'headline', value, operator: "_like" }];
+        this.filters = [{ name: "headline", value, operator: "_like" }];
         this.updateStore();
         this.updateVirtual();
         if (this.popperButton && this.popperOptions) {
             this.updatePosition();
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -257,8 +237,7 @@ class MDMenuComponent extends MDSheetComponent {
             doc.selected = doc === data;
         });
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} offset - {{desc}}
@@ -277,8 +256,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.viewport.scrollTop = (this.activatedIndex - delta) * this.rowHeight;
         this.virtual.handleVirtualScroll();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -294,8 +272,7 @@ class MDMenuComponent extends MDSheetComponent {
             });
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

@@ -9,8 +9,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDIconButtonComponent#onIconButtonToggleClick - {{desc}}
  */
 class MDIconButtonComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -27,9 +25,9 @@ class MDIconButtonComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
         name: { type: String, reflect: true },
     };
+
     variants = ["filled", "tonal", "outlined", "toggle"];
-    
-    
+
     /**
      * {{desc}}
      */
@@ -41,8 +39,7 @@ class MDIconButtonComponent extends MDComponent {
             fadeOut: true,
         });
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -50,8 +47,7 @@ class MDIconButtonComponent extends MDComponent {
         /* prettier-ignore */
         return html`<md-icon class="md-icon-button__icon" .icon="${this.icon}"></md-icon>`
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -60,8 +56,7 @@ class MDIconButtonComponent extends MDComponent {
         this.classList.add("md-icon-button");
         this.on("click", this.handleIconButtonToggleClick);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -69,8 +64,7 @@ class MDIconButtonComponent extends MDComponent {
         super.disconnectedCallback();
         this.off("click", this.handleIconButtonToggleClick);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -93,8 +87,7 @@ class MDIconButtonComponent extends MDComponent {
             }
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

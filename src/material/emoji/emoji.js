@@ -17,8 +17,6 @@ function emojiToHexadecimal(emoji) {
  * @element md-emoji
  */
 class MDEmojiComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -27,32 +25,28 @@ class MDEmojiComponent extends MDComponent {
     static properties = {
         emoji: { type: String },
     };
-    
-    
+
     /**
      * {{desc}}
      */
     get webp() {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/512.webp`;
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get svg() {
         return `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiToHexadecimal(this.emoji)}/emoji.svg`;
     }
-    
-    
+
     /**
      * {{desc}}
      */
     render() {
         return this.emoji;
     }
-    
-    
+
     /**
      * {{desc}}
      */

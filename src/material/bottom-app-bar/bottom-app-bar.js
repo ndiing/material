@@ -9,8 +9,6 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * @fires MDBottomAppBarComponent#onSheetScrimClick - {{desc}}
  */
 class MDBottomAppBarComponent extends MDSheetComponent {
-    
-    
     /**
      * {{desc}}
      */

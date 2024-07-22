@@ -12,8 +12,6 @@ const breakpoints = [
  * {{desc}}
  */
 class MDMediaObserver {
-    
-    
     /**
      * {{desc}}
      * @param {Any} callback = () => {} - {{desc}}
@@ -21,8 +19,7 @@ class MDMediaObserver {
     constructor(callback = () => {}) {
         this.callback = callback;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} items - {{desc}}

@@ -8,8 +8,6 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @element md-fab
  */
 class MDFabComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -26,9 +24,9 @@ class MDFabComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     variants = ["small", "large", "surface", "secondary", "tertiary", "unelevated", "extended"];
-    
-    
+
     /**
      * {{desc}}
      */
@@ -39,8 +37,7 @@ class MDFabComponent extends MDComponent {
             fadeOut: true,
         });
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -51,8 +48,7 @@ class MDFabComponent extends MDComponent {
             ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing}
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -60,8 +56,7 @@ class MDFabComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-fab");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

@@ -25,8 +25,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MDSelectFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDSelectFieldComponent extends MDTextFieldComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -62,16 +60,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         ...MDTextFieldComponent.properties,
         ...MDMenuComponent.properties,
     };
-    
-    
+
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "arrow_drop_down" }];
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -81,64 +77,56 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     get selectedIndex() {
         return this.options.findIndex((doc) => doc.selected);
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get selectedOptions() {
         return this.options.filter((doc) => doc.selected);
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get defaultSelectedIndex() {
         return this.defaultOptions.findIndex((doc) => doc.selected);
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get selectedOptionLabel() {
         return this.selectedOptions?.[0]?.headline ?? "";
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get defaultSelectedOptionLabel() {
         return this.defaultSelectedOptions?.[0]?.headline ?? "";
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get selectedOptionValue() {
         return this.selectedOptions?.[0]?.value ?? "";
     }
-    
-    
+
     /**
      * {{desc}}
      */
     get defaultSelectedOptionValue() {
         return this.defaultSelectedOptions?.[0]?.value ?? "";
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -146,10 +134,8 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "select";
         this.options = [];
-        // this.map = { label: "label", value: "value" };
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -184,8 +170,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             >
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -202,8 +187,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             >
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -214,8 +198,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.defaultOptions = JSON.parse(JSON.stringify(this.options));
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -223,8 +206,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
         super.validate();
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -235,8 +217,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -247,7 +228,6 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.pickerOpen = true;
         this.picker = document.createElement("md-menu");
         this.picker.items = this.options;
-        // this.picker.map = this.map;
         this.parentElement.insertBefore(this.picker, this.nextElementSibling);
         this.handleMenuListSelection = this.handleMenuListSelection.bind(this);
         this.picker.addEventListener("onMenuListSelection", this.handleMenuListSelection);
@@ -284,8 +264,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -294,8 +273,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         super.handleTextFieldContainerClick(event);
         this.togglePicker();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -304,8 +282,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -338,8 +315,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             }
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -349,8 +325,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.filter(this.textFieldNative.value.value);
         this.showPicker();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -363,8 +338,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         });
         this.requestUpdate();
     }
-    
-    
+
     /**
      * {{desc}}
      */

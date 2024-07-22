@@ -4397,7 +4397,7 @@ const options0 = [
         name: "Not classified",
         options: {},
     },
-].map(option=>({...option,headline:option.name,value:option.id}));
+].map((option) => ({ ...option, headline: option.name, value: option.id }));
 const options1 = [
     {
         id: "Basic Materials",
@@ -4585,7 +4585,7 @@ const options1 = [
         name: "Not classified",
         options: {},
     },
-].map(option=>({...option,headline:option.name,value:option.id}));
+].map((option) => ({ ...option, headline: option.name, value: option.id }));
 
 class DevForm extends MDComponent {
     render() {

@@ -12,8 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDSwitchComponent#onSwitchNativeReset - {{desc}}
  */
 class MDSwitchComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -32,9 +30,9 @@ class MDSwitchComponent extends MDComponent {
         disabled: { type: Boolean },
         icons: { type: Array },
     };
+
     switchNative = createRef();
-    
-    
+
     /**
      * {{desc}}
      */
@@ -48,8 +46,7 @@ class MDSwitchComponent extends MDComponent {
             fadeOut: true,
         });
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -74,8 +71,7 @@ class MDSwitchComponent extends MDComponent {
             <div class="md-switch__track"><md-icon class="md-switch__thumb" .icon="${this.icons?.length ? this.icons[~~this.checked] : nothing}"></md-icon></div>
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -92,8 +88,7 @@ class MDSwitchComponent extends MDComponent {
             this.defaultIndeterminate = !!this.indeterminate;
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -104,8 +99,7 @@ class MDSwitchComponent extends MDComponent {
         this.indeterminate = this.switchNative.value.indeterminate;
         this.emit("onSwitchNativeInput", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

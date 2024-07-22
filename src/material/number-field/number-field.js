@@ -20,8 +20,6 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDNumberFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDNumberFieldComponent extends MDTextFieldComponent {
-    
-    
     /**
      * {{desc}}
      */
@@ -31,8 +29,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
             { name: "add", icon: "add" },
         ];
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -42,8 +39,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "number";
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -51,8 +47,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-number-field");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -61,8 +56,7 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

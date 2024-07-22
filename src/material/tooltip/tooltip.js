@@ -11,8 +11,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDTooltipComponent extends MDSheetComponent {
     variants = ["plain", "rich"];
-    
-    
+
     /**
      * {{desc}}
      */
@@ -20,8 +19,7 @@ class MDTooltipComponent extends MDSheetComponent {
         super();
         this.popper = new MDPopperController(this, {});
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -29,8 +27,7 @@ class MDTooltipComponent extends MDSheetComponent {
         super.connectedCallback();
         this.classList.add("md-tooltip");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -40,8 +37,7 @@ class MDTooltipComponent extends MDSheetComponent {
         this.updatePosition(button, options);
         super.showModal();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -51,8 +47,7 @@ class MDTooltipComponent extends MDSheetComponent {
         this.updatePosition(button, options);
         super.show();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}

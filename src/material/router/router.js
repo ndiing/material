@@ -1,5 +1,3 @@
-
-
 /**
  * {{desc}}
  * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
@@ -14,8 +12,7 @@ class MDRouter {
     static route;
     static routes;
     static _historyApiFallback = true;
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} routes - {{desc}}
@@ -32,8 +29,7 @@ class MDRouter {
             return acc;
         }, []);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -44,8 +40,7 @@ class MDRouter {
             return window.location.hash.replace(/^#/, "").replace(/\?.*$/, "") || "/";
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -70,8 +65,7 @@ class MDRouter {
         }
         return query;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} path - {{desc}}
@@ -88,8 +82,7 @@ class MDRouter {
             return false;
         });
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} route - {{desc}}
@@ -103,8 +96,7 @@ class MDRouter {
             return acc;
         }, []);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} container - {{desc}}
@@ -139,16 +131,14 @@ class MDRouter {
             }
         });
     }
-    
-    
+
     /**
      * {{desc}}
      */
     static get params() {
         return this._params;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -156,8 +146,7 @@ class MDRouter {
     static set params(value) {
         this._params = value;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -228,8 +217,7 @@ class MDRouter {
         performance.clearMarks("markRouterNavigateSuccess");
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} url - {{desc}}
@@ -241,8 +229,7 @@ class MDRouter {
             window.location.hash = url;
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -254,8 +241,7 @@ class MDRouter {
             this.navigate(url);
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} routes - {{desc}}
@@ -277,16 +263,14 @@ class MDRouter {
         this.handleClick = this.handleClick.bind(this);
         window.addEventListener("click", this.handleClick);
     }
-    
-    
+
     /**
      * {{desc}}
      */
     static get historyApiFallback() {
         return this._historyApiFallback;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -294,8 +278,7 @@ class MDRouter {
     static set historyApiFallback(value) {
         this._historyApiFallback = value;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} type - {{desc}}

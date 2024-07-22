@@ -7,9 +7,7 @@ class DevLayoutItem extends MDComponent {
             <md-layout variant="border">
                 <md-layout-item region="center">
                     <md-layout variant="column">
-                        <md-layout-item expanded="12" medium="8" compact="4">
-                            layout-item
-                        </md-layout-item>
+                        <md-layout-item expanded="12" medium="8" compact="4"> layout-item </md-layout-item>
                     </md-layout>
                 </md-layout-item>
             </md-layout>

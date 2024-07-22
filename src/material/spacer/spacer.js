@@ -6,8 +6,6 @@ import { MDComponent } from "../component/component.js";
  * @element md-spacer
  */
 class MDSpacerComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -15,8 +13,7 @@ class MDSpacerComponent extends MDComponent {
     static properties = {
         ...MDComponent.properties,
     };
-    
-    
+
     /**
      * {{desc}}
      */

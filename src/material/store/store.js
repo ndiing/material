@@ -4,8 +4,6 @@ import { isObject } from "../functions/functions.js";
  * {{desc}}
  */
 class MDStore {
-    
-    
     /**
      * {{desc}}
      * @param {Any} docs = [] - {{desc}}
@@ -18,8 +16,7 @@ class MDStore {
             ...options,
         };
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} doc - {{desc}}
@@ -28,8 +25,7 @@ class MDStore {
         this.docs.push(doc);
         return doc;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} _id - {{desc}}
@@ -37,8 +33,7 @@ class MDStore {
     get(_id) {
         return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} _id - {{desc}}
@@ -52,8 +47,7 @@ class MDStore {
         }
         return null;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} _id - {{desc}}
@@ -67,8 +61,7 @@ class MDStore {
         }
         return null;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} doc - {{desc}}
@@ -80,8 +73,7 @@ class MDStore {
             return this.post(doc);
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -99,8 +91,7 @@ class MDStore {
             return 0;
         });
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -110,8 +101,7 @@ class MDStore {
         const query = q.toLowerCase().trim();
         return docs.filter((doc) => this.deepSearch(doc, query));
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -120,8 +110,7 @@ class MDStore {
     filter(docs, filters) {
         return docs.filter((doc) => this.deepFilter(doc, filters));
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -132,8 +121,7 @@ class MDStore {
         const startIndex = (_page - 1) * _limit;
         return docs.slice(startIndex, startIndex + _limit);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -143,8 +131,7 @@ class MDStore {
     slice(docs, _start, _end) {
         return docs.slice(_start, _end);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} options = {} - {{desc}}
@@ -184,8 +171,7 @@ class MDStore {
         }
         return { total, docs: docs };
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} target - {{desc}}
@@ -207,8 +193,7 @@ class MDStore {
         }
         return target;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} obj - {{desc}}
@@ -217,8 +202,7 @@ class MDStore {
     getValue(obj, path) {
         return path.split(".").reduce((acc, part) => acc && acc[part], obj);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} obj - {{desc}}
@@ -239,8 +223,7 @@ class MDStore {
         }
         return false;
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} obj - {{desc}}

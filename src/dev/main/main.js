@@ -116,10 +116,13 @@ class DevMainComponent extends MDComponent {
                 label: "list",
                 items: [
                     // { label: "list-item", routerLink: "/list-item" },
-                    { label: "list", items:[
-                        { label: "list", routerLink: "/list" },
-                        { label: "list2", routerLink: "/list2" },
-                    ] },
+                    {
+                        label: "list",
+                        items: [
+                            { label: "list", routerLink: "/list" },
+                            { label: "list2", routerLink: "/list2" },
+                        ],
+                    },
                     // { label: "tree-item", routerLink: "/tree-item" },
                     { label: "tree", routerLink: "/tree" },
                     { label: "chip", routerLink: "/chip" },

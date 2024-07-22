@@ -16,8 +16,6 @@ import { renderComponent } from "../template/template.js";
  * @fires MDBlockComponent#onImageNativeError - {{desc}}
  */
 class MDBlockComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -74,20 +72,14 @@ class MDBlockComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-    
-    
+
     /**
      * {{desc}}
      */
     constructor() {
         super();
-        // Confused material!!!
-        // headline/section
-        // headline/label
-        // supportingText/subhead
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -127,17 +119,16 @@ class MDBlockComponent extends MDComponent {
             
             ${this.badge !== undefined ? html`<md-badge class="md-block__badge" .label="${this.badge}"></md-badge>` : nothing}
         `;
-        // this.emit("onCheckboxNativeInput", this);
-        // this.emit("onCheckboxNativeReset", this);
-        // this.emit("onRadioButtonNativeInput", this);
-        // this.emit("onRadioButtonNativeReset", this);
-        // this.emit("onSwitchNativeInput", this);
-        // this.emit("onSwitchNativeReset", this);
-        // this.emit("onImageNativeLoad", this);
-        // this.emit("onImageNativeError", this);
+        /* this.emit("onCheckboxNativeInput", this); */
+        /* this.emit("onCheckboxNativeReset", this); */
+        /* this.emit("onRadioButtonNativeInput", this); */
+        /* this.emit("onRadioButtonNativeReset", this); */
+        /* this.emit("onSwitchNativeInput", this); */
+        /* this.emit("onSwitchNativeReset", this); */
+        /* this.emit("onImageNativeLoad", this); */
+        /* this.emit("onImageNativeError", this); */
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -145,18 +136,17 @@ class MDBlockComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-block");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-        if (changedProperties.has('supportingText')) {
+        if (changedProperties.has("supportingText")) {
             await this.updateComplete;
             const supportingTextElement = this.querySelector(".md-block__group .md-block__supporting-text");
-            if(supportingTextElement){
+            if (supportingTextElement) {
                 const style = window.getComputedStyle(supportingTextElement);
                 const lineHeight = parseFloat(style.getPropertyValue("line-height"));
                 if (supportingTextElement.scrollHeight > lineHeight) {

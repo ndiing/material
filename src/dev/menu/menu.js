@@ -1572,9 +1572,9 @@ const items0 = [
         name: "Saint Pierre & Miquelon",
         options: {},
     },
-].map(item=>({
-    headline:item.name,
-    value:item.id,
+].map((item) => ({
+    headline: item.name,
+    value: item.id,
 }));
 
 class DevMenu extends MDComponent {

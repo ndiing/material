@@ -1572,7 +1572,7 @@ const options0 = [
         name: "Saint Pierre & Miquelon",
         options: {},
     },
-].map(option => ({...option,headline:option.name,value:option.id}));
+].map((option) => ({ ...option, headline: option.name, value: option.id }));
 const options1 = [
     {
         id: "AED",
@@ -2470,7 +2470,7 @@ const options1 = [
         name: "ZMW",
         options: {},
     },
-].map(option => ({...option,headline:option.name,value:option.id}));
+].map((option) => ({ ...option, headline: option.name, value: option.id }));
 const options2 = [
     {
         id: "ECONOMICS",
@@ -3592,7 +3592,7 @@ const options2 = [
         name: "ZOOMEX",
         options: {},
     },
-].map(option => ({...option,headline:option.name,value:option.id}));
+].map((option) => ({ ...option, headline: option.name, value: option.id }));
 const options3 = [
     {
         id: "SYML:SP;SPX",
@@ -6584,7 +6584,7 @@ const options3 = [
             index_proname: "ADX:FADGI",
         },
     },
-].map(option => ({...option,headline:option.name,value:option.id}));
+].map((option) => ({ ...option, headline: option.name, value: option.id }));
 
 class DevSelectField extends MDComponent {
     render() {

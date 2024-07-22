@@ -1,7 +1,5 @@
 .md-block {
     display: flex;
-    // display: inline-flex;
-    // vertical-align: middle;
     align-items: center;
     padding: 8px 16px;
     gap: 0 16px;
@@ -23,7 +21,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface);
-    
 }
 .md-block__avatar {
     width: 40px;

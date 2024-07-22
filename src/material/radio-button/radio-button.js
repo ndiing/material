@@ -12,8 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDRadioButtonComponent#onRadioButtonNativeReset - {{desc}}
  */
 class MDRadioButtonComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -30,8 +28,7 @@ class MDRadioButtonComponent extends MDComponent {
         checked: { type: Boolean },
         disabled: { type: Boolean },
     };
-    
-    
+
     /**
      * {{desc}}
      */
@@ -45,9 +42,9 @@ class MDRadioButtonComponent extends MDComponent {
             fadeOut: true,
         });
     }
+
     radioButtonNative = createRef();
-    
-    
+
     /**
      * {{desc}}
      */
@@ -72,8 +69,7 @@ class MDRadioButtonComponent extends MDComponent {
             <div class="md-radio-button__track"><div class="md-radio-button__thumb"></div></div>
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -90,8 +86,7 @@ class MDRadioButtonComponent extends MDComponent {
             this.defaultIndeterminate = !!this.indeterminate;
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -102,8 +97,7 @@ class MDRadioButtonComponent extends MDComponent {
         this.indeterminate = this.radioButtonNative.value.indeterminate;
         this.emit("onRadioButtonNativeInput", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

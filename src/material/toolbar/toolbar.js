@@ -7,8 +7,6 @@ import { renderComponent } from "../template/template.js";
  * @element md-toolbar
  */
 class MDToolbarComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -17,8 +15,7 @@ class MDToolbarComponent extends MDComponent {
     static properties = {
         items: { type: Array },
     };
-    
-    
+
     /**
      * {{desc}}
      */
@@ -28,8 +25,7 @@ class MDToolbarComponent extends MDComponent {
             return renderComponent(item);
         });
     }
-    
-    
+
     /**
      * {{desc}}
      */

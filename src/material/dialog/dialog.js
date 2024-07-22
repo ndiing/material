@@ -10,8 +10,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDDialogComponent extends MDSheetComponent {
     variants = ["full"];
-    
-    
+
     /**
      * {{desc}}
      */

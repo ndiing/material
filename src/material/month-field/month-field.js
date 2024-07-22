@@ -21,16 +21,13 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDMonthFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
-    
-    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "calendar_month" }];
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -40,8 +37,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "month";
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -49,8 +45,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -61,8 +56,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -115,8 +109,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -125,8 +118,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -137,8 +129,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.handleMonthFieldActionPickerClick(event);
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -146,8 +137,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -156,16 +146,14 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
     }
-    
-    
+
     /**
      * {{desc}}
      */
     handleMonthFieldActionPickerClick() {
         this.togglePicker();
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -173,8 +161,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
-    
-    
+
     /**
      * {{desc}}
      */

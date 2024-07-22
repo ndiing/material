@@ -7,8 +7,6 @@ import { MDGestureController } from "../material.js";
  * @element md-data-table-column-cell
  */
 class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
-    
-    
     /**
      * {{desc}}
      */
@@ -21,8 +19,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
             resize: ["e"],
         });
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

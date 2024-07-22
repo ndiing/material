@@ -7,8 +7,6 @@ import { MDTreeComponent } from "../tree/tree.js";
  * @fires MDTabsComponent#onTreeItemClick - {{desc}}
  */
 class MDTabsComponent extends MDTreeComponent {
-    
-    
     /**
      * {{desc}}
      */
@@ -18,9 +16,9 @@ class MDTabsComponent extends MDTreeComponent {
         this.currentSelectedIndex = -1;
         this.lastSelectedIndex = -1;
     }
+
     variants = ["primary", "secondary"];
-    
-    
+
     /**
      * {{desc}}
      */
@@ -28,8 +26,7 @@ class MDTabsComponent extends MDTreeComponent {
         super.connectedCallback();
         this.classList.add("md-tabs");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

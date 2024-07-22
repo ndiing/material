@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderComponent, renderDivider, renderListItem } from "../template/template.js";
+import { renderDivider, renderListItem } from "../template/template.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
@@ -14,13 +14,10 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
  */
 class MDListComponent extends MDComponent {
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {Array} items - {{desc}}
-     * @property {Object} map - {{desc}}
-     * @property {Function} format - {{desc}}
      * @property {Boolean} rangeSelection - {{desc}}
      * @property {Boolean} multiSelection - {{desc}}
      * @property {Boolean} singleSelection - {{desc}}
@@ -28,76 +25,42 @@ class MDListComponent extends MDComponent {
      */
     static properties = {
         items: { type: Array },
-        // map: { type: Object },
-        // format: { type: Function },
         rangeSelection: { type: Boolean },
         multiSelection: { type: Boolean },
         singleSelection: { type: Boolean },
         allSelection: { type: Boolean },
     };
-    // get computedMap(){
-    //     return {
-    //         "leadingActions": "leadingActions",
-    //         "leadingCheckbox": "leadingCheckbox",
-    //         "leadingRadio": "leadingRadio",
-    //         "leadingSwitch": "leadingSwitch",
-    //         "leadingAvatar": "leadingAvatar",
-    //         "leadingImage": "leadingImage",
-    //         "leadingVideo": "leadingVideo",
-    //         "leadingIcon": "leadingIcon",
-    //         "leadingSupportingText": "leadingSupportingText",
-    //         "headline": "headline",
-    //         "supportingText": "supportingText",
-    //         "trailingSupportingText": "trailingSupportingText",
-    //         "trailingIcon": "trailingIcon",
-    //         "trailingVideo": "trailingVideo",
-    //         "trailingImage": "trailingImage",
-    //         "trailingAvatar": "trailingAvatar",
-    //         "trailingSwitch": "trailingSwitch",
-    //         "trailingRadio": "trailingRadio",
-    //         "trailingCheckbox": "trailingCheckbox",
-    //         "trailingActions": "trailingActions",
-    //         "badge": "badge",
-    //         "activated": "activated",
-    //         "indeterminate": "indeterminate",
-    //         "selected": "selected",
-    //         "disabled": "disabled",
-    //         ...this.map
-    //     }
-    // }
-    
+
     /**
      * {{desc}}
      */
     constructor() {
         super();
     }
-    renderListItem(item={}){
-        // item.component = item.component||"list-item";
-        // for(const name in this.computedMap){
-        //     const value=this.computedMap[name]
-        //     item[name]=item[value]
-        // }
+
+    renderListItem(item = {}) {
         item.onListItemClick = this.handleListItemClick;
         item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
         item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
         item.onSwitchNativeInput = this.handleListItemSwitchNativeInput;
-        return renderListItem(item)
+        return renderListItem(item);
     }
-    renderListSection(item={}){
+
+    renderListSection(item = {}) {
         return html`
             <div class="md-block md-list__section">
                 <div class="md-block__group">
                     <div class="md-block__headline">${item.section}</div>
                 </div>
             </div>
-        `
+        `;
     }
-    renderListDivider(item={}){
-        item.classMap={'md-list__divider':true}
-        return renderDivider(item)
+
+    renderListDivider(item = {}) {
+        item.classMap = { "md-list__divider": true };
+        return renderDivider(item);
     }
-    
+
     /**
      * {{desc}}
      */
@@ -111,7 +74,7 @@ class MDListComponent extends MDComponent {
             ], () => this.renderListItem(item))
         });
     }
-    
+
     /**
      * {{desc}}
      */
@@ -120,7 +83,7 @@ class MDListComponent extends MDComponent {
         this.classList.add("md-list");
         this.on("keydown", this.handleListKeydown);
     }
-    
+
     /**
      * {{desc}}
      */
@@ -128,7 +91,7 @@ class MDListComponent extends MDComponent {
         super.disconnectedCallback();
         this.off("keydown", this.handleListKeydown);
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -139,7 +102,7 @@ class MDListComponent extends MDComponent {
         });
         this.endIndex = this.items.indexOf(data);
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -147,7 +110,7 @@ class MDListComponent extends MDComponent {
     selectToggle(data) {
         data.selected = !data.selected;
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -166,7 +129,7 @@ class MDListComponent extends MDComponent {
             [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
         }
     }
-    
+
     /**
      * {{desc}}
      */
@@ -175,7 +138,7 @@ class MDListComponent extends MDComponent {
             item.selected = true;
         });
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -205,7 +168,7 @@ class MDListComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onListItemClick", event);
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -218,7 +181,7 @@ class MDListComponent extends MDComponent {
         }
         this.emit("onListKeydown", event);
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -229,7 +192,7 @@ class MDListComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onListItemCheckboxNativeInput", event);
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -240,7 +203,7 @@ class MDListComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onListItemRadioButtonNativeInput", event);
     }
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

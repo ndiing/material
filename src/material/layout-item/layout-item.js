@@ -6,8 +6,6 @@ import { MDComponent } from "../component/component.js";
  * @element md-layout-item
  */
 class MDLayoutItemComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -22,16 +20,14 @@ class MDLayoutItemComponent extends MDComponent {
         compact: { type: Number },
         region: { type: String },
     };
-    
-    
+
     /**
      * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

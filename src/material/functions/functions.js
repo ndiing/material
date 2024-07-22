@@ -1,5 +1,3 @@
-
-
 /**
  * {{desc}}
  * @param {Any} string - {{desc}}

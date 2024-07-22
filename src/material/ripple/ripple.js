@@ -1,11 +1,7 @@
-
-
 /**
  * {{desc}}
  */
 class MDRippleController {
-    
-    
     /**
      * {{desc}}
      * @param {Any} host - {{desc}}
@@ -23,8 +19,7 @@ class MDRippleController {
             ...options,
         };
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -76,8 +71,7 @@ class MDRippleController {
         this.button.addEventListener("focus", this.handleRippleFocus);
         this.button.addEventListener("blur", this.handleRippleBlur);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -89,8 +83,7 @@ class MDRippleController {
         this.button.removeEventListener("focus", this.handleRippleFocus);
         this.button.removeEventListener("blur", this.handleRippleBlur);
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -98,16 +91,14 @@ class MDRippleController {
         this.container.style.removeProperty("--md-comp-ripple-animation");
         this.container.classList.add("md-ripple--hover");
     }
-    
-    
+
     /**
      * {{desc}}
      */
     handleRipplePointerleave() {
         this.container.classList.remove("md-ripple--hover");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -131,8 +122,7 @@ class MDRippleController {
             this.container.style.setProperty("--md-comp-ripple-y", `${y * 100}%`);
         }
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -140,16 +130,14 @@ class MDRippleController {
         this.container.classList.remove("md-ripple--pressed");
         window.removeEventListener("pointerup", this.handleRipplePointerup);
     }
-    
-    
+
     /**
      * {{desc}}
      */
     handleRippleFocus() {
         this.container.classList.add("md-ripple--focused");
     }
-    
-    
+
     /**
      * {{desc}}
      */

@@ -8,8 +8,6 @@ import { renderComponent } from "../template/template.js";
  * @fires MDChipsComponent#onChipClick - {{desc}}
  */
 class MDChipsComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -20,8 +18,7 @@ class MDChipsComponent extends MDComponent {
         items: { type: Array },
         multiSelection: { type: Boolean },
     };
-    
-    
+
     /**
      * {{desc}}
      */
@@ -34,8 +31,7 @@ class MDChipsComponent extends MDComponent {
             return renderComponent(item)
         });
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -43,8 +39,7 @@ class MDChipsComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-chips");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -57,8 +52,7 @@ class MDChipsComponent extends MDComponent {
         }
         this.emit("onChipClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

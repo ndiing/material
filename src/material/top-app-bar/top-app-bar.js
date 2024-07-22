@@ -10,8 +10,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDTopAppBarComponent extends MDSheetComponent {
     variants = ["center", "small", "medium", "large"];
-    
-    
+
     /**
      * {{desc}}
      */

@@ -31,8 +31,6 @@ import { html } from "lit";
  * @fires MDWeekPickerComponent#onWeekPickerButtonOkClick - {{desc}}
  */
 class MDWeekPickerComponent extends MDDatetimePickerComponent {
-    
-    
     /**
      * {{desc}}
      */
@@ -46,8 +44,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         }
         return rows;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -77,8 +74,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         }
         return rows;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -92,8 +88,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
             </div>
         `];
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -101,8 +96,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -117,8 +111,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         }
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -145,8 +138,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
             </div>
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -154,8 +146,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         super.connectedCallback();
         this.classList.add("md-week-picker");
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -166,16 +157,14 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.selected.setFullYear(date.getFullYear());
         this.selected.setWeek(date.getWeek());
     }
-    
-    
+
     /**
      * {{desc}}
      */
     getValue() {
         return stringifyWeek(this.selected);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -190,8 +179,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         }
         this.emit("onWeekPickerButtonLabelClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -208,8 +196,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerIconButtonPrevClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -226,8 +213,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerIconButtonNextClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -239,8 +225,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerYearItemClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -252,8 +237,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerMonthItemClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -268,8 +252,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.emit("onWeekPickerSelection", event);
         this.emit("onWeekPickerDayItemClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -281,8 +264,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
         this.index = 2;
         this.emit("onWeekPickerButtonCancelClick", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

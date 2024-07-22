@@ -12,8 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDImageComponent#onImageNativeError - {{desc}}
  */
 class MDImageComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -30,9 +28,9 @@ class MDImageComponent extends MDComponent {
         ratio: { type: String },
         variant: { type: String },
     };
+
     variants = ["rounded"];
-    
-    
+
     /**
      * {{desc}}
      */
@@ -50,9 +48,9 @@ class MDImageComponent extends MDComponent {
         }
         return style;
     }
+
     imageNative = createRef();
-    
-    
+
     /**
      * {{desc}}
      */
@@ -61,8 +59,7 @@ class MDImageComponent extends MDComponent {
         this.loading = "lazy";
         this.alt = "alt";
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -81,8 +78,7 @@ class MDImageComponent extends MDComponent {
             >
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -90,8 +86,7 @@ class MDImageComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-image");
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -105,8 +100,7 @@ class MDImageComponent extends MDComponent {
             });
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -114,8 +108,7 @@ class MDImageComponent extends MDComponent {
     handleImageNativeLoad(event) {
         this.emit("onImageNativeLoad", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

@@ -12,8 +12,6 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDCheckboxComponent#onCheckboxNativeReset - {{desc}}
  */
 class MDCheckboxComponent extends MDComponent {
-    
-    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -30,8 +28,7 @@ class MDCheckboxComponent extends MDComponent {
         checked: { type: Boolean },
         disabled: { type: Boolean },
     };
-    
-    
+
     /**
      * {{desc}}
      */
@@ -45,9 +42,9 @@ class MDCheckboxComponent extends MDComponent {
             fadeOut: true,
         });
     }
+
     checkboxNative = createRef();
-    
-    
+
     /**
      * {{desc}}
      */
@@ -72,8 +69,7 @@ class MDCheckboxComponent extends MDComponent {
             <div class="md-checkbox__track"><div class="md-checkbox__thumb"></div></div>
         `;
     }
-    
-    
+
     /**
      * {{desc}}
      */
@@ -90,8 +86,7 @@ class MDCheckboxComponent extends MDComponent {
             this.defaultIndeterminate = !!this.indeterminate;
         }
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -102,8 +97,7 @@ class MDCheckboxComponent extends MDComponent {
         this.indeterminate = this.checkboxNative.value.indeterminate;
         this.emit("onCheckboxNativeInput", event);
     }
-    
-    
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
