@@ -7,6 +7,7 @@ import { updateWhenLocaleChanges } from "@lit/localize";
  */
 class MDComponent extends LitElement {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -14,6 +15,7 @@ class MDComponent extends LitElement {
     static properties = {
         tooltip: { type: String },
     };
+    
     
     /**
      * {{desc}}
@@ -23,12 +25,14 @@ class MDComponent extends LitElement {
         updateWhenLocaleChanges(this);
     }
     
+    
     /**
      * {{desc}}
      */
     createRenderRoot() {
         return this;
     }
+    
     
     /**
      * {{desc}}
@@ -38,6 +42,7 @@ class MDComponent extends LitElement {
         this.on("pointerenter", this.handlePointerenter);
         this.on("pointerleave", this.handlePointerleave);
     }
+    
     
     /**
      * {{desc}}
@@ -49,6 +54,7 @@ class MDComponent extends LitElement {
         this.off("pointerleave", this.handlePointerleave);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -56,6 +62,7 @@ class MDComponent extends LitElement {
     updated(changedProperties) {
         super.updated(changedProperties);
     }
+    
     
     /**
      * {{desc}}
@@ -66,6 +73,7 @@ class MDComponent extends LitElement {
         listener = listener.bind(this);
         this.addEventListener(type, listener);
     }
+    
     
     /**
      * {{desc}}
@@ -80,6 +88,7 @@ class MDComponent extends LitElement {
         this.on(type, handleListener);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} type - {{desc}}
@@ -88,6 +97,7 @@ class MDComponent extends LitElement {
     off(type, listener) {
         this.removeEventListener(type, listener);
     }
+    
     
     /**
      * {{desc}}
@@ -103,6 +113,7 @@ class MDComponent extends LitElement {
         this.dispatchEvent(event);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -110,12 +121,14 @@ class MDComponent extends LitElement {
         await this.createTooltip();
     }
     
+    
     /**
      * {{desc}}
      */
     handlePointerleave() {
         this.removeTooltip();
     }
+    
     /**
      * {{desc}}
      */
@@ -129,6 +142,7 @@ class MDComponent extends LitElement {
             this.tooltipElement.show(this);
         }
     }
+    
     /**
      * {{desc}}
      */

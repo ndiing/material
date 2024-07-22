@@ -10,6 +10,7 @@ import { renderComponent } from "../template/template.js";
  */
 class MDTreeComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -22,6 +23,7 @@ class MDTreeComponent extends MDComponent {
     };
     variants = ["plain", "accordion", "tree", "level"];
     
+    
     /**
      * {{desc}}
      */
@@ -29,6 +31,7 @@ class MDTreeComponent extends MDComponent {
         super();
         this.variant = "tree";
     }
+    
     
     /**
      * {{desc}}
@@ -46,6 +49,7 @@ class MDTreeComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -54,6 +58,7 @@ class MDTreeComponent extends MDComponent {
         return (this.variant === 'level' ? this.getList(this.items) || this.items : this.items)?.map(item => this.renderTree(item));
     }
     
+    
     /**
      * {{desc}}
      */
@@ -61,6 +66,7 @@ class MDTreeComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-tree");
     }
+    
     
     /**
      * {{desc}}
@@ -81,6 +87,7 @@ class MDTreeComponent extends MDComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} items - {{desc}}
@@ -100,6 +107,7 @@ class MDTreeComponent extends MDComponent {
         });
         return temp;
     }
+    
     
     /**
      * {{desc}}
@@ -140,6 +148,7 @@ class MDTreeComponent extends MDComponent {
         return { expanded, activated };
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} items - {{desc}}
@@ -163,6 +172,7 @@ class MDTreeComponent extends MDComponent {
         return activated;
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} items - {{desc}}
@@ -171,6 +181,7 @@ class MDTreeComponent extends MDComponent {
     expand(items, data) {
         data.expanded = !data.expanded;
     }
+    
     
     /**
      * {{desc}}

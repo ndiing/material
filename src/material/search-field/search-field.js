@@ -21,12 +21,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  */
 class MDSearchFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [...((this.value && [{ name: "clear", icon: "close" }]) || [])];
     }
+    
     
     /**
      * {{desc}}
@@ -38,6 +40,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
         this.type = "search";
     }
     
+    
     /**
      * {{desc}}
      */
@@ -45,6 +48,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-search-field");
     }
+    
     
     /**
      * {{desc}}
@@ -54,6 +58,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+    
     
     /**
      * {{desc}}

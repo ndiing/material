@@ -22,12 +22,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  */
 class MDDatetimeFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "calendar_clock" }];
     }
+    
     
     /**
      * {{desc}}
@@ -39,6 +41,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         this.type = "datetime-local";
     }
     
+    
     /**
      * {{desc}}
      */
@@ -46,6 +49,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-datetime-field");
     }
+    
     
     /**
      * {{desc}}
@@ -57,6 +61,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+    
     
     /**
      * {{desc}}
@@ -108,6 +113,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -116,6 +122,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+    
     
     /**
      * {{desc}}
@@ -128,12 +135,14 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
     handleDatetimeFieldActionPickerClick() {
         this.togglePicker();
     }
+    
     
     /**
      * {{desc}}
@@ -143,6 +152,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
     
+    
     /**
      * {{desc}}
      */
@@ -150,6 +160,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
+    
     
     /**
      * {{desc}}

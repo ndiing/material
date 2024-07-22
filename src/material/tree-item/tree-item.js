@@ -12,6 +12,7 @@ import { isDefined } from "../functions/functions.js";
  */
 class MDTreeItemComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -47,6 +48,7 @@ class MDTreeItemComponent extends MDComponent {
         leafIcons: { type: Array },
     };
     
+    
     /**
      * {{desc}}
      */
@@ -65,6 +67,7 @@ class MDTreeItemComponent extends MDComponent {
         return icons;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -80,6 +83,7 @@ class MDTreeItemComponent extends MDComponent {
         }
         return icons;
     }
+    
     
     /**
      * {{desc}}
@@ -97,12 +101,14 @@ class MDTreeItemComponent extends MDComponent {
         return icons;
     }
     
+    
     /**
      * {{desc}}
      */
     get nodeAction() {
         return this.nodeActions_[~~this.expanded];
     }
+    
     
     /**
      * {{desc}}
@@ -111,6 +117,7 @@ class MDTreeItemComponent extends MDComponent {
         return this.nodeIcons_[~~this.expanded];
     }
     
+    
     /**
      * {{desc}}
      */
@@ -118,12 +125,14 @@ class MDTreeItemComponent extends MDComponent {
         return this.leafIcons_[~~this.selected];
     }
     
+    
     /**
      * {{desc}}
      */
     get icon_() {
         return this.isNode ? this.nodeicon : this.leafIcon;
     }
+    
     
     /**
      * {{desc}}
@@ -134,6 +143,7 @@ class MDTreeItemComponent extends MDComponent {
             clipped: true,
         });
     }
+    
     
     /**
      * {{desc}}
@@ -152,6 +162,7 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -168,6 +179,7 @@ class MDTreeItemComponent extends MDComponent {
             ${this.isNode ? html`<md-icon-button class="md-tree__icon-button" .icon="${this.nodeAction}"></md-icon-button>` : nothing}
         `;
     }
+    
     
     /**
      * {{desc}}
@@ -187,6 +199,7 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -204,6 +217,7 @@ class MDTreeItemComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -216,6 +230,7 @@ class MDTreeItemComponent extends MDComponent {
         ], () => this.renderPlain());
     }
     
+    
     /**
      * {{desc}}
      */
@@ -223,6 +238,7 @@ class MDTreeItemComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-tree__item");
     }
+    
     
     /**
      * {{desc}}

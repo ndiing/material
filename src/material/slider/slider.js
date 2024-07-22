@@ -12,6 +12,7 @@ import { calcDecimal, calcPercentage, isArrayString } from "../functions/functio
  */
 class MDSliderComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -45,12 +46,14 @@ class MDSliderComponent extends MDComponent {
         autocomplete: { type: String },
     };
     
+    
     /**
      * {{desc}}
      */
     get sliderNativeAll() {
         return this.querySelectorAll(".md-slider__native");
     }
+    
     
     /**
      * {{desc}}
@@ -63,6 +66,7 @@ class MDSliderComponent extends MDComponent {
         this.step = 1;
         this.value = [undefined];
     }
+    
     
     /**
      * {{desc}}
@@ -83,6 +87,7 @@ class MDSliderComponent extends MDComponent {
             </div>
         `;
     }
+    
     
     /**
      * {{desc}}
@@ -119,6 +124,7 @@ class MDSliderComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -138,6 +144,7 @@ class MDSliderComponent extends MDComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} index - {{desc}}
@@ -148,6 +155,7 @@ class MDSliderComponent extends MDComponent {
         this.style.setProperty("--md-comp-slider-percentage" + (index + 1), percentage + "%");
         this.style.setProperty("--md-comp-slider-decimal" + (index + 1), decimal);
     }
+    
     
     /**
      * {{desc}}
@@ -172,6 +180,7 @@ class MDSliderComponent extends MDComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -191,6 +200,7 @@ class MDSliderComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onSliderNativeInput", event);
     }
+    
     
     /**
      * {{desc}}

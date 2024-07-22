@@ -10,6 +10,7 @@ import { MDCardComponent } from "../card/card.js";
  */
 class MDSheetComponent extends MDCardComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -27,6 +28,7 @@ class MDSheetComponent extends MDCardComponent {
     };
     variants = ["north", "east", "south", "west", "modal"];
     
+    
     /**
      * {{desc}}
      */
@@ -36,12 +38,14 @@ class MDSheetComponent extends MDCardComponent {
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
     
+    
     /**
      * {{desc}}
      */
     showModal() {
         this.show(true);
     }
+    
     
     /**
      * {{desc}}
@@ -62,6 +66,7 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetShow", this);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -78,6 +83,7 @@ class MDSheetComponent extends MDCardComponent {
         this.emit("onSheetClose", this);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} ...args - {{desc}}
@@ -89,6 +95,7 @@ class MDSheetComponent extends MDCardComponent {
             this.show(...args);
         }
     }
+    
     
     /**
      * {{desc}}

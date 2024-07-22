@@ -7,6 +7,7 @@ import { MDComponent } from "../component/component.js";
  */
 class MDIconComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -16,12 +17,14 @@ class MDIconComponent extends MDComponent {
         icon: { type: String },
     };
     
+    
     /**
      * {{desc}}
      */
     render() {
         return this.icon;
     }
+    
     
     /**
      * {{desc}}

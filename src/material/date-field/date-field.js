@@ -22,12 +22,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  */
 class MDDateFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "today" }];
     }
+    
     
     /**
      * {{desc}}
@@ -39,6 +41,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.type = "date";
     }
     
+    
     /**
      * {{desc}}
      */
@@ -46,6 +49,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-date-field");
     }
+    
     
     /**
      * {{desc}}
@@ -57,6 +61,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+    
     
     /**
      * {{desc}}
@@ -111,6 +116,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -119,6 +125,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+    
     
     /**
      * {{desc}}
@@ -131,12 +138,14 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
     handleDateFieldActionPickerClick() {
         this.togglePicker();
     }
+    
     
     /**
      * {{desc}}
@@ -147,6 +156,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.picker.close();
     }
     
+    
     /**
      * {{desc}}
      */
@@ -155,6 +165,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
     
+    
     /**
      * {{desc}}
      */
@@ -162,6 +173,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
+    
     
     /**
      * {{desc}}

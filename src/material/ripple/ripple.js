@@ -1,8 +1,10 @@
 
+
 /**
  * {{desc}}
  */
 class MDRippleController {
+    
     
     /**
      * {{desc}}
@@ -21,6 +23,7 @@ class MDRippleController {
             ...options,
         };
     }
+    
     
     /**
      * {{desc}}
@@ -74,6 +77,7 @@ class MDRippleController {
         this.button.addEventListener("blur", this.handleRippleBlur);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -86,6 +90,7 @@ class MDRippleController {
         this.button.removeEventListener("blur", this.handleRippleBlur);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -94,12 +99,14 @@ class MDRippleController {
         this.container.classList.add("md-ripple--hover");
     }
     
+    
     /**
      * {{desc}}
      */
     handleRipplePointerleave() {
         this.container.classList.remove("md-ripple--hover");
     }
+    
     
     /**
      * {{desc}}
@@ -125,6 +132,7 @@ class MDRippleController {
         }
     }
     
+    
     /**
      * {{desc}}
      */
@@ -133,12 +141,14 @@ class MDRippleController {
         window.removeEventListener("pointerup", this.handleRipplePointerup);
     }
     
+    
     /**
      * {{desc}}
      */
     handleRippleFocus() {
         this.container.classList.add("md-ripple--focused");
     }
+    
     
     /**
      * {{desc}}

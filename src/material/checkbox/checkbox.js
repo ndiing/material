@@ -13,6 +13,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  */
 class MDCheckboxComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -30,6 +31,7 @@ class MDCheckboxComponent extends MDComponent {
         disabled: { type: Boolean },
     };
     
+    
     /**
      * {{desc}}
      */
@@ -44,6 +46,7 @@ class MDCheckboxComponent extends MDComponent {
         });
     }
     checkboxNative = createRef();
+    
     
     /**
      * {{desc}}
@@ -70,6 +73,7 @@ class MDCheckboxComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -87,6 +91,7 @@ class MDCheckboxComponent extends MDComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -97,6 +102,7 @@ class MDCheckboxComponent extends MDComponent {
         this.indeterminate = this.checkboxNative.value.indeterminate;
         this.emit("onCheckboxNativeInput", event);
     }
+    
     
     /**
      * {{desc}}

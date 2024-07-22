@@ -26,6 +26,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
  */
 class MDSelectFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -62,12 +63,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         ...MDMenuComponent.properties,
     };
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "arrow_drop_down" }];
     }
+    
     
     /**
      * {{desc}}
@@ -79,12 +82,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         return this.options.findIndex((doc) => doc.selected);
     }
     
+    
     /**
      * {{desc}}
      */
     get selectedOptions() {
         return this.options.filter((doc) => doc.selected);
     }
+    
     
     /**
      * {{desc}}
@@ -93,12 +98,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         return this.defaultOptions.findIndex((doc) => doc.selected);
     }
     
+    
     /**
      * {{desc}}
      */
     get defaultSelectedOptions() {
         return this.defaultOptions.filter((doc) => doc.selected);
     }
+    
     
     /**
      * {{desc}}
@@ -107,12 +114,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         return this.selectedOptions?.[0]?.headline ?? "";
     }
     
+    
     /**
      * {{desc}}
      */
     get defaultSelectedOptionLabel() {
         return this.defaultSelectedOptions?.[0]?.headline ?? "";
     }
+    
     
     /**
      * {{desc}}
@@ -121,12 +130,14 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         return this.selectedOptions?.[0]?.value ?? "";
     }
     
+    
     /**
      * {{desc}}
      */
     get defaultSelectedOptionValue() {
         return this.defaultSelectedOptions?.[0]?.value ?? "";
     }
+    
     
     /**
      * {{desc}}
@@ -137,6 +148,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.options = [];
         // this.map = { label: "label", value: "value" };
     }
+    
     
     /**
      * {{desc}}
@@ -173,6 +185,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -190,6 +203,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -201,6 +215,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
@@ -208,6 +223,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.setCustomValidity(this.selectedIndex === -1 ? "Please select an item in the list." : "");
         super.validate();
     }
+    
     
     /**
      * {{desc}}
@@ -219,6 +235,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+    
     
     /**
      * {{desc}}
@@ -268,6 +285,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -277,6 +295,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.togglePicker();
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -285,6 +304,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+    
     
     /**
      * {{desc}}
@@ -319,6 +339,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -328,6 +349,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         this.picker.filter(this.textFieldNative.value.value);
         this.showPicker();
     }
+    
     
     /**
      * {{desc}}
@@ -341,6 +363,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
         });
         this.requestUpdate();
     }
+    
     
     /**
      * {{desc}}

@@ -5,6 +5,7 @@ import { getBoundary } from "../functions/functions";
  */
 class MDPopperController {
     
+    
     /**
      * {{desc}}
      * @param {Any} host - {{desc}}
@@ -16,6 +17,7 @@ class MDPopperController {
             ...options,
         };
     }
+    
     
     /**
      * {{desc}}
@@ -41,6 +43,7 @@ class MDPopperController {
         return { width, height, left, top, right, bottom };
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} container - {{desc}}
@@ -57,6 +60,7 @@ class MDPopperController {
         absolute.remove();
         return { width, height, left, top, right, bottom };
     }
+    
     
     /**
      * {{desc}}
@@ -82,6 +86,7 @@ class MDPopperController {
         }
         return { left, top };
     }
+    
     
     /**
      * {{desc}}

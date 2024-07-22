@@ -7,6 +7,7 @@ import { MDComponent } from "../component/component.js";
  */
 class MDScrimComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -17,6 +18,7 @@ class MDScrimComponent extends MDComponent {
         open: { type: Boolean, reflect: true },
     };
     
+    
     /**
      * {{desc}}
      */
@@ -25,6 +27,7 @@ class MDScrimComponent extends MDComponent {
         this.classList.add("md-scrim");
     }
     
+    
     /**
      * {{desc}}
      */
@@ -32,12 +35,14 @@ class MDScrimComponent extends MDComponent {
         this.open = true;
     }
     
+    
     /**
      * {{desc}}
      */
     close() {
         this.open = false;
     }
+    
     
     /**
      * {{desc}}

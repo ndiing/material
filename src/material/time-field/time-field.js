@@ -22,12 +22,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "schedule" }];
     }
+    
     
     /**
      * {{desc}}
@@ -39,6 +41,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.type = "time";
     }
     
+    
     /**
      * {{desc}}
      */
@@ -46,6 +49,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-time-field");
     }
+    
     
     /**
      * {{desc}}
@@ -55,6 +59,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+    
     
     /**
      * {{desc}}
@@ -67,12 +72,14 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
     handleTimeFieldActionPickerClick() {
         this.togglePicker();
     }
+    
     
     /**
      * {{desc}}
@@ -84,6 +91,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+    
     
     /**
      * {{desc}}
@@ -138,6 +146,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -145,6 +154,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
+    
     
     /**
      * {{desc}}
@@ -155,6 +165,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.picker.close();
     }
     
+    
     /**
      * {{desc}}
      */
@@ -162,6 +173,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
+    
     
     /**
      * {{desc}}

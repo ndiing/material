@@ -5,6 +5,7 @@ import { isObject } from "../functions/functions.js";
  */
 class MDStore {
     
+    
     /**
      * {{desc}}
      * @param {Any} docs = [] - {{desc}}
@@ -18,6 +19,7 @@ class MDStore {
         };
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} doc - {{desc}}
@@ -27,6 +29,7 @@ class MDStore {
         return doc;
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} _id - {{desc}}
@@ -34,6 +37,7 @@ class MDStore {
     get(_id) {
         return this.docs.find((doc) => doc[this.options.primaryKey] === _id);
     }
+    
     
     /**
      * {{desc}}
@@ -49,6 +53,7 @@ class MDStore {
         return null;
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} _id - {{desc}}
@@ -63,6 +68,7 @@ class MDStore {
         return null;
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} doc - {{desc}}
@@ -74,6 +80,7 @@ class MDStore {
             return this.post(doc);
         }
     }
+    
     
     /**
      * {{desc}}
@@ -93,6 +100,7 @@ class MDStore {
         });
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -103,6 +111,7 @@ class MDStore {
         return docs.filter((doc) => this.deepSearch(doc, query));
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -111,6 +120,7 @@ class MDStore {
     filter(docs, filters) {
         return docs.filter((doc) => this.deepFilter(doc, filters));
     }
+    
     
     /**
      * {{desc}}
@@ -123,6 +133,7 @@ class MDStore {
         return docs.slice(startIndex, startIndex + _limit);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} docs - {{desc}}
@@ -132,6 +143,7 @@ class MDStore {
     slice(docs, _start, _end) {
         return docs.slice(_start, _end);
     }
+    
     
     /**
      * {{desc}}
@@ -173,6 +185,7 @@ class MDStore {
         return { total, docs: docs };
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} target - {{desc}}
@@ -195,6 +208,7 @@ class MDStore {
         return target;
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} obj - {{desc}}
@@ -203,6 +217,7 @@ class MDStore {
     getValue(obj, path) {
         return path.split(".").reduce((acc, part) => acc && acc[part], obj);
     }
+    
     
     /**
      * {{desc}}
@@ -224,6 +239,7 @@ class MDStore {
         }
         return false;
     }
+    
     
     /**
      * {{desc}}

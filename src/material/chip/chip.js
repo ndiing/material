@@ -10,6 +10,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  */
 class MDChipComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -32,6 +33,7 @@ class MDChipComponent extends MDComponent {
     };
     variants = ["assist", "filter", "input", "suggestion"];
     
+    
     /**
      * {{desc}}
      */
@@ -41,6 +43,7 @@ class MDChipComponent extends MDComponent {
             clipped: true,
         });
     }
+    
     
     /**
      * {{desc}}
@@ -56,6 +59,7 @@ class MDChipComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -63,6 +67,7 @@ class MDChipComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-chip");
     }
+    
     
     /**
      * {{desc}}
@@ -86,6 +91,7 @@ class MDChipComponent extends MDComponent {
             }
         }
     }
+    
     
     /**
      * {{desc}}

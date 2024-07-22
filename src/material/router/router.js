@@ -1,4 +1,5 @@
 
+
 /**
  * {{desc}}
  * @fires MDRouter#onRouterCurrentEntryChange - {{desc}}
@@ -13,6 +14,7 @@ class MDRouter {
     static route;
     static routes;
     static _historyApiFallback = true;
+    
     
     /**
      * {{desc}}
@@ -31,6 +33,7 @@ class MDRouter {
         }, []);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -41,6 +44,7 @@ class MDRouter {
             return window.location.hash.replace(/^#/, "").replace(/\?.*$/, "") || "/";
         }
     }
+    
     
     /**
      * {{desc}}
@@ -67,6 +71,7 @@ class MDRouter {
         return query;
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} path - {{desc}}
@@ -84,6 +89,7 @@ class MDRouter {
         });
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} route - {{desc}}
@@ -97,6 +103,7 @@ class MDRouter {
             return acc;
         }, []);
     }
+    
     
     /**
      * {{desc}}
@@ -133,12 +140,14 @@ class MDRouter {
         });
     }
     
+    
     /**
      * {{desc}}
      */
     static get params() {
         return this._params;
     }
+    
     
     /**
      * {{desc}}
@@ -147,6 +156,7 @@ class MDRouter {
     static set params(value) {
         this._params = value;
     }
+    
     
     /**
      * {{desc}}
@@ -219,6 +229,7 @@ class MDRouter {
         performance.clearMeasures("measureRouterNavigateSuccess");
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} url - {{desc}}
@@ -231,6 +242,7 @@ class MDRouter {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -242,6 +254,7 @@ class MDRouter {
             this.navigate(url);
         }
     }
+    
     
     /**
      * {{desc}}
@@ -265,12 +278,14 @@ class MDRouter {
         window.addEventListener("click", this.handleClick);
     }
     
+    
     /**
      * {{desc}}
      */
     static get historyApiFallback() {
         return this._historyApiFallback;
     }
+    
     
     /**
      * {{desc}}
@@ -279,6 +294,7 @@ class MDRouter {
     static set historyApiFallback(value) {
         this._historyApiFallback = value;
     }
+    
     
     /**
      * {{desc}}

@@ -31,6 +31,7 @@ import { html } from "lit";
  */
 class MDTimePickerComponent extends MDDatetimePickerComponent {
     
+    
     /**
      * {{desc}}
      */
@@ -44,6 +45,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         `];
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -51,6 +53,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
+    
     
     /**
      * {{desc}}
@@ -65,6 +68,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
     
+    
     /**
      * {{desc}}
      */
@@ -73,6 +77,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.index = 0;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -80,6 +85,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         super.connectedCallback();
         this.classList.add("md-time-picker");
     }
+    
     
     /**
      * {{desc}}
@@ -92,12 +98,14 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.selected.setMinutes(date.getMinutes());
     }
     
+    
     /**
      * {{desc}}
      */
     getValue() {
         return stringifyTime(this.selected);
     }
+    
     
     /**
      * {{desc}}
@@ -111,6 +119,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         }
         this.emit("onTimePickerButtonLabelClick", event);
     }
+    
     
     /**
      * {{desc}}
@@ -129,6 +138,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerIconButtonPrevClick", event);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -146,6 +156,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerIconButtonNextClick", event);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -158,6 +169,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerSelection", event);
         this.emit("onTimePickerHourItemClick", event);
     }
+    
     
     /**
      * {{desc}}
@@ -174,6 +186,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.emit("onTimePickerMinuteItemClick", event);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -185,6 +198,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         this.index = 0;
         this.emit("onTimePickerButtonCancelClick", event);
     }
+    
     
     /**
      * {{desc}}

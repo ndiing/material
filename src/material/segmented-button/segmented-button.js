@@ -9,6 +9,7 @@ import { renderComponent } from "../template/template.js";
  */
 class MDSegmentedButtonComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -22,6 +23,7 @@ class MDSegmentedButtonComponent extends MDComponent {
         singleSelection: { type: Boolean },
         multiSelection: { type: Boolean },
     };
+    
     
     /**
      * {{desc}}
@@ -38,6 +40,7 @@ class MDSegmentedButtonComponent extends MDComponent {
         });
     }
     
+    
     /**
      * {{desc}}
      */
@@ -45,6 +48,7 @@ class MDSegmentedButtonComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-segmented-button");
     }
+    
     
     /**
      * {{desc}}

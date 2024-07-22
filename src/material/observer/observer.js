@@ -1,10 +1,12 @@
 
+
 /**
  * {{desc}}
  */
 class MDObserver {
     handle;
     isObserving = false;
+    
     
     /**
      * {{desc}}
@@ -13,6 +15,7 @@ class MDObserver {
     constructor(callback = () => {}) {
         this.callback = callback;
     }
+    
     
     /**
      * {{desc}}
@@ -26,6 +29,7 @@ class MDObserver {
         }
     }
     
+    
     /**
      * {{desc}}
      */
@@ -34,6 +38,7 @@ class MDObserver {
             this.handle = window.requestAnimationFrame(this.executeCallback.bind(this));
         }
     }
+    
     
     /**
      * {{desc}}
@@ -44,6 +49,7 @@ class MDObserver {
             this.scheduleNextFrame();
         }
     }
+    
     
     /**
      * {{desc}}

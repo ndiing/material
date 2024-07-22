@@ -7,6 +7,7 @@ import { MDDataTableItemComponent } from "../data-table-item/data-table-item.js"
  */
 class MDDataTableRowCellComponent extends MDDataTableItemComponent {
     
+    
     /**
      * {{desc}}
      */

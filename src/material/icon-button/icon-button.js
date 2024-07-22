@@ -10,6 +10,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  */
 class MDIconButtonComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -28,6 +29,7 @@ class MDIconButtonComponent extends MDComponent {
     };
     variants = ["filled", "tonal", "outlined", "toggle"];
     
+    
     /**
      * {{desc}}
      */
@@ -40,6 +42,7 @@ class MDIconButtonComponent extends MDComponent {
         });
     }
     
+    
     /**
      * {{desc}}
      */
@@ -47,6 +50,7 @@ class MDIconButtonComponent extends MDComponent {
         /* prettier-ignore */
         return html`<md-icon class="md-icon-button__icon" .icon="${this.icon}"></md-icon>`
     }
+    
     
     /**
      * {{desc}}
@@ -57,6 +61,7 @@ class MDIconButtonComponent extends MDComponent {
         this.on("click", this.handleIconButtonToggleClick);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -64,6 +69,7 @@ class MDIconButtonComponent extends MDComponent {
         super.disconnectedCallback();
         this.off("click", this.handleIconButtonToggleClick);
     }
+    
     
     /**
      * {{desc}}
@@ -87,6 +93,7 @@ class MDIconButtonComponent extends MDComponent {
             }
         }
     }
+    
     
     /**
      * {{desc}}

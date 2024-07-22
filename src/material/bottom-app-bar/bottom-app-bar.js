@@ -10,6 +10,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDBottomAppBarComponent extends MDSheetComponent {
     
+    
     /**
      * {{desc}}
      */

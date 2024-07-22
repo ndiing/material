@@ -1,9 +1,11 @@
 
+
 /**
  * {{desc}}
  * @fires MDVirtualController#onVirtualScroll - {{desc}}
  */
 class MDVirtualController {
+    
     
     /**
      * {{desc}}
@@ -26,6 +28,7 @@ class MDVirtualController {
         };
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} type - {{desc}}
@@ -39,6 +42,7 @@ class MDVirtualController {
         });
         this.viewport.dispatchEvent(event);
     }
+    
     
     /**
      * {{desc}}
@@ -66,6 +70,7 @@ class MDVirtualController {
         this.handleVirtualScroll();
     }
     
+    
     /**
      * {{desc}}
      */
@@ -73,6 +78,7 @@ class MDVirtualController {
         await this.host.updateComplete;
         this.viewport.removeEventListener("scroll", this.handleVirtualScroll);
     }
+    
     
     /**
      * {{desc}}

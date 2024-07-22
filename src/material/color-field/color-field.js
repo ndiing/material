@@ -22,12 +22,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  */
 class MDColorFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "palette" }];
     }
+    
     
     /**
      * {{desc}}
@@ -39,6 +41,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.type = "color";
     }
     
+    
     /**
      * {{desc}}
      */
@@ -46,6 +49,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-color-field");
     }
+    
     
     /**
      * {{desc}}
@@ -97,6 +101,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -108,6 +113,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
@@ -115,6 +121,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         super.handleTextFieldContainerClick();
         this.togglePicker();
     }
+    
     
     /**
      * {{desc}}
@@ -125,6 +132,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         super.handleTextFieldNativeClick();
     }
     
+    
     /**
      * {{desc}}
      */
@@ -133,6 +141,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
     
+    
     /**
      * {{desc}}
      */
@@ -140,6 +149,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
+    
     
     /**
      * {{desc}}

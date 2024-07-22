@@ -11,6 +11,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
 class MDBottomSheetComponent extends MDSheetComponent {
     variants = ["modal"];
     
+    
     /**
      * {{desc}}
      */

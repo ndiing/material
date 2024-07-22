@@ -14,6 +14,7 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
  */
 class MDListComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -64,14 +65,13 @@ class MDListComponent extends MDComponent {
     //         ...this.map
     //     }
     // }
-
+    
     /**
      * {{desc}}
      */
     constructor() {
         super();
     }
-
     renderListItem(item={}){
         // item.component = item.component||"list-item";
         // for(const name in this.computedMap){
@@ -97,7 +97,7 @@ class MDListComponent extends MDComponent {
         item.classMap={'md-list__divider':true}
         return renderDivider(item)
     }
-
+    
     /**
      * {{desc}}
      */
@@ -111,7 +111,7 @@ class MDListComponent extends MDComponent {
             ], () => this.renderListItem(item))
         });
     }
-
+    
     /**
      * {{desc}}
      */
@@ -120,7 +120,7 @@ class MDListComponent extends MDComponent {
         this.classList.add("md-list");
         this.on("keydown", this.handleListKeydown);
     }
-
+    
     /**
      * {{desc}}
      */
@@ -128,7 +128,7 @@ class MDListComponent extends MDComponent {
         super.disconnectedCallback();
         this.off("keydown", this.handleListKeydown);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -139,7 +139,7 @@ class MDListComponent extends MDComponent {
         });
         this.endIndex = this.items.indexOf(data);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -147,7 +147,7 @@ class MDListComponent extends MDComponent {
     selectToggle(data) {
         data.selected = !data.selected;
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -166,7 +166,7 @@ class MDListComponent extends MDComponent {
             [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
         }
     }
-
+    
     /**
      * {{desc}}
      */
@@ -175,7 +175,7 @@ class MDListComponent extends MDComponent {
             item.selected = true;
         });
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -205,7 +205,7 @@ class MDListComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onListItemClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -218,7 +218,7 @@ class MDListComponent extends MDComponent {
         }
         this.emit("onListKeydown", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -229,7 +229,7 @@ class MDListComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onListItemCheckboxNativeInput", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -240,7 +240,7 @@ class MDListComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onListItemRadioButtonNativeInput", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

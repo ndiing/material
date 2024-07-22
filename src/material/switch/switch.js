@@ -13,6 +13,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  */
 class MDSwitchComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -33,6 +34,7 @@ class MDSwitchComponent extends MDComponent {
     };
     switchNative = createRef();
     
+    
     /**
      * {{desc}}
      */
@@ -46,6 +48,7 @@ class MDSwitchComponent extends MDComponent {
             fadeOut: true,
         });
     }
+    
     
     /**
      * {{desc}}
@@ -72,6 +75,7 @@ class MDSwitchComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -89,6 +93,7 @@ class MDSwitchComponent extends MDComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -99,6 +104,7 @@ class MDSwitchComponent extends MDComponent {
         this.indeterminate = this.switchNative.value.indeterminate;
         this.emit("onSwitchNativeInput", event);
     }
+    
     
     /**
      * {{desc}}

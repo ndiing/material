@@ -9,6 +9,7 @@ import { calcPercentage } from "../functions/functions.js";
  */
 class MDProgressIndicatorComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -23,6 +24,7 @@ class MDProgressIndicatorComponent extends MDComponent {
     };
     variants = ["circular", "linear"];
     
+    
     /**
      * {{desc}}
      */
@@ -30,6 +32,7 @@ class MDProgressIndicatorComponent extends MDComponent {
         super();
         this.max = 100;
     }
+    
     
     /**
      * {{desc}}
@@ -44,6 +47,7 @@ class MDProgressIndicatorComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -56,12 +60,14 @@ class MDProgressIndicatorComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
     render() {
         return this.variant && this.variant.includes("circular") ? this.renderCircular() : this.renderLinear();
     }
+    
     
     /**
      * {{desc}}
@@ -70,6 +76,7 @@ class MDProgressIndicatorComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-progress-indicator");
     }
+    
     
     /**
      * {{desc}}

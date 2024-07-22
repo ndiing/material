@@ -9,6 +9,7 @@ import { renderComponent } from "../template/template.js";
  */
 class MDDataTableItemComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -66,6 +67,7 @@ class MDDataTableItemComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     
+    
     /**
      * {{desc}}
      */
@@ -76,6 +78,7 @@ class MDDataTableItemComponent extends MDComponent {
         // headline/label
         // supportingText/subhead
     }
+    
     
     /**
      * {{desc}}
@@ -118,6 +121,7 @@ class MDDataTableItemComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -125,6 +129,7 @@ class MDDataTableItemComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-data-table__item");
     }
+    
     
     /**
      * {{desc}}

@@ -8,6 +8,7 @@ import { MDTreeComponent } from "../tree/tree.js";
  */
 class MDTabsComponent extends MDTreeComponent {
     
+    
     /**
      * {{desc}}
      */
@@ -19,6 +20,7 @@ class MDTabsComponent extends MDTreeComponent {
     }
     variants = ["primary", "secondary"];
     
+    
     /**
      * {{desc}}
      */
@@ -26,6 +28,7 @@ class MDTabsComponent extends MDTreeComponent {
         super.connectedCallback();
         this.classList.add("md-tabs");
     }
+    
     
     /**
      * {{desc}}

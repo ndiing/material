@@ -10,6 +10,7 @@ import { html, nothing } from "lit";
  */
 class MDMarkdownComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -21,6 +22,7 @@ class MDMarkdownComponent extends MDComponent {
         text: { type: String },
     };
     
+    
     /**
      * {{desc}}
      */
@@ -30,12 +32,14 @@ class MDMarkdownComponent extends MDComponent {
         this.textContent = "";
     }
     
+    
     /**
      * {{desc}}
      */
     render() {
         return html` ${this.text ? html`<div class="md-markdown__body">${unsafeHTML(marked(this.text))}</div>` : nothing} `;
     }
+    
     
     /**
      * {{desc}}
@@ -44,6 +48,7 @@ class MDMarkdownComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-markdown");
     }
+    
     
     /**
      * {{desc}}

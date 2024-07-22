@@ -12,6 +12,7 @@ import { MDTreeComponent } from "../tree/tree.js";
  */
 class MDNavigationBarComponent extends MDSheetComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -28,6 +29,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
         ...MDTreeComponent.properties,
     };
     
+    
     /**
      * {{desc}}
      */
@@ -42,6 +44,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
         `];
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -49,6 +52,7 @@ class MDNavigationBarComponent extends MDSheetComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
+    
     
     /**
      * {{desc}}

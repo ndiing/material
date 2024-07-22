@@ -23,6 +23,7 @@ import { renderList } from "../template/template.js";
  */
 class MDMenuComponent extends MDSheetComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -48,6 +49,7 @@ class MDMenuComponent extends MDSheetComponent {
     };
     // menuList = createRef();
     get menuList(){return this.querySelector('.md-menu__list')}
+    
     
     /**
      * {{desc}}
@@ -75,6 +77,7 @@ class MDMenuComponent extends MDSheetComponent {
         `];
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -82,6 +85,7 @@ class MDMenuComponent extends MDSheetComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
+    
     
     /**
      * {{desc}}
@@ -96,6 +100,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual = new MDVirtualController(this);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -106,12 +111,14 @@ class MDMenuComponent extends MDSheetComponent {
         this.updateVirtual();
     }
     
+    
     /**
      * {{desc}}
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
+    
     
     /**
      * {{desc}}
@@ -126,6 +133,7 @@ class MDMenuComponent extends MDSheetComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
@@ -137,6 +145,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.storeItems = docs;
         this.style.setProperty("max-height", `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
+    
     
     /**
      * {{desc}}
@@ -151,6 +160,7 @@ class MDMenuComponent extends MDSheetComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -159,6 +169,7 @@ class MDMenuComponent extends MDSheetComponent {
     showModal(button, options) {
         this.show(button, options, true);
     }
+    
     
     /**
      * {{desc}}
@@ -197,6 +208,7 @@ class MDMenuComponent extends MDSheetComponent {
         super.show(modal);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} button = this.popperButton - {{desc}}
@@ -221,6 +233,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.popper.setPosition(this.popperButton, this.popperOptions);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -234,6 +247,7 @@ class MDMenuComponent extends MDSheetComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -243,6 +257,7 @@ class MDMenuComponent extends MDSheetComponent {
             doc.selected = doc === data;
         });
     }
+    
     
     /**
      * {{desc}}
@@ -263,6 +278,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.handleVirtualScroll();
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -278,6 +294,7 @@ class MDMenuComponent extends MDSheetComponent {
             });
         }
     }
+    
     
     /**
      * {{desc}}

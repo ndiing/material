@@ -9,6 +9,7 @@ import { renderComponent } from "../template/template.js";
  */
 class MDChipsComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -19,6 +20,7 @@ class MDChipsComponent extends MDComponent {
         items: { type: Array },
         multiSelection: { type: Boolean },
     };
+    
     
     /**
      * {{desc}}
@@ -33,6 +35,7 @@ class MDChipsComponent extends MDComponent {
         });
     }
     
+    
     /**
      * {{desc}}
      */
@@ -40,6 +43,7 @@ class MDChipsComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-chips");
     }
+    
     
     /**
      * {{desc}}
@@ -53,6 +57,7 @@ class MDChipsComponent extends MDComponent {
         }
         this.emit("onChipClick", event);
     }
+    
     
     /**
      * {{desc}}

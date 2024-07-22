@@ -8,14 +8,15 @@ import { renderComponent } from "../template/template.js";
  * @element md-block
  * @fires MDBlockComponent#onCheckboxNativeInput - {{desc}}
  * @fires MDBlockComponent#onCheckboxNativeReset - {{desc}}
- * @fires MDBlockComponent#onRadioButtonButtonNativeInput - {{desc}}
- * @fires MDBlockComponent#onRadioButtonButtonNativeReset - {{desc}}
+ * @fires MDBlockComponent#onRadioButtonNativeInput - {{desc}}
+ * @fires MDBlockComponent#onRadioButtonNativeReset - {{desc}}
  * @fires MDBlockComponent#onSwitchNativeInput - {{desc}}
  * @fires MDBlockComponent#onSwitchNativeReset - {{desc}}
  * @fires MDBlockComponent#onImageNativeLoad - {{desc}}
  * @fires MDBlockComponent#onImageNativeError - {{desc}}
  */
 class MDBlockComponent extends MDComponent {
+    
     
     /**
      * {{desc}}
@@ -74,6 +75,7 @@ class MDBlockComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     
+    
     /**
      * {{desc}}
      */
@@ -84,6 +86,7 @@ class MDBlockComponent extends MDComponent {
         // headline/label
         // supportingText/subhead
     }
+    
     
     /**
      * {{desc}}
@@ -134,6 +137,7 @@ class MDBlockComponent extends MDComponent {
         // this.emit("onImageNativeError", this);
     }
     
+    
     /**
      * {{desc}}
      */
@@ -141,6 +145,7 @@ class MDBlockComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-block");
     }
+    
     
     /**
      * {{desc}}

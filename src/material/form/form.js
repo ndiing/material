@@ -12,6 +12,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  */
 class MDFormComponent extends MDComponent {
     
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -38,6 +39,7 @@ class MDFormComponent extends MDComponent {
     };
     formNative = createRef();
     
+    
     /**
      * {{desc}}
      */
@@ -50,6 +52,7 @@ class MDFormComponent extends MDComponent {
         this.novalidate = true;
         this.childNodes_ = Array.from(this.childNodes);
     }
+    
     
     /**
      * {{desc}}
@@ -74,6 +77,7 @@ class MDFormComponent extends MDComponent {
         `;
     }
     
+    
     /**
      * {{desc}}
      */
@@ -82,6 +86,7 @@ class MDFormComponent extends MDComponent {
         this.classList.add("md-form");
     }
     
+    
     /**
      * {{desc}}
      */
@@ -89,12 +94,14 @@ class MDFormComponent extends MDComponent {
         this.formNative.value.reset();
     }
     
+    
     /**
      * {{desc}}
      */
     submit() {
         this.formNative.value.submit();
     }
+    
     
     /**
      * {{desc}}
@@ -111,6 +118,7 @@ class MDFormComponent extends MDComponent {
         }
         this.emit("onFormNativeReset", event);
     }
+    
     
     /**
      * {{desc}}

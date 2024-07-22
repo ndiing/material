@@ -22,12 +22,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  */
 class MDMonthFieldComponent extends MDTextFieldComponent {
     
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "calendar_month" }];
     }
+    
     
     /**
      * {{desc}}
@@ -39,6 +41,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.type = "month";
     }
     
+    
     /**
      * {{desc}}
      */
@@ -46,6 +49,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
+    
     
     /**
      * {{desc}}
@@ -57,6 +61,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
+    
     
     /**
      * {{desc}}
@@ -111,6 +116,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker.show(this.textFieldContainer.value);
     }
     
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -119,6 +125,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
+    
     
     /**
      * {{desc}}
@@ -131,6 +138,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         }
     }
     
+    
     /**
      * {{desc}}
      */
@@ -138,6 +146,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
+    
     
     /**
      * {{desc}}
@@ -148,12 +157,14 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.picker.close();
     }
     
+    
     /**
      * {{desc}}
      */
     handleMonthFieldActionPickerClick() {
         this.togglePicker();
     }
+    
     
     /**
      * {{desc}}
@@ -162,6 +173,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
+    
     
     /**
      * {{desc}}
