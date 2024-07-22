@@ -13,7 +13,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDSnackbarComponent extends MDSheetComponent {
     static queue = createQueue();
-
+    
     /**
      * {{desc}}
      */
@@ -21,7 +21,7 @@ class MDSnackbarComponent extends MDSheetComponent {
         super.connectedCallback();
         this.classList.add("md-snackbar");
     }
-
+    
     /**
      * {{desc}}
      */
@@ -43,7 +43,7 @@ class MDSnackbarComponent extends MDSheetComponent {
             });
         });
     }
-
+    
     /**
      * {{desc}}
      */

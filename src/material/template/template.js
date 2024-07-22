@@ -32,7 +32,7 @@ function renderBadge(item = {}) {
  * @property {String} [item.tooltip] - {{desc}}
  * @property {Array} [item.leadingActions] - {{desc}}
  * @property {Boolean} [item.leadingCheckbox] - {{desc}}
- * @property {Boolean} [item.leadingRadio] - {{desc}}
+ * @property {Boolean} [item.leadingRadioButton] - {{desc}}
  * @property {Boolean} [item.leadingSwitch] - {{desc}}
  * @property {String} [item.leadingAvatar] - {{desc}}
  * @property {String} [item.leadingImage] - {{desc}}
@@ -47,7 +47,7 @@ function renderBadge(item = {}) {
  * @property {String} [item.trailingImage] - {{desc}}
  * @property {String} [item.trailingAvatar] - {{desc}}
  * @property {Boolean} [item.trailingSwitch] - {{desc}}
- * @property {Boolean} [item.trailingRadio] - {{desc}}
+ * @property {Boolean} [item.trailingRadioButton] - {{desc}}
  * @property {Boolean} [item.trailingCheckbox] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Number} [item.badge] - {{desc}}
@@ -75,7 +75,7 @@ function renderBlock(item = {}) {
             .tooltip="${ifDefined(item.tooltip)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-            .leadingRadio="${ifDefined(item.leadingRadio)}"
+            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
             .leadingSwitch="${ifDefined(item.leadingSwitch)}"
             .leadingAvatar="${ifDefined(item.leadingAvatar)}"
             .leadingImage="${ifDefined(item.leadingImage)}"
@@ -90,7 +90,7 @@ function renderBlock(item = {}) {
             .trailingImage="${ifDefined(item.trailingImage)}"
             .trailingAvatar="${ifDefined(item.trailingAvatar)}"
             .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-            .trailingRadio="${ifDefined(item.trailingRadio)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
             .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .badge="${ifDefined(item.badge)}"
@@ -106,6 +106,7 @@ function renderBlock(item = {}) {
             @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
             @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
             @onImageNativeError="${ifDefined(item.onImageNativeError)}"
+            @click="${ifDefined(item.onBlockClick)}"
         ></md-block>
     `
 }
@@ -1504,27 +1505,39 @@ function renderList(item = {}) {
  * Render List Item
  * @param {Object} item - {{desc}}
  * @property {String} [item.tooltip] - {{desc}}
- * @property {String} [item.avatar] - {{desc}}
- * @property {String} [item.thumbnail] - {{desc}}
- * @property {String} [item.video] - {{desc}}
- * @property {String} [item.icon] - {{desc}}
- * @property {String} [item.label] - {{desc}}
- * @property {String} [item.subLabel] - {{desc}}
- * @property {Number} [item.badge] - {{desc}}
- * @property {String} [item.text] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
  * @property {Boolean} [item.leadingCheckbox] - {{desc}}
  * @property {Boolean} [item.leadingRadioButton] - {{desc}}
  * @property {Boolean} [item.leadingSwitch] - {{desc}}
- * @property {Boolean} [item.trailingCheckbox] - {{desc}}
- * @property {Boolean} [item.trailingRadioButton] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
  * @property {Boolean} [item.trailingSwitch] - {{desc}}
- * @property {Boolean} [item.selected] - {{desc}}
- * @property {String} [item.routerLink] - {{desc}}
+ * @property {Boolean} [item.trailingRadioButton] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
  * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
  * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
  * @property {Function} [item.onSwitchNativeInput] - {{desc}}
- * @property {Function} [item.onListItemSelected] - {{desc}}
+ * @property {Function} [item.onSwitchNativeReset] - {{desc}}
+ * @property {Function} [item.onImageNativeLoad] - {{desc}}
+ * @property {Function} [item.onImageNativeError] - {{desc}}
  */
 function renderListItem(item = {}) {
     /* prettier-ignore */
@@ -1535,27 +1548,39 @@ function renderListItem(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .avatar="${ifDefined(item.avatar)}"
-            .thumbnail="${ifDefined(item.thumbnail)}"
-            .video="${ifDefined(item.video)}"
-            .icon="${ifDefined(item.icon)}"
-            .label="${ifDefined(item.label)}"
-            .subLabel="${ifDefined(item.subLabel)}"
-            .badge="${ifDefined(item.badge)}"
-            .text="${ifDefined(item.text)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
             .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
             .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
             .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
             .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-            .selected="${ifDefined(item.selected)}"
-            .routerLink="${ifDefined(item.routerLink)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
             .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
             @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
             @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
             @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
-            @onListItemSelected="${ifDefined(item.onListItemSelected)}"
+            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+            @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
+            @onImageNativeError="${ifDefined(item.onImageNativeError)}"
             @click="${ifDefined(item.onListItemClick)}"
         ></md-list-item>
     `

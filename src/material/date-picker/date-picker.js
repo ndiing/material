@@ -31,6 +31,7 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
  * @fires MDDatePickerComponent#onDatePickerButtonOkClick - {{desc}}
  */
 class MDDatePickerComponent extends MDDatetimePickerComponent {
+    
     /**
      * {{desc}}
      */
@@ -45,7 +46,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         }
         return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick }];
     }
-
+    
     /**
      * {{desc}}
      */
@@ -59,7 +60,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
             </div>
         `];
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -67,7 +68,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -75,7 +76,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         super.connectedCallback();
         this.classList.add("md-date-picker");
     }
-
+    
     /**
      * {{desc}}
      */
@@ -88,14 +89,14 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.selected.setMonth(date.getMonth());
         this.selected.setDate(date.getDate());
     }
-
+    
     /**
      * {{desc}}
      */
     getValue() {
         return stringifyDate(this.selected);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -110,7 +111,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         }
         this.emit("onDatePickerButtonLabelClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -127,7 +128,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerIconButtonPrevClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -144,7 +145,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerIconButtonNextClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -155,7 +156,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.index = 1;
         this.emit("onDatePickerYearItemClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -167,7 +168,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerMonthItemClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -184,7 +185,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerDayItemClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -197,7 +198,7 @@ class MDDatePickerComponent extends MDDatetimePickerComponent {
         this.emit("onDatePickerSelection", event);
         this.emit("onDatePickerButtonCancelClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

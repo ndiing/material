@@ -9,6 +9,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @fires MDChipComponent#onChipActionClick - {{desc}}
  */
 class MDChipComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -30,7 +31,7 @@ class MDChipComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["assist", "filter", "input", "suggestion"];
-
+    
     /**
      * {{desc}}
      */
@@ -40,7 +41,7 @@ class MDChipComponent extends MDComponent {
             clipped: true,
         });
     }
-
+    
     /**
      * {{desc}}
      */
@@ -54,7 +55,7 @@ class MDChipComponent extends MDComponent {
             ${this.action ? html`<md-icon-button class="md-chip__action" .icon="${this.action}" @click="${this.handleChipActionClick}"></md-icon-button>` : nothing}
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -62,7 +63,7 @@ class MDChipComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-chip");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -85,7 +86,7 @@ class MDChipComponent extends MDComponent {
             }
         }
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

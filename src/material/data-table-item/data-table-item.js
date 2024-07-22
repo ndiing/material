@@ -5,9 +5,10 @@ import { renderComponent } from "../template/template.js";
 /**
  * {{desc}}
  * @extends MDComponent
- * @element md-data-table__item
+ * @element md-data-table-item
  */
 class MDDataTableItemComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -64,19 +65,18 @@ class MDDataTableItemComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
+    
     /**
      * {{desc}}
      */
     constructor() {
         super();
-
         // Confused material!!!
         // headline/section
         // headline/label
         // supportingText/subhead
     }
-
+    
     /**
      * {{desc}}
      */
@@ -117,7 +117,7 @@ class MDDataTableItemComponent extends MDComponent {
             ${this.badge !== undefined ? html`<md-badge class="md-data-table__badge" .label="${this.badge}"></md-badge>` : nothing}
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -125,7 +125,7 @@ class MDDataTableItemComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-data-table__item");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -145,6 +145,5 @@ class MDDataTableItemComponent extends MDComponent {
         }
     }
 }
-
 customElements.define("md-data-table-item", MDDataTableItemComponent);
 export { MDDataTableItemComponent };

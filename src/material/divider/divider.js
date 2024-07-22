@@ -6,6 +6,7 @@ import { MDComponent } from "../component/component.js";
  * @element md-divider
  */
 class MDDividerComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -15,7 +16,7 @@ class MDDividerComponent extends MDComponent {
         variant: { type: String },
     };
     variants = ["vertical", "horizontal"];
-
+    
     /**
      * {{desc}}
      */
@@ -23,7 +24,7 @@ class MDDividerComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-divider");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

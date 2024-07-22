@@ -20,6 +20,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDTextareaFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDTextareaFieldComponent extends MDTextFieldComponent {
+    
     /**
      * {{desc}}
      */
@@ -27,7 +28,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "textarea";
     }
-
+    
     /**
      * {{desc}}
      */
@@ -35,7 +36,7 @@ class MDTextareaFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-textarea-field");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

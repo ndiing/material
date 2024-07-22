@@ -11,6 +11,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDFormComponent#onFormNativeSubmit - {{desc}}
  */
 class MDFormComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -36,7 +37,7 @@ class MDFormComponent extends MDComponent {
         items: { type: Array },
     };
     formNative = createRef();
-
+    
     /**
      * {{desc}}
      */
@@ -49,7 +50,7 @@ class MDFormComponent extends MDComponent {
         this.novalidate = true;
         this.childNodes_ = Array.from(this.childNodes);
     }
-
+    
     /**
      * {{desc}}
      */
@@ -72,7 +73,7 @@ class MDFormComponent extends MDComponent {
             >${this.childNodes_}</form>
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -80,21 +81,21 @@ class MDFormComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-form");
     }
-
+    
     /**
      * {{desc}}
      */
     reset() {
         this.formNative.value.reset();
     }
-
+    
     /**
      * {{desc}}
      */
     submit() {
         this.formNative.value.submit();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -110,7 +111,7 @@ class MDFormComponent extends MDComponent {
         }
         this.emit("onFormNativeReset", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

@@ -20,6 +20,7 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDPasswordFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDPasswordFieldComponent extends MDTextFieldComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -54,14 +55,14 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
     static properties = {
         ...MDTextFieldComponent.properties,
     };
-
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "password", icon: this.type === "password" ? "visibility_off" : "visibility" }];
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -71,7 +72,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "password";
     }
-
+    
     /**
      * {{desc}}
      */
@@ -79,7 +80,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-password-field");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -88,7 +89,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

@@ -10,7 +10,7 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  */
 class MDSideSheetComponent extends MDSheetComponent {
     variants = ["modal"];
-
+    
     /**
      * {{desc}}
      */

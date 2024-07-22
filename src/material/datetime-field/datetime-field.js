@@ -21,13 +21,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDDatetimeFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDDatetimeFieldComponent extends MDTextFieldComponent {
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "calendar_clock" }];
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -37,7 +38,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "datetime-local";
     }
-
+    
     /**
      * {{desc}}
      */
@@ -45,7 +46,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-datetime-field");
     }
-
+    
     /**
      * {{desc}}
      */
@@ -56,7 +57,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-
+    
     /**
      * {{desc}}
      */
@@ -106,7 +107,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -115,7 +116,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -126,14 +127,14 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
             this.handleDatetimeFieldActionPickerClick(event);
         }
     }
-
+    
     /**
      * {{desc}}
      */
     handleDatetimeFieldActionPickerClick() {
         this.togglePicker();
     }
-
+    
     /**
      * {{desc}}
      */
@@ -141,7 +142,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
-
+    
     /**
      * {{desc}}
      */
@@ -149,7 +150,7 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
-
+    
     /**
      * {{desc}}
      */

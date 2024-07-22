@@ -24,6 +24,7 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDTextFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDTextFieldComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -86,7 +87,7 @@ class MDTextFieldComponent extends MDComponent {
     };
     textFieldNative = createRef();
     textFieldContainer = createRef();
-
+    
     /**
      * {{desc}}
      */
@@ -96,7 +97,7 @@ class MDTextFieldComponent extends MDComponent {
         this.autocomplete = "off";
         this.rows = 1;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -133,7 +134,7 @@ class MDTextFieldComponent extends MDComponent {
             >
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -166,7 +167,7 @@ class MDTextFieldComponent extends MDComponent {
             ></textarea>
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -203,14 +204,14 @@ class MDTextFieldComponent extends MDComponent {
             </select>
         `;
     }
-
+    
     /**
      * {{desc}}
      */
     renderHidden() {
         /* prettier-ignore */
     }
-
+    
     /**
      * {{desc}}
      */
@@ -221,7 +222,7 @@ class MDTextFieldComponent extends MDComponent {
             ['select', () => this.renderSelect()],
         ], () => this.renderInput());
     }
-
+    
     /**
      * {{desc}}
      */
@@ -261,7 +262,7 @@ class MDTextFieldComponent extends MDComponent {
             ${this.renderHidden()}
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -280,7 +281,7 @@ class MDTextFieldComponent extends MDComponent {
         }
     }
     variants = ["filled", "outlined", "rounded"];
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -301,7 +302,7 @@ class MDTextFieldComponent extends MDComponent {
         this.classList.toggle("md-text-field--error", !!this.validationMessage);
         this.classList.toggle("md-text-field--focused", !!this.focused);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -309,7 +310,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldContainerClick(event) {
         this.emit("onTextFieldContainerClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -317,7 +318,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldLabelClick(event) {
         this.emit("onTextFieldLabelClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -325,7 +326,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldMetaClick(event) {
         this.emit("onTextFieldMetaClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -335,7 +336,7 @@ class MDTextFieldComponent extends MDComponent {
         this.focused = true;
         this.emit("onTextFieldNativeFocus", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -344,7 +345,7 @@ class MDTextFieldComponent extends MDComponent {
         this.focused = false;
         this.emit("onTextFieldNativeBlur", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -352,7 +353,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeClick(event) {
         this.emit("onTextFieldNativeClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -360,7 +361,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeKeydown(event) {
         this.emit("onTextFieldNativeKeydown", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -368,7 +369,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldNativeSelect(event) {
         this.emit("onTextFieldNativeSelect", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -380,14 +381,14 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeInput", event);
     }
-
+    
     /**
      * {{desc}}
      */
     validate() {
         this.validationMessage = this.textFieldNative.value.validationMessage;
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -399,7 +400,7 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeSearch", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -409,7 +410,7 @@ class MDTextFieldComponent extends MDComponent {
         this.validate();
         this.emit("onTextFieldNativeInvalid", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -421,7 +422,7 @@ class MDTextFieldComponent extends MDComponent {
         this.validationMessage = "";
         this.emit("onTextFieldNativeReset", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -429,7 +430,7 @@ class MDTextFieldComponent extends MDComponent {
     handleTextFieldActionClick(event) {
         this.emit("onTextFieldActionClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

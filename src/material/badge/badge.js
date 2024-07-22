@@ -7,6 +7,7 @@ import { MDComponent } from "../component/component.js";
  * @element md-badge
  */
 class MDBadgeComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -17,7 +18,7 @@ class MDBadgeComponent extends MDComponent {
         label: { type: Number },
         limit: { type: Number },
     };
-
+    
     /**
      * {{desc}}
      */
@@ -25,7 +26,7 @@ class MDBadgeComponent extends MDComponent {
         super();
         this.limit = 999;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -33,7 +34,7 @@ class MDBadgeComponent extends MDComponent {
         /* prettier-ignore */
         return this.label ? html`<div class="md-badge__label">${this.label > this.limit ? this.limit + '+' : this.label}</div>` : nothing;
     }
-
+    
     /**
      * {{desc}}
      */

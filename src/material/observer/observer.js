@@ -1,10 +1,11 @@
+
 /**
  * {{desc}}
  */
 class MDObserver {
     handle;
     isObserving = false;
-
+    
     /**
      * {{desc}}
      * @param {Any} callback = () => {} - {{desc}}
@@ -12,7 +13,7 @@ class MDObserver {
     constructor(callback = () => {}) {
         this.callback = callback;
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} time - {{desc}}
@@ -24,7 +25,7 @@ class MDObserver {
             this.scheduleNextFrame();
         }
     }
-
+    
     /**
      * {{desc}}
      */
@@ -33,7 +34,7 @@ class MDObserver {
             this.handle = window.requestAnimationFrame(this.executeCallback.bind(this));
         }
     }
-
+    
     /**
      * {{desc}}
      */
@@ -43,7 +44,7 @@ class MDObserver {
             this.scheduleNextFrame();
         }
     }
-
+    
     /**
      * {{desc}}
      */

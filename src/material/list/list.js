@@ -25,23 +25,49 @@ class MDListComponent extends MDComponent {
      */
     static properties = {
         items: { type: Array },
-        map: { type: Object },
-        format: { type: Function },
+        // map: { type: Object },
+        // format: { type: Function },
         rangeSelection: { type: Boolean },
         multiSelection: { type: Boolean },
         singleSelection: { type: Boolean },
         allSelection: { type: Boolean },
     };
+    // get computedMap(){
+    //     return {
+    //         "leadingActions": "leadingActions",
+    //         "leadingCheckbox": "leadingCheckbox",
+    //         "leadingRadio": "leadingRadio",
+    //         "leadingSwitch": "leadingSwitch",
+    //         "leadingAvatar": "leadingAvatar",
+    //         "leadingImage": "leadingImage",
+    //         "leadingVideo": "leadingVideo",
+    //         "leadingIcon": "leadingIcon",
+    //         "leadingSupportingText": "leadingSupportingText",
+    //         "headline": "headline",
+    //         "supportingText": "supportingText",
+    //         "trailingSupportingText": "trailingSupportingText",
+    //         "trailingIcon": "trailingIcon",
+    //         "trailingVideo": "trailingVideo",
+    //         "trailingImage": "trailingImage",
+    //         "trailingAvatar": "trailingAvatar",
+    //         "trailingSwitch": "trailingSwitch",
+    //         "trailingRadio": "trailingRadio",
+    //         "trailingCheckbox": "trailingCheckbox",
+    //         "trailingActions": "trailingActions",
+    //         "badge": "badge",
+    //         "activated": "activated",
+    //         "indeterminate": "indeterminate",
+    //         "selected": "selected",
+    //         "disabled": "disabled",
+    //         ...this.map
+    //     }
+    // }
 
     /**
      * {{desc}}
      */
     constructor() {
         super();
-        this.map = {
-            label: "label",
-            value: "value",
-        };
     }
 
     /**
@@ -51,8 +77,10 @@ class MDListComponent extends MDComponent {
         /* prettier-ignore */
         return this.items?.map((item) => {
             item.component = item.component||"list-item";
-            item.label=item[this.map.label]
-            item.value=item[this.map.value]
+            // for(const name in this.computedMap){
+            //     const value=this.computedMap[name]
+            //     item[name]=item[value]
+            // }
             item.onListItemClick = this.handleListItemClick;
             item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput;
             item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput;
@@ -130,7 +158,17 @@ class MDListComponent extends MDComponent {
      * @param {Any} event - {{desc}}
      */
     handleListItemClick(event) {
-        if (event.target.closest(".md-list__checkbox," + ".md-list__radio-button," + ".md-list__switch")) {
+        if (
+            /* prettier-ignore */
+            event.target.closest(
+                ".md-list__checkbox," + 
+                ".md-list__radio-button," +
+                ".md-list__switch,"+
+                ".md-block__checkbox," + 
+                ".md-block__radio-button," +
+                ".md-block__switch",
+            )
+        ) {
             return;
         }
         const data = event.currentTarget.data;

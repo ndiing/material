@@ -74,18 +74,12 @@
         opacity: 0;
     }
 }
-.md-menu__tree {
-    .md-tree__item {
-        padding: 0 12px;
-        min-height: 48px;
-    }
-}
 .md-menu__list {
     .md-list__item {
         padding: 0 12px;
         min-height: 48px;
     }
-    .md-list__label-primary {
+    .md-block__headline {
         @include typescale-label-large();
     }
 }

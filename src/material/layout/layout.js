@@ -6,6 +6,7 @@ import { MDComponent } from "../component/component.js";
  * @element md-layout
  */
 class MDLayoutComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -14,14 +15,14 @@ class MDLayoutComponent extends MDComponent {
     static properties = {
         variant: { type: String },
     };
-
+    
     /**
      * {{desc}}
      */
     connectedCallback() {
         super.connectedCallback();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

@@ -295,6 +295,7 @@ let cli = {
                             "chip",
                             "list-item",
                             "tree-item",
+                            "block",
                         ].includes(name)
                     ) {
                         code += `            @click="\${ifDefined(item.${toCamelCase(`on-${name}-Click`)})}"\n`;

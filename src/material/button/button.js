@@ -8,6 +8,7 @@ import { MDRippleController } from "../ripple/ripple.js";
  * @element md-button
  */
 class MDButtonComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -28,7 +29,7 @@ class MDButtonComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
-
+    
     /**
      * {{desc}}
      */
@@ -40,7 +41,7 @@ class MDButtonComponent extends MDComponent {
             button: ".md-button__native",
         });
     }
-
+    
     /**
      * {{desc}}
      */
@@ -56,7 +57,7 @@ class MDButtonComponent extends MDComponent {
             </button>
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -64,7 +65,7 @@ class MDButtonComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-button");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

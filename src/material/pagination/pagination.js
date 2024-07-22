@@ -13,6 +13,7 @@ import { MDComponent } from "../component/component.js";
  * @fires MDPaginationComponent#onPaginationLastClick - {{desc}}
  */
 class MDPaginationComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -39,42 +40,42 @@ class MDPaginationComponent extends MDComponent {
         nextPage: { type: Boolean },
         lastPage: { type: Boolean },
     };
-
+    
     /**
      * {{desc}}
      */
     get pages() {
         return Math.ceil(this.total / this.limit);
     }
-
+    
     /**
      * {{desc}}
      */
     get start() {
         return Math.max((this.page - 1) * this.limit, 0);
     }
-
+    
     /**
      * {{desc}}
      */
     get end() {
         return Math.min(this.start + this.limit, this.total);
     }
-
+    
     /**
      * {{desc}}
      */
     get numberStart() {
         return Math.min(this.start + 1, this.total);
     }
-
+    
     /**
      * {{desc}}
      */
     get numberEnd() {
         return this.end;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -97,7 +98,7 @@ class MDPaginationComponent extends MDComponent {
         this.nextPage = true;
         this.lastPage = true;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -106,7 +107,7 @@ class MDPaginationComponent extends MDComponent {
             return this[$1];
         });
     }
-
+    
     /**
      * {{desc}}
      */
@@ -130,7 +131,7 @@ class MDPaginationComponent extends MDComponent {
             ${this.lastPage ? html`<md-icon-button class="md-pagination__icon-button" .disabled="${this.pages === 0 || this.page === this.pages}" .icon="${"last_page"}" @click="${this.handlePaginationLastClick}"></md-icon-button>` : nothing}
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -138,7 +139,7 @@ class MDPaginationComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-pagination");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -155,7 +156,7 @@ class MDPaginationComponent extends MDComponent {
             this.emit("onPaginationChange", this);
         }
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -165,7 +166,7 @@ class MDPaginationComponent extends MDComponent {
         this.limit = limit;
         this.emit("onPaginationLimitChange", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -174,7 +175,7 @@ class MDPaginationComponent extends MDComponent {
         this.page = 1;
         this.emit("onPaginationFirstClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -183,7 +184,7 @@ class MDPaginationComponent extends MDComponent {
         this.page = Math.max(--this.page, 1);
         this.emit("onPaginationPrevClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -192,7 +193,7 @@ class MDPaginationComponent extends MDComponent {
         this.page = Math.min(++this.page, this.pages);
         this.emit("onPaginationNextClick", event);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}

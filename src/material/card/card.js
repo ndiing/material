@@ -8,6 +8,7 @@ import { renderComponent } from "../template/template.js";
  * @element md-card
  */
 class MDCardComponent extends MDComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -27,7 +28,7 @@ class MDCardComponent extends MDComponent {
         actions: { type: Array },
     };
     variants = ["elevated", "filled", "outlined"];
-
+    
     /**
      * {{desc}}
      */
@@ -35,7 +36,7 @@ class MDCardComponent extends MDComponent {
         super();
         this.childNodes_ = Array.from(this.childNodes);
     }
-
+    
     /**
      * {{desc}}
      */
@@ -83,7 +84,7 @@ class MDCardComponent extends MDComponent {
             `:nothing}
         `;
     }
-
+    
     /**
      * {{desc}}
      */
@@ -91,7 +92,7 @@ class MDCardComponent extends MDComponent {
         super.connectedCallback();
         this.classList.add("md-card");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}

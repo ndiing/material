@@ -21,13 +21,14 @@ import { MDTextFieldComponent } from "../text-field/text-field.js";
  * @fires MDTimeFieldComponent#onTextFieldIconButtonClick - {{desc}}
  */
 class MDTimeFieldComponent extends MDTextFieldComponent {
+    
     /**
      * {{desc}}
      */
     get actions() {
         return [{ name: "picker", icon: "schedule" }];
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -37,7 +38,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         super();
         this.type = "time";
     }
-
+    
     /**
      * {{desc}}
      */
@@ -45,7 +46,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         super.connectedCallback();
         this.classList.add("md-time-field");
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -54,7 +55,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         event.preventDefault();
         super.handleTextFieldNativeClick();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
@@ -65,14 +66,14 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.handleTimeFieldActionPickerClick(event);
         }
     }
-
+    
     /**
      * {{desc}}
      */
     handleTimeFieldActionPickerClick() {
         this.togglePicker();
     }
-
+    
     /**
      * {{desc}}
      */
@@ -83,7 +84,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.showPicker();
         }
     }
-
+    
     /**
      * {{desc}}
      */
@@ -136,7 +137,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         await this.picker.updateComplete;
         this.picker.show(this.textFieldContainer.value);
     }
-
+    
     /**
      * {{desc}}
      */
@@ -144,7 +145,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
         this.picker.close();
     }
-
+    
     /**
      * {{desc}}
      */
@@ -153,7 +154,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
         this.picker.close();
     }
-
+    
     /**
      * {{desc}}
      */
@@ -161,7 +162,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
         this.textFieldNative.value.value = this.picker.getValue();
         this.textFieldNative.value.dispatchEvent(new CustomEvent("input"));
     }
-
+    
     /**
      * {{desc}}
      */

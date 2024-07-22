@@ -11,6 +11,7 @@ import { MDTreeComponent } from "../tree/tree.js";
  * @fires MDNavigationDrawerComponent#onSheetScrimClick - {{desc}}
  */
 class MDNavigationDrawerComponent extends MDSheetComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -26,7 +27,7 @@ class MDNavigationDrawerComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         ...MDTreeComponent.properties,
     };
-
+    
     /**
      * {{desc}}
      */
@@ -40,7 +41,7 @@ class MDNavigationDrawerComponent extends MDSheetComponent {
             ></md-tree>
         `];
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -48,7 +49,7 @@ class MDNavigationDrawerComponent extends MDSheetComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
-
+    
     /**
      * {{desc}}
      */

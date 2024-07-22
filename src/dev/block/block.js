@@ -39,7 +39,6 @@ class DevBlock extends MDComponent {
                     </md-layout>
                     
                     <md-layout variant="column">
-                        
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline"></md-block>
                         </md-layout-item>
@@ -78,7 +77,43 @@ class DevBlock extends MDComponent {
                         </md-layout-item>
                     </md-layout>
 
+                    <md-layout variant="column">
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline" leadingIcon="image"></md-block>
+                        </md-layout-item>
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline"></md-block>
+                        </md-layout-item>
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline" trailingIcon="image"></md-block>
+                        </md-layout-item>
+                    </md-layout>
+
+                    <md-layout variant="column">
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline" leadingAvatar="https://api.dicebear.com/9.x/icons/svg?seed=Cleo"></md-block>
+                        </md-layout-item>
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline"></md-block>
+                        </md-layout-item>
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline" trailingAvatar="https://api.dicebear.com/9.x/icons/svg?seed=Cleo"></md-block>
+                        </md-layout-item>
+                    </md-layout>
+
                     
+                    <md-layout variant="column">
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline"></md-block>
+                        </md-layout-item>
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline" supportingText="supportingText"></md-block>
+                        </md-layout-item>
+                        <md-layout-item expanded="2" medium="8" compact="4">
+                            <md-block headline="headline" supportingText="supporting Text supporting Text supporting Text"></md-block>
+                        </md-layout-item>
+                    </md-layout>
+
                 </md-layout-item>
             </md-layout>
         `;

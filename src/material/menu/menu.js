@@ -6,6 +6,7 @@ import { MDVirtualController } from "../virtual/virtual.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { MDListComponent } from "../list/list.js";
 import { createRef, ref } from "lit/directives/ref.js";
+import { renderList } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -21,6 +22,7 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MDMenuComponent#onMenuListItemClick - {{desc}}
  */
 class MDMenuComponent extends MDSheetComponent {
+    
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -40,12 +42,13 @@ class MDMenuComponent extends MDSheetComponent {
         ...MDSheetComponent.properties,
         ...MDListComponent.properties,
         items: { type: Array },
-        map: { type: Object },
+        // map: { type: Object },
         rowHeight: { type: Number },
         maxRows: { type: Number },
     };
-    menuList = createRef();
-
+    // menuList = createRef();
+    get menuList(){return this.querySelector('.md-menu__list')}
+    
     /**
      * {{desc}}
      */
@@ -57,20 +60,21 @@ class MDMenuComponent extends MDSheetComponent {
                 @onVirtualScroll="${this.handleMenuViewportVirtualScroll}"
             >
                 <div class="md-virtual__scrollbar"></div>
-                <div class="md-virtual__container">
-                    <md-list
-                        class="md-menu__list"
-                        .items="${ifDefined(this.virtualList)}"
-                        .map="${ifDefined(this.map)}"
-                        ${ref(this.menuList)}
-                        @onListItemClick="${this.handleMenuListItemClick}"
-                        @onListItemSelected="${this.handleMenuListItemSelected}"
-                    ></md-list>
-                </div>
+                <div class="md-virtual__container">${renderList({
+                    classMap:{'md-menu__list':true},
+                    items:this.vitualItems,
+                    // map:this.map,
+                    // format:this.format,
+                    rangeSelection:this.rangeSelection,
+                    multiSelection:this.multiSelection,
+                    singleSelection:this.singleSelection,
+                    allSelection:this.allSelection,
+                    onListItemClick:this.handleMenuListItemClick,
+                })}</div>
             </div>
         `];
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
@@ -78,20 +82,20 @@ class MDMenuComponent extends MDSheetComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
-
+    
     /**
      * {{desc}}
      */
     constructor() {
         super();
-        this.map = { label: "label", value: "value" };
+        // this.map = { label: "label", value: "value" };
         this.rowHeight = 48;
         this.maxRows = 5;
         this.popper = new MDPopperController(this, {});
         this.store = new MDStore(this.items);
         this.virtual = new MDVirtualController(this);
     }
-
+    
     /**
      * {{desc}}
      */
@@ -101,14 +105,14 @@ class MDMenuComponent extends MDSheetComponent {
         this.updateStore();
         this.updateVirtual();
     }
-
+    
     /**
      * {{desc}}
      */
     disconnectedCallback() {
         super.disconnectedCallback();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
@@ -121,7 +125,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.updateVirtual();
         }
     }
-
+    
     /**
      * {{desc}}
      */
@@ -130,10 +134,10 @@ class MDMenuComponent extends MDSheetComponent {
             filters: this.filters,
         });
         this.storeTotal = total;
-        this.storeList = docs;
+        this.storeItems = docs;
         this.style.setProperty("max-height", `${Math.min(this.storeTotal * this.rowHeight, this.maxRows * this.rowHeight) + (this.storeTotal ? 16 : 0)}px`);
     }
-
+    
     /**
      * {{desc}}
      */
@@ -146,7 +150,7 @@ class MDMenuComponent extends MDSheetComponent {
             this.virtual.handleVirtualScroll();
         }
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -155,7 +159,7 @@ class MDMenuComponent extends MDSheetComponent {
     showModal(button, options) {
         this.show(button, options, true);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} button - {{desc}}
@@ -192,7 +196,7 @@ class MDMenuComponent extends MDSheetComponent {
         this.updatePosition(button, options);
         super.show(modal);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} button = this.popperButton - {{desc}}
@@ -216,20 +220,20 @@ class MDMenuComponent extends MDSheetComponent {
         };
         this.popper.setPosition(this.popperButton, this.popperOptions);
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
      */
     filter(value) {
-        this.filters = [{ name: this.map.label, value, operator: "_like" }];
+        this.filters = [{ name: 'headline', value, operator: "_like" }];
         this.updateStore();
         this.updateVirtual();
         if (this.popperButton && this.popperOptions) {
             this.updatePosition();
         }
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} data - {{desc}}
@@ -239,7 +243,7 @@ class MDMenuComponent extends MDSheetComponent {
             doc.selected = doc === data;
         });
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} offset - {{desc}}
@@ -247,7 +251,7 @@ class MDMenuComponent extends MDSheetComponent {
      */
     activate(offset, selected) {
         this.activatedIndex = (this.activatedIndex + this.storeTotal + offset) % this.storeTotal;
-        let data = this.storeList[this.activatedIndex];
+        let data = this.storeItems[this.activatedIndex];
         this.store.docs.forEach((doc) => {
             doc.activated = doc === data;
             if (selected) {
@@ -258,13 +262,13 @@ class MDMenuComponent extends MDSheetComponent {
         this.virtual.viewport.scrollTop = (this.activatedIndex - delta) * this.rowHeight;
         this.virtual.handleVirtualScroll();
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
      */
     handleMenuViewportVirtualScroll(event) {
-        this.virtualList = this.storeList.slice(this.virtual.rowStart, this.virtual.rowEnd);
+        this.vitualItems = this.storeItems.slice(this.virtual.rowStart, this.virtual.rowEnd);
         this.requestUpdate();
         this.emit("onMenuViewportVirtualScroll", event);
         if (!this.initialized) {
@@ -274,7 +278,7 @@ class MDMenuComponent extends MDSheetComponent {
             });
         }
     }
-
+    
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
