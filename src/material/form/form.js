@@ -35,7 +35,6 @@ class MDFormComponent extends MDComponent {
         target: { type: String },
         items: { type: Array },
     };
-
     formNative = createRef();
 
     /**

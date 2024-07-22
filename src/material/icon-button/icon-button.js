@@ -25,7 +25,6 @@ class MDIconButtonComponent extends MDComponent {
         disabled: { type: Boolean, reflect: true },
         name: { type: String, reflect: true },
     };
-
     variants = ["filled", "tonal", "outlined", "toggle"];
 
     /**

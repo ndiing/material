@@ -362,16 +362,13 @@ class MDDataTableComponent extends MDCardComponent {
                             >${renderComponent({
                                 component: 'data-table-column-cell',
                                 headline: column.label,
-
                                 /* FIX THIS LATER... */
                                 reorderable: column.reorderable,
                                 resizable: column.resizable,
                                 sortable: column.sortable,
                                 sortableIcon: column.sortableIcon,
                                 /* FIX THIS LATER... */
-
                                 trailingActions:[{icon:"arrow_drop_down"}]
-
                             })}&lt;/th>
                         `)}
                     &lt;/tr>

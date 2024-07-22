@@ -42,7 +42,6 @@ class MDRadioButtonComponent extends MDComponent {
             fadeOut: true,
         });
     }
-
     radioButtonNative = createRef();
 
     /**

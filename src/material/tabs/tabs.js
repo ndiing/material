@@ -9,6 +9,16 @@ import { MDTreeComponent } from "../tree/tree.js";
 class MDTabsComponent extends MDTreeComponent {
     /**
      * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Array} items - {{desc}}
+     * @property {String} variant - {{desc}}
+     */
+    static properties = {
+        ...MDTreeComponent.properties,
+    };
+
+    /**
+     * {{desc}}
      */
     constructor() {
         super();
@@ -16,7 +26,6 @@ class MDTabsComponent extends MDTreeComponent {
         this.currentSelectedIndex = -1;
         this.lastSelectedIndex = -1;
     }
-
     variants = ["primary", "secondary"];
 
     /**
