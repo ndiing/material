@@ -2,17 +2,17 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
 const items0 = [
-    { component:'section',section: "Section 1" },
+    { component:'section',section: "Section 0" },
+    { headline: "Headline 0" },
     { headline: "Headline 1" },
-    { headline: "Headline 1" },
-    { headline: "Headline 1" },
-    { headline: "Headline 1" },
+    { headline: "Headline 2" },
+    { headline: "Headline 3" },
     { component:'divider', },
     { component:'section',section: "Section 1" },
-    { headline: "Headline 1" },
-    { headline: "Headline 1" },
-    { headline: "Headline 1" },
-    { headline: "Headline 1" },
+    { headline: "Headline 4" },
+    { headline: "Headline 5" },
+    { headline: "Headline 6" },
+    { headline: "Headline 7" },
     { component:'divider', },
 ];
 
