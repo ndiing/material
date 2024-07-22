@@ -8,65 +8,37 @@ class DevPickerComponent extends MDComponent {
             <div class="md-layout-column">
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-datetime-picker id="datetimePicker"></md-datetime-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Datetime Picker"
-                        @click="${this.handleDatetimePickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Datetime Picker" @click="${this.handleDatetimePickerButtonClick}"></md-button>
                 </div>
 
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-date-picker id="datePicker"></md-date-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Date Picker"
-                        @click="${this.handleDatePickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Date Picker" @click="${this.handleDatePickerButtonClick}"></md-button>
                 </div>
 
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-month-picker id="monthPicker"></md-month-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Month Picker"
-                        @click="${this.handleMonthPickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Month Picker" @click="${this.handleMonthPickerButtonClick}"></md-button>
                 </div>
 
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-time-picker id="timePicker"></md-time-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Time Picker"
-                        @click="${this.handleTimePickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Time Picker" @click="${this.handleTimePickerButtonClick}"></md-button>
                 </div>
 
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-week-picker id="weekPicker"></md-week-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Week Picker"
-                        @click="${this.handleWeekPickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Week Picker" @click="${this.handleWeekPickerButtonClick}"></md-button>
                 </div>
 
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-color-picker id="colorPicker"></md-color-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Color Picker"
-                        @click="${this.handleColorPickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Color Picker" @click="${this.handleColorPickerButtonClick}"></md-button>
                 </div>
 
                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                     <md-emoji-picker id="emojiPicker"></md-emoji-picker>
-                    <md-button
-                        variant="tonal"
-                        label="Emoji Picker"
-                        @click="${this.handleEmojiPickerButtonClick}"
-                    ></md-button>
+                    <md-button variant="tonal" label="Emoji Picker" @click="${this.handleEmojiPickerButtonClick}"></md-button>
                 </div>
             </div>
         `;

@@ -8,12 +8,7 @@ class DevRouter extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-router
-                                @onRouterCurrentEntryChange="${console.log}"
-                                @onRouterNavigate="${console.log}"
-                                @onRouterNavigateError="${console.log}"
-                                @onRouterNavigateSuccess="${console.log}"
-                            ></md-router>
+                            <md-router @onRouterCurrentEntryChange="${console.log}" @onRouterNavigate="${console.log}" @onRouterNavigateError="${console.log}" @onRouterNavigateSuccess="${console.log}"></md-router>
                         </div>
                     </div>
                 </div>

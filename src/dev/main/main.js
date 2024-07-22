@@ -161,12 +161,7 @@ class DevMainComponent extends MDComponent {
                     .leadingActions="${[{ icon: "menu", onIconButtonClick: this.handleIconButtonClick.bind(this) }]}"
                     open
                 ></md-top-app-bar> -->
-                <md-navigation-drawer
-                    id="navigationDrawer"
-                    .items="${this.items}"
-                    variant="tree"
-                    open
-                ></md-navigation-drawer>
+                <md-navigation-drawer id="navigationDrawer" .items="${this.items}" variant="tree" open></md-navigation-drawer>
                 <md-layout-item region="center">
                     <md-outlet></md-outlet>
                 </md-layout-item>

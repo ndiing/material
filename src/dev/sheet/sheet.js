@@ -5,38 +5,10 @@ class DevSheet extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-sheet
-                    open
-                    variant="north"
-                    @onSheetScrimClick="${console.log}"
-                    @onSheetShow="${console.log}"
-                    @onSheetClose="${console.log}"
-                    >north</md-sheet
-                >
-                <md-sheet
-                    open
-                    variant="east"
-                    @onSheetScrimClick="${console.log}"
-                    @onSheetShow="${console.log}"
-                    @onSheetClose="${console.log}"
-                    >east</md-sheet
-                >
-                <md-sheet
-                    open
-                    variant="south"
-                    @onSheetScrimClick="${console.log}"
-                    @onSheetShow="${console.log}"
-                    @onSheetClose="${console.log}"
-                    >south</md-sheet
-                >
-                <md-sheet
-                    open
-                    variant="west"
-                    @onSheetScrimClick="${console.log}"
-                    @onSheetShow="${console.log}"
-                    @onSheetClose="${console.log}"
-                    >west</md-sheet
-                >
+                <md-sheet open variant="north" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">north</md-sheet>
+                <md-sheet open variant="east" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">east</md-sheet>
+                <md-sheet open variant="south" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">south</md-sheet>
+                <md-sheet open variant="west" @onSheetScrimClick="${console.log}" @onSheetShow="${console.log}" @onSheetClose="${console.log}">west</md-sheet>
 
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
