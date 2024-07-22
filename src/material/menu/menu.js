@@ -115,7 +115,7 @@ class MDMenuComponent extends MDSheetComponent {
      */
     updated(changedProperties) {
         super.updated(changedProperties);
-        if (changedProperties.has("list")) {
+        if (changedProperties.has("items")) {
             this.store.docs = this.items;
             this.updateStore();
             this.updateVirtual();
