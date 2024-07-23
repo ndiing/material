@@ -58,6 +58,7 @@ import DevToolbar from "./toolbar/toolbar.js";
 import DevCard from "./card/card.js";
 import DevScrim from "./scrim/scrim.js";
 import DevSheet from "./sheet/sheet.js";
+import DevSheet2 from "./sheet/sheet2.js";
 import DevDialog from "./dialog/dialog.js";
 import DevTopAppBar from "./top-app-bar/top-app-bar.js";
 import DevSideSheet from "./side-sheet/side-sheet.js";
@@ -159,6 +160,7 @@ const routes = [
             { component: DevSegmentedButton, path: "segmented-button" },
             { component: DevSelectField, path: "select-field" },
             { component: DevSheet, path: "sheet" },
+            { component: DevSheet2, path: "sheet2" },
             { component: DevSideSheet, path: "side-sheet" },
             { component: DevSlider, path: "slider" },
             { component: DevSnackbar, path: "snackbar" },

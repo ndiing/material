@@ -49,7 +49,10 @@ class DevMainComponent extends MDComponent {
                     { label: "Card", routerLink: "/card" },
                     { label: "Dialog", routerLink: "/dialog" },
                     { label: "Scrim", routerLink: "/scrim" },
-                    { label: "Sheet", routerLink: "/sheet" },
+                    { label: "Sheet", items:[
+                        { label: "Standard side sheet", routerLink: "/sheet" },
+                        { label: "Modal side sheet", routerLink: "/sheet2" },
+                    ] },
                     { label: "Side Sheet", routerLink: "/side-sheet" },
                     { label: "Snackbar", routerLink: "/snackbar" },
                     { label: "Toolbar", routerLink: "/toolbar" },

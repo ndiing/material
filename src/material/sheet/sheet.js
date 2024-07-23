@@ -36,6 +36,7 @@ class MDSheetComponent extends MDCardComponent {
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
 
+
     /**
      * {{desc}}
      */
@@ -45,20 +46,20 @@ class MDSheetComponent extends MDCardComponent {
 
     /**
      * {{desc}}
-     * @param {Any} modal - {{desc}}
+     * @param {Any} scrim - {{desc}}
      */
-    async show(modal) {
+    show(scrim) {
+        this.open = true;
         this.style.removeProperty("--md-comp-sheet-animation");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        if (modal) {
+        if (scrim) {
             this.scrim = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
             this.handleSheetScrimClick = this.handleSheetScrimClick.bind(this);
             this.scrim.on("click", this.handleSheetScrimClick);
             this.scrim.show();
         }
-        this.open = true;
         this.emit("onSheetShow", this);
     }
 
@@ -66,6 +67,7 @@ class MDSheetComponent extends MDCardComponent {
      * {{desc}}
      */
     close() {
+        this.open = false;
         this.style.removeProperty("--md-comp-sheet-animation");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
@@ -74,19 +76,18 @@ class MDSheetComponent extends MDCardComponent {
             this.scrim.remove();
             this.scrim = null;
         }
-        this.open = false;
         this.emit("onSheetClose", this);
     }
 
     /**
      * {{desc}}
-     * @param {Any} ...args - {{desc}}
+     * @param {Any} scrim - {{desc}}
      */
-    toggle(...args) {
+    toggle(scrim) {
         if (this.open) {
             this.close();
         } else {
-            this.show(...args);
+            this.show(scrim);
         }
     }
 

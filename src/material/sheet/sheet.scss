@@ -128,39 +128,39 @@
 }
 .md-sheet {
     display: inline-flex;
-    border-radius: var(--md-sys-shape-corner-large);
+    border-radius: var(--md-sys-shape-corner-none);
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    /*.md-card__header {
+    .md-card__header {
         padding: 24px;
         gap: 0 12px;
         + .md-card__body {
             margin-top: -24px;
         }
-        > .md-block__group {
-            > .md-block__headline {
+        >.md-block__group{
+            >.md-block__headline{
                 @include typescale-title-large();
             }
         }
-    }*/
-    /*.md-card__inner {
+    }
+    .md-card__inner {
         padding: 0 24px;
         margin: 24px 0;
         + .md-card__footer {
             margin-top: -24px;
         }
-    }*/
-    /*.md-card__footer {
+    }
+    .md-card__footer {
         padding: 24px;
         gap: 0 8px;
-    }*/
+    }
 }
 .md-sheet.md-card--north {
     grid-area: north;
-    border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
+    min-height: var(--md-comp-sheet-height);
     margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
     animation-name: var(--md-comp-sheet-animation, sheetNorthOut);
     &[open] {
@@ -169,8 +169,8 @@
     }
 }
 .md-sheet.md-card--east {
-    border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
     grid-area: east;
+    min-width: var(--md-comp-sheet-width);
     margin-right: calc(0px - var(--md-comp-sheet-width, 100vw));
     animation-name: var(--md-comp-sheet-animation, sheetEastOut);
     &[open] {
@@ -180,7 +180,7 @@
 }
 .md-sheet.md-card--south {
     grid-area: south;
-    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
+    min-height: var(--md-comp-sheet-height);
     margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
     animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
     &[open] {
@@ -190,7 +190,7 @@
 }
 .md-sheet.md-card--west {
     grid-area: west;
-    border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
+    min-width: var(--md-comp-sheet-width);
     margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
     animation-name: var(--md-comp-sheet-animation, sheetWestOut);
     &[open] {
@@ -199,14 +199,18 @@
     }
 }
 .md-sheet.md-card--modal {
-    background-color: var(--md-sys-color-surface-container-low);
-    color: var(--md-sys-color-on-surface-variant);
-    box-shadow: var(--md-sys-elevation-level0);
+    border-radius: var(--md-sys-shape-corner-large);
     position: absolute;
     z-index: 7;
-    /*.md-card__header {
+    .md-card__header {
         padding: 24px 24px 24px 16px;
-    }*/
+    }
+    .md-card__inner {
+        padding: 0 24px 0 16px;
+    }
+    .md-card__footer {
+        padding: 24px 24px 24px 16px;
+    }
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
     }
@@ -214,6 +218,7 @@
         grid-area: auto;
         margin-top: 0;
         transform: translate3d(0%, -100%, 0);
+        border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
         top: 0;
         left: 0;
         right: 0;
@@ -227,6 +232,7 @@
         grid-area: auto;
         margin-right: 0;
         transform: translate3d(100%, 0%, 0);
+        border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
         right: 0;
         top: 0;
         bottom: 0;
@@ -240,6 +246,7 @@
         grid-area: auto;
         margin-bottom: 0;
         transform: translate3d(0%, 100%, 0);
+        border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
         bottom: 0;
         left: 0;
         right: 0;
@@ -253,6 +260,7 @@
         grid-area: auto;
         margin-left: 0;
         transform: translate3d(-100%, 0%, 0);
+        border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
         left: 0;
         top: 0;
         bottom: 0;
