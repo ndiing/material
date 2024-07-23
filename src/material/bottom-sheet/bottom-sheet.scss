@@ -4,34 +4,24 @@
     max-height: calc(100% - 72px);
     width: 100%;
     margin: 72px auto 0 auto;
-    // border-radius: var(--md-sys-shape-corner-none);
+    transform: translate3d(0%, 100%, 0);
+    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    // grid-area: south;
     min-height: var(--md-comp-sheet-height);
-    // margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
-    // animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
-    // border-radius: var(--md-sys-shape-corner-large);
     position: absolute;
-    z-index: 7;
-    // grid-area: auto;
-    margin-bottom: 0;
-    transform: translate3d(0%, 100%, 0);
-    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 7;
     animation-name: var(--md-comp-sheet-animation, sheetSouthModalOut);
     &[open] {
-        // margin-bottom: 0;
-        // animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
-        box-shadow: var(--md-sys-elevation-level1);
         margin-bottom: 0;
-        // animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
         transform: translate3d(0, 0, 0);
+        box-shadow: var(--md-sys-elevation-level1);
         animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
     }
     .md-card__header {

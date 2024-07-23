@@ -1,15 +1,15 @@
 .md-top-app-bar {
     --md-comp-sheet-height: 64px;
+    grid-area: north;
     display: inline-flex;
+    min-height: var(--md-comp-sheet-height);
+    margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
     border-radius: var(--md-sys-shape-corner-none);
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    grid-area: north;
-    min-height: var(--md-comp-sheet-height);
-    margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
     animation-name: var(--md-comp-sheet-animation, sheetNorthOut);
     &[open] {
         margin-top: 0;
