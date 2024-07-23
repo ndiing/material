@@ -15,7 +15,7 @@ class DevBlock extends MDComponent {
                             <md-block headline="headline" leadingCheckbox></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline" leadingRadio></md-block>
+                            <md-block headline="headline" leadingRadioButton></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" leadingSwitch></md-block>
@@ -68,7 +68,7 @@ class DevBlock extends MDComponent {
                             <md-block headline="headline" trailingSwitch></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
-                            <md-block headline="headline" trailingRadio></md-block>
+                            <md-block headline="headline" trailingRadioButton></md-block>
                         </md-layout-item>
                         <md-layout-item expanded="2" medium="8" compact="4">
                             <md-block headline="headline" trailingCheckbox></md-block>

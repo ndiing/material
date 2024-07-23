@@ -1,3 +1,4 @@
+/* scheme */
 @mixin scheme-light() {
     @media (prefers-color-scheme: light) {
         @content;
@@ -8,6 +9,8 @@
         @content;
     }
 }
+
+/* breakpoint */
 @mixin breakpoint-compact() {
     @media (max-width: 599px) {
         @content;
@@ -23,6 +26,8 @@
         @content;
     }
 }
+
+/* container */
 @mixin container-compact() {
     @container (width < 599px) {
         @content;
@@ -38,6 +43,8 @@
         @content;
     }
 }
+
+/* typescale */
 @mixin typescale-display-large() {
     font-size: var(--md-sys-typescale-display-large-size);
     line-height: var(--md-sys-typescale-display-large-line-height);

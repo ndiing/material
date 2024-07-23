@@ -161,7 +161,7 @@ class DevMainComponent extends MDComponent {
                 ],
             },
         ];
-        
+
         this.select(this.items, MDRouter.path);
     }
 

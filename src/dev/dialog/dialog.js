@@ -20,7 +20,6 @@ const actions0 = [
 const actions1 = [
     //
     {
-        component: "icon-button",
         icon: "close",
         onIconButtonClick: () => {
             dialog1.close();
