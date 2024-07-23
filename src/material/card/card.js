@@ -20,6 +20,7 @@ class MDCardComponent extends MDComponent {
      */
     static properties = {
         variant: { type: String },
+        leadingIcon: { type: String },
         leadingActions: { type: Array },
         headline: { type: String },
         subhead: { type: String },
@@ -43,6 +44,7 @@ class MDCardComponent extends MDComponent {
         /* prettier-ignore */
         return html`
             ${this.leadingActions?.length || this.headline || this.subhead || this.trailingActions?.length?renderCardHeader({
+                leadingIcon: this.leadingIcon,
                 leadingActions: this.leadingActions,
                 headline: this.headline,
                 supportingText: this.subhead,
