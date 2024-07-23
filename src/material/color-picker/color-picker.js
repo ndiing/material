@@ -25,6 +25,7 @@ class MDColorPickerComponent extends MDSheetComponent {
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
+     * @property {String} leadingIcon - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}

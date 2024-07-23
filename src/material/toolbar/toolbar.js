@@ -62,7 +62,6 @@ class MDToolbarComponent extends MDBlockComponent {
      * @param {Any} value - {{desc}}
      */
     set leadingActions(value) {}
-
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-toolbar");
