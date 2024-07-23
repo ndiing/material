@@ -1,3 +1,4 @@
+/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@
         outline: none;
     }
 }
+/* base */
 html,
 body {
     width: 100%;
@@ -23,6 +25,7 @@ body {
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
 }
+/* layout */
 .md-layout-border {
     display: grid;
     grid-template-columns: auto 1fr auto;

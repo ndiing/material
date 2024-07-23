@@ -28,7 +28,6 @@ class DevMainComponent extends MDComponent {
                     { icon: "image", label: "Image", routerLink: "/image" },
                     { icon: "view_quilt", label: "Layout", routerLink: "/layout" },
                     // { disabled: true, icon: "crop_landscape", label: "Layout Item", routerLink: "/layout-item" },
-                    { icon: "notes", label: "Markdown", routerLink: "/markdown" },
                     { icon: "space_bar", label: "Spacer", routerLink: "/spacer" },
                 ],
             },

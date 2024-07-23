@@ -15,16 +15,10 @@ class DevSwitch extends MDComponent {
                                 <md-switch name="switch2" value="2"></md-switch>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-switch name="switch3" value="3"></md-switch>
-                            </div>
-                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-switch name="switch4" value="1" checked icons='["close","check"]'></md-switch>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-switch name="switch5" value="2" icons='["close","check"]'></md-switch>
-                            </div>
-                            <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                <md-switch name="switch6" value="3" icons='["mood_bad","mood"]'></md-switch>
                             </div>
                             <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                                 <md-button type="reset" label="Reset" variant="outlined"></md-button>

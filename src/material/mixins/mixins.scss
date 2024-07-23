@@ -9,7 +9,6 @@
         @content;
     }
 }
-
 /* breakpoint */
 @mixin breakpoint-compact() {
     @media (max-width: 599px) {
@@ -26,7 +25,6 @@
         @content;
     }
 }
-
 /* container */
 @mixin container-compact() {
     @container (width < 599px) {
@@ -43,7 +41,6 @@
         @content;
     }
 }
-
 /* typescale */
 @mixin typescale-display-large() {
     font-size: var(--md-sys-typescale-display-large-size);

@@ -42,15 +42,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.md-button--icon-right {
-    .md-button__icon {
-        order: 1;
-        + .md-button__label {
-            margin-right: 0;
-            margin-left: 4px;
-        }
-    }
-}
 .md-button--elevated,
 .md-button--filled,
 .md-button--tonal,
@@ -64,19 +55,8 @@
             margin-right: 0;
         }
     }
-    &.md-button--icon-right {
-        .md-button__icon {
-            margin-left: 0;
-            margin-right: -8px;
-            + .md-button__label {
-                margin-right: 0;
-                margin-left: 0;
-            }
-        }
-    }
     &[disabled] {
         background-color: var(--md-sys-color-on-surface12);
-        border-color: var(--md-sys-color-on-surface12);
         color: var(--md-sys-color-on-surface38);
         box-shadow: var(--md-sys-elevation-level0);
     }

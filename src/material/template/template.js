@@ -1171,25 +1171,6 @@ function renderListItem(item = {}) {
  * {{desc}}
  * @param {Any} item = {} - {{desc}}
  */
-function renderMarkdown(item = {}) {
-    /* prettier-ignore */
-    return html`
-        <md-markdown
-            .data="${item}"
-            id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
-            .tooltip="${ifDefined(item.tooltip)}"
-            .href="${ifDefined(item.href)}"
-            .text="${ifDefined(item.text)}"
-        ></md-markdown>
-    `
-}
-
-/**
- * {{desc}}
- * @param {Any} item = {} - {{desc}}
- */
 function renderMenu(item = {}) {
     /* prettier-ignore */
     return html`
@@ -2456,7 +2437,6 @@ function renderComponent(item) {
         ["layout-item", () => renderLayoutItem(item)],
         ["list", () => renderList(item)],
         ["list-item", () => renderListItem(item)],
-        ["markdown", () => renderMarkdown(item)],
         ["menu", () => renderMenu(item)],
         ["month-field", () => renderMonthField(item)],
         ["month-picker", () => renderMonthPicker(item)],
@@ -2492,4 +2472,4 @@ function renderComponent(item) {
         ["week-picker", () => renderWeekPicker(item)],
     ], () => nothing)
 }
-export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCardFooter, renderCardHeader, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMarkdown, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };
+export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCardFooter, renderCardHeader, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };

@@ -27,7 +27,7 @@ class MDButtonComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-    variants = ["elevated", "filled", "tonal", "outlined", "icon-right"];
+    variants = ["elevated", "filled", "tonal", "outlined"];
 
     /**
      * {{desc}}

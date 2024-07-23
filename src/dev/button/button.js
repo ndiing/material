@@ -32,11 +32,6 @@ class DevButton extends MDComponent {
                             <md-button type="button" label="Text" icon="add"></md-button>
                             <md-button type="button" label="Text" icon="add" disabled></md-button>
                         </div>
-                        <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button variant="icon-right" type="button" label="Text"></md-button>
-                            <md-button variant="icon-right" type="button" label="Text" icon="add"></md-button>
-                            <md-button variant="icon-right" type="button" label="Text" icon="add" disabled></md-button>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,6 @@ import DevTemplate from "./template/template.js";
 // base
 import DevLayoutItem from "./layout-item/layout-item.js";
 import DevLayout from "./layout/layout.js";
-import DevMarkdown from "./markdown/markdown.js";
 import DevDivider from "./divider/divider.js";
 import DevSpacer from "./spacer/spacer.js";
 import DevIcon from "./icon/icon.js";
@@ -137,7 +136,6 @@ const routes = [
             { component: DevList2, path: "list2" },
             { component: DevListItem, path: "list-item" },
             { component: DevLocalization, path: "localization" },
-            { component: DevMarkdown, path: "markdown" },
             { component: DevMediaObserver, path: "media-observer" },
             { component: DevMenu, path: "menu" },
             { component: DevMonthField, path: "month-field" },
