@@ -56,13 +56,13 @@ import { MDCardFooterComponent } from "./card-footer/card-footer.js";
 import { MDCardComponent } from "./card/card.js";
 import { MDScrimComponent } from "./scrim/scrim.js";
 import { MDSheetComponent } from "./sheet/sheet.js";
-import { MDDialogComponent } from "./dialog/dialog.js";
-import { MDTopAppBarComponent } from "./top-app-bar/top-app-bar.js";
 import { MDSideSheetComponent } from "./side-sheet/side-sheet.js";
 import { MDBottomSheetComponent } from "./bottom-sheet/bottom-sheet.js";
+import { MDTopAppBarComponent } from "./top-app-bar/top-app-bar.js";
+import { MDBottomAppBarComponent } from "./bottom-app-bar/bottom-app-bar.js";
+import { MDDialogComponent } from "./dialog/dialog.js";
 import { MDSnackbarComponent } from "./snackbar/snackbar.js";
 import { MDTooltipComponent } from "./tooltip/tooltip.js";
-import { MDBottomAppBarComponent } from "./bottom-app-bar/bottom-app-bar.js";
 // picker
 import { MDDatetimePickerComponent } from "./datetime-picker/datetime-picker.js";
 import { MDDatePickerComponent } from "./date-picker/date-picker.js";
@@ -72,17 +72,17 @@ import { MDWeekPickerComponent } from "./week-picker/week-picker.js";
 import { MDColorPickerComponent } from "./color-picker/color-picker.js";
 import { MDEmojiPickerComponent } from "./emoji-picker/emoji-picker.js";
 // list
+import { MDChipComponent } from "./chip/chip.js"; // 1
+import { MDChipsComponent } from "./chips/chips.js"; // 1
 import { MDListItemComponent } from "./list-item/list-item.js"; // 1
 import { MDListComponent } from "./list/list.js"; // 1
 import { MDTreeItemComponent } from "./tree-item/tree-item.js"; // 1
 import { MDTreeComponent } from "./tree/tree.js"; // 1
-import { MDChipComponent } from "./chip/chip.js"; // 1
-import { MDChipsComponent } from "./chips/chips.js"; // 1
+import { MDTabsComponent } from "./tabs/tabs.js";
+import { MDMenuComponent } from "./menu/menu.js";
 import { MDNavigationBarComponent } from "./navigation-bar/navigation-bar.js";
 import { MDNavigationDrawerComponent } from "./navigation-drawer/navigation-drawer.js";
 import { MDNavigationRailComponent } from "./navigation-rail/navigation-rail.js";
-import { MDMenuComponent } from "./menu/menu.js";
-import { MDTabsComponent } from "./tabs/tabs.js";
 // table
 import { MDPaginationComponent } from "./pagination/pagination.js";
 import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js"; // 1

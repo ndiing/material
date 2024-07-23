@@ -3316,6 +3316,7 @@ function renderTimePicker(item = {}) {
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
  * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Array} [item.items] - {{desc}}
  * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
  * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
  * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
@@ -3361,6 +3362,7 @@ function renderToolbar(item = {}) {
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
+            .items="${ifDefined(item.items)}"
             @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
             @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
             @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"

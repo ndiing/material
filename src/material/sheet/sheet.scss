@@ -140,8 +140,8 @@
         + .md-card__body {
             margin-top: -24px;
         }
-        >.md-block__group{
-            >.md-block__headline{
+        > .md-block__group {
+            > .md-block__headline {
                 @include typescale-title-large();
             }
         }
@@ -213,6 +213,8 @@
     }
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
+        margin-bottom: 0;
+        animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
     }
     &.md-sheet.md-card--north {
         grid-area: auto;

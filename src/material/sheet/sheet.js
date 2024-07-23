@@ -24,7 +24,6 @@ class MDSheetComponent extends MDCardComponent {
         ...MDCardComponent.properties,
         open: { type: Boolean, reflect: true },
     };
-
     variants = ["north", "east", "south", "west", "modal"];
 
     /**
@@ -35,7 +34,6 @@ class MDSheetComponent extends MDCardComponent {
         this.classList.add("md-sheet");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
-
 
     /**
      * {{desc}}

@@ -4,41 +4,57 @@
     max-height: calc(100% - 72px);
     width: 100%;
     margin: 72px auto 0 auto;
-    transform: translate3d(0%, 100%, 0);
-    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
-    background-color: var(--md-sys-color-surface-container-low);
+    // border-radius: var(--md-sys-shape-corner-none);
+    background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+    animation-duration: var(--md-sys-motion-duration-short4);
+    // grid-area: south;
+    min-height: var(--md-comp-sheet-height);
+    // margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
+    // animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
+    // border-radius: var(--md-sys-shape-corner-large);
     position: absolute;
+    z-index: 7;
+    // grid-area: auto;
+    margin-bottom: 0;
+    transform: translate3d(0%, 100%, 0);
+    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 7;
     animation-name: var(--md-comp-sheet-animation, sheetSouthModalOut);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-    animation-duration: var(--md-sys-motion-duration-short4);
     &[open] {
+        // margin-bottom: 0;
+        // animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
         box-shadow: var(--md-sys-elevation-level1);
+        margin-bottom: 0;
+        // animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
         transform: translate3d(0, 0, 0);
         animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
     }
-    /*.md-card__header {
+    .md-card__header {
         padding: 24px 24px 24px 16px;
         gap: 0 12px;
         + .md-card__body {
-            margin-top: 0;
+            margin-top: -24px;
         }
         > .md-block__group {
             > .md-block__headline {
                 @include typescale-title-large();
             }
         }
-    }*/
-    /*.md-card__inner {
-        padding: 0;
-        margin: 0;
+    }
+    .md-card__inner {
+        padding: 0 24px 0 16px;
+        margin: 24px 0;
         + .md-card__footer {
-            margin-top: 0;
+            margin-top: -24px;
         }
-    }*/
+    }
+    .md-card__footer {
+        padding: 24px 24px 24px 16px;
+        gap: 0 8px;
+    }
 }

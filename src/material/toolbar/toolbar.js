@@ -14,6 +14,38 @@ import { MDBlockComponent } from "../material.js";
  * @fires MDToolbarComponent#onImageNativeError - {{desc}}
  */
 class MDToolbarComponent extends MDBlockComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Array} leadingActions - {{desc}}
+     * @property {Boolean} leadingCheckbox - {{desc}}
+     * @property {Boolean} leadingRadioButton - {{desc}}
+     * @property {Boolean} leadingSwitch - {{desc}}
+     * @property {String} leadingAvatar - {{desc}}
+     * @property {String} leadingImage - {{desc}}
+     * @property {String} leadingVideo - {{desc}}
+     * @property {String} leadingIcon - {{desc}}
+     * @property {String} leadingSupportingText - {{desc}}
+     * @property {String} headline - {{desc}}
+     * @property {String} supportingText - {{desc}}
+     * @property {String} trailingSupportingText - {{desc}}
+     * @property {String} trailingIcon - {{desc}}
+     * @property {String} trailingVideo - {{desc}}
+     * @property {String} trailingImage - {{desc}}
+     * @property {String} trailingAvatar - {{desc}}
+     * @property {Boolean} trailingSwitch - {{desc}}
+     * @property {Boolean} trailingRadioButton - {{desc}}
+     * @property {Boolean} trailingCheckbox - {{desc}}
+     * @property {Array} trailingActions - {{desc}}
+     * @property {Number} badge - {{desc}}
+     * @property {String} defaultLeadingActionComponent - {{desc}}
+     * @property {String} defaultTrailingActionComponent - {{desc}}
+     * @property {Boolean} activated - {{desc}}
+     * @property {Boolean} indeterminate - {{desc}}
+     * @property {Boolean} selected - {{desc}}
+     * @property {Boolean} disabled - {{desc}}
+     * @property {Array} items - {{desc}}
+     */
     static properties = {
         items: { type: Array },
     };
@@ -31,9 +63,6 @@ class MDToolbarComponent extends MDBlockComponent {
      */
     set leadingActions(value) {}
 
-    /**
-     * {{desc}}
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-toolbar");
