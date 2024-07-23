@@ -1,5 +1,5 @@
 import { MDComponent } from "../component/component.js";
-import { renderChip, renderComponent } from "../template/template.js";
+import { renderChip } from "../template/template.js";
 
 /**
  * {{desc}}

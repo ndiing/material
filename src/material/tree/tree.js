@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderComponent, renderTreeItem } from "../template/template.js";
+import { renderTreeItem } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -19,6 +19,7 @@ class MDTreeComponent extends MDComponent {
         items: { type: Array },
         variant: { type: String },
     };
+
     variants = ["plain", "accordion", "tree", "level"];
 
     /**
@@ -185,6 +186,7 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
+
     handleTreeItemSelected() {}
 }
 customElements.define("md-tree", MDTreeComponent);

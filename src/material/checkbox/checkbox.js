@@ -42,6 +42,7 @@ class MDCheckboxComponent extends MDComponent {
             fadeOut: true,
         });
     }
+
     checkboxNative = createRef();
 
     /**

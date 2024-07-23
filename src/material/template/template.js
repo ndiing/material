@@ -3289,7 +3289,41 @@ function renderTimePicker(item = {}) {
  * Render Toolbar
  * @param {Object} item - {{desc}}
  * @property {String} [item.tooltip] - {{desc}}
- * @property {Array} [item.items] - {{desc}}
+ * @property {Array} [item.leadingActions] - {{desc}}
+ * @property {Boolean} [item.leadingCheckbox] - {{desc}}
+ * @property {Boolean} [item.leadingRadioButton] - {{desc}}
+ * @property {Boolean} [item.leadingSwitch] - {{desc}}
+ * @property {String} [item.leadingAvatar] - {{desc}}
+ * @property {String} [item.leadingImage] - {{desc}}
+ * @property {String} [item.leadingVideo] - {{desc}}
+ * @property {String} [item.leadingIcon] - {{desc}}
+ * @property {String} [item.leadingSupportingText] - {{desc}}
+ * @property {String} [item.headline] - {{desc}}
+ * @property {String} [item.supportingText] - {{desc}}
+ * @property {String} [item.trailingSupportingText] - {{desc}}
+ * @property {String} [item.trailingIcon] - {{desc}}
+ * @property {String} [item.trailingVideo] - {{desc}}
+ * @property {String} [item.trailingImage] - {{desc}}
+ * @property {String} [item.trailingAvatar] - {{desc}}
+ * @property {Boolean} [item.trailingSwitch] - {{desc}}
+ * @property {Boolean} [item.trailingRadioButton] - {{desc}}
+ * @property {Boolean} [item.trailingCheckbox] - {{desc}}
+ * @property {Array} [item.trailingActions] - {{desc}}
+ * @property {Number} [item.badge] - {{desc}}
+ * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
+ * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
+ * @property {Boolean} [item.activated] - {{desc}}
+ * @property {Boolean} [item.indeterminate] - {{desc}}
+ * @property {Boolean} [item.selected] - {{desc}}
+ * @property {Boolean} [item.disabled] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
+ * @property {Function} [item.onSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onSwitchNativeReset] - {{desc}}
+ * @property {Function} [item.onImageNativeLoad] - {{desc}}
+ * @property {Function} [item.onImageNativeError] - {{desc}}
  */
 function renderToolbar(item = {}) {
     /* prettier-ignore */
@@ -3300,7 +3334,41 @@ function renderToolbar(item = {}) {
             class="${classMap({...item.classMap})}"
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
-            .items="${ifDefined(item.items)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
+            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
+            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
+            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
+            .leadingImage="${ifDefined(item.leadingImage)}"
+            .leadingVideo="${ifDefined(item.leadingVideo)}"
+            .leadingIcon="${ifDefined(item.leadingIcon)}"
+            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
+            .headline="${ifDefined(item.headline)}"
+            .supportingText="${ifDefined(item.supportingText)}"
+            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
+            .trailingIcon="${ifDefined(item.trailingIcon)}"
+            .trailingVideo="${ifDefined(item.trailingVideo)}"
+            .trailingImage="${ifDefined(item.trailingImage)}"
+            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
+            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
+            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
+            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .badge="${ifDefined(item.badge)}"
+            .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
+            .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
+            .activated="${ifDefined(item.activated)}"
+            .indeterminate="${ifDefined(item.indeterminate)}"
+            .selected="${ifDefined(item.selected)}"
+            .disabled="${ifDefined(item.disabled)}"
+            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
+            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
+            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
+            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
+            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
+            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
+            @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
+            @onImageNativeError="${ifDefined(item.onImageNativeError)}"
         ></md-toolbar>
     `
 }

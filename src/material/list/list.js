@@ -37,6 +37,7 @@ class MDListComponent extends MDComponent {
     constructor() {
         super();
     }
+
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}
@@ -48,6 +49,7 @@ class MDListComponent extends MDComponent {
         item.onSwitchNativeInput = this.handleListItemSwitchNativeInput.bind(this);
         return renderListItem(item);
     }
+
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}
@@ -61,6 +63,7 @@ class MDListComponent extends MDComponent {
             </div>
         `;
     }
+
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}

@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderCardFooter, renderCardHeader, renderComponent } from "../template/template.js";
+import { renderCardFooter, renderCardHeader } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -26,6 +26,7 @@ class MDCardComponent extends MDComponent {
         trailingActions: { type: Array },
         actions: { type: Array },
     };
+
     variants = ["elevated", "filled", "outlined"];
 
     /**

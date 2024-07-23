@@ -1,5 +1,5 @@
 import { MDComponent } from "../component/component.js";
-import { renderButton, renderComponent } from "../template/template.js";
+import { renderButton } from "../template/template.js";
 
 /**
  * {{desc}}

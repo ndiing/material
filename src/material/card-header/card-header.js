@@ -1,4 +1,3 @@
-import { MDComponent } from "../component/component.js";
 import { MDBlockComponent } from "../material.js";
 
 /**

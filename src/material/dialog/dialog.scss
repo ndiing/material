@@ -97,16 +97,14 @@
         + .md-card__body {
             margin-top: -32px;
         }
-    }
-    .md-card__actions {
         gap: 0 12px;
         align-self: center;
-        + .md-card__label {
+        + .md-block_group {
             align-self: center;
+            > .md-block_headline {
+                @include typescale-headline-small();
+            }
         }
-    }
-    .md-card__label-primary {
-        @include typescale-headline-small();
     }
     .md-card__inner {
         padding: 0 24px;
@@ -138,8 +136,10 @@
         + .md-card__body {
             margin-top: -16px;
         }
-    }
-    .md-card__label-primary {
-        @include typescale-title-large();
+        > .md-block__group {
+            > .md-block__headline {
+                @include typescale-title-large();
+            }
+        }
     }
 }

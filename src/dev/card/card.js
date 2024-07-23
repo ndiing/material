@@ -1,15 +1,15 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-const actions0 = [{ component: "spacer" }, { label: "label", onButtonClick:console.log }];
-const actions1 = [{ component: "spacer" }, { label: "label", onButtonClick:console.log }];
-const actions2 = [{ icon: "image", onIconButtonClick:console.log }];
-const actions3 = [{ component: "spacer" }, { label: "label", onButtonClick:console.log }];
-const actions4 = [{ icon: "image", onIconButtonClick:console.log }];
-const actions5 = [{ icon: "image", onIconButtonClick:console.log }];
-const actions6 = [{ component: "spacer" }, { label: "label", onButtonClick:console.log }];
-const actions7 = [{ icon: "image", onIconButtonClick:console.log }];
-const actions8 = [{ icon: "image", onIconButtonClick:console.log }];
+const actions0 = [{ component: "spacer" }, { label: "label", onButtonClick: console.log }];
+const actions1 = [{ component: "spacer" }, { label: "label", onButtonClick: console.log }];
+const actions2 = [{ icon: "image", onIconButtonClick: console.log }];
+const actions3 = [{ component: "spacer" }, { label: "label", onButtonClick: console.log }];
+const actions4 = [{ icon: "image", onIconButtonClick: console.log }];
+const actions5 = [{ icon: "image", onIconButtonClick: console.log }];
+const actions6 = [{ component: "spacer" }, { label: "label", onButtonClick: console.log }];
+const actions7 = [{ icon: "image", onIconButtonClick: console.log }];
+const actions8 = [{ icon: "image", onIconButtonClick: console.log }];
 
 class DevCard extends MDComponent {
     render() {

@@ -84,6 +84,7 @@ class MDTextFieldComponent extends MDComponent {
         variant: { type: String },
         mask: { type: String },
     };
+
     textFieldNative = createRef();
     textFieldContainer = createRef();
 
@@ -279,6 +280,7 @@ class MDTextFieldComponent extends MDComponent {
             this.defaultValue = this.value;
         }
     }
+
     variants = ["filled", "outlined", "rounded"];
 
     /**

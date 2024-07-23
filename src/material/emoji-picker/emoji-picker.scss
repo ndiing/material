@@ -28,17 +28,15 @@
         + .md-card__body {
             margin-top: -4px;
         }
-    }
-    .md-card__actions {
         width: 100%;
         gap: 0 24px;
-        .md-card__button {
+        .md-button {
             color: var(--md-sys-color-on-surface-variant);
             .md-button__native {
                 gap: 0;
             }
         }
-        .md-card__text-field {
+        .md-text-field {
             --md-comp-text-field-density: -4;
             .md-text-field__container {
                 background-color: var(--md-sys-color-surface-container-highest);

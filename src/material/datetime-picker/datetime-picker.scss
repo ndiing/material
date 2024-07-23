@@ -59,12 +59,10 @@
         + .md-card__body {
             margin-top: -4px;
         }
-    }
-    .md-card__actions {
         gap: 0 24px;
-        .md-button {
+        > .md-button {
             color: var(--md-sys-color-on-surface-variant);
-            .md-button__native {
+            > .md-button__native {
                 gap: 0;
             }
         }
