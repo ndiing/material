@@ -76,7 +76,7 @@ class MDDataTableComponent extends MDCardComponent {
      * @param {Any} value - {{desc}}
      */
     set childNodes_(value) {}
-    get label() {
+    get headline() {
         return "Label";
     }
 
@@ -84,9 +84,9 @@ class MDDataTableComponent extends MDCardComponent {
      * {{desc}}
      * @param {Any} value - {{desc}}
      */
-    set label(value) {}
+    set headline(value) {}
     get trailingActions() {
-        return [{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant: "outlined", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch.bind(this) }];
+        return [{component:'spacer'},{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant: "outlined", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch.bind(this) }];
     }
 
     /**
