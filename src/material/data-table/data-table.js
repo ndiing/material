@@ -86,7 +86,7 @@ class MDDataTableComponent extends MDCardComponent {
      */
     set headline(value) {}
     get trailingActions() {
-        return [{component:'spacer'},{ name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant: "outlined", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch.bind(this) }];
+        return [{ component: "spacer" }, { name: "search", classMap: { "md-data-table__search": true }, component: "search-field", placeholder: "search", icon: "search", variant: "outlined", onTextFieldNativeSearch: this.handleDataTableTextFieldNativeSearch.bind(this) }];
     }
 
     /**
