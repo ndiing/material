@@ -134,7 +134,7 @@
     box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    .md-card__header {
+    /*.md-card__header {
         padding: 24px;
         gap: 0 12px;
         + .md-card__body {
@@ -145,18 +145,18 @@
                 @include typescale-title-large();
             }
         }
-    }
-    .md-card__inner {
+    }*/
+    /*.md-card__inner {
         padding: 0 24px;
         margin: 24px 0;
         + .md-card__footer {
             margin-top: -24px;
         }
-    }
-    .md-card__footer {
+    }*/
+    /*.md-card__footer {
         padding: 24px;
         gap: 0 8px;
-    }
+    }*/
 }
 .md-sheet.md-card--north {
     grid-area: north;
@@ -204,9 +204,9 @@
     box-shadow: var(--md-sys-elevation-level0);
     position: absolute;
     z-index: 7;
-    .md-card__header {
+    /*.md-card__header {
         padding: 24px 24px 24px 16px;
-    }
+    }*/
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
     }

@@ -15,7 +15,7 @@
         visibility: visible;
         opacity: 1;
     }
-    .md-card__header {
+    /*.md-card__header {
         padding: 12px 16px;
         gap: 0 16px;
         + .md-card__body {
@@ -26,15 +26,15 @@
                 @include typescale-title-small();
             }
         }
-    }
-    .md-card__inner {
+    }*/
+    /*.md-card__inner {
         padding: 0 16px;
         margin: 12px 0;
         + .md-card__footer {
             margin-top: -8px;
         }
-    }
-    .md-card__footer {
+    }*/
+    /*.md-card__footer {
         padding: 8px 16px;
         gap: 0 40px;
         .md-button {
@@ -43,7 +43,7 @@
                 padding-right: 4px;
             }
         }
-    }
+    }*/
 }
 .md-tooltip.md-card--plain {
     border-radius: var(--md-sys-shape-corner-extra-small);
@@ -51,9 +51,9 @@
     color: var(--md-sys-color-inverse-on-surface);
     box-shadow: var(--md-sys-elevation-level0);
     pointer-events: none;
-    .md-card__inner {
+    /*.md-card__inner {
         padding: 0 8px;
         margin: 4px 0;
         @include typescale-body-small();
-    }
+    }*/
 }

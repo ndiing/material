@@ -22,7 +22,7 @@
     + .md-scrim {
         opacity: 0;
     }
-    .md-card__header {
+    /*.md-card__header {
         padding: 12px 12px;
         gap: 0 16px;
         + .md-card__body {
@@ -43,8 +43,8 @@
                 color: var(--md-sys-color-on-surface-variant);
             }
         }
-    }
-    .md-card__inner {
+    }*/
+    /*.md-card__inner {
         overflow: hidden;
         padding: 0;
         margin: 0;
@@ -52,11 +52,11 @@
         + .md-card__footer {
             margin-top: -4px;
         }
-    }
-    .md-card__footer {
+    }*/
+    /*.md-card__footer {
         padding: 12px 12px;
         gap: 0 8px;
-    }
+    }*/
 }
 .md-emoji-picker__main {
     display: flex;

@@ -22,7 +22,7 @@
         transform: translate3d(0, 0, 0);
         animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
     }
-    .md-card__header {
+    /*.md-card__header {
         padding: 24px 24px 24px 16px;
         gap: 0 12px;
         + .md-card__body {
@@ -33,12 +33,12 @@
                 @include typescale-title-large();
             }
         }
-    }
-    .md-card__inner {
+    }*/
+    /*.md-card__inner {
         padding: 0;
         margin: 0;
         + .md-card__footer {
             margin-top: 0;
         }
-    }
+    }*/
 }

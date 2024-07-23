@@ -75,12 +75,12 @@
     animation-name: var(--md-comp-sheet-animation, dialogOut);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    .md-card__inner {
+    /*.md-card__inner {
         overflow: hidden;
         animation-name: var(--md-comp-sheet-animation, dialogInnerOut);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
         animation-duration: var(--md-sys-motion-duration-short4);
-    }
+    }*/
     &[open] {
         visibility: visible;
         animation-name: var(--md-comp-sheet-animation, dialogIn);
@@ -89,7 +89,7 @@
             animation-name: var(--md-comp-sheet-animation, dialogInnerIn);
         }
     }
-    .md-card__header {
+    /*.md-card__header {
         flex-direction: column;
         align-items: flex-start;
         padding: 24px;
@@ -105,18 +105,18 @@
                 @include typescale-headline-small();
             }
         }
-    }
-    .md-card__inner {
+    }*/
+    /*.md-card__inner {
         padding: 0 24px;
         margin: 24px 0;
         + .md-card__footer {
             margin-top: -24px;
         }
-    }
-    .md-card__footer {
+    }*/
+    /*.md-card__footer {
         padding: 24px;
         gap: 0 8px;
-    }
+    }*/
 }
 .md-dialog.md-card--full {
     width: 100%;
@@ -130,7 +130,7 @@
     &[open] {
         animation-name: var(--md-comp-sheet-animation, dialogFullIn);
     }
-    .md-card__header {
+    /*.md-card__header {
         flex-direction: row;
         padding: 8px 24px;
         + .md-card__body {
@@ -141,5 +141,5 @@
                 @include typescale-title-large();
             }
         }
-    }
+    }*/
 }

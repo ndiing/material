@@ -49,13 +49,13 @@
             animation-duration: var(--md-sys-motion-duration-short4);
         }
     }
-    .md-card__body {
+    /*.md-card__body {
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 0 8px 0;
         gap: 4px 0;
-    }
-    .md-card__inner {
+    }*/
+    /*.md-card__inner {
         flex: 1 0 64%;
         padding: 0 0 0 16px;
         margin: 14px 0 6px 0;
@@ -63,8 +63,8 @@
         + .md-card__footer {
             margin-top: 0;
         }
-    }
-    .md-card__footer {
+    }*/
+    /*.md-card__footer {
         padding: 8px 8px 0 0;
         gap: 0 8px;
         margin-left: auto;
@@ -87,5 +87,5 @@
                 }
             }
         }
-    }
+    }*/
 }

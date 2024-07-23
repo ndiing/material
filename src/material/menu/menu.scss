@@ -66,10 +66,10 @@
             animation-name: var(--md-comp-sheet-animation, menuInnerIn);
         }
     }
-    .md-card__inner {
+    /*.md-card__inner {
         padding: 0;
         margin: 0;
-    }
+    }*/
     + .md-scrim {
         opacity: 0;
     }

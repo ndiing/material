@@ -16,11 +16,11 @@
         box-shadow: var(--md-sys-elevation-level2);
         animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
     }
-    .md-card__inner {
+    /*.md-card__inner {
         overflow: hidden;
         padding: 0;
         margin: 0;
-    }
+    }*/
 }
 .md-navigation-bar__tree {
     flex-direction: row;
