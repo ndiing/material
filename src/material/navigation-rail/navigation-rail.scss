@@ -1,16 +1,16 @@
 .md-navigation-rail {
     --md-comp-sheet-width: 80px;
-    grid-area: west;
     display: inline-flex;
-    min-width: var(--md-comp-sheet-width);
-    margin-left: calc(0px - var(--md-comp-sheet-width));
-    border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
+    border-radius: var(--md-sys-shape-corner-none);
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
-    animation-name: var(--md-comp-sheet-animation, sheetWestOut);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
+    grid-area: west;
+    min-width: var(--md-comp-sheet-width);
+    margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
+    animation-name: var(--md-comp-sheet-animation, sheetWestOut);
     &[open] {
         margin-left: 0;
         animation-name: var(--md-comp-sheet-animation, sheetWestIn);
