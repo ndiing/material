@@ -13,29 +13,29 @@
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
     user-select: none;
-    /*.md-card__header {
+    .md-card__header {
         padding: 16px 16px;
         gap: 0 16px;
-        + .md-card__body {
-            margin-top: 0;
-        }
         > .md-block__group {
             > .md-block__headline {
                 @include typescale-title-large();
             }
         }
-    }*/
-    /*.md-card__inner {
+        + .md-card__body {
+            margin-top: 0;
+        }
+    }
+    .md-card__inner {
         padding: 0;
         margin: 0;
         + .md-card__footer {
             margin-top: 0;
         }
-    }*/
-    /*.md-card__footer {
+    }
+    .md-card__footer {
         padding: 16px 16px;
         gap: 0 8px;
-    }*/
+    }
 }
 .md-data-table__item {
     display: flex;

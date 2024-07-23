@@ -15,10 +15,10 @@
         margin-left: 0;
         animation-name: var(--md-comp-sheet-animation, sheetWestIn);
     }
-    /*.md-card__inner {
+    .md-card__inner {
         padding: 0;
         margin: 0;
-    }*/
+    }
 }
 .md-navigation-rail__tree {
     gap: 12px 0;
