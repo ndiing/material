@@ -45,7 +45,7 @@ class DevMainComponent extends MDComponent {
                 items: [
                     { label: "Bottom App Bar", routerLink: "/bottom-app-bar" },
                     { label: "Bottom Sheet", routerLink: "/bottom-sheet" },
-                    { label: "Box", routerLink: "/box" },
+                    // { label: "Box", routerLink: "/box" },
                     { label: "Card", routerLink: "/card" },
                     { label: "Dialog", routerLink: "/dialog" },
                     { label: "Scrim", routerLink: "/scrim" },
@@ -62,7 +62,7 @@ class DevMainComponent extends MDComponent {
                 items: [
                     { label: "Attribute Observer", routerLink: "/attribute-observer" },
                     { label: "Color", routerLink: "/color" },
-                    { label: "Component", routerLink: "/component" },
+                    // { label: "Component", routerLink: "/component" },
                     { label: "Functions", routerLink: "/functions" },
                     { label: "Gesture", routerLink: "/gesture" },
                     { label: "Localization", routerLink: "/localization" },
@@ -73,7 +73,7 @@ class DevMainComponent extends MDComponent {
                     { label: "Ripple", routerLink: "/ripple" },
                     { label: "Router", routerLink: "/router" },
                     { label: "Store", routerLink: "/store" },
-                    { label: "Template", routerLink: "/template" },
+                    // { label: "Template", routerLink: "/template" },
                     { label: "Virtual", routerLink: "/virtual" },
                 ],
             },
