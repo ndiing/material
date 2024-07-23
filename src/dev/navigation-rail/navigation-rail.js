@@ -13,7 +13,7 @@ class DevNavigationRail extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-navigation-rail id="navigationRail0" .items="${items0}"></md-navigation-rail>
+                <md-navigation-rail open id="navigationRail0" .items="${items0}"></md-navigation-rail>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">
                         <md-navigation-rail id="navigationRail1" .items="${items1}"></md-navigation-rail>

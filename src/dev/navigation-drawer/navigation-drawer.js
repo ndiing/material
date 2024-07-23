@@ -13,7 +13,7 @@ class DevNavigationDrawer extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-navigation-drawer id="navigationDrawer0" .items="${items0}"></md-navigation-drawer>
+                <md-navigation-drawer open id="navigationDrawer0" .items="${items0}"></md-navigation-drawer>
 
                 <md-navigation-drawer id="navigationDrawer1" variant="modal" .items="${items1}"></md-navigation-drawer>
 

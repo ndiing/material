@@ -5,10 +5,10 @@ class DevSheet extends MDComponent {
     render() {
         return html`
             <md-layout variant="border">
-                <md-sheet id="north" variant="north" headline="north"></md-sheet>
-                <md-sheet id="east" variant="east" headline="east"></md-sheet>
-                <md-sheet id="south" variant="south" headline="south"></md-sheet>
-                <md-sheet id="west" variant="west" headline="west"></md-sheet>
+                <md-sheet open style="--md-comp-sheet-height:80px;" id="north" variant="north" headline="north"></md-sheet>
+                <md-sheet open style="--md-comp-sheet-width:360px;" id="east" variant="east" headline="east"></md-sheet>
+                <md-sheet open style="--md-comp-sheet-height:80px;" id="south" variant="south" headline="south"></md-sheet>
+                <md-sheet open style="--md-comp-sheet-width:360px;" id="west" variant="west" headline="west"></md-sheet>
                 <md-layout-item region="center">
                     <md-layout variant="column">
                         <md-layout-item expanded="12" medium="8" compact="4">

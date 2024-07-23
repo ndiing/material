@@ -10,10 +10,10 @@ class DevSideSheet extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button label="toggle side sheet" variant="tonal" @click="${() => sideSheet0.toggle()}"></md-button>
+                            <md-button label="Standard side sheet" variant="tonal" @click="${() => sideSheet0.toggle()}"></md-button>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-button label="toggle side sheet" variant="tonal" @click="${() => sideSheet1.toggle(true)}"></md-button>
+                            <md-button label="Modal side sheet" variant="tonal" @click="${() => sideSheet1.toggle(true)}"></md-button>
                         </div>
                     </div>
                 </div>

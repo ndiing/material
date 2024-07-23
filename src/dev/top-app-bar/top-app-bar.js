@@ -18,16 +18,16 @@ class DevTopAppBar extends MDComponent {
                                         <div class="md-layout-border__item md-layout-border__item--center">
                                             <div class="md-layout-column">
                                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                                    <md-button variant="tonal" label="toggle top app bar" @click="${() => center.toggle()}"></md-button>
+                                                    <md-button variant="tonal" label="Center-aligned" @click="${() => center.toggle()}"></md-button>
                                                 </div>
                                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                                    <md-button variant="tonal" label="toggle top app bar" @click="${() => small.toggle()}"></md-button>
+                                                    <md-button variant="tonal" label="Small" @click="${() => small.toggle()}"></md-button>
                                                 </div>
                                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                                    <md-button variant="tonal" label="toggle top app bar" @click="${() => medium.toggle()}"></md-button>
+                                                    <md-button variant="tonal" label="Medium" @click="${() => medium.toggle()}"></md-button>
                                                 </div>
                                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                                    <md-button variant="tonal" label="toggle top app bar" @click="${() => large.toggle()}"></md-button>
+                                                    <md-button variant="tonal" label="Large" @click="${() => large.toggle()}"></md-button>
                                                 </div>
                                             </div>
                                         </div>

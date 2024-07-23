@@ -13,7 +13,7 @@ class DevNavigationBar extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-navigation-bar id="navigationBar0" .items="${items0}"></md-navigation-bar>
+                <md-navigation-bar open id="navigationBar0" .items="${items0}"></md-navigation-bar>
 
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">

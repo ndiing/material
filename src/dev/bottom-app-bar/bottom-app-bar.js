@@ -26,7 +26,7 @@ class DevBottomAppBar extends MDComponent {
         return html`
             <div class="md-layout-border">
                 <!-- bottomAppBar0 -->
-                <md-bottom-app-bar id="bottomAppBar0" .leadingActions="${actions0}" .trailingActions="${actions1}"></md-bottom-app-bar>
+                <md-bottom-app-bar open id="bottomAppBar0" .leadingActions="${actions0}" .trailingActions="${actions1}"></md-bottom-app-bar>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">
                         <!-- bottomAppBar1 -->
@@ -34,10 +34,10 @@ class DevBottomAppBar extends MDComponent {
                         <div class="md-layout-border__item md-layout-border__item--center">
                             <div class="md-layout-column">
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                    <md-button label="show bottom app bar" variant="tonal" @click="${() => bottomAppBar0.toggle()}"></md-button>
+                                    <md-button label="Icon buttons and FAB " variant="tonal" @click="${() => bottomAppBar0.toggle()}"></md-button>
                                 </div>
                                 <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                                    <md-button label="show bottom app bar" variant="tonal" @click="${() => bottomAppBar1.toggle()}"></md-button>
+                                    <md-button label="Icon buttons and no FAB" variant="tonal" @click="${() => bottomAppBar1.toggle()}"></md-button>
                                 </div>
                             </div>
                         </div>
