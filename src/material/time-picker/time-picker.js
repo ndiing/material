@@ -61,7 +61,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
         } else if (this.index === 1) {
             label = stringifyTime(this.selection);
         }
-        return [{ component: "button", variant: "icon-right", icon: "arrow_drop_down", label, onButtonClick: this.handleCardButtonLabelClick.bind(this) }];
+        return [{ component: "button", label, onButtonClick: this.handleCardButtonLabelClick.bind(this) }];
     }
 
     /**
