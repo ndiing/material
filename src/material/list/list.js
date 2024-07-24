@@ -57,8 +57,10 @@ class MDListComponent extends MDComponent {
     renderListSection(item = {}) {
         return html`
             <div class="md-block md-list__section">
-                <div class="md-block__group">
-                    <div class="md-block__headline">${item.section}</div>
+                <div class="md-block__inner">
+                    <div class="md-block__group">
+                        <div class="md-block__headline">${item.section}</div>
+                    </div>
                 </div>
             </div>
         `;
