@@ -815,3 +815,100 @@
         @include typescale-body-small();
     }
 }
+@keyframes _snackbarIn {
+    0% {
+        visibility: visible;
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: var(--md-comp-pane-height);
+
+        opacity: 1;
+    }
+}
+@keyframes _snackbarOut {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+@keyframes _snackbarBodyIn {
+    0% {
+        overflow: hidden;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+@keyframes _snackbarBodyOut {
+    0% {
+        overflow: hidden;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+.md-pane--snackbar {
+    display: inline-flex;
+    width: 344px;
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+    box-shadow: var(--md-sys-elevation-level3);
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    z-index: 7;
+    visibility: hidden;
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+    animation-duration: var(--md-sys-motion-duration-short4);
+    animation-name: var(--md-comp-pane-animation, _snackbarOut);
+    &[open] {
+        visibility: visible;
+        animation-name: var(--md-comp-pane-animation, _snackbarIn);
+        .md-pane__body {
+            overflow: auto;
+            animation-name: var(--md-comp-pane-animation, _snackbarBodyIn);
+        }
+    }
+    .md-pane__wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4px 0;
+        gap: 4px 0;
+    }
+    .md-pane__body {
+        flex: 1 0 64%;
+        padding: 0 16px 0 16px;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+        @include typescale-body-medium();
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+        animation-duration: var(--md-sys-motion-duration-short4);
+        animation-name: var(--md-comp-pane-animation, _snackbarBodyOut);
+        + .md-pane__footer {
+            margin-top: 0;
+        }
+    }
+    .md-pane__footer {
+        min-height: auto;
+        padding: 0 8px 0 0;
+        gap: 0 12px;
+        margin-left: auto;
+        background-color: inherit;
+        color: inherit;
+        .md-button {
+            color: var(--md-sys-color-inverse-primary);
+            &.md-ripple {
+                &::after {
+                    background-color: var(--md-sys-color-surface);
+                }
+            }
+        }
+    }
+}

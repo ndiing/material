@@ -24,6 +24,29 @@ class DevBlock extends MDComponent {
 
                     <md-layout variant="column">
                         <md-layout-item expanded="3" medium="8" compact="4">
+                            <md-pane id="snackbar0" class="md-pane--snackbar" style="--md-comp-pane-width: 360px;--md-comp-pane-height:456px;">Lorem ipsum dolor sit.</md-pane>
+                            <md-button variant="tonal" label="snackbar0" @click="${() => snackbar0.toggle()}"></md-button>
+                        </md-layout-item>
+                        <md-layout-item expanded="3" medium="8" compact="4">
+                            <md-pane id="snackbar1" class="md-pane--snackbar" style="--md-comp-pane-width: 360px;--md-comp-pane-height:456px;" actions='[{"label":"label"}]'>Lorem ipsum dolor sit.</md-pane>
+                            <md-button variant="tonal" label="snackbar1" @click="${() => snackbar1.toggle()}"></md-button>
+                        </md-layout-item>
+                        <md-layout-item expanded="3" medium="8" compact="4">
+                            <md-pane id="snackbar2" class="md-pane--snackbar" style="--md-comp-pane-width: 360px;--md-comp-pane-height:456px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</md-pane>
+                            <md-button variant="tonal" label="snackbar2" @click="${() => snackbar2.toggle()}"></md-button>
+                        </md-layout-item>
+                        <md-layout-item expanded="3" medium="8" compact="4">
+                            <md-pane id="snackbar3" class="md-pane--snackbar" style="--md-comp-pane-width: 360px;--md-comp-pane-height:456px;" actions='[{"label":"label"}]'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</md-pane>
+                            <md-button variant="tonal" label="snackbar3" @click="${() => snackbar3.toggle()}"></md-button>
+                        </md-layout-item>
+                        <md-layout-item expanded="3" medium="8" compact="4">
+                            <md-pane id="snackbar4" class="md-pane--snackbar" style="--md-comp-pane-width: 360px;--md-comp-pane-height:456px;" actions='[{"label":"label label label"}]'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</md-pane>
+                            <md-button variant="tonal" label="snackbar4" @click="${() => snackbar4.toggle()}"></md-button>
+                        </md-layout-item>
+                    </md-layout>
+
+                    <md-layout variant="column">
+                        <md-layout-item expanded="3" medium="8" compact="4">
                             <md-pane
                                 id="tooltip0"
                                 class="md-pane--tooltip"
