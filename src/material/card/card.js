@@ -52,8 +52,8 @@ class MDCardComponent extends MDComponent {
                 trailingActions: this.trailingActions,
             }):nothing}
             ${this.childNodes_?.length || this.actions?.length?html`
-                <div class="md-card__body">
-                    ${this.childNodes_?.length ? html`<div class="md-card__inner">${this.childNodes_}</div>` : nothing}
+                <div class="md-card__wrapper">
+                    ${this.childNodes_?.length ? html`<div class="md-card__body">${this.childNodes_}</div>` : nothing}
                     ${this.actions?.length ? renderCardFooter({
                         defaultTrailingActionComponent: 'button',
                         trailingActions:this.actions

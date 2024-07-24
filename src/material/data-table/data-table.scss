@@ -21,11 +21,11 @@
                 @include typescale-title-large();
             }
         }
-        + .md-card__body {
+        + .md-card__wrapper {
             margin-top: 0;
         }
     }
-    .md-card__inner {
+    .md-card__body {
         padding: 0;
         margin: 0;
         + .md-card__footer {

@@ -142,11 +142,11 @@
                 @include typescale-title-large();
             }
         }
-        + .md-card__body {
+        + .md-card__wrapper {
             margin-top: -24px;
         }
     }
-    .md-card__inner {
+    .md-card__body {
         padding: 0 24px;
         margin: 24px 0;
         + .md-card__footer {
@@ -205,7 +205,7 @@
     .md-card__header {
         padding: 24px 24px 24px 16px;
     }
-    .md-card__inner {
+    .md-card__body {
         padding: 0 24px 0 16px;
     }
     .md-card__footer {

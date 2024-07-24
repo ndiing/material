@@ -75,7 +75,7 @@
     animation-name: var(--md-comp-sheet-animation, dialogOut);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    .md-card__inner {
+    .md-card__body {
         overflow: hidden;
         animation-name: var(--md-comp-sheet-animation, dialogInnerOut);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
@@ -84,7 +84,7 @@
     &[open] {
         visibility: visible;
         animation-name: var(--md-comp-sheet-animation, dialogIn);
-        .md-card__inner {
+        .md-card__body {
             overflow: auto;
             animation-name: var(--md-comp-sheet-animation, dialogInnerIn);
         }
@@ -101,11 +101,11 @@
         > .md-block__group {
             align-self: flex-start;
         }
-        + .md-card__body {
+        + .md-card__wrapper {
             margin-top: -32px;
         }
     }
-    .md-card__inner {
+    .md-card__body {
         padding: 0 24px;
         margin: 24px 0;
         + .md-card__footer {
@@ -137,7 +137,7 @@
         > .md-block__group {
             align-self: center;
         }
-        + .md-card__body {
+        + .md-card__wrapper {
             margin-top: -24px;
         }
     }

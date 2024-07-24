@@ -62,11 +62,11 @@
                 gap: 0;
             }
         }
-        + .md-card__body {
+        + .md-card__wrapper {
             margin-top: -4px;
         }
     }
-    .md-card__inner {
+    .md-card__body {
         overflow: hidden;
         padding: 0;
         margin: 0;

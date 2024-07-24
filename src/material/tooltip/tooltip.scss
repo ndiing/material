@@ -23,11 +23,11 @@
                 @include typescale-title-small();
             }
         }
-        + .md-card__body {
+        + .md-card__wrapper {
             margin-top: -20px;
         }
     }
-    .md-card__inner {
+    .md-card__body {
         padding: 0 16px;
         margin: 12px 0;
         + .md-card__footer {
@@ -51,7 +51,7 @@
     color: var(--md-sys-color-inverse-on-surface);
     box-shadow: var(--md-sys-elevation-level0);
     pointer-events: none;
-    .md-card__inner {
+    .md-card__body {
         padding: 0 8px;
         margin: 4px 0;
         @include typescale-body-small();
