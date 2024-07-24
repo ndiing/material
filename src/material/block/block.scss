@@ -518,7 +518,6 @@
     }
     .md-pane__header {
         flex-direction: row;
-        min-height: 56px;
         padding: 8px 24px;
         + .md-pane__wrapper {
             margin-top: -24px;
@@ -591,7 +590,6 @@
         }
     }
     .md-pane__header {
-        flex-direction: column;
         padding: 24px;
         gap: 16px 24px;
         background-color: inherit;
@@ -684,7 +682,6 @@
         }
     }
     .md-pane__header {
-        flex-direction: column;
         padding: 24px;
         gap: 16px 24px;
         background-color: inherit;
@@ -709,5 +706,112 @@
         gap: 0 8px;
         background-color: inherit;
         color: inherit;
+    }
+}
+@keyframes _tooltipIn {
+    0% {
+        visibility: visible;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes _tooltipOut {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+@keyframes _tooltipBodyIn {
+    0% {
+        overflow: hidden;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+@keyframes _tooltipBodyOut {
+    0% {
+        overflow: hidden;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+.md-pane--tooltip {
+    display: inline-flex;
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level2);
+    position: absolute;
+    z-index: 7;
+    visibility: hidden;
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+    animation-duration: var(--md-sys-motion-duration-short4);
+    animation-name: var(--md-comp-pane-animation, _tooltipOut);
+    pointer-events: none;
+    &[open] {
+        visibility: visible;
+        animation-name: var(--md-comp-pane-animation, _tooltipIn);
+        .md-pane__body {
+            overflow: auto;
+            animation-name: var(--md-comp-pane-animation, _tooltipBodyIn);
+        }
+    }
+    .md-pane__header {
+        min-height: auto;
+        padding: 12px 16px;
+        gap: 16px 16px;
+        background-color: inherit;
+        color: inherit;
+        + .md-pane__wrapper {
+            margin-top: -20px;
+        }
+        .md-block__headline {
+            @include typescale-title-small();
+        }
+    }
+    .md-pane__body {
+        padding: 0 16px;
+        margin: 12px 0;
+        overflow: hidden;
+        @include typescale-body-medium();
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+        animation-duration: var(--md-sys-motion-duration-short4);
+        animation-name: var(--md-comp-pane-animation, _tooltipBodyOut);
+        + .md-pane__footer {
+            margin-top: -8px;
+        }
+    }
+    .md-pane__footer {
+        padding: 8px 16px;
+        gap: 0 40px;
+        background-color: inherit;
+        color: inherit;
+        .md-button {
+            pointer-events: all;
+        }
+        .md-button__native {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    }
+}
+.md-pane--tooltip.md-pane--plain {
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+    box-shadow: var(--md-sys-elevation-level0);
+    .md-pane__body {
+        padding: 0 8px;
+        margin: 4px 0;
+        overflow: hidden;
+        @include typescale-body-small();
     }
 }
