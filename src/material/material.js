@@ -49,6 +49,7 @@ import { MDSelectFieldComponent } from "./select-field/select-field.js";
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
 // card
 import { MDBlockComponent } from "./block/block.js";
+import { MDPaneComponent } from "./pane/pane.js";
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
 import { MDCardHeaderComponent } from "./card-header/card-header.js";
 import { MDCardFooterComponent } from "./card-footer/card-footer.js";
