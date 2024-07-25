@@ -1,5 +1,4 @@
 import { html } from "lit";
-import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
 import { MDPaneComponent } from "../pane/pane.js";
 
@@ -22,9 +21,11 @@ class MDNavigationDrawerComponent extends MDPaneComponent {
      * @property {Boolean} open - {{desc}}
      */
     static properties = {
-        ...MDSheetComponent.properties,
+        ...MDPaneComponent.properties,
         ...MDTreeComponent.properties,
     };
+
+    variants = ["modal"];
 
     /**
      * {{desc}}

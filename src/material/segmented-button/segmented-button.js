@@ -11,13 +11,13 @@ class MDSegmentedButtonComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
-     * @property {Array} buttons - {{desc}}
+     * @property {Array} items - {{desc}}
      * @property {Boolean} singleSelection - {{desc}}
      * @property {Boolean} multiSelection - {{desc}}
      */
     static properties = {
         ...MDComponent.properties,
-        buttons: { type: Array },
+        items: { type: Array },
         singleSelection: { type: Boolean },
         multiSelection: { type: Boolean },
     };
@@ -27,7 +27,7 @@ class MDSegmentedButtonComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return this.buttons.map(item => {
+        return this.items.map(item => {
             item.classMap={'md-segmented-button__item':true}
             item.variant=item.variant||'outlined'
             item.icon=item.selected?'check':''
@@ -54,7 +54,7 @@ class MDSegmentedButtonComponent extends MDComponent {
             if (this.multiSelection) {
                 data.selected = !data.selected;
             } else if (this.singleSelection) {
-                this.buttons.forEach((item) => {
+                this.items.forEach((item) => {
                     item.selected = item === data;
                 });
             }

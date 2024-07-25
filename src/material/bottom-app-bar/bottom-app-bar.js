@@ -1,12 +1,12 @@
-import { MDSheetComponent } from "../sheet/sheet.js";
+import { MDPaneComponent } from "../material.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-bottom-app-bar
  * @fires MDBottomAppBarComponent#onScrimClick - {{desc}}
  */
-class MDBottomAppBarComponent extends MDSheetComponent {
+class MDBottomAppBarComponent extends MDPaneComponent {
     /**
      * {{desc}}
      */

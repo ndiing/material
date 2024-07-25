@@ -1,5 +1,4 @@
 import { html } from "lit";
-import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDPopperController } from "../popper/popper.js";
 import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
@@ -34,7 +33,7 @@ class MDMenuComponent extends MDPaneComponent {
      * @property {Number} maxRows - {{desc}}
      */
     static properties = {
-        ...MDSheetComponent.properties,
+        ...MDPaneComponent.properties,
         ...MDListComponent.properties,
         items: { type: Array },
         rowHeight: { type: Number },

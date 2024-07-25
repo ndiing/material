@@ -20,6 +20,7 @@ class MDProgressIndicatorComponent extends MDComponent {
         value: { type: Number },
         max: { type: Number },
     };
+
     variants = ["circular", "linear"];
 
     /**

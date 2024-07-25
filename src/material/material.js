@@ -53,14 +53,14 @@ import { MDPaneComponent } from "./pane/pane.js";
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
 import { MDCardComponent } from "./card/card.js";
 import { MDScrimComponent } from "./scrim/scrim.js";
+import { MDDialogComponent } from "./dialog/dialog.js";
+import { MDSnackbarComponent } from "./snackbar/snackbar.js";
+import { MDTooltipComponent } from "./tooltip/tooltip.js";
 import { MDSheetComponent } from "./sheet/sheet.js";
 import { MDSideSheetComponent } from "./side-sheet/side-sheet.js";
 import { MDBottomSheetComponent } from "./bottom-sheet/bottom-sheet.js";
 import { MDTopAppBarComponent } from "./top-app-bar/top-app-bar.js";
 import { MDBottomAppBarComponent } from "./bottom-app-bar/bottom-app-bar.js";
-import { MDDialogComponent } from "./dialog/dialog.js";
-import { MDSnackbarComponent } from "./snackbar/snackbar.js";
-import { MDTooltipComponent } from "./tooltip/tooltip.js";
 // picker
 import { MDDatetimePickerComponent } from "./datetime-picker/datetime-picker.js";
 import { MDDatePickerComponent } from "./date-picker/date-picker.js";

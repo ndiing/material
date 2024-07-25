@@ -1,36 +1,7 @@
-@keyframes datetimePickerIn {
-    0% {
-        visibility: visible;
-        height: calc(456px - (56px * 2));
-        transform: translate3d(0, 56px, 0);
-        opacity: 0;
-    }
-    100% {
-        height: 456px;
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-    }
-}
-@keyframes datetimePickerOut {
-    0% {
-        visibility: visible;
-        opacity: 1;
-    }
-    100% {
-        visibility: hidden;
-        opacity: 0;
-    }
-}
-@keyframes datetimePickerWrapperIn {
-    0% {
-        transform: translate3d(0, -56px, 0);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-}
 .md-datetime-picker {
     display: inline-flex;
+    width: 360px;
+    height: 456px;
     border-radius: var(--md-sys-shape-corner-large);
     background-color: var(--md-sys-color-surface-container-high);
     color: var(--md-sys-color-on-surface-variant);
@@ -38,46 +9,41 @@
     position: absolute;
     z-index: 7;
     visibility: hidden;
-    animation-name: var(--md-comp-sheet-animation, datetimePickerOut);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
+    animation-name: var(--md-comp-pane-animation, pickerOut);
     &[open] {
         visibility: visible;
-        animation-name: var(--md-comp-sheet-animation, datetimePickerIn);
-        > * {
-            animation-name: var(--md-comp-sheet-animation, datetimePickerWrapperIn);
-            animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
-            animation-duration: var(--md-sys-motion-duration-short4);
+        animation-name: var(--md-comp-pane-animation, pickerIn);
+        .md-pane__body {
+            overflow: auto;
+            animation-name: var(--md-comp-pane-animation, pickerBodyIn);
         }
     }
-    + .md-scrim {
-        opacity: 0;
-    }
-    .md-card__header {
-        padding: 12px 12px;
-        gap: 0 24px;
-        > .md-button {
-            color: var(--md-sys-color-on-surface-variant);
-            > .md-button__native {
-                gap: 0;
-            }
-        }
-        + .md-card__wrapper {
+    .md-pane__header {
+        padding: 12px;
+        + .md-pane__wrapper {
             margin-top: -4px;
         }
     }
-    .md-card__body {
-        overflow: hidden;
+    .md-pane__body {
+        flex: 1;
         padding: 0;
         margin: 0;
-        @include typescale-body-large();
-        + .md-card__footer {
+        overflow: hidden;
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
+        animation-duration: var(--md-sys-motion-duration-short4);
+        animation-name: var(--md-comp-pane-animation, dialogBodyOut);
+        + .md-pane__footer {
             margin-top: -4px;
         }
     }
-    .md-card__footer {
-        padding: 12px 12px;
-        gap: 0 8px;
+    .md-pane__footer {
+        padding: 12px;
+        .md-block__section--start {
+            flex: 1;
+            gap: 0 8px;
+        }
     }
 }
 .md-datetime-picker__card {

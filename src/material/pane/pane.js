@@ -29,6 +29,7 @@ class MDPaneComponent extends MDComponent {
         actions: { type: Array },
         open: { type: Boolean, reflect: true },
     };
+
     variants = [];
 
     /**

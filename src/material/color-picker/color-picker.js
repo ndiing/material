@@ -1,11 +1,11 @@
 import { html } from "lit";
-import { MDSheetComponent } from "../sheet/sheet.js";
 import { hexToHsla, hslaToRgba, rgbaToHex, rgbaToHsla } from "../functions/functions.js";
 import { MDPopperController } from "../popper/popper.js";
+import { MDPaneComponent } from "../material.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-color-picker
  * @fires MDColorPickerComponent#onScrimClick - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerButtonLabelClick - {{desc}}
@@ -18,7 +18,7 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDColorPickerComponent#onColorPickerButtonCancelClick - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerButtonOkClick - {{desc}}
  */
-class MDColorPickerComponent extends MDSheetComponent {
+class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -32,7 +32,7 @@ class MDColorPickerComponent extends MDSheetComponent {
      * @property {String} value - {{desc}}
      */
     static properties = {
-        ...MDSheetComponent.properties,
+        ...MDPaneComponent.properties,
         value: { type: String },
     };
 

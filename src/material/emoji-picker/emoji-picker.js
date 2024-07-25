@@ -1,14 +1,14 @@
 import { html, nothing } from "lit";
-import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDPopperController } from "../popper/popper.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { MDStore } from "../store/store.js";
 import data from "../../assets/emojis.json";
+import { MDPaneComponent } from "../material.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-emoji-picker
  * @fires MDEmojiPickerComponent#onScrimClick - {{desc}}
  * @fires MDEmojiPickerComponent#onEmojiPickerTextFieldNativeInput - {{desc}}
@@ -19,7 +19,7 @@ import data from "../../assets/emojis.json";
  * @fires MDEmojiPickerComponent#onEmojiPickerButtonCancelClick - {{desc}}
  * @fires MDEmojiPickerComponent#onEmojiPickerButtonOkClick - {{desc}}
  */
-class MDEmojiPickerComponent extends MDSheetComponent {
+class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -34,7 +34,7 @@ class MDEmojiPickerComponent extends MDSheetComponent {
      * @property {Array} rows - {{desc}}
      */
     static properties = {
-        ...MDSheetComponent.properties,
+        ...MDPaneComponent.properties,
         tabs: { type: Object },
         rows: { type: Array },
     };

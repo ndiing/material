@@ -1,11 +1,11 @@
 import { html, nothing } from "lit";
-import { MDSheetComponent } from "../sheet/sheet.js";
 import { parseDatetimeLocal, stringifyDatetimeLocal, stringifyTime, stringifyYear } from "../functions/functions.js";
 import { MDPopperController } from "../popper/popper.js";
+import { MDPaneComponent } from "../material.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-datetime-picker
  * @fires MDDatetimePickerComponent#onScrimClick - {{desc}}
  * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{desc}}
@@ -20,7 +20,7 @@ import { MDPopperController } from "../popper/popper.js";
  * @fires MDDatetimePickerComponent#onDatetimePickerHourItemClick - {{desc}}
  * @fires MDDatetimePickerComponent#onDatetimePickerMinuteItemClick - {{desc}}
  */
-class MDDatetimePickerComponent extends MDSheetComponent {
+class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
@@ -35,7 +35,7 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * @property {String} value - {{desc}}
      */
     static properties = {
-        ...MDSheetComponent.properties,
+        ...MDPaneComponent.properties,
         index: { type: Number },
         value: { type: String },
     };

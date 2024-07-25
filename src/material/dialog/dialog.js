@@ -1,12 +1,12 @@
-import { MDSheetComponent } from "../sheet/sheet.js";
+import { MDPaneComponent } from "../material.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-dialog
  * @fires MDDialogComponent#onScrimClick - {{desc}}
  */
-class MDDialogComponent extends MDSheetComponent {
+class MDDialogComponent extends MDPaneComponent {
     variants = ["full-screen"];
 
     /**
