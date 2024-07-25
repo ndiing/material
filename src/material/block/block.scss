@@ -129,7 +129,7 @@
     }
 }
 /* sheet */
-@keyframes _sheetNorthIn {
+@keyframes sheetNorthIn {
     0% {
         margin-top: calc(0px - var(--md-comp-pane-height, 100vh));
     }
@@ -137,7 +137,7 @@
         margin-top: 0;
     }
 }
-@keyframes _sheetNorthOut {
+@keyframes sheetNorthOut {
     0% {
         margin-top: 0;
     }
@@ -145,7 +145,7 @@
         margin-top: calc(0px - var(--md-comp-pane-height, 100vh));
     }
 }
-@keyframes _sheetSouthIn {
+@keyframes sheetSouthIn {
     0% {
         margin-bottom: calc(0px - var(--md-comp-pane-height, 100vh));
     }
@@ -153,7 +153,7 @@
         margin-bottom: 0;
     }
 }
-@keyframes _sheetSouthOut {
+@keyframes sheetSouthOut {
     0% {
         margin-bottom: 0;
     }
@@ -161,7 +161,7 @@
         margin-bottom: calc(0px - var(--md-comp-pane-height, 100vh));
     }
 }
-@keyframes _sheetWestIn {
+@keyframes sheetWestIn {
     0% {
         margin-left: calc(0px - var(--md-comp-pane-width, 100vh));
     }
@@ -169,7 +169,7 @@
         margin-left: 0;
     }
 }
-@keyframes _sheetWestOut {
+@keyframes sheetWestOut {
     0% {
         margin-left: 0;
     }
@@ -177,7 +177,7 @@
         margin-left: calc(0px - var(--md-comp-pane-width, 100vh));
     }
 }
-@keyframes _sheetEastIn {
+@keyframes sheetEastIn {
     0% {
         margin-right: calc(0px - var(--md-comp-pane-width, 100vh));
     }
@@ -185,7 +185,7 @@
         margin-right: 0;
     }
 }
-@keyframes _sheetEastOut {
+@keyframes sheetEastOut {
     0% {
         margin-right: 0;
     }
@@ -193,7 +193,7 @@
         margin-right: calc(0px - var(--md-comp-pane-width, 100vh));
     }
 }
-@keyframes _sheetNorthModalIn {
+@keyframes sheetNorthModalIn {
     0% {
         transform: translate3d(0, -100%, 0);
     }
@@ -201,7 +201,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
-@keyframes _sheetNorthModalOut {
+@keyframes sheetNorthModalOut {
     0% {
         transform: translate3d(0, 0, 0);
     }
@@ -209,7 +209,7 @@
         transform: translate3d(0, -100%, 0);
     }
 }
-@keyframes _sheetEastModalIn {
+@keyframes sheetEastModalIn {
     0% {
         transform: translate3d(100%, 0, 0);
     }
@@ -217,7 +217,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
-@keyframes _sheetEastModalOut {
+@keyframes sheetEastModalOut {
     0% {
         transform: translate3d(0, 0, 0);
     }
@@ -225,7 +225,7 @@
         transform: translate3d(100%, 0, 0);
     }
 }
-@keyframes _sheetSouthModalIn {
+@keyframes sheetSouthModalIn {
     0% {
         transform: translate3d(0, 100%, 0);
     }
@@ -233,7 +233,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
-@keyframes _sheetSouthModalOut {
+@keyframes sheetSouthModalOut {
     0% {
         transform: translate3d(0, 0, 0);
     }
@@ -241,7 +241,7 @@
         transform: translate3d(0, 100%, 0);
     }
 }
-@keyframes _sheetWestModalIn {
+@keyframes sheetWestModalIn {
     0% {
         transform: translate3d(-100%, 0, 0);
     }
@@ -249,7 +249,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
-@keyframes _sheetWestModalOut {
+@keyframes sheetWestModalOut {
     0% {
         transform: translate3d(0, 0, 0);
     }
@@ -257,7 +257,7 @@
         transform: translate3d(-100%, 0, 0);
     }
 }
-@keyframes _dialogIn {
+@keyframes dialogIn {
     0% {
         visibility: visible;
         height: calc(var(--md-comp-pane-height) - 88px);
@@ -270,7 +270,7 @@
         opacity: 1;
     }
 }
-@keyframes _dialogOut {
+@keyframes dialogOut {
     0% {
         visibility: visible;
         transform: translate3d(-50%, -50%, 0);
@@ -282,7 +282,7 @@
         opacity: 0;
     }
 }
-@keyframes _dialogBodyIn {
+@keyframes dialogBodyIn {
     0% {
         overflow: hidden;
     }
@@ -290,7 +290,7 @@
         overflow: hidden;
     }
 }
-@keyframes _dialogBodyOut {
+@keyframes dialogBodyOut {
     0% {
         overflow: hidden;
     }
@@ -298,7 +298,7 @@
         overflow: hidden;
     }
 }
-@keyframes _dialogFullScreenIn {
+@keyframes dialogFullScreenIn {
     0% {
         visibility: visible;
         transform: translate3d(-50%, -100%, 0);
@@ -307,7 +307,7 @@
         transform: translate3d(-50%, -50%, 0);
     }
 }
-@keyframes _dialogFullScreenOut {
+@keyframes dialogFullScreenOut {
     0% {
         visibility: visible;
         transform: translate3d(-50%, -50%, 0);
@@ -317,7 +317,7 @@
         transform: translate3d(-50%, 50%, 0);
     }
 }
-@keyframes _menuIn {
+@keyframes menuIn {
     0% {
         visibility: visible;
         height: 64px;
@@ -328,7 +328,7 @@
         opacity: 1;
     }
 }
-@keyframes _menuOut {
+@keyframes menuOut {
     0% {
         visibility: visible;
         height: var(--md-comp-pane-height);
@@ -340,7 +340,7 @@
         opacity: 0;
     }
 }
-@keyframes _menuBodyIn {
+@keyframes menuBodyIn {
     0% {
         overflow: hidden;
     }
@@ -348,7 +348,7 @@
         overflow: hidden;
     }
 }
-@keyframes _menuBodyOut {
+@keyframes menuBodyOut {
     0% {
         overflow: hidden;
     }
@@ -356,7 +356,7 @@
         overflow: hidden;
     }
 }
-@keyframes _pickerIn {
+@keyframes pickerIn {
     0% {
         visibility: visible;
         height: calc(var(--md-comp-pane-height) - 96px);
@@ -369,7 +369,7 @@
         opacity: 1;
     }
 }
-@keyframes _pickerOut {
+@keyframes pickerOut {
     0% {
         visibility: visible;
         height: var(--md-comp-pane-height);
@@ -383,7 +383,7 @@
         opacity: 0;
     }
 }
-@keyframes _pickerBodyIn {
+@keyframes pickerBodyIn {
     0% {
         overflow: hidden;
     }
@@ -391,7 +391,7 @@
         overflow: hidden;
     }
 }
-@keyframes _pickerBodyOut {
+@keyframes pickerBodyOut {
     0% {
         overflow: hidden;
     }
@@ -399,7 +399,7 @@
         overflow: hidden;
     }
 }
-@keyframes _tooltipIn {
+@keyframes tooltipIn {
     0% {
         visibility: visible;
         opacity: 0;
@@ -408,7 +408,7 @@
         opacity: 1;
     }
 }
-@keyframes _tooltipOut {
+@keyframes tooltipOut {
     0% {
         visibility: visible;
         opacity: 1;
@@ -418,7 +418,7 @@
         opacity: 0;
     }
 }
-@keyframes _tooltipBodyIn {
+@keyframes tooltipBodyIn {
     0% {
         overflow: hidden;
     }
@@ -426,7 +426,7 @@
         overflow: hidden;
     }
 }
-@keyframes _tooltipBodyOut {
+@keyframes tooltipBodyOut {
     0% {
         overflow: hidden;
     }
@@ -434,7 +434,7 @@
         overflow: hidden;
     }
 }
-@keyframes _snackbarIn {
+@keyframes snackbarIn {
     0% {
         visibility: visible;
         height: 0;
@@ -445,7 +445,7 @@
         opacity: 1;
     }
 }
-@keyframes _snackbarOut {
+@keyframes snackbarOut {
     0% {
         visibility: visible;
         opacity: 1;
@@ -455,7 +455,7 @@
         opacity: 0;
     }
 }
-@keyframes _snackbarBodyIn {
+@keyframes snackbarBodyIn {
     0% {
         overflow: hidden;
     }
@@ -463,7 +463,7 @@
         overflow: hidden;
     }
 }
-@keyframes _snackbarBodyOut {
+@keyframes snackbarBodyOut {
     0% {
         overflow: hidden;
     }
@@ -485,13 +485,13 @@
     visibility: hidden;
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    animation-name: var(--md-comp-pane-animation, _pickerOut);
+    animation-name: var(--md-comp-pane-animation, pickerOut);
     &[open] {
         visibility: visible;
-        animation-name: var(--md-comp-pane-animation, _pickerIn);
+        animation-name: var(--md-comp-pane-animation, pickerIn);
         .md-pane__body {
             overflow: auto;
-            animation-name: var(--md-comp-pane-animation, _pickerBodyIn);
+            animation-name: var(--md-comp-pane-animation, pickerBodyIn);
         }
     }
     .md-pane__body {
@@ -501,6 +501,6 @@
         overflow: hidden;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
         animation-duration: var(--md-sys-motion-duration-short4);
-        animation-name: var(--md-comp-pane-animation, _dialogBodyOut);
+        animation-name: var(--md-comp-pane-animation, dialogBodyOut);
     }
 }

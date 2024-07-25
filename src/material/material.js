@@ -48,8 +48,8 @@ import { MDTextareaFieldComponent } from "./textarea-field/textarea-field.js";
 import { MDSelectFieldComponent } from "./select-field/select-field.js";
 import { MDProgressIndicatorComponent } from "./progress-indicator/progress-indicator.js";
 // card
-import { MDBlockComponent } from "./block/block.js"; // 0
-import { MDPaneComponent } from "./pane/pane.js"; // 0
+import { MDBlockComponent } from "./block/block.js";
+import { MDPaneComponent } from "./pane/pane.js";
 import { MDToolbarComponent } from "./toolbar/toolbar.js";
 import { MDCardComponent } from "./card/card.js";
 import { MDScrimComponent } from "./scrim/scrim.js";
@@ -70,12 +70,12 @@ import { MDWeekPickerComponent } from "./week-picker/week-picker.js";
 import { MDColorPickerComponent } from "./color-picker/color-picker.js";
 import { MDEmojiPickerComponent } from "./emoji-picker/emoji-picker.js";
 // list
-import { MDChipComponent } from "./chip/chip.js"; // 1
-import { MDChipsComponent } from "./chips/chips.js"; // 1
-import { MDListItemComponent } from "./list-item/list-item.js"; // 1
-import { MDListComponent } from "./list/list.js"; // 1
-import { MDTreeItemComponent } from "./tree-item/tree-item.js"; // 1
-import { MDTreeComponent } from "./tree/tree.js"; // 1
+import { MDChipComponent } from "./chip/chip.js";
+import { MDChipsComponent } from "./chips/chips.js";
+import { MDListItemComponent } from "./list-item/list-item.js";
+import { MDListComponent } from "./list/list.js";
+import { MDTreeItemComponent } from "./tree-item/tree-item.js";
+import { MDTreeComponent } from "./tree/tree.js";
 import { MDTabsComponent } from "./tabs/tabs.js";
 import { MDMenuComponent } from "./menu/menu.js";
 import { MDNavigationBarComponent } from "./navigation-bar/navigation-bar.js";
@@ -83,92 +83,9 @@ import { MDNavigationDrawerComponent } from "./navigation-drawer/navigation-draw
 import { MDNavigationRailComponent } from "./navigation-rail/navigation-rail.js";
 // table
 import { MDPaginationComponent } from "./pagination/pagination.js";
-import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js"; // 1
-import { MDDataTableColumnCellComponent } from "./data-table-column-cell/data-table-column-cell.js"; // 1
-import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-row-cell.js"; // 1
-import { MDDataTableComponent } from "./data-table/data-table.js"; // 1
+import { MDDataTableItemComponent } from "./data-table-item/data-table-item.js";
+import { MDDataTableColumnCellComponent } from "./data-table-column-cell/data-table-column-cell.js";
+import { MDDataTableRowCellComponent } from "./data-table-row-cell/data-table-row-cell.js";
+import { MDDataTableComponent } from "./data-table/data-table.js";
 // export
-export {
-    //
-    MDObserver,
-    MDMediaObserver,
-    MDAttributeObserver,
-    MDStore,
-    MDRouter,
-    localization,
-    color,
-    progress,
-    functions,
-    MDRippleController,
-    MDPopperController,
-    MDGestureController,
-    MDVirtualController,
-    MDComponent,
-    template,
-    MDLayoutItemComponent,
-    MDLayoutComponent,
-    MDDividerComponent,
-    MDSpacerComponent,
-    MDIconComponent,
-    MDEmojiComponent,
-    MDImageComponent,
-    MDBadgeComponent,
-    MDButtonComponent,
-    MDIconButtonComponent,
-    MDSegmentedButtonComponent,
-    MDFabComponent,
-    MDFormComponent,
-    MDCheckboxComponent,
-    MDRadioButtonComponent,
-    MDSwitchComponent,
-    MDSliderComponent,
-    MDTextFieldComponent,
-    MDDatetimeFieldComponent,
-    MDDateFieldComponent,
-    MDMonthFieldComponent,
-    MDWeekFieldComponent,
-    MDTimeFieldComponent,
-    MDColorFieldComponent,
-    MDNumberFieldComponent,
-    MDSearchFieldComponent,
-    MDPasswordFieldComponent,
-    MDTextareaFieldComponent,
-    MDSelectFieldComponent,
-    MDProgressIndicatorComponent,
-    MDBlockComponent,
-    MDPaneComponent,
-    MDToolbarComponent,
-    MDCardComponent,
-    MDScrimComponent,
-    MDSheetComponent,
-    MDDialogComponent,
-    MDTopAppBarComponent,
-    MDSideSheetComponent,
-    MDBottomSheetComponent,
-    MDSnackbarComponent,
-    MDTooltipComponent,
-    MDBottomAppBarComponent,
-    MDDatetimePickerComponent,
-    MDDatePickerComponent,
-    MDMonthPickerComponent,
-    MDTimePickerComponent,
-    MDWeekPickerComponent,
-    MDColorPickerComponent,
-    MDEmojiPickerComponent,
-    MDListItemComponent,
-    MDListComponent,
-    MDTreeItemComponent,
-    MDTreeComponent,
-    MDChipComponent,
-    MDChipsComponent,
-    MDNavigationBarComponent,
-    MDNavigationDrawerComponent,
-    MDNavigationRailComponent,
-    MDMenuComponent,
-    MDTabsComponent,
-    MDPaginationComponent,
-    MDDataTableItemComponent,
-    MDDataTableColumnCellComponent,
-    MDDataTableRowCellComponent,
-    MDDataTableComponent,
-};
+export { MDObserver, MDMediaObserver, MDAttributeObserver, MDStore, MDRouter, localization, color, progress, functions, MDRippleController, MDPopperController, MDGestureController, MDVirtualController, MDComponent, template, MDLayoutItemComponent, MDLayoutComponent, MDDividerComponent, MDSpacerComponent, MDIconComponent, MDEmojiComponent, MDImageComponent, MDBadgeComponent, MDButtonComponent, MDIconButtonComponent, MDSegmentedButtonComponent, MDFabComponent, MDFormComponent, MDCheckboxComponent, MDRadioButtonComponent, MDSwitchComponent, MDSliderComponent, MDTextFieldComponent, MDDatetimeFieldComponent, MDDateFieldComponent, MDMonthFieldComponent, MDWeekFieldComponent, MDTimeFieldComponent, MDColorFieldComponent, MDNumberFieldComponent, MDSearchFieldComponent, MDPasswordFieldComponent, MDTextareaFieldComponent, MDSelectFieldComponent, MDProgressIndicatorComponent, MDBlockComponent, MDPaneComponent, MDToolbarComponent, MDCardComponent, MDScrimComponent, MDSheetComponent, MDDialogComponent, MDTopAppBarComponent, MDSideSheetComponent, MDBottomSheetComponent, MDSnackbarComponent, MDTooltipComponent, MDBottomAppBarComponent, MDDatetimePickerComponent, MDDatePickerComponent, MDMonthPickerComponent, MDTimePickerComponent, MDWeekPickerComponent, MDColorPickerComponent, MDEmojiPickerComponent, MDListItemComponent, MDListComponent, MDTreeItemComponent, MDTreeComponent, MDChipComponent, MDChipsComponent, MDNavigationBarComponent, MDNavigationDrawerComponent, MDNavigationRailComponent, MDMenuComponent, MDTabsComponent, MDPaginationComponent, MDDataTableItemComponent, MDDataTableColumnCellComponent, MDDataTableRowCellComponent, MDDataTableComponent };

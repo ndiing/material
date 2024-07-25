@@ -11,13 +11,13 @@
     pointer-events: none;
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    animation-name: var(--md-comp-pane-animation, _tooltipOut);
+    animation-name: var(--md-comp-pane-animation, tooltipOut);
     &[open] {
         visibility: visible;
-        animation-name: var(--md-comp-pane-animation, _tooltipIn);
+        animation-name: var(--md-comp-pane-animation, tooltipIn);
         .md-pane__body {
             overflow: auto;
-            animation-name: var(--md-comp-pane-animation, _tooltipBodyIn);
+            animation-name: var(--md-comp-pane-animation, tooltipBodyIn);
         }
     }
     .md-pane__header {
@@ -47,7 +47,7 @@
         overflow: hidden;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
         animation-duration: var(--md-sys-motion-duration-short4);
-        animation-name: var(--md-comp-pane-animation, _tooltipBodyOut);
+        animation-name: var(--md-comp-pane-animation, tooltipBodyOut);
         + .md-pane__footer {
             margin-top: -8px;
         }

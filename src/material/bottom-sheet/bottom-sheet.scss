@@ -20,12 +20,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    animation-name: var(--md-comp-pane-animation, _sheetSouthModalOut);
+    animation-name: var(--md-comp-pane-animation, sheetSouthModalOut);
     &[open] {
         margin-bottom: 0;
         box-shadow: var(--md-sys-elevation-level1);
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-pane-animation, _sheetSouthModalIn);
+        animation-name: var(--md-comp-pane-animation, sheetSouthModalIn);
     }
     .md-pane__header {
         padding: 24px;

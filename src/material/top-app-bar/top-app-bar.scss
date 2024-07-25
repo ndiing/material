@@ -11,10 +11,10 @@
     grid-area: north;
     min-height: var(--md-comp-pane-height);
     margin-top: calc(0px - var(--md-comp-pane-height, 100vh));
-    animation-name: var(--md-comp-pane-animation, _sheetNorthOut);
+    animation-name: var(--md-comp-pane-animation, sheetNorthOut);
     &[open] {
         margin-top: 0;
-        animation-name: var(--md-comp-pane-animation, _sheetNorthIn);
+        animation-name: var(--md-comp-pane-animation, sheetNorthIn);
     }
     .md-pane__header {
         padding: 18px 16px;

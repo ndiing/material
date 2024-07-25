@@ -43,40 +43,40 @@
     grid-area: north;
     min-height: var(--md-comp-pane-height);
     margin-top: calc(0px - var(--md-comp-pane-height, 100vh));
-    animation-name: var(--md-comp-pane-animation, _sheetNorthOut);
+    animation-name: var(--md-comp-pane-animation, sheetNorthOut);
     &[open] {
         margin-top: 0;
-        animation-name: var(--md-comp-pane-animation, _sheetNorthIn);
+        animation-name: var(--md-comp-pane-animation, sheetNorthIn);
     }
 }
 .md-sheet.md-pane--east {
     grid-area: east;
     min-width: var(--md-comp-pane-width);
     margin-right: calc(0px - var(--md-comp-pane-height, 100vw));
-    animation-name: var(--md-comp-pane-animation, _sheetEastOut);
+    animation-name: var(--md-comp-pane-animation, sheetEastOut);
     &[open] {
         margin-right: 0;
-        animation-name: var(--md-comp-pane-animation, _sheetEastIn);
+        animation-name: var(--md-comp-pane-animation, sheetEastIn);
     }
 }
 .md-sheet.md-pane--south {
     grid-area: south;
     min-height: var(--md-comp-pane-height);
     margin-bottom: calc(0px - var(--md-comp-pane-height, 100vh));
-    animation-name: var(--md-comp-pane-animation, _sheetSouthOut);
+    animation-name: var(--md-comp-pane-animation, sheetSouthOut);
     &[open] {
         margin-bottom: 0;
-        animation-name: var(--md-comp-pane-animation, _sheetSouthIn);
+        animation-name: var(--md-comp-pane-animation, sheetSouthIn);
     }
 }
 .md-sheet.md-pane--west {
     grid-area: west;
     min-width: var(--md-comp-pane-width);
     margin-left: calc(0px - var(--md-comp-pane-height, 100vw));
-    animation-name: var(--md-comp-pane-animation, _sheetWestOut);
+    animation-name: var(--md-comp-pane-animation, sheetWestOut);
     &[open] {
         margin-left: 0;
-        animation-name: var(--md-comp-pane-animation, _sheetWestIn);
+        animation-name: var(--md-comp-pane-animation, sheetWestIn);
     }
 }
 .md-sheet.md-pane--modal {
@@ -106,10 +106,10 @@
     left: 0;
     right: 0;
     top: 0;
-    animation-name: var(--md-comp-pane-animation, _sheetNorthModalOut);
+    animation-name: var(--md-comp-pane-animation, sheetNorthModalOut);
     &[open] {
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-pane-animation, _sheetNorthModalIn);
+        animation-name: var(--md-comp-pane-animation, sheetNorthModalIn);
     }
 }
 .md-sheet.md-pane--east.md-pane--modal {
@@ -120,10 +120,10 @@
     right: 0;
     top: 0;
     bottom: 0;
-    animation-name: var(--md-comp-pane-animation, _sheetEastModalOut);
+    animation-name: var(--md-comp-pane-animation, sheetEastModalOut);
     &[open] {
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-pane-animation, _sheetEastModalIn);
+        animation-name: var(--md-comp-pane-animation, sheetEastModalIn);
     }
 }
 .md-sheet.md-pane--south.md-pane--modal {
@@ -134,10 +134,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    animation-name: var(--md-comp-pane-animation, _sheetSouthModalOut);
+    animation-name: var(--md-comp-pane-animation, sheetSouthModalOut);
     &[open] {
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-pane-animation, _sheetSouthModalIn);
+        animation-name: var(--md-comp-pane-animation, sheetSouthModalIn);
     }
 }
 .md-sheet.md-pane--west.md-pane--modal {
@@ -148,9 +148,9 @@
     left: 0;
     top: 0;
     bottom: 0;
-    animation-name: var(--md-comp-pane-animation, _sheetWestModalOut);
+    animation-name: var(--md-comp-pane-animation, sheetWestModalOut);
     &[open] {
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-pane-animation, _sheetWestModalIn);
+        animation-name: var(--md-comp-pane-animation, sheetWestModalIn);
     }
 }

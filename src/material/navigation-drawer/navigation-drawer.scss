@@ -11,10 +11,10 @@
     grid-area: west;
     min-width: var(--md-comp-pane-width);
     margin-left: calc(0px - var(--md-comp-pane-height, 100vw));
-    animation-name: var(--md-comp-pane-animation, _sheetWestOut);
+    animation-name: var(--md-comp-pane-animation, sheetWestOut);
     &[open] {
         margin-left: 0;
-        animation-name: var(--md-comp-pane-animation, _sheetWestIn);
+        animation-name: var(--md-comp-pane-animation, sheetWestIn);
     }
     .md-pane__body {
         padding: 0;
@@ -35,11 +35,11 @@
     left: 0;
     top: 0;
     bottom: 0;
-    animation-name: var(--md-comp-pane-animation, _sheetWestModalOut);
+    animation-name: var(--md-comp-pane-animation, sheetWestModalOut);
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-pane-animation, _sheetWestModalIn);
+        animation-name: var(--md-comp-pane-animation, sheetWestModalIn);
     }
 }
 .md-navigation-drawer__tree {

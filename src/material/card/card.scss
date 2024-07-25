@@ -1,3 +1,9 @@
+.md-card {
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level0);
+}
 .md-card.md-pane--filled {
     border-radius: var(--md-sys-shape-corner-medium);
     background-color: var(--md-sys-color-surface-container-highest);

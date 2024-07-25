@@ -13,13 +13,13 @@
     visibility: hidden;
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    animation-name: var(--md-comp-pane-animation, _menuOut);
+    animation-name: var(--md-comp-pane-animation, menuOut);
     &[open] {
         visibility: visible;
-        animation-name: var(--md-comp-pane-animation, _menuIn);
+        animation-name: var(--md-comp-pane-animation, menuIn);
         .md-pane__body {
             overflow: auto;
-            animation-name: var(--md-comp-pane-animation, _menuBodyIn);
+            animation-name: var(--md-comp-pane-animation, menuBodyIn);
         }
     }
     .md-pane__body {
@@ -29,7 +29,7 @@
         overflow: hidden;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
         animation-duration: var(--md-sys-motion-duration-short4);
-        animation-name: var(--md-comp-pane-animation, _dialogBodyOut);
+        animation-name: var(--md-comp-pane-animation, dialogBodyOut);
     }
 }
 .md-menu__list {
