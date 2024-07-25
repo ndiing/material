@@ -12,6 +12,15 @@ class DevBlock extends MDComponent {
 
             <md-layout variant="column">
                 <md-layout-item expanded="3" medium="8" compact="4">
+                    <md-button variant="tonal" label="without labels" @click="${() => navigationRail0.toggle()}"></md-button>
+                </md-layout-item>
+                <md-layout-item expanded="3" medium="8" compact="4">
+                    <md-button variant="tonal" label="with text labels" @click="${() => navigationRail1.toggle()}"></md-button>
+                </md-layout-item>
+            </md-layout>
+
+            <md-layout variant="column">
+                <md-layout-item expanded="3" medium="8" compact="4">
                     <md-button variant="tonal" label="Standard navigation drawer" @click="${() => navigationDrawer0.toggle()}"></md-button>
                 </md-layout-item>
                 <md-layout-item expanded="3" medium="8" compact="4">
@@ -302,12 +311,15 @@ class DevBlock extends MDComponent {
 
                                 <md-pane id="bottomAppBar1" class="md-pane--bottom-app-bar" leadingActions='[{"icon":"image"},{"icon":"image"},{"icon":"image"},{"icon":"image"}]'></md-pane>
 
+                                <md-pane id="navigationRail0" style="--md-comp-pane-width:80px;" class="md-pane--navigation-rail" !open ></md-pane>
+                                
                                 <md-layout-item region="center">
                                     <md-layout variant="border">
                                         <md-pane id="topAppBar2" class="md-pane--top-app-bar md-pane--medium" headline="Medium" leadingActions='[{"icon":"arrow_back"}]' trailingActions='[{"icon":"close"}]'></md-pane>
-
+                                        
                                         <md-pane id="navigationBar0" class="md-pane--navigation-bar"></md-pane>
-
+                                        
+                                        <md-pane id="navigationRail1" style="--md-comp-pane-width:80px;" class="md-pane--navigation-rail" !open ></md-pane>
                                         <md-layout-item region="center">
                                             <md-layout variant="border">
                                                 <md-pane id="topAppBar3" class="md-pane--top-app-bar md-pane--large" headline="Large" leadingActions='[{"icon":"arrow_back"}]' trailingActions='[{"icon":"close"}]'></md-pane>
