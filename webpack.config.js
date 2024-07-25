@@ -26,7 +26,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "index.html",
+            template: "./src/index.html",
         }),
         new MiniCssExtractPlugin({
             filename: isProduction ? "[name].[contenthash].css" : "[name].css",
