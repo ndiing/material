@@ -4,7 +4,7 @@ import icons from "../../assets/icons.json";
 import { MDVirtualController } from "../../material/material.js";
 
 const grouped = Object.groupBy(
-    icons.filter((doc) => !doc.unsupported_families.includes("Material Symbols Outlined")),
+    icons,
     (doc) => doc.group,
 );
 const rows = [];
