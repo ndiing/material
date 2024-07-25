@@ -36,12 +36,16 @@
     }
 }
 @mixin ripple-button() {
-    cursor: pointer;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    & {
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
 }
 @mixin ripple-clipped() {
-    overflow: hidden;
+    & {
+        overflow: hidden;
+    }
 }
 @mixin ripple-focused() {
     &::after {

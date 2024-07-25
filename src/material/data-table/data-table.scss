@@ -102,8 +102,10 @@
         .md-data-table__item {
             @include ripple();
             @include ripple-button();
-            --md-comp-ripple-size: 200%;
-            --md-comp-ripple-animation: none;
+            & {
+                --md-comp-ripple-size: 200%;
+                --md-comp-ripple-animation: none;
+            }
         }
         tr {
             &:focus,
