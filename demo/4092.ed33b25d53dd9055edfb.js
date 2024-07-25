@@ -1,0 +1,2 @@
+(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[4092],{4092:(a,e,n)=>{n.r(e),n.d(e,{templates:()=>i});const i={sc958887ef4afecbd:"¡Hola, bienvenido a nuestra aplicación!"}}}]);
+//# sourceMappingURL=4092.ed33b25d53dd9055edfb.js.map

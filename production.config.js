@@ -1,81 +1,64 @@
-const path = require('path');
-const fs = require('fs');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const fs = require("fs");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-// Function to dynamically generate entries
 function generateEntries() {
-  const componentsDir = path.resolve(__dirname, 'src/material');
-  const componentFolders = fs.readdirSync(componentsDir, { withFileTypes: true })
-    .filter(dir => dir.isDirectory())
-    .map(dir => dir.name);
+    const componentsDir = path.resolve(__dirname, "src/material");
+    const componentFolders = fs
+        .readdirSync(componentsDir, { withFileTypes: true })
+        .filter((dir) => dir.isDirectory())
+        .map((dir) => dir.name);
 
-  const entries = {};
-  componentFolders.forEach(folder => {
-    const jsPath = path.resolve(componentsDir, `${folder}/${folder}.js`);
-    const scssPath = path.resolve(componentsDir, `${folder}/${folder}.scss`);
+    const entries = {};
+    componentFolders.forEach((folder) => {
+        const jsPath = path.resolve(componentsDir, `${folder}/${folder}.js`);
+        const scssPath = path.resolve(componentsDir, `${folder}/${folder}.scss`);
 
-    // Check if both JS and SCSS files exist
-    // if (fs.existsSync(jsPath) && fs.existsSync(scssPath)) {
-    //   entries[folder] = [jsPath, scssPath];
-    // } else 
-    if (fs.existsSync(jsPath)) {
-      entries[folder] = jsPath;
-    } 
-    // else if (fs.existsSync(scssPath)) {
-    //   entries[folder] = scssPath;
-    // }
-  });
+        if (fs.existsSync(jsPath)) {
+            entries[folder] = jsPath;
+        }
+    });
 
-  entries['material']=['./src/material/material.scss','./src/material/material.js']
+    entries["material"] = ["./src/material/material.scss", "./src/material/material.js"];
 
-  return entries;
+    return entries;
 }
 
 module.exports = {
     experiments: {
-        outputModule: true, // Aktifkan eksperimen output modul
-      },
-    
-  entry: generateEntries(),
-  output: {
-    filename: '[name]/[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    library: {
-        // name: '[name]Library',
-        type: 'module', // Menggunakan 'module' untuk ES module
-  
+        outputModule: true,
     },
-    clean: true,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
+
+    entry: generateEntries(),
+    output: {
+        filename: "[name]/[name].js",
+        path: path.resolve(__dirname, "dist"),
+        library: {
+            type: "module",
         },
-      },
-      {
-        test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      },
+        clean: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                },
+            },
+            {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+            },
+        ],
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name]/[name].css",
+        }),
     ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name]/[name].css',
-    }),
-  ],
-//   externals: {
-//     lit: {
-//       commonjs: 'lit',
-//       commonjs2: 'lit',
-//       amd: 'lit',
-//       root: 'lit',
-//     },
-//   },
-optimization: {
-  minimize: true, // Ensure JS files are minified
-},
+    optimization: {
+        minimize: true,
+    },
 };
