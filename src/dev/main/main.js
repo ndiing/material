@@ -68,7 +68,7 @@ class DevMainComponent extends MDComponent {
             },
             {
                 icon: "construction",
-                label: "Cdk",
+                label: "CDK",
                 items: [
                     { icon: "track_changes", label: "Attribute Observer", routerLink: "/attribute-observer" },
                     { icon: "color_lens", label: "Color", routerLink: "/color" },
