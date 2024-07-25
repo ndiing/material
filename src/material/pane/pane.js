@@ -79,8 +79,8 @@ class MDPaneComponent extends MDComponent {
                     ${this.hasFooter?html`
                         ${renderBlock({
                             classMap: { "md-pane__footer": true },
-                            trailingActions: this.actions,
-                            defaultTrailingActionComponent: "button",
+                            leadingActions: this.actions,
+                            defaultLeadingActionComponent: "button",
                         })}
                     `:nothing}
                 </div>

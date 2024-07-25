@@ -76,6 +76,15 @@ class MDBlockComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+    get hasSectionStart() {
+        return this.leadingActions?.length || this.leadingCheckbox || this.leadingRadioButton || this.leadingSwitch || this.leadingAvatar || this.leadingImage || this.leadingVideo || this.leadingIcon || this.leadingSupportingText;
+    }
+    get hasSectionCenter() {
+        return this.headline || this.supportingText;
+    }
+    get hasSectionEnd() {
+        return this.trailingActions?.length || this.trailingCheckbox || this.trailingRadioButton || this.trailingSwitch || this.trailingAvatar || this.trailingImage || this.trailingVideo || this.trailingIcon || this.trailingSupportingText;
+    }
 
     /**
      * {{desc}}
@@ -92,38 +101,47 @@ class MDBlockComponent extends MDComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${this.leadingActions?.length ? this.leadingActions.map(item => {
-                item.component = item.component || this.defaultLeadingActionComponent;
-                return renderComponent(item);
-            }) : nothing}
-            ${this.leadingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
-            ${this.leadingRadioButton ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
-            ${this.leadingSwitch ? html`<md-switch class="md-block__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-switch>` : nothing}
-            ${this.leadingAvatar ? html`<md-image class="md-block__avatar" .variant="${"rounded"}" .src="${this.leadingAvatar}"></md-image>` : nothing}
-            ${this.leadingImage ? html`<md-image class="md-block__image" .src="${this.leadingImage}"></md-image>` : nothing}
-            ${this.leadingVideo ? html`<md-image class="md-block__video" .ratio="${"3/2"}" .src="${this.leadingVideo}"></md-image>` : nothing}
-            ${this.leadingIcon ? html`<md-icon class="md-block__icon" .icon="${this.leadingIcon}"></md-icon>` : nothing}
-            ${this.leadingSupportingText ? html`<div class="md-block__supporting-text">${this.leadingSupportingText}</div>` : nothing}
-            ${this.headline || this.supportingText ? html`
-                <div class="md-block__group">
-                    ${this.headline ? html`<div class="md-block__headline">${this.headline}</div>` : nothing}
-                    ${this.supportingText ? html`<div class="md-block__supporting-text">${this.supportingText}</div>` : nothing}
-                </div>
-            ` : nothing}
-            ${this.trailingSupportingText ? html`<div class="md-block__supporting-text">${this.trailingSupportingText}</div>` : nothing}
-            ${this.trailingIcon ? html`<md-icon class="md-block__icon" .icon="${this.trailingIcon}"></md-icon>` : nothing}
-            ${this.trailingVideo ? html`<md-image class="md-block__video" .ratio="${"3/2"}" .src="${this.trailingVideo}"></md-image>` : nothing}
-            ${this.trailingImage ? html`<md-image class="md-block__image" .src="${this.trailingImage}"></md-image>` : nothing}
-            ${this.trailingAvatar ? html`<md-image class="md-block__avatar" .variant="${"rounded"}" .src="${this.trailingAvatar}"></md-image>` : nothing}
-            ${this.trailingSwitch ? html`<md-switch class="md-block__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-switch>` : nothing}
-            ${this.trailingRadioButton ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
-            ${this.trailingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
-            ${this.trailingActions?.length ? this.trailingActions.map(item => {
-                item.component = item.component || this.defaultTrailingActionComponent;
-                return renderComponent(item);
-            }) : nothing}
-            
-            ${this.badge !== undefined ? html`<md-badge class="md-block__badge" .label="${this.badge}"></md-badge>` : nothing}
+            <div class="md-block__inner">
+                ${this.hasSectionStart?html`
+                    <div class="md-block__section md-block__section--start">
+                        ${this.leadingActions?.length ? this.leadingActions.map(item => {
+                            item.component = item.component || this.defaultLeadingActionComponent;
+                            return renderComponent(item);
+                        }) : nothing}
+                        ${this.leadingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
+                        ${this.leadingRadioButton ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
+                        ${this.leadingSwitch ? html`<md-switch class="md-block__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-switch>` : nothing}
+                        ${this.leadingAvatar ? html`<md-image class="md-block__avatar" .variant="${"rounded"}" .src="${this.leadingAvatar}"></md-image>` : nothing}
+                        ${this.leadingImage ? html`<md-image class="md-block__image" .src="${this.leadingImage}"></md-image>` : nothing}
+                        ${this.leadingVideo ? html`<md-image class="md-block__video" .ratio="${"3/2"}" .src="${this.leadingVideo}"></md-image>` : nothing}
+                        ${this.leadingIcon ? html`<md-icon class="md-block__icon" .icon="${this.leadingIcon}"></md-icon>` : nothing}
+                        ${this.leadingSupportingText ? html`<div class="md-block__supporting-text">${this.leadingSupportingText}</div>` : nothing}
+                    </div>
+                `:nothing}
+                ${this.hasSectionCenter ? html`
+                    <div class="md-block__section md-block__section--center">
+                        ${this.headline ? html`<div class="md-block__headline">${this.headline}</div>` : nothing}
+                        ${this.supportingText ? html`<div class="md-block__supporting-text">${this.supportingText}</div>` : nothing}
+                    </div>
+                ` : nothing}
+                ${this.hasSectionEnd?html`
+                    <div class="md-block__section md-block__section--end">
+                        ${this.trailingSupportingText ? html`<div class="md-block__supporting-text">${this.trailingSupportingText}</div>` : nothing}
+                        ${this.trailingIcon ? html`<md-icon class="md-block__icon" .icon="${this.trailingIcon}"></md-icon>` : nothing}
+                        ${this.trailingVideo ? html`<md-image class="md-block__video" .ratio="${"3/2"}" .src="${this.trailingVideo}"></md-image>` : nothing}
+                        ${this.trailingImage ? html`<md-image class="md-block__image" .src="${this.trailingImage}"></md-image>` : nothing}
+                        ${this.trailingAvatar ? html`<md-image class="md-block__avatar" .variant="${"rounded"}" .src="${this.trailingAvatar}"></md-image>` : nothing}
+                        ${this.trailingSwitch ? html`<md-switch class="md-block__switch" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-switch>` : nothing}
+                        ${this.trailingRadioButton ? html`<md-radio-button class="md-block__radio-button" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-radio-button>` : nothing}
+                        ${this.trailingCheckbox ? html`<md-checkbox class="md-block__checkbox" .indeterminate="${this.indeterminate}" .checked="${this.selected}"></md-checkbox>` : nothing}
+                        ${this.trailingActions?.length ? this.trailingActions.map(item => {
+                            item.component = item.component || this.defaultTrailingActionComponent;
+                            return renderComponent(item);
+                        }) : nothing}
+                    </div>
+                `:nothing}
+                ${this.badge !== undefined ? html`<md-badge class="md-block__badge" .label="${this.badge}"></md-badge>` : nothing}
+            </div>
         `;
         /* this.emit("onCheckboxNativeInput", this); */
         /* this.emit("onCheckboxNativeReset", this); */
@@ -151,7 +169,7 @@ class MDBlockComponent extends MDComponent {
         super.updated(changedProperties);
         if (changedProperties.has("supportingText")) {
             await this.updateComplete;
-            const supportingTextElement = this.querySelector(".md-block__group .md-block__supporting-text");
+            const supportingTextElement = this.querySelector(".md-block__section--center .md-block__supporting-text");
             if (supportingTextElement) {
                 const style = window.getComputedStyle(supportingTextElement);
                 const lineHeight = parseFloat(style.getPropertyValue("line-height"));
