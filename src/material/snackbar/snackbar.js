@@ -1,17 +1,15 @@
 import { createQueue } from "../functions/functions.js";
-import { MDSheetComponent } from "../sheet/sheet.js";
+import { MDPaneComponent } from "../pane/pane.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-snackbar
- * @fires MDSnackbarComponent#onSheetShow - {{desc}}
- * @fires MDSnackbarComponent#onSheetClose - {{desc}}
- * @fires MDSnackbarComponent#onSheetScrimClick - {{desc}}
+ * @fires MDSnackbarComponent#onScrimClick - {{desc}}
  * @fires MDSnackbarComponent#onSnackbarShow - {{desc}}
  * @fires MDSnackbarComponent#onSnackbarClose - {{desc}}
  */
-class MDSnackbarComponent extends MDSheetComponent {
+class MDSnackbarComponent extends MDPaneComponent {
     static queue = createQueue();
 
     /**
@@ -32,7 +30,7 @@ class MDSnackbarComponent extends MDSheetComponent {
                     this.close();
                 }, 4000);
                 const handleSnackbarClose = (event) => {
-                    if (event.animationName === "snackbarOut") {
+                    if (event.animationName === "_snackbarOut") {
                         window.clearTimeout(this.timeout);
                         resolve();
                     }

@@ -12,7 +12,6 @@ class MDScrimComponent extends MDComponent {
      * @property {Boolean} open - {{desc}}
      */
     static properties = {
-        ...MDComponent.properties,
         open: { type: Boolean, reflect: true },
     };
 

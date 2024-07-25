@@ -1,23 +1,25 @@
+/* navigation bar */
 .md-navigation-bar {
-    --md-comp-sheet-height: 80px;
+    --md-comp-pane-height: 80px;
     display: inline-flex;
     border-radius: var(--md-sys-shape-corner-none);
-    background-color: var(--md-sys-color-surface-container);
+    background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
     grid-area: south;
-    min-height: var(--md-comp-sheet-height);
-    margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
-    animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
+    min-height: var(--md-comp-pane-height);
+    margin-bottom: calc(0px - var(--md-comp-pane-height, 100vh));
+    animation-name: var(--md-comp-pane-animation, _sheetSouthOut);
     &[open] {
         margin-bottom: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
+        animation-name: var(--md-comp-pane-animation, _sheetSouthIn);
     }
-    .md-card__body {
+    .md-pane__body {
         padding: 0;
         margin: 0;
+        border-radius: inherit;
     }
 }
 .md-navigation-bar__tree {

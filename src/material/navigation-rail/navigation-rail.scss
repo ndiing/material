@@ -1,5 +1,6 @@
+/* navigation rail */
 .md-navigation-rail {
-    --md-comp-sheet-width: 80px;
+    --md-comp-pane-width: 80px;
     display: inline-flex;
     border-radius: var(--md-sys-shape-corner-none);
     background-color: var(--md-sys-color-surface);
@@ -8,16 +9,17 @@
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
     grid-area: west;
-    min-width: var(--md-comp-sheet-width);
-    margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
-    animation-name: var(--md-comp-sheet-animation, sheetWestOut);
+    min-width: var(--md-comp-pane-width);
+    margin-left: calc(0px - var(--md-comp-pane-height, 100vw));
+    animation-name: var(--md-comp-pane-animation, _sheetWestOut);
     &[open] {
         margin-left: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetWestIn);
+        animation-name: var(--md-comp-pane-animation, _sheetWestIn);
     }
-    .md-card__body {
+    .md-pane__body {
         padding: 0;
         margin: 0;
+        border-radius: inherit;
     }
 }
 .md-navigation-rail__tree {

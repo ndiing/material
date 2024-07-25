@@ -1,131 +1,3 @@
-@keyframes sheetNorthIn {
-    0% {
-        margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
-    }
-    100% {
-        margin-top: 0;
-    }
-}
-@keyframes sheetNorthOut {
-    0% {
-        margin-top: 0;
-    }
-    100% {
-        margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
-    }
-}
-@keyframes sheetEastIn {
-    0% {
-        margin-right: calc(0px - var(--md-comp-sheet-width, 100vw));
-    }
-    100% {
-        margin-right: 0;
-    }
-}
-@keyframes sheetEastOut {
-    0% {
-        margin-right: 0;
-    }
-    100% {
-        margin-right: calc(0px - var(--md-comp-sheet-width, 100vw));
-    }
-}
-@keyframes sheetSouthIn {
-    0% {
-        margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
-    }
-    100% {
-        margin-bottom: 0;
-    }
-}
-@keyframes sheetSouthOut {
-    0% {
-        margin-bottom: 0;
-    }
-    100% {
-        margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
-    }
-}
-@keyframes sheetWestIn {
-    0% {
-        margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
-    }
-    100% {
-        margin-left: 0;
-    }
-}
-@keyframes sheetWestOut {
-    0% {
-        margin-left: 0;
-    }
-    100% {
-        margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
-    }
-}
-@keyframes sheetNorthModalIn {
-    0% {
-        transform: translate3d(0%, -100%, 0);
-    }
-    100% {
-        transform: translate3d(0%, 0%, 0);
-    }
-}
-@keyframes sheetNorthModalOut {
-    0% {
-        transform: translate3d(0%, 0%, 0);
-    }
-    100% {
-        transform: translate3d(0%, -100%, 0);
-    }
-}
-@keyframes sheetEastModalIn {
-    0% {
-        transform: translate3d(100%, 0%, 0);
-    }
-    100% {
-        transform: translate3d(0%, 0%, 0);
-    }
-}
-@keyframes sheetEastModalOut {
-    0% {
-        transform: translate3d(0%, 0%, 0);
-    }
-    100% {
-        transform: translate3d(100%, 0%, 0);
-    }
-}
-@keyframes sheetSouthModalIn {
-    0% {
-        transform: translate3d(0%, 100%, 0);
-    }
-    100% {
-        transform: translate3d(0%, 0%, 0);
-    }
-}
-@keyframes sheetSouthModalOut {
-    0% {
-        transform: translate3d(0%, 0%, 0);
-    }
-    100% {
-        transform: translate3d(0%, 100%, 0);
-    }
-}
-@keyframes sheetWestModalIn {
-    0% {
-        transform: translate3d(-100%, 0%, 0);
-    }
-    100% {
-        transform: translate3d(0%, 0%, 0);
-    }
-}
-@keyframes sheetWestModalOut {
-    0% {
-        transform: translate3d(0%, 0%, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0%, 0);
-    }
-}
 .md-sheet {
     display: inline-flex;
     border-radius: var(--md-sys-shape-corner-none);
@@ -134,142 +6,151 @@
     box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    .md-card__header {
+    .md-pane__header {
         padding: 24px;
-        gap: 0 12px;
-        > .md-block__group {
-            > .md-block__headline {
-                @include typescale-title-large();
-            }
+        border-radius: inherit;
+        background-color: inherit;
+        color: inherit;
+        .md-block__inner {
+            gap: 0 12px;
         }
-        + .md-card__wrapper {
+        .md-block__headline {
+            @include typescale-title-large();
+        }
+        + .md-pane__wrapper {
             margin-top: -24px;
         }
     }
-    .md-card__body {
+    .md-pane__wrapper {
+        border-radius: inherit;
+    }
+    .md-pane__body {
         padding: 0 24px;
         margin: 24px 0;
-        + .md-card__footer {
+        border-radius: inherit;
+        + .md-pane__footer {
             margin-top: -24px;
         }
     }
-    .md-card__footer {
+    .md-pane__footer {
         padding: 24px;
-        gap: 0 8px;
+        border-radius: inherit;
+        background-color: inherit;
+        color: inherit;
     }
 }
-.md-sheet.md-card--north {
+.md-sheet.md-pane--north {
     grid-area: north;
-    min-height: var(--md-comp-sheet-height);
-    margin-top: calc(0px - var(--md-comp-sheet-height, 100vh));
-    animation-name: var(--md-comp-sheet-animation, sheetNorthOut);
+    min-height: var(--md-comp-pane-height);
+    margin-top: calc(0px - var(--md-comp-pane-height, 100vh));
+    animation-name: var(--md-comp-pane-animation, _sheetNorthOut);
     &[open] {
         margin-top: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetNorthIn);
+        animation-name: var(--md-comp-pane-animation, _sheetNorthIn);
     }
 }
-.md-sheet.md-card--east {
+.md-sheet.md-pane--east {
     grid-area: east;
-    min-width: var(--md-comp-sheet-width);
-    margin-right: calc(0px - var(--md-comp-sheet-width, 100vw));
-    animation-name: var(--md-comp-sheet-animation, sheetEastOut);
+    min-width: var(--md-comp-pane-width);
+    margin-right: calc(0px - var(--md-comp-pane-height, 100vw));
+    animation-name: var(--md-comp-pane-animation, _sheetEastOut);
     &[open] {
         margin-right: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetEastIn);
+        animation-name: var(--md-comp-pane-animation, _sheetEastIn);
     }
 }
-.md-sheet.md-card--south {
+.md-sheet.md-pane--south {
     grid-area: south;
-    min-height: var(--md-comp-sheet-height);
-    margin-bottom: calc(0px - var(--md-comp-sheet-height, 100vh));
-    animation-name: var(--md-comp-sheet-animation, sheetSouthOut);
+    min-height: var(--md-comp-pane-height);
+    margin-bottom: calc(0px - var(--md-comp-pane-height, 100vh));
+    animation-name: var(--md-comp-pane-animation, _sheetSouthOut);
     &[open] {
         margin-bottom: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
+        animation-name: var(--md-comp-pane-animation, _sheetSouthIn);
     }
 }
-.md-sheet.md-card--west {
+.md-sheet.md-pane--west {
     grid-area: west;
-    min-width: var(--md-comp-sheet-width);
-    margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
-    animation-name: var(--md-comp-sheet-animation, sheetWestOut);
+    min-width: var(--md-comp-pane-width);
+    margin-left: calc(0px - var(--md-comp-pane-height, 100vw));
+    animation-name: var(--md-comp-pane-animation, _sheetWestOut);
     &[open] {
         margin-left: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetWestIn);
+        animation-name: var(--md-comp-pane-animation, _sheetWestIn);
     }
 }
-.md-sheet.md-card--modal {
-    border-radius: var(--md-sys-shape-corner-large);
+.md-sheet.md-pane--modal {
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level0);
     position: absolute;
     z-index: 7;
-    .md-card__header {
-        padding: 24px 24px 24px 16px;
-    }
-    .md-card__body {
-        padding: 0 24px 0 16px;
-    }
-    .md-card__footer {
-        padding: 24px 24px 24px 16px;
-    }
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
-        margin-bottom: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
     }
-    &.md-sheet.md-card--north {
-        grid-area: auto;
-        margin-top: 0;
-        transform: translate3d(0%, -100%, 0);
-        border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
-        top: 0;
-        left: 0;
-        right: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetNorthModalOut);
-        &[open] {
-            transform: translate3d(0, 0, 0);
-            animation-name: var(--md-comp-sheet-animation, sheetNorthModalIn);
-        }
+    .md-pane__header {
+        padding: 24px 24px 24px 16px;
     }
-    &.md-sheet.md-card--east {
-        grid-area: auto;
-        margin-right: 0;
-        transform: translate3d(100%, 0%, 0);
-        border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
-        right: 0;
-        top: 0;
-        bottom: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetEastModalOut);
-        &[open] {
-            transform: translate3d(0, 0, 0);
-            animation-name: var(--md-comp-sheet-animation, sheetEastModalIn);
-        }
+    .md-pane__body {
+        padding: 0 24px 0 16px;
     }
-    &.md-sheet.md-card--south {
-        grid-area: auto;
-        margin-bottom: 0;
-        transform: translate3d(0%, 100%, 0);
-        border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetSouthModalOut);
-        &[open] {
-            transform: translate3d(0, 0, 0);
-            animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
-        }
+    .md-pane__footer {
+        padding: 24px 24px 24px 16px;
     }
-    &.md-sheet.md-card--west {
-        grid-area: auto;
-        margin-left: 0;
-        transform: translate3d(-100%, 0%, 0);
-        border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetWestModalOut);
-        &[open] {
-            transform: translate3d(0, 0, 0);
-            animation-name: var(--md-comp-sheet-animation, sheetWestModalIn);
-        }
+}
+.md-sheet.md-pane--north.md-pane--modal {
+    grid-area: auto;
+    margin-top: 0;
+    border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
+    transform: translate3d(0, -100%, 0);
+    left: 0;
+    right: 0;
+    top: 0;
+    animation-name: var(--md-comp-pane-animation, _sheetNorthModalOut);
+    &[open] {
+        transform: translate3d(0, 0, 0);
+        animation-name: var(--md-comp-pane-animation, _sheetNorthModalIn);
+    }
+}
+.md-sheet.md-pane--east.md-pane--modal {
+    grid-area: auto;
+    margin-right: 0;
+    border-radius: var(--md-sys-shape-corner-large) 0 0 var(--md-sys-shape-corner-large);
+    transform: translate3d(100%, 0, 0);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    animation-name: var(--md-comp-pane-animation, _sheetEastModalOut);
+    &[open] {
+        transform: translate3d(0, 0, 0);
+        animation-name: var(--md-comp-pane-animation, _sheetEastModalIn);
+    }
+}
+.md-sheet.md-pane--south.md-pane--modal {
+    grid-area: auto;
+    margin-bottom: 0;
+    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
+    transform: translate3d(0, 100%, 0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation-name: var(--md-comp-pane-animation, _sheetSouthModalOut);
+    &[open] {
+        transform: translate3d(0, 0, 0);
+        animation-name: var(--md-comp-pane-animation, _sheetSouthModalIn);
+    }
+}
+.md-sheet.md-pane--west.md-pane--modal {
+    grid-area: auto;
+    margin-left: 0;
+    border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
+    transform: translate3d(-100%, 0, 0);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    animation-name: var(--md-comp-pane-animation, _sheetWestModalOut);
+    &[open] {
+        transform: translate3d(0, 0, 0);
+        animation-name: var(--md-comp-pane-animation, _sheetWestModalIn);
     }
 }

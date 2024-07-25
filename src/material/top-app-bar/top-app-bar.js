@@ -1,15 +1,13 @@
-import { MDSheetComponent } from "../sheet/sheet.js";
+import { MDPaneComponent } from "../pane/pane.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-top-app-bar
- * @fires MDTopAppBarComponent#onSheetShow - {{desc}}
- * @fires MDTopAppBarComponent#onSheetClose - {{desc}}
- * @fires MDTopAppBarComponent#onSheetScrimClick - {{desc}}
+ * @fires MDTopAppBarComponent#onScrimClick - {{desc}}
  */
-class MDTopAppBarComponent extends MDSheetComponent {
-    variants = ["center", "small", "medium", "large"];
+class MDTopAppBarComponent extends MDPaneComponent {
+    variants = ["center-aligned", "small", "medium", "large"];
 
     /**
      * {{desc}}

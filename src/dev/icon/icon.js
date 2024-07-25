@@ -3,10 +3,7 @@ import { MDComponent } from "../../material/component/component.js";
 import icons from "../../assets/icons.json";
 import { MDVirtualController } from "../../material/material.js";
 
-const grouped = Object.groupBy(
-    icons,
-    (doc) => doc.group,
-);
+const grouped = Object.groupBy(icons, (doc) => doc.group);
 const rows = [];
 for (const name in grouped) {
     const docs = grouped[name];

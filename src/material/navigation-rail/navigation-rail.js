@@ -1,21 +1,19 @@
 import { html } from "lit";
 import { MDSheetComponent } from "../sheet/sheet.js";
 import { MDTreeComponent } from "../tree/tree.js";
+import { MDPaneComponent } from "../pane/pane.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-navigation-rail
- * @fires MDNavigationRailComponent#onSheetShow - {{desc}}
- * @fires MDNavigationRailComponent#onSheetClose - {{desc}}
- * @fires MDNavigationRailComponent#onSheetScrimClick - {{desc}}
+ * @fires MDNavigationRailComponent#onScrimClick - {{desc}}
  */
-class MDNavigationRailComponent extends MDSheetComponent {
+class MDNavigationRailComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
-     * @property {String} leadingIcon - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}

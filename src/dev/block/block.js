@@ -299,11 +299,11 @@ class DevBlock extends MDComponent {
                         <md-pane id="sideSheet" style="--md-comp-pane-width:256px;" class="md-pane--side-sheet" !open leadingActions='[{"icon":"arrow_back"}]' headline="headline" trailingActions='[{"icon":"close"}]' actions='[{"label":"label"},{"label":"label"}]'></md-pane>
                         <md-pane id="sideSheet1" style="--md-comp-pane-width:256px;" class="md-pane--side-sheet md-pane--modal" !open leadingActions='[{"icon":"arrow_back"}]' headline="headline" trailingActions='[{"icon":"close"}]' actions='[{"label":"label"},{"label":"label"}]'></md-pane>
 
-                        <md-pane id="bottomSheet" style="--md-comp-pane-width:256px;" class="md-pane--bottom-sheet" !open >I am empty without you</md-pane>
-                        <md-pane id="bottomSheet1" style="--md-comp-pane-width:256px;" class="md-pane--bottom-sheet md-pane--modal" !open >I am empty without you</md-pane>
+                        <md-pane id="bottomSheet" style="--md-comp-pane-width:256px;" class="md-pane--bottom-sheet" !open>I am empty without you</md-pane>
+                        <md-pane id="bottomSheet1" style="--md-comp-pane-width:256px;" class="md-pane--bottom-sheet md-pane--modal" !open>I am empty without you</md-pane>
 
-                        <md-pane id="navigationDrawer0" style="--md-comp-pane-width:360px;" class="md-pane--navigation-drawer" !open ></md-pane>
-                        <md-pane id="navigationDrawer1" style="--md-comp-pane-width:360px;" class="md-pane--navigation-drawer md-pane--modal" !open ></md-pane>
+                        <md-pane id="navigationDrawer0" style="--md-comp-pane-width:360px;" class="md-pane--navigation-drawer" !open></md-pane>
+                        <md-pane id="navigationDrawer1" style="--md-comp-pane-width:360px;" class="md-pane--navigation-drawer md-pane--modal" !open></md-pane>
 
                         <md-layout-item region="center">
                             <md-layout variant="border">
@@ -311,15 +311,15 @@ class DevBlock extends MDComponent {
 
                                 <md-pane id="bottomAppBar1" class="md-pane--bottom-app-bar" leadingActions='[{"icon":"image"},{"icon":"image"},{"icon":"image"},{"icon":"image"}]'></md-pane>
 
-                                <md-pane id="navigationRail0" style="--md-comp-pane-width:80px;" class="md-pane--navigation-rail" !open ></md-pane>
-                                
+                                <md-pane id="navigationRail0" style="--md-comp-pane-width:80px;" class="md-pane--navigation-rail" !open></md-pane>
+
                                 <md-layout-item region="center">
                                     <md-layout variant="border">
                                         <md-pane id="topAppBar2" class="md-pane--top-app-bar md-pane--medium" headline="Medium" leadingActions='[{"icon":"arrow_back"}]' trailingActions='[{"icon":"close"}]'></md-pane>
-                                        
+
                                         <md-pane id="navigationBar0" class="md-pane--navigation-bar"></md-pane>
-                                        
-                                        <md-pane id="navigationRail1" style="--md-comp-pane-width:80px;" class="md-pane--navigation-rail" !open ></md-pane>
+
+                                        <md-pane id="navigationRail1" style="--md-comp-pane-width:80px;" class="md-pane--navigation-rail" !open></md-pane>
                                         <md-layout-item region="center">
                                             <md-layout variant="border">
                                                 <md-pane id="topAppBar3" class="md-pane--top-app-bar md-pane--large" headline="Large" leadingActions='[{"icon":"arrow_back"}]' trailingActions='[{"icon":"close"}]'></md-pane>

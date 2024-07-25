@@ -90,16 +90,13 @@ function renderBottomAppBar(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-bottom-app-bar>
     `
 }
@@ -118,16 +115,13 @@ function renderBottomSheet(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-bottom-sheet>
     `
 }
@@ -170,12 +164,13 @@ function renderCard(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
+            .open="${ifDefined(item.open)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-card>
     `
 }
@@ -424,7 +419,6 @@ function renderColorPicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -432,9 +426,7 @@ function renderColorPicker(item = {}) {
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
             .value="${ifDefined(item.value)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onColorPickerButtonLabelClick="${ifDefined(item.onColorPickerButtonLabelClick)}"
             @onColorPickerSelection="${ifDefined(item.onColorPickerSelection)}"
             @onColorPickerGradientTrackPointerdown="${ifDefined(item.onColorPickerGradientTrackPointerdown)}"
@@ -462,12 +454,12 @@ function renderDataTable(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
+            .open="${ifDefined(item.open)}"
             .columns="${ifDefined(item.columns)}"
             .rows="${ifDefined(item.rows)}"
             .footer="${ifDefined(item.footer)}"
@@ -480,6 +472,7 @@ function renderDataTable(item = {}) {
             .singleSelection="${ifDefined(item.singleSelection)}"
             .allSelection="${ifDefined(item.allSelection)}"
             .toolbarItems="${ifDefined(item.toolbarItems)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onDataTableTextFieldNativeSearch="${ifDefined(item.onDataTableTextFieldNativeSearch)}"
             @onDataTableColumnCellDragStart="${ifDefined(item.onDataTableColumnCellDragStart)}"
             @onDataTableColumnCellDrag="${ifDefined(item.onDataTableColumnCellDrag)}"
@@ -696,7 +689,6 @@ function renderDatePicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -705,9 +697,7 @@ function renderDatePicker(item = {}) {
             .open="${ifDefined(item.open)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -803,7 +793,6 @@ function renderDatetimePicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -812,9 +801,7 @@ function renderDatetimePicker(item = {}) {
             .open="${ifDefined(item.open)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -844,16 +831,13 @@ function renderDialog(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-dialog>
     `
 }
@@ -909,7 +893,6 @@ function renderEmojiPicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -918,9 +901,7 @@ function renderEmojiPicker(item = {}) {
             .open="${ifDefined(item.open)}"
             .tabs="${ifDefined(item.tabs)}"
             .rows="${ifDefined(item.rows)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onEmojiPickerTextFieldNativeInput="${ifDefined(item.onEmojiPickerTextFieldNativeInput)}"
             @onEmojiPickerTabsItemClick="${ifDefined(item.onEmojiPickerTabsItemClick)}"
             @onEmojiPickerViewportVirtualScroll="${ifDefined(item.onEmojiPickerViewportVirtualScroll)}"
@@ -1181,7 +1162,6 @@ function renderMenu(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -1191,9 +1171,7 @@ function renderMenu(item = {}) {
             .items="${ifDefined(item.items)}"
             .rowHeight="${ifDefined(item.rowHeight)}"
             .maxRows="${ifDefined(item.maxRows)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onMenuListSelection="${ifDefined(item.onMenuListSelection)}"
             @onMenuListItemEnter="${ifDefined(item.onMenuListItemEnter)}"
             @onMenuViewportVirtualScroll="${ifDefined(item.onMenuViewportVirtualScroll)}"
@@ -1274,7 +1252,6 @@ function renderMonthPicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -1283,9 +1260,7 @@ function renderMonthPicker(item = {}) {
             .open="${ifDefined(item.open)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -1323,16 +1298,13 @@ function renderNavigationBar(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-navigation-bar>
     `
 }
@@ -1351,16 +1323,13 @@ function renderNavigationDrawer(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-navigation-drawer>
     `
 }
@@ -1379,16 +1348,13 @@ function renderNavigationRail(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-navigation-rail>
     `
 }
@@ -1480,6 +1446,31 @@ function renderPagination(item = {}) {
             @onPaginationNextClick="${ifDefined(item.onPaginationNextClick)}"
             @onPaginationLastClick="${ifDefined(item.onPaginationLastClick)}"
         ></md-pagination>
+    `
+}
+
+/**
+ * {{desc}}
+ * @param {Any} item = {} - {{desc}}
+ */
+function renderPane(item = {}) {
+    /* prettier-ignore */
+    return html`
+        <md-pane
+            .data="${item}"
+            id="${ifDefined(item.id)}"
+            class="${classMap({...item.classMap})}"
+            style="${styleMap({...item.styleMap})}"
+            .tooltip="${ifDefined(item.tooltip)}"
+            .variant="${ifDefined(item.variant)}"
+            .leadingActions="${ifDefined(item.leadingActions)}"
+            .headline="${ifDefined(item.headline)}"
+            .subhead="${ifDefined(item.subhead)}"
+            .trailingActions="${ifDefined(item.trailingActions)}"
+            .actions="${ifDefined(item.actions)}"
+            .open="${ifDefined(item.open)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
+        ></md-pane>
     `
 }
 
@@ -1750,16 +1741,13 @@ function renderSheet(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-sheet>
     `
 }
@@ -1778,16 +1766,13 @@ function renderSideSheet(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-side-sheet>
     `
 }
@@ -1830,16 +1815,13 @@ function renderSnackbar(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onSnackbarShow="${ifDefined(item.onSnackbarShow)}"
             @onSnackbarClose="${ifDefined(item.onSnackbarClose)}"
         ></md-snackbar>
@@ -2092,7 +2074,6 @@ function renderTimePicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -2101,9 +2082,7 @@ function renderTimePicker(item = {}) {
             .open="${ifDefined(item.open)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -2194,16 +2173,13 @@ function renderTooltip(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-tooltip>
     `
 }
@@ -2222,16 +2198,13 @@ function renderTopAppBar(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .actions="${ifDefined(item.actions)}"
             .open="${ifDefined(item.open)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
         ></md-top-app-bar>
     `
 }
@@ -2360,7 +2333,6 @@ function renderWeekPicker(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .variant="${ifDefined(item.variant)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
             .leadingActions="${ifDefined(item.leadingActions)}"
             .headline="${ifDefined(item.headline)}"
             .subhead="${ifDefined(item.subhead)}"
@@ -2369,9 +2341,7 @@ function renderWeekPicker(item = {}) {
             .open="${ifDefined(item.open)}"
             .index="${ifDefined(item.index)}"
             .value="${ifDefined(item.value)}"
-            @onSheetShow="${ifDefined(item.onSheetShow)}"
-            @onSheetClose="${ifDefined(item.onSheetClose)}"
-            @onSheetScrimClick="${ifDefined(item.onSheetScrimClick)}"
+            @onScrimClick="${ifDefined(item.onScrimClick)}"
             @onDatetimePickerSelection="${ifDefined(item.onDatetimePickerSelection)}"
             @onDatetimePickerIconButtonPrevClick="${ifDefined(item.onDatetimePickerIconButtonPrevClick)}"
             @onDatetimePickerIconButtonNextClick="${ifDefined(item.onDatetimePickerIconButtonNextClick)}"
@@ -2445,6 +2415,7 @@ function renderComponent(item) {
         ["navigation-rail", () => renderNavigationRail(item)],
         ["number-field", () => renderNumberField(item)],
         ["pagination", () => renderPagination(item)],
+        ["pane", () => renderPane(item)],
         ["password-field", () => renderPasswordField(item)],
         ["progress-indicator", () => renderProgressIndicator(item)],
         ["radio-button", () => renderRadioButton(item)],
@@ -2472,4 +2443,4 @@ function renderComponent(item) {
         ["week-picker", () => renderWeekPicker(item)],
     ], () => nothing)
 }
-export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCardFooter, renderCardHeader, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };
+export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCardFooter, renderCardHeader, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPane, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };

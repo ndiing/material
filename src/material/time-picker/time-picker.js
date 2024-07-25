@@ -6,9 +6,7 @@ import { html } from "lit";
  * {{desc}}
  * @extends MDDatetimePickerComponent
  * @element md-time-picker
- * @fires MDTimePickerComponent#onSheetShow - {{desc}}
- * @fires MDTimePickerComponent#onSheetClose - {{desc}}
- * @fires MDTimePickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDTimePickerComponent#onScrimClick - {{desc}}
  * @fires MDTimePickerComponent#onDatetimePickerSelection - {{desc}}
  * @fires MDTimePickerComponent#onDatetimePickerIconButtonPrevClick - {{desc}}
  * @fires MDTimePickerComponent#onDatetimePickerIconButtonNextClick - {{desc}}

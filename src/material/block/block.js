@@ -76,12 +76,24 @@ class MDBlockComponent extends MDComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
+    /**
+     * {{desc}}
+     */
     get hasSectionStart() {
         return this.leadingActions?.length || this.leadingCheckbox || this.leadingRadioButton || this.leadingSwitch || this.leadingAvatar || this.leadingImage || this.leadingVideo || this.leadingIcon || this.leadingSupportingText;
     }
+
+    /**
+     * {{desc}}
+     */
     get hasSectionCenter() {
         return this.headline || this.supportingText;
     }
+
+    /**
+     * {{desc}}
+     */
     get hasSectionEnd() {
         return this.trailingActions?.length || this.trailingCheckbox || this.trailingRadioButton || this.trailingSwitch || this.trailingAvatar || this.trailingImage || this.trailingVideo || this.trailingIcon || this.trailingSupportingText;
     }

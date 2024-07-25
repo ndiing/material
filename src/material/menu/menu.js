@@ -5,26 +5,24 @@ import { MDStore } from "../store/store.js";
 import { MDVirtualController } from "../virtual/virtual.js";
 import { MDListComponent } from "../list/list.js";
 import { renderList } from "../template/template.js";
+import { MDPaneComponent } from "../pane/pane.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-menu
- * @fires MDMenuComponent#onSheetShow - {{desc}}
- * @fires MDMenuComponent#onSheetClose - {{desc}}
- * @fires MDMenuComponent#onSheetScrimClick - {{desc}}
+ * @fires MDMenuComponent#onScrimClick - {{desc}}
  * @fires MDMenuComponent#onMenuListSelection - {{desc}}
  * @fires MDMenuComponent#onMenuListItemEnter - {{desc}}
  * @fires MDMenuComponent#onMenuViewportVirtualScroll - {{desc}}
  * @fires MDMenuComponent#onMenuViewportVirtualScrollInitialized - {{desc}}
  * @fires MDMenuComponent#onMenuListItemClick - {{desc}}
  */
-class MDMenuComponent extends MDSheetComponent {
+class MDMenuComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
-     * @property {String} leadingIcon - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}

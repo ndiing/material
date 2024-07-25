@@ -7,9 +7,7 @@ import { MDPopperController } from "../popper/popper.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-color-picker
- * @fires MDColorPickerComponent#onSheetShow - {{desc}}
- * @fires MDColorPickerComponent#onSheetClose - {{desc}}
- * @fires MDColorPickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDColorPickerComponent#onScrimClick - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerButtonLabelClick - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerSelection - {{desc}}
  * @fires MDColorPickerComponent#onColorPickerGradientTrackPointerdown - {{desc}}
@@ -25,7 +23,6 @@ class MDColorPickerComponent extends MDSheetComponent {
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
-     * @property {String} leadingIcon - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}

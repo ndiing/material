@@ -8,6 +8,7 @@ import { renderComponent } from "../template/template.js";
  * {{desc}}
  * @extends MDCardComponent
  * @element md-data-table
+ * @fires MDDataTableComponent#onScrimClick - {{desc}}
  * @fires MDDataTableComponent#onDataTableTextFieldNativeSearch - {{desc}}
  * @fires MDDataTableComponent#onDataTableColumnCellDragStart - {{desc}}
  * @fires MDDataTableComponent#onDataTableColumnCellDrag - {{desc}}
@@ -29,12 +30,12 @@ class MDDataTableComponent extends MDCardComponent {
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
-     * @property {String} leadingIcon - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Array} actions - {{desc}}
+     * @property {Boolean} open - {{desc}}
      * @property {Array} columns - {{desc}}
      * @property {Array} rows - {{desc}}
      * @property {Array} footer - {{desc}}

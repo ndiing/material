@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { MDBlockComponent } from "../material.js";
 import { renderBlock } from "../template/template.js";
 
 /**
@@ -13,6 +12,7 @@ class MDPaneComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
+     * @property {String} variant - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}
@@ -21,6 +21,7 @@ class MDPaneComponent extends MDComponent {
      * @property {Boolean} open - {{desc}}
      */
     static properties = {
+        variant: { type: String },
         leadingActions: { type: Array },
         headline: { type: String },
         subhead: { type: String },
@@ -28,6 +29,7 @@ class MDPaneComponent extends MDComponent {
         actions: { type: Array },
         open: { type: Boolean, reflect: true },
     };
+    variants = [];
 
     /**
      * {{desc}}
@@ -103,6 +105,20 @@ class MDPaneComponent extends MDComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeScrim();
+    }
+
+    /**
+     * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-pane--${variant}`, variants.includes(variant));
+            });
+        }
     }
 
     /**

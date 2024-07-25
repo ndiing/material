@@ -6,9 +6,7 @@ import { html } from "lit";
  * {{desc}}
  * @extends MDDatetimePickerComponent
  * @element md-week-picker
- * @fires MDWeekPickerComponent#onSheetShow - {{desc}}
- * @fires MDWeekPickerComponent#onSheetClose - {{desc}}
- * @fires MDWeekPickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDWeekPickerComponent#onScrimClick - {{desc}}
  * @fires MDWeekPickerComponent#onDatetimePickerSelection - {{desc}}
  * @fires MDWeekPickerComponent#onDatetimePickerIconButtonPrevClick - {{desc}}
  * @fires MDWeekPickerComponent#onDatetimePickerIconButtonNextClick - {{desc}}

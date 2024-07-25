@@ -7,9 +7,7 @@ import { MDPopperController } from "../popper/popper.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-datetime-picker
- * @fires MDDatetimePickerComponent#onSheetShow - {{desc}}
- * @fires MDDatetimePickerComponent#onSheetClose - {{desc}}
- * @fires MDDatetimePickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDDatetimePickerComponent#onScrimClick - {{desc}}
  * @fires MDDatetimePickerComponent#onDatetimePickerSelection - {{desc}}
  * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonPrevClick - {{desc}}
  * @fires MDDatetimePickerComponent#onDatetimePickerIconButtonNextClick - {{desc}}
@@ -27,7 +25,6 @@ class MDDatetimePickerComponent extends MDSheetComponent {
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {String} variant - {{desc}}
-     * @property {String} leadingIcon - {{desc}}
      * @property {Array} leadingActions - {{desc}}
      * @property {String} headline - {{desc}}
      * @property {String} subhead - {{desc}}

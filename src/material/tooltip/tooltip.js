@@ -1,15 +1,13 @@
+import { MDPaneComponent } from "../pane/pane.js";
 import { MDPopperController } from "../popper/popper.js";
-import { MDSheetComponent } from "../sheet/sheet.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-tooltip
- * @fires MDTooltipComponent#onSheetShow - {{desc}}
- * @fires MDTooltipComponent#onSheetClose - {{desc}}
- * @fires MDTooltipComponent#onSheetScrimClick - {{desc}}
+ * @fires MDTooltipComponent#onScrimClick - {{desc}}
  */
-class MDTooltipComponent extends MDSheetComponent {
+class MDTooltipComponent extends MDPaneComponent {
     variants = ["plain", "rich"];
 
     /**
@@ -26,16 +24,6 @@ class MDTooltipComponent extends MDSheetComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tooltip");
-    }
-
-    /**
-     * {{desc}}
-     * @param {Any} button - {{desc}}
-     * @param {Any} options - {{desc}}
-     */
-    showModal(button, options) {
-        this.updatePosition(button, options);
-        super.showModal();
     }
 
     /**

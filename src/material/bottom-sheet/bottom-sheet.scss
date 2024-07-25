@@ -1,50 +1,71 @@
+/* bottom sheet */
 .md-bottom-sheet {
     display: inline-flex;
+    width: 100%;
     max-width: 640px;
     max-height: calc(100% - 72px);
-    width: 100%;
     margin: 72px auto 0 auto;
-    transform: translate3d(0%, 100%, 0);
-    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface-variant);
-    box-shadow: var(--md-sys-elevation-level0);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
-    min-height: var(--md-comp-sheet-height);
+    min-height: var(--md-comp-pane-height);
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level1);
     position: absolute;
-    bottom: 0;
+    z-index: 7;
+    grid-area: auto;
+    margin-bottom: 0;
+    border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0 0;
+    transform: translate3d(0, 100%, 0);
     left: 0;
     right: 0;
-    z-index: 7;
-    animation-name: var(--md-comp-sheet-animation, sheetSouthModalOut);
+    bottom: 0;
+    animation-name: var(--md-comp-pane-animation, _sheetSouthModalOut);
     &[open] {
         margin-bottom: 0;
-        transform: translate3d(0, 0, 0);
         box-shadow: var(--md-sys-elevation-level1);
-        animation-name: var(--md-comp-sheet-animation, sheetSouthModalIn);
+        transform: translate3d(0, 0, 0);
+        animation-name: var(--md-comp-pane-animation, _sheetSouthModalIn);
     }
-    .md-card__header {
-        padding: 24px 24px 24px 16px;
-        gap: 0 12px;
-        > .md-block__group {
-            > .md-block__headline {
-                @include typescale-title-large();
-            }
+    .md-pane__header {
+        padding: 24px;
+        border-radius: inherit;
+        background-color: inherit;
+        color: inherit;
+        .md-block__inner {
+            gap: 0 12px;
         }
-        + .md-card__wrapper {
+        .md-block__headline {
+            @include typescale-title-large();
+        }
+        + .md-pane__wrapper {
             margin-top: -24px;
         }
     }
-    .md-card__body {
-        padding: 0 24px 0 16px;
+    .md-pane__wrapper {
+        border-radius: inherit;
+    }
+    .md-pane__body {
+        padding: 0 24px;
         margin: 24px 0;
-        + .md-card__footer {
+        border-radius: inherit;
+        + .md-pane__footer {
             margin-top: -24px;
         }
     }
-    .md-card__footer {
+    .md-pane__footer {
+        padding: 24px;
+        border-radius: inherit;
+        background-color: inherit;
+        color: inherit;
+    }
+    .md-pane__header {
         padding: 24px 24px 24px 16px;
-        gap: 0 8px;
+    }
+    .md-pane__body {
+        padding: 0 24px 0 16px;
+    }
+    .md-pane__footer {
+        padding: 24px 24px 24px 16px;
     }
 }

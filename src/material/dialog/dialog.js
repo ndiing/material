@@ -4,12 +4,10 @@ import { MDSheetComponent } from "../sheet/sheet.js";
  * {{desc}}
  * @extends MDSheetComponent
  * @element md-dialog
- * @fires MDDialogComponent#onSheetShow - {{desc}}
- * @fires MDDialogComponent#onSheetClose - {{desc}}
- * @fires MDDialogComponent#onSheetScrimClick - {{desc}}
+ * @fires MDDialogComponent#onScrimClick - {{desc}}
  */
 class MDDialogComponent extends MDSheetComponent {
-    variants = ["full"];
+    variants = ["full-screen"];
 
     /**
      * {{desc}}

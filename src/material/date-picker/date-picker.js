@@ -6,9 +6,7 @@ import { parseDate, stringifyDate, stringifyYear } from "../functions/functions.
  * {{desc}}
  * @extends MDDatetimePickerComponent
  * @element md-date-picker
- * @fires MDDatePickerComponent#onSheetShow - {{desc}}
- * @fires MDDatePickerComponent#onSheetClose - {{desc}}
- * @fires MDDatePickerComponent#onSheetScrimClick - {{desc}}
+ * @fires MDDatePickerComponent#onScrimClick - {{desc}}
  * @fires MDDatePickerComponent#onDatetimePickerSelection - {{desc}}
  * @fires MDDatePickerComponent#onDatetimePickerIconButtonPrevClick - {{desc}}
  * @fires MDDatePickerComponent#onDatetimePickerIconButtonNextClick - {{desc}}

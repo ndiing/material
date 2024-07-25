@@ -1,14 +1,12 @@
-import { MDSheetComponent } from "../sheet/sheet.js";
+import { MDPaneComponent } from "../pane/pane.js";
 
 /**
  * {{desc}}
- * @extends MDSheetComponent
+ * @extends MDPaneComponent
  * @element md-side-sheet
- * @fires MDSideSheetComponent#onSheetShow - {{desc}}
- * @fires MDSideSheetComponent#onSheetClose - {{desc}}
- * @fires MDSideSheetComponent#onSheetScrimClick - {{desc}}
+ * @fires MDSideSheetComponent#onScrimClick - {{desc}}
  */
-class MDSideSheetComponent extends MDSheetComponent {
+class MDSideSheetComponent extends MDPaneComponent {
     variants = ["modal"];
 
     /**

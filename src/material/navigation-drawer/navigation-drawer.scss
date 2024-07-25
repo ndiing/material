@@ -1,5 +1,6 @@
+/* navigation drawer */
 .md-navigation-drawer {
-    --md-comp-sheet-width: 360px;
+    --md-comp-pane-width: 360px;
     display: inline-flex;
     border-radius: var(--md-sys-shape-corner-none);
     background-color: var(--md-sys-color-surface);
@@ -8,39 +9,37 @@
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-emphasized));
     animation-duration: var(--md-sys-motion-duration-short4);
     grid-area: west;
-    min-width: var(--md-comp-sheet-width);
-    margin-left: calc(0px - var(--md-comp-sheet-width, 100vw));
-    animation-name: var(--md-comp-sheet-animation, sheetWestOut);
+    min-width: var(--md-comp-pane-width);
+    margin-left: calc(0px - var(--md-comp-pane-height, 100vw));
+    animation-name: var(--md-comp-pane-animation, _sheetWestOut);
     &[open] {
         margin-left: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetWestIn);
+        animation-name: var(--md-comp-pane-animation, _sheetWestIn);
     }
-    .md-card__body {
+    .md-pane__body {
         padding: 0;
         margin: 0;
+        border-radius: inherit;
     }
 }
-.md-navigation-drawer.md-card--modal {
-    border-radius: var(--md-sys-shape-corner-large);
+.md-navigation-drawer.md-pane--modal {
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level0);
     position: absolute;
     z-index: 7;
     grid-area: auto;
     margin-left: 0;
-    transform: translate3d(-100%, 0%, 0);
     border-radius: 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large) 0;
+    transform: translate3d(-100%, 0, 0);
     left: 0;
     top: 0;
     bottom: 0;
-    animation-name: var(--md-comp-sheet-animation, sheetWestModalOut);
-    .md-card__body {
-        padding: 0;
-    }
+    animation-name: var(--md-comp-pane-animation, _sheetWestModalOut);
     &[open] {
         box-shadow: var(--md-sys-elevation-level1);
-        margin-bottom: 0;
-        animation-name: var(--md-comp-sheet-animation, sheetSouthIn);
         transform: translate3d(0, 0, 0);
-        animation-name: var(--md-comp-sheet-animation, sheetWestModalIn);
+        animation-name: var(--md-comp-pane-animation, _sheetWestModalIn);
     }
 }
 .md-navigation-drawer__tree {

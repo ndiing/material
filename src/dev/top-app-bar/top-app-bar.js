@@ -5,7 +5,7 @@ class DevTopAppBar extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-                <md-top-app-bar leadingActions='[{"icon":"image"}]' headline="headline" trailingActions='[{"icon":"image"}]' variant="center" id="center"></md-top-app-bar>
+                <md-top-app-bar leadingActions='[{"icon":"image"}]' headline="headline" trailingActions='[{"icon":"image"}]' variant="center-aligned" id="center"></md-top-app-bar>
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-border">
                         <md-top-app-bar leadingActions='[{"icon":"image"}]' headline="headline" trailingActions='[{"icon":"image"}]' variant="small" id="small"></md-top-app-bar>

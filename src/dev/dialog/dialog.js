@@ -55,7 +55,7 @@ class DevDialog extends MDComponent {
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-dialog id="dialog1" variant="full" headline="Lorem ipsum dolor" .leadingActions="${actions1}" .trailingActions="${actions2}"> Lorem ipsum dolor sit amet. Beatae commodi eos eligendi est? Illo tempora a rerum ex. </md-dialog>
+                            <md-dialog id="dialog1" variant="full-screen" headline="Lorem ipsum dolor" .leadingActions="${actions1}" .trailingActions="${actions2}"> Lorem ipsum dolor sit amet. Beatae commodi eos eligendi est? Illo tempora a rerum ex. </md-dialog>
                             <md-button label="Full-screen dialog" variant="tonal" @click="${() => dialog1.show(true)}"></md-button>
                         </div>
 
