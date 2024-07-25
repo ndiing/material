@@ -1,13 +1,18 @@
 {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-            "targets": {
-              "esmodules": true
-           },
-            "bugfixes": true
-        }
-      ]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        },
+        "bugfixes": true
+      }
     ]
-   }
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-transform-runtime"
+  ]
+}
