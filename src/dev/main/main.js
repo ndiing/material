@@ -196,10 +196,11 @@ class DevMainComponent extends MDComponent {
     }
 
     handleListItemSelected(event) {
-        event.detail.currentTarget.scrollIntoView({
+        event.detail.currentTarget
+        .scrollIntoView({
             block:'center',
             inline:'center',
-            behavior:'smooth',
+            behavior:'instant',
         })
     }
 }

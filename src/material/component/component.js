@@ -19,7 +19,7 @@ class MDComponent extends LitElement {
      */
     constructor() {
         super();
-        updateWhenLocaleChanges(this);
+        // updateWhenLocaleChanges(this);
     }
 
     /**
