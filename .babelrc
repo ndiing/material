@@ -1,19 +1,11 @@
 {
+  "plugins": ["@babel/syntax-dynamic-import"],
   "presets": [
     [
       "@babel/preset-env",
       {
-        "targets": {
-          "esmodules": true
-        },
-        "bugfixes": true,
-        "useBuiltIns": "entry",
-        "corejs": 3
+        "modules": false
       }
     ]
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-transform-runtime"
   ]
 }
