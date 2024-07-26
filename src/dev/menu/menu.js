@@ -1584,9 +1584,19 @@ class DevMenu extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-menu id="menu" rowHeight="48" maxRows="5" .items="${items0}" .map="${{ label: "name", value: "id" }}" @onMenuViewportVirtualScroll="" @onMenuListItemClick=""></md-menu>
-                            <md-button label="toggle menu" @click="${(event) => menu.toggle(event.currentTarget)}"></md-button>
-                            <input @click="${(event) => menu.toggle(event.currentTarget)}" @input="${(event) => menu.filter(event.currentTarget.value)}" />
+                            <md-menu
+                                id="menu"
+                                rowHeight="48"
+                                maxRows="5"
+                                style="width:168px;"
+                                .items="${items0}"
+                                @onListItemClick="${() => menu.close()}"
+                            ></md-menu>
+                            <md-button
+                                label="menu"
+                                variant="tonal"
+                                @click="${(event) => menu.toggle(event.currentTarget)}"
+                            ></md-button>
                         </div>
                     </div>
                 </div>
@@ -1596,19 +1606,12 @@ class DevMenu extends MDComponent {
 
     connectedCallback() {
         super.connectedCallback();
-        this.handleContextmenu = this.handleContextmenu.bind(this);
-        window.addEventListener("contextmenu", this.handleContextmenu);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        window.removeEventListener("contextmenu", this.handleContextmenu);
     }
 
-    handleContextmenu(event) {
-        event.preventDefault();
-        menu.show(event);
-    }
 }
 
 customElements.define("dev-menu", DevMenu);

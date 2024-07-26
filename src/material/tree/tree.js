@@ -88,6 +88,7 @@ class MDTreeComponent extends MDComponent {
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
+            await this.updateComplete
             this.setItems(this.items);
             this.requestUpdate();
         }
