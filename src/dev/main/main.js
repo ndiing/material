@@ -179,7 +179,7 @@ class DevMainComponent extends MDComponent {
     render() {
         return html`
             <md-layout variant="border">
-                <!-- <md-top-app-bar id="topAppBar" .leadingActions="${[{ icon: "menu", onIconButtonClick: this.handleIconButtonClick.bind(this) }]}" open></md-top-app-bar> -->
+                <md-top-app-bar id="topAppBar" .leadingActions="${[{ icon: "menu", onIconButtonClick: this.handleIconButtonClick.bind(this) }]}" open></md-top-app-bar>
                 <md-navigation-drawer id="navigationDrawer" .items="${this.items}" variant="tree" open @onListItemSelected="${this.handleListItemSelected}"></md-navigation-drawer>
                 <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
             </md-layout>

@@ -103,3 +103,17 @@
     text-overflow: ellipsis;
     text-align: center;
 }
+
+.dev-demo__viewport{
+    aspect-ratio: 16/9;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    background-color: var(--md-sys-color-surface-container-lowest);
+    border: 8px solid var(--md-sys-color-surface-container-lowest);
+    position: relative;
+}
+.dev-demo__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}

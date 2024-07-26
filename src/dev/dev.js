@@ -92,11 +92,13 @@ import DevDataTableRowCell from "./data-table-row-cell/data-table-row-cell.js";
 import DevDataTable from "./data-table/data-table.js";
 // main
 import DevMain from "./main/main.js";
+import DevDemo from "./demo/demo.js";
 
 const routes = [
     {
         path: "",
         children: [
+            { path: "demo", component: DevDemo },
             { path: "observer", component: DevObserver },
             { path: "media-observer", component: DevMediaObserver },
             { path: "attribute-observer", component: DevAttributeObserver },
