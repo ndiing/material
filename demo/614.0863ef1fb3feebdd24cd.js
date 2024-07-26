@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[614],{614:(e,i,n)=>{n.r(i),n.d(i,{templates:()=>a});const a={sc958887ef4afecbd:"你好，欢迎来到我们的应用程序！"}}}]);
+//# sourceMappingURL=614.0863ef1fb3feebdd24cd.js.map
