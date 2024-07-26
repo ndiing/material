@@ -87,14 +87,11 @@
         flex-direction: column;
         position: relative;
     }
-    // .md-block__section{}
-    // .md-block__section--start{}
     .md-block__icon {
         width: 64px;
         height: 32px;
         border-radius: calc(32px / 2);
     }
-    // .md-block__section--center{}
     .md-block__headline {
         margin: 4px 0;
         @include typescale-label-medium();

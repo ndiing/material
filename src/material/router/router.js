@@ -253,8 +253,6 @@ class MDRouter {
         this.stacks = this.setRoutes(routes);
         this.handleLoad = this.handleLoad.bind(this);
         window.addEventListener("DOMContentLoaded", this.handleLoad);
-        // window.addEventListener("load", this.handleLoad);
-        // this.handleLoad();
         if (this.historyApiFallback) {
             window.addEventListener("popstate", this.handleLoad);
             const pushState = window.history.pushState;

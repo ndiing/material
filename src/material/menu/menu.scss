@@ -40,10 +40,6 @@
     .md-block__inner {
         gap: 0 12px;
     }
-    // .md-block__section{}
-    // .md-block__section--start{}
-    // .md-block__icon{}
-    // .md-block__section--center{}
     .md-block__headline {
         @include typescale-label-large();
     }
