@@ -1,6 +1,6 @@
 /* navigation drawer */
 .md-navigation-drawer {
-    --md-comp-pane-width: 360px;
+    --md-comp-pane-width: calc(360px - 56px);
     display: inline-flex;
     border-radius: var(--md-sys-shape-corner-none);
     background-color: var(--md-sys-color-surface);
