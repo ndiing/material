@@ -27,6 +27,8 @@ import DevIcon from "./icon/icon.js"
 import DevEmoji from "./emoji/emoji.js"
 import DevImage from "./image/image.js"
 import DevBadge from "./badge/badge.js"
+import DevBadge2 from "./badge/badge2.js"
+import DevBadge3 from "./badge/badge3.js"
 // button
 import DevButton from "./button/button.js"
 import DevIconButton from "./icon-button/icon-button.js"
@@ -100,6 +102,8 @@ const routes = [
             { component: DevBlock, path: "block" },
             { component: DevAttributeObserver, path: "attribute-observer" },
             { component: DevBadge, path: "badge" },
+            { component: DevBadge2, path: "badge2" },
+            { component: DevBadge3, path: "badge3" },
             { component: DevBottomAppBar, path: "bottom-app-bar" },
             { component: DevBottomSheet, path: "bottom-sheet" },
             { component: DevButton, path: "button" },

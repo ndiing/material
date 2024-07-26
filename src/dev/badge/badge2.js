@@ -2,10 +2,10 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
 const items0=[
-    {leadingIcon:'mail_outline',headline:'Mail',badge:1111,selected:true},
-    {leadingIcon:'chat_bubble_outline',headline:'Chat',badge:10},
-    {leadingIcon:'groups',headline:'Rooms',badge:0},
-    {leadingIcon:'videocam',headline:'Meet',badge:3},
+    {leadingIcon:'folder',headline:'All Files',badge:9999},
+    {leadingIcon:'schedule',headline:'Recent',selected:true},
+    {leadingIcon:'image',headline:'Images'},
+    {leadingIcon:'library_music',headline:'Library',badge:1234},
 ]
 
 class DevBadge extends MDComponent {
@@ -13,14 +13,14 @@ class DevBadge extends MDComponent {
         return html`
             <div class="md-layout-border">
 
-                <!-- <md-navigation-bar
+                <md-navigation-rail
                     open
                     .items="${items0}"
-                ></md-navigation-bar> -->
+                ></md-navigation-rail>
 
                 <div class="md-layout-border__item md-layout-border__item--center">
 
-                    <div class="md-layout-column">
+                    <!-- <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-badge></md-badge>
                         </div>
@@ -30,7 +30,7 @@ class DevBadge extends MDComponent {
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
                             <md-badge label="1111" limit="999"></md-badge>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -38,6 +38,6 @@ class DevBadge extends MDComponent {
     }
 }
 
-customElements.define("dev-badge", DevBadge);
+customElements.define("dev-badge2", DevBadge);
 
-export default document.createElement("dev-badge");
+export default document.createElement("dev-badge2");

@@ -45,8 +45,12 @@ class MDMediaObserver {
 }
 export { schemes, breakpoints, MDMediaObserver };
 
-// const scheme=new MDMediaObserver(console.log)
-// scheme.observe(schemes)
+// const scheme = new MDMediaObserver((entry) => {
+//     window.dispatchEvent(new CustomEvent('onSchemeChange', {detail:entry}));
+// });
+// scheme.observe(schemes);
 
-// const breakpoint=new MDMediaObserver(console.log)
-// breakpoint.observe(breakpoints)
+// const breakpoint = new MDMediaObserver((entry) => {
+//     window.dispatchEvent(new CustomEvent('onBreakpointChange', {detail:entry}));
+// });
+// breakpoint.observe(breakpoints);
