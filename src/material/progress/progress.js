@@ -108,13 +108,17 @@ function stop() {
     }
 }
 export { start, pause, resume, stop };
-
 // (() => {
 //     const windowFetch = window.fetch;
-
+/**
+ * {{desc}}
+ */
 //     function performanceStart() {
 //         performance.mark("markFetchStart");
 //     }
+/**
+ * {{desc}}
+ */
 //     function performanceEnd() {
 //         performance.mark("markFetchEnd");
 //         performance.measure("measureFetch", "markFetchStart", "markFetchEnd");
@@ -133,9 +137,8 @@ export { start, pause, resume, stop };
 //             throw error;
 //         }
 //     };
-
 //     let firstRun;
-  
+
 //     let timeout;
 //     new PerformanceObserver((items) => {
 //         items.getEntries().forEach((entry) => {

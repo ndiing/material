@@ -8,10 +8,6 @@ import { choose } from "lit/directives/choose.js";
  * @extends MDComponent
  * @element md-tree
  * @fires MDTreeComponent#onTreeItemClick - {{desc}}
- * @fires MDTreeComponent#onTreeKeydown - {{desc}}
- * @fires MDTreeComponent#onTreeItemCheckboxNativeInput - {{desc}}
- * @fires MDTreeComponent#onTreeItemRadioButtonNativeInput - {{desc}}
- * @fires MDTreeComponent#onTreeItemSwitchNativeInput - {{desc}}
  */
 class MDTreeComponent extends MDComponent {
     /**
@@ -46,7 +42,7 @@ class MDTreeComponent extends MDComponent {
     renderListItem(item = {}) {
         item.leadingActions = [
             //
-            ...((item.isNode && [{ icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" }]) || item.indent>0&&[{ component: "icon", icon: "" }]||[]),
+            ...((item.isNode && [{ icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" }]) || (item.indent > 0 && [{ component: "icon", icon: "" }]) || []),
             { component: "icon", icon: item.isNode ? "folder" : "draft" },
         ];
         item.onListItemClick = this.handleTreeItemClick.bind(this);
@@ -87,6 +83,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -95,13 +92,17 @@ class MDTreeComponent extends MDComponent {
             this.requestUpdate();
         }
     }
-
+    /**
+     * {{desc}}
+     * @param {Any} items - {{desc}}
+     * @param {Any} indent = 0 - {{desc}}
+     */
     setItems(items, indent = 0) {
         let expanded;
         let activated;
-        items.forEach((item,index,array) => {
+        items.forEach((item, index, array) => {
             item.indent = indent;
-            item.hasNode = indent===0&&array.find(arr=>arr.items?.length);
+            item.hasNode = indent === 0 && array.find((arr) => arr.items?.length);
             if (item.expanded || item.selected) {
                 expanded = true;
             }
@@ -126,6 +127,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
      * @param {Any} data - {{desc}}
      */
     select(items, data) {
@@ -147,27 +149,20 @@ class MDTreeComponent extends MDComponent {
         return activated;
         // this.endIndex = items.indexOf(data);
     }
-
-    // /**
-    //  * {{desc}}
-    //  * @param {Any} data - {{desc}}
-    //  */
+    //
     // selectToggle(data) {
     //     data.selected = !data.selected;
     // }
 
     /**
      * {{desc}}
+     * @param {Any} items - {{desc}}
      * @param {Any} data - {{desc}}
      */
     expand(items, data) {
         data.expanded = !data.expanded;
     }
-
-    // /**
-    //  * {{desc}}
-    //  * @param {Any} data - {{desc}}
-    //  */
+    //
     // selectRange(data) {
     //     this.endIndex = this.endIndex || 0;
     //     this.startIndex = this.items.indexOf(data);
@@ -182,10 +177,7 @@ class MDTreeComponent extends MDComponent {
     //         [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
     //     }
     // }
-
-    // /**
-    //  * {{desc}}
-    //  */
+    //
     // selectAll() {
     //     this.items.forEach((item) => {
     //         item.selected = true;
@@ -222,11 +214,7 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-
-    // /**
-    //  * {{desc}}
-    //  * @param {Any} event - {{desc}}
-    //  */
+    //
     // handleTreeKeydown(event) {
     //     const activeElement = document.activeElement === event.target.closest(".md-tree__item");
     //     if (this.allSelection && activeElement && event.ctrlKey && event.key === "a") {
@@ -235,33 +223,21 @@ class MDTreeComponent extends MDComponent {
     //     }
     //     this.emit("onTreeKeydown", event);
     // }
-
-    // /**
-    //  * {{desc}}
-    //  * @param {Any} event - {{desc}}
-    //  */
+    //
     // handleTreeItemCheckboxNativeInput(event) {
     //     const data = event.currentTarget.data;
     //     this.selectToggle(data);
     //     this.requestUpdate();
     //     this.emit("onTreeItemCheckboxNativeInput", event);
     // }
-
-    // /**
-    //  * {{desc}}
-    //  * @param {Any} event - {{desc}}
-    //  */
+    //
     // handleTreeItemRadioButtonNativeInput(event) {
     //     const data = event.currentTarget.data;
     //     this.select(data);
     //     this.requestUpdate();
     //     this.emit("onTreeItemRadioButtonNativeInput", event);
     // }
-
-    // /**
-    //  * {{desc}}
-    //  * @param {Any} event - {{desc}}
-    //  */
+    //
     // handleTreeItemSwitchNativeInput(event) {
     //     const data = event.currentTarget.data;
     //     this.selectToggle(data);

@@ -38,13 +38,14 @@ class MDToolbarComponent extends MDBlockComponent {
      * @property {Boolean} trailingCheckbox - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Number} badge - {{desc}}
+     * @property {Number} indent - {{desc}}
+     * @property {String} routerLink - {{desc}}
      * @property {String} defaultLeadingActionComponent - {{desc}}
      * @property {String} defaultTrailingActionComponent - {{desc}}
      * @property {Boolean} activated - {{desc}}
      * @property {Boolean} indeterminate - {{desc}}
      * @property {Boolean} selected - {{desc}}
      * @property {Boolean} disabled - {{desc}}
-     * @property {String} routerLink - {{desc}}
      * @property {Array} items - {{desc}}
      */
     static properties = {

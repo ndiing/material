@@ -1,22 +1,10 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-const items0=[
-    {leadingIcon:'mail_outline',headline:'Mail',badge:1111,selected:true},
-    {leadingIcon:'chat_bubble_outline',headline:'Chat',badge:10},
-    {leadingIcon:'groups',headline:'Rooms',badge:0},
-    {leadingIcon:'videocam',headline:'Meet',badge:3},
-]
-
 class DevBadge extends MDComponent {
     render() {
         return html`
             <div class="md-layout-border">
-
-                <!-- <md-navigation-bar
-                    open
-                    .items="${items0}"
-                ></md-navigation-bar> -->
 
                 <div class="md-layout-border__item md-layout-border__item--center">
 

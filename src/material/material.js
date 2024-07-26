@@ -2,20 +2,16 @@
 import { MDObserver } from "./observer/observer.js";
 import { MDMediaObserver } from "./media-observer/media-observer.js";
 import { MDAttributeObserver } from "./attribute-observer/attribute-observer.js";
-
 import { MDStore } from "./store/store.js";
 import { MDRouter } from "./router/router.js";
-
 import * as localization from "./localization/localization.js";
 import * as color from "./color/color.js";
 import * as progress from "./progress/progress.js";
 import * as functions from "./functions/functions.js";
-
 import { MDRippleController } from "./ripple/ripple.js";
 import { MDPopperController } from "./popper/popper.js";
 import { MDGestureController } from "./gesture/gesture.js";
 import { MDVirtualController } from "./virtual/virtual.js";
-
 import { MDComponent } from "./component/component.js";
 import * as template from "./template/template.js";
 // base

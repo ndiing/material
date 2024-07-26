@@ -3261,10 +3261,6 @@ function renderTopAppBar(item = {}) {
  * @property {Boolean} [item.singleSelection] - {{desc}}
  * @property {Boolean} [item.allSelection] - {{desc}}
  * @property {Function} [item.onTreeItemClick] - {{desc}}
- * @property {Function} [item.onTreeKeydown] - {{desc}}
- * @property {Function} [item.onTreeItemCheckboxNativeInput] - {{desc}}
- * @property {Function} [item.onTreeItemRadioButtonNativeInput] - {{desc}}
- * @property {Function} [item.onTreeItemSwitchNativeInput] - {{desc}}
  */
 function renderTree(item = {}) {
     /* prettier-ignore */
@@ -3281,10 +3277,6 @@ function renderTree(item = {}) {
             .singleSelection="${ifDefined(item.singleSelection)}"
             .allSelection="${ifDefined(item.allSelection)}"
             @onTreeItemClick="${ifDefined(item.onTreeItemClick)}"
-            @onTreeKeydown="${ifDefined(item.onTreeKeydown)}"
-            @onTreeItemCheckboxNativeInput="${ifDefined(item.onTreeItemCheckboxNativeInput)}"
-            @onTreeItemRadioButtonNativeInput="${ifDefined(item.onTreeItemRadioButtonNativeInput)}"
-            @onTreeItemSwitchNativeInput="${ifDefined(item.onTreeItemSwitchNativeInput)}"
         ></md-tree>
     `
 }
@@ -3540,71 +3532,4 @@ function renderComponent(item) {
     ], () => nothing)
 }
 
-export {
-    renderBadge,
-    renderBlock,
-    renderBottomAppBar,
-    renderBottomSheet,
-    renderButton,
-    renderCard,
-    renderCheckbox,
-    renderChip,
-    renderChips,
-    renderColorField,
-    renderColorPicker,
-    renderDataTable,
-    renderDataTableColumnCell,
-    renderDataTableItem,
-    renderDataTableRowCell,
-    renderDateField,
-    renderDatePicker,
-    renderDatetimeField,
-    renderDatetimePicker,
-    renderDialog,
-    renderDivider,
-    renderEmoji,
-    renderEmojiPicker,
-    renderFab,
-    renderForm,
-    renderIcon,
-    renderIconButton,
-    renderImage,
-    renderLayout,
-    renderLayoutItem,
-    renderList,
-    renderListItem,
-    renderMenu,
-    renderMonthField,
-    renderMonthPicker,
-    renderNavigationBar,
-    renderNavigationDrawer,
-    renderNavigationRail,
-    renderNumberField,
-    renderPagination,
-    renderPane,
-    renderPasswordField,
-    renderProgressIndicator,
-    renderRadioButton,
-    renderScrim,
-    renderSearchField,
-    renderSegmentedButton,
-    renderSelectField,
-    renderSheet,
-    renderSideSheet,
-    renderSlider,
-    renderSnackbar,
-    renderSpacer,
-    renderSwitch,
-    renderTabs,
-    renderTextField,
-    renderTextareaField,
-    renderTimeField,
-    renderTimePicker,
-    renderToolbar,
-    renderTooltip,
-    renderTopAppBar,
-    renderTree,
-    renderWeekField,
-    renderWeekPicker,
-    renderComponent,
-};
+export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPane, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderWeekField, renderWeekPicker, renderComponent };

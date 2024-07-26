@@ -47,6 +47,7 @@ class MDNavigationBarComponent extends MDPaneComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
+
     /**
      * {{desc}}
      */

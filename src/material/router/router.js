@@ -146,16 +146,15 @@ class MDRouter {
     static set params(value) {
         this._params = value;
     }
-
-    static performanceStart(){
+    static performanceStart() {
         performance.mark("markRouterStart");
     }
-    static performanceEnd(){
+    static performanceEnd() {
         performance.mark("markRouterEnd");
-        performance.measure("measureRouter",'markRouterStart','markRouterEnd');
-        performance.clearMarks('markRouterStart');
-        performance.clearMarks('markRouterEnd');
-        performance.clearMeasures('measureRouter');
+        performance.measure("measureRouter", "markRouterStart", "markRouterEnd");
+        performance.clearMarks("markRouterStart");
+        performance.clearMarks("markRouterEnd");
+        performance.clearMeasures("measureRouter");
     }
 
     /**
@@ -163,10 +162,9 @@ class MDRouter {
      * @param {Any} event - {{desc}}
      */
     static async handleLoad(event) {
-        this.performanceStart()
+        this.performanceStart();
         this.emit("onRouterCurrentEntryChange", event);
-        
-        
+
         this.params = {};
         this.route = this.getRoute(this.path);
         this.routes = this.getRoutes(this.route);
@@ -220,7 +218,7 @@ class MDRouter {
             }
         }
         this.emit("onRouterNavigateSuccess", event);
-        this.performanceEnd()
+        this.performanceEnd();
     }
 
     /**
@@ -255,7 +253,7 @@ class MDRouter {
         this.stacks = this.setRoutes(routes);
         this.handleLoad = this.handleLoad.bind(this);
         // window.addEventListener("DOMContentLoaded", this.handleLoad);
-        this.handleLoad()
+        this.handleLoad();
         if (this.historyApiFallback) {
             window.addEventListener("popstate", this.handleLoad);
             const pushState = window.history.pushState;
@@ -300,4 +298,3 @@ class MDRouter {
     }
 }
 export { MDRouter };
-

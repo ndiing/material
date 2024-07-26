@@ -40,13 +40,14 @@ class MDBlockComponent extends MDComponent {
      * @property {Boolean} trailingCheckbox - {{desc}}
      * @property {Array} trailingActions - {{desc}}
      * @property {Number} badge - {{desc}}
+     * @property {Number} indent - {{desc}}
+     * @property {String} routerLink - {{desc}}
      * @property {String} defaultLeadingActionComponent - {{desc}}
      * @property {String} defaultTrailingActionComponent - {{desc}}
      * @property {Boolean} activated - {{desc}}
      * @property {Boolean} indeterminate - {{desc}}
      * @property {Boolean} selected - {{desc}}
      * @property {Boolean} disabled - {{desc}}
-     * @property {String} routerLink - {{desc}}
      */
     static properties = {
         leadingActions: { type: Array },
@@ -71,12 +72,11 @@ class MDBlockComponent extends MDComponent {
         trailingActions: { type: Array },
         badge: { type: Number },
         indent: { type: Number },
-        
+
         routerLink: { type: String, reflect: true },
-        
+
         defaultLeadingActionComponent: { type: String },
         defaultTrailingActionComponent: { type: String },
-
         activated: { type: Boolean, reflect: true },
         indeterminate: { type: Boolean },
         selected: { type: Boolean, reflect: true },
@@ -87,7 +87,7 @@ class MDBlockComponent extends MDComponent {
      * {{desc}}
      */
     get hasSectionStart() {
-        return this.leadingActions?.length || this.leadingCheckbox || this.leadingRadioButton || this.leadingSwitch || this.leadingAvatar || this.leadingImage || this.leadingVideo || this.leadingIcon || this.leadingSupportingText||this.indent;
+        return this.leadingActions?.length || this.leadingCheckbox || this.leadingRadioButton || this.leadingSwitch || this.leadingAvatar || this.leadingImage || this.leadingVideo || this.leadingIcon || this.leadingSupportingText || this.indent;
     }
 
     /**
@@ -111,7 +111,7 @@ class MDBlockComponent extends MDComponent {
         super();
         this.defaultLeadingActionComponent = "icon-button";
         this.defaultTrailingActionComponent = "icon-button";
-        this.indent=0
+        this.indent = 0;
     }
 
     /**
