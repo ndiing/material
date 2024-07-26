@@ -44,6 +44,7 @@ class MDListComponent extends MDComponent {
      */
     renderListItem(item = {}) {
         item.onListItemClick = this.handleListItemClick.bind(this);
+        item.onSelected = this.handleListItemSelected.bind(this);
         item.onCheckboxNativeInput = this.handleListItemCheckboxNativeInput.bind(this);
         item.onRadioButtonNativeInput = this.handleListItemRadioButtonNativeInput.bind(this);
         item.onSwitchNativeInput = this.handleListItemSwitchNativeInput.bind(this);
@@ -224,6 +225,15 @@ class MDListComponent extends MDComponent {
         this.selectToggle(data);
         this.requestUpdate();
         this.emit("onListItemSwitchNativeInput", event);
+    }
+
+    /**
+     * {{desc}}
+     * @param {Any} event - {{desc}}
+     */
+    handleListItemSelected(event) {
+        const data = event.currentTarget.data;
+        this.emit("onListItemSelected", event);
     }
 }
 customElements.define("md-list", MDListComponent);

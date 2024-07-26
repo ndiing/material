@@ -18,148 +18,132 @@ class DevMainComponent extends MDComponent {
         super();
         this.items = [
             {
-                leadingIcon: "layers", // or "category"
-                headline: "Base",
                 items: [
-                    { leadingIcon: "verified", headline: "Badge", routerLink: "/badge" },
-                    { leadingIcon: "horizontal_rule", headline: "Divider", routerLink: "/divider" },
-                    { leadingIcon: "emoji_emotions", headline: "Emoji", routerLink: "/emoji", selected: true },
-                    { leadingIcon: "insert_emoticon", headline: "Icon", routerLink: "/icon" },
-                    { leadingIcon: "image", headline: "Image", routerLink: "/image" },
-                    { leadingIcon: "view_quilt", headline: "Layout", routerLink: "/layout" },
-                    // { disabled: true, leadingIcon: "crop_landscape", headline: "Layout Item", routerLink: "/layout-item" },
-                    { leadingIcon: "space_bar", headline: "Spacer", routerLink: "/spacer" },
-                ],
-            },
-            {
-                leadingIcon: "radio_button_checked",
-                headline: "Button",
-                items: [
-                    { leadingIcon: "smart_button", headline: "Button", routerLink: "/button" },
-                    { leadingIcon: "add_circle_outline", headline: "Fab", routerLink: "/fab" },
-                    { leadingIcon: "touch_app", headline: "Icon Button", routerLink: "/icon-button" },
-                    { leadingIcon: "segment", headline: "Segmented Button", routerLink: "/segmented-button" },
-                ],
-            },
-            {
-                leadingIcon: "style",
-                headline: "Card",
-                items: [
-                    { leadingIcon: "dock", headline: "Bottom App Bar", routerLink: "/bottom-app-bar" },
-                    { leadingIcon: "space_dashboard", headline: "Bottom Sheet", routerLink: "/bottom-sheet" },
-                    // { disabled: true, leadingIcon: "check_box_outline_blank", headline: "Box", routerLink: "/box" },
-                    { leadingIcon: "credit_card", headline: "Card", routerLink: "/card" },
-                    { leadingIcon: "chat_bubble_outline", headline: "Dialog", routerLink: "/dialog" },
-                    { leadingIcon: "filter_none", headline: "Scrim", routerLink: "/scrim" },
                     {
-                        leadingIcon: "article",
-                        headline: "Sheet",
                         items: [
-                            { leadingIcon: "description", headline: "Standard side sheet", routerLink: "/sheet" },
-                            { leadingIcon: "dock", headline: "Modal side sheet", routerLink: "/sheet2" },
+                            { leadingIcon:'deployed_code',routerLink: "/observer", headline: "Observer" },
+                            { leadingIcon:'deployed_code',routerLink: "/media-observer", headline: "Media Observer" },
+                            { leadingIcon:'deployed_code',routerLink: "/attribute-observer", headline: "Attribute Observer" },
+                            { leadingIcon:'deployed_code',routerLink: "/store", headline: "Store" },
+                            { leadingIcon:'deployed_code',routerLink: "/router", headline: "Router" },
+                            { leadingIcon:'deployed_code',routerLink: "/localization", headline: "Localization" },
+                            { leadingIcon:'deployed_code',routerLink: "/color", headline: "Color" },
+                            { leadingIcon:'deployed_code',routerLink: "/progress", headline: "Progress" },
+                            { leadingIcon:'deployed_code',routerLink: "/functions", headline: "Functions" },
+                            { leadingIcon:'deployed_code',routerLink: "/ripple", headline: "Ripple" },
+                            { leadingIcon:'deployed_code',routerLink: "/popper", headline: "Popper" },
+                            { leadingIcon:'deployed_code',routerLink: "/gesture", headline: "Gesture" },
+                            { leadingIcon:'deployed_code',routerLink: "/virtual", headline: "Virtual" },
+                            { leadingIcon:'deployed_code',routerLink: "/component", headline: "Component" },
+                            { leadingIcon:'deployed_code',routerLink: "/template", headline: "Template" },
                         ],
+                        headline: "Cdk",
                     },
-                    { leadingIcon: "filter_none", headline: "Side Sheet", routerLink: "/side-sheet" },
-                    { leadingIcon: "campaign", headline: "Snackbar", routerLink: "/snackbar" },
-                    { leadingIcon: "app_registration", headline: "Toolbar", routerLink: "/toolbar" },
-                    { leadingIcon: "tooltip", headline: "Tooltip", routerLink: "/tooltip" },
-                    { leadingIcon: "web_asset", headline: "Top App Bar", routerLink: "/top-app-bar" },
-                ],
-            },
-            {
-                leadingIcon: "construction",
-                headline: "CDK",
-                items: [
-                    { leadingIcon: "track_changes", headline: "Attribute Observer", routerLink: "/attribute-observer" },
-                    { leadingIcon: "color_lens", headline: "Color", routerLink: "/color" },
-                    // { disabled: true, leadingIcon: "widgets", headline: "Component", routerLink: "/component" },
-                    { leadingIcon: "functions", headline: "Functions", routerLink: "/functions" },
-                    { leadingIcon: "gesture", headline: "Gesture", routerLink: "/gesture" },
-                    { leadingIcon: "language", headline: "Localization", routerLink: "/localization" },
-                    { leadingIcon: "tv", headline: "Media Observer", routerLink: "/media-observer" },
-                    { leadingIcon: "visibility", headline: "Observer", routerLink: "/observer" },
-                    { leadingIcon: "near_me", headline: "Popper", routerLink: "/popper" },
-                    { leadingIcon: "autorenew", headline: "Progress", routerLink: "/progress" },
-                    { leadingIcon: "waves", headline: "Ripple", routerLink: "/ripple" },
-                    { leadingIcon: "router", headline: "Router", routerLink: "/router" },
-                    { leadingIcon: "store", headline: "Store", routerLink: "/store" },
-                    // { disabled: true, leadingIcon: "web", headline: "Template", routerLink: "/template" },
-                    { leadingIcon: "blur_on", headline: "Virtual", routerLink: "/virtual" },
-                ],
-            },
-            {
-                leadingIcon: "assignment",
-                headline: "Form",
-                items: [
-                    { leadingIcon: "check_box", headline: "Checkbox", routerLink: "/checkbox" },
-                    { leadingIcon: "palette", headline: "Color Field", routerLink: "/color-field" },
-                    { leadingIcon: "event", headline: "Date Field", routerLink: "/date-field" },
-                    { leadingIcon: "schedule", headline: "Datetime Field", routerLink: "/datetime-field" },
-                    { leadingIcon: "dynamic_form", headline: "Form", routerLink: "/form" },
-                    { leadingIcon: "calendar_today", headline: "Month Field", routerLink: "/month-field" },
-                    { leadingIcon: "pin", headline: "Number Field", routerLink: "/number-field" },
-                    { leadingIcon: "lock", headline: "Password Field", routerLink: "/password-field" },
-                    { leadingIcon: "hourglass_full", headline: "Progress Indicator", routerLink: "/progress-indicator" },
-                    { leadingIcon: "radio_button_checked", headline: "Radio Button", routerLink: "/radio-button" },
-                    { leadingIcon: "search", headline: "Search Field", routerLink: "/search-field" },
-                    { leadingIcon: "arrow_drop_down_circle", headline: "Select Field", routerLink: "/select-field" },
-                    { leadingIcon: "tune", headline: "Slider", routerLink: "/slider" },
-                    { leadingIcon: "toggle_on", headline: "Switch", routerLink: "/switch" },
-                    { leadingIcon: "text_fields", headline: "Text Field", routerLink: "/text-field" },
-                    { leadingIcon: "short_text", headline: "Textarea Field", routerLink: "/textarea-field" },
-                    { leadingIcon: "access_time", headline: "Time Field", routerLink: "/time-field" },
-                    { leadingIcon: "date_range", headline: "Week Field", routerLink: "/week-field" },
-                ],
-            },
-            {
-                leadingIcon: "list",
-                headline: "List",
-                items: [
-                    { leadingIcon: "tag", headline: "Chip", routerLink: "/chip" },
-                    { leadingIcon: "dynamic_feed", headline: "Chips", routerLink: "/chips" },
                     {
-                        leadingIcon: "view_list",
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/layout-item", headline: "Layout Item" },
+                            { leadingIcon:'deployed_code',routerLink: "/layout", headline: "Layout" },
+                            { leadingIcon:'deployed_code',routerLink: "/divider", headline: "Divider" },
+                            { leadingIcon:'deployed_code',routerLink: "/spacer", headline: "Spacer" },
+                            { leadingIcon:'deployed_code',routerLink: "/icon", headline: "Icon" },
+                            { leadingIcon:'deployed_code',routerLink: "/emoji", headline: "Emoji" },
+                            { leadingIcon:'deployed_code',routerLink: "/image", headline: "Image" },
+                            { leadingIcon:'deployed_code',routerLink: "/badge", headline: "Badge" },
+                        ],
+                        headline: "Base",
+                    },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/button", headline: "Button" },
+                            { leadingIcon:'deployed_code',routerLink: "/icon-button", headline: "Icon Button" },
+                            { leadingIcon:'deployed_code',routerLink: "/segmented-button", headline: "Segmented Button" },
+                            { leadingIcon:'deployed_code',routerLink: "/fab", headline: "Fab" },
+                        ],
+                        headline: "Button",
+                    },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/form", headline: "Form" },
+                            { leadingIcon:'deployed_code',routerLink: "/checkbox", headline: "Checkbox" },
+                            { leadingIcon:'deployed_code',routerLink: "/radio-button", headline: "Radio Button" },
+                            { leadingIcon:'deployed_code',routerLink: "/switch", headline: "Switch" },
+                            { leadingIcon:'deployed_code',routerLink: "/slider", headline: "Slider" },
+                            { leadingIcon:'deployed_code',routerLink: "/text-field", headline: "Text Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/datetime-field", headline: "Datetime Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/date-field", headline: "Date Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/month-field", headline: "Month Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/week-field", headline: "Week Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/time-field", headline: "Time Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/color-field", headline: "Color Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/number-field", headline: "Number Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/search-field", headline: "Search Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/password-field", headline: "Password Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/textarea-field", headline: "Textarea Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/select-field", headline: "Select Field" },
+                            { leadingIcon:'deployed_code',routerLink: "/progress-indicator", headline: "Progress Indicator" },
+                        ],
+                        headline: "Form",
+                    },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/block", headline: "Block" },
+                            { leadingIcon:'deployed_code',routerLink: "/pane", headline: "Pane" },
+                            { leadingIcon:'deployed_code',routerLink: "/toolbar", headline: "Toolbar" },
+                            { leadingIcon:'deployed_code',routerLink: "/card", headline: "Card" },
+                            { leadingIcon:'deployed_code',routerLink: "/scrim", headline: "Scrim" },
+                            { leadingIcon:'deployed_code',routerLink: "/dialog", headline: "Dialog" },
+                            { leadingIcon:'deployed_code',routerLink: "/snackbar", headline: "Snackbar" },
+                            { leadingIcon:'deployed_code',routerLink: "/tooltip", headline: "Tooltip" },
+                            { leadingIcon:'deployed_code',routerLink: "/sheet", headline: "Sheet" },
+                            { leadingIcon:'deployed_code',routerLink: "/side-sheet", headline: "Side Sheet" },
+                            { leadingIcon:'deployed_code',routerLink: "/bottom-sheet", headline: "Bottom Sheet" },
+                            { leadingIcon:'deployed_code',routerLink: "/top-app-bar", headline: "Top App Bar" },
+                            { leadingIcon:'deployed_code',routerLink: "/bottom-app-bar", headline: "Bottom App Bar" },
+                        ],
+                        headline: "Card",
+                    },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/datetime-picker", headline: "Datetime Picker" },
+                            { leadingIcon:'deployed_code',routerLink: "/date-picker", headline: "Date Picker" },
+                            { leadingIcon:'deployed_code',routerLink: "/month-picker", headline: "Month Picker" },
+                            { leadingIcon:'deployed_code',routerLink: "/time-picker", headline: "Time Picker" },
+                            { leadingIcon:'deployed_code',routerLink: "/week-picker", headline: "Week Picker" },
+                            { leadingIcon:'deployed_code',routerLink: "/color-picker", headline: "Color Picker" },
+                            { leadingIcon:'deployed_code',routerLink: "/emoji-picker", headline: "Emoji Picker" },
+                        ],
+                        headline: "Picker",
+                    },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/chip", headline: "Chip" },
+                            { leadingIcon:'deployed_code',routerLink: "/chips", headline: "Chips" },
+                            { leadingIcon:'deployed_code',routerLink: "/list-item", headline: "List Item" },
+                            { leadingIcon:'deployed_code',routerLink: "/list", headline: "List" },
+                            { leadingIcon:'deployed_code',routerLink: "/tree", headline: "Tree" },
+                            { leadingIcon:'deployed_code',routerLink: "/tabs", headline: "Tabs" },
+                            { leadingIcon:'deployed_code',routerLink: "/menu", headline: "Menu" },
+                            { leadingIcon:'deployed_code',routerLink: "/navigation-bar", headline: "Navigation Bar" },
+                            { leadingIcon:'deployed_code',routerLink: "/navigation-drawer", headline: "Navigation Drawer" },
+                            { leadingIcon:'deployed_code',routerLink: "/navigation-rail", headline: "Navigation Rail" },
+                        ],
                         headline: "List",
-                        items: [
-                            { leadingIcon: "view_list", headline: "List", routerLink: "/list" },
-                            { leadingIcon: "list_alt", headline: "List2", routerLink: "/list2" },
-                        ],
                     },
-                    // { disabled: true, leadingIcon: "list_alt", headline: "List Item", routerLink: "/list-item" },
-                    { leadingIcon: "menu", headline: "Menu", routerLink: "/menu" },
-                    { leadingIcon: "navigation", headline: "Navigation Bar", routerLink: "/navigation-bar" },
-                    { leadingIcon: "menu_open", headline: "Navigation Drawer", routerLink: "/navigation-drawer" },
-                    { leadingIcon: "railway_alert", headline: "Navigation Rail", routerLink: "/navigation-rail" },
-                    { leadingIcon: "tab", headline: "Tabs", routerLink: "/tabs" },
-                    { leadingIcon: "account_tree", headline: "Tree", routerLink: "/tree" },
-                    // { disabled: true, leadingIcon: "account_tree", headline: "Tree Item", routerLink: "/tree-item" },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/pagination", headline: "Pagination" },
+                            { leadingIcon:'deployed_code',routerLink: "/data-table-item", headline: "Data Table Item" },
+                            { leadingIcon:'deployed_code',routerLink: "/data-table-column-cell", headline: "Data Table Column Cell" },
+                            { leadingIcon:'deployed_code',routerLink: "/data-table-row-cell", headline: "Data Table Row Cell" },
+                            { leadingIcon:'deployed_code',routerLink: "/data-table", headline: "Data Table" },
+                        ],
+                        headline: "Table",
+                    },
                 ],
+                leadingIcon:'deployed_code',routerLink: "/",
+                headline: "Main",
             },
-            {
-                leadingIcon: "calendar_today",
-                headline: "Picker",
-                items: [
-                    { leadingIcon: "palette", headline: "Color Picker", routerLink: "/color-picker" },
-                    { leadingIcon: "event", headline: "Date Picker", routerLink: "/date-picker" },
-                    { leadingIcon: "schedule", headline: "Datetime Picker", routerLink: "/datetime-picker" },
-                    { leadingIcon: "emoji_emotions", headline: "Emoji Picker", routerLink: "/emoji-picker" },
-                    { leadingIcon: "calendar_today", headline: "Month Picker", routerLink: "/month-picker" },
-                    { leadingIcon: "access_time", headline: "Time Picker", routerLink: "/time-picker" },
-                    { leadingIcon: "date_range", headline: "Week Picker", routerLink: "/week-picker" },
-                ],
-            },
-            {
-                leadingIcon: "table_chart",
-                headline: "Table",
-                items: [
-                    { leadingIcon: "table_chart", headline: "Data Table", routerLink: "/data-table" },
-                    // { disabled: true, leadingIcon: "view_column", headline: "Data Table Column Cell", routerLink: "/data-table-column-cell" },
-                    // { disabled: true, leadingIcon: "grid_view", headline: "Data Table Item", routerLink: "/data-table-item" },
-                    // { disabled: true, leadingIcon: "grid_on", headline: "Data Table Row Cell", routerLink: "/data-table-row-cell" },
-                    { leadingIcon: "last_page", headline: "Pagination", routerLink: "/pagination" },
-                ],
-            },
-        ];
+        ][0].items;
 
         this.items = this.flat(this.items);
 
@@ -196,7 +180,7 @@ class DevMainComponent extends MDComponent {
         return html`
             <md-layout variant="border">
                 <!-- <md-top-app-bar id="topAppBar" .leadingActions="${[{ icon: "menu", onIconButtonClick: this.handleIconButtonClick.bind(this) }]}" open></md-top-app-bar> -->
-                <md-navigation-drawer id="navigationDrawer" .items="${this.items}" variant="tree" open></md-navigation-drawer>
+                <md-navigation-drawer id="navigationDrawer" .items="${this.items}" variant="tree" open @onListItemSelected="${this.handleListItemSelected}"></md-navigation-drawer>
                 <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
             </md-layout>
         `;
@@ -204,12 +188,20 @@ class DevMainComponent extends MDComponent {
 
     connectedCallback() {
         super.connectedCallback();
-        window.addEventListener('onSchemeChange',console.log)
-        window.addEventListener('onBreakpointChange',console.log)
+        window.addEventListener("onSchemeChange", console.log);
+        window.addEventListener("onBreakpointChange", console.log);
     }
 
     handleIconButtonClick(event) {
         this.navigationDrawer.toggle();
+    }
+
+    handleListItemSelected(event) {
+        event.detail.currentTarget.scrollIntoView({
+            block:'center',
+            inline:'center',
+            behavior:'smooth',
+        })
     }
 }
 

@@ -200,6 +200,11 @@ class MDBlockComponent extends MDComponent {
                 }
             }
         }
+        if (changedProperties.has("selected")) {
+            if (this.selected) {
+                this.emit("onSelected", this);
+            }
+        }
     }
 }
 customElements.define("md-block", MDBlockComponent);

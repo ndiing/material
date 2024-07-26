@@ -67,6 +67,7 @@ function renderBadge(item = {}) {
  * @property {Function} [item.onSwitchNativeReset] - {{desc}}
  * @property {Function} [item.onImageNativeLoad] - {{desc}}
  * @property {Function} [item.onImageNativeError] - {{desc}}
+ * @property {Function} [item.onSelected] - {{desc}}
  */
 function renderBlock(item = {}) {
     /* prettier-ignore */
@@ -114,6 +115,7 @@ function renderBlock(item = {}) {
             @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
             @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
             @onImageNativeError="${ifDefined(item.onImageNativeError)}"
+            @onSelected="${ifDefined(item.onSelected)}"
             @click="${ifDefined(item.onBlockClick)}"
         ></md-block>
     `
@@ -1461,6 +1463,7 @@ function renderLayoutItem(item = {}) {
  * @property {Function} [item.onListItemCheckboxNativeInput] - {{desc}}
  * @property {Function} [item.onListItemRadioButtonNativeInput] - {{desc}}
  * @property {Function} [item.onListItemSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onListItemSelected] - {{desc}}
  */
 function renderList(item = {}) {
     /* prettier-ignore */
@@ -1481,6 +1484,7 @@ function renderList(item = {}) {
             @onListItemCheckboxNativeInput="${ifDefined(item.onListItemCheckboxNativeInput)}"
             @onListItemRadioButtonNativeInput="${ifDefined(item.onListItemRadioButtonNativeInput)}"
             @onListItemSwitchNativeInput="${ifDefined(item.onListItemSwitchNativeInput)}"
+            @onListItemSelected="${ifDefined(item.onListItemSelected)}"
         ></md-list>
     `
 }
@@ -1526,6 +1530,7 @@ function renderList(item = {}) {
  * @property {Function} [item.onSwitchNativeReset] - {{desc}}
  * @property {Function} [item.onImageNativeLoad] - {{desc}}
  * @property {Function} [item.onImageNativeError] - {{desc}}
+ * @property {Function} [item.onSelected] - {{desc}}
  */
 function renderListItem(item = {}) {
     /* prettier-ignore */
@@ -1573,6 +1578,7 @@ function renderListItem(item = {}) {
             @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
             @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
             @onImageNativeError="${ifDefined(item.onImageNativeError)}"
+            @onSelected="${ifDefined(item.onSelected)}"
             @click="${ifDefined(item.onListItemClick)}"
         ></md-list-item>
     `
@@ -2691,6 +2697,7 @@ function renderSwitch(item = {}) {
  * @property {Function} [item.onListItemCheckboxNativeInput] - {{desc}}
  * @property {Function} [item.onListItemRadioButtonNativeInput] - {{desc}}
  * @property {Function} [item.onListItemSwitchNativeInput] - {{desc}}
+ * @property {Function} [item.onListItemSelected] - {{desc}}
  */
 function renderTabs(item = {}) {
     /* prettier-ignore */
@@ -2712,6 +2719,7 @@ function renderTabs(item = {}) {
             @onListItemCheckboxNativeInput="${ifDefined(item.onListItemCheckboxNativeInput)}"
             @onListItemRadioButtonNativeInput="${ifDefined(item.onListItemRadioButtonNativeInput)}"
             @onListItemSwitchNativeInput="${ifDefined(item.onListItemSwitchNativeInput)}"
+            @onListItemSelected="${ifDefined(item.onListItemSelected)}"
         ></md-tabs>
     `
 }
@@ -3131,6 +3139,7 @@ function renderTimePicker(item = {}) {
  * @property {Function} [item.onSwitchNativeReset] - {{desc}}
  * @property {Function} [item.onImageNativeLoad] - {{desc}}
  * @property {Function} [item.onImageNativeError] - {{desc}}
+ * @property {Function} [item.onSelected] - {{desc}}
  */
 function renderToolbar(item = {}) {
     /* prettier-ignore */
@@ -3179,6 +3188,7 @@ function renderToolbar(item = {}) {
             @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
             @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
             @onImageNativeError="${ifDefined(item.onImageNativeError)}"
+            @onSelected="${ifDefined(item.onSelected)}"
         ></md-toolbar>
     `
 }
@@ -3532,4 +3542,71 @@ function renderComponent(item) {
     ], () => nothing)
 }
 
-export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPane, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderWeekField, renderWeekPicker, renderComponent };
+export {
+    renderBadge,
+    renderBlock,
+    renderBottomAppBar,
+    renderBottomSheet,
+    renderButton,
+    renderCard,
+    renderCheckbox,
+    renderChip,
+    renderChips,
+    renderColorField,
+    renderColorPicker,
+    renderDataTable,
+    renderDataTableColumnCell,
+    renderDataTableItem,
+    renderDataTableRowCell,
+    renderDateField,
+    renderDatePicker,
+    renderDatetimeField,
+    renderDatetimePicker,
+    renderDialog,
+    renderDivider,
+    renderEmoji,
+    renderEmojiPicker,
+    renderFab,
+    renderForm,
+    renderIcon,
+    renderIconButton,
+    renderImage,
+    renderLayout,
+    renderLayoutItem,
+    renderList,
+    renderListItem,
+    renderMenu,
+    renderMonthField,
+    renderMonthPicker,
+    renderNavigationBar,
+    renderNavigationDrawer,
+    renderNavigationRail,
+    renderNumberField,
+    renderPagination,
+    renderPane,
+    renderPasswordField,
+    renderProgressIndicator,
+    renderRadioButton,
+    renderScrim,
+    renderSearchField,
+    renderSegmentedButton,
+    renderSelectField,
+    renderSheet,
+    renderSideSheet,
+    renderSlider,
+    renderSnackbar,
+    renderSpacer,
+    renderSwitch,
+    renderTabs,
+    renderTextField,
+    renderTextareaField,
+    renderTimeField,
+    renderTimePicker,
+    renderToolbar,
+    renderTooltip,
+    renderTopAppBar,
+    renderTree,
+    renderWeekField,
+    renderWeekPicker,
+    renderComponent,
+};
