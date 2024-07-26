@@ -3,6 +3,12 @@
     flex-direction: column;
     padding: 8px 0;
 }
+.md-list__section{
+    // .md-block__section--start{}
+    .md-block__headline{
+        color: var(--md-sys-color-on-surface-variant);
+    }
+}
 // .md-list__item{}
 // .md-block__inner{}
 // .md-block__section{}

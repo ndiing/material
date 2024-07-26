@@ -161,9 +161,6 @@ class MDListComponent extends MDComponent {
         if (
             /* prettier-ignore */
             event.target.closest(
-                ".md-list__checkbox," + 
-                ".md-list__radio-button," +
-                ".md-list__switch,"+
                 ".md-block__checkbox," + 
                 ".md-block__radio-button," +
                 ".md-block__switch",

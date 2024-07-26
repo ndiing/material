@@ -77,7 +77,6 @@ const DevEmojiPicker = () => import("./emoji-picker/emoji-picker.js").then((m) =
 const DevListItem = () => import("./list-item/list-item.js").then((m) => m.default);
 const DevList = () => import("./list/list.js").then((m) => m.default);
 const DevList2 = () => import("./list/list2.js").then((m) => m.default);
-const DevTreeItem = () => import("./tree-item/tree-item.js").then((m) => m.default);
 const DevTree = () => import("./tree/tree.js").then((m) => m.default);
 const DevChip = () => import("./chip/chip.js").then((m) => m.default);
 const DevChips = () => import("./chips/chips.js").then((m) => m.default);
@@ -171,7 +170,6 @@ const routes = [
             { load: DevTooltip, path: "tooltip" },
             { load: DevTopAppBar, path: "top-app-bar" },
             { load: DevTree, path: "tree" },
-            { load: DevTreeItem, path: "tree-item" },
             { load: DevVirtual, path: "virtual" },
             { load: DevWeekField, path: "week-field" },
             { load: DevWeekPicker, path: "week-picker" },

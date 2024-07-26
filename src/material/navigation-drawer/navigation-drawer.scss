@@ -43,6 +43,9 @@
     }
 }
 .md-navigation-drawer__list {
+    .md-list__section {
+        margin: 0 12px;
+    }
     .md-list__item {
         margin: 0 12px;
         border-radius: calc(56px / 2);

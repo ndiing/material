@@ -161,25 +161,29 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        this.items= this.flat(this.items)
+        this.items = this.flat(this.items);
 
         this.select(this.items, MDRouter.path);
     }
 
-    flat(items){
-        return items.reduce((acc,curr) => {
-            if(curr.routerLink){
-                acc.push(curr)
+    flat(items) {
+        return items.reduce((acc, curr) => {
+            if (!curr.routerLink) {
+                curr.component = "section";
+                curr.section = curr.headline;
+                curr.headline = undefined;
             }
-            if(curr.items){
-                acc.push(...this.flat(curr.items))
+            acc.push(curr);
+            if (curr.items) {
+                acc.push(...this.flat(curr.items));
+                curr.items = undefined;
             }
-            return acc
-        }, [])
+            return acc;
+        }, []);
     }
 
     select(list, routerLink) {
-        list.sort((a, b) => a.headline.localeCompare(b.headline));
+        // list.sort((a, b) => a.headline.localeCompare(b.headline));
         list.forEach((item) => {
             item.selected = item.routerLink === routerLink;
             if (item.items?.length) {
@@ -191,15 +195,9 @@ class DevMainComponent extends MDComponent {
     render() {
         return html`
             <md-layout variant="border">
-                <!-- <md-top-app-bar
-                    id="topAppBar"
-                    .leadingActions="${[{ leadingIcon: "menu", onIconButtonClick: this.handleIconButtonClick.bind(this) }]}"
-                    open
-                ></md-top-app-bar> -->
+                <!-- <md-top-app-bar id="topAppBar" .leadingActions="${[{ icon: "menu", onIconButtonClick: this.handleIconButtonClick.bind(this) }]}" open></md-top-app-bar> -->
                 <md-navigation-drawer id="navigationDrawer" .items="${this.items}" variant="tree" open></md-navigation-drawer>
-                <md-layout-item region="center">
-                    <md-outlet></md-outlet>
-                </md-layout-item>
+                <md-layout-item region="center"><md-outlet></md-outlet></md-layout-item>
             </md-layout>
         `;
     }

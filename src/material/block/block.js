@@ -70,20 +70,24 @@ class MDBlockComponent extends MDComponent {
         trailingCheckbox: { type: Boolean },
         trailingActions: { type: Array },
         badge: { type: Number },
+        indent: { type: Number },
+        
+        routerLink: { type: String, reflect: true },
+        
         defaultLeadingActionComponent: { type: String },
         defaultTrailingActionComponent: { type: String },
+
         activated: { type: Boolean, reflect: true },
         indeterminate: { type: Boolean },
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
-        routerLink: { type: String, reflect: true },
     };
 
     /**
      * {{desc}}
      */
     get hasSectionStart() {
-        return this.leadingActions?.length || this.leadingCheckbox || this.leadingRadioButton || this.leadingSwitch || this.leadingAvatar || this.leadingImage || this.leadingVideo || this.leadingIcon || this.leadingSupportingText;
+        return this.leadingActions?.length || this.leadingCheckbox || this.leadingRadioButton || this.leadingSwitch || this.leadingAvatar || this.leadingImage || this.leadingVideo || this.leadingIcon || this.leadingSupportingText||this.indent;
     }
 
     /**
@@ -107,6 +111,7 @@ class MDBlockComponent extends MDComponent {
         super();
         this.defaultLeadingActionComponent = "icon-button";
         this.defaultTrailingActionComponent = "icon-button";
+        this.indent=0
     }
 
     /**
@@ -118,6 +123,7 @@ class MDBlockComponent extends MDComponent {
             <div class="md-block__inner">
                 ${this.hasSectionStart?html`
                     <div class="md-block__section md-block__section--start">
+                        ${Array.from({length:this.indent}, () => html`<md-icon class="md-block__indent"></md-icon>`)}
                         ${this.leadingActions?.length ? this.leadingActions.map(item => {
                             item.component = item.component || this.defaultLeadingActionComponent;
                             return renderComponent(item);

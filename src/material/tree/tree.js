@@ -1,47 +1,63 @@
 import { html, nothing } from "lit";
 import { MDComponent } from "../component/component.js";
-import { renderTreeItem } from "../template/template.js";
+import { renderDivider, renderListItem } from "../template/template.js";
+import { choose } from "lit/directives/choose.js";
 
 /**
  * {{desc}}
  * @extends MDComponent
  * @element md-tree
  * @fires MDTreeComponent#onTreeItemClick - {{desc}}
+ * @fires MDTreeComponent#onTreeKeydown - {{desc}}
+ * @fires MDTreeComponent#onTreeItemCheckboxNativeInput - {{desc}}
+ * @fires MDTreeComponent#onTreeItemRadioButtonNativeInput - {{desc}}
+ * @fires MDTreeComponent#onTreeItemSwitchNativeInput - {{desc}}
  */
 class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      * @property {String} tooltip - {{desc}}
      * @property {Array} items - {{desc}}
-     * @property {String} variant - {{desc}}
+     * @property {Boolean} rangeSelection - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
+     * @property {Boolean} singleSelection - {{desc}}
+     * @property {Boolean} allSelection - {{desc}}
      */
     static properties = {
         items: { type: Array },
-        variant: { type: String },
+        rangeSelection: { type: Boolean },
+        multiSelection: { type: Boolean },
+        singleSelection: { type: Boolean },
+        allSelection: { type: Boolean },
     };
-    variants = ["plain", "accordion", "tree", "level"];
 
     /**
      * {{desc}}
      */
     constructor() {
         super();
-        this.variant = "tree";
+        this.singleSelection = true;
     }
 
     /**
      * {{desc}}
-     * @param {Any} item - {{desc}}
+     * @param {Any} item = {} - {{desc}}
      */
-    renderTree(item) {
-        item.variant = this.variant;
-        item.onTreeItemClick = this.handleTreeItemClick.bind(this);
-        item.onTreeItemSelected = this.handleTreeItemSelected.bind(this);
+    renderListItem(item = {}) {
+        item.leadingActions = [
+            //
+            ...((item.isNode && [{ icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" }]) || item.indent>0&&[{ component: "icon", icon: "" }]||[]),
+            { component: "icon", icon: item.isNode ? "folder" : "draft" },
+        ];
+        item.onListItemClick = this.handleTreeItemClick.bind(this);
+        // item.onCheckboxNativeInput = this.handleTreeItemCheckboxNativeInput.bind(this);
+        // item.onRadioButtonNativeInput = this.handleTreeItemRadioButtonNativeInput.bind(this);
+        // item.onSwitchNativeInput = this.handleTreeItemSwitchNativeInput.bind(this);
         /* prettier-ignore */
-        return html`
-            ${renderTreeItem(item)}
-            ${item.expanded && item.items?.length ? item.items.map((item) => this.renderTree(item)) : nothing}
-        `;
+        return [
+            renderListItem(item),
+            item.expanded&&item.items?.map((item) => this.renderListItem(item))||nothing
+        ]
     }
 
     /**
@@ -49,7 +65,7 @@ class MDTreeComponent extends MDComponent {
      */
     render() {
         /* prettier-ignore */
-        return (this.variant === 'level' ? this.getList(this.items) || this.items : this.items)?.map(item => this.renderTree(item));
+        return this.items?.map((item) => this.renderListItem(item));
     }
 
     /**
@@ -58,80 +74,50 @@ class MDTreeComponent extends MDComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree");
+        // this.on("keydown", this.handleTreeKeydown);
     }
 
     /**
      * {{desc}}
-     * @param {Any} changedProperties - {{desc}}
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        // this.off("keydown", this.handleTreeKeydown);
+    }
+
+    /**
+     * {{desc}}
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-        if (changedProperties.has("variant")) {
-            const variants = (this.variant ?? "").split(" ").filter(Boolean);
-            this.variants.forEach((variant) => {
-                this.classList.toggle(`md-tree--${variant}`, variants.includes(variant));
-            });
-        }
         if (changedProperties.has("items")) {
-            await this.updateComplete;
-            this.setList(this.items);
+            this.setItems(this.items);
             this.requestUpdate();
         }
     }
 
-    /**
-     * {{desc}}
-     * @param {Any} items - {{desc}}
-     */
-    getList(items) {
-        let temp;
-        items.forEach((item) => {
-            if (item.expanded) {
-                temp = item.items;
-            }
-            if (item.items?.length) {
-                const temp2 = this.getList(item.items);
-                if (temp2) {
-                    temp = temp2;
-                }
-            }
-        });
-        return temp;
-    }
-
-    /**
-     * {{desc}}
-     * @param {Any} items - {{desc}}
-     * @param {Any} indent = 0 - {{desc}}
-     */
-    setList(items, indent = 0) {
+    setItems(items, indent = 0) {
         let expanded;
         let activated;
-        items.forEach((item) => {
+        items.forEach((item,index,array) => {
             item.indent = indent;
+            item.hasNode = indent===0&&array.find(arr=>arr.items?.length);
             if (item.expanded || item.selected) {
                 expanded = true;
             }
             if (item.selected) {
                 activated = true;
             }
+            item.isNode = !!item.items?.length;
             if (item.items?.length) {
-                if (this.variant === "level") {
-                    item.items.unshift({
-                        label: item.label,
-                        parent: item,
-                        isParent: true,
-                    });
+                let { expanded: expanded_, activated: activated_ } = this.setItems(item.items, indent + 1);
+                if (expanded_) {
+                    expanded = expanded_;
+                    item.expanded = expanded;
                 }
-                item.isNode = true;
-                const { expanded: isExpanded, activated: isActivated } = this.setList(item.items, indent + 1);
-                if (isExpanded) {
-                    expanded = true;
-                    item.expanded = true;
-                }
-                if (isActivated) {
-                    activated = true;
-                    item.activated = true;
+                if (activated_) {
+                    activated = activated_;
+                    item.activated = activated;
                 }
             }
         });
@@ -140,7 +126,6 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
-     * @param {Any} items - {{desc}}
      * @param {Any} data - {{desc}}
      */
     select(items, data) {
@@ -152,40 +137,137 @@ class MDTreeComponent extends MDComponent {
                 activated = true;
             }
             if (item.items?.length) {
-                if (this.select(item.items, data)) {
-                    activated = true;
-                    item.activated = true;
+                let activated_ = this.select(item.items, data);
+                if (activated_) {
+                    activated = activated_;
+                    item.activated = activated;
                 }
             }
         });
         return activated;
+        // this.endIndex = items.indexOf(data);
     }
+
+    // /**
+    //  * {{desc}}
+    //  * @param {Any} data - {{desc}}
+    //  */
+    // selectToggle(data) {
+    //     data.selected = !data.selected;
+    // }
 
     /**
      * {{desc}}
-     * @param {Any} items - {{desc}}
      * @param {Any} data - {{desc}}
      */
     expand(items, data) {
         data.expanded = !data.expanded;
     }
 
+    // /**
+    //  * {{desc}}
+    //  * @param {Any} data - {{desc}}
+    //  */
+    // selectRange(data) {
+    //     this.endIndex = this.endIndex || 0;
+    //     this.startIndex = this.items.indexOf(data);
+    //     this.swapIndex = this.startIndex > this.endIndex;
+    //     if (this.swapIndex) {
+    //         [this.endIndex, this.startIndex] = [this.startIndex, this.endIndex];
+    //     }
+    //     this.items.forEach((item, i) => {
+    //         item.selected = i >= this.startIndex && i <= this.endIndex;
+    //     });
+    //     if (this.swapIndex) {
+    //         [this.startIndex, this.endIndex] = [this.endIndex, this.startIndex];
+    //     }
+    // }
+
+    // /**
+    //  * {{desc}}
+    //  */
+    // selectAll() {
+    //     this.items.forEach((item) => {
+    //         item.selected = true;
+    //     });
+    // }
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
      */
     handleTreeItemClick(event) {
+        if (
+            /* prettier-ignore */
+            event.target.closest(
+                ".md-block__checkbox," + 
+                ".md-block__radio-button," +
+                ".md-block__switch",
+            )
+        ) {
+            return;
+        }
         const data = event.currentTarget.data;
-        if (data.isNode || data.isParent) {
-            event.stopPropagation();
-            this.expand(this.items, data.isParent ? data.parent : data);
-        } else {
-            this.select(this.items, data);
+        if (this.rangeSelection && event.shiftKey) {
+            this.selectRange(data);
+        } else if (this.multiSelection && event.ctrlKey) {
+            this.selectToggle(data);
+        } else if (this.singleSelection) {
+            if (data.isNode) {
+                this.expand(this.items, data);
+            } else {
+                this.select(this.items, data);
+            }
         }
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-    handleTreeItemSelected() {}
+
+    // /**
+    //  * {{desc}}
+    //  * @param {Any} event - {{desc}}
+    //  */
+    // handleTreeKeydown(event) {
+    //     const activeElement = document.activeElement === event.target.closest(".md-tree__item");
+    //     if (this.allSelection && activeElement && event.ctrlKey && event.key === "a") {
+    //         this.selectAll();
+    //         this.requestUpdate();
+    //     }
+    //     this.emit("onTreeKeydown", event);
+    // }
+
+    // /**
+    //  * {{desc}}
+    //  * @param {Any} event - {{desc}}
+    //  */
+    // handleTreeItemCheckboxNativeInput(event) {
+    //     const data = event.currentTarget.data;
+    //     this.selectToggle(data);
+    //     this.requestUpdate();
+    //     this.emit("onTreeItemCheckboxNativeInput", event);
+    // }
+
+    // /**
+    //  * {{desc}}
+    //  * @param {Any} event - {{desc}}
+    //  */
+    // handleTreeItemRadioButtonNativeInput(event) {
+    //     const data = event.currentTarget.data;
+    //     this.select(data);
+    //     this.requestUpdate();
+    //     this.emit("onTreeItemRadioButtonNativeInput", event);
+    // }
+
+    // /**
+    //  * {{desc}}
+    //  * @param {Any} event - {{desc}}
+    //  */
+    // handleTreeItemSwitchNativeInput(event) {
+    //     const data = event.currentTarget.data;
+    //     this.selectToggle(data);
+    //     this.requestUpdate();
+    //     this.emit("onTreeItemSwitchNativeInput", event);
+    // }
 }
 customElements.define("md-tree", MDTreeComponent);
 export { MDTreeComponent };

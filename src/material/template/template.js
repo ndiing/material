@@ -51,13 +51,14 @@ function renderBadge(item = {}) {
  * @property {Boolean} [item.trailingCheckbox] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Number} [item.badge] - {{desc}}
+ * @property {Number} [item.indent] - {{desc}}
+ * @property {String} [item.routerLink] - {{desc}}
  * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
  * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
  * @property {Boolean} [item.disabled] - {{desc}}
- * @property {String} [item.routerLink] - {{desc}}
  * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
  * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
  * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
@@ -97,13 +98,14 @@ function renderBlock(item = {}) {
             .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .badge="${ifDefined(item.badge)}"
+            .indent="${ifDefined(item.indent)}"
+            .routerLink="${ifDefined(item.routerLink)}"
             .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
             .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
             .activated="${ifDefined(item.activated)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            .routerLink="${ifDefined(item.routerLink)}"
             @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
             @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
             @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
@@ -1508,13 +1510,14 @@ function renderList(item = {}) {
  * @property {Boolean} [item.trailingCheckbox] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Number} [item.badge] - {{desc}}
+ * @property {Number} [item.indent] - {{desc}}
+ * @property {String} [item.routerLink] - {{desc}}
  * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
  * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
  * @property {Boolean} [item.disabled] - {{desc}}
- * @property {String} [item.routerLink] - {{desc}}
  * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
  * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
  * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
@@ -1554,13 +1557,14 @@ function renderListItem(item = {}) {
             .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .badge="${ifDefined(item.badge)}"
+            .indent="${ifDefined(item.indent)}"
+            .routerLink="${ifDefined(item.routerLink)}"
             .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
             .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
             .activated="${ifDefined(item.activated)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            .routerLink="${ifDefined(item.routerLink)}"
             @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
             @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
             @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
@@ -3110,13 +3114,14 @@ function renderTimePicker(item = {}) {
  * @property {Boolean} [item.trailingCheckbox] - {{desc}}
  * @property {Array} [item.trailingActions] - {{desc}}
  * @property {Number} [item.badge] - {{desc}}
+ * @property {Number} [item.indent] - {{desc}}
+ * @property {String} [item.routerLink] - {{desc}}
  * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
  * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
  * @property {Boolean} [item.activated] - {{desc}}
  * @property {Boolean} [item.indeterminate] - {{desc}}
  * @property {Boolean} [item.selected] - {{desc}}
  * @property {Boolean} [item.disabled] - {{desc}}
- * @property {String} [item.routerLink] - {{desc}}
  * @property {Array} [item.items] - {{desc}}
  * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
  * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
@@ -3157,13 +3162,14 @@ function renderToolbar(item = {}) {
             .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
             .trailingActions="${ifDefined(item.trailingActions)}"
             .badge="${ifDefined(item.badge)}"
+            .indent="${ifDefined(item.indent)}"
+            .routerLink="${ifDefined(item.routerLink)}"
             .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
             .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
             .activated="${ifDefined(item.activated)}"
             .indeterminate="${ifDefined(item.indeterminate)}"
             .selected="${ifDefined(item.selected)}"
             .disabled="${ifDefined(item.disabled)}"
-            .routerLink="${ifDefined(item.routerLink)}"
             .items="${ifDefined(item.items)}"
             @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
             @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
@@ -3250,8 +3256,15 @@ function renderTopAppBar(item = {}) {
  * @param {Object} item - {{desc}}
  * @property {String} [item.tooltip] - {{desc}}
  * @property {Array} [item.items] - {{desc}}
- * @property {String} [item.variant] - {{desc}}
+ * @property {Boolean} [item.rangeSelection] - {{desc}}
+ * @property {Boolean} [item.multiSelection] - {{desc}}
+ * @property {Boolean} [item.singleSelection] - {{desc}}
+ * @property {Boolean} [item.allSelection] - {{desc}}
  * @property {Function} [item.onTreeItemClick] - {{desc}}
+ * @property {Function} [item.onTreeKeydown] - {{desc}}
+ * @property {Function} [item.onTreeItemCheckboxNativeInput] - {{desc}}
+ * @property {Function} [item.onTreeItemRadioButtonNativeInput] - {{desc}}
+ * @property {Function} [item.onTreeItemSwitchNativeInput] - {{desc}}
  */
 function renderTree(item = {}) {
     /* prettier-ignore */
@@ -3263,100 +3276,16 @@ function renderTree(item = {}) {
             style="${styleMap({...item.styleMap})}"
             .tooltip="${ifDefined(item.tooltip)}"
             .items="${ifDefined(item.items)}"
-            .variant="${ifDefined(item.variant)}"
+            .rangeSelection="${ifDefined(item.rangeSelection)}"
+            .multiSelection="${ifDefined(item.multiSelection)}"
+            .singleSelection="${ifDefined(item.singleSelection)}"
+            .allSelection="${ifDefined(item.allSelection)}"
             @onTreeItemClick="${ifDefined(item.onTreeItemClick)}"
+            @onTreeKeydown="${ifDefined(item.onTreeKeydown)}"
+            @onTreeItemCheckboxNativeInput="${ifDefined(item.onTreeItemCheckboxNativeInput)}"
+            @onTreeItemRadioButtonNativeInput="${ifDefined(item.onTreeItemRadioButtonNativeInput)}"
+            @onTreeItemSwitchNativeInput="${ifDefined(item.onTreeItemSwitchNativeInput)}"
         ></md-tree>
-    `
-}
-
-/**
- * Render Tree Item
- * @param {Object} item - {{desc}}
- * @property {String} [item.tooltip] - {{desc}}
- * @property {Array} [item.leadingActions] - {{desc}}
- * @property {Boolean} [item.leadingCheckbox] - {{desc}}
- * @property {Boolean} [item.leadingRadioButton] - {{desc}}
- * @property {Boolean} [item.leadingSwitch] - {{desc}}
- * @property {String} [item.leadingAvatar] - {{desc}}
- * @property {String} [item.leadingImage] - {{desc}}
- * @property {String} [item.leadingVideo] - {{desc}}
- * @property {String} [item.leadingIcon] - {{desc}}
- * @property {String} [item.leadingSupportingText] - {{desc}}
- * @property {String} [item.headline] - {{desc}}
- * @property {String} [item.supportingText] - {{desc}}
- * @property {String} [item.trailingSupportingText] - {{desc}}
- * @property {String} [item.trailingIcon] - {{desc}}
- * @property {String} [item.trailingVideo] - {{desc}}
- * @property {String} [item.trailingImage] - {{desc}}
- * @property {String} [item.trailingAvatar] - {{desc}}
- * @property {Boolean} [item.trailingSwitch] - {{desc}}
- * @property {Boolean} [item.trailingRadioButton] - {{desc}}
- * @property {Boolean} [item.trailingCheckbox] - {{desc}}
- * @property {Array} [item.trailingActions] - {{desc}}
- * @property {Number} [item.badge] - {{desc}}
- * @property {String} [item.defaultLeadingActionComponent] - {{desc}}
- * @property {String} [item.defaultTrailingActionComponent] - {{desc}}
- * @property {Boolean} [item.activated] - {{desc}}
- * @property {Boolean} [item.indeterminate] - {{desc}}
- * @property {Boolean} [item.selected] - {{desc}}
- * @property {Boolean} [item.disabled] - {{desc}}
- * @property {String} [item.routerLink] - {{desc}}
- * @property {Function} [item.onCheckboxNativeInput] - {{desc}}
- * @property {Function} [item.onCheckboxNativeReset] - {{desc}}
- * @property {Function} [item.onRadioButtonNativeInput] - {{desc}}
- * @property {Function} [item.onRadioButtonNativeReset] - {{desc}}
- * @property {Function} [item.onSwitchNativeInput] - {{desc}}
- * @property {Function} [item.onSwitchNativeReset] - {{desc}}
- * @property {Function} [item.onImageNativeLoad] - {{desc}}
- * @property {Function} [item.onImageNativeError] - {{desc}}
- */
-function renderTreeItem(item = {}) {
-    /* prettier-ignore */
-    return html`
-        <md-tree-item
-            .data="${item}"
-            id="${ifDefined(item.id)}"
-            class="${classMap({...item.classMap})}"
-            style="${styleMap({...item.styleMap})}"
-            .tooltip="${ifDefined(item.tooltip)}"
-            .leadingActions="${ifDefined(item.leadingActions)}"
-            .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-            .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
-            .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-            .leadingAvatar="${ifDefined(item.leadingAvatar)}"
-            .leadingImage="${ifDefined(item.leadingImage)}"
-            .leadingVideo="${ifDefined(item.leadingVideo)}"
-            .leadingIcon="${ifDefined(item.leadingIcon)}"
-            .leadingSupportingText="${ifDefined(item.leadingSupportingText)}"
-            .headline="${ifDefined(item.headline)}"
-            .supportingText="${ifDefined(item.supportingText)}"
-            .trailingSupportingText="${ifDefined(item.trailingSupportingText)}"
-            .trailingIcon="${ifDefined(item.trailingIcon)}"
-            .trailingVideo="${ifDefined(item.trailingVideo)}"
-            .trailingImage="${ifDefined(item.trailingImage)}"
-            .trailingAvatar="${ifDefined(item.trailingAvatar)}"
-            .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-            .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
-            .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-            .trailingActions="${ifDefined(item.trailingActions)}"
-            .badge="${ifDefined(item.badge)}"
-            .defaultLeadingActionComponent="${ifDefined(item.defaultLeadingActionComponent)}"
-            .defaultTrailingActionComponent="${ifDefined(item.defaultTrailingActionComponent)}"
-            .activated="${ifDefined(item.activated)}"
-            .indeterminate="${ifDefined(item.indeterminate)}"
-            .selected="${ifDefined(item.selected)}"
-            .disabled="${ifDefined(item.disabled)}"
-            .routerLink="${ifDefined(item.routerLink)}"
-            @onCheckboxNativeInput="${ifDefined(item.onCheckboxNativeInput)}"
-            @onCheckboxNativeReset="${ifDefined(item.onCheckboxNativeReset)}"
-            @onRadioButtonNativeInput="${ifDefined(item.onRadioButtonNativeInput)}"
-            @onRadioButtonNativeReset="${ifDefined(item.onRadioButtonNativeReset)}"
-            @onSwitchNativeInput="${ifDefined(item.onSwitchNativeInput)}"
-            @onSwitchNativeReset="${ifDefined(item.onSwitchNativeReset)}"
-            @onImageNativeLoad="${ifDefined(item.onImageNativeLoad)}"
-            @onImageNativeError="${ifDefined(item.onImageNativeError)}"
-            @click="${ifDefined(item.onTreeItemClick)}"
-        ></md-tree-item>
     `
 }
 
@@ -3606,10 +3535,76 @@ function renderComponent(item) {
         ["tooltip", () => renderTooltip(item)],
         ["top-app-bar", () => renderTopAppBar(item)],
         ["tree", () => renderTree(item)],
-        ["tree-item", () => renderTreeItem(item)],
         ["week-field", () => renderWeekField(item)],
         ["week-picker", () => renderWeekPicker(item)],
     ], () => nothing)
 }
 
-export { renderBadge, renderBlock, renderBottomAppBar, renderBottomSheet, renderButton, renderCard, renderCheckbox, renderChip, renderChips, renderColorField, renderColorPicker, renderDataTable, renderDataTableColumnCell, renderDataTableItem, renderDataTableRowCell, renderDateField, renderDatePicker, renderDatetimeField, renderDatetimePicker, renderDialog, renderDivider, renderEmoji, renderEmojiPicker, renderFab, renderForm, renderIcon, renderIconButton, renderImage, renderLayout, renderLayoutItem, renderList, renderListItem, renderMenu, renderMonthField, renderMonthPicker, renderNavigationBar, renderNavigationDrawer, renderNavigationRail, renderNumberField, renderPagination, renderPane, renderPasswordField, renderProgressIndicator, renderRadioButton, renderScrim, renderSearchField, renderSegmentedButton, renderSelectField, renderSheet, renderSideSheet, renderSlider, renderSnackbar, renderSpacer, renderSwitch, renderTabs, renderTextField, renderTextareaField, renderTimeField, renderTimePicker, renderToolbar, renderTooltip, renderTopAppBar, renderTree, renderTreeItem, renderWeekField, renderWeekPicker, renderComponent };
+export {
+    renderBadge,
+    renderBlock,
+    renderBottomAppBar,
+    renderBottomSheet,
+    renderButton,
+    renderCard,
+    renderCheckbox,
+    renderChip,
+    renderChips,
+    renderColorField,
+    renderColorPicker,
+    renderDataTable,
+    renderDataTableColumnCell,
+    renderDataTableItem,
+    renderDataTableRowCell,
+    renderDateField,
+    renderDatePicker,
+    renderDatetimeField,
+    renderDatetimePicker,
+    renderDialog,
+    renderDivider,
+    renderEmoji,
+    renderEmojiPicker,
+    renderFab,
+    renderForm,
+    renderIcon,
+    renderIconButton,
+    renderImage,
+    renderLayout,
+    renderLayoutItem,
+    renderList,
+    renderListItem,
+    renderMenu,
+    renderMonthField,
+    renderMonthPicker,
+    renderNavigationBar,
+    renderNavigationDrawer,
+    renderNavigationRail,
+    renderNumberField,
+    renderPagination,
+    renderPane,
+    renderPasswordField,
+    renderProgressIndicator,
+    renderRadioButton,
+    renderScrim,
+    renderSearchField,
+    renderSegmentedButton,
+    renderSelectField,
+    renderSheet,
+    renderSideSheet,
+    renderSlider,
+    renderSnackbar,
+    renderSpacer,
+    renderSwitch,
+    renderTabs,
+    renderTextField,
+    renderTextareaField,
+    renderTimeField,
+    renderTimePicker,
+    renderToolbar,
+    renderTooltip,
+    renderTopAppBar,
+    renderTree,
+    renderWeekField,
+    renderWeekPicker,
+    renderComponent,
+};
