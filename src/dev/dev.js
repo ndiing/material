@@ -89,8 +89,6 @@ const DevTabs = () => import("./tabs/tabs.js").then((m) => m.default);
 // table
 const DevPagination = () => import("./pagination/pagination.js").then((m) => m.default);
 const DevDataTableItem = () => import("./data-table-item/data-table-item.js").then((m) => m.default);
-const DevDataTableColumnCell = () => import("./data-table-column-cell/data-table-column-cell.js").then((m) => m.default);
-const DevDataTableRowCell = () => import("./data-table-row-cell/data-table-row-cell.js").then((m) => m.default);
 const DevDataTable = () => import("./data-table/data-table.js").then((m) => m.default);
 // main
 const DevMain = () => import("./main/main.js").then((m) => m.default);
