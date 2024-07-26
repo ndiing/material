@@ -188,8 +188,7 @@ class DevMainComponent extends MDComponent {
 
     connectedCallback() {
         super.connectedCallback();
-        window.addEventListener("onSchemeChange", console.log);
-        window.addEventListener("onBreakpointChange", console.log);
+        
     }
 
     handleIconButtonClick(event) {
