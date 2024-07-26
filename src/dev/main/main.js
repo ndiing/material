@@ -161,9 +161,21 @@ class DevMainComponent extends MDComponent {
             },
         ];
 
-        this.items = this.items.map((item) => item.items).flat();
+        this.items= this.flat(this.items)
 
         this.select(this.items, MDRouter.path);
+    }
+
+    flat(items){
+        return items.reduce((acc,curr) => {
+            if(curr.routerLink){
+                acc.push(curr)
+            }
+            if(curr.items){
+                acc.push(...this.flat(curr.items))
+            }
+            return acc
+        }, [])
     }
 
     select(list, routerLink) {

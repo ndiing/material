@@ -1,1 +1,0 @@
-(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[614],{614:(e,n,a)=>{a.r(n),a.d(n,{templates:()=>i});const i={sc958887ef4afecbd:"你好，欢迎来到我们的应用程序！"}}}]);
