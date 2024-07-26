@@ -12,6 +12,20 @@ class DevBlock extends MDComponent {
 
             <md-layout variant="column">
                 <md-layout-item expanded="3" medium="8" compact="4">
+                    <md-button
+                        variant="tonal"
+                        label="label"
+                        @click="${() => {
+                            fetch("https://jsonplaceholder.typicode.com/posts")
+                                .then((response) => response.json())
+                                .then((json) => console.log(json));
+                        }}"
+                    ></md-button>
+                </md-layout-item>
+            </md-layout>
+
+            <md-layout variant="column">
+                <md-layout-item expanded="3" medium="8" compact="4">
                     <md-button variant="tonal" label="without labels" @click="${() => navigationRail0.toggle()}"></md-button>
                 </md-layout-item>
                 <md-layout-item expanded="3" medium="8" compact="4">

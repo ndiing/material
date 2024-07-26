@@ -3,59 +3,59 @@ import { MDComponent } from "../../material/component/component.js";
 
 const items0 = [
     {
-        label: "Fruits",
+        headline: "Fruits",
         items: [
             {
-                label: "Citrus",
+                headline: "Citrus",
                 items: [
-                    { label: "Orange", items: [] },
-                    { label: "Lemon", items: [] },
+                    { headline: "Orange", items: [] },
+                    { headline: "Lemon", items: [] },
                 ],
             },
             {
-                label: "Berries",
+                headline: "Berries",
                 items: [
-                    { label: "Strawberry", items: [] },
-                    { label: "Blueberry", items: [] },
+                    { headline: "Strawberry", items: [] },
+                    { headline: "Blueberry", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Vegetables",
+        headline: "Vegetables",
         items: [
             {
-                label: "Leafy Green",
+                headline: "Leafy Green",
                 expanded: true,
                 items: [
-                    { label: "Spinach", items: [] },
-                    { label: "Kale", items: [] },
+                    { headline: "Spinach", items: [] },
+                    { headline: "Kale", items: [] },
                 ],
             },
             {
-                label: "Root",
+                headline: "Root",
                 items: [
-                    { selected: true, label: "Carrot", items: [] },
-                    { label: "Beetroot", items: [] },
+                    { selected: true, headline: "Carrot", items: [] },
+                    { headline: "Beetroot", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Grains",
+        headline: "Grains",
         items: [
             {
-                label: "Cereal",
+                headline: "Cereal",
                 items: [
-                    { label: "Wheat", items: [] },
-                    { label: "Rice", items: [] },
+                    { headline: "Wheat", items: [] },
+                    { headline: "Rice", items: [] },
                 ],
             },
             {
-                label: "Legumes",
+                headline: "Legumes",
                 items: [
-                    { label: "Lentils", items: [] },
-                    { label: "Chickpeas", items: [] },
+                    { headline: "Lentils", items: [] },
+                    { headline: "Chickpeas", items: [] },
                 ],
             },
         ],
@@ -63,59 +63,59 @@ const items0 = [
 ];
 const items1 = [
     {
-        label: "Fruits",
+        headline: "Fruits",
         items: [
             {
-                label: "Citrus",
+                headline: "Citrus",
                 items: [
-                    { label: "Orange", items: [] },
-                    { label: "Lemon", items: [] },
+                    { headline: "Orange", items: [] },
+                    { headline: "Lemon", items: [] },
                 ],
             },
             {
-                label: "Berries",
+                headline: "Berries",
                 items: [
-                    { label: "Strawberry", items: [] },
-                    { label: "Blueberry", items: [] },
+                    { headline: "Strawberry", items: [] },
+                    { headline: "Blueberry", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Vegetables",
+        headline: "Vegetables",
         items: [
             {
-                label: "Leafy Green",
+                headline: "Leafy Green",
                 expanded: true,
                 items: [
-                    { label: "Spinach", items: [] },
-                    { label: "Kale", items: [] },
+                    { headline: "Spinach", items: [] },
+                    { headline: "Kale", items: [] },
                 ],
             },
             {
-                label: "Root",
+                headline: "Root",
                 items: [
-                    { selected: true, label: "Carrot", items: [] },
-                    { label: "Beetroot", items: [] },
+                    { selected: true, headline: "Carrot", items: [] },
+                    { headline: "Beetroot", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Grains",
+        headline: "Grains",
         items: [
             {
-                label: "Cereal",
+                headline: "Cereal",
                 items: [
-                    { label: "Wheat", items: [] },
-                    { label: "Rice", items: [] },
+                    { headline: "Wheat", items: [] },
+                    { headline: "Rice", items: [] },
                 ],
             },
             {
-                label: "Legumes",
+                headline: "Legumes",
                 items: [
-                    { label: "Lentils", items: [] },
-                    { label: "Chickpeas", items: [] },
+                    { headline: "Lentils", items: [] },
+                    { headline: "Chickpeas", items: [] },
                 ],
             },
         ],
@@ -123,59 +123,59 @@ const items1 = [
 ];
 const items2 = [
     {
-        label: "Fruits",
+        headline: "Fruits",
         items: [
             {
-                label: "Citrus",
+                headline: "Citrus",
                 items: [
-                    { label: "Orange", items: [] },
-                    { label: "Lemon", items: [] },
+                    { headline: "Orange", items: [] },
+                    { headline: "Lemon", items: [] },
                 ],
             },
             {
-                label: "Berries",
+                headline: "Berries",
                 items: [
-                    { label: "Strawberry", items: [] },
-                    { label: "Blueberry", items: [] },
+                    { headline: "Strawberry", items: [] },
+                    { headline: "Blueberry", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Vegetables",
+        headline: "Vegetables",
         items: [
             {
-                label: "Leafy Green",
+                headline: "Leafy Green",
                 expanded: true,
                 items: [
-                    { label: "Spinach", items: [] },
-                    { label: "Kale", items: [] },
+                    { headline: "Spinach", items: [] },
+                    { headline: "Kale", items: [] },
                 ],
             },
             {
-                label: "Root",
+                headline: "Root",
                 items: [
-                    { selected: true, label: "Carrot", items: [] },
-                    { label: "Beetroot", items: [] },
+                    { selected: true, headline: "Carrot", items: [] },
+                    { headline: "Beetroot", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Grains",
+        headline: "Grains",
         items: [
             {
-                label: "Cereal",
+                headline: "Cereal",
                 items: [
-                    { label: "Wheat", items: [] },
-                    { label: "Rice", items: [] },
+                    { headline: "Wheat", items: [] },
+                    { headline: "Rice", items: [] },
                 ],
             },
             {
-                label: "Legumes",
+                headline: "Legumes",
                 items: [
-                    { label: "Lentils", items: [] },
-                    { label: "Chickpeas", items: [] },
+                    { headline: "Lentils", items: [] },
+                    { headline: "Chickpeas", items: [] },
                 ],
             },
         ],
@@ -183,59 +183,59 @@ const items2 = [
 ];
 const items3 = [
     {
-        label: "Fruits",
+        headline: "Fruits",
         items: [
             {
-                label: "Citrus",
+                headline: "Citrus",
                 items: [
-                    { label: "Orange", items: [] },
-                    { label: "Lemon", items: [] },
+                    { headline: "Orange", items: [] },
+                    { headline: "Lemon", items: [] },
                 ],
             },
             {
-                label: "Berries",
+                headline: "Berries",
                 items: [
-                    { label: "Strawberry", items: [] },
-                    { label: "Blueberry", items: [] },
+                    { headline: "Strawberry", items: [] },
+                    { headline: "Blueberry", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Vegetables",
+        headline: "Vegetables",
         items: [
             {
-                label: "Leafy Green",
+                headline: "Leafy Green",
                 expanded: true,
                 items: [
-                    { label: "Spinach", items: [] },
-                    { label: "Kale", items: [] },
+                    { headline: "Spinach", items: [] },
+                    { headline: "Kale", items: [] },
                 ],
             },
             {
-                label: "Root",
+                headline: "Root",
                 items: [
-                    { selected: true, label: "Carrot", items: [] },
-                    { label: "Beetroot", items: [] },
+                    { selected: true, headline: "Carrot", items: [] },
+                    { headline: "Beetroot", items: [] },
                 ],
             },
         ],
     },
     {
-        label: "Grains",
+        headline: "Grains",
         items: [
             {
-                label: "Cereal",
+                headline: "Cereal",
                 items: [
-                    { label: "Wheat", items: [] },
-                    { label: "Rice", items: [] },
+                    { headline: "Wheat", items: [] },
+                    { headline: "Rice", items: [] },
                 ],
             },
             {
-                label: "Legumes",
+                headline: "Legumes",
                 items: [
-                    { label: "Lentils", items: [] },
-                    { label: "Chickpeas", items: [] },
+                    { headline: "Lentils", items: [] },
+                    { headline: "Chickpeas", items: [] },
                 ],
             },
         ],

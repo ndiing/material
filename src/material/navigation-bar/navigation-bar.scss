@@ -24,6 +24,7 @@
 }
 .md-navigation-bar__list {
     flex-direction: row;
+    height: 100%;
     padding: 0;
     gap: 0 8px;
     .md-list__item {
@@ -86,9 +87,7 @@
         flex-direction: column;
         position: relative;
     }
-
     // .md-block__section{}
-
     // .md-block__section--start{}
     .md-block__icon {
         width: 64px;

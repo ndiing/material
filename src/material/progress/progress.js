@@ -108,17 +108,70 @@ function stop() {
     }
 }
 export { start, pause, resume, stop };
+
 (() => {
+    const windowFetch = window.fetch;
+
+    function performanceStart(){
+        performance.mark('markFetchStart')
+
+    }
+    function performanceEnd(){
+        performance.mark('markFetchEnd')
+        performance.measure('measureFetch','markFetchStart','markFetchEnd')
+        performance.clearMarks('markFetchStart')
+        performance.clearMarks('markFetchEnd')
+        performance.clearMeasures('measureFetch')
+
+    }
+    window.fetch = async function(...args) {
+        try {
+            performanceStart()
+            const response = await windowFetch.apply(this, args);
+            performanceEnd()
+            return response;
+        } catch (error) {
+            performanceEnd()
+            throw error;
+        }
+    };
+
+    let firstRun
+    
+    
     let timeout;
     new PerformanceObserver((items) => {
         items.getEntries().forEach((entry) => {
             window.clearTimeout(timeout);
             timeout = window.setTimeout(() => {
                 stop();
+                if(firstRun===1){
+                    firstRun=0
+                    // console.log(firstRun)
+                }
             }, 100);
             start(entry.duration);
+            if(firstRun===undefined){
+                firstRun=1
+                // console.log(firstRun)
+            }
+            // console.log(entry);
         });
     }).observe({
-        entryTypes: ["mark", "measure", "navigation", "resource"],
+        entryTypes: [
+            // "element",
+            // "event",
+            "first-input",
+            "largest-contentful-paint",
+            "layout-shift",
+            "long-animation-frame",
+            "longtask",
+            "mark",
+            "measure",
+            "navigation",
+            "paint",
+            // "resource",
+            // "visibility-state"
+        ],
     });
 })();

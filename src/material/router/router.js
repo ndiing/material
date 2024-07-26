@@ -147,13 +147,26 @@ class MDRouter {
         this._params = value;
     }
 
+    static performanceStart(){
+        performance.mark("markRouterStart");
+    }
+    static performanceEnd(){
+        performance.mark("markRouterEnd");
+        performance.measure("measureRouter",'markRouterStart','markRouterEnd');
+        performance.clearMarks('markRouterStart');
+        performance.clearMarks('markRouterEnd');
+        performance.clearMeasures('measureRouter');
+    }
+
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
      */
     static async handleLoad(event) {
+        this.performanceStart()
         this.emit("onRouterCurrentEntryChange", event);
-        performance.mark("markRouterCurrentEntryChange");
+        
+        
         this.params = {};
         this.route = this.getRoute(this.path);
         this.routes = this.getRoutes(this.route);
@@ -165,7 +178,6 @@ class MDRouter {
         }
         for (const route of this.routes) {
             this.emit("onRouterNavigate", event);
-            performance.mark("markRouterNavigate");
             if (route.beforeLoad) {
                 try {
                     await new Promise((resolve, reject) => {
@@ -182,7 +194,6 @@ class MDRouter {
                     });
                 } catch (error) {
                     this.emit("onRouterNavigateError", event);
-                    performance.mark("markRouterNavigateError");
                     throw error;
                 }
             }
@@ -209,13 +220,7 @@ class MDRouter {
             }
         }
         this.emit("onRouterNavigateSuccess", event);
-        performance.mark("markRouterNavigateSuccess");
-        performance.measure("measureRouterNavigateSuccess", "markRouterCurrentEntryChange", "markRouterNavigateSuccess");
-        performance.clearMarks("markRouterCurrentEntryChange");
-        performance.clearMarks("markRouterNavigate");
-        performance.clearMarks("markRouterNavigateError");
-        performance.clearMarks("markRouterNavigateSuccess");
-        performance.clearMeasures("measureRouterNavigateSuccess");
+        this.performanceEnd()
     }
 
     /**
@@ -249,7 +254,8 @@ class MDRouter {
     static init(routes) {
         this.stacks = this.setRoutes(routes);
         this.handleLoad = this.handleLoad.bind(this);
-        window.addEventListener("DOMContentLoaded", this.handleLoad);
+        // window.addEventListener("DOMContentLoaded", this.handleLoad);
+        this.handleLoad()
         if (this.historyApiFallback) {
             window.addEventListener("popstate", this.handleLoad);
             const pushState = window.history.pushState;
@@ -294,3 +300,4 @@ class MDRouter {
     }
 }
 export { MDRouter };
+

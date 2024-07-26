@@ -11,11 +11,20 @@ import { MDListComponent } from "../material.js";
  * @fires MDTabsComponent#onListItemSwitchNativeInput - {{desc}}
  */
 class MDTabsComponent extends MDListComponent {
+    /**
+     * {{desc}}
+     * @property {String} tooltip - {{desc}}
+     * @property {Array} items - {{desc}}
+     * @property {Boolean} rangeSelection - {{desc}}
+     * @property {Boolean} multiSelection - {{desc}}
+     * @property {Boolean} singleSelection - {{desc}}
+     * @property {Boolean} allSelection - {{desc}}
+     * @property {String} variant - {{desc}}
+     */
     static properties = {
         ...MDListComponent.properties,
         variant: { type: String },
     };
-
     variants = ["primary", "secondary"];
 
     /**

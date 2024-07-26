@@ -24,7 +24,6 @@ class MDNavigationDrawerComponent extends MDPaneComponent {
         ...MDPaneComponent.properties,
         ...MDListComponent.properties,
     };
-
     variants = ["modal"];
 
     /**
@@ -49,7 +48,9 @@ class MDNavigationDrawerComponent extends MDPaneComponent {
     set childNodes_(value) {
         this._childNodes = value;
     }
-
+    /**
+     * {{desc}}
+     */
     constructor() {
         super();
         this.singleSelection = true;
