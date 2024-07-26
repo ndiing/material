@@ -112,47 +112,44 @@ export { start, pause, resume, stop };
 (() => {
     const windowFetch = window.fetch;
 
-    function performanceStart(){
-        performance.mark('markFetchStart')
-
+    function performanceStart() {
+        performance.mark("markFetchStart");
     }
-    function performanceEnd(){
-        performance.mark('markFetchEnd')
-        performance.measure('measureFetch','markFetchStart','markFetchEnd')
-        performance.clearMarks('markFetchStart')
-        performance.clearMarks('markFetchEnd')
-        performance.clearMeasures('measureFetch')
-
+    function performanceEnd() {
+        performance.mark("markFetchEnd");
+        performance.measure("measureFetch", "markFetchStart", "markFetchEnd");
+        performance.clearMarks("markFetchStart");
+        performance.clearMarks("markFetchEnd");
+        performance.clearMeasures("measureFetch");
     }
-    window.fetch = async function(...args) {
+    window.fetch = async function (...args) {
         try {
-            performanceStart()
+            performanceStart();
             const response = await windowFetch.apply(this, args);
-            performanceEnd()
+            performanceEnd();
             return response;
         } catch (error) {
-            performanceEnd()
+            performanceEnd();
             throw error;
         }
     };
 
-    let firstRun
-    
-    
+    let firstRun;
+  
     let timeout;
     new PerformanceObserver((items) => {
         items.getEntries().forEach((entry) => {
             window.clearTimeout(timeout);
             timeout = window.setTimeout(() => {
                 stop();
-                if(firstRun===1){
-                    firstRun=0
+                if (firstRun === 1) {
+                    firstRun = 0;
                     // console.log(firstRun)
                 }
             }, 100);
             start(entry.duration);
-            if(firstRun===undefined){
-                firstRun=1
+            if (firstRun === undefined) {
+                firstRun = 1;
                 // console.log(firstRun)
             }
             // console.log(entry);

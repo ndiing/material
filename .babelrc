@@ -6,12 +6,13 @@
         "targets": {
           "esmodules": true
         },
-        "bugfixes": true
+        "bugfixes": true,
+        "useBuiltIns": "entry",
+        "corejs": 3
       }
     ]
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-optional-chaining",
     "@babel/plugin-transform-runtime"
   ]
