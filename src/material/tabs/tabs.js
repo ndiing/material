@@ -1,21 +1,20 @@
-import { MDTreeComponent } from "../tree/tree.js";
+import { MDListComponent } from "../material.js";
 
 /**
  * {{desc}}
- * @extends MDTreeComponent
+ * @extends MDListComponent
  * @element md-tabs
- * @fires MDTabsComponent#onTreeItemClick - {{desc}}
+ * @fires MDTabsComponent#onListItemClick - {{desc}}
+ * @fires MDTabsComponent#onListKeydown - {{desc}}
+ * @fires MDTabsComponent#onListItemCheckboxNativeInput - {{desc}}
+ * @fires MDTabsComponent#onListItemRadioButtonNativeInput - {{desc}}
+ * @fires MDTabsComponent#onListItemSwitchNativeInput - {{desc}}
  */
-class MDTabsComponent extends MDTreeComponent {
-    /**
-     * {{desc}}
-     */
-    constructor() {
-        super();
-        this.variant = "primary";
-        this.currentSelectedIndex = -1;
-        this.lastSelectedIndex = -1;
-    }
+class MDTabsComponent extends MDListComponent {
+    static properties = {
+        ...MDListComponent.properties,
+        variant: { type: String },
+    };
 
     variants = ["primary", "secondary"];
 
@@ -29,27 +28,16 @@ class MDTabsComponent extends MDTreeComponent {
 
     /**
      * {{desc}}
-     * @param {Any} event - {{desc}}
+     * @param {Any} changedProperties - {{desc}}
      */
-    async handleTreeItemSelected(event) {
-        await this.updateComplete;
-        const treeItem = event.detail;
-        let width = treeItem.clientWidth;
-        let left = treeItem.offsetLeft;
-        if (this.variant === "primary") {
-            const treeInner = treeItem.querySelector(".md-tree__inner");
-            width = treeInner.clientWidth;
-            left += treeInner.offsetLeft;
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            const variants = (this.variant ?? "").split(" ").filter(Boolean);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-tabs--${variant}`, variants.includes(variant));
+            });
         }
-        let right = this.scrollWidth - (left + width);
-        this.currentSelectedIndex = this.items.indexOf(treeItem.data);
-        const direction = this.lastSelectedIndex > this.currentSelectedIndex ? "left" : "right";
-        this.style.removeProperty(`--md-comp-tabs-indicator-transition-left`);
-        this.style.removeProperty(`--md-comp-tabs-indicator-transition-right`);
-        this.style.setProperty(`--md-comp-tabs-indicator-transition-${direction}`, "0ms");
-        this.lastSelectedIndex = this.currentSelectedIndex;
-        this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
-        this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
     }
 }
 customElements.define("md-tabs", MDTabsComponent);

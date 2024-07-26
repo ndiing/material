@@ -240,22 +240,22 @@ let cli = {
             for (const doc of docs) {
 
 
-                const tags = ["md-pane",
-                "md-block",
-                "md-textfield",
-                "md-card",
-                "md-data-table-item",
-                "md-datetime-picker",
-                "md-tree",
-                "md-chip",
-                "md-list-item",
-                "md-divider",
-                "md-list",
-                "md-button",
-                "md-tree-item",
-            ]
+            //     const tags = ["md-pane",
+            //     "md-block",
+            //     "md-textfield",
+            //     "md-card",
+            //     "md-data-table-item",
+            //     "md-datetime-picker",
+            //     "md-tree",
+            //     "md-chip",
+            //     "md-list-item",
+            //     "md-divider",
+            //     "md-list",
+            //     "md-button",
+            //     "md-tree-item",
+            // ]
 
-                if (doc.tagName&&tags.includes(doc.tagName)) {
+                if (doc.tagName) {
                     let name = doc.tagName.replace("md-", "");
                     let methodName = toCamelCase("render-" + name);
 

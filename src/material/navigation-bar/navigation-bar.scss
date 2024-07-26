@@ -22,107 +22,87 @@
         border-radius: inherit;
     }
 }
-.md-navigation-bar__tree {
+.md-navigation-bar__list {
     flex-direction: row;
     padding: 0;
     gap: 0 8px;
-    .md-tree__item {
-        flex: 1 0 auto;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 80px;
-        padding: 12px;
-        &.md-ripple {
-            @include ripple-reset();
+    .md-list__item {
+        flex: 1;
+        align-items: center;
+        padding: 12px 0;
+        @include ripple-reset();
+        .md-block__icon {
+            @include ripple();
+            @include ripple-button();
         }
-        &.md-ripple {
-            .md-tree__icon {
-                @include ripple();
-            }
-        }
-        &.md-ripple--button {
-            .md-tree__icon {
-                @include ripple-button();
-            }
-        }
-        &.md-ripple--focused,
-        &.md-ripple--hover,
-        &.md-ripple--pressed,
-        &.md-ripple[selected],
-        &.md-ripple[dragged],
-        &.md-ripple[disabled] {
-            .md-tree__icon {
+        &:focus,
+        &:hover,
+        &:active,
+        &[selected],
+        &[dragged],
+        &[disabled] {
+            .md-block__icon {
                 @include ripple-size();
-            }
-        }
-        &.md-ripple--clipped.md-ripple--focused,
-        &.md-ripple--clipped.md-ripple--hover,
-        &.md-ripple--clipped.md-ripple--pressed,
-        &.md-ripple--clipped.md-ripple[selected],
-        &.md-ripple--clipped.md-ripple[dragged],
-        &.md-ripple--clipped.md-ripple[disabled] {
-            .md-tree__icon {
                 @include ripple-clipped();
             }
         }
-        &.md-ripple--focused {
-            .md-tree__icon {
+        &:focus {
+            .md-block__icon {
                 @include ripple-focused();
             }
         }
-        &.md-ripple--fade-out.md-ripple--focused {
-            .md-tree__icon {
-                @include ripple-fade-out();
-            }
-        }
-        &.md-ripple--hover {
-            .md-tree__icon {
+        &:hover {
+            .md-block__icon {
                 @include ripple-hover();
             }
         }
-        &.md-ripple--pressed {
-            .md-tree__icon {
+        &:active {
+            .md-block__icon {
                 @include ripple-pressed();
             }
         }
-        &.md-ripple[activated] {
-            .md-tree__icon {
+        &[activated] {
+            .md-block__icon {
                 @include ripple-activated();
             }
         }
-        &.md-ripple[selected] {
-            .md-tree__icon {
+        &[selected] {
+            .md-block__icon {
                 @include ripple-selected();
             }
         }
-        &.md-ripple[dragged] {
-            .md-tree__icon {
+        &[dragged] {
+            .md-block__icon {
                 @include ripple-dragged();
             }
         }
-        &.md-ripple[disabled] {
-            .md-tree__icon {
+        &[disabled] {
+            .md-block__icon {
                 @include ripple-disabled();
             }
         }
     }
-    .md-tree__icon {
+    .md-block__inner {
+        flex-direction: column;
+        position: relative;
+    }
+
+    // .md-block__section{}
+
+    // .md-block__section--start{}
+    .md-block__icon {
         width: 64px;
         height: 32px;
-        border-radius: 16px;
+        border-radius: calc(32px / 2);
     }
-    .md-tree__inner {
-        flex: 0;
-    }
-    .md-tree__label {
+    // .md-block__section--center{}
+    .md-block__headline {
         margin: 4px 0;
-    }
-    .md-tree__label-primary {
         @include typescale-label-medium();
     }
-    .md-tree__badge {
+    .md-block__badge {
         margin-top: -8px;
-        transform: translate3d(-0%, -50%, 0);
+        transform: translate3d(0, -50%, 0);
         position: absolute;
         left: 50%;
         top: 50%;
@@ -130,11 +110,7 @@
             margin-left: 5px;
         }
     }
-    .md-tree__inner {
-        .md-tree__label {
-            + .md-tree__badge {
-                margin-top: -20px;
-            }
-        }
+    .md-block__section--start + .md-block__section--center + .md-block__badge {
+        margin-top: -20px;
     }
 }

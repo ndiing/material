@@ -34,12 +34,19 @@
 }
 .md-menu__list {
     .md-list__item {
-        padding: 0 12px;
         min-height: 48px;
-        > .md-block__group {
-            > .md-block__headline {
-                @include typescale-label-large();
-            }
-        }
+        padding: 0 12px;
+    }
+    .md-block__inner {
+        gap: 0 12px;
+    }
+
+    // .md-block__section{}
+
+    // .md-block__section--start{}
+    // .md-block__icon{}
+    // .md-block__section--center{}
+    .md-block__headline {
+        @include typescale-label-large();
     }
 }

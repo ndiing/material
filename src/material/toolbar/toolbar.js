@@ -44,6 +44,7 @@ class MDToolbarComponent extends MDBlockComponent {
      * @property {Boolean} indeterminate - {{desc}}
      * @property {Boolean} selected - {{desc}}
      * @property {Boolean} disabled - {{desc}}
+     * @property {String} routerLink - {{desc}}
      * @property {Array} items - {{desc}}
      */
     static properties = {

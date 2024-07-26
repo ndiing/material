@@ -46,6 +46,7 @@ class MDBlockComponent extends MDComponent {
      * @property {Boolean} indeterminate - {{desc}}
      * @property {Boolean} selected - {{desc}}
      * @property {Boolean} disabled - {{desc}}
+     * @property {String} routerLink - {{desc}}
      */
     static properties = {
         leadingActions: { type: Array },
@@ -75,6 +76,7 @@ class MDBlockComponent extends MDComponent {
         indeterminate: { type: Boolean },
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
+        routerLink: { type: String, reflect: true },
     };
 
     /**

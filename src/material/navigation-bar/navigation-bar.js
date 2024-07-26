@@ -1,6 +1,6 @@
-import { html } from "lit";
-import { MDTreeComponent } from "../tree/tree.js";
 import { MDPaneComponent } from "../pane/pane.js";
+import { MDListComponent } from "../material.js";
+import { renderList } from "../template/template.js";
 
 /**
  * {{desc}}
@@ -22,7 +22,7 @@ class MDNavigationBarComponent extends MDPaneComponent {
      */
     static properties = {
         ...MDPaneComponent.properties,
-        ...MDTreeComponent.properties,
+        ...MDListComponent.properties,
     };
 
     /**
@@ -30,13 +30,14 @@ class MDNavigationBarComponent extends MDPaneComponent {
      */
     get childNodes_() {
         /* prettier-ignore */
-        return [html`
-            <md-tree
-                class="md-navigation-bar__tree"
-                .variant="${"plain"}"
-                .items="${this.items}"
-            ></md-tree>
-        `];
+        return [renderList({
+            classMap:{'md-navigation-bar__list':true},
+            items: this.items,
+            rangeSelection: this.rangeSelection,
+            multiSelection: this.multiSelection,
+            singleSelection: this.singleSelection,
+            allSelection: this.allSelection,
+        })];
     }
 
     /**
@@ -45,6 +46,11 @@ class MDNavigationBarComponent extends MDPaneComponent {
      */
     set childNodes_(value) {
         this._childNodes = value;
+    }
+
+    constructor() {
+        super();
+        this.singleSelection = true;
     }
 
     /**

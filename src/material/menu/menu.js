@@ -60,12 +60,12 @@ class MDMenuComponent extends MDPaneComponent {
                 <div class="md-virtual__scrollbar"></div>
                 <div class="md-virtual__container">${renderList({
                     classMap:{'md-menu__list':true},
-                    items:this.vitualItems,
-                    rangeSelection:this.rangeSelection,
-                    multiSelection:this.multiSelection,
-                    singleSelection:this.singleSelection,
-                    allSelection:this.allSelection,
-                    onListItemClick:this.handleMenuListItemClick,
+                    items: this.vitualItems,
+                    rangeSelection: this.rangeSelection,
+                    multiSelection: this.multiSelection,
+                    singleSelection: this.singleSelection,
+                    allSelection: this.allSelection,
+                    onListItemClick: this.handleMenuListItemClick,
                 })}</div>
             </div>
         `];

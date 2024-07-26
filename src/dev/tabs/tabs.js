@@ -1,20 +1,31 @@
 import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
-const items0 = [
-    { label: "label", icon: "image", selected: true },
-    { label: "label", icon: "image" },
-    { label: "label", icon: "image" },
-    { label: "label", icon: "image" },
+const items8 = [
+    { leadingIcon: "image", headline: "Headline 1", selected: true },
+    { leadingIcon: "image", headline: "Headline 2", badge: 0 },
+    { leadingIcon: "image", headline: "Headline 3", badge: 1 },
+    { leadingIcon: "image", headline: "Headline 4", badge: 1111 },
 ];
-const items1 = [{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }];
-const items2 = [
-    { label: "label", icon: "image", selected: true },
-    { label: "label", icon: "image" },
-    { label: "label", icon: "image" },
-    { label: "label", icon: "image" },
+const items9 = [
+    { headline: "Headline 1", selected: true },
+    { headline: "Headline 2", badge: 0 },
+    { headline: "Headline 3", badge: 1 },
+    { headline: "Headline 4", badge: 1111 },
 ];
-const items3 = [{ label: "label", selected: true }, { label: "label" }, { label: "label" }, { label: "label" }];
+
+const items10 = [
+    { leadingIcon: "image", headline: "Headline 1", selected: true },
+    { leadingIcon: "image", headline: "Headline 2", badge: 0 },
+    { leadingIcon: "image", headline: "Headline 3", badge: 1 },
+    { leadingIcon: "image", headline: "Headline 4", badge: 1111 },
+];
+const items11 = [
+    { headline: "Headline 1", selected: true },
+    { headline: "Headline 2", badge: 0 },
+    { headline: "Headline 3", badge: 1 },
+    { headline: "Headline 4", badge: 1111 },
+];
 
 class DevTabs extends MDComponent {
     render() {
@@ -23,17 +34,17 @@ class DevTabs extends MDComponent {
                 <div class="md-layout-border__item md-layout-border__item--center">
                     <div class="md-layout-column">
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tabs variant="primary" .items="${items0}"></md-tabs>
+                            <md-tabs variant="primary" .items="${items8}"></md-tabs>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tabs variant="primary" .items="${items1}"></md-tabs>
+                            <md-tabs variant="primary" .items="${items9}"></md-tabs>
                         </div>
 
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tabs variant="secondary" .items="${items2}"></md-tabs>
+                            <md-tabs variant="secondary" .items="${items10}"></md-tabs>
                         </div>
                         <div class="md-layout-column__item md-layout-column__item--expanded12 md-layout-column__item--medium8 md-layout-column__item--compact4">
-                            <md-tabs variant="secondary" .items="${items3}"></md-tabs>
+                            <md-tabs variant="secondary" .items="${items11}"></md-tabs>
                         </div>
                     </div>
                 </div>

@@ -2,12 +2,18 @@ import { html } from "lit";
 import { MDComponent } from "../../material/component/component.js";
 
 const items0 = [
-    { label: "label", icon: "image", selected: true },
-    { label: "label", icon: "image" },
-    { label: "label", icon: "image" },
-    { label: "label", icon: "image" },
+    { leadingIcon: "image", headline: "Headline 1", selected: true },
+    { leadingIcon: "image", headline: "Headline 2", badge: 0 },
+    { leadingIcon: "image", headline: "Headline 3", badge: 1 },
+    { leadingIcon: "image", headline: "Headline 4", badge: 1111 },
 ];
-const items1 = [{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }];
+const items1 = [
+    //
+    { leadingIcon: "image", selected: true },
+    { leadingIcon: "image", badge: 0 },
+    { leadingIcon: "image", badge: 1 },
+    { leadingIcon: "image", badge: 1111 },
+];
 
 class DevNavigationBar extends MDComponent {
     render() {

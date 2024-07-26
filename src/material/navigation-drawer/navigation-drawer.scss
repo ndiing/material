@@ -42,9 +42,21 @@
         animation-name: var(--md-comp-pane-animation, sheetWestModalIn);
     }
 }
-.md-navigation-drawer__tree {
-    .md-tree__item {
+.md-navigation-drawer__list {
+    .md-list__item {
         margin: 0 12px;
-        border-radius: 28px;
+        border-radius: calc(56px / 2);
+    }
+    .md-block__inner {
+        gap: 0 12px;
+    }
+
+    // .md-block__section{}
+
+    // .md-block__section--start{}
+    // .md-block__icon{}
+    // .md-block__section--center{}
+    .md-block__headline {
+        @include typescale-label-large();
     }
 }
