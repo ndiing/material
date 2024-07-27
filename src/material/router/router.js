@@ -146,12 +146,14 @@ class MDRouter {
     static set params(value) {
         this._params = value;
     }
+
     /**
      * {{desc}}
      */
     static performanceStart() {
         performance.mark("markRouterStart");
     }
+
     /**
      * {{desc}}
      */
