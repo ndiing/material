@@ -19,26 +19,7 @@ class DevMainComponent extends MDComponent {
         this.items = [
             {
                 items: [
-                    {
-                        items: [
-                            { leadingIcon:'deployed_code',routerLink: "/observer", headline: "Observer" },
-                            { leadingIcon:'deployed_code',routerLink: "/media-observer", headline: "Media Observer" },
-                            { leadingIcon:'deployed_code',routerLink: "/attribute-observer", headline: "Attribute Observer" },
-                            { leadingIcon:'deployed_code',routerLink: "/store", headline: "Store" },
-                            { leadingIcon:'deployed_code',routerLink: "/router", headline: "Router" },
-                            { leadingIcon:'deployed_code',routerLink: "/localization", headline: "Localization" },
-                            { leadingIcon:'deployed_code',routerLink: "/color", headline: "Color" },
-                            { leadingIcon:'deployed_code',routerLink: "/progress", headline: "Progress" },
-                            { leadingIcon:'deployed_code',routerLink: "/functions", headline: "Functions" },
-                            { leadingIcon:'deployed_code',routerLink: "/ripple", headline: "Ripple" },
-                            { leadingIcon:'deployed_code',routerLink: "/popper", headline: "Popper" },
-                            { leadingIcon:'deployed_code',routerLink: "/gesture", headline: "Gesture" },
-                            { leadingIcon:'deployed_code',routerLink: "/virtual", headline: "Virtual" },
-                            { leadingIcon:'deployed_code',routerLink: "/component", headline: "Component" },
-                            { leadingIcon:'deployed_code',routerLink: "/template", headline: "Template" },
-                        ],
-                        headline: "Cdk",
-                    },
+                    
                     {
                         items: [
                             { leadingIcon:'deployed_code',routerLink: "/layout-item", headline: "Layout Item" },
@@ -138,6 +119,26 @@ class DevMainComponent extends MDComponent {
                             { leadingIcon:'deployed_code',routerLink: "/data-table", headline: "Data Table" },
                         ],
                         headline: "Table",
+                    },
+                    {
+                        items: [
+                            { leadingIcon:'deployed_code',routerLink: "/observer", headline: "Observer" },
+                            { leadingIcon:'deployed_code',routerLink: "/media-observer", headline: "Media Observer" },
+                            { leadingIcon:'deployed_code',routerLink: "/attribute-observer", headline: "Attribute Observer" },
+                            { leadingIcon:'deployed_code',routerLink: "/store", headline: "Store" },
+                            { leadingIcon:'deployed_code',routerLink: "/router", headline: "Router" },
+                            { leadingIcon:'deployed_code',routerLink: "/localization", headline: "Localization" },
+                            { leadingIcon:'deployed_code',routerLink: "/color", headline: "Color" },
+                            { leadingIcon:'deployed_code',routerLink: "/progress", headline: "Progress" },
+                            { leadingIcon:'deployed_code',routerLink: "/functions", headline: "Functions" },
+                            { leadingIcon:'deployed_code',routerLink: "/ripple", headline: "Ripple" },
+                            { leadingIcon:'deployed_code',routerLink: "/popper", headline: "Popper" },
+                            { leadingIcon:'deployed_code',routerLink: "/gesture", headline: "Gesture" },
+                            { leadingIcon:'deployed_code',routerLink: "/virtual", headline: "Virtual" },
+                            { leadingIcon:'deployed_code',routerLink: "/component", headline: "Component" },
+                            { leadingIcon:'deployed_code',routerLink: "/template", headline: "Template" },
+                        ],
+                        headline: "Cdk",
                     },
                 ],
                 leadingIcon:'deployed_code',routerLink: "/",
