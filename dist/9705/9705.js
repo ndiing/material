@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_webpack_project=self.webpackChunkmy_webpack_project||[]).push([[9705],{9705:(e,c,p)=>{p.r(c),p.d(c,{templates:()=>a});var a={sc958887ef4afecbd:"你好，欢迎来到我们的应用程序！"}}}]);
