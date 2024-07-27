@@ -86,6 +86,7 @@ class MDRippleController {
 
     /**
      * {{desc}}
+     * @private
      */
     handleRipplePointerenter() {
         this.container.style.removeProperty("--md-comp-ripple-animation");
@@ -94,6 +95,7 @@ class MDRippleController {
 
     /**
      * {{desc}}
+     * @private
      */
     handleRipplePointerleave() {
         this.container.classList.remove("md-ripple--hover");
@@ -102,6 +104,7 @@ class MDRippleController {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleRipplePointerdown(event) {
         this.container.classList.add("md-ripple--pressed");
@@ -125,6 +128,7 @@ class MDRippleController {
 
     /**
      * {{desc}}
+     * @private
      */
     handleRipplePointerup() {
         this.container.classList.remove("md-ripple--pressed");
@@ -133,6 +137,7 @@ class MDRippleController {
 
     /**
      * {{desc}}
+     * @private
      */
     handleRippleFocus() {
         this.container.classList.add("md-ripple--focused");
@@ -140,6 +145,7 @@ class MDRippleController {
 
     /**
      * {{desc}}
+     * @private
      */
     handleRippleBlur() {
         this.container.classList.remove("md-ripple--focused");

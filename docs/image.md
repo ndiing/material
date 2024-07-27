@@ -12,11 +12,6 @@
     * [new MDImageComponent()](#new_MDImageComponent_new)
     * [.properties](#MDImageComponent+properties)
     * [.imageNativeStyle](#MDImageComponent+imageNativeStyle)
-    * [.render()](#MDImageComponent+render)
-    * [.connectedCallback()](#MDImageComponent+connectedCallback)
-    * [.updated(changedProperties)](#MDImageComponent+updated)
-    * [.handleImageNativeLoad(event)](#MDImageComponent+handleImageNativeLoad)
-    * [.handleImageNativeError(event)](#MDImageComponent+handleImageNativeError)
 
 <a name="new_MDImageComponent_new"></a>
 
@@ -46,48 +41,3 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDImageComponent</code>](#MDImageComponent)  
-<a name="MDImageComponent+render"></a>
-
-### mdImageComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-<a name="MDImageComponent+connectedCallback"></a>
-
-### mdImageComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-<a name="MDImageComponent+updated"></a>
-
-### mdImageComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-
-<a name="MDImageComponent+handleImageNativeLoad"></a>
-
-### mdImageComponent.handleImageNativeLoad(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDImageComponent+handleImageNativeError"></a>
-
-### mdImageComponent.handleImageNativeError(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDImageComponent</code>](#MDImageComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

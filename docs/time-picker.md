@@ -13,16 +13,8 @@
     * [.childNodes_](#MDTimePickerComponent+childNodes_)
     * [.childNodes_](#MDTimePickerComponent+childNodes_)
     * [.leadingActions](#MDTimePickerComponent+leadingActions)
-    * [.connectedCallback()](#MDTimePickerComponent+connectedCallback)
     * [.updateDate()](#MDTimePickerComponent+updateDate)
     * [.getValue()](#MDTimePickerComponent+getValue)
-    * [.handleCardButtonLabelClick(event)](#MDTimePickerComponent+handleCardButtonLabelClick)
-    * [.handleCardIconButtonPrevClick(event)](#MDTimePickerComponent+handleCardIconButtonPrevClick)
-    * [.handleCardIconButtonNextClick(event)](#MDTimePickerComponent+handleCardIconButtonNextClick)
-    * [.handleDatetimePickerHourItemClick(event)](#MDTimePickerComponent+handleDatetimePickerHourItemClick)
-    * [.handleDatetimePickerMinuteItemClick(event)](#MDTimePickerComponent+handleDatetimePickerMinuteItemClick)
-    * [.handleCardButtonCancelClick(event)](#MDTimePickerComponent+handleCardButtonCancelClick)
-    * [.handleCardButtonOkClick(event)](#MDTimePickerComponent+handleCardButtonOkClick)
 
 <a name="new_MDTimePickerComponent_new"></a>
 
@@ -52,12 +44,6 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-<a name="MDTimePickerComponent+connectedCallback"></a>
-
-### mdTimePickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
 <a name="MDTimePickerComponent+updateDate"></a>
 
 ### mdTimePickerComponent.updateDate()
@@ -70,80 +56,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-<a name="MDTimePickerComponent+handleCardButtonLabelClick"></a>
-
-### mdTimePickerComponent.handleCardButtonLabelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDTimePickerComponent+handleCardIconButtonPrevClick"></a>
-
-### mdTimePickerComponent.handleCardIconButtonPrevClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDTimePickerComponent+handleCardIconButtonNextClick"></a>
-
-### mdTimePickerComponent.handleCardIconButtonNextClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDTimePickerComponent+handleDatetimePickerHourItemClick"></a>
-
-### mdTimePickerComponent.handleDatetimePickerHourItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDTimePickerComponent+handleDatetimePickerMinuteItemClick"></a>
-
-### mdTimePickerComponent.handleDatetimePickerMinuteItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDTimePickerComponent+handleCardButtonCancelClick"></a>
-
-### mdTimePickerComponent.handleCardButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDTimePickerComponent+handleCardButtonOkClick"></a>
-
-### mdTimePickerComponent.handleCardButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDTimePickerComponent</code>](#MDTimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

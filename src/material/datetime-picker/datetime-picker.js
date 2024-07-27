@@ -267,6 +267,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderYear() {
         /* prettier-ignore */
@@ -284,6 +285,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderMonth() {
         /* prettier-ignore */
@@ -301,6 +303,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderDay() {
         /* prettier-ignore */
@@ -328,6 +331,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderHour() {
         /* prettier-ignore */
@@ -344,6 +348,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderMinute() {
         /* prettier-ignore */
@@ -360,6 +365,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -376,6 +382,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -418,6 +425,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -439,6 +447,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -460,6 +469,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -479,6 +489,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -491,6 +502,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());
@@ -507,6 +519,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -519,6 +532,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -531,6 +545,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -548,6 +563,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
@@ -567,6 +583,7 @@ class MDDatetimePickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;

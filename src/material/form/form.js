@@ -52,6 +52,7 @@ class MDFormComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -75,6 +76,7 @@ class MDFormComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -98,6 +100,7 @@ class MDFormComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.value.elements) {
@@ -114,6 +117,7 @@ class MDFormComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();

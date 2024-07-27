@@ -15,9 +15,6 @@
     * [.childNodes_](#MDColorPickerComponent+childNodes_)
     * [.leadingActions](#MDColorPickerComponent+leadingActions)
     * [.actions](#MDColorPickerComponent+actions)
-    * [.renderMain()](#MDColorPickerComponent+renderMain)
-    * [.connectedCallback()](#MDColorPickerComponent+connectedCallback)
-    * [.updated(changedProperties)](#MDColorPickerComponent+updated)
     * [.init()](#MDColorPickerComponent+init)
     * [.draw()](#MDColorPickerComponent+draw)
     * [.findPixel(r, g, b)](#MDColorPickerComponent+findPixel)
@@ -28,14 +25,6 @@
     * [.showModal(button, options)](#MDColorPickerComponent+showModal)
     * [.show(button, options)](#MDColorPickerComponent+show)
     * [.updatePosition(button, options)](#MDColorPickerComponent+updatePosition)
-    * [.handleColorPickerButtonLabelClick(event)](#MDColorPickerComponent+handleColorPickerButtonLabelClick)
-    * [.handleColorPickerGradientTrackPointerdown(event)](#MDColorPickerComponent+handleColorPickerGradientTrackPointerdown)
-    * [.handleColorPickerGradientTrackPointermove(event)](#MDColorPickerComponent+handleColorPickerGradientTrackPointermove)
-    * [.handleColorPickerGradientTrackPointerup(event)](#MDColorPickerComponent+handleColorPickerGradientTrackPointerup)
-    * [.handleColorPickerHueNativeInput(event)](#MDColorPickerComponent+handleColorPickerHueNativeInput)
-    * [.handleColorPickerOpacityNativeInput(event)](#MDColorPickerComponent+handleColorPickerOpacityNativeInput)
-    * [.handleColorPickerButtonCancelClick(event)](#MDColorPickerComponent+handleColorPickerButtonCancelClick)
-    * [.handleColorPickerButtonOkClick(event)](#MDColorPickerComponent+handleColorPickerButtonOkClick)
 
 <a name="new_MDColorPickerComponent_new"></a>
 
@@ -91,29 +80,6 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-<a name="MDColorPickerComponent+renderMain"></a>
-
-### mdColorPickerComponent.renderMain()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-<a name="MDColorPickerComponent+connectedCallback"></a>
-
-### mdColorPickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-<a name="MDColorPickerComponent+updated"></a>
-
-### mdColorPickerComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-
 <a name="MDColorPickerComponent+init"></a>
 
 ### mdColorPickerComponent.init()
@@ -203,92 +169,4 @@
 | --- | --- | --- |
 | button | <code>Any</code> | {{desc}} |
 | options | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerButtonLabelClick"></a>
-
-### mdColorPickerComponent.handleColorPickerButtonLabelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerGradientTrackPointerdown"></a>
-
-### mdColorPickerComponent.handleColorPickerGradientTrackPointerdown(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerGradientTrackPointermove"></a>
-
-### mdColorPickerComponent.handleColorPickerGradientTrackPointermove(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerGradientTrackPointerup"></a>
-
-### mdColorPickerComponent.handleColorPickerGradientTrackPointerup(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerHueNativeInput"></a>
-
-### mdColorPickerComponent.handleColorPickerHueNativeInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerOpacityNativeInput"></a>
-
-### mdColorPickerComponent.handleColorPickerOpacityNativeInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerButtonCancelClick"></a>
-
-### mdColorPickerComponent.handleColorPickerButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorPickerComponent+handleColorPickerButtonOkClick"></a>
-
-### mdColorPickerComponent.handleColorPickerButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorPickerComponent</code>](#MDColorPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

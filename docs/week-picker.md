@@ -14,18 +14,8 @@
     * [.childNodes_](#MDWeekPickerComponent+childNodes_)
     * [.childNodes_](#MDWeekPickerComponent+childNodes_)
     * [.leadingActions](#MDWeekPickerComponent+leadingActions)
-    * [.renderDay()](#MDWeekPickerComponent+renderDay)
-    * [.connectedCallback()](#MDWeekPickerComponent+connectedCallback)
     * [.updateDate()](#MDWeekPickerComponent+updateDate)
     * [.getValue()](#MDWeekPickerComponent+getValue)
-    * [.handleCardButtonLabelClick(event)](#MDWeekPickerComponent+handleCardButtonLabelClick)
-    * [.handleCardIconButtonPrevClick(event)](#MDWeekPickerComponent+handleCardIconButtonPrevClick)
-    * [.handleCardIconButtonNextClick(event)](#MDWeekPickerComponent+handleCardIconButtonNextClick)
-    * [.handleDatetimePickerYearItemClick(event)](#MDWeekPickerComponent+handleDatetimePickerYearItemClick)
-    * [.handleDatetimePickerMonthItemClick(event)](#MDWeekPickerComponent+handleDatetimePickerMonthItemClick)
-    * [.handleDatetimePickerDayItemClick(event)](#MDWeekPickerComponent+handleDatetimePickerDayItemClick)
-    * [.handleCardButtonCancelClick(event)](#MDWeekPickerComponent+handleCardButtonCancelClick)
-    * [.handleCardButtonOkClick(event)](#MDWeekPickerComponent+handleCardButtonOkClick)
 
 <a name="MDWeekPickerComponent+weekdays"></a>
 
@@ -62,18 +52,6 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-<a name="MDWeekPickerComponent+renderDay"></a>
-
-### mdWeekPickerComponent.renderDay()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-<a name="MDWeekPickerComponent+connectedCallback"></a>
-
-### mdWeekPickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
 <a name="MDWeekPickerComponent+updateDate"></a>
 
 ### mdWeekPickerComponent.updateDate()
@@ -86,91 +64,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-<a name="MDWeekPickerComponent+handleCardButtonLabelClick"></a>
-
-### mdWeekPickerComponent.handleCardButtonLabelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleCardIconButtonPrevClick"></a>
-
-### mdWeekPickerComponent.handleCardIconButtonPrevClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleCardIconButtonNextClick"></a>
-
-### mdWeekPickerComponent.handleCardIconButtonNextClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleDatetimePickerYearItemClick"></a>
-
-### mdWeekPickerComponent.handleDatetimePickerYearItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleDatetimePickerMonthItemClick"></a>
-
-### mdWeekPickerComponent.handleDatetimePickerMonthItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleDatetimePickerDayItemClick"></a>
-
-### mdWeekPickerComponent.handleDatetimePickerDayItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleCardButtonCancelClick"></a>
-
-### mdWeekPickerComponent.handleCardButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekPickerComponent+handleCardButtonOkClick"></a>
-
-### mdWeekPickerComponent.handleCardButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekPickerComponent</code>](#MDWeekPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

@@ -100,6 +100,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderText() {
         return this.text.replace(/\$(\w+)/g, ($, $1) => {
@@ -109,6 +110,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -133,6 +135,7 @@ class MDPaginationComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -142,6 +145,7 @@ class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -159,6 +163,7 @@ class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handlePaginationLimitInput(event) {
         const limit = Number(event.detail.currentTarget.value);
@@ -169,6 +174,7 @@ class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handlePaginationFirstClick(event) {
         this.page = 1;
@@ -178,6 +184,7 @@ class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handlePaginationPrevClick(event) {
         this.page = Math.max(--this.page, 1);
@@ -187,6 +194,7 @@ class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handlePaginationNextClick(event) {
         this.page = Math.min(++this.page, this.pages);
@@ -196,6 +204,7 @@ class MDPaginationComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handlePaginationLastClick(event) {
         this.page = this.pages;

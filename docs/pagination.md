@@ -16,15 +16,6 @@
     * [.end](#MDPaginationComponent+end)
     * [.numberStart](#MDPaginationComponent+numberStart)
     * [.numberEnd](#MDPaginationComponent+numberEnd)
-    * [.renderText()](#MDPaginationComponent+renderText)
-    * [.render()](#MDPaginationComponent+render)
-    * [.connectedCallback()](#MDPaginationComponent+connectedCallback)
-    * [.updated(changedProperties)](#MDPaginationComponent+updated)
-    * [.handlePaginationLimitInput(event)](#MDPaginationComponent+handlePaginationLimitInput)
-    * [.handlePaginationFirstClick(event)](#MDPaginationComponent+handlePaginationFirstClick)
-    * [.handlePaginationPrevClick(event)](#MDPaginationComponent+handlePaginationPrevClick)
-    * [.handlePaginationNextClick(event)](#MDPaginationComponent+handlePaginationNextClick)
-    * [.handlePaginationLastClick(event)](#MDPaginationComponent+handlePaginationLastClick)
 
 <a name="new_MDPaginationComponent_new"></a>
 
@@ -83,87 +74,3 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+renderText"></a>
-
-### mdPaginationComponent.renderText()
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+render"></a>
-
-### mdPaginationComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+connectedCallback"></a>
-
-### mdPaginationComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-<a name="MDPaginationComponent+updated"></a>
-
-### mdPaginationComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-
-<a name="MDPaginationComponent+handlePaginationLimitInput"></a>
-
-### mdPaginationComponent.handlePaginationLimitInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDPaginationComponent+handlePaginationFirstClick"></a>
-
-### mdPaginationComponent.handlePaginationFirstClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDPaginationComponent+handlePaginationPrevClick"></a>
-
-### mdPaginationComponent.handlePaginationPrevClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDPaginationComponent+handlePaginationNextClick"></a>
-
-### mdPaginationComponent.handlePaginationNextClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDPaginationComponent+handlePaginationLastClick"></a>
-
-### mdPaginationComponent.handlePaginationLastClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPaginationComponent</code>](#MDPaginationComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

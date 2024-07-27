@@ -17,6 +17,7 @@ class MDIconComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         return this.icon;
@@ -24,6 +25,7 @@ class MDIconComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

@@ -9,6 +9,7 @@ import { MDGestureController } from "../material.js";
 class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -23,6 +24,7 @@ class MDDataTableColumnCellComponent extends MDDataTableItemComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);

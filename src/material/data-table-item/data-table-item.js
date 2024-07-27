@@ -74,6 +74,7 @@ class MDDataTableItemComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -115,6 +116,7 @@ class MDDataTableItemComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -124,6 +126,7 @@ class MDDataTableItemComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

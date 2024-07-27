@@ -11,9 +11,6 @@
 * [MDSearchFieldComponent](#MDSearchFieldComponent) ⇐ <code>MDTextFieldComponent</code>
     * [.actions](#MDSearchFieldComponent+actions)
     * [.actions](#MDSearchFieldComponent+actions)
-    * [.connectedCallback()](#MDSearchFieldComponent+connectedCallback)
-    * [.handleTextFieldNativeClick(event)](#MDSearchFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldActionClick(event)](#MDSearchFieldComponent+handleTextFieldActionClick)
 
 <a name="MDSearchFieldComponent+actions"></a>
 
@@ -31,32 +28,4 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
-
-<a name="MDSearchFieldComponent+connectedCallback"></a>
-
-### mdSearchFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDSearchFieldComponent</code>](#MDSearchFieldComponent)  
-<a name="MDSearchFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdSearchFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSearchFieldComponent</code>](#MDSearchFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDSearchFieldComponent+handleTextFieldActionClick"></a>
-
-### mdSearchFieldComponent.handleTextFieldActionClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSearchFieldComponent</code>](#MDSearchFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

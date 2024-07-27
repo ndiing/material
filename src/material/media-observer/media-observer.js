@@ -44,4 +44,3 @@ class MDMediaObserver {
     }
 }
 export { schemes, breakpoints, MDMediaObserver };
-

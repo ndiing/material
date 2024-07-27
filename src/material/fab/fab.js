@@ -39,6 +39,7 @@ class MDFabComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -50,6 +51,7 @@ class MDFabComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -59,6 +61,7 @@ class MDFabComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);

@@ -11,14 +11,8 @@
 * [MDColorFieldComponent](#MDColorFieldComponent) ⇐ <code>MDTextFieldComponent</code>
     * [.actions](#MDColorFieldComponent+actions)
     * [.actions](#MDColorFieldComponent+actions)
-    * [.connectedCallback()](#MDColorFieldComponent+connectedCallback)
     * [.showPicker()](#MDColorFieldComponent+showPicker)
     * [.togglePicker()](#MDColorFieldComponent+togglePicker)
-    * [.handleTextFieldContainerClick()](#MDColorFieldComponent+handleTextFieldContainerClick)
-    * [.handleTextFieldNativeClick(event)](#MDColorFieldComponent+handleTextFieldNativeClick)
-    * [.handleColorPickerSelection()](#MDColorFieldComponent+handleColorPickerSelection)
-    * [.handleColorPickerButtonCancelClick()](#MDColorFieldComponent+handleColorPickerButtonCancelClick)
-    * [.handleColorPickerButtonOkClick()](#MDColorFieldComponent+handleColorPickerButtonOkClick)
 
 <a name="MDColorFieldComponent+actions"></a>
 
@@ -37,12 +31,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDColorFieldComponent+connectedCallback"></a>
-
-### mdColorFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
 <a name="MDColorFieldComponent+showPicker"></a>
 
 ### mdColorFieldComponent.showPicker()
@@ -52,41 +40,6 @@
 <a name="MDColorFieldComponent+togglePicker"></a>
 
 ### mdColorFieldComponent.togglePicker()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
-<a name="MDColorFieldComponent+handleTextFieldContainerClick"></a>
-
-### mdColorFieldComponent.handleTextFieldContainerClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
-<a name="MDColorFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdColorFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDColorFieldComponent+handleColorPickerSelection"></a>
-
-### mdColorFieldComponent.handleColorPickerSelection()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
-<a name="MDColorFieldComponent+handleColorPickerButtonCancelClick"></a>
-
-### mdColorFieldComponent.handleColorPickerButtonCancelClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  
-<a name="MDColorFieldComponent+handleColorPickerButtonOkClick"></a>
-
-### mdColorFieldComponent.handleColorPickerButtonOkClick()
 {{desc}}
 
 **Kind**: instance method of [<code>MDColorFieldComponent</code>](#MDColorFieldComponent)  

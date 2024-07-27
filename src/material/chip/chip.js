@@ -43,6 +43,7 @@ class MDChipComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -57,6 +58,7 @@ class MDChipComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -66,6 +68,7 @@ class MDChipComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -89,6 +92,7 @@ class MDChipComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", event);

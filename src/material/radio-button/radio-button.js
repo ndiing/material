@@ -46,6 +46,7 @@ class MDRadioButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -71,6 +72,7 @@ class MDRadioButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -89,6 +91,7 @@ class MDRadioButtonComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleRadioButtonNativeInput(event) {
         this.value = this.radioButtonNative.value.value;
@@ -100,6 +103,7 @@ class MDRadioButtonComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleRadioButtonNativeReset(event) {
         this.radioButtonNative.value.value = this.defaultValue;

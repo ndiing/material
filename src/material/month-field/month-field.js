@@ -40,6 +40,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -113,6 +114,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -122,6 +124,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
@@ -132,6 +135,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleMonthPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -140,6 +144,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleMonthPickerMonthItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -149,6 +154,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleMonthFieldActionPickerClick() {
         this.togglePicker();
@@ -156,6 +162,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleMonthPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -164,6 +171,7 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleMonthPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();

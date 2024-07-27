@@ -46,6 +46,7 @@ class MDCheckboxComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -71,6 +72,7 @@ class MDCheckboxComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -89,6 +91,7 @@ class MDCheckboxComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCheckboxNativeInput(event) {
         this.value = this.checkboxNative.value.value;
@@ -100,6 +103,7 @@ class MDCheckboxComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCheckboxNativeReset(event) {
         this.checkboxNative.value.value = this.defaultValue;

@@ -14,6 +14,7 @@ class MDSnackbarComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

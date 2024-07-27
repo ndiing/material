@@ -13,16 +13,8 @@
     * [.leadingActions](#MDMonthPickerComponent+leadingActions)
     * [.childNodes_](#MDMonthPickerComponent+childNodes_)
     * [.childNodes_](#MDMonthPickerComponent+childNodes_)
-    * [.connectedCallback()](#MDMonthPickerComponent+connectedCallback)
     * [.updateDate()](#MDMonthPickerComponent+updateDate)
     * [.getValue()](#MDMonthPickerComponent+getValue)
-    * [.handleCardButtonLabelClick(event)](#MDMonthPickerComponent+handleCardButtonLabelClick)
-    * [.handleCardIconButtonPrevClick(event)](#MDMonthPickerComponent+handleCardIconButtonPrevClick)
-    * [.handleCardIconButtonNextClick(event)](#MDMonthPickerComponent+handleCardIconButtonNextClick)
-    * [.handleDatetimePickerYearItemClick(event)](#MDMonthPickerComponent+handleDatetimePickerYearItemClick)
-    * [.handleDatetimePickerMonthItemClick(event)](#MDMonthPickerComponent+handleDatetimePickerMonthItemClick)
-    * [.handleCardButtonCancelClick(event)](#MDMonthPickerComponent+handleCardButtonCancelClick)
-    * [.handleCardButtonOkClick(event)](#MDMonthPickerComponent+handleCardButtonOkClick)
 
 <a name="new_MDMonthPickerComponent_new"></a>
 
@@ -52,12 +44,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDMonthPickerComponent+connectedCallback"></a>
-
-### mdMonthPickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
 <a name="MDMonthPickerComponent+updateDate"></a>
 
 ### mdMonthPickerComponent.updateDate()
@@ -70,80 +56,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-<a name="MDMonthPickerComponent+handleCardButtonLabelClick"></a>
-
-### mdMonthPickerComponent.handleCardButtonLabelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthPickerComponent+handleCardIconButtonPrevClick"></a>
-
-### mdMonthPickerComponent.handleCardIconButtonPrevClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthPickerComponent+handleCardIconButtonNextClick"></a>
-
-### mdMonthPickerComponent.handleCardIconButtonNextClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthPickerComponent+handleDatetimePickerYearItemClick"></a>
-
-### mdMonthPickerComponent.handleDatetimePickerYearItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthPickerComponent+handleDatetimePickerMonthItemClick"></a>
-
-### mdMonthPickerComponent.handleDatetimePickerMonthItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthPickerComponent+handleCardButtonCancelClick"></a>
-
-### mdMonthPickerComponent.handleCardButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthPickerComponent+handleCardButtonOkClick"></a>
-
-### mdMonthPickerComponent.handleCardButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthPickerComponent</code>](#MDMonthPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

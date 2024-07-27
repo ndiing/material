@@ -16,21 +16,12 @@
     * [.actions](#MDEmojiPickerComponent+actions)
     * [.emojiPickerTabs](#MDEmojiPickerComponent+emojiPickerTabs)
     * [.emojiPickerTabs](#MDEmojiPickerComponent+emojiPickerTabs)
-    * [.renderMain()](#MDEmojiPickerComponent+renderMain)
-    * [.connectedCallback()](#MDEmojiPickerComponent+connectedCallback)
     * [.disconnectedCallback()](#MDEmojiPickerComponent+disconnectedCallback)
     * [.generateTabsAndRows(data, tabs)](#MDEmojiPickerComponent+generateTabsAndRows)
     * [.showModal(button, options)](#MDEmojiPickerComponent+showModal)
     * [.show(button, options)](#MDEmojiPickerComponent+show)
     * [.updatePosition(button, options)](#MDEmojiPickerComponent+updatePosition)
-    * [.handleEmojiPickerTextFieldNativeInput(event)](#MDEmojiPickerComponent+handleEmojiPickerTextFieldNativeInput)
-    * [.handleEmojiPickerTabsItemClick(event)](#MDEmojiPickerComponent+handleEmojiPickerTabsItemClick)
     * [.updateEmojiPickerTabsIndicator(data)](#MDEmojiPickerComponent+updateEmojiPickerTabsIndicator)
-    * [.handleEmojiPickerViewportVirtualScroll(event)](#MDEmojiPickerComponent+handleEmojiPickerViewportVirtualScroll)
-    * [.handleEmojiPickerGridColumnClick(event)](#MDEmojiPickerComponent+handleEmojiPickerGridColumnClick)
-    * [.handleCardButtonClick(event)](#MDEmojiPickerComponent+handleCardButtonClick)
-    * [.handleEmojiPickerButtonCancelClick(event)](#MDEmojiPickerComponent+handleEmojiPickerButtonCancelClick)
-    * [.handleEmojiPickerButtonOkClick(event)](#MDEmojiPickerComponent+handleEmojiPickerButtonOkClick)
 
 <a name="MDEmojiPickerComponent+properties"></a>
 
@@ -99,18 +90,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDEmojiPickerComponent+renderMain"></a>
-
-### mdEmojiPickerComponent.renderMain()
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-<a name="MDEmojiPickerComponent+connectedCallback"></a>
-
-### mdEmojiPickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
 <a name="MDEmojiPickerComponent+disconnectedCallback"></a>
 
 ### mdEmojiPickerComponent.disconnectedCallback()
@@ -165,28 +144,6 @@
 | button | <code>Any</code> | {{desc}} |
 | options | <code>Any</code> | {{desc}} |
 
-<a name="MDEmojiPickerComponent+handleEmojiPickerTextFieldNativeInput"></a>
-
-### mdEmojiPickerComponent.handleEmojiPickerTextFieldNativeInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDEmojiPickerComponent+handleEmojiPickerTabsItemClick"></a>
-
-### mdEmojiPickerComponent.handleEmojiPickerTabsItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
 <a name="MDEmojiPickerComponent+updateEmojiPickerTabsIndicator"></a>
 
 ### mdEmojiPickerComponent.updateEmojiPickerTabsIndicator(data)
@@ -197,59 +154,4 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>Any</code> | {{desc}} |
-
-<a name="MDEmojiPickerComponent+handleEmojiPickerViewportVirtualScroll"></a>
-
-### mdEmojiPickerComponent.handleEmojiPickerViewportVirtualScroll(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDEmojiPickerComponent+handleEmojiPickerGridColumnClick"></a>
-
-### mdEmojiPickerComponent.handleEmojiPickerGridColumnClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDEmojiPickerComponent+handleCardButtonClick"></a>
-
-### mdEmojiPickerComponent.handleCardButtonClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDEmojiPickerComponent+handleEmojiPickerButtonCancelClick"></a>
-
-### mdEmojiPickerComponent.handleEmojiPickerButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDEmojiPickerComponent+handleEmojiPickerButtonOkClick"></a>
-
-### mdEmojiPickerComponent.handleEmojiPickerButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiPickerComponent</code>](#MDEmojiPickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

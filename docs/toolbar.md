@@ -5,7 +5,7 @@
 
 **Kind**: global class  
 **Extends**: <code>MDBlockComponent</code>  
-**Emits**: <code>MDToolbarComponent#event:onCheckboxNativeInput - {{desc}}</code>, <code>MDToolbarComponent#event:onCheckboxNativeReset - {{desc}}</code>, <code>MDToolbarComponent#event:onRadioButtonNativeInput - {{desc}}</code>, <code>MDToolbarComponent#event:onRadioButtonNativeReset - {{desc}}</code>, <code>MDToolbarComponent#event:onSwitchNativeInput - {{desc}}</code>, <code>MDToolbarComponent#event:onSwitchNativeReset - {{desc}}</code>, <code>MDToolbarComponent#event:onImageNativeLoad - {{desc}}</code>, <code>MDToolbarComponent#event:onImageNativeError - {{desc}}</code>  
+**Emits**: <code>MDToolbarComponent#event:onCheckboxNativeInput - {{desc}}</code>, <code>MDToolbarComponent#event:onCheckboxNativeReset - {{desc}}</code>, <code>MDToolbarComponent#event:onRadioButtonNativeInput - {{desc}}</code>, <code>MDToolbarComponent#event:onRadioButtonNativeReset - {{desc}}</code>, <code>MDToolbarComponent#event:onSwitchNativeInput - {{desc}}</code>, <code>MDToolbarComponent#event:onSwitchNativeReset - {{desc}}</code>, <code>MDToolbarComponent#event:onImageNativeLoad - {{desc}}</code>, <code>MDToolbarComponent#event:onImageNativeError - {{desc}}</code>, <code>MDToolbarComponent#event:onSelected - {{desc}}</code>  
 **Element**: md-toolbar  
 
 * [MDToolbarComponent](#MDToolbarComponent) ⇐ <code>MDBlockComponent</code>
@@ -45,13 +45,14 @@
 | trailingCheckbox | <code>Boolean</code> | {{desc}} |
 | trailingActions | <code>Array</code> | {{desc}} |
 | badge | <code>Number</code> | {{desc}} |
+| indent | <code>Number</code> | {{desc}} |
+| routerLink | <code>String</code> | {{desc}} |
 | defaultLeadingActionComponent | <code>String</code> | {{desc}} |
 | defaultTrailingActionComponent | <code>String</code> | {{desc}} |
 | activated | <code>Boolean</code> | {{desc}} |
 | indeterminate | <code>Boolean</code> | {{desc}} |
 | selected | <code>Boolean</code> | {{desc}} |
 | disabled | <code>Boolean</code> | {{desc}} |
-| routerLink | <code>String</code> | {{desc}} |
 | items | <code>Array</code> | {{desc}} |
 
 <a name="MDToolbarComponent+leadingActions"></a>

@@ -66,6 +66,7 @@ class MDSliderComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} value - {{desc}}
+     * @private
      */
     renderTrack(value) {
         let length = 2;
@@ -85,6 +86,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -120,6 +122,7 @@ class MDSliderComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -151,6 +154,7 @@ class MDSliderComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -174,6 +178,7 @@ class MDSliderComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleSliderNativeInput(event) {
         if (this.value?.length > 1) {
@@ -194,6 +199,7 @@ class MDSliderComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleSliderNativeReset(event) {
         for (let index = 0; index < this.sliderNativeAll.length; index++) {

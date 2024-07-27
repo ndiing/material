@@ -10,9 +10,6 @@
 * [MDDataTableItemComponent](#MDDataTableItemComponent) ⇐ <code>MDComponent</code>
     * [new MDDataTableItemComponent()](#new_MDDataTableItemComponent_new)
     * [.properties](#MDDataTableItemComponent+properties)
-    * [.render()](#MDDataTableItemComponent+render)
-    * [.connectedCallback()](#MDDataTableItemComponent+connectedCallback)
-    * [.updated(changedProperties)](#MDDataTableItemComponent+updated)
 
 <a name="new_MDDataTableItemComponent_new"></a>
 
@@ -55,27 +52,4 @@
 | indeterminate | <code>Boolean</code> | {{desc}} |
 | selected | <code>Boolean</code> | {{desc}} |
 | disabled | <code>Boolean</code> | {{desc}} |
-
-<a name="MDDataTableItemComponent+render"></a>
-
-### mdDataTableItemComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableItemComponent</code>](#MDDataTableItemComponent)  
-<a name="MDDataTableItemComponent+connectedCallback"></a>
-
-### mdDataTableItemComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableItemComponent</code>](#MDDataTableItemComponent)  
-<a name="MDDataTableItemComponent+updated"></a>
-
-### mdDataTableItemComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableItemComponent</code>](#MDDataTableItemComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
 

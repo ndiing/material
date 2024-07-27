@@ -74,6 +74,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -83,6 +84,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -92,6 +94,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

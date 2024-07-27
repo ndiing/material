@@ -40,6 +40,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -113,6 +114,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -122,6 +124,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
@@ -132,6 +135,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleWeekFieldActionPickerClick() {
         this.togglePicker();
@@ -139,6 +143,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleWeekPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -147,6 +152,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleWeekPickerDayItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -156,6 +162,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleWeekPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -164,6 +171,7 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleWeekPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();

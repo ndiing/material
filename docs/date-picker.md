@@ -12,17 +12,8 @@
     * [.leadingActions](#MDDatePickerComponent+leadingActions)
     * [.childNodes_](#MDDatePickerComponent+childNodes_)
     * [.childNodes_](#MDDatePickerComponent+childNodes_)
-    * [.connectedCallback()](#MDDatePickerComponent+connectedCallback)
     * [.updateDate()](#MDDatePickerComponent+updateDate)
     * [.getValue()](#MDDatePickerComponent+getValue)
-    * [.handleCardButtonLabelClick(event)](#MDDatePickerComponent+handleCardButtonLabelClick)
-    * [.handleCardIconButtonPrevClick(event)](#MDDatePickerComponent+handleCardIconButtonPrevClick)
-    * [.handleCardIconButtonNextClick(event)](#MDDatePickerComponent+handleCardIconButtonNextClick)
-    * [.handleDatetimePickerYearItemClick(event)](#MDDatePickerComponent+handleDatetimePickerYearItemClick)
-    * [.handleDatetimePickerMonthItemClick(event)](#MDDatePickerComponent+handleDatetimePickerMonthItemClick)
-    * [.handleDatetimePickerDayItemClick(event)](#MDDatePickerComponent+handleDatetimePickerDayItemClick)
-    * [.handleCardButtonCancelClick(event)](#MDDatePickerComponent+handleCardButtonCancelClick)
-    * [.handleCardButtonOkClick(event)](#MDDatePickerComponent+handleCardButtonOkClick)
 
 <a name="MDDatePickerComponent+leadingActions"></a>
 
@@ -47,12 +38,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDDatePickerComponent+connectedCallback"></a>
-
-### mdDatePickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
 <a name="MDDatePickerComponent+updateDate"></a>
 
 ### mdDatePickerComponent.updateDate()
@@ -65,91 +50,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-<a name="MDDatePickerComponent+handleCardButtonLabelClick"></a>
-
-### mdDatePickerComponent.handleCardButtonLabelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleCardIconButtonPrevClick"></a>
-
-### mdDatePickerComponent.handleCardIconButtonPrevClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleCardIconButtonNextClick"></a>
-
-### mdDatePickerComponent.handleCardIconButtonNextClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleDatetimePickerYearItemClick"></a>
-
-### mdDatePickerComponent.handleDatetimePickerYearItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleDatetimePickerMonthItemClick"></a>
-
-### mdDatePickerComponent.handleDatetimePickerMonthItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleDatetimePickerDayItemClick"></a>
-
-### mdDatePickerComponent.handleDatetimePickerDayItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleCardButtonCancelClick"></a>
-
-### mdDatePickerComponent.handleCardButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatePickerComponent+handleCardButtonOkClick"></a>
-
-### mdDatePickerComponent.handleCardButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatePickerComponent</code>](#MDDatePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

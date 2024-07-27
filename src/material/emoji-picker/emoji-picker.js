@@ -100,6 +100,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderMain() {
         /* prettier-ignore */
@@ -155,6 +156,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -257,6 +259,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleEmojiPickerTextFieldNativeInput(event) {
         const value = event.detail.currentTarget.value;
@@ -276,6 +279,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleEmojiPickerTabsItemClick(event) {
         const data = event.currentTarget.data;
@@ -305,6 +309,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     async handleEmojiPickerViewportVirtualScroll(event) {
         this.virtualRows = this.dataRows.filter((row, index) => {
@@ -329,6 +334,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleEmojiPickerGridColumnClick(event) {
         this.emit("onEmojiPickerGridColumnClick", event);
@@ -337,6 +343,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonClick(event) {
         if (event.currentTarget.name === "label") {
@@ -352,6 +359,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleEmojiPickerButtonCancelClick(event) {
         this.emit("onEmojiPickerButtonCancelClick", event);
@@ -360,6 +368,7 @@ class MDEmojiPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleEmojiPickerButtonOkClick(event) {
         this.emit("onEmojiPickerButtonOkClick", event);

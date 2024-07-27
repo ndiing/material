@@ -17,11 +17,10 @@
     * [.getRoute(path)](#MDRouter.getRoute)
     * [.getRoutes(route)](#MDRouter.getRoutes)
     * [.getOutlet(container, route)](#MDRouter.getOutlet)
-    * [.handleLoad(event)](#MDRouter.handleLoad)
+    * [.performanceStart()](#MDRouter.performanceStart)
+    * [.performanceEnd()](#MDRouter.performanceEnd)
     * [.navigate(url)](#MDRouter.navigate)
-    * [.handleClick(event)](#MDRouter.handleClick)
     * [.init(routes)](#MDRouter.init)
-    * [.emit(type, detail)](#MDRouter.emit)
 
 <a name="MDRouter.path"></a>
 
@@ -115,17 +114,18 @@
 | container | <code>Any</code> | {{desc}} |
 | route | <code>Any</code> | {{desc}} |
 
-<a name="MDRouter.handleLoad"></a>
+<a name="MDRouter.performanceStart"></a>
 
-### MDRouter.handleLoad(event)
+### MDRouter.performanceStart()
 {{desc}}
 
 **Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
+<a name="MDRouter.performanceEnd"></a>
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
+### MDRouter.performanceEnd()
+{{desc}}
 
+**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
 <a name="MDRouter.navigate"></a>
 
 ### MDRouter.navigate(url)
@@ -137,17 +137,6 @@
 | --- | --- | --- |
 | url | <code>Any</code> | {{desc}} |
 
-<a name="MDRouter.handleClick"></a>
-
-### MDRouter.handleClick(event)
-{{desc}}
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
 <a name="MDRouter.init"></a>
 
 ### MDRouter.init(routes)
@@ -158,16 +147,4 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | routes | <code>Any</code> | {{desc}} |
-
-<a name="MDRouter.emit"></a>
-
-### MDRouter.emit(type, detail)
-{{desc}}
-
-**Kind**: static method of [<code>MDRouter</code>](#MDRouter)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>Any</code> | {{desc}} |
-| detail | <code>Any</code> | {{desc}} |
 

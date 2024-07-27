@@ -102,6 +102,21 @@ function parse(data, options = {}, replacer = false) {
             params?.forEach((param) => {
                 code += `     * @param {Any} ${param} - {{desc}}\n`;
             });
+            if([
+                /^handle/,
+                /^render/,
+                /^createRenderRoot/,
+                /^createRenderRoot/,
+                /^connectedCallback/,
+                /^firstUpdated/,
+                /^updated/,
+                /^on$/,
+                /^off$/,
+                /^once$/,
+                /^emit$/,
+            ].some(reg=>reg.test(name))){
+                code += `     * @private\n`;
+            }
             code += `     */\n`;
             code += match;
             return code;

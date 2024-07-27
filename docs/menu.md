@@ -14,9 +14,7 @@
     * [.menuList](#MDMenuComponent+menuList)
     * [.childNodes_](#MDMenuComponent+childNodes_)
     * [.childNodes_](#MDMenuComponent+childNodes_)
-    * [.connectedCallback()](#MDMenuComponent+connectedCallback)
     * [.disconnectedCallback()](#MDMenuComponent+disconnectedCallback)
-    * [.updated(changedProperties)](#MDMenuComponent+updated)
     * [.updateStore()](#MDMenuComponent+updateStore)
     * [.updateVirtual()](#MDMenuComponent+updateVirtual)
     * [.showModal(button, options)](#MDMenuComponent+showModal)
@@ -25,8 +23,6 @@
     * [.filter(value)](#MDMenuComponent+filter)
     * [.select(data)](#MDMenuComponent+select)
     * [.activate(offset, selected)](#MDMenuComponent+activate)
-    * [.handleMenuViewportVirtualScroll(event)](#MDMenuComponent+handleMenuViewportVirtualScroll)
-    * [.handleMenuListItemClick(event)](#MDMenuComponent+handleMenuListItemClick)
 
 <a name="new_MDMenuComponent_new"></a>
 
@@ -78,29 +74,12 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDMenuComponent+connectedCallback"></a>
-
-### mdMenuComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMenuComponent</code>](#MDMenuComponent)  
 <a name="MDMenuComponent+disconnectedCallback"></a>
 
 ### mdMenuComponent.disconnectedCallback()
 {{desc}}
 
 **Kind**: instance method of [<code>MDMenuComponent</code>](#MDMenuComponent)  
-<a name="MDMenuComponent+updated"></a>
-
-### mdMenuComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMenuComponent</code>](#MDMenuComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-
 <a name="MDMenuComponent+updateStore"></a>
 
 ### mdMenuComponent.updateStore()
@@ -183,26 +162,4 @@
 | --- | --- | --- |
 | offset | <code>Any</code> | {{desc}} |
 | selected | <code>Any</code> | {{desc}} |
-
-<a name="MDMenuComponent+handleMenuViewportVirtualScroll"></a>
-
-### mdMenuComponent.handleMenuViewportVirtualScroll(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMenuComponent</code>](#MDMenuComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMenuComponent+handleMenuListItemClick"></a>
-
-### mdMenuComponent.handleMenuListItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMenuComponent</code>](#MDMenuComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

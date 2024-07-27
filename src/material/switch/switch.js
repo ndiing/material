@@ -48,6 +48,7 @@ class MDSwitchComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -73,6 +74,7 @@ class MDSwitchComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -91,6 +93,7 @@ class MDSwitchComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleSwitchNativeInput(event) {
         this.value = this.switchNative.value.value;
@@ -102,6 +105,7 @@ class MDSwitchComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleSwitchNativeReset(event) {
         this.switchNative.value.value = this.defaultValue;

@@ -8,10 +8,8 @@
 
 * [MDVirtualController](#MDVirtualController)
     * [new MDVirtualController(host, options)](#new_MDVirtualController_new)
-    * [.emit(type, detail)](#MDVirtualController+emit)
     * [.hostConnected()](#MDVirtualController+hostConnected)
     * [.hostDisconnected()](#MDVirtualController+hostDisconnected)
-    * [.handleVirtualScroll(event)](#MDVirtualController+handleVirtualScroll)
 
 <a name="new_MDVirtualController_new"></a>
 
@@ -23,18 +21,6 @@
 | --- | --- | --- |
 | host | <code>Any</code> | {{desc}} |
 | options | <code>Any</code> | {{desc}} |
-
-<a name="MDVirtualController+emit"></a>
-
-### mdVirtualController.emit(type, detail)
-{{desc}}
-
-**Kind**: instance method of [<code>MDVirtualController</code>](#MDVirtualController)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>Any</code> | {{desc}} |
-| detail | <code>Any</code> | {{desc}} |
 
 <a name="MDVirtualController+hostConnected"></a>
 
@@ -48,14 +34,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDVirtualController</code>](#MDVirtualController)  
-<a name="MDVirtualController+handleVirtualScroll"></a>
-
-### mdVirtualController.handleVirtualScroll(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDVirtualController</code>](#MDVirtualController)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

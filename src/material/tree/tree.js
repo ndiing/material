@@ -38,12 +38,10 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}
+     * @private
      */
     renderListItem(item = {}) {
-        item.leadingActions = [
-            ...((item.isNode && [{ icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" }]) || (item.indent > 0 && [{ component: "icon", icon: "" }]) || []),
-            { component: "icon", icon: item.isNode ? "folder" : "draft" },
-        ];
+        item.leadingActions = [...((item.isNode && [{ icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" }]) || (item.indent > 0 && [{ component: "icon", icon: "" }]) || []), { component: "icon", icon: item.isNode ? "folder" : "draft" }];
         item.onListItemClick = this.handleTreeItemClick.bind(this);
         /* prettier-ignore */
         return [
@@ -54,6 +52,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -62,6 +61,7 @@ class MDTreeComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -78,15 +78,17 @@ class MDTreeComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
-            await this.updateComplete
+            await this.updateComplete;
             this.setItems(this.items);
             this.requestUpdate();
         }
     }
+
     /**
      * {{desc}}
      * @param {Any} items - {{desc}}
@@ -152,11 +154,11 @@ class MDTreeComponent extends MDComponent {
     expand(items, data) {
         data.expanded = !data.expanded;
     }
-    
 
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTreeItemClick(event) {
         if (
@@ -184,7 +186,6 @@ class MDTreeComponent extends MDComponent {
         this.requestUpdate();
         this.emit("onTreeItemClick", event);
     }
-   
 }
 customElements.define("md-tree", MDTreeComponent);
 export { MDTreeComponent };

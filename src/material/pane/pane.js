@@ -62,6 +62,7 @@ class MDPaneComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -92,6 +93,7 @@ class MDPaneComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -110,6 +112,7 @@ class MDPaneComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -188,6 +191,7 @@ class MDPaneComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleScrimClick(event) {
         this.close();

@@ -72,6 +72,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -99,6 +100,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -112,6 +114,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -127,6 +130,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -142,6 +146,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -154,6 +159,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -169,6 +175,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -181,6 +188,7 @@ class MDMonthPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());

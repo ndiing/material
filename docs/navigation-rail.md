@@ -13,7 +13,6 @@
     * [.properties](#MDNavigationRailComponent+properties)
     * [.childNodes_](#MDNavigationRailComponent+childNodes_)
     * [.childNodes_](#MDNavigationRailComponent+childNodes_)
-    * [.connectedCallback()](#MDNavigationRailComponent+connectedCallback)
 
 <a name="new_MDNavigationRailComponent_new"></a>
 
@@ -56,9 +55,3 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDNavigationRailComponent+connectedCallback"></a>
-
-### mdNavigationRailComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDNavigationRailComponent</code>](#MDNavigationRailComponent)  

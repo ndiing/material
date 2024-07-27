@@ -14,6 +14,7 @@ import { renderComponent } from "../template/template.js";
  * @fires MDBlockComponent#onSwitchNativeReset - {{desc}}
  * @fires MDBlockComponent#onImageNativeLoad - {{desc}}
  * @fires MDBlockComponent#onImageNativeError - {{desc}}
+ * @fires MDBlockComponent#onSelected - {{desc}}
  */
 class MDBlockComponent extends MDComponent {
     /**
@@ -72,9 +73,7 @@ class MDBlockComponent extends MDComponent {
         trailingActions: { type: Array },
         badge: { type: Number },
         indent: { type: Number },
-
         routerLink: { type: String, reflect: true },
-
         defaultLeadingActionComponent: { type: String },
         defaultTrailingActionComponent: { type: String },
         activated: { type: Boolean, reflect: true },
@@ -116,6 +115,7 @@ class MDBlockComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -175,6 +175,7 @@ class MDBlockComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -184,6 +185,7 @@ class MDBlockComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

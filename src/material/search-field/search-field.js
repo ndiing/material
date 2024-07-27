@@ -39,6 +39,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -48,6 +49,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -57,6 +59,7 @@ class MDSearchFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     async handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);

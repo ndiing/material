@@ -11,12 +11,8 @@
 * [MDFormComponent](#MDFormComponent) ⇐ <code>MDComponent</code>
     * [new MDFormComponent()](#new_MDFormComponent_new)
     * [.properties](#MDFormComponent+properties)
-    * [.render()](#MDFormComponent+render)
-    * [.connectedCallback()](#MDFormComponent+connectedCallback)
     * [.reset()](#MDFormComponent+reset)
     * [.submit()](#MDFormComponent+submit)
-    * [.handleFormNativeReset(event)](#MDFormComponent+handleFormNativeReset)
-    * [.handleFormNativeSubmit(event)](#MDFormComponent+handleFormNativeSubmit)
 
 <a name="new_MDFormComponent_new"></a>
 
@@ -44,18 +40,6 @@
 | target | <code>String</code> | {{desc}} |
 | items | <code>Array</code> | {{desc}} |
 
-<a name="MDFormComponent+render"></a>
-
-### mdFormComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDFormComponent</code>](#MDFormComponent)  
-<a name="MDFormComponent+connectedCallback"></a>
-
-### mdFormComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDFormComponent</code>](#MDFormComponent)  
 <a name="MDFormComponent+reset"></a>
 
 ### mdFormComponent.reset()
@@ -68,25 +52,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDFormComponent</code>](#MDFormComponent)  
-<a name="MDFormComponent+handleFormNativeReset"></a>
-
-### mdFormComponent.handleFormNativeReset(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDFormComponent</code>](#MDFormComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDFormComponent+handleFormNativeSubmit"></a>
-
-### mdFormComponent.handleFormNativeSubmit(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDFormComponent</code>](#MDFormComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

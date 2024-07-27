@@ -20,18 +20,9 @@
     * [.defaultSelectedOptionLabel](#MDSelectFieldComponent+defaultSelectedOptionLabel)
     * [.selectedOptionValue](#MDSelectFieldComponent+selectedOptionValue)
     * [.defaultSelectedOptionValue](#MDSelectFieldComponent+defaultSelectedOptionValue)
-    * [.renderSelect()](#MDSelectFieldComponent+renderSelect)
-    * [.renderHidden()](#MDSelectFieldComponent+renderHidden)
-    * [.connectedCallback()](#MDSelectFieldComponent+connectedCallback)
     * [.validate()](#MDSelectFieldComponent+validate)
     * [.togglePicker()](#MDSelectFieldComponent+togglePicker)
     * [.showPicker()](#MDSelectFieldComponent+showPicker)
-    * [.handleTextFieldContainerClick(event)](#MDSelectFieldComponent+handleTextFieldContainerClick)
-    * [.handleTextFieldNativeClick(event)](#MDSelectFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldNativeKeydown(event)](#MDSelectFieldComponent+handleTextFieldNativeKeydown)
-    * [.handleTextFieldNativeInput(event)](#MDSelectFieldComponent+handleTextFieldNativeInput)
-    * [.handleTextFieldNativeReset(event)](#MDSelectFieldComponent+handleTextFieldNativeReset)
-    * [.handleMenuListSelection()](#MDSelectFieldComponent+handleMenuListSelection)
 
 <a name="new_MDSelectFieldComponent_new"></a>
 
@@ -136,24 +127,6 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-<a name="MDSelectFieldComponent+renderSelect"></a>
-
-### mdSelectFieldComponent.renderSelect()
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-<a name="MDSelectFieldComponent+renderHidden"></a>
-
-### mdSelectFieldComponent.renderHidden()
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-<a name="MDSelectFieldComponent+connectedCallback"></a>
-
-### mdSelectFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
 <a name="MDSelectFieldComponent+validate"></a>
 
 ### mdSelectFieldComponent.validate()
@@ -169,67 +142,6 @@
 <a name="MDSelectFieldComponent+showPicker"></a>
 
 ### mdSelectFieldComponent.showPicker()
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-<a name="MDSelectFieldComponent+handleTextFieldContainerClick"></a>
-
-### mdSelectFieldComponent.handleTextFieldContainerClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDSelectFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdSelectFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDSelectFieldComponent+handleTextFieldNativeKeydown"></a>
-
-### mdSelectFieldComponent.handleTextFieldNativeKeydown(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDSelectFieldComponent+handleTextFieldNativeInput"></a>
-
-### mdSelectFieldComponent.handleTextFieldNativeInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDSelectFieldComponent+handleTextFieldNativeReset"></a>
-
-### mdSelectFieldComponent.handleTextFieldNativeReset(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDSelectFieldComponent+handleMenuListSelection"></a>
-
-### mdSelectFieldComponent.handleMenuListSelection()
 {{desc}}
 
 **Kind**: instance method of [<code>MDSelectFieldComponent</code>](#MDSelectFieldComponent)  

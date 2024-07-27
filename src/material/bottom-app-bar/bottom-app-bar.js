@@ -9,6 +9,7 @@ import { MDPaneComponent } from "../material.js";
 class MDBottomAppBarComponent extends MDPaneComponent {
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

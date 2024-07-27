@@ -42,6 +42,7 @@ class MDEmojiComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         return this.emoji;
@@ -49,6 +50,7 @@ class MDEmojiComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

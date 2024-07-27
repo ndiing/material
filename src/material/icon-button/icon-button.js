@@ -41,6 +41,7 @@ class MDIconButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -49,6 +50,7 @@ class MDIconButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -67,6 +69,7 @@ class MDIconButtonComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -90,6 +93,7 @@ class MDIconButtonComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleIconButtonToggleClick(event) {
         if (this.variant && this.variant.includes("toggle")) {

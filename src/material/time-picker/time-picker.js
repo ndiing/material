@@ -72,6 +72,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -99,6 +100,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -112,6 +114,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -129,6 +132,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -146,6 +150,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
@@ -159,6 +164,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
@@ -174,6 +180,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -186,6 +193,7 @@ class MDTimePickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonOkClick(event) {
         this.selected.setMinutes(this.selection.getMinutes());

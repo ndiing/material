@@ -27,8 +27,6 @@
     * [.properties](#MDEmojiComponent+properties)
     * [.webp](#MDEmojiComponent+webp)
     * [.svg](#MDEmojiComponent+svg)
-    * [.render()](#MDEmojiComponent+render)
-    * [.connectedCallback()](#MDEmojiComponent+connectedCallback)
 
 <a name="MDEmojiComponent+properties"></a>
 
@@ -55,18 +53,6 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
-<a name="MDEmojiComponent+render"></a>
-
-### mdEmojiComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
-<a name="MDEmojiComponent+connectedCallback"></a>
-
-### mdEmojiComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDEmojiComponent</code>](#MDEmojiComponent)  
 <a name="emojiToHexadecimal"></a>
 
 ## emojiToHexadecimal(emoji)

@@ -9,6 +9,7 @@ import { MDListComponent } from "../material.js";
  * @fires MDTabsComponent#onListItemCheckboxNativeInput - {{desc}}
  * @fires MDTabsComponent#onListItemRadioButtonNativeInput - {{desc}}
  * @fires MDTabsComponent#onListItemSwitchNativeInput - {{desc}}
+ * @fires MDTabsComponent#onListItemSelected - {{desc}}
  */
 class MDTabsComponent extends MDListComponent {
     /**
@@ -29,6 +30,7 @@ class MDTabsComponent extends MDListComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -38,6 +40,7 @@ class MDTabsComponent extends MDListComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);

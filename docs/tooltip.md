@@ -10,7 +10,6 @@
 
 * [MDTooltipComponent](#MDTooltipComponent) ⇐ <code>MDPaneComponent</code>
     * [new MDTooltipComponent()](#new_MDTooltipComponent_new)
-    * [.connectedCallback()](#MDTooltipComponent+connectedCallback)
     * [.show(button, options)](#MDTooltipComponent+show)
     * [.updatePosition(button, options)](#MDTooltipComponent+updatePosition)
 
@@ -19,12 +18,6 @@
 ### new MDTooltipComponent()
 {{desc}}
 
-<a name="MDTooltipComponent+connectedCallback"></a>
-
-### mdTooltipComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDTooltipComponent</code>](#MDTooltipComponent)  
 <a name="MDTooltipComponent+show"></a>
 
 ### mdTooltipComponent.show(button, options)

@@ -40,6 +40,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -49,6 +50,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -58,6 +60,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
@@ -68,6 +71,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleTimeFieldActionPickerClick() {
         this.togglePicker();
@@ -139,6 +143,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleTimePickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -147,6 +152,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleTimePickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -156,6 +162,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleTimePickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -164,6 +171,7 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleTimePickerMinuteItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();

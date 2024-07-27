@@ -11,9 +11,6 @@
 * [MDNumberFieldComponent](#MDNumberFieldComponent) ⇐ <code>MDTextFieldComponent</code>
     * [.actions](#MDNumberFieldComponent+actions)
     * [.actions](#MDNumberFieldComponent+actions)
-    * [.connectedCallback()](#MDNumberFieldComponent+connectedCallback)
-    * [.handleTextFieldNativeClick(event)](#MDNumberFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldActionClick(event)](#MDNumberFieldComponent+handleTextFieldActionClick)
 
 <a name="MDNumberFieldComponent+actions"></a>
 
@@ -31,32 +28,4 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
-
-<a name="MDNumberFieldComponent+connectedCallback"></a>
-
-### mdNumberFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDNumberFieldComponent</code>](#MDNumberFieldComponent)  
-<a name="MDNumberFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdNumberFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDNumberFieldComponent</code>](#MDNumberFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDNumberFieldComponent+handleTextFieldActionClick"></a>
-
-### mdNumberFieldComponent.handleTextFieldActionClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDNumberFieldComponent</code>](#MDNumberFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

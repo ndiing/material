@@ -40,6 +40,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -109,6 +110,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleTextFieldContainerClick() {
         super.handleTextFieldContainerClick();
@@ -118,6 +120,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -126,6 +129,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleColorPickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -134,6 +138,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleColorPickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -142,6 +147,7 @@ class MDColorFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleColorPickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();

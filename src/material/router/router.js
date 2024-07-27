@@ -146,9 +146,15 @@ class MDRouter {
     static set params(value) {
         this._params = value;
     }
+    /**
+     * {{desc}}
+     */
     static performanceStart() {
         performance.mark("markRouterStart");
     }
+    /**
+     * {{desc}}
+     */
     static performanceEnd() {
         performance.mark("markRouterEnd");
         performance.measure("measureRouter", "markRouterStart", "markRouterEnd");
@@ -160,11 +166,11 @@ class MDRouter {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     static async handleLoad(event) {
         this.performanceStart();
         this.emit("onRouterCurrentEntryChange", event);
-
         this.params = {};
         this.route = this.getRoute(this.path);
         this.routes = this.getRoutes(this.route);
@@ -236,6 +242,7 @@ class MDRouter {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     static handleClick(event) {
         const routerLink = event.target.closest("[routerLink]");
@@ -286,6 +293,7 @@ class MDRouter {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} detail - {{desc}}
+     * @private
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {

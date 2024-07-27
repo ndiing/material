@@ -227,6 +227,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderNative() {
         /* prettier-ignore */
@@ -337,6 +338,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderViewport() {
         /* prettier-ignore */
@@ -362,6 +364,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -381,6 +384,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -534,6 +538,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableTextFieldNativeSearch(event) {
         this.q = event.detail.currentTarget.value;
@@ -544,6 +549,7 @@ class MDDataTableComponent extends MDCardComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleDataTableVirtualScroll() {
         if (!this.storeRows) {
@@ -561,6 +567,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellDragStart(event) {
         this.emit("onDataTableColumnCellDragStart", event);
@@ -569,6 +576,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellDrag(event) {
         this.drag = true;
@@ -578,6 +586,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellDragEnd(event) {
         const fromData = event.currentTarget.data;
@@ -599,6 +608,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellResizeStart(event) {
         this.emit("onDataTableColumnCellResizeStart", event);
@@ -607,6 +617,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellResize(event) {
         this.resize = true;
@@ -621,6 +632,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellResizeEnd(event) {
         window.requestAnimationFrame(() => {
@@ -632,6 +644,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellPointerenter(event) {
         const data = event.currentTarget.data;
@@ -647,6 +660,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellPointerleave(event) {
         const data = event.currentTarget.data;
@@ -662,6 +676,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellClick(event) {
         const data = event.currentTarget.data;
@@ -686,6 +701,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableColumnCellCheckboxNativeInput(event) {
         const checked = event.detail.currentTarget.checked;
@@ -697,6 +713,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableRowCellCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -708,6 +725,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableRowClick(event) {
         if (event.target.closest(".md-data-table__checkbox," + ".md-data-table__radio-button," + ".md-data-table__switch")) {
@@ -728,6 +746,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTableKeydown(event) {
         const activeElement = document.activeElement === event.target.closest("tr");
@@ -741,6 +760,7 @@ class MDDataTableComponent extends MDCardComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDataTablePaginationChange(event) {
         this._start = event.detail.start;

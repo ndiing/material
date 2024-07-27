@@ -58,6 +58,7 @@ class MDNavigationRailComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

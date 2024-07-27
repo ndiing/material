@@ -11,16 +11,8 @@
 * [MDMonthFieldComponent](#MDMonthFieldComponent) ⇐ <code>MDTextFieldComponent</code>
     * [.actions](#MDMonthFieldComponent+actions)
     * [.actions](#MDMonthFieldComponent+actions)
-    * [.connectedCallback()](#MDMonthFieldComponent+connectedCallback)
     * [.togglePicker()](#MDMonthFieldComponent+togglePicker)
     * [.showPicker()](#MDMonthFieldComponent+showPicker)
-    * [.handleTextFieldNativeClick(event)](#MDMonthFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldActionClick(event)](#MDMonthFieldComponent+handleTextFieldActionClick)
-    * [.handleMonthPickerSelection()](#MDMonthFieldComponent+handleMonthPickerSelection)
-    * [.handleMonthPickerMonthItemClick()](#MDMonthFieldComponent+handleMonthPickerMonthItemClick)
-    * [.handleMonthFieldActionPickerClick()](#MDMonthFieldComponent+handleMonthFieldActionPickerClick)
-    * [.handleMonthPickerButtonCancelClick()](#MDMonthFieldComponent+handleMonthPickerButtonCancelClick)
-    * [.handleMonthPickerButtonOkClick()](#MDMonthFieldComponent+handleMonthPickerButtonOkClick)
 
 <a name="MDMonthFieldComponent+actions"></a>
 
@@ -39,12 +31,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDMonthFieldComponent+connectedCallback"></a>
-
-### mdMonthFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
 <a name="MDMonthFieldComponent+togglePicker"></a>
 
 ### mdMonthFieldComponent.togglePicker()
@@ -54,58 +40,6 @@
 <a name="MDMonthFieldComponent+showPicker"></a>
 
 ### mdMonthFieldComponent.showPicker()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-<a name="MDMonthFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdMonthFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthFieldComponent+handleTextFieldActionClick"></a>
-
-### mdMonthFieldComponent.handleTextFieldActionClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDMonthFieldComponent+handleMonthPickerSelection"></a>
-
-### mdMonthFieldComponent.handleMonthPickerSelection()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-<a name="MDMonthFieldComponent+handleMonthPickerMonthItemClick"></a>
-
-### mdMonthFieldComponent.handleMonthPickerMonthItemClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-<a name="MDMonthFieldComponent+handleMonthFieldActionPickerClick"></a>
-
-### mdMonthFieldComponent.handleMonthFieldActionPickerClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-<a name="MDMonthFieldComponent+handleMonthPickerButtonCancelClick"></a>
-
-### mdMonthFieldComponent.handleMonthPickerButtonCancelClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  
-<a name="MDMonthFieldComponent+handleMonthPickerButtonOkClick"></a>
-
-### mdMonthFieldComponent.handleMonthPickerButtonOkClick()
 {{desc}}
 
 **Kind**: instance method of [<code>MDMonthFieldComponent</code>](#MDMonthFieldComponent)  

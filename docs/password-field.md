@@ -12,9 +12,6 @@
     * [.properties](#MDPasswordFieldComponent+properties)
     * [.actions](#MDPasswordFieldComponent+actions)
     * [.actions](#MDPasswordFieldComponent+actions)
-    * [.connectedCallback()](#MDPasswordFieldComponent+connectedCallback)
-    * [.handleTextFieldNativeClick(event)](#MDPasswordFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldActionClick(event)](#MDPasswordFieldComponent+handleTextFieldActionClick)
 
 <a name="MDPasswordFieldComponent+properties"></a>
 
@@ -71,32 +68,4 @@
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
-
-<a name="MDPasswordFieldComponent+connectedCallback"></a>
-
-### mdPasswordFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDPasswordFieldComponent</code>](#MDPasswordFieldComponent)  
-<a name="MDPasswordFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdPasswordFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPasswordFieldComponent</code>](#MDPasswordFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDPasswordFieldComponent+handleTextFieldActionClick"></a>
-
-### mdPasswordFieldComponent.handleTextFieldActionClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDPasswordFieldComponent</code>](#MDPasswordFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

@@ -32,6 +32,7 @@ class MDProgressIndicatorComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderCircular() {
         /* prettier-ignore */
@@ -45,6 +46,7 @@ class MDProgressIndicatorComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderLinear() {
         /* prettier-ignore */
@@ -57,6 +59,7 @@ class MDProgressIndicatorComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         return this.variant && this.variant.includes("circular") ? this.renderCircular() : this.renderLinear();
@@ -64,6 +67,7 @@ class MDProgressIndicatorComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -73,6 +77,7 @@ class MDProgressIndicatorComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);

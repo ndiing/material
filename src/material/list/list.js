@@ -12,6 +12,7 @@ import { choose } from "lit/directives/choose.js";
  * @fires MDListComponent#onListItemCheckboxNativeInput - {{desc}}
  * @fires MDListComponent#onListItemRadioButtonNativeInput - {{desc}}
  * @fires MDListComponent#onListItemSwitchNativeInput - {{desc}}
+ * @fires MDListComponent#onListItemSelected - {{desc}}
  */
 class MDListComponent extends MDComponent {
     /**
@@ -41,6 +42,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}
+     * @private
      */
     renderListItem(item = {}) {
         item.onListItemClick = this.handleListItemClick.bind(this);
@@ -54,6 +56,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}
+     * @private
      */
     renderListSection(item = {}) {
         return html`
@@ -70,6 +73,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} item = {} - {{desc}}
+     * @private
      */
     renderListDivider(item = {}) {
         item.classMap = { "md-list__divider": true };
@@ -78,6 +82,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -92,6 +97,7 @@ class MDListComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -157,6 +163,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleListItemClick(event) {
         if (
@@ -184,6 +191,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleListKeydown(event) {
         const activeElement = document.activeElement === event.target.closest(".md-list__item");
@@ -197,6 +205,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -208,6 +217,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
@@ -219,6 +229,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
@@ -230,6 +241,7 @@ class MDListComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleListItemSelected(event) {
         const data = event.currentTarget.data;

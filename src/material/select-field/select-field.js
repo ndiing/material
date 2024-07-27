@@ -138,6 +138,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderSelect() {
         /* prettier-ignore */
@@ -173,6 +174,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderHidden() {
         /* prettier-ignore */
@@ -190,6 +192,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -268,6 +271,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldContainerClick(event) {
         super.handleTextFieldContainerClick(event);
@@ -277,6 +281,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -286,6 +291,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeKeydown(event) {
         super.handleTextFieldNativeKeydown(event);
@@ -319,6 +325,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeInput(event) {
         super.handleTextFieldNativeInput(event);
@@ -329,6 +336,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeReset(event) {
         super.handleTextFieldNativeReset(event);
@@ -341,6 +349,7 @@ class MDSelectFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleMenuListSelection() {
         this.textFieldNative.value.value = this.selectedOptionLabel;

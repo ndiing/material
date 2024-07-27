@@ -81,6 +81,7 @@ class MDColorPickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderMain() {
         /* prettier-ignore */
@@ -124,6 +125,7 @@ class MDColorPickerComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -137,6 +139,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -305,6 +308,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerButtonLabelClick(event) {
         this.emit("onColorPickerButtonLabelClick", event);
@@ -313,6 +317,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerGradientTrackPointerdown(event) {
         window.addEventListener("pointermove", this.handleColorPickerGradientTrackPointermove);
@@ -327,6 +332,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerGradientTrackPointermove(event) {
         this.updateRgba(event);
@@ -337,6 +343,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerGradientTrackPointerup(event) {
         this.updateRgba(event);
@@ -350,6 +357,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerHueNativeInput(event) {
         const hue = parseFloat(event.currentTarget.value);
@@ -368,6 +376,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerOpacityNativeInput(event) {
         const alpha = parseFloat(event.currentTarget.value);
@@ -381,6 +390,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -394,6 +404,7 @@ class MDColorPickerComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleColorPickerButtonOkClick(event) {
         this.value = this.selection.hex;

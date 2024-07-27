@@ -24,11 +24,7 @@
     * [.classDataTableColumnCell(column)](#MDDataTableComponent+classDataTableColumnCell)
     * [.classDataTableRowCell(column)](#MDDataTableComponent+classDataTableRowCell)
     * [.classDataTableFooterCell(column)](#MDDataTableComponent+classDataTableFooterCell)
-    * [.renderNative()](#MDDataTableComponent+renderNative)
-    * [.renderViewport()](#MDDataTableComponent+renderViewport)
-    * [.connectedCallback()](#MDDataTableComponent+connectedCallback)
     * [.disconnectedCallback()](#MDDataTableComponent+disconnectedCallback)
-    * [.updated(changedProperties)](#MDDataTableComponent+updated)
     * [.updateVirtual()](#MDDataTableComponent+updateVirtual)
     * [.updateStore()](#MDDataTableComponent+updateStore)
     * [.updateColumns()](#MDDataTableComponent+updateColumns)
@@ -36,22 +32,6 @@
     * [.selectToggle(data)](#MDDataTableComponent+selectToggle)
     * [.selectRange(data)](#MDDataTableComponent+selectRange)
     * [.selectAll(selected)](#MDDataTableComponent+selectAll)
-    * [.handleDataTableTextFieldNativeSearch(event)](#MDDataTableComponent+handleDataTableTextFieldNativeSearch)
-    * [.handleDataTableVirtualScroll()](#MDDataTableComponent+handleDataTableVirtualScroll)
-    * [.handleDataTableColumnCellDragStart(event)](#MDDataTableComponent+handleDataTableColumnCellDragStart)
-    * [.handleDataTableColumnCellDrag(event)](#MDDataTableComponent+handleDataTableColumnCellDrag)
-    * [.handleDataTableColumnCellDragEnd(event)](#MDDataTableComponent+handleDataTableColumnCellDragEnd)
-    * [.handleDataTableColumnCellResizeStart(event)](#MDDataTableComponent+handleDataTableColumnCellResizeStart)
-    * [.handleDataTableColumnCellResize(event)](#MDDataTableComponent+handleDataTableColumnCellResize)
-    * [.handleDataTableColumnCellResizeEnd(event)](#MDDataTableComponent+handleDataTableColumnCellResizeEnd)
-    * [.handleDataTableColumnCellPointerenter(event)](#MDDataTableComponent+handleDataTableColumnCellPointerenter)
-    * [.handleDataTableColumnCellPointerleave(event)](#MDDataTableComponent+handleDataTableColumnCellPointerleave)
-    * [.handleDataTableColumnCellClick(event)](#MDDataTableComponent+handleDataTableColumnCellClick)
-    * [.handleDataTableColumnCellCheckboxNativeInput(event)](#MDDataTableComponent+handleDataTableColumnCellCheckboxNativeInput)
-    * [.handleDataTableRowCellCheckboxNativeInput(event)](#MDDataTableComponent+handleDataTableRowCellCheckboxNativeInput)
-    * [.handleDataTableRowClick(event)](#MDDataTableComponent+handleDataTableRowClick)
-    * [.handleDataTableKeydown(event)](#MDDataTableComponent+handleDataTableKeydown)
-    * [.handleDataTablePaginationChange(event)](#MDDataTableComponent+handleDataTablePaginationChange)
 
 <a name="new_MDDataTableComponent_new"></a>
 
@@ -217,41 +197,12 @@
 | --- | --- | --- |
 | column | <code>Any</code> | {{desc}} |
 
-<a name="MDDataTableComponent+renderNative"></a>
-
-### mdDataTableComponent.renderNative()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+renderViewport"></a>
-
-### mdDataTableComponent.renderViewport()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+connectedCallback"></a>
-
-### mdDataTableComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
 <a name="MDDataTableComponent+disconnectedCallback"></a>
 
 ### mdDataTableComponent.disconnectedCallback()
 {{desc}}
 
 **Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+updated"></a>
-
-### mdDataTableComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-
 <a name="MDDataTableComponent+updateVirtual"></a>
 
 ### mdDataTableComponent.updateVirtual()
@@ -313,175 +264,4 @@
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | selected | <code>Any</code> | <code>true</code> | = true - {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableTextFieldNativeSearch"></a>
-
-### mdDataTableComponent.handleDataTableTextFieldNativeSearch(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableVirtualScroll"></a>
-
-### mdDataTableComponent.handleDataTableVirtualScroll()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-<a name="MDDataTableComponent+handleDataTableColumnCellDragStart"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellDragStart(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellDrag"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellDrag(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellDragEnd"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellDragEnd(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellResizeStart"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellResizeStart(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellResize"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellResize(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellResizeEnd"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellResizeEnd(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellPointerenter"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellPointerenter(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellPointerleave"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellPointerleave(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellClick"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableColumnCellCheckboxNativeInput"></a>
-
-### mdDataTableComponent.handleDataTableColumnCellCheckboxNativeInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableRowCellCheckboxNativeInput"></a>
-
-### mdDataTableComponent.handleDataTableRowCellCheckboxNativeInput(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableRowClick"></a>
-
-### mdDataTableComponent.handleDataTableRowClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTableKeydown"></a>
-
-### mdDataTableComponent.handleDataTableKeydown(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDataTableComponent+handleDataTablePaginationChange"></a>
-
-### mdDataTableComponent.handleDataTablePaginationChange(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDataTableComponent</code>](#MDDataTableComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
 

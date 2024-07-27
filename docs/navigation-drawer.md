@@ -13,7 +13,6 @@
     * [.properties](#MDNavigationDrawerComponent+properties)
     * [.childNodes_](#MDNavigationDrawerComponent+childNodes_)
     * [.childNodes_](#MDNavigationDrawerComponent+childNodes_)
-    * [.connectedCallback()](#MDNavigationDrawerComponent+connectedCallback)
 
 <a name="new_MDNavigationDrawerComponent_new"></a>
 
@@ -56,9 +55,3 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDNavigationDrawerComponent+connectedCallback"></a>
-
-### mdNavigationDrawerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDNavigationDrawerComponent</code>](#MDNavigationDrawerComponent)  

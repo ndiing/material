@@ -112,6 +112,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     renderDay() {
         /* prettier-ignore */
@@ -139,6 +140,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -166,6 +168,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonLabelClick(event) {
         if (this.index === 0) {
@@ -181,6 +184,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonPrevClick(event) {
         if (this.index === 0) {
@@ -198,6 +202,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardIconButtonNextClick(event) {
         if (this.index === 0) {
@@ -215,6 +220,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -227,6 +233,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -239,6 +246,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleDatetimePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -254,6 +262,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonCancelClick(event) {
         this.value = this.defaultValue;
@@ -266,6 +275,7 @@ class MDWeekPickerComponent extends MDDatetimePickerComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleCardButtonOkClick(event) {
         this.selected.setFullYear(this.selection.getFullYear());

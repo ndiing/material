@@ -39,6 +39,7 @@ class MDGestureController {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} detail - {{desc}}
+     * @private
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -105,6 +106,7 @@ class MDGestureController {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleGesturePointerdown(event) {
         if (event.button !== 0) {
@@ -170,6 +172,7 @@ class MDGestureController {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleGesturePointermove(event) {
         window.clearTimeout(this.longPressTimeout);
@@ -217,6 +220,7 @@ class MDGestureController {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleGesturePointerup(event) {
         window.clearTimeout(this.longPressTimeout);

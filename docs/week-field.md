@@ -11,16 +11,8 @@
 * [MDWeekFieldComponent](#MDWeekFieldComponent) ⇐ <code>MDTextFieldComponent</code>
     * [.actions](#MDWeekFieldComponent+actions)
     * [.actions](#MDWeekFieldComponent+actions)
-    * [.connectedCallback()](#MDWeekFieldComponent+connectedCallback)
     * [.togglePicker()](#MDWeekFieldComponent+togglePicker)
     * [.showPicker()](#MDWeekFieldComponent+showPicker)
-    * [.handleTextFieldNativeClick(event)](#MDWeekFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldActionClick(event)](#MDWeekFieldComponent+handleTextFieldActionClick)
-    * [.handleWeekFieldActionPickerClick()](#MDWeekFieldComponent+handleWeekFieldActionPickerClick)
-    * [.handleWeekPickerSelection()](#MDWeekFieldComponent+handleWeekPickerSelection)
-    * [.handleWeekPickerDayItemClick()](#MDWeekFieldComponent+handleWeekPickerDayItemClick)
-    * [.handleWeekPickerButtonCancelClick()](#MDWeekFieldComponent+handleWeekPickerButtonCancelClick)
-    * [.handleWeekPickerButtonOkClick()](#MDWeekFieldComponent+handleWeekPickerButtonOkClick)
 
 <a name="MDWeekFieldComponent+actions"></a>
 
@@ -39,12 +31,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDWeekFieldComponent+connectedCallback"></a>
-
-### mdWeekFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
 <a name="MDWeekFieldComponent+togglePicker"></a>
 
 ### mdWeekFieldComponent.togglePicker()
@@ -54,58 +40,6 @@
 <a name="MDWeekFieldComponent+showPicker"></a>
 
 ### mdWeekFieldComponent.showPicker()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-<a name="MDWeekFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdWeekFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekFieldComponent+handleTextFieldActionClick"></a>
-
-### mdWeekFieldComponent.handleTextFieldActionClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDWeekFieldComponent+handleWeekFieldActionPickerClick"></a>
-
-### mdWeekFieldComponent.handleWeekFieldActionPickerClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-<a name="MDWeekFieldComponent+handleWeekPickerSelection"></a>
-
-### mdWeekFieldComponent.handleWeekPickerSelection()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-<a name="MDWeekFieldComponent+handleWeekPickerDayItemClick"></a>
-
-### mdWeekFieldComponent.handleWeekPickerDayItemClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-<a name="MDWeekFieldComponent+handleWeekPickerButtonCancelClick"></a>
-
-### mdWeekFieldComponent.handleWeekPickerButtonCancelClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  
-<a name="MDWeekFieldComponent+handleWeekPickerButtonOkClick"></a>
-
-### mdWeekFieldComponent.handleWeekPickerButtonOkClick()
 {{desc}}
 
 **Kind**: instance method of [<code>MDWeekFieldComponent</code>](#MDWeekFieldComponent)  

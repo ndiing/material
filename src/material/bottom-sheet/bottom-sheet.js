@@ -11,6 +11,7 @@ class MDBottomSheetComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

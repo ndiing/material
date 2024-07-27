@@ -12,6 +12,7 @@ import { MDBlockComponent } from "../material.js";
  * @fires MDToolbarComponent#onSwitchNativeReset - {{desc}}
  * @fires MDToolbarComponent#onImageNativeLoad - {{desc}}
  * @fires MDToolbarComponent#onImageNativeError - {{desc}}
+ * @fires MDToolbarComponent#onSelected - {{desc}}
  */
 class MDToolbarComponent extends MDBlockComponent {
     /**

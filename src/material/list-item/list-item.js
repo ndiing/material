@@ -13,6 +13,7 @@ import { MDBlockComponent } from "../material.js";
  * @fires MDListItemComponent#onSwitchNativeReset - {{desc}}
  * @fires MDListItemComponent#onImageNativeLoad - {{desc}}
  * @fires MDListItemComponent#onImageNativeError - {{desc}}
+ * @fires MDListItemComponent#onSelected - {{desc}}
  */
 class MDListItemComponent extends MDBlockComponent {
     /**
@@ -27,6 +28,7 @@ class MDListItemComponent extends MDBlockComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

@@ -8,12 +8,8 @@
 
 * [MDGestureController](#MDGestureController)
     * [new MDGestureController(host, options)](#new_MDGestureController_new)
-    * [.emit(type, detail)](#MDGestureController+emit)
     * [.hostConnected()](#MDGestureController+hostConnected)
     * [.hostDisconnected()](#MDGestureController+hostDisconnected)
-    * [.handleGesturePointerdown(event)](#MDGestureController+handleGesturePointerdown)
-    * [.handleGesturePointermove(event)](#MDGestureController+handleGesturePointermove)
-    * [.handleGesturePointerup(event)](#MDGestureController+handleGesturePointerup)
 
 <a name="new_MDGestureController_new"></a>
 
@@ -25,18 +21,6 @@
 | --- | --- | --- |
 | host | <code>Any</code> | {{desc}} |
 | options | <code>Any</code> | {{desc}} |
-
-<a name="MDGestureController+emit"></a>
-
-### mdGestureController.emit(type, detail)
-{{desc}}
-
-**Kind**: instance method of [<code>MDGestureController</code>](#MDGestureController)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| type | <code>Any</code> | {{desc}} |
-| detail | <code>Any</code> | {{desc}} |
 
 <a name="MDGestureController+hostConnected"></a>
 
@@ -50,36 +34,3 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDGestureController</code>](#MDGestureController)  
-<a name="MDGestureController+handleGesturePointerdown"></a>
-
-### mdGestureController.handleGesturePointerdown(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDGestureController</code>](#MDGestureController)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDGestureController+handleGesturePointermove"></a>
-
-### mdGestureController.handleGesturePointermove(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDGestureController</code>](#MDGestureController)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDGestureController+handleGesturePointerup"></a>
-
-### mdGestureController.handleGesturePointerup(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDGestureController</code>](#MDGestureController)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-

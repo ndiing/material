@@ -11,16 +11,8 @@
 * [MDDateFieldComponent](#MDDateFieldComponent) ⇐ <code>MDTextFieldComponent</code>
     * [.actions](#MDDateFieldComponent+actions)
     * [.actions](#MDDateFieldComponent+actions)
-    * [.connectedCallback()](#MDDateFieldComponent+connectedCallback)
     * [.togglePicker()](#MDDateFieldComponent+togglePicker)
     * [.showPicker()](#MDDateFieldComponent+showPicker)
-    * [.handleTextFieldNativeClick(event)](#MDDateFieldComponent+handleTextFieldNativeClick)
-    * [.handleTextFieldActionClick(event)](#MDDateFieldComponent+handleTextFieldActionClick)
-    * [.handleDateFieldActionPickerClick()](#MDDateFieldComponent+handleDateFieldActionPickerClick)
-    * [.handleDatePickerDayItemClick()](#MDDateFieldComponent+handleDatePickerDayItemClick)
-    * [.handleDatePickerSelection()](#MDDateFieldComponent+handleDatePickerSelection)
-    * [.handleDatePickerButtonCancelClick()](#MDDateFieldComponent+handleDatePickerButtonCancelClick)
-    * [.handleDatePickerButtonOkClick()](#MDDateFieldComponent+handleDatePickerButtonOkClick)
 
 <a name="MDDateFieldComponent+actions"></a>
 
@@ -39,12 +31,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDDateFieldComponent+connectedCallback"></a>
-
-### mdDateFieldComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
 <a name="MDDateFieldComponent+togglePicker"></a>
 
 ### mdDateFieldComponent.togglePicker()
@@ -54,58 +40,6 @@
 <a name="MDDateFieldComponent+showPicker"></a>
 
 ### mdDateFieldComponent.showPicker()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-<a name="MDDateFieldComponent+handleTextFieldNativeClick"></a>
-
-### mdDateFieldComponent.handleTextFieldNativeClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDateFieldComponent+handleTextFieldActionClick"></a>
-
-### mdDateFieldComponent.handleTextFieldActionClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDateFieldComponent+handleDateFieldActionPickerClick"></a>
-
-### mdDateFieldComponent.handleDateFieldActionPickerClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-<a name="MDDateFieldComponent+handleDatePickerDayItemClick"></a>
-
-### mdDateFieldComponent.handleDatePickerDayItemClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-<a name="MDDateFieldComponent+handleDatePickerSelection"></a>
-
-### mdDateFieldComponent.handleDatePickerSelection()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-<a name="MDDateFieldComponent+handleDatePickerButtonCancelClick"></a>
-
-### mdDateFieldComponent.handleDatePickerButtonCancelClick()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  
-<a name="MDDateFieldComponent+handleDatePickerButtonOkClick"></a>
-
-### mdDateFieldComponent.handleDatePickerButtonOkClick()
 {{desc}}
 
 **Kind**: instance method of [<code>MDDateFieldComponent</code>](#MDDateFieldComponent)  

@@ -5,7 +5,7 @@
 
 **Kind**: global class  
 **Extends**: <code>MDComponent</code>  
-**Emits**: <code>MDBlockComponent#event:onCheckboxNativeInput - {{desc}}</code>, <code>MDBlockComponent#event:onCheckboxNativeReset - {{desc}}</code>, <code>MDBlockComponent#event:onRadioButtonNativeInput - {{desc}}</code>, <code>MDBlockComponent#event:onRadioButtonNativeReset - {{desc}}</code>, <code>MDBlockComponent#event:onSwitchNativeInput - {{desc}}</code>, <code>MDBlockComponent#event:onSwitchNativeReset - {{desc}}</code>, <code>MDBlockComponent#event:onImageNativeLoad - {{desc}}</code>, <code>MDBlockComponent#event:onImageNativeError - {{desc}}</code>  
+**Emits**: <code>MDBlockComponent#event:onCheckboxNativeInput - {{desc}}</code>, <code>MDBlockComponent#event:onCheckboxNativeReset - {{desc}}</code>, <code>MDBlockComponent#event:onRadioButtonNativeInput - {{desc}}</code>, <code>MDBlockComponent#event:onRadioButtonNativeReset - {{desc}}</code>, <code>MDBlockComponent#event:onSwitchNativeInput - {{desc}}</code>, <code>MDBlockComponent#event:onSwitchNativeReset - {{desc}}</code>, <code>MDBlockComponent#event:onImageNativeLoad - {{desc}}</code>, <code>MDBlockComponent#event:onImageNativeError - {{desc}}</code>, <code>MDBlockComponent#event:onSelected - {{desc}}</code>  
 **Element**: md-block  
 
 * [MDBlockComponent](#MDBlockComponent) ⇐ <code>MDComponent</code>
@@ -14,9 +14,6 @@
     * [.hasSectionStart](#MDBlockComponent+hasSectionStart)
     * [.hasSectionCenter](#MDBlockComponent+hasSectionCenter)
     * [.hasSectionEnd](#MDBlockComponent+hasSectionEnd)
-    * [.render()](#MDBlockComponent+render)
-    * [.connectedCallback()](#MDBlockComponent+connectedCallback)
-    * [.updated(changedProperties)](#MDBlockComponent+updated)
 
 <a name="new_MDBlockComponent_new"></a>
 
@@ -55,13 +52,14 @@
 | trailingCheckbox | <code>Boolean</code> | {{desc}} |
 | trailingActions | <code>Array</code> | {{desc}} |
 | badge | <code>Number</code> | {{desc}} |
+| indent | <code>Number</code> | {{desc}} |
+| routerLink | <code>String</code> | {{desc}} |
 | defaultLeadingActionComponent | <code>String</code> | {{desc}} |
 | defaultTrailingActionComponent | <code>String</code> | {{desc}} |
 | activated | <code>Boolean</code> | {{desc}} |
 | indeterminate | <code>Boolean</code> | {{desc}} |
 | selected | <code>Boolean</code> | {{desc}} |
 | disabled | <code>Boolean</code> | {{desc}} |
-| routerLink | <code>String</code> | {{desc}} |
 
 <a name="MDBlockComponent+hasSectionStart"></a>
 
@@ -81,26 +79,3 @@
 {{desc}}
 
 **Kind**: instance property of [<code>MDBlockComponent</code>](#MDBlockComponent)  
-<a name="MDBlockComponent+render"></a>
-
-### mdBlockComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDBlockComponent</code>](#MDBlockComponent)  
-<a name="MDBlockComponent+connectedCallback"></a>
-
-### mdBlockComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDBlockComponent</code>](#MDBlockComponent)  
-<a name="MDBlockComponent+updated"></a>
-
-### mdBlockComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDBlockComponent</code>](#MDBlockComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-

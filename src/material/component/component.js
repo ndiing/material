@@ -24,6 +24,7 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @private
      */
     createRenderRoot() {
         return this;
@@ -31,6 +32,7 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -51,6 +53,7 @@ class MDComponent extends LitElement {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -60,6 +63,7 @@ class MDComponent extends LitElement {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} listener - {{desc}}
+     * @private
      */
     on(type, listener) {
         listener = listener.bind(this);
@@ -70,6 +74,7 @@ class MDComponent extends LitElement {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} listener - {{desc}}
+     * @private
      */
     once(type, listener) {
         const handleListener = (event) => {
@@ -83,6 +88,7 @@ class MDComponent extends LitElement {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} listener - {{desc}}
+     * @private
      */
     off(type, listener) {
         this.removeEventListener(type, listener);
@@ -92,6 +98,7 @@ class MDComponent extends LitElement {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} detail - {{desc}}
+     * @private
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -104,6 +111,7 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @private
      */
     async handlePointerenter() {
         await this.createTooltip();
@@ -111,6 +119,7 @@ class MDComponent extends LitElement {
 
     /**
      * {{desc}}
+     * @private
      */
     handlePointerleave() {
         this.removeTooltip();

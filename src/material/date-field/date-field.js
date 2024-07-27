@@ -40,6 +40,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -113,6 +114,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldNativeClick(event) {
         event.preventDefault();
@@ -122,6 +124,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleTextFieldActionClick(event) {
         super.handleTextFieldActionClick(event);
@@ -132,6 +135,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleDateFieldActionPickerClick() {
         this.togglePicker();
@@ -139,6 +143,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleDatePickerDayItemClick() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -148,6 +153,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleDatePickerSelection() {
         this.textFieldNative.value.value = this.picker.getValue();
@@ -156,6 +162,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleDatePickerButtonCancelClick() {
         this.textFieldNative.value.dispatchEvent(new CustomEvent("reset"));
@@ -164,6 +171,7 @@ class MDDateFieldComponent extends MDTextFieldComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     handleDatePickerButtonOkClick() {
         this.textFieldNative.value.value = this.picker.getValue();

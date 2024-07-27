@@ -93,6 +93,7 @@ class MDMenuComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -111,6 +112,7 @@ class MDMenuComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} changedProperties - {{desc}}
+     * @private
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -261,6 +263,7 @@ class MDMenuComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleMenuViewportVirtualScroll(event) {
         this.vitualItems = this.storeItems.slice(this.virtual.rowStart, this.virtual.rowEnd);
@@ -277,6 +280,7 @@ class MDMenuComponent extends MDPaneComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleMenuListItemClick(event) {
         const data = event.detail.currentTarget.data;

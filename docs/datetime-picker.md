@@ -24,25 +24,8 @@
     * [.trailingActions](#MDDatetimePickerComponent+trailingActions)
     * [.actions](#MDDatetimePickerComponent+actions)
     * [.actions](#MDDatetimePickerComponent+actions)
-    * [.renderYear()](#MDDatetimePickerComponent+renderYear)
-    * [.renderMonth()](#MDDatetimePickerComponent+renderMonth)
-    * [.renderDay()](#MDDatetimePickerComponent+renderDay)
-    * [.renderHour()](#MDDatetimePickerComponent+renderHour)
-    * [.renderMinute()](#MDDatetimePickerComponent+renderMinute)
-    * [.connectedCallback()](#MDDatetimePickerComponent+connectedCallback)
-    * [.updated(changedProperties)](#MDDatetimePickerComponent+updated)
     * [.updateDate()](#MDDatetimePickerComponent+updateDate)
     * [.getValue()](#MDDatetimePickerComponent+getValue)
-    * [.handleCardIconButtonPrevClick(event)](#MDDatetimePickerComponent+handleCardIconButtonPrevClick)
-    * [.handleCardIconButtonNextClick(event)](#MDDatetimePickerComponent+handleCardIconButtonNextClick)
-    * [.handleCardButtonLabelClick(event)](#MDDatetimePickerComponent+handleCardButtonLabelClick)
-    * [.handleCardButtonCancelClick(event)](#MDDatetimePickerComponent+handleCardButtonCancelClick)
-    * [.handleCardButtonOkClick(event)](#MDDatetimePickerComponent+handleCardButtonOkClick)
-    * [.handleDatetimePickerYearItemClick(event)](#MDDatetimePickerComponent+handleDatetimePickerYearItemClick)
-    * [.handleDatetimePickerMonthItemClick(event)](#MDDatetimePickerComponent+handleDatetimePickerMonthItemClick)
-    * [.handleDatetimePickerDayItemClick(event)](#MDDatetimePickerComponent+handleDatetimePickerDayItemClick)
-    * [.handleDatetimePickerHourItemClick(event)](#MDDatetimePickerComponent+handleDatetimePickerHourItemClick)
-    * [.handleDatetimePickerMinuteItemClick(event)](#MDDatetimePickerComponent+handleDatetimePickerMinuteItemClick)
     * [.showModal(button, options)](#MDDatetimePickerComponent+showModal)
     * [.show(button, options)](#MDDatetimePickerComponent+show)
     * [.updatePosition(button, options)](#MDDatetimePickerComponent+updatePosition)
@@ -162,53 +145,6 @@
 | --- | --- | --- |
 | value | <code>Any</code> | {{desc}} |
 
-<a name="MDDatetimePickerComponent+renderYear"></a>
-
-### mdDatetimePickerComponent.renderYear()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+renderMonth"></a>
-
-### mdDatetimePickerComponent.renderMonth()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+renderDay"></a>
-
-### mdDatetimePickerComponent.renderDay()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+renderHour"></a>
-
-### mdDatetimePickerComponent.renderHour()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+renderMinute"></a>
-
-### mdDatetimePickerComponent.renderMinute()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+connectedCallback"></a>
-
-### mdDatetimePickerComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+updated"></a>
-
-### mdDatetimePickerComponent.updated(changedProperties)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| changedProperties | <code>Any</code> | {{desc}} |
-
 <a name="MDDatetimePickerComponent+updateDate"></a>
 
 ### mdDatetimePickerComponent.updateDate()
@@ -221,116 +157,6 @@
 {{desc}}
 
 **Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-<a name="MDDatetimePickerComponent+handleCardIconButtonPrevClick"></a>
-
-### mdDatetimePickerComponent.handleCardIconButtonPrevClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleCardIconButtonNextClick"></a>
-
-### mdDatetimePickerComponent.handleCardIconButtonNextClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleCardButtonLabelClick"></a>
-
-### mdDatetimePickerComponent.handleCardButtonLabelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleCardButtonCancelClick"></a>
-
-### mdDatetimePickerComponent.handleCardButtonCancelClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleCardButtonOkClick"></a>
-
-### mdDatetimePickerComponent.handleCardButtonOkClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleDatetimePickerYearItemClick"></a>
-
-### mdDatetimePickerComponent.handleDatetimePickerYearItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleDatetimePickerMonthItemClick"></a>
-
-### mdDatetimePickerComponent.handleDatetimePickerMonthItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleDatetimePickerDayItemClick"></a>
-
-### mdDatetimePickerComponent.handleDatetimePickerDayItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleDatetimePickerHourItemClick"></a>
-
-### mdDatetimePickerComponent.handleDatetimePickerHourItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
-<a name="MDDatetimePickerComponent+handleDatetimePickerMinuteItemClick"></a>
-
-### mdDatetimePickerComponent.handleDatetimePickerMinuteItemClick(event)
-{{desc}}
-
-**Kind**: instance method of [<code>MDDatetimePickerComponent</code>](#MDDatetimePickerComponent)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>Any</code> | {{desc}} |
-
 <a name="MDDatetimePickerComponent+showModal"></a>
 
 ### mdDatetimePickerComponent.showModal(button, options)

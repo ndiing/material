@@ -28,6 +28,7 @@ class MDVirtualController {
      * {{desc}}
      * @param {Any} type - {{desc}}
      * @param {Any} detail - {{desc}}
+     * @private
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -75,6 +76,7 @@ class MDVirtualController {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     async handleVirtualScroll(event) {
         if (this.options.rowTotal) {

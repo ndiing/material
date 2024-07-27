@@ -11,6 +11,7 @@ class MDDialogComponent extends MDPaneComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

@@ -9,7 +9,6 @@
 
 * [MDScrimComponent](#MDScrimComponent) ⇐ <code>MDComponent</code>
     * [.properties](#MDScrimComponent+properties)
-    * [.connectedCallback()](#MDScrimComponent+connectedCallback)
     * [.show()](#MDScrimComponent+show)
     * [.close()](#MDScrimComponent+close)
     * [.toggle()](#MDScrimComponent+toggle)
@@ -27,12 +26,6 @@
 | tooltip | <code>String</code> | {{desc}} |
 | open | <code>Boolean</code> | {{desc}} |
 
-<a name="MDScrimComponent+connectedCallback"></a>
-
-### mdScrimComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDScrimComponent</code>](#MDScrimComponent)  
 <a name="MDScrimComponent+show"></a>
 
 ### mdScrimComponent.show()

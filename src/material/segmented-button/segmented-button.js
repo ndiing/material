@@ -24,6 +24,7 @@ class MDSegmentedButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     render() {
         /* prettier-ignore */
@@ -38,6 +39,7 @@ class MDSegmentedButtonComponent extends MDComponent {
 
     /**
      * {{desc}}
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -47,6 +49,7 @@ class MDSegmentedButtonComponent extends MDComponent {
     /**
      * {{desc}}
      * @param {Any} event - {{desc}}
+     * @private
      */
     handleSegmentedButtonItemClick(event) {
         if (this.multiSelection || this.singleSelection) {

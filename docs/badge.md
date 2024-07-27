@@ -10,8 +10,6 @@
 * [MDBadgeComponent](#MDBadgeComponent) ⇐ <code>MDComponent</code>
     * [new MDBadgeComponent()](#new_MDBadgeComponent_new)
     * [.properties](#MDBadgeComponent+properties)
-    * [.render()](#MDBadgeComponent+render)
-    * [.connectedCallback()](#MDBadgeComponent+connectedCallback)
 
 <a name="new_MDBadgeComponent_new"></a>
 
@@ -32,15 +30,3 @@
 | label | <code>Number</code> | {{desc}} |
 | limit | <code>Number</code> | {{desc}} |
 
-<a name="MDBadgeComponent+render"></a>
-
-### mdBadgeComponent.render()
-{{desc}}
-
-**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
-<a name="MDBadgeComponent+connectedCallback"></a>
-
-### mdBadgeComponent.connectedCallback()
-{{desc}}
-
-**Kind**: instance method of [<code>MDBadgeComponent</code>](#MDBadgeComponent)  
