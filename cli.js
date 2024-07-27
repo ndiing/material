@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
-const jsdoc2md = require('jsdoc-to-markdown');
-
+const jsdoc2md = require("jsdoc-to-markdown");
 
 function toCamelCase(string) {
     return string
@@ -102,19 +101,7 @@ function parse(data, options = {}, replacer = false) {
             params?.forEach((param) => {
                 code += `     * @param {Any} ${param} - {{desc}}\n`;
             });
-            if([
-                /^handle/,
-                /^render/,
-                /^createRenderRoot/,
-                /^createRenderRoot/,
-                /^connectedCallback/,
-                /^firstUpdated/,
-                /^updated/,
-                /^on$/,
-                /^off$/,
-                /^once$/,
-                /^emit$/,
-            ].some(reg=>reg.test(name))){
+            if ([/^handle/, /^render/, /^createRenderRoot/, /^createRenderRoot/, /^connectedCallback/, /^firstUpdated/, /^updated/, /^on$/, /^off$/, /^once$/, /^emit$/].some((reg) => reg.test(name))) {
                 code += `     * @private\n`;
             }
             code += `     */\n`;
@@ -255,22 +242,20 @@ let cli = {
             code += `\n`;
 
             for (const doc of docs) {
-
-
-            //     const tags = ["md-pane",
-            //     "md-block",
-            //     "md-textfield",
-            //     "md-card",
-            //     "md-data-table-item",
-            //     "md-datetime-picker",
-            //     "md-tree",
-            //     "md-chip",
-            //     "md-list-item",
-            //     "md-divider",
-            //     "md-list",
-            //     "md-button",
-            //     "md-tree-item",
-            // ]
+                //     const tags = ["md-pane",
+                //     "md-block",
+                //     "md-textfield",
+                //     "md-card",
+                //     "md-data-table-item",
+                //     "md-datetime-picker",
+                //     "md-tree",
+                //     "md-chip",
+                //     "md-list-item",
+                //     "md-divider",
+                //     "md-list",
+                //     "md-button",
+                //     "md-tree-item",
+                // ]
 
                 if (doc.tagName) {
                     let name = doc.tagName.replace("md-", "");
@@ -363,49 +348,50 @@ let cli = {
             write("./src/material/template/template.js", code);
         },
         docs: () => {
-        
-// Direktori sumber dan tujuan
-const srcDir = './src/material';
-const docsDir = './docs';
+            // Direktori sumber dan tujuan
+            const srcDir = "./src/material";
+            const docsDir = "./docs";
 
-// Buat direktori docs jika belum ada
-if (!fs.existsSync(docsDir)) {
-    fs.mkdirSync(docsDir);
-}
+            // Buat direktori docs jika belum ada
+            if (!fs.existsSync(docsDir)) {
+                fs.mkdirSync(docsDir);
+            }
 
-// Fungsi untuk menghasilkan dokumentasi
-function generateDocs(file) {
-    const output = path.join(docsDir, path.basename(file, '.js') + '.md');
-    jsdoc2md.render({ files: file })
-        .then((doc) => {
-            fs.writeFileSync(output, doc);
-            console.log(`Documentation for ${file} generated at ${output}`);
-        })
-        .catch((error) => {
-            console.error(`Error generating documentation for ${file}:`, error);
-        });
-}
+            // Fungsi untuk menghasilkan dokumentasi
+            function generateDocs(file) {
+                const output = path.join(docsDir, path.basename(file, ".js") + ".md");
+                jsdoc2md
+                    .render({ files: file })
+                    .then((doc) => {
+                        fs.writeFileSync(output, doc);
+                        console.log(`Documentation for ${file} generated at ${output}`);
+                    })
+                    .catch((error) => {
+                        console.error(`Error generating documentation for ${file}:`, error);
+                    });
+            }
 
-// Dapatkan semua file JavaScript di direktori sumber
-function getJavaScriptFiles(dir) {
-    let results = [];
-    const list = fs.readdirSync(dir);
-    list.forEach(function(file) {
-        file = path.join(dir, file);
-        const stat = fs.statSync(file);
-        if (stat && stat.isDirectory()) {
-            results = results.concat(getJavaScriptFiles(file));
-        } else if (file.endsWith('.js')) {
-            results.push(file);
-        }
-    });
-    return results;
-}
+            // Dapatkan semua file JavaScript di direktori sumber
+            function getJavaScriptFiles(dir) {
+                let results = [];
+                const list = fs.readdirSync(dir);
+                list.forEach(function (file) {
+                    file = path.join(dir, file);
+                    const stat = fs.statSync(file);
+                    if (stat && stat.isDirectory()) {
+                        results = results.concat(getJavaScriptFiles(file));
+                    } else if (file.endsWith(".js")) {
+                        results.push(file);
+                    }
+                });
+                return results;
+            }
 
-// Generate dokumentasi untuk setiap file
-const files = getJavaScriptFiles(srcDir);
-files.forEach(generateDocs);
-
+            // Generate dokumentasi untuk setiap file
+            const files = getJavaScriptFiles(srcDir);
+            files.forEach(generateDocs);
+        },
+        sample: () => {
         }
     },
 };

@@ -1,4 +1,6 @@
 .md-toolbar {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface);
     .md-block__section--start {
         flex: 1;
     }
