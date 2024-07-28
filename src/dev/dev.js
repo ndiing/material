@@ -145,7 +145,7 @@ const routes = [
             { path: "select-field", component: DevSelectField },
             { path: "progress-indicator", component: DevProgressIndicator },
             { path: "block", component: DevBlock },
-            // { path: "pane", component: DevPane },
+            { path: "pane", component: DevPane },
             { path: "toolbar", component: DevToolbar },
             { path: "card", component: DevCard },
             // { path: "scrim", component: DevScrim },
