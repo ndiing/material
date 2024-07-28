@@ -5,7 +5,7 @@ class DevDemo extends MDComponent {
     render() {
         return html`
             <md-layout variant="column">
-                <md-layout-item expanded="4" medium="8" compact="4">
+                <md-layout-item expanded="6" medium="8" compact="4">
                     <md-layout variant="border" class="dev-demo__viewport">
                         <md-layout-item region="center" class="dev-demo__container">
                             demo
