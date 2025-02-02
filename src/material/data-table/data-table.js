@@ -73,8 +73,8 @@ class MdDataTableComponent extends MdComponent {
                 <th style="${styleMap(this.dataTableHeaderCellCheckboxStickyStyle)}">
                     <md-data-table-cell
                         .checkbox="${true}"
-                        .selected="${this.selected}"
-                        .indeterminate="${this.indeterminate}"
+                        .selected="${this.isSelectedAll}"
+                        .indeterminate="${this.hasSelected}"
                         @onCheckboxNativeInput="${this.handleDataTableHeaderCellCheckboxNativeInput}"
                     ></md-data-table-cell>
                 </th>
@@ -88,6 +88,7 @@ class MdDataTableComponent extends MdComponent {
                                 .label="${ifDefined(th.label)}"
                                 .checkbox="${ifDefined(th.checkbox)}"
                                 .action="${ifDefined(th.action)}"
+                                .resizable="${true}"
                             ></md-data-table-cell>
                         </th>
                     `,
@@ -211,20 +212,20 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      */
-    get selectedLength() {
+    get selectedTotal() {
         return this.data.filter((item) => item.selected).length;
     }
 
     /**
      */
-    get selected() {
-        return this.selectedLength && this.selectedLength === this.data.length;
+    get isSelectedAll() {
+        return this.selectedTotal && this.selectedTotal === this.data.length;
     }
 
     /**
      */
-    get indeterminate() {
-        return this.selectedLength && this.selectedLength !== this.data.length;
+    get hasSelected() {
+        return this.selectedTotal && this.selectedTotal !== this.data.length;
     }
 
     /**
@@ -232,7 +233,7 @@ class MdDataTableComponent extends MdComponent {
      * @param {Object} [event]
      */
     handleDataTableHeaderCellCheckboxNativeInput(event) {
-        const selected = this.indeterminate || !this.selected ? true : false;
+        const selected = this.hasSelected || !this.isSelectedAll ? true : false;
         this.data.forEach((item) => {
             item.selected = selected;
         });

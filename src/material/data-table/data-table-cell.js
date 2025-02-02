@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
+import { Movable } from "../movable/movable";
 
 /**
  * @extends MdComponent
@@ -78,6 +79,12 @@ class MdDataTableCellComponent extends MdComponent {
             } else {
                 this.classList.add("md-data-table__cell--two-line");
             }
+        }
+        if(this.resizable){
+            this.moveable=new Movable(this,{
+                axis:[],
+                handles:['e']
+            })
         }
     }
 
