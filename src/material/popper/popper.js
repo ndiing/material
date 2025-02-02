@@ -1,6 +1,20 @@
 /**
  */
-class PopperController {
+class Popper {
+    /**
+     * @param {String} [host]
+     * @param {Object} [options={}]
+     */
+    constructor(host, options = {}) {
+        this.host = host;
+        this.options = options;
+        this.init();
+    }
+
+    /**
+     */
+    init() {}
+    destroy() {}
     methods = {
         "top-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right - containerRect.width, top: triggerRect.top - containerRect.height - offset }),
         top: ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - (containerRect.width - triggerRect.width) / 2, top: triggerRect.top - containerRect.height - offset }),
@@ -58,4 +72,4 @@ class PopperController {
         return null;
     }
 }
-export { PopperController };
+export { Popper };

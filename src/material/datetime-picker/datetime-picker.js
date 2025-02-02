@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
-import { PopperController } from "../popper/popper";
+import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
@@ -187,14 +187,12 @@ class MdDatetimePickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 2;
-
         this.yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
         this.monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
         this.weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
         this.dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
         this.hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
         this.minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
-
         // this.icons = [{ component: "button", id: "label", label: stringifyDatetimeLocal(this.value) }];
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
@@ -656,13 +654,11 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     handleDatetimePickerButtonCancelClick(event) {
         this.close();
-
         this.value.setFullYear(this.defaultValue.getFullYear());
         this.value.setMonth(this.defaultValue.getMonth());
         this.value.setDate(this.defaultValue.getDate());
         this.value.setHours(this.defaultValue.getHours());
         this.value.setMinutes(this.defaultValue.getMinutes());
-
         this.emit("onDatetimePickerButtonCancelClick", { event });
     }
 
@@ -672,7 +668,6 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     handleDatetimePickerButtonOkClick(event) {
         this.close();
-
         this.emit("onDatetimePickerButtonOkClick", { event });
     }
 
@@ -726,7 +721,7 @@ class MdDatetimePickerComponent extends MdComponent {
             placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
         };
-        this.popper = new PopperController();
+        this.popper = new Popper();
         this.popper.show(options);
         this.emit("onDatetimePickerShown");
     }

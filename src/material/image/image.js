@@ -28,7 +28,7 @@ class MdImageComponent extends MdComponent {
 
     /**
      */
-    get styleInfo() {
+    get imageNativeStyle() {
         const style = {};
         if (this.ratio) style["aspect-ratio"] = this.ratio;
         if (this.circular) {
@@ -51,7 +51,7 @@ class MdImageComponent extends MdComponent {
                 .src="${ifDefined(this.src)}"
                 .alt="${ifDefined(this.alt)}"
                 class="md-image__native"
-                style="${styleMap(this.styleInfo)}"
+                style="${styleMap(this.imageNativeStyle)}"
             />
         `;
     }

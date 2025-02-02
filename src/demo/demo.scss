@@ -2,8 +2,16 @@
     padding: 0 28px;
 }
 
-.demo-dragger {
+.demo-movable {
     width: 256px;
     height: 256px;
     background-color: var(--md-sys-color-surface-container-high);
+    position: relative;
+}
+
+.demo-resizable {
+    width: 256px;
+    height: 256px;
+    background-color: var(--md-sys-color-surface-container-high);
+    position: relative;
 }

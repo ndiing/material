@@ -9,6 +9,8 @@ import { RippleController } from "../ripple/ripple";
 class MdDataTableCellComponent extends MdComponent {
     /**
      * @property {Boolean} [checkbox]
+     * @property {Boolean} [selected]
+     * @property {Boolean} [indeterminate]
      * @property {String} [avatar]
      * @property {String} [icon]
      * @property {String} [label]
@@ -17,6 +19,8 @@ class MdDataTableCellComponent extends MdComponent {
      */
     static properties = {
         checkbox: { type: Boolean },
+        selected: { type: Boolean },
+        indeterminate: { type: Boolean },
         avatar: { type: String },
         icon: { type: String },
         label: { type: String },
@@ -39,6 +43,7 @@ class MdDataTableCellComponent extends MdComponent {
                 ? html`<md-checkbox
                       class="md-data-table__checkbox"
                       .checked="${this.selected}"
+                      .indeterminate="${this.indeterminate}"
                   ></md-checkbox>`
                 : nothing}
             ${this.avatar

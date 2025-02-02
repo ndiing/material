@@ -1,9 +1,13 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { styleMap } from "lit/directives/style-map.js";
 
 /**
  * @extends MdComponent
+ * @fires MdDataTableComponent#onDataTableBodyRowClick - {"detail":{"event":{}}}
+ * @fires MdDataTableComponent#onDataTableHeaderCellCheckboxNativeInput - {"detail":{"event":{}}}
+ * @fires MdDataTableComponent#onDataTableBodyCellCheckboxNativeInput - {"detail":{"event":{}}}
  */
 class MdDataTableComponent extends MdComponent {
     /**
@@ -30,15 +34,56 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
+     */
+    get dataTableHeaderCellStickyStyle() {
+        return {
+            position: "sticky",
+            top: 0,
+            "z-index": 2,
+        };
+    }
+
+    /**
+     */
+    get dataTableHeaderCellCheckboxStickyStyle() {
+        return {
+            position: "sticky",
+            left: 0,
+            "z-index": 3,
+        };
+    }
+
+    /**
+     */
+    get dataTableBodyCellCheckboxStickyStyle() {
+        return {
+            position: "sticky",
+            left: 0,
+            "z-index": 1,
+        };
+    }
+
+    /**
      * @private
      * @param {String} [tr]
      */
     renderDataTableHeaderRow(tr) {
         return html`
             <tr>
+                <th style="${styleMap(this.dataTableHeaderCellCheckboxStickyStyle)}">
+                    <md-data-table-cell
+                        .checkbox="${true}"
+                        .selected="${this.selected}"
+                        .indeterminate="${this.indeterminate}"
+                        @onCheckboxNativeInput="${this.handleDataTableHeaderCellCheckboxNativeInput}"
+                    ></md-data-table-cell>
+                </th>
                 ${tr.map(
                     (th) => html`
-                        <th .data="${th}">
+                        <th
+                            .data="${th}"
+                            style="${styleMap(this.dataTableHeaderCellStickyStyle)}"
+                        >
                             <md-data-table-cell
                                 .label="${ifDefined(th.label)}"
                                 .checkbox="${ifDefined(th.checkbox)}"
@@ -60,7 +105,19 @@ class MdDataTableComponent extends MdComponent {
             <tbody>
                 ${this.bodies.map(
                     (tr) => html`
-                        <tr>
+                        <tr
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            @click="${this.handleDataTableBodyRowClick}"
+                        >
+                            <td style="${styleMap(this.dataTableBodyCellCheckboxStickyStyle)}">
+                                <md-data-table-cell
+                                    .data="${item}"
+                                    .checkbox="${true}"
+                                    .selected="${item.selected}"
+                                    @onCheckboxNativeInput="${this.handleDataTableBodyCellCheckboxNativeInput}"
+                                ></md-data-table-cell>
+                            </td>
                             ${tr.map(
                                 (td) => html`
                                     <td .data="${td}">
@@ -135,6 +192,63 @@ class MdDataTableComponent extends MdComponent {
                 this.bodies = this.headers;
             }
         }
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleDataTableBodyRowClick(event) {
+        const target = event.target.closest(".md-data-table__checkbox");
+        if (target) return;
+        const data = event.currentTarget.data;
+        this.data.forEach((item) => {
+            item.selected = item === data;
+        });
+        this.requestUpdate();
+        this.emit("onDataTableBodyRowClick", { event });
+    }
+
+    /**
+     */
+    get selectedLength() {
+        return this.data.filter((item) => item.selected).length;
+    }
+
+    /**
+     */
+    get selected() {
+        return this.selectedLength && this.selectedLength === this.data.length;
+    }
+
+    /**
+     */
+    get indeterminate() {
+        return this.selectedLength && this.selectedLength !== this.data.length;
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleDataTableHeaderCellCheckboxNativeInput(event) {
+        const selected = this.indeterminate || !this.selected ? true : false;
+        this.data.forEach((item) => {
+            item.selected = selected;
+        });
+        this.requestUpdate();
+        this.emit("onDataTableHeaderCellCheckboxNativeInput", { event });
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleDataTableBodyCellCheckboxNativeInput(event) {
+        const data = event.currentTarget.data;
+        data.selected = !data.selected;
+        this.requestUpdate();
+        this.emit("onDataTableBodyCellCheckboxNativeInput", { event });
     }
 }
 customElements.define("md-data-table", MdDataTableComponent);
