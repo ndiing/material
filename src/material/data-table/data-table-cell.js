@@ -80,11 +80,11 @@ class MdDataTableCellComponent extends MdComponent {
                 this.classList.add("md-data-table__cell--two-line");
             }
         }
-        if(this.resizable){
-            this.moveable=new Movable(this,{
-                axis:[],
-                handles:['e']
-            })
+        if (this.resizable) {
+            this.moveable = new Movable(this, {
+                axis: [],
+                handles: ["e"],
+            });
         }
     }
 

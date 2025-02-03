@@ -3,15 +3,36 @@
 }
 
 .demo-movable {
+    position: relative;
     width: 256px;
     height: 256px;
-    background-color: var(--md-sys-color-surface-container-high);
-    position: relative;
 }
 
-.demo-resizable {
-    width: 256px;
+.demo-virtual-scroll {
     height: 256px;
-    background-color: var(--md-sys-color-surface-container-high);
-    position: relative;
+    width: 256px;
+    display: flex;
+    flex-direction: column;
 }
+.demo-virtual-scroll__item {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+}
+
+
+// .screen{
+//     // overflow: auto;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: #fff;
+// }
+// .window{
+//     border: 1px solid;
+//     background-image: url(file:///C:/Users/ndiin/Pictures/WhatsApp%20Image%202025-02-03%20at%2001.49.41.jpeg);
+//     background-size: cover;
+//     background-position: center;
+// }

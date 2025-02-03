@@ -35,6 +35,7 @@ class Movable {
         this.startY = event.clientY - this.endY;
         this.startWidth = this.host.clientWidth;
         this.startHeight = this.host.clientHeight;
+        this.emit("onMovablePointerdown");
     }
 
     /**
@@ -72,6 +73,7 @@ class Movable {
         this.host.style.setProperty("top", (this.currentY ?? 0) + "px");
         this.host.style.setProperty("width", (this.currentWidth ?? this.startWidth) + "px");
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
+        this.emit("onMovablePointermove");
     }
 
     /**
@@ -84,7 +86,18 @@ class Movable {
         document.body.classList.remove("md-resizable--resize");
         window.removeEventListener("pointermove", this.handlePointermove);
         window.removeEventListener("pointerup", this.handlePointerup);
+        this.emit("onMovablePointerup");
     }
+
+    emit(type, detail) {
+        const event = new CustomEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            detail,
+        });
+        this.host.dispatchEvent(event);
+    }
+
     // hostConnected
 
     /**

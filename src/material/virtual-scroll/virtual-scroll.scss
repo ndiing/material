@@ -1,0 +1,16 @@
+.md-virtual-scroll {
+    position: relative;
+    overflow: auto;
+}
+.md-virtual-scroll__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+.md-virtual-scroll__container {
+}
+.md-virtual-scroll__item {
+}

@@ -85,6 +85,7 @@ class MdDataTableComponent extends MdComponent {
                             style="${styleMap(this.dataTableHeaderCellStickyStyle)}"
                         >
                             <md-data-table-cell
+                                style="${styleMap({ width: "200px" })}"
                                 .label="${ifDefined(th.label)}"
                                 .checkbox="${ifDefined(th.checkbox)}"
                                 .action="${ifDefined(th.action)}"
