@@ -24,6 +24,8 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdDatetimePickerComponent#onDatetimePickerScrimClosed - {"detail":{"event":{}}}
  */
 class MdDatetimePickerComponent extends MdComponent {
+    
+
     /**
      * @property {Array} [icons]
      * @property {Array} [actions]
@@ -58,12 +60,14 @@ class MdDatetimePickerComponent extends MdComponent {
             // reflect: true,
         },
     };
+    
 
     /**
      */
     get startOfDay() {
         return new Date(this.selection.getFullYear(), this.selection.getMonth()).getDay();
     }
+    
 
     /**
      */
@@ -80,6 +84,7 @@ class MdDatetimePickerComponent extends MdComponent {
             };
         });
     }
+    
 
     /**
      */
@@ -95,6 +100,7 @@ class MdDatetimePickerComponent extends MdComponent {
             };
         });
     }
+    
 
     /**
      */
@@ -106,6 +112,7 @@ class MdDatetimePickerComponent extends MdComponent {
             };
         });
     }
+    
 
     /**
      */
@@ -126,6 +133,7 @@ class MdDatetimePickerComponent extends MdComponent {
             });
         });
     }
+    
 
     /**
      */
@@ -143,6 +151,7 @@ class MdDatetimePickerComponent extends MdComponent {
             };
         });
     }
+    
 
     /**
      */
@@ -165,6 +174,7 @@ class MdDatetimePickerComponent extends MdComponent {
     // get label() {
     //     return stringifyDatetimeLocal(this.value)
     // }
+    
 
     /**
      */
@@ -178,6 +188,7 @@ class MdDatetimePickerComponent extends MdComponent {
         };
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }
+    
 
     /**
      */
@@ -200,6 +211,7 @@ class MdDatetimePickerComponent extends MdComponent {
         ];
         this.buttons = [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
     }
+    
 
     /**
      * @private
@@ -208,6 +220,7 @@ class MdDatetimePickerComponent extends MdComponent {
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
+    
 
     /**
      * @private
@@ -227,6 +240,7 @@ class MdDatetimePickerComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
+    
 
     /**
      * @private
@@ -246,6 +260,7 @@ class MdDatetimePickerComponent extends MdComponent {
             ></md-button>
         `;
     }
+    
 
     /**
      * @private
@@ -254,6 +269,7 @@ class MdDatetimePickerComponent extends MdComponent {
     renderSpacer(item) {
         return html` <div class="md-datetime-picker__spacer"></div> `;
     }
+    
 
     /**
      * @private
@@ -272,6 +288,7 @@ class MdDatetimePickerComponent extends MdComponent {
             () => nothing,
         );
     }
+    
 
     /**
      * @private
@@ -295,6 +312,7 @@ class MdDatetimePickerComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -318,6 +336,7 @@ class MdDatetimePickerComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -356,6 +375,7 @@ class MdDatetimePickerComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -379,6 +399,7 @@ class MdDatetimePickerComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -402,6 +423,7 @@ class MdDatetimePickerComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -441,6 +463,7 @@ class MdDatetimePickerComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -462,6 +485,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
     }
+    
 
     /**
      * @private
@@ -472,6 +496,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.datetimePickerScrim.remove();
         this.classList.remove("md-datetime-picker");
     }
+    
 
     /**
      * @private
@@ -489,6 +514,7 @@ class MdDatetimePickerComponent extends MdComponent {
         // }
         // console.log(this.value);
     }
+    
 
     /**
      * @private
@@ -503,6 +529,7 @@ class MdDatetimePickerComponent extends MdComponent {
         // this.index = map[this.index];
         this.emit("onDatetimePickerLabelClick", { event });
     }
+    
 
     /**
      * @private
@@ -517,6 +544,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onDatetimePickerIconButtonPrevClick", { event });
     }
+    
 
     /**
      * @private
@@ -531,6 +559,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onDatetimePickerIconButtonNextClick", { event });
     }
+    
 
     /**
      * @private
@@ -542,6 +571,7 @@ class MdDatetimePickerComponent extends MdComponent {
         else if (data.id === "next") return this.handleDatetimePickerIconButtonNextClick(event);
         this.emit("onDatetimePickerIconButtonClick", { event });
     }
+    
 
     /**
      * @private
@@ -563,6 +593,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 1;
         this.emit("onDatetimePickerYearItemClick", { event });
     }
+    
 
     /**
      * @private
@@ -584,6 +615,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 2;
         this.emit("onDatetimePickerMonthItemClick", { event });
     }
+    
 
     /**
      * @private
@@ -605,6 +637,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 3;
         this.emit("onDatetimePickerDayItemClick", { event });
     }
+    
 
     /**
      * @private
@@ -626,6 +659,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 4;
         this.emit("onDatetimePickerHourItemClick", { event });
     }
+    
 
     /**
      * @private
@@ -647,6 +681,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 2;
         this.emit("onDatetimePickerMinuteItemClick", { event });
     }
+    
 
     /**
      * @private
@@ -661,6 +696,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.value.setMinutes(this.defaultValue.getMinutes());
         this.emit("onDatetimePickerButtonCancelClick", { event });
     }
+    
 
     /**
      * @private
@@ -670,6 +706,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.close();
         this.emit("onDatetimePickerButtonOkClick", { event });
     }
+    
 
     /**
      * @private
@@ -686,6 +723,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = map[this.index];
         this.emit("onDatetimePickerButtonLabelClick", { event });
     }
+    
 
     /**
      * @private
@@ -698,6 +736,7 @@ class MdDatetimePickerComponent extends MdComponent {
         else if (data.id === "label") return this.handleDatetimePickerButtonLabelClick(event);
         this.emit("onDatetimePickerButtonClick", { event });
     }
+    
 
     /**
      * @private
@@ -707,6 +746,7 @@ class MdDatetimePickerComponent extends MdComponent {
         if (this.open) this.close();
         this.emit("onDatetimePickerScrimClosed", { event });
     }
+    
 
     /**
      * @param {String} [options]
@@ -725,6 +765,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.popper.show(options);
         this.emit("onDatetimePickerShown");
     }
+    
 
     /**
      */
@@ -734,6 +775,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.datetimePickerScrim.close();
         this.emit("onDatetimePickerClosed");
     }
+    
 
     /**
      * @param {String} [options]

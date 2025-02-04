@@ -10,6 +10,8 @@ import { createRef, ref } from "lit/directives/ref.js";
  * @fires MdFormComponent#onFormNativeSubmit - {"detail":{"event":{}}}
  */
 class MdFormComponent extends MdComponent {
+    
+
     /**
      * @property {String} [acceptCharset]
      * @property {String} [action]
@@ -28,6 +30,7 @@ class MdFormComponent extends MdComponent {
         name: { type: String },
         noValidate: { type: Boolean },
     };
+    
 
     /**
      */
@@ -40,6 +43,7 @@ class MdFormComponent extends MdComponent {
         // this.method = "post";
         this.body = Array.from(this.childNodes);
     }
+    
 
     /**
      * @private
@@ -63,6 +67,7 @@ class MdFormComponent extends MdComponent {
             </form>
         `;
     }
+    
 
     /**
      * @private
@@ -71,6 +76,7 @@ class MdFormComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-form");
     }
+    
 
     /**
      * @private
@@ -79,6 +85,7 @@ class MdFormComponent extends MdComponent {
     handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event });
     }
+    
 
     /**
      * @private
@@ -94,6 +101,7 @@ class MdFormComponent extends MdComponent {
         }
         this.emit("onFormNativeReset", { event });
     }
+    
 
     /**
      * @private
@@ -104,18 +112,21 @@ class MdFormComponent extends MdComponent {
         new FormData(this.formNative);
         this.emit("onFormNativeSubmit", { event });
     }
+    
 
     /**
      */
     get formNative() {
         return this.querySelector(".md-form__native");
     }
+    
 
     /**
      */
     reset() {
         this.formNative.reset();
     }
+    
 
     /**
      * @param {String} [submitButton]

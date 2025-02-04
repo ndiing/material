@@ -2,38 +2,39 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
-import { Movable } from "../movable/movable";
 
 /**
  * @extends MdComponent
  */
 class MdDataTableCellComponent extends MdComponent {
+    
+
     /**
      * @property {Boolean} [checkbox]
-     * @property {Boolean} [selected]
+     * @property {Boolean} [checked]
      * @property {Boolean} [indeterminate]
      * @property {String} [avatar]
      * @property {String} [icon]
      * @property {String} [label]
      * @property {String} [sublabel]
-     * @property {String} [action]
      */
     static properties = {
         checkbox: { type: Boolean },
-        selected: { type: Boolean },
+        checked: { type: Boolean },
         indeterminate: { type: Boolean },
         avatar: { type: String },
         icon: { type: String },
         label: { type: String },
         sublabel: { type: String },
-        action: { type: String },
     };
+    
 
     /**
      */
     constructor() {
         super();
     }
+    
 
     /**
      * @private
@@ -43,7 +44,7 @@ class MdDataTableCellComponent extends MdComponent {
             ${this.checkbox
                 ? html`<md-checkbox
                       class="md-data-table__checkbox"
-                      .checked="${this.selected}"
+                      .checked="${this.checked}"
                       .indeterminate="${this.indeterminate}"
                   ></md-checkbox>`
                 : nothing}
@@ -54,15 +55,10 @@ class MdDataTableCellComponent extends MdComponent {
                       circular
                   ></md-image>`
                 : nothing}
-            ${this.icon ? html`<md-icon class="md-data-table__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-data-table__labels">${this.label ? html`<div class="md-data-table__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-data-table__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing}
-            ${this.action
-                ? html`<md-icon-button
-                      class="md-data-table__action"
-                      .icon="${this.action}"
-                  ></md-icon-button>`
-                : nothing}
+            ${this.icon ? html`<md-icon class="md-data-table__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-data-table__labels">${this.label ? html`<div class="md-data-table__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-data-table__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.text ? html`<div class="md-data-table__text">${this.text}</div>` : nothing}
         `;
     }
+    
 
     /**
      * @private
@@ -80,13 +76,8 @@ class MdDataTableCellComponent extends MdComponent {
                 this.classList.add("md-data-table__cell--two-line");
             }
         }
-        if (this.resizable) {
-            this.moveable = new Movable(this, {
-                axis: [],
-                handles: ["e"],
-            });
-        }
     }
+    
 
     /**
      * @private

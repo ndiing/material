@@ -1,6 +1,10 @@
+
+
 /**
  */
 class RippleController {
+    
+
     /**
      * @param {String} [host]
      * @param {String} [options]
@@ -19,6 +23,7 @@ class RippleController {
             ...options,
         };
     }
+    
 
     /**
      * @async
@@ -62,6 +67,7 @@ class RippleController {
         this.trigger.addEventListener("focus", this.handleFocus);
         this.trigger.addEventListener("blur", this.handleBlur);
     }
+    
 
     /**
      * @async
@@ -78,6 +84,7 @@ class RippleController {
         this.trigger.removeEventListener("focus", this.handleFocus);
         this.trigger.removeEventListener("blur", this.handleBlur);
     }
+    
 
     /**
      * @private
@@ -86,6 +93,7 @@ class RippleController {
     handlePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
+    
 
     /**
      * @private
@@ -94,6 +102,7 @@ class RippleController {
     handlePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
+    
 
     /**
      * @private
@@ -115,6 +124,7 @@ class RippleController {
             this.container.style.setProperty("--md-comp-ripple-y", y * 100 + "%");
         }
     }
+    
 
     /**
      * @private
@@ -124,6 +134,7 @@ class RippleController {
         this.container.classList.remove("md-ripple--press");
         window.removeEventListener("pointerup", this.handlePointerup);
     }
+    
 
     /**
      * @private
@@ -132,6 +143,7 @@ class RippleController {
     handleFocus(event) {
         this.container.classList.add("md-ripple--focus");
     }
+    
 
     /**
      * @private

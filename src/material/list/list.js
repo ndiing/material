@@ -10,6 +10,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdListComponent#onListItemSwitchNativeInput - {"detail":{"event":{}}}
  */
 class MdListComponent extends MdComponent {
+    
+
     /**
      * @property {Array} [items]
      * @property {String} [type]
@@ -21,6 +23,7 @@ class MdListComponent extends MdComponent {
         rippleOptions: { type: Object },
     };
     types = ["single-select", "multi-select"];
+    
 
     /**
      */
@@ -29,6 +32,7 @@ class MdListComponent extends MdComponent {
         this.items = [];
         this.type = "single-select";
     }
+    
 
     /**
      * @private
@@ -65,6 +69,7 @@ class MdListComponent extends MdComponent {
             </md-list-row>
         `;
     }
+    
 
     /**
      * @private
@@ -72,6 +77,7 @@ class MdListComponent extends MdComponent {
     render() {
         return this.items.map((item) => this.renderListItem(item));
     }
+    
 
     /**
      * @private
@@ -80,6 +86,7 @@ class MdListComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-list");
     }
+    
 
     /**
      * @private
@@ -97,6 +104,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onListItemClick", { event });
     }
+    
 
     /**
      * @param {Object} [data]
@@ -104,6 +112,7 @@ class MdListComponent extends MdComponent {
     multiSelect(data) {
         data.selected = !data.selected;
     }
+    
 
     /**
      * @param {Object} [data]
@@ -113,6 +122,7 @@ class MdListComponent extends MdComponent {
             item.selected = item === data;
         });
     }
+    
 
     /**
      * @private
@@ -124,6 +134,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onListItemCheckboxNativeInput", { event });
     }
+    
 
     /**
      * @private
@@ -135,6 +146,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
+    
 
     /**
      * @private

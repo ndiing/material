@@ -8,6 +8,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdIconButtonComponent#onIconButtonClick - {"detail":{"event":{}}}
  */
 class MdIconButtonComponent extends MdComponent {
+    
+
     /**
      * @property {String} [icon]
      * @property {String} [variant]
@@ -25,6 +27,7 @@ class MdIconButtonComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["filled", "filled-tonal", "outlined"];
+    
 
     /**
      */
@@ -32,6 +35,7 @@ class MdIconButtonComponent extends MdComponent {
         super();
         this.type = "button";
     }
+    
 
     /**
      * @private
@@ -47,6 +51,7 @@ class MdIconButtonComponent extends MdComponent {
             ${this.icon ? html`<md-icon class="md-icon-button__icon">${this.icon}</md-icon>` : nothing}
         `;
     }
+    
 
     /**
      * @private
@@ -63,6 +68,7 @@ class MdIconButtonComponent extends MdComponent {
             ...this.rippleOptions,
         });
     }
+    
 
     /**
      * @private
@@ -72,6 +78,7 @@ class MdIconButtonComponent extends MdComponent {
         this.classList.remove("md-icon-button");
         this.removeEventListener("click", this.handleIconButtonClick);
     }
+    
 
     /**
      * @private
@@ -85,6 +92,7 @@ class MdIconButtonComponent extends MdComponent {
             });
         }
     }
+    
 
     /**
      * @private

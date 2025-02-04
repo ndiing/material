@@ -5,6 +5,8 @@ import { MdComponent } from "../component/component";
  * @extends MdComponent
  */
 class MdProgressIndicatorComponent extends MdComponent {
+    
+
     /**
      * @property {String} [variant]
      * @property {Number} [max]
@@ -16,6 +18,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         value: { type: Number },
     };
     variants = ["circular"];
+    
 
     /**
      */
@@ -24,6 +27,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         this.max = 100;
         this.value = 0;
     }
+    
 
     /**
      * @private
@@ -37,6 +41,7 @@ class MdProgressIndicatorComponent extends MdComponent {
             ></progress>
         `;
     }
+    
 
     /**
      * @private
@@ -85,6 +90,7 @@ class MdProgressIndicatorComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -93,6 +99,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         if (this.variant === "circular") return this.renderProgressIndicatorCircular();
         else return this.renderProgressIndicatorNative();
     }
+    
 
     /**
      * @private
@@ -101,6 +108,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-progress-indicator");
     }
+    
 
     /**
      * @private

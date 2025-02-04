@@ -7,6 +7,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @extends MdComponent
  */
 class MdFabComponent extends MdComponent {
+    
+
     /**
      * @property {String} [icon]
      * @property {String} [label]
@@ -24,6 +26,7 @@ class MdFabComponent extends MdComponent {
     sizes = ["small", "large"];
     types = ["extended"];
     variants = ["unelevated"];
+    
 
     /**
      */
@@ -31,6 +34,7 @@ class MdFabComponent extends MdComponent {
         super();
         this.ripple = new RippleController(this, {});
     }
+    
 
     /**
      * @private
@@ -38,6 +42,7 @@ class MdFabComponent extends MdComponent {
     render() {
         return html` ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing} `;
     }
+    
 
     /**
      * @private
@@ -46,6 +51,7 @@ class MdFabComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-fab");
     }
+    
 
     /**
      * @private

@@ -7,6 +7,8 @@ import { choose } from "lit/directives/choose.js";
  * @extends MdComponent
  */
 class MdNavigationBarComponent extends MdComponent {
+    
+
     /**
      * @property {Boolean} [open]
      * @property {Array} [items]
@@ -15,6 +17,7 @@ class MdNavigationBarComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
     };
+    
 
     /**
      */
@@ -23,6 +26,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.items = [];
         this.rippleOptions = { container: ".md-navigation-list__icon" };
     }
+    
 
     /**
      * @private
@@ -35,6 +39,7 @@ class MdNavigationBarComponent extends MdComponent {
             ></md-navigation-list>
         `;
     }
+    
 
     /**
      * @private
@@ -48,6 +53,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
+    
 
     /**
      * @private
@@ -57,6 +63,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.classList.remove("md-navigation-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
+    
 
     /**
      * @private
@@ -65,6 +72,7 @@ class MdNavigationBarComponent extends MdComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
     }
+    
 
     /**
      */
@@ -73,6 +81,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.open = true;
         this.emit("onNavigationBarShown");
     }
+    
 
     /**
      */
@@ -81,6 +90,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.open = false;
         this.emit("onNavigationBarClosed");
     }
+    
 
     /**
      */

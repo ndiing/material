@@ -9,6 +9,8 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdSwitchComponent#onSwitchNativeReset - {"detail":{"event":{}}}
  */
 class MdSwitchComponent extends MdComponent {
+    
+
     /**
      * @property {String} [name]
      * @property {String} [value]
@@ -23,6 +25,7 @@ class MdSwitchComponent extends MdComponent {
         checked: { type: Boolean },
         icons: { type: Array },
     };
+    
 
     /**
      */
@@ -36,6 +39,7 @@ class MdSwitchComponent extends MdComponent {
             centered: true,
         });
     }
+    
 
     /**
      * @private
@@ -60,6 +64,7 @@ class MdSwitchComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -72,6 +77,7 @@ class MdSwitchComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
     }
+    
 
     /**
      * @private
@@ -84,6 +90,7 @@ class MdSwitchComponent extends MdComponent {
         this.checked = native.checked;
         this.emit("onSwitchNativeInput", { event });
     }
+    
 
     /**
      * @private

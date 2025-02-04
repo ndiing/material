@@ -8,6 +8,8 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdNavigationListItemComponent#onNavigationListItemSelected - {"detail":{"navigationListItem":"this"}}
  */
 class MdNavigationListItemComponent extends MdComponent {
+    
+
     /**
      * @property {String} [icon]
      * @property {String} [label]
@@ -28,6 +30,7 @@ class MdNavigationListItemComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
+    
 
     /**
      */
@@ -35,6 +38,7 @@ class MdNavigationListItemComponent extends MdComponent {
         super();
         this.rippleOptions = {};
     }
+    
 
     /**
      * @private
@@ -50,6 +54,7 @@ class MdNavigationListItemComponent extends MdComponent {
                 : nothing}
         `;
     }
+    
 
     /**
      * @private
@@ -61,6 +66,7 @@ class MdNavigationListItemComponent extends MdComponent {
         await this.updateComplete;
         this.ripple = new RippleController(this, this.rippleOptions);
     }
+    
 
     /**
      * @private

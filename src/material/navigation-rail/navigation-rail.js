@@ -8,6 +8,8 @@ import { choose } from "lit/directives/choose.js";
  * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick - {"detail":{"event":{}}}
  */
 class MdNavigationRailComponent extends MdComponent {
+    
+
     /**
      * @property {Array} [icons]
      * @property {Array} [actions]
@@ -24,6 +26,7 @@ class MdNavigationRailComponent extends MdComponent {
         items: { type: Array },
         open: { type: Boolean, reflect: true },
     };
+    
 
     /**
      */
@@ -32,6 +35,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.items = [];
         this.rippleOptions = { container: ".md-navigation-list__icon" };
     }
+    
 
     /**
      * @private
@@ -40,6 +44,7 @@ class MdNavigationRailComponent extends MdComponent {
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
+    
 
     /**
      * @private
@@ -59,6 +64,7 @@ class MdNavigationRailComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
+    
 
     /**
      * @private
@@ -75,6 +81,7 @@ class MdNavigationRailComponent extends MdComponent {
             () => nothing,
         );
     }
+    
 
     /**
      * @private
@@ -92,6 +99,7 @@ class MdNavigationRailComponent extends MdComponent {
             </div>
         `;
     }
+    
 
     /**
      * @private
@@ -105,6 +113,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
+    
 
     /**
      * @private
@@ -114,6 +123,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.classList.remove("md-navigation-rail");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
+    
 
     /**
      * @private
@@ -122,6 +132,7 @@ class MdNavigationRailComponent extends MdComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
     }
+    
 
     /**
      * @private
@@ -130,6 +141,7 @@ class MdNavigationRailComponent extends MdComponent {
     handleNavigationRailIconButtonClick(event) {
         this.emit("onNavigationRailIconButtonClick", { event });
     }
+    
 
     /**
      */
@@ -138,6 +150,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.open = true;
         this.emit("onNavigationRailShown");
     }
+    
 
     /**
      */
@@ -146,6 +159,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.open = false;
         this.emit("onNavigationRailClosed");
     }
+    
 
     /**
      */

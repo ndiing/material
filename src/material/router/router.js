@@ -1,7 +1,10 @@
+
+
 /**
  */
 class Router {
     static params = {};
+    
 
     /**
      * @param {undefined} [pathname=this.pathname]
@@ -29,6 +32,7 @@ class Router {
             }
         }
     }
+    
 
     /**
      */
@@ -39,6 +43,7 @@ class Router {
             return window.location.hash.replace(/^#/, "").replace(/\?[^\?]+/, "") || "/";
         }
     }
+    
 
     /**
      * @private
@@ -67,6 +72,7 @@ class Router {
         }
         this.emit("onRouterNavigateSuccess");
     }
+    
 
     /**
      * @param {String} [routes]
@@ -83,6 +89,7 @@ class Router {
             }
         }
     }
+    
 
     /**
      * @private
@@ -92,6 +99,7 @@ class Router {
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
+    
 
     /**
      * @async
@@ -123,6 +131,7 @@ class Router {
             callback();
         });
     }
+    
 
     /**
      * @param {String} [route]
@@ -130,6 +139,7 @@ class Router {
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
+    
 
     /**
      * @async
@@ -138,6 +148,7 @@ class Router {
     static async loadComponent(route) {
         if (!route.component) route.component = await route.load();
     }
+    
 
     /**
      * @private
@@ -154,6 +165,7 @@ class Router {
             route.beforeLoad(callback);
         });
     }
+    
 
     /**
      */
@@ -161,6 +173,7 @@ class Router {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
     }
+    
 
     /**
      * @param {String} [url]
@@ -172,6 +185,7 @@ class Router {
             window.location.hash = url;
         }
     }
+    
 
     /**
      * @private
@@ -184,6 +198,7 @@ class Router {
             Router.navigate(url);
         }
     }
+    
 
     /**
      * @param {String} [type]
@@ -199,6 +214,7 @@ class Router {
     }
     static routes = [];
     static options = {};
+    
 
     /**
      * @param {Array} [routes=[]]

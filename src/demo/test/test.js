@@ -43,9 +43,7 @@ class DemoTest extends MdComponent {
                     </div>
 
                     <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                        <div class="screen">
-                            ${Array.from({length:50}, () => html`<div class="window"></div>`)}
-                        </div>
+                        <div class="screen">${Array.from({ length: 50 }, () => html`<div class="window"></div>`)}</div>
                     </div>
                 </div>
             </div>
@@ -73,7 +71,7 @@ class DemoTest extends MdComponent {
         // const availableWidth = screenWidth - 2 * containerMargin;
         // let appWidth = (availableWidth - gap * (columns - 1)) / columns;
         // let appHeight = appWidth/720*1600;
-        
+
         // document.querySelectorAll(".window").forEach((win, index) => {
         //     win.style.setProperty("width", appWidth + "px");
         //     win.style.setProperty("height", appHeight + "px");

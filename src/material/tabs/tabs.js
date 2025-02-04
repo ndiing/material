@@ -7,6 +7,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdTabsComponent#onTabClick - {"detail":{"event":{}}}
  */
 class MdTabsComponent extends MdComponent {
+    
+
     /**
      * @property {Array} [items]
      * @property {Object} [rippleOptions]
@@ -18,6 +20,7 @@ class MdTabsComponent extends MdComponent {
         variant: { type: String },
     };
     variants = ["primary", "secondary"];
+    
 
     /**
      */
@@ -26,6 +29,7 @@ class MdTabsComponent extends MdComponent {
         this.items = [];
         this.variant = "primary";
     }
+    
 
     /**
      * @private
@@ -47,6 +51,7 @@ class MdTabsComponent extends MdComponent {
             ></md-tab>
         `;
     }
+    
 
     /**
      * @private
@@ -54,6 +59,7 @@ class MdTabsComponent extends MdComponent {
     render() {
         return this.items.map((item) => this.renderTab(item));
     }
+    
 
     /**
      * @private
@@ -63,6 +69,7 @@ class MdTabsComponent extends MdComponent {
         this.classList.add("md-tabs");
         this.style.setProperty("--md-comp-tabs-indicator-transition-property", "none");
     }
+    
 
     /**
      * @private
@@ -76,6 +83,7 @@ class MdTabsComponent extends MdComponent {
             });
         }
     }
+    
 
     /**
      * @private
@@ -88,6 +96,7 @@ class MdTabsComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onTabClick", { event });
     }
+    
 
     /**
      * @param {Object} [data]
@@ -97,6 +106,7 @@ class MdTabsComponent extends MdComponent {
             item.selected = item === data;
         });
     }
+    
 
     /**
      * @private

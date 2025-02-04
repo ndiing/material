@@ -8,6 +8,8 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdTreeItemComponent#onTreeItemSelected - {"detail":{"treeItem":"this"}}
  */
 class MdTreeItemComponent extends MdComponent {
+    
+
     /**
      * @property {Boolean} [selected]
      * @property {Boolean} [expanded]
@@ -28,6 +30,7 @@ class MdTreeItemComponent extends MdComponent {
         label: { type: String },
         routerLink: { type: String, reflect: true },
     };
+    
 
     /**
      */
@@ -38,6 +41,7 @@ class MdTreeItemComponent extends MdComponent {
         this.nodeIcons = ["folder", "folder_open"];
         this.leafIcons = ["draft", "draft"];
     }
+    
 
     /**
      */
@@ -46,6 +50,7 @@ class MdTreeItemComponent extends MdComponent {
         if (this.data.children?.length) return this.actions[~~this.expanded];
         else return [" ", ""][~~(this.indent === 0)];
     }
+    
 
     /**
      */
@@ -54,6 +59,7 @@ class MdTreeItemComponent extends MdComponent {
         if (this.data.children?.length) return this.nodeIcons[~~this.expanded];
         else return this.leafIcons[~~this.selected];
     }
+    
 
     /**
      * @private
@@ -61,6 +67,7 @@ class MdTreeItemComponent extends MdComponent {
     render() {
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
+    
 
     /**
      * @private
@@ -70,6 +77,7 @@ class MdTreeItemComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-tree__item");
     }
+    
 
     /**
      * @private

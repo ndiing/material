@@ -1,6 +1,10 @@
+
+
 /**
  */
 class Store {
+    
+
     /**
      * @param {Object} [data=[]]
      * @param {Object} [options={}]
@@ -9,6 +13,7 @@ class Store {
         this.data = data;
         this.options = options;
     }
+    
 
     /**
      * @param {Object} [data]
@@ -23,6 +28,7 @@ class Store {
             return valueA > valueB ? 1 : -1;
         });
     }
+    
 
     /**
      * @param {String} [item]
@@ -41,6 +47,7 @@ class Store {
         }
         return false;
     }
+    
 
     /**
      * @param {Object} [data]
@@ -50,6 +57,7 @@ class Store {
         if (!q) return data;
         return data.filter((item) => this.deepSearch(item, q));
     }
+    
 
     /**
      * @param {String} [item]
@@ -58,6 +66,7 @@ class Store {
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
+    
 
     /**
      * @param {Object} [data]
@@ -94,6 +103,7 @@ class Store {
             });
         });
     }
+    
 
     /**
      * @param {Object} [data]
@@ -103,6 +113,7 @@ class Store {
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
+    
 
     /**
      * @param {Object} [data]
@@ -114,6 +125,7 @@ class Store {
         let end = start + _limit;
         return data.slice(start, end);
     }
+    
 
     /**
      * @async
