@@ -12,7 +12,6 @@ class DemoNavigationDrawerModal extends MdComponent {
         return html`
             <div class="md-layout__border">
                 <md-navigation-drawer
-                    open
                     id="navigationDrawer1"
                     modal
                     .items="${[
