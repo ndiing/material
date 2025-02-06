@@ -12,14 +12,13 @@ class DemoLayoutBorder extends MdComponent {
         return html`
             <div
                 class="md-layout"
-                style="height:100%;min-height:0;"
             >
                 <div class="md-layout__border">
-                    <div class="md-layout__north">north</div>
-                    <div class="md-layout__east">east</div>
-                    <div class="md-layout__south">south</div>
-                    <div class="md-layout__west">west</div>
-                    <div class="md-layout__center">center</div>
+                    <div class="demo-layout__region md-layout__north">North</div>
+                    <div class="demo-layout__region md-layout__east">East</div>
+                    <div class="demo-layout__region md-layout__south">South</div>
+                    <div class="demo-layout__region md-layout__west">West</div>
+                    <div class="demo-layout__region md-layout__center">Center</div>
                 </div>
             </div>
         `;
