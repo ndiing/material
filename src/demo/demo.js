@@ -8,21 +8,27 @@ Router.use([
         children: [
             { path: "layout-grid", load: () => import("./layout-grid/layout-grid.js").then((m) => m.default) },
             { path: "layout-border", load: () => import("./layout-border/layout-border.js").then((m) => m.default) },
+
             { path: "icon", load: () => import("./icon/icon.js").then((m) => m.default) },
             { path: "image", load: () => import("./image/image.js").then((m) => m.default) },
+
             { path: "badge", load: () => import("./badge/badge.js").then((m) => m.default) },
             { path: "badge-large", load: () => import("./badge/badge-large.js").then((m) => m.default) },
             { path: "badge-large-with-max", load: () => import("./badge/badge-large-with-max.js").then((m) => m.default) },
+
             { path: "button", load: () => import("./button/button.js").then((m) => m.default) },
             { path: "button-elevated", load: () => import("./button/button-elevated.js").then((m) => m.default) },
             { path: "button-filled", load: () => import("./button/button-filled.js").then((m) => m.default) },
             { path: "button-filled-tonal", load: () => import("./button/button-filled-tonal.js").then((m) => m.default) },
             { path: "button-outlined", load: () => import("./button/button-outlined.js").then((m) => m.default) },
+            
             { path: "fab", load: () => import("./fab/fab.js").then((m) => m.default) },
             { path: "fab-small", load: () => import("./fab/fab-small.js").then((m) => m.default) },
             { path: "fab-large", load: () => import("./fab/fab-large.js").then((m) => m.default) },
+
             { path: "fab-extended", load: () => import("./fab/fab-extended.js").then((m) => m.default) },
             { path: "fab-extended-without-icon", load: () => import("./fab/fab-extended-without-icon.js").then((m) => m.default) },
+            
             { path: "icon-button", load: () => import("./icon-button/icon-button.js").then((m) => m.default) },
             { path: "segmented-button", load: () => import("./segmented-button/segmented-button.js").then((m) => m.default) },
             { path: "checkbox", load: () => import("./checkbox/checkbox.js").then((m) => m.default) },

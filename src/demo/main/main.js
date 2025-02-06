@@ -150,7 +150,8 @@ class DemoMain extends MdComponent {
                 <md-top-app-bar
                     class="demo-main-top-app-bar"
                     open
-                    label="Material 3"
+                    label="Material Design"
+                    sublabel="Version 0.55.0"
                     .leadingActions="${this.leadingActions}"
                     @onTopAppBarIconButtonClick="${() => mainNavigationDrawer.toggle()}"
                 ></md-top-app-bar>
