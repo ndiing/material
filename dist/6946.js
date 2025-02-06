@@ -1,1 +1,437 @@
-"use strict";(self.webpackChunk_ndiinginc_material=self.webpackChunk_ndiinginc_material||[]).push([[6946],{6946:(t,e,n)=>{n.r(e),n.d(e,{default:()=>x});var r=n(6684),i=n(5376);function o(t){return o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},o(t)}function l(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=Array(e);n<e;n++)r[n]=t[n];return r}function s(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);e&&(r=r.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,r)}return n}function a(t,e,n){return(e=u(e))in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function c(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,u(r.key),r)}}function u(t){var e=function(t){if("object"!=o(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var n=e.call(t,"string");if("object"!=o(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(t)}(t);return"symbol"==o(e)?e:e+""}var d=function(){return t=function t(e){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.host=e,this.options=function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?s(Object(n),!0).forEach((function(e){a(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):s(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}({axis:["x","y"],handles:["n","e","s","w","nw","ne","sw","se"]},n),this.init()},(e=[{key:"handlePointerdown",value:function(t){var e,n;this.handle=t.target.closest(".md-resizable__handle")&&t.target.className.match(/--(\w+)/)[1],document.body.classList.add("md-resizable--resize"),window.addEventListener("pointermove",this.handlePointermove),window.addEventListener("pointerup",this.handlePointerup),this.endX=null!==(e=this.endX)&&void 0!==e?e:0,this.endY=null!==(n=this.endY)&&void 0!==n?n:0,this.startX=t.clientX-this.endX,this.startY=t.clientY-this.endY,this.startWidth=this.host.clientWidth,this.startHeight=this.host.clientHeight,this.emit("onMovablePointerdown")}},{key:"handlePointermove",value:function(t){var e,n,r,i,o=t.clientX-this.startX,l=t.clientY-this.startY;this.handle?("e"!==this.handle&&"ne"!==this.handle&&"se"!==this.handle||(this.currentWidth=this.startWidth+o-this.endX),"w"!==this.handle&&"sw"!==this.handle&&"nw"!==this.handle||(this.currentX=o,this.currentWidth=this.startWidth-o+this.endX),"s"!==this.handle&&"se"!==this.handle&&"sw"!==this.handle||(this.currentHeight=this.startHeight+l-this.endY),"n"!==this.handle&&"ne"!==this.handle&&"nw"!==this.handle||(this.currentY=l,this.currentHeight=this.startHeight-l+this.endY)):(this.options.axis.includes("x")&&(this.currentX=o),this.options.axis.includes("y")&&(this.currentY=l)),this.host.style.setProperty("position","relative"),this.host.style.setProperty("left",(null!==(e=this.currentX)&&void 0!==e?e:0)+"px"),this.host.style.setProperty("top",(null!==(n=this.currentY)&&void 0!==n?n:0)+"px"),this.host.style.setProperty("width",(null!==(r=this.currentWidth)&&void 0!==r?r:this.startWidth)+"px"),this.host.style.setProperty("height",(null!==(i=this.currentHeight)&&void 0!==i?i:this.startHeight)+"px"),this.emit("onMovablePointermove")}},{key:"handlePointerup",value:function(t){this.endX=this.currentX,this.endY=this.currentY,document.body.classList.remove("md-resizable--resize"),window.removeEventListener("pointermove",this.handlePointermove),window.removeEventListener("pointerup",this.handlePointerup),this.emit("onMovablePointerup")}},{key:"emit",value:function(t,e){var n=new CustomEvent(t,{bubbles:!0,cancelable:!0,detail:e});this.host.dispatchEvent(n)}},{key:"init",value:function(){var t="";t+='<div class="md-resizable">';var e,n=function(t,e){var n="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!n){if(Array.isArray(t)||(n=function(t,e){if(t){if("string"==typeof t)return l(t,e);var n={}.toString.call(t).slice(8,-1);return"Object"===n&&t.constructor&&(n=t.constructor.name),"Map"===n||"Set"===n?Array.from(t):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?l(t,e):void 0}}(t))||e&&t&&"number"==typeof t.length){n&&(t=n);var r=0,i=function(){};return{s:i,n:function(){return r>=t.length?{done:!0}:{done:!1,value:t[r++]}},e:function(t){throw t},f:i}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var o,s=!0,a=!1;return{s:function(){n=n.call(t)},n:function(){var t=n.next();return s=t.done,t},e:function(t){a=!0,o=t},f:function(){try{s||null==n.return||n.return()}finally{if(a)throw o}}}}(this.options.handles);try{for(n.s();!(e=n.n()).done;){var r=e.value;t+='<div class="md-resizable__handle md-resizable__handle--'.concat(r,'"></div>')}}catch(t){n.e(t)}finally{n.f()}t+="</div>",this.host.insertAdjacentHTML("afterbegin",t),this.handlePointerdown=this.handlePointerdown.bind(this),this.handlePointermove=this.handlePointermove.bind(this),this.handlePointerup=this.handlePointerup.bind(this),this.host.addEventListener("pointerdown",this.handlePointerdown)}},{key:"destroy",value:function(){}}])&&c(t.prototype,e),Object.defineProperty(t,"prototype",{writable:!1}),t;var t,e}();function h(t){return h="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},h(t)}function m(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);e&&(r=r.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,r)}return n}function v(t,e,n){return(e=y(e))in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function f(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,y(r.key),r)}}function y(t){var e=function(t){if("object"!=h(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var n=e.call(t,"string");if("object"!=h(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(t)}(t);return"symbol"==h(e)?e:e+""}var p,b,_=function(){return t=function t(e,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.host=e,this.options=function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?m(Object(n),!0).forEach((function(e){v(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):m(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}({total:void 0,rowHeight:56,nodePadding:2,viewportHeight:void 0},n),this.init()},(e=[{key:"handleScroll",value:function(t){var e,n=this.options.total,r=this.options.rowHeight,i=this.host.scrollTop,o=this.options.nodePadding,l=null!==(e=this.options.viewportHeight)&&void 0!==e?e:this.host.clientHeight,s=n*r,a=Math.floor(i/r)-o;a=Math.max(0,a);var c=Math.ceil(l/r)+2*o;c=Math.min(n-a,c);var u=a*r;this.track.style.setProperty("height",s+"px"),this.host.querySelectorAll(".md-virtual-scroll__item").forEach((function(t){t.style.setProperty("transform","translate3d(0,"+u+"px,0)")})),this.emit("onVirtualScroll",{containerHeight:s,start:a,end:c,translateY:u})}},{key:"emit",value:function(t,e){var n=new CustomEvent(t,{bubbles:!0,cancelable:!0,detail:e});this.host.dispatchEvent(n)}},{key:"init",value:function(){this.host.classList.add("md-virtual-scroll"),this.track=document.createElement("div"),this.track.classList.add("md-virtual-scroll__track"),this.host.append(this.track),this.handleScroll=this.handleScroll.bind(this),this.host.addEventListener("scroll",this.handleScroll),this.handleScroll()}},{key:"destroy",value:function(){}}])&&f(t.prototype,e),Object.defineProperty(t,"prototype",{writable:!1}),t;var t,e}();function w(t){return w="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},w(t)}function g(t,e){return e||(e=t.slice(0)),Object.freeze(Object.defineProperties(t,{raw:{value:Object.freeze(e)}}))}function P(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,O(r.key),r)}}function O(t){var e=function(t){if("object"!=w(t)||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var n=e.call(t,"string");if("object"!=w(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(t)}(t);return"symbol"==w(e)?e:e+""}function j(){try{var t=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){})))}catch(t){}return(j=function(){return!!t})()}function S(t){return S=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t)},S(t)}function E(t,e){return E=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t},E(t,e)}var k=function(t){function e(){return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e),function(t,e,n){return e=S(e),function(t,e){if(e&&("object"==w(e)||"function"==typeof e))return e;if(void 0!==e)throw new TypeError("Derived constructors may only return object or undefined");return function(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t)}(t,j()?Reflect.construct(e,n||[],S(t).constructor):e.apply(t,n))}(this,e,arguments)}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&E(t,e)}(e,t),n=e,(i=[{key:"render",value:function(){return(0,r.qy)(p||(p=g(['\n            <div class="md-layout">\n                <div class="md-layout__grid">\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-movable"></div>\n                    </div>\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-movable"></div>\n                    </div>\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-movable"></div>\n                    </div>\n\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-virtual-scroll ">\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                        </div>\n                    </div>\n\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="screen">',"</div>\n                    </div>\n                </div>\n            </div>\n        "])),Array.from({length:50},(function(){return(0,r.qy)(b||(b=g(['<div class="window"></div>'])))})))}},{key:"firstUpdated",value:function(){document.querySelectorAll(".demo-movable").forEach((function(t){new d(t)})),document.querySelectorAll(".demo-virtual-scroll").forEach((function(t){t.addEventListener("onVirtualScroll",console.log),new _(t,{total:1e3})}))}}])&&P(n.prototype,i),Object.defineProperty(n,"prototype",{writable:!1}),n;var n,i}(i.$);customElements.define("demo-test",k);const x=document.createElement("demo-test")}}]);
+"use strict";
+(self.webpackChunk_ndiinginc_material = self.webpackChunk_ndiinginc_material || []).push([
+    [6946],
+    {
+        6946: (t, e, n) => {
+            n.r(e), n.d(e, { default: () => x });
+            var r = n(6684),
+                i = n(5376);
+            function o(t) {
+                return (
+                    (o =
+                        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                            ? function (t) {
+                                  return typeof t;
+                              }
+                            : function (t) {
+                                  return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
+                              }),
+                    o(t)
+                );
+            }
+            function l(t, e) {
+                (null == e || e > t.length) && (e = t.length);
+                for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
+                return r;
+            }
+            function s(t, e) {
+                var n = Object.keys(t);
+                if (Object.getOwnPropertySymbols) {
+                    var r = Object.getOwnPropertySymbols(t);
+                    e &&
+                        (r = r.filter(function (e) {
+                            return Object.getOwnPropertyDescriptor(t, e).enumerable;
+                        })),
+                        n.push.apply(n, r);
+                }
+                return n;
+            }
+            function a(t, e, n) {
+                return (e = u(e)) in t ? Object.defineProperty(t, e, { value: n, enumerable: !0, configurable: !0, writable: !0 }) : (t[e] = n), t;
+            }
+            function c(t, e) {
+                for (var n = 0; n < e.length; n++) {
+                    var r = e[n];
+                    (r.enumerable = r.enumerable || !1), (r.configurable = !0), "value" in r && (r.writable = !0), Object.defineProperty(t, u(r.key), r);
+                }
+            }
+            function u(t) {
+                var e = (function (t) {
+                    if ("object" != o(t) || !t) return t;
+                    var e = t[Symbol.toPrimitive];
+                    if (void 0 !== e) {
+                        var n = e.call(t, "string");
+                        if ("object" != o(n)) return n;
+                        throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return String(t);
+                })(t);
+                return "symbol" == o(e) ? e : e + "";
+            }
+            var d = (function () {
+                return (
+                    (t = function t(e) {
+                        var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                        !(function (t, e) {
+                            if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+                        })(this, t),
+                            (this.host = e),
+                            (this.options = (function (t) {
+                                for (var e = 1; e < arguments.length; e++) {
+                                    var n = null != arguments[e] ? arguments[e] : {};
+                                    e % 2
+                                        ? s(Object(n), !0).forEach(function (e) {
+                                              a(t, e, n[e]);
+                                          })
+                                        : Object.getOwnPropertyDescriptors
+                                          ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n))
+                                          : s(Object(n)).forEach(function (e) {
+                                                Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
+                                            });
+                                }
+                                return t;
+                            })({ axis: ["x", "y"], handles: ["n", "e", "s", "w", "nw", "ne", "sw", "se"] }, n)),
+                            this.init();
+                    }),
+                    (e = [
+                        {
+                            key: "handlePointerdown",
+                            value: function (t) {
+                                var e, n;
+                                (this.handle = t.target.closest(".md-resizable__handle") && t.target.className.match(/--(\w+)/)[1]), document.body.classList.add("md-resizable--resize"), window.addEventListener("pointermove", this.handlePointermove), window.addEventListener("pointerup", this.handlePointerup), (this.endX = null !== (e = this.endX) && void 0 !== e ? e : 0), (this.endY = null !== (n = this.endY) && void 0 !== n ? n : 0), (this.startX = t.clientX - this.endX), (this.startY = t.clientY - this.endY), (this.startWidth = this.host.clientWidth), (this.startHeight = this.host.clientHeight), this.emit("onMovablePointerdown");
+                            },
+                        },
+                        {
+                            key: "handlePointermove",
+                            value: function (t) {
+                                var e,
+                                    n,
+                                    r,
+                                    i,
+                                    o = t.clientX - this.startX,
+                                    l = t.clientY - this.startY;
+                                this.handle ? (("e" !== this.handle && "ne" !== this.handle && "se" !== this.handle) || (this.currentWidth = this.startWidth + o - this.endX), ("w" !== this.handle && "sw" !== this.handle && "nw" !== this.handle) || ((this.currentX = o), (this.currentWidth = this.startWidth - o + this.endX)), ("s" !== this.handle && "se" !== this.handle && "sw" !== this.handle) || (this.currentHeight = this.startHeight + l - this.endY), ("n" !== this.handle && "ne" !== this.handle && "nw" !== this.handle) || ((this.currentY = l), (this.currentHeight = this.startHeight - l + this.endY))) : (this.options.axis.includes("x") && (this.currentX = o), this.options.axis.includes("y") && (this.currentY = l)), this.host.style.setProperty("position", "relative"), this.host.style.setProperty("left", (null !== (e = this.currentX) && void 0 !== e ? e : 0) + "px"), this.host.style.setProperty("top", (null !== (n = this.currentY) && void 0 !== n ? n : 0) + "px"), this.host.style.setProperty("width", (null !== (r = this.currentWidth) && void 0 !== r ? r : this.startWidth) + "px"), this.host.style.setProperty("height", (null !== (i = this.currentHeight) && void 0 !== i ? i : this.startHeight) + "px"), this.emit("onMovablePointermove");
+                            },
+                        },
+                        {
+                            key: "handlePointerup",
+                            value: function (t) {
+                                (this.endX = this.currentX), (this.endY = this.currentY), document.body.classList.remove("md-resizable--resize"), window.removeEventListener("pointermove", this.handlePointermove), window.removeEventListener("pointerup", this.handlePointerup), this.emit("onMovablePointerup");
+                            },
+                        },
+                        {
+                            key: "emit",
+                            value: function (t, e) {
+                                var n = new CustomEvent(t, { bubbles: !0, cancelable: !0, detail: e });
+                                this.host.dispatchEvent(n);
+                            },
+                        },
+                        {
+                            key: "init",
+                            value: function () {
+                                var t = "";
+                                t += '<div class="md-resizable">';
+                                var e,
+                                    n = (function (t, e) {
+                                        var n = ("undefined" != typeof Symbol && t[Symbol.iterator]) || t["@@iterator"];
+                                        if (!n) {
+                                            if (
+                                                Array.isArray(t) ||
+                                                (n = (function (t, e) {
+                                                    if (t) {
+                                                        if ("string" == typeof t) return l(t, e);
+                                                        var n = {}.toString.call(t).slice(8, -1);
+                                                        return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? l(t, e) : void 0;
+                                                    }
+                                                })(t)) ||
+                                                (e && t && "number" == typeof t.length)
+                                            ) {
+                                                n && (t = n);
+                                                var r = 0,
+                                                    i = function () {};
+                                                return {
+                                                    s: i,
+                                                    n: function () {
+                                                        return r >= t.length ? { done: !0 } : { done: !1, value: t[r++] };
+                                                    },
+                                                    e: function (t) {
+                                                        throw t;
+                                                    },
+                                                    f: i,
+                                                };
+                                            }
+                                            throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+                                        }
+                                        var o,
+                                            s = !0,
+                                            a = !1;
+                                        return {
+                                            s: function () {
+                                                n = n.call(t);
+                                            },
+                                            n: function () {
+                                                var t = n.next();
+                                                return (s = t.done), t;
+                                            },
+                                            e: function (t) {
+                                                (a = !0), (o = t);
+                                            },
+                                            f: function () {
+                                                try {
+                                                    s || null == n.return || n.return();
+                                                } finally {
+                                                    if (a) throw o;
+                                                }
+                                            },
+                                        };
+                                    })(this.options.handles);
+                                try {
+                                    for (n.s(); !(e = n.n()).done; ) {
+                                        var r = e.value;
+                                        t += '<div class="md-resizable__handle md-resizable__handle--'.concat(r, '"></div>');
+                                    }
+                                } catch (t) {
+                                    n.e(t);
+                                } finally {
+                                    n.f();
+                                }
+                                (t += "</div>"), this.host.insertAdjacentHTML("afterbegin", t), (this.handlePointerdown = this.handlePointerdown.bind(this)), (this.handlePointermove = this.handlePointermove.bind(this)), (this.handlePointerup = this.handlePointerup.bind(this)), this.host.addEventListener("pointerdown", this.handlePointerdown);
+                            },
+                        },
+                        { key: "destroy", value: function () {} },
+                    ]) && c(t.prototype, e),
+                    Object.defineProperty(t, "prototype", { writable: !1 }),
+                    t
+                );
+                var t, e;
+            })();
+            function h(t) {
+                return (
+                    (h =
+                        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                            ? function (t) {
+                                  return typeof t;
+                              }
+                            : function (t) {
+                                  return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
+                              }),
+                    h(t)
+                );
+            }
+            function m(t, e) {
+                var n = Object.keys(t);
+                if (Object.getOwnPropertySymbols) {
+                    var r = Object.getOwnPropertySymbols(t);
+                    e &&
+                        (r = r.filter(function (e) {
+                            return Object.getOwnPropertyDescriptor(t, e).enumerable;
+                        })),
+                        n.push.apply(n, r);
+                }
+                return n;
+            }
+            function v(t, e, n) {
+                return (e = y(e)) in t ? Object.defineProperty(t, e, { value: n, enumerable: !0, configurable: !0, writable: !0 }) : (t[e] = n), t;
+            }
+            function f(t, e) {
+                for (var n = 0; n < e.length; n++) {
+                    var r = e[n];
+                    (r.enumerable = r.enumerable || !1), (r.configurable = !0), "value" in r && (r.writable = !0), Object.defineProperty(t, y(r.key), r);
+                }
+            }
+            function y(t) {
+                var e = (function (t) {
+                    if ("object" != h(t) || !t) return t;
+                    var e = t[Symbol.toPrimitive];
+                    if (void 0 !== e) {
+                        var n = e.call(t, "string");
+                        if ("object" != h(n)) return n;
+                        throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return String(t);
+                })(t);
+                return "symbol" == h(e) ? e : e + "";
+            }
+            var p,
+                b,
+                _ = (function () {
+                    return (
+                        (t = function t(e, n) {
+                            !(function (t, e) {
+                                if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+                            })(this, t),
+                                (this.host = e),
+                                (this.options = (function (t) {
+                                    for (var e = 1; e < arguments.length; e++) {
+                                        var n = null != arguments[e] ? arguments[e] : {};
+                                        e % 2
+                                            ? m(Object(n), !0).forEach(function (e) {
+                                                  v(t, e, n[e]);
+                                              })
+                                            : Object.getOwnPropertyDescriptors
+                                              ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n))
+                                              : m(Object(n)).forEach(function (e) {
+                                                    Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
+                                                });
+                                    }
+                                    return t;
+                                })({ total: void 0, rowHeight: 56, nodePadding: 2, viewportHeight: void 0 }, n)),
+                                this.init();
+                        }),
+                        (e = [
+                            {
+                                key: "handleScroll",
+                                value: function (t) {
+                                    var e,
+                                        n = this.options.total,
+                                        r = this.options.rowHeight,
+                                        i = this.host.scrollTop,
+                                        o = this.options.nodePadding,
+                                        l = null !== (e = this.options.viewportHeight) && void 0 !== e ? e : this.host.clientHeight,
+                                        s = n * r,
+                                        a = Math.floor(i / r) - o;
+                                    a = Math.max(0, a);
+                                    var c = Math.ceil(l / r) + 2 * o;
+                                    c = Math.min(n - a, c);
+                                    var u = a * r;
+                                    this.track.style.setProperty("height", s + "px"),
+                                        this.host.querySelectorAll(".md-virtual-scroll__item").forEach(function (t) {
+                                            t.style.setProperty("transform", "translate3d(0," + u + "px,0)");
+                                        }),
+                                        this.emit("onVirtualScroll", { containerHeight: s, start: a, end: c, translateY: u });
+                                },
+                            },
+                            {
+                                key: "emit",
+                                value: function (t, e) {
+                                    var n = new CustomEvent(t, { bubbles: !0, cancelable: !0, detail: e });
+                                    this.host.dispatchEvent(n);
+                                },
+                            },
+                            {
+                                key: "init",
+                                value: function () {
+                                    this.host.classList.add("md-virtual-scroll"), (this.track = document.createElement("div")), this.track.classList.add("md-virtual-scroll__track"), this.host.append(this.track), (this.handleScroll = this.handleScroll.bind(this)), this.host.addEventListener("scroll", this.handleScroll), this.handleScroll();
+                                },
+                            },
+                            { key: "destroy", value: function () {} },
+                        ]) && f(t.prototype, e),
+                        Object.defineProperty(t, "prototype", { writable: !1 }),
+                        t
+                    );
+                    var t, e;
+                })();
+            function w(t) {
+                return (
+                    (w =
+                        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                            ? function (t) {
+                                  return typeof t;
+                              }
+                            : function (t) {
+                                  return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
+                              }),
+                    w(t)
+                );
+            }
+            function g(t, e) {
+                return e || (e = t.slice(0)), Object.freeze(Object.defineProperties(t, { raw: { value: Object.freeze(e) } }));
+            }
+            function P(t, e) {
+                for (var n = 0; n < e.length; n++) {
+                    var r = e[n];
+                    (r.enumerable = r.enumerable || !1), (r.configurable = !0), "value" in r && (r.writable = !0), Object.defineProperty(t, O(r.key), r);
+                }
+            }
+            function O(t) {
+                var e = (function (t) {
+                    if ("object" != w(t) || !t) return t;
+                    var e = t[Symbol.toPrimitive];
+                    if (void 0 !== e) {
+                        var n = e.call(t, "string");
+                        if ("object" != w(n)) return n;
+                        throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return String(t);
+                })(t);
+                return "symbol" == w(e) ? e : e + "";
+            }
+            function j() {
+                try {
+                    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+                } catch (t) {}
+                return (j = function () {
+                    return !!t;
+                })();
+            }
+            function S(t) {
+                return (
+                    (S = Object.setPrototypeOf
+                        ? Object.getPrototypeOf.bind()
+                        : function (t) {
+                              return t.__proto__ || Object.getPrototypeOf(t);
+                          }),
+                    S(t)
+                );
+            }
+            function E(t, e) {
+                return (
+                    (E = Object.setPrototypeOf
+                        ? Object.setPrototypeOf.bind()
+                        : function (t, e) {
+                              return (t.__proto__ = e), t;
+                          }),
+                    E(t, e)
+                );
+            }
+            var k = (function (t) {
+                function e() {
+                    return (
+                        (function (t, e) {
+                            if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+                        })(this, e),
+                        (function (t, e, n) {
+                            return (
+                                (e = S(e)),
+                                (function (t, e) {
+                                    if (e && ("object" == w(e) || "function" == typeof e)) return e;
+                                    if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+                                    return (function (t) {
+                                        if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                                        return t;
+                                    })(t);
+                                })(t, j() ? Reflect.construct(e, n || [], S(t).constructor) : e.apply(t, n))
+                            );
+                        })(this, e, arguments)
+                    );
+                }
+                return (
+                    (function (t, e) {
+                        if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+                        (t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } })), Object.defineProperty(t, "prototype", { writable: !1 }), e && E(t, e);
+                    })(e, t),
+                    (n = e),
+                    (i = [
+                        {
+                            key: "render",
+                            value: function () {
+                                return (0, r.qy)(
+                                    p || (p = g(['\n            <div class="md-layout">\n                <div class="md-layout__grid">\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-movable"></div>\n                    </div>\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-movable"></div>\n                    </div>\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-movable"></div>\n                    </div>\n\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="demo-virtual-scroll ">\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                            <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>\n                        </div>\n                    </div>\n\n                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">\n                        <div class="screen">', "</div>\n                    </div>\n                </div>\n            </div>\n        "])),
+                                    Array.from({ length: 50 }, function () {
+                                        return (0, r.qy)(b || (b = g(['<div class="window"></div>'])));
+                                    }),
+                                );
+                            },
+                        },
+                        {
+                            key: "firstUpdated",
+                            value: function () {
+                                document.querySelectorAll(".demo-movable").forEach(function (t) {
+                                    new d(t);
+                                }),
+                                    document.querySelectorAll(".demo-virtual-scroll").forEach(function (t) {
+                                        t.addEventListener("onVirtualScroll", console.log), new _(t, { total: 1e3 });
+                                    });
+                            },
+                        },
+                    ]) && P(n.prototype, i),
+                    Object.defineProperty(n, "prototype", { writable: !1 }),
+                    n
+                );
+                var n, i;
+            })(i.$);
+            customElements.define("demo-test", k);
+            const x = document.createElement("demo-test");
+        },
+    },
+]);

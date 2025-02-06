@@ -76,14 +76,20 @@ class DemoMain extends MdComponent {
                     { label: "Modal", routerLink: "/sheet-modal" },
                 ],
             },
-            { label: "Side Sheet", children:[
-                { label: "Standard side sheet", routerLink: "/side-sheet" },
-                { label: "Modal side sheet", routerLink: "/side-sheet-modal" },
-            ] },
-            { label: "Bottom Sheet", children:[
-                { label: "Standard bottom sheet", routerLink: "/bottom-sheet" },
-                { label: "Modal bottom sheet", routerLink: "/bottom-sheet-modal" },
-            ] },
+            {
+                label: "Side Sheet",
+                children: [
+                    { label: "Standard side sheet", routerLink: "/side-sheet" },
+                    { label: "Modal side sheet", routerLink: "/side-sheet-modal" },
+                ],
+            },
+            {
+                label: "Bottom Sheet",
+                children: [
+                    { label: "Standard bottom sheet", routerLink: "/bottom-sheet" },
+                    { label: "Modal bottom sheet", routerLink: "/bottom-sheet-modal" },
+                ],
+            },
             { label: "List", routerLink: "/list" },
             { label: "Tooltip", routerLink: "/tooltip" },
             { label: "Tree", routerLink: "/tree" },
