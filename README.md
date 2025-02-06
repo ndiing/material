@@ -85,7 +85,9 @@
 <dt><a href="#MdSnackbarComponent">MdSnackbarComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
 <dd></dd>
 <dt><a href="#Store">Store</a></dt>
-<dd></dd>
+<dd><p>A simple data store class that provides sorting, searching, filtering,
+pagination, and range selection functionalities.</p>
+</dd>
 <dt><a href="#MdSwitchComponent">MdSwitchComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
 <dd></dd>
 <dt><a href="#MdTabComponent">MdTabComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
@@ -1866,108 +1868,146 @@ Initializes the router with routes and options
 <a name="Store"></a>
 
 ## Store
+A simple data store class that provides sorting, searching, filtering,
+pagination, and range selection functionalities.
+
 **Kind**: global class  
 
 * [Store](#Store)
     * [new Store([data], [options])](#new_Store_new)
-    * [.sort([data], [sorters])](#Store+sort)
-    * [.deepSearch([item], [q])](#Store+deepSearch)
-    * [.search([data], [q])](#Store+search)
-    * [.getNestedValue([item], [name])](#Store+getNestedValue)
-    * [.filter([data], [filters])](#Store+filter)
-    * [.range([data], [_start], [_end])](#Store+range)
-    * [.paginate([data], [_page], [_limit])](#Store+paginate)
-    * [.get([options])](#Store+get)
+    * [.sort(data, [sorters])](#Store+sort) ⇒ <code>Array.&lt;Object&gt;</code>
+    * [.deepSearch(item, q)](#Store+deepSearch) ⇒ <code>boolean</code>
+    * [.search(data, q)](#Store+search) ⇒ <code>Array.&lt;Object&gt;</code>
+    * [.getNestedValue(item, name)](#Store+getNestedValue) ⇒ <code>\*</code>
+    * [.filter(data, filters)](#Store+filter) ⇒ <code>Array.&lt;Object&gt;</code>
+    * [.range(data, _start, _end)](#Store+range) ⇒ <code>Array.&lt;Object&gt;</code>
+    * [.paginate(data, _page, _limit)](#Store+paginate) ⇒ <code>Array.&lt;Object&gt;</code>
+    * [.get([options])](#Store+get) ⇒ <code>Promise.&lt;{data: Array.&lt;Object&gt;, total: number}&gt;</code>
 
 <a name="new_Store_new"></a>
 
 ### new Store([data], [options])
+Creates an instance of Store.
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [data] | <code>Object</code> | <code>[]</code> | 
-| [options] | <code>Object</code> | <code>{}</code> | 
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [data] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> | The initial dataset. |
+| [options] | <code>Object</code> | <code>{}</code> | Additional store options. |
 
 <a name="Store+sort"></a>
 
-### store.sort([data], [sorters])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.sort(data, [sorters]) ⇒ <code>Array.&lt;Object&gt;</code>
+Sorts the data based on the given sorter.
 
-| Param | Type |
-| --- | --- |
-| [data] | <code>Object</code> | 
-| [sorters] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>Array.&lt;Object&gt;</code> - - The sorted dataset.  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| data | <code>Array.&lt;Object&gt;</code> |  | The dataset to sort. |
+| [sorters] | <code>Object</code> |  | The sorting criteria. |
+| [sorters.name] | <code>string</code> |  | The field name to sort by. |
+| [sorters.order] | <code>string</code> | <code>&quot;\&quot;asc\&quot;&quot;</code> | The sorting order ('asc' or 'desc'). |
 
 <a name="Store+deepSearch"></a>
 
-### store.deepSearch([item], [q])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.deepSearch(item, q) ⇒ <code>boolean</code>
+Performs a deep search within an item.
 
-| Param | Type |
-| --- | --- |
-| [item] | <code>String</code> | 
-| [q] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>boolean</code> - - Whether the item matches the query.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>\*</code> | The item to search within. |
+| q | <code>string</code> | The query string. |
 
 <a name="Store+search"></a>
 
-### store.search([data], [q])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.search(data, q) ⇒ <code>Array.&lt;Object&gt;</code>
+Searches the dataset based on the given query string.
 
-| Param | Type |
-| --- | --- |
-| [data] | <code>Object</code> | 
-| [q] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>Array.&lt;Object&gt;</code> - - The filtered dataset.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;Object&gt;</code> | The dataset to search. |
+| q | <code>string</code> | The search query. |
 
 <a name="Store+getNestedValue"></a>
 
-### store.getNestedValue([item], [name])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.getNestedValue(item, name) ⇒ <code>\*</code>
+Retrieves a nested value from an object using dot notation.
 
-| Param | Type |
-| --- | --- |
-| [item] | <code>String</code> | 
-| [name] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>\*</code> - - The retrieved value or undefined.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>Object</code> | The object to retrieve value from. |
+| name | <code>string</code> | The dot-notation key (e.g., "user.name"). |
 
 <a name="Store+filter"></a>
 
-### store.filter([data], [filters])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.filter(data, filters) ⇒ <code>Array.&lt;Object&gt;</code>
+Filters the dataset based on specified filter conditions.
 
-| Param | Type |
-| --- | --- |
-| [data] | <code>Object</code> | 
-| [filters] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>Array.&lt;Object&gt;</code> - - The filtered dataset.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;Object&gt;</code> | The dataset to filter. |
+| filters | <code>Array.&lt;Object&gt;</code> | The filter criteria. |
 
 <a name="Store+range"></a>
 
-### store.range([data], [_start], [_end])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.range(data, _start, _end) ⇒ <code>Array.&lt;Object&gt;</code>
+Retrieves a specific range of data.
 
-| Param | Type |
-| --- | --- |
-| [data] | <code>Object</code> | 
-| [_start] | <code>String</code> | 
-| [_end] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>Array.&lt;Object&gt;</code> - - The sliced dataset.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;Object&gt;</code> | The dataset. |
+| _start | <code>number</code> | The start index. |
+| _end | <code>number</code> | The end index. |
 
 <a name="Store+paginate"></a>
 
-### store.paginate([data], [_page], [_limit])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.paginate(data, _page, _limit) ⇒ <code>Array.&lt;Object&gt;</code>
+Paginates the dataset.
 
-| Param | Type |
-| --- | --- |
-| [data] | <code>Object</code> | 
-| [_page] | <code>String</code> | 
-| [_limit] | <code>String</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>Array.&lt;Object&gt;</code> - - The paginated dataset.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;Object&gt;</code> | The dataset. |
+| _page | <code>number</code> | The page number. |
+| _limit | <code>number</code> | The number of items per page. |
 
 <a name="Store+get"></a>
 
-### store.get([options])
-**Kind**: instance method of [<code>Store</code>](#Store)  
+### store.get([options]) ⇒ <code>Promise.&lt;{data: Array.&lt;Object&gt;, total: number}&gt;</code>
+Retrieves processed data based on provided options.
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [options] | <code>Object</code> | <code>{}</code> | 
+**Kind**: instance method of [<code>Store</code>](#Store)  
+**Returns**: <code>Promise.&lt;{data: Array.&lt;Object&gt;, total: number}&gt;</code> - - Processed data and total count.  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [options] | <code>Object</code> | <code>{}</code> | The retrieval options. |
+| [options.sorters] | <code>Object</code> |  | Sorting options. |
+| [options.q] | <code>string</code> |  | Search query. |
+| [options.filters] | <code>Array.&lt;Object&gt;</code> |  | Filtering options. |
+| [options._start] | <code>number</code> |  | Start index for range selection. |
+| [options._end] | <code>number</code> |  | End index for range selection. |
+| [options._page] | <code>number</code> |  | Page number for pagination. |
+| [options._limit] | <code>number</code> |  | Number of items per page. |
 
 <a name="MdSwitchComponent"></a>
 
