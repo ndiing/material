@@ -113,7 +113,7 @@
 <dl>
 <dt><a href="#RouterUseOptions">RouterUseOptions</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#RouterUseRoutes">RouterUseRoutes</a> : <code>Array</code></dt>
+<dt><a href="#RouterUseRoutes">RouterUseRoutes</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
@@ -2426,7 +2426,7 @@ Initializes the router with routes and options
 
 <a name="RouterUseRoutes"></a>
 
-## RouterUseRoutes : <code>Array</code>
+## RouterUseRoutes : <code>Object</code>
 **Kind**: global typedef  
 **Properties**
 

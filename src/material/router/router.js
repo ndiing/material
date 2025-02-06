@@ -227,7 +227,7 @@ class Router {
      */
 
     /**
-     * @typedef {Array} RouterUseRoutes
+     * @typedef {Object} RouterUseRoutes
      * @property {string} [path] - Route path
      * @property {Function} [load] - Component loading function
      * @property {Function} [beforeLoad] - Function executed before loading the route
