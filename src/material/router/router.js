@@ -1,9 +1,20 @@
 /**
+ * Router class for handling client-side navigation
+ *
+ * @fires Router#onRouterCurrentEntryChange
+ * @fires Router#onRouterNavigate
+ * @fires Router#onRouterNavigateError
+ * @fires Router#onRouterNavigateSuccess
  */
 class Router {
+    /**
+     * Holds route parameters extracted from URL
+     * @type {Object}
+     */
     static params = {};
 
     /**
+     * @private
      * @param {undefined} [pathname=this.pathname]
      * @param {undefined} [routes=this.routes]
      * @param {String} [parent=null]
@@ -31,6 +42,8 @@ class Router {
     }
 
     /**
+     * Get the current pathname, considering history API fallback
+     * @returns {string} The current pathname
      */
     static get pathname() {
         if (this.options.historyApiFallback) {
@@ -69,6 +82,7 @@ class Router {
     }
 
     /**
+     * @private
      * @param {String} [routes]
      */
     static removeComponent(routes) {
@@ -94,6 +108,7 @@ class Router {
     }
 
     /**
+     * @private
      * @async
      * @param {String} [container]
      * @param {String} [route]
@@ -125,6 +140,7 @@ class Router {
     }
 
     /**
+     * @private
      * @param {String} [route]
      */
     static setContainer(route) {
@@ -132,6 +148,7 @@ class Router {
     }
 
     /**
+     * @private
      * @async
      * @param {String} [route]
      */
@@ -156,6 +173,7 @@ class Router {
     }
 
     /**
+     * @private
      */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
@@ -163,7 +181,9 @@ class Router {
     }
 
     /**
-     * @param {String} [url]
+     * Navigates to a new URL
+     *
+     * @param {string} url - The URL to navigate to
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -186,6 +206,7 @@ class Router {
     }
 
     /**
+     * @private
      * @param {String} [type]
      * @param {String} [detail]
      */
@@ -201,23 +222,25 @@ class Router {
     static options = {};
 
     /**
-     * @typedef {Array} RouterUseRoutes
-     * @property {String} [path] 
-     * @property {Function} [load] 
-     * @property {Function} [beforeLoad] 
-     * @property {HTMLElement} [component] 
-     * @property {String} [outlet] 
-     * @property {RouterUseRoutes} [children] 
-    */
-
-    /**
      * @typedef {Object} RouterUseOptions
-     * @property {Boolean} [historyApiFallback=false]
-    */
+     * @property {boolean} [historyApiFallback=false] - Use history API fallback
+     */
 
     /**
-     * @param {RouterUseRoutes} [routes=[]]
-     * @param {RouterUseOptions} [options={}]
+     * @typedef {Array} RouterUseRoutes
+     * @property {string} [path] - Route path
+     * @property {Function} [load] - Component loading function
+     * @property {Function} [beforeLoad] - Function executed before loading the route
+     * @property {HTMLElement} [component] - Associated component
+     * @property {string} [outlet] - Outlet selector
+     * @property {RouterUseRoutes[]} [children] - Nested child routes
+     */
+
+    /**
+     * Initializes the router with routes and options
+     *
+     * @param {RouterUseRoutes[]} [routes=[]] - List of routes
+     * @param {RouterUseOptions} [options={}] - Router options
      */
     static use(routes = [], options = {}) {
         this.routes = routes;

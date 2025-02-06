@@ -70,7 +70,8 @@
 <dt><a href="#RippleController">RippleController</a></dt>
 <dd></dd>
 <dt><a href="#Router">Router</a></dt>
-<dd></dd>
+<dd><p>Router class for handling client-side navigation</p>
+</dd>
 <dt><a href="#MdScrimComponent">MdScrimComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
 <dd></dd>
 <dt><a href="#MdSegmentedButtonComponent">MdSegmentedButtonComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
@@ -110,9 +111,9 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#RouterUseRoutes">RouterUseRoutes</a> : <code>Array</code></dt>
-<dd></dd>
 <dt><a href="#RouterUseOptions">RouterUseOptions</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#RouterUseRoutes">RouterUseRoutes</a> : <code>Array</code></dt>
 <dd></dd>
 </dl>
 
@@ -1512,105 +1513,54 @@
 <a name="Router"></a>
 
 ## Router
+Router class for handling client-side navigation
+
 **Kind**: global class  
+**Emits**: <code>Router#event:onRouterCurrentEntryChange</code>, <code>Router#event:onRouterNavigate</code>, <code>Router#event:onRouterNavigateError</code>, <code>Router#event:onRouterNavigateSuccess</code>  
 
 * [Router](#Router)
-    * [.pathname](#Router.pathname)
-    * [.get([pathname], [routes], [parent], [result])](#Router.get)
-    * [.removeComponent([routes])](#Router.removeComponent)
-    * [.getOutlet([container], [route])](#Router.getOutlet)
-    * [.setContainer([route])](#Router.setContainer)
-    * [.loadComponent([route])](#Router.loadComponent)
-    * [.setController()](#Router.setController)
-    * [.navigate([url])](#Router.navigate)
-    * [.emit([type], [detail])](#Router.emit)
-    * [.use([routes], [options])](#Router.use)
+    * _instance_
+        * [.params](#Router+params) : <code>Object</code>
+    * _static_
+        * [.pathname](#Router.pathname) ⇒ <code>string</code>
+        * [.navigate(url)](#Router.navigate)
+        * [.use([routes], [options])](#Router.use)
 
+<a name="Router+params"></a>
+
+### router.params : <code>Object</code>
+Holds route parameters extracted from URL
+
+**Kind**: instance property of [<code>Router</code>](#Router)  
 <a name="Router.pathname"></a>
 
-### Router.pathname
+### Router.pathname ⇒ <code>string</code>
+Get the current pathname, considering history API fallback
+
 **Kind**: static property of [<code>Router</code>](#Router)  
-<a name="Router.get"></a>
-
-### Router.get([pathname], [routes], [parent], [result])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [pathname] | <code>undefined</code> | <code>this.pathname</code> | 
-| [routes] | <code>undefined</code> | <code>this.routes</code> | 
-| [parent] | <code>String</code> | <code></code> | 
-| [result] | <code>Array</code> | <code>[]</code> | 
-
-<a name="Router.removeComponent"></a>
-
-### Router.removeComponent([routes])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [routes] | <code>String</code> | 
-
-<a name="Router.getOutlet"></a>
-
-### Router.getOutlet([container], [route])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [container] | <code>String</code> | 
-| [route] | <code>String</code> | 
-
-<a name="Router.setContainer"></a>
-
-### Router.setContainer([route])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [route] | <code>String</code> | 
-
-<a name="Router.loadComponent"></a>
-
-### Router.loadComponent([route])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [route] | <code>String</code> | 
-
-<a name="Router.setController"></a>
-
-### Router.setController()
-**Kind**: static method of [<code>Router</code>](#Router)  
+**Returns**: <code>string</code> - The current pathname  
 <a name="Router.navigate"></a>
 
-### Router.navigate([url])
+### Router.navigate(url)
+Navigates to a new URL
+
 **Kind**: static method of [<code>Router</code>](#Router)  
 
-| Param | Type |
-| --- | --- |
-| [url] | <code>String</code> | 
-
-<a name="Router.emit"></a>
-
-### Router.emit([type], [detail])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>String</code> | 
-| [detail] | <code>String</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | The URL to navigate to |
 
 <a name="Router.use"></a>
 
 ### Router.use([routes], [options])
+Initializes the router with routes and options
+
 **Kind**: static method of [<code>Router</code>](#Router)  
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [routes] | [<code>RouterUseRoutes</code>](#RouterUseRoutes) | <code>[]</code> | 
-| [options] | [<code>RouterUseOptions</code>](#RouterUseOptions) | <code>{}</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [routes] | [<code>Array.&lt;RouterUseRoutes&gt;</code>](#RouterUseRoutes) | <code>[]</code> | List of routes |
+| [options] | [<code>RouterUseOptions</code>](#RouterUseOptions) | <code>{}</code> | Router options |
 
 <a name="MdScrimComponent"></a>
 
@@ -2464,28 +2414,28 @@
 
 ### virtualScroll.init()
 **Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-<a name="RouterUseRoutes"></a>
-
-## RouterUseRoutes : <code>Array</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| [path] | <code>String</code> | 
-| [load] | <code>function</code> | 
-| [beforeLoad] | <code>function</code> | 
-| [component] | <code>HTMLElement</code> | 
-| [outlet] | <code>String</code> | 
-| [children] | [<code>RouterUseRoutes</code>](#RouterUseRoutes) | 
-
 <a name="RouterUseOptions"></a>
 
 ## RouterUseOptions : <code>Object</code>
 **Kind**: global typedef  
 **Properties**
 
-| Name | Type | Default |
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| [historyApiFallback] | <code>boolean</code> | <code>false</code> | Use history API fallback |
+
+<a name="RouterUseRoutes"></a>
+
+## RouterUseRoutes : <code>Array</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
 | --- | --- | --- |
-| [historyApiFallback] | <code>Boolean</code> | <code>false</code> | 
+| [path] | <code>string</code> | Route path |
+| [load] | <code>function</code> | Component loading function |
+| [beforeLoad] | <code>function</code> | Function executed before loading the route |
+| [component] | <code>HTMLElement</code> | Associated component |
+| [outlet] | <code>string</code> | Outlet selector |
+| [children] | [<code>Array.&lt;RouterUseRoutes&gt;</code>](#RouterUseRoutes) | Nested child routes |
 
