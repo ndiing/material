@@ -201,8 +201,23 @@ class Router {
     static options = {};
 
     /**
-     * @param {Array} [routes=[]]
-     * @param {Object} [options={}]
+     * @typedef {Array} RouterUseRoutes
+     * @property {String} [path] 
+     * @property {Function} [load] 
+     * @property {Function} [beforeLoad] 
+     * @property {HTMLElement} [component] 
+     * @property {String} [outlet] 
+     * @property {RouterUseRoutes} [children] 
+    */
+
+    /**
+     * @typedef {Object} RouterUseOptions
+     * @property {Boolean} [historyApiFallback=false]
+    */
+
+    /**
+     * @param {RouterUseRoutes} [routes=[]]
+     * @param {RouterUseOptions} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
