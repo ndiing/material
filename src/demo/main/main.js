@@ -12,6 +12,22 @@ class DemoMain extends MdComponent {
         super();
         this.items = [
             {
+                label: "Bottom App Bar",
+                children: [
+                    { label: "Icon buttons and FAB", routerLink: "/bottom-app-bar" },
+                    { label: "Icon buttons and no FAB", routerLink: "/bottom-app-bar-no-fab" },
+                ],
+            },
+            { label: "Top App Bar", children: [{ label: "Small top app bar", routerLink: "/top-app-bar" }] },
+            {
+                label: "Badge",
+                children: [
+                    { label: "Small badge", routerLink: "/badge" },
+                    { label: "Large badge", routerLink: "/badge-large" },
+                    { label: "Large badge with max characters", routerLink: "/badge-large-with-max" },
+                ],
+            },
+            {
                 label: "Layout",
                 children: [
                     { label: "Grid", routerLink: "/layout-grid" },
@@ -20,9 +36,31 @@ class DemoMain extends MdComponent {
             },
             { label: "Icon", routerLink: "/icon" },
             { label: "Image", routerLink: "/image" },
-            { label: "Badge", routerLink: "/badge" },
-            { label: "Button", routerLink: "/button" },
-            { label: "Fab", routerLink: "/fab" },
+            {
+                label: "Button",
+                children: [
+                    { label: "Elevated button", routerLink: "/button-elevated" },
+                    { label: "Filled button", routerLink: "/button-filled" },
+                    { label: "Filled tonal button", routerLink: "/button-filled-tonal" },
+                    { label: "Outlined button", routerLink: "/button-outlined" },
+                    { label: "Text button", routerLink: "/button" },
+                ],
+            },
+            {
+                label: "FAB",
+                children: [
+                    { label: "FAB", routerLink: "/fab" },
+                    { label: "Small FAB", routerLink: "/fab-small" },
+                    { label: "Large FAB", routerLink: "/fab-large" },
+                ],
+            },
+            {
+                label: "Extended FAB",
+                children: [
+                    { label: "With icon", routerLink: "/fab-extended" },
+                    { label: "Without icon", routerLink: "/fab-extended-without-icon" },
+                ],
+            },
             { label: "Icon Button", routerLink: "/icon-button" },
             { label: "Segmented Button", routerLink: "/segmented-button" },
             { label: "Checkbox", routerLink: "/checkbox" },
@@ -36,17 +74,16 @@ class DemoMain extends MdComponent {
                 children: [
                     { label: "Default", routerLink: "/sheet" },
                     { label: "Modal", routerLink: "/sheet-modal" },
-                    { label: "Side Sheet", routerLink: "/side-sheet" },
-                    { label: "Side Sheet Modal", routerLink: "/side-sheet-modal" },
-                    { label: "Bottom Sheet", routerLink: "/bottom-sheet" },
-                    { label: "Bottom Sheet Modal", routerLink: "/bottom-sheet-modal" },
                 ],
             },
+            { label: "Side Sheet", routerLink: "/side-sheet" },
+            { label: "Side Sheet Modal", routerLink: "/side-sheet-modal" },
+            { label: "Bottom Sheet", routerLink: "/bottom-sheet" },
+            { label: "Bottom Sheet Modal", routerLink: "/bottom-sheet-modal" },
             { label: "List", routerLink: "/list" },
             { label: "Tooltip", routerLink: "/tooltip" },
             { label: "Tree", routerLink: "/tree" },
-            { label: "Bottom App Bar", routerLink: "/bottom-app-bar" },
-            { label: "Top App Bar", routerLink: "/top-app-bar" },
+
             // { label: "Navigation List", routerLink: "/navigation-list" },
             { label: "Tabs", routerLink: "/tabs" },
             {
@@ -121,9 +158,9 @@ class DemoMain extends MdComponent {
                     id="mainNavigationDrawer"
                     view="tree"
                     .items="${this.items}"
-                    modal
+                    open
                     @onTreeItemClick="${(event) => {
-                        if (event.detail.event.currentTarget.data.routerLink) mainNavigationDrawer.toggle();
+                        // if (event.detail.event.currentTarget.data.routerLink) mainNavigationDrawer.toggle();
                     }}"
                 ></md-navigation-drawer>
                 <md-sheet region="center">

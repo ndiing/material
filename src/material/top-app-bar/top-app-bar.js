@@ -8,8 +8,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick - {"detail":{"event":{}}}
  */
 class MdTopAppBarComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [leadingActions]
      * @property {String} [label]
@@ -24,14 +22,12 @@ class MdTopAppBarComponent extends MdComponent {
         trailingActions: { type: Array },
         open: { type: Boolean, reflect: true },
     };
-    
 
     /**
      */
     constructor() {
         super();
     }
-    
 
     /**
      * @private
@@ -51,7 +47,6 @@ class MdTopAppBarComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
-    
 
     /**
      * @private
@@ -59,7 +54,6 @@ class MdTopAppBarComponent extends MdComponent {
     render() {
         return html` ${this.leadingActions?.length ? html` <div class="md-top-app-bar__actions">${this.leadingActions.map((action) => this.renderIconButton(action))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-top-app-bar__labels">${this.label ? html`<div class="md-top-app-bar__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-top-app-bar__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.trailingActions?.length ? html` <div class="md-top-app-bar__actions">${this.trailingActions.map((action) => this.renderIconButton(action))}</div> ` : nothing} `;
     }
-    
 
     /**
      * @private
@@ -73,7 +67,6 @@ class MdTopAppBarComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
-    
 
     /**
      * @private
@@ -83,7 +76,6 @@ class MdTopAppBarComponent extends MdComponent {
         this.classList.remove("md-top-app-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
-    
 
     /**
      * @private
@@ -92,7 +84,6 @@ class MdTopAppBarComponent extends MdComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
     }
-    
 
     /**
      * @private
@@ -101,7 +92,6 @@ class MdTopAppBarComponent extends MdComponent {
     handleTopAppBarIconButtonClick(event) {
         this.emit("onTopAppBarIconButtonClick", { event });
     }
-    
 
     /**
      */
@@ -110,7 +100,6 @@ class MdTopAppBarComponent extends MdComponent {
         this.open = true;
         this.emit("onTopAppBarShown");
     }
-    
 
     /**
      */
@@ -119,7 +108,6 @@ class MdTopAppBarComponent extends MdComponent {
         this.open = false;
         this.emit("onTopAppBarClosed");
     }
-    
 
     /**
      */

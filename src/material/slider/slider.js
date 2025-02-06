@@ -9,8 +9,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdSliderComponent#onSliderNativeReset - {"detail":{"event":{}}}
  */
 class MdSliderComponent extends MdComponent {
-    
-
     /**
      * @property {Number} [min]
      * @property {Number} [max]
@@ -39,7 +37,6 @@ class MdSliderComponent extends MdComponent {
         },
     };
     variants = ["centered", "continuous", "discrete", "range-selection"];
-    
 
     /**
      */
@@ -49,7 +46,6 @@ class MdSliderComponent extends MdComponent {
         this.max = 100;
         this.step = 1;
     }
-    
 
     /**
      */
@@ -59,7 +55,6 @@ class MdSliderComponent extends MdComponent {
         else if (this.variant === "discrete") return this.max / this.step + 1;
         else if (this.variant === "range-selection") return 2;
     }
-    
 
     /**
      * @private
@@ -98,7 +93,6 @@ class MdSliderComponent extends MdComponent {
             </div>
         `;
     }
-    
 
     /**
      * @private
@@ -114,7 +108,6 @@ class MdSliderComponent extends MdComponent {
             />
         `;
     }
-    
 
     /**
      * @private
@@ -132,7 +125,6 @@ class MdSliderComponent extends MdComponent {
         else this.variant = "continuous";
         this.updateValue();
     }
-    
 
     /**
      * @private
@@ -146,14 +138,12 @@ class MdSliderComponent extends MdComponent {
             });
         }
     }
-    
 
     /**
      */
     get sliderNatives() {
         return this.querySelectorAll(".md-slider__native");
     }
-    
 
     /**
      * @private
@@ -172,7 +162,6 @@ class MdSliderComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onSliderNativeInput", { event });
     }
-    
 
     /**
      * @private
@@ -184,7 +173,6 @@ class MdSliderComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onSliderNativeReset", { event });
     }
-    
 
     /**
      */
@@ -193,7 +181,6 @@ class MdSliderComponent extends MdComponent {
             this.style.setProperty(`--md-comp-slider-value${index}`, this.percentage(value));
         });
     }
-    
 
     /**
      * @param {String} [value]

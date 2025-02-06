@@ -14,9 +14,9 @@ class DemoTopAppBar extends MdComponent {
                 <md-top-app-bar
                     open
                     id="topAppBar1"
-                    label="North"
-                    .leadingActions="${[{ icon: "image" }]}"
-                    .trailingActions="${[{ icon: "image" }, { icon: "image" }, { icon: "image" }]}"
+                    label="Title Large"
+                    .leadingActions="${[{ icon: "arrow_back" }]}"
+                    .trailingActions="${[{ icon: "attach_file" }, { icon: "today" }, { icon: "more_vert" }]}"
                 ></md-top-app-bar>
                 <md-sheet region="center">
                     <div class="md-layout">

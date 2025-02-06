@@ -7,8 +7,6 @@ import { styleMap } from "lit/directives/style-map.js";
  * @extends MdComponent
  */
 class MdImageComponent extends MdComponent {
-    
-
     /**
      * @property {String} [src]
      * @property {String} [alt]
@@ -21,14 +19,12 @@ class MdImageComponent extends MdComponent {
         ratio: { type: String },
         circular: { type: Boolean },
     };
-    
 
     /**
      */
     constructor() {
         super();
     }
-    
 
     /**
      */
@@ -45,7 +41,6 @@ class MdImageComponent extends MdComponent {
         }
         return style;
     }
-    
 
     /**
      * @private
@@ -60,7 +55,6 @@ class MdImageComponent extends MdComponent {
             />
         `;
     }
-    
 
     /**
      * @private

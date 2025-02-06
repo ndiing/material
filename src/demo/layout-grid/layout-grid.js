@@ -12,7 +12,6 @@ class DemoLayoutGrid extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="demo-layout__column md-layout__column--expanded1 md-layout__column--medium1 md-layout__column--compact1">1/1/1</div>
                     <div class="demo-layout__column md-layout__column--expanded11 md-layout__column--medium7 md-layout__column--compact3">11/7/3</div>
                     <div class="demo-layout__column md-layout__column--expanded2 md-layout__column--medium2 md-layout__column--compact1">2/2/1</div>
@@ -26,7 +25,6 @@ class DemoLayoutGrid extends MdComponent {
                     <div class="demo-layout__column md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact2">6/4/2</div>
                     <div class="demo-layout__column md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact2">6/4/2</div>
                     <div class="demo-layout__column md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4">12/8/4</div>
-
                 </div>
             </div>
         `;

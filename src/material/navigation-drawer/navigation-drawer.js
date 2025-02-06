@@ -9,8 +9,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MdNavigationDrawerComponent#onNavigationDrawerScrimClosed - {"detail":{"event":{}}}
  */
 class MdNavigationDrawerComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [icons]
      * @property {Array} [actions]
@@ -32,7 +30,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         view: { type: String },
     };
     views = ["flat", "tree"];
-    
 
     /**
      */
@@ -40,7 +37,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         super();
         this.view = "flat";
     }
-    
 
     /**
      * @private
@@ -49,7 +45,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
-    
 
     /**
      * @private
@@ -69,7 +64,6 @@ class MdNavigationDrawerComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
-    
 
     /**
      * @private
@@ -86,7 +80,6 @@ class MdNavigationDrawerComponent extends MdComponent {
             () => nothing,
         );
     }
-    
 
     /**
      * @private
@@ -99,7 +92,6 @@ class MdNavigationDrawerComponent extends MdComponent {
             </div>
         `;
     }
-    
 
     /**
      * @private
@@ -118,7 +110,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
-    
 
     /**
      * @private
@@ -130,7 +121,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.classList.remove("md-navigation-drawer");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
-    
 
     /**
      * @private
@@ -147,7 +137,6 @@ class MdNavigationDrawerComponent extends MdComponent {
             this.classList.toggle(`md-navigation-drawer--modal`, !!this.modal);
         }
     }
-    
 
     /**
      * @private
@@ -156,7 +145,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     handleNavigationDrawerIconButtonClick(event) {
         this.emit("onNavigationDrawerIconButtonClick", { event });
     }
-    
 
     /**
      */
@@ -166,7 +154,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.open = true;
         this.emit("onNavigationDrawerShown");
     }
-    
 
     /**
      */
@@ -176,7 +163,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
         this.emit("onNavigationDrawerClosed");
     }
-    
 
     /**
      */
@@ -184,7 +170,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         if (this.open) this.close();
         else this.show();
     }
-    
 
     /**
      * @private

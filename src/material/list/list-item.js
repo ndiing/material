@@ -8,8 +8,6 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdListItemComponent#onListItemSelected - {"detail":{"listItem":"this"}}
  */
 class MdListItemComponent extends MdComponent {
-    
-
     /**
      * @property {Boolean} [leadingCheckbox]
      * @property {Boolean} [leadingRadioButton]
@@ -50,7 +48,6 @@ class MdListItemComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
-    
 
     /**
      */
@@ -58,7 +55,6 @@ class MdListItemComponent extends MdComponent {
         super();
         this.rippleOptions = {};
     }
-    
 
     /**
      * @private
@@ -130,7 +126,6 @@ class MdListItemComponent extends MdComponent {
                 : nothing}
         `;
     }
-    
 
     /**
      * @private
@@ -150,7 +145,6 @@ class MdListItemComponent extends MdComponent {
         }
         this.ripple = new RippleController(this, this.rippleOptions);
     }
-    
 
     /**
      * @private

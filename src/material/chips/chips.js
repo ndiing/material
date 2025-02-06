@@ -8,8 +8,6 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdChipComponent#onChipClick - {"detail":{"event":{}}}
  */
 class MdChipComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [items]
      * @property {String} [type]
@@ -19,7 +17,6 @@ class MdChipComponent extends MdComponent {
         type: { type: String },
     };
     types = ["single-select", "multi-select"];
-    
 
     /**
      */
@@ -27,7 +24,6 @@ class MdChipComponent extends MdComponent {
         super();
         this.type = "single-select";
     }
-    
 
     /**
      * @private
@@ -47,7 +43,6 @@ class MdChipComponent extends MdComponent {
             ></md-chip>
         `;
     }
-    
 
     /**
      * @private
@@ -55,7 +50,6 @@ class MdChipComponent extends MdComponent {
     render() {
         return this.items.map((item) => this.renderChip(item));
     }
-    
 
     /**
      * @private
@@ -64,7 +58,6 @@ class MdChipComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-chips");
     }
-    
 
     /**
      * @private

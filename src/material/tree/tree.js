@@ -7,8 +7,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdTreeComponent#onTreeItemClick - {"detail":{"event":{}}}
  */
 class MdTreeComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [items]
      * @property {Array} [items2]
@@ -17,7 +15,6 @@ class MdTreeComponent extends MdComponent {
         items: { type: Array },
         items2: { type: Array },
     };
-    
 
     /**
      */
@@ -26,7 +23,6 @@ class MdTreeComponent extends MdComponent {
         this.items = [];
         this.items2 = [];
     }
-    
 
     /**
      * @private
@@ -51,7 +47,6 @@ class MdTreeComponent extends MdComponent {
             </md-tree-row>
         `;
     }
-    
 
     /**
      * @private
@@ -59,7 +54,6 @@ class MdTreeComponent extends MdComponent {
     render() {
         return this.items2.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
-    
 
     /**
      * @private
@@ -68,7 +62,6 @@ class MdTreeComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-tree");
     }
-    
 
     /**
      * @private
@@ -82,7 +75,6 @@ class MdTreeComponent extends MdComponent {
             this.items2 = this.flatten(this.items).items2;
         }
     }
-    
 
     /**
      * @param {Array} [items]
@@ -110,7 +102,6 @@ class MdTreeComponent extends MdComponent {
         });
         return { expanded, items2 };
     }
-    
 
     /**
      * @param {Object} [data]
@@ -122,7 +113,6 @@ class MdTreeComponent extends MdComponent {
             if (item.children?.length) this.toggle(item);
         });
     }
-    
 
     /**
      * @private

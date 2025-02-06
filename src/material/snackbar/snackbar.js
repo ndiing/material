@@ -20,8 +20,6 @@ const task = (() => {
  * @fires MdSnackbarComponent#onSnackbarButtonClick - {"detail":{"event":{}}}
  */
 class MdSnackbarComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [icons]
      * @property {Array} [actions]
@@ -34,7 +32,6 @@ class MdSnackbarComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
     };
-    
 
     /**
      */
@@ -42,7 +39,6 @@ class MdSnackbarComponent extends MdComponent {
         super();
         this.body = Array.from(this.childNodes);
     }
-    
 
     /**
      * @private
@@ -51,7 +47,6 @@ class MdSnackbarComponent extends MdComponent {
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
-    
 
     /**
      * @private
@@ -71,7 +66,6 @@ class MdSnackbarComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
-    
 
     /**
      * @private
@@ -91,7 +85,6 @@ class MdSnackbarComponent extends MdComponent {
             ></md-button>
         `;
     }
-    
 
     /**
      * @private
@@ -100,7 +93,6 @@ class MdSnackbarComponent extends MdComponent {
     renderSpacer(item) {
         return html` <div class="md-snackbar__spacer"></div> `;
     }
-    
 
     /**
      * @private
@@ -119,7 +111,6 @@ class MdSnackbarComponent extends MdComponent {
             () => nothing,
         );
     }
-    
 
     /**
      * @private
@@ -127,7 +118,6 @@ class MdSnackbarComponent extends MdComponent {
     render() {
         return html` ${this.body?.length ? html`<div class="md-snackbar__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-snackbar__footer">${this.buttons?.length ? html` <div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing} `;
     }
-    
 
     /**
      * @private
@@ -141,7 +131,6 @@ class MdSnackbarComponent extends MdComponent {
         this.style.setProperty("--md-comp-snackbar-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-snackbar-width", this.clientWidth + "px");
     }
-    
 
     /**
      * @private
@@ -150,7 +139,6 @@ class MdSnackbarComponent extends MdComponent {
         super.disconnectedCallback();
         this.classList.remove("md-snackbar");
     }
-    
 
     /**
      * @private
@@ -159,7 +147,6 @@ class MdSnackbarComponent extends MdComponent {
     handleSnackbarIconButtonClick(event) {
         this.emit("onSnackbarIconButtonClick", { event });
     }
-    
 
     /**
      * @private
@@ -168,7 +155,6 @@ class MdSnackbarComponent extends MdComponent {
     handleSnackbarButtonClick(event) {
         this.emit("onSnackbarButtonClick", { event });
     }
-    
 
     /**
      */
@@ -191,7 +177,6 @@ class MdSnackbarComponent extends MdComponent {
             });
         });
     }
-    
 
     /**
      */
@@ -206,7 +191,6 @@ class MdSnackbarComponent extends MdComponent {
         };
         this.addEventListener("animationend", callback);
     }
-    
 
     /**
      */

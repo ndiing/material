@@ -9,8 +9,6 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdCheckboxComponent#onCheckboxNativeReset - {"detail":{"event":{}}}
  */
 class MdCheckboxComponent extends MdComponent {
-    
-
     /**
      * @property {String} [name]
      * @property {String} [value]
@@ -23,7 +21,6 @@ class MdCheckboxComponent extends MdComponent {
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
     };
-    
 
     /**
      */
@@ -36,7 +33,6 @@ class MdCheckboxComponent extends MdComponent {
             radius: 40,
         });
     }
-    
 
     /**
      * @private
@@ -61,7 +57,6 @@ class MdCheckboxComponent extends MdComponent {
             </div>
         `;
     }
-    
 
     /**
      * @private
@@ -73,7 +68,6 @@ class MdCheckboxComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
     }
-    
 
     /**
      * @private
@@ -85,7 +79,6 @@ class MdCheckboxComponent extends MdComponent {
         this.checked = native.checked;
         this.emit("onCheckboxNativeInput", { event });
     }
-    
 
     /**
      * @private

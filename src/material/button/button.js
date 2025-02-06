@@ -7,8 +7,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @extends MdComponent
  */
 class MdButtonComponent extends MdComponent {
-    
-
     /**
      * @property {String} [icon]
      * @property {String} [label]
@@ -26,7 +24,6 @@ class MdButtonComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
     };
     variants = ["elevated", "filled", "filled-tonal", "outlined"];
-    
 
     /**
      */
@@ -37,7 +34,6 @@ class MdButtonComponent extends MdComponent {
             trigger: ".md-button__native",
         });
     }
-    
 
     /**
      * @private
@@ -53,7 +49,6 @@ class MdButtonComponent extends MdComponent {
             ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
         `;
     }
-    
 
     /**
      * @private
@@ -62,7 +57,6 @@ class MdButtonComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-button");
     }
-    
 
     /**
      * @private

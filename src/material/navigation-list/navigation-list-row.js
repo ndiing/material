@@ -5,8 +5,6 @@ import { MdComponent } from "../component/component";
  * @extends MdComponent
  */
 class MdNavigationListRowComponent extends MdComponent {
-    
-
     /**
      * @private
      */

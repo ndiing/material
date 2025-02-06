@@ -7,8 +7,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdSegmentedButtonComponent#onSegmentedButtonItemClick - {"detail":{"event":{}}}
  */
 class MdSegmentedButtonComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [items]
      * @property {String} [type]
@@ -18,7 +16,6 @@ class MdSegmentedButtonComponent extends MdComponent {
         type: { type: String },
     };
     types = ["single-select", "multi-select"];
-    
 
     /**
      */
@@ -27,7 +24,6 @@ class MdSegmentedButtonComponent extends MdComponent {
         this.items = [];
         this.type = "single-select";
     }
-    
 
     /**
      * @private
@@ -48,7 +44,6 @@ class MdSegmentedButtonComponent extends MdComponent {
             ></md-button>
         `;
     }
-    
 
     /**
      * @private
@@ -56,7 +51,6 @@ class MdSegmentedButtonComponent extends MdComponent {
     render() {
         return this.items.map((item) => this.renderButton(item));
     }
-    
 
     /**
      * @private
@@ -65,7 +59,6 @@ class MdSegmentedButtonComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-segmented-button");
     }
-    
 
     /**
      * @private

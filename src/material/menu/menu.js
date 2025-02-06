@@ -8,8 +8,6 @@ import { Popper } from "../popper/popper";
  * @extends MdComponent
  */
 class MdMenuComponent extends MdComponent {
-    
-
     /**
      * @property {Boolean} [open]
      * @property {Array} [items]
@@ -18,7 +16,6 @@ class MdMenuComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
     };
-    
 
     /**
      */
@@ -26,7 +23,6 @@ class MdMenuComponent extends MdComponent {
         super();
         this.items = [];
     }
-    
 
     /**
      * @private
@@ -34,7 +30,6 @@ class MdMenuComponent extends MdComponent {
     render() {
         return html` <md-navigation-list .items="${this.items}"></md-navigation-list> `;
     }
-    
 
     /**
      * @private
@@ -48,7 +43,6 @@ class MdMenuComponent extends MdComponent {
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
     }
-    
 
     /**
      * @private
@@ -57,7 +51,6 @@ class MdMenuComponent extends MdComponent {
         super.disconnectedCallback();
         this.classList.remove("md-menu");
     }
-    
 
     /**
      * @param {Object} [options={}]
@@ -74,7 +67,6 @@ class MdMenuComponent extends MdComponent {
         this.popper.show(options);
         this.emit("onMenuShown");
     }
-    
 
     /**
      */
@@ -83,7 +75,6 @@ class MdMenuComponent extends MdComponent {
         this.open = false;
         this.emit("onMenuClosed");
     }
-    
 
     /**
      * @param {String} [options]

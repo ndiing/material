@@ -10,8 +10,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MdSideSheetComponent#onSideSheetScrimClosed - {"detail":{"event":{}}}
  */
 class MdSideSheetComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [icons]
      * @property {Array} [actions]
@@ -30,7 +28,6 @@ class MdSideSheetComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean, reflect: true },
     };
-    
 
     /**
      */
@@ -38,7 +35,6 @@ class MdSideSheetComponent extends MdComponent {
         super();
         this.body = Array.from(this.childNodes);
     }
-    
 
     /**
      * @private
@@ -47,7 +43,6 @@ class MdSideSheetComponent extends MdComponent {
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
-    
 
     /**
      * @private
@@ -67,7 +62,6 @@ class MdSideSheetComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
-    
 
     /**
      * @private
@@ -87,7 +81,6 @@ class MdSideSheetComponent extends MdComponent {
             ></md-button>
         `;
     }
-    
 
     /**
      * @private
@@ -96,7 +89,6 @@ class MdSideSheetComponent extends MdComponent {
     renderSpacer(item) {
         return html` <div class="md-side-sheet__spacer"></div> `;
     }
-    
 
     /**
      * @private
@@ -115,7 +107,6 @@ class MdSideSheetComponent extends MdComponent {
             () => nothing,
         );
     }
-    
 
     /**
      * @private
@@ -123,7 +114,6 @@ class MdSideSheetComponent extends MdComponent {
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-side-sheet__header">${this.icons?.length ? html` <div class="md-side-sheet__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-side-sheet__labels">${this.label ? html`<div class="md-side-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-side-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-side-sheet__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-side-sheet__wrapper">${this.body?.length ? html`<div class="md-side-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-side-sheet__footer">${this.buttons?.length ? html` <div class="md-side-sheet__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
-    
 
     /**
      * @private
@@ -142,7 +132,6 @@ class MdSideSheetComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
-    
 
     /**
      * @private
@@ -154,7 +143,6 @@ class MdSideSheetComponent extends MdComponent {
         this.classList.remove("md-side-sheet");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
-    
 
     /**
      * @private
@@ -166,7 +154,6 @@ class MdSideSheetComponent extends MdComponent {
             this.classList.toggle(`md-side-sheet--modal`, !!this.modal);
         }
     }
-    
 
     /**
      * @private
@@ -175,7 +162,6 @@ class MdSideSheetComponent extends MdComponent {
     handleSideSheetIconButtonClick(event) {
         this.emit("onSideSheetIconButtonClick", { event });
     }
-    
 
     /**
      * @private
@@ -184,7 +170,6 @@ class MdSideSheetComponent extends MdComponent {
     handleSideSheetButtonClick(event) {
         this.emit("onSideSheetButtonClick", { event });
     }
-    
 
     /**
      */
@@ -194,7 +179,6 @@ class MdSideSheetComponent extends MdComponent {
         this.open = true;
         this.emit("onSideSheetShown");
     }
-    
 
     /**
      */
@@ -204,7 +188,6 @@ class MdSideSheetComponent extends MdComponent {
         if (this.sideSheetScrim.open) this.sideSheetScrim.close();
         this.emit("onSideSheetClosed");
     }
-    
 
     /**
      */
@@ -212,7 +195,6 @@ class MdSideSheetComponent extends MdComponent {
         if (this.open) this.close();
         else this.show();
     }
-    
 
     /**
      * @private

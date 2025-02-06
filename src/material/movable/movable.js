@@ -3,8 +3,6 @@
 /**
  */
 class Movable {
-    
-
     /**
      * @param {String} [host]
      * @param {Object} [options={}]
@@ -21,7 +19,6 @@ class Movable {
         // this.options.handles=['se']
         this.init();
     }
-    
 
     /**
      * @private
@@ -40,7 +37,6 @@ class Movable {
         this.startHeight = this.host.clientHeight;
         this.emit("onMovablePointerdown");
     }
-    
 
     /**
      * @private
@@ -79,7 +75,6 @@ class Movable {
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
         this.emit("onMovablePointermove");
     }
-    
 
     /**
      * @private
@@ -93,7 +88,6 @@ class Movable {
         window.removeEventListener("pointerup", this.handlePointerup);
         this.emit("onMovablePointerup");
     }
-    
 
     /**
      * @param {String} [type]
@@ -108,7 +102,6 @@ class Movable {
         this.host.dispatchEvent(event);
     }
     // hostConnected
-    
 
     /**
      */

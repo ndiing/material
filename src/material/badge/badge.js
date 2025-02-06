@@ -5,8 +5,6 @@ import { MdComponent } from "../component/component";
  * @extends MdComponent
  */
 class MdBadgeComponent extends MdComponent {
-    
-
     /**
      * @property {Number} [label]
      * @property {Number} [max]
@@ -15,7 +13,6 @@ class MdBadgeComponent extends MdComponent {
         label: { type: Number },
         max: { type: Number },
     };
-    
 
     /**
      */
@@ -23,7 +20,6 @@ class MdBadgeComponent extends MdComponent {
         super();
         this.max = 999;
     }
-    
 
     /**
      * @private
@@ -31,7 +27,6 @@ class MdBadgeComponent extends MdComponent {
     render() {
         return this.label ? (this.label > this.max ? this.max + "+" : this.label) : nothing;
     }
-    
 
     /**
      * @private

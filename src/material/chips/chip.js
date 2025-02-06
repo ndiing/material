@@ -7,8 +7,6 @@ import { RippleController } from "../ripple/ripple";
  * @fires MdChipComponent#onChipActionClick - {"detail":{"event":{}}}
  */
 class MdChipComponent extends MdComponent {
-    
-
     /**
      * @property {String} [icon]
      * @property {String} [avatar]
@@ -25,7 +23,6 @@ class MdChipComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-    
 
     /**
      */
@@ -33,7 +30,6 @@ class MdChipComponent extends MdComponent {
         super();
         this.ripple = new RippleController(this, {});
     }
-    
 
     /**
      * @private
@@ -59,7 +55,6 @@ class MdChipComponent extends MdComponent {
                 : nothing}
         `;
     }
-    
 
     /**
      * @private
@@ -68,7 +63,6 @@ class MdChipComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-chip");
     }
-    
 
     /**
      * @private

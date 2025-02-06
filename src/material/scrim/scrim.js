@@ -6,15 +6,12 @@ import { MdComponent } from "../component/component";
  * @fires MdScrimComponent#onScrimClick - {"detail":{"event":{}}}
  */
 class MdScrimComponent extends MdComponent {
-    
-
     /**
      * @property {Boolean} [open]
      */
     static properties = {
         open: { type: Boolean, reflect: true },
     };
-    
 
     /**
      * @private
@@ -25,7 +22,6 @@ class MdScrimComponent extends MdComponent {
         this.handleScrimClick = this.handleScrimClick.bind(this);
         this.addEventListener("click", this.handleScrimClick);
     }
-    
 
     /**
      * @private
@@ -35,7 +31,6 @@ class MdScrimComponent extends MdComponent {
         this.classList.remove("md-scrim");
         this.removeEventListener("click", this.handleScrimClick);
     }
-    
 
     /**
      */
@@ -43,7 +38,6 @@ class MdScrimComponent extends MdComponent {
         this.open = true;
         this.emit("onScrimShown");
     }
-    
 
     /**
      */
@@ -51,7 +45,6 @@ class MdScrimComponent extends MdComponent {
         this.open = false;
         this.emit("onScrimClosed");
     }
-    
 
     /**
      */
@@ -59,7 +52,6 @@ class MdScrimComponent extends MdComponent {
         if (this.open) this.close();
         else this.show();
     }
-    
 
     /**
      * @private

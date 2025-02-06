@@ -4,8 +4,6 @@
  * @fires VirtualScroll#onVirtualScroll - {"detail":{"containerHeight":{},"start":{},"end":{},"translateY":{},"":{}}}
  */
 class VirtualScroll {
-    
-
     /**
      * @param {String} [host]
      * @param {String} [options]
@@ -22,7 +20,6 @@ class VirtualScroll {
         };
         this.init();
     }
-    
 
     /**
      * @private
@@ -51,7 +48,6 @@ class VirtualScroll {
             translateY,
         });
     }
-    
 
     /**
      * @param {String} [type]
@@ -65,7 +61,6 @@ class VirtualScroll {
         });
         this.host.dispatchEvent(event);
     }
-    
 
     /**
      */

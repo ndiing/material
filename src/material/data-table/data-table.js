@@ -9,7 +9,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdDataTableComponent#onDataTableBodyCellCheckboxNativeInput - {"detail":{"event":{}}}
  */
 class MdDataTableComponent extends MdComponent {
-
     /**
      * @property {Array} [headers]
      * @property {Array} [bodies]
@@ -101,7 +100,6 @@ class MdDataTableComponent extends MdComponent {
             </table>
         `;
     }
-    
 
     /**
      * @private
@@ -110,7 +108,6 @@ class MdDataTableComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-data-table");
     }
-    
 
     /**
      * @private

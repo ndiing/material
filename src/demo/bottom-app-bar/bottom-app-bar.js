@@ -14,8 +14,8 @@ class DemoBottomAppBar extends MdComponent {
                 <md-bottom-app-bar
                     id="bottomAppBar1"
                     open
-                    .actions="${[{ icon: "image" }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
-                    .fab="${"image"}"
+                    .actions="${[{ icon: "check_box" }, { icon: "brush" }, { icon: "mic" }, { icon: "image" }]}"
+                    .fab="${"add"}"
                 ></md-bottom-app-bar>
                 <md-sheet region="center">
                     <div class="md-layout">

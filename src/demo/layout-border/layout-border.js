@@ -10,9 +10,7 @@ class DemoLayoutBorder extends MdComponent {
      */
     render() {
         return html`
-            <div
-                class="md-layout"
-            >
+            <div class="md-layout">
                 <div class="md-layout__border">
                     <div class="demo-layout__region md-layout__north">North</div>
                     <div class="demo-layout__region md-layout__east">East</div>

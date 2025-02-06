@@ -7,8 +7,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @fires MdNavigationListComponent#onNavigationListItemClick - {"detail":{"event":{}}}
  */
 class MdNavigationListComponent extends MdComponent {
-    
-
     /**
      * @property {Array} [items]
      * @property {Object} [rippleOptions]
@@ -17,7 +15,6 @@ class MdNavigationListComponent extends MdComponent {
         items: { type: Array },
         rippleOptions: { type: Object },
     };
-    
 
     /**
      */
@@ -25,7 +22,6 @@ class MdNavigationListComponent extends MdComponent {
         super();
         this.items = [];
     }
-    
 
     /**
      * @private
@@ -48,7 +44,6 @@ class MdNavigationListComponent extends MdComponent {
             </md-navigation-list-row>
         `;
     }
-    
 
     /**
      * @private
@@ -56,7 +51,6 @@ class MdNavigationListComponent extends MdComponent {
     render() {
         return this.items.map((item) => this.renderNavigationListItem(item));
     }
-    
 
     /**
      * @private
@@ -66,7 +60,6 @@ class MdNavigationListComponent extends MdComponent {
         this.classList.add("md-navigation-list");
         this.style.setProperty("--md-comp-navigation-list-icon-animation", "none");
     }
-    
 
     /**
      * @private
@@ -79,7 +72,6 @@ class MdNavigationListComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onNavigationListItemClick", { event });
     }
-    
 
     /**
      * @param {Object} [data]

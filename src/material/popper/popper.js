@@ -1,10 +1,6 @@
-
-
 /**
  */
 class Popper {
-    
-
     /**
      * @param {String} [host]
      * @param {Object} [options={}]
@@ -14,7 +10,6 @@ class Popper {
         this.options = options;
         this.init();
     }
-    
 
     /**
      */
@@ -38,7 +33,6 @@ class Popper {
         "left-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.bottom - containerRect.height }),
         "top-left": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.top - containerRect.height - offset }),
     };
-    
 
     /**
      * @param {Object} [options={}]
@@ -61,7 +55,6 @@ class Popper {
         container.style.setProperty("left", left + "px");
         container.style.setProperty("top", top + "px");
     }
-    
 
     /**
      * @param {String} [element]

@@ -5,8 +5,6 @@ import { MdComponent } from "../component/component";
  * @extends MdComponent
  */
 class MdDividerComponent extends MdComponent {
-    
-
     /**
      * @private
      */
