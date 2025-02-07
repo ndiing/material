@@ -2,7 +2,20 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
+/**
+ * @class MdIconButtonComponent
+ * @extends MdComponent
+ * @fires onIconButtonClick
+ */
 class MdIconButtonComponent extends MdComponent {
+    /**
+     * @property {String} icon
+     * @property {String} variant
+     * @property {String} type
+     * @property {Boolean} toggle
+     * @property {Boolean} selected
+     * @property {Boolean} disabled
+     */
     static properties = {
         icon: { type: String },
         variant: { type: String },
@@ -12,10 +25,16 @@ class MdIconButtonComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["filled", "filled-tonal", "outlined"];
+
+    /**
+     */
     constructor() {
         super();
         this.type = "button";
     }
+
+    /**
+     */
     render() {
         return html`
             <button
@@ -27,6 +46,9 @@ class MdIconButtonComponent extends MdComponent {
             ${this.icon ? html`<md-icon class="md-icon-button__icon">${this.icon}</md-icon>` : nothing}
         `;
     }
+
+    /**
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
@@ -39,11 +61,18 @@ class MdIconButtonComponent extends MdComponent {
             ...this.rippleOptions,
         });
     }
+
+    /**
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-icon-button");
         this.removeEventListener("click", this.handleIconButtonClick);
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -52,6 +81,10 @@ class MdIconButtonComponent extends MdComponent {
             });
         }
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleIconButtonClick(event) {
         if (this.toggle) {
             this.selected = !this.selected;

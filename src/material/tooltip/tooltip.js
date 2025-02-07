@@ -3,7 +3,23 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { Popper } from "../popper/popper";
+/**
+ * @class MdTooltipComponent
+ * @extends MdComponent
+ * @fires onTooltipIconButtonClick
+ * @fires onTooltipButtonClick
+ * @fires onTooltipShown
+ * @fires onTooltipClosed
+ */
 class MdTooltipComponent extends MdComponent {
+    /**
+     * @property {Array} icons
+     * @property {Array} actions
+     * @property {String} label
+     * @property {String} sublabel
+     * @property {Array} buttons
+     * @property {Boolean} open
+     */
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -12,13 +28,24 @@ class MdTooltipComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
     };
+
+    /**
+     */
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -33,6 +60,10 @@ class MdTooltipComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderButton(item) {
         return html`
             <md-button
@@ -47,9 +78,18 @@ class MdTooltipComponent extends MdComponent {
             ></md-button>
         `;
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderSpacer(item) {
         return html` <div class="md-tooltip__spacer"></div> `;
     }
+
+    /**
+     * @param {String} [item]
+     * @param {String} [component=icon]
+     */
     renderItem(item, component = "icon") {
         return choose(
             item.component || component,
@@ -62,23 +102,44 @@ class MdTooltipComponent extends MdComponent {
             () => nothing,
         );
     }
+
+    /**
+     */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-tooltip__header">${this.icons?.length ? html` <div class="md-tooltip__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-tooltip__labels">${this.label ? html`<div class="md-tooltip__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-tooltip__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-tooltip__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-tooltip__wrapper">${this.body?.length ? html`<div class="md-tooltip__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-tooltip__footer">${this.buttons?.length ? html` <div class="md-tooltip__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
+
+    /**
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tooltip");
     }
+
+    /**
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-tooltip");
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleTooltipIconButtonClick(event) {
         this.emit("onTooltipIconButtonClick", { event });
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleTooltipButtonClick(event) {
         this.emit("onTooltipButtonClick", { event });
     }
+
+    /**
+     * @param {Object} [options]
+     */
     show(options) {
         options = {
             container: this,
@@ -91,10 +152,17 @@ class MdTooltipComponent extends MdComponent {
         this.popper.show(options);
         this.emit("onTooltipShown");
     }
+
+    /**
+     */
     close() {
         this.open = false;
         this.emit("onTooltipClosed");
     }
+
+    /**
+     * @param {Object} [options]
+     */
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);

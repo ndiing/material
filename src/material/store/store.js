@@ -1,8 +1,21 @@
+/**
+ * @class Store
+ * @extends undefined
+ */
 class Store {
+    /**
+     * @param {Array} [data=[]]
+     * @param {Object} [options={}]
+     */
     constructor(data = [], options = {}) {
         this.data = data;
         this.options = options;
     }
+
+    /**
+     * @param {String} [data]
+     * @param {String} [sorters]
+     */
     sort(data, sorters) {
         if (!sorters || !sorters.name) return data;
         return data.sort((a, b) => {
@@ -12,6 +25,11 @@ class Store {
             return valueA > valueB ? 1 : -1;
         });
     }
+
+    /**
+     * @param {String} [item]
+     * @param {String} [q]
+     */
     deepSearch(item, q) {
         if (!item) return false;
         if (typeof item === "string" || typeof item === "number") {
@@ -25,13 +43,28 @@ class Store {
         }
         return false;
     }
+
+    /**
+     * @param {String} [data]
+     * @param {String} [q]
+     */
     search(data, q) {
         if (!q) return data;
         return data.filter((item) => this.deepSearch(item, q));
     }
+
+    /**
+     * @param {String} [item]
+     * @param {String} [name]
+     */
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
+
+    /**
+     * @param {String} [data]
+     * @param {String} [filters]
+     */
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
         return data.filter((item) => {
@@ -63,14 +96,30 @@ class Store {
             });
         });
     }
+
+    /**
+     * @param {String} [data]
+     * @param {String} [_start]
+     * @param {String} [_end]
+     */
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
+
+    /**
+     * @param {String} [data]
+     * @param {String} [_page]
+     * @param {String} [_limit]
+     */
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;
         let end = start + _limit;
         return data.slice(start, end);
     }
+
+    /**
+     * @param {Object} [options={}]
+     */
     async get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;
         let data = this.data.slice();

@@ -2,7 +2,25 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+/**
+ * @class MdNavigationDrawerComponent
+ * @extends MdComponent
+ * @fires onNavigationDrawerIconButtonClick
+ * @fires onNavigationDrawerShown
+ * @fires onNavigationDrawerClosed
+ * @fires onNavigationDrawerScrimClosed
+ */
 class MdNavigationDrawerComponent extends MdComponent {
+    /**
+     * @property {Array} icons
+     * @property {Array} actions
+     * @property {String} label
+     * @property {String} sublabel
+     * @property {Array} items
+     * @property {Boolean} open
+     * @property {Boolean} modal
+     * @property {String} view
+     */
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -14,13 +32,24 @@ class MdNavigationDrawerComponent extends MdComponent {
         view: { type: String },
     };
     views = ["flat", "tree"];
+
+    /**
+     */
     constructor() {
         super();
         this.view = "flat";
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -35,6 +64,11 @@ class MdNavigationDrawerComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
+
+    /**
+     * @param {String} [item]
+     * @param {String} [component=icon]
+     */
     renderItem(item, component = "icon") {
         return choose(
             item.component || component,
@@ -45,6 +79,9 @@ class MdNavigationDrawerComponent extends MdComponent {
             () => nothing,
         );
     }
+
+    /**
+     */
     render() {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
@@ -53,6 +90,9 @@ class MdNavigationDrawerComponent extends MdComponent {
             </div>
         `;
     }
+
+    /**
+     */
     async connectedCallback() {
         super.connectedCallback();
         this.navigationDrawerScrim = document.createElement("md-scrim");
@@ -66,6 +106,9 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
+
+    /**
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.navigationDrawerScrim.removeEventListener("onScrimClosed", this.handleNavigationDrawerScrimClosed);
@@ -73,6 +116,10 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.classList.remove("md-navigation-drawer");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("region")) {
@@ -84,25 +131,42 @@ class MdNavigationDrawerComponent extends MdComponent {
             this.classList.toggle(`md-navigation-drawer--modal`, !!this.modal);
         }
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleNavigationDrawerIconButtonClick(event) {
         this.emit("onNavigationDrawerIconButtonClick", { event });
     }
+
+    /**
+     */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         if (this.modal) this.navigationDrawerScrim.show();
         this.open = true;
         this.emit("onNavigationDrawerShown");
     }
+
+    /**
+     */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
         this.emit("onNavigationDrawerClosed");
     }
+
+    /**
+     */
     toggle() {
         if (this.open) this.close();
         else this.show();
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleNavigationDrawerScrimClosed(event) {
         if (this.open) this.close();
         this.emit("onNavigationDrawerScrimClosed", { event });

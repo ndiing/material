@@ -2,7 +2,22 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
+/**
+ * @class MdTabComponent
+ * @extends MdComponent
+ * @fires onTabSelected
+ */
 class MdTabComponent extends MdComponent {
+    /**
+     * @property {String} icon
+     * @property {String} label
+     * @property {String} sublabel
+     * @property {Boolean} selected
+     * @property {Boolean} disabled
+     * @property {String} routerLink
+     * @property {Object} rippleOptions
+     * @property {Number} badge
+     */
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -13,10 +28,16 @@ class MdTabComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
+
+    /**
+     */
     constructor() {
         super();
         this.rippleOptions = {};
     }
+
+    /**
+     */
     render() {
         return html`
             ${this.icon ? html`<md-icon class="md-tab__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-tab__labels">${this.label ? html`<div class="md-tab__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-tab__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.text ? html`<div class="md-tab__text">${this.text}</div>` : nothing}
@@ -28,12 +49,19 @@ class MdTabComponent extends MdComponent {
                 : nothing}
         `;
     }
+
+    /**
+     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tab");
         await this.updateComplete;
         this.ripple = new RippleController(this, this.rippleOptions);
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("icon")) {

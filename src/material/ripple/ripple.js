@@ -1,4 +1,12 @@
+/**
+ * @class RippleController
+ * @extends undefined
+ */
 class RippleController {
+    /**
+     * @param {String} [host]
+     * @param {Object} [options]
+     */
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
@@ -10,6 +18,9 @@ class RippleController {
             ...options,
         };
     }
+
+    /**
+     */
     async hostConnected() {
         await this.host.updateComplete;
         this.container = this.host;
@@ -49,6 +60,9 @@ class RippleController {
         this.trigger.addEventListener("focus", this.handleFocus);
         this.trigger.addEventListener("blur", this.handleBlur);
     }
+
+    /**
+     */
     async hostDisconnected() {
         await this.host.updateComplete;
         this.container.classList.remove("md-ripple");
@@ -61,12 +75,24 @@ class RippleController {
         this.trigger.removeEventListener("focus", this.handleFocus);
         this.trigger.removeEventListener("blur", this.handleBlur);
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handlePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handlePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handlePointerdown(event) {
         window.addEventListener("pointerup", this.handlePointerup);
         this.container.classList.add("md-ripple--press");
@@ -83,13 +109,25 @@ class RippleController {
             this.container.style.setProperty("--md-comp-ripple-y", y * 100 + "%");
         }
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handlePointerup(event) {
         this.container.classList.remove("md-ripple--press");
         window.removeEventListener("pointerup", this.handlePointerup);
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleFocus(event) {
         this.container.classList.add("md-ripple--focus");
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleBlur(event) {
         this.container.classList.remove("md-ripple--focus");
     }

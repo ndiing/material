@@ -2,15 +2,35 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+/**
+ * @class MdBottomAppBarComponent
+ * @extends MdComponent
+ * @fires onBottomAppBarIconButtonClick
+ * @fires onBottomAppBarFabClick
+ * @fires onBottomAppBarShown
+ * @fires onBottomAppBarClosed
+ */
 class MdBottomAppBarComponent extends MdComponent {
+    /**
+     * @property {Array} actions
+     * @property {String} fab
+     * @property {Boolean} open
+     */
     static properties = {
         actions: { type: Array },
         fab: { type: String },
         open: { type: Boolean, reflect: true },
     };
+
+    /**
+     */
     constructor() {
         super();
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -26,6 +46,10 @@ class MdBottomAppBarComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
+
+    /**
+     * @param {String} [item]
+     */
     renderFab(item) {
         return html`
             <md-fab
@@ -40,9 +64,15 @@ class MdBottomAppBarComponent extends MdComponent {
             ></md-fab>
         `;
     }
+
+    /**
+     */
     render() {
         return html` ${this.actions?.length ? html` <div class="md-bottom-app-bar__actions">${this.actions.map((action) => this.renderIconButton(action))}</div> ` : nothing} ${this.fab ? this.renderFab(this.fab) : nothing} `;
     }
+
+    /**
+     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-bottom-app-bar");
@@ -51,30 +81,54 @@ class MdBottomAppBarComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
+
+    /**
+     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-bottom-app-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleBottomAppBarIconButtonClick(event) {
         this.emit("onBottomAppBarIconButtonClick", { event });
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleBottomAppBarFabClick(event) {
         this.emit("onBottomAppBarFabClick", { event });
     }
+
+    /**
+     */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
         this.emit("onBottomAppBarShown");
     }
+
+    /**
+     */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
         this.emit("onBottomAppBarClosed");
     }
+
+    /**
+     */
     toggle() {
         if (this.open) this.close();
         else this.show();

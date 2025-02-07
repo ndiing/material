@@ -2,7 +2,18 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
+/**
+ * @class MdFabComponent
+ * @extends MdComponent
+ */
 class MdFabComponent extends MdComponent {
+    /**
+     * @property {String} icon
+     * @property {String} label
+     * @property {String} type
+     * @property {String} size
+     * @property {String} variant
+     */
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -13,17 +24,30 @@ class MdFabComponent extends MdComponent {
     sizes = ["small", "large"];
     types = ["extended"];
     variants = ["unelevated"];
+
+    /**
+     */
     constructor() {
         super();
         this.ripple = new RippleController(this, {});
     }
+
+    /**
+     */
     render() {
         return html` ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing} `;
     }
+
+    /**
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-fab");
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("type")) {

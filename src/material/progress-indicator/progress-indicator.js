@@ -1,17 +1,32 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+/**
+ * @class MdProgressIndicatorComponent
+ * @extends MdComponent
+ */
 class MdProgressIndicatorComponent extends MdComponent {
+    /**
+     * @property {String} variant
+     * @property {Number} max
+     * @property {Number} value
+     */
     static properties = {
         variant: { type: String },
         max: { type: Number },
         value: { type: Number },
     };
     variants = ["circular"];
+
+    /**
+     */
     constructor() {
         super();
         this.max = 100;
         this.value = 0;
     }
+
+    /**
+     */
     renderProgressIndicatorNative() {
         return html`
             <progress
@@ -21,6 +36,9 @@ class MdProgressIndicatorComponent extends MdComponent {
             ></progress>
         `;
     }
+
+    /**
+     */
     renderProgressIndicatorCircular() {
         this.r = ((36 / 40) * 100) / 2;
         this.strokeWidth = (4 / 40) * 100;
@@ -65,14 +83,24 @@ class MdProgressIndicatorComponent extends MdComponent {
             </div>
         `;
     }
+
+    /**
+     */
     render() {
         if (this.variant === "circular") return this.renderProgressIndicatorCircular();
         else return this.renderProgressIndicatorNative();
     }
+
+    /**
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-progress-indicator");
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {

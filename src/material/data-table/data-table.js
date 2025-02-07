@@ -1,13 +1,29 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+/**
+ * @class MdDataTableComponent
+ * @extends MdComponent
+ * @fires onDataTableBodyClick
+ * @fires onDataTableHeaderCellCheckboxNativeInput
+ * @fires onDataTableBodyCellCheckboxNativeInput
+ */
 class MdDataTableComponent extends MdComponent {
+    /**
+     * @property {Array} headers
+     * @property {Array} bodies
+     * @property {Array} footers
+     * @property {Array} data
+     */
     static properties = {
         headers: { type: Array },
         bodies: { type: Array },
         footers: { type: Array },
         data: { type: Array },
     };
+
+    /**
+     */
     constructor() {
         super();
         this.headers = [];
@@ -15,6 +31,9 @@ class MdDataTableComponent extends MdComponent {
         this.footers = [];
         this.data = [];
     }
+
+    /**
+     */
     render() {
         return html`
             <table class="md-data-table__native">
@@ -80,10 +99,17 @@ class MdDataTableComponent extends MdComponent {
             </table>
         `;
     }
+
+    /**
+     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
     }
+
+    /**
+     * @param {String} [changedProperties]
+     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("headers")) {
@@ -93,6 +119,10 @@ class MdDataTableComponent extends MdComponent {
             }
         }
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleDataTableBodyClick(event) {
         if (event.target.closest(".md-data-table__checkbox")) {
             return;
@@ -104,15 +134,28 @@ class MdDataTableComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onDataTableBodyClick", { event });
     }
+
+    /**
+     */
     get selected() {
         return this.data.filter((item) => item.selected);
     }
+
+    /**
+     */
     get checked() {
         return this.selected.length && this.selected.length === this.data.length;
     }
+
+    /**
+     */
     get indeterminate() {
         return this.selected.length && this.selected.length < this.data.length;
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleDataTableHeaderCellCheckboxNativeInput(event) {
         const checked = !this.checked || this.indeterminate;
         this.data.forEach((item) => {
@@ -121,6 +164,10 @@ class MdDataTableComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onDataTableHeaderCellCheckboxNativeInput", { event });
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleDataTableBodyCellCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
         data.selected = !data.selected;

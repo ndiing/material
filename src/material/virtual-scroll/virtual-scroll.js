@@ -1,4 +1,13 @@
+/**
+ * @class VirtualScroll
+ * @extends undefined
+ * @fires onVirtualScroll
+ */
 class VirtualScroll {
+    /**
+     * @param {String} [host]
+     * @param {Object} [options]
+     */
     constructor(host, options) {
         this.host = host;
         this.options = {
@@ -10,6 +19,10 @@ class VirtualScroll {
         };
         this.init();
     }
+
+    /**
+     * @param {Object} [event]
+     */
     handleScroll(event) {
         const total = this.options.total;
         const rowHeight = this.options.rowHeight;
@@ -33,6 +46,11 @@ class VirtualScroll {
             translateY,
         });
     }
+
+    /**
+     * @param {String} [type]
+     * @param {Object} [detail]
+     */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -41,6 +59,9 @@ class VirtualScroll {
         });
         this.host.dispatchEvent(event);
     }
+
+    /**
+     */
     init() {
         this.host.classList.add("md-virtual-scroll");
         this.track = document.createElement("div");
@@ -50,6 +71,9 @@ class VirtualScroll {
         this.host.addEventListener("scroll", this.handleScroll);
         this.handleScroll();
     }
+
+    /**
+     */
     destroy() {}
 }
 export { VirtualScroll };
