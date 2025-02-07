@@ -2,20 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
-
-/**
- * @extends MdComponent
- * @fires MdSwitchComponent#onSwitchNativeInput - {"detail":{"event":{}}}
- * @fires MdSwitchComponent#onSwitchNativeReset - {"detail":{"event":{}}}
- */
 class MdSwitchComponent extends MdComponent {
-    /**
-     * @property {String} [name]
-     * @property {String} [value]
-     * @property {Boolean} [indeterminate]
-     * @property {Boolean} [checked]
-     * @property {Array} [icons]
-     */
     static properties = {
         name: { type: String },
         value: { type: String },
@@ -23,9 +10,6 @@ class MdSwitchComponent extends MdComponent {
         checked: { type: Boolean },
         icons: { type: Array },
     };
-
-    /**
-     */
     constructor() {
         super();
         this.ripple = new RippleController(this, {
@@ -36,10 +20,6 @@ class MdSwitchComponent extends MdComponent {
             centered: true,
         });
     }
-
-    /**
-     * @private
-     */
     render() {
         return html`
             <input
@@ -60,10 +40,6 @@ class MdSwitchComponent extends MdComponent {
             </div>
         `;
     }
-
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-switch");
@@ -72,11 +48,6 @@ class MdSwitchComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleSwitchNativeInput(event) {
         this.style.removeProperty("--md-comp-switch-thumb-transition-property");
         const native = event.currentTarget;
@@ -84,11 +55,6 @@ class MdSwitchComponent extends MdComponent {
         this.checked = native.checked;
         this.emit("onSwitchNativeInput", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleSwitchNativeReset(event) {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;

@@ -1,33 +1,16 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
-/**
- * @extends MdComponent
- * @fires MdTreeComponent#onTreeItemClick - {"detail":{"event":{}}}
- */
 class MdTreeComponent extends MdComponent {
-    /**
-     * @property {Array} [items]
-     * @property {Array} [items2]
-     */
     static properties = {
         items: { type: Array },
         items2: { type: Array },
     };
-
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.items2 = [];
     }
-
-    /**
-     * @private
-     * @param {String} [item]
-     */
     renderTreeItem(item) {
         return html`
             <md-tree-row>
@@ -46,27 +29,13 @@ class MdTreeComponent extends MdComponent {
             </md-tree-row>
         `;
     }
-
-    /**
-     * @private
-     */
     render() {
         return this.items2.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
-
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree");
     }
-
-    /**
-     * @private
-     * @async
-     * @param {String} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
@@ -74,12 +43,6 @@ class MdTreeComponent extends MdComponent {
             this.items2 = this.flatten(this.items).items2;
         }
     }
-
-    /**
-     * @param {Array} [items]
-     * @param {String} [parent]
-     * @param {Number} [indent=0]
-     */
     flatten(items, parent, indent = 0) {
         let expanded;
         let items2 = [];
@@ -101,10 +64,6 @@ class MdTreeComponent extends MdComponent {
         });
         return { expanded, items2 };
     }
-
-    /**
-     * @param {Object} [data]
-     */
     toggle(data) {
         data.children.forEach((item) => {
             item.visible = data.expanded;
@@ -112,11 +71,6 @@ class MdTreeComponent extends MdComponent {
             if (item.children?.length) this.toggle(item);
         });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTreeItemClick(event) {
         const action = event.target.closest(".md-tree__action");
         const data = event.currentTarget.data;

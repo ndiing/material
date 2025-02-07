@@ -12,8 +12,6 @@ class DemoIconButtonOutlined extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-                    
-                
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-icon-button
                             variant="outlined"
@@ -36,8 +34,6 @@ class DemoIconButtonOutlined extends MdComponent {
                             disabled
                         ></md-icon-button>
                     </div>
-                   
-                    
                 </div>
             </div>
         `;

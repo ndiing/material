@@ -2,33 +2,16 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
-
-/**
- * @extends MdComponent
- * @fires MdChipComponent#onChipClick - {"detail":{"event":{}}}
- */
 class MdChipComponent extends MdComponent {
-    /**
-     * @property {Array} [items]
-     * @property {String} [type]
-     */
     static properties = {
         items: { type: Array },
         type: { type: String },
     };
     types = ["single-select", "multi-select"];
-
-    /**
-     */
     constructor() {
         super();
         this.type = "single-select";
     }
-
-    /**
-     * @private
-     * @param {String} [item]
-     */
     renderChip(item) {
         return html`
             <md-chip
@@ -43,26 +26,13 @@ class MdChipComponent extends MdComponent {
             ></md-chip>
         `;
     }
-
-    /**
-     * @private
-     */
     render() {
         return this.items.map((item) => this.renderChip(item));
     }
-
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chips");
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleChipClick(event) {
         const data = event.currentTarget.data;
         if (this.type === "single-select") {

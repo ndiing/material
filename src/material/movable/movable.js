@@ -1,10 +1,4 @@
-/**
- */
 class Movable {
-    /**
-     * @param {String} [host]
-     * @param {Object} [options={}]
-     */
     constructor(host, options = {}) {
         this.host = host;
         this.options = {
@@ -14,11 +8,6 @@ class Movable {
         };
         this.init();
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
         document.body.classList.add("md-resizable--resize");
@@ -32,11 +21,6 @@ class Movable {
         this.startHeight = this.host.clientHeight;
         this.emit("onMovablePointerdown");
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handlePointermove(event) {
         const currentX = event.clientX - this.startX;
         const currentY = event.clientY - this.startY;
@@ -70,11 +54,6 @@ class Movable {
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
         this.emit("onMovablePointermove");
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handlePointerup(event) {
         this.endX = this.currentX;
         this.endY = this.currentY;
@@ -83,11 +62,6 @@ class Movable {
         window.removeEventListener("pointerup", this.handlePointerup);
         this.emit("onMovablePointerup");
     }
-
-    /**
-     * @param {String} [type]
-     * @param {String} [detail]
-     */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -96,9 +70,6 @@ class Movable {
         });
         this.host.dispatchEvent(event);
     }
-
-    /**
-     */
     init() {
         let text = "";
         text += `<div class="md-resizable">`;

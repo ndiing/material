@@ -1,36 +1,18 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
-/**
- * @extends MdComponent
- * @fires MdTabsComponent#onTabClick - {"detail":{"event":{}}}
- */
 class MdTabsComponent extends MdComponent {
-    /**
-     * @property {Array} [items]
-     * @property {Object} [rippleOptions]
-     * @property {String} [variant]
-     */
     static properties = {
         items: { type: Array },
         rippleOptions: { type: Object },
         variant: { type: String },
     };
     variants = ["primary", "secondary"];
-
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.variant = "primary";
     }
-
-    /**
-     * @private
-     * @param {String} [item]
-     */
     renderTab(item) {
         return html`
             <md-tab
@@ -47,27 +29,14 @@ class MdTabsComponent extends MdComponent {
             ></md-tab>
         `;
     }
-
-    /**
-     * @private
-     */
     render() {
         return this.items.map((item) => this.renderTab(item));
     }
-
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tabs");
         this.style.setProperty("--md-comp-tabs-indicator-transition-property", "none");
     }
-
-    /**
-     * @private
-     * @param {String} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -76,11 +45,6 @@ class MdTabsComponent extends MdComponent {
             });
         }
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
         const data = event.currentTarget.data;
@@ -88,21 +52,11 @@ class MdTabsComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onTabClick", { event });
     }
-
-    /**
-     * @param {Object} [data]
-     */
     singleSelect(data) {
         this.items.forEach((item) => {
             item.selected = item === data;
         });
     }
-
-    /**
-     * @private
-     * @async
-     * @param {Object} [event]
-     */
     async handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {
             const tab = event.detail.tab;

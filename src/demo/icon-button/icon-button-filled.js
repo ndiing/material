@@ -34,7 +34,6 @@ class DemoIconButtonFilled extends MdComponent {
                             disabled
                         ></md-icon-button>
                     </div>
-                    
                 </div>
             </div>
         `;

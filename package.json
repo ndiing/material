@@ -9,7 +9,7 @@
         "watch": "webpack --watch",
         "localize:extract": "lit-localize extract",
         "localize:build": "lit-localize build",
-        "prettier:write": "npx prettier . --write"
+        "prettier:write": "npx prettier ./src/material --write"
     },
     "devDependencies": {
         "@babel/core": "^7.26.0",

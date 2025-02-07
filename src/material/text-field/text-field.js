@@ -3,39 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
-
-/**
- * @extends MdComponent
- * @fires MdTextFieldComponent#onTextFieldFocus - {"detail":{"event":{}}}
- * @fires MdTextFieldComponent#onTextFieldBlur - {"detail":{"event":{}}}
- * @fires MdTextFieldComponent#onTextFieldInput - {"detail":{"event":{}}}
- * @fires MdTextFieldComponent#onTextFieldSearch - {"detail":{"event":{}}}
- * @fires MdTextFieldComponent#onTextFieldInvalid - {"detail":{"event":{}}}
- * @fires MdTextFieldComponent#onTextFieldReset - {"detail":{"event":{}}}
- * @fires MdTextFieldComponent#onTextFieldIconButtonClick - {"detail":{"event":{}}}
- */
 class MdTextFieldComponent extends MdComponent {
-    /**
-     * @property {String} [label]
-     * @property {Boolean} [separateLabel]
-     * @property {Array} [icons]
-     * @property {String} [prefix]
-     * @property {String} [suffix]
-     * @property {Array} [actions]
-     * @property {String} [text]
-     * @property {String} [error]
-     * @property {String} [counter]
-     * @property {String} [name]
-     * @property {String} [type]
-     * @property {String} [value]
-     * @property {String} [placeholder]
-     * @property {String} [title]
-     * @property {String} [autocomplete]
-     * @property {Boolean} [required]
-     * @property {Boolean} [readOnly]
-     * @property {String} [variant]
-     * @property {Boolean} [disabled]
-     */
     static properties = {
         label: { type: String },
         separateLabel: { type: Boolean },
@@ -58,19 +26,11 @@ class MdTextFieldComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
     };
     variants = ["outlined", "filled"];
-
-    /**
-     */
     constructor() {
         super();
         this.title = "";
         this.autocomplete = "off";
     }
-
-    /**
-     * @private
-     * @param {String} [item]
-     */
     renderIcon(item) {
         return html`
             <md-icon
@@ -80,11 +40,6 @@ class MdTextFieldComponent extends MdComponent {
             >
         `;
     }
-
-    /**
-     * @private
-     * @param {String} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -100,12 +55,6 @@ class MdTextFieldComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
-
-    /**
-     * @private
-     * @param {String} [item]
-     * @param {String} [component=icon]
-     */
     renderItem(item, component = "icon") {
         return choose(
             item.component || component,
@@ -116,19 +65,12 @@ class MdTextFieldComponent extends MdComponent {
             () => nothing,
         );
     }
-
-    /**
-     */
     get actions2() {
         let actions = [];
         if (this.error) actions = actions.concat([{ component: "icon", icon: "error", classMap: { "md-text-field__icon--error": true } }]);
         if (this.actions?.length) actions = actions.concat(this.actions);
         return actions;
     }
-
-    /**
-     * @private
-     */
     render() {
         return html`
             ${this.label ? html`<label class="md-text-field__label">${this.label}</label>` : nothing}
@@ -157,11 +99,6 @@ class MdTextFieldComponent extends MdComponent {
             ${this.text || this.error || this.counter ? html` <div class="md-text-field__wrapper">${this.text || this.error ? html`<div class="md-text-field__text">${this.error || this.text}</div>` : nothing} ${this.counter ? html`<div class="md-text-field__counter">${this.counter}</div>` : nothing}</div> ` : nothing}
         `;
     }
-
-    /**
-     * @private
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-text-field");
@@ -170,11 +107,6 @@ class MdTextFieldComponent extends MdComponent {
         await this.updateComplete;
         this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldNative.offsetLeft + "px");
     }
-
-    /**
-     * @private
-     * @param {String} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -189,35 +121,17 @@ class MdTextFieldComponent extends MdComponent {
             this.classList.toggle(`md-text-field--with-label`, !!this.label);
         }
     }
-
-    /**
-     */
     get textFieldNative() {
         return this.querySelector(".md-text-field__native");
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
         this.emit("onTextFieldFocus", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
         this.emit("onTextFieldBlur", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldInput(event) {
         this.value = this.textFieldNative.value;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
@@ -225,11 +139,6 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldInput", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldSearch(event) {
         this.value = this.textFieldNative.value;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
@@ -237,22 +146,12 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldSearch", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldInvalid(event) {
         event.preventDefault();
         this.error = this.textFieldNative.validationMessage;
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldInvalid", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldReset(event) {
         this.value = this.defaultValue;
         this.classList.toggle("md-text-field--populated", !!this.value);
@@ -260,11 +159,6 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldReset", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", { event });
     }

@@ -1,18 +1,9 @@
-/**
- */
 class Popper {
-    /**
-     * @param {String} [host]
-     * @param {Object} [options={}]
-     */
     constructor(host, options = {}) {
         this.host = host;
         this.options = options;
         this.init();
     }
-
-    /**
-     */
     init() {}
     destroy() {}
     methods = {
@@ -33,10 +24,6 @@ class Popper {
         "left-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.bottom - containerRect.height }),
         "top-left": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.top - containerRect.height - offset }),
     };
-
-    /**
-     * @param {Object} [options={}]
-     */
     show(options = {}) {
         const { container = undefined, trigger = undefined, boundary = this.closestScrollable(container), offset = 0, placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
         let left;
@@ -55,10 +42,6 @@ class Popper {
         container.style.setProperty("left", left + "px");
         container.style.setProperty("top", top + "px");
     }
-
-    /**
-     * @param {String} [element]
-     */
     closestScrollable(element) {
         let current = element;
         while (current) {

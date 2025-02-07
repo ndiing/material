@@ -2,32 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
-
-/**
- * @extends MdComponent
- * @fires MdListItemComponent#onListItemSelected - {"detail":{"listItem":"this"}}
- */
 class MdListItemComponent extends MdComponent {
-    /**
-     * @property {Boolean} [leadingCheckbox]
-     * @property {Boolean} [leadingRadioButton]
-     * @property {Boolean} [leadingSwitch]
-     * @property {String} [avatar]
-     * @property {String} [image]
-     * @property {String} [video]
-     * @property {String} [icon]
-     * @property {String} [label]
-     * @property {String} [sublabel]
-     * @property {String} [text]
-     * @property {Boolean} [trailingCheckbox]
-     * @property {Boolean} [trailingRadioButton]
-     * @property {Boolean} [trailingSwitch]
-     * @property {Boolean} [selected]
-     * @property {Boolean} [disabled]
-     * @property {String} [routerLink]
-     * @property {Object} [rippleOptions]
-     * @property {Number} [badge]
-     */
     static properties = {
         leadingCheckbox: { type: Boolean },
         leadingRadioButton: { type: Boolean },
@@ -48,17 +23,10 @@ class MdListItemComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
-
-    /**
-     */
     constructor() {
         super();
         this.rippleOptions = {};
     }
-
-    /**
-     * @private
-     */
     render() {
         return html`
             ${this.leadingCheckbox
@@ -126,11 +94,6 @@ class MdListItemComponent extends MdComponent {
                 : nothing}
         `;
     }
-
-    /**
-     * @private
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
@@ -145,12 +108,6 @@ class MdListItemComponent extends MdComponent {
         }
         this.ripple = new RippleController(this, this.rippleOptions);
     }
-
-    /**
-     * @private
-     * @async
-     * @param {String} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("icon")) {

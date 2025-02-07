@@ -1,5 +1,3 @@
-
-
 .md-switch {
     display: inline-flex;
     align-items: center;
@@ -21,7 +19,6 @@
     z-index: 1;
 
     &:checked {
-
         + .md-switch__track {
             border-color: var(--md-sys-color-primary);
             background-color: var(--md-sys-color-primary);
@@ -38,9 +35,7 @@
     }
 
     &:active {
-
         + .md-switch__track {
-
             .md-switch__thumb {
                 width: 28px;
                 height: 28px;
@@ -50,9 +45,7 @@
         }
 
         &:checked {
-
             + .md-switch__track {
-
                 .md-switch__thumb {
                     left: 20px;
                 }
@@ -90,7 +83,6 @@
     transition-duration: var(--md-sys-motion-duration-short3);
 
     &.md-ripple {
-
         &::after {
             width: 40px;
         }

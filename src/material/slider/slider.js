@@ -2,22 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { classMap } from "lit/directives/class-map.js";
-
-/**
- * @extends MdComponent
- * @fires MdSliderComponent#onSliderNativeInput - {"detail":{"event":{}}}
- * @fires MdSliderComponent#onSliderNativeReset - {"detail":{"event":{}}}
- */
 class MdSliderComponent extends MdComponent {
-    /**
-     * @property {Number} [min]
-     * @property {Number} [max]
-     * @property {Number} [step]
-     * @property {String} [variant]
-     * @property {String} [name]
-     * @property {undefined} [value]
-     * @property {undefined} [converter]
-     */
     static properties = {
         min: { type: Number },
         max: { type: Number },
@@ -36,30 +21,18 @@ class MdSliderComponent extends MdComponent {
         },
     };
     variants = ["centered", "continuous", "discrete", "range-selection"];
-
-    /**
-     */
     constructor() {
         super();
         this.min = 0;
         this.max = 100;
         this.step = 1;
     }
-
-    /**
-     */
     get indicators() {
         if (this.variant === "centered") return 3;
         else if (this.variant === "continuous") return 1;
         else if (this.variant === "discrete") return this.max / this.step + 1;
         else if (this.variant === "range-selection") return 2;
     }
-
-    /**
-     * @private
-     * @param {String} [value]
-     * @param {String} [index]
-     */
     renderSliderWrapper(value, index) {
         return html`
             <div class="md-slider__wrapper">
@@ -92,10 +65,6 @@ class MdSliderComponent extends MdComponent {
             </div>
         `;
     }
-
-    /**
-     * @private
-     */
     render() {
         return html`
             ${this.value.map((value, index) => this.renderSliderWrapper(value, index))}
@@ -107,10 +76,6 @@ class MdSliderComponent extends MdComponent {
             />
         `;
     }
-
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
@@ -124,11 +89,6 @@ class MdSliderComponent extends MdComponent {
         else this.variant = "continuous";
         this.updateValue();
     }
-
-    /**
-     * @private
-     * @param {String} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -137,17 +97,9 @@ class MdSliderComponent extends MdComponent {
             });
         }
     }
-
-    /**
-     */
     get sliderNatives() {
         return this.querySelectorAll(".md-slider__native");
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleSliderNativeInput(event) {
         const native = event.currentTarget;
         const data = native.data;
@@ -161,31 +113,17 @@ class MdSliderComponent extends MdComponent {
         this.requestUpdate();
         this.emit("onSliderNativeInput", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleSliderNativeReset(event) {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));
         this.updateValue();
         this.requestUpdate();
         this.emit("onSliderNativeReset", { event });
     }
-
-    /**
-     */
     updateValue() {
         this.value.forEach((value, index) => {
             this.style.setProperty(`--md-comp-slider-value${index}`, this.percentage(value));
         });
     }
-
-    /**
-     * @param {String} [value]
-     * @param {undefined} [min=this.min]
-     * @param {undefined} [max=this.max]
-     */
     percentage(value, min = this.min, max = this.max) {
         return (value - min) / (max - min);
     }

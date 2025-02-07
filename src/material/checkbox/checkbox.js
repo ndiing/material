@@ -2,28 +2,13 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
-
-/**
- * @extends MdComponent
- * @fires MdCheckboxComponent#onCheckboxNativeInput - {"detail":{"event":{}}}
- * @fires MdCheckboxComponent#onCheckboxNativeReset - {"detail":{"event":{}}}
- */
 class MdCheckboxComponent extends MdComponent {
-    /**
-     * @property {String} [name]
-     * @property {String} [value]
-     * @property {Boolean} [indeterminate]
-     * @property {Boolean} [checked]
-     */
     static properties = {
         name: { type: String },
         value: { type: String },
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
     };
-
-    /**
-     */
     constructor() {
         super();
         this.ripple = new RippleController(this, {
@@ -33,10 +18,6 @@ class MdCheckboxComponent extends MdComponent {
             radius: 40,
         });
     }
-
-    /**
-     * @private
-     */
     render() {
         return html`
             <input
@@ -57,10 +38,6 @@ class MdCheckboxComponent extends MdComponent {
             </div>
         `;
     }
-
-    /**
-     * @private
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-checkbox");
@@ -68,22 +45,12 @@ class MdCheckboxComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleCheckboxNativeInput(event) {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
         this.emit("onCheckboxNativeInput", { event });
     }
-
-    /**
-     * @private
-     * @param {Object} [event]
-     */
     handleCheckboxNativeReset(event) {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
