@@ -1,5 +1,4 @@
 /**
- * @class Store
  * @extends undefined
  */
 class Store {

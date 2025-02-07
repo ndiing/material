@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 /**
- * @class MdRadioButtonComponent
  * @extends MdComponent
  * @fires onRadioButtonNativeInput
  * @fires onRadioButtonNativeReset

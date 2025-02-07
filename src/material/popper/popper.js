@@ -1,5 +1,4 @@
 /**
- * @class Popper
  * @extends undefined
  */
 class Popper {

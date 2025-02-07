@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 /**
- * @class MdProgressIndicatorComponent
  * @extends MdComponent
  */
 class MdProgressIndicatorComponent extends MdComponent {

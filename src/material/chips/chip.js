@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
 /**
- * @class MdChipComponent
  * @extends MdComponent
  * @fires onChipActionClick
  */

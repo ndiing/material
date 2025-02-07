@@ -6,7 +6,6 @@ import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
 import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 /**
- * @class MdDatetimePickerComponent
  * @extends MdComponent
  * @fires onDatetimePickerLabelClick
  * @fires onDatetimePickerIconButtonPrevClick

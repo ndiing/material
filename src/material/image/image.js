@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 /**
- * @class MdImageComponent
  * @extends MdComponent
  */
 class MdImageComponent extends MdComponent {

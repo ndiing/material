@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 /**
- * @class MdNavigationDrawerComponent
  * @extends MdComponent
  * @fires onNavigationDrawerIconButtonClick
  * @fires onNavigationDrawerShown
