@@ -1,4 +1,5 @@
 /**
+ * @class Movable
  * @extends undefined
  * @fires onMovablePointerdown
  * @fires onMovablePointermove

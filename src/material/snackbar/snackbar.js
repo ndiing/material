@@ -14,6 +14,7 @@ const task = (() => {
     return (callback) => (pending = execute(callback));
 })();
 /**
+ * @class MdSnackbarComponent
  * @extends MdComponent
  * @fires onSnackbarIconButtonClick
  * @fires onSnackbarButtonClick

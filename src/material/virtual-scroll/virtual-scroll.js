@@ -1,4 +1,5 @@
 /**
+ * @class VirtualScroll
  * @extends undefined
  * @fires onVirtualScroll
  */

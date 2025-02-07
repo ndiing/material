@@ -3,6 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 /**
+ * @class MdDataTableCellComponent
  * @extends MdComponent
  */
 class MdDataTableCellComponent extends MdComponent {

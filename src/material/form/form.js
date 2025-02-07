@@ -3,6 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 /**
+ * @class MdFormComponent
  * @extends MdComponent
  * @fires onFormNativeFormdata
  * @fires onFormNativeReset

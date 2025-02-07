@@ -12,7 +12,7 @@
         "prettier:write": "npx prettier ./src/material --write",
         "jsdoc": "npx jsdoc src/material -r -d docs",
         "jsdoc2md": "npx jsdoc2md src/material/**/*.js > README.md",
-        "jsdoc:x": "npx jsdoc src/material -r -X > ./dev/jsdoc.json"
+        "jsdoc:x": "npx jsdoc src/material -r -X > ./dev/jsdoc2.json"
     },
     "devDependencies": {
         "@babel/core": "^7.26.0",

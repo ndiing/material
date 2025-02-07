@@ -4,6 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { Popper } from "../popper/popper";
 /**
+ * @class MdTooltipComponent
  * @extends MdComponent
  * @fires onTooltipIconButtonClick
  * @fires onTooltipButtonClick

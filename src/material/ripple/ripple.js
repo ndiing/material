@@ -1,4 +1,5 @@
 /**
+ * @class RippleController
  * @extends undefined
  */
 class RippleController {

@@ -4,6 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 /**
+ * @class MdTextFieldComponent
  * @extends MdComponent
  * @fires onTextFieldFocus
  * @fires onTextFieldBlur
