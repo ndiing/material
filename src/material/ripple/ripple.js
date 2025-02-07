@@ -8,10 +8,7 @@ class RippleController {
     constructor(host, options) {
         (this.host = host).addController(this);
         this.options = {
-            // animation:undefined,
             centered: false,
-            // color:undefined,
-            // disabled:false,
             radius: undefined,
             trigger: undefined,
             unbounded: false,

@@ -1,6 +1,7 @@
 @use "sass:color";
 
 @media (prefers-color-scheme: light) {
+
     :root {
         --md-sys-color-primary: #6750a4;
         --md-sys-color-primary8: #f2eaf8;
@@ -18,6 +19,7 @@
         --md-sys-color-tertiary-container: #ffd8e4;
         --md-sys-color-on-tertiary-container: #633b48;
         --md-sys-color-error: #b3261e;
+
         --md-sys-color-error38: #{rgba(#b3261e, 38%)};
         --md-sys-color-on-error: #ffffff;
         --md-sys-color-error-container: #f9dedc;
@@ -64,6 +66,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
     :root {
         --md-sys-color-primary: #d0bcff;
 
@@ -84,6 +87,7 @@
         --md-sys-color-tertiary-container: #633b48;
         --md-sys-color-on-tertiary-container: #ffd8e4;
         --md-sys-color-error: #f2b8b5;
+
         --md-sys-color-error38: #{rgba(#f2b8b5, 38%)};
         --md-sys-color-on-error: #601410;
         --md-sys-color-error-container: #8c1d18;
@@ -187,99 +191,72 @@
 }
 
 :root {
-    // --md-sys-typescale-display-large-font: Roboto;
     --md-sys-typescale-display-large-font: "Noto Sans";
     --md-sys-typescale-display-large-weight: 400;
     --md-sys-typescale-display-large-size: 57px;
     --md-sys-typescale-display-large-tracking: -0.25px;
     --md-sys-typescale-display-large-line-height: 64px;
-    // --md-sys-typescale-display-large: Display Large;
-    // --md-sys-typescale-display-medium-font: Roboto;
     --md-sys-typescale-display-medium-font: "Noto Sans";
     --md-sys-typescale-display-medium-weight: 400;
     --md-sys-typescale-display-medium-size: 45px;
     --md-sys-typescale-display-medium-tracking: 0;
     --md-sys-typescale-display-medium-line-height: 52px;
-    // --md-sys-typescale-display-medium: Display Medium;
-    // --md-sys-typescale-display-small-font: Roboto;
     --md-sys-typescale-display-small-font: "Noto Sans";
     --md-sys-typescale-display-small-weight: 400;
     --md-sys-typescale-display-small-size: 36px;
     --md-sys-typescale-display-small-tracking: 0;
     --md-sys-typescale-display-small-line-height: 44px;
-    // --md-sys-typescale-display-small: Display Small;
     --md-sys-typescale-headline-large-weight: 400;
-    // --md-sys-typescale-headline-large-font: Roboto;
     --md-sys-typescale-headline-large-font: "Noto Sans";
     --md-sys-typescale-headline-large-size: 32px;
     --md-sys-typescale-headline-large-tracking: 0;
     --md-sys-typescale-headline-large-line-height: 40px;
-    // --md-sys-typescale-headline-large: Headline Large;
-    // --md-sys-typescale-headline-medium-font: Roboto;
     --md-sys-typescale-headline-medium-font: "Noto Sans";
     --md-sys-typescale-headline-medium-weight: 400;
     --md-sys-typescale-headline-medium-size: 28px;
     --md-sys-typescale-headline-medium-tracking: 0;
     --md-sys-typescale-headline-medium-line-height: 36px;
-    // --md-sys-typescale-headline-medium: Headline Medium;
-    // --md-sys-typescale-headline-small-font: Roboto;
     --md-sys-typescale-headline-small-font: "Noto Sans";
     --md-sys-typescale-headline-small-weight: 400;
     --md-sys-typescale-headline-small-size: 24px;
     --md-sys-typescale-headline-small-tracking: 0;
     --md-sys-typescale-headline-small-line-height: 32px;
-    // --md-sys-typescale-headline-small: Headline Small;
-    // --md-sys-typescale-title-large-font: Roboto;
     --md-sys-typescale-title-large-font: "Noto Sans";
     --md-sys-typescale-title-large-weight: 400;
     --md-sys-typescale-title-large-size: 22px;
     --md-sys-typescale-title-large-tracking: 0;
     --md-sys-typescale-title-large-line-height: 28px;
-    // --md-sys-typescale-title-large: Title Large;
-    // --md-sys-typescale-title-medium-font: Roboto;
     --md-sys-typescale-title-medium-font: "Noto Sans";
     --md-sys-typescale-title-medium-weight: 500;
     --md-sys-typescale-title-medium-size: 16px;
     --md-sys-typescale-title-medium-tracking: 0.15px;
     --md-sys-typescale-title-medium-line-height: 24px;
-    // --md-sys-typescale-title-medium: Title Medium;
-    // --md-sys-typescale-title-small-font: Roboto;
     --md-sys-typescale-title-small-font: "Noto Sans";
     --md-sys-typescale-title-small-weight: 500;
     --md-sys-typescale-title-small-size: 14px;
     --md-sys-typescale-title-small-tracking: 0.1px;
     --md-sys-typescale-title-small-line-height: 20px;
-    // --md-sys-typescale-title-small: Title Small;
-    // --md-sys-typescale-body-large-font: Roboto;
     --md-sys-typescale-body-large-font: "Noto Sans";
     --md-sys-typescale-body-large-weight: 400;
     --md-sys-typescale-body-large-size: 16px;
     --md-sys-typescale-body-large-tracking: 0.5px;
     --md-sys-typescale-body-large-line-height: 24px;
-    // --md-sys-typescale-body-large: Body Large;
-    // --md-sys-typescale-body-medium-font: Roboto;
     --md-sys-typescale-body-medium-font: "Noto Sans";
     --md-sys-typescale-body-medium-weight: 400;
     --md-sys-typescale-body-medium-size: 14px;
     --md-sys-typescale-body-medium-tracking: 0.25px;
     --md-sys-typescale-body-medium-line-height: 20px;
-    // --md-sys-typescale-body-medium: Body Medium;
-    // --md-sys-typescale-body-small-font: Roboto;
     --md-sys-typescale-body-small-font: "Noto Sans";
     --md-sys-typescale-body-small-weight: 400;
     --md-sys-typescale-body-small-size: 12px;
     --md-sys-typescale-body-small-tracking: 0.4px;
     --md-sys-typescale-body-small-line-height: 16px;
-    // --md-sys-typescale-body-small: Body Small;
-    // --md-sys-typescale-label-large-font: Roboto;
     --md-sys-typescale-label-large-font: "Noto Sans";
     --md-sys-typescale-label-large-weight: 500;
     --md-sys-typescale-label-large-weight-prominent: 700;
     --md-sys-typescale-label-large-size: 14px;
     --md-sys-typescale-label-large-tracking: 0.1px;
     --md-sys-typescale-label-large-line-height: 20px;
-    // --md-sys-typescale-label-large: Label Large;
-    // --md-sys-typescale-label-medium-font: Roboto;
     --md-sys-typescale-label-medium-font: "Noto Sans";
     --md-sys-typescale-label-medium-weight: 500;
     --md-sys-typescale-label-medium-weight-prominent: 700;
@@ -287,12 +264,9 @@
     --md-sys-typescale-label-medium-tracking: 0.5px;
     --md-sys-typescale-label-medium-line-height: 16px;
     --md-sys-typescale-label-medium-text-transform: None;
-    // --md-sys-typescale-label-medium: Label Medium;
-    // --md-sys-typescale-label-small-font: Roboto;
     --md-sys-typescale-label-small-font: "Noto Sans";
     --md-sys-typescale-label-small-weight: 500;
     --md-sys-typescale-label-small-size: 11px;
     --md-sys-typescale-label-small-tracking: 0.5px;
     --md-sys-typescale-label-small-line-height: 16px;
-    // --md-sys-typescale-label-small: Label Small;
 }

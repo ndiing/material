@@ -1,4 +1,3 @@
-// VirtualScrollController
 
 /**
  * @fires VirtualScroll#onVirtualScroll - {"detail":{"containerHeight":{},"start":{},"end":{},"translateY":{},"":{}}}
@@ -10,7 +9,6 @@ class VirtualScroll {
      */
     constructor(host, options) {
         this.host = host;
-        // (this.host=host).addController(this)
         this.options = {
             total: undefined,
             rowHeight: 56,
@@ -65,7 +63,6 @@ class VirtualScroll {
     /**
      */
     init() {
-        // console.log(this)
         this.host.classList.add("md-virtual-scroll");
         this.track = document.createElement("div");
         this.track.classList.add("md-virtual-scroll__track");
@@ -75,7 +72,5 @@ class VirtualScroll {
         this.handleScroll();
     }
     destroy() {}
-    // hostConnected
-    // hostDisconnected
 }
 export { VirtualScroll };

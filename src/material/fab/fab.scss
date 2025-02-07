@@ -16,8 +16,6 @@
     box-shadow: var(--md-sys-elevation-level1);
 }
 
-// .md-fab__icon {}
-
 .md-fab__label {
     @include mixins.typescale-label-large();
     white-space: nowrap;

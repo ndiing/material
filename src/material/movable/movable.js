@@ -1,5 +1,3 @@
-// MovableController
-
 /**
  */
 class Movable {
@@ -9,14 +7,11 @@ class Movable {
      */
     constructor(host, options = {}) {
         this.host = host;
-        // (this.host=host).addController(this)
         this.options = {
             axis: ["x", "y"],
             handles: ["n", "e", "s", "w", "nw", "ne", "sw", "se"],
             ...options,
         };
-        // this.options.axis=['x']
-        // this.options.handles=['se']
         this.init();
     }
 
@@ -101,7 +96,6 @@ class Movable {
         });
         this.host.dispatchEvent(event);
     }
-    // hostConnected
 
     /**
      */
@@ -118,7 +112,6 @@ class Movable {
         this.handlePointerup = this.handlePointerup.bind(this);
         this.host.addEventListener("pointerdown", this.handlePointerdown);
     }
-    // hostDisconnected
     destroy() {}
 }
 export { Movable };

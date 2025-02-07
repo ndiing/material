@@ -62,9 +62,8 @@ class Router {
         this.emit("onRouterCurrentEntryChange");
         this.setController();
         const routes = this.get();
-        // console.log(routes)
         this.emit("onRouterNavigate");
-        for (const route of routes??[]) {
+        for (const route of routes ?? []) {
             if (route.beforeLoad) {
                 try {
                     await this.handleBeforeLoad(route);

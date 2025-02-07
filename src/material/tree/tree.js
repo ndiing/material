@@ -29,7 +29,6 @@ class MdTreeComponent extends MdComponent {
      * @param {String} [item]
      */
     renderTreeItem(item) {
-        // console.log(item)
         return html`
             <md-tree-row>
                 <md-tree-item
