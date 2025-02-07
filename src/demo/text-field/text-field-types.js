@@ -17,8 +17,8 @@ class DemoTextFieldTypes extends MdComponent {
                     @onFormNativeSubmit="${console.log}"
                 >
                     <div class="md-layout__grid">
-                        <!-- <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"><md-text-field variant="filled" label="color" name="color" type="color"></md-text-field></div> -->
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <!-- <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4"><md-text-field variant="filled" label="color" name="color" type="color"></md-text-field></div> -->
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="date"
@@ -26,7 +26,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="date"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="datetime-local"
@@ -34,7 +34,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="datetime-local"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="email"
@@ -42,8 +42,8 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="email"
                             ></md-text-field>
                         </div>
-                        <!-- <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"><md-text-field variant="filled" label="file" name="file" type="file"></md-text-field></div> -->
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <!-- <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4"><md-text-field variant="filled" label="file" name="file" type="file"></md-text-field></div> -->
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="month"
@@ -51,7 +51,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="month"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="number"
@@ -59,7 +59,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="number"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="password"
@@ -67,7 +67,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="password"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="search"
@@ -75,7 +75,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="search"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="tel"
@@ -83,7 +83,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="tel"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="text"
@@ -91,7 +91,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="time"
@@ -99,7 +99,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="time"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="url"
@@ -107,7 +107,7 @@ class DemoTextFieldTypes extends MdComponent {
                                 type="url"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 label="week"

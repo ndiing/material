@@ -11,128 +11,95 @@ class DemoMain extends MdComponent {
     constructor() {
         super();
         this.items = [
-            {
-                label: "Bottom App Bar",
-                children: [
-                    { label: "Icon buttons and FAB", routerLink: "/bottom-app-bar" },
-                    { label: "Icon buttons and no FAB", routerLink: "/bottom-app-bar-no-fab" },
-                ],
-            },
-            { label: "Top App Bar", children: [{ label: "Small top app bar", routerLink: "/top-app-bar" }] },
-            {
-                label: "Badge",
-                children: [
-                    { label: "Small badge", routerLink: "/badge" },
-                    { label: "Large badge", routerLink: "/badge-large" },
-                    { label: "Large badge with max characters", routerLink: "/badge-large-with-max" },
-                ],
-            },
-            {
-                label: "Layout",
-                children: [
-                    { label: "Grid", routerLink: "/layout-grid" },
-                    { label: "Border", routerLink: "/layout-border" },
-                ],
-            },
-            { label: "Icon", routerLink: "/icon" },
-            { label: "Image", routerLink: "/image" },
-            {
-                label: "Button",
-                children: [
-                    { label: "Elevated button", routerLink: "/button-elevated" },
-                    { label: "Filled button", routerLink: "/button-filled" },
-                    { label: "Filled tonal button", routerLink: "/button-filled-tonal" },
-                    { label: "Outlined button", routerLink: "/button-outlined" },
-                    { label: "Text button", routerLink: "/button" },
-                ],
-            },
-            {
-                label: "FAB",
-                children: [
-                    { label: "FAB", routerLink: "/fab" },
-                    { label: "Small FAB", routerLink: "/fab-small" },
-                    { label: "Large FAB", routerLink: "/fab-large" },
-                ],
-            },
-            {
-                label: "Extended FAB",
-                children: [
-                    { label: "With icon", routerLink: "/fab-extended" },
-                    { label: "Without icon", routerLink: "/fab-extended-without-icon" },
-                ],
-            },
-            { label: "Icon Button", routerLink: "/icon-button" },
-            { label: "Segmented Button", routerLink: "/segmented-button" },
-            { label: "Checkbox", routerLink: "/checkbox" },
-            { label: "Radio Button", routerLink: "/radio-button" },
-            { label: "Switch", routerLink: "/switch" },
-            { label: "Card", routerLink: "/card" },
-            { label: "Scrim", routerLink: "/scrim" },
-            { label: "Dialog", routerLink: "/dialog" },
-            {
-                label: "Sheet",
-                children: [
-                    { label: "Default", routerLink: "/sheet" },
-                    { label: "Modal", routerLink: "/sheet-modal" },
-                ],
-            },
-            {
-                label: "Side Sheet",
-                children: [
-                    { label: "Standard side sheet", routerLink: "/side-sheet" },
-                    { label: "Modal side sheet", routerLink: "/side-sheet-modal" },
-                ],
-            },
-            {
-                label: "Bottom Sheet",
-                children: [
-                    { label: "Standard bottom sheet", routerLink: "/bottom-sheet" },
-                    { label: "Modal bottom sheet", routerLink: "/bottom-sheet-modal" },
-                ],
-            },
-            { label: "List", routerLink: "/list" },
-            { label: "Tooltip", routerLink: "/tooltip" },
-            { label: "Tree", routerLink: "/tree" },
-
-            // { label: "Navigation List", routerLink: "/navigation-list" },
-            { label: "Tabs", routerLink: "/tabs" },
-            {
-                label: "Navigation Bar",
-                children: [
-                    { label: "Default", routerLink: "/navigation-bar" },
-                    { label: "No Label", routerLink: "/navigation-bar-no-label" },
-                ],
-            },
-            {
-                label: "Navigation Drawer",
-                children: [
-                    { label: "Default", routerLink: "/navigation-drawer" },
-                    { label: "No Icon", routerLink: "/navigation-drawer-no-icon" },
-                    { label: "Modal", routerLink: "/navigation-drawer-modal" },
-                ],
-            },
-            {
-                label: "Navigation Rail",
-                children: [
-                    { label: "Default", routerLink: "/navigation-rail" },
-                    { label: "No Label", routerLink: "/navigation-rail-no-label" },
-                ],
-            },
-            { label: "Menu", routerLink: "/menu" },
-            { label: "Progress Indicator", routerLink: "/progress-indicator" },
-            { label: "Slider", routerLink: "/slider" },
-            { label: "Chips", routerLink: "/chips" },
-            { label: "Snackbar", routerLink: "/snackbar" },
-            { label: "Form", routerLink: "/form" },
-            {
-                label: "Text Field",
-                children: [
-                    { label: "Default", routerLink: "/text-field" },
-                    { label: "Types", routerLink: "/text-field-types" },
-                ],
-            },
-            { label: "Data Table", routerLink: "/data-table" },
-            { label: "Datetime Picker", routerLink: "/datetime-picker" },
+            { label: "test", routerLink: "/test" },
+            { label: "icon", routerLink: "/icon" },
+            { label: "image", routerLink: "/image" },
+            { label: "layout", children:[
+                { label: "layout-grid", routerLink: "/layout-grid" },
+                { label: "layout-border", routerLink: "/layout-border" },
+            ] },
+            { label: "scrim", routerLink: "/scrim" },
+            { label: "sheet", children:[
+                { label: "sheet", routerLink: "/sheet" },
+                { label: "sheet-modal", routerLink: "/sheet-modal" },
+            ] },
+            { label: "form", routerLink: "/form" },
+            { label: "data-table", routerLink: "/data-table" },
+            { label: "bottom-app-bar", children:[
+                { label: "bottom-app-bar", routerLink: "/bottom-app-bar" },
+                { label: "bottom-app-bar-no-fab", routerLink: "/bottom-app-bar-no-fab" },
+            ] },
+            { label: "top-app-bar", routerLink: "/top-app-bar" },
+            { label: "badge", children:[
+                { label: "badge", routerLink: "/badge" },
+                { label: "badge-large", routerLink: "/badge-large" },
+                { label: "badge-large-with-max", routerLink: "/badge-large-with-max" },
+            ] },
+            { label: "button", children:[
+                { label: "button", routerLink: "/button" },
+                { label: "button-elevated", routerLink: "/button-elevated" },
+                { label: "button-filled", routerLink: "/button-filled" },
+                { label: "button-filled-tonal", routerLink: "/button-filled-tonal" },
+                { label: "button-outlined", routerLink: "/button-outlined" },
+            ] },
+            { label: "fab", children:[
+                { label: "fab", routerLink: "/fab" },
+                { label: "fab-small", routerLink: "/fab-small" },
+                { label: "fab-large", routerLink: "/fab-large" },
+                { label: "fab-extended", routerLink: "/fab-extended" },
+                { label: "fab-extended-without-icon", routerLink: "/fab-extended-without-icon" },
+            ] },
+            { label: "icon-button", children:[
+                { label: "icon-button", routerLink: "/icon-button" },
+                { label: "icon-button-filled", routerLink: "/icon-button-filled" },
+                { label: "icon-button-filled-tonal", routerLink: "/icon-button-filled-tonal" },
+                { label: "icon-button-outlined", routerLink: "/icon-button-outlined" },
+            ] },
+            { label: "segmented-button", children:[
+                { label: "segmented-button", routerLink: "/segmented-button" },
+                { label: "segmented-button-multi", routerLink: "/segmented-button-multi" },
+            ] },
+            { label: "card", routerLink: "/card" },
+            { label: "checkbox", routerLink: "/checkbox" },
+            { label: "chips", routerLink: "/chips" },
+            { label: "datetime-picker", routerLink: "/datetime-picker" },
+            { label: "dialog", routerLink: "/dialog" },
+            { label: "list", routerLink: "/list" },
+            { label: "menu", routerLink: "/menu" },
+            { label: "navigation-bar", children:[
+                { label: "navigation-bar", routerLink: "/navigation-bar" },
+                { label: "navigation-bar-no-label", routerLink: "/navigation-bar-no-label" },
+            ] },
+            { label: "navigation-drawer", children:[
+                { label: "navigation-drawer", routerLink: "/navigation-drawer" },
+                { label: "navigation-drawer-no-icon", routerLink: "/navigation-drawer-no-icon" },
+                { label: "navigation-drawer-modal", routerLink: "/navigation-drawer-modal" },
+            ] },
+            { label: "navigation-rail", children:[
+                { label: "navigation-rail", routerLink: "/navigation-rail" },
+                { label: "navigation-rail-no-label", routerLink: "/navigation-rail-no-label" },
+            ] },
+            { label: "progress-indicator", routerLink: "/progress-indicator" },
+            { label: "radio-button", routerLink: "/radio-button" },
+            { label: "side-sheet", children:[
+                { label: "side-sheet", routerLink: "/side-sheet" },
+                { label: "side-sheet-modal", routerLink: "/side-sheet-modal" },
+            ] },
+            { label: "bottom-sheet", children:[
+                { label: "bottom-sheet", routerLink: "/bottom-sheet" },
+                { label: "bottom-sheet-modal", routerLink: "/bottom-sheet-modal" },
+            ] },
+            { label: "slider", routerLink: "/slider" },
+            { label: "snackbar", routerLink: "/snackbar" },
+            { label: "switch", routerLink: "/switch" },
+            { label: "tabs", routerLink: "/tabs" },
+            { label: "text-field", children:[
+                { label: "text-field", routerLink: "/text-field" },
+                { label: "text-field-types", routerLink: "/text-field-types" },
+            ] },
+            { label: "tooltip", routerLink: "/tooltip" },
+            { label: "tree", routerLink: "/tree" },
+            { label: "navigation-list", routerLink: "/navigation-list" },
         ];
         this.items.sort((a, b) => {
             if (a.children && !b.children) return -1;

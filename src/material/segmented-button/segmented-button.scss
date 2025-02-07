@@ -1,4 +1,5 @@
 .md-segmented-button {
+    --md-comp-segmented-button-density: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -8,6 +9,8 @@
 }
 
 .md-segmented-button__button {
+    --md-comp-button-density: var(--md-comp-segmented-button-density);
+    
     &:first-child:not(:last-child) {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;

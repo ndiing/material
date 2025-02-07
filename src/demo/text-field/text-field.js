@@ -17,21 +17,21 @@ class DemoTextField extends MdComponent {
                     @onFormNativeSubmit="${console.log}"
                 >
                     <div class="md-layout__grid">
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text0"
                                 required
                                 prefix="Rp"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text1"
                                 required
                                 suffix="@gmail.com"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text2"
                                 required
@@ -39,7 +39,7 @@ class DemoTextField extends MdComponent {
                                 text="Supporting text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text3"
                                 required
@@ -47,21 +47,21 @@ class DemoTextField extends MdComponent {
                                 counter="5/20"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text4"
                                 required
                                 .icons="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text5"
                                 required
                                 .actions="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text6"
                                 required
@@ -69,7 +69,7 @@ class DemoTextField extends MdComponent {
                                 prefix="Rp"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text7"
                                 required
@@ -77,7 +77,7 @@ class DemoTextField extends MdComponent {
                                 suffix="@gmail.com"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text8"
                                 required
@@ -86,7 +86,7 @@ class DemoTextField extends MdComponent {
                                 text="Supporting text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text9"
                                 required
@@ -96,7 +96,7 @@ class DemoTextField extends MdComponent {
                                 counter="5/20"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text10"
                                 required
@@ -104,7 +104,7 @@ class DemoTextField extends MdComponent {
                                 .icons="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 name="text11"
                                 required
@@ -112,7 +112,7 @@ class DemoTextField extends MdComponent {
                                 .actions="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text12"
@@ -120,7 +120,7 @@ class DemoTextField extends MdComponent {
                                 prefix="Rp"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text13"
@@ -128,7 +128,7 @@ class DemoTextField extends MdComponent {
                                 suffix="@gmail.com"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text14"
@@ -137,7 +137,7 @@ class DemoTextField extends MdComponent {
                                 text="Supporting text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text15"
@@ -146,7 +146,7 @@ class DemoTextField extends MdComponent {
                                 counter="5/20"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text16"
@@ -154,7 +154,7 @@ class DemoTextField extends MdComponent {
                                 .icons="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text17"
@@ -162,7 +162,7 @@ class DemoTextField extends MdComponent {
                                 .actions="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text18"
@@ -171,7 +171,7 @@ class DemoTextField extends MdComponent {
                                 prefix="Rp"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text19"
@@ -180,7 +180,7 @@ class DemoTextField extends MdComponent {
                                 suffix="@gmail.com"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text20"
@@ -190,7 +190,7 @@ class DemoTextField extends MdComponent {
                                 text="Supporting text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text21"
@@ -201,7 +201,7 @@ class DemoTextField extends MdComponent {
                                 counter="5/20"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text22"
@@ -210,7 +210,7 @@ class DemoTextField extends MdComponent {
                                 .icons="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="filled"
                                 name="text23"
@@ -219,7 +219,7 @@ class DemoTextField extends MdComponent {
                                 .actions="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text36"
@@ -227,7 +227,7 @@ class DemoTextField extends MdComponent {
                                 prefix="Rp"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text37"
@@ -235,7 +235,7 @@ class DemoTextField extends MdComponent {
                                 suffix="@gmail.com"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text38"
@@ -244,7 +244,7 @@ class DemoTextField extends MdComponent {
                                 text="Supporting text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text39"
@@ -253,7 +253,7 @@ class DemoTextField extends MdComponent {
                                 counter="5/20"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text40"
@@ -261,7 +261,7 @@ class DemoTextField extends MdComponent {
                                 .icons="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text41"
@@ -269,7 +269,7 @@ class DemoTextField extends MdComponent {
                                 .actions="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text42"
@@ -278,7 +278,7 @@ class DemoTextField extends MdComponent {
                                 prefix="Rp"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text43"
@@ -287,7 +287,7 @@ class DemoTextField extends MdComponent {
                                 suffix="@gmail.com"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text44"
@@ -297,7 +297,7 @@ class DemoTextField extends MdComponent {
                                 text="Supporting text"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text45"
@@ -308,7 +308,7 @@ class DemoTextField extends MdComponent {
                                 counter="5/20"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text46"
@@ -317,7 +317,7 @@ class DemoTextField extends MdComponent {
                                 .icons="${[{ icon: "image" }]}"
                             ></md-text-field>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 variant="outlined"
                                 name="text47"

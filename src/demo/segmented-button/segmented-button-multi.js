@@ -4,7 +4,7 @@ import { MdComponent } from "../../material/component/component";
 /**
  * @extends MdComponent
  */
-class DemoBadgeWithMax extends MdComponent {
+class DemoSegmentedButtonMulti extends MdComponent {
     /**
      * @private
      */
@@ -13,15 +13,15 @@ class DemoBadgeWithMax extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-badge label="1000"></md-badge>
-                    </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-badge label="1000" max="99"></md-badge>
+                        <md-segmented-button
+                            .items="${[{ label: "Label", selected: true }, { label: "Label", selected: true }, { label: "Label" }]}"
+                            type="multi-selected"
+                        ></md-segmented-button>
                     </div>
                 </div>
             </div>
         `;
     }
 }
-customElements.define("demo-badge-with-max", DemoBadgeWithMax);
-export default document.createElement("demo-badge-with-max");
+customElements.define("demo-segmented-button-multi", DemoSegmentedButtonMulti);
+export default document.createElement("demo-segmented-button-multi");

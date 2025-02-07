@@ -10,7 +10,7 @@ import "./polyfill/polyfill.js";
 import "./util/util.js";
 import "./icon/icon.js";
 import "./image/image.js";
-import "./divider/divider.js";
+import "./divider/divider.js"; 
 import "./badge/badge.js";
 import "./button/button.js";
 import "./fab/fab.js";

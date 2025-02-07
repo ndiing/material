@@ -1,7 +1,7 @@
 import { Router } from "../material/router/router";
 import DemoMain from "./main/main.js";
 import DemoError from "./error/error.js";
-Router.use([
+const routes = [
     {
         path: "",
         component: DemoMain,
@@ -50,12 +50,12 @@ Router.use([
             { path: "fab-extended-without-icon", load: () => import("./fab/fab-extended-without-icon.js").then((m) => m.default) },
 
             { path: "icon-button", load: () => import("./icon-button/icon-button.js").then((m) => m.default) },
-            // { path: "icon-button-filled", load: () => import("./icon-button/icon-button-filled.js").then((m) => m.default) },
-            // { path: "icon-button-filled-tonal", load: () => import("./icon-button/icon-button-filled-tonal.js").then((m) => m.default) },
-            // { path: "icon-button-outlined", load: () => import("./icon-button/icon-button-outlined.js").then((m) => m.default) },
+            { path: "icon-button-filled", load: () => import("./icon-button/icon-button-filled.js").then((m) => m.default) },
+            { path: "icon-button-filled-tonal", load: () => import("./icon-button/icon-button-filled-tonal.js").then((m) => m.default) },
+            { path: "icon-button-outlined", load: () => import("./icon-button/icon-button-outlined.js").then((m) => m.default) },
 
             { path: "segmented-button", load: () => import("./segmented-button/segmented-button.js").then((m) => m.default) },
-            // { path: "segmented-button-multi", load: () => import("./segmented-button/segmented-button-multi.js").then((m) => m.default) },
+            { path: "segmented-button-multi", load: () => import("./segmented-button/segmented-button-multi.js").then((m) => m.default) },
 
             { path: "card", load: () => import("./card/card.js").then((m) => m.default) },
 
@@ -113,4 +113,5 @@ Router.use([
         path: "*",
         component: DemoError,
     },
-]);
+];
+Router.use(routes);

@@ -14,17 +14,17 @@ class DemoTest extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <div class="demo-movable"></div>
                     </div>
-                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <div class="demo-movable"></div>
                     </div>
-                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <div class="demo-movable"></div>
                     </div>
 
-                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <div class="demo-virtual-scroll ">
                             <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>
                             <div class="demo-virtual-scroll__item md-virtual-scroll__item">item 1</div>
@@ -42,7 +42,7 @@ class DemoTest extends MdComponent {
                         </div>
                     </div>
 
-                    <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <div class="screen">${Array.from({ length: 50 }, () => html`<div class="window"></div>`)}</div>
                     </div>
                 </div>
