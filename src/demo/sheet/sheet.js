@@ -1,64 +1,29 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoSheet extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
-            <div class="md-layout__border">
-                <md-sheet
-                    style="height:80px;"
-                    id="sheet1"
-                    region="north"
-                    label="North"
-                ></md-sheet>
-                <md-sheet
-                    style="width:256px;"
-                    id="sheet2"
-                    region="east"
-                    label="East"
-                ></md-sheet>
-                <md-sheet
-                    style="height:80px;"
-                    id="sheet3"
-                    region="south"
-                    label="South"
-                ></md-sheet>
-                <md-sheet
-                    style="width:256px;"
-                    id="sheet4"
-                    region="west"
-                    label="West"
-                ></md-sheet>
-                <md-sheet region="center">
-                    <div class="md-layout">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Sheet North"
-                            @click="${() => sheet1.toggle()}"
-                        ></md-button>
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Sheet East"
-                            @click="${() => sheet2.toggle()}"
-                        ></md-button>
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Sheet South"
-                            @click="${() => sheet3.toggle()}"
-                        ></md-button>
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Sheet West"
-                            @click="${() => sheet4.toggle()}"
-                        ></md-button>
+            <div class="md-layout">
+                <div class="md-layout__grid">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                        <md-sheet
+                            icons=""
+                            actions=""
+                            label=""
+                            sublabel=""
+                            buttons=""
+                            open=""
+                            region=""
+                            modal=""
+                            @onSheetIconButtonClick="${console.log}"
+                            @onSheetButtonClick="${console.log}"
+                            @onSheetShown="${console.log}"
+                            @onSheetClosed="${console.log}"
+                            @onSheetScrimClosed="${console.log}"
+                        ></md-sheet>
                     </div>
-                </md-sheet>
+                </div>
             </div>
         `;
     }

@@ -1,35 +1,36 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoNavigationRailNoLabel extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout__border">
-                <md-navigation-rail
-                    id="navigationRail1"
-                    open
-                    .items="${[
-                        { icon: "image", selected: true },
-                        { icon: "image", badge: 0 },
-                        { icon: "image", badge: 1 },
-                        { icon: "image", badge: 1000 },
-                    ]}"
-                ></md-navigation-rail>
-                <md-sheet region="center">
+                <div class="md-layout__center">
                     <div class="md-layout">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Navigation Rail"
-                            @click="${() => navigationRail1.toggle()}"
-                        ></md-button>
+                        <div class="md-layout__grid">
+                            <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                                <md-button
+                                    variant="filled-tonal"
+                                    label="Toggle Navigation Rail"
+                                    @click="${(event) => navigationRail.toggle()}"
+                                ></md-button>
+                            </div>
+                        </div>
                     </div>
-                </md-sheet>
+                </div>
+                <md-navigation-rail
+                    id="navigationRail"
+                    .items="${[
+                        {icon:'image',selected:true},
+                        {icon:'image'},
+                        {icon:'image'},
+                        {icon:'image'},
+                    ]}"
+                    open
+                    @onNavigationRailIconButtonClick="${console.log}"
+                    @onNavigationRailShown="${console.log}"
+                    @onNavigationRailClosed="${console.log}"
+                ></md-navigation-rail>
             </div>
         `;
     }

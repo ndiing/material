@@ -137,7 +137,9 @@ class Router {
      * @param {String} [route]
      */
     static async loadComponent(route) {
-        if (!route.component) route.component = await route.load();
+        if (!route.component) {
+            route.component = await route.load();
+        }
     }
 
     /**

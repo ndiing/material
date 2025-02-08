@@ -1,31 +1,41 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoSideSheetModal extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout__border">
-                <md-side-sheet
-                    id="sideSheet2"
-                    modal
-                    >body</md-side-sheet
-                >
-                <md-sheet region="center">
+                <div class="md-layout__center">
                     <div class="md-layout">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Side Sheet"
-                            @click="${() => sideSheet2.toggle()}"
-                        ></md-button>
+                        <div class="md-layout__grid">
+                            <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                                <md-button
+                                    variant="filled-tonal"
+                                    label="Toggle Side Sheet"
+                                    @click="${(event) => sideSheet.toggle()}"
+                                ></md-button>
+                            </div>
+                        </div>
                     </div>
-                </md-sheet>
+                </div>
+                <md-side-sheet
+                    id="sideSheet"
+                    .icons="${undefined}"
+                    .actions="${[{icon:"image"}]}"
+                    label="Label"
+                    .sublabel="${undefined}"
+                    .buttons="${[{component:"spacer"},{label:"Label"},{label:"Label"}]}"
+                    open
+                    modal
+                    @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}"
+                    @onSideSheetButtonClick="${(event) => sideSheet.toggle()}"
+                    @onSideSheetShown="${console.log}"
+                    @onSideSheetClosed="${console.log}"
+                    @onSideSheetScrimClosed="${console.log}"
+                >Body</md-side-sheet>
             </div>
+            
+            
         `;
     }
 }

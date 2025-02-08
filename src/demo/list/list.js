@@ -1,162 +1,221 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoList extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text" },
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline" },
+                                {avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel'},
+                                {avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text" },
-                                { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline" },
+                                {trailingCheckbox:true,avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingCheckbox:true,avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel'},
+                                {trailingCheckbox:true,avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { image: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { image: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text" },
-                                { image: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline" },
+                                {image:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {image:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel'},
+                                {image:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { trailingCheckbox: true, image: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { trailingCheckbox: true, image: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text" },
-                                { trailingCheckbox: true, image: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline" },
+                                {trailingCheckbox:true,image:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingCheckbox:true,image:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel'},
+                                {trailingCheckbox:true,image:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { video: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { video: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text" },
-                                { video: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline" },
+                                {video:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {video:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel'},
+                                {video:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline", sublabel: "Supporting text" },
-                                { trailingCheckbox: true, video: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", label: "Headline" },
+                                {trailingCheckbox:true,video:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingCheckbox:true,video:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label',sublabel:'Sublabel'},
+                                {trailingCheckbox:true,video:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { icon: "image", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { icon: "image", label: "Headline", sublabel: "Supporting text" },
-                                { icon: "image", label: "Headline" },
+                                {icon:'image',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {icon:'image',label:'Label',sublabel:'Sublabel'},
+                                {icon:'image',label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { trailingCheckbox: true, icon: "image", label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { trailingCheckbox: true, icon: "image", label: "Headline", sublabel: "Supporting text" },
-                                { trailingCheckbox: true, icon: "image", label: "Headline" },
+                                {trailingCheckbox:true,icon:'image',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingCheckbox:true,icon:'image',label:'Label',sublabel:'Sublabel'},
+                                {trailingCheckbox:true,icon:'image',label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-list .items="${[{ label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" }, { label: "Headline", sublabel: "Supporting text" }, { label: "Headline" }]}"></md-list>
-                    </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { trailingCheckbox: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { trailingCheckbox: true, label: "Headline", sublabel: "Supporting text" },
-                                { trailingCheckbox: true, label: "Headline" },
+                                {label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {label:'Label',sublabel:'Sublabel'},
+                                {label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { leadingCheckbox: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { leadingCheckbox: true, label: "Headline", sublabel: "Supporting text" },
-                                { leadingCheckbox: true, label: "Headline" },
+                                {trailingCheckbox:true,label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingCheckbox:true,label:'Label',sublabel:'Sublabel'},
+                                {trailingCheckbox:true,label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { text: "100+", leadingCheckbox: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { text: "100+", leadingCheckbox: true, label: "Headline", sublabel: "Supporting text" },
-                                { text: "100+", leadingCheckbox: true, label: "Headline" },
+                                {leadingCheckbox:true,label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {leadingCheckbox:true,label:'Label',sublabel:'Sublabel'},
+                                {leadingCheckbox:true,label:'Label'},
                             ]}"
-                            type="multi-select"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { leadingRadioButton: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { leadingRadioButton: true, label: "Headline", sublabel: "Supporting text" },
-                                { leadingRadioButton: true, label: "Headline" },
+                                {leadingCheckbox:true,text:'Text',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {leadingCheckbox:true,text:'Text',label:'Label',sublabel:'Sublabel'},
+                                {leadingCheckbox:true,text:'Text',label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { text: "100+", leadingRadioButton: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { text: "100+", leadingRadioButton: true, label: "Headline", sublabel: "Supporting text" },
-                                { text: "100+", leadingRadioButton: true, label: "Headline" },
+                                {leadingRadioButton:true,label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {leadingRadioButton:true,label:'Label',sublabel:'Sublabel'},
+                                {leadingRadioButton:true,label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { trailingSwitch: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { trailingSwitch: true, label: "Headline", sublabel: "Supporting text" },
-                                { trailingSwitch: true, label: "Headline" },
+                                {leadingRadioButton:true,text:'Text',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {leadingRadioButton:true,text:'Text',label:'Label',sublabel:'Sublabel'},
+                                {leadingRadioButton:true,text:'Text',label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[
-                                { icon: "image", trailingSwitch: true, label: "Headline", sublabel: "Supporting text that is long enough to fill up multiple lines" },
-                                { icon: "image", trailingSwitch: true, label: "Headline", sublabel: "Supporting text" },
-                                { icon: "image", trailingSwitch: true, label: "Headline" },
+                                {trailingSwitch:true,label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingSwitch:true,label:'Label',sublabel:'Sublabel'},
+                                {trailingSwitch:true,label:'Label'},
                             ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
+                    <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
+                        <md-list
+                            .items="${[
+                                {trailingSwitch:true,icon:'image',label:'Label',sublabel:'Sublabel Sublabel Sublabel Sublabel Sublabel'},
+                                {trailingSwitch:true,icon:'image',label:'Label',sublabel:'Sublabel'},
+                                {trailingSwitch:true,icon:'image',label:'Label'},
+                            ]}"
+                            @onListItemClick="${console.log}"
+                            @onListItemCheckboxNativeInput="${console.log}"
+                            @onListItemRadioButtonNativeInput="${console.log}"
+                            @onListItemSwitchNativeInput="${console.log}"
+                        ></md-list>
+                    </div>
+
                 </div>
             </div>
         `;

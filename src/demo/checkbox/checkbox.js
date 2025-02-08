@@ -1,26 +1,39 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoCheckbox extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
+
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-checkbox></md-checkbox>
+                        <md-checkbox
+                            name="checkbox"
+                            value="checkbox"
+                            @onCheckboxNativeInput="${console.log}"
+                            @onCheckboxNativeReset="${console.log}"
+                        ></md-checkbox>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-checkbox indeterminate></md-checkbox>
+                        <md-checkbox
+                            name="checkbox"
+                            value="checkbox"
+                            indeterminate=""
+                            @onCheckboxNativeInput="${console.log}"
+                            @onCheckboxNativeReset="${console.log}"
+                        ></md-checkbox>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-checkbox checked></md-checkbox>
+                        <md-checkbox
+                            name="checkbox"
+                            value="checkbox"
+                            checked=""
+                            @onCheckboxNativeInput="${console.log}"
+                            @onCheckboxNativeReset="${console.log}"
+                        ></md-checkbox>
                     </div>
+
                 </div>
             </div>
         `;

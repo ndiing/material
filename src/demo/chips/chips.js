@@ -1,43 +1,43 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoChips extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
+
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-chips
-                            .items="${[
-                                { icon: "image", label: "Item 1" },
-                                { icon: "image", label: "Item 2" },
-                                { icon: "image", label: "Item 3" },
-                                { icon: "image", label: "Item 4" },
-                            ]}"
+                            .items="${[{label:"Label"},{label:"Label"},{label:"Label"},{label:"Label"}]}"
+                            @onChipClick="${console.log}"
                         ></md-chips>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-chips .items="${[{ label: "Item 1" }, { label: "Item 2" }, { label: "Item 3" }, { label: "Item 4" }]}"></md-chips>
-                    </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-chips
-                            .items="${[
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", action: "close", label: "Item 1" },
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", action: "close", label: "Item 2" },
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", action: "close", label: "Item 3" },
-                                { avatar: "https://api.dicebear.com/9.x/icons/svg?seed=Andrea", action: "close", label: "Item 4" },
-                            ]}"
+                            .items="${[{icon:'image',label:"Label"},{icon:'image',label:"Label"},{icon:'image',label:"Label"},{icon:'image',label:"Label"}]}"
+                            @onChipClick="${console.log}"
                         ></md-chips>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-chips .items="${[{ label: "Item 1" }, { label: "Item 2" }, { label: "Item 3" }, { label: "Item 4" }]}"></md-chips>
+                        <md-chips
+                            .items="${[{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label"},{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label"},{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label"},{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label"}]}"
+                            @onChipClick="${console.log}"
+                        ></md-chips>
                     </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                        <md-chips
+                            .items="${[{icon:'image',label:"Label",action:"image"},{icon:'image',label:"Label",action:"image"},{icon:'image',label:"Label",action:"image"},{icon:'image',label:"Label",action:"image"}]}"
+                            @onChipClick="${console.log}"
+                        ></md-chips>
+                    </div>
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                        <md-chips
+                            .items="${[{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label",action:"image"},{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label",action:"image"},{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label",action:"image"},{avatar:'https://api.dicebear.com/9.x/dylan/svg?seed=Leah',label:"Label",action:"image"}]}"
+                            @onChipClick="${console.log}"
+                        ></md-chips>
+                    </div>
+
                 </div>
             </div>
         `;

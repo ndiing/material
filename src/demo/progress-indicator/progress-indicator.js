@@ -1,41 +1,22 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoProgressIndicator extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
+
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-progress-indicator></md-progress-indicator>
-                    </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-progress-indicator value="50"></md-progress-indicator>
-                    </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-progress-indicator value="100"></md-progress-indicator>
-                    </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-progress-indicator variant="circular"></md-progress-indicator>
+                        <md-progress-indicator
+                        ></md-progress-indicator>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-progress-indicator
                             value="50"
-                            variant="circular"
                         ></md-progress-indicator>
                     </div>
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-progress-indicator
-                            value="100"
-                            variant="circular"
-                        ></md-progress-indicator>
-                    </div>
+
                 </div>
             </div>
         `;

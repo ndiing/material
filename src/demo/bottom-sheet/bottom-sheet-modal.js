@@ -1,30 +1,38 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoBottomSheetModal extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout__border">
-                <md-bottom-sheet
-                    id="bottomSheet2"
-                    modal
-                    >body</md-bottom-sheet
-                >
-                <md-sheet region="center">
+                <div class="md-layout__center">
                     <div class="md-layout">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Bottom Sheet"
-                            @click="${() => bottomSheet2.toggle()}"
-                        ></md-button>
+                        <div class="md-layout__grid">
+                            <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                                <md-button
+                                    variant="filled-tonal"
+                                    label="Toggle Bottom Sheet"
+                                    @click="${() => bottomSheet.toggle()}"
+                                ></md-button>
+                            </div>
+                        </div>
                     </div>
-                </md-sheet>
+                </div>
+                <md-bottom-sheet
+                    id="bottomSheet"
+                    .icons="${undefined}"
+                    .actions="${undefined}"
+                    .label="${undefined}"
+                    .sublabel="${undefined}"
+                    .buttons="${undefined}"
+                    .open="${undefined}"
+                    modal
+                    @onBottomSheetIconButtonClick="${console.log}"
+                    @onBottomSheetButtonClick="${console.log}"
+                    @onBottomSheetShown="${console.log}"
+                    @onBottomSheetClosed="${console.log}"
+                    @onBottomSheetScrimClosed="${console.log}"
+                >Body</md-bottom-sheet>
             </div>
         `;
     }

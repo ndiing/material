@@ -1,30 +1,40 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoBottomAppBarNoFab extends MdComponent {
-    /**
-     * @private
-     */
+    constructor(){
+        super()
+        this.actions=[
+            {icon:'image'},
+            {icon:'image'},
+            {icon:'image'},
+            {icon:'image'},
+        ]
+    }
     render() {
         return html`
             <div class="md-layout__border">
-                <md-bottom-app-bar
-                    id="bottomAppBar1"
-                    open
-                    .actions="${[{ icon: "check_box" }, { icon: "brush" }, { icon: "mic" }, { icon: "image" }]}"
-                ></md-bottom-app-bar>
-                <md-sheet region="center">
+                <div class="md-layout__center">
                     <div class="md-layout">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Toggle Bottom App Bar"
-                            @click="${() => bottomAppBar1.toggle()}"
-                        ></md-button>
+                        <div class="md-layout__grid">
+                            <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
+                                <md-button
+                                    variant="filled-tonal"
+                                    label="Toggle Bottom App Bar"
+                                    @click="${() => bottomAppBar.toggle()}"
+                                ></md-button>
+                            </div>
+                        </div>
                     </div>
-                </md-sheet>
+                </div>
+                <md-bottom-app-bar
+                    id="bottomAppBar"
+                    .actions="${this.actions}"
+                    open
+                    @onBottomAppBarIconButtonClick="${console.log}"
+                    @onBottomAppBarShown="${console.log}"
+                    @onBottomAppBarClosed="${console.log}"
+                ></md-bottom-app-bar>
             </div>
         `;
     }

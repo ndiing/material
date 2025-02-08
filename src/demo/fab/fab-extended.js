@@ -1,13 +1,7 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoFabExtended extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout">
@@ -15,17 +9,14 @@ class DemoFabExtended extends MdComponent {
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-fab
                             type="extended"
-                            icon="edit"
-                            label="Compose"
+                            icon="image"
+                            label="Label"
                         ></md-fab>
                     </div>
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-fab
-                            variant="unelevated"
                             type="extended"
-                            icon="edit"
-                            label="Compose"
+                            label="Label"
                         ></md-fab>
                     </div>
                 </div>

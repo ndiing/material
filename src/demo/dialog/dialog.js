@@ -1,32 +1,34 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-/**
- * @extends MdComponent
- */
 class DemoDialog extends MdComponent {
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
+
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-dialog
-                            id="dialog1"
-                            label="Label"
-                            .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
-                            @onDialogButtonClick="${() => dialog1.toggle()}"
-                        >
-                            body
-                        </md-dialog>
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Dialog"
-                            @click="${() => dialog1.toggle()}"
+                            @click="${(event) => dialog.toggle()}"
                         ></md-button>
+                        <md-dialog
+                            id="dialog"
+                            .icons="${undefined}"
+                            .actions="${undefined}"
+                            label="label"
+                            .sublabel="${undefined}"
+                            .buttons="${[{component:"spacer"},{label:"Label"},{label:"Label"}]}"
+                            .open="${undefined}"
+                            @onDialogIconButtonClick="${console.log}"
+                            @onDialogButtonClick="${() => dialog.toggle()}"
+                            @onDialogShown="${console.log}"
+                            @onDialogClosed="${console.log}"
+                            @onDialogScrimClosed="${console.log}"
+                        >body</md-dialog>
                     </div>
+
                 </div>
             </div>
         `;
