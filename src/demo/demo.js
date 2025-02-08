@@ -127,6 +127,8 @@ const routes = [
             { path: "tree-item", load: () => import( "./tree/tree-item.js").then(m=>m.default) },
             { path: "tree-row", load: () => import( "./tree/tree-row.js").then(m=>m.default) },
             { path: "tree", load: () => import( "./tree/tree.js").then(m=>m.default) },
+
+            { path: "test", load: () => import( "./test/test.js").then(m=>m.default) },
         ],
     },
     {

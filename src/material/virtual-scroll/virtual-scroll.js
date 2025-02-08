@@ -15,6 +15,8 @@ class VirtualScroll {
             rowHeight: 56,
             nodePadding: 2,
             viewportHeight: undefined,
+            track: ".md-virtual-scroll__track",
+            item: ".md-virtual-scroll__item",
             ...options,
         };
         this.init();
@@ -29,21 +31,27 @@ class VirtualScroll {
         const scrollTop = this.host.scrollTop;
         const nodePadding = this.options.nodePadding;
         const viewportHeight = this.options.viewportHeight ?? this.host.clientHeight;
-        const containerHeight = total * rowHeight;
+
+        const trackHeight = total * rowHeight;
+
         let start = Math.floor(scrollTop / rowHeight) - nodePadding;
         start = Math.max(0, start);
+
         let end = Math.ceil(viewportHeight / rowHeight) + 2 * nodePadding;
         end = Math.min(total - start, end);
+        end = end + start;
+
         const translateY = start * rowHeight;
-        this.track.style.setProperty("height", containerHeight + "px");
-        this.host.querySelectorAll(".md-virtual-scroll__item").forEach((item) => {
+
+        this.track.style.setProperty("height", trackHeight + "px");
+
+        this.host.querySelectorAll(this.options.item).forEach((item) => {
             item.style.setProperty("transform", "translate3d(0," + translateY + "px,0)");
         });
+
         this.emit("onVirtualScroll", {
-            containerHeight,
             start,
             end,
-            translateY,
         });
     }
 
@@ -64,9 +72,9 @@ class VirtualScroll {
      */
     init() {
         this.host.classList.add("md-virtual-scroll");
-        this.track = document.createElement("div");
-        this.track.classList.add("md-virtual-scroll__track");
-        this.host.append(this.track);
+
+        this.track = this.host.querySelector(this.options.track);
+
         this.handleScroll = this.handleScroll.bind(this);
         this.host.addEventListener("scroll", this.handleScroll);
         this.handleScroll();

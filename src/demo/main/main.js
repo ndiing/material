@@ -203,8 +203,10 @@ class DemoMain extends MdComponent {
                     view="tree"
                     .items="${this.items}"
                     open
-                    @onTreeItemClick="${(event) => {
-                        // if (event.detail.event.currentTarget.data.routerLink) mainNavigationDrawer.toggle();
+                    @onNavigationDrawerItemClick="${(event) => {
+                        // if (event
+                        //     .detail.event
+                        //     .currentTarget.data.routerLink) mainNavigationDrawer.toggle();
                     }}"
                 ></md-navigation-drawer>
                 <md-sheet region="center">

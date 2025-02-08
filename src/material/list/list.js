@@ -18,6 +18,7 @@ class MdListComponent extends MdComponent {
     static properties = {
         items: { type: Array },
         type: { type: String },
+        fieldMap: { type: Object },
         rippleOptions: { type: Object },
     };
     types = ["single-select", "multi-select"];
@@ -28,12 +29,22 @@ class MdListComponent extends MdComponent {
         super();
         this.items = [];
         this.type = "single-select";
+        // this.fieldMap={
+        //     // label:'label',
+        //     // value:'value',
+        // }
     }
 
     /**
      * @param {String} [item]
      */
     renderListItem(item) {
+        if(this.fieldMap){
+            for(const name in this.fieldMap){
+                const value=this.fieldMap[name]
+                item[name]=item[value]
+            }
+        }
         return html`
             <md-list-row>
                 <md-list-item

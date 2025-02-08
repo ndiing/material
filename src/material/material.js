@@ -4,8 +4,8 @@
 /* import "./tokens/tokens.js"; */
 /* import "./popper/popper.js"; */
 /* import "./movable/movable.js"; */
-/* import "./store/store.js"; */
-import "./virtual-scroll/virtual-scroll.js";
+// import "./store/store.js";
+// import "./virtual-scroll/virtual-scroll.js";
 import "./polyfill/polyfill.js";
 import "./util/util.js";
 import "./icon/icon.js";
