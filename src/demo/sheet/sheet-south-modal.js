@@ -26,7 +26,7 @@ class DemoSheetSouthModal extends MdComponent {
                     .label="${undefined}"
                     .sublabel="${undefined}"
                     .buttons="${undefined}"
-                    .open="${undefined}"
+                    
                     modal
                     style="height:80px"
                     @onSheetIconButtonClick="${console.log}"

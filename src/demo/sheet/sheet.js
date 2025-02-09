@@ -13,7 +13,7 @@ class DemoSheet extends MdComponent {
                             label=""
                             sublabel=""
                             buttons=""
-                            open=""
+                            
                             region=""
                             modal=""
                             @onSheetIconButtonClick="${console.log}"

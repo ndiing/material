@@ -166,6 +166,10 @@ class DemoMain extends MdComponent {
             // { label: "tree-item", routerLink: "/tree-item" },
             // { label: "tree-row", routerLink: "/tree-row" },
             { label: "tree", routerLink: "/tree" },
+            { label: "date-picker", children:[
+                { label: "date-picker", routerLink: "/date-picker" },
+                { label: "date-picker-modal", routerLink: "/date-picker-modal" },
+            ] },
         ];
         this.items.sort((a, b) => {
             if (a.children && !b.children) return -1;

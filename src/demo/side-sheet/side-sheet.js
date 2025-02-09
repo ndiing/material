@@ -25,7 +25,7 @@ class DemoSideSheet extends MdComponent {
                     label="Label"
                     .sublabel="${undefined}"
                     .buttons="${[{component:"spacer"},{label:"Label"},{label:"Label"}]}"
-                    open
+                    
                     .modal="${undefined}"
                     @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}"
                     @onSideSheetButtonClick="${(event) => sideSheet.toggle()}"

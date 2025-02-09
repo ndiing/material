@@ -14,7 +14,7 @@ class DemoSheetCenter extends MdComponent {
                             label=""
                             sublabel=""
                             buttons=""
-                            open=""
+                            
                             region=""
                             modal=""
                             @onSheetIconButtonClick="${console.log}"

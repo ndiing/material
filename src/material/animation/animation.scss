@@ -347,3 +347,52 @@
         opacity: 0;
     }
 }
+
+
+@keyframes date-picker-out {
+    0% {
+        height: var(--md-comp-date-picker-container-height);
+        opacity: 0;
+        transform: translate3d(0%, calc((var(--md-comp-date-picker-height) - var(--md-comp-date-picker-container-height)) / 2), 0);
+    }
+
+    100% {
+        height: var(--md-comp-date-picker-height);
+        opacity: 1;
+        transform: translate3d(0%, 0%, 0);
+    }
+}
+
+@keyframes date-picker-in {
+    0% {
+        height: var(--md-comp-date-picker-height);
+        opacity: 1;
+        transform: translate3d(0%, 0%, 0);
+    }
+
+    100% {
+        height: var(--md-comp-date-picker-container-height);
+        opacity: 0;
+        transform: translate3d(0%, calc((var(--md-comp-date-picker-height) - var(--md-comp-date-picker-container-height)) / 2), 0);
+    }
+}
+
+@keyframes date-picker-body-out {
+    0% {
+        overflow: hidden;
+    }
+
+    100% {
+        overflow: hidden;
+    }
+}
+
+@keyframes date-picker-body-in {
+    0% {
+        overflow: hidden;
+    }
+
+    100% {
+        overflow: hidden;
+    }
+}

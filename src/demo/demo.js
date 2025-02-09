@@ -129,6 +129,9 @@ const routes = [
             { path: "tree", load: () => import( "./tree/tree.js").then(m=>m.default) },
 
             { path: "test", load: () => import( "./test/test.js").then(m=>m.default) },
+            
+            { path: "date-picker", load: () => import( "./date-picker/date-picker.js").then(m=>m.default) },
+            { path: "date-picker-modal", load: () => import( "./date-picker/date-picker-modal.js").then(m=>m.default) },
         ],
     },
     {

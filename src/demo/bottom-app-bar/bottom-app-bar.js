@@ -32,7 +32,7 @@ class DemoBottomAppBar extends MdComponent {
                     id="bottomAppBar"
                     .actions="${this.actions}"
                     .fab="${this.fab}"
-                    open
+                    
                     @onBottomAppBarIconButtonClick="${console.log}"
                     @onBottomAppBarFabClick="${console.log}"
                     @onBottomAppBarShown="${console.log}"

@@ -20,7 +20,7 @@ class DemoNavigationBarNoLabel extends MdComponent {
                 </div>
                 <md-navigation-bar
                     id="navigationBar"
-                    open
+                    
                     .items="${[
                         {icon:'image',selected:true},
                         {icon:'image'},

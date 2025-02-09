@@ -26,7 +26,7 @@ class DemoSheetEast extends MdComponent {
                     .label="${undefined}"
                     .sublabel="${undefined}"
                     .buttons="${undefined}"
-                    .open="${undefined}"
+                    
                     .modal="${undefined}"
                     style="width:256px"
                     @onSheetIconButtonClick="${console.log}"

@@ -20,7 +20,7 @@ class DemoDialog extends MdComponent {
                             label="label"
                             .sublabel="${undefined}"
                             .buttons="${[{component:"spacer"},{label:"Label"},{label:"Label"}]}"
-                            .open="${undefined}"
+                            
                             @onDialogIconButtonClick="${console.log}"
                             @onDialogButtonClick="${() => dialog.toggle()}"
                             @onDialogShown="${console.log}"
