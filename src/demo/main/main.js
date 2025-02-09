@@ -42,10 +42,7 @@ class DemoMain extends MdComponent {
             },
             // { label: "data-table-cell", routerLink: "/data-table-cell" },
             { label: "data-table", routerLink: "/data-table" },
-            { label: "datetime-picker", children:[
-                { label: "datetime-picker", routerLink: "/datetime-picker" },
-                { label: "datetime-picker-modal", routerLink: "/datetime-picker-modal" },
-            ] },
+           
             { label: "dialog", routerLink: "/dialog" },
             { label: "divider", routerLink: "/divider" },
             {
@@ -166,9 +163,19 @@ class DemoMain extends MdComponent {
             // { label: "tree-item", routerLink: "/tree-item" },
             // { label: "tree-row", routerLink: "/tree-row" },
             { label: "tree", routerLink: "/tree" },
-            { label: "date-picker", children:[
-                { label: "date-picker", routerLink: "/date-picker" },
-                { label: "date-picker-modal", routerLink: "/date-picker-modal" },
+            { label: "picker", children:[
+                // { label: "datetime-picker", children:[
+                    { label: "datetime-picker", routerLink: "/datetime-picker" },
+                    { label: "datetime-picker-modal", routerLink: "/datetime-picker-modal" },
+                // ] },
+                // { label: "date-picker", children:[
+                    { label: "date-picker", routerLink: "/date-picker" },
+                    { label: "date-picker-modal", routerLink: "/date-picker-modal" },
+                // ] },
+                // { label: "time-picker", children:[
+                    { label: "time-picker", routerLink: "/time-picker" },
+                    { label: "time-picker-modal", routerLink: "/time-picker-modal" },
+                // ] },
             ] },
         ];
         this.items.sort((a, b) => {

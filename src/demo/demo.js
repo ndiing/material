@@ -31,9 +31,6 @@ const routes = [
             { path: "data-table-cell", load: () => import( "./data-table/data-table-cell.js").then(m=>m.default) },
             { path: "data-table", load: () => import( "./data-table/data-table.js").then(m=>m.default) },
 
-            { path: "datetime-picker", load: () => import( "./datetime-picker/datetime-picker.js").then(m=>m.default) },
-            { path: "datetime-picker-modal", load: () => import( "./datetime-picker/datetime-picker-modal.js").then(m=>m.default) },
-
             { path: "dialog", load: () => import( "./dialog/dialog.js").then(m=>m.default) },
 
             { path: "divider", load: () => import( "./divider/divider.js").then(m=>m.default) },
@@ -130,8 +127,14 @@ const routes = [
 
             { path: "test", load: () => import( "./test/test.js").then(m=>m.default) },
             
+            { path: "datetime-picker", load: () => import( "./datetime-picker/datetime-picker.js").then(m=>m.default) },
+            { path: "datetime-picker-modal", load: () => import( "./datetime-picker/datetime-picker-modal.js").then(m=>m.default) },
+
             { path: "date-picker", load: () => import( "./date-picker/date-picker.js").then(m=>m.default) },
             { path: "date-picker-modal", load: () => import( "./date-picker/date-picker-modal.js").then(m=>m.default) },
+            
+            { path: "time-picker", load: () => import( "./time-picker/time-picker.js").then(m=>m.default) },
+            { path: "time-picker-modal", load: () => import( "./time-picker/time-picker-modal.js").then(m=>m.default) },
         ],
     },
     {

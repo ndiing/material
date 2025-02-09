@@ -42,7 +42,7 @@ class DemoDatePickerModal extends MdComponent {
                         ></md-button>
                         <md-date-picker
                             id="datePicker2"
-                            value="1990-10-17T20:30"
+                            value="1990-10-17"
                             modal
                             @onDatePickerLabelClick="${console.log}"
                             @onDatePickerIconButtonPrevClick="${console.log}"

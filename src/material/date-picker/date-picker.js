@@ -126,6 +126,7 @@ class MdDatePickerComponent extends MdComponent {
         });
     }
 
+    
     /**
      */
     get icons() {
@@ -150,7 +151,6 @@ class MdDatePickerComponent extends MdComponent {
         this.monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
         this.weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
         this.dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
-        
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
@@ -306,6 +306,7 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
+    
     /**
      */
     render() {
@@ -313,7 +314,6 @@ class MdDatePickerComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length
                 ? html`
                       <div class="md-date-picker__header">
-                        
                           <div class="md-date-picker__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div>
                           ${this.actions?.length ? html` <div class="md-date-picker__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}
                       </div>
@@ -448,6 +448,7 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerDayItemClick", { event });
     }
 
+    
     /**
      * @param {Object} [event]
      */
