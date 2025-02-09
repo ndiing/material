@@ -585,7 +585,7 @@ ${this.label || this.sublabel
      */
     handleDatetimePickerButtonOkClick(event) {
         this.close();
-        this.emit("onDatetimePickerButtonOkClick", { event });
+        this.emit("onDatetimePickerButtonOkClick", { event,value:stringifyDatetimeLocal(this.value) });
     }
 
     /**
