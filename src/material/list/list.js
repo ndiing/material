@@ -13,6 +13,7 @@ class MdListComponent extends MdComponent {
     /**
      * @property {Array} items
      * @property {String} type
+     * @property {Object} fieldMap
      * @property {Object} rippleOptions
      */
     static properties = {
@@ -29,10 +30,6 @@ class MdListComponent extends MdComponent {
         super();
         this.items = [];
         this.type = "single-select";
-        // this.fieldMap={
-        //     // label:'label',
-        //     // value:'value',
-        // }
     }
 
     /**
