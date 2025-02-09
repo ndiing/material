@@ -6,8 +6,8 @@
 // import "./movable/movable.js";
 // import "./store/store.js";
 // import "./virtual-scroll/virtual-scroll.js";
+// import "./util/util.js";
 import "./polyfill/polyfill.js";
-import "./util/util.js";
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";
