@@ -167,9 +167,9 @@ class MdDatetimePickerComponent extends MdComponent {
         const map = {
             0: () => [this.years[0].label, this.years[this.years.length - 1].label].join(" - "),
             1: () => this.selection.getFullYear(),
-            2: () => this.selection.toLocaleString(),
-            3: () => this.selection.toLocaleTimeString(),
-            4: () => this.selection.toLocaleTimeString(),
+            2: () => stringifyDatetimeLocal(this.selection),
+            3: () => stringifyDatetimeLocal(this.selection),
+            4: () => stringifyDatetimeLocal(this.selection),
         };
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }

@@ -55,5 +55,6 @@ import "./data-table/data-table.js";
 import "./datetime-picker/datetime-picker.js";
 import "./date-picker/date-picker.js";
 import "./time-picker/time-picker.js";
+import "./week-picker/week-picker.js";
 // import "./carousel/carousel.js";
 // import "./search/search.js";

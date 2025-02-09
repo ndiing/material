@@ -135,6 +135,9 @@ const routes = [
             
             { path: "time-picker", load: () => import( "./time-picker/time-picker.js").then(m=>m.default) },
             { path: "time-picker-modal", load: () => import( "./time-picker/time-picker-modal.js").then(m=>m.default) },
+            
+            { path: "week-picker", load: () => import( "./week-picker/week-picker.js").then(m=>m.default) },
+            { path: "week-picker-modal", load: () => import( "./week-picker/week-picker-modal.js").then(m=>m.default) },
         ],
     },
     {

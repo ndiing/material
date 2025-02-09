@@ -176,6 +176,10 @@ class DemoMain extends MdComponent {
                     { label: "time-picker", routerLink: "/time-picker" },
                     { label: "time-picker-modal", routerLink: "/time-picker-modal" },
                 // ] },
+                // { label: "week-picker", children:[
+                    { label: "week-picker", routerLink: "/week-picker" },
+                    { label: "week-picker-modal", routerLink: "/week-picker-modal" },
+                // ] },
             ] },
         ];
         this.items.sort((a, b) => {

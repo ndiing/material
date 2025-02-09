@@ -98,8 +98,8 @@ class MdTimePickerComponent extends MdComponent {
      */
     get icons() {
         const map = {
-            0: () => this.selection.toLocaleTimeString(),
-            1: () => this.selection.toLocaleTimeString(),
+            0: () => stringifyTime(this.selection),
+            1: () => stringifyTime(this.selection),
         };
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }
