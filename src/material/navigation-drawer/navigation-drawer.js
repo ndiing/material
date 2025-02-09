@@ -86,17 +86,21 @@ class MdNavigationDrawerComponent extends MdComponent {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
             <div class="md-navigation-drawer__wrapper">
-                <div class="md-navigation-drawer__body">${this.view === "flat" ? html`
-                    <md-navigation-list 
-                        .items="${this.items}"
-                        @onNavigationListItemClick="${this.handleNavigationDrawerItemClick}"
-                    ></md-navigation-list>    
-                ` : html`
-                    <md-tree 
-                        .items="${this.items}"
-                        @onTreeItemClick="${this.handleNavigationDrawerItemClick}"
-                    ></md-tree>
-                `}</div>
+                <div class="md-navigation-drawer__body">
+                    ${this.view === "flat"
+                        ? html`
+                              <md-navigation-list
+                                  .items="${this.items}"
+                                  @onNavigationListItemClick="${this.handleNavigationDrawerItemClick}"
+                              ></md-navigation-list>
+                          `
+                        : html`
+                              <md-tree
+                                  .items="${this.items}"
+                                  @onTreeItemClick="${this.handleNavigationDrawerItemClick}"
+                              ></md-tree>
+                          `}
+                </div>
             </div>
         `;
     }
@@ -186,7 +190,7 @@ class MdNavigationDrawerComponent extends MdComponent {
      * @param {Object} [event]
      */
     handleNavigationDrawerItemClick(event) {
-        this.emit("onNavigationDrawerItemClick", { event:event.detail.event });
+        this.emit("onNavigationDrawerItemClick", { event: event.detail.event });
     }
 }
 customElements.define("md-navigation-drawer", MdNavigationDrawerComponent);

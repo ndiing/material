@@ -22,6 +22,14 @@ class VirtualScroll {
         this.init();
     }
 
+    load(options = {}) {
+        for (const name in options) {
+            const value = options[name];
+            this.options[name] = value;
+        }
+        this.handleScroll();
+    }
+
     /**
      * @param {Object} [event]
      */

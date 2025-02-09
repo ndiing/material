@@ -39,10 +39,10 @@ class MdListComponent extends MdComponent {
      * @param {String} [item]
      */
     renderListItem(item) {
-        if(this.fieldMap){
-            for(const name in this.fieldMap){
-                const value=this.fieldMap[name]
-                item[name]=item[value]
+        if (this.fieldMap) {
+            for (const name in this.fieldMap) {
+                const value = this.fieldMap[name];
+                item[name] = item[value];
             }
         }
         return html`

@@ -12,6 +12,10 @@ class Store {
         this.options = options;
     }
 
+    load(data = []) {
+        this.data = data;
+    }
+
     /**
      * @param {String} [data]
      * @param {String} [sorters]

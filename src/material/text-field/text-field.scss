@@ -134,6 +134,11 @@
             pointer-events: none;
         }
 
+        .md-text-field__prefix,
+        .md-text-field__suffix {
+            visibility: hidden;
+        }
+
         .md-text-field__native {
             &::placeholder,
             &::-webkit-datetime-edit {
@@ -159,7 +164,10 @@
                 padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 8px);
                 padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 8px);
             }
-
+            .md-text-field__prefix,
+            .md-text-field__suffix {
+                visibility: visible;
+            }
             .md-text-field__native {
                 &::placeholder,
                 &::-webkit-datetime-edit {
@@ -220,6 +228,11 @@
             }
         }
 
+        .md-text-field__prefix,
+        .md-text-field__suffix {
+            visibility: hidden;
+        }
+
         .md-text-field__native {
             &::placeholder,
             &::-webkit-datetime-edit {
@@ -245,6 +258,11 @@
                 &::before {
                     width: 100%;
                 }
+            }
+
+            .md-text-field__prefix,
+            .md-text-field__suffix {
+                visibility: visible;
             }
 
             .md-text-field__native {
