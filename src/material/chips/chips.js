@@ -9,7 +9,7 @@ import { RippleController } from "../ripple/ripple";
  * @fires onChipClick
  * @element md-chips
  */
-class MdChipComponent extends MdComponent {
+class MdChipsComponent extends MdComponent {
     /**
      * @property {Array} [items]
      * @property {String} [type]
@@ -83,5 +83,5 @@ class MdChipComponent extends MdComponent {
         this.emit("onChipClick", { event });
     }
 }
-customElements.define("md-chips", MdChipComponent);
-export { MdChipComponent };
+customElements.define("md-chips", MdChipsComponent);
+export { MdChipsComponent };

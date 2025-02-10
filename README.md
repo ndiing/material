@@ -15,7 +15,7 @@
 <dd></dd>
 <dt><a href="#MdChipComponent">MdChipComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
 <dd></dd>
-<dt><a href="#MdChipComponent">MdChipComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
+<dt><a href="#MdChipsComponent">MdChipsComponent</a> ⇐ <code><a href="#MdComponent">MdComponent</a></code></dt>
 <dd></dd>
 <dt><a href="#MdComponent">MdComponent</a> ⇐ <code>LitElement</code></dt>
 <dd></dd>
@@ -315,11 +315,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onChipActionClick</code>  
 **Element**: md-chip  
-
-* [MdChipComponent](#MdChipComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdChipComponent+properties)
-    * [.properties](#MdChipComponent+properties)
-
 <a name="MdChipComponent+properties"></a>
 
 ### mdChipComponent.properties
@@ -335,48 +330,17 @@
 | [selected] | <code>Boolean</code> | 
 | [disabled] | <code>Boolean</code> | 
 
-<a name="MdChipComponent+properties"></a>
+<a name="MdChipsComponent"></a>
 
-### mdChipComponent.properties
-**Kind**: instance property of [<code>MdChipComponent</code>](#MdChipComponent)  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| [items] | <code>Array</code> | 
-| [type] | <code>String</code> | 
-
-<a name="MdChipComponent"></a>
-
-## MdChipComponent ⇐ [<code>MdComponent</code>](#MdComponent)
+## MdChipsComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onChipClick</code>  
 **Element**: md-chips  
+<a name="MdChipsComponent+properties"></a>
 
-* [MdChipComponent](#MdChipComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdChipComponent+properties)
-    * [.properties](#MdChipComponent+properties)
-
-<a name="MdChipComponent+properties"></a>
-
-### mdChipComponent.properties
-**Kind**: instance property of [<code>MdChipComponent</code>](#MdChipComponent)  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| [icon] | <code>String</code> | 
-| [avatar] | <code>String</code> | 
-| [label] | <code>String</code> | 
-| [action] | <code>String</code> | 
-| [selected] | <code>Boolean</code> | 
-| [disabled] | <code>Boolean</code> | 
-
-<a name="MdChipComponent+properties"></a>
-
-### mdChipComponent.properties
-**Kind**: instance property of [<code>MdChipComponent</code>](#MdChipComponent)  
+### mdChipsComponent.properties
+**Kind**: instance property of [<code>MdChipsComponent</code>](#MdChipsComponent)  
 **Properties**
 
 | Name | Type |
