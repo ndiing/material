@@ -3,8 +3,11 @@
 .md-data-table {
     display: flex;
     flex-direction: column;
+    padding: 8px 0;
     width: 100%;
     height: 100%;
+    min-width: 0;
+    min-height: 0;
 }
 
 .md-data-table__native {
@@ -16,66 +19,31 @@
     overflow: auto;
 
     thead {
-        th {
-            position: sticky;
-            top: 0;
-            z-index: 2;
-
-            &:nth-child(1) {
-                position: sticky;
-                left: 0;
-                z-index: 3;
-            }
-        }
     }
 
     tbody {
         &:focus {
-            td {
-                .md-data-table__cell {
-                    background-color: var(--md-sys-color-primary10);
-                }
+            .md-data-table__cell {
+                background-color: var(--md-sys-color-primary10);
             }
         }
 
         &:active {
-            td {
-                .md-data-table__cell {
-                    background-color: var(--md-sys-color-primary10);
-                }
+            .md-data-table__cell {
+                background-color: var(--md-sys-color-primary10);
             }
         }
 
         &:hover {
-            td {
-                .md-data-table__cell {
-                    background-color: var(--md-sys-color-primary8);
-                }
+            .md-data-table__cell {
+                background-color: var(--md-sys-color-primary8);
             }
         }
 
         &[selected] {
-            td {
-                .md-data-table__cell {
-                    background-color: var(--md-sys-color-secondary-container);
-                    color: var(--md-sys-color-on-secondary-container);
-
-                    .md-data-table__icon {
-                        font-variation-settings:
-                            "FILL" 1,
-                            "wght" 400,
-                            "GRAD" 0,
-                            "opsz" 24;
-                    }
-                }
-            }
-        }
-
-        td {
-            &:nth-child(1) {
-                position: sticky;
-                left: 0;
-                z-index: 1;
+            .md-data-table__cell {
+                background-color: var(--md-sys-color-secondary-container);
+                color: var(--md-sys-color-on-secondary-container);
             }
         }
     }
@@ -104,18 +72,18 @@
     color: var(--md-sys-color-on-surface);
     border-bottom: 1px solid var(--md-sys-color-outline);
 
-    &[selected] {
-        background-color: var(--md-sys-color-secondary-container);
-        color: var(--md-sys-color-on-secondary-container);
+    // &[selected] {
+    //     background-color: var(--md-sys-color-secondary-container);
+    //     color: var(--md-sys-color-on-secondary-container);
 
-        .md-data-table__icon {
-            font-variation-settings:
-                "FILL" 1,
-                "wght" 400,
-                "GRAD" 0,
-                "opsz" 24;
-        }
-    }
+    //     .md-data-table__icon {
+    //         font-variation-settings:
+    //             "FILL" 1,
+    //             "wght" 400,
+    //             "GRAD" 0,
+    //             "opsz" 24;
+    //     }
+    // }
 }
 
 .md-data-table__avatar {

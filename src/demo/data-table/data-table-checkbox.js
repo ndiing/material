@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-class DemoDataTable extends MdComponent {
+class DemoDataTableCheckbox extends MdComponent {
     constructor(){
         super()
 
@@ -629,6 +629,7 @@ class DemoDataTable extends MdComponent {
                             .bodies="${this.bodies}"
                             .footers="${this.footers}"
                             .data="${this.data}"
+                            checkbox
                         ></md-data-table>
                     </div>
                 </div>
@@ -636,5 +637,5 @@ class DemoDataTable extends MdComponent {
         `;
     }
 }
-customElements.define("demo-data-table", DemoDataTable);
-export default document.createElement("demo-data-table");
+customElements.define("demo-data-table-checkbox", DemoDataTableCheckbox);
+export default document.createElement("demo-data-table-checkbox");

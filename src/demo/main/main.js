@@ -41,7 +41,10 @@ class DemoMain extends MdComponent {
                 ],
             },
             // { label: "data-table-cell", routerLink: "/data-table-cell" },
-            { label: "data-table", routerLink: "/data-table" },
+            { label: "data-table", children:[
+                { label: "data-table", routerLink: "/data-table" },
+                { label: "data-table-checkbox", routerLink: "/data-table-checkbox" },
+            ] },
            
             { label: "dialog", routerLink: "/dialog" },
             { label: "divider", routerLink: "/divider" },
@@ -213,7 +216,7 @@ class DemoMain extends MdComponent {
                     class="demo-main-top-app-bar"
                     open
                     label="Material Design"
-                    sublabel="Version 0.55.0"
+                    sublabel="Version 0.59.0"
                     .leadingActions="${this.leadingActions}"
                     @onTopAppBarIconButtonClick="${() => mainNavigationDrawer.toggle()}"
                 ></md-top-app-bar>

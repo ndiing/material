@@ -6,12 +6,12 @@ import { RippleController } from "../ripple/ripple";
 /**
  *
  * @extends MdComponent
- * @fires onDataTableCellActionClick
+ * @fires onDataTableCellSelected
  * @element md-data-table-cell
  */
 class MdDataTableCellComponent extends MdComponent {
     /**
-     * @property {Boolean} [checkbox]
+     * @property {Boolean} [leadingCheckbox]
      * @property {Boolean} [leadingRadioButton]
      * @property {Boolean} [leadingSwitch]
      * @property {String} [avatar]
@@ -21,7 +21,6 @@ class MdDataTableCellComponent extends MdComponent {
      * @property {String} [label]
      * @property {String} [sublabel]
      * @property {String} [text]
-     * @property {String} [action]
      * @property {Boolean} [trailingCheckbox]
      * @property {Boolean} [trailingRadioButton]
      * @property {Boolean} [trailingSwitch]
@@ -30,7 +29,7 @@ class MdDataTableCellComponent extends MdComponent {
      * @property {Number} [badge]
      */
     static properties = {
-        checkbox: { type: Boolean },
+        leadingCheckbox: { type: Boolean },
         leadingRadioButton: { type: Boolean },
         leadingSwitch: { type: Boolean },
         avatar: { type: String },
@@ -40,12 +39,15 @@ class MdDataTableCellComponent extends MdComponent {
         label: { type: String },
         sublabel: { type: String },
         text: { type: String },
-        action: { type: String },
         trailingCheckbox: { type: Boolean },
         trailingRadioButton: { type: Boolean },
         trailingSwitch: { type: Boolean },
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
+        // selected: { type: Boolean, reflect: true },
+        // disabled: { type: Boolean, reflect: true },
+        // routerLink: { type: String, reflect: true },
+        // rippleOptions: { type: Object },
         badge: { type: Number },
     };
 
@@ -54,7 +56,7 @@ class MdDataTableCellComponent extends MdComponent {
      */
     constructor() {
         super();
-        this.rippleOptions = {};
+        // this.rippleOptions = {};
     }
 
     /**
@@ -63,7 +65,7 @@ class MdDataTableCellComponent extends MdComponent {
      */
     render() {
         return html`
-            ${this.checkbox
+            ${this.leadingCheckbox
                 ? html`<md-checkbox
                       class="md-data-table__checkbox"
                       .indeterminate="${this.indeterminate}"
@@ -103,15 +105,6 @@ class MdDataTableCellComponent extends MdComponent {
                   ></md-image>`
                 : nothing}
             ${this.icon ? html`<md-icon class="md-data-table__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-data-table__labels">${this.label ? html`<div class="md-data-table__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-data-table__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.text ? html`<div class="md-data-table__text">${this.text}</div>` : nothing}
-            ${this.action
-                ? html`
-                      <md-icon-button
-                          class="md-data-table__action"
-                          .icon="${this.action}"
-                          @click="${this.handleDataTableCellActionClick}"
-                      ></md-icon-button>
-                  `
-                : nothing}
             ${this.trailingCheckbox
                 ? html`<md-checkbox
                       class="md-data-table__checkbox"
@@ -156,6 +149,7 @@ class MdDataTableCellComponent extends MdComponent {
                 this.classList.add("md-data-table__cell--two-line");
             }
         }
+        // this.ripple = new RippleController(this, this.rippleOptions);
     }
 
     /**
@@ -169,15 +163,9 @@ class MdDataTableCellComponent extends MdComponent {
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-data-table__cell--with-icon", !!this.icon);
         }
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleDataTableCellActionClick(event) {
-        this.emit("onDataTableCellActionClick", { event });
+        // if (changedProperties.has("selected") && this.selected) {
+        //     this.emit("onDataTableCellSelected", { dataTableCell: this });
+        // }
     }
 }
 customElements.define("md-data-table-cell", MdDataTableCellComponent);
