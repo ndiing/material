@@ -9,7 +9,7 @@ class Router {
     static params = {};
 
     /**
-     *
+     * @private
      * @static
      * @param {Any} [pathname=this.pathname]
      * @param {Any} [routes=this.routes]
@@ -81,7 +81,7 @@ class Router {
     }
 
     /**
-     *
+     * @private
      * @static
      * @param {Any} [routes]
      */
@@ -110,7 +110,7 @@ class Router {
     }
 
     /**
-     *
+     * @private
      * @static
      * @async
      * @param {Any} [container]
@@ -143,7 +143,7 @@ class Router {
     }
 
     /**
-     *
+     * @private
      * @static
      * @param {Any} [route]
      */
@@ -152,7 +152,7 @@ class Router {
     }
 
     /**
-     *
+     * @private
      * @static
      * @async
      * @param {Any} [route]
@@ -182,7 +182,7 @@ class Router {
     }
 
     /**
-     *
+     * @private
      * @static
      */
     static setController() {

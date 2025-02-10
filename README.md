@@ -1362,12 +1362,6 @@
 
 * [Router](#Router)
     * [.pathname](#Router.pathname)
-    * [.get([pathname], [routes], [parent], [result])](#Router.get)
-    * [.removeComponent([routes])](#Router.removeComponent)
-    * [.getOutlet([container], [route])](#Router.getOutlet)
-    * [.setContainer([route])](#Router.setContainer)
-    * [.loadComponent([route])](#Router.loadComponent)
-    * [.setController()](#Router.setController)
     * [.navigate([url])](#Router.navigate)
     * [.use([routes], [options])](#Router.use)
 
@@ -1376,59 +1370,6 @@
 ### Router.pathname
 **Kind**: static property of [<code>Router</code>](#Router)  
 **Read only**: true  
-<a name="Router.get"></a>
-
-### Router.get([pathname], [routes], [parent], [result])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [pathname] | <code>Any</code> | <code>this.pathname</code> | 
-| [routes] | <code>Any</code> | <code>this.routes</code> | 
-| [parent] | <code>Any</code> | <code></code> | 
-| [result] | <code>Any</code> | <code>[]</code> | 
-
-<a name="Router.removeComponent"></a>
-
-### Router.removeComponent([routes])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [routes] | <code>Any</code> | 
-
-<a name="Router.getOutlet"></a>
-
-### Router.getOutlet([container], [route])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [container] | <code>Any</code> | 
-| [route] | <code>Any</code> | 
-
-<a name="Router.setContainer"></a>
-
-### Router.setContainer([route])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [route] | <code>Any</code> | 
-
-<a name="Router.loadComponent"></a>
-
-### Router.loadComponent([route])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [route] | <code>Any</code> | 
-
-<a name="Router.setController"></a>
-
-### Router.setController()
-**Kind**: static method of [<code>Router</code>](#Router)  
 <a name="Router.navigate"></a>
 
 ### Router.navigate([url])
