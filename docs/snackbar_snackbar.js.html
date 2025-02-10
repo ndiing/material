@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: snackbar/snackbar.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: snackbar/snackbar.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MdComponent } from "../component/component";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { choose } from "lit/directives/choose.js";
+const task = (() => {
+    let pending = Promise.resolve();
+    let execute = async (callback) => {
+        try {
+            await pending;
+        } finally {
+            return callback();
+        }
+    };
+    return (callback) => (pending = execute(callback));
+})();
+
+/**
+ *
+ * @extends MdComponent
+ * @fires onSnackbarIconButtonClick
+ * @fires onSnackbarButtonClick
+ * @fires onSnackbarShown
+ * @fires onSnackbarClosed
+ * @element md-snackbar
+ */
+class MdSnackbarComponent extends MdComponent {
+    /**
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
+     */
+    static properties = {
+        icons: { type: Array },
+        actions: { type: Array },
+        buttons: { type: Array },
+        open: { type: Boolean, reflect: true },
+    };
+
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.body = Array.from(this.childNodes);
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIcon(item) {
+        return html` &lt;md-icon .data="${item}">${item.icon}&lt;/md-icon> `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIconButton(item) {
+        return html`
+            &lt;md-icon-button
+                .data="${item}"
+                .icon="${ifDefined(item.icon)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .toggle="${ifDefined(item.toggle)}"
+                .selected="${ifDefined(item.selected)}"
+                .disabled="${ifDefined(item.disabled)}"
+                @click="${this.handleSnackbarIconButtonClick}"
+            >&lt;/md-icon-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderButton(item) {
+        return html`
+            &lt;md-button
+                .data="${item}"
+                .icon="${ifDefined(item.icon)}"
+                .label="${ifDefined(item.label)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .selected="${ifDefined(item.selected)}"
+                @click="${this.handleSnackbarButtonClick}"
+            >&lt;/md-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderSpacer(item) {
+        return html` &lt;div class="md-snackbar__spacer">&lt;/div> `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
+     */
+    renderItem(item, component = "icon") {
+        return choose(
+            item.component || component,
+            [
+                ["icon", () => this.renderIcon(item)],
+                ["icon-button", () => this.renderIconButton(item)],
+                ["button", () => this.renderButton(item)],
+                ["spacer", () => this.renderSpacer(item)],
+            ],
+            () => nothing,
+        );
+    }
+
+    /**
+     *
+     * @private
+     */
+    render() {
+        return html` ${this.body?.length ? html`&lt;div class="md-snackbar__body">${this.body}&lt;/div>` : nothing} ${this.buttons?.length ? html` &lt;div class="md-snackbar__footer">${this.buttons?.length ? html` &lt;div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}&lt;/div> ` : nothing}&lt;/div> ` : nothing} `;
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     */
+    async connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-snackbar");
+        this.style.setProperty("--md-comp-snackbar-animation", "none");
+        await this.updateComplete;
+        this.style.setProperty("--md-comp-snackbar-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-snackbar-width", this.clientWidth + "px");
+    }
+
+    /**
+     *
+     * @private
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-snackbar");
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSnackbarIconButtonClick(event) {
+        this.emit("onSnackbarIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSnackbarButtonClick(event) {
+        this.emit("onSnackbarButtonClick", { event });
+    }
+
+    /**
+     *
+     */
+    show() {
+        task(() => {
+            return new Promise((resolve) => {
+                const callback1 = () => {
+                    this.close();
+                };
+                const timeout = setTimeout(callback1, 1000 * 4);
+                const callback2 = () => {
+                    clearTimeout(timeout);
+                    this.removeEventListener("onSnackbarClosed", callback2);
+                    resolve();
+                };
+                this.addEventListener("onSnackbarClosed", callback2);
+                this.style.removeProperty("--md-comp-snackbar-animation");
+                this.open = true;
+                this.emit("onSnackbarShown");
+            });
+        });
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-snackbar-animation");
+        this.open = false;
+        const callback = (event) => {
+            if (event.animationName === "snackbar-in") {
+                this.removeEventListener("animationend", callback);
+                this.emit("onSnackbarClosed");
+            }
+        };
+        this.addEventListener("animationend", callback);
+    }
+
+    /**
+     *
+     */
+    toggle() {
+        if (this.open) this.close();
+        else this.show();
+    }
+}
+customElements.define("md-snackbar", MdSnackbarComponent);
+export { MdSnackbarComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="RippleController.html">RippleController</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Feb 11 2025 00:01:12 GMT+0700 (Indochina Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
