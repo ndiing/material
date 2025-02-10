@@ -358,7 +358,7 @@
 ## MdDataTableCellComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
-**Emits**: <code>event:onDataTableCellActionClick</code>  
+**Emits**: <code>event:onDataTableCellSelected</code>  
 **Element**: md-data-table-cell  
 <a name="MdDataTableCellComponent+properties"></a>
 
@@ -368,7 +368,7 @@
 
 | Name | Type |
 | --- | --- |
-| [checkbox] | <code>Boolean</code> | 
+| [leadingCheckbox] | <code>Boolean</code> | 
 | [leadingRadioButton] | <code>Boolean</code> | 
 | [leadingSwitch] | <code>Boolean</code> | 
 | [avatar] | <code>String</code> | 
@@ -378,7 +378,6 @@
 | [label] | <code>String</code> | 
 | [sublabel] | <code>String</code> | 
 | [text] | <code>String</code> | 
-| [action] | <code>String</code> | 
 | [trailingCheckbox] | <code>Boolean</code> | 
 | [trailingRadioButton] | <code>Boolean</code> | 
 | [trailingSwitch] | <code>Boolean</code> | 
@@ -391,14 +390,16 @@
 ## MdDataTableComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
-**Emits**: <code>event:onDataTableBodyClick</code>, <code>event:onDataTableHeaderCellCheckboxNativeInput</code>, <code>event:onDataTableBodyCellCheckboxNativeInput</code>  
+**Emits**: <code>event:onDataTableHeaderCellCheckboxClick</code>, <code>event:onDataTableBodyCellCheckboxClick</code>, <code>event:onDataTableBodyClick</code>  
 **Element**: md-data-table  
 
 * [MdDataTableComponent](#MdDataTableComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
     * [.properties](#MdDataTableComponent+properties)
     * [.selected](#MdDataTableComponent+selected)
-    * [.checked](#MdDataTableComponent+checked)
     * [.indeterminate](#MdDataTableComponent+indeterminate)
+    * [.checked](#MdDataTableComponent+checked)
+    * [.styleDataTableNativeHeaderCell()](#MdDataTableComponent+styleDataTableNativeHeaderCell)
+    * [.styleDataTableNativeBodyCell()](#MdDataTableComponent+styleDataTableNativeBodyCell)
 
 <a name="MdDataTableComponent+properties"></a>
 
@@ -412,15 +413,11 @@
 | [bodies] | <code>Array</code> | 
 | [footers] | <code>Array</code> | 
 | [data] | <code>Array</code> | 
+| [checkbox] | <code>Boolean</code> | 
 
 <a name="MdDataTableComponent+selected"></a>
 
 ### mdDataTableComponent.selected
-**Kind**: instance property of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
-**Read only**: true  
-<a name="MdDataTableComponent+checked"></a>
-
-### mdDataTableComponent.checked
 **Kind**: instance property of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
 **Read only**: true  
 <a name="MdDataTableComponent+indeterminate"></a>
@@ -428,6 +425,19 @@
 ### mdDataTableComponent.indeterminate
 **Kind**: instance property of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
 **Read only**: true  
+<a name="MdDataTableComponent+checked"></a>
+
+### mdDataTableComponent.checked
+**Kind**: instance property of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
+**Read only**: true  
+<a name="MdDataTableComponent+styleDataTableNativeHeaderCell"></a>
+
+### mdDataTableComponent.styleDataTableNativeHeaderCell()
+**Kind**: instance method of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
+<a name="MdDataTableComponent+styleDataTableNativeBodyCell"></a>
+
+### mdDataTableComponent.styleDataTableNativeBodyCell()
+**Kind**: instance method of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
 <a name="MdDatePickerComponent"></a>
 
 ## MdDatePickerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
