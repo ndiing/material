@@ -7,7 +7,7 @@ import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onMonthPickerLabelClick
  * @fires onMonthPickerIconButtonPrevClick
@@ -58,7 +58,7 @@ class MdMonthPickerComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      * @readonly
      */
     get years() {
@@ -76,7 +76,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get months() {
@@ -93,7 +93,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get icons() {
@@ -105,7 +105,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -123,7 +123,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -132,7 +132,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -152,7 +152,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -172,7 +172,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -181,7 +181,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -200,7 +200,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     renderMonthPickerYear() {
@@ -224,7 +224,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     renderMonthPickerMonth() {
@@ -248,7 +248,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -274,7 +274,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -296,7 +296,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -307,7 +307,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -322,7 +322,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -331,7 +331,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -343,7 +343,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -355,7 +355,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -367,7 +367,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -379,7 +379,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -394,7 +394,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -406,7 +406,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -416,7 +416,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -430,7 +430,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -443,7 +443,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -453,7 +453,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [options]
      */
     show(options) {
@@ -472,7 +472,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-month-picker-animation");
@@ -482,7 +482,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [options]
      */
     toggle(options) {

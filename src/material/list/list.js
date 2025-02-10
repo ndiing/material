@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onListItemClick
  * @fires onListItemCheckboxNativeInput
@@ -27,7 +27,7 @@ class MdListComponent extends MdComponent {
     types = ["single-select", "multi-select"];
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -36,7 +36,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -79,7 +79,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -87,7 +87,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -96,7 +96,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -114,7 +114,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [data]
      */
     multiSelect(data) {
@@ -122,7 +122,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [data]
      */
     singleSelect(data) {
@@ -132,7 +132,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -144,7 +144,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -156,7 +156,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

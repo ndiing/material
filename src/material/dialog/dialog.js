@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onDialogIconButtonClick
  * @fires onDialogButtonClick
@@ -32,7 +32,7 @@ class MdDialogComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -49,7 +49,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -69,7 +69,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -89,7 +89,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -98,7 +98,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -117,7 +117,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -125,7 +125,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -144,7 +144,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -155,7 +155,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -164,7 +164,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -173,7 +173,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-dialog-animation");
@@ -183,7 +183,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-dialog-animation");
@@ -193,7 +193,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -201,7 +201,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

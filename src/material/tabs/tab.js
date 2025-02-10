@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onTabSelected
  * @element md-tab
@@ -32,7 +32,7 @@ class MdTabComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -56,7 +56,7 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -68,7 +68,7 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]

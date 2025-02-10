@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onChipActionClick
  * @element md-chip
@@ -27,7 +27,7 @@ class MdChipComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -35,7 +35,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -61,7 +61,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -70,7 +70,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

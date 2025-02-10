@@ -1,4 +1,3 @@
-
 @mixin typescale-display-large() {
     font-family: var(--md-sys-typescale-display-large-font);
     font-weight: var(--md-sys-typescale-display-large-weight);
@@ -154,7 +153,6 @@
 }
 
 @mixin ripple-focus() {
-
     &::after {
         opacity: 10%;
         animation-name: ripple-out;
@@ -164,7 +162,6 @@
 }
 
 @mixin ripple-press() {
-
     &::after {
         opacity: 10%;
         animation-name: none;
@@ -172,14 +169,12 @@
 }
 
 @mixin ripple-hover() {
-
     &::after {
         opacity: 8%;
     }
 }
 
 @mixin ripple-drag() {
-
     &::after {
         opacity: 16%;
     }

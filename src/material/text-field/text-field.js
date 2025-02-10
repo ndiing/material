@@ -5,7 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onTextFieldFocus
  * @fires onTextFieldBlur
@@ -62,7 +62,7 @@ class MdTextFieldComponent extends MdComponent {
     variants = ["outlined", "filled"];
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -71,7 +71,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -86,7 +86,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -107,7 +107,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -124,7 +124,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get actions2() {
@@ -135,7 +135,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -168,7 +168,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -183,7 +183,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -203,7 +203,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get textFieldNative() {
@@ -211,7 +211,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -221,7 +221,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -231,7 +231,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -244,7 +244,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -257,7 +257,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -269,7 +269,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -282,7 +282,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

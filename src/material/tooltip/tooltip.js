@@ -5,7 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { Popper } from "../popper/popper";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onTooltipIconButtonClick
  * @fires onTooltipButtonClick
@@ -32,7 +32,7 @@ class MdTooltipComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -49,7 +49,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -69,7 +69,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -89,7 +89,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -98,7 +98,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -117,7 +117,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -125,7 +125,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -134,7 +134,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -143,7 +143,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -152,7 +152,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -161,7 +161,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [options]
      */
     show(options) {
@@ -178,7 +178,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.open = false;
@@ -186,7 +186,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [options]
      */
     toggle(options) {

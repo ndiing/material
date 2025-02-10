@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onTreeItemClick
  * @element md-tree
@@ -19,7 +19,7 @@ class MdTreeComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -28,7 +28,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -52,7 +52,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -60,7 +60,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -69,7 +69,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -83,7 +83,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [items]
      * @param {Any} [parent]
      * @param {Any} [indent=0]
@@ -111,7 +111,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [data]
      */
     toggle(data) {
@@ -123,7 +123,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

@@ -76,7 +76,6 @@
 }
 
 .md-navigation-rail {
-
     .md-navigation-list {
         padding: 0;
         --md-comp-navigation-list-icon-animation: navigation-list-icon-out;
@@ -126,9 +125,7 @@
         }
 
         .md-navigation-list__icon {
-
             ~ .md-navigation-list__labels {
-
                 ~ .md-navigation-list__badge {
                     margin-top: -20px;
                 }

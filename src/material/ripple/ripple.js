@@ -1,12 +1,9 @@
-
-
 /**
- * 
+ *
  */
 class RippleController {
-
     /**
-     * 
+     *
      * @param {Any} [host]
      * @param {Any} [options]
      */
@@ -23,7 +20,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @async
      */
     async hostConnected() {
@@ -67,7 +64,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @async
      */
     async hostDisconnected() {
@@ -84,7 +81,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -93,7 +90,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -102,7 +99,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -124,7 +121,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -134,7 +131,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -143,7 +140,7 @@ class RippleController {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

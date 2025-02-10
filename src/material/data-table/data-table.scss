@@ -16,7 +16,6 @@
     overflow: auto;
 
     thead {
-
         th {
             position: sticky;
             top: 0;
@@ -31,11 +30,8 @@
     }
 
     tbody {
-
         &:focus {
-
             td {
-
                 .md-data-table__cell {
                     background-color: var(--md-sys-color-primary10);
                 }
@@ -43,9 +39,7 @@
         }
 
         &:active {
-
             td {
-
                 .md-data-table__cell {
                     background-color: var(--md-sys-color-primary10);
                 }
@@ -53,9 +47,7 @@
         }
 
         &:hover {
-
             td {
-
                 .md-data-table__cell {
                     background-color: var(--md-sys-color-primary8);
                 }
@@ -63,9 +55,7 @@
         }
 
         &[selected] {
-
             td {
-
                 .md-data-table__cell {
                     background-color: var(--md-sys-color-secondary-container);
                     color: var(--md-sys-color-on-secondary-container);
@@ -82,7 +72,6 @@
         }
 
         td {
-
             &:nth-child(1) {
                 position: sticky;
                 left: 0;

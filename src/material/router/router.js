@@ -1,7 +1,5 @@
-
-
 /**
- * 
+ *
  * @fires onRouterCurrentEntryChange
  * @fires onRouterNavigate
  * @fires onRouterNavigateError
@@ -11,7 +9,7 @@ class Router {
     static params = {};
 
     /**
-     * 
+     *
      * @static
      * @param {Any} [pathname=this.pathname]
      * @param {Any} [routes=this.routes]
@@ -40,7 +38,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      * @readonly
      */
@@ -53,7 +51,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @private
      * @static
      * @async
@@ -83,7 +81,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      * @param {Any} [routes]
      */
@@ -101,7 +99,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @private
      * @static
      * @param {Any} [route]
@@ -112,7 +110,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      * @async
      * @param {Any} [container]
@@ -145,7 +143,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      * @param {Any} [route]
      */
@@ -154,7 +152,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      * @async
      * @param {Any} [route]
@@ -166,7 +164,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @private
      * @static
      * @async
@@ -184,7 +182,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      */
     static setController() {
@@ -193,7 +191,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @static
      * @param {Any} [url]
      */
@@ -206,7 +204,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @private
      * @static
      * @param {Any} [event]
@@ -220,7 +218,7 @@ class Router {
     }
 
     /**
-     * 
+     *
      * @private
      * @static
      * @param {Any} [type]
@@ -238,10 +236,23 @@ class Router {
     static options = {};
 
     /**
-     * 
+     * @typedef {Object} RouterUseRoutes
+     * @property {String} path
+     * @property {Function} load - use `import('./my.js').then(m=>m.default)` for lazy load
+     * @property {Function} beforeLoad
+     * @property {HTMLElement} component
+     * @property {RouterUseRoutes} children
+     */
+    /**
+     * @typedef {Object} RouterUseOptions
+     * @property {Boolean} [historyApiFallback=false] - use hash / history
+     */
+
+    /**
+     *
      * @static
-     * @param {Any} [routes=[]]
-     * @param {Any} [options={}]
+     * @param {RouterUseRoutes} [routes=[]]
+     * @param {RouterUseOptions} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
@@ -254,9 +265,9 @@ class Router {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
 
-/**
- * 
- */
+            /**
+             *
+             */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");

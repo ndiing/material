@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onFormNativeFormdata
  * @fires onFormNativeReset
@@ -32,7 +32,7 @@ class MdFormComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -64,7 +64,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -73,7 +73,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -82,7 +82,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -98,7 +98,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -109,7 +109,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get formNative() {
@@ -117,14 +117,14 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     reset() {
         this.formNative.reset();
     }
 
     /**
-     * 
+     *
      * @param {Any} [submitButton]
      */
     submit(submitButton) {

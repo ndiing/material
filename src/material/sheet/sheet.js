@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onSheetIconButtonClick
  * @fires onSheetButtonClick
@@ -37,7 +37,7 @@ class MdSheetComponent extends MdComponent {
     regions = ["north", "east", "south", "west", "center"];
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -46,7 +46,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -55,7 +55,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -75,7 +75,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -95,7 +95,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -104,7 +104,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -123,7 +123,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -131,7 +131,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -150,7 +150,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -162,7 +162,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -179,7 +179,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -188,7 +188,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -197,7 +197,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -207,7 +207,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -217,7 +217,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -225,7 +225,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

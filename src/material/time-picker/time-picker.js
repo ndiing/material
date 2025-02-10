@@ -7,7 +7,7 @@ import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onTimePickerLabelClick
  * @fires onTimePickerIconButtonPrevClick
@@ -58,7 +58,7 @@ class MdTimePickerComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      * @readonly
      */
     get hours() {
@@ -77,7 +77,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get minutes() {
@@ -97,7 +97,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get icons() {
@@ -109,7 +109,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -127,7 +127,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -136,7 +136,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -156,7 +156,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -176,7 +176,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -185,7 +185,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -204,7 +204,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     renderTimePickerHour() {
@@ -228,7 +228,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     renderTimePickerMinute() {
@@ -252,7 +252,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -278,7 +278,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -300,7 +300,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -311,7 +311,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -326,7 +326,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -335,7 +335,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -347,7 +347,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -359,7 +359,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -371,7 +371,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -384,7 +384,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -397,7 +397,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -409,7 +409,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -419,7 +419,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -433,7 +433,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -446,7 +446,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -456,7 +456,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [options]
      */
     show(options) {
@@ -475,7 +475,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-time-picker-animation");
@@ -485,7 +485,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [options]
      */
     toggle(options) {

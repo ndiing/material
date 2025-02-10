@@ -1,15 +1,12 @@
-
-
 /**
- * 
+ *
  * @fires onMovablePointerdown
  * @fires onMovablePointermove
  * @fires onMovablePointerup
  */
 class Movable {
-
     /**
-     * 
+     *
      * @param {Any} [host]
      * @param {Any} [options={}]
      */
@@ -24,7 +21,7 @@ class Movable {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -43,7 +40,7 @@ class Movable {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -82,7 +79,7 @@ class Movable {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -96,7 +93,7 @@ class Movable {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [type]
      * @param {Any} [detail]
@@ -111,7 +108,7 @@ class Movable {
     }
 
     /**
-     * 
+     *
      */
     init() {
         let text = "";
@@ -128,7 +125,7 @@ class Movable {
     }
 
     /**
-     * 
+     *
      */
     destroy() {}
 }

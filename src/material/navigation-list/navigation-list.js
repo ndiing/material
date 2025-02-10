@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires onNavigationListItemClick
  * @element md-navigation-list
@@ -19,7 +19,7 @@ class MdNavigationListComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -27,7 +27,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -50,7 +50,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -58,7 +58,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -68,7 +68,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -81,7 +81,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [data]
      */
     singleSelect(data) {

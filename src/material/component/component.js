@@ -1,13 +1,12 @@
 import { LitElement } from "lit";
 
 /**
- * 
+ *
  * @extends LitElement
  */
 class MdComponent extends LitElement {
-
     /**
-     * 
+     *
      * @private
      */
     createRenderRoot() {
@@ -15,7 +14,7 @@ class MdComponent extends LitElement {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [type]
      * @param {Any} [detail]

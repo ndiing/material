@@ -140,6 +140,15 @@
 <dd></dd>
 </dl>
 
+## Typedefs
+
+<dl>
+<dt><a href="#RouterUseRoutes">RouterUseRoutes</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#RouterUseOptions">RouterUseOptions</a> : <code>Object</code></dt>
+<dd></dd>
+</dl>
+
 <a name="MdBadgeComponent"></a>
 
 ## MdBadgeComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1436,8 +1445,8 @@
 
 | Param | Type | Default |
 | --- | --- | --- |
-| [routes] | <code>Any</code> | <code>[]</code> | 
-| [options] | <code>Any</code> | <code>{}</code> | 
+| [routes] | [<code>RouterUseRoutes</code>](#RouterUseRoutes) | <code>[]</code> | 
+| [options] | [<code>RouterUseOptions</code>](#RouterUseOptions) | <code>{}</code> | 
 
 <a name="MdScrimComponent"></a>
 
@@ -2387,4 +2396,28 @@
 | Param | Type |
 | --- | --- |
 | [date] | <code>Any</code> | 
+
+<a name="RouterUseRoutes"></a>
+
+## RouterUseRoutes : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| path | <code>String</code> |  |
+| load | <code>function</code> | use `import('./my.js').then(m=>m.default)` for lazy load |
+| beforeLoad | <code>function</code> |  |
+| component | <code>HTMLElement</code> |  |
+| children | [<code>RouterUseRoutes</code>](#RouterUseRoutes) |  |
+
+<a name="RouterUseOptions"></a>
+
+## RouterUseOptions : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| [historyApiFallback] | <code>Boolean</code> | <code>false</code> | use hash / history |
 
