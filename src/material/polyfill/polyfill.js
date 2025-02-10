@@ -1,4 +1,5 @@
 
+
 /**
  * 
  * @param {Any} [week]
@@ -11,6 +12,10 @@ Date.prototype.setWeek = function (week) {
     this.setTime(weekStartTime);
     return this;
 };
+
+/**
+ * 
+ */
 Date.prototype.getWeek = function () {
     const target = new Date(this.valueOf());
     const dayNr = (this.getDay() + 6) % 7; // Ubah agar Senin sebagai hari pertama

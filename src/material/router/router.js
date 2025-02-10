@@ -253,6 +253,10 @@ class Router {
         if (this.options.historyApiFallback) {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
+
+/**
+ * 
+ */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");
