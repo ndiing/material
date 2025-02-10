@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onDataTableCellActionClick
  * @element md-data-table-cell
@@ -50,7 +50,7 @@ class MdDataTableCellComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -58,7 +58,7 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -140,7 +140,7 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -159,7 +159,7 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -172,7 +172,7 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

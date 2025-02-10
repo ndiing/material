@@ -4,7 +4,7 @@ import { RippleController } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @element md-button
  */
@@ -28,7 +28,7 @@ class MdButtonComponent extends MdComponent {
     variants = ["elevated", "filled", "filled-tonal", "outlined"];
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -39,7 +39,7 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -55,7 +55,7 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -64,7 +64,7 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */

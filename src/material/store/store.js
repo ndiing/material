@@ -1,9 +1,12 @@
+
+
 /**
- *
+ * 
  */
 class Store {
+
     /**
-     *
+     * 
      * @param {Any} [data=[]]
      * @param {Any} [options={}]
      */
@@ -13,7 +16,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data=[]]
      */
     load(data = []) {
@@ -21,7 +24,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      * @param {Any} [sorters]
      */
@@ -36,7 +39,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [item]
      * @param {Any} [q]
      */
@@ -55,7 +58,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      * @param {Any} [q]
      */
@@ -65,7 +68,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [item]
      * @param {Any} [name]
      */
@@ -74,7 +77,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      * @param {Any} [filters]
      */
@@ -111,7 +114,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      * @param {Any} [_start]
      * @param {Any} [_end]
@@ -121,7 +124,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      * @param {Any} [_page]
      * @param {Any} [_limit]
@@ -133,7 +136,7 @@ class Store {
     }
 
     /**
-     *
+     * 
      * @async
      * @param {Any} [options={}]
      */

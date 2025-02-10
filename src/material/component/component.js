@@ -1,19 +1,22 @@
 import { LitElement } from "lit";
 
 /**
- *
+ * 
  * @extends LitElement
  */
 class MdComponent extends LitElement {
+
     /**
-     *
+     * 
+     * @private
      */
     createRenderRoot() {
         return this;
     }
 
     /**
-     *
+     * 
+     * @private
      * @param {Any} [type]
      * @param {Any} [detail]
      */

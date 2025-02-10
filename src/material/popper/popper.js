@@ -1,9 +1,12 @@
+
+
 /**
- *
+ * 
  */
 class Popper {
+
     /**
-     *
+     * 
      * @param {Any} [host]
      * @param {Any} [options={}]
      */
@@ -14,12 +17,12 @@ class Popper {
     }
 
     /**
-     *
+     * 
      */
     init() {}
 
     /**
-     *
+     * 
      */
     destroy() {}
     methods = {
@@ -42,7 +45,7 @@ class Popper {
     };
 
     /**
-     *
+     * 
      * @param {Any} [options={}]
      */
     show(options = {}) {
@@ -65,7 +68,7 @@ class Popper {
     }
 
     /**
-     *
+     * 
      * @param {Any} [element]
      */
     closestScrollable(element) {

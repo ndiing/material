@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onRadioButtonNativeInput
  * @fires onRadioButtonNativeReset
@@ -25,7 +25,7 @@ class MdRadioButtonComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -38,7 +38,7 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -63,7 +63,7 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -75,7 +75,7 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -87,7 +87,7 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

@@ -1,18 +1,43 @@
+
+/**
+ * 
+ * @param {Any} [string]
+ */
 function parseDate(string) {
     return new Date(string);
 }
+
+/**
+ * 
+ * @param {Any} [string]
+ */
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
+
+/**
+ * 
+ * @param {Any} [string]
+ */
 function parseMonth(string) {
     return new Date(string + "-01");
 }
+
+/**
+ * 
+ * @param {Any} [string]
+ */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
     const date = new Date();
     date.setHours(hours, minutes, 0, 0);
     return date;
 }
+
+/**
+ * 
+ * @param {Any} [string]
+ */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
     const d = new Date(year, 0, 1);
@@ -20,9 +45,19 @@ function parseWeek(string) {
     d.setDate(d.getDate() + days);
     return d;
 }
+
+/**
+ * 
+ * @param {Any} [date]
+ */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
+
+/**
+ * 
+ * @param {Any} [date]
+ */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -31,12 +66,27 @@ function stringifyDatetimeLocal(date) {
     const minutes = String(date.getMinutes()).padStart(2, "0");
     return `${year}-${month}-${day}T${hours}:${minutes}`;
 }
+
+/**
+ * 
+ * @param {Any} [date]
+ */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
+
+/**
+ * 
+ * @param {Any} [date]
+ */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
+
+/**
+ * 
+ * @param {Any} [date]
+ */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
     const days = Math.floor((date - firstDayOfYear) / (24 * 60 * 60 * 1000));

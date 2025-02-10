@@ -1,5 +1,7 @@
+
+
 /**
- *
+ * 
  * @fires onRouterCurrentEntryChange
  * @fires onRouterNavigate
  * @fires onRouterNavigateError
@@ -9,7 +11,7 @@ class Router {
     static params = {};
 
     /**
-     *
+     * 
      * @static
      * @param {Any} [pathname=this.pathname]
      * @param {Any} [routes=this.routes]
@@ -38,7 +40,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      * @readonly
      */
@@ -51,7 +53,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @private
      * @static
      * @async
@@ -81,7 +83,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      * @param {Any} [routes]
      */
@@ -99,7 +101,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @private
      * @static
      * @param {Any} [route]
@@ -110,7 +112,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      * @async
      * @param {Any} [container]
@@ -143,7 +145,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      * @param {Any} [route]
      */
@@ -152,7 +154,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      * @async
      * @param {Any} [route]
@@ -164,7 +166,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @private
      * @static
      * @async
@@ -182,7 +184,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      */
     static setController() {
@@ -191,7 +193,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @static
      * @param {Any} [url]
      */
@@ -204,7 +206,7 @@ class Router {
     }
 
     /**
-     *
+     * 
      * @private
      * @static
      * @param {Any} [event]
@@ -218,7 +220,8 @@ class Router {
     }
 
     /**
-     *
+     * 
+     * @private
      * @static
      * @param {Any} [type]
      * @param {Any} [detail]
@@ -235,7 +238,7 @@ class Router {
     static options = {};
 
     /**
-     *
+     * 
      * @static
      * @param {Any} [routes=[]]
      * @param {Any} [options={}]

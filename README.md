@@ -115,18 +115,37 @@
 <dd></dd>
 </dl>
 
+## Functions
+
+<dl>
+<dt><a href="#parseDate">parseDate([string])</a></dt>
+<dd></dd>
+<dt><a href="#parseDatetimeLocal">parseDatetimeLocal([string])</a></dt>
+<dd></dd>
+<dt><a href="#parseMonth">parseMonth([string])</a></dt>
+<dd></dd>
+<dt><a href="#parseTime">parseTime([string])</a></dt>
+<dd></dd>
+<dt><a href="#parseWeek">parseWeek([string])</a></dt>
+<dd></dd>
+<dt><a href="#stringifyDate">stringifyDate([date])</a></dt>
+<dd></dd>
+<dt><a href="#stringifyDatetimeLocal">stringifyDatetimeLocal([date])</a></dt>
+<dd></dd>
+<dt><a href="#stringifyMonth">stringifyMonth([date])</a></dt>
+<dd></dd>
+<dt><a href="#stringifyTime">stringifyTime([date])</a></dt>
+<dd></dd>
+<dt><a href="#stringifyWeek">stringifyWeek([date])</a></dt>
+<dd></dd>
+</dl>
+
 <a name="MdBadgeComponent"></a>
 
 ## MdBadgeComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-badge  
-
-* [MdBadgeComponent](#MdBadgeComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdBadgeComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdBadgeComponent+properties"></a>
 
 ### mdBadgeComponent.properties
@@ -137,22 +156,6 @@
 | --- | --- |
 | [label] | <code>Number</code> | 
 | [max] | <code>Number</code> | 
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdBadgeComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdBadgeComponent</code>](#MdBadgeComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdBadgeComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdBadgeComponent</code>](#MdBadgeComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
 
 <a name="MdBottomAppBarComponent"></a>
 
@@ -167,8 +170,6 @@
     * [.show()](#MdBottomAppBarComponent+show)
     * [.close()](#MdBottomAppBarComponent+close)
     * [.toggle()](#MdBottomAppBarComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdBottomAppBarComponent+properties"></a>
 
@@ -194,22 +195,6 @@
 
 ### mdBottomAppBarComponent.toggle()
 **Kind**: instance method of [<code>MdBottomAppBarComponent</code>](#MdBottomAppBarComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdBottomAppBarComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdBottomAppBarComponent</code>](#MdBottomAppBarComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdBottomAppBarComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdBottomAppBarComponent</code>](#MdBottomAppBarComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdBottomSheetComponent"></a>
 
 ## MdBottomSheetComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -223,8 +208,6 @@
     * [.show()](#MdBottomSheetComponent+show)
     * [.close()](#MdBottomSheetComponent+close)
     * [.toggle()](#MdBottomSheetComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdBottomSheetComponent+properties"></a>
 
@@ -254,34 +237,12 @@
 
 ### mdBottomSheetComponent.toggle()
 **Kind**: instance method of [<code>MdBottomSheetComponent</code>](#MdBottomSheetComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdBottomSheetComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdBottomSheetComponent</code>](#MdBottomSheetComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdBottomSheetComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdBottomSheetComponent</code>](#MdBottomSheetComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdButtonComponent"></a>
 
 ## MdButtonComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-button  
-
-* [MdButtonComponent](#MdButtonComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdButtonComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdButtonComponent+properties"></a>
 
 ### mdButtonComponent.properties
@@ -297,22 +258,6 @@
 | [disabled] | <code>Boolean</code> | 
 | [selected] | <code>Boolean</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdButtonComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdButtonComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdButtonComponent</code>](#MdButtonComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdCardComponent"></a>
 
 ## MdCardComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -320,12 +265,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onCardIconButtonClick</code>, <code>event:onCardButtonClick</code>  
 **Element**: md-card  
-
-* [MdCardComponent](#MdCardComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdCardComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdCardComponent+properties"></a>
 
 ### mdCardComponent.properties
@@ -340,22 +279,6 @@
 | [sublabel] | <code>String</code> | 
 | [buttons] | <code>Array</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdCardComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdCardComponent</code>](#MdCardComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdCardComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdCardComponent</code>](#MdCardComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdCheckboxComponent"></a>
 
 ## MdCheckboxComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -363,12 +286,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onCheckboxNativeInput</code>, <code>event:onCheckboxNativeReset</code>  
 **Element**: md-checkbox  
-
-* [MdCheckboxComponent](#MdCheckboxComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdCheckboxComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdCheckboxComponent+properties"></a>
 
 ### mdCheckboxComponent.properties
@@ -382,22 +299,6 @@
 | [indeterminate] | <code>Boolean</code> | 
 | [checked] | <code>Boolean</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdCheckboxComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdCheckboxComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdCheckboxComponent</code>](#MdCheckboxComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdChipComponent"></a>
 
 ## MdChipComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -409,8 +310,6 @@
 * [MdChipComponent](#MdChipComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
     * [.properties](#MdChipComponent+properties)
     * [.properties](#MdChipComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdChipComponent+properties"></a>
 
@@ -437,22 +336,6 @@
 | --- | --- |
 | [items] | <code>Array</code> | 
 | [type] | <code>String</code> | 
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdChipComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdChipComponent</code>](#MdChipComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdChipComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdChipComponent</code>](#MdChipComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
 
 <a name="MdChipComponent"></a>
 
@@ -465,8 +348,6 @@
 * [MdChipComponent](#MdChipComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
     * [.properties](#MdChipComponent+properties)
     * [.properties](#MdChipComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdChipComponent+properties"></a>
 
@@ -494,46 +375,11 @@
 | [items] | <code>Array</code> | 
 | [type] | <code>String</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdChipComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdChipComponent</code>](#MdChipComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdChipComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdChipComponent</code>](#MdChipComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdComponent"></a>
 
 ## MdComponent ⇐ <code>LitElement</code>
 **Kind**: global class  
 **Extends**: <code>LitElement</code>  
-
-* [MdComponent](#MdComponent) ⇐ <code>LitElement</code>
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdComponent</code>](#MdComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdComponent</code>](#MdComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdDataTableCellComponent"></a>
 
 ## MdDataTableCellComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -541,12 +387,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onDataTableCellActionClick</code>  
 **Element**: md-data-table-cell  
-
-* [MdDataTableCellComponent](#MdDataTableCellComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdDataTableCellComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdDataTableCellComponent+properties"></a>
 
 ### mdDataTableCellComponent.properties
@@ -573,22 +413,6 @@
 | [checked] | <code>Boolean</code> | 
 | [badge] | <code>Number</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdDataTableCellComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdDataTableCellComponent</code>](#MdDataTableCellComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdDataTableCellComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdDataTableCellComponent</code>](#MdDataTableCellComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdDataTableComponent"></a>
 
 ## MdDataTableComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -602,8 +426,6 @@
     * [.selected](#MdDataTableComponent+selected)
     * [.checked](#MdDataTableComponent+checked)
     * [.indeterminate](#MdDataTableComponent+indeterminate)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdDataTableComponent+properties"></a>
 
@@ -633,22 +455,6 @@
 ### mdDataTableComponent.indeterminate
 **Kind**: instance property of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
 **Read only**: true  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdDataTableComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdDataTableComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdDataTableComponent</code>](#MdDataTableComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdDatePickerComponent"></a>
 
 ## MdDatePickerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -668,8 +474,6 @@
     * [.show([options])](#MdDatePickerComponent+show)
     * [.close()](#MdDatePickerComponent+close)
     * [.toggle([options])](#MdDatePickerComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdDatePickerComponent+properties"></a>
 
@@ -741,22 +545,6 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdDatePickerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdDatePickerComponent</code>](#MdDatePickerComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdDatePickerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdDatePickerComponent</code>](#MdDatePickerComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdDatetimePickerComponent"></a>
 
 ## MdDatetimePickerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -778,8 +566,6 @@
     * [.show([options])](#MdDatetimePickerComponent+show)
     * [.close()](#MdDatetimePickerComponent+close)
     * [.toggle([options])](#MdDatetimePickerComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdDatetimePickerComponent+properties"></a>
 
@@ -861,22 +647,6 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdDatetimePickerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdDatetimePickerComponent</code>](#MdDatetimePickerComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdDatetimePickerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdDatetimePickerComponent</code>](#MdDatetimePickerComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdDialogComponent"></a>
 
 ## MdDialogComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -890,8 +660,6 @@
     * [.show()](#MdDialogComponent+show)
     * [.close()](#MdDialogComponent+close)
     * [.toggle()](#MdDialogComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdDialogComponent+properties"></a>
 
@@ -920,59 +688,18 @@
 
 ### mdDialogComponent.toggle()
 **Kind**: instance method of [<code>MdDialogComponent</code>](#MdDialogComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdDialogComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdDialogComponent</code>](#MdDialogComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdDialogComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdDialogComponent</code>](#MdDialogComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdDividerComponent"></a>
 
 ## MdDividerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-divider  
-
-* [MdDividerComponent](#MdDividerComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdDividerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdDividerComponent</code>](#MdDividerComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdDividerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdDividerComponent</code>](#MdDividerComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdFabComponent"></a>
 
 ## MdFabComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-fab  
-
-* [MdFabComponent](#MdFabComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdFabComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdFabComponent+properties"></a>
 
 ### mdFabComponent.properties
@@ -987,22 +714,6 @@
 | [size] | <code>String</code> | 
 | [variant] | <code>String</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdFabComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdFabComponent</code>](#MdFabComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdFabComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdFabComponent</code>](#MdFabComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdFormComponent"></a>
 
 ## MdFormComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1016,8 +727,6 @@
     * [.formNative](#MdFormComponent+formNative)
     * [.reset()](#MdFormComponent+reset)
     * [.submit([submitButton])](#MdFormComponent+submit)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdFormComponent+properties"></a>
 
@@ -1053,22 +762,6 @@
 | --- | --- |
 | [submitButton] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdFormComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdFormComponent</code>](#MdFormComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdFormComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdFormComponent</code>](#MdFormComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdIconButtonComponent"></a>
 
 ## MdIconButtonComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1076,12 +769,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onIconButtonClick</code>  
 **Element**: md-icon-button  
-
-* [MdIconButtonComponent](#MdIconButtonComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdIconButtonComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdIconButtonComponent+properties"></a>
 
 ### mdIconButtonComponent.properties
@@ -1097,47 +784,12 @@
 | [selected] | <code>Boolean</code> | 
 | [disabled] | <code>Boolean</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdIconButtonComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdIconButtonComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdIconButtonComponent</code>](#MdIconButtonComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdIconComponent"></a>
 
 ## MdIconComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-icon  
-
-* [MdIconComponent](#MdIconComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdIconComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdIconComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdIconComponent</code>](#MdIconComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdImageComponent"></a>
 
 ## MdImageComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1148,8 +800,6 @@
 * [MdImageComponent](#MdImageComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
     * [.properties](#MdImageComponent+properties)
     * [.imageNativeStyle](#MdImageComponent+imageNativeStyle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdImageComponent+properties"></a>
 
@@ -1169,22 +819,6 @@
 ### mdImageComponent.imageNativeStyle
 **Kind**: instance property of [<code>MdImageComponent</code>](#MdImageComponent)  
 **Read only**: true  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdImageComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdImageComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdImageComponent</code>](#MdImageComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdListItemComponent"></a>
 
 ## MdListItemComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1192,12 +826,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onListItemSelected</code>  
 **Element**: md-list-item  
-
-* [MdListItemComponent](#MdListItemComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdListItemComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdListItemComponent+properties"></a>
 
 ### mdListItemComponent.properties
@@ -1225,47 +853,12 @@
 | [rippleOptions] | <code>Object</code> | 
 | [badge] | <code>Number</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdListItemComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdListItemComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdListItemComponent</code>](#MdListItemComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdListRowComponent"></a>
 
 ## MdListRowComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-list-row  
-
-* [MdListRowComponent](#MdListRowComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdListRowComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdListRowComponent</code>](#MdListRowComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdListRowComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdListRowComponent</code>](#MdListRowComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdListComponent"></a>
 
 ## MdListComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1278,8 +871,6 @@
     * [.properties](#MdListComponent+properties)
     * [.multiSelect([data])](#MdListComponent+multiSelect)
     * [.singleSelect([data])](#MdListComponent+singleSelect)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdListComponent+properties"></a>
 
@@ -1312,22 +903,6 @@
 | --- | --- |
 | [data] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdListComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdListComponent</code>](#MdListComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdListComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdListComponent</code>](#MdListComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdMenuComponent"></a>
 
 ## MdMenuComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1341,8 +916,6 @@
     * [.show([options])](#MdMenuComponent+show)
     * [.close()](#MdMenuComponent+close)
     * [.toggle([options])](#MdMenuComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdMenuComponent+properties"></a>
 
@@ -1377,22 +950,6 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdMenuComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdMenuComponent</code>](#MdMenuComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdMenuComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdMenuComponent</code>](#MdMenuComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdMonthPickerComponent"></a>
 
 ## MdMonthPickerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1409,8 +966,6 @@
     * [.show([options])](#MdMonthPickerComponent+show)
     * [.close()](#MdMonthPickerComponent+close)
     * [.toggle([options])](#MdMonthPickerComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdMonthPickerComponent+properties"></a>
 
@@ -1467,22 +1022,6 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdMonthPickerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdMonthPickerComponent</code>](#MdMonthPickerComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdMonthPickerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdMonthPickerComponent</code>](#MdMonthPickerComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="Movable"></a>
 
 ## Movable
@@ -1491,7 +1030,6 @@
 
 * [Movable](#Movable)
     * [new Movable([host], [options])](#new_Movable_new)
-    * [.emit([type], [detail])](#Movable+emit)
     * [.init()](#Movable+init)
     * [.destroy()](#Movable+destroy)
 
@@ -1503,16 +1041,6 @@
 | --- | --- | --- |
 | [host] | <code>Any</code> |  | 
 | [options] | <code>Any</code> | <code>{}</code> | 
-
-<a name="Movable+emit"></a>
-
-### movable.emit([type], [detail])
-**Kind**: instance method of [<code>Movable</code>](#Movable)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
 
 <a name="Movable+init"></a>
 
@@ -1535,8 +1063,6 @@
     * [.show()](#MdNavigationBarComponent+show)
     * [.close()](#MdNavigationBarComponent+close)
     * [.toggle()](#MdNavigationBarComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdNavigationBarComponent+properties"></a>
 
@@ -1561,22 +1087,6 @@
 
 ### mdNavigationBarComponent.toggle()
 **Kind**: instance method of [<code>MdNavigationBarComponent</code>](#MdNavigationBarComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdNavigationBarComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdNavigationBarComponent</code>](#MdNavigationBarComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdNavigationBarComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdNavigationBarComponent</code>](#MdNavigationBarComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdNavigationDrawerComponent"></a>
 
 ## MdNavigationDrawerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1590,8 +1100,6 @@
     * [.show()](#MdNavigationDrawerComponent+show)
     * [.close()](#MdNavigationDrawerComponent+close)
     * [.toggle()](#MdNavigationDrawerComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdNavigationDrawerComponent+properties"></a>
 
@@ -1622,22 +1130,6 @@
 
 ### mdNavigationDrawerComponent.toggle()
 **Kind**: instance method of [<code>MdNavigationDrawerComponent</code>](#MdNavigationDrawerComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdNavigationDrawerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdNavigationDrawerComponent</code>](#MdNavigationDrawerComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdNavigationDrawerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdNavigationDrawerComponent</code>](#MdNavigationDrawerComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdNavigationListItemComponent"></a>
 
 ## MdNavigationListItemComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1645,12 +1137,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onNavigationListItemSelected</code>  
 **Element**: md-navigation-list-item  
-
-* [MdNavigationListItemComponent](#MdNavigationListItemComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdNavigationListItemComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdNavigationListItemComponent+properties"></a>
 
 ### mdNavigationListItemComponent.properties
@@ -1668,47 +1154,12 @@
 | [rippleOptions] | <code>Object</code> | 
 | [badge] | <code>Number</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdNavigationListItemComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdNavigationListItemComponent</code>](#MdNavigationListItemComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdNavigationListItemComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdNavigationListItemComponent</code>](#MdNavigationListItemComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdNavigationListRowComponent"></a>
 
 ## MdNavigationListRowComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-navigation-list-row  
-
-* [MdNavigationListRowComponent](#MdNavigationListRowComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdNavigationListRowComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdNavigationListRowComponent</code>](#MdNavigationListRowComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdNavigationListRowComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdNavigationListRowComponent</code>](#MdNavigationListRowComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdNavigationListComponent"></a>
 
 ## MdNavigationListComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1720,8 +1171,6 @@
 * [MdNavigationListComponent](#MdNavigationListComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
     * [.properties](#MdNavigationListComponent+properties)
     * [.singleSelect([data])](#MdNavigationListComponent+singleSelect)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdNavigationListComponent+properties"></a>
 
@@ -1743,22 +1192,6 @@
 | --- | --- |
 | [data] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdNavigationListComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdNavigationListComponent</code>](#MdNavigationListComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdNavigationListComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdNavigationListComponent</code>](#MdNavigationListComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdNavigationRailComponent"></a>
 
 ## MdNavigationRailComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1772,8 +1205,6 @@
     * [.show()](#MdNavigationRailComponent+show)
     * [.close()](#MdNavigationRailComponent+close)
     * [.toggle()](#MdNavigationRailComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdNavigationRailComponent+properties"></a>
 
@@ -1802,22 +1233,6 @@
 
 ### mdNavigationRailComponent.toggle()
 **Kind**: instance method of [<code>MdNavigationRailComponent</code>](#MdNavigationRailComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdNavigationRailComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdNavigationRailComponent</code>](#MdNavigationRailComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdNavigationRailComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdNavigationRailComponent</code>](#MdNavigationRailComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="Popper"></a>
 
 ## Popper
@@ -1871,12 +1286,6 @@
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-progress-indicator  
-
-* [MdProgressIndicatorComponent](#MdProgressIndicatorComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdProgressIndicatorComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdProgressIndicatorComponent+properties"></a>
 
 ### mdProgressIndicatorComponent.properties
@@ -1889,22 +1298,6 @@
 | [max] | <code>Number</code> | 
 | [value] | <code>Number</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdProgressIndicatorComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdProgressIndicatorComponent</code>](#MdProgressIndicatorComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdProgressIndicatorComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdProgressIndicatorComponent</code>](#MdProgressIndicatorComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdRadioButtonComponent"></a>
 
 ## MdRadioButtonComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -1912,12 +1305,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onRadioButtonNativeInput</code>, <code>event:onRadioButtonNativeReset</code>  
 **Element**: md-radio-button  
-
-* [MdRadioButtonComponent](#MdRadioButtonComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdRadioButtonComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdRadioButtonComponent+properties"></a>
 
 ### mdRadioButtonComponent.properties
@@ -1930,22 +1317,6 @@
 | [value] | <code>String</code> | 
 | [indeterminate] | <code>Boolean</code> | 
 | [checked] | <code>Boolean</code> | 
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdRadioButtonComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdRadioButtonComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdRadioButtonComponent</code>](#MdRadioButtonComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
 
 <a name="RippleController"></a>
 
@@ -1989,7 +1360,6 @@
     * [.loadComponent([route])](#Router.loadComponent)
     * [.setController()](#Router.setController)
     * [.navigate([url])](#Router.navigate)
-    * [.emit([type], [detail])](#Router.emit)
     * [.use([routes], [options])](#Router.use)
 
 <a name="Router.pathname"></a>
@@ -2059,16 +1429,6 @@
 | --- | --- |
 | [url] | <code>Any</code> | 
 
-<a name="Router.emit"></a>
-
-### Router.emit([type], [detail])
-**Kind**: static method of [<code>Router</code>](#Router)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="Router.use"></a>
 
 ### Router.use([routes], [options])
@@ -2092,8 +1452,6 @@
     * [.show()](#MdScrimComponent+show)
     * [.close()](#MdScrimComponent+close)
     * [.toggle()](#MdScrimComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdScrimComponent+properties"></a>
 
@@ -2117,20 +1475,6 @@
 
 ### mdScrimComponent.toggle()
 **Kind**: instance method of [<code>MdScrimComponent</code>](#MdScrimComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdScrimComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdScrimComponent</code>](#MdScrimComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdScrimComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdScrimComponent</code>](#MdScrimComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdSegmentedButtonComponent"></a>
 
 ## MdSegmentedButtonComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2138,12 +1482,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onSegmentedButtonItemClick</code>  
 **Element**: md-segmented-button  
-
-* [MdSegmentedButtonComponent](#MdSegmentedButtonComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdSegmentedButtonComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdSegmentedButtonComponent+properties"></a>
 
 ### mdSegmentedButtonComponent.properties
@@ -2154,22 +1492,6 @@
 | --- | --- |
 | [items] | <code>Array</code> | 
 | [type] | <code>String</code> | 
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdSegmentedButtonComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdSegmentedButtonComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdSegmentedButtonComponent</code>](#MdSegmentedButtonComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
 
 <a name="MdSheetComponent"></a>
 
@@ -2184,8 +1506,6 @@
     * [.show()](#MdSheetComponent+show)
     * [.close()](#MdSheetComponent+close)
     * [.toggle()](#MdSheetComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdSheetComponent+properties"></a>
 
@@ -2216,22 +1536,6 @@
 
 ### mdSheetComponent.toggle()
 **Kind**: instance method of [<code>MdSheetComponent</code>](#MdSheetComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdSheetComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdSheetComponent</code>](#MdSheetComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdSheetComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdSheetComponent</code>](#MdSheetComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdSideSheetComponent"></a>
 
 ## MdSideSheetComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2245,8 +1549,6 @@
     * [.show()](#MdSideSheetComponent+show)
     * [.close()](#MdSideSheetComponent+close)
     * [.toggle()](#MdSideSheetComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdSideSheetComponent+properties"></a>
 
@@ -2276,22 +1578,6 @@
 
 ### mdSideSheetComponent.toggle()
 **Kind**: instance method of [<code>MdSideSheetComponent</code>](#MdSideSheetComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdSideSheetComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdSideSheetComponent</code>](#MdSideSheetComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdSideSheetComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdSideSheetComponent</code>](#MdSideSheetComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdSliderComponent"></a>
 
 ## MdSliderComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2306,8 +1592,6 @@
     * [.sliderNatives](#MdSliderComponent+sliderNatives)
     * [.updateValue()](#MdSliderComponent+updateValue)
     * [.percentage([value], [min], [max])](#MdSliderComponent+percentage)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdSliderComponent+properties"></a>
 
@@ -2349,22 +1633,6 @@
 | [min] | <code>Any</code> | <code>this.min</code> | 
 | [max] | <code>Any</code> | <code>this.max</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdSliderComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdSliderComponent</code>](#MdSliderComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdSliderComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdSliderComponent</code>](#MdSliderComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdSnackbarComponent"></a>
 
 ## MdSnackbarComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2378,8 +1646,6 @@
     * [.show()](#MdSnackbarComponent+show)
     * [.close()](#MdSnackbarComponent+close)
     * [.toggle()](#MdSnackbarComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdSnackbarComponent+properties"></a>
 
@@ -2406,22 +1672,6 @@
 
 ### mdSnackbarComponent.toggle()
 **Kind**: instance method of [<code>MdSnackbarComponent</code>](#MdSnackbarComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdSnackbarComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdSnackbarComponent</code>](#MdSnackbarComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdSnackbarComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdSnackbarComponent</code>](#MdSnackbarComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="Store"></a>
 
 ## Store
@@ -2545,12 +1795,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onSwitchNativeInput</code>, <code>event:onSwitchNativeReset</code>  
 **Element**: md-switch  
-
-* [MdSwitchComponent](#MdSwitchComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdSwitchComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdSwitchComponent+properties"></a>
 
 ### mdSwitchComponent.properties
@@ -2565,22 +1809,6 @@
 | [checked] | <code>Boolean</code> | 
 | [icons] | <code>Array</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdSwitchComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdSwitchComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdSwitchComponent</code>](#MdSwitchComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTabComponent"></a>
 
 ## MdTabComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2588,12 +1816,6 @@
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Emits**: <code>event:onTabSelected</code>  
 **Element**: md-tab  
-
-* [MdTabComponent](#MdTabComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.properties](#MdTabComponent+properties)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
 <a name="MdTabComponent+properties"></a>
 
 ### mdTabComponent.properties
@@ -2611,22 +1833,6 @@
 | [rippleOptions] | <code>Object</code> | 
 | [badge] | <code>Number</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTabComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTabComponent</code>](#MdTabComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTabComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTabComponent</code>](#MdTabComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTabsComponent"></a>
 
 ## MdTabsComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2638,8 +1844,6 @@
 * [MdTabsComponent](#MdTabsComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
     * [.properties](#MdTabsComponent+properties)
     * [.singleSelect([data])](#MdTabsComponent+singleSelect)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTabsComponent+properties"></a>
 
@@ -2662,22 +1866,6 @@
 | --- | --- |
 | [data] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTabsComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTabsComponent</code>](#MdTabsComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTabsComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTabsComponent</code>](#MdTabsComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTextFieldComponent"></a>
 
 ## MdTextFieldComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2690,8 +1878,6 @@
     * [.properties](#MdTextFieldComponent+properties)
     * [.actions2](#MdTextFieldComponent+actions2)
     * [.textFieldNative](#MdTextFieldComponent+textFieldNative)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTextFieldComponent+properties"></a>
 
@@ -2731,22 +1917,6 @@
 ### mdTextFieldComponent.textFieldNative
 **Kind**: instance property of [<code>MdTextFieldComponent</code>](#MdTextFieldComponent)  
 **Read only**: true  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTextFieldComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTextFieldComponent</code>](#MdTextFieldComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTextFieldComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTextFieldComponent</code>](#MdTextFieldComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTimePickerComponent"></a>
 
 ## MdTimePickerComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2763,8 +1933,6 @@
     * [.show([options])](#MdTimePickerComponent+show)
     * [.close()](#MdTimePickerComponent+close)
     * [.toggle([options])](#MdTimePickerComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTimePickerComponent+properties"></a>
 
@@ -2821,22 +1989,6 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTimePickerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTimePickerComponent</code>](#MdTimePickerComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTimePickerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTimePickerComponent</code>](#MdTimePickerComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTooltipComponent"></a>
 
 ## MdTooltipComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2850,8 +2002,6 @@
     * [.show([options])](#MdTooltipComponent+show)
     * [.close()](#MdTooltipComponent+close)
     * [.toggle([options])](#MdTooltipComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTooltipComponent+properties"></a>
 
@@ -2890,22 +2040,6 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTooltipComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTooltipComponent</code>](#MdTooltipComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTooltipComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTooltipComponent</code>](#MdTooltipComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTopAppBarComponent"></a>
 
 ## MdTopAppBarComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2919,8 +2053,6 @@
     * [.show()](#MdTopAppBarComponent+show)
     * [.close()](#MdTopAppBarComponent+close)
     * [.toggle()](#MdTopAppBarComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTopAppBarComponent+properties"></a>
 
@@ -2948,22 +2080,6 @@
 
 ### mdTopAppBarComponent.toggle()
 **Kind**: instance method of [<code>MdTopAppBarComponent</code>](#MdTopAppBarComponent)  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTopAppBarComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTopAppBarComponent</code>](#MdTopAppBarComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTopAppBarComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTopAppBarComponent</code>](#MdTopAppBarComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTreeItemComponent"></a>
 
 ## MdTreeItemComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -2976,8 +2092,6 @@
     * [.properties](#MdTreeItemComponent+properties)
     * [.action](#MdTreeItemComponent+action)
     * [.icon](#MdTreeItemComponent+icon)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTreeItemComponent+properties"></a>
 
@@ -3006,47 +2120,12 @@
 ### mdTreeItemComponent.icon
 **Kind**: instance property of [<code>MdTreeItemComponent</code>](#MdTreeItemComponent)  
 **Read only**: true  
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTreeItemComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTreeItemComponent</code>](#MdTreeItemComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTreeItemComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTreeItemComponent</code>](#MdTreeItemComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTreeRowComponent"></a>
 
 ## MdTreeRowComponent ⇐ [<code>MdComponent</code>](#MdComponent)
 **Kind**: global class  
 **Extends**: [<code>MdComponent</code>](#MdComponent)  
 **Element**: md-tree-row  
-
-* [MdTreeRowComponent](#MdTreeRowComponent) ⇐ [<code>MdComponent</code>](#MdComponent)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
-
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTreeRowComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTreeRowComponent</code>](#MdTreeRowComponent)  
-<a name="MdComponent+emit"></a>
-
-### mdTreeRowComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTreeRowComponent</code>](#MdTreeRowComponent)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="MdTreeComponent"></a>
 
 ## MdTreeComponent ⇐ [<code>MdComponent</code>](#MdComponent)
@@ -3059,8 +2138,6 @@
     * [.properties](#MdTreeComponent+properties)
     * [.flatten([items], [parent], [indent])](#MdTreeComponent+flatten)
     * [.toggle([data])](#MdTreeComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdTreeComponent+properties"></a>
 
@@ -3093,22 +2170,6 @@
 | --- | --- |
 | [data] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
-
-### mdTreeComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdTreeComponent</code>](#MdTreeComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdTreeComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdTreeComponent</code>](#MdTreeComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
-
 <a name="VirtualScroll"></a>
 
 ## VirtualScroll
@@ -3118,7 +2179,6 @@
 * [VirtualScroll](#VirtualScroll)
     * [new VirtualScroll([host], [options])](#new_VirtualScroll_new)
     * [.load([options])](#VirtualScroll+load)
-    * [.emit([type], [detail])](#VirtualScroll+emit)
     * [.init()](#VirtualScroll+init)
     * [.destroy()](#VirtualScroll+destroy)
 
@@ -3139,16 +2199,6 @@
 | Param | Type | Default |
 | --- | --- | --- |
 | [options] | <code>Any</code> | <code>{}</code> | 
-
-<a name="VirtualScroll+emit"></a>
-
-### virtualScroll.emit([type], [detail])
-**Kind**: instance method of [<code>VirtualScroll</code>](#VirtualScroll)  
-
-| Param | Type |
-| --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
 
 <a name="VirtualScroll+init"></a>
 
@@ -3177,8 +2227,6 @@
     * [.show([options])](#MdWeekPickerComponent+show)
     * [.close()](#MdWeekPickerComponent+close)
     * [.toggle([options])](#MdWeekPickerComponent+toggle)
-    * [.createRenderRoot()](#MdComponent+createRenderRoot)
-    * [.emit([type], [detail])](#MdComponent+emit)
 
 <a name="MdWeekPickerComponent+properties"></a>
 
@@ -3250,19 +2298,93 @@
 | --- | --- |
 | [options] | <code>Any</code> | 
 
-<a name="MdComponent+createRenderRoot"></a>
+<a name="parseDate"></a>
 
-### mdWeekPickerComponent.createRenderRoot()
-**Kind**: instance method of [<code>MdWeekPickerComponent</code>](#MdWeekPickerComponent)  
-**Overrides**: [<code>createRenderRoot</code>](#MdComponent+createRenderRoot)  
-<a name="MdComponent+emit"></a>
-
-### mdWeekPickerComponent.emit([type], [detail])
-**Kind**: instance method of [<code>MdWeekPickerComponent</code>](#MdWeekPickerComponent)  
-**Overrides**: [<code>emit</code>](#MdComponent+emit)  
+## parseDate([string])
+**Kind**: global function  
 
 | Param | Type |
 | --- | --- |
-| [type] | <code>Any</code> | 
-| [detail] | <code>Any</code> | 
+| [string] | <code>Any</code> | 
+
+<a name="parseDatetimeLocal"></a>
+
+## parseDatetimeLocal([string])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [string] | <code>Any</code> | 
+
+<a name="parseMonth"></a>
+
+## parseMonth([string])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [string] | <code>Any</code> | 
+
+<a name="parseTime"></a>
+
+## parseTime([string])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [string] | <code>Any</code> | 
+
+<a name="parseWeek"></a>
+
+## parseWeek([string])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [string] | <code>Any</code> | 
+
+<a name="stringifyDate"></a>
+
+## stringifyDate([date])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [date] | <code>Any</code> | 
+
+<a name="stringifyDatetimeLocal"></a>
+
+## stringifyDatetimeLocal([date])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [date] | <code>Any</code> | 
+
+<a name="stringifyMonth"></a>
+
+## stringifyMonth([date])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [date] | <code>Any</code> | 
+
+<a name="stringifyTime"></a>
+
+## stringifyTime([date])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [date] | <code>Any</code> | 
+
+<a name="stringifyWeek"></a>
+
+## stringifyWeek([date])
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| [date] | <code>Any</code> | 
 

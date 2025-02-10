@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onScrimShown
  * @fires onScrimClosed
@@ -18,7 +18,7 @@ class MdScrimComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -29,7 +29,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -39,7 +39,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     show() {
         this.open = true;
@@ -47,7 +47,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     close() {
         this.open = false;
@@ -55,7 +55,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) this.close();
@@ -63,7 +63,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

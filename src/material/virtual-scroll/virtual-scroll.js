@@ -1,10 +1,13 @@
+
+
 /**
- *
+ * 
  * @fires onVirtualScroll
  */
 class VirtualScroll {
+
     /**
-     *
+     * 
      * @param {Any} [host]
      * @param {Any} [options]
      */
@@ -23,7 +26,7 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * 
      * @param {Any} [options={}]
      */
     load(options = {}) {
@@ -35,7 +38,7 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -63,7 +66,8 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * 
+     * @private
      * @param {Any} [type]
      * @param {Any} [detail]
      */
@@ -77,7 +81,7 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * 
      */
     init() {
         this.host.classList.add("md-virtual-scroll");
@@ -88,7 +92,7 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * 
      */
     destroy() {}
 }

@@ -1,3 +1,4 @@
+
 .md-resizable {
     display: grid;
     grid-template-columns: 16px 1fr 16px;
@@ -60,6 +61,7 @@
     &,
     & *,
     &::before,
+
     &::after {
         user-select: none;
     }

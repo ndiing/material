@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onSwitchNativeInput
  * @fires onSwitchNativeReset
@@ -27,7 +27,7 @@ class MdSwitchComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -41,7 +41,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -66,7 +66,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -79,7 +79,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -92,7 +92,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

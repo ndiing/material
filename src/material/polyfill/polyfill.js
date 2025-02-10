@@ -1,3 +1,8 @@
+
+/**
+ * 
+ * @param {Any} [week]
+ */
 Date.prototype.setWeek = function (week) {
     const year = this.getFullYear(); // Menggunakan tahun saat ini
     const firstThursday = new Date(year, 0, 4); // Kamis pertama tahun ini

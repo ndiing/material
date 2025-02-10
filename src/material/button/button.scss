@@ -69,6 +69,7 @@
     box-shadow: var(--md-sys-elevation-level1);
 
     .md-button__icon {
+
         + .md-button__label {
             margin-right: 0;
         }
@@ -87,12 +88,14 @@
     color: var(--md-sys-color-on-primary);
 
     .md-button__icon {
+
         + .md-button__label {
             margin-right: 0;
         }
     }
 
     &.md-ripple {
+
         &::after {
             background-color: var(--md-sys-color-on-primary);
         }
@@ -110,6 +113,7 @@
     color: var(--md-sys-color-on-secondary-container);
 
     .md-button__icon {
+
         + .md-button__label {
             margin-right: 0;
         }
@@ -127,6 +131,7 @@
     border: 1px solid var(--md-sys-color-outline);
 
     .md-button__icon {
+
         + .md-button__label {
             margin-right: 0;
         }
