@@ -52,7 +52,12 @@ class MdDataTableComponent extends MdComponent {
                                 ${tr.map(
                                     (th) => html`
                                         <th>
-                                            <md-data-table-cell .label="${ifDefined(th.label)}"></md-data-table-cell>
+                                            <md-data-table-cell 
+                                                .data="${th}"
+                                                .label="${ifDefined(th.label)}"
+                                                .action="${th.action??' '}"
+                                                @onDataTableCellActionClick="${this.handleDataTableCellActionClick}"
+                                            ></md-data-table-cell>
                                         </th>
                                     `,
                                 )}
@@ -67,7 +72,7 @@ class MdDataTableComponent extends MdComponent {
                             ?selected="${item.selected}"
                             @click="${this.handleDataTableBodyClick}"
                         >
-                            ${this.bodies.map(
+                            ${(this.bodies?.length&&this.bodies||this.headers).map(
                                 (tr) => html`
                                     <tr>
                                         <td>
@@ -112,12 +117,12 @@ class MdDataTableComponent extends MdComponent {
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
-        if (changedProperties.has("headers")) {
-            if (!this.bodies?.length) {
-                await this.updateComplete;
-                this.bodies = JSON.parse(JSON.stringify(this.headers));
-            }
-        }
+        // if (changedProperties.has("headers")) {
+        //     if (!this.bodies?.length) {
+        //         await this.updateComplete;
+        //         this.bodies = JSON.parse(JSON.stringify(this.headers));
+        //     }
+        // }
     }
 
     /**
@@ -173,6 +178,20 @@ class MdDataTableComponent extends MdComponent {
         data.selected = !data.selected;
         this.requestUpdate();
         this.emit("onDataTableBodyCellCheckboxNativeInput", { event });
+    }
+
+    handleDataTableCellActionClick(event){
+        const data = event.currentTarget.data
+        if(!data.action){
+            data.action='arrow_upward'
+        }
+        else if(data.action==='arrow_upward'){
+            data.action='arrow_downward'
+        }
+        else {
+            data.action=undefined
+        }
+        this.requestUpdate()
     }
 }
 customElements.define("md-data-table", MdDataTableComponent);

@@ -18,6 +18,9 @@ class DemoDataTable extends MdComponent {
             ]
         ];
         
+        // this.bodies=[]
+        // this.footers=[]
+
         const categories = ['Pendapatan', 'Pengeluaran', 'Investasi', 'Kewajiban', 'Hiburan'];
         const descriptions = ['Gaji Bulanan', 'Pembayaran Listrik', 'Pembelian Saham', 'Cicilan Kendaraan', 'Bonus Tahunan', 'Belanja Bulanan', 'Makan di Restoran', 'Bunga Deposito', 'Asuransi Jiwa', 'Transfer ke Orang Tua'];
         const types = ['Kredit', 'Debet'];
@@ -33,10 +36,7 @@ class DemoDataTable extends MdComponent {
             status: statuses[i % statuses.length]
         }));
         
-        console.log(this.data);
         
-        this.bodies=this.headers
-        this.footers=[]
     }
     render() {
         return html`
