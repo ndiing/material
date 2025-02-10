@@ -138,6 +138,9 @@ const routes = [
             
             { path: "week-picker", load: () => import( "./week-picker/week-picker.js").then(m=>m.default) },
             { path: "week-picker-modal", load: () => import( "./week-picker/week-picker-modal.js").then(m=>m.default) },
+            
+            { path: "month-picker", load: () => import( "./month-picker/month-picker.js").then(m=>m.default) },
+            { path: "month-picker-modal", load: () => import( "./month-picker/month-picker-modal.js").then(m=>m.default) },
         ],
     },
     {

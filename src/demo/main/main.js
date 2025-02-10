@@ -180,6 +180,10 @@ class DemoMain extends MdComponent {
                     { label: "week-picker", routerLink: "/week-picker" },
                     { label: "week-picker-modal", routerLink: "/week-picker-modal" },
                 // ] },
+                // { label: "month-picker", children:[
+                    { label: "month-picker", routerLink: "/month-picker" },
+                    { label: "month-picker-modal", routerLink: "/month-picker-modal" },
+                // ] },
             ] },
         ];
         this.items.sort((a, b) => {
