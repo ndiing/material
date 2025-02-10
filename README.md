@@ -1361,10 +1361,18 @@
 **Emits**: <code>event:onRouterCurrentEntryChange</code>, <code>event:onRouterNavigate</code>, <code>event:onRouterNavigateError</code>, <code>event:onRouterNavigateSuccess</code>  
 
 * [Router](#Router)
-    * [.pathname](#Router.pathname)
-    * [.navigate([url])](#Router.navigate)
-    * [.use([routes], [options])](#Router.use)
+    * _instance_
+        * [.params](#Router+params)
+    * _static_
+        * [.pathname](#Router.pathname)
+        * [.navigate([url])](#Router.navigate)
+        * [.use([routes], [options])](#Router.use)
 
+<a name="Router+params"></a>
+
+### router.params
+**Kind**: instance property of [<code>Router</code>](#Router)  
+**Read only**: true  
 <a name="Router.pathname"></a>
 
 ### Router.pathname

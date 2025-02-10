@@ -6,6 +6,9 @@
  * @fires onRouterNavigateSuccess
  */
 class Router {
+    /**
+     * @readonly
+     */
     static params = {};
 
     /**
