@@ -1,14 +1,14 @@
 /**
- * @class Movable
- * @extends undefined
+ *
  * @fires onMovablePointerdown
  * @fires onMovablePointermove
  * @fires onMovablePointerup
  */
 class Movable {
     /**
-     * @param {String} [host]
-     * @param {Object} [options={}]
+     *
+     * @param {Any} [host]
+     * @param {Any} [options={}]
      */
     constructor(host, options = {}) {
         this.host = host;
@@ -21,7 +21,9 @@ class Movable {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
@@ -38,7 +40,9 @@ class Movable {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handlePointermove(event) {
         const currentX = event.clientX - this.startX;
@@ -75,7 +79,9 @@ class Movable {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handlePointerup(event) {
         this.endX = this.currentX;
@@ -87,8 +93,9 @@ class Movable {
     }
 
     /**
-     * @param {String} [type]
-     * @param {Object} [detail]
+     *
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -100,6 +107,7 @@ class Movable {
     }
 
     /**
+     *
      */
     init() {
         let text = "";
@@ -116,6 +124,7 @@ class Movable {
     }
 
     /**
+     *
      */
     destroy() {}
 }

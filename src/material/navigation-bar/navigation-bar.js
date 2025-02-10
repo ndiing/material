@@ -2,16 +2,18 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
- * @class MdNavigationBarComponent
+ *
  * @extends MdComponent
  * @fires onNavigationBarShown
  * @fires onNavigationBarClosed
+ * @element md-navigation-bar
  */
 class MdNavigationBarComponent extends MdComponent {
     /**
-     * @property {Boolean} open
-     * @property {Array} items
+     * @property {Boolean} [open]
+     * @property {Array} [items]
      */
     static properties = {
         open: { type: Boolean, reflect: true },
@@ -19,6 +21,7 @@ class MdNavigationBarComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -27,6 +30,8 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -38,6 +43,9 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -49,6 +57,8 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -57,13 +67,16 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -72,6 +85,7 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -80,6 +94,7 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();

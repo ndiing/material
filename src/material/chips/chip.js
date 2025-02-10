@@ -1,19 +1,21 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
+
 /**
- * @class MdChipComponent
+ *
  * @extends MdComponent
  * @fires onChipActionClick
+ * @element md-chip
  */
 class MdChipComponent extends MdComponent {
     /**
-     * @property {String} icon
-     * @property {String} avatar
-     * @property {String} label
-     * @property {String} action
-     * @property {Boolean} selected
-     * @property {Boolean} disabled
+     * @property {String} [icon]
+     * @property {String} [avatar]
+     * @property {String} [label]
+     * @property {String} [action]
+     * @property {Boolean} [selected]
+     * @property {Boolean} [disabled]
      */
     static properties = {
         icon: { type: String },
@@ -25,6 +27,7 @@ class MdChipComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -32,6 +35,8 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -56,6 +61,8 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -63,7 +70,9 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", { event });

@@ -2,16 +2,18 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
+
 /**
- * @class MdImageComponent
+ *
  * @extends MdComponent
+ * @element md-image
  */
 class MdImageComponent extends MdComponent {
     /**
-     * @property {String} src
-     * @property {String} alt
-     * @property {String} ratio
-     * @property {Boolean} circular
+     * @property {String} [src]
+     * @property {String} [alt]
+     * @property {String} [ratio]
+     * @property {Boolean} [circular]
      */
     static properties = {
         src: { type: String },
@@ -21,12 +23,15 @@ class MdImageComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
     }
 
     /**
+     *
+     * @readonly
      */
     get imageNativeStyle() {
         const style = {};
@@ -43,6 +48,8 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -56,6 +63,8 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

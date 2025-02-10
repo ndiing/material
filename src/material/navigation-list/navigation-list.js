@@ -1,15 +1,17 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
- * @class MdNavigationListComponent
+ *
  * @extends MdComponent
  * @fires onNavigationListItemClick
+ * @element md-navigation-list
  */
 class MdNavigationListComponent extends MdComponent {
     /**
-     * @property {Array} items
-     * @property {Object} rippleOptions
+     * @property {Array} [items]
+     * @property {Object} [rippleOptions]
      */
     static properties = {
         items: { type: Array },
@@ -17,6 +19,7 @@ class MdNavigationListComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -24,7 +27,9 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderNavigationListItem(item) {
         return html`
@@ -45,12 +50,16 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return this.items.map((item) => this.renderNavigationListItem(item));
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -59,7 +68,9 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");
@@ -70,7 +81,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [data]
+     *
+     * @param {Any} [data]
      */
     singleSelect(data) {
         this.items.forEach((item) => {

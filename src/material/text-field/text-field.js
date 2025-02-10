@@ -3,8 +3,9 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
+
 /**
- * @class MdTextFieldComponent
+ *
  * @extends MdComponent
  * @fires onTextFieldFocus
  * @fires onTextFieldBlur
@@ -13,28 +14,29 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onTextFieldInvalid
  * @fires onTextFieldReset
  * @fires onTextFieldIconButtonClick
+ * @element md-text-field
  */
 class MdTextFieldComponent extends MdComponent {
     /**
-     * @property {String} label
-     * @property {Boolean} separateLabel
-     * @property {Array} icons
-     * @property {String} prefix
-     * @property {String} suffix
-     * @property {Array} actions
-     * @property {String} text
-     * @property {String} error
-     * @property {String} counter
-     * @property {String} name
-     * @property {String} type
-     * @property {String} value
-     * @property {String} placeholder
-     * @property {String} title
-     * @property {String} autocomplete
-     * @property {Boolean} required
-     * @property {Boolean} readOnly
-     * @property {String} variant
-     * @property {Boolean} disabled
+     * @property {String} [label]
+     * @property {Boolean} [separateLabel]
+     * @property {Array} [icons]
+     * @property {String} [prefix]
+     * @property {String} [suffix]
+     * @property {Array} [actions]
+     * @property {String} [text]
+     * @property {String} [error]
+     * @property {String} [counter]
+     * @property {String} [name]
+     * @property {String} [type]
+     * @property {String} [value]
+     * @property {String} [placeholder]
+     * @property {String} [title]
+     * @property {String} [autocomplete]
+     * @property {Boolean} [required]
+     * @property {Boolean} [readOnly]
+     * @property {String} [variant]
+     * @property {Boolean} [disabled]
      */
     static properties = {
         label: { type: String },
@@ -60,6 +62,7 @@ class MdTextFieldComponent extends MdComponent {
     variants = ["outlined", "filled"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -68,7 +71,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html`
@@ -81,7 +86,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -100,8 +107,10 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component=icon]
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderItem(item, component = "icon") {
         return choose(
@@ -115,6 +124,8 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get actions2() {
         let actions = [];
@@ -124,6 +135,8 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -155,6 +168,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -162,14 +178,14 @@ class MdTextFieldComponent extends MdComponent {
         this.defaultValue = this.value;
         this.classList.toggle("md-text-field--populated", !!this.value);
         await this.updateComplete;
-
         this.textFieldoffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
-
         this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldoffset.offsetLeft + "px");
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -187,13 +203,17 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get textFieldNative() {
         return this.querySelector(".md-text-field__native");
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
@@ -201,7 +221,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
@@ -209,7 +231,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldInput(event) {
         this.value = this.textFieldNative.value;
@@ -220,7 +244,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldSearch(event) {
         this.value = this.textFieldNative.value;
@@ -231,7 +257,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldInvalid(event) {
         event.preventDefault();
@@ -241,7 +269,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldReset(event) {
         this.value = this.defaultValue;
@@ -252,7 +282,9 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTextFieldIconButtonClick(event) {
         this.emit("onTextFieldIconButtonClick", { event });

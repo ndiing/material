@@ -1,16 +1,18 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
- * @class MdTabsComponent
+ *
  * @extends MdComponent
  * @fires onTabClick
+ * @element md-tabs
  */
 class MdTabsComponent extends MdComponent {
     /**
-     * @property {Array} items
-     * @property {Object} rippleOptions
-     * @property {String} variant
+     * @property {Array} [items]
+     * @property {Object} [rippleOptions]
+     * @property {String} [variant]
      */
     static properties = {
         items: { type: Array },
@@ -20,6 +22,7 @@ class MdTabsComponent extends MdComponent {
     variants = ["primary", "secondary"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -28,7 +31,9 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderTab(item) {
         return html`
@@ -48,12 +53,16 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return this.items.map((item) => this.renderTab(item));
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -62,7 +71,9 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -74,7 +85,9 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
@@ -85,7 +98,8 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [data]
+     *
+     * @param {Any} [data]
      */
     singleSelect(data) {
         this.items.forEach((item) => {
@@ -94,7 +108,10 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @async
+     * @param {Any} [event]
      */
     async handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {

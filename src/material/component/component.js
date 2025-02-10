@@ -1,18 +1,21 @@
 import { LitElement } from "lit";
+
 /**
- * @class MdComponent
+ *
  * @extends LitElement
  */
 class MdComponent extends LitElement {
     /**
+     *
      */
     createRenderRoot() {
         return this;
     }
 
     /**
-     * @param {String} [type]
-     * @param {Object} [detail]
+     *
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

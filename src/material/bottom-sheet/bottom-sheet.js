@@ -2,24 +2,26 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
- * @class MdBottomSheetComponent
+ *
  * @extends MdComponent
  * @fires onBottomSheetIconButtonClick
  * @fires onBottomSheetButtonClick
  * @fires onBottomSheetShown
  * @fires onBottomSheetClosed
  * @fires onBottomSheetScrimClosed
+ * @element md-bottom-sheet
  */
 class MdBottomSheetComponent extends MdComponent {
     /**
-     * @property {Array} icons
-     * @property {Array} actions
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {Array} buttons
-     * @property {Boolean} open
-     * @property {Boolean} modal
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
+     * @property {Boolean} [modal]
      */
     static properties = {
         icons: { type: Array },
@@ -32,6 +34,7 @@ class MdBottomSheetComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -39,14 +42,18 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -64,7 +71,9 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -82,15 +91,19 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-bottom-sheet__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component=icon]
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderItem(item, component = "icon") {
         return choose(
@@ -106,12 +119,17 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-bottom-sheet__header">${this.icons?.length ? html` <div class="md-bottom-sheet__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-bottom-sheet__labels">${this.label ? html`<div class="md-bottom-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-bottom-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-bottom-sheet__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-bottom-sheet__wrapper">${this.body?.length ? html`<div class="md-bottom-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-bottom-sheet__footer">${this.buttons?.length ? html` <div class="md-bottom-sheet__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -128,6 +146,8 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -138,7 +158,9 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -148,20 +170,25 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleBottomSheetIconButtonClick(event) {
         this.emit("onBottomSheetIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleBottomSheetButtonClick(event) {
         this.emit("onBottomSheetButtonClick", { event });
     }
 
     /**
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -171,6 +198,7 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -180,6 +208,7 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -187,7 +216,9 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleBottomSheetScrimClosed(event) {
         if (this.open) this.close();

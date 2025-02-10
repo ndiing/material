@@ -1,19 +1,21 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
- * @class MdDataTableComponent
+ *
  * @extends MdComponent
  * @fires onDataTableBodyClick
  * @fires onDataTableHeaderCellCheckboxNativeInput
  * @fires onDataTableBodyCellCheckboxNativeInput
+ * @element md-data-table
  */
 class MdDataTableComponent extends MdComponent {
     /**
-     * @property {Array} headers
-     * @property {Array} bodies
-     * @property {Array} footers
-     * @property {Array} data
+     * @property {Array} [headers]
+     * @property {Array} [bodies]
+     * @property {Array} [footers]
+     * @property {Array} [data]
      */
     static properties = {
         headers: { type: Array },
@@ -23,6 +25,7 @@ class MdDataTableComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -33,6 +36,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -52,10 +57,10 @@ class MdDataTableComponent extends MdComponent {
                                 ${tr.map(
                                     (th) => html`
                                         <th>
-                                            <md-data-table-cell 
+                                            <md-data-table-cell
                                                 .data="${th}"
                                                 .label="${ifDefined(th.label)}"
-                                                .action="${th.action??' '}"
+                                                .action="${th.action ?? " "}"
                                                 @onDataTableCellActionClick="${this.handleDataTableCellActionClick}"
                                             ></md-data-table-cell>
                                         </th>
@@ -72,7 +77,7 @@ class MdDataTableComponent extends MdComponent {
                             ?selected="${item.selected}"
                             @click="${this.handleDataTableBodyClick}"
                         >
-                            ${(this.bodies?.length&&this.bodies||this.headers).map(
+                            ${((this.bodies?.length && this.bodies) || this.headers).map(
                                 (tr) => html`
                                     <tr>
                                         <td>
@@ -106,6 +111,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -113,7 +120,10 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @async
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -126,7 +136,9 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleDataTableBodyClick(event) {
         if (event.target.closest(".md-data-table__checkbox")) {
@@ -141,25 +153,33 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get selected() {
         return this.data.filter((item) => item.selected);
     }
 
     /**
+     *
+     * @readonly
      */
     get checked() {
         return this.selected.length && this.selected.length === this.data.length;
     }
 
     /**
+     *
+     * @readonly
      */
     get indeterminate() {
         return this.selected.length && this.selected.length < this.data.length;
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleDataTableHeaderCellCheckboxNativeInput(event) {
         const checked = !this.checked || this.indeterminate;
@@ -171,7 +191,9 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleDataTableBodyCellCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -180,18 +202,21 @@ class MdDataTableComponent extends MdComponent {
         this.emit("onDataTableBodyCellCheckboxNativeInput", { event });
     }
 
-    handleDataTableCellActionClick(event){
-        const data = event.currentTarget.data
-        if(!data.action){
-            data.action='arrow_upward'
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDataTableCellActionClick(event) {
+        const data = event.currentTarget.data;
+        if (!data.action) {
+            data.action = "arrow_upward";
+        } else if (data.action === "arrow_upward") {
+            data.action = "arrow_downward";
+        } else {
+            data.action = undefined;
         }
-        else if(data.action==='arrow_upward'){
-            data.action='arrow_downward'
-        }
-        else {
-            data.action=undefined
-        }
-        this.requestUpdate()
+        this.requestUpdate();
     }
 }
 customElements.define("md-data-table", MdDataTableComponent);

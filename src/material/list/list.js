@@ -1,20 +1,22 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
- * @class MdListComponent
+ *
  * @extends MdComponent
  * @fires onListItemClick
  * @fires onListItemCheckboxNativeInput
  * @fires onListItemRadioButtonNativeInput
  * @fires onListItemSwitchNativeInput
+ * @element md-list
  */
 class MdListComponent extends MdComponent {
     /**
-     * @property {Array} items
-     * @property {String} type
-     * @property {Object} fieldMap
-     * @property {Object} rippleOptions
+     * @property {Array} [items]
+     * @property {String} [type]
+     * @property {Object} [fieldMap]
+     * @property {Object} [rippleOptions]
      */
     static properties = {
         items: { type: Array },
@@ -25,6 +27,7 @@ class MdListComponent extends MdComponent {
     types = ["single-select", "multi-select"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -33,7 +36,9 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderListItem(item) {
         if (this.fieldMap) {
@@ -74,12 +79,16 @@ class MdListComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return this.items.map((item) => this.renderListItem(item));
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -87,7 +96,9 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
@@ -103,14 +114,16 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [data]
+     *
+     * @param {Any} [data]
      */
     multiSelect(data) {
         data.selected = !data.selected;
     }
 
     /**
-     * @param {String} [data]
+     *
+     * @param {Any} [data]
      */
     singleSelect(data) {
         this.items.forEach((item) => {
@@ -119,7 +132,9 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -129,7 +144,9 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
@@ -139,7 +156,9 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;

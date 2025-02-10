@@ -1,11 +1,15 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
- * @class MdDividerComponent
+ *
  * @extends MdComponent
+ * @element md-divider
  */
 class MdDividerComponent extends MdComponent {
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

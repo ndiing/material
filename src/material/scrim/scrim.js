@@ -1,21 +1,25 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
- * @class MdScrimComponent
+ *
  * @extends MdComponent
  * @fires onScrimShown
  * @fires onScrimClosed
  * @fires onScrimClick
+ * @element md-scrim
  */
 class MdScrimComponent extends MdComponent {
     /**
-     * @property {Boolean} open
+     * @property {Boolean} [open]
      */
     static properties = {
         open: { type: Boolean, reflect: true },
     };
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -25,6 +29,8 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -33,6 +39,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
+     *
      */
     show() {
         this.open = true;
@@ -40,6 +47,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.open = false;
@@ -47,6 +55,7 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -54,7 +63,9 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleScrimClick(event) {
         this.close();

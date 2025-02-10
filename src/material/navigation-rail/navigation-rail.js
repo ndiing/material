@@ -2,21 +2,23 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
- * @class MdNavigationRailComponent
+ *
  * @extends MdComponent
  * @fires onNavigationRailIconButtonClick
  * @fires onNavigationRailShown
  * @fires onNavigationRailClosed
+ * @element md-navigation-rail
  */
 class MdNavigationRailComponent extends MdComponent {
     /**
-     * @property {Array} icons
-     * @property {Array} actions
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {Array} items
-     * @property {Boolean} open
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [items]
+     * @property {Boolean} [open]
      */
     static properties = {
         icons: { type: Array },
@@ -28,6 +30,7 @@ class MdNavigationRailComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -36,14 +39,18 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -61,8 +68,10 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component=icon]
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderItem(item, component = "icon") {
         return choose(
@@ -76,6 +85,8 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -92,6 +103,9 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -103,6 +117,8 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -111,20 +127,25 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleNavigationRailIconButtonClick(event) {
         this.emit("onNavigationRailIconButtonClick", { event });
     }
 
     /**
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -133,6 +154,7 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -141,6 +163,7 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();

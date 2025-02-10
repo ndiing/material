@@ -1,13 +1,15 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
- * @class MdBadgeComponent
+ *
  * @extends MdComponent
+ * @element md-badge
  */
 class MdBadgeComponent extends MdComponent {
     /**
-     * @property {Number} label
-     * @property {Number} max
+     * @property {Number} [label]
+     * @property {Number} [max]
      */
     static properties = {
         label: { type: Number },
@@ -15,6 +17,7 @@ class MdBadgeComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -22,12 +25,16 @@ class MdBadgeComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return this.label ? (this.label > this.max ? this.max + "+" : this.label) : nothing;
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();

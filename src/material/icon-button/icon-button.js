@@ -2,19 +2,21 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
- * @class MdIconButtonComponent
+ *
  * @extends MdComponent
  * @fires onIconButtonClick
+ * @element md-icon-button
  */
 class MdIconButtonComponent extends MdComponent {
     /**
-     * @property {String} icon
-     * @property {String} variant
-     * @property {String} type
-     * @property {Boolean} toggle
-     * @property {Boolean} selected
-     * @property {Boolean} disabled
+     * @property {String} [icon]
+     * @property {String} [variant]
+     * @property {String} [type]
+     * @property {Boolean} [toggle]
+     * @property {Boolean} [selected]
+     * @property {Boolean} [disabled]
      */
     static properties = {
         icon: { type: String },
@@ -27,6 +29,7 @@ class MdIconButtonComponent extends MdComponent {
     variants = ["filled", "filled-tonal", "outlined"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -34,6 +37,8 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -48,6 +53,8 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -63,6 +70,8 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -71,7 +80,9 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -83,7 +94,9 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleIconButtonClick(event) {
         if (this.toggle) {

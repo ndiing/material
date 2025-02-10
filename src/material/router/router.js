@@ -1,6 +1,5 @@
 /**
- * @class Router
- * @extends undefined
+ *
  * @fires onRouterCurrentEntryChange
  * @fires onRouterNavigate
  * @fires onRouterNavigateError
@@ -10,10 +9,12 @@ class Router {
     static params = {};
 
     /**
-     * @param {String} [pathname=this.pathname]
-     * @param {String} [routes=this.routes]
-     * @param {String} [parent=null]
-     * @param {Array} [result=[]]
+     *
+     * @static
+     * @param {Any} [pathname=this.pathname]
+     * @param {Any} [routes=this.routes]
+     * @param {Any} [parent=null]
+     * @param {Any} [result=[]]
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -37,6 +38,9 @@ class Router {
     }
 
     /**
+     *
+     * @static
+     * @readonly
      */
     static get pathname() {
         if (this.options.historyApiFallback) {
@@ -47,7 +51,11 @@ class Router {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @static
+     * @async
+     * @param {Any} [event]
      */
     static async handleNavigation(event) {
         this.emit("onRouterCurrentEntryChange");
@@ -73,7 +81,9 @@ class Router {
     }
 
     /**
-     * @param {String} [routes]
+     *
+     * @static
+     * @param {Any} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -89,16 +99,22 @@ class Router {
     }
 
     /**
-     * @param {String} [route]
-     * @param {String} [outlet]
+     *
+     * @private
+     * @static
+     * @param {Any} [route]
+     * @param {Any} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
     /**
-     * @param {String} [container]
-     * @param {String} [route]
+     *
+     * @static
+     * @async
+     * @param {Any} [container]
+     * @param {Any} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -127,14 +143,19 @@ class Router {
     }
 
     /**
-     * @param {String} [route]
+     *
+     * @static
+     * @param {Any} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
     /**
-     * @param {String} [route]
+     *
+     * @static
+     * @async
+     * @param {Any} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -143,7 +164,11 @@ class Router {
     }
 
     /**
-     * @param {String} [route]
+     *
+     * @private
+     * @static
+     * @async
+     * @param {Any} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -157,6 +182,8 @@ class Router {
     }
 
     /**
+     *
+     * @static
      */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
@@ -164,7 +191,9 @@ class Router {
     }
 
     /**
-     * @param {String} [url]
+     *
+     * @static
+     * @param {Any} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -175,7 +204,10 @@ class Router {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @static
+     * @param {Any} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -186,8 +218,10 @@ class Router {
     }
 
     /**
-     * @param {String} [type]
-     * @param {Object} [detail]
+     *
+     * @static
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -201,8 +235,10 @@ class Router {
     static options = {};
 
     /**
-     * @param {Array} [routes=[]]
-     * @param {Object} [options={}]
+     *
+     * @static
+     * @param {Any} [routes=[]]
+     * @param {Any} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;

@@ -2,23 +2,25 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
- * @class MdDialogComponent
+ *
  * @extends MdComponent
  * @fires onDialogIconButtonClick
  * @fires onDialogButtonClick
  * @fires onDialogShown
  * @fires onDialogClosed
  * @fires onDialogScrimClosed
+ * @element md-dialog
  */
 class MdDialogComponent extends MdComponent {
     /**
-     * @property {Array} icons
-     * @property {Array} actions
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {Array} buttons
-     * @property {Boolean} open
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
      */
     static properties = {
         icons: { type: Array },
@@ -30,6 +32,7 @@ class MdDialogComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -37,14 +40,18 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -62,7 +69,9 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -80,15 +89,19 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-dialog__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component=icon]
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderItem(item, component = "icon") {
         return choose(
@@ -104,12 +117,17 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-dialog__header">${this.icons?.length ? html` <div class="md-dialog__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-dialog__labels">${this.label ? html`<div class="md-dialog__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-dialog__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-dialog__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-dialog__wrapper">${this.body?.length ? html`<div class="md-dialog__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-dialog__footer">${this.buttons?.length ? html` <div class="md-dialog__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -126,6 +144,8 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -135,20 +155,25 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleDialogIconButtonClick(event) {
         this.emit("onDialogIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleDialogButtonClick(event) {
         this.emit("onDialogButtonClick", { event });
     }
 
     /**
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-dialog-animation");
@@ -158,6 +183,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-dialog-animation");
@@ -167,6 +193,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -174,7 +201,9 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleDialogScrimClosed(event) {
         if (this.open) this.close();

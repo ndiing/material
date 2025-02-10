@@ -2,17 +2,19 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { RippleController } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
- * @class MdFabComponent
+ *
  * @extends MdComponent
+ * @element md-fab
  */
 class MdFabComponent extends MdComponent {
     /**
-     * @property {String} icon
-     * @property {String} label
-     * @property {String} type
-     * @property {String} size
-     * @property {String} variant
+     * @property {String} [icon]
+     * @property {String} [label]
+     * @property {String} [type]
+     * @property {String} [size]
+     * @property {String} [variant]
      */
     static properties = {
         icon: { type: String },
@@ -26,6 +28,7 @@ class MdFabComponent extends MdComponent {
     variants = ["unelevated"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -33,12 +36,16 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html` ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing} `;
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -46,7 +53,9 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

@@ -3,16 +3,18 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { Popper } from "../popper/popper";
+
 /**
- * @class MdMenuComponent
+ *
  * @extends MdComponent
  * @fires onMenuShown
  * @fires onMenuClosed
+ * @element md-menu
  */
 class MdMenuComponent extends MdComponent {
     /**
-     * @property {Boolean} open
-     * @property {Array} items
+     * @property {Boolean} [open]
+     * @property {Array} [items]
      */
     static properties = {
         open: { type: Boolean, reflect: true },
@@ -20,6 +22,7 @@ class MdMenuComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -27,12 +30,17 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html` <md-navigation-list .items="${this.items}"></md-navigation-list> `;
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -44,6 +52,8 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -51,7 +61,8 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options={}]
+     *
+     * @param {Any} [options={}]
      */
     show(options = {}) {
         this.style.removeProperty("--md-comp-menu-animation");
@@ -67,6 +78,7 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-menu-animation");
@@ -75,7 +87,8 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     *
+     * @param {Any} [options]
      */
     toggle(options) {
         if (this.open) this.close();

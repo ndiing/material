@@ -133,7 +133,6 @@
             @include mixins.typescale-body-large();
             pointer-events: none;
         }
-
         .md-text-field__prefix,
         .md-text-field__suffix {
             visibility: hidden;
@@ -168,6 +167,7 @@
             .md-text-field__suffix {
                 visibility: visible;
             }
+
             .md-text-field__native {
                 &::placeholder,
                 &::-webkit-datetime-edit {
@@ -227,7 +227,6 @@
                 z-index: -1;
             }
         }
-
         .md-text-field__prefix,
         .md-text-field__suffix {
             visibility: hidden;
@@ -259,7 +258,6 @@
                     width: 100%;
                 }
             }
-
             .md-text-field__prefix,
             .md-text-field__suffix {
                 visibility: visible;

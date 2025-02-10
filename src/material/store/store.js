@@ -1,24 +1,29 @@
 /**
- * @class Store
- * @extends undefined
+ *
  */
 class Store {
     /**
-     * @param {Array} [data=[]]
-     * @param {Object} [options={}]
+     *
+     * @param {Any} [data=[]]
+     * @param {Any} [options={}]
      */
     constructor(data = [], options = {}) {
         this.data = data;
         this.options = options;
     }
 
+    /**
+     *
+     * @param {Any} [data=[]]
+     */
     load(data = []) {
         this.data = data;
     }
 
     /**
-     * @param {String} [data]
-     * @param {String} [sorters]
+     *
+     * @param {Any} [data]
+     * @param {Any} [sorters]
      */
     sort(data, sorters) {
         if (!sorters || !sorters.name) return data;
@@ -31,8 +36,9 @@ class Store {
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [q]
+     *
+     * @param {Any} [item]
+     * @param {Any} [q]
      */
     deepSearch(item, q) {
         if (!item) return false;
@@ -49,8 +55,9 @@ class Store {
     }
 
     /**
-     * @param {String} [data]
-     * @param {String} [q]
+     *
+     * @param {Any} [data]
+     * @param {Any} [q]
      */
     search(data, q) {
         if (!q) return data;
@@ -58,16 +65,18 @@ class Store {
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [name]
+     *
+     * @param {Any} [item]
+     * @param {Any} [name]
      */
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
 
     /**
-     * @param {String} [data]
-     * @param {String} [filters]
+     *
+     * @param {Any} [data]
+     * @param {Any} [filters]
      */
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
@@ -102,18 +111,20 @@ class Store {
     }
 
     /**
-     * @param {String} [data]
-     * @param {String} [_start]
-     * @param {String} [_end]
+     *
+     * @param {Any} [data]
+     * @param {Any} [_start]
+     * @param {Any} [_end]
      */
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
 
     /**
-     * @param {String} [data]
-     * @param {String} [_page]
-     * @param {String} [_limit]
+     *
+     * @param {Any} [data]
+     * @param {Any} [_page]
+     * @param {Any} [_limit]
      */
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;
@@ -122,7 +133,9 @@ class Store {
     }
 
     /**
-     * @param {Object} [options={}]
+     *
+     * @async
+     * @param {Any} [options={}]
      */
     async get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;

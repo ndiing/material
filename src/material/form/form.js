@@ -2,22 +2,24 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
+
 /**
- * @class MdFormComponent
+ *
  * @extends MdComponent
  * @fires onFormNativeFormdata
  * @fires onFormNativeReset
  * @fires onFormNativeSubmit
+ * @element md-form
  */
 class MdFormComponent extends MdComponent {
     /**
-     * @property {String} acceptCharset
-     * @property {String} action
-     * @property {String} autocomplete
-     * @property {String} enctype
-     * @property {String} method
-     * @property {String} name
-     * @property {Boolean} noValidate
+     * @property {String} [acceptCharset]
+     * @property {String} [action]
+     * @property {String} [autocomplete]
+     * @property {String} [enctype]
+     * @property {String} [method]
+     * @property {String} [name]
+     * @property {Boolean} [noValidate]
      */
     static properties = {
         acceptCharset: { type: String },
@@ -30,6 +32,7 @@ class MdFormComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -37,6 +40,8 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -59,6 +64,8 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -66,14 +73,18 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event });
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.elements) {
@@ -87,7 +98,9 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();
@@ -96,19 +109,23 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get formNative() {
         return this.querySelector(".md-form__native");
     }
 
     /**
+     *
      */
     reset() {
         this.formNative.reset();
     }
 
     /**
-     * @param {String} [submitButton]
+     *
+     * @param {Any} [submitButton]
      */
     submit(submitButton) {
         if (this.formNative.requestSubmit) {

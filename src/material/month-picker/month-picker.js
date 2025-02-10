@@ -5,8 +5,9 @@ import { choose } from "lit/directives/choose.js";
 import { parseMonth, stringifyMonth } from "../util/util";
 import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
+
 /**
- * @class MdMonthPickerComponent
+ *
  * @extends MdComponent
  * @fires onMonthPickerLabelClick
  * @fires onMonthPickerIconButtonPrevClick
@@ -14,9 +15,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onMonthPickerIconButtonClick
  * @fires onMonthPickerYearItemClick
  * @fires onMonthPickerMonthItemClick
- * @fires onMonthPickerDayItemClick
- * @fires onMonthPickerHourItemClick
- * @fires onMonthPickerMinuteItemClick
  * @fires onMonthPickerButtonCancelClick
  * @fires onMonthPickerButtonOkClick
  * @fires onMonthPickerButtonLabelClick
@@ -24,18 +22,19 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onMonthPickerScrimClosed
  * @fires onMonthPickerShown
  * @fires onMonthPickerClosed
+ * @element md-month-picker
  */
 class MdMonthPickerComponent extends MdComponent {
     /**
-     * @property {Array} icons
-     * @property {Array} actions
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {Array} buttons
-     * @property {Boolean} open
-     * @property {Boolean} modal
-     * @property {Number} index
-     * @property {undefined} value
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
+     * @property {Boolean} [modal]
+     * @property {Number} [index]
+     * @property {Any} [value]
      */
     static properties = {
         icons: { type: Array },
@@ -59,6 +58,8 @@ class MdMonthPickerComponent extends MdComponent {
     };
 
     /**
+     *
+     * @readonly
      */
     get years() {
         let year = this.selection.getFullYear();
@@ -75,6 +76,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get months() {
         return Array.from({ length: 12 }, (v, k) => {
@@ -89,19 +92,20 @@ class MdMonthPickerComponent extends MdComponent {
         });
     }
 
-    
     /**
+     *
+     * @readonly
      */
     get icons() {
         const map = {
             0: () => [this.years[0].label, this.years[this.years.length - 1].label].join(" - "),
             1: () => this.selection.getFullYear(),
-            
         };
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }
 
     /**
+     *
      */
     constructor() {
         super();
@@ -119,14 +123,18 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -144,7 +152,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -162,15 +172,19 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-month-picker__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component=icon]
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderItem(item, component = "icon") {
         return choose(
@@ -186,6 +200,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     renderMonthPickerYear() {
         return html`
@@ -208,6 +224,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     renderMonthPickerMonth() {
         return html`
@@ -229,8 +247,9 @@ class MdMonthPickerComponent extends MdComponent {
         `;
     }
 
-    
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -255,6 +274,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -274,6 +296,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -283,7 +307,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -296,14 +322,18 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerLabelClick(event) {
         this.emit("onMonthPickerLabelClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerIconButtonPrevClick(event) {
         if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() - 10);
@@ -313,7 +343,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerIconButtonNextClick(event) {
         if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() + 10);
@@ -323,7 +355,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerIconButtonClick(event) {
         const data = event.currentTarget.data;
@@ -333,7 +367,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -343,7 +379,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -351,23 +389,26 @@ class MdMonthPickerComponent extends MdComponent {
         this.selection.setMonth(data.month);
         this.value.setFullYear(data.year);
         this.value.setMonth(data.month);
-        this.requestUpdate()
+        this.requestUpdate();
         this.emit("onMonthPickerMonthItemClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerButtonCancelClick(event) {
         this.close();
         this.value.setFullYear(this.defaultValue.getFullYear());
         this.value.setMonth(this.defaultValue.getMonth());
-        
         this.emit("onMonthPickerButtonCancelClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerButtonOkClick(event) {
         this.close();
@@ -375,7 +416,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerButtonLabelClick(event) {
         const map = {
@@ -387,7 +430,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerButtonClick(event) {
         const data = event.currentTarget.data;
@@ -398,7 +443,9 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleMonthPickerScrimClosed(event) {
         if (this.open) this.close();
@@ -406,7 +453,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     *
+     * @param {Any} [options]
      */
     show(options) {
         this.style.removeProperty("--md-comp-month-picker-animation");
@@ -424,6 +472,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-month-picker-animation");
@@ -433,7 +482,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     *
+     * @param {Any} [options]
      */
     toggle(options) {
         if (this.open) this.close();

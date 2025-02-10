@@ -2,30 +2,32 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
+
 /**
- * @class MdDataTableCellComponent
+ *
  * @extends MdComponent
-//  * @fires onDataTableCellActionClick
+ * @fires onDataTableCellActionClick
+ * @element md-data-table-cell
  */
 class MdDataTableCellComponent extends MdComponent {
     /**
-     * @property {Boolean} checkbox
-     * @property {Boolean} leadingRadioButton
-     * @property {Boolean} leadingSwitch
-     * @property {String} avatar
-     * @property {String} image
-     * @property {String} video
-     * @property {String} icon
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {String} text
-     * @property {String} action
-     * @property {Boolean} trailingCheckbox
-     * @property {Boolean} trailingRadioButton
-     * @property {Boolean} trailingSwitch
-     * @property {Boolean} indeterminate
-     * @property {Boolean} checked
-     * @property {Number} badge
+     * @property {Boolean} [checkbox]
+     * @property {Boolean} [leadingRadioButton]
+     * @property {Boolean} [leadingSwitch]
+     * @property {String} [avatar]
+     * @property {String} [image]
+     * @property {String} [video]
+     * @property {String} [icon]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {String} [text]
+     * @property {String} [action]
+     * @property {Boolean} [trailingCheckbox]
+     * @property {Boolean} [trailingRadioButton]
+     * @property {Boolean} [trailingSwitch]
+     * @property {Boolean} [indeterminate]
+     * @property {Boolean} [checked]
+     * @property {Number} [badge]
      */
     static properties = {
         checkbox: { type: Boolean },
@@ -48,6 +50,7 @@ class MdDataTableCellComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -55,6 +58,8 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -135,6 +140,9 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -151,7 +159,10 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @async
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -160,6 +171,11 @@ class MdDataTableCellComponent extends MdComponent {
         }
     }
 
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
     handleDataTableCellActionClick(event) {
         this.emit("onDataTableCellActionClick", { event });
     }

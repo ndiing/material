@@ -2,21 +2,23 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
+
 /**
- * @class MdTreeItemComponent
+ *
  * @extends MdComponent
  * @fires onTreeItemSelected
+ * @element md-tree-item
  */
 class MdTreeItemComponent extends MdComponent {
     /**
-     * @property {Boolean} selected
-     * @property {Boolean} expanded
-     * @property {String} indent
-     * @property {Array} actions
-     * @property {Array} nodeIcons
-     * @property {Array} leafIcons
-     * @property {String} label
-     * @property {String} routerLink
+     * @property {Boolean} [selected]
+     * @property {Boolean} [expanded]
+     * @property {String} [indent]
+     * @property {Array} [actions]
+     * @property {Array} [nodeIcons]
+     * @property {Array} [leafIcons]
+     * @property {String} [label]
+     * @property {String} [routerLink]
      */
     static properties = {
         selected: { type: Boolean, reflect: true },
@@ -30,6 +32,7 @@ class MdTreeItemComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
@@ -40,6 +43,8 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get action() {
         if (!this.actions?.length) return;
@@ -48,6 +53,8 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
+     *
+     * @readonly
      */
     get icon() {
         if (!this.leafIcons?.length) return;
@@ -56,12 +63,17 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -69,7 +81,10 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @async
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

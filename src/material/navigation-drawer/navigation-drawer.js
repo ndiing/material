@@ -2,24 +2,27 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
- * @class MdNavigationDrawerComponent
+ *
  * @extends MdComponent
  * @fires onNavigationDrawerIconButtonClick
  * @fires onNavigationDrawerShown
  * @fires onNavigationDrawerClosed
  * @fires onNavigationDrawerScrimClosed
+ * @fires onNavigationDrawerItemClick
+ * @element md-navigation-drawer
  */
 class MdNavigationDrawerComponent extends MdComponent {
     /**
-     * @property {Array} icons
-     * @property {Array} actions
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {Array} items
-     * @property {Boolean} open
-     * @property {Boolean} modal
-     * @property {String} view
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [items]
+     * @property {Boolean} [open]
+     * @property {Boolean} [modal]
+     * @property {String} [view]
      */
     static properties = {
         icons: { type: Array },
@@ -34,6 +37,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     views = ["flat", "tree"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -41,14 +45,18 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -66,8 +74,10 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component=icon]
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderItem(item, component = "icon") {
         return choose(
@@ -81,6 +91,8 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html`
@@ -106,6 +118,9 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -122,6 +137,8 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -132,7 +149,9 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -147,13 +166,16 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleNavigationDrawerIconButtonClick(event) {
         this.emit("onNavigationDrawerIconButtonClick", { event });
     }
 
     /**
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -163,6 +185,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -172,6 +195,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -179,7 +203,9 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleNavigationDrawerScrimClosed(event) {
         if (this.open) this.close();
@@ -187,7 +213,9 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleNavigationDrawerItemClick(event) {
         this.emit("onNavigationDrawerItemClick", { event: event.detail.event });

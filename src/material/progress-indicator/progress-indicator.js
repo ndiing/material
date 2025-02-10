@@ -1,14 +1,16 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
- * @class MdProgressIndicatorComponent
+ *
  * @extends MdComponent
+ * @element md-progress-indicator
  */
 class MdProgressIndicatorComponent extends MdComponent {
     /**
-     * @property {String} variant
-     * @property {Number} max
-     * @property {Number} value
+     * @property {String} [variant]
+     * @property {Number} [max]
+     * @property {Number} [value]
      */
     static properties = {
         variant: { type: String },
@@ -18,6 +20,7 @@ class MdProgressIndicatorComponent extends MdComponent {
     variants = ["circular"];
 
     /**
+     *
      */
     constructor() {
         super();
@@ -26,6 +29,8 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     renderProgressIndicatorNative() {
         return html`
@@ -38,6 +43,8 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     renderProgressIndicatorCircular() {
         this.r = ((36 / 40) * 100) / 2;
@@ -85,6 +92,8 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         if (this.variant === "circular") return this.renderProgressIndicatorCircular();
@@ -92,6 +101,8 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -99,7 +110,9 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

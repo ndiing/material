@@ -2,20 +2,22 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
- * @class MdTopAppBarComponent
+ *
  * @extends MdComponent
  * @fires onTopAppBarIconButtonClick
  * @fires onTopAppBarShown
  * @fires onTopAppBarClosed
+ * @element md-top-app-bar
  */
 class MdTopAppBarComponent extends MdComponent {
     /**
-     * @property {Array} leadingActions
-     * @property {String} label
-     * @property {String} sublabel
-     * @property {Array} trailingActions
-     * @property {Boolean} open
+     * @property {Array} [leadingActions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [trailingActions]
+     * @property {Boolean} [open]
      */
     static properties = {
         leadingActions: { type: Array },
@@ -26,13 +28,16 @@ class MdTopAppBarComponent extends MdComponent {
     };
 
     /**
+     *
      */
     constructor() {
         super();
     }
 
     /**
-     * @param {String} [item]
+     *
+     * @private
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -50,12 +55,17 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     render() {
         return html` ${this.leadingActions?.length ? html` <div class="md-top-app-bar__actions">${this.leadingActions.map((action) => this.renderIconButton(action))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-top-app-bar__labels">${this.label ? html`<div class="md-top-app-bar__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-top-app-bar__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.trailingActions?.length ? html` <div class="md-top-app-bar__actions">${this.trailingActions.map((action) => this.renderIconButton(action))}</div> ` : nothing} `;
     }
 
     /**
+     *
+     * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -67,6 +77,8 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
+     *
+     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -75,20 +87,25 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     *
+     * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
-     * @param {Object} [event]
+     *
+     * @private
+     * @param {Any} [event]
      */
     handleTopAppBarIconButtonClick(event) {
         this.emit("onTopAppBarIconButtonClick", { event });
     }
 
     /**
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -97,6 +114,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -105,6 +123,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
+     *
      */
     toggle() {
         if (this.open) this.close();
