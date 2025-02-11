@@ -196,9 +196,10 @@ class MdDataTableComponent extends MdComponent {
      * @private
      * @param {Any} [changedProperties]
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("data")) {
+            await this.updateComplete
             this.store.load(this.data);
             this.requestUpdateStore();
         }
