@@ -80,7 +80,7 @@ class MdDataTableComponent extends MdComponent {
      */
     get checkboxData() {
         if (this.checkbox) {
-            return [{ leadingCheckbox: true, sticky: true }];
+            return [{ checkbox: true, sticky: true }];
         }
         return [];
     }
@@ -101,11 +101,11 @@ class MdDataTableComponent extends MdComponent {
                                         <th
                                             .data="${th}"
                                             style="${styleMap(this.styleDataTableHeaderCell(th))}"
-                                            @click="${th.leadingCheckbox ? this.handleDataTableHeaderCheckboxClick : this.handleDataTableHeaderCellClick}"
+                                            @click="${th.checkbox ? this.handleDataTableHeaderCheckboxClick : this.handleDataTableHeaderCellClick}"
                                         >
                                             <md-data-table-cell
                                                 .label="${th.label}"
-                                                .leadingCheckbox="${th.leadingCheckbox}"
+                                                .checkbox="${th.checkbox}"
                                                 .indeterminate="${this.indeterminate}"
                                                 .checked="${this.checked}"
                                                 .action="${th.action || (th.sortable && " ")}"
@@ -133,11 +133,11 @@ class MdDataTableComponent extends MdComponent {
                                                 <td
                                                     .data="${td}"
                                                     style="${styleMap(this.styleDataTableBodyCell(td))}"
-                                                    @click="${td.leadingCheckbox ? this.handleDataTableBodyCheckboxClick : this.handleDataTableBodyCellClick}"
+                                                    @click="${td.checkbox ? this.handleDataTableBodyCheckboxClick : this.handleDataTableBodyCellClick}"
                                                 >
                                                     <md-data-table-cell
                                                         .label="${item[td.name]}"
-                                                        .leadingCheckbox="${td.leadingCheckbox}"
+                                                        .checkbox="${td.checkbox}"
                                                         .indeterminate="${item.indeterminate}"
                                                         .checked="${item.selected}"
                                                     >
@@ -304,7 +304,7 @@ class MdDataTableComponent extends MdComponent {
      */
     handleDataTableBodyClick(event) {
         const bodyData = event.target.closest("tbody")?.data;
-        if (bodyData?.leadingCheckbox) return;
+        if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
         this.data.forEach((item) => {
             item.selected = item === data;

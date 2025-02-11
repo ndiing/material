@@ -32,87 +32,51 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../ripple/ripple";
 
 /**
- *
+ * 
  * @extends MdComponent
- * @fires onDataTableCellSelected
  * @element md-data-table-cell
  */
 class MdDataTableCellComponent extends MdComponent {
     /**
-     * @property {Boolean} [leadingCheckbox]
-     * @property {Boolean} [leadingRadioButton]
-     * @property {Boolean} [leadingSwitch]
+     * @property {Boolean} [checkbox]
      * @property {String} [avatar]
-     * @property {String} [image]
-     * @property {String} [video]
      * @property {String} [icon]
      * @property {String} [label]
      * @property {String} [sublabel]
-     * @property {String} [text]
      * @property {String} [action]
-     * @property {Boolean} [trailingCheckbox]
-     * @property {Boolean} [trailingRadioButton]
-     * @property {Boolean} [trailingSwitch]
      * @property {Boolean} [indeterminate]
      * @property {Boolean} [checked]
-     * @property {Number} [badge]
      */
     static properties = {
-        leadingCheckbox: { type: Boolean },
-        leadingRadioButton: { type: Boolean },
-        leadingSwitch: { type: Boolean },
+        checkbox: { type: Boolean },
         avatar: { type: String },
-        image: { type: String },
-        video: { type: String },
         icon: { type: String },
         label: { type: String },
         sublabel: { type: String },
-        text: { type: String },
         action: { type: String },
-        trailingCheckbox: { type: Boolean },
-        trailingRadioButton: { type: Boolean },
-        trailingSwitch: { type: Boolean },
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
-        // selected: { type: Boolean, reflect: true },
-        // disabled: { type: Boolean, reflect: true },
-        // routerLink: { type: String, reflect: true },
-        // rippleOptions: { type: Object },
-        badge: { type: Number },
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
-        // this.rippleOptions = {};
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
         return html`
-            ${this.leadingCheckbox
+            ${this.checkbox
                 ? html`&lt;md-checkbox
                       class="md-data-table__checkbox"
                       .indeterminate="${this.indeterminate}"
                       .checked="${this.checked}"
                   >&lt;/md-checkbox>`
-                : nothing}
-            ${this.leadingRadioButton
-                ? html`&lt;md-radio-button
-                      class="md-data-table__radio-button"
-                      .checked="${this.selected}"
-                  >&lt;/md-radio-button>`
-                : nothing}
-            ${this.leadingSwitch
-                ? html`&lt;md-switch
-                      class="md-data-table__switch"
-                      .checked="${this.selected}"
-                  >&lt;/md-switch>`
                 : nothing}
             ${this.avatar
                 ? html`&lt;md-image
@@ -121,49 +85,15 @@ class MdDataTableCellComponent extends MdComponent {
                       circular
                   >&lt;/md-image>`
                 : nothing}
-            ${this.image
-                ? html`&lt;md-image
-                      class="md-data-table__image"
-                      .src="${ifDefined(this.image)}"
-                  >&lt;/md-image>`
-                : nothing}
-            ${this.video
-                ? html`&lt;md-image
-                      class="md-data-table__video"
-                      .src="${ifDefined(this.video)}"
-                      ratio="3/2"
-                  >&lt;/md-image>`
-                : nothing}
-            ${this.icon ? html`&lt;md-icon class="md-data-table__icon">${this.icon}&lt;/md-icon>` : nothing} ${this.label || this.sublabel ? html` &lt;div class="md-data-table__labels">${this.label ? html`&lt;div class="md-data-table__label">${this.label}&lt;/div>` : nothing} ${this.sublabel ? html`&lt;div class="md-data-table__sublabel">${this.sublabel}&lt;/div>` : nothing}&lt;/div> ` : nothing} ${this.text ? html`&lt;div class="md-data-table__text">${this.text}&lt;/div>` : nothing} ${this.action ? html`&lt;md-icon class="md-data-table__action">${this.action}&lt;/md-icon>` : nothing}
-            ${this.trailingCheckbox
-                ? html`&lt;md-checkbox
-                      class="md-data-table__checkbox"
-                      .checked="${this.selected}"
-                  >&lt;/md-checkbox>`
-                : nothing}
-            ${this.trailingRadioButton
-                ? html`&lt;md-radio-button
-                      class="md-data-table__radio-button"
-                      .checked="${this.selected}"
-                  >&lt;/md-radio-button>`
-                : nothing}
-            ${this.trailingSwitch
-                ? html`&lt;md-switch
-                      class="md-data-table__switch"
-                      .checked="${this.selected}"
-                  >&lt;/md-switch>`
-                : nothing}
-            ${this.badge !== undefined
-                ? html`&lt;md-badge
-                      class="md-data-table__badge"
-                      .label="${this.badge}"
-                  >&lt;/md-badge>`
-                : nothing}
+            ${this.icon ? html`&lt;md-icon class="md-data-table__icon">${this.icon}&lt;/md-icon>` : nothing} 
+            ${this.label || this.sublabel ? html` &lt;div class="md-data-table__labels">${this.label ? html`&lt;div class="md-data-table__label">${this.label}&lt;/div>` : nothing} 
+            ${this.sublabel ? html`&lt;div class="md-data-table__sublabel">${this.sublabel}&lt;/div>` : nothing}&lt;/div> ` : nothing} ${this.text ? html`&lt;div class="md-data-table__text">${this.text}&lt;/div>` : nothing} 
+            ${this.action ? html`&lt;md-icon class="md-data-table__action">${this.action}&lt;/md-icon>` : nothing}
         `;
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -179,11 +109,10 @@ class MdDataTableCellComponent extends MdComponent {
                 this.classList.add("md-data-table__cell--two-line");
             }
         }
-        // this.ripple = new RippleController(this, this.rippleOptions);
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -193,9 +122,6 @@ class MdDataTableCellComponent extends MdComponent {
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-data-table__cell--with-icon", !!this.icon);
         }
-        // if (changedProperties.has("selected") &amp;&amp; this.selected) {
-        //     this.emit("onDataTableCellSelected", { dataTableCell: this });
-        // }
     }
 }
 customElements.define("md-data-table-cell", MdDataTableCellComponent);
@@ -216,7 +142,7 @@ export { MdDataTableCellComponent };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Feb 11 2025 07:18:46 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Feb 11 2025 09:10:22 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>
