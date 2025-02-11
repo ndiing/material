@@ -251,6 +251,7 @@ class MdDataTableComponent extends MdComponent {
      * @param {Any} [event]
      */
     handleDataTableKeydown(event) {
+        // console.log(document.activeElement)
         if (event.ctrlKey && event.key === "a") {
             event.preventDefault();
             this.data.forEach((item) => {
@@ -316,7 +317,7 @@ class MdDataTableComponent extends MdComponent {
      * @param {Any} [event]
      */
     handleDataTableBodyClick(event) {
-        const bodyData = event.target.closest("tbody")?.data;
+        const bodyData = event.target.closest("td")?.data;
         if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
         if (event.ctrlKey) {
