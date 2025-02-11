@@ -1,41 +1,46 @@
-@media (max-width: 599px) {
+@use "../mixins/mixins.scss";
+
+@include mixins.layout-compact(){
     .md-layout__grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-gap: 8px;
     }
-
+    
     @for $i from 1 through 4 {
         .md-layout__column--compact#{ $i} {
             grid-column-end: span $i;
         }
     }
+
 }
 
-@media (min-width: 600px) and (max-width: 839px) {
+@include mixins.layout-medium(){
     .md-layout__grid {
         display: grid;
         grid-template-columns: repeat(8, minmax(0, 1fr));
         grid-gap: 16px;
     }
-
+    
     @for $i from 1 through 8 {
         .md-layout__column--medium#{ $i} {
             grid-column-end: span $i;
         }
     }
+
 }
 
-@media (min-width: 840px) {
+@include mixins.layout-expanded(){
     .md-layout__grid {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-gap: 24px;
     }
-
+    
     @for $i from 1 through 12 {
         .md-layout__column--expanded#{ $i} {
             grid-column-end: span $i;
         }
     }
+
 }
