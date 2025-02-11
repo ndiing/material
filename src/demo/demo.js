@@ -1,199 +1,102 @@
 import { Router } from "../material/router/router";
 import DemoMain from "./main/main.js";
 import DemoError from "./error/error.js";
-
 import DemoBadge from "./badge/badge.js";
-
 import DemoBottomAppBar from "./bottom-app-bar/bottom-app-bar.js";
-
 import DemoBottomAppBarNoFab from "./bottom-app-bar/bottom-app-bar-no-fab.js";
-
 import DemoBottomSheet from "./bottom-sheet/bottom-sheet.js";
-
 import DemoBottomSheetModal from "./bottom-sheet/bottom-sheet-modal.js";
-
 import DemoButton from "./button/button.js";
-
 import DemoButtonElevated from "./button/button-elevated.js";
-
 import DemoButtonFilled from "./button/button-filled.js";
-
 import DemoButtonFilledTonal from "./button/button-filled-tonal.js";
-
 import DemoButtonOutlined from "./button/button-outlined.js";
-
 import DemoCard from "./card/card.js";
-
 import DemoCheckbox from "./checkbox/checkbox.js";
-
 import DemoChips from "./chips/chips.js";
-
 import DemoChipsSingleSelect from "./chips/chips-single-select.js";
-
 import DemoChipsMultiSelect from "./chips/chips-multi-select.js";
-
 import DemoDataTableCell from "./data-table/data-table-cell.js";
-
 import DemoDataTable from "./data-table/data-table.js";
-
 import DemoDataTableCheckbox from "./data-table/data-table-checkbox.js";
-
 import DemoDataTableSortable from "./data-table/data-table-sortable.js";
-
 import DemoDialog from "./dialog/dialog.js";
-
 import DemoDivider from "./divider/divider.js";
-
 import DemoFab from "./fab/fab.js";
-
 import DemoFabUnelevated from "./fab/fab-unelevated.js";
-
 import DemoFabExtended from "./fab/fab-extended.js";
-
 import DemoFabSmall from "./fab/fab-small.js";
-
 import DemoFabLarge from "./fab/fab-large.js";
-
 import DemoForm from "./form/form.js";
-
 import DemoIcon from "./icon/icon.js";
-
 import DemoIconButton from "./icon-button/icon-button.js";
-
 import DemoIconButtonFilled from "./icon-button/icon-button-filled.js";
-
 import DemoIconButtonFilledTonal from "./icon-button/icon-button-filled-tonal.js";
-
 import DemoIconButtonOutlined from "./icon-button/icon-button-outlined.js";
-
 import DemoImage from "./image/image.js";
-
 import DemoListItem from "./list/list-item.js";
-
 import DemoListRow from "./list/list-row.js";
-
 import DemoList from "./list/list.js";
-
 import DemoListSingleSelect from "./list/list-single-select.js";
-
 import DemoListMultiSelect from "./list/list-multi-select.js";
-
 import DemoMenu from "./menu/menu.js";
-
 import DemoNavigationBar from "./navigation-bar/navigation-bar.js";
-
 import DemoNavigationBarNoLabel from "./navigation-bar/navigation-bar-no-label.js";
-
 import DemoNavigationDrawer from "./navigation-drawer/navigation-drawer.js";
-
 import DemoNavigationDrawerModal from "./navigation-drawer/navigation-drawer-modal.js";
-
 import DemoNavigationListItem from "./navigation-list/navigation-list-item.js";
-
 import DemoNavigationListRow from "./navigation-list/navigation-list-row.js";
-
 import DemoNavigationList from "./navigation-list/navigation-list.js";
-
 import DemoNavigationRail from "./navigation-rail/navigation-rail.js";
-
 import DemoNavigationRailNoLabel from "./navigation-rail/navigation-rail-no-label.js";
-
 import DemoProgressIndicator from "./progress-indicator/progress-indicator.js";
-
 import DemoProgressIndicatorCircular from "./progress-indicator/progress-indicator-circular.js";
-
 import DemoRadioButton from "./radio-button/radio-button.js";
-
 import DemoScrim from "./scrim/scrim.js";
-
 import DemoSegmentedButton from "./segmented-button/segmented-button.js";
-
 import DemoSegmentedButtonSingleSelect from "./segmented-button/segmented-button-single-select.js";
-
 import DemoSegmentedButtonMultiSelect from "./segmented-button/segmented-button-multi-select.js";
-
 import DemoSheet from "./sheet/sheet.js";
-
 import DemoSheetNorth from "./sheet/sheet-north.js";
-
 import DemoSheetNorthModal from "./sheet/sheet-north-modal.js";
-
 import DemoSheetEast from "./sheet/sheet-east.js";
-
 import DemoSheetEastModal from "./sheet/sheet-east-modal.js";
-
 import DemoSheetSouth from "./sheet/sheet-south.js";
-
 import DemoSheetSouthModal from "./sheet/sheet-south-modal.js";
-
 import DemoSheetWest from "./sheet/sheet-west.js";
-
 import DemoSheetWestModal from "./sheet/sheet-west-modal.js";
-
 import DemoSheetCenter from "./sheet/sheet-center.js";
-
 import DemoSideSheet from "./side-sheet/side-sheet.js";
-
 import DemoSideSheetModal from "./side-sheet/side-sheet-modal.js";
-
 import DemoSlider from "./slider/slider.js";
-
 import DemoSliderCentered from "./slider/slider-centered.js";
-
 import DemoSliderContinuous from "./slider/slider-continuous.js";
-
 import DemoSliderDiscrete from "./slider/slider-discrete.js";
-
 import DemoSliderRangeSelection from "./slider/slider-range-selection.js";
-
 import DemoSnackbar from "./snackbar/snackbar.js";
-
 import DemoSwitch from "./switch/switch.js";
-
 import DemoTab from "./tabs/tab.js";
-
 import DemoTabs from "./tabs/tabs.js";
-
 import DemoTabsPrimary from "./tabs/tabs-primary.js";
-
 import DemoTabsSecondary from "./tabs/tabs-secondary.js";
-
 import DemoTextField from "./text-field/text-field.js";
-
 import DemoTextFieldOutlined from "./text-field/text-field-outlined.js";
-
 import DemoTextFieldFilled from "./text-field/text-field-filled.js";
-
 import DemoTooltip from "./tooltip/tooltip.js";
-
 import DemoTopAppBar from "./top-app-bar/top-app-bar.js";
-
 import DemoTreeItem from "./tree/tree-item.js";
-
 import DemoTreeRow from "./tree/tree-row.js";
-
 import DemoTree from "./tree/tree.js";
-
 import DemoTest from "./test/test.js";
-
 import DemoDatetimePicker from "./datetime-picker/datetime-picker.js";
-
 import DemoDatetimePickerModal from "./datetime-picker/datetime-picker-modal.js";
-
 import DemoDatePicker from "./date-picker/date-picker.js";
-
 import DemoDatePickerModal from "./date-picker/date-picker-modal.js";
-
 import DemoTimePicker from "./time-picker/time-picker.js";
-
 import DemoTimePickerModal from "./time-picker/time-picker-modal.js";
-
 import DemoWeekPicker from "./week-picker/week-picker.js";
-
 import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
-
 import DemoMonthPicker from "./month-picker/month-picker.js";
-
 import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
 
 const routes = [
