@@ -7,6 +7,7 @@ import { Store } from "../store/store";
 /**
  *
  * @extends MdComponent
+ * @fires onDataTableKeydown
  * @fires onDataTableHeaderCheckboxClick
  * @fires onDataTableBodyCheckboxClick
  * @fires onDataTableHeaderCellClick
@@ -91,7 +92,7 @@ class MdDataTableComponent extends MdComponent {
      */
     render() {
         return html`
-            <table class="md-data-table__native" >
+            <table class="md-data-table__native">
                 <thead>
                     ${this.headers.map(
                         (tr) => html`
@@ -177,9 +178,18 @@ class MdDataTableComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
-        
+        this.handleDataTableKeydown = this.handleDataTableKeydown.bind(this);
+        window.addEventListener("keydown", this.handleDataTableKeydown);
     }
 
+    /**
+     *
+     * @private
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        window.removeEventListener("keydown", this.handleDataTableKeydown);
+    }
 
     /**
      *
@@ -240,27 +250,15 @@ class MdDataTableComponent extends MdComponent {
      * @private
      * @param {Any} [event]
      */
-    handleDataTableHeaderCheckboxClick(event) {
-        const data = event.currentTarget.data;
-        const selected = !this.checked || this.indeterminate;
-        this.data.forEach((item) => {
-            item.selected = selected;
-        });
-        this.requestUpdate();
-        this.emit("onDataTableHeaderCheckboxClick", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleDataTableBodyCheckboxClick(event) {
-        const data = event.currentTarget.data;
-        const bodyData = event.target.closest("tbody").data;
-        bodyData.selected = !bodyData.selected;
-        this.requestUpdate();
-        this.emit("onDataTableBodyCheckboxClick", { event });
+    handleDataTableKeydown(event) {
+        if (event.ctrlKey && event.key === "a") {
+            event.preventDefault();
+            this.data.forEach((item) => {
+                item.selected = true;
+            });
+            this.requestUpdate();
+        }
+        this.emit("onDataTableKeydown", { event });
     }
 
     /**
@@ -283,8 +281,6 @@ class MdDataTableComponent extends MdComponent {
                 desc: undefined,
             };
             data.order = orders[data.order];
-            // console.log(data)
-            // this.requestUpdate();
             this.requestUpdateStore();
         }
         this.emit("onDataTableHeaderCellClick", { event });
@@ -304,37 +300,61 @@ class MdDataTableComponent extends MdComponent {
      * @private
      * @param {Any} [event]
      */
+    handleDataTableHeaderCheckboxClick(event) {
+        const data = event.currentTarget.data;
+        const selected = !this.checked || this.indeterminate;
+        this.data.forEach((item) => {
+            item.selected = selected;
+        });
+        this.requestUpdate();
+        this.emit("onDataTableHeaderCheckboxClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
     handleDataTableBodyClick(event) {
         const bodyData = event.target.closest("tbody")?.data;
         if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
-        if(event.ctrlKey){
-            data.selected=!data.selected
-        }
-        else if (event.shiftKey){
-            this.prevSelectedIndex=this.prevSelectedIndex??0
-            this.currentSelectedIndex=this.data.indexOf(data)
-            this.swapSelectedIndex=this.prevSelectedIndex>this.currentSelectedIndex
-            if(this.swapSelectedIndex){
-                [this.prevSelectedIndex,this.currentSelectedIndex]=
-                [this.currentSelectedIndex,this.prevSelectedIndex]
+        if (event.ctrlKey) {
+            data.selected = !data.selected;
+        } else if (event.shiftKey) {
+            this.prevSelectedIndex = this.prevSelectedIndex ?? 0;
+            this.currentSelectedIndex = this.data.indexOf(data);
+            this.swapSelectedIndex = this.prevSelectedIndex > this.currentSelectedIndex;
+            if (this.swapSelectedIndex) {
+                [this.prevSelectedIndex, this.currentSelectedIndex] = [this.currentSelectedIndex, this.prevSelectedIndex];
             }
-            this.data.forEach((item,index) => {
-                item.selected = index>=this.prevSelectedIndex&&index<=this.currentSelectedIndex;
+            this.data.forEach((item, index) => {
+                item.selected = index >= this.prevSelectedIndex && index <= this.currentSelectedIndex;
             });
-            if(this.swapSelectedIndex){
-                [this.currentSelectedIndex,this.prevSelectedIndex]=
-                [this.prevSelectedIndex,this.currentSelectedIndex]
+            if (this.swapSelectedIndex) {
+                [this.currentSelectedIndex, this.prevSelectedIndex] = [this.prevSelectedIndex, this.currentSelectedIndex];
             }
-        }
-        else{
+        } else {
             this.data.forEach((item) => {
                 item.selected = item === data;
             });
-            this.prevSelectedIndex=this.data.indexOf(data)
+            this.prevSelectedIndex = this.data.indexOf(data);
         }
         this.requestUpdate();
         this.emit("onDataTableBodyClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDataTableBodyCheckboxClick(event) {
+        const data = event.currentTarget.data;
+        const bodyData = event.target.closest("tbody").data;
+        bodyData.selected = !bodyData.selected;
+        this.requestUpdate();
+        this.emit("onDataTableBodyCheckboxClick", { event });
     }
 }
 customElements.define("md-data-table", MdDataTableComponent);

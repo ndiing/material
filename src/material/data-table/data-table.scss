@@ -20,7 +20,6 @@
 
     thead {
         .md-data-table__cell {
-            // cursor: pointer;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
@@ -28,11 +27,10 @@
 
     tbody {
         .md-data-table__cell {
-            // cursor: pointer;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
-        
+
         &:focus {
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary10);
@@ -82,19 +80,6 @@
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     border-bottom: 1px solid var(--md-sys-color-outline);
-
-    // &[selected] {
-    //     background-color: var(--md-sys-color-secondary-container);
-    //     color: var(--md-sys-color-on-secondary-container);
-
-    //     .md-data-table__icon {
-    //         font-variation-settings:
-    //             "FILL" 1,
-    //             "wght" 400,
-    //             "GRAD" 0,
-    //             "opsz" 24;
-    //     }
-    // }
 }
 
 .md-data-table__avatar {
