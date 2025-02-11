@@ -1,33 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>JSDoc: Source: text-field/text-field.js</title>
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: text-field/text-field.js</title>
 
-        <script src="scripts/prettify/prettify.js"></script>
-        <script src="scripts/prettify/lang-css.js"></script>
-        <!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="styles/prettify-tomorrow.css"
-        />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="styles/jsdoc-default.css"
-        />
-    </head>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
 
-    <body>
-        <div id="main">
-            <h1 class="page-title">Source: text-field/text-field.js</h1>
+<body>
 
-            <section>
-                <article>
-                    <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+<div id="main">
+
+    <h1 class="page-title">Source: text-field/text-field.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
@@ -39,7 +38,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onTextFieldFocus
  * @fires onTextFieldBlur
  * @fires onTextFieldInput
- * @fires onTextFieldSearch
  * @fires onTextFieldInvalid
  * @fires onTextFieldReset
  * @fires onTextFieldIconButtonClick
@@ -97,6 +95,7 @@ class MdTextFieldComponent extends MdComponent {
         super();
         this.title = "";
         this.autocomplete = "off";
+        this.actions = [];
     }
 
     /**
@@ -156,11 +155,19 @@ class MdTextFieldComponent extends MdComponent {
      *
      * @readonly
      */
-    get actions2() {
-        let actions = [];
-        if (this.error) actions = actions.concat([{ component: "icon", icon: "error", classMap: { "md-text-field__icon--error": true } }]);
-        if (this.actions?.length) actions = actions.concat(this.actions);
-        return actions;
+    get actionsAll() {
+        return []
+            .concat([
+                ...((this.error &amp;&amp; [
+                    {
+                        component: "icon",
+                        icon: "error",
+                        classMap: { "md-text-field__icon--error": true },
+                    },
+                ]) ||
+                    []),
+            ])
+            .concat(this.actions);
     }
 
     /**
@@ -185,12 +192,11 @@ class MdTextFieldComponent extends MdComponent {
                     @focus="${this.handleTextFieldFocus}"
                     @blur="${this.handleTextFieldBlur}"
                     @input="${this.handleTextFieldInput}"
-                    @search="${this.handleTextFieldSearch}"
                     @invalid="${this.handleTextFieldInvalid}"
                     @reset="${this.handleTextFieldReset}"
                     class="md-text-field__native"
                 />
-                ${this.suffix ? html`&lt;div class="md-text-field__suffix">${this.suffix}&lt;/div>` : nothing} ${this.actions2?.length ? html` &lt;div class="md-text-field__actions">${this.actions2.map((item) => this.renderItem(item, "icon-button"))}&lt;/div> ` : nothing}
+                ${this.suffix ? html`&lt;div class="md-text-field__suffix">${this.suffix}&lt;/div>` : nothing} ${this.actionsAll?.length ? html` &lt;div class="md-text-field__actions">${this.actionsAll.map((item) => this.renderItem(item, "icon-button"))}&lt;/div> ` : nothing}
             &lt;/div>
             ${this.text || this.error || this.counter ? html` &lt;div class="md-text-field__wrapper">${this.text || this.error ? html`&lt;div class="md-text-field__text">${this.error || this.text}&lt;/div>` : nothing} ${this.counter ? html`&lt;div class="md-text-field__counter">${this.counter}&lt;/div>` : nothing}&lt;/div> ` : nothing}
         `;
@@ -203,12 +209,12 @@ class MdTextFieldComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-text-field");
         this.defaultValue = this.value;
+        this.classList.add("md-text-field");
         this.classList.toggle("md-text-field--populated", !!this.value);
         await this.updateComplete;
-        this.textFieldoffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
-        this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldoffset.offsetLeft + "px");
+        this.textFieldOffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
+        this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldOffset.offsetLeft + "px");
     }
 
     /**
@@ -266,23 +272,10 @@ class MdTextFieldComponent extends MdComponent {
      */
     handleTextFieldInput(event) {
         this.value = this.textFieldNative.value;
-        this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.error = this.textFieldNative.validationMessage;
+        this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldInput", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleTextFieldSearch(event) {
-        this.value = this.textFieldNative.value;
-        this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
-        this.error = this.textFieldNative.validationMessage;
-        this.classList.toggle("md-text-field--error", !!this.error);
-        this.emit("onTextFieldSearch", { event });
     }
 
     /**
@@ -304,8 +297,8 @@ class MdTextFieldComponent extends MdComponent {
      */
     handleTextFieldReset(event) {
         this.value = this.defaultValue;
-        this.classList.toggle("md-text-field--populated", !!this.value);
         this.error = undefined;
+        this.classList.toggle("md-text-field--populated", !!this.value);
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldReset", { event });
     }
@@ -322,93 +315,25 @@ class MdTextFieldComponent extends MdComponent {
 customElements.define("md-text-field", MdTextFieldComponent);
 export { MdTextFieldComponent };
 </code></pre>
-                </article>
-            </section>
-        </div>
+        </article>
+    </section>
 
-        <nav>
-            <h2><a href="index.html">Home</a></h2>
-            <h3>Classes</h3>
-            <ul>
-                <li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li>
-                <li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li>
-                <li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li>
-                <li><a href="MdButtonComponent.html">MdButtonComponent</a></li>
-                <li><a href="MdCardComponent.html">MdCardComponent</a></li>
-                <li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li>
-                <li><a href="MdChipComponent.html">MdChipComponent</a></li>
-                <li><a href="MdChipsComponent.html">MdChipsComponent</a></li>
-                <li><a href="MdComponent.html">MdComponent</a></li>
-                <li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li>
-                <li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li>
-                <li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li>
-                <li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li>
-                <li><a href="MdDialogComponent.html">MdDialogComponent</a></li>
-                <li><a href="MdDividerComponent.html">MdDividerComponent</a></li>
-                <li><a href="MdFabComponent.html">MdFabComponent</a></li>
-                <li><a href="MdFormComponent.html">MdFormComponent</a></li>
-                <li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li>
-                <li><a href="MdIconComponent.html">MdIconComponent</a></li>
-                <li><a href="MdImageComponent.html">MdImageComponent</a></li>
-                <li><a href="MdListComponent.html">MdListComponent</a></li>
-                <li><a href="MdListItemComponent.html">MdListItemComponent</a></li>
-                <li><a href="MdListRowComponent.html">MdListRowComponent</a></li>
-                <li><a href="MdMenuComponent.html">MdMenuComponent</a></li>
-                <li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li>
-                <li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li>
-                <li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li>
-                <li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li>
-                <li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li>
-                <li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li>
-                <li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li>
-                <li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li>
-                <li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li>
-                <li><a href="MdScrimComponent.html">MdScrimComponent</a></li>
-                <li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li>
-                <li><a href="MdSheetComponent.html">MdSheetComponent</a></li>
-                <li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li>
-                <li><a href="MdSliderComponent.html">MdSliderComponent</a></li>
-                <li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li>
-                <li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li>
-                <li><a href="MdTabComponent.html">MdTabComponent</a></li>
-                <li><a href="MdTabsComponent.html">MdTabsComponent</a></li>
-                <li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li>
-                <li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li>
-                <li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li>
-                <li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li>
-                <li><a href="MdTreeComponent.html">MdTreeComponent</a></li>
-                <li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li>
-                <li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li>
-                <li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li>
-                <li><a href="Movable.html">Movable</a></li>
-                <li><a href="Popper.html">Popper</a></li>
-                <li><a href="RippleController.html">RippleController</a></li>
-                <li><a href="Router.html">Router</a></li>
-                <li><a href="Store.html">Store</a></li>
-                <li><a href="VirtualScroll.html">VirtualScroll</a></li>
-            </ul>
-            <h3>Global</h3>
-            <ul>
-                <li><a href="global.html#parseDate">parseDate</a></li>
-                <li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li>
-                <li><a href="global.html#parseMonth">parseMonth</a></li>
-                <li><a href="global.html#parseTime">parseTime</a></li>
-                <li><a href="global.html#parseWeek">parseWeek</a></li>
-                <li><a href="global.html#stringifyDate">stringifyDate</a></li>
-                <li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li>
-                <li><a href="global.html#stringifyMonth">stringifyMonth</a></li>
-                <li><a href="global.html#stringifyTime">stringifyTime</a></li>
-                <li><a href="global.html#stringifyWeek">stringifyWeek</a></li>
-            </ul>
-        </nav>
 
-        <br class="clear" />
 
-        <footer>Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Feb 11 2025 09:10:22 GMT+0700 (Indochina Time)</footer>
 
-        <script>
-            prettyPrint();
-        </script>
-        <script src="scripts/linenumber.js"></script>
-    </body>
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="RippleController.html">RippleController</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Feb 11 2025 09:35:44 GMT+0700 (Indochina Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
 </html>

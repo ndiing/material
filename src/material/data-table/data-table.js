@@ -91,7 +91,7 @@ class MdDataTableComponent extends MdComponent {
      */
     render() {
         return html`
-            <table class="md-data-table__native">
+            <table class="md-data-table__native" >
                 <thead>
                     ${this.headers.map(
                         (tr) => html`
@@ -177,7 +177,9 @@ class MdDataTableComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
+        
     }
+
 
     /**
      *
@@ -306,9 +308,31 @@ class MdDataTableComponent extends MdComponent {
         const bodyData = event.target.closest("tbody")?.data;
         if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
-        this.data.forEach((item) => {
-            item.selected = item === data;
-        });
+        if(event.ctrlKey){
+            data.selected=!data.selected
+        }
+        else if (event.shiftKey){
+            this.prevSelectedIndex=this.prevSelectedIndex??0
+            this.currentSelectedIndex=this.data.indexOf(data)
+            this.swapSelectedIndex=this.prevSelectedIndex>this.currentSelectedIndex
+            if(this.swapSelectedIndex){
+                [this.prevSelectedIndex,this.currentSelectedIndex]=
+                [this.currentSelectedIndex,this.prevSelectedIndex]
+            }
+            this.data.forEach((item,index) => {
+                item.selected = index>=this.prevSelectedIndex&&index<=this.currentSelectedIndex;
+            });
+            if(this.swapSelectedIndex){
+                [this.currentSelectedIndex,this.prevSelectedIndex]=
+                [this.prevSelectedIndex,this.currentSelectedIndex]
+            }
+        }
+        else{
+            this.data.forEach((item) => {
+                item.selected = item === data;
+            });
+            this.prevSelectedIndex=this.data.indexOf(data)
+        }
         this.requestUpdate();
         this.emit("onDataTableBodyClick", { event });
     }

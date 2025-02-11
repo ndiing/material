@@ -27,6 +27,12 @@
     }
 
     tbody {
+        .md-data-table__cell {
+            // cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
         &:focus {
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary10);

@@ -8,8 +8,12 @@ class DemoNavigationList extends MdComponent {
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-navigation-list
-                            items=""
-                            rippleOptions=""
+                            .items="${[
+                                {label:'label 1'},
+                                {label:'label 2'},
+                                {label:'label 3'},
+                                {label:'label 4'},
+                            ]}"
                             @onNavigationListItemClick="${console.log}"
                         ></md-navigation-list>
                     </div>

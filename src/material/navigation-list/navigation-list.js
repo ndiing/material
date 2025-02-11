@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { Store } from "../store/store";
 
 /**
  *
@@ -24,6 +25,8 @@ class MdNavigationListComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
+        this.store = new Store();
+        this.itemsStore = [];
     }
 
     /**
@@ -65,6 +68,24 @@ class MdNavigationListComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-navigation-list");
         this.style.setProperty("--md-comp-navigation-list-icon-animation", "none");
+    }
+
+    /**
+     *
+     * @private
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("items")) {
+            this.store.load(this.items);
+            this.requestUpdateStore();
+        }
+    }
+
+    requestUpdateStore() {
+        const result = this.store.get({});
+        this.itemsStore = result.data;
+        this.requestUpdate();
     }
 
     /**

@@ -27,7 +27,7 @@ class Movable {
      */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
-        document.body.classList.add("md-resizable--resize");
+        document.body.classList.add("md-user-select--none");
         window.addEventListener("pointermove", this.handlePointermove);
         window.addEventListener("pointerup", this.handlePointerup);
         this.endX = this.endX ?? 0;
@@ -86,7 +86,7 @@ class Movable {
     handlePointerup(event) {
         this.endX = this.currentX;
         this.endY = this.currentY;
-        document.body.classList.remove("md-resizable--resize");
+        document.body.classList.remove("md-user-select--none");
         window.removeEventListener("pointermove", this.handlePointermove);
         window.removeEventListener("pointerup", this.handlePointerup);
         this.emit("onMovablePointerup");

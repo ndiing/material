@@ -107,7 +107,7 @@ class DemoMain extends MdComponent {
             },
             // { label: "navigation-list-item", routerLink: "/navigation-list-item" },
             // { label: "navigation-list-row", routerLink: "/navigation-list-row" },
-            // { label: "navigation-list", routerLink: "/navigation-list" },
+            { label: "navigation-list", routerLink: "/navigation-list" },
             {
                 label: "navigation-rail",
                 children: [
