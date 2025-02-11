@@ -21,13 +21,14 @@ class DemoSheetSouth extends MdComponent {
                 <md-sheet
                     id="sheet"
                     region="south"
-                    .icons="${undefined}"
-                    .actions="${undefined}"
-                    .label="${undefined}"
-                    .sublabel="${undefined}"
-                    .buttons="${undefined}"
-                    .modal="${undefined}"
+                    
+                    
+                    
+                    
+                    
+                    
                     style="height:80px"
+                    open
                     @onSheetIconButtonClick="${console.log}"
                     @onSheetButtonClick="${console.log}"
                     @onSheetShown="${console.log}"

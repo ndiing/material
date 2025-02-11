@@ -21,11 +21,11 @@ class DemoSheetNorthModal extends MdComponent {
                 <md-sheet
                     id="sheet"
                     region="north"
-                    .icons="${undefined}"
-                    .actions="${undefined}"
-                    .label="${undefined}"
-                    .sublabel="${undefined}"
-                    .buttons="${undefined}"
+                    
+                    
+                    
+                    
+                    
                     modal
                     style="height:64px"
                     @onSheetIconButtonClick="${console.log}"

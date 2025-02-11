@@ -21,6 +21,7 @@ class DemoNavigationBarNoLabel extends MdComponent {
                 <md-navigation-bar
                     id="navigationBar"
                     .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
+                    open
                     @onNavigationBarShown="${console.log}"
                     @onNavigationBarClosed="${console.log}"
                 ></md-navigation-bar>

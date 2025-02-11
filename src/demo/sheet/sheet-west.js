@@ -21,13 +21,14 @@ class DemoSheetWest extends MdComponent {
                 <md-sheet
                     id="sheet"
                     region="west"
-                    .icons="${undefined}"
-                    .actions="${undefined}"
-                    .label="${undefined}"
-                    .sublabel="${undefined}"
-                    .buttons="${undefined}"
-                    .modal="${undefined}"
+                    
+                    
+                    
+                    
+                    
+                    
                     style="width:360px"
+                    open
                     @onSheetIconButtonClick="${console.log}"
                     @onSheetButtonClick="${console.log}"
                     @onSheetShown="${console.log}"

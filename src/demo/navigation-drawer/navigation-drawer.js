@@ -26,6 +26,7 @@ class DemoNavigationDrawer extends MdComponent {
                         { icon: "image", label: "Label" },
                         { icon: "image", label: "Label" },
                     ]}"
+                    open
                     @onNavigationDrawerIconButtonClick="${console.log}"
                     @onNavigationDrawerShown="${console.log}"
                     @onNavigationDrawerClosed="${console.log}"

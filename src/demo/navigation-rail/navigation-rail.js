@@ -26,6 +26,7 @@ class DemoNavigationRail extends MdComponent {
                         { icon: "image", label: "Label" },
                         { icon: "image", label: "Label" },
                     ]}"
+                    open
                     @onNavigationRailIconButtonClick="${console.log}"
                     @onNavigationRailShown="${console.log}"
                     @onNavigationRailClosed="${console.log}"

@@ -20,10 +20,10 @@ class DemoSideSheetModal extends MdComponent {
                 </div>
                 <md-side-sheet
                     id="sideSheet"
-                    .icons="${undefined}"
+                    
                     .actions="${[{ icon: "image" }]}"
                     label="Label"
-                    .sublabel="${undefined}"
+                    
                     .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
                     modal
                     @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}"

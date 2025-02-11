@@ -22,7 +22,7 @@ class DemoTopAppBar extends MdComponent {
                     id="topAppBar"
                     .leadingActions="${[{ icon: "image" }]}"
                     label="Label"
-                    .sublabel="${undefined}"
+                    
                     .trailingActions="${[{ icon: "image" }, { icon: "image" }, { icon: "image" }]}"
                     @onTopAppBarIconButtonClick="${console.log}"
                     @onTopAppBarShown="${console.log}"

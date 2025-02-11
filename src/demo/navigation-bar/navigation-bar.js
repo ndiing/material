@@ -26,6 +26,7 @@ class DemoNavigationBar extends MdComponent {
                         { icon: "image", label: "Label" },
                         { icon: "image", label: "Label" },
                     ]}"
+                    open
                     @onNavigationBarShown="${console.log}"
                     @onNavigationBarClosed="${console.log}"
                 ></md-navigation-bar>

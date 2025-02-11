@@ -21,11 +21,11 @@ class DemoSheetWestModal extends MdComponent {
                 <md-sheet
                     id="sheet"
                     region="west"
-                    .icons="${undefined}"
-                    .actions="${undefined}"
-                    .label="${undefined}"
-                    .sublabel="${undefined}"
-                    .buttons="${undefined}"
+                    
+                    
+                    
+                    
+                    
                     modal
                     style="width:360px"
                     @onSheetIconButtonClick="${console.log}"
