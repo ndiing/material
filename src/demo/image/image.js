@@ -6,11 +6,8 @@ class DemoImage extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-image
-                            src="https://api.dicebear.com/9.x/dylan/svg?seed=Leah"
-                        ></md-image>
+                        <md-image src="https://api.dicebear.com/9.x/dylan/svg?seed=Leah"></md-image>
                     </div>
 
                     <div class="md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
@@ -99,7 +96,6 @@ class DemoImage extends MdComponent {
                             circular
                         ></md-image>
                     </div>
-
                 </div>
             </div>
         `;

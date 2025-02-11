@@ -158,7 +158,7 @@ class MdListItemComponent extends MdComponent {
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy();
+        if (this.ripple) this.ripple.destroy();
     }
 
     /**
