@@ -10,13 +10,13 @@ class DemoSnackbar extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Snackbar"
-                            @click="${() => snackbar.toggle()}"
+                            @click="${() => snackbar.show()}"
                         ></md-button>
                         <md-snackbar
                             id="snackbar"
                             @onSnackbarIconButtonClick="${console.log}"
-                            @onSnackbarButtonClick="${console.log}"
-                            @onSnackbarShown="${() => snackbar.toggle()}"
+                            @onSnackbarButtonClick="${() => snackbar.toggle()}"
+                            @onSnackbarShown="${console.log}"
                             @onSnackbarClosed="${console.log}"
                             >Body</md-snackbar
                         >
@@ -25,7 +25,7 @@ class DemoSnackbar extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Snackbar"
-                            @click="${() => snackbar2.toggle()}"
+                            @click="${() => snackbar2.show()}"
                         ></md-button>
                         <md-snackbar
                             id="snackbar2"
@@ -42,7 +42,7 @@ class DemoSnackbar extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Snackbar"
-                            @click="${() => snackbar3.toggle()}"
+                            @click="${() => snackbar3.show()}"
                         ></md-button>
                         <md-snackbar
                             id="snackbar3"
@@ -57,7 +57,7 @@ class DemoSnackbar extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Snackbar"
-                            @click="${() => snackbar4.toggle()}"
+                            @click="${() => snackbar4.show()}"
                         ></md-button>
                         <md-snackbar
                             id="snackbar4"
@@ -74,7 +74,7 @@ class DemoSnackbar extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Snackbar"
-                            @click="${() => snackbar5.toggle()}"
+                            @click="${() => snackbar5.show()}"
                         ></md-button>
                         <md-snackbar
                             id="snackbar5"

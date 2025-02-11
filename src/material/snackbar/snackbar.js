@@ -180,15 +180,15 @@ class MdSnackbarComponent extends MdComponent {
      *
      */
     close() {
-        this.style.removeProperty("--md-comp-snackbar-animation");
-        this.open = false;
-        const callback = (event) => {
+        const handleAnimationend = (event) => {
             if (event.animationName === "snackbar-in") {
-                this.removeEventListener("animationend", callback);
+                this.removeEventListener("animationend", handleAnimationend);
                 this.emit("onSnackbarClosed");
             }
         };
-        this.addEventListener("animationend", callback);
+        this.addEventListener("animationend", handleAnimationend);
+        this.style.removeProperty("--md-comp-snackbar-animation");
+        this.open = false;
     }
 
     /**
