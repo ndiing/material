@@ -75,9 +75,10 @@ class MdNavigationListComponent extends MdComponent {
      * @private
      * @param {Any} [changedProperties]
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
+            await this.updateComplete;
             this.store.load(this.items);
             this.requestUpdateStore();
         }

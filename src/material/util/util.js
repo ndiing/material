@@ -1,5 +1,7 @@
+
+
 /**
- *
+ * 
  * @param {Any} [string]
  */
 function parseDate(string) {
@@ -7,7 +9,7 @@ function parseDate(string) {
 }
 
 /**
- *
+ * 
  * @param {Any} [string]
  */
 function parseDatetimeLocal(string) {
@@ -15,7 +17,7 @@ function parseDatetimeLocal(string) {
 }
 
 /**
- *
+ * 
  * @param {Any} [string]
  */
 function parseMonth(string) {
@@ -23,7 +25,7 @@ function parseMonth(string) {
 }
 
 /**
- *
+ * 
  * @param {Any} [string]
  */
 function parseTime(string) {
@@ -34,7 +36,7 @@ function parseTime(string) {
 }
 
 /**
- *
+ * 
  * @param {Any} [string]
  */
 function parseWeek(string) {
@@ -46,7 +48,7 @@ function parseWeek(string) {
 }
 
 /**
- *
+ * 
  * @param {Any} [date]
  */
 function stringifyDate(date) {
@@ -54,7 +56,7 @@ function stringifyDate(date) {
 }
 
 /**
- *
+ * 
  * @param {Any} [date]
  */
 function stringifyDatetimeLocal(date) {
@@ -67,7 +69,7 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- *
+ * 
  * @param {Any} [date]
  */
 function stringifyMonth(date) {
@@ -75,7 +77,7 @@ function stringifyMonth(date) {
 }
 
 /**
- *
+ * 
  * @param {Any} [date]
  */
 function stringifyTime(date) {
@@ -83,7 +85,7 @@ function stringifyTime(date) {
 }
 
 /**
- *
+ * 
  * @param {Any} [date]
  */
 function stringifyWeek(date) {
@@ -92,4 +94,21 @@ function stringifyWeek(date) {
     const weekNumber = Math.ceil((days + 1) / 7);
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
-export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
+
+/**
+ * 
+ * @param {Any} [element]
+ */
+function closestScrollableElement(element) {
+    let current = element;
+    while (current) {
+        const style = window.getComputedStyle(current);
+        const isScrollable = style.overflow === "auto" || style.overflow === "scroll" || style.overflowY === "auto" || style.overflowY === "scroll" || current.scrollHeight > current.clientHeight;
+        if (isScrollable) {
+            return current;
+        }
+        current = current.parentElement;
+    }
+    return null;
+}
+export { closestScrollableElement, parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
