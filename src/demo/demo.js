@@ -31,6 +31,7 @@ const routes = [
             { path: "data-table-cell", load: () => import( "./data-table/data-table-cell.js").then(m=>m.default) },
             { path: "data-table", load: () => import( "./data-table/data-table.js").then(m=>m.default) },
             { path: "data-table-checkbox", load: () => import( "./data-table/data-table-checkbox.js").then(m=>m.default) },
+            { path: "data-table-sortable", load: () => import( "./data-table/data-table-sortable.js").then(m=>m.default) },
 
             { path: "dialog", load: () => import( "./dialog/dialog.js").then(m=>m.default) },
 

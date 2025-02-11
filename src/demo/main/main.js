@@ -44,6 +44,7 @@ class DemoMain extends MdComponent {
             { label: "data-table", children:[
                 { label: "data-table", routerLink: "/data-table" },
                 { label: "data-table-checkbox", routerLink: "/data-table-checkbox" },
+                { label: "data-table-sortable", routerLink: "/data-table-sortable" },
             ] },
            
             { label: "dialog", routerLink: "/dialog" },

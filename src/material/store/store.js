@@ -26,12 +26,19 @@ class Store {
      * @param {Any} [sorters]
      */
     sort(data, sorters) {
-        if (!sorters || !sorters.name) return data;
+        if (!Array.isArray(sorters) || sorters.length === 0) return data;
+
         return data.sort((a, b) => {
-            let valueA = a[sorters.name];
-            let valueB = b[sorters.name];
-            if (sorters.order === "desc") return valueB > valueA ? 1 : -1;
-            return valueA > valueB ? 1 : -1;
+            for (let sorter of sorters) {
+                let valueA = this.getNestedValue(a, sorter.name);
+                let valueB = this.getNestedValue(b, sorter.name);
+
+                if (valueA == null || valueB == null) continue;
+
+                if (valueA > valueB) return sorter.order === "desc" ? -1 : 1;
+                if (valueA < valueB) return sorter.order === "desc" ? 1 : -1;
+            }
+            return 0;
         });
     }
 
@@ -137,7 +144,7 @@ class Store {
      * @async
      * @param {Any} [options={}]
      */
-    async get(options = {}) {
+    get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;
         let data = this.data.slice();
         data = this.sort(data, sorters);
@@ -149,7 +156,7 @@ class Store {
         } else if (_page !== undefined && _limit !== undefined) {
             data = this.paginate(data, _page, _limit);
         }
-        return Promise.resolve({ data, total });
+        return { data, total };
     }
 }
 export { Store };

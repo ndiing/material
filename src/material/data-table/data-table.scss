@@ -19,6 +19,11 @@
     overflow: auto;
 
     thead {
+        .md-data-table__cell {
+            // cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
     }
 
     tbody {

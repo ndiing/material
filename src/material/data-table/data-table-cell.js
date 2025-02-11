@@ -21,6 +21,7 @@ class MdDataTableCellComponent extends MdComponent {
      * @property {String} [label]
      * @property {String} [sublabel]
      * @property {String} [text]
+     * @property {String} [action]
      * @property {Boolean} [trailingCheckbox]
      * @property {Boolean} [trailingRadioButton]
      * @property {Boolean} [trailingSwitch]
@@ -39,6 +40,7 @@ class MdDataTableCellComponent extends MdComponent {
         label: { type: String },
         sublabel: { type: String },
         text: { type: String },
+        action: { type: String },
         trailingCheckbox: { type: Boolean },
         trailingRadioButton: { type: Boolean },
         trailingSwitch: { type: Boolean },
@@ -104,7 +106,7 @@ class MdDataTableCellComponent extends MdComponent {
                       ratio="3/2"
                   ></md-image>`
                 : nothing}
-            ${this.icon ? html`<md-icon class="md-data-table__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-data-table__labels">${this.label ? html`<div class="md-data-table__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-data-table__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.text ? html`<div class="md-data-table__text">${this.text}</div>` : nothing}
+            ${this.icon ? html`<md-icon class="md-data-table__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-data-table__labels">${this.label ? html`<div class="md-data-table__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-data-table__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.text ? html`<div class="md-data-table__text">${this.text}</div>` : nothing} ${this.action ? html`<md-icon class="md-data-table__action">${this.action}</md-icon>` : nothing}
             ${this.trailingCheckbox
                 ? html`<md-checkbox
                       class="md-data-table__checkbox"
