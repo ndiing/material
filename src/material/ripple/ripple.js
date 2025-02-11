@@ -3,9 +3,17 @@
  */
 class Ripple {
     /**
+     * @typedef {Object} RippleOptions
+     * @property {Boolean} [centered=false]
+     * @property {String} [radius=undefined]
+     * @property {String} [trigger=undefined]
+     * @property {Boolean} [unbounded=false]
+     * @property {String} [container=undefined]
+    */
+    /**
      *
-     * @param {Any} [host]
-     * @param {Any} [options]
+     * @param {HTMLElement} [host]
+     * @param {RippleOptions} [options]
      */
     constructor(host, options) {
         this.host = host;
