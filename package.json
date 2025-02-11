@@ -10,7 +10,8 @@
         "localize:extract": "lit-localize extract",
         "localize:build": "lit-localize build",
         "prettier": "npx prettier ./src --write",
-        "jsdoc": "npx jsdoc src/material -r -d docs"
+        "jsdoc": "npx jsdoc src/material -r -d docs",
+        "dev": "node ./dev/index.js"
     },
     "devDependencies": {
         "@babel/core": "^7.26.0",

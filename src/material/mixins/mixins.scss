@@ -1,4 +1,5 @@
 /* typescale */
+
 @mixin typescale-display-large() {
     font-family: var(--md-sys-typescale-display-large-font);
     font-weight: var(--md-sys-typescale-display-large-weight);
@@ -118,8 +119,8 @@
     letter-spacing: var(--md-sys-typescale-label-small-tracking);
     line-height: var(--md-sys-typescale-label-small-line-height);
 }
-
 /* ripple */
+
 @mixin ripple() {
     position: relative;
     --md-comp-ripple-radius: 141.4213562373095%;
@@ -185,8 +186,8 @@
 @mixin ripple-disabled() {
     pointer-events: none;
 }
-
 /* layout */
+
 @mixin layout-compact() {
     @media (max-width: 599px) {
         @content;

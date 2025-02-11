@@ -1,12 +1,13 @@
 import "./polyfill/polyfill.js";
-// import "./component/component.js";
+// import "./util/util.js";
+// import "./store/store.js";
 // import "./router/router.js";
 // import "./ripple/ripple.js";
 // import "./popper/popper.js";
 // import "./movable/movable.js";
-// import "./store/store.js";
+// import "./layout/layout.js";
 // import "./virtual-scroll/virtual-scroll.js";
-// import "./util/util.js";
+// import "./component/component.js";
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";
