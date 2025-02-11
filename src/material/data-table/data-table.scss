@@ -1,6 +1,8 @@
 @use "../mixins/mixins.scss";
 
 .md-data-table {
+    --md-comp-data-table-density: 0;
+    --md-comp-data-table-height: calc(56px + (var(--md-comp-data-table-density) * 4px));
     display: flex;
     flex-direction: column;
     padding: 8px 0;
@@ -74,27 +76,18 @@
 .md-data-table__cell {
     display: flex;
     align-items: center;
-    min-height: 56px;
+    min-height: var(--md-comp-data-table-height);
     padding: 8px 16px;
     gap: 0 16px;
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     border-bottom: 1px solid var(--md-sys-color-outline);
+    border-right: 1px solid var(--md-sys-color-outline);
 }
 
 .md-data-table__avatar {
     width: 40px;
     height: 40px;
-}
-
-.md-data-table__image {
-    width: 56px;
-    height: 56px;
-}
-
-.md-data-table__video {
-    height: 64px;
-    margin: 4px 0 4px -16px;
 }
 
 .md-data-table__labels {
@@ -116,14 +109,6 @@
     @include mixins.typescale-body-medium();
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;
-    color: var(--md-sys-color-on-surface-variant);
-}
-
-.md-data-table__text {
-    @include mixins.typescale-label-small();
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
 

@@ -8,11 +8,11 @@ import { Store } from "../store/store";
  *
  * @extends MdComponent
  * @fires onDataTableKeydown
- * @fires onDataTableHeaderCheckboxClick
- * @fires onDataTableBodyCheckboxClick
  * @fires onDataTableHeaderCellClick
  * @fires onDataTableBodyCellClick
+ * @fires onDataTableHeaderCheckboxClick
  * @fires onDataTableBodyClick
+ * @fires onDataTableBodyCheckboxClick
  * @element md-data-table
  */
 class MdDataTableComponent extends MdComponent {
@@ -254,6 +254,7 @@ class MdDataTableComponent extends MdComponent {
         // console.log(document.activeElement)
         if (event.ctrlKey && event.key === "a") {
             event.preventDefault();
+            // select all
             this.data.forEach((item) => {
                 item.selected = true;
             });
@@ -303,6 +304,7 @@ class MdDataTableComponent extends MdComponent {
      */
     handleDataTableHeaderCheckboxClick(event) {
         const data = event.currentTarget.data;
+        // select toggle
         const selected = !this.checked || this.indeterminate;
         this.data.forEach((item) => {
             item.selected = selected;
@@ -321,8 +323,10 @@ class MdDataTableComponent extends MdComponent {
         if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
         if (event.ctrlKey) {
+            // multi select
             data.selected = !data.selected;
         } else if (event.shiftKey) {
+            // select range
             this.prevSelectedIndex = this.prevSelectedIndex ?? 0;
             this.currentSelectedIndex = this.data.indexOf(data);
             this.swapSelectedIndex = this.prevSelectedIndex > this.currentSelectedIndex;
@@ -336,6 +340,7 @@ class MdDataTableComponent extends MdComponent {
                 [this.currentSelectedIndex, this.prevSelectedIndex] = [this.prevSelectedIndex, this.currentSelectedIndex];
             }
         } else {
+            // single select
             this.data.forEach((item) => {
                 item.selected = item === data;
             });
