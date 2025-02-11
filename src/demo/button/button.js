@@ -6,11 +6,8 @@ class DemoButton extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            label="Label"
-                        ></md-button>
+                        <md-button label="Label"></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
@@ -31,7 +28,6 @@ class DemoButton extends MdComponent {
                             disabled
                         ></md-button>
                     </div>
-
                 </div>
             </div>
         `;

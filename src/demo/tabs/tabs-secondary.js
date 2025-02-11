@@ -6,15 +6,14 @@ class DemoTabsSecondary extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-tabs
                             variant="secondary"
                             .items="${[
-                                {icon:'image',label:'Label',badge:'',selected:true},
-                                {icon:'image',label:'Label',badge:'3'},
-                                {icon:'image',label:'Label',badge:'32'},
-                                {icon:'image',label:'Label',badge:'3200'},
+                                { icon: "image", label: "Label", badge: "", selected: true },
+                                { icon: "image", label: "Label", badge: "3" },
+                                { icon: "image", label: "Label", badge: "32" },
+                                { icon: "image", label: "Label", badge: "3200" },
                             ]}"
                             @onTabClick="${console.log}"
                         ></md-tabs>
@@ -23,15 +22,14 @@ class DemoTabsSecondary extends MdComponent {
                         <md-tabs
                             variant="secondary"
                             .items="${[
-                                {label:'Label',badge:'',selected:true},
-                                {label:'Label',badge:'3'},
-                                {label:'Label',badge:'32'},
-                                {label:'Label',badge:'3200'},
+                                { label: "Label", badge: "", selected: true },
+                                { label: "Label", badge: "3" },
+                                { label: "Label", badge: "32" },
+                                { label: "Label", badge: "3200" },
                             ]}"
                             @onTabClick="${console.log}"
                         ></md-tabs>
                     </div>
-
                 </div>
             </div>
         `;

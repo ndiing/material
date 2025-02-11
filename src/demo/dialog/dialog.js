@@ -6,7 +6,6 @@ class DemoDialog extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
@@ -19,16 +18,15 @@ class DemoDialog extends MdComponent {
                             .actions="${undefined}"
                             label="label"
                             .sublabel="${undefined}"
-                            .buttons="${[{component:"spacer"},{label:"Label"},{label:"Label"}]}"
-                            
+                            .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
                             @onDialogIconButtonClick="${console.log}"
                             @onDialogButtonClick="${() => dialog.toggle()}"
                             @onDialogShown="${console.log}"
                             @onDialogClosed="${console.log}"
                             @onDialogScrimClosed="${console.log}"
-                        >body</md-dialog>
+                            >body</md-dialog
+                        >
                     </div>
-
                 </div>
             </div>
         `;

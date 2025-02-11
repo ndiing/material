@@ -6,7 +6,6 @@ class DemoSnackbar extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
@@ -19,7 +18,8 @@ class DemoSnackbar extends MdComponent {
                             @onSnackbarButtonClick="${console.log}"
                             @onSnackbarShown="${() => snackbar.toggle()}"
                             @onSnackbarClosed="${console.log}"
-                        >Body</md-snackbar>
+                            >Body</md-snackbar
+                        >
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
@@ -29,12 +29,13 @@ class DemoSnackbar extends MdComponent {
                         ></md-button>
                         <md-snackbar
                             id="snackbar2"
-                            .buttons="${[{label:"Label"}]}"
+                            .buttons="${[{ label: "Label" }]}"
                             @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar2.toggle()}"
                             @onSnackbarShown="${console.log}"
                             @onSnackbarClosed="${console.log}"
-                        >Body</md-snackbar>
+                            >Body</md-snackbar
+                        >
                     </div>
 
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -49,7 +50,8 @@ class DemoSnackbar extends MdComponent {
                             @onSnackbarButtonClick="${console.log}"
                             @onSnackbarShown="${() => snackbar3.toggle()}"
                             @onSnackbarClosed="${console.log}"
-                        >Body Body Body Body Body Body Body Body</md-snackbar>
+                            >Body Body Body Body Body Body Body Body</md-snackbar
+                        >
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
@@ -59,12 +61,13 @@ class DemoSnackbar extends MdComponent {
                         ></md-button>
                         <md-snackbar
                             id="snackbar4"
-                            .buttons="${[{label:"Label"}]}"
+                            .buttons="${[{ label: "Label" }]}"
                             @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar4.toggle()}"
                             @onSnackbarShown="${console.log}"
                             @onSnackbarClosed="${console.log}"
-                        >Body Body Body Body Body Body Body Body</md-snackbar>
+                            >Body Body Body Body Body Body Body Body</md-snackbar
+                        >
                     </div>
 
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -75,14 +78,14 @@ class DemoSnackbar extends MdComponent {
                         ></md-button>
                         <md-snackbar
                             id="snackbar5"
-                            .buttons="${[{label:"Label Label"}]}"
+                            .buttons="${[{ label: "Label Label" }]}"
                             @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar5.toggle()}"
                             @onSnackbarShown="${console.log}"
                             @onSnackbarClosed="${console.log}"
-                        >Body Body Body Body Body Body Body Body</md-snackbar>
+                            >Body Body Body Body Body Body Body Body</md-snackbar
+                        >
                     </div>
-
                 </div>
             </div>
         `;

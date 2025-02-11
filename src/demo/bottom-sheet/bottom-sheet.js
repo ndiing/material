@@ -25,14 +25,14 @@ class DemoBottomSheet extends MdComponent {
                     .label="${undefined}"
                     .sublabel="${undefined}"
                     .buttons="${undefined}"
-                    
                     .modal="${undefined}"
                     @onBottomSheetIconButtonClick="${console.log}"
                     @onBottomSheetButtonClick="${console.log}"
                     @onBottomSheetShown="${console.log}"
                     @onBottomSheetClosed="${console.log}"
                     @onBottomSheetScrimClosed="${console.log}"
-                >Body</md-bottom-sheet>
+                    >Body</md-bottom-sheet
+                >
             </div>
         `;
     }

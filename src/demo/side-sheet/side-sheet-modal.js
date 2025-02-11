@@ -21,21 +21,19 @@ class DemoSideSheetModal extends MdComponent {
                 <md-side-sheet
                     id="sideSheet"
                     .icons="${undefined}"
-                    .actions="${[{icon:"image"}]}"
+                    .actions="${[{ icon: "image" }]}"
                     label="Label"
                     .sublabel="${undefined}"
-                    .buttons="${[{component:"spacer"},{label:"Label"},{label:"Label"}]}"
-                    
+                    .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
                     modal
                     @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}"
                     @onSideSheetButtonClick="${(event) => sideSheet.toggle()}"
                     @onSideSheetShown="${console.log}"
                     @onSideSheetClosed="${console.log}"
                     @onSideSheetScrimClosed="${console.log}"
-                >Body</md-side-sheet>
+                    >Body</md-side-sheet
+                >
             </div>
-            
-            
         `;
     }
 }

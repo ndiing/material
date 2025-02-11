@@ -6,12 +6,11 @@ class DemoTimePicker extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Time Picker"
-                            @click="${(event) => timePicker.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => timePicker.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-time-picker
                             id="timePicker"
@@ -25,7 +24,7 @@ class DemoTimePicker extends MdComponent {
                             @onTimePickerHourItemClick="${console.log}"
                             @onTimePickerMinuteItemClick="${console.log}"
                             @onTimePickerButtonCancelClick="${console.log}"
-                            @onTimePickerButtonOkClick="${event=>console.log(event.detail.value)}"
+                            @onTimePickerButtonOkClick="${(event) => console.log(event.detail.value)}"
                             @onTimePickerButtonLabelClick="${console.log}"
                             @onTimePickerButtonClick="${console.log}"
                             @onTimePickerScrimClosed="${console.log}"
@@ -37,7 +36,7 @@ class DemoTimePicker extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Time Picker"
-                            @click="${(event) => timePicker2.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => timePicker2.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-time-picker
                             id="timePicker2"
@@ -52,7 +51,7 @@ class DemoTimePicker extends MdComponent {
                             @onTimePickerHourItemClick="${console.log}"
                             @onTimePickerMinuteItemClick="${console.log}"
                             @onTimePickerButtonCancelClick="${console.log}"
-                            @onTimePickerButtonOkClick="${event=>console.log(event.detail.value)}"
+                            @onTimePickerButtonOkClick="${(event) => console.log(event.detail.value)}"
                             @onTimePickerButtonLabelClick="${console.log}"
                             @onTimePickerButtonClick="${console.log}"
                             @onTimePickerScrimClosed="${console.log}"
@@ -60,9 +59,6 @@ class DemoTimePicker extends MdComponent {
                             @onTimePickerClosed="${console.log}"
                         ></md-time-picker>
                     </div>
-                    
-                    
-
                 </div>
             </div>
         `;

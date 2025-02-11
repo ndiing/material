@@ -7,11 +7,9 @@
         "build:dev": "webpack --mode=development",
         "serve": "webpack serve",
         "watch": "webpack --watch",
-        
         "localize:extract": "lit-localize extract",
         "localize:build": "lit-localize build",
-
-        "prettier": "npx prettier ./src/material --write",
+        "prettier": "npx prettier . --write",
         "jsdoc": "npx jsdoc src/material -r -d docs"
     },
     "devDependencies": {

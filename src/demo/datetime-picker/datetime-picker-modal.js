@@ -6,13 +6,11 @@ class DemoDatetimePickerModal extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
-                
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Datetime Picker"
-                            @click="${(event) => datetimePicker.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => datetimePicker.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-datetime-picker
                             id="datetimePicker"
@@ -39,7 +37,7 @@ class DemoDatetimePickerModal extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Datetime Picker"
-                            @click="${(event) => datetimePicker2.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => datetimePicker2.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-datetime-picker
                             id="datetimePicker2"
@@ -63,7 +61,6 @@ class DemoDatetimePickerModal extends MdComponent {
                             @onDatetimePickerClosed="${console.log}"
                         ></md-datetime-picker>
                     </div>
-
                 </div>
             </div>
         `;

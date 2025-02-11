@@ -67,6 +67,7 @@ class MdTextFieldComponent extends MdComponent {
         super();
         this.title = "";
         this.autocomplete = "off";
+        this.actions = [];
     }
 
     /**
@@ -126,18 +127,19 @@ class MdTextFieldComponent extends MdComponent {
      *
      * @readonly
      */
-    get actions2() {
-        let actions = [];
-        if (this.error)
-            actions = actions.concat([
-                {
-                    component: "icon",
-                    icon: "error",
-                    classMap: { "md-text-field__icon--error": true },
-                },
-            ]);
-        if (this.actions?.length) actions = actions.concat(this.actions);
-        return actions;
+    get actionsAll() {
+        return []
+            .concat([
+                ...((this.error && [
+                    {
+                        component: "icon",
+                        icon: "error",
+                        classMap: { "md-text-field__icon--error": true },
+                    },
+                ]) ||
+                    []),
+            ])
+            .concat(this.actions);
     }
 
     /**
@@ -166,7 +168,7 @@ class MdTextFieldComponent extends MdComponent {
                     @reset="${this.handleTextFieldReset}"
                     class="md-text-field__native"
                 />
-                ${this.suffix ? html`<div class="md-text-field__suffix">${this.suffix}</div>` : nothing} ${this.actions2?.length ? html` <div class="md-text-field__actions">${this.actions2.map((item) => this.renderItem(item, "icon-button"))}</div> ` : nothing}
+                ${this.suffix ? html`<div class="md-text-field__suffix">${this.suffix}</div>` : nothing} ${this.actionsAll?.length ? html` <div class="md-text-field__actions">${this.actionsAll.map((item) => this.renderItem(item, "icon-button"))}</div> ` : nothing}
             </div>
             ${this.text || this.error || this.counter ? html` <div class="md-text-field__wrapper">${this.text || this.error ? html`<div class="md-text-field__text">${this.error || this.text}</div>` : nothing} ${this.counter ? html`<div class="md-text-field__counter">${this.counter}</div>` : nothing}</div> ` : nothing}
         `;

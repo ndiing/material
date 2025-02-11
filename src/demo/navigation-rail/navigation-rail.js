@@ -21,12 +21,11 @@ class DemoNavigationRail extends MdComponent {
                 <md-navigation-rail
                     id="navigationRail"
                     .items="${[
-                        {icon:'image',label:'Label',selected:true},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
+                        { icon: "image", label: "Label", selected: true },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
                     ]}"
-                    
                     @onNavigationRailIconButtonClick="${console.log}"
                     @onNavigationRailShown="${console.log}"
                     @onNavigationRailClosed="${console.log}"

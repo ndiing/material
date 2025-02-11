@@ -6,12 +6,11 @@ class DemoWeekPickerModal extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Week Picker"
-                            @click="${(event) => weekPicker.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => weekPicker.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-week-picker
                             id="weekPicker"
@@ -26,7 +25,7 @@ class DemoWeekPickerModal extends MdComponent {
                             @onWeekPickerHourItemClick="${console.log}"
                             @onWeekPickerMinuteItemClick="${console.log}"
                             @onWeekPickerButtonCancelClick="${console.log}"
-                            @onWeekPickerButtonOkClick="${event=>console.log(event.detail.value)}"
+                            @onWeekPickerButtonOkClick="${(event) => console.log(event.detail.value)}"
                             @onWeekPickerButtonLabelClick="${console.log}"
                             @onWeekPickerButtonClick="${console.log}"
                             @onWeekPickerScrimClosed="${console.log}"
@@ -38,7 +37,7 @@ class DemoWeekPickerModal extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Week Picker"
-                            @click="${(event) => weekPicker2.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => weekPicker2.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-week-picker
                             id="weekPicker2"
@@ -54,7 +53,7 @@ class DemoWeekPickerModal extends MdComponent {
                             @onWeekPickerHourItemClick="${console.log}"
                             @onWeekPickerMinuteItemClick="${console.log}"
                             @onWeekPickerButtonCancelClick="${console.log}"
-                            @onWeekPickerButtonOkClick="${event=>console.log(event.detail.value)}"
+                            @onWeekPickerButtonOkClick="${(event) => console.log(event.detail.value)}"
                             @onWeekPickerButtonLabelClick="${console.log}"
                             @onWeekPickerButtonClick="${console.log}"
                             @onWeekPickerScrimClosed="${console.log}"
@@ -62,9 +61,6 @@ class DemoWeekPickerModal extends MdComponent {
                             @onWeekPickerClosed="${console.log}"
                         ></md-week-picker>
                     </div>
-                    
-                    
-
                 </div>
             </div>
         `;

@@ -2,41 +2,40 @@ import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
 class DemoTree extends MdComponent {
-    constructor(){
-        super()
-        
+    constructor() {
+        super();
+
         this.items = [
             {
-                label: 'Fruits',
+                label: "Fruits",
                 children: [
-                    { label: 'Apple', children: [] },
-                    { label: 'Banana', children: [] },
-                    { label: 'Orange', children: [] }
-                ]
+                    { label: "Apple", children: [] },
+                    { label: "Banana", children: [] },
+                    { label: "Orange", children: [] },
+                ],
             },
             {
-                label: 'Vegetables',
+                label: "Vegetables",
                 children: [
-                    { label: 'Carrot', children: [] },
-                    { label: 'Broccoli', children: [] },
+                    { label: "Carrot", children: [] },
+                    { label: "Broccoli", children: [] },
                     {
-                        label: 'Leafy Greens',
+                        label: "Leafy Greens",
                         children: [
-                            { label: 'Spinach', children: [] },
-                            { label: 'Kale', children: [] }
-                        ]
-                    }
-                ]
+                            { label: "Spinach", children: [] },
+                            { label: "Kale", children: [] },
+                        ],
+                    },
+                ],
             },
             {
-                label: 'Dairy',
+                label: "Dairy",
                 children: [
-                    { label: 'Milk', children: [] },
-                    { label: 'Cheese', children: [] }
-                ]
-            }
+                    { label: "Milk", children: [] },
+                    { label: "Cheese", children: [] },
+                ],
+            },
         ];
-        
     }
     render() {
         return html`

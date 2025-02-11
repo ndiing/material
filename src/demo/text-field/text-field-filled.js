@@ -6,7 +6,6 @@ class DemoTextFieldFilled extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-text-field
                             variant="filled"
@@ -31,14 +30,14 @@ class DemoTextFieldFilled extends MdComponent {
                             variant="filled"
                             label="Label text"
                             value="Input text"
-                            .actions="${[{icon:'image'}]}"
+                            .actions="${[{ icon: "image" }]}"
                         ></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-text-field
                             variant="filled"
                             label="Label text"
-                            .icons="${[{icon:'image'}]}"
+                            .icons="${[{ icon: "image" }]}"
                         ></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
@@ -46,8 +45,8 @@ class DemoTextFieldFilled extends MdComponent {
                             variant="filled"
                             label="Label text"
                             value="Input text"
-                            .icons="${[{icon:'image'}]}"
-                            .actions="${[{icon:'image'}]}"
+                            .icons="${[{ icon: "image" }]}"
+                            .actions="${[{ icon: "image" }]}"
                         ></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
@@ -81,9 +80,7 @@ class DemoTextFieldFilled extends MdComponent {
                         ></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-text-field
-                            variant="filled"
-                        ></md-text-field>
+                        <md-text-field variant="filled"></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-text-field
@@ -104,9 +101,6 @@ class DemoTextFieldFilled extends MdComponent {
                             value="Input text Input text Input text Input text Input text Input text Input text Input text"
                         ></md-text-field>
                     </div>
-                    
-                    
-
                 </div>
             </div>
         `;

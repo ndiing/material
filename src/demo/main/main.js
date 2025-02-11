@@ -12,14 +12,20 @@ class DemoMain extends MdComponent {
         super();
         this.items = [
             { label: "badge", routerLink: "/badge" },
-            { label: "bottom-app-bar", children:[
-                { label: "bottom-app-bar", routerLink: "/bottom-app-bar" },
-                { label: "bottom-app-bar-no-fab", routerLink: "/bottom-app-bar-no-fab" },
-            ] },
-            { label: "bottom-sheet", children:[
-                { label: "bottom-sheet", routerLink: "/bottom-sheet" },
-                { label: "bottom-sheet-modal", routerLink: "/bottom-sheet-modal" },
-            ] },
+            {
+                label: "bottom-app-bar",
+                children: [
+                    { label: "bottom-app-bar", routerLink: "/bottom-app-bar" },
+                    { label: "bottom-app-bar-no-fab", routerLink: "/bottom-app-bar-no-fab" },
+                ],
+            },
+            {
+                label: "bottom-sheet",
+                children: [
+                    { label: "bottom-sheet", routerLink: "/bottom-sheet" },
+                    { label: "bottom-sheet-modal", routerLink: "/bottom-sheet-modal" },
+                ],
+            },
             {
                 label: "button",
                 children: [
@@ -41,12 +47,15 @@ class DemoMain extends MdComponent {
                 ],
             },
             // { label: "data-table-cell", routerLink: "/data-table-cell" },
-            { label: "data-table", children:[
-                { label: "data-table", routerLink: "/data-table" },
-                { label: "data-table-checkbox", routerLink: "/data-table-checkbox" },
-                { label: "data-table-sortable", routerLink: "/data-table-sortable" },
-            ] },
-           
+            {
+                label: "data-table",
+                children: [
+                    { label: "data-table", routerLink: "/data-table" },
+                    { label: "data-table-checkbox", routerLink: "/data-table-checkbox" },
+                    { label: "data-table-sortable", routerLink: "/data-table-sortable" },
+                ],
+            },
+
             { label: "dialog", routerLink: "/dialog" },
             { label: "divider", routerLink: "/divider" },
             {
@@ -82,21 +91,30 @@ class DemoMain extends MdComponent {
                 ],
             },
             { label: "menu", routerLink: "/menu" },
-            { label: "navigation-bar", children:[
-                { label: "navigation-bar", routerLink: "/navigation-bar" },
-                { label: "navigation-bar-no-label", routerLink: "/navigation-bar-no-label" },
-            ] },
-            { label: "navigation-drawer", children:[
-                { label: "navigation-drawer", routerLink: "/navigation-drawer" },
-                { label: "navigation-drawer-modal", routerLink: "/navigation-drawer-modal" },
-            ] },
+            {
+                label: "navigation-bar",
+                children: [
+                    { label: "navigation-bar", routerLink: "/navigation-bar" },
+                    { label: "navigation-bar-no-label", routerLink: "/navigation-bar-no-label" },
+                ],
+            },
+            {
+                label: "navigation-drawer",
+                children: [
+                    { label: "navigation-drawer", routerLink: "/navigation-drawer" },
+                    { label: "navigation-drawer-modal", routerLink: "/navigation-drawer-modal" },
+                ],
+            },
             // { label: "navigation-list-item", routerLink: "/navigation-list-item" },
             // { label: "navigation-list-row", routerLink: "/navigation-list-row" },
             // { label: "navigation-list", routerLink: "/navigation-list" },
-            { label: "navigation-rail", children:[
-                { label: "navigation-rail", routerLink: "/navigation-rail" },
-                { label: "navigation-rail-no-label", routerLink: "/navigation-rail-no-label" },
-            ] },
+            {
+                label: "navigation-rail",
+                children: [
+                    { label: "navigation-rail", routerLink: "/navigation-rail" },
+                    { label: "navigation-rail-no-label", routerLink: "/navigation-rail-no-label" },
+                ],
+            },
             {
                 label: "progress-indicator",
                 children: [
@@ -129,10 +147,13 @@ class DemoMain extends MdComponent {
                     // { label: "sheet-center", routerLink: "/sheet-center" },
                 ],
             },
-            { label: "side-sheet", children:[
-                { label: "side-sheet", routerLink: "/side-sheet" },
-                { label: "side-sheet-modal", routerLink: "/side-sheet-modal" },
-            ] },
+            {
+                label: "side-sheet",
+                children: [
+                    { label: "side-sheet", routerLink: "/side-sheet" },
+                    { label: "side-sheet-modal", routerLink: "/side-sheet-modal" },
+                ],
+            },
             {
                 label: "slider",
                 children: [
@@ -167,28 +188,31 @@ class DemoMain extends MdComponent {
             // { label: "tree-item", routerLink: "/tree-item" },
             // { label: "tree-row", routerLink: "/tree-row" },
             { label: "tree", routerLink: "/tree" },
-            { label: "picker", children:[
-                // { label: "datetime-picker", children:[
+            {
+                label: "picker",
+                children: [
+                    // { label: "datetime-picker", children:[
                     { label: "datetime-picker", routerLink: "/datetime-picker" },
                     { label: "datetime-picker-modal", routerLink: "/datetime-picker-modal" },
-                // ] },
-                // { label: "date-picker", children:[
+                    // ] },
+                    // { label: "date-picker", children:[
                     { label: "date-picker", routerLink: "/date-picker" },
                     { label: "date-picker-modal", routerLink: "/date-picker-modal" },
-                // ] },
-                // { label: "time-picker", children:[
+                    // ] },
+                    // { label: "time-picker", children:[
                     { label: "time-picker", routerLink: "/time-picker" },
                     { label: "time-picker-modal", routerLink: "/time-picker-modal" },
-                // ] },
-                // { label: "week-picker", children:[
+                    // ] },
+                    // { label: "week-picker", children:[
                     { label: "week-picker", routerLink: "/week-picker" },
                     { label: "week-picker-modal", routerLink: "/week-picker-modal" },
-                // ] },
-                // { label: "month-picker", children:[
+                    // ] },
+                    // { label: "month-picker", children:[
                     { label: "month-picker", routerLink: "/month-picker" },
                     { label: "month-picker-modal", routerLink: "/month-picker-modal" },
-                // ] },
-            ] },
+                    // ] },
+                ],
+            },
         ];
         this.items.sort((a, b) => {
             if (a.children && !b.children) return -1;

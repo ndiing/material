@@ -8,7 +8,6 @@ class DemoScrim extends MdComponent {
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-scrim
-                            
                             @onScrimShown="${console.log}"
                             @onScrimClosed="${console.log}"
                             @onScrimClick="${console.log}"

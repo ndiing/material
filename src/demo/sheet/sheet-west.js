@@ -26,7 +26,6 @@ class DemoSheetWest extends MdComponent {
                     .label="${undefined}"
                     .sublabel="${undefined}"
                     .buttons="${undefined}"
-                    
                     .modal="${undefined}"
                     style="width:360px"
                     @onSheetIconButtonClick="${console.log}"
@@ -34,7 +33,8 @@ class DemoSheetWest extends MdComponent {
                     @onSheetShown="${console.log}"
                     @onSheetClosed="${console.log}"
                     @onSheetScrimClosed="${console.log}"
-                >Body</md-sheet>
+                    >Body</md-sheet
+                >
             </div>
         `;
     }

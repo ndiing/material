@@ -6,12 +6,11 @@ class DemoMonthPicker extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Month Picker"
-                            @click="${(event) => monthPicker.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => monthPicker.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-month-picker
                             id="monthPicker"
@@ -25,7 +24,7 @@ class DemoMonthPicker extends MdComponent {
                             @onMonthPickerHourItemClick="${console.log}"
                             @onMonthPickerMinuteItemClick="${console.log}"
                             @onMonthPickerButtonCancelClick="${console.log}"
-                            @onMonthPickerButtonOkClick="${event=>console.log(event.detail.value)}"
+                            @onMonthPickerButtonOkClick="${(event) => console.log(event.detail.value)}"
                             @onMonthPickerButtonLabelClick="${console.log}"
                             @onMonthPickerButtonClick="${console.log}"
                             @onMonthPickerScrimClosed="${console.log}"
@@ -37,7 +36,7 @@ class DemoMonthPicker extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Month Picker"
-                            @click="${(event) => monthPicker2.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => monthPicker2.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-month-picker
                             id="monthPicker2"
@@ -52,7 +51,7 @@ class DemoMonthPicker extends MdComponent {
                             @onMonthPickerHourItemClick="${console.log}"
                             @onMonthPickerMinuteItemClick="${console.log}"
                             @onMonthPickerButtonCancelClick="${console.log}"
-                            @onMonthPickerButtonOkClick="${event=>console.log(event.detail.value)}"
+                            @onMonthPickerButtonOkClick="${(event) => console.log(event.detail.value)}"
                             @onMonthPickerButtonLabelClick="${console.log}"
                             @onMonthPickerButtonClick="${console.log}"
                             @onMonthPickerScrimClosed="${console.log}"
@@ -60,9 +59,6 @@ class DemoMonthPicker extends MdComponent {
                             @onMonthPickerClosed="${console.log}"
                         ></md-month-picker>
                     </div>
-                    
-                    
-
                 </div>
             </div>
         `;

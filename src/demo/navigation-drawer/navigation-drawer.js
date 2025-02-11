@@ -21,20 +21,17 @@ class DemoNavigationDrawer extends MdComponent {
                 <md-navigation-drawer
                     id="navigationDrawer"
                     .items="${[
-                        {icon:'image',label:'Label',selected:true},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
+                        { icon: "image", label: "Label", selected: true },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
                     ]}"
-                    
                     @onNavigationDrawerIconButtonClick="${console.log}"
                     @onNavigationDrawerShown="${console.log}"
                     @onNavigationDrawerClosed="${console.log}"
                     @onNavigationDrawerScrimClosed="${console.log}"
                 ></md-navigation-drawer>
             </div>
-            
-            
         `;
     }
 }

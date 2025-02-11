@@ -6,7 +6,6 @@ class DemoSwitch extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-switch
                             name="switch"
@@ -28,7 +27,7 @@ class DemoSwitch extends MdComponent {
                         <md-switch
                             name="switch"
                             value="switch"
-                            .icons="${['image','image']}"
+                            .icons="${["image", "image"]}"
                             @onSwitchNativeInput="${console.log}"
                             @onSwitchNativeReset="${console.log}"
                         ></md-switch>
@@ -38,12 +37,11 @@ class DemoSwitch extends MdComponent {
                             name="switch"
                             value="switch"
                             checked=""
-                            .icons="${['image','image']}"
+                            .icons="${["image", "image"]}"
                             @onSwitchNativeInput="${console.log}"
                             @onSwitchNativeReset="${console.log}"
                         ></md-switch>
                     </div>
-
                 </div>
             </div>
         `;

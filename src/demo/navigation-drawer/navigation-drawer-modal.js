@@ -21,10 +21,10 @@ class DemoNavigationDrawerModal extends MdComponent {
                 <md-navigation-drawer
                     id="navigationDrawer"
                     .items="${[
-                        {icon:'image',label:'Label',selected:true},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
+                        { icon: "image", label: "Label", selected: true },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
                     ]}"
                     modal
                     @onNavigationDrawerIconButtonClick="${console.log}"
@@ -33,8 +33,6 @@ class DemoNavigationDrawerModal extends MdComponent {
                     @onNavigationDrawerScrimClosed="${console.log}"
                 ></md-navigation-drawer>
             </div>
-            
-            
         `;
     }
 }

@@ -20,12 +20,11 @@ class DemoNavigationBar extends MdComponent {
                 </div>
                 <md-navigation-bar
                     id="navigationBar"
-                    
                     .items="${[
-                        {icon:'image',label:'Label',selected:true},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
-                        {icon:'image',label:'Label'},
+                        { icon: "image", label: "Label", selected: true },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
+                        { icon: "image", label: "Label" },
                     ]}"
                     @onNavigationBarShown="${console.log}"
                     @onNavigationBarClosed="${console.log}"

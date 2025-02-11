@@ -2,15 +2,10 @@ import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
 class DemoBottomAppBar extends MdComponent {
-    constructor(){
-        super()
-        this.actions=[
-            {icon:'image'},
-            {icon:'image'},
-            {icon:'image'},
-            {icon:'image'},
-        ]
-        this.fab='image'
+    constructor() {
+        super();
+        this.actions = [{ icon: "image" }, { icon: "image" }, { icon: "image" }, { icon: "image" }];
+        this.fab = "image";
     }
     render() {
         return html`
@@ -32,7 +27,6 @@ class DemoBottomAppBar extends MdComponent {
                     id="bottomAppBar"
                     .actions="${this.actions}"
                     .fab="${this.fab}"
-                    
                     @onBottomAppBarIconButtonClick="${console.log}"
                     @onBottomAppBarFabClick="${console.log}"
                     @onBottomAppBarShown="${console.log}"

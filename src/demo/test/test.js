@@ -32,7 +32,7 @@ class DemoTest extends MdComponent {
             </div>
         `;
     }
-    
+
     async connectedCallback() {
         super.connectedCallback();
         await this.updateComplete;
@@ -44,7 +44,7 @@ class DemoTest extends MdComponent {
             this.requestUpdate();
         });
     }
-    
+
     async firstUpdated() {
         await this.updateComplete;
         this.store.load(Array.from({ length: 10000 }, (v, k) => ({ label: `Label ${k}` })));

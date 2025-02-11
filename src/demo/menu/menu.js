@@ -10,16 +10,11 @@ class DemoMenu extends MdComponent {
                         <md-button
                             variant="filled-tonal"
                             label="Toggle Menu"
-                            @click="${(event) => menu.toggle({trigger:event.currentTarget})}"
+                            @click="${(event) => menu.toggle({ trigger: event.currentTarget })}"
                         ></md-button>
                         <md-menu
                             id="menu"
-                            .items="${[
-                                {label:'Label',selected:true},
-                                {label:'Label'},
-                                {label:'Label'},
-                                {label:'Label'},
-                            ]}"
+                            .items="${[{ label: "Label", selected: true }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
                             @onMenuShown="${console.log}"
                             @onMenuClosed="${console.log}"
                         ></md-menu>
