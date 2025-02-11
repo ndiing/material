@@ -33,7 +33,6 @@ class MdButtonComponent extends MdComponent {
     constructor() {
         super();
         this.type = "button";
-
     }
 
     /**
@@ -55,19 +54,25 @@ class MdButtonComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {
             trigger: ".md-button__native",
         });
     }
 
+    /**
+     *
+     * @private
+     * @async
+     */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

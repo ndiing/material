@@ -29,7 +29,6 @@ class MdCheckboxComponent extends MdComponent {
      */
     constructor() {
         super();
-        
     }
 
     /**
@@ -60,6 +59,7 @@ class MdCheckboxComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -67,7 +67,7 @@ class MdCheckboxComponent extends MdComponent {
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-checkbox__track",
             trigger: ".md-checkbox__native",
@@ -79,10 +79,11 @@ class MdCheckboxComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

@@ -8,7 +8,7 @@ class Ripple {
      * @param {Any} [options]
      */
     constructor(host, options) {
-        this.host = host
+        this.host = host;
         this.options = {
             centered: false,
             radius: undefined,
@@ -17,7 +17,7 @@ class Ripple {
             container: undefined,
             ...options,
         };
-        this.init()
+        this.init();
     }
 
     /**

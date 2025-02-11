@@ -74,7 +74,7 @@ class MdNavigationListItemComponent extends MdComponent {
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

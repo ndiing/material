@@ -68,7 +68,7 @@ class Popper {
             top: triggerRect.top - containerRect.height - offset,
         }),
     };
-    
+
     /**
      *
      * @param {Any} [host]
@@ -78,7 +78,6 @@ class Popper {
         this.host = host;
         this.options = options;
     }
-    
 
     /**
      *

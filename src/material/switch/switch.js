@@ -31,7 +31,6 @@ class MdSwitchComponent extends MdComponent {
      */
     constructor() {
         super();
-        
     }
 
     /**
@@ -62,6 +61,7 @@ class MdSwitchComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -70,7 +70,7 @@ class MdSwitchComponent extends MdComponent {
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-switch__thumb",
             trigger: ".md-switch__native",
@@ -83,10 +83,11 @@ class MdSwitchComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

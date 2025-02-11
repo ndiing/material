@@ -32,7 +32,6 @@ class MdFabComponent extends MdComponent {
      */
     constructor() {
         super();
-        
     }
 
     /**
@@ -46,21 +45,23 @@ class MdFabComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-fab");
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {});
     }
 
     /**
      *
      * @private
+     * @async
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

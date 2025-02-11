@@ -55,13 +55,14 @@ class MdIconButtonComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {
             trigger: ".md-icon-button__native",
             unbounded: true,
@@ -78,7 +79,7 @@ class MdIconButtonComponent extends MdComponent {
         super.disconnectedCallback();
         this.classList.remove("md-icon-button");
         this.removeEventListener("click", this.handleIconButtonClick);
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

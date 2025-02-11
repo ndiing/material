@@ -56,7 +56,6 @@ class MdTreeItemComponent extends MdComponent {
      */
     constructor() {
         super();
-        
         this.actions = ["keyboard_arrow_right", "keyboard_arrow_down"];
         this.nodeIcons = ["folder", "folder_open"];
         this.leafIcons = ["draft", "draft"];
@@ -78,7 +77,7 @@ class MdTreeItemComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree__item");
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {});
     }
 
@@ -89,7 +88,7 @@ class MdTreeItemComponent extends MdComponent {
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

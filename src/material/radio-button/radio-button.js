@@ -29,7 +29,6 @@ class MdRadioButtonComponent extends MdComponent {
      */
     constructor() {
         super();
-        
     }
 
     /**
@@ -60,6 +59,7 @@ class MdRadioButtonComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
@@ -67,7 +67,7 @@ class MdRadioButtonComponent extends MdComponent {
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-radio-button__track",
             trigger: ".md-radio-button__native",
@@ -79,10 +79,11 @@ class MdRadioButtonComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**

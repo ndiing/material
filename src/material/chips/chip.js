@@ -31,7 +31,6 @@ class MdChipComponent extends MdComponent {
      */
     constructor() {
         super();
-        
     }
 
     /**
@@ -63,21 +62,23 @@ class MdChipComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chip");
-        await this.updateComplete
+        await this.updateComplete;
         this.ripple = new Ripple(this, {});
     }
 
     /**
      *
      * @private
+     * @async
      */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        this.ripple.destroy()
+        this.ripple.destroy();
     }
 
     /**
