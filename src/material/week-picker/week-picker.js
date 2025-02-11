@@ -120,7 +120,7 @@ class MdWeekPickerComponent extends MdComponent {
      */
     get days() {
         return Array.from({ length: 6 }, (v, k) => {
-            const date2 = new Date(this.selection.getFullYear(), this.selection.getMonth(), k * 7 + 0 + 1 - this.startOfDay + 1);
+            const weekDate = new Date(this.selection.getFullYear(), this.selection.getMonth(), k * 7 + 0 + 1 - this.startOfDay + 1);
             const children = Array.from({ length: 7 }, (v2, k2) => {
                 const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), k * 7 + k2 + 1 - this.startOfDay + 1);
                 return {
@@ -130,11 +130,11 @@ class MdWeekPickerComponent extends MdComponent {
                 };
             });
             return {
-                year: date2.getFullYear(),
-                month: date2.getMonth(),
-                week: date2.getWeek(),
-                selected: date2.getFullYear() === this.value.getFullYear() && date2.getWeek() === this.value.getWeek(),
-                activated: date2.getFullYear() === this.current.getFullYear() && date2.getWeek() === this.current.getWeek(),
+                year: weekDate.getFullYear(),
+                month: weekDate.getMonth(),
+                week: weekDate.getWeek(),
+                selected: weekDate.getFullYear() === this.value.getFullYear() && weekDate.getWeek() === this.value.getWeek(),
+                activated: weekDate.getFullYear() === this.current.getFullYear() && weekDate.getWeek() === this.current.getWeek(),
                 children,
             };
         });

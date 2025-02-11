@@ -177,16 +177,16 @@ class MdSnackbarComponent extends MdComponent {
     show() {
         task(() => {
             return new Promise((resolve) => {
-                const callback1 = () => {
+                const handleTimeout = () => {
                     this.close();
                 };
-                const timeout = setTimeout(callback1, 1000 * 4);
-                const callback2 = () => {
+                const timeout = setTimeout(handleTimeout, 1000 * 4);
+                const handleSnackbarClosed = () => {
                     clearTimeout(timeout);
-                    this.removeEventListener("onSnackbarClosed", callback2);
+                    this.removeEventListener("onSnackbarClosed", handleSnackbarClosed);
                     resolve();
                 };
-                this.addEventListener("onSnackbarClosed", callback2);
+                this.addEventListener("onSnackbarClosed", handleSnackbarClosed);
                 this.style.removeProperty("--md-comp-snackbar-animation");
                 this.open = true;
                 this.emit("onSnackbarShown");

@@ -11,11 +11,11 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MdTreeComponent extends MdComponent {
     /**
      * @property {Array} [items]
-     * @property {Array} [items2]
+     * @property {Array} [flatItems]
      */
     static properties = {
         items: { type: Array },
-        items2: { type: Array },
+        flatItems: { type: Array },
     };
 
     /**
@@ -24,7 +24,7 @@ class MdTreeComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
-        this.items2 = [];
+        this.flatItems = [];
     }
 
     /**
@@ -56,7 +56,7 @@ class MdTreeComponent extends MdComponent {
      * @private
      */
     render() {
-        return this.items2.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
+        return this.flatItems.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
 
     /**
@@ -78,7 +78,7 @@ class MdTreeComponent extends MdComponent {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
             await this.updateComplete;
-            this.items2 = this.flatten(this.items).items2;
+            this.flatItems = this.flatten(this.items).flatItems;
         }
     }
 
@@ -90,13 +90,13 @@ class MdTreeComponent extends MdComponent {
      */
     flatten(items, parent, indent = 0) {
         let expanded;
-        let items2 = [];
+        let flatItems = [];
         items.forEach((item) => {
             item.parent = parent;
             item.indent = indent;
             if (indent === 0) item.visible = true;
             if (item.expanded || item.selected) expanded = true;
-            items2.push(item);
+            flatItems.push(item);
             if (item.children?.length) {
                 const result = this.flatten(item.children, item, indent + 1);
                 if (result.expanded) {
@@ -104,10 +104,10 @@ class MdTreeComponent extends MdComponent {
                     item.expanded = expanded;
                     this.toggle(item);
                 }
-                items2.push(...result.items2);
+                flatItems.push(...result.flatItems);
             }
         });
-        return { expanded, items2 };
+        return { expanded, flatItems };
     }
 
     /**
@@ -134,7 +134,7 @@ class MdTreeComponent extends MdComponent {
             data.expanded = !data.expanded;
             this.toggle(data);
         }
-        this.items2.forEach((item) => {
+        this.flatItems.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();
