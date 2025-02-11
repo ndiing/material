@@ -20,12 +20,6 @@ class DemoBottomSheet extends MdComponent {
                 </div>
                 <md-bottom-sheet
                     id="bottomSheet"
-                    
-                    
-                    
-                    
-                    
-                    
                     open
                     @onBottomSheetIconButtonClick="${console.log}"
                     @onBottomSheetButtonClick="${console.log}"

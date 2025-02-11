@@ -21,11 +21,6 @@ class DemoSheetEastModal extends MdComponent {
                 <md-sheet
                     id="sheet"
                     region="east"
-                    
-                    
-                    
-                    
-                    
                     modal
                     style="width:256px"
                     @onSheetIconButtonClick="${console.log}"

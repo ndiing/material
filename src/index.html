@@ -2,16 +2,54 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+
         <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0"
+            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
         />
         <meta
             name="description"
-            content="Put your description here."
+            content="This is a ndiing-material app"
         />
+
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#181818"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#f3f3f3"
+        />
+
+        <meta
+            name="mobile-web-app-capable"
+            content="yes"
+        />
+        <meta
+            name="apple-mobile-web-app-title"
+            content="ndiing-material"
+        />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black"
+        />
+
         <title>Document</title>
         <base href="./" />
+
+        <link
+            rel="icon"
+            href="/public/assets/icons/icon_24.png"
+            type="image/png"
+        />
+
+        <link
+            rel="manifest"
+            href="/public/manifest.json"
+        />
+
         <link
             rel="preconnect"
             href="https://fonts.googleapis.com"
@@ -32,5 +70,12 @@
     </head>
     <body>
         <md-outlet></md-outlet>
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.onload = () => {
+                    navigator.serviceWorker.register("/public/sw.js");
+                };
+            }
+        </script>
     </body>
 </html>

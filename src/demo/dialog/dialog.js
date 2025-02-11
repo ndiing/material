@@ -14,10 +14,7 @@ class DemoDialog extends MdComponent {
                         ></md-button>
                         <md-dialog
                             id="dialog"
-                            
-                            
                             label="label"
-                            
                             .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
                             @onDialogIconButtonClick="${console.log}"
                             @onDialogButtonClick="${() => dialog.toggle()}"

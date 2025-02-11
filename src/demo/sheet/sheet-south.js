@@ -21,12 +21,6 @@ class DemoSheetSouth extends MdComponent {
                 <md-sheet
                     id="sheet"
                     region="south"
-                    
-                    
-                    
-                    
-                    
-                    
                     style="height:80px"
                     open
                     @onSheetIconButtonClick="${console.log}"
