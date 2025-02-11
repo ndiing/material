@@ -13,15 +13,7 @@ class Popper {
         this.init();
     }
 
-    /**
-     *
-     */
-    init() {}
 
-    /**
-     *
-     */
-    destroy() {}
     methods = {
         "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.right - containerRect.width,

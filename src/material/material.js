@@ -1,13 +1,14 @@
+import "./polyfill/polyfill.js";
+
 // import "./component/component.js";
 // import "./router/router.js";
 // import "./ripple/ripple.js";
-// import "./tokens/tokens.js";
 // import "./popper/popper.js";
 // import "./movable/movable.js";
 // import "./store/store.js";
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./util/util.js";
-import "./polyfill/polyfill.js";
+
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";
@@ -57,5 +58,6 @@ import "./date-picker/date-picker.js";
 import "./time-picker/time-picker.js";
 import "./week-picker/week-picker.js";
 import "./month-picker/month-picker.js";
+
 // import "./carousel/carousel.js";
 // import "./search/search.js";

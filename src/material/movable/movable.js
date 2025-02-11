@@ -127,6 +127,17 @@ class Movable {
     /**
      *
      */
-    destroy() {}
+    destroy() {
+        const resizable = this.host.querySelector(".md-resizable");
+        if (resizable) {
+            resizable.remove();
+        }
+
+        this.host.removeEventListener("pointerdown", this.handlePointerdown);
+
+        this.handlePointerdown = null;
+        this.handlePointermove = null;
+        this.handlePointerup = null;
+    }
 }
 export { Movable };

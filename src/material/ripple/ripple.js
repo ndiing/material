@@ -68,16 +68,24 @@ class RippleController {
      * @async
      */
     async hostDisconnected() {
-        await this.host.updateComplete;
-        this.container.classList.remove("md-ripple");
-        this.container.removeAttribute("tabIndex");
-        this.trigger.classList.remove("md-ripple--trigger");
-        this.trigger.classList.remove("md-ripple--bounded");
-        this.trigger.removeEventListener("pointerenter", this.handlePointerenter);
-        this.trigger.removeEventListener("pointerleave", this.handlePointerleave);
-        this.trigger.removeEventListener("pointerdown", this.handlePointerdown);
-        this.trigger.removeEventListener("focus", this.handleFocus);
-        this.trigger.removeEventListener("blur", this.handleBlur);
+        if (this.container) {
+            this.container.classList.remove("md-ripple");
+            this.container.classList.remove("md-ripple--bounded");
+            this.container.removeAttribute("tabIndex");
+            this.container.style.removeProperty("--md-comp-ripple-radius");
+        }
+
+        if (this.trigger) {
+            this.trigger.classList.remove("md-ripple--trigger");
+            this.trigger.removeEventListener("pointerenter", this.handlePointerenter);
+            this.trigger.removeEventListener("pointerleave", this.handlePointerleave);
+            this.trigger.removeEventListener("pointerdown", this.handlePointerdown);
+            this.trigger.removeEventListener("focus", this.handleFocus);
+            this.trigger.removeEventListener("blur", this.handleBlur);
+        }
+
+        this.container = null;
+        this.trigger = null;
     }
 
     /**
