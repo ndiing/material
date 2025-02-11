@@ -201,12 +201,26 @@ class MdDatetimePickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 2;
-        this.yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
-        this.monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
-        this.weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
-        this.dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
-        this.hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
-        this.minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
+        this.yearFormat = new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+        }).format;
+        this.monthFormat = new Intl.DateTimeFormat(undefined, {
+            month: "long",
+        }).format;
+        this.weekdayFormat = new Intl.DateTimeFormat(undefined, {
+            weekday: "narrow",
+        }).format;
+        this.dayFormat = new Intl.DateTimeFormat(undefined, {
+            day: "numeric",
+        }).format;
+        this.hourFormat = new Intl.DateTimeFormat(undefined, {
+            hour: "numeric",
+            hour12: false,
+        }).format;
+        this.minuteFormat = new Intl.DateTimeFormat(undefined, {
+            minute: "numeric",
+            hour12: false,
+        }).format;
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
@@ -644,7 +658,10 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     handleDatetimePickerButtonOkClick(event) {
         this.close();
-        this.emit("onDatetimePickerButtonOkClick", { event, value: stringifyDatetimeLocal(this.value) });
+        this.emit("onDatetimePickerButtonOkClick", {
+            event,
+            value: stringifyDatetimeLocal(this.value),
+        });
     }
 
     /**

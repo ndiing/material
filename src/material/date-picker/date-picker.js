@@ -158,10 +158,18 @@ class MdDatePickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 2;
-        this.yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
-        this.monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
-        this.weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
-        this.dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
+        this.yearFormat = new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+        }).format;
+        this.monthFormat = new Intl.DateTimeFormat(undefined, {
+            month: "long",
+        }).format;
+        this.weekdayFormat = new Intl.DateTimeFormat(undefined, {
+            weekday: "narrow",
+        }).format;
+        this.dayFormat = new Intl.DateTimeFormat(undefined, {
+            day: "numeric",
+        }).format;
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
@@ -517,7 +525,10 @@ class MdDatePickerComponent extends MdComponent {
      */
     handleDatePickerButtonOkClick(event) {
         this.close();
-        this.emit("onDatePickerButtonOkClick", { event, value: stringifyDate(this.value) });
+        this.emit("onDatePickerButtonOkClick", {
+            event,
+            value: stringifyDate(this.value),
+        });
     }
 
     /**

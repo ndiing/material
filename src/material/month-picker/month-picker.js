@@ -113,8 +113,12 @@ class MdMonthPickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 1;
-        this.yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
-        this.monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+        this.yearFormat = new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+        }).format;
+        this.monthFormat = new Intl.DateTimeFormat(undefined, {
+            month: "long",
+        }).format;
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
@@ -412,7 +416,10 @@ class MdMonthPickerComponent extends MdComponent {
      */
     handleMonthPickerButtonOkClick(event) {
         this.close();
-        this.emit("onMonthPickerButtonOkClick", { event, value: stringifyMonth(this.value) });
+        this.emit("onMonthPickerButtonOkClick", {
+            event,
+            value: stringifyMonth(this.value),
+        });
     }
 
     /**

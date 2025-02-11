@@ -79,7 +79,9 @@ class MdNavigationListItemComponent extends MdComponent {
             this.classList.toggle("md-navigation-list__item--with-icon", !!this.icon);
         }
         if (changedProperties.has("selected") && this.selected) {
-            this.emit("onNavigationListItemSelected", { navigationListItem: this });
+            this.emit("onNavigationListItemSelected", {
+                navigationListItem: this,
+            });
         }
     }
 }

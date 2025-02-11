@@ -23,22 +23,70 @@ class Popper {
      */
     destroy() {}
     methods = {
-        "top-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right - containerRect.width, top: triggerRect.top - containerRect.height - offset }),
-        top: ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - (containerRect.width - triggerRect.width) / 2, top: triggerRect.top - containerRect.height - offset }),
-        "top-start": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left, top: triggerRect.top - containerRect.height - offset }),
-        "top-right": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right + offset, top: triggerRect.top - containerRect.height - offset }),
-        "right-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right + offset, top: triggerRect.bottom - containerRect.height }),
-        right: ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right + offset, top: triggerRect.top - (containerRect.height - triggerRect.height) / 2 }),
-        "right-start": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right + offset, top: triggerRect.top }),
-        "bottom-right": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right + offset, top: triggerRect.bottom + offset }),
-        "bottom-start": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left, top: triggerRect.bottom + offset }),
-        bottom: ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - (containerRect.width - triggerRect.width) / 2, top: triggerRect.bottom + offset }),
-        "bottom-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.right - containerRect.width, top: triggerRect.bottom + offset }),
-        "bottom-left": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.bottom + offset }),
-        "left-start": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.top }),
-        left: ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.top - (containerRect.height - triggerRect.height) / 2 }),
-        "left-end": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.bottom - containerRect.height }),
-        "top-left": ({ containerRect, triggerRect, offset } = {}) => ({ left: triggerRect.left - containerRect.width - offset, top: triggerRect.top - containerRect.height - offset }),
+        "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right - containerRect.width,
+            top: triggerRect.top - containerRect.height - offset,
+        }),
+        top: ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - (containerRect.width - triggerRect.width) / 2,
+            top: triggerRect.top - containerRect.height - offset,
+        }),
+        "top-start": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left,
+            top: triggerRect.top - containerRect.height - offset,
+        }),
+        "top-right": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right + offset,
+            top: triggerRect.top - containerRect.height - offset,
+        }),
+        "right-end": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right + offset,
+            top: triggerRect.bottom - containerRect.height,
+        }),
+        right: ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right + offset,
+            top: triggerRect.top - (containerRect.height - triggerRect.height) / 2,
+        }),
+        "right-start": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right + offset,
+            top: triggerRect.top,
+        }),
+        "bottom-right": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right + offset,
+            top: triggerRect.bottom + offset,
+        }),
+        "bottom-start": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left,
+            top: triggerRect.bottom + offset,
+        }),
+        bottom: ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - (containerRect.width - triggerRect.width) / 2,
+            top: triggerRect.bottom + offset,
+        }),
+        "bottom-end": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.right - containerRect.width,
+            top: triggerRect.bottom + offset,
+        }),
+        "bottom-left": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - containerRect.width - offset,
+            top: triggerRect.bottom + offset,
+        }),
+        "left-start": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - containerRect.width - offset,
+            top: triggerRect.top,
+        }),
+        left: ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - containerRect.width - offset,
+            top: triggerRect.top - (containerRect.height - triggerRect.height) / 2,
+        }),
+        "left-end": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - containerRect.width - offset,
+            top: triggerRect.bottom - containerRect.height,
+        }),
+        "top-left": ({ containerRect, triggerRect, offset } = {}) => ({
+            left: triggerRect.left - containerRect.width - offset,
+            top: triggerRect.top - containerRect.height - offset,
+        }),
     };
 
     /**

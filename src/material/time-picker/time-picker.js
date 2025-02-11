@@ -117,8 +117,14 @@ class MdTimePickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 0;
-        this.hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
-        this.minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
+        this.hourFormat = new Intl.DateTimeFormat(undefined, {
+            hour: "numeric",
+            hour12: false,
+        }).format;
+        this.minuteFormat = new Intl.DateTimeFormat(undefined, {
+            minute: "numeric",
+            hour12: false,
+        }).format;
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
@@ -415,7 +421,10 @@ class MdTimePickerComponent extends MdComponent {
      */
     handleTimePickerButtonOkClick(event) {
         this.close();
-        this.emit("onTimePickerButtonOkClick", { event, value: stringifyTime(this.value) });
+        this.emit("onTimePickerButtonOkClick", {
+            event,
+            value: stringifyTime(this.value),
+        });
     }
 
     /**

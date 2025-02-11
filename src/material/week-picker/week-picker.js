@@ -162,10 +162,18 @@ class MdWeekPickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 2;
-        this.yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
-        this.monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
-        this.weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
-        this.dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
+        this.yearFormat = new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+        }).format;
+        this.monthFormat = new Intl.DateTimeFormat(undefined, {
+            month: "long",
+        }).format;
+        this.weekdayFormat = new Intl.DateTimeFormat(undefined, {
+            weekday: "narrow",
+        }).format;
+        this.dayFormat = new Intl.DateTimeFormat(undefined, {
+            day: "numeric",
+        }).format;
         this.actions = [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
@@ -523,7 +531,10 @@ class MdWeekPickerComponent extends MdComponent {
      */
     handleWeekPickerButtonOkClick(event) {
         this.close();
-        this.emit("onWeekPickerButtonOkClick", { event, value: stringifyWeek(this.value) });
+        this.emit("onWeekPickerButtonOkClick", {
+            event,
+            value: stringifyWeek(this.value),
+        });
     }
 
     /**
