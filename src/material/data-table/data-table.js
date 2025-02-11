@@ -199,7 +199,7 @@ class MdDataTableComponent extends MdComponent {
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("data")) {
-            await this.updateComplete
+            await this.updateComplete;
             this.store.load(this.data);
             this.requestUpdateStore();
         }

@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
+import { Layout } from "../../material/layout/layout";
 
 /**
  * @extends MdComponent
@@ -238,8 +239,7 @@ class DemoMain extends MdComponent {
         return html`
             <div class="md-layout__border">
                 <md-top-app-bar
-                    class="demo-main-top-app-bar"
-                    open
+                    id="mainTopAppBar"
                     label="Material Design"
                     sublabel="Version 0.59.0"
                     .leadingActions="${this.leadingActions}"
@@ -249,11 +249,8 @@ class DemoMain extends MdComponent {
                     id="mainNavigationDrawer"
                     view="tree"
                     .items="${this.items}"
-                    open
                     @onNavigationDrawerItemClick="${(event) => {
-                        // if (event
-                        //     .detail.event
-                        //     .currentTarget.data.routerLink) mainNavigationDrawer.toggle();
+                        if (mainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) mainNavigationDrawer.toggle();
                     }}"
                 ></md-navigation-drawer>
                 <md-sheet region="center">
@@ -261,6 +258,30 @@ class DemoMain extends MdComponent {
                 </md-sheet>
             </div>
         `;
+    }
+
+    async connectedCallback() {
+        super.connectedCallback();
+
+        await this.updateComplete;
+
+        this.handleMainLayout = this.handleMainLayout.bind(this);
+        this.layout = new Layout(this.handleMainLayout);
+        this.layout.init();
+    }
+
+    handleMainLayout(item) {
+        if (item.name === "expanded") {
+            mainTopAppBar.open = false;
+            mainNavigationDrawer.modal = false;
+            mainNavigationDrawer.open = true;
+            mainNavigationDrawer.navigationDrawerScrim.open = false;
+        } else {
+            mainTopAppBar.open = true;
+            mainNavigationDrawer.modal = true;
+            mainNavigationDrawer.open = false;
+            mainNavigationDrawer.navigationDrawerScrim.open = false;
+        }
     }
 }
 customElements.define("demo-main", DemoMain);

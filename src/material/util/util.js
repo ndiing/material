@@ -1,7 +1,5 @@
-
-
 /**
- * 
+ *
  * @param {Any} [string]
  */
 function parseDate(string) {
@@ -9,7 +7,7 @@ function parseDate(string) {
 }
 
 /**
- * 
+ *
  * @param {Any} [string]
  */
 function parseDatetimeLocal(string) {
@@ -17,7 +15,7 @@ function parseDatetimeLocal(string) {
 }
 
 /**
- * 
+ *
  * @param {Any} [string]
  */
 function parseMonth(string) {
@@ -25,7 +23,7 @@ function parseMonth(string) {
 }
 
 /**
- * 
+ *
  * @param {Any} [string]
  */
 function parseTime(string) {
@@ -36,7 +34,7 @@ function parseTime(string) {
 }
 
 /**
- * 
+ *
  * @param {Any} [string]
  */
 function parseWeek(string) {
@@ -48,7 +46,7 @@ function parseWeek(string) {
 }
 
 /**
- * 
+ *
  * @param {Any} [date]
  */
 function stringifyDate(date) {
@@ -56,7 +54,7 @@ function stringifyDate(date) {
 }
 
 /**
- * 
+ *
  * @param {Any} [date]
  */
 function stringifyDatetimeLocal(date) {
@@ -69,7 +67,7 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- * 
+ *
  * @param {Any} [date]
  */
 function stringifyMonth(date) {
@@ -77,7 +75,7 @@ function stringifyMonth(date) {
 }
 
 /**
- * 
+ *
  * @param {Any} [date]
  */
 function stringifyTime(date) {
@@ -85,7 +83,7 @@ function stringifyTime(date) {
 }
 
 /**
- * 
+ *
  * @param {Any} [date]
  */
 function stringifyWeek(date) {
@@ -96,7 +94,7 @@ function stringifyWeek(date) {
 }
 
 /**
- * 
+ *
  * @param {Any} [element]
  */
 function closestScrollableElement(element) {

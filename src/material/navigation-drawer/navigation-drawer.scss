@@ -113,3 +113,9 @@
         }
     }
 }
+
+@include mixins.layout-compact() {
+    .md-navigation-drawer {
+        width: calc(100% - 56px);
+    }
+}
