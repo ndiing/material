@@ -80,11 +80,21 @@ class Popper {
     }
 
     /**
+     * @typedef {Object} PopperShowOptions
+     * @property {HTMLElement} [container]
+     * @property {HTMLElement} [trigger]
+     * @property {HTMLElement} [boundary=this.closestScrollableElement(container)]
+     * @property {Number} [offset=0]
+     * @property {Array} [placements=["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"]]
+     */
+
+    /**
      *
-     * @param {Any} [options={}]
+     * @param {PopperShowOptions} [options={}]
      */
     show(options = {}) {
-        const { container = undefined, trigger = undefined, boundary = this.closestScrollableElement(container), offset = 0, placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
+        let { container = undefined, trigger = undefined, boundary, offset = 0, placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
+        boundary = boundary || this.closestScrollableElement(container);
         let left;
         let top;
         for (let i = 0; i < placements.length; i++) {

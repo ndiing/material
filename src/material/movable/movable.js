@@ -6,9 +6,15 @@
  */
 class Movable {
     /**
+     * @typedef {Object} MovableOptions
+     * @property {Array} [axis=["x", "y"]]
+     * @property {Array} [handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]]
+     */
+
+    /**
      *
-     * @param {Any} [host]
-     * @param {Any} [options={}]
+     * @param {HTMLElement} [host]
+     * @param {MovableOptions} [options={}]
      */
     constructor(host, options = {}) {
         this.host = host;

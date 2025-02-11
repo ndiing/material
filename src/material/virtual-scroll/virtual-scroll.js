@@ -4,9 +4,18 @@
  */
 class VirtualScroll {
     /**
+     * @typedef {Object} VirtualScrollOptions
+     * @property {Number} [total]
+     * @property {Number} [rowHeight=56]
+     * @property {Number} [nodePadding=2]
+     * @property {Number} [viewportHeight]
+     * @property {String} [track=.md-virtual-scroll__track]
+     * @property {String} [item=.md-virtual-scroll__item]
+     */
+    /**
      *
-     * @param {Any} [host]
-     * @param {Any} [options]
+     * @param {HTMLElement} [host]
+     * @param {VirtualScrollOptions} [options]
      */
     constructor(host, options) {
         this.host = host;

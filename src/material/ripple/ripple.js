@@ -9,7 +9,7 @@ class Ripple {
      * @property {String} [trigger=undefined]
      * @property {Boolean} [unbounded=false]
      * @property {String} [container=undefined]
-    */
+     */
     /**
      *
      * @param {HTMLElement} [host]
