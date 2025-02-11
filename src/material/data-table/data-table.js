@@ -52,11 +52,11 @@ class MdDataTableComponent extends MdComponent {
             position: "sticky",
             top: 0,
             "z-index": 2,
-            ...(th.sticky&&{
+            ...(th.sticky && {
                 position: "sticky",
                 left: 0,
                 "z-index": 3,
-            })
+            }),
         };
     }
 
@@ -66,11 +66,11 @@ class MdDataTableComponent extends MdComponent {
      */
     styleDataTableBodyCell(td) {
         return {
-            ...(td.sticky&&{
+            ...(td.sticky && {
                 position: "sticky",
                 left: 0,
                 "z-index": 1,
-            })
+            }),
         };
     }
 
