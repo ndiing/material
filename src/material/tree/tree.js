@@ -245,6 +245,7 @@ class MdTreeComponent extends MdComponent {
     handleTreeKeydownEnter(event) {
         event.preventDefault();
         const selectedElement = this.querySelector("md-tree-item[selected]");
+        if(selectedElement)
         selectedElement.click();
         this.emit("onTreeKeydownEnter", { event });
     }

@@ -29,34 +29,42 @@
             <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { Store } from "../store/store";
+import { closestScrollableElement } from "../util/util";
 
 /**
- *
+ * 
  * @extends MdComponent
+ * @fires onTreeKeydownArrowLeft
+ * @fires onTreeKeydownArrowUp
+ * @fires onTreeKeydownArrowRight
+ * @fires onTreeKeydownArrowDown
+ * @fires onTreeKeydownEnter
+ * @fires onTreeKeydown
  * @fires onTreeItemClick
  * @element md-tree
  */
 class MdTreeComponent extends MdComponent {
     /**
      * @property {Array} [items]
-     * @property {Array} [flatItems]
      */
     static properties = {
         items: { type: Array },
-        flatItems: { type: Array },
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
         this.items = [];
         this.flatItems = [];
+        this.store = new Store();
+        this.storeItems = [];
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -80,24 +88,26 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
-        return this.flatItems.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
+        return this.storeItems.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree");
+        this.handleTreeKeydown = this.handleTreeKeydown.bind(this);
+        window.addEventListener("keydown", this.handleTreeKeydown);
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -107,11 +117,15 @@ class MdTreeComponent extends MdComponent {
         if (changedProperties.has("items")) {
             await this.updateComplete;
             this.flatItems = this.flatten(this.items).flatItems;
+            this.store.load(this.flatItems);
+            const result = this.store.get();
+            this.storeItems = result.data;
+            this.requestUpdate();
         }
     }
 
     /**
-     *
+     * 
      * @param {Any} [items]
      * @param {Any} [parent]
      * @param {Any} [indent=0]
@@ -130,7 +144,7 @@ class MdTreeComponent extends MdComponent {
                 if (result.expanded) {
                     expanded = result.expanded;
                     item.expanded = expanded;
-                    this.toggle(item);
+                    this.updateItemVisibility(item);
                 }
                 flatItems.push(...result.flatItems);
             }
@@ -139,19 +153,149 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      */
-    toggle(data) {
+    updateItemVisibility(data) {
         data.children.forEach((item) => {
             item.visible = data.expanded;
             if (!data.visible) item.visible = data.visible;
-            if (item.children?.length) this.toggle(item);
+            if (item.children?.length) this.updateItemVisibility(item);
         });
     }
 
     /**
-     *
+     * 
+     * @async
+     * @param {Any} [arg]
+     */
+    async updateScroll(arg) {
+        await this.updateComplete;
+        const selectedElement = this.querySelector("md-tree-item[selected]");
+        selectedElement.focus();
+        selectedElement.scrollIntoView({
+            behavior: "instant",
+            block: "nearest",
+            inline: "nearest",
+        });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleTreeKeydownArrowDown(event) {
+        event.preventDefault();
+        const visibleItems = this.storeItems.filter((item) => item.visible);
+        const selectedIndex = visibleItems.findIndex((item) => item.selected);
+        if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
+        const nextItem = visibleItems.find((item, index) => item.visible &amp;&amp; index > selectedIndex);
+        visibleItems.forEach((item, index) => {
+            item.selected = item === nextItem;
+        });
+        this.requestUpdate();
+        this.updateScroll();
+        this.emit("onTreeKeydownArrowDown", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleTreeKeydownArrowUp(event) {
+        event.preventDefault();
+        const visibleItems = this.storeItems.filter((item) => item.visible);
+        const selectedIndex = visibleItems.findLastIndex((item) => item.selected);
+        if (selectedIndex === 0) return;
+        const nextIndex = visibleItems.findLastIndex((item, index) => item.visible &amp;&amp; index &lt; selectedIndex);
+        visibleItems.forEach((item, index) => {
+            item.selected = index === nextIndex;
+        });
+        this.requestUpdate();
+        this.updateScroll();
+        this.emit("onTreeKeydownArrowUp", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleTreeKeydownArrowRight(event) {
+        event.preventDefault();
+        const selectedItem = this.storeItems.find((item) => item.selected);
+        if (selectedItem.children?.length) {
+            selectedItem.expanded = true;
+            this.updateItemVisibility(selectedItem);
+            const visibleItems = this.storeItems.filter((item) => item.visible);
+            const selectedIndex = visibleItems.findIndex((item) => item.selected);
+            if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
+            const nextIndex = visibleItems.findIndex((item, index) => item.visible &amp;&amp; index > selectedIndex);
+            visibleItems.forEach((item, index) => {
+                item.selected = index === nextIndex;
+            });
+            this.requestUpdate();
+            this.updateScroll();
+        }
+        this.emit("onTreeKeydownArrowRight", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleTreeKeydownArrowLeft(event) {
+        event.preventDefault();
+        const selectedItem = this.storeItems.find((item) => item.selected);
+        if (selectedItem.expanded) {
+            selectedItem.expanded = false;
+            this.updateItemVisibility(selectedItem);
+            this.requestUpdate();
+            this.updateScroll();
+        } else if (selectedItem.parent) {
+            this.flatItems.forEach((item) => {
+                item.selected = item === selectedItem.parent;
+            });
+            this.requestUpdate();
+            this.updateScroll();
+        }
+        this.emit("onTreeKeydownArrowLeft", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleTreeKeydownEnter(event) {
+        event.preventDefault();
+        const selectedElement = this.querySelector("md-tree-item[selected]");
+        if(selectedElement)
+        selectedElement.click();
+        this.emit("onTreeKeydownEnter", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleTreeKeydown(event) {
+        if (this.contains(document.activeElement)) {
+            if (event.key === "ArrowLeft") return this.handleTreeKeydownArrowLeft(event);
+            else if (event.key === "ArrowUp") return this.handleTreeKeydownArrowUp(event);
+            else if (event.key === "ArrowRight") return this.handleTreeKeydownArrowRight(event);
+            else if (event.key === "ArrowDown") return this.handleTreeKeydownArrowDown(event);
+            else if (event.key === "Enter") return this.handleTreeKeydownEnter(event);
+        }
+        this.emit("onTreeKeydown", { event });
+    }
+
+    /**
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -160,7 +304,7 @@ class MdTreeComponent extends MdComponent {
         const data = event.currentTarget.data;
         if (action &amp;&amp; data.children?.length) {
             data.expanded = !data.expanded;
-            this.toggle(data);
+            this.updateItemVisibility(data);
         }
         this.flatItems.forEach((item) => {
             item.selected = item === data;
@@ -181,13 +325,13 @@ export { MdTreeComponent };
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Feb 11 2025 23:15:53 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Feb 12 2025 02:41:42 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>
