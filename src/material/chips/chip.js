@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 
 /**
  *
@@ -31,7 +31,7 @@ class MdChipComponent extends MdComponent {
      */
     constructor() {
         super();
-        this.ripple = new RippleController(this, {});
+        
     }
 
     /**
@@ -64,9 +64,20 @@ class MdChipComponent extends MdComponent {
      *
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chip");
+        await this.updateComplete
+        this.ripple = new Ripple(this, {});
+    }
+
+    /**
+     *
+     * @private
+     */
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        this.ripple.destroy()
     }
 
     /**

@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 
 /**
  *
@@ -29,12 +29,7 @@ class MdRadioButtonComponent extends MdComponent {
      */
     constructor() {
         super();
-        this.ripple = new RippleController(this, {
-            container: ".md-radio-button__track",
-            trigger: ".md-radio-button__native",
-            unbounded: true,
-            radius: 40,
-        });
+        
     }
 
     /**
@@ -66,12 +61,28 @@ class MdRadioButtonComponent extends MdComponent {
      *
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-radio-button");
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
+        await this.updateComplete
+        this.ripple = new Ripple(this, {
+            container: ".md-radio-button__track",
+            trigger: ".md-radio-button__native",
+            unbounded: true,
+            radius: 40,
+        });
+    }
+
+    /**
+     *
+     * @private
+     */
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        this.ripple.destroy()
     }
 
     /**

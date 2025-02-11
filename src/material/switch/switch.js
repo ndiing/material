@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 
 /**
  *
@@ -31,13 +31,7 @@ class MdSwitchComponent extends MdComponent {
      */
     constructor() {
         super();
-        this.ripple = new RippleController(this, {
-            container: ".md-switch__thumb",
-            trigger: ".md-switch__native",
-            unbounded: true,
-            radius: 40,
-            centered: true,
-        });
+        
     }
 
     /**
@@ -69,13 +63,30 @@ class MdSwitchComponent extends MdComponent {
      *
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-switch");
         this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
+        await this.updateComplete
+        this.ripple = new Ripple(this, {
+            container: ".md-switch__thumb",
+            trigger: ".md-switch__native",
+            unbounded: true,
+            radius: 40,
+            centered: true,
+        });
+    }
+
+    /**
+     *
+     * @private
+     */
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        this.ripple.destroy()
     }
 
     /**

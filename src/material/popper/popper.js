@@ -2,16 +2,6 @@
  *
  */
 class Popper {
-    /**
-     *
-     * @param {Any} [host]
-     * @param {Any} [options={}]
-     */
-    constructor(host, options = {}) {
-        this.host = host;
-        this.options = options;
-        this.init();
-    }
     methods = {
         "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.right - containerRect.width,
@@ -78,13 +68,24 @@ class Popper {
             top: triggerRect.top - containerRect.height - offset,
         }),
     };
+    
+    /**
+     *
+     * @param {Any} [host]
+     * @param {Any} [options={}]
+     */
+    constructor(host, options = {}) {
+        this.host = host;
+        this.options = options;
+    }
+    
 
     /**
      *
      * @param {Any} [options={}]
      */
     show(options = {}) {
-        const { container = undefined, trigger = undefined, boundary = this.closestScrollable(container), offset = 0, placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
+        const { container = undefined, trigger = undefined, boundary = this.closestScrollableElement(container), offset = 0, placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
         let left;
         let top;
         for (let i = 0; i < placements.length; i++) {
@@ -106,7 +107,7 @@ class Popper {
      *
      * @param {Any} [element]
      */
-    closestScrollable(element) {
+    closestScrollableElement(element) {
         let current = element;
         while (current) {
             const style = window.getComputedStyle(current);

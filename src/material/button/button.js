@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
@@ -33,9 +33,7 @@ class MdButtonComponent extends MdComponent {
     constructor() {
         super();
         this.type = "button";
-        this.ripple = new RippleController(this, {
-            trigger: ".md-button__native",
-        });
+
     }
 
     /**
@@ -58,9 +56,18 @@ class MdButtonComponent extends MdComponent {
      *
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
+        await this.updateComplete
+        this.ripple = new Ripple(this, {
+            trigger: ".md-button__native",
+        });
+    }
+
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        this.ripple.destroy()
     }
 
     /**

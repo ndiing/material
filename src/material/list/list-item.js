@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 
 /**
  *
@@ -148,7 +148,17 @@ class MdListItemComponent extends MdComponent {
                 this.classList.add("md-list__item--two-line");
             }
         }
-        this.ripple = new RippleController(this, this.rippleOptions);
+        this.ripple = new Ripple(this, this.rippleOptions);
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     */
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        this.ripple.destroy()
     }
 
     /**

@@ -1,14 +1,14 @@
 /**
  *
  */
-class RippleController {
+class Ripple {
     /**
      *
      * @param {Any} [host]
      * @param {Any} [options]
      */
     constructor(host, options) {
-        (this.host = host).addController(this);
+        this.host = host
         this.options = {
             centered: false,
             radius: undefined,
@@ -17,14 +17,14 @@ class RippleController {
             container: undefined,
             ...options,
         };
+        this.init()
     }
 
     /**
      *
      * @async
      */
-    async hostConnected() {
-        await this.host.updateComplete;
+    async init() {
         this.container = this.host;
         if (this.options.container) {
             if (typeof this.options.container === "string") {
@@ -67,7 +67,7 @@ class RippleController {
      *
      * @async
      */
-    async hostDisconnected() {
+    async destroy() {
         if (this.container) {
             this.container.classList.remove("md-ripple");
             this.container.classList.remove("md-ripple--bounded");
@@ -154,4 +154,4 @@ class RippleController {
         this.container.classList.remove("md-ripple--focus");
     }
 }
-export { RippleController };
+export { Ripple };

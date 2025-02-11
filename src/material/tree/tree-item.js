@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 
 /**
  *
@@ -56,7 +56,7 @@ class MdTreeItemComponent extends MdComponent {
      */
     constructor() {
         super();
-        this.ripple = new RippleController(this, {});
+        
         this.actions = ["keyboard_arrow_right", "keyboard_arrow_down"];
         this.nodeIcons = ["folder", "folder_open"];
         this.leafIcons = ["draft", "draft"];
@@ -78,6 +78,18 @@ class MdTreeItemComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree__item");
+        await this.updateComplete
+        this.ripple = new Ripple(this, {});
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     */
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        this.ripple.destroy()
     }
 
     /**

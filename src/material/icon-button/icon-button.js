@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-import { RippleController } from "../ripple/ripple";
+import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
@@ -56,12 +56,13 @@ class MdIconButtonComponent extends MdComponent {
      *
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
-        this.ripple = new RippleController(this, {
+        await this.updateComplete
+        this.ripple = new Ripple(this, {
             trigger: ".md-icon-button__native",
             unbounded: true,
             radius: 40,
@@ -77,6 +78,7 @@ class MdIconButtonComponent extends MdComponent {
         super.disconnectedCallback();
         this.classList.remove("md-icon-button");
         this.removeEventListener("click", this.handleIconButtonClick);
+        this.ripple.destroy()
     }
 
     /**
