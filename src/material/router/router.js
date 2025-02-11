@@ -6,13 +6,10 @@
  * @fires onRouterNavigateSuccess
  */
 class Router {
-    /**
-     * @readonly
-     */
     static params = {};
 
     /**
-     * @private
+     *
      * @static
      * @param {Any} [pathname=this.pathname]
      * @param {Any} [routes=this.routes]
@@ -84,7 +81,7 @@ class Router {
     }
 
     /**
-     * @private
+     *
      * @static
      * @param {Any} [routes]
      */
@@ -113,7 +110,7 @@ class Router {
     }
 
     /**
-     * @private
+     *
      * @static
      * @async
      * @param {Any} [container]
@@ -146,7 +143,7 @@ class Router {
     }
 
     /**
-     * @private
+     *
      * @static
      * @param {Any} [route]
      */
@@ -155,7 +152,7 @@ class Router {
     }
 
     /**
-     * @private
+     *
      * @static
      * @async
      * @param {Any} [route]
@@ -185,7 +182,7 @@ class Router {
     }
 
     /**
-     * @private
+     *
      * @static
      */
     static setController() {
@@ -239,23 +236,10 @@ class Router {
     static options = {};
 
     /**
-     * @typedef {Object} RouterUseRoutes
-     * @property {String} path
-     * @property {Function} load - use `import('./my.js').then(m=>m.default)` for lazy load
-     * @property {Function} beforeLoad
-     * @property {HTMLElement} component
-     * @property {RouterUseRoutes} children
-     */
-    /**
-     * @typedef {Object} RouterUseOptions
-     * @property {Boolean} [historyApiFallback=false] - use hash / history
-     */
-
-    /**
      *
      * @static
-     * @param {RouterUseRoutes} [routes=[]]
-     * @param {RouterUseOptions} [options={}]
+     * @param {Any} [routes=[]]
+     * @param {Any} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;

@@ -6,10 +6,10 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onSheetIconButtonClick
- * @fires onSheetButtonClick
  * @fires onSheetShown
  * @fires onSheetClosed
+ * @fires onSheetIconButtonClick
+ * @fires onSheetButtonClick
  * @fires onSheetScrimClosed
  * @element md-sheet
  */
@@ -180,24 +180,6 @@ class MdSheetComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleSheetIconButtonClick(event) {
-        this.emit("onSheetIconButtonClick", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleSheetButtonClick(event) {
-        this.emit("onSheetButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -222,6 +204,24 @@ class MdSheetComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSheetIconButtonClick(event) {
+        this.emit("onSheetIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSheetButtonClick(event) {
+        this.emit("onSheetButtonClick", { event });
     }
 
     /**

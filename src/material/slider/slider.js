@@ -40,16 +40,6 @@ class MdSliderComponent extends MdComponent {
 
     /**
      *
-     */
-    constructor() {
-        super();
-        this.min = 0;
-        this.max = 100;
-        this.step = 1;
-    }
-
-    /**
-     *
      * @readonly
      */
     get indicators() {
@@ -57,6 +47,24 @@ class MdSliderComponent extends MdComponent {
         else if (this.variant === "continuous") return 1;
         else if (this.variant === "discrete") return this.max / this.step + 1;
         else if (this.variant === "range-selection") return 2;
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get sliderNativeAll() {
+        return this.querySelectorAll(".md-slider__native");
+    }
+
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.min = 0;
+        this.max = 100;
+        this.step = 1;
     }
 
     /**
@@ -148,14 +156,6 @@ class MdSliderComponent extends MdComponent {
 
     /**
      *
-     * @readonly
-     */
-    get sliderNatives() {
-        return this.querySelectorAll(".md-slider__native");
-    }
-
-    /**
-     *
      * @private
      * @param {Any} [event]
      */
@@ -163,8 +163,8 @@ class MdSliderComponent extends MdComponent {
         const native = event.currentTarget;
         const data = native.data;
         if (this.value.length > 1) {
-            this.sliderNatives[0].value = Math.min(this.sliderNatives[0].value, this.value[1]);
-            this.sliderNatives[1].value = Math.max(this.sliderNatives[1].value, this.value[0]);
+            this.sliderNativeAll[0].value = Math.min(this.sliderNativeAll[0].value, this.value[1]);
+            this.sliderNativeAll[1].value = Math.max(this.sliderNativeAll[1].value, this.value[0]);
         }
         this.value[data.index] = Number(native.value);
         native.value = this.value[data.index];

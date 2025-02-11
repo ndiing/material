@@ -6,10 +6,10 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onBottomAppBarIconButtonClick
- * @fires onBottomAppBarFabClick
  * @fires onBottomAppBarShown
  * @fires onBottomAppBarClosed
+ * @fires onBottomAppBarIconButtonClick
+ * @fires onBottomAppBarFabClick
  * @element md-bottom-app-bar
  */
 class MdBottomAppBarComponent extends MdComponent {
@@ -115,24 +115,6 @@ class MdBottomAppBarComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleBottomAppBarIconButtonClick(event) {
-        this.emit("onBottomAppBarIconButtonClick", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleBottomAppBarFabClick(event) {
-        this.emit("onBottomAppBarFabClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -155,6 +137,24 @@ class MdBottomAppBarComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleBottomAppBarIconButtonClick(event) {
+        this.emit("onBottomAppBarIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleBottomAppBarFabClick(event) {
+        this.emit("onBottomAppBarFabClick", { event });
     }
 }
 customElements.define("md-bottom-app-bar", MdBottomAppBarComponent);

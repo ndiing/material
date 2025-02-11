@@ -97,24 +97,6 @@ class MdListComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleListItemClick(event) {
-        const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
-        if (action) return;
-        const data = event.currentTarget.data;
-        if (this.type === "single-select") {
-            this.singleSelect(data);
-        } else {
-            this.multiSelect(data);
-        }
-        this.requestUpdate();
-        this.emit("onListItemClick", { event });
-    }
-
-    /**
-     *
      * @param {Any} [data]
      */
     multiSelect(data) {
@@ -129,6 +111,24 @@ class MdListComponent extends MdComponent {
         this.items.forEach((item) => {
             item.selected = item === data;
         });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleListItemClick(event) {
+        const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
+        if (action) return;
+        const data = event.currentTarget.data;
+        if (this.type === "single-select") {
+            this.singleSelect(data);
+        } else {
+            this.multiSelect(data);
+        }
+        this.requestUpdate();
+        this.emit("onListItemClick", { event });
     }
 
     /**

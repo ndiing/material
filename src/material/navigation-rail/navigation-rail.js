@@ -6,9 +6,9 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onNavigationRailIconButtonClick
  * @fires onNavigationRailShown
  * @fires onNavigationRailClosed
+ * @fires onNavigationRailIconButtonClick
  * @element md-navigation-rail
  */
 class MdNavigationRailComponent extends MdComponent {
@@ -137,15 +137,6 @@ class MdNavigationRailComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleNavigationRailIconButtonClick(event) {
-        this.emit("onNavigationRailIconButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -168,6 +159,15 @@ class MdNavigationRailComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleNavigationRailIconButtonClick(event) {
+        this.emit("onNavigationRailIconButtonClick", { event });
     }
 }
 customElements.define("md-navigation-rail", MdNavigationRailComponent);

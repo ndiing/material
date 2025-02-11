@@ -12,8 +12,6 @@ class Popper {
         this.options = options;
         this.init();
     }
-
-
     methods = {
         "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.right - containerRect.width,

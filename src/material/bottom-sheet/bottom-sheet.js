@@ -6,10 +6,10 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onBottomSheetIconButtonClick
- * @fires onBottomSheetButtonClick
  * @fires onBottomSheetShown
  * @fires onBottomSheetClosed
+ * @fires onBottomSheetIconButtonClick
+ * @fires onBottomSheetButtonClick
  * @fires onBottomSheetScrimClosed
  * @element md-bottom-sheet
  */
@@ -171,24 +171,6 @@ class MdBottomSheetComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleBottomSheetIconButtonClick(event) {
-        this.emit("onBottomSheetIconButtonClick", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleBottomSheetButtonClick(event) {
-        this.emit("onBottomSheetButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -213,6 +195,24 @@ class MdBottomSheetComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleBottomSheetIconButtonClick(event) {
+        this.emit("onBottomSheetIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleBottomSheetButtonClick(event) {
+        this.emit("onBottomSheetButtonClick", { event });
     }
 
     /**

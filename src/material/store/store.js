@@ -27,14 +27,11 @@ class Store {
      */
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
-
         return data.sort((a, b) => {
             for (let sorter of sorters) {
                 let valueA = this.getNestedValue(a, sorter.name);
                 let valueB = this.getNestedValue(b, sorter.name);
-
                 if (valueA == null || valueB == null) continue;
-
                 if (valueA > valueB) return sorter.order === "desc" ? -1 : 1;
                 if (valueA < valueB) return sorter.order === "desc" ? 1 : -1;
             }
@@ -141,7 +138,6 @@ class Store {
 
     /**
      *
-     * @async
      * @param {Any} [options={}]
      */
     get(options = {}) {

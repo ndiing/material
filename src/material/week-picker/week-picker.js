@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  *
  * @extends MdComponent
+ * @fires onWeekPickerShown
+ * @fires onWeekPickerClosed
  * @fires onWeekPickerLabelClick
  * @fires onWeekPickerIconButtonPrevClick
  * @fires onWeekPickerIconButtonNextClick
@@ -21,8 +23,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onWeekPickerButtonLabelClick
  * @fires onWeekPickerButtonClick
  * @fires onWeekPickerScrimClosed
- * @fires onWeekPickerShown
- * @fires onWeekPickerClosed
  * @element md-week-picker
  */
 class MdWeekPickerComponent extends MdComponent {
@@ -424,6 +424,44 @@ class MdWeekPickerComponent extends MdComponent {
 
     /**
      *
+     * @param {Any} [options]
+     */
+    show(options) {
+        this.style.removeProperty("--md-comp-week-picker-animation");
+        this.index = this.defaultIndex;
+        if (this.modal) this.weekPickerScrim.show();
+        this.open = true;
+        options = {
+            container: this,
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            ...options,
+        };
+        this.popper = new Popper();
+        this.popper.show(options);
+        this.emit("onWeekPickerShown");
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-week-picker-animation");
+        this.open = false;
+        this.weekPickerScrim.close();
+        this.emit("onWeekPickerClosed");
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    toggle(options) {
+        if (this.open) this.close();
+        else this.show(options);
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -573,44 +611,6 @@ class MdWeekPickerComponent extends MdComponent {
     handleWeekPickerScrimClosed(event) {
         if (this.open) this.close();
         this.emit("onWeekPickerScrimClosed", { event });
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    show(options) {
-        this.style.removeProperty("--md-comp-week-picker-animation");
-        this.index = this.defaultIndex;
-        if (this.modal) this.weekPickerScrim.show();
-        this.open = true;
-        options = {
-            container: this,
-            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
-            ...options,
-        };
-        this.popper = new Popper();
-        this.popper.show(options);
-        this.emit("onWeekPickerShown");
-    }
-
-    /**
-     *
-     */
-    close() {
-        this.style.removeProperty("--md-comp-week-picker-animation");
-        this.open = false;
-        this.weekPickerScrim.close();
-        this.emit("onWeekPickerClosed");
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    toggle(options) {
-        if (this.open) this.close();
-        else this.show(options);
     }
 }
 customElements.define("md-week-picker", MdWeekPickerComponent);

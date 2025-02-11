@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  *
  * @extends MdComponent
+ * @fires onMonthPickerShown
+ * @fires onMonthPickerClosed
  * @fires onMonthPickerLabelClick
  * @fires onMonthPickerIconButtonPrevClick
  * @fires onMonthPickerIconButtonNextClick
@@ -20,8 +22,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onMonthPickerButtonLabelClick
  * @fires onMonthPickerButtonClick
  * @fires onMonthPickerScrimClosed
- * @fires onMonthPickerShown
- * @fires onMonthPickerClosed
  * @element md-month-picker
  */
 class MdMonthPickerComponent extends MdComponent {
@@ -327,6 +327,44 @@ class MdMonthPickerComponent extends MdComponent {
 
     /**
      *
+     * @param {Any} [options]
+     */
+    show(options) {
+        this.style.removeProperty("--md-comp-month-picker-animation");
+        this.index = this.defaultIndex;
+        if (this.modal) this.monthPickerScrim.show();
+        this.open = true;
+        options = {
+            container: this,
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            ...options,
+        };
+        this.popper = new Popper();
+        this.popper.show(options);
+        this.emit("onMonthPickerShown");
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-month-picker-animation");
+        this.open = false;
+        this.monthPickerScrim.close();
+        this.emit("onMonthPickerClosed");
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    toggle(options) {
+        if (this.open) this.close();
+        else this.show(options);
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -457,44 +495,6 @@ class MdMonthPickerComponent extends MdComponent {
     handleMonthPickerScrimClosed(event) {
         if (this.open) this.close();
         this.emit("onMonthPickerScrimClosed", { event });
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    show(options) {
-        this.style.removeProperty("--md-comp-month-picker-animation");
-        this.index = this.defaultIndex;
-        if (this.modal) this.monthPickerScrim.show();
-        this.open = true;
-        options = {
-            container: this,
-            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
-            ...options,
-        };
-        this.popper = new Popper();
-        this.popper.show(options);
-        this.emit("onMonthPickerShown");
-    }
-
-    /**
-     *
-     */
-    close() {
-        this.style.removeProperty("--md-comp-month-picker-animation");
-        this.open = false;
-        this.monthPickerScrim.close();
-        this.emit("onMonthPickerClosed");
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    toggle(options) {
-        if (this.open) this.close();
-        else this.show(options);
     }
 }
 customElements.define("md-month-picker", MdMonthPickerComponent);

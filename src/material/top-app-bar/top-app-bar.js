@@ -6,9 +6,9 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onTopAppBarIconButtonClick
  * @fires onTopAppBarShown
  * @fires onTopAppBarClosed
+ * @fires onTopAppBarIconButtonClick
  * @element md-top-app-bar
  */
 class MdTopAppBarComponent extends MdComponent {
@@ -97,15 +97,6 @@ class MdTopAppBarComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleTopAppBarIconButtonClick(event) {
-        this.emit("onTopAppBarIconButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -128,6 +119,15 @@ class MdTopAppBarComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTopAppBarIconButtonClick(event) {
+        this.emit("onTopAppBarIconButtonClick", { event });
     }
 }
 customElements.define("md-top-app-bar", MdTopAppBarComponent);

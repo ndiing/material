@@ -17,10 +17,10 @@ const task = (() => {
 /**
  *
  * @extends MdComponent
- * @fires onSnackbarIconButtonClick
- * @fires onSnackbarButtonClick
  * @fires onSnackbarShown
  * @fires onSnackbarClosed
+ * @fires onSnackbarIconButtonClick
+ * @fires onSnackbarButtonClick
  * @element md-snackbar
  */
 class MdSnackbarComponent extends MdComponent {
@@ -155,24 +155,6 @@ class MdSnackbarComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleSnackbarIconButtonClick(event) {
-        this.emit("onSnackbarIconButtonClick", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleSnackbarButtonClick(event) {
-        this.emit("onSnackbarButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         task(() => {
@@ -215,6 +197,24 @@ class MdSnackbarComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSnackbarIconButtonClick(event) {
+        this.emit("onSnackbarIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSnackbarButtonClick(event) {
+        this.emit("onSnackbarButtonClick", { event });
     }
 }
 customElements.define("md-snackbar", MdSnackbarComponent);

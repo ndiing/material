@@ -6,10 +6,10 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onSideSheetIconButtonClick
- * @fires onSideSheetButtonClick
  * @fires onSideSheetShown
  * @fires onSideSheetClosed
+ * @fires onSideSheetIconButtonClick
+ * @fires onSideSheetButtonClick
  * @fires onSideSheetScrimClosed
  * @element md-side-sheet
  */
@@ -171,24 +171,6 @@ class MdSideSheetComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleSideSheetIconButtonClick(event) {
-        this.emit("onSideSheetIconButtonClick", { event });
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleSideSheetButtonClick(event) {
-        this.emit("onSideSheetButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -213,6 +195,24 @@ class MdSideSheetComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSideSheetIconButtonClick(event) {
+        this.emit("onSideSheetIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleSideSheetButtonClick(event) {
+        this.emit("onSideSheetButtonClick", { event });
     }
 
     /**

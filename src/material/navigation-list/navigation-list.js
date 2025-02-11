@@ -73,6 +73,7 @@ class MdNavigationListComponent extends MdComponent {
     /**
      *
      * @private
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -82,6 +83,19 @@ class MdNavigationListComponent extends MdComponent {
         }
     }
 
+    /**
+     *
+     * @param {Any} [data]
+     */
+    singleSelect(data) {
+        this.items.forEach((item) => {
+            item.selected = item === data;
+        });
+    }
+
+    /**
+     *
+     */
     requestUpdateStore() {
         const result = this.store.get({});
         this.itemsStore = result.data;
@@ -99,16 +113,6 @@ class MdNavigationListComponent extends MdComponent {
         this.singleSelect(data);
         this.requestUpdate();
         this.emit("onNavigationListItemClick", { event });
-    }
-
-    /**
-     *
-     * @param {Any} [data]
-     */
-    singleSelect(data) {
-        this.items.forEach((item) => {
-            item.selected = item === data;
-        });
     }
 }
 customElements.define("md-navigation-list", MdNavigationListComponent);

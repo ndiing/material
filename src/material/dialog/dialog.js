@@ -7,9 +7,9 @@ import { choose } from "lit/directives/choose.js";
  *
  * @extends MdComponent
  * @fires onDialogIconButtonClick
- * @fires onDialogButtonClick
  * @fires onDialogShown
  * @fires onDialogClosed
+ * @fires onDialogButtonClick
  * @fires onDialogScrimClosed
  * @element md-dialog
  */
@@ -165,15 +165,6 @@ class MdDialogComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleDialogButtonClick(event) {
-        this.emit("onDialogButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-dialog-animation");
@@ -198,6 +189,15 @@ class MdDialogComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDialogButtonClick(event) {
+        this.emit("onDialogButtonClick", { event });
     }
 
     /**

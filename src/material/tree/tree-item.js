@@ -33,17 +33,6 @@ class MdTreeItemComponent extends MdComponent {
 
     /**
      *
-     */
-    constructor() {
-        super();
-        this.ripple = new RippleController(this, {});
-        this.actions = ["keyboard_arrow_right", "keyboard_arrow_down"];
-        this.nodeIcons = ["folder", "folder_open"];
-        this.leafIcons = ["draft", "draft"];
-    }
-
-    /**
-     *
      * @readonly
      */
     get action() {
@@ -60,6 +49,17 @@ class MdTreeItemComponent extends MdComponent {
         if (!this.leafIcons?.length) return;
         if (this.data.children?.length) return this.nodeIcons[~~this.expanded];
         else return this.leafIcons[~~this.selected];
+    }
+
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.ripple = new RippleController(this, {});
+        this.actions = ["keyboard_arrow_right", "keyboard_arrow_down"];
+        this.nodeIcons = ["folder", "folder_open"];
+        this.leafIcons = ["draft", "draft"];
     }
 
     /**

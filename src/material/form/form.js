@@ -33,6 +33,14 @@ class MdFormComponent extends MdComponent {
 
     /**
      *
+     * @readonly
+     */
+    get formNative() {
+        return this.querySelector(".md-form__native");
+    }
+
+    /**
+     *
      */
     constructor() {
         super();
@@ -106,14 +114,6 @@ class MdFormComponent extends MdComponent {
         event.preventDefault();
         new FormData(this.formNative);
         this.emit("onFormNativeSubmit", { event });
-    }
-
-    /**
-     *
-     * @readonly
-     */
-    get formNative() {
-        return this.querySelector(".md-form__native");
     }
 
     /**

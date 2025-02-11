@@ -74,7 +74,6 @@ class RippleController {
             this.container.removeAttribute("tabIndex");
             this.container.style.removeProperty("--md-comp-ripple-radius");
         }
-
         if (this.trigger) {
             this.trigger.classList.remove("md-ripple--trigger");
             this.trigger.removeEventListener("pointerenter", this.handlePointerenter);
@@ -83,7 +82,6 @@ class RippleController {
             this.trigger.removeEventListener("focus", this.handleFocus);
             this.trigger.removeEventListener("blur", this.handleBlur);
         }
-
         this.container = null;
         this.trigger = null;
     }

@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  *
  * @extends MdComponent
+ * @fires onDatePickerShown
+ * @fires onDatePickerClosed
  * @fires onDatePickerLabelClick
  * @fires onDatePickerIconButtonPrevClick
  * @fires onDatePickerIconButtonNextClick
@@ -21,8 +23,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onDatePickerButtonLabelClick
  * @fires onDatePickerButtonClick
  * @fires onDatePickerScrimClosed
- * @fires onDatePickerShown
- * @fires onDatePickerClosed
  * @element md-date-picker
  */
 class MdDatePickerComponent extends MdComponent {
@@ -418,6 +418,44 @@ class MdDatePickerComponent extends MdComponent {
 
     /**
      *
+     * @param {Any} [options]
+     */
+    show(options) {
+        this.style.removeProperty("--md-comp-date-picker-animation");
+        this.index = this.defaultIndex;
+        if (this.modal) this.datePickerScrim.show();
+        this.open = true;
+        options = {
+            container: this,
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            ...options,
+        };
+        this.popper = new Popper();
+        this.popper.show(options);
+        this.emit("onDatePickerShown");
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-date-picker-animation");
+        this.open = false;
+        this.datePickerScrim.close();
+        this.emit("onDatePickerClosed");
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    toggle(options) {
+        if (this.open) this.close();
+        else this.show(options);
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -567,44 +605,6 @@ class MdDatePickerComponent extends MdComponent {
     handleDatePickerScrimClosed(event) {
         if (this.open) this.close();
         this.emit("onDatePickerScrimClosed", { event });
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    show(options) {
-        this.style.removeProperty("--md-comp-date-picker-animation");
-        this.index = this.defaultIndex;
-        if (this.modal) this.datePickerScrim.show();
-        this.open = true;
-        options = {
-            container: this,
-            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
-            ...options,
-        };
-        this.popper = new Popper();
-        this.popper.show(options);
-        this.emit("onDatePickerShown");
-    }
-
-    /**
-     *
-     */
-    close() {
-        this.style.removeProperty("--md-comp-date-picker-animation");
-        this.open = false;
-        this.datePickerScrim.close();
-        this.emit("onDatePickerClosed");
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    toggle(options) {
-        if (this.open) this.close();
-        else this.show(options);
     }
 }
 customElements.define("md-date-picker", MdDatePickerComponent);

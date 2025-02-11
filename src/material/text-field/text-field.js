@@ -62,6 +62,33 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      *
+     * @readonly
+     */
+    get actionsAll() {
+        return []
+            .concat([
+                ...((this.error && [
+                    {
+                        component: "icon",
+                        icon: "error",
+                        classMap: { "md-text-field__icon--error": true },
+                    },
+                ]) ||
+                    []),
+            ])
+            .concat(this.actions);
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get textFieldNative() {
+        return this.querySelector(".md-text-field__native");
+    }
+
+    /**
+     *
      */
     constructor() {
         super();
@@ -121,25 +148,6 @@ class MdTextFieldComponent extends MdComponent {
             ],
             () => nothing,
         );
-    }
-
-    /**
-     *
-     * @readonly
-     */
-    get actionsAll() {
-        return []
-            .concat([
-                ...((this.error && [
-                    {
-                        component: "icon",
-                        icon: "error",
-                        classMap: { "md-text-field__icon--error": true },
-                    },
-                ]) ||
-                    []),
-            ])
-            .concat(this.actions);
     }
 
     /**
@@ -207,14 +215,6 @@ class MdTextFieldComponent extends MdComponent {
         if (changedProperties.has("label")) {
             this.classList.toggle(`md-text-field--with-label`, !!this.label);
         }
-    }
-
-    /**
-     *
-     * @readonly
-     */
-    get textFieldNative() {
-        return this.querySelector(".md-text-field__native");
     }
 
     /**

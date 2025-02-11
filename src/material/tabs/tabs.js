@@ -86,6 +86,16 @@ class MdTabsComponent extends MdComponent {
 
     /**
      *
+     * @param {Any} [data]
+     */
+    singleSelect(data) {
+        this.items.forEach((item) => {
+            item.selected = item === data;
+        });
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -95,16 +105,6 @@ class MdTabsComponent extends MdComponent {
         this.singleSelect(data);
         this.requestUpdate();
         this.emit("onTabClick", { event });
-    }
-
-    /**
-     *
-     * @param {Any} [data]
-     */
-    singleSelect(data) {
-        this.items.forEach((item) => {
-            item.selected = item === data;
-        });
     }
 
     /**

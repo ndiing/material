@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  *
  * @extends MdComponent
+ * @fires onTimePickerShown
+ * @fires onTimePickerClosed
  * @fires onTimePickerLabelClick
  * @fires onTimePickerIconButtonPrevClick
  * @fires onTimePickerIconButtonNextClick
@@ -20,8 +22,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires onTimePickerButtonLabelClick
  * @fires onTimePickerButtonClick
  * @fires onTimePickerScrimClosed
- * @fires onTimePickerShown
- * @fires onTimePickerClosed
  * @element md-time-picker
  */
 class MdTimePickerComponent extends MdComponent {
@@ -333,6 +333,44 @@ class MdTimePickerComponent extends MdComponent {
 
     /**
      *
+     * @param {Any} [options]
+     */
+    show(options) {
+        this.style.removeProperty("--md-comp-time-picker-animation");
+        this.index = this.defaultIndex;
+        if (this.modal) this.timePickerScrim.show();
+        this.open = true;
+        options = {
+            container: this,
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            ...options,
+        };
+        this.popper = new Popper();
+        this.popper.show(options);
+        this.emit("onTimePickerShown");
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-time-picker-animation");
+        this.open = false;
+        this.timePickerScrim.close();
+        this.emit("onTimePickerClosed");
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    toggle(options) {
+        if (this.open) this.close();
+        else this.show(options);
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -462,44 +500,6 @@ class MdTimePickerComponent extends MdComponent {
     handleTimePickerScrimClosed(event) {
         if (this.open) this.close();
         this.emit("onTimePickerScrimClosed", { event });
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    show(options) {
-        this.style.removeProperty("--md-comp-time-picker-animation");
-        this.index = this.defaultIndex;
-        if (this.modal) this.timePickerScrim.show();
-        this.open = true;
-        options = {
-            container: this,
-            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
-            ...options,
-        };
-        this.popper = new Popper();
-        this.popper.show(options);
-        this.emit("onTimePickerShown");
-    }
-
-    /**
-     *
-     */
-    close() {
-        this.style.removeProperty("--md-comp-time-picker-animation");
-        this.open = false;
-        this.timePickerScrim.close();
-        this.emit("onTimePickerClosed");
-    }
-
-    /**
-     *
-     * @param {Any} [options]
-     */
-    toggle(options) {
-        if (this.open) this.close();
-        else this.show(options);
     }
 }
 customElements.define("md-time-picker", MdTimePickerComponent);

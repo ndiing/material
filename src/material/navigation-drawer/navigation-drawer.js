@@ -6,9 +6,9 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires onNavigationDrawerIconButtonClick
  * @fires onNavigationDrawerShown
  * @fires onNavigationDrawerClosed
+ * @fires onNavigationDrawerIconButtonClick
  * @fires onNavigationDrawerScrimClosed
  * @fires onNavigationDrawerItemClick
  * @element md-navigation-drawer
@@ -167,15 +167,6 @@ class MdNavigationDrawerComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleNavigationDrawerIconButtonClick(event) {
-        this.emit("onNavigationDrawerIconButtonClick", { event });
-    }
-
-    /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -200,6 +191,15 @@ class MdNavigationDrawerComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleNavigationDrawerIconButtonClick(event) {
+        this.emit("onNavigationDrawerIconButtonClick", { event });
     }
 
     /**

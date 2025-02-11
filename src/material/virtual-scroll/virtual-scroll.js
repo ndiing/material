@@ -93,9 +93,7 @@ class VirtualScroll {
      */
     destroy() {
         this.host.classList.remove("md-virtual-scroll");
-
         this.host.removeEventListener("scroll", this.handleScroll);
-
         this.track = null;
         this.handleScroll = null;
     }
