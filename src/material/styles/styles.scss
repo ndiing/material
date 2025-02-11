@@ -36,3 +36,19 @@ body {
     min-height: 0;
     padding: 24px;
 }
+
+@include mixins.layout-compact(){
+    .md-layout{
+        padding: 8px;
+    }
+}
+@include mixins.layout-medium(){
+    .md-layout{
+        padding: 16px;
+    }
+}
+@include mixins.layout-expanded(){
+    .md-layout{
+        padding: 24px;
+    }
+}

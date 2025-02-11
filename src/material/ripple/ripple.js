@@ -140,7 +140,9 @@ class Ripple {
      * @param {Any} [event]
      */
     handlePointerup(event) {
+        // this.container.classList.remove("md-ripple--focus");
         this.container.classList.remove("md-ripple--press");
+        // this.container.classList.remove("md-ripple--hover");
         window.removeEventListener("pointerup", this.handlePointerup);
     }
 

@@ -116,6 +116,6 @@
 
 @include mixins.layout-compact() {
     .md-navigation-drawer {
-        width: calc(100% - 56px);
+        width: calc(100% - 40px);
     }
 }
