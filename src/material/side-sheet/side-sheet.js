@@ -133,13 +133,13 @@ class MdSideSheetComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-side-sheet");
+        this.style.setProperty("--md-comp-sheet-animation", "none");
         this.sideSheetScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.sideSheetScrim, this.nextElementSibling);
         this.handleSideSheetScrimClosed = this.handleSideSheetScrimClosed.bind(this);
         this.sideSheetScrim.addEventListener("onScrimClosed", this.handleSideSheetScrimClosed);
         if (this.modal && this.open) this.sideSheetScrim.show();
-        this.classList.add("md-side-sheet");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -153,8 +153,6 @@ class MdSideSheetComponent extends MdComponent {
         super.disconnectedCallback();
         this.sideSheetScrim.removeEventListener("onScrimClosed", this.handleSideSheetScrimClosed);
         this.sideSheetScrim.remove();
-        this.classList.remove("md-side-sheet");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
     }
 
     /**

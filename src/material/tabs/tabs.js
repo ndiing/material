@@ -90,23 +90,15 @@ class MdTabsComponent extends MdComponent {
 
     /**
      *
-     * @param {Any} [data]
-     */
-    singleSelect(data) {
-        this.items.forEach((item) => {
-            item.selected = item === data;
-        });
-    }
-
-    /**
-     *
      * @private
      * @param {Any} [event]
      */
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
         const data = event.currentTarget.data;
-        this.singleSelect(data);
+        this.items.forEach((item) => {
+            item.selected = item === data;
+        });
         this.requestUpdate();
         this.emit("onTabClick", { event });
     }

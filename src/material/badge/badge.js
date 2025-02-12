@@ -29,7 +29,7 @@ class MdBadgeComponent extends MdComponent {
      * @private
      */
     render() {
-        return this.label ? (this.label > this.max ? this.max + "+" : this.label) : nothing;
+        return this.label ? (this.label > this.max ? `${this.max}+` : this.label) : nothing;
     }
 
     /**

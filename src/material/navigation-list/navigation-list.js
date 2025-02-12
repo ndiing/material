@@ -73,7 +73,6 @@ class MdNavigationListComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-navigation-list");
         this.style.setProperty("--md-comp-navigation-list-icon-animation", "none");
-        await this.updateComplete;
         this.handleNavigationListKeydown = this.handleNavigationListKeydown.bind(this);
         window.addEventListener("keydown", this.handleNavigationListKeydown);
     }

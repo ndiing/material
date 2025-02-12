@@ -381,19 +381,19 @@ class MdWeekPickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.selection = new Date(this.value.valueOf());
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.classList.add("md-week-picker");
+        this.style.setProperty("--md-comp-week-picker-animation", "none");
         this.weekPickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.weekPickerScrim, this.nextElementSibling);
         this.handleWeekPickerScrimClosed = this.handleWeekPickerScrimClosed.bind(this);
         this.weekPickerScrim.addEventListener("onScrimClosed", this.handleWeekPickerScrimClosed);
         if (this.modal && this.open) this.weekPickerScrim.show();
-        this.classList.add("md-week-picker");
-        this.style.setProperty("--md-comp-week-picker-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-week-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-week-picker-width", this.clientWidth + "px");
-        this.selection = new Date(this.value.valueOf());
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
     }
 
     /**

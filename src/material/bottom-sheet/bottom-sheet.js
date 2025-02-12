@@ -133,13 +133,13 @@ class MdBottomSheetComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-bottom-sheet");
+        this.style.setProperty("--md-comp-sheet-animation", "none");
         this.bottomSheetScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.bottomSheetScrim, this.nextElementSibling);
         this.handleBottomSheetScrimClosed = this.handleBottomSheetScrimClosed.bind(this);
         this.bottomSheetScrim.addEventListener("onScrimClosed", this.handleBottomSheetScrimClosed);
         if (this.modal && this.open) this.bottomSheetScrim.show();
-        this.classList.add("md-bottom-sheet");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -153,8 +153,6 @@ class MdBottomSheetComponent extends MdComponent {
         super.disconnectedCallback();
         this.bottomSheetScrim.removeEventListener("onScrimClosed", this.handleBottomSheetScrimClosed);
         this.bottomSheetScrim.remove();
-        this.classList.remove("md-bottom-sheet");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
     }
 
     /**

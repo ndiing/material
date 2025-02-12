@@ -63,10 +63,10 @@ class MdRadioButtonComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-radio-button");
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
+        this.classList.add("md-radio-button");
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-radio-button__track",

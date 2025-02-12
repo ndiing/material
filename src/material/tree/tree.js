@@ -116,7 +116,7 @@ class MdTreeComponent extends MdComponent {
                 if (result.expanded) {
                     expanded = result.expanded;
                     item.expanded = expanded;
-                    this.updateItemVisibility(item);
+                    this.updateVisibility(item);
                 }
                 flatItems.push(...result.flatItems);
             }
@@ -128,11 +128,11 @@ class MdTreeComponent extends MdComponent {
      *
      * @param {Any} [data]
      */
-    updateItemVisibility(data) {
+    updateVisibility(data) {
         data.children.forEach((item) => {
             item.visible = data.expanded;
             if (!data.visible) item.visible = data.visible;
-            if (item.children?.length) this.updateItemVisibility(item);
+            if (item.children?.length) this.updateVisibility(item);
         });
     }
 
@@ -200,7 +200,7 @@ class MdTreeComponent extends MdComponent {
         const selectedItem = this.storeItems.find((item) => item.selected);
         if (selectedItem.children?.length) {
             selectedItem.expanded = true;
-            this.updateItemVisibility(selectedItem);
+            this.updateVisibility(selectedItem);
             const visibleItems = this.storeItems.filter((item) => item.visible);
             const selectedIndex = visibleItems.findIndex((item) => item.selected);
             if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
@@ -224,7 +224,7 @@ class MdTreeComponent extends MdComponent {
         const selectedItem = this.storeItems.find((item) => item.selected);
         if (selectedItem.expanded) {
             selectedItem.expanded = false;
-            this.updateItemVisibility(selectedItem);
+            this.updateVisibility(selectedItem);
             this.requestUpdate();
             this.updateScroll();
         } else if (selectedItem.parent) {
@@ -275,7 +275,7 @@ class MdTreeComponent extends MdComponent {
         const data = event.currentTarget.data;
         if (action && data.children?.length) {
             data.expanded = !data.expanded;
-            this.updateItemVisibility(data);
+            this.updateVisibility(data);
         }
         this.flatItems.forEach((item) => {
             item.selected = item === data;

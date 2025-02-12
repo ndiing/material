@@ -7,9 +7,9 @@ import { Popper } from "../popper/popper";
 /**
  *
  * @extends MdComponent
- * @fires MdTooltipComponent#onTooltipIconButtonClick
  * @fires MdTooltipComponent#onTooltipShown
  * @fires MdTooltipComponent#onTooltipClosed
+ * @fires MdTooltipComponent#onTooltipIconButtonClick
  * @fires MdTooltipComponent#onTooltipButtonClick
  * @element md-tooltip
  */
@@ -144,15 +144,6 @@ class MdTooltipComponent extends MdComponent {
 
     /**
      *
-     * @private
-     * @param {Any} [event]
-     */
-    handleTooltipIconButtonClick(event) {
-        this.emit("onTooltipIconButtonClick", { event });
-    }
-
-    /**
-     *
      * @param {Any} [options]
      */
     show(options) {
@@ -183,6 +174,15 @@ class MdTooltipComponent extends MdComponent {
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTooltipIconButtonClick(event) {
+        this.emit("onTooltipIconButtonClick", { event });
     }
 
     /**

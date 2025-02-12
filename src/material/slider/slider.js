@@ -47,10 +47,13 @@ class MdSliderComponent extends MdComponent {
      * @readonly
      */
     get indicators() {
-        if (this.variant === "centered") return 3;
-        else if (this.variant === "continuous") return 1;
-        else if (this.variant === "discrete") return this.max / this.step + 1;
-        else if (this.variant === "range-selection") return 2;
+        const lengths = {
+            centered: 3,
+            continuous: 1,
+            discrete: this.max / this.step + 1,
+            "range-selection": 2,
+        };
+        return lengths[this.variant];
     }
 
     /**
@@ -160,6 +163,25 @@ class MdSliderComponent extends MdComponent {
 
     /**
      *
+     */
+    updateValue() {
+        this.value.forEach((value, index) => {
+            this.style.setProperty(`--md-comp-slider-value${index}`, this.percentage(value));
+        });
+    }
+
+    /**
+     *
+     * @param {Any} [value]
+     * @param {Any} [min=this.min]
+     * @param {Any} [max=this.max]
+     */
+    percentage(value, min = this.min, max = this.max) {
+        return (value - min) / (max - min);
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -187,25 +209,6 @@ class MdSliderComponent extends MdComponent {
         this.updateValue();
         this.requestUpdate();
         this.emit("onSliderNativeReset", { event });
-    }
-
-    /**
-     *
-     */
-    updateValue() {
-        this.value.forEach((value, index) => {
-            this.style.setProperty(`--md-comp-slider-value${index}`, this.percentage(value));
-        });
-    }
-
-    /**
-     *
-     * @param {Any} [value]
-     * @param {Any} [min=this.min]
-     * @param {Any} [max=this.max]
-     */
-    percentage(value, min = this.min, max = this.max) {
-        return (value - min) / (max - min);
     }
 }
 customElements.define("md-slider", MdSliderComponent);

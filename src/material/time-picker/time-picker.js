@@ -290,19 +290,19 @@ class MdTimePickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.selection = new Date(this.value.valueOf());
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.classList.add("md-time-picker");
+        this.style.setProperty("--md-comp-time-picker-animation", "none");
         this.timePickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.timePickerScrim, this.nextElementSibling);
         this.handleTimePickerScrimClosed = this.handleTimePickerScrimClosed.bind(this);
         this.timePickerScrim.addEventListener("onScrimClosed", this.handleTimePickerScrimClosed);
         if (this.modal && this.open) this.timePickerScrim.show();
-        this.classList.add("md-time-picker");
-        this.style.setProperty("--md-comp-time-picker-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-time-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-time-picker-width", this.clientWidth + "px");
-        this.selection = new Date(this.value.valueOf());
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
     }
 
     /**

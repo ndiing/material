@@ -82,6 +82,29 @@ class MdFormComponent extends MdComponent {
 
     /**
      *
+     */
+    reset() {
+        this.formNative.reset();
+    }
+
+    /**
+     *
+     * @param {Any} [submitButton]
+     */
+    submit(submitButton) {
+        if (this.formNative.requestSubmit) {
+            if (submitButton) {
+                this.formNative.requestSubmit(submitButton);
+            } else {
+                this.formNative.requestSubmit();
+            }
+        } else {
+            this.formNative.submit();
+        }
+    }
+
+    /**
+     *
      * @private
      * @param {Any} [event]
      */
@@ -114,29 +137,6 @@ class MdFormComponent extends MdComponent {
         event.preventDefault();
         new FormData(this.formNative);
         this.emit("onFormNativeSubmit", { event });
-    }
-
-    /**
-     *
-     */
-    reset() {
-        this.formNative.reset();
-    }
-
-    /**
-     *
-     * @param {Any} [submitButton]
-     */
-    submit(submitButton) {
-        if (this.formNative.requestSubmit) {
-            if (submitButton) {
-                this.formNative.requestSubmit(submitButton);
-            } else {
-                this.formNative.requestSubmit();
-            }
-        } else {
-            this.formNative.submit();
-        }
     }
 }
 customElements.define("md-form", MdFormComponent);

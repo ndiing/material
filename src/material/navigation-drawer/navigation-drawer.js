@@ -128,13 +128,13 @@ class MdNavigationDrawerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-navigation-drawer");
+        this.style.setProperty("--md-comp-sheet-animation", "none");
         this.navigationDrawerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.navigationDrawerScrim, this.nextElementSibling);
         this.handleNavigationDrawerScrimClosed = this.handleNavigationDrawerScrimClosed.bind(this);
         this.navigationDrawerScrim.addEventListener("onScrimClosed", this.handleNavigationDrawerScrimClosed);
         if (this.modal && this.open) this.navigationDrawerScrim.show();
-        this.classList.add("md-navigation-drawer");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -148,8 +148,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         super.disconnectedCallback();
         this.navigationDrawerScrim.removeEventListener("onScrimClosed", this.handleNavigationDrawerScrimClosed);
         this.navigationDrawerScrim.remove();
-        this.classList.remove("md-navigation-drawer");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
     }
 
     /**

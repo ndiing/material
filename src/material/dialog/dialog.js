@@ -6,9 +6,9 @@ import { choose } from "lit/directives/choose.js";
 /**
  *
  * @extends MdComponent
- * @fires MdDialogComponent#onDialogIconButtonClick
  * @fires MdDialogComponent#onDialogShown
  * @fires MdDialogComponent#onDialogClosed
+ * @fires MdDialogComponent#onDialogIconButtonClick
  * @fires MdDialogComponent#onDialogButtonClick
  * @fires MdDialogComponent#onDialogScrimClosed
  * @element md-dialog
@@ -131,13 +131,13 @@ class MdDialogComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-dialog");
+        this.style.setProperty("--md-comp-dialog-animation", "none");
         this.dialogScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.dialogScrim, this.nextElementSibling);
         this.handleDialogScrimClosed = this.handleDialogScrimClosed.bind(this);
         this.dialogScrim.addEventListener("onScrimClosed", this.handleDialogScrimClosed);
         if (this.open) this.dialogScrim.show();
-        this.classList.add("md-dialog");
-        this.style.setProperty("--md-comp-dialog-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-dialog-width", this.clientWidth + "px");
@@ -151,16 +151,6 @@ class MdDialogComponent extends MdComponent {
         super.disconnectedCallback();
         this.dialogScrim.removeEventListener("onScrimClosed", this.handleDialogScrimClosed);
         this.dialogScrim.remove();
-        this.classList.remove("md-dialog");
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleDialogIconButtonClick(event) {
-        this.emit("onDialogIconButtonClick", { event });
     }
 
     /**
@@ -189,6 +179,15 @@ class MdDialogComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDialogIconButtonClick(event) {
+        this.emit("onDialogIconButtonClick", { event });
     }
 
     /**

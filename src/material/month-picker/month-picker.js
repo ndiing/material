@@ -284,19 +284,19 @@ class MdMonthPickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.selection = new Date(this.value.valueOf());
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.classList.add("md-month-picker");
+        this.style.setProperty("--md-comp-month-picker-animation", "none");
         this.monthPickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.monthPickerScrim, this.nextElementSibling);
         this.handleMonthPickerScrimClosed = this.handleMonthPickerScrimClosed.bind(this);
         this.monthPickerScrim.addEventListener("onScrimClosed", this.handleMonthPickerScrimClosed);
         if (this.modal && this.open) this.monthPickerScrim.show();
-        this.classList.add("md-month-picker");
-        this.style.setProperty("--md-comp-month-picker-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-month-picker-width", this.clientWidth + "px");
-        this.selection = new Date(this.value.valueOf());
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
     }
 
     /**

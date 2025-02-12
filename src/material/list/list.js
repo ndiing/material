@@ -101,24 +101,6 @@ class MdListComponent extends MdComponent {
 
     /**
      *
-     * @param {Any} [data]
-     */
-    multiSelect(data) {
-        data.selected = !data.selected;
-    }
-
-    /**
-     *
-     * @param {Any} [data]
-     */
-    singleSelect(data) {
-        this.items.forEach((item) => {
-            item.selected = item === data;
-        });
-    }
-
-    /**
-     *
      * @private
      * @param {Any} [event]
      */
@@ -127,9 +109,11 @@ class MdListComponent extends MdComponent {
         if (action) return;
         const data = event.currentTarget.data;
         if (this.type === "single-select") {
-            this.singleSelect(data);
+            this.items.forEach((item) => {
+                item.selected = item === data;
+            });
         } else {
-            this.multiSelect(data);
+            data.selected = !data.selected;
         }
         this.requestUpdate();
         this.emit("onListItemClick", { event });
@@ -142,7 +126,7 @@ class MdListComponent extends MdComponent {
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
-        this.multiSelect(data);
+        data.selected = !data.selected;
         this.requestUpdate();
         this.emit("onListItemCheckboxNativeInput", { event });
     }
@@ -154,7 +138,9 @@ class MdListComponent extends MdComponent {
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
-        this.singleSelect(data);
+        this.items.forEach((item) => {
+            item.selected = item === data;
+        });
         this.requestUpdate();
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
@@ -166,7 +152,7 @@ class MdListComponent extends MdComponent {
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
-        this.multiSelect(data);
+        data.selected = !data.selected;
         this.requestUpdate();
         this.emit("onListItemSwitchNativeInput", { event });
     }

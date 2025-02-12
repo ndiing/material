@@ -81,7 +81,6 @@ class MdIconButtonComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.classList.remove("md-icon-button");
         this.removeEventListener("click", this.handleIconButtonClick);
         if (this.ripple) this.ripple.destroy();
     }

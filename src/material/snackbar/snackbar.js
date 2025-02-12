@@ -146,15 +146,6 @@ class MdSnackbarComponent extends MdComponent {
 
     /**
      *
-     * @private
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-snackbar");
-    }
-
-    /**
-     *
      */
     show() {
         task(() => {

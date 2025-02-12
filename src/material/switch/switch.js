@@ -65,11 +65,11 @@ class MdSwitchComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-switch");
-        this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
+        this.classList.add("md-switch");
+        this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-switch__thumb",

@@ -476,19 +476,19 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
+        this.selection = new Date(this.value.valueOf());
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.classList.add("md-datetime-picker");
+        this.style.setProperty("--md-comp-datetime-picker-animation", "none");
         this.datetimePickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.datetimePickerScrim, this.nextElementSibling);
         this.handleDatetimePickerScrimClosed = this.handleDatetimePickerScrimClosed.bind(this);
         this.datetimePickerScrim.addEventListener("onScrimClosed", this.handleDatetimePickerScrimClosed);
         if (this.modal && this.open) this.datetimePickerScrim.show();
-        this.classList.add("md-datetime-picker");
-        this.style.setProperty("--md-comp-datetime-picker-animation", "none");
         await this.updateComplete;
         this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-datetime-picker-width", this.clientWidth + "px");
-        this.selection = new Date(this.value.valueOf());
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
     }
 
     /**
@@ -499,7 +499,6 @@ class MdDatetimePickerComponent extends MdComponent {
         super.disconnectedCallback();
         this.datetimePickerScrim.removeEventListener("onScrimClosed", this.handleDatetimePickerScrimClosed);
         this.datetimePickerScrim.remove();
-        this.classList.remove("md-datetime-picker");
     }
 
     /**
