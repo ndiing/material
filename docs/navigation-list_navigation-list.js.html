@@ -32,8 +32,12 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 
 /**
- *
+ * 
  * @extends MdComponent
+ * @fires onNavigationListKeydownArrowUp
+ * @fires onNavigationListKeydownArrowDown
+ * @fires onNavigationListKeydownEnter
+ * @fires onNavigationListKeydown
  * @fires onNavigationListItemClick
  * @element md-navigation-list
  */
@@ -48,17 +52,17 @@ class MdNavigationListComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
         this.items = [];
         this.store = new Store();
-        this.itemsStore = [];
+        this.storeItems = [];
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -81,7 +85,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -89,18 +93,33 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
+     * @async
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-list");
         this.style.setProperty("--md-comp-navigation-list-icon-animation", "none");
+        await this.updateComplete;
+        this.handleNavigationListKeydown = this.handleNavigationListKeydown.bind(this);
+        window.addEventListener("keydown", this.handleNavigationListKeydown);
     }
 
     /**
-     *
+     * 
      * @private
+     * @async
+     */
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        window.removeEventListener("keydown", this.handleNavigationListKeydown);
+    }
+
+    /**
+     * 
+     * @private
+     * @async
      * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
@@ -113,33 +132,103 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [data]
-     */
-    singleSelect(data) {
-        this.items.forEach((item) => {
-            item.selected = item === data;
-        });
-    }
-
-    /**
-     *
+     * 
      */
     requestUpdateStore() {
         const result = this.store.get({});
-        this.itemsStore = result.data;
+        this.storeItems = result.data;
         this.requestUpdate();
     }
 
     /**
-     *
+     * 
+     * @async
+     */
+    async updateScroll() {
+        await this.updateComplete;
+        const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
+        navigationListItemSelected.focus();
+        navigationListItemSelected.scrollIntoView({
+            block: "nearest",
+            inline: "nearest",
+            behavior: "instant",
+        });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleNavigationListKeydownArrowUp(event) {
+        event.preventDefault();
+        const selectedIndex = this.storeItems.findIndex((item) => item.selected);
+        const prevIndex = selectedIndex - 1;
+        if (prevIndex === -1) return;
+        this.storeItems.forEach((item, index) => {
+            item.selected = index === prevIndex;
+        });
+        this.requestUpdate();
+        this.updateScroll();
+        this.emit("onNavigationListKeydownArrowUp", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @async
+     * @param {Any} [event]
+     */
+    async handleNavigationListKeydownArrowDown(event) {
+        event.preventDefault();
+        const selectedIndex = this.storeItems.findIndex((item) => item.selected);
+        const nextIndex = selectedIndex + 1;
+        if (nextIndex === this.storeItems.length) return;
+        this.storeItems.forEach((item, index) => {
+            item.selected = index === nextIndex;
+        });
+        this.requestUpdate();
+        this.updateScroll();
+        this.emit("onNavigationListKeydownArrowDown", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleNavigationListKeydownEnter(event) {
+        event.preventDefault();
+        const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
+        navigationListItemSelected.click();
+        this.emit("onNavigationListKeydownEnter", { event });
+    }
+
+    /**
+     * 
+     * @private
+     * @param {Any} [event]
+     */
+    handleNavigationListKeydown(event) {
+        if (this.contains(document.activeElement)) {
+            if (event.key === "ArrowUp") return this.handleNavigationListKeydownArrowUp(event);
+            else if (event.key === "ArrowDown") return this.handleNavigationListKeydownArrowDown(event);
+            else if (event.key === "Enter") return this.handleNavigationListKeydownEnter(event);
+        }
+        this.emit("onNavigationListKeydown", { event });
+    }
+
+    /**
+     * 
      * @private
      * @param {Any} [event]
      */
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");
         const data = event.currentTarget.data;
-        this.singleSelect(data);
+        this.items.forEach((item) => {
+            item.selected = item === data;
+        });
         this.requestUpdate();
         this.emit("onNavigationListItemClick", { event });
     }
@@ -162,7 +251,7 @@ export { MdNavigationListComponent };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Feb 12 2025 03:59:58 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Feb 12 2025 07:06:24 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

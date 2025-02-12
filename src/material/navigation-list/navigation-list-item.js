@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onNavigationListItemSelected
  * @element md-navigation-list-item
@@ -32,7 +32,7 @@ class MdNavigationListItemComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -56,7 +56,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -68,7 +68,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -78,7 +78,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      * @param {Any} [changedProperties]
