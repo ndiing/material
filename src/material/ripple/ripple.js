@@ -58,17 +58,20 @@ class Ripple {
             this.radius = (this.options.radius / this.container.clientWidth) * 100;
         }
         this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
+        
         this.handlePointerenter = this.handlePointerenter.bind(this);
         this.handlePointerleave = this.handlePointerleave.bind(this);
         this.handlePointerdown = this.handlePointerdown.bind(this);
         this.handlePointerup = this.handlePointerup.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        
         this.trigger.addEventListener("pointerenter", this.handlePointerenter);
         this.trigger.addEventListener("pointerleave", this.handlePointerleave);
         this.trigger.addEventListener("pointerdown", this.handlePointerdown);
         this.trigger.addEventListener("focus", this.handleFocus);
         this.trigger.addEventListener("blur", this.handleBlur);
+        
     }
 
     /**
@@ -118,7 +121,9 @@ class Ripple {
      * @param {Any} [event]
      */
     handlePointerdown(event) {
-        window.addEventListener("pointerup", this.handlePointerup);
+        window.addEventListener("pointerup", this.handlePointerup,{passive: true});
+        window.addEventListener("touchend", this.handlePointerup,{passive: true});
+
         this.container.classList.add("md-ripple--press");
         const rect = this.container.getBoundingClientRect();
         if (!this.options.centered) {
@@ -140,10 +145,9 @@ class Ripple {
      * @param {Any} [event]
      */
     handlePointerup(event) {
-        // this.container.classList.remove("md-ripple--focus");
         this.container.classList.remove("md-ripple--press");
-        // this.container.classList.remove("md-ripple--hover");
         window.removeEventListener("pointerup", this.handlePointerup);
+        window.removeEventListener("touchend", this.handlePointerup);
     }
 
     /**
