@@ -93,20 +93,4 @@ function stringifyWeek(date) {
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
 
-/**
- *
- * @param {Any} [element]
- */
-function closestScrollableElement(element) {
-    let current = element;
-    while (current) {
-        const style = window.getComputedStyle(current);
-        const isScrollable = style.overflow === "auto" || style.overflow === "scroll" || style.overflowY === "auto" || style.overflowY === "scroll" || current.scrollHeight > current.clientHeight;
-        if (isScrollable) {
-            return current;
-        }
-        current = current.parentElement;
-    }
-    return null;
-}
-export { closestScrollableElement, parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
+export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
