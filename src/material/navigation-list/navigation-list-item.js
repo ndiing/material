@@ -6,7 +6,7 @@ import { Ripple } from "../ripple/ripple";
 /**
  * 
  * @extends MdComponent
- * @fires onNavigationListItemSelected
+ * @fires MdNavigationListItemComponent#onNavigationListItemSelected
  * @element md-navigation-list-item
  */
 class MdNavigationListItemComponent extends MdComponent {

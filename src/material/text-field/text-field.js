@@ -7,12 +7,12 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * 
  * @extends MdComponent
- * @fires onTextFieldFocus
- * @fires onTextFieldBlur
- * @fires onTextFieldInput
- * @fires onTextFieldInvalid
- * @fires onTextFieldReset
- * @fires onTextFieldIconButtonClick
+ * @fires MdTextFieldComponent#onTextFieldFocus
+ * @fires MdTextFieldComponent#onTextFieldBlur
+ * @fires MdTextFieldComponent#onTextFieldInput
+ * @fires MdTextFieldComponent#onTextFieldInvalid
+ * @fires MdTextFieldComponent#onTextFieldReset
+ * @fires MdTextFieldComponent#onTextFieldIconButtonClick
  * @element md-text-field
  */
 class MdTextFieldComponent extends MdComponent {

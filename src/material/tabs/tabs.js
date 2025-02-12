@@ -5,7 +5,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * 
  * @extends MdComponent
- * @fires onTabClick
+ * @fires MdTabsComponent#onTabClick
  * @element md-tabs
  */
 class MdTabsComponent extends MdComponent {

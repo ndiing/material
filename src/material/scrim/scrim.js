@@ -4,9 +4,9 @@ import { MdComponent } from "../component/component";
 /**
  * 
  * @extends MdComponent
- * @fires onScrimShown
- * @fires onScrimClosed
- * @fires onScrimClick
+ * @fires MdScrimComponent#onScrimShown
+ * @fires MdScrimComponent#onScrimClosed
+ * @fires MdScrimComponent#onScrimClick
  * @element md-scrim
  */
 class MdScrimComponent extends MdComponent {

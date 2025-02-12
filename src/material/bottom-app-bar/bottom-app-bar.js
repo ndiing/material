@@ -6,10 +6,10 @@ import { choose } from "lit/directives/choose.js";
 /**
  * 
  * @extends MdComponent
- * @fires onBottomAppBarShown
- * @fires onBottomAppBarClosed
- * @fires onBottomAppBarIconButtonClick
- * @fires onBottomAppBarFabClick
+ * @fires MdBottomAppBarComponent#onBottomAppBarShown
+ * @fires MdBottomAppBarComponent#onBottomAppBarClosed
+ * @fires MdBottomAppBarComponent#onBottomAppBarIconButtonClick
+ * @fires MdBottomAppBarComponent#onBottomAppBarFabClick
  * @element md-bottom-app-bar
  */
 class MdBottomAppBarComponent extends MdComponent {

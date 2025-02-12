@@ -9,19 +9,19 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * 
  * @extends MdComponent
- * @fires onTimePickerShown
- * @fires onTimePickerClosed
- * @fires onTimePickerLabelClick
- * @fires onTimePickerIconButtonPrevClick
- * @fires onTimePickerIconButtonNextClick
- * @fires onTimePickerIconButtonClick
- * @fires onTimePickerHourItemClick
- * @fires onTimePickerMinuteItemClick
- * @fires onTimePickerButtonCancelClick
- * @fires onTimePickerButtonOkClick
- * @fires onTimePickerButtonLabelClick
- * @fires onTimePickerButtonClick
- * @fires onTimePickerScrimClosed
+ * @fires MdTimePickerComponent#onTimePickerShown
+ * @fires MdTimePickerComponent#onTimePickerClosed
+ * @fires MdTimePickerComponent#onTimePickerLabelClick
+ * @fires MdTimePickerComponent#onTimePickerIconButtonPrevClick
+ * @fires MdTimePickerComponent#onTimePickerIconButtonNextClick
+ * @fires MdTimePickerComponent#onTimePickerIconButtonClick
+ * @fires MdTimePickerComponent#onTimePickerHourItemClick
+ * @fires MdTimePickerComponent#onTimePickerMinuteItemClick
+ * @fires MdTimePickerComponent#onTimePickerButtonCancelClick
+ * @fires MdTimePickerComponent#onTimePickerButtonOkClick
+ * @fires MdTimePickerComponent#onTimePickerButtonLabelClick
+ * @fires MdTimePickerComponent#onTimePickerButtonClick
+ * @fires MdTimePickerComponent#onTimePickerScrimClosed
  * @element md-time-picker
  */
 class MdTimePickerComponent extends MdComponent {

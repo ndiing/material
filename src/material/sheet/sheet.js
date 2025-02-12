@@ -6,11 +6,11 @@ import { choose } from "lit/directives/choose.js";
 /**
  * 
  * @extends MdComponent
- * @fires onSheetShown
- * @fires onSheetClosed
- * @fires onSheetIconButtonClick
- * @fires onSheetButtonClick
- * @fires onSheetScrimClosed
+ * @fires MdSheetComponent#onSheetShown
+ * @fires MdSheetComponent#onSheetClosed
+ * @fires MdSheetComponent#onSheetIconButtonClick
+ * @fires MdSheetComponent#onSheetButtonClick
+ * @fires MdSheetComponent#onSheetScrimClosed
  * @element md-sheet
  */
 class MdSheetComponent extends MdComponent {

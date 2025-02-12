@@ -9,19 +9,19 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * 
  * @extends MdComponent
- * @fires onMonthPickerShown
- * @fires onMonthPickerClosed
- * @fires onMonthPickerLabelClick
- * @fires onMonthPickerIconButtonPrevClick
- * @fires onMonthPickerIconButtonNextClick
- * @fires onMonthPickerIconButtonClick
- * @fires onMonthPickerYearItemClick
- * @fires onMonthPickerMonthItemClick
- * @fires onMonthPickerButtonCancelClick
- * @fires onMonthPickerButtonOkClick
- * @fires onMonthPickerButtonLabelClick
- * @fires onMonthPickerButtonClick
- * @fires onMonthPickerScrimClosed
+ * @fires MdMonthPickerComponent#onMonthPickerShown
+ * @fires MdMonthPickerComponent#onMonthPickerClosed
+ * @fires MdMonthPickerComponent#onMonthPickerLabelClick
+ * @fires MdMonthPickerComponent#onMonthPickerIconButtonPrevClick
+ * @fires MdMonthPickerComponent#onMonthPickerIconButtonNextClick
+ * @fires MdMonthPickerComponent#onMonthPickerIconButtonClick
+ * @fires MdMonthPickerComponent#onMonthPickerYearItemClick
+ * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonCancelClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonOkClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonClick
+ * @fires MdMonthPickerComponent#onMonthPickerScrimClosed
  * @element md-month-picker
  */
 class MdMonthPickerComponent extends MdComponent {

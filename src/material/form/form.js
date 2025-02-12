@@ -6,9 +6,9 @@ import { createRef, ref } from "lit/directives/ref.js";
 /**
  * 
  * @extends MdComponent
- * @fires onFormNativeFormdata
- * @fires onFormNativeReset
- * @fires onFormNativeSubmit
+ * @fires MdFormComponent#onFormNativeFormdata
+ * @fires MdFormComponent#onFormNativeReset
+ * @fires MdFormComponent#onFormNativeSubmit
  * @element md-form
  */
 class MdFormComponent extends MdComponent {

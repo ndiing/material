@@ -5,7 +5,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * 
  * @extends MdComponent
- * @fires onSegmentedButtonItemClick
+ * @fires MdSegmentedButtonComponent#onSegmentedButtonItemClick
  * @element md-segmented-button
  */
 class MdSegmentedButtonComponent extends MdComponent {

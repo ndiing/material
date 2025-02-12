@@ -6,9 +6,9 @@ import { choose } from "lit/directives/choose.js";
 /**
  * 
  * @extends MdComponent
- * @fires onNavigationRailShown
- * @fires onNavigationRailClosed
- * @fires onNavigationRailIconButtonClick
+ * @fires MdNavigationRailComponent#onNavigationRailShown
+ * @fires MdNavigationRailComponent#onNavigationRailClosed
+ * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick
  * @element md-navigation-rail
  */
 class MdNavigationRailComponent extends MdComponent {

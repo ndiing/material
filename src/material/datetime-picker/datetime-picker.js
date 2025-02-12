@@ -9,22 +9,22 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * 
  * @extends MdComponent
- * @fires onDatetimePickerShown
- * @fires onDatetimePickerClosed
- * @fires onDatetimePickerLabelClick
- * @fires onDatetimePickerIconButtonPrevClick
- * @fires onDatetimePickerIconButtonNextClick
- * @fires onDatetimePickerIconButtonClick
- * @fires onDatetimePickerYearItemClick
- * @fires onDatetimePickerMonthItemClick
- * @fires onDatetimePickerDayItemClick
- * @fires onDatetimePickerHourItemClick
- * @fires onDatetimePickerMinuteItemClick
- * @fires onDatetimePickerButtonCancelClick
- * @fires onDatetimePickerButtonOkClick
- * @fires onDatetimePickerButtonLabelClick
- * @fires onDatetimePickerButtonClick
- * @fires onDatetimePickerScrimClosed
+ * @fires MdDatetimePickerComponent#onDatetimePickerShown
+ * @fires MdDatetimePickerComponent#onDatetimePickerClosed
+ * @fires MdDatetimePickerComponent#onDatetimePickerLabelClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonNextClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerYearItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerMonthItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerDayItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerHourItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerMinuteItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonCancelClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonOkClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonLabelClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerScrimClosed
  * @element md-datetime-picker
  */
 class MdDatetimePickerComponent extends MdComponent {

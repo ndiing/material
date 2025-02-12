@@ -7,10 +7,10 @@ import { Popper } from "../popper/popper";
 /**
  * 
  * @extends MdComponent
- * @fires onTooltipIconButtonClick
- * @fires onTooltipShown
- * @fires onTooltipClosed
- * @fires onTooltipButtonClick
+ * @fires MdTooltipComponent#onTooltipIconButtonClick
+ * @fires MdTooltipComponent#onTooltipShown
+ * @fires MdTooltipComponent#onTooltipClosed
+ * @fires MdTooltipComponent#onTooltipButtonClick
  * @element md-tooltip
  */
 class MdTooltipComponent extends MdComponent {

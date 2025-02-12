@@ -6,8 +6,8 @@ import { Ripple } from "../ripple/ripple";
 /**
  * 
  * @extends MdComponent
- * @fires onCheckboxNativeInput
- * @fires onCheckboxNativeReset
+ * @fires MdCheckboxComponent#onCheckboxNativeInput
+ * @fires MdCheckboxComponent#onCheckboxNativeReset
  * @element md-checkbox
  */
 class MdCheckboxComponent extends MdComponent {

@@ -6,11 +6,11 @@ import { choose } from "lit/directives/choose.js";
 /**
  * 
  * @extends MdComponent
- * @fires onNavigationDrawerShown
- * @fires onNavigationDrawerClosed
- * @fires onNavigationDrawerIconButtonClick
- * @fires onNavigationDrawerScrimClosed
- * @fires onNavigationDrawerItemClick
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerShown
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerClosed
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerIconButtonClick
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerScrimClosed
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerItemClick
  * @element md-navigation-drawer
  */
 class MdNavigationDrawerComponent extends MdComponent {

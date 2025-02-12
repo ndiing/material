@@ -17,10 +17,10 @@ const task = (() => {
 /**
  * 
  * @extends MdComponent
- * @fires onSnackbarShown
- * @fires onSnackbarClosed
- * @fires onSnackbarIconButtonClick
- * @fires onSnackbarButtonClick
+ * @fires MdSnackbarComponent#onSnackbarShown
+ * @fires MdSnackbarComponent#onSnackbarClosed
+ * @fires MdSnackbarComponent#onSnackbarIconButtonClick
+ * @fires MdSnackbarComponent#onSnackbarButtonClick
  * @element md-snackbar
  */
 class MdSnackbarComponent extends MdComponent {

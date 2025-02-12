@@ -7,8 +7,8 @@ import { Popper } from "../popper/popper";
 /**
  * 
  * @extends MdComponent
- * @fires onMenuShown
- * @fires onMenuClosed
+ * @fires MdMenuComponent#onMenuShown
+ * @fires MdMenuComponent#onMenuClosed
  * @element md-menu
  */
 class MdMenuComponent extends MdComponent {

@@ -9,20 +9,20 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * 
  * @extends MdComponent
- * @fires onWeekPickerShown
- * @fires onWeekPickerClosed
- * @fires onWeekPickerLabelClick
- * @fires onWeekPickerIconButtonPrevClick
- * @fires onWeekPickerIconButtonNextClick
- * @fires onWeekPickerIconButtonClick
- * @fires onWeekPickerYearItemClick
- * @fires onWeekPickerMonthItemClick
- * @fires onWeekPickerWeekRowClick
- * @fires onWeekPickerButtonCancelClick
- * @fires onWeekPickerButtonOkClick
- * @fires onWeekPickerButtonLabelClick
- * @fires onWeekPickerButtonClick
- * @fires onWeekPickerScrimClosed
+ * @fires MdWeekPickerComponent#onWeekPickerShown
+ * @fires MdWeekPickerComponent#onWeekPickerClosed
+ * @fires MdWeekPickerComponent#onWeekPickerLabelClick
+ * @fires MdWeekPickerComponent#onWeekPickerIconButtonPrevClick
+ * @fires MdWeekPickerComponent#onWeekPickerIconButtonNextClick
+ * @fires MdWeekPickerComponent#onWeekPickerIconButtonClick
+ * @fires MdWeekPickerComponent#onWeekPickerYearItemClick
+ * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick
+ * @fires MdWeekPickerComponent#onWeekPickerWeekRowClick
+ * @fires MdWeekPickerComponent#onWeekPickerButtonCancelClick
+ * @fires MdWeekPickerComponent#onWeekPickerButtonOkClick
+ * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick
+ * @fires MdWeekPickerComponent#onWeekPickerButtonClick
+ * @fires MdWeekPickerComponent#onWeekPickerScrimClosed
  * @element md-week-picker
  */
 class MdWeekPickerComponent extends MdComponent {

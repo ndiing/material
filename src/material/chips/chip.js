@@ -5,7 +5,7 @@ import { Ripple } from "../ripple/ripple";
 /**
  * 
  * @extends MdComponent
- * @fires onChipActionClick
+ * @fires MdChipComponent#onChipActionClick
  * @element md-chip
  */
 class MdChipComponent extends MdComponent {

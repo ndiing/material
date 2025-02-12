@@ -7,13 +7,13 @@ import { closestScrollableElement } from "../util/util";
 /**
  * 
  * @extends MdComponent
- * @fires onTreeKeydownArrowDown
- * @fires onTreeKeydownArrowUp
- * @fires onTreeKeydownArrowRight
- * @fires onTreeKeydownArrowLeft
- * @fires onTreeKeydownEnter
- * @fires onTreeKeydown
- * @fires onTreeItemClick
+ * @fires MdTreeComponent#onTreeKeydownArrowDown
+ * @fires MdTreeComponent#onTreeKeydownArrowUp
+ * @fires MdTreeComponent#onTreeKeydownArrowRight
+ * @fires MdTreeComponent#onTreeKeydownArrowLeft
+ * @fires MdTreeComponent#onTreeKeydownEnter
+ * @fires MdTreeComponent#onTreeKeydown
+ * @fires MdTreeComponent#onTreeItemClick
  * @element md-tree
  */
 class MdTreeComponent extends MdComponent {

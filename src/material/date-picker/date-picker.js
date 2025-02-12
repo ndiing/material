@@ -9,20 +9,20 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * 
  * @extends MdComponent
- * @fires onDatePickerShown
- * @fires onDatePickerClosed
- * @fires onDatePickerLabelClick
- * @fires onDatePickerIconButtonPrevClick
- * @fires onDatePickerIconButtonNextClick
- * @fires onDatePickerIconButtonClick
- * @fires onDatePickerYearItemClick
- * @fires onDatePickerMonthItemClick
- * @fires onDatePickerDayItemClick
- * @fires onDatePickerButtonCancelClick
- * @fires onDatePickerButtonOkClick
- * @fires onDatePickerButtonLabelClick
- * @fires onDatePickerButtonClick
- * @fires onDatePickerScrimClosed
+ * @fires MdDatePickerComponent#onDatePickerShown
+ * @fires MdDatePickerComponent#onDatePickerClosed
+ * @fires MdDatePickerComponent#onDatePickerLabelClick
+ * @fires MdDatePickerComponent#onDatePickerIconButtonPrevClick
+ * @fires MdDatePickerComponent#onDatePickerIconButtonNextClick
+ * @fires MdDatePickerComponent#onDatePickerIconButtonClick
+ * @fires MdDatePickerComponent#onDatePickerYearItemClick
+ * @fires MdDatePickerComponent#onDatePickerMonthItemClick
+ * @fires MdDatePickerComponent#onDatePickerDayItemClick
+ * @fires MdDatePickerComponent#onDatePickerButtonCancelClick
+ * @fires MdDatePickerComponent#onDatePickerButtonOkClick
+ * @fires MdDatePickerComponent#onDatePickerButtonLabelClick
+ * @fires MdDatePickerComponent#onDatePickerButtonClick
+ * @fires MdDatePickerComponent#onDatePickerScrimClosed
  * @element md-date-picker
  */
 class MdDatePickerComponent extends MdComponent {

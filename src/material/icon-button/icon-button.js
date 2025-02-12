@@ -6,7 +6,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * 
  * @extends MdComponent
- * @fires onIconButtonClick
+ * @fires MdIconButtonComponent#onIconButtonClick
  * @element md-icon-button
  */
 class MdIconButtonComponent extends MdComponent {

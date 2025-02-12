@@ -5,10 +5,10 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * 
  * @extends MdComponent
- * @fires onListItemClick
- * @fires onListItemCheckboxNativeInput
- * @fires onListItemRadioButtonNativeInput
- * @fires onListItemSwitchNativeInput
+ * @fires MdListComponent#onListItemClick
+ * @fires MdListComponent#onListItemCheckboxNativeInput
+ * @fires MdListComponent#onListItemRadioButtonNativeInput
+ * @fires MdListComponent#onListItemSwitchNativeInput
  * @element md-list
  */
 class MdListComponent extends MdComponent {

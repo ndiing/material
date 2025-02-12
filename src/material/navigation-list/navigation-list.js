@@ -6,11 +6,11 @@ import { Store } from "../store/store";
 /**
  * 
  * @extends MdComponent
- * @fires onNavigationListKeydownArrowUp
- * @fires onNavigationListKeydownArrowDown
- * @fires onNavigationListKeydownEnter
- * @fires onNavigationListKeydown
- * @fires onNavigationListItemClick
+ * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp
+ * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown
+ * @fires MdNavigationListComponent#onNavigationListKeydownEnter
+ * @fires MdNavigationListComponent#onNavigationListKeydown
+ * @fires MdNavigationListComponent#onNavigationListItemClick
  * @element md-navigation-list
  */
 class MdNavigationListComponent extends MdComponent {

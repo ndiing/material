@@ -6,8 +6,8 @@ import { choose } from "lit/directives/choose.js";
 /**
  * 
  * @extends MdComponent
- * @fires onNavigationBarShown
- * @fires onNavigationBarClosed
+ * @fires MdNavigationBarComponent#onNavigationBarShown
+ * @fires MdNavigationBarComponent#onNavigationBarClosed
  * @element md-navigation-bar
  */
 class MdNavigationBarComponent extends MdComponent {

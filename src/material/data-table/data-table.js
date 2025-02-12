@@ -7,12 +7,12 @@ import { Store } from "../store/store";
 /**
  * 
  * @extends MdComponent
- * @fires onDataTableKeydown
- * @fires onDataTableHeaderCellClick
- * @fires onDataTableBodyCellClick
- * @fires onDataTableHeaderCheckboxClick
- * @fires onDataTableBodyClick
- * @fires onDataTableBodyCheckboxClick
+ * @fires MdDataTableComponent#onDataTableKeydown
+ * @fires MdDataTableComponent#onDataTableHeaderCellClick
+ * @fires MdDataTableComponent#onDataTableBodyCellClick
+ * @fires MdDataTableComponent#onDataTableHeaderCheckboxClick
+ * @fires MdDataTableComponent#onDataTableBodyClick
+ * @fires MdDataTableComponent#onDataTableBodyCheckboxClick
  * @element md-data-table
  */
 class MdDataTableComponent extends MdComponent {
