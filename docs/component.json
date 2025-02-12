@@ -1,0 +1,236 @@
+[
+    {
+        "comment": "/**\n *\n * @extends LitElement\n */",
+        "meta": {
+            "range": [
+                69,
+                497
+            ],
+            "filename": "component.js",
+            "lineno": 7,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000006",
+                "name": "MdComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "LitElement"
+        ],
+        "name": "MdComponent",
+        "longname": "MdComponent",
+        "kind": "class",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     *\n     * @private\n     */",
+        "meta": {
+            "range": [
+                151,
+                198
+            ],
+            "filename": "component.js",
+            "lineno": 12,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000010",
+                "name": "MdComponent#createRenderRoot",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "createRenderRoot",
+        "longname": "MdComponent#createRenderRoot",
+        "kind": "function",
+        "memberof": "MdComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     *\n     * @private\n     * @param {Any} [type]\n     * @param {Any} [detail]\n     */",
+        "meta": {
+            "range": [
+                299,
+                495
+            ],
+            "filename": "component.js",
+            "lineno": 22,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdComponent#emit",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "type",
+                    "detail"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "type"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "detail"
+            }
+        ],
+        "name": "emit",
+        "longname": "MdComponent#emit",
+        "kind": "function",
+        "memberof": "MdComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                334,
+                453
+            ],
+            "filename": "component.js",
+            "lineno": 23,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000023",
+                "name": "event",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "<anonymous>~event",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                378,
+                391
+            ],
+            "filename": "component.js",
+            "lineno": 24,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000029",
+                "name": "bubbles",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "bubbles",
+        "longname": "bubbles",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                405,
+                421
+            ],
+            "filename": "component.js",
+            "lineno": 25,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000031",
+                "name": "cancelable",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "cancelable",
+        "longname": "cancelable",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                435,
+                441
+            ],
+            "filename": "component.js",
+            "lineno": 26,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000033",
+                "name": "detail",
+                "type": "Identifier",
+                "value": "detail"
+            }
+        },
+        "undocumented": true,
+        "name": "detail",
+        "longname": "detail",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                507,
+                518
+            ],
+            "filename": "component.js",
+            "lineno": 31,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
+            "code": {
+                "id": "astnode100000042",
+                "name": "exports.MdComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdComponent",
+        "longname": "MdComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component\\component.js"
+        ]
+    }
+]

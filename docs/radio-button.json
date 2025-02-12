@@ -1,0 +1,969 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdRadioButtonComponent#onRadioButtonNativeInput\r\n * @fires MdRadioButtonComponent#onRadioButtonNativeReset\r\n * @element md-radio-button\r\n */",
+        "meta": {
+            "range": [
+                385,
+                3194
+            ],
+            "filename": "radio-button.js",
+            "lineno": 13,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdRadioButtonComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "fires": [
+            "MdRadioButtonComponent#event:onRadioButtonNativeInput",
+            "MdRadioButtonComponent#event:onRadioButtonNativeReset"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-radio-button",
+                "value": "md-radio-button"
+            }
+        ],
+        "name": "MdRadioButtonComponent",
+        "longname": "MdRadioButtonComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {String} [name] \r\n     * @property {String} [value] \r\n     * @property {Boolean} [indeterminate] \r\n     * @property {Boolean} [checked] \r\n     */",
+        "meta": {
+            "range": [
+                614,
+                790
+            ],
+            "filename": "radio-button.js",
+            "lineno": 20,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "value"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "indeterminate"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "checked"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdRadioButtonComponent#properties",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                645,
+                667
+            ],
+            "filename": "radio-button.js",
+            "lineno": 21,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000026",
+                "name": "name",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "name",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                653,
+                665
+            ],
+            "filename": "radio-button.js",
+            "lineno": 21,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "name.type",
+        "kind": "member",
+        "memberof": "name",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                678,
+                701
+            ],
+            "filename": "radio-button.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000030",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                687,
+                699
+            ],
+            "filename": "radio-button.js",
+            "lineno": 22,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "value.type",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                712,
+                744
+            ],
+            "filename": "radio-button.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000034",
+                "name": "indeterminate",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "indeterminate",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                729,
+                742
+            ],
+            "filename": "radio-button.js",
+            "lineno": 23,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "indeterminate.type",
+        "kind": "member",
+        "memberof": "indeterminate",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                755,
+                781
+            ],
+            "filename": "radio-button.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000038",
+                "name": "checked",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "checked",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                766,
+                779
+            ],
+            "filename": "radio-button.js",
+            "lineno": 24,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "checked.type",
+        "kind": "member",
+        "memberof": "checked",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [
+                825,
+                865
+            ],
+            "filename": "radio-button.js",
+            "lineno": 30,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000042",
+                "name": "MdRadioButtonComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdRadioButtonComponent",
+        "longname": "MdRadioButtonComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdRadioButtonComponent#onRadioButtonNativeInput\r\n * @fires MdRadioButtonComponent#onRadioButtonNativeReset\r\n * @element md-radio-button\r\n */",
+        "meta": {
+            "range": [
+                385,
+                3194
+            ],
+            "filename": "radio-button.js",
+            "lineno": 13,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdRadioButtonComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdRadioButtonComponent",
+        "longname": "MdRadioButtonComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "fires": [
+            "MdRadioButtonComponent#event:onRadioButtonNativeInput",
+            "MdRadioButtonComponent#event:onRadioButtonNativeReset"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-radio-button",
+                "value": "md-radio-button"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                917,
+                1776
+            ],
+            "filename": "radio-button.js",
+            "lineno": 38,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000049",
+                "name": "MdRadioButtonComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdRadioButtonComponent#render",
+        "kind": "function",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [
+                1843,
+                2351
+            ],
+            "filename": "radio-button.js",
+            "lineno": 64,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000108",
+                "name": "MdRadioButtonComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdRadioButtonComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1964,
+                1994
+            ],
+            "filename": "radio-button.js",
+            "lineno": 67,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000126",
+                "name": "this.defaultValue",
+                "type": "MemberExpression",
+                "value": "this.value",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdRadioButtonComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2005,
+                2051
+            ],
+            "filename": "radio-button.js",
+            "lineno": 68,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000134",
+                "name": "this.defaultIndeterminate",
+                "type": "MemberExpression",
+                "value": "this.indeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultIndeterminate",
+        "longname": "MdRadioButtonComponent#defaultIndeterminate",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2062,
+                2096
+            ],
+            "filename": "radio-button.js",
+            "lineno": 69,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000142",
+                "name": "this.defaultChecked",
+                "type": "MemberExpression",
+                "value": "this.checked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultChecked",
+        "longname": "MdRadioButtonComponent#defaultChecked",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2143,
+                2343
+            ],
+            "filename": "radio-button.js",
+            "lineno": 71,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000155",
+                "name": "this.ripple",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "ripple",
+        "longname": "MdRadioButtonComponent#ripple",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2189,
+                2225
+            ],
+            "filename": "radio-button.js",
+            "lineno": 72,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000163",
+                "name": "container",
+                "type": "Literal",
+                "value": ".md-radio-button__track"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "container",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2240,
+                2275
+            ],
+            "filename": "radio-button.js",
+            "lineno": 73,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000165",
+                "name": "trigger",
+                "type": "Literal",
+                "value": ".md-radio-button__native"
+            }
+        },
+        "undocumented": true,
+        "name": "trigger",
+        "longname": "trigger",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2290,
+                2305
+            ],
+            "filename": "radio-button.js",
+            "lineno": 74,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000167",
+                "name": "unbounded",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "unbounded",
+        "longname": "unbounded",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2320,
+                2330
+            ],
+            "filename": "radio-button.js",
+            "lineno": 75,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000169",
+                "name": "radius",
+                "type": "Literal",
+                "value": 40
+            }
+        },
+        "undocumented": true,
+        "name": "radius",
+        "longname": "radius",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [
+                2418,
+                2543
+            ],
+            "filename": "radio-button.js",
+            "lineno": 84,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000171",
+                "name": "MdRadioButtonComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "disconnectedCallback",
+        "longname": "MdRadioButtonComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                2624,
+                2864
+            ],
+            "filename": "radio-button.js",
+            "lineno": 94,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000191",
+                "name": "MdRadioButtonComponent#handleRadioButtonNativeInput",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleRadioButtonNativeInput",
+        "longname": "MdRadioButtonComponent#handleRadioButtonNativeInput",
+        "kind": "function",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2677,
+                2705
+            ],
+            "filename": "radio-button.js",
+            "lineno": 95,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000197",
+                "name": "native",
+                "type": "MemberExpression",
+                "value": "event.currentTarget"
+            }
+        },
+        "undocumented": true,
+        "name": "native",
+        "longname": "<anonymous>~native",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2716,
+                2757
+            ],
+            "filename": "radio-button.js",
+            "lineno": 96,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000203",
+                "name": "this.indeterminate",
+                "type": "MemberExpression",
+                "value": "native.indeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "MdRadioButtonComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2768,
+                2797
+            ],
+            "filename": "radio-button.js",
+            "lineno": 97,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000211",
+                "name": "this.checked",
+                "type": "MemberExpression",
+                "value": "native.checked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "MdRadioButtonComponent#checked",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2848,
+                2853
+            ],
+            "filename": "radio-button.js",
+            "lineno": 98,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000225",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                2945,
+                3191
+            ],
+            "filename": "radio-button.js",
+            "lineno": 106,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000227",
+                "name": "MdRadioButtonComponent#handleRadioButtonNativeReset",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleRadioButtonNativeReset",
+        "longname": "MdRadioButtonComponent#handleRadioButtonNativeReset",
+        "kind": "function",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2992,
+                3022
+            ],
+            "filename": "radio-button.js",
+            "lineno": 107,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000233",
+                "name": "this.value",
+                "type": "MemberExpression",
+                "value": "this.defaultValue",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdRadioButtonComponent#value",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3033,
+                3079
+            ],
+            "filename": "radio-button.js",
+            "lineno": 108,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000241",
+                "name": "this.indeterminate",
+                "type": "MemberExpression",
+                "value": "this.defaultIndeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "MdRadioButtonComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3090,
+                3124
+            ],
+            "filename": "radio-button.js",
+            "lineno": 109,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000249",
+                "name": "this.checked",
+                "type": "MemberExpression",
+                "value": "this.defaultChecked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "MdRadioButtonComponent#checked",
+        "kind": "member",
+        "memberof": "MdRadioButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3175,
+                3180
+            ],
+            "filename": "radio-button.js",
+            "lineno": 110,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000263",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3272,
+                3294
+            ],
+            "filename": "radio-button.js",
+            "lineno": 114,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button",
+            "code": {
+                "id": "astnode100000273",
+                "name": "exports.MdRadioButtonComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdRadioButtonComponent",
+        "longname": "MdRadioButtonComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button\\radio-button.js"
+        ]
+    }
+]

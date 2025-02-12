@@ -1,0 +1,354 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-badge\r\n */",
+        "meta": {
+            "range": [
+                157,
+                813
+            ],
+            "filename": "badge.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdBadgeComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-badge",
+                "value": "md-badge"
+            }
+        ],
+        "name": "MdBadgeComponent",
+        "longname": "MdBadgeComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Number} [label] \r\n     * @property {Number} [max] \r\n     */",
+        "meta": {
+            "range": [
+                295,
+                390
+            ],
+            "filename": "badge.js",
+            "lineno": 14,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000016",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "optional": true,
+                "name": "max"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdBadgeComponent#properties",
+        "kind": "member",
+        "memberof": "MdBadgeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                326,
+                349
+            ],
+            "filename": "badge.js",
+            "lineno": 15,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000018",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                335,
+                347
+            ],
+            "filename": "badge.js",
+            "lineno": 15,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000020",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                360,
+                381
+            ],
+            "filename": "badge.js",
+            "lineno": 16,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000022",
+                "name": "max",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "max",
+        "longname": "max",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                367,
+                379
+            ],
+            "filename": "badge.js",
+            "lineno": 16,
+            "columnno": 15,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000024",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "max.type",
+        "kind": "member",
+        "memberof": "max",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [
+                425,
+                490
+            ],
+            "filename": "badge.js",
+            "lineno": 22,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000026",
+                "name": "MdBadgeComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdBadgeComponent",
+        "longname": "MdBadgeComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-badge\r\n */",
+        "meta": {
+            "range": [
+                157,
+                813
+            ],
+            "filename": "badge.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdBadgeComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdBadgeComponent",
+        "longname": "MdBadgeComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-badge",
+                "value": "md-badge"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                468,
+                482
+            ],
+            "filename": "badge.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000034",
+                "name": "this.max",
+                "type": "Literal",
+                "value": 999,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "max",
+        "longname": "MdBadgeComponent#max",
+        "kind": "member",
+        "memberof": "MdBadgeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                542,
+                653
+            ],
+            "filename": "badge.js",
+            "lineno": 31,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000039",
+                "name": "MdBadgeComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdBadgeComponent#render",
+        "kind": "function",
+        "memberof": "MdBadgeComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                705,
+                810
+            ],
+            "filename": "badge.js",
+            "lineno": 39,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000065",
+                "name": "MdBadgeComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdBadgeComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdBadgeComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                878,
+                894
+            ],
+            "filename": "badge.js",
+            "lineno": 45,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
+            "code": {
+                "id": "astnode100000090",
+                "name": "exports.MdBadgeComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdBadgeComponent",
+        "longname": "MdBadgeComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge\\badge.js"
+        ]
+    }
+]

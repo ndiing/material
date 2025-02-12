@@ -1,0 +1,666 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-progress-indicator\r\n */",
+        "meta": {
+            "range": [
+                170,
+                3673
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdProgressIndicatorComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-progress-indicator",
+                "value": "md-progress-indicator"
+            }
+        ],
+        "name": "MdProgressIndicatorComponent",
+        "longname": "MdProgressIndicatorComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {String} [variant] - [\"circular\"]\r\n     * @property {Number} [max] \r\n     * @property {Number} [value] \r\n     */",
+        "meta": {
+            "range": [
+                372,
+                503
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 15,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000016",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "description": "[\"circular\"]",
+                "name": "variant"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "optional": true,
+                "name": "max"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "optional": true,
+                "name": "value"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdProgressIndicatorComponent#properties",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                403,
+                428
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 16,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000018",
+                "name": "variant",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "variant",
+        "longname": "variant",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                414,
+                426
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 16,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000020",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "variant.type",
+        "kind": "member",
+        "memberof": "variant",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                439,
+                460
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 17,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000022",
+                "name": "max",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "max",
+        "longname": "max",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                446,
+                458
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 17,
+            "columnno": 15,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000024",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "max.type",
+        "kind": "member",
+        "memberof": "max",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                471,
+                494
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 18,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000026",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                480,
+                492
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 18,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "value.type",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                547,
+                571
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 24,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000030",
+                "name": "variants",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "variants",
+        "longname": "MdProgressIndicatorComponent#variants",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [
+                606,
+                696
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 29,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000033",
+                "name": "MdProgressIndicatorComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdProgressIndicatorComponent",
+        "longname": "MdProgressIndicatorComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-progress-indicator\r\n */",
+        "meta": {
+            "range": [
+                170,
+                3673
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdProgressIndicatorComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdProgressIndicatorComponent",
+        "longname": "MdProgressIndicatorComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-progress-indicator",
+                "value": "md-progress-indicator"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                649,
+                663
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 31,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000041",
+                "name": "this.max",
+                "type": "Literal",
+                "value": 100,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "max",
+        "longname": "MdProgressIndicatorComponent#max",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                674,
+                688
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 32,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000047",
+                "name": "this.value",
+                "type": "Literal",
+                "value": 0,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdProgressIndicatorComponent#value",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                748,
+                1000
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 39,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000052",
+                "name": "MdProgressIndicatorComponent#renderProgressIndicatorNative",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderProgressIndicatorNative",
+        "longname": "MdProgressIndicatorComponent#renderProgressIndicatorNative",
+        "kind": "function",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                1052,
+                2882
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 53,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000069",
+                "name": "MdProgressIndicatorComponent#renderProgressIndicatorCircular",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderProgressIndicatorCircular",
+        "longname": "MdProgressIndicatorComponent#renderProgressIndicatorCircular",
+        "kind": "function",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1097,
+                1127
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 54,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000074",
+                "name": "this.r",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "r",
+        "longname": "MdProgressIndicatorComponent#r",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1138,
+                1171
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 55,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000086",
+                "name": "this.strokeWidth",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "strokeWidth",
+        "longname": "MdProgressIndicatorComponent#strokeWidth",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1182,
+                1225
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 56,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000096",
+                "name": "this.strokeDasharray",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "strokeDasharray",
+        "longname": "MdProgressIndicatorComponent#strokeDasharray",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1236,
+                1305
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 57,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000110",
+                "name": "this.strokeDashoffset",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "strokeDashoffset",
+        "longname": "MdProgressIndicatorComponent#strokeDashoffset",
+        "kind": "member",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                2934,
+                3099
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 102,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000158",
+                "name": "MdProgressIndicatorComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdProgressIndicatorComponent#render",
+        "kind": "function",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                3151,
+                3269
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 111,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000178",
+                "name": "MdProgressIndicatorComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdProgressIndicatorComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [
+                3362,
+                3670
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 121,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000195",
+                "name": "MdProgressIndicatorComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdProgressIndicatorComponent#updated",
+        "kind": "function",
+        "memberof": "MdProgressIndicatorComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3763,
+                3791
+            ],
+            "filename": "progress-indicator.js",
+            "lineno": 131,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
+            "code": {
+                "id": "astnode100000247",
+                "name": "exports.MdProgressIndicatorComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdProgressIndicatorComponent",
+        "longname": "MdProgressIndicatorComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator\\progress-indicator.js"
+        ]
+    }
+]

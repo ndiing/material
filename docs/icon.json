@@ -1,0 +1,95 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-icon\r\n */",
+        "meta": {
+            "range": [
+                156,
+                358
+            ],
+            "filename": "icon.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdIconComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-icon",
+                "value": "md-icon"
+            }
+        ],
+        "name": "MdIconComponent",
+        "longname": "MdIconComponent",
+        "kind": "class",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                251,
+                355
+            ],
+            "filename": "icon.js",
+            "lineno": 15,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdIconComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdIconComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdIconComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                421,
+                436
+            ],
+            "filename": "icon.js",
+            "lineno": 21,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon",
+            "code": {
+                "id": "astnode100000041",
+                "name": "exports.MdIconComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdIconComponent",
+        "longname": "MdIconComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon\\icon.js"
+        ]
+    }
+]

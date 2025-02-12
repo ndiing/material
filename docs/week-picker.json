@@ -1,0 +1,4522 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdWeekPickerComponent#onWeekPickerShown\r\n * @fires MdWeekPickerComponent#onWeekPickerClosed\r\n * @fires MdWeekPickerComponent#onWeekPickerLabelClick\r\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonPrevClick\r\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonNextClick\r\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonClick\r\n * @fires MdWeekPickerComponent#onWeekPickerYearItemClick\r\n * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick\r\n * @fires MdWeekPickerComponent#onWeekPickerWeekRowClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonCancelClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonOkClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonClick\r\n * @fires MdWeekPickerComponent#onWeekPickerScrimClosed\r\n * @element md-week-picker\r\n */",
+        "meta": {
+            "range": [
+                1258,
+                20788
+            ],
+            "filename": "week-picker.js",
+            "lineno": 28,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000034",
+                "name": "MdWeekPickerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "fires": [
+            "MdWeekPickerComponent#event:onWeekPickerShown",
+            "MdWeekPickerComponent#event:onWeekPickerClosed",
+            "MdWeekPickerComponent#event:onWeekPickerLabelClick",
+            "MdWeekPickerComponent#event:onWeekPickerIconButtonPrevClick",
+            "MdWeekPickerComponent#event:onWeekPickerIconButtonNextClick",
+            "MdWeekPickerComponent#event:onWeekPickerIconButtonClick",
+            "MdWeekPickerComponent#event:onWeekPickerYearItemClick",
+            "MdWeekPickerComponent#event:onWeekPickerMonthItemClick",
+            "MdWeekPickerComponent#event:onWeekPickerWeekRowClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonCancelClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonOkClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonLabelClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonClick",
+            "MdWeekPickerComponent#event:onWeekPickerScrimClosed"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-week-picker",
+                "value": "md-week-picker"
+            }
+        ],
+        "name": "MdWeekPickerComponent",
+        "longname": "MdWeekPickerComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [icons] \r\n     * @property {Array} [actions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [buttons] \r\n     * @property {Boolean} [open] \r\n     * @property {Boolean} [modal] \r\n     * @property {Number} [index] \r\n     * @property {Any} [value] \r\n     */",
+        "meta": {
+            "range": [
+                1657,
+                2286
+            ],
+            "filename": "week-picker.js",
+            "lineno": 40,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000038",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "buttons"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "open"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "modal"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "optional": true,
+                "name": "index"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "value"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdWeekPickerComponent#properties",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1688,
+                1710
+            ],
+            "filename": "week-picker.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000040",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1697,
+                1708
+            ],
+            "filename": "week-picker.js",
+            "lineno": 41,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000042",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1721,
+                1745
+            ],
+            "filename": "week-picker.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000044",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1732,
+                1743
+            ],
+            "filename": "week-picker.js",
+            "lineno": 42,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000046",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1756,
+                1779
+            ],
+            "filename": "week-picker.js",
+            "lineno": 43,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000048",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1765,
+                1777
+            ],
+            "filename": "week-picker.js",
+            "lineno": 43,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000050",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1790,
+                1816
+            ],
+            "filename": "week-picker.js",
+            "lineno": 44,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000052",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1802,
+                1814
+            ],
+            "filename": "week-picker.js",
+            "lineno": 44,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000054",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1827,
+                1851
+            ],
+            "filename": "week-picker.js",
+            "lineno": 45,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000056",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1838,
+                1849
+            ],
+            "filename": "week-picker.js",
+            "lineno": 45,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000058",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1862,
+                1900
+            ],
+            "filename": "week-picker.js",
+            "lineno": 46,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000060",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1870,
+                1883
+            ],
+            "filename": "week-picker.js",
+            "lineno": 46,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000062",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1885,
+                1898
+            ],
+            "filename": "week-picker.js",
+            "lineno": 46,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000064",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1911,
+                1935
+            ],
+            "filename": "week-picker.js",
+            "lineno": 47,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000066",
+                "name": "modal",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "modal",
+        "longname": "modal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1920,
+                1933
+            ],
+            "filename": "week-picker.js",
+            "lineno": 47,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000068",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "modal.type",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1946,
+                1969
+            ],
+            "filename": "week-picker.js",
+            "lineno": 48,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000070",
+                "name": "index",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "index",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1955,
+                1967
+            ],
+            "filename": "week-picker.js",
+            "lineno": 48,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000072",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "index.type",
+        "kind": "member",
+        "memberof": "index",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1980,
+                2277
+            ],
+            "filename": "week-picker.js",
+            "lineno": 49,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000074",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"converter\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2002,
+                2265
+            ],
+            "filename": "week-picker.js",
+            "lineno": 50,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000076",
+                "name": "converter",
+                "type": "ObjectExpression",
+                "value": "{\"fromAttribute\":\"\",\"toAttribute\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "converter",
+        "longname": "value.converter",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2032,
+                2130
+            ],
+            "filename": "week-picker.js",
+            "lineno": 51,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000078",
+                "name": "fromAttribute",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "fromAttribute",
+        "longname": "value.converter.fromAttribute",
+        "kind": "function",
+        "memberof": "value.converter",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2149,
+                2249
+            ],
+            "filename": "week-picker.js",
+            "lineno": 54,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000087",
+                "name": "toAttribute",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "toAttribute",
+        "longname": "value.converter.toAttribute",
+        "kind": "function",
+        "memberof": "value.converter",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                2339,
+                2456
+            ],
+            "filename": "week-picker.js",
+            "lineno": 65,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000096",
+                "name": "MdWeekPickerComponent#startOfDay",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "startOfDay",
+        "longname": "MdWeekPickerComponent#startOfDay",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                2509,
+                3023
+            ],
+            "filename": "week-picker.js",
+            "lineno": 73,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000118",
+                "name": "MdWeekPickerComponent#years",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "years",
+        "longname": "MdWeekPickerComponent#years",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2536,
+                2571
+            ],
+            "filename": "week-picker.js",
+            "lineno": 74,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000123",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "<anonymous>~year",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2582,
+                2615
+            ],
+            "filename": "week-picker.js",
+            "lineno": 75,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000132",
+                "name": "year",
+                "type": "BinaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "<anonymous>~year",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2646,
+                2656
+            ],
+            "filename": "week-picker.js",
+            "lineno": 76,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000149",
+                "name": "length",
+                "type": "Literal",
+                "value": 10
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2691,
+                2719
+            ],
+            "filename": "week-picker.js",
+            "lineno": 77,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000156",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2760,
+                2784
+            ],
+            "filename": "week-picker.js",
+            "lineno": 79,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000166",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2803,
+                2831
+            ],
+            "filename": "week-picker.js",
+            "lineno": 80,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000171",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2850,
+                2907
+            ],
+            "filename": "week-picker.js",
+            "lineno": 81,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000177",
+                "name": "selected",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2926,
+                2986
+            ],
+            "filename": "week-picker.js",
+            "lineno": 82,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000189",
+                "name": "activated",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                3076,
+                3651
+            ],
+            "filename": "week-picker.js",
+            "lineno": 91,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000201",
+                "name": "MdWeekPickerComponent#months",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "months",
+        "longname": "MdWeekPickerComponent#months",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3120,
+                3130
+            ],
+            "filename": "week-picker.js",
+            "lineno": 92,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000211",
+                "name": "length",
+                "type": "Literal",
+                "value": 12
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3165,
+                3213
+            ],
+            "filename": "week-picker.js",
+            "lineno": 93,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000218",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3254,
+                3278
+            ],
+            "filename": "week-picker.js",
+            "lineno": 95,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000231",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3297,
+                3319
+            ],
+            "filename": "week-picker.js",
+            "lineno": 96,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000236",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3338,
+                3367
+            ],
+            "filename": "week-picker.js",
+            "lineno": 97,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000241",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3386,
+                3488
+            ],
+            "filename": "week-picker.js",
+            "lineno": 98,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000247",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3507,
+                3614
+            ],
+            "filename": "week-picker.js",
+            "lineno": 99,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000271",
+                "name": "activated",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                3704,
+                3931
+            ],
+            "filename": "week-picker.js",
+            "lineno": 108,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000295",
+                "name": "MdWeekPickerComponent#weekdays",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "weekdays",
+        "longname": "MdWeekPickerComponent#weekdays",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3750,
+                3759
+            ],
+            "filename": "week-picker.js",
+            "lineno": 109,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000305",
+                "name": "length",
+                "type": "Literal",
+                "value": 7
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3794,
+                3822
+            ],
+            "filename": "week-picker.js",
+            "lineno": 110,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000312",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3863,
+                3894
+            ],
+            "filename": "week-picker.js",
+            "lineno": 112,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000323",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                3984,
+                5169
+            ],
+            "filename": "week-picker.js",
+            "lineno": 121,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000329",
+                "name": "MdWeekPickerComponent#days",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "days",
+        "longname": "MdWeekPickerComponent#days",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4026,
+                4035
+            ],
+            "filename": "week-picker.js",
+            "lineno": 122,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000339",
+                "name": "length",
+                "type": "Literal",
+                "value": 6
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4070,
+                4183
+            ],
+            "filename": "week-picker.js",
+            "lineno": 123,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000346",
+                "name": "weekDate",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "weekDate",
+        "longname": "<anonymous>~weekDate",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4204,
+                4689
+            ],
+            "filename": "week-picker.js",
+            "lineno": 124,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000376",
+                "name": "children",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "children",
+        "longname": "<anonymous>~children",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4228,
+                4237
+            ],
+            "filename": "week-picker.js",
+            "lineno": 124,
+            "columnno": 42,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000383",
+                "name": "length",
+                "type": "Literal",
+                "value": 7
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4278,
+                4388
+            ],
+            "filename": "week-picker.js",
+            "lineno": 125,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000390",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4437,
+                4464
+            ],
+            "filename": "week-picker.js",
+            "lineno": 127,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000421",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4487,
+                4600
+            ],
+            "filename": "week-picker.js",
+            "lineno": 128,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000427",
+                "name": "isSameMonth",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "isSameMonth",
+        "longname": "isSameMonth",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4623,
+                4652
+            ],
+            "filename": "week-picker.js",
+            "lineno": 129,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000451",
+                "name": "isSunday",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "isSunday",
+        "longname": "isSunday",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4730,
+                4758
+            ],
+            "filename": "week-picker.js",
+            "lineno": 133,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000460",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4777,
+                4803
+            ],
+            "filename": "week-picker.js",
+            "lineno": 134,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000465",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4822,
+                4846
+            ],
+            "filename": "week-picker.js",
+            "lineno": 135,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000470",
+                "name": "week",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "week",
+        "longname": "week",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4865,
+                4973
+            ],
+            "filename": "week-picker.js",
+            "lineno": 136,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000475",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4992,
+                5105
+            ],
+            "filename": "week-picker.js",
+            "lineno": 137,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000499",
+                "name": "activated",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5124,
+                5132
+            ],
+            "filename": "week-picker.js",
+            "lineno": 138,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000523",
+                "name": "children",
+                "type": "Identifier",
+                "value": "children"
+            }
+        },
+        "undocumented": true,
+        "name": "children",
+        "longname": "children",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [
+                5222,
+                5562
+            ],
+            "filename": "week-picker.js",
+            "lineno": 147,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000525",
+                "name": "MdWeekPickerComponent#icons",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "icons",
+        "longname": "MdWeekPickerComponent#icons",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5251,
+                5472
+            ],
+            "filename": "week-picker.js",
+            "lineno": 148,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000530",
+                "name": "map",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "map",
+        "longname": "<anonymous>~map",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5272,
+                5355
+            ],
+            "filename": "week-picker.js",
+            "lineno": 149,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000533",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "0",
+        "longname": "<anonymous>~map.0",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5370,
+                5407
+            ],
+            "filename": "week-picker.js",
+            "lineno": 150,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000560",
+                "name": 1,
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "1",
+        "longname": "<anonymous>~map.1",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5422,
+                5460
+            ],
+            "filename": "week-picker.js",
+            "lineno": 151,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000568",
+                "name": 2,
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "2",
+        "longname": "<anonymous>~map.2",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5493,
+                5512
+            ],
+            "filename": "week-picker.js",
+            "lineno": 153,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000578",
+                "name": "component",
+                "type": "Literal",
+                "value": "button"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5514,
+                5525
+            ],
+            "filename": "week-picker.js",
+            "lineno": 153,
+            "columnno": 39,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000580",
+                "name": "id",
+                "type": "Literal",
+                "value": "label"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5527,
+                5551
+            ],
+            "filename": "week-picker.js",
+            "lineno": 153,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000582",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [
+                5597,
+                6496
+            ],
+            "filename": "week-picker.js",
+            "lineno": 159,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000589",
+                "name": "MdWeekPickerComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdWeekPickerComponent",
+        "longname": "MdWeekPickerComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdWeekPickerComponent#onWeekPickerShown\r\n * @fires MdWeekPickerComponent#onWeekPickerClosed\r\n * @fires MdWeekPickerComponent#onWeekPickerLabelClick\r\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonPrevClick\r\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonNextClick\r\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonClick\r\n * @fires MdWeekPickerComponent#onWeekPickerYearItemClick\r\n * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick\r\n * @fires MdWeekPickerComponent#onWeekPickerWeekRowClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonCancelClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonOkClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick\r\n * @fires MdWeekPickerComponent#onWeekPickerButtonClick\r\n * @fires MdWeekPickerComponent#onWeekPickerScrimClosed\r\n * @element md-week-picker\r\n */",
+        "meta": {
+            "range": [
+                1258,
+                20788
+            ],
+            "filename": "week-picker.js",
+            "lineno": 28,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000034",
+                "name": "MdWeekPickerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdWeekPickerComponent",
+        "longname": "MdWeekPickerComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "fires": [
+            "MdWeekPickerComponent#event:onWeekPickerShown",
+            "MdWeekPickerComponent#event:onWeekPickerClosed",
+            "MdWeekPickerComponent#event:onWeekPickerLabelClick",
+            "MdWeekPickerComponent#event:onWeekPickerIconButtonPrevClick",
+            "MdWeekPickerComponent#event:onWeekPickerIconButtonNextClick",
+            "MdWeekPickerComponent#event:onWeekPickerIconButtonClick",
+            "MdWeekPickerComponent#event:onWeekPickerYearItemClick",
+            "MdWeekPickerComponent#event:onWeekPickerMonthItemClick",
+            "MdWeekPickerComponent#event:onWeekPickerWeekRowClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonCancelClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonOkClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonLabelClick",
+            "MdWeekPickerComponent#event:onWeekPickerButtonClick",
+            "MdWeekPickerComponent#event:onWeekPickerScrimClosed"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-week-picker",
+                "value": "md-week-picker"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5640,
+                5665
+            ],
+            "filename": "week-picker.js",
+            "lineno": 161,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000597",
+                "name": "this.current",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "current",
+        "longname": "MdWeekPickerComponent#current",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5676,
+                5699
+            ],
+            "filename": "week-picker.js",
+            "lineno": 162,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000604",
+                "name": "this.value",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdWeekPickerComponent#value",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5710,
+                5737
+            ],
+            "filename": "week-picker.js",
+            "lineno": 163,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000611",
+                "name": "this.selection",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selection",
+        "longname": "MdWeekPickerComponent#selection",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5748,
+                5762
+            ],
+            "filename": "week-picker.js",
+            "lineno": 164,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000618",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 2,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdWeekPickerComponent#index",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5773,
+                5876
+            ],
+            "filename": "week-picker.js",
+            "lineno": 165,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000624",
+                "name": "this.yearFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "yearFormat",
+        "longname": "MdWeekPickerComponent#yearFormat",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5841,
+                5856
+            ],
+            "filename": "week-picker.js",
+            "lineno": 166,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000635",
+                "name": "year",
+                "type": "Literal",
+                "value": "numeric"
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5887,
+                5989
+            ],
+            "filename": "week-picker.js",
+            "lineno": 168,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000639",
+                "name": "this.monthFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "monthFormat",
+        "longname": "MdWeekPickerComponent#monthFormat",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5956,
+                5969
+            ],
+            "filename": "week-picker.js",
+            "lineno": 169,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000650",
+                "name": "month",
+                "type": "Literal",
+                "value": "long"
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6000,
+                6108
+            ],
+            "filename": "week-picker.js",
+            "lineno": 171,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000654",
+                "name": "this.weekdayFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "weekdayFormat",
+        "longname": "MdWeekPickerComponent#weekdayFormat",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6071,
+                6088
+            ],
+            "filename": "week-picker.js",
+            "lineno": 172,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000665",
+                "name": "weekday",
+                "type": "Literal",
+                "value": "narrow"
+            }
+        },
+        "undocumented": true,
+        "name": "weekday",
+        "longname": "weekday",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6119,
+                6220
+            ],
+            "filename": "week-picker.js",
+            "lineno": 174,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000669",
+                "name": "this.dayFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "dayFormat",
+        "longname": "MdWeekPickerComponent#dayFormat",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6186,
+                6200
+            ],
+            "filename": "week-picker.js",
+            "lineno": 175,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000680",
+                "name": "day",
+                "type": "Literal",
+                "value": "numeric"
+            }
+        },
+        "undocumented": true,
+        "name": "day",
+        "longname": "day",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6231,
+                6375
+            ],
+            "filename": "week-picker.js",
+            "lineno": 177,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000684",
+                "name": "this.actions",
+                "type": "ArrayExpression",
+                "value": "[\"{\\\"id\\\":\\\"prev\\\",\\\"icon\\\":\\\"keyboard_arrow_left\\\"}\",\"{\\\"id\\\":\\\"next\\\",\\\"icon\\\":\\\"keyboard_arrow_right\\\"}\"]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "MdWeekPickerComponent#actions",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6263,
+                6273
+            ],
+            "filename": "week-picker.js",
+            "lineno": 178,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000690",
+                "name": "id",
+                "type": "Literal",
+                "value": "prev"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6275,
+                6302
+            ],
+            "filename": "week-picker.js",
+            "lineno": 178,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000692",
+                "name": "icon",
+                "type": "Literal",
+                "value": "keyboard_arrow_left"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6321,
+                6331
+            ],
+            "filename": "week-picker.js",
+            "lineno": 179,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000695",
+                "name": "id",
+                "type": "Literal",
+                "value": "next"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6333,
+                6361
+            ],
+            "filename": "week-picker.js",
+            "lineno": 179,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000697",
+                "name": "icon",
+                "type": "Literal",
+                "value": "keyboard_arrow_right"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6386,
+                6488
+            ],
+            "filename": "week-picker.js",
+            "lineno": 181,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000700",
+                "name": "this.buttons",
+                "type": "ArrayExpression",
+                "value": "[\"{\\\"component\\\":\\\"spacer\\\"}\",\"{\\\"id\\\":\\\"cancel\\\",\\\"label\\\":\\\"Cancel\\\"}\",\"{\\\"id\\\":\\\"ok\\\",\\\"label\\\":\\\"Ok\\\"}\"]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "MdWeekPickerComponent#buttons",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6404,
+                6423
+            ],
+            "filename": "week-picker.js",
+            "lineno": 181,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000706",
+                "name": "component",
+                "type": "Literal",
+                "value": "spacer"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6429,
+                6441
+            ],
+            "filename": "week-picker.js",
+            "lineno": 181,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000709",
+                "name": "id",
+                "type": "Literal",
+                "value": "cancel"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6443,
+                6458
+            ],
+            "filename": "week-picker.js",
+            "lineno": 181,
+            "columnno": 65,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000711",
+                "name": "label",
+                "type": "Literal",
+                "value": "Cancel"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6464,
+                6472
+            ],
+            "filename": "week-picker.js",
+            "lineno": 181,
+            "columnno": 86,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000714",
+                "name": "id",
+                "type": "Literal",
+                "value": "ok"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6474,
+                6485
+            ],
+            "filename": "week-picker.js",
+            "lineno": 181,
+            "columnno": 96,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000716",
+                "name": "label",
+                "type": "Literal",
+                "value": "Ok"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [
+                6576,
+                6674
+            ],
+            "filename": "week-picker.js",
+            "lineno": 189,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000718",
+                "name": "MdWeekPickerComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdWeekPickerComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [
+                6754,
+                7299
+            ],
+            "filename": "week-picker.js",
+            "lineno": 198,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000734",
+                "name": "MdWeekPickerComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdWeekPickerComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [
+                7379,
+                7904
+            ],
+            "filename": "week-picker.js",
+            "lineno": 218,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000786",
+                "name": "MdWeekPickerComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdWeekPickerComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [
+                7984,
+                8079
+            ],
+            "filename": "week-picker.js",
+            "lineno": 238,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000838",
+                "name": "MdWeekPickerComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdWeekPickerComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [
+                8199,
+                8626
+            ],
+            "filename": "week-picker.js",
+            "lineno": 248,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000848",
+                "name": "MdWeekPickerComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item",
+                    "component"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdWeekPickerComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                8678,
+                9361
+            ],
+            "filename": "week-picker.js",
+            "lineno": 265,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000899",
+                "name": "MdWeekPickerComponent#renderWeekPickerYear",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderWeekPickerYear",
+        "longname": "MdWeekPickerComponent#renderWeekPickerYear",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                9413,
+                10099
+            ],
+            "filename": "week-picker.js",
+            "lineno": 289,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000939",
+                "name": "MdWeekPickerComponent#renderWeekPickerMonth",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderWeekPickerMonth",
+        "longname": "MdWeekPickerComponent#renderWeekPickerMonth",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                10151,
+                11954
+            ],
+            "filename": "week-picker.js",
+            "lineno": 313,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100000979",
+                "name": "MdWeekPickerComponent#renderWeekPickerDay",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderWeekPickerDay",
+        "longname": "MdWeekPickerComponent#renderWeekPickerDay",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                11281,
+                11315
+            ],
+            "filename": "week-picker.js",
+            "lineno": 333,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001050",
+                "name": "\"md-week-picker__table-cell\"",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-week-picker__table-cell\"",
+        "longname": "\"md-week-picker__table-cell\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                11366,
+                11424
+            ],
+            "filename": "week-picker.js",
+            "lineno": 334,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001052",
+                "name": "\"md-week-picker__table-cell--same-month\"",
+                "type": "MemberExpression",
+                "value": "item.isSameMonth"
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-week-picker__table-cell--same-month\"",
+        "longname": "\"md-week-picker__table-cell--same-month\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                11475,
+                11526
+            ],
+            "filename": "week-picker.js",
+            "lineno": 335,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001056",
+                "name": "\"md-week-picker__table-cell--sunday\"",
+                "type": "MemberExpression",
+                "value": "item.isSunday"
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-week-picker__table-cell--sunday\"",
+        "longname": "\"md-week-picker__table-cell--sunday\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                12006,
+                13400
+            ],
+            "filename": "week-picker.js",
+            "lineno": 354,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001063",
+                "name": "MdWeekPickerComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdWeekPickerComponent#render",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [
+                13467,
+                14448
+            ],
+            "filename": "week-picker.js",
+            "lineno": 382,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001174",
+                "name": "MdWeekPickerComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdWeekPickerComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                13540,
+                13597
+            ],
+            "filename": "week-picker.js",
+            "lineno": 384,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001184",
+                "name": "this.weekPickerScrim",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "weekPickerScrim",
+        "longname": "MdWeekPickerComponent#weekPickerScrim",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                13697,
+                13775
+            ],
+            "filename": "week-picker.js",
+            "lineno": 386,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001207",
+                "name": "this.handleWeekPickerScrimClosed",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleWeekPickerScrimClosed",
+        "longname": "MdWeekPickerComponent#handleWeekPickerScrimClosed",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                14291,
+                14338
+            ],
+            "filename": "week-picker.js",
+            "lineno": 394,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001293",
+                "name": "this.selection",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selection",
+        "longname": "MdWeekPickerComponent#selection",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                14349,
+                14399
+            ],
+            "filename": "week-picker.js",
+            "lineno": 395,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001306",
+                "name": "this.defaultValue",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdWeekPickerComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                14410,
+                14440
+            ],
+            "filename": "week-picker.js",
+            "lineno": 396,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001319",
+                "name": "this.defaultIndex",
+                "type": "MemberExpression",
+                "value": "this.index",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultIndex",
+        "longname": "MdWeekPickerComponent#defaultIndex",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [
+                14500,
+                14762
+            ],
+            "filename": "week-picker.js",
+            "lineno": 403,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001326",
+                "name": "MdWeekPickerComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "disconnectedCallback",
+        "longname": "MdWeekPickerComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [
+                14855,
+                15204
+            ],
+            "filename": "week-picker.js",
+            "lineno": 415,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001361",
+                "name": "MdWeekPickerComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdWeekPickerComponent#updated",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [options]\r\n     */",
+        "meta": {
+            "range": [
+                15270,
+                15856
+            ],
+            "filename": "week-picker.js",
+            "lineno": 429,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001411",
+                "name": "MdWeekPickerComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "options"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "options"
+            }
+        ],
+        "name": "show",
+        "longname": "MdWeekPickerComponent#show",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15366,
+                15396
+            ],
+            "filename": "week-picker.js",
+            "lineno": 431,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001425",
+                "name": "this.index",
+                "type": "MemberExpression",
+                "value": "this.defaultIndex",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdWeekPickerComponent#index",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15461,
+                15477
+            ],
+            "filename": "week-picker.js",
+            "lineno": 433,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001444",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdWeekPickerComponent#open",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15488,
+                15734
+            ],
+            "filename": "week-picker.js",
+            "lineno": 434,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001450",
+                "name": "options",
+                "type": "ObjectExpression",
+                "funcscope": "<anonymous>",
+                "value": "{\"container\":\"\",\"placements\":\"\"}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "options",
+        "longname": "<anonymous>~options",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15513,
+                15528
+            ],
+            "filename": "week-picker.js",
+            "lineno": 435,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001453",
+                "name": "container",
+                "type": "ThisExpression",
+                "value": "this"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "<anonymous>~options.container",
+        "kind": "member",
+        "memberof": "<anonymous>~options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15543,
+                15697
+            ],
+            "filename": "week-picker.js",
+            "lineno": 436,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001455",
+                "name": "placements",
+                "type": "ArrayExpression",
+                "value": "[\"bottom-start\",\"bottom-end\",\"bottom\",\"top-start\",\"top-end\",\"top\",\"right-start\",\"right-end\",\"right\",\"left-start\",\"left-end\",\"left\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "placements",
+        "longname": "<anonymous>~options.placements",
+        "kind": "member",
+        "memberof": "<anonymous>~options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15745,
+                15771
+            ],
+            "filename": "week-picker.js",
+            "lineno": 439,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001472",
+                "name": "this.popper",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "popper",
+        "longname": "MdWeekPickerComponent#popper",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [
+                15891,
+                16087
+            ],
+            "filename": "week-picker.js",
+            "lineno": 447,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001492",
+                "name": "MdWeekPickerComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdWeekPickerComponent#close",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                15981,
+                15998
+            ],
+            "filename": "week-picker.js",
+            "lineno": 449,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001505",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdWeekPickerComponent#open",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [options]\r\n     */",
+        "meta": {
+            "range": [
+                16153,
+                16249
+            ],
+            "filename": "week-picker.js",
+            "lineno": 458,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001523",
+                "name": "MdWeekPickerComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "options"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "options"
+            }
+        ],
+        "name": "toggle",
+        "longname": "MdWeekPickerComponent#toggle",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                16330,
+                16429
+            ],
+            "filename": "week-picker.js",
+            "lineno": 468,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001543",
+                "name": "MdWeekPickerComponent#handleWeekPickerLabelClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerLabelClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerLabelClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                16413,
+                16418
+            ],
+            "filename": "week-picker.js",
+            "lineno": 469,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001555",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                16510,
+                16942
+            ],
+            "filename": "week-picker.js",
+            "lineno": 477,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001557",
+                "name": "MdWeekPickerComponent#handleWeekPickerIconButtonPrevClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerIconButtonPrevClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerIconButtonPrevClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                16926,
+                16931
+            ],
+            "filename": "week-picker.js",
+            "lineno": 482,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001637",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                17023,
+                17455
+            ],
+            "filename": "week-picker.js",
+            "lineno": 490,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001639",
+                "name": "MdWeekPickerComponent#handleWeekPickerIconButtonNextClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerIconButtonNextClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerIconButtonNextClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                17439,
+                17444
+            ],
+            "filename": "week-picker.js",
+            "lineno": 495,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001719",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                17536,
+                17876
+            ],
+            "filename": "week-picker.js",
+            "lineno": 503,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001721",
+                "name": "MdWeekPickerComponent#handleWeekPickerIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerIconButtonClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerIconButtonClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                17592,
+                17623
+            ],
+            "filename": "week-picker.js",
+            "lineno": 504,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001727",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                17860,
+                17865
+            ],
+            "filename": "week-picker.js",
+            "lineno": 507,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001765",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                17957,
+                18183
+            ],
+            "filename": "week-picker.js",
+            "lineno": 515,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001767",
+                "name": "MdWeekPickerComponent#handleWeekPickerYearItemClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerYearItemClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerYearItemClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18011,
+                18042
+            ],
+            "filename": "week-picker.js",
+            "lineno": 516,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001773",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18101,
+                18115
+            ],
+            "filename": "week-picker.js",
+            "lineno": 518,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001791",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 1,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdWeekPickerComponent#index",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18167,
+                18172
+            ],
+            "filename": "week-picker.js",
+            "lineno": 519,
+            "columnno": 49,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001803",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                18264,
+                18538
+            ],
+            "filename": "week-picker.js",
+            "lineno": 527,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001805",
+                "name": "MdWeekPickerComponent#handleWeekPickerMonthItemClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerMonthItemClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerMonthItemClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18319,
+                18350
+            ],
+            "filename": "week-picker.js",
+            "lineno": 528,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001811",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18455,
+                18469
+            ],
+            "filename": "week-picker.js",
+            "lineno": 531,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001839",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 2,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdWeekPickerComponent#index",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18522,
+                18527
+            ],
+            "filename": "week-picker.js",
+            "lineno": 532,
+            "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001851",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                18619,
+                19065
+            ],
+            "filename": "week-picker.js",
+            "lineno": 540,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001853",
+                "name": "MdWeekPickerComponent#handleWeekPickerWeekRowClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerWeekRowClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerWeekRowClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                18672,
+                18703
+            ],
+            "filename": "week-picker.js",
+            "lineno": 541,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001859",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19049,
+                19054
+            ],
+            "filename": "week-picker.js",
+            "lineno": 549,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001938",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                19146,
+                19466
+            ],
+            "filename": "week-picker.js",
+            "lineno": 557,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001940",
+                "name": "MdWeekPickerComponent#handleWeekPickerButtonCancelClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerButtonCancelClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerButtonCancelClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19450,
+                19455
+            ],
+            "filename": "week-picker.js",
+            "lineno": 562,
+            "columnno": 53,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001996",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                19547,
+                19745
+            ],
+            "filename": "week-picker.js",
+            "lineno": 570,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100001998",
+                "name": "MdWeekPickerComponent#handleWeekPickerButtonOkClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerButtonOkClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerButtonOkClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19672,
+                19677
+            ],
+            "filename": "week-picker.js",
+            "lineno": 573,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002015",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19692,
+                19724
+            ],
+            "filename": "week-picker.js",
+            "lineno": 574,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002017",
+                "name": "value",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                19826,
+                20068
+            ],
+            "filename": "week-picker.js",
+            "lineno": 583,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002023",
+                "name": "MdWeekPickerComponent#handleWeekPickerButtonLabelClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerButtonLabelClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerButtonLabelClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19883,
+                19958
+            ],
+            "filename": "week-picker.js",
+            "lineno": 584,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002029",
+                "name": "map",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":2}"
+            }
+        },
+        "undocumented": true,
+        "name": "map",
+        "longname": "<anonymous>~map",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19904,
+                19908
+            ],
+            "filename": "week-picker.js",
+            "lineno": 585,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002032",
+                "name": 2,
+                "type": "Literal",
+                "value": 0
+            }
+        },
+        "undocumented": true,
+        "name": "2",
+        "longname": "<anonymous>~map.2",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19923,
+                19927
+            ],
+            "filename": "week-picker.js",
+            "lineno": 586,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002034",
+                "type": "Literal",
+                "value": 1
+            }
+        },
+        "undocumented": true,
+        "name": "0",
+        "longname": "<anonymous>~map.0",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19942,
+                19946
+            ],
+            "filename": "week-picker.js",
+            "lineno": 587,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002036",
+                "name": 1,
+                "type": "Literal",
+                "value": 2
+            }
+        },
+        "undocumented": true,
+        "name": "1",
+        "longname": "<anonymous>~map.1",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                19969,
+                19997
+            ],
+            "filename": "week-picker.js",
+            "lineno": 589,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002039",
+                "name": "this.index",
+                "type": "MemberExpression",
+                "value": "map[undefined]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdWeekPickerComponent#index",
+        "kind": "member",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                20052,
+                20057
+            ],
+            "filename": "week-picker.js",
+            "lineno": 590,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002055",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                20149,
+                20565
+            ],
+            "filename": "week-picker.js",
+            "lineno": 598,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002057",
+                "name": "MdWeekPickerComponent#handleWeekPickerButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerButtonClick",
+        "longname": "MdWeekPickerComponent#handleWeekPickerButtonClick",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                20201,
+                20232
+            ],
+            "filename": "week-picker.js",
+            "lineno": 599,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002063",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                20549,
+                20554
+            ],
+            "filename": "week-picker.js",
+            "lineno": 603,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002113",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [
+                20646,
+                20785
+            ],
+            "filename": "week-picker.js",
+            "lineno": 611,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002115",
+                "name": "MdWeekPickerComponent#handleWeekPickerScrimClosed",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleWeekPickerScrimClosed",
+        "longname": "MdWeekPickerComponent#handleWeekPickerScrimClosed",
+        "kind": "function",
+        "memberof": "MdWeekPickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                20769,
+                20774
+            ],
+            "filename": "week-picker.js",
+            "lineno": 613,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002136",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                20864,
+                20885
+            ],
+            "filename": "week-picker.js",
+            "lineno": 617,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker",
+            "code": {
+                "id": "astnode100002146",
+                "name": "exports.MdWeekPickerComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdWeekPickerComponent",
+        "longname": "MdWeekPickerComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker\\week-picker.js"
+        ]
+    }
+]
