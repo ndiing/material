@@ -98,15 +98,12 @@ import DemoWeekPicker from "./week-picker/week-picker.js";
 import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
 import DemoMonthPicker from "./month-picker/month-picker.js";
 import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
-import DemoTest from "./test/test.js";
 
 const routes = [
     {
         path: "",
         component: DemoMain,
         children: [
-            { path: "test", component: DemoTest },
-
             { path: "badge", component: DemoBadge },
 
             { path: "bottom-app-bar", component: DemoBottomAppBar },

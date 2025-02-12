@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: text-field/text-field.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: text-field/text-field.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MdComponent } from "../component/component";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { choose } from "lit/directives/choose.js";
+import { classMap } from "lit/directives/class-map.js";
+
+/**
+ *
+ * @extends MdComponent
+ * @fires MdTextFieldComponent#onTextFieldFocus
+ * @fires MdTextFieldComponent#onTextFieldBlur
+ * @fires MdTextFieldComponent#onTextFieldInput
+ * @fires MdTextFieldComponent#onTextFieldInvalid
+ * @fires MdTextFieldComponent#onTextFieldReset
+ * @fires MdTextFieldComponent#onTextFieldIconButtonClick
+ * @element md-text-field
+ */
+class MdTextFieldComponent extends MdComponent {
+    /**
+     * @property {String} [label]
+     * @property {Boolean} [separateLabel]
+     * @property {Array} [icons]
+     * @property {String} [prefix]
+     * @property {String} [suffix]
+     * @property {Array} [actions]
+     * @property {String} [text]
+     * @property {String} [error]
+     * @property {String} [counter]
+     * @property {String} [name]
+     * @property {String} [type]
+     * @property {String} [value]
+     * @property {String} [placeholder]
+     * @property {String} [title]
+     * @property {String} [autocomplete]
+     * @property {Boolean} [required]
+     * @property {Boolean} [readOnly]
+     * @property {String} [variant] - ["outlined","filled"]
+     * @property {Boolean} [disabled]
+     */
+    static properties = {
+        label: { type: String },
+        separateLabel: { type: Boolean },
+        icons: { type: Array },
+        prefix: { type: String },
+        suffix: { type: String },
+        actions: { type: Array },
+        text: { type: String },
+        error: { type: String },
+        counter: { type: String },
+        name: { type: String },
+        type: { type: String },
+        value: { type: String },
+        placeholder: { type: String },
+        title: { type: String },
+        autocomplete: { type: String },
+        required: { type: Boolean },
+        readOnly: { type: Boolean },
+        variant: { type: String },
+        disabled: { type: Boolean, reflect: true },
+    };
+
+    /**
+     * @readonly
+     */
+    variants = ["outlined", "filled"];
+
+    /**
+     *
+     * @readonly
+     */
+    get actionsAll() {
+        return []
+            .concat([
+                ...((this.error &amp;&amp; [
+                    {
+                        component: "icon",
+                        icon: "error",
+                        classMap: { "md-text-field__icon--error": true },
+                    },
+                ]) ||
+                    []),
+            ])
+            .concat(this.actions);
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get textFieldNative() {
+        return this.querySelector(".md-text-field__native");
+    }
+
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.title = "";
+        this.autocomplete = "off";
+        this.actions = [];
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIcon(item) {
+        return html`
+            &lt;md-icon
+                .data="${item}"
+                class="${classMap({ ...item.classMap })}"
+                >${item.icon}&lt;/md-icon
+            >
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIconButton(item) {
+        return html`
+            &lt;md-icon-button
+                .data="${item}"
+                class="${classMap({ ...item.classMap })}"
+                .icon="${ifDefined(item.icon)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .toggle="${ifDefined(item.toggle)}"
+                .selected="${ifDefined(item.selected)}"
+                .disabled="${ifDefined(item.disabled)}"
+                @click="${this.handleTextFieldIconButtonClick}"
+            >&lt;/md-icon-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
+     */
+    renderItem(item, component = "icon") {
+        return choose(
+            item.component || component,
+            [
+                ["icon", () => this.renderIcon(item)],
+                ["icon-button", () => this.renderIconButton(item)],
+            ],
+            () => nothing,
+        );
+    }
+
+    /**
+     *
+     * @private
+     */
+    render() {
+        return html`
+            ${this.label ? html`&lt;label class="md-text-field__label">${this.label}&lt;/label>` : nothing}
+            &lt;div class="md-text-field__container">
+                ${this.icons?.length ? html` &lt;div class="md-text-field__icons">${this.icons.map((item) => this.renderItem(item, "icon"))}&lt;/div> ` : nothing} ${this.prefix ? html`&lt;div class="md-text-field__prefix">${this.prefix}&lt;/div>` : nothing}
+                &lt;input
+                    .name="${ifDefined(this.name)}"
+                    .type="${ifDefined(this.type)}"
+                    .value="${ifDefined(this.value)}"
+                    .placeholder="${ifDefined(this.placeholder)}"
+                    .required="${ifDefined(this.required)}"
+                    .readOnly="${ifDefined(this.readOnly)}"
+                    .title="${ifDefined(this.title)}"
+                    .autocomplete="${ifDefined(this.autocomplete)}"
+                    .defaultValue="${ifDefined(this.defaultValue)}"
+                    @focus="${this.handleTextFieldFocus}"
+                    @blur="${this.handleTextFieldBlur}"
+                    @input="${this.handleTextFieldInput}"
+                    @invalid="${this.handleTextFieldInvalid}"
+                    @reset="${this.handleTextFieldReset}"
+                    class="md-text-field__native"
+                />
+                ${this.suffix ? html`&lt;div class="md-text-field__suffix">${this.suffix}&lt;/div>` : nothing} ${this.actionsAll?.length ? html` &lt;div class="md-text-field__actions">${this.actionsAll.map((item) => this.renderItem(item, "icon-button"))}&lt;/div> ` : nothing}
+            &lt;/div>
+            ${this.text || this.error || this.counter ? html` &lt;div class="md-text-field__wrapper">${this.text || this.error ? html`&lt;div class="md-text-field__text">${this.error || this.text}&lt;/div>` : nothing} ${this.counter ? html`&lt;div class="md-text-field__counter">${this.counter}&lt;/div>` : nothing}&lt;/div> ` : nothing}
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     */
+    async connectedCallback() {
+        super.connectedCallback();
+        this.defaultValue = this.value;
+        this.classList.add("md-text-field");
+        this.classList.toggle("md-text-field--populated", !!this.value);
+        await this.updateComplete;
+        this.textFieldOffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
+        this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldOffset.offsetLeft + "px");
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [changedProperties]
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("variant")) {
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-text-field--${variant}`, variant === this.variant);
+            });
+        }
+        if (changedProperties.has("separateLabel")) {
+            this.classList.toggle(`md-text-field--separate-label`, !!this.separateLabel);
+        }
+        if (changedProperties.has("label")) {
+            this.classList.toggle(`md-text-field--with-label`, !!this.label);
+        }
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldFocus(event) {
+        this.classList.add("md-text-field--focus");
+        this.emit("onTextFieldFocus", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldBlur(event) {
+        this.classList.remove("md-text-field--focus");
+        this.emit("onTextFieldBlur", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldInput(event) {
+        this.value = this.textFieldNative.value;
+        this.error = this.textFieldNative.validationMessage;
+        this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
+        this.classList.toggle("md-text-field--error", !!this.error);
+        this.emit("onTextFieldInput", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldInvalid(event) {
+        event.preventDefault();
+        this.error = this.textFieldNative.validationMessage;
+        this.classList.toggle("md-text-field--error", !!this.error);
+        this.emit("onTextFieldInvalid", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldReset(event) {
+        this.value = this.defaultValue;
+        this.error = undefined;
+        this.classList.toggle("md-text-field--populated", !!this.value);
+        this.classList.toggle("md-text-field--error", !!this.error);
+        this.emit("onTextFieldReset", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldIconButtonClick(event) {
+        this.emit("onTextFieldIconButtonClick", { event });
+    }
+}
+customElements.define("md-text-field", MdTextFieldComponent);
+export { MdTextFieldComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Feb 13 2025 04:07:50 GMT+0700 (Indochina Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

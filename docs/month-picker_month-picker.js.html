@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: month-picker/month-picker.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: month-picker/month-picker.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MdComponent } from "../component/component";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { choose } from "lit/directives/choose.js";
+import { parseMonth, stringifyMonth } from "../util/util";
+import { Popper } from "../popper/popper";
+import { classMap } from "lit/directives/class-map.js";
+
+/**
+ *
+ * @extends MdComponent
+ * @fires MdMonthPickerComponent#onMonthPickerShown
+ * @fires MdMonthPickerComponent#onMonthPickerClosed
+ * @fires MdMonthPickerComponent#onMonthPickerLabelClick
+ * @fires MdMonthPickerComponent#onMonthPickerIconButtonPrevClick
+ * @fires MdMonthPickerComponent#onMonthPickerIconButtonNextClick
+ * @fires MdMonthPickerComponent#onMonthPickerIconButtonClick
+ * @fires MdMonthPickerComponent#onMonthPickerYearItemClick
+ * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonCancelClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonOkClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick
+ * @fires MdMonthPickerComponent#onMonthPickerButtonClick
+ * @fires MdMonthPickerComponent#onMonthPickerScrimClosed
+ * @element md-month-picker
+ */
+class MdMonthPickerComponent extends MdComponent {
+    /**
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
+     * @property {Boolean} [modal]
+     * @property {Number} [index]
+     * @property {Any} [value]
+     */
+    static properties = {
+        icons: { type: Array },
+        actions: { type: Array },
+        label: { type: String },
+        sublabel: { type: String },
+        buttons: { type: Array },
+        open: { type: Boolean, reflect: true },
+        modal: { type: Boolean },
+        index: { type: Number },
+        value: {
+            converter: {
+                fromAttribute: (value, type) => {
+                    return parseMonth(value);
+                },
+                toAttribute: (value, type) => {
+                    return stringifyMonth(value);
+                },
+            },
+        },
+    };
+
+    /**
+     *
+     * @readonly
+     */
+    get years() {
+        let year = this.selection.getFullYear();
+        year = Math.floor(year / 10) * 10;
+        return Array.from({ length: 10 }, (v, k) => {
+            const date = new Date(year + k, 0);
+            return {
+                year: date.getFullYear(),
+                label: this.yearFormat(date),
+                selected: date.getFullYear() === this.value.getFullYear(),
+                activated: date.getFullYear() === this.current.getFullYear(),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get months() {
+        return Array.from({ length: 12 }, (v, k) => {
+            const date = new Date(this.selection.getFullYear(), k);
+            return {
+                year: date.getFullYear(),
+                month: date.getMonth(),
+                label: this.monthFormat(date),
+                selected: date.getFullYear() === this.value.getFullYear() &amp;&amp; date.getMonth() === this.value.getMonth(),
+                activated: date.getFullYear() === this.current.getFullYear() &amp;&amp; date.getMonth() === this.current.getMonth(),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get icons() {
+        const map = {
+            0: () => [this.years[0].label, this.years[this.years.length - 1].label].join(" - "),
+            1: () => this.selection.getFullYear(),
+        };
+        return [{ component: "button", id: "label", label: map[this.index]() }];
+    }
+
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.current = new Date();
+        this.value = new Date();
+        this.selection = new Date();
+        this.index = 1;
+        this.yearFormat = new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+        }).format;
+        this.monthFormat = new Intl.DateTimeFormat(undefined, {
+            month: "long",
+        }).format;
+        this.actions = [
+            { id: "prev", icon: "keyboard_arrow_left" },
+            { id: "next", icon: "keyboard_arrow_right" },
+        ];
+        this.buttons = [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIcon(item) {
+        return html` &lt;md-icon .data="${item}">${item.icon}&lt;/md-icon> `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIconButton(item) {
+        return html`
+            &lt;md-icon-button
+                .data="${item}"
+                .icon="${ifDefined(item.icon)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .toggle="${ifDefined(item.toggle)}"
+                .selected="${ifDefined(item.selected)}"
+                .disabled="${ifDefined(item.disabled)}"
+                @click="${this.handleMonthPickerIconButtonClick}"
+            >&lt;/md-icon-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderButton(item) {
+        return html`
+            &lt;md-button
+                .data="${item}"
+                .icon="${ifDefined(item.icon)}"
+                .label="${ifDefined(item.label)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .selected="${ifDefined(item.selected)}"
+                @click="${this.handleMonthPickerButtonClick}"
+            >&lt;/md-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderSpacer(item) {
+        return html` &lt;div class="md-month-picker__spacer">&lt;/div> `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
+     */
+    renderItem(item, component = "icon") {
+        return choose(
+            item.component || component,
+            [
+                ["icon", () => this.renderIcon(item)],
+                ["icon-button", () => this.renderIconButton(item)],
+                ["button", () => this.renderButton(item)],
+                ["spacer", () => this.renderSpacer(item)],
+            ],
+            () => nothing,
+        );
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderMonthPickerYear() {
+        return html`
+            &lt;div class="md-month-picker__list">
+                ${this.years.map(
+                    (item) => html`
+                        &lt;div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleMonthPickerYearItemClick}"
+                            class="md-month-picker__list-item"
+                        >
+                            ${item.label}
+                        &lt;/div>
+                    `,
+                )}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderMonthPickerMonth() {
+        return html`
+            &lt;div class="md-month-picker__list">
+                ${this.months.map(
+                    (item) => html`
+                        &lt;div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleMonthPickerMonthItemClick}"
+                            class="md-month-picker__list-item"
+                        >
+                            ${item.label}
+                        &lt;/div>
+                    `,
+                )}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    render() {
+        return html`
+            ${this.icons?.length || this.label || this.sublabel || this.actions?.length
+                ? html`
+                      &lt;div class="md-month-picker__header">
+                          &lt;div class="md-month-picker__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}&lt;/div>
+                          ${this.actions?.length ? html` &lt;div class="md-month-picker__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}&lt;/div> ` : nothing}
+                      &lt;/div>
+                  `
+                : nothing}
+            &lt;div class="md-month-picker__wrapper">
+                &lt;div class="md-month-picker__body">
+                    &lt;div class="md-month-picker__items">
+                        &lt;div class="md-month-picker__item">${this.renderMonthPickerYear()}&lt;/div>
+                        &lt;div class="md-month-picker__item">${this.renderMonthPickerMonth()}&lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                ${this.buttons?.length ? html` &lt;div class="md-month-picker__footer">${this.buttons?.length ? html` &lt;div class="md-month-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}&lt;/div> ` : nothing}&lt;/div> ` : nothing}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     */
+    async connectedCallback() {
+        super.connectedCallback();
+        this.selection = new Date(this.value.valueOf());
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.classList.add("md-month-picker");
+        this.style.setProperty("--md-comp-month-picker-animation", "none");
+        this.monthPickerScrim = document.createElement("md-scrim");
+        this.parentElement.insertBefore(this.monthPickerScrim, this.nextElementSibling);
+        this.handleMonthPickerScrimClosed = this.handleMonthPickerScrimClosed.bind(this);
+        this.monthPickerScrim.addEventListener("onScrimClosed", this.handleMonthPickerScrimClosed);
+        if (this.modal &amp;&amp; this.open) this.monthPickerScrim.show();
+        await this.updateComplete;
+        this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-month-picker-width", this.clientWidth + "px");
+    }
+
+    /**
+     *
+     * @private
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.monthPickerScrim.removeEventListener("onScrimClosed", this.handleMonthPickerScrimClosed);
+        this.monthPickerScrim.remove();
+        this.classList.remove("md-month-picker");
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [changedProperties]
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("index")) {
+            this.style.setProperty("--md-comp-month-picker-index", this.index);
+        }
+        if (changedProperties.has("modal")) {
+            this.classList.toggle(`md-month-picker--modal`, !!this.modal);
+        }
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    show(options) {
+        this.style.removeProperty("--md-comp-month-picker-animation");
+        this.index = this.defaultIndex;
+        if (this.modal) this.monthPickerScrim.show();
+        this.open = true;
+        options = {
+            container: this,
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            ...options,
+        };
+        this.popper = new Popper();
+        this.popper.show(options);
+        this.emit("onMonthPickerShown");
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-month-picker-animation");
+        this.open = false;
+        this.monthPickerScrim.close();
+        this.emit("onMonthPickerClosed");
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    toggle(options) {
+        if (this.open) this.close();
+        else this.show(options);
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerLabelClick(event) {
+        this.emit("onMonthPickerLabelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerIconButtonPrevClick(event) {
+        if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() - 10);
+        else if (this.index === 1) this.selection.setFullYear(this.selection.getFullYear() - 1);
+        this.requestUpdate();
+        this.emit("onMonthPickerIconButtonPrevClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerIconButtonNextClick(event) {
+        if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() + 10);
+        else if (this.index === 1) this.selection.setFullYear(this.selection.getFullYear() + 1);
+        this.requestUpdate();
+        this.emit("onMonthPickerIconButtonNextClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerIconButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "prev") return this.handleMonthPickerIconButtonPrevClick(event);
+        else if (data.id === "next") return this.handleMonthPickerIconButtonNextClick(event);
+        this.emit("onMonthPickerIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerYearItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setFullYear(data.year);
+        this.index = 1;
+        this.emit("onMonthPickerYearItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerMonthItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setFullYear(data.year);
+        this.selection.setMonth(data.month);
+        this.value.setFullYear(data.year);
+        this.value.setMonth(data.month);
+        this.requestUpdate();
+        this.emit("onMonthPickerMonthItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerButtonCancelClick(event) {
+        this.close();
+        this.value.setFullYear(this.defaultValue.getFullYear());
+        this.value.setMonth(this.defaultValue.getMonth());
+        this.emit("onMonthPickerButtonCancelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerButtonOkClick(event) {
+        this.close();
+        this.emit("onMonthPickerButtonOkClick", {
+            event,
+            value: stringifyMonth(this.value),
+        });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerButtonLabelClick(event) {
+        const map = {
+            0: 1,
+            1: 0,
+        };
+        this.index = map[this.index];
+        this.emit("onMonthPickerButtonLabelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "cancel") return this.handleMonthPickerButtonCancelClick(event);
+        else if (data.id === "ok") return this.handleMonthPickerButtonOkClick(event);
+        else if (data.id === "label") return this.handleMonthPickerButtonLabelClick(event);
+        this.emit("onMonthPickerButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleMonthPickerScrimClosed(event) {
+        if (this.open) this.close();
+        this.emit("onMonthPickerScrimClosed", { event });
+    }
+}
+customElements.define("md-month-picker", MdMonthPickerComponent);
+export { MdMonthPickerComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Feb 13 2025 04:07:50 GMT+0700 (Indochina Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

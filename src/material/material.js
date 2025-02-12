@@ -1,4 +1,3 @@
-import "./polyfill/polyfill.js";
 // import "./util/util.js";
 // import "./store/store.js";
 // import "./router/router.js";
@@ -8,6 +7,7 @@ import "./polyfill/polyfill.js";
 // import "./layout/layout.js";
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./component/component.js";
+import "./polyfill/polyfill.js";
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";

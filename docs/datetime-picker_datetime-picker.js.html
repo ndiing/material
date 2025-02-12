@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: datetime-picker/datetime-picker.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: datetime-picker/datetime-picker.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MdComponent } from "../component/component";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { choose } from "lit/directives/choose.js";
+import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
+import { Popper } from "../popper/popper";
+import { classMap } from "lit/directives/class-map.js";
+
+/**
+ *
+ * @extends MdComponent
+ * @fires MdDatetimePickerComponent#onDatetimePickerShown
+ * @fires MdDatetimePickerComponent#onDatetimePickerClosed
+ * @fires MdDatetimePickerComponent#onDatetimePickerLabelClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonNextClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerYearItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerMonthItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerDayItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerHourItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerMinuteItemClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonCancelClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonOkClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonLabelClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerButtonClick
+ * @fires MdDatetimePickerComponent#onDatetimePickerScrimClosed
+ * @element md-datetime-picker
+ */
+class MdDatetimePickerComponent extends MdComponent {
+    /**
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
+     * @property {Boolean} [modal]
+     * @property {Number} [index]
+     * @property {Any} [value]
+     */
+    static properties = {
+        icons: { type: Array },
+        actions: { type: Array },
+        label: { type: String },
+        sublabel: { type: String },
+        buttons: { type: Array },
+        open: { type: Boolean, reflect: true },
+        modal: { type: Boolean },
+        index: { type: Number },
+        value: {
+            converter: {
+                fromAttribute: (value, type) => {
+                    return parseDatetimeLocal(value);
+                },
+                toAttribute: (value, type) => {
+                    return stringifyDatetimeLocal(value);
+                },
+            },
+        },
+    };
+
+    /**
+     *
+     * @readonly
+     */
+    get startOfDay() {
+        return new Date(this.selection.getFullYear(), this.selection.getMonth()).getDay();
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get years() {
+        let year = this.selection.getFullYear();
+        year = Math.floor(year / 10) * 10;
+        return Array.from({ length: 10 }, (v, k) => {
+            const date = new Date(year + k, 0);
+            return {
+                year: date.getFullYear(),
+                label: this.yearFormat(date),
+                selected: date.getFullYear() === this.value.getFullYear(),
+                activated: date.getFullYear() === this.current.getFullYear(),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get months() {
+        return Array.from({ length: 12 }, (v, k) => {
+            const date = new Date(this.selection.getFullYear(), k);
+            return {
+                year: date.getFullYear(),
+                month: date.getMonth(),
+                label: this.monthFormat(date),
+                selected: date.getFullYear() === this.value.getFullYear() &amp;&amp; date.getMonth() === this.value.getMonth(),
+                activated: date.getFullYear() === this.current.getFullYear() &amp;&amp; date.getMonth() === this.current.getMonth(),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get weekdays() {
+        return Array.from({ length: 7 }, (v, k) => {
+            const date = new Date(0, 0, k);
+            return {
+                label: this.weekdayFormat(date),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get days() {
+        return Array.from({ length: 6 }, (v, k) => {
+            return Array.from({ length: 7 }, (v2, k2) => {
+                const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), k2 + 1 + 7 * k - this.startOfDay);
+                return {
+                    year: date.getFullYear(),
+                    month: date.getMonth(),
+                    day: date.getDate(),
+                    label: this.dayFormat(date),
+                    selected: date.getFullYear() === this.value.getFullYear() &amp;&amp; date.getMonth() === this.value.getMonth() &amp;&amp; date.getDate() === this.value.getDate(),
+                    activated: date.getFullYear() === this.current.getFullYear() &amp;&amp; date.getMonth() === this.current.getMonth() &amp;&amp; date.getDate() === this.current.getDate(),
+                    isSameMonth: date.getFullYear() === this.selection.getFullYear() &amp;&amp; date.getMonth() === this.selection.getMonth(),
+                    isSunday: date.getDay() === 0,
+                };
+            });
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get hours() {
+        return Array.from({ length: 24 }, (v, k) => {
+            const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), this.selection.getDate(), k);
+            return {
+                year: date.getFullYear(),
+                month: date.getMonth(),
+                day: date.getDate(),
+                hour: date.getHours(),
+                label: this.hourFormat(date),
+                selected: date.getFullYear() === this.value.getFullYear() &amp;&amp; date.getMonth() === this.value.getMonth() &amp;&amp; date.getDate() === this.value.getDate() &amp;&amp; date.getHours() === this.value.getHours(),
+                activated: date.getFullYear() === this.current.getFullYear() &amp;&amp; date.getMonth() === this.current.getMonth() &amp;&amp; date.getDate() === this.current.getDate() &amp;&amp; date.getHours() === this.current.getHours(),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get minutes() {
+        return Array.from({ length: 60 }, (v, k) => {
+            const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), this.selection.getDate(), this.selection.getHours(), k);
+            return {
+                year: date.getFullYear(),
+                month: date.getMonth(),
+                day: date.getDate(),
+                hour: date.getHours(),
+                minute: date.getMinutes(),
+                label: this.minuteFormat(date),
+                selected: date.getFullYear() === this.value.getFullYear() &amp;&amp; date.getMonth() === this.value.getMonth() &amp;&amp; date.getDate() === this.value.getDate() &amp;&amp; date.getHours() === this.value.getHours() &amp;&amp; date.getMinutes() === this.value.getMinutes(),
+                activated: date.getFullYear() === this.current.getFullYear() &amp;&amp; date.getMonth() === this.current.getMonth() &amp;&amp; date.getDate() === this.current.getDate() &amp;&amp; date.getHours() === this.current.getHours() &amp;&amp; date.getMinutes() === this.current.getMinutes(),
+            };
+        });
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get icons() {
+        const map = {
+            0: () => [this.years[0].label, this.years[this.years.length - 1].label].join(" - "),
+            1: () => this.selection.getFullYear(),
+            2: () => stringifyDatetimeLocal(this.selection),
+            3: () => stringifyDatetimeLocal(this.selection),
+            4: () => stringifyDatetimeLocal(this.selection),
+        };
+        return [{ component: "button", id: "label", label: map[this.index]() }];
+    }
+
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.current = new Date();
+        this.value = new Date();
+        this.selection = new Date();
+        this.index = 2;
+        this.yearFormat = new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+        }).format;
+        this.monthFormat = new Intl.DateTimeFormat(undefined, {
+            month: "long",
+        }).format;
+        this.weekdayFormat = new Intl.DateTimeFormat(undefined, {
+            weekday: "narrow",
+        }).format;
+        this.dayFormat = new Intl.DateTimeFormat(undefined, {
+            day: "numeric",
+        }).format;
+        this.hourFormat = new Intl.DateTimeFormat(undefined, {
+            hour: "numeric",
+            hour12: false,
+        }).format;
+        this.minuteFormat = new Intl.DateTimeFormat(undefined, {
+            minute: "numeric",
+            hour12: false,
+        }).format;
+        this.actions = [
+            { id: "prev", icon: "keyboard_arrow_left" },
+            { id: "next", icon: "keyboard_arrow_right" },
+        ];
+        this.buttons = [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIcon(item) {
+        return html` &lt;md-icon .data="${item}">${item.icon}&lt;/md-icon> `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderIconButton(item) {
+        return html`
+            &lt;md-icon-button
+                .data="${item}"
+                .icon="${ifDefined(item.icon)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .toggle="${ifDefined(item.toggle)}"
+                .selected="${ifDefined(item.selected)}"
+                .disabled="${ifDefined(item.disabled)}"
+                @click="${this.handleDatetimePickerIconButtonClick}"
+            >&lt;/md-icon-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderButton(item) {
+        return html`
+            &lt;md-button
+                .data="${item}"
+                .icon="${ifDefined(item.icon)}"
+                .label="${ifDefined(item.label)}"
+                .variant="${ifDefined(item.variant)}"
+                .type="${ifDefined(item.type)}"
+                .disabled="${ifDefined(item.disabled)}"
+                .selected="${ifDefined(item.selected)}"
+                @click="${this.handleDatetimePickerButtonClick}"
+            >&lt;/md-button>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     */
+    renderSpacer(item) {
+        return html` &lt;div class="md-datetime-picker__spacer">&lt;/div> `;
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
+     */
+    renderItem(item, component = "icon") {
+        return choose(
+            item.component || component,
+            [
+                ["icon", () => this.renderIcon(item)],
+                ["icon-button", () => this.renderIconButton(item)],
+                ["button", () => this.renderButton(item)],
+                ["spacer", () => this.renderSpacer(item)],
+            ],
+            () => nothing,
+        );
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderDatetimePickerYear() {
+        return html`
+            &lt;div class="md-datetime-picker__list">
+                ${this.years.map(
+                    (item) => html`
+                        &lt;div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleDatetimePickerYearItemClick}"
+                            class="md-datetime-picker__list-item"
+                        >
+                            ${item.label}
+                        &lt;/div>
+                    `,
+                )}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderDatetimePickerMonth() {
+        return html`
+            &lt;div class="md-datetime-picker__list">
+                ${this.months.map(
+                    (item) => html`
+                        &lt;div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleDatetimePickerMonthItemClick}"
+                            class="md-datetime-picker__list-item"
+                        >
+                            ${item.label}
+                        &lt;/div>
+                    `,
+                )}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderDatetimePickerDay() {
+        return html`
+            &lt;div class="md-datetime-picker__table">
+                &lt;div class="md-datetime-picker__table-header">
+                    &lt;div class="md-datetime-picker__table-row">${this.weekdays.map((item) => html` &lt;div class="md-datetime-picker__table-cell">${item.label}&lt;/div> `)}&lt;/div>
+                &lt;/div>
+                &lt;div class="md-datetime-picker__table-body">
+                    ${this.days.map(
+                        (row) => html`
+                            &lt;div class="md-datetime-picker__table-row">
+                                ${row.map(
+                                    (item) => html`
+                                        &lt;div
+                                            .data="${item}"
+                                            ?selected="${item.selected}"
+                                            ?activated="${item.activated}"
+                                            @click="${this.handleDatetimePickerDayItemClick}"
+                                            class="${classMap({
+                                                "md-datetime-picker__table-cell": true,
+                                                "md-datetime-picker__table-cell--same-month": item.isSameMonth,
+                                                "md-datetime-picker__table-cell--sunday": item.isSunday,
+                                            })}"
+                                        >
+                                            ${item.label}
+                                        &lt;/div>
+                                    `,
+                                )}
+                            &lt;/div>
+                        `,
+                    )}
+                &lt;/div>
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderDatetimePickerHour() {
+        return html`
+            &lt;div class="md-datetime-picker__circle md-datetime-picker__circle--hours">
+                ${this.hours.map(
+                    (item) => html`
+                        &lt;div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleDatetimePickerHourItemClick}"
+                            class="md-datetime-picker__circle-item"
+                        >
+                            ${item.label}
+                        &lt;/div>
+                    `,
+                )}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    renderDatetimePickerMinute() {
+        return html`
+            &lt;div class="md-datetime-picker__circle md-datetime-picker__circle--minutes">
+                ${this.minutes.map(
+                    (item) => html`
+                        &lt;div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleDatetimePickerMinuteItemClick}"
+                            class="md-datetime-picker__circle-item"
+                        >
+                            ${item.label}
+                        &lt;/div>
+                    `,
+                )}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     */
+    render() {
+        return html`
+            ${this.icons?.length || this.label || this.sublabel || this.actions?.length
+                ? html`
+                      &lt;div class="md-datetime-picker__header">
+                          &lt;div class="md-datetime-picker__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}&lt;/div>
+                          ${this.actions?.length ? html` &lt;div class="md-datetime-picker__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}&lt;/div> ` : nothing}
+                      &lt;/div>
+                  `
+                : nothing}
+            &lt;div class="md-datetime-picker__wrapper">
+                &lt;div class="md-datetime-picker__body">
+                    &lt;div class="md-datetime-picker__items">
+                        &lt;div class="md-datetime-picker__item">${this.renderDatetimePickerYear()}&lt;/div>
+                        &lt;div class="md-datetime-picker__item">${this.renderDatetimePickerMonth()}&lt;/div>
+                        &lt;div class="md-datetime-picker__item">${this.renderDatetimePickerDay()}&lt;/div>
+                        &lt;div class="md-datetime-picker__item">${this.renderDatetimePickerHour()}&lt;/div>
+                        &lt;div class="md-datetime-picker__item">${this.renderDatetimePickerMinute()}&lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                ${this.buttons?.length ? html` &lt;div class="md-datetime-picker__footer">${this.buttons?.length ? html` &lt;div class="md-datetime-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}&lt;/div> ` : nothing}&lt;/div> ` : nothing}
+            &lt;/div>
+        `;
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     */
+    async connectedCallback() {
+        super.connectedCallback();
+        this.selection = new Date(this.value.valueOf());
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.classList.add("md-datetime-picker");
+        this.style.setProperty("--md-comp-datetime-picker-animation", "none");
+        this.datetimePickerScrim = document.createElement("md-scrim");
+        this.parentElement.insertBefore(this.datetimePickerScrim, this.nextElementSibling);
+        this.handleDatetimePickerScrimClosed = this.handleDatetimePickerScrimClosed.bind(this);
+        this.datetimePickerScrim.addEventListener("onScrimClosed", this.handleDatetimePickerScrimClosed);
+        if (this.modal &amp;&amp; this.open) this.datetimePickerScrim.show();
+        await this.updateComplete;
+        this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-datetime-picker-width", this.clientWidth + "px");
+    }
+
+    /**
+     *
+     * @private
+     */
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.datetimePickerScrim.removeEventListener("onScrimClosed", this.handleDatetimePickerScrimClosed);
+        this.datetimePickerScrim.remove();
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [changedProperties]
+     */
+    updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("index")) {
+            this.style.setProperty("--md-comp-datetime-picker-index", this.index);
+        }
+        if (changedProperties.has("modal")) {
+            this.classList.toggle(`md-datetime-picker--modal`, !!this.modal);
+        }
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    show(options) {
+        this.style.removeProperty("--md-comp-datetime-picker-animation");
+        this.index = this.defaultIndex;
+        if (this.modal) this.datetimePickerScrim.show();
+        this.open = true;
+        options = {
+            container: this,
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            ...options,
+        };
+        this.popper = new Popper();
+        this.popper.show(options);
+        this.emit("onDatetimePickerShown");
+    }
+
+    /**
+     *
+     */
+    close() {
+        this.style.removeProperty("--md-comp-datetime-picker-animation");
+        this.open = false;
+        this.datetimePickerScrim.close();
+        this.emit("onDatetimePickerClosed");
+    }
+
+    /**
+     *
+     * @param {Any} [options]
+     */
+    toggle(options) {
+        if (this.open) this.close();
+        else this.show(options);
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerLabelClick(event) {
+        this.emit("onDatetimePickerLabelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerIconButtonPrevClick(event) {
+        if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() - 10);
+        else if (this.index === 1) this.selection.setFullYear(this.selection.getFullYear() - 1);
+        else if (this.index === 2) this.selection.setMonth(this.selection.getMonth() - 1);
+        else if (this.index === 3) this.selection.setHours(this.selection.getHours() - 1);
+        else if (this.index === 4) this.selection.setMinutes(this.selection.getMinutes() - 1);
+        this.requestUpdate();
+        this.emit("onDatetimePickerIconButtonPrevClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerIconButtonNextClick(event) {
+        if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() + 10);
+        else if (this.index === 1) this.selection.setFullYear(this.selection.getFullYear() + 1);
+        else if (this.index === 2) this.selection.setMonth(this.selection.getMonth() + 1);
+        else if (this.index === 3) this.selection.setHours(this.selection.getHours() + 1);
+        else if (this.index === 4) this.selection.setMinutes(this.selection.getMinutes() + 1);
+        this.requestUpdate();
+        this.emit("onDatetimePickerIconButtonNextClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerIconButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "prev") return this.handleDatetimePickerIconButtonPrevClick(event);
+        else if (data.id === "next") return this.handleDatetimePickerIconButtonNextClick(event);
+        this.emit("onDatetimePickerIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerYearItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setFullYear(data.year);
+        this.index = 1;
+        this.emit("onDatetimePickerYearItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerMonthItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setFullYear(data.year);
+        this.selection.setMonth(data.month);
+        this.index = 2;
+        this.emit("onDatetimePickerMonthItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerDayItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setFullYear(data.year);
+        this.selection.setMonth(data.month);
+        this.selection.setDate(data.day);
+        this.value.setFullYear(data.year);
+        this.value.setMonth(data.month);
+        this.value.setDate(data.day);
+        this.index = 3;
+        this.emit("onDatetimePickerDayItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerHourItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setHours(data.hour);
+        this.value.setHours(data.hour);
+        this.index = 4;
+        this.emit("onDatetimePickerHourItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerMinuteItemClick(event) {
+        const data = event.currentTarget.data;
+        this.selection.setMinutes(data.minute);
+        this.value.setMinutes(data.minute);
+        this.index = 2;
+        this.emit("onDatetimePickerMinuteItemClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerButtonCancelClick(event) {
+        this.close();
+        this.value.setFullYear(this.defaultValue.getFullYear());
+        this.value.setMonth(this.defaultValue.getMonth());
+        this.value.setDate(this.defaultValue.getDate());
+        this.value.setHours(this.defaultValue.getHours());
+        this.value.setMinutes(this.defaultValue.getMinutes());
+        this.emit("onDatetimePickerButtonCancelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerButtonOkClick(event) {
+        this.close();
+        this.emit("onDatetimePickerButtonOkClick", {
+            event,
+            value: stringifyDatetimeLocal(this.value),
+        });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerButtonLabelClick(event) {
+        const map = {
+            2: 0,
+            0: 1,
+            1: 2,
+            3: 4,
+            4: 2,
+        };
+        this.index = map[this.index];
+        this.emit("onDatetimePickerButtonLabelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "cancel") return this.handleDatetimePickerButtonCancelClick(event);
+        else if (data.id === "ok") return this.handleDatetimePickerButtonOkClick(event);
+        else if (data.id === "label") return this.handleDatetimePickerButtonLabelClick(event);
+        this.emit("onDatetimePickerButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleDatetimePickerScrimClosed(event) {
+        if (this.open) this.close();
+        this.emit("onDatetimePickerScrimClosed", { event });
+    }
+}
+customElements.define("md-datetime-picker", MdDatetimePickerComponent);
+export { MdDatetimePickerComponent };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Feb 13 2025 04:07:50 GMT+0700 (Indochina Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
