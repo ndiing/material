@@ -22,7 +22,7 @@ class MdNavigationDrawerComponent extends MdComponent {
      * @property {Array} [items]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {String} [view]
+     * @property {String} [type]
      */
     static properties = {
         icons: { type: Array },
@@ -32,16 +32,16 @@ class MdNavigationDrawerComponent extends MdComponent {
         items: { type: Array },
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean, reflect: true },
-        view: { type: String },
+        type: { type: String },
     };
-    views = ["flat", "tree"];
+    types = ["flat", "tree"];
 
     /**
      *
      */
     constructor() {
         super();
-        this.view = "flat";
+        this.type = "flat";
     }
 
     /**
@@ -99,7 +99,7 @@ class MdNavigationDrawerComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
             <div class="md-navigation-drawer__wrapper">
                 <div class="md-navigation-drawer__body">
-                    ${this.view === "flat"
+                    ${this.type === "flat"
                         ? html`
                               <md-navigation-list
                                   .items="${this.items}"

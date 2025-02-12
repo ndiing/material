@@ -247,7 +247,7 @@ class DemoMain extends MdComponent {
                 ></md-top-app-bar>
                 <md-navigation-drawer
                     id="mainNavigationDrawer"
-                    view="tree"
+                    type="tree"
                     .items="${this.items}"
                     @onNavigationDrawerItemClick="${(event) => {
                         if (mainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) mainNavigationDrawer.toggle();
