@@ -404,7 +404,6 @@ class MdWeekPickerComponent extends MdComponent {
         super.disconnectedCallback();
         this.weekPickerScrim.removeEventListener("onScrimClosed", this.handleWeekPickerScrimClosed);
         this.weekPickerScrim.remove();
-        this.classList.remove("md-week-picker");
     }
 
     /**

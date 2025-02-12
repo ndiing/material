@@ -135,15 +135,6 @@ class MdTooltipComponent extends MdComponent {
 
     /**
      *
-     * @private
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-tooltip");
-    }
-
-    /**
-     *
      * @param {Any} [options]
      */
     show(options) {

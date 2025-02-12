@@ -53,15 +53,6 @@ class MdMenuComponent extends MdComponent {
 
     /**
      *
-     * @private
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-menu");
-    }
-
-    /**
-     *
      * @param {Any} [options={}]
      */
     show(options = {}) {

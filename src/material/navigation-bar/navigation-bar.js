@@ -59,16 +59,6 @@ class MdNavigationBarComponent extends MdComponent {
     /**
      *
      * @private
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-navigation-bar");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
-    }
-
-    /**
-     *
-     * @private
      * @param {Any} [changedProperties]
      */
     updated(changedProperties) {

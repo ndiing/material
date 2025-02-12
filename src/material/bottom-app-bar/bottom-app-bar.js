@@ -97,16 +97,6 @@ class MdBottomAppBarComponent extends MdComponent {
     /**
      *
      * @private
-     */
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.classList.remove("md-bottom-app-bar");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
-    }
-
-    /**
-     *
-     * @private
      * @param {Any} [changedProperties]
      */
     updated(changedProperties) {

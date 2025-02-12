@@ -313,7 +313,6 @@ class MdTimePickerComponent extends MdComponent {
         super.disconnectedCallback();
         this.timePickerScrim.removeEventListener("onScrimClosed", this.handleTimePickerScrimClosed);
         this.timePickerScrim.remove();
-        this.classList.remove("md-time-picker");
     }
 
     /**

@@ -307,7 +307,6 @@ class MdMonthPickerComponent extends MdComponent {
         super.disconnectedCallback();
         this.monthPickerScrim.removeEventListener("onScrimClosed", this.handleMonthPickerScrimClosed);
         this.monthPickerScrim.remove();
-        this.classList.remove("md-month-picker");
     }
 
     /**
