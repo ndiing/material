@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdListComponent#onListItemClick
  * @fires MdListComponent#onListItemCheckboxNativeInput
@@ -13,10 +13,10 @@ import { ifDefined } from "lit/directives/if-defined.js";
  */
 class MdListComponent extends MdComponent {
     /**
-     * @property {Array} [items] 
+     * @property {Array} [items]
      * @property {String} [type] - ["single-select","multi-select"]
-     * @property {Object} [fieldMap] 
-     * @property {Object} [rippleOptions] 
+     * @property {Object} [fieldMap]
+     * @property {Object} [rippleOptions]
      */
     static properties = {
         items: { type: Array },
@@ -31,7 +31,7 @@ class MdListComponent extends MdComponent {
     types = ["single-select", "multi-select"];
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -83,7 +83,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -91,7 +91,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -100,7 +100,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [data]
      */
     multiSelect(data) {
@@ -108,7 +108,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [data]
      */
     singleSelect(data) {
@@ -118,7 +118,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -136,7 +136,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -148,7 +148,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -160,7 +160,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

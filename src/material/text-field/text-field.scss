@@ -40,7 +40,6 @@
     padding: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
     &::placeholder,
-
     &::-webkit-datetime-edit {
         color: inherit;
     }
@@ -83,13 +82,11 @@
 }
 
 .md-text-field--focus {
-
     .md-text-field__label {
         color: var(--md-sys-color-primary);
     }
 
     .md-text-field__icons {
-
         .md-icon {
             color: var(--md-sys-color-primary);
         }
@@ -97,13 +94,11 @@
 }
 
 .md-text-field--error {
-
     .md-text-field__label {
         color: var(--md-sys-color-error);
     }
 
     .md-text-field__icons {
-
         .md-icon {
             color: var(--md-sys-color-error);
         }
@@ -123,14 +118,12 @@
 }
 
 .md-text-field--filled {
-
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
         box-shadow: inset 0 -1px 0 0 var(--md-sys-color-outline);
     }
 
     &:not(.md-text-field--separate-label).md-text-field--with-label {
-
         .md-text-field__label {
             position: absolute;
             padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
@@ -141,14 +134,12 @@
             pointer-events: none;
         }
         .md-text-field__prefix,
-
         .md-text-field__suffix {
             visibility: hidden;
         }
 
         .md-text-field__native {
             &::placeholder,
-
             &::-webkit-datetime-edit {
                 visibility: hidden;
             }
@@ -159,11 +150,8 @@
         }
     }
     &.md-text-field--focus,
-
     &.md-text-field--populated {
-
         &:not(.md-text-field--separate-label).md-text-field--with-label {
-
             .md-text-field__label {
                 padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 8px);
                 padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 8px);
@@ -171,20 +159,17 @@
             }
             .md-text-field__prefix,
             .md-text-field__suffix,
-
             .md-text-field__native {
                 padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 8px);
                 padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 8px);
             }
             .md-text-field__prefix,
-
             .md-text-field__suffix {
                 visibility: visible;
             }
 
             .md-text-field__native {
                 &::placeholder,
-
                 &::-webkit-datetime-edit {
                     visibility: visible;
                 }
@@ -197,14 +182,12 @@
     }
 
     &.md-text-field--focus {
-
         .md-text-field__container {
             box-shadow: inset 0 -2px 0 0 var(--md-sys-color-primary);
         }
     }
 
     &.md-text-field--error {
-
         .md-text-field__container {
             box-shadow: inset 0 -2px 0 0 var(--md-sys-color-error);
         }
@@ -212,14 +195,12 @@
 }
 
 .md-text-field--outlined {
-
     .md-text-field__container {
         background-color: transparent;
         box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
     }
 
     &:not(.md-text-field--separate-label).md-text-field--with-label {
-
         .md-text-field__label {
             display: inline-flex;
             align-items: center;
@@ -247,14 +228,12 @@
             }
         }
         .md-text-field__prefix,
-
         .md-text-field__suffix {
             visibility: hidden;
         }
 
         .md-text-field__native {
             &::placeholder,
-
             &::-webkit-datetime-edit {
                 visibility: hidden;
             }
@@ -265,11 +244,8 @@
         }
     }
     &.md-text-field--focus,
-
     &.md-text-field--populated {
-
         &:not(.md-text-field--separate-label).md-text-field--with-label {
-
             .md-text-field__label {
                 padding-top: 0;
                 padding-bottom: 0;
@@ -283,14 +259,12 @@
                 }
             }
             .md-text-field__prefix,
-
             .md-text-field__suffix {
                 visibility: visible;
             }
 
             .md-text-field__native {
                 &::placeholder,
-
                 &::-webkit-datetime-edit {
                     visibility: visible;
                 }
@@ -303,14 +277,12 @@
     }
 
     &.md-text-field--focus {
-
         .md-text-field__container {
             box-shadow: inset 0 0 0 2px var(--md-sys-color-primary);
         }
     }
 
     &.md-text-field--error {
-
         .md-text-field__container {
             box-shadow: inset 0 0 0 2px var(--md-sys-color-error);
         }
@@ -318,7 +290,6 @@
 }
 
 .md-text-field__native {
-
     &[type="color" i] {
         height: 24px;
         min-width: 24px;
@@ -337,7 +308,6 @@
     &::-webkit-datetime-edit-day-field,
     &::-webkit-datetime-edit-year-field,
     &::-webkit-datetime-edit-hour-field,
-
     &::-webkit-datetime-edit-minute-field {
         padding: 0;
     }
@@ -351,7 +321,6 @@
     &[type="month" i]::-webkit-calendar-picker-indicator,
     &[type="week" i]::-webkit-calendar-picker-indicator,
     &[type="time" i]::-webkit-calendar-picker-indicator,
-
     &[type="search" i]::-webkit-search-cancel-button {
         display: none;
     }

@@ -80,9 +80,7 @@
 }
 
 .md-slider__native {
-
     &:hover {
-
         ~ .md-slider__value {
             transform: translate3d(-50%, 0%, 0) scale(1);
             top: -62px;
@@ -91,30 +89,25 @@
 }
 
 .md-slider--centered {
-
     .md-slider__wrapper {
         background: var(--md-sys-color-secondary-container);
     }
 }
 
 .md-slider--continuous {
-
     .md-slider__indicators {
         flex-direction: row-reverse;
     }
 }
 
 .md-slider--discrete {
-
     .md-slider__indicator--activated {
         background-color: var(--md-sys-color-secondary-container);
     }
 }
 
 .md-slider--range-selection {
-
     .md-slider__wrapper {
-
         &:first-of-type {
             background: linear-gradient(to right, var(--md-sys-color-secondary-container) 0% calc(1% * var(--md-comp-slider-value0) * 100), var(--md-sys-color-primary) calc(1% * var(--md-comp-slider-value0) * 100) calc(1% * var(--md-comp-slider-value1) * 100), var(--md-sys-color-secondary-container) calc(1% * var(--md-comp-slider-value1) * 100) 100%);
 

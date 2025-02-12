@@ -1,0 +1,254 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @param {Any} [week]\r\n */",
+        "meta": {
+            "range": [43, 368],
+            "filename": "polyfill.js",
+            "lineno": 7,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000003",
+                "name": "Date.prototype.setWeek",
+                "type": "FunctionExpression",
+                "paramnames": ["week"]
+            },
+            "vars": {
+                "year": "Date#setWeek~year",
+                "firstThursday": "Date#setWeek~firstThursday",
+                "firstThursdayTime": "Date#setWeek~firstThursdayTime",
+                "weekStartTime": "Date#setWeek~weekStartTime"
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "week"
+            }
+        ],
+        "name": "setWeek",
+        "longname": "Date#setWeek",
+        "kind": "function",
+        "memberof": "Date",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [97, 122],
+            "filename": "polyfill.js",
+            "lineno": 8,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000013",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "Date#setWeek~year",
+        "kind": "constant",
+        "memberof": "Date#setWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [135, 171],
+            "filename": "polyfill.js",
+            "lineno": 9,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000020",
+                "name": "firstThursday",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "firstThursday",
+        "longname": "Date#setWeek~firstThursday",
+        "kind": "constant",
+        "memberof": "Date#setWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [184, 227],
+            "filename": "polyfill.js",
+            "lineno": 10,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000028",
+                "name": "firstThursdayTime",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "firstThursdayTime",
+        "longname": "Date#setWeek~firstThursdayTime",
+        "kind": "constant",
+        "memberof": "Date#setWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [240, 312],
+            "filename": "polyfill.js",
+            "lineno": 11,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000035",
+                "name": "weekStartTime",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "weekStartTime",
+        "longname": "Date#setWeek~weekStartTime",
+        "kind": "constant",
+        "memberof": "Date#setWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n * \r\n */",
+        "meta": {
+            "range": [388, 753],
+            "filename": "polyfill.js",
+            "lineno": 19,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000061",
+                "name": "Date.prototype.getWeek",
+                "type": "FunctionExpression",
+                "paramnames": []
+            },
+            "vars": {
+                "target": "Date#getWeek~target",
+                "dayNr": "Date#getWeek~dayNr",
+                "firstThursday": "Date#getWeek~firstThursday",
+                "weekNumber": "Date#getWeek~weekNumber"
+            }
+        },
+        "name": "getWeek",
+        "longname": "Date#getWeek",
+        "kind": "function",
+        "memberof": "Date",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [438, 471],
+            "filename": "polyfill.js",
+            "lineno": 20,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000070",
+                "name": "target",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "target",
+        "longname": "Date#getWeek~target",
+        "kind": "constant",
+        "memberof": "Date#getWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [484, 515],
+            "filename": "polyfill.js",
+            "lineno": 21,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000079",
+                "name": "dayNr",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "dayNr",
+        "longname": "Date#getWeek~dayNr",
+        "kind": "constant",
+        "memberof": "Date#getWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [579, 631],
+            "filename": "polyfill.js",
+            "lineno": 23,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000103",
+                "name": "firstThursday",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "firstThursday",
+        "longname": "Date#getWeek~firstThursday",
+        "kind": "constant",
+        "memberof": "Date#getWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [644, 725],
+            "filename": "polyfill.js",
+            "lineno": 24,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
+            "code": {
+                "id": "astnode100000114",
+                "name": "weekNumber",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "weekNumber",
+        "longname": "Date#getWeek~weekNumber",
+        "kind": "constant",
+        "memberof": "Date#getWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill\\polyfill.js"]
+    }
+]

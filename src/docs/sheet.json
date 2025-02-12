@@ -1,0 +1,1270 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdSheetComponent#onSheetShown\r\n * @fires MdSheetComponent#onSheetClosed\r\n * @fires MdSheetComponent#onSheetIconButtonClick\r\n * @fires MdSheetComponent#onSheetButtonClick\r\n * @fires MdSheetComponent#onSheetScrimClosed\r\n * @element md-sheet\r\n */",
+        "meta": {
+            "range": [496, 7649],
+            "filename": "sheet.js",
+            "lineno": 16,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdSheetComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdSheetComponent#event:onSheetShown", "MdSheetComponent#event:onSheetClosed", "MdSheetComponent#event:onSheetIconButtonClick", "MdSheetComponent#event:onSheetButtonClick", "MdSheetComponent#event:onSheetScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-sheet",
+                "value": "md-sheet"
+            }
+        ],
+        "name": "MdSheetComponent",
+        "longname": "MdSheetComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [icons] \r\n     * @property {Array} [actions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [buttons] \r\n     * @property {Boolean} [open] \r\n     * @property {String} [region] - [\"north\",\"east\",\"south\",\"west\",\"center\"]\r\n     * @property {Boolean} [modal] \r\n     */",
+        "meta": {
+            "range": [900, 1237],
+            "filename": "sheet.js",
+            "lineno": 27,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "buttons"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "open"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "description": "[\"north\",\"east\",\"south\",\"west\",\"center\"]",
+                "name": "region"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "modal"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdSheetComponent#properties",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [931, 953],
+            "filename": "sheet.js",
+            "lineno": 28,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000026",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [940, 951],
+            "filename": "sheet.js",
+            "lineno": 28,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [964, 988],
+            "filename": "sheet.js",
+            "lineno": 29,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000030",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [975, 986],
+            "filename": "sheet.js",
+            "lineno": 29,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [999, 1022],
+            "filename": "sheet.js",
+            "lineno": 30,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000034",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1008, 1020],
+            "filename": "sheet.js",
+            "lineno": 30,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1033, 1059],
+            "filename": "sheet.js",
+            "lineno": 31,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000038",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1045, 1057],
+            "filename": "sheet.js",
+            "lineno": 31,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1070, 1094],
+            "filename": "sheet.js",
+            "lineno": 32,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000042",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1081, 1092],
+            "filename": "sheet.js",
+            "lineno": 32,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1105, 1143],
+            "filename": "sheet.js",
+            "lineno": 33,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000046",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1113, 1126],
+            "filename": "sheet.js",
+            "lineno": 33,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1128, 1141],
+            "filename": "sheet.js",
+            "lineno": 33,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000050",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1154, 1178],
+            "filename": "sheet.js",
+            "lineno": 34,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000052",
+                "name": "region",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "region",
+        "longname": "region",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1164, 1176],
+            "filename": "sheet.js",
+            "lineno": 34,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000054",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "region.type",
+        "kind": "member",
+        "memberof": "region",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1189, 1228],
+            "filename": "sheet.js",
+            "lineno": 35,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000056",
+                "name": "modal",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "modal",
+        "longname": "modal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1198, 1211],
+            "filename": "sheet.js",
+            "lineno": 35,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000058",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "modal.type",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1213, 1226],
+            "filename": "sheet.js",
+            "lineno": 35,
+            "columnno": 32,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000060",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "modal.reflect",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [1281, 1336],
+            "filename": "sheet.js",
+            "lineno": 41,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000062",
+                "name": "regions",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "regions",
+        "longname": "MdSheetComponent#regions",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [1371, 1494],
+            "filename": "sheet.js",
+            "lineno": 46,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000069",
+                "name": "MdSheetComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdSheetComponent",
+        "longname": "MdSheetComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdSheetComponent#onSheetShown\r\n * @fires MdSheetComponent#onSheetClosed\r\n * @fires MdSheetComponent#onSheetIconButtonClick\r\n * @fires MdSheetComponent#onSheetButtonClick\r\n * @fires MdSheetComponent#onSheetScrimClosed\r\n * @element md-sheet\r\n */",
+        "meta": {
+            "range": [496, 7649],
+            "filename": "sheet.js",
+            "lineno": 16,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdSheetComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdSheetComponent",
+        "longname": "MdSheetComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdSheetComponent#event:onSheetShown", "MdSheetComponent#event:onSheetClosed", "MdSheetComponent#event:onSheetIconButtonClick", "MdSheetComponent#event:onSheetButtonClick", "MdSheetComponent#event:onSheetScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-sheet",
+                "value": "md-sheet"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1414, 1453],
+            "filename": "sheet.js",
+            "lineno": 48,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000077",
+                "name": "this.body",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "body",
+        "longname": "MdSheetComponent#body",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1464, 1486],
+            "filename": "sheet.js",
+            "lineno": 49,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000089",
+                "name": "this.region",
+                "type": "Literal",
+                "value": "center",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "region",
+        "longname": "MdSheetComponent#region",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1574, 1672],
+            "filename": "sheet.js",
+            "lineno": 57,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000094",
+                "name": "MdSheetComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdSheetComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1752, 2292],
+            "filename": "sheet.js",
+            "lineno": 66,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000110",
+                "name": "MdSheetComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdSheetComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [2372, 2892],
+            "filename": "sheet.js",
+            "lineno": 86,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000162",
+                "name": "MdSheetComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdSheetComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [2972, 3061],
+            "filename": "sheet.js",
+            "lineno": 106,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000214",
+                "name": "MdSheetComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdSheetComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [3181, 3608],
+            "filename": "sheet.js",
+            "lineno": 116,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000224",
+                "name": "MdSheetComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "component"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdSheetComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [3660, 4798],
+            "filename": "sheet.js",
+            "lineno": 133,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000275",
+                "name": "MdSheetComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdSheetComponent#render",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [4865, 5627],
+            "filename": "sheet.js",
+            "lineno": 142,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000443",
+                "name": "MdSheetComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdSheetComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4938, 4990],
+            "filename": "sheet.js",
+            "lineno": 144,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000453",
+                "name": "this.sheetScrim",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "sheetScrim",
+        "longname": "MdSheetComponent#sheetScrim",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5085, 5153],
+            "filename": "sheet.js",
+            "lineno": 146,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000476",
+                "name": "this.handleSheetScrimClosed",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleSheetScrimClosed",
+        "longname": "MdSheetComponent#handleSheetScrimClosed",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [5679, 5990],
+            "filename": "sheet.js",
+            "lineno": 160,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000561",
+                "name": "MdSheetComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "disconnectedCallback",
+        "longname": "MdSheetComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [6083, 6499],
+            "filename": "sheet.js",
+            "lineno": 173,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000605",
+                "name": "MdSheetComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdSheetComponent#updated",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [6534, 6726],
+            "filename": "sheet.js",
+            "lineno": 188,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000670",
+                "name": "MdSheetComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "show",
+        "longname": "MdSheetComponent#show",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6666, 6682],
+            "filename": "sheet.js",
+            "lineno": 191,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000694",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdSheetComponent#open",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [6761, 6967],
+            "filename": "sheet.js",
+            "lineno": 198,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000705",
+                "name": "MdSheetComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdSheetComponent#close",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6845, 6862],
+            "filename": "sheet.js",
+            "lineno": 200,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000718",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdSheetComponent#open",
+        "kind": "member",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [7002, 7084],
+            "filename": "sheet.js",
+            "lineno": 208,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000742",
+                "name": "MdSheetComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "toggle",
+        "longname": "MdSheetComponent#toggle",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [7165, 7264],
+            "filename": "sheet.js",
+            "lineno": 218,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000760",
+                "name": "MdSheetComponent#handleSheetIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSheetIconButtonClick",
+        "longname": "MdSheetComponent#handleSheetIconButtonClick",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7248, 7253],
+            "filename": "sheet.js",
+            "lineno": 219,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000772",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [7345, 7436],
+            "filename": "sheet.js",
+            "lineno": 227,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000774",
+                "name": "MdSheetComponent#handleSheetButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSheetButtonClick",
+        "longname": "MdSheetComponent#handleSheetButtonClick",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7420, 7425],
+            "filename": "sheet.js",
+            "lineno": 228,
+            "columnno": 42,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000786",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [7517, 7646],
+            "filename": "sheet.js",
+            "lineno": 236,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000788",
+                "name": "MdSheetComponent#handleSheetScrimClosed",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSheetScrimClosed",
+        "longname": "MdSheetComponent#handleSheetScrimClosed",
+        "kind": "function",
+        "memberof": "MdSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7630, 7635],
+            "filename": "sheet.js",
+            "lineno": 238,
+            "columnno": 42,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000809",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7714, 7730],
+            "filename": "sheet.js",
+            "lineno": 242,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet",
+            "code": {
+                "id": "astnode100000819",
+                "name": "exports.MdSheetComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdSheetComponent",
+        "longname": "MdSheetComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet\\sheet.js"]
+    }
+]

@@ -1,0 +1,1113 @@
+[
+    {
+        "comment": "/**\n *\n */",
+        "meta": {
+            "range": [11, 4503],
+            "filename": "store.js",
+            "lineno": 4,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000002",
+                "name": "Store",
+                "type": "ClassDeclaration",
+                "paramnames": ["data", "options"]
+            }
+        },
+        "name": "Store",
+        "longname": "Store",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data=[]]\n     * @param {Any} [options={}]\n     */",
+        "meta": {
+            "range": [115, 217],
+            "filename": "store.js",
+            "lineno": 10,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000005",
+                "name": "Store",
+                "type": "MethodDefinition",
+                "paramnames": ["data", "options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "[]",
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "{}",
+                "name": "options"
+            }
+        ],
+        "name": "Store",
+        "longname": "Store",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n *\n */",
+        "meta": {
+            "range": [11, 4503],
+            "filename": "store.js",
+            "lineno": 4,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000002",
+                "name": "Store",
+                "type": "ClassDeclaration",
+                "paramnames": ["data", "options"]
+            }
+        },
+        "name": "Store",
+        "longname": "Store",
+        "kind": "class",
+        "scope": "global",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "[]",
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "{}",
+                "name": "options"
+            }
+        ]
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [162, 178],
+            "filename": "store.js",
+            "lineno": 11,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000016",
+                "name": "this.data",
+                "type": "Identifier",
+                "value": "data",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "Store#data",
+        "kind": "member",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [188, 210],
+            "filename": "store.js",
+            "lineno": 12,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000022",
+                "name": "this.options",
+                "type": "Identifier",
+                "value": "options",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "options",
+        "longname": "Store#options",
+        "kind": "member",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data=[]]\n     */",
+        "meta": {
+            "range": [276, 325],
+            "filename": "store.js",
+            "lineno": 19,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000027",
+                "name": "Store#load",
+                "type": "MethodDefinition",
+                "paramnames": ["data"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "[]",
+                "name": "data"
+            }
+        ],
+        "name": "load",
+        "longname": "Store#load",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [302, 318],
+            "filename": "store.js",
+            "lineno": 20,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000035",
+                "name": "this.data",
+                "type": "Identifier",
+                "value": "data",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "Store#data",
+        "kind": "member",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data]\n     * @param {Any} [sorters]\n     */",
+        "meta": {
+            "range": [411, 991],
+            "filename": "store.js",
+            "lineno": 28,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000040",
+                "name": "Store#sort",
+                "type": "MethodDefinition",
+                "paramnames": ["data", "sorters"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "sorters"
+            }
+        ],
+        "name": "sort",
+        "longname": "Store#sort",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [565, 571],
+            "filename": "store.js",
+            "lineno": 31,
+            "columnno": 21,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000072",
+                "name": "sorter"
+            }
+        },
+        "undocumented": true,
+        "name": "sorter",
+        "longname": "<anonymous>~sorter",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [606, 650],
+            "filename": "store.js",
+            "lineno": 32,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000077",
+                "name": "valueA",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "valueA",
+        "longname": "<anonymous>~valueA",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [672, 716],
+            "filename": "store.js",
+            "lineno": 33,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000088",
+                "name": "valueB",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "valueB",
+        "longname": "<anonymous>~valueB",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [item]\n     * @param {Any} [q]\n     */",
+        "meta": {
+            "range": [1071, 1540],
+            "filename": "store.js",
+            "lineno": 47,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000137",
+                "name": "Store#deepSearch",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "q"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "q"
+            }
+        ],
+        "name": "deepSearch",
+        "longname": "Store#deepSearch",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data]\n     * @param {Any} [q]\n     */",
+        "meta": {
+            "range": [1620, 1736],
+            "filename": "store.js",
+            "lineno": 66,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000218",
+                "name": "Store#search",
+                "type": "MethodDefinition",
+                "paramnames": ["data", "q"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "q"
+            }
+        ],
+        "name": "search",
+        "longname": "Store#search",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [item]\n     * @param {Any} [name]\n     */",
+        "meta": {
+            "range": [1819, 1968],
+            "filename": "store.js",
+            "lineno": 76,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000242",
+                "name": "Store#getNestedValue",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "name"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "name"
+            }
+        ],
+        "name": "getNestedValue",
+        "longname": "Store#getNestedValue",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data]\n     * @param {Any} [filters]\n     */",
+        "meta": {
+            "range": [2054, 3423],
+            "filename": "store.js",
+            "lineno": 85,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000273",
+                "name": "Store#filter",
+                "type": "MethodDefinition",
+                "paramnames": ["data", "filters"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "filters"
+            }
+        ],
+        "name": "filter",
+        "longname": "Store#filter",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2272, 2276],
+            "filename": "store.js",
+            "lineno": 89,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000316",
+                "name": "name",
+                "type": "Identifier",
+                "value": "name"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "name",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2278, 2283],
+            "filename": "store.js",
+            "lineno": 89,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000318",
+                "name": "value",
+                "type": "Identifier",
+                "value": "value"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2285, 2301],
+            "filename": "store.js",
+            "lineno": 89,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000320",
+                "name": "operator",
+                "type": "AssignmentPattern",
+                "value": "operator"
+            }
+        },
+        "undocumented": true,
+        "name": "operator",
+        "longname": "operator",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2334, 2378],
+            "filename": "store.js",
+            "lineno": 90,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000326",
+                "name": "fieldValue",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "fieldValue",
+        "longname": "<anonymous>~fieldValue",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data]\n     * @param {Any} [_start]\n     * @param {Any} [_end]\n     */",
+        "meta": {
+            "range": [3535, 3609],
+            "filename": "store.js",
+            "lineno": 123,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000424",
+                "name": "Store#range",
+                "type": "MethodDefinition",
+                "paramnames": ["data", "_start", "_end"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "_start"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "_end"
+            }
+        ],
+        "name": "range",
+        "longname": "Store#range",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [data]\n     * @param {Any} [_page]\n     * @param {Any} [_limit]\n     */",
+        "meta": {
+            "range": [3722, 3874],
+            "filename": "store.js",
+            "lineno": 133,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000438",
+                "name": "Store#paginate",
+                "type": "MethodDefinition",
+                "paramnames": ["data", "_page", "_limit"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "_page"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "_limit"
+            }
+        ],
+        "name": "paginate",
+        "longname": "Store#paginate",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3766, 3794],
+            "filename": "store.js",
+            "lineno": 134,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000446",
+                "name": "start",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "start",
+        "longname": "<anonymous>~start",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3808, 3828],
+            "filename": "store.js",
+            "lineno": 135,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000454",
+                "name": "end",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "end",
+        "longname": "<anonymous>~end",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n     *\n     * @param {Any} [options={}]\n     */",
+        "meta": {
+            "range": [3936, 4501],
+            "filename": "store.js",
+            "lineno": 143,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000466",
+                "name": "Store#get",
+                "type": "MethodDefinition",
+                "paramnames": ["options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "{}",
+                "name": "options"
+            }
+        ],
+        "name": "get",
+        "longname": "Store#get",
+        "kind": "function",
+        "memberof": "Store",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3970, 3977],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000476",
+                "name": "sorters",
+                "type": "Identifier",
+                "value": "sorters"
+            }
+        },
+        "undocumented": true,
+        "name": "sorters",
+        "longname": "sorters",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3979, 3980],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 23,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000478",
+                "name": "q",
+                "type": "Identifier",
+                "value": "q"
+            }
+        },
+        "undocumented": true,
+        "name": "q",
+        "longname": "q",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3982, 3989],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000480",
+                "name": "filters",
+                "type": "Identifier",
+                "value": "filters"
+            }
+        },
+        "undocumented": true,
+        "name": "filters",
+        "longname": "filters",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3991, 3997],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000482",
+                "name": "_start",
+                "type": "Identifier",
+                "value": "_start"
+            }
+        },
+        "undocumented": true,
+        "name": "_start",
+        "longname": "_start",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3999, 4003],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 43,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000484",
+                "name": "_end",
+                "type": "Identifier",
+                "value": "_end"
+            }
+        },
+        "undocumented": true,
+        "name": "_end",
+        "longname": "_end",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4005, 4010],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 49,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000486",
+                "name": "_page",
+                "type": "Identifier",
+                "value": "_page"
+            }
+        },
+        "undocumented": true,
+        "name": "_page",
+        "longname": "_page",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4012, 4018],
+            "filename": "store.js",
+            "lineno": 144,
+            "columnno": 56,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000488",
+                "name": "_limit",
+                "type": "Identifier",
+                "value": "_limit"
+            }
+        },
+        "undocumented": true,
+        "name": "_limit",
+        "longname": "_limit",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4044, 4068],
+            "filename": "store.js",
+            "lineno": 145,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000492",
+                "name": "data",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4078, 4109],
+            "filename": "store.js",
+            "lineno": 146,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000501",
+                "name": "data",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4119, 4146],
+            "filename": "store.js",
+            "lineno": 147,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000510",
+                "name": "data",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4156, 4189],
+            "filename": "store.js",
+            "lineno": 148,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000519",
+                "name": "data",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4203, 4222],
+            "filename": "store.js",
+            "lineno": 149,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000528",
+                "name": "total",
+                "type": "MemberExpression",
+                "value": "data.length"
+            }
+        },
+        "undocumented": true,
+        "name": "total",
+        "longname": "<anonymous>~total",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4294, 4331],
+            "filename": "store.js",
+            "lineno": 151,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000543",
+                "name": "data",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4411, 4452],
+            "filename": "store.js",
+            "lineno": 153,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000562",
+                "name": "data",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4481, 4485],
+            "filename": "store.js",
+            "lineno": 155,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000573",
+                "name": "data",
+                "type": "Identifier",
+                "value": "data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "data",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4487, 4492],
+            "filename": "store.js",
+            "lineno": 155,
+            "columnno": 23,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000575",
+                "name": "total",
+                "type": "Identifier",
+                "value": "total"
+            }
+        },
+        "undocumented": true,
+        "name": "total",
+        "longname": "total",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4513, 4518],
+            "filename": "store.js",
+            "lineno": 158,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
+            "code": {
+                "id": "astnode100000578",
+                "name": "exports.Store",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "Store",
+        "longname": "Store",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store\\store.js"]
+    }
+]

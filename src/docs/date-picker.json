@@ -1,0 +1,3835 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdDatePickerComponent#onDatePickerShown\r\n * @fires MdDatePickerComponent#onDatePickerClosed\r\n * @fires MdDatePickerComponent#onDatePickerLabelClick\r\n * @fires MdDatePickerComponent#onDatePickerIconButtonPrevClick\r\n * @fires MdDatePickerComponent#onDatePickerIconButtonNextClick\r\n * @fires MdDatePickerComponent#onDatePickerIconButtonClick\r\n * @fires MdDatePickerComponent#onDatePickerYearItemClick\r\n * @fires MdDatePickerComponent#onDatePickerMonthItemClick\r\n * @fires MdDatePickerComponent#onDatePickerDayItemClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonCancelClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonOkClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonLabelClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonClick\r\n * @fires MdDatePickerComponent#onDatePickerScrimClosed\r\n * @element md-date-picker\r\n */",
+        "meta": {
+            "range": [1258, 20631],
+            "filename": "date-picker.js",
+            "lineno": 28,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000034",
+                "name": "MdDatePickerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdDatePickerComponent#event:onDatePickerShown", "MdDatePickerComponent#event:onDatePickerClosed", "MdDatePickerComponent#event:onDatePickerLabelClick", "MdDatePickerComponent#event:onDatePickerIconButtonPrevClick", "MdDatePickerComponent#event:onDatePickerIconButtonNextClick", "MdDatePickerComponent#event:onDatePickerIconButtonClick", "MdDatePickerComponent#event:onDatePickerYearItemClick", "MdDatePickerComponent#event:onDatePickerMonthItemClick", "MdDatePickerComponent#event:onDatePickerDayItemClick", "MdDatePickerComponent#event:onDatePickerButtonCancelClick", "MdDatePickerComponent#event:onDatePickerButtonOkClick", "MdDatePickerComponent#event:onDatePickerButtonLabelClick", "MdDatePickerComponent#event:onDatePickerButtonClick", "MdDatePickerComponent#event:onDatePickerScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-date-picker",
+                "value": "md-date-picker"
+            }
+        ],
+        "name": "MdDatePickerComponent",
+        "longname": "MdDatePickerComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [icons] \r\n     * @property {Array} [actions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [buttons] \r\n     * @property {Boolean} [open] \r\n     * @property {Boolean} [modal] \r\n     * @property {Number} [index] \r\n     * @property {Any} [value] \r\n     */",
+        "meta": {
+            "range": [1657, 2286],
+            "filename": "date-picker.js",
+            "lineno": 40,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000038",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "buttons"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "open"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "modal"
+            },
+            {
+                "type": {
+                    "names": ["Number"]
+                },
+                "optional": true,
+                "name": "index"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "value"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdDatePickerComponent#properties",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1688, 1710],
+            "filename": "date-picker.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000040",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1697, 1708],
+            "filename": "date-picker.js",
+            "lineno": 41,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000042",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1721, 1745],
+            "filename": "date-picker.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000044",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1732, 1743],
+            "filename": "date-picker.js",
+            "lineno": 42,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000046",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1756, 1779],
+            "filename": "date-picker.js",
+            "lineno": 43,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000048",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1765, 1777],
+            "filename": "date-picker.js",
+            "lineno": 43,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000050",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1790, 1816],
+            "filename": "date-picker.js",
+            "lineno": 44,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000052",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1802, 1814],
+            "filename": "date-picker.js",
+            "lineno": 44,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000054",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1827, 1851],
+            "filename": "date-picker.js",
+            "lineno": 45,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000056",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1838, 1849],
+            "filename": "date-picker.js",
+            "lineno": 45,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000058",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1862, 1900],
+            "filename": "date-picker.js",
+            "lineno": 46,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000060",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1870, 1883],
+            "filename": "date-picker.js",
+            "lineno": 46,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000062",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1885, 1898],
+            "filename": "date-picker.js",
+            "lineno": 46,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000064",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1911, 1935],
+            "filename": "date-picker.js",
+            "lineno": 47,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000066",
+                "name": "modal",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "modal",
+        "longname": "modal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1920, 1933],
+            "filename": "date-picker.js",
+            "lineno": 47,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000068",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "modal.type",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1946, 1969],
+            "filename": "date-picker.js",
+            "lineno": 48,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000070",
+                "name": "index",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "index",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1955, 1967],
+            "filename": "date-picker.js",
+            "lineno": 48,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000072",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "index.type",
+        "kind": "member",
+        "memberof": "index",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1980, 2277],
+            "filename": "date-picker.js",
+            "lineno": 49,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000074",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"converter\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2002, 2265],
+            "filename": "date-picker.js",
+            "lineno": 50,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000076",
+                "name": "converter",
+                "type": "ObjectExpression",
+                "value": "{\"fromAttribute\":\"\",\"toAttribute\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "converter",
+        "longname": "value.converter",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2032, 2130],
+            "filename": "date-picker.js",
+            "lineno": 51,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000078",
+                "name": "fromAttribute",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "fromAttribute",
+        "longname": "value.converter.fromAttribute",
+        "kind": "function",
+        "memberof": "value.converter",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2149, 2249],
+            "filename": "date-picker.js",
+            "lineno": 54,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000087",
+                "name": "toAttribute",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "toAttribute",
+        "longname": "value.converter.toAttribute",
+        "kind": "function",
+        "memberof": "value.converter",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [2339, 2456],
+            "filename": "date-picker.js",
+            "lineno": 65,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000096",
+                "name": "MdDatePickerComponent#startOfDay",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "startOfDay",
+        "longname": "MdDatePickerComponent#startOfDay",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [2509, 3023],
+            "filename": "date-picker.js",
+            "lineno": 73,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000118",
+                "name": "MdDatePickerComponent#years",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "years",
+        "longname": "MdDatePickerComponent#years",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2536, 2571],
+            "filename": "date-picker.js",
+            "lineno": 74,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000123",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "<anonymous>~year",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2582, 2615],
+            "filename": "date-picker.js",
+            "lineno": 75,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000132",
+                "name": "year",
+                "type": "BinaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "<anonymous>~year",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2646, 2656],
+            "filename": "date-picker.js",
+            "lineno": 76,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000149",
+                "name": "length",
+                "type": "Literal",
+                "value": 10
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2691, 2719],
+            "filename": "date-picker.js",
+            "lineno": 77,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000156",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2760, 2784],
+            "filename": "date-picker.js",
+            "lineno": 79,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000166",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2803, 2831],
+            "filename": "date-picker.js",
+            "lineno": 80,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000171",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2850, 2907],
+            "filename": "date-picker.js",
+            "lineno": 81,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000177",
+                "name": "selected",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2926, 2986],
+            "filename": "date-picker.js",
+            "lineno": 82,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000189",
+                "name": "activated",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [3076, 3651],
+            "filename": "date-picker.js",
+            "lineno": 91,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000201",
+                "name": "MdDatePickerComponent#months",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "months",
+        "longname": "MdDatePickerComponent#months",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3120, 3130],
+            "filename": "date-picker.js",
+            "lineno": 92,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000211",
+                "name": "length",
+                "type": "Literal",
+                "value": 12
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3165, 3213],
+            "filename": "date-picker.js",
+            "lineno": 93,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000218",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3254, 3278],
+            "filename": "date-picker.js",
+            "lineno": 95,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000231",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3297, 3319],
+            "filename": "date-picker.js",
+            "lineno": 96,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000236",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3338, 3367],
+            "filename": "date-picker.js",
+            "lineno": 97,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000241",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3386, 3488],
+            "filename": "date-picker.js",
+            "lineno": 98,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000247",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3507, 3614],
+            "filename": "date-picker.js",
+            "lineno": 99,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000271",
+                "name": "activated",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [3704, 3927],
+            "filename": "date-picker.js",
+            "lineno": 108,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000295",
+                "name": "MdDatePickerComponent#weekdays",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "weekdays",
+        "longname": "MdDatePickerComponent#weekdays",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3750, 3759],
+            "filename": "date-picker.js",
+            "lineno": 109,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000305",
+                "name": "length",
+                "type": "Literal",
+                "value": 7
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3794, 3818],
+            "filename": "date-picker.js",
+            "lineno": 110,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000312",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3859, 3890],
+            "filename": "date-picker.js",
+            "lineno": 112,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000321",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [3980, 5035],
+            "filename": "date-picker.js",
+            "lineno": 121,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000327",
+                "name": "MdDatePickerComponent#days",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "days",
+        "longname": "MdDatePickerComponent#days",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4022, 4031],
+            "filename": "date-picker.js",
+            "lineno": 122,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000337",
+                "name": "length",
+                "type": "Literal",
+                "value": 6
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4080, 4089],
+            "filename": "date-picker.js",
+            "lineno": 123,
+            "columnno": 32,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000349",
+                "name": "length",
+                "type": "Literal",
+                "value": 7
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4130, 4236],
+            "filename": "date-picker.js",
+            "lineno": 124,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000356",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4285, 4309],
+            "filename": "date-picker.js",
+            "lineno": 126,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000385",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4332, 4354],
+            "filename": "date-picker.js",
+            "lineno": 127,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000390",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4377, 4396],
+            "filename": "date-picker.js",
+            "lineno": 128,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000395",
+                "name": "day",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "day",
+        "longname": "day",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4419, 4446],
+            "filename": "date-picker.js",
+            "lineno": 129,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000400",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4469, 4614],
+            "filename": "date-picker.js",
+            "lineno": 130,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000406",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4637, 4789],
+            "filename": "date-picker.js",
+            "lineno": 131,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000442",
+                "name": "activated",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4812, 4925],
+            "filename": "date-picker.js",
+            "lineno": 132,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000478",
+                "name": "isSameMonth",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "isSameMonth",
+        "longname": "isSameMonth",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4948, 4977],
+            "filename": "date-picker.js",
+            "lineno": 133,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000502",
+                "name": "isSunday",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "isSunday",
+        "longname": "isSunday",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [5088, 5428],
+            "filename": "date-picker.js",
+            "lineno": 143,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000509",
+                "name": "MdDatePickerComponent#icons",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "icons",
+        "longname": "MdDatePickerComponent#icons",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5117, 5338],
+            "filename": "date-picker.js",
+            "lineno": 144,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000514",
+                "name": "map",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "map",
+        "longname": "<anonymous>~map",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5138, 5221],
+            "filename": "date-picker.js",
+            "lineno": 145,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000517",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "0",
+        "longname": "<anonymous>~map.0",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5236, 5273],
+            "filename": "date-picker.js",
+            "lineno": 146,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000544",
+                "name": 1,
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "1",
+        "longname": "<anonymous>~map.1",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5288, 5326],
+            "filename": "date-picker.js",
+            "lineno": 147,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000552",
+                "name": 2,
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "2",
+        "longname": "<anonymous>~map.2",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5359, 5378],
+            "filename": "date-picker.js",
+            "lineno": 149,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000562",
+                "name": "component",
+                "type": "Literal",
+                "value": "button"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5380, 5391],
+            "filename": "date-picker.js",
+            "lineno": 149,
+            "columnno": 39,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000564",
+                "name": "id",
+                "type": "Literal",
+                "value": "label"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5393, 5417],
+            "filename": "date-picker.js",
+            "lineno": 149,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000566",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [5463, 6362],
+            "filename": "date-picker.js",
+            "lineno": 155,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000573",
+                "name": "MdDatePickerComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdDatePickerComponent",
+        "longname": "MdDatePickerComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdDatePickerComponent#onDatePickerShown\r\n * @fires MdDatePickerComponent#onDatePickerClosed\r\n * @fires MdDatePickerComponent#onDatePickerLabelClick\r\n * @fires MdDatePickerComponent#onDatePickerIconButtonPrevClick\r\n * @fires MdDatePickerComponent#onDatePickerIconButtonNextClick\r\n * @fires MdDatePickerComponent#onDatePickerIconButtonClick\r\n * @fires MdDatePickerComponent#onDatePickerYearItemClick\r\n * @fires MdDatePickerComponent#onDatePickerMonthItemClick\r\n * @fires MdDatePickerComponent#onDatePickerDayItemClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonCancelClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonOkClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonLabelClick\r\n * @fires MdDatePickerComponent#onDatePickerButtonClick\r\n * @fires MdDatePickerComponent#onDatePickerScrimClosed\r\n * @element md-date-picker\r\n */",
+        "meta": {
+            "range": [1258, 20631],
+            "filename": "date-picker.js",
+            "lineno": 28,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000034",
+                "name": "MdDatePickerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdDatePickerComponent",
+        "longname": "MdDatePickerComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdDatePickerComponent#event:onDatePickerShown", "MdDatePickerComponent#event:onDatePickerClosed", "MdDatePickerComponent#event:onDatePickerLabelClick", "MdDatePickerComponent#event:onDatePickerIconButtonPrevClick", "MdDatePickerComponent#event:onDatePickerIconButtonNextClick", "MdDatePickerComponent#event:onDatePickerIconButtonClick", "MdDatePickerComponent#event:onDatePickerYearItemClick", "MdDatePickerComponent#event:onDatePickerMonthItemClick", "MdDatePickerComponent#event:onDatePickerDayItemClick", "MdDatePickerComponent#event:onDatePickerButtonCancelClick", "MdDatePickerComponent#event:onDatePickerButtonOkClick", "MdDatePickerComponent#event:onDatePickerButtonLabelClick", "MdDatePickerComponent#event:onDatePickerButtonClick", "MdDatePickerComponent#event:onDatePickerScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-date-picker",
+                "value": "md-date-picker"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5506, 5531],
+            "filename": "date-picker.js",
+            "lineno": 157,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000581",
+                "name": "this.current",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "current",
+        "longname": "MdDatePickerComponent#current",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5542, 5565],
+            "filename": "date-picker.js",
+            "lineno": 158,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000588",
+                "name": "this.value",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdDatePickerComponent#value",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5576, 5603],
+            "filename": "date-picker.js",
+            "lineno": 159,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000595",
+                "name": "this.selection",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selection",
+        "longname": "MdDatePickerComponent#selection",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5614, 5628],
+            "filename": "date-picker.js",
+            "lineno": 160,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000602",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 2,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdDatePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5639, 5742],
+            "filename": "date-picker.js",
+            "lineno": 161,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000608",
+                "name": "this.yearFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "yearFormat",
+        "longname": "MdDatePickerComponent#yearFormat",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5707, 5722],
+            "filename": "date-picker.js",
+            "lineno": 162,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000619",
+                "name": "year",
+                "type": "Literal",
+                "value": "numeric"
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5753, 5855],
+            "filename": "date-picker.js",
+            "lineno": 164,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000623",
+                "name": "this.monthFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "monthFormat",
+        "longname": "MdDatePickerComponent#monthFormat",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5822, 5835],
+            "filename": "date-picker.js",
+            "lineno": 165,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000634",
+                "name": "month",
+                "type": "Literal",
+                "value": "long"
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5866, 5974],
+            "filename": "date-picker.js",
+            "lineno": 167,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000638",
+                "name": "this.weekdayFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "weekdayFormat",
+        "longname": "MdDatePickerComponent#weekdayFormat",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5937, 5954],
+            "filename": "date-picker.js",
+            "lineno": 168,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000649",
+                "name": "weekday",
+                "type": "Literal",
+                "value": "narrow"
+            }
+        },
+        "undocumented": true,
+        "name": "weekday",
+        "longname": "weekday",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5985, 6086],
+            "filename": "date-picker.js",
+            "lineno": 170,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000653",
+                "name": "this.dayFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "dayFormat",
+        "longname": "MdDatePickerComponent#dayFormat",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6052, 6066],
+            "filename": "date-picker.js",
+            "lineno": 171,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000664",
+                "name": "day",
+                "type": "Literal",
+                "value": "numeric"
+            }
+        },
+        "undocumented": true,
+        "name": "day",
+        "longname": "day",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6097, 6241],
+            "filename": "date-picker.js",
+            "lineno": 173,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000668",
+                "name": "this.actions",
+                "type": "ArrayExpression",
+                "value": "[\"{\\\"id\\\":\\\"prev\\\",\\\"icon\\\":\\\"keyboard_arrow_left\\\"}\",\"{\\\"id\\\":\\\"next\\\",\\\"icon\\\":\\\"keyboard_arrow_right\\\"}\"]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "MdDatePickerComponent#actions",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6129, 6139],
+            "filename": "date-picker.js",
+            "lineno": 174,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000674",
+                "name": "id",
+                "type": "Literal",
+                "value": "prev"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6141, 6168],
+            "filename": "date-picker.js",
+            "lineno": 174,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000676",
+                "name": "icon",
+                "type": "Literal",
+                "value": "keyboard_arrow_left"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6187, 6197],
+            "filename": "date-picker.js",
+            "lineno": 175,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000679",
+                "name": "id",
+                "type": "Literal",
+                "value": "next"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6199, 6227],
+            "filename": "date-picker.js",
+            "lineno": 175,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000681",
+                "name": "icon",
+                "type": "Literal",
+                "value": "keyboard_arrow_right"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6252, 6354],
+            "filename": "date-picker.js",
+            "lineno": 177,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000684",
+                "name": "this.buttons",
+                "type": "ArrayExpression",
+                "value": "[\"{\\\"component\\\":\\\"spacer\\\"}\",\"{\\\"id\\\":\\\"cancel\\\",\\\"label\\\":\\\"Cancel\\\"}\",\"{\\\"id\\\":\\\"ok\\\",\\\"label\\\":\\\"Ok\\\"}\"]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "MdDatePickerComponent#buttons",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6270, 6289],
+            "filename": "date-picker.js",
+            "lineno": 177,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000690",
+                "name": "component",
+                "type": "Literal",
+                "value": "spacer"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6295, 6307],
+            "filename": "date-picker.js",
+            "lineno": 177,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000693",
+                "name": "id",
+                "type": "Literal",
+                "value": "cancel"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6309, 6324],
+            "filename": "date-picker.js",
+            "lineno": 177,
+            "columnno": 65,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000695",
+                "name": "label",
+                "type": "Literal",
+                "value": "Cancel"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6330, 6338],
+            "filename": "date-picker.js",
+            "lineno": 177,
+            "columnno": 86,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000698",
+                "name": "id",
+                "type": "Literal",
+                "value": "ok"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6340, 6351],
+            "filename": "date-picker.js",
+            "lineno": 177,
+            "columnno": 96,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000700",
+                "name": "label",
+                "type": "Literal",
+                "value": "Ok"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [6442, 6540],
+            "filename": "date-picker.js",
+            "lineno": 185,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000702",
+                "name": "MdDatePickerComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdDatePickerComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [6620, 7165],
+            "filename": "date-picker.js",
+            "lineno": 194,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000718",
+                "name": "MdDatePickerComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdDatePickerComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [7245, 7770],
+            "filename": "date-picker.js",
+            "lineno": 214,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000770",
+                "name": "MdDatePickerComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdDatePickerComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [7850, 7945],
+            "filename": "date-picker.js",
+            "lineno": 234,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000822",
+                "name": "MdDatePickerComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdDatePickerComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [8065, 8492],
+            "filename": "date-picker.js",
+            "lineno": 244,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000832",
+                "name": "MdDatePickerComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "component"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdDatePickerComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [8544, 9227],
+            "filename": "date-picker.js",
+            "lineno": 261,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000883",
+                "name": "MdDatePickerComponent#renderDatePickerYear",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderDatePickerYear",
+        "longname": "MdDatePickerComponent#renderDatePickerYear",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [9279, 9965],
+            "filename": "date-picker.js",
+            "lineno": 285,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000923",
+                "name": "MdDatePickerComponent#renderDatePickerMonth",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderDatePickerMonth",
+        "longname": "MdDatePickerComponent#renderDatePickerMonth",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [10017, 11799],
+            "filename": "date-picker.js",
+            "lineno": 309,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100000963",
+                "name": "MdDatePickerComponent#renderDatePickerDay",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderDatePickerDay",
+        "longname": "MdDatePickerComponent#renderDatePickerDay",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [11126, 11160],
+            "filename": "date-picker.js",
+            "lineno": 327,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001032",
+                "name": "\"md-date-picker__table-cell\"",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-date-picker__table-cell\"",
+        "longname": "\"md-date-picker__table-cell\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [11211, 11269],
+            "filename": "date-picker.js",
+            "lineno": 328,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001034",
+                "name": "\"md-date-picker__table-cell--same-month\"",
+                "type": "MemberExpression",
+                "value": "item.isSameMonth"
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-date-picker__table-cell--same-month\"",
+        "longname": "\"md-date-picker__table-cell--same-month\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [11320, 11371],
+            "filename": "date-picker.js",
+            "lineno": 329,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001038",
+                "name": "\"md-date-picker__table-cell--sunday\"",
+                "type": "MemberExpression",
+                "value": "item.isSunday"
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-date-picker__table-cell--sunday\"",
+        "longname": "\"md-date-picker__table-cell--sunday\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [11851, 13245],
+            "filename": "date-picker.js",
+            "lineno": 348,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001045",
+                "name": "MdDatePickerComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdDatePickerComponent#render",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [13312, 14293],
+            "filename": "date-picker.js",
+            "lineno": 376,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001156",
+                "name": "MdDatePickerComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdDatePickerComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [13385, 13442],
+            "filename": "date-picker.js",
+            "lineno": 378,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001166",
+                "name": "this.datePickerScrim",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "datePickerScrim",
+        "longname": "MdDatePickerComponent#datePickerScrim",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [13542, 13620],
+            "filename": "date-picker.js",
+            "lineno": 380,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001189",
+                "name": "this.handleDatePickerScrimClosed",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleDatePickerScrimClosed",
+        "longname": "MdDatePickerComponent#handleDatePickerScrimClosed",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14136, 14183],
+            "filename": "date-picker.js",
+            "lineno": 388,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001275",
+                "name": "this.selection",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selection",
+        "longname": "MdDatePickerComponent#selection",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14194, 14244],
+            "filename": "date-picker.js",
+            "lineno": 389,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001288",
+                "name": "this.defaultValue",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdDatePickerComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14255, 14285],
+            "filename": "date-picker.js",
+            "lineno": 390,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001301",
+                "name": "this.defaultIndex",
+                "type": "MemberExpression",
+                "value": "this.index",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultIndex",
+        "longname": "MdDatePickerComponent#defaultIndex",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [14345, 14607],
+            "filename": "date-picker.js",
+            "lineno": 397,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001308",
+                "name": "MdDatePickerComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "disconnectedCallback",
+        "longname": "MdDatePickerComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [14700, 15049],
+            "filename": "date-picker.js",
+            "lineno": 409,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001343",
+                "name": "MdDatePickerComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdDatePickerComponent#updated",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [options]\r\n     */",
+        "meta": {
+            "range": [15115, 15701],
+            "filename": "date-picker.js",
+            "lineno": 423,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001393",
+                "name": "MdDatePickerComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": ["options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "options"
+            }
+        ],
+        "name": "show",
+        "longname": "MdDatePickerComponent#show",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15211, 15241],
+            "filename": "date-picker.js",
+            "lineno": 425,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001407",
+                "name": "this.index",
+                "type": "MemberExpression",
+                "value": "this.defaultIndex",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdDatePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15306, 15322],
+            "filename": "date-picker.js",
+            "lineno": 427,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001426",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdDatePickerComponent#open",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15333, 15579],
+            "filename": "date-picker.js",
+            "lineno": 428,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001432",
+                "name": "options",
+                "type": "ObjectExpression",
+                "funcscope": "<anonymous>",
+                "value": "{\"container\":\"\",\"placements\":\"\"}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "options",
+        "longname": "<anonymous>~options",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15358, 15373],
+            "filename": "date-picker.js",
+            "lineno": 429,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001435",
+                "name": "container",
+                "type": "ThisExpression",
+                "value": "this"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "<anonymous>~options.container",
+        "kind": "member",
+        "memberof": "<anonymous>~options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15388, 15542],
+            "filename": "date-picker.js",
+            "lineno": 430,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001437",
+                "name": "placements",
+                "type": "ArrayExpression",
+                "value": "[\"bottom-start\",\"bottom-end\",\"bottom\",\"top-start\",\"top-end\",\"top\",\"right-start\",\"right-end\",\"right\",\"left-start\",\"left-end\",\"left\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "placements",
+        "longname": "<anonymous>~options.placements",
+        "kind": "member",
+        "memberof": "<anonymous>~options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15590, 15616],
+            "filename": "date-picker.js",
+            "lineno": 433,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001454",
+                "name": "this.popper",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "popper",
+        "longname": "MdDatePickerComponent#popper",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [15736, 15932],
+            "filename": "date-picker.js",
+            "lineno": 441,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001474",
+                "name": "MdDatePickerComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdDatePickerComponent#close",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15826, 15843],
+            "filename": "date-picker.js",
+            "lineno": 443,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001487",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdDatePickerComponent#open",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [options]\r\n     */",
+        "meta": {
+            "range": [15998, 16094],
+            "filename": "date-picker.js",
+            "lineno": 452,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001505",
+                "name": "MdDatePickerComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": ["options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "options"
+            }
+        ],
+        "name": "toggle",
+        "longname": "MdDatePickerComponent#toggle",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [16175, 16274],
+            "filename": "date-picker.js",
+            "lineno": 462,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001525",
+                "name": "MdDatePickerComponent#handleDatePickerLabelClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerLabelClick",
+        "longname": "MdDatePickerComponent#handleDatePickerLabelClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16258, 16263],
+            "filename": "date-picker.js",
+            "lineno": 463,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001537",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [16355, 16787],
+            "filename": "date-picker.js",
+            "lineno": 471,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001539",
+                "name": "MdDatePickerComponent#handleDatePickerIconButtonPrevClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerIconButtonPrevClick",
+        "longname": "MdDatePickerComponent#handleDatePickerIconButtonPrevClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16771, 16776],
+            "filename": "date-picker.js",
+            "lineno": 476,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001619",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [16868, 17300],
+            "filename": "date-picker.js",
+            "lineno": 484,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001621",
+                "name": "MdDatePickerComponent#handleDatePickerIconButtonNextClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerIconButtonNextClick",
+        "longname": "MdDatePickerComponent#handleDatePickerIconButtonNextClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [17284, 17289],
+            "filename": "date-picker.js",
+            "lineno": 489,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001701",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [17381, 17721],
+            "filename": "date-picker.js",
+            "lineno": 497,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001703",
+                "name": "MdDatePickerComponent#handleDatePickerIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerIconButtonClick",
+        "longname": "MdDatePickerComponent#handleDatePickerIconButtonClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [17437, 17468],
+            "filename": "date-picker.js",
+            "lineno": 498,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001709",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [17705, 17710],
+            "filename": "date-picker.js",
+            "lineno": 501,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001747",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [17802, 18028],
+            "filename": "date-picker.js",
+            "lineno": 509,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001749",
+                "name": "MdDatePickerComponent#handleDatePickerYearItemClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerYearItemClick",
+        "longname": "MdDatePickerComponent#handleDatePickerYearItemClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [17856, 17887],
+            "filename": "date-picker.js",
+            "lineno": 510,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001755",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [17946, 17960],
+            "filename": "date-picker.js",
+            "lineno": 512,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001773",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 1,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdDatePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [18012, 18017],
+            "filename": "date-picker.js",
+            "lineno": 513,
+            "columnno": 49,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001785",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [18109, 18383],
+            "filename": "date-picker.js",
+            "lineno": 521,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001787",
+                "name": "MdDatePickerComponent#handleDatePickerMonthItemClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerMonthItemClick",
+        "longname": "MdDatePickerComponent#handleDatePickerMonthItemClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [18164, 18195],
+            "filename": "date-picker.js",
+            "lineno": 522,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001793",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [18300, 18314],
+            "filename": "date-picker.js",
+            "lineno": 525,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001821",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 2,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdDatePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [18367, 18372],
+            "filename": "date-picker.js",
+            "lineno": 526,
+            "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001833",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [18464, 18908],
+            "filename": "date-picker.js",
+            "lineno": 534,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001835",
+                "name": "MdDatePickerComponent#handleDatePickerDayItemClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerDayItemClick",
+        "longname": "MdDatePickerComponent#handleDatePickerDayItemClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [18517, 18548],
+            "filename": "date-picker.js",
+            "lineno": 535,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001841",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [18892, 18897],
+            "filename": "date-picker.js",
+            "lineno": 543,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001920",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [18989, 19309],
+            "filename": "date-picker.js",
+            "lineno": 551,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001922",
+                "name": "MdDatePickerComponent#handleDatePickerButtonCancelClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerButtonCancelClick",
+        "longname": "MdDatePickerComponent#handleDatePickerButtonCancelClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19293, 19298],
+            "filename": "date-picker.js",
+            "lineno": 556,
+            "columnno": 53,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001978",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [19390, 19588],
+            "filename": "date-picker.js",
+            "lineno": 564,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001980",
+                "name": "MdDatePickerComponent#handleDatePickerButtonOkClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerButtonOkClick",
+        "longname": "MdDatePickerComponent#handleDatePickerButtonOkClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19515, 19520],
+            "filename": "date-picker.js",
+            "lineno": 567,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001997",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19535, 19567],
+            "filename": "date-picker.js",
+            "lineno": 568,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100001999",
+                "name": "value",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [19669, 19911],
+            "filename": "date-picker.js",
+            "lineno": 577,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002005",
+                "name": "MdDatePickerComponent#handleDatePickerButtonLabelClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerButtonLabelClick",
+        "longname": "MdDatePickerComponent#handleDatePickerButtonLabelClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19726, 19801],
+            "filename": "date-picker.js",
+            "lineno": 578,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002011",
+                "name": "map",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":2}"
+            }
+        },
+        "undocumented": true,
+        "name": "map",
+        "longname": "<anonymous>~map",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19747, 19751],
+            "filename": "date-picker.js",
+            "lineno": 579,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002014",
+                "name": 2,
+                "type": "Literal",
+                "value": 0
+            }
+        },
+        "undocumented": true,
+        "name": "2",
+        "longname": "<anonymous>~map.2",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19766, 19770],
+            "filename": "date-picker.js",
+            "lineno": 580,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002016",
+                "type": "Literal",
+                "value": 1
+            }
+        },
+        "undocumented": true,
+        "name": "0",
+        "longname": "<anonymous>~map.0",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19785, 19789],
+            "filename": "date-picker.js",
+            "lineno": 581,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002018",
+                "name": 1,
+                "type": "Literal",
+                "value": 2
+            }
+        },
+        "undocumented": true,
+        "name": "1",
+        "longname": "<anonymous>~map.1",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19812, 19840],
+            "filename": "date-picker.js",
+            "lineno": 583,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002021",
+                "name": "this.index",
+                "type": "MemberExpression",
+                "value": "map[undefined]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdDatePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [19895, 19900],
+            "filename": "date-picker.js",
+            "lineno": 584,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002037",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [19992, 20408],
+            "filename": "date-picker.js",
+            "lineno": 592,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002039",
+                "name": "MdDatePickerComponent#handleDatePickerButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerButtonClick",
+        "longname": "MdDatePickerComponent#handleDatePickerButtonClick",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [20044, 20075],
+            "filename": "date-picker.js",
+            "lineno": 593,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002045",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [20392, 20397],
+            "filename": "date-picker.js",
+            "lineno": 597,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002095",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [20489, 20628],
+            "filename": "date-picker.js",
+            "lineno": 605,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002097",
+                "name": "MdDatePickerComponent#handleDatePickerScrimClosed",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDatePickerScrimClosed",
+        "longname": "MdDatePickerComponent#handleDatePickerScrimClosed",
+        "kind": "function",
+        "memberof": "MdDatePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [20612, 20617],
+            "filename": "date-picker.js",
+            "lineno": 607,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002118",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [20707, 20728],
+            "filename": "date-picker.js",
+            "lineno": 611,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker",
+            "code": {
+                "id": "astnode100002128",
+                "name": "exports.MdDatePickerComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdDatePickerComponent",
+        "longname": "MdDatePickerComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker\\date-picker.js"]
+    }
+]

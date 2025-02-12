@@ -5,7 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdTextFieldComponent#onTextFieldFocus
  * @fires MdTextFieldComponent#onTextFieldBlur
@@ -17,25 +17,25 @@ import { classMap } from "lit/directives/class-map.js";
  */
 class MdTextFieldComponent extends MdComponent {
     /**
-     * @property {String} [label] 
-     * @property {Boolean} [separateLabel] 
-     * @property {Array} [icons] 
-     * @property {String} [prefix] 
-     * @property {String} [suffix] 
-     * @property {Array} [actions] 
-     * @property {String} [text] 
-     * @property {String} [error] 
-     * @property {String} [counter] 
-     * @property {String} [name] 
-     * @property {String} [type] 
-     * @property {String} [value] 
-     * @property {String} [placeholder] 
-     * @property {String} [title] 
-     * @property {String} [autocomplete] 
-     * @property {Boolean} [required] 
-     * @property {Boolean} [readOnly] 
+     * @property {String} [label]
+     * @property {Boolean} [separateLabel]
+     * @property {Array} [icons]
+     * @property {String} [prefix]
+     * @property {String} [suffix]
+     * @property {Array} [actions]
+     * @property {String} [text]
+     * @property {String} [error]
+     * @property {String} [counter]
+     * @property {String} [name]
+     * @property {String} [type]
+     * @property {String} [value]
+     * @property {String} [placeholder]
+     * @property {String} [title]
+     * @property {String} [autocomplete]
+     * @property {Boolean} [required]
+     * @property {Boolean} [readOnly]
      * @property {String} [variant] - ["outlined","filled"]
-     * @property {Boolean} [disabled] 
+     * @property {Boolean} [disabled]
      */
     static properties = {
         label: { type: String },
@@ -65,7 +65,7 @@ class MdTextFieldComponent extends MdComponent {
     variants = ["outlined", "filled"];
 
     /**
-     * 
+     *
      * @readonly
      */
     get actionsAll() {
@@ -84,7 +84,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get textFieldNative() {
@@ -92,7 +92,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -102,7 +102,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -117,7 +117,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -138,7 +138,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -155,7 +155,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -187,7 +187,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -202,7 +202,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -222,7 +222,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -232,7 +232,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -242,7 +242,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -255,7 +255,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -267,7 +267,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -280,7 +280,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

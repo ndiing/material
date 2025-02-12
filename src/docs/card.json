@@ -1,0 +1,748 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdCardComponent#onCardIconButtonClick\r\n * @fires MdCardComponent#onCardButtonClick\r\n * @element md-card\r\n */",
+        "meta": {
+            "range": [361, 4738],
+            "filename": "card.js",
+            "lineno": 13,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdCardComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdCardComponent#event:onCardIconButtonClick", "MdCardComponent#event:onCardButtonClick"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-card",
+                "value": "md-card"
+            }
+        ],
+        "name": "MdCardComponent",
+        "longname": "MdCardComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [icons] \r\n     * @property {Array} [actions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [buttons] \r\n     */",
+        "meta": {
+            "range": [612, 815],
+            "filename": "card.js",
+            "lineno": 21,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "buttons"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdCardComponent#properties",
+        "kind": "member",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [643, 665],
+            "filename": "card.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000026",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [652, 663],
+            "filename": "card.js",
+            "lineno": 22,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [676, 700],
+            "filename": "card.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000030",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [687, 698],
+            "filename": "card.js",
+            "lineno": 23,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [711, 734],
+            "filename": "card.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000034",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [720, 732],
+            "filename": "card.js",
+            "lineno": 24,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [745, 771],
+            "filename": "card.js",
+            "lineno": 25,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000038",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [757, 769],
+            "filename": "card.js",
+            "lineno": 25,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [782, 806],
+            "filename": "card.js",
+            "lineno": 26,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000042",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [793, 804],
+            "filename": "card.js",
+            "lineno": 26,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [850, 940],
+            "filename": "card.js",
+            "lineno": 32,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000046",
+                "name": "MdCardComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdCardComponent",
+        "longname": "MdCardComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdCardComponent#onCardIconButtonClick\r\n * @fires MdCardComponent#onCardButtonClick\r\n * @element md-card\r\n */",
+        "meta": {
+            "range": [361, 4738],
+            "filename": "card.js",
+            "lineno": 13,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdCardComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdCardComponent",
+        "longname": "MdCardComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdCardComponent#event:onCardIconButtonClick", "MdCardComponent#event:onCardButtonClick"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-card",
+                "value": "md-card"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [893, 932],
+            "filename": "card.js",
+            "lineno": 34,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000054",
+                "name": "this.body",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "body",
+        "longname": "MdCardComponent#body",
+        "kind": "member",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1020, 1118],
+            "filename": "card.js",
+            "lineno": 42,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000065",
+                "name": "MdCardComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdCardComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1198, 1737],
+            "filename": "card.js",
+            "lineno": 51,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000081",
+                "name": "MdCardComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdCardComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1817, 2336],
+            "filename": "card.js",
+            "lineno": 71,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000133",
+                "name": "MdCardComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdCardComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [2416, 2504],
+            "filename": "card.js",
+            "lineno": 91,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000185",
+                "name": "MdCardComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdCardComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [2624, 3051],
+            "filename": "card.js",
+            "lineno": 101,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000195",
+                "name": "MdCardComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "component"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdCardComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [3103, 4231],
+            "filename": "card.js",
+            "lineno": 118,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000246",
+                "name": "MdCardComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdCardComponent#render",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [4283, 4387],
+            "filename": "card.js",
+            "lineno": 126,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000414",
+                "name": "MdCardComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdCardComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [4468, 4565],
+            "filename": "card.js",
+            "lineno": 136,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000431",
+                "name": "MdCardComponent#handleCardIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleCardIconButtonClick",
+        "longname": "MdCardComponent#handleCardIconButtonClick",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4549, 4554],
+            "filename": "card.js",
+            "lineno": 137,
+            "columnno": 45,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000443",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [4646, 4735],
+            "filename": "card.js",
+            "lineno": 145,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000445",
+                "name": "MdCardComponent#handleCardButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleCardButtonClick",
+        "longname": "MdCardComponent#handleCardButtonClick",
+        "kind": "function",
+        "memberof": "MdCardComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4719, 4724],
+            "filename": "card.js",
+            "lineno": 146,
+            "columnno": 41,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000457",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4801, 4816],
+            "filename": "card.js",
+            "lineno": 150,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card",
+            "code": {
+                "id": "astnode100000467",
+                "name": "exports.MdCardComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdCardComponent",
+        "longname": "MdCardComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\card\\card.js"]
+    }
+]

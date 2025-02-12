@@ -1,0 +1,680 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-button\r\n */",
+        "meta": {
+            "range": [261, 2444],
+            "filename": "button.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdButtonComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-button",
+                "value": "md-button"
+            }
+        ],
+        "name": "MdButtonComponent",
+        "longname": "MdButtonComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {String} [icon] \r\n     * @property {String} [label] \r\n     * @property {String} [variant] - [\"elevated\",\"filled\",\"filled-tonal\",\"outlined\"]\r\n     * @property {String} [type] \r\n     * @property {Boolean} [disabled] \r\n     * @property {Boolean} [selected] \r\n     */",
+        "meta": {
+            "range": [603, 874],
+            "filename": "button.js",
+            "lineno": 20,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "icon"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "description": "[\"elevated\",\"filled\",\"filled-tonal\",\"outlined\"]",
+                "name": "variant"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "type"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "disabled"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "selected"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdButtonComponent#properties",
+        "kind": "member",
+        "memberof": "MdButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [634, 656],
+            "filename": "button.js",
+            "lineno": 21,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000026",
+                "name": "icon",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [642, 654],
+            "filename": "button.js",
+            "lineno": 21,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icon.type",
+        "kind": "member",
+        "memberof": "icon",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [667, 690],
+            "filename": "button.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000030",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [676, 688],
+            "filename": "button.js",
+            "lineno": 22,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [701, 726],
+            "filename": "button.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000034",
+                "name": "variant",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "variant",
+        "longname": "variant",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [712, 724],
+            "filename": "button.js",
+            "lineno": 23,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "variant.type",
+        "kind": "member",
+        "memberof": "variant",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [737, 759],
+            "filename": "button.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000038",
+                "name": "type",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [745, 757],
+            "filename": "button.js",
+            "lineno": 24,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type.type",
+        "kind": "member",
+        "memberof": "type",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [770, 812],
+            "filename": "button.js",
+            "lineno": 25,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000042",
+                "name": "disabled",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "disabled",
+        "longname": "disabled",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [782, 795],
+            "filename": "button.js",
+            "lineno": 25,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "disabled.type",
+        "kind": "member",
+        "memberof": "disabled",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [797, 810],
+            "filename": "button.js",
+            "lineno": 25,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000046",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "disabled.reflect",
+        "kind": "member",
+        "memberof": "disabled",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [823, 865],
+            "filename": "button.js",
+            "lineno": 26,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000048",
+                "name": "selected",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [835, 848],
+            "filename": "button.js",
+            "lineno": 26,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000050",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "selected.type",
+        "kind": "member",
+        "memberof": "selected",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [850, 863],
+            "filename": "button.js",
+            "lineno": 26,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000052",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "selected.reflect",
+        "kind": "member",
+        "memberof": "selected",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [918, 980],
+            "filename": "button.js",
+            "lineno": 32,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000054",
+                "name": "variants",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "variants",
+        "longname": "MdButtonComponent#variants",
+        "kind": "member",
+        "memberof": "MdButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [1015, 1086],
+            "filename": "button.js",
+            "lineno": 37,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000060",
+                "name": "MdButtonComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdButtonComponent",
+        "longname": "MdButtonComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-button\r\n */",
+        "meta": {
+            "range": [261, 2444],
+            "filename": "button.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdButtonComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdButtonComponent",
+        "longname": "MdButtonComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-button",
+                "value": "md-button"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1058, 1078],
+            "filename": "button.js",
+            "lineno": 39,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000068",
+                "name": "this.type",
+                "type": "Literal",
+                "value": "button",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "MdButtonComponent#type",
+        "kind": "member",
+        "memberof": "MdButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [1138, 1546],
+            "filename": "button.js",
+            "lineno": 46,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000073",
+                "name": "MdButtonComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdButtonComponent#render",
+        "kind": "function",
+        "memberof": "MdButtonComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [1613, 1860],
+            "filename": "button.js",
+            "lineno": 63,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000116",
+                "name": "MdButtonComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdButtonComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdButtonComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1764, 1852],
+            "filename": "button.js",
+            "lineno": 67,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000139",
+                "name": "this.ripple",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "ripple",
+        "longname": "MdButtonComponent#ripple",
+        "kind": "member",
+        "memberof": "MdButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1810, 1839],
+            "filename": "button.js",
+            "lineno": 68,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000147",
+                "name": "trigger",
+                "type": "Literal",
+                "value": ".md-button__native"
+            }
+        },
+        "undocumented": true,
+        "name": "trigger",
+        "longname": "trigger",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [1927, 2052],
+            "filename": "button.js",
+            "lineno": 77,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000149",
+                "name": "MdButtonComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "disconnectedCallback",
+        "longname": "MdButtonComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdButtonComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [2145, 2441],
+            "filename": "button.js",
+            "lineno": 87,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000169",
+                "name": "MdButtonComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdButtonComponent#updated",
+        "kind": "function",
+        "memberof": "MdButtonComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2511, 2528],
+            "filename": "button.js",
+            "lineno": 97,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button",
+            "code": {
+                "id": "astnode100000221",
+                "name": "exports.MdButtonComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdButtonComponent",
+        "longname": "MdButtonComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button\\button.js"]
+    }
+]

@@ -4,14 +4,14 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdChipsComponent#onChipClick
  * @element md-chips
  */
 class MdChipsComponent extends MdComponent {
     /**
-     * @property {Array} [items] 
+     * @property {Array} [items]
      * @property {String} [type] - ["single-select","multi-select"]
      */
     static properties = {
@@ -25,7 +25,7 @@ class MdChipsComponent extends MdComponent {
     types = ["single-select", "multi-select"];
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -33,7 +33,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -53,7 +53,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -61,7 +61,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -70,7 +70,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

@@ -88,7 +88,6 @@ import DemoTopAppBar from "./top-app-bar/top-app-bar.js";
 import DemoTreeItem from "./tree/tree-item.js";
 import DemoTreeRow from "./tree/tree-row.js";
 import DemoTree from "./tree/tree.js";
-import DemoTest from "./test/test.js";
 import DemoDatetimePicker from "./datetime-picker/datetime-picker.js";
 import DemoDatetimePickerModal from "./datetime-picker/datetime-picker-modal.js";
 import DemoDatePicker from "./date-picker/date-picker.js";
@@ -99,12 +98,15 @@ import DemoWeekPicker from "./week-picker/week-picker.js";
 import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
 import DemoMonthPicker from "./month-picker/month-picker.js";
 import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
+import DemoTest from "./test/test.js";
 
 const routes = [
     {
         path: "",
         component: DemoMain,
         children: [
+            { path: "test", component: DemoTest },
+
             { path: "badge", component: DemoBadge },
 
             { path: "bottom-app-bar", component: DemoBottomAppBar },
@@ -225,8 +227,6 @@ const routes = [
             { path: "tree-item", component: DemoTreeItem },
             { path: "tree-row", component: DemoTreeRow },
             { path: "tree", component: DemoTree },
-
-            { path: "test", component: DemoTest },
 
             { path: "datetime-picker", component: DemoDatetimePicker },
             { path: "datetime-picker-modal", component: DemoDatetimePickerModal },

@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdSliderComponent#onSliderNativeInput
  * @fires MdSliderComponent#onSliderNativeReset
@@ -12,12 +12,12 @@ import { classMap } from "lit/directives/class-map.js";
  */
 class MdSliderComponent extends MdComponent {
     /**
-     * @property {Number} [min] 
-     * @property {Number} [max] 
-     * @property {Number} [step] 
+     * @property {Number} [min]
+     * @property {Number} [max]
+     * @property {Number} [step]
      * @property {String} [variant] - ["centered","continuous","discrete","range-selection"]
-     * @property {String} [name] 
-     * @property {Any} [value] 
+     * @property {String} [name]
+     * @property {Any} [value]
      */
     static properties = {
         min: { type: Number },
@@ -43,7 +43,7 @@ class MdSliderComponent extends MdComponent {
     variants = ["centered", "continuous", "discrete", "range-selection"];
 
     /**
-     * 
+     *
      * @readonly
      */
     get indicators() {
@@ -54,7 +54,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get sliderNativeAll() {
@@ -62,7 +62,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -72,7 +72,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [value]
      * @param {Any} [index]
@@ -111,7 +111,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -127,7 +127,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -145,7 +145,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -159,7 +159,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -178,7 +178,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -190,7 +190,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     updateValue() {
         this.value.forEach((value, index) => {
@@ -199,7 +199,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [value]
      * @param {Any} [min=this.min]
      * @param {Any} [max=this.max]

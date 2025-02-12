@@ -1,0 +1,3282 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdTimePickerComponent#onTimePickerShown\r\n * @fires MdTimePickerComponent#onTimePickerClosed\r\n * @fires MdTimePickerComponent#onTimePickerLabelClick\r\n * @fires MdTimePickerComponent#onTimePickerIconButtonPrevClick\r\n * @fires MdTimePickerComponent#onTimePickerIconButtonNextClick\r\n * @fires MdTimePickerComponent#onTimePickerIconButtonClick\r\n * @fires MdTimePickerComponent#onTimePickerHourItemClick\r\n * @fires MdTimePickerComponent#onTimePickerMinuteItemClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonCancelClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonOkClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonLabelClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonClick\r\n * @fires MdTimePickerComponent#onTimePickerScrimClosed\r\n * @element md-time-picker\r\n */",
+        "meta": {
+            "range": [1201, 16986],
+            "filename": "time-picker.js",
+            "lineno": 27,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000034",
+                "name": "MdTimePickerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdTimePickerComponent#event:onTimePickerShown", "MdTimePickerComponent#event:onTimePickerClosed", "MdTimePickerComponent#event:onTimePickerLabelClick", "MdTimePickerComponent#event:onTimePickerIconButtonPrevClick", "MdTimePickerComponent#event:onTimePickerIconButtonNextClick", "MdTimePickerComponent#event:onTimePickerIconButtonClick", "MdTimePickerComponent#event:onTimePickerHourItemClick", "MdTimePickerComponent#event:onTimePickerMinuteItemClick", "MdTimePickerComponent#event:onTimePickerButtonCancelClick", "MdTimePickerComponent#event:onTimePickerButtonOkClick", "MdTimePickerComponent#event:onTimePickerButtonLabelClick", "MdTimePickerComponent#event:onTimePickerButtonClick", "MdTimePickerComponent#event:onTimePickerScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-time-picker",
+                "value": "md-time-picker"
+            }
+        ],
+        "name": "MdTimePickerComponent",
+        "longname": "MdTimePickerComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [icons] \r\n     * @property {Array} [actions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [buttons] \r\n     * @property {Boolean} [open] \r\n     * @property {Boolean} [modal] \r\n     * @property {Number} [index] \r\n     * @property {Any} [value] \r\n     */",
+        "meta": {
+            "range": [1600, 2229],
+            "filename": "time-picker.js",
+            "lineno": 39,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000038",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "buttons"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "open"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "modal"
+            },
+            {
+                "type": {
+                    "names": ["Number"]
+                },
+                "optional": true,
+                "name": "index"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "value"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdTimePickerComponent#properties",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1631, 1653],
+            "filename": "time-picker.js",
+            "lineno": 40,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000040",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1640, 1651],
+            "filename": "time-picker.js",
+            "lineno": 40,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000042",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1664, 1688],
+            "filename": "time-picker.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000044",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1675, 1686],
+            "filename": "time-picker.js",
+            "lineno": 41,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000046",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1699, 1722],
+            "filename": "time-picker.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000048",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1708, 1720],
+            "filename": "time-picker.js",
+            "lineno": 42,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000050",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1733, 1759],
+            "filename": "time-picker.js",
+            "lineno": 43,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000052",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1745, 1757],
+            "filename": "time-picker.js",
+            "lineno": 43,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000054",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1770, 1794],
+            "filename": "time-picker.js",
+            "lineno": 44,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000056",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1781, 1792],
+            "filename": "time-picker.js",
+            "lineno": 44,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000058",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1805, 1843],
+            "filename": "time-picker.js",
+            "lineno": 45,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000060",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1813, 1826],
+            "filename": "time-picker.js",
+            "lineno": 45,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000062",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1828, 1841],
+            "filename": "time-picker.js",
+            "lineno": 45,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000064",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1854, 1878],
+            "filename": "time-picker.js",
+            "lineno": 46,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000066",
+                "name": "modal",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "modal",
+        "longname": "modal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1863, 1876],
+            "filename": "time-picker.js",
+            "lineno": 46,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000068",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "modal.type",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1889, 1912],
+            "filename": "time-picker.js",
+            "lineno": 47,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000070",
+                "name": "index",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "index",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1898, 1910],
+            "filename": "time-picker.js",
+            "lineno": 47,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000072",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "index.type",
+        "kind": "member",
+        "memberof": "index",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1923, 2220],
+            "filename": "time-picker.js",
+            "lineno": 48,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000074",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"converter\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1945, 2208],
+            "filename": "time-picker.js",
+            "lineno": 49,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000076",
+                "name": "converter",
+                "type": "ObjectExpression",
+                "value": "{\"fromAttribute\":\"\",\"toAttribute\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "converter",
+        "longname": "value.converter",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1975, 2073],
+            "filename": "time-picker.js",
+            "lineno": 50,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000078",
+                "name": "fromAttribute",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "fromAttribute",
+        "longname": "value.converter.fromAttribute",
+        "kind": "function",
+        "memberof": "value.converter",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2092, 2192],
+            "filename": "time-picker.js",
+            "lineno": 53,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000087",
+                "name": "toAttribute",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "toAttribute",
+        "longname": "value.converter.toAttribute",
+        "kind": "function",
+        "memberof": "value.converter",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [2282, 3166],
+            "filename": "time-picker.js",
+            "lineno": 64,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000096",
+                "name": "MdTimePickerComponent#hours",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "hours",
+        "longname": "MdTimePickerComponent#hours",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2325, 2335],
+            "filename": "time-picker.js",
+            "lineno": 65,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000106",
+                "name": "length",
+                "type": "Literal",
+                "value": 24
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2370, 2471],
+            "filename": "time-picker.js",
+            "lineno": 66,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000113",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2512, 2536],
+            "filename": "time-picker.js",
+            "lineno": 68,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000138",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2555, 2577],
+            "filename": "time-picker.js",
+            "lineno": 69,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000143",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2596, 2615],
+            "filename": "time-picker.js",
+            "lineno": 70,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000148",
+                "name": "day",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "day",
+        "longname": "day",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2634, 2655],
+            "filename": "time-picker.js",
+            "lineno": 71,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000153",
+                "name": "hour",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "hour",
+        "longname": "hour",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2674, 2702],
+            "filename": "time-picker.js",
+            "lineno": 72,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000158",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2721, 2911],
+            "filename": "time-picker.js",
+            "lineno": 73,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000164",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2930, 3129],
+            "filename": "time-picker.js",
+            "lineno": 74,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000212",
+                "name": "activated",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [3219, 4278],
+            "filename": "time-picker.js",
+            "lineno": 83,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000260",
+                "name": "MdTimePickerComponent#minutes",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "minutes",
+        "longname": "MdTimePickerComponent#minutes",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3264, 3274],
+            "filename": "time-picker.js",
+            "lineno": 84,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000270",
+                "name": "length",
+                "type": "Literal",
+                "value": 60
+            }
+        },
+        "undocumented": true,
+        "name": "length",
+        "longname": "length",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3309, 3437],
+            "filename": "time-picker.js",
+            "lineno": 85,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000277",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "<anonymous>~date",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3478, 3502],
+            "filename": "time-picker.js",
+            "lineno": 87,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000308",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "year",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3521, 3543],
+            "filename": "time-picker.js",
+            "lineno": 88,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000313",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "month",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3562, 3581],
+            "filename": "time-picker.js",
+            "lineno": 89,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000318",
+                "name": "day",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "day",
+        "longname": "day",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3600, 3621],
+            "filename": "time-picker.js",
+            "lineno": 90,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000323",
+                "name": "hour",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "hour",
+        "longname": "hour",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3640, 3665],
+            "filename": "time-picker.js",
+            "lineno": 91,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000328",
+                "name": "minute",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "minute",
+        "longname": "minute",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3684, 3714],
+            "filename": "time-picker.js",
+            "lineno": 92,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000333",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3733, 3972],
+            "filename": "time-picker.js",
+            "lineno": 93,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000339",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3991, 4241],
+            "filename": "time-picker.js",
+            "lineno": 94,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000399",
+                "name": "activated",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "activated",
+        "longname": "activated",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [4331, 4574],
+            "filename": "time-picker.js",
+            "lineno": 103,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000459",
+                "name": "MdTimePickerComponent#icons",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "icons",
+        "longname": "MdTimePickerComponent#icons",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4360, 4484],
+            "filename": "time-picker.js",
+            "lineno": 104,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000464",
+                "name": "map",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "map",
+        "longname": "<anonymous>~map",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4381, 4419],
+            "filename": "time-picker.js",
+            "lineno": 105,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000467",
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "0",
+        "longname": "<anonymous>~map.0",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4434, 4472],
+            "filename": "time-picker.js",
+            "lineno": 106,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000474",
+                "name": 1,
+                "type": "ArrowFunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "1",
+        "longname": "<anonymous>~map.1",
+        "kind": "function",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4505, 4524],
+            "filename": "time-picker.js",
+            "lineno": 108,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000484",
+                "name": "component",
+                "type": "Literal",
+                "value": "button"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4526, 4537],
+            "filename": "time-picker.js",
+            "lineno": 108,
+            "columnno": 39,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000486",
+                "name": "id",
+                "type": "Literal",
+                "value": "label"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4539, 4563],
+            "filename": "time-picker.js",
+            "lineno": 108,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000488",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [4609, 5338],
+            "filename": "time-picker.js",
+            "lineno": 114,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000495",
+                "name": "MdTimePickerComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdTimePickerComponent",
+        "longname": "MdTimePickerComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdTimePickerComponent#onTimePickerShown\r\n * @fires MdTimePickerComponent#onTimePickerClosed\r\n * @fires MdTimePickerComponent#onTimePickerLabelClick\r\n * @fires MdTimePickerComponent#onTimePickerIconButtonPrevClick\r\n * @fires MdTimePickerComponent#onTimePickerIconButtonNextClick\r\n * @fires MdTimePickerComponent#onTimePickerIconButtonClick\r\n * @fires MdTimePickerComponent#onTimePickerHourItemClick\r\n * @fires MdTimePickerComponent#onTimePickerMinuteItemClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonCancelClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonOkClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonLabelClick\r\n * @fires MdTimePickerComponent#onTimePickerButtonClick\r\n * @fires MdTimePickerComponent#onTimePickerScrimClosed\r\n * @element md-time-picker\r\n */",
+        "meta": {
+            "range": [1201, 16986],
+            "filename": "time-picker.js",
+            "lineno": 27,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000034",
+                "name": "MdTimePickerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdTimePickerComponent",
+        "longname": "MdTimePickerComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdTimePickerComponent#event:onTimePickerShown", "MdTimePickerComponent#event:onTimePickerClosed", "MdTimePickerComponent#event:onTimePickerLabelClick", "MdTimePickerComponent#event:onTimePickerIconButtonPrevClick", "MdTimePickerComponent#event:onTimePickerIconButtonNextClick", "MdTimePickerComponent#event:onTimePickerIconButtonClick", "MdTimePickerComponent#event:onTimePickerHourItemClick", "MdTimePickerComponent#event:onTimePickerMinuteItemClick", "MdTimePickerComponent#event:onTimePickerButtonCancelClick", "MdTimePickerComponent#event:onTimePickerButtonOkClick", "MdTimePickerComponent#event:onTimePickerButtonLabelClick", "MdTimePickerComponent#event:onTimePickerButtonClick", "MdTimePickerComponent#event:onTimePickerScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-time-picker",
+                "value": "md-time-picker"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4652, 4677],
+            "filename": "time-picker.js",
+            "lineno": 116,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000503",
+                "name": "this.current",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "current",
+        "longname": "MdTimePickerComponent#current",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4688, 4711],
+            "filename": "time-picker.js",
+            "lineno": 117,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000510",
+                "name": "this.value",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdTimePickerComponent#value",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4722, 4749],
+            "filename": "time-picker.js",
+            "lineno": 118,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000517",
+                "name": "this.selection",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selection",
+        "longname": "MdTimePickerComponent#selection",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4760, 4774],
+            "filename": "time-picker.js",
+            "lineno": 119,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000524",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 0,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdTimePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4785, 4916],
+            "filename": "time-picker.js",
+            "lineno": 120,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000530",
+                "name": "this.hourFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "hourFormat",
+        "longname": "MdTimePickerComponent#hourFormat",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4853, 4868],
+            "filename": "time-picker.js",
+            "lineno": 121,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000541",
+                "name": "hour",
+                "type": "Literal",
+                "value": "numeric"
+            }
+        },
+        "undocumented": true,
+        "name": "hour",
+        "longname": "hour",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4883, 4896],
+            "filename": "time-picker.js",
+            "lineno": 122,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000543",
+                "name": "hour12",
+                "type": "Literal",
+                "value": false
+            }
+        },
+        "undocumented": true,
+        "name": "hour12",
+        "longname": "hour12",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4927, 5062],
+            "filename": "time-picker.js",
+            "lineno": 124,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000547",
+                "name": "this.minuteFormat",
+                "type": "MemberExpression",
+                "value": ".format",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "minuteFormat",
+        "longname": "MdTimePickerComponent#minuteFormat",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4997, 5014],
+            "filename": "time-picker.js",
+            "lineno": 125,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000558",
+                "name": "minute",
+                "type": "Literal",
+                "value": "numeric"
+            }
+        },
+        "undocumented": true,
+        "name": "minute",
+        "longname": "minute",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5029, 5042],
+            "filename": "time-picker.js",
+            "lineno": 126,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000560",
+                "name": "hour12",
+                "type": "Literal",
+                "value": false
+            }
+        },
+        "undocumented": true,
+        "name": "hour12",
+        "longname": "hour12",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5073, 5217],
+            "filename": "time-picker.js",
+            "lineno": 128,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000564",
+                "name": "this.actions",
+                "type": "ArrayExpression",
+                "value": "[\"{\\\"id\\\":\\\"prev\\\",\\\"icon\\\":\\\"keyboard_arrow_left\\\"}\",\"{\\\"id\\\":\\\"next\\\",\\\"icon\\\":\\\"keyboard_arrow_right\\\"}\"]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "MdTimePickerComponent#actions",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5105, 5115],
+            "filename": "time-picker.js",
+            "lineno": 129,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000570",
+                "name": "id",
+                "type": "Literal",
+                "value": "prev"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5117, 5144],
+            "filename": "time-picker.js",
+            "lineno": 129,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000572",
+                "name": "icon",
+                "type": "Literal",
+                "value": "keyboard_arrow_left"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5163, 5173],
+            "filename": "time-picker.js",
+            "lineno": 130,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000575",
+                "name": "id",
+                "type": "Literal",
+                "value": "next"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5175, 5203],
+            "filename": "time-picker.js",
+            "lineno": 130,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000577",
+                "name": "icon",
+                "type": "Literal",
+                "value": "keyboard_arrow_right"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5228, 5330],
+            "filename": "time-picker.js",
+            "lineno": 132,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000580",
+                "name": "this.buttons",
+                "type": "ArrayExpression",
+                "value": "[\"{\\\"component\\\":\\\"spacer\\\"}\",\"{\\\"id\\\":\\\"cancel\\\",\\\"label\\\":\\\"Cancel\\\"}\",\"{\\\"id\\\":\\\"ok\\\",\\\"label\\\":\\\"Ok\\\"}\"]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "MdTimePickerComponent#buttons",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5246, 5265],
+            "filename": "time-picker.js",
+            "lineno": 132,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000586",
+                "name": "component",
+                "type": "Literal",
+                "value": "spacer"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5271, 5283],
+            "filename": "time-picker.js",
+            "lineno": 132,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000589",
+                "name": "id",
+                "type": "Literal",
+                "value": "cancel"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5285, 5300],
+            "filename": "time-picker.js",
+            "lineno": 132,
+            "columnno": 65,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000591",
+                "name": "label",
+                "type": "Literal",
+                "value": "Cancel"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5306, 5314],
+            "filename": "time-picker.js",
+            "lineno": 132,
+            "columnno": 86,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000594",
+                "name": "id",
+                "type": "Literal",
+                "value": "ok"
+            }
+        },
+        "undocumented": true,
+        "name": "id",
+        "longname": "id",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5316, 5327],
+            "filename": "time-picker.js",
+            "lineno": 132,
+            "columnno": 96,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000596",
+                "name": "label",
+                "type": "Literal",
+                "value": "Ok"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [5418, 5516],
+            "filename": "time-picker.js",
+            "lineno": 140,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000598",
+                "name": "MdTimePickerComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdTimePickerComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [5596, 6141],
+            "filename": "time-picker.js",
+            "lineno": 149,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000614",
+                "name": "MdTimePickerComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdTimePickerComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [6221, 6746],
+            "filename": "time-picker.js",
+            "lineno": 169,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000666",
+                "name": "MdTimePickerComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdTimePickerComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [6826, 6921],
+            "filename": "time-picker.js",
+            "lineno": 189,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000718",
+                "name": "MdTimePickerComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdTimePickerComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [7041, 7468],
+            "filename": "time-picker.js",
+            "lineno": 199,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000728",
+                "name": "MdTimePickerComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "component"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdTimePickerComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [7520, 8237],
+            "filename": "time-picker.js",
+            "lineno": 216,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000779",
+                "name": "MdTimePickerComponent#renderTimePickerHour",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderTimePickerHour",
+        "longname": "MdTimePickerComponent#renderTimePickerHour",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [8289, 9014],
+            "filename": "time-picker.js",
+            "lineno": 240,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000819",
+                "name": "MdTimePickerComponent#renderTimePickerMinute",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "renderTimePickerMinute",
+        "longname": "MdTimePickerComponent#renderTimePickerMinute",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [9066, 10366],
+            "filename": "time-picker.js",
+            "lineno": 264,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000859",
+                "name": "MdTimePickerComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdTimePickerComponent#render",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [10433, 11414],
+            "filename": "time-picker.js",
+            "lineno": 291,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000965",
+                "name": "MdTimePickerComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdTimePickerComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [10506, 10563],
+            "filename": "time-picker.js",
+            "lineno": 293,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000975",
+                "name": "this.timePickerScrim",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "timePickerScrim",
+        "longname": "MdTimePickerComponent#timePickerScrim",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [10663, 10741],
+            "filename": "time-picker.js",
+            "lineno": 295,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100000998",
+                "name": "this.handleTimePickerScrimClosed",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleTimePickerScrimClosed",
+        "longname": "MdTimePickerComponent#handleTimePickerScrimClosed",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [11257, 11304],
+            "filename": "time-picker.js",
+            "lineno": 303,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001084",
+                "name": "this.selection",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selection",
+        "longname": "MdTimePickerComponent#selection",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [11315, 11365],
+            "filename": "time-picker.js",
+            "lineno": 304,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001097",
+                "name": "this.defaultValue",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdTimePickerComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [11376, 11406],
+            "filename": "time-picker.js",
+            "lineno": 305,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001110",
+                "name": "this.defaultIndex",
+                "type": "MemberExpression",
+                "value": "this.index",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultIndex",
+        "longname": "MdTimePickerComponent#defaultIndex",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [11466, 11728],
+            "filename": "time-picker.js",
+            "lineno": 312,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001117",
+                "name": "MdTimePickerComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "disconnectedCallback",
+        "longname": "MdTimePickerComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [11821, 12170],
+            "filename": "time-picker.js",
+            "lineno": 324,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001152",
+                "name": "MdTimePickerComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdTimePickerComponent#updated",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [options]\r\n     */",
+        "meta": {
+            "range": [12236, 12822],
+            "filename": "time-picker.js",
+            "lineno": 338,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001202",
+                "name": "MdTimePickerComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": ["options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "options"
+            }
+        ],
+        "name": "show",
+        "longname": "MdTimePickerComponent#show",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12332, 12362],
+            "filename": "time-picker.js",
+            "lineno": 340,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001216",
+                "name": "this.index",
+                "type": "MemberExpression",
+                "value": "this.defaultIndex",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdTimePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12427, 12443],
+            "filename": "time-picker.js",
+            "lineno": 342,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001235",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdTimePickerComponent#open",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12454, 12700],
+            "filename": "time-picker.js",
+            "lineno": 343,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001241",
+                "name": "options",
+                "type": "ObjectExpression",
+                "funcscope": "<anonymous>",
+                "value": "{\"container\":\"\",\"placements\":\"\"}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "options",
+        "longname": "<anonymous>~options",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12479, 12494],
+            "filename": "time-picker.js",
+            "lineno": 344,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001244",
+                "name": "container",
+                "type": "ThisExpression",
+                "value": "this"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "<anonymous>~options.container",
+        "kind": "member",
+        "memberof": "<anonymous>~options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12509, 12663],
+            "filename": "time-picker.js",
+            "lineno": 345,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001246",
+                "name": "placements",
+                "type": "ArrayExpression",
+                "value": "[\"bottom-start\",\"bottom-end\",\"bottom\",\"top-start\",\"top-end\",\"top\",\"right-start\",\"right-end\",\"right\",\"left-start\",\"left-end\",\"left\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "placements",
+        "longname": "<anonymous>~options.placements",
+        "kind": "member",
+        "memberof": "<anonymous>~options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12711, 12737],
+            "filename": "time-picker.js",
+            "lineno": 348,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001263",
+                "name": "this.popper",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "popper",
+        "longname": "MdTimePickerComponent#popper",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [12857, 13053],
+            "filename": "time-picker.js",
+            "lineno": 356,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001283",
+                "name": "MdTimePickerComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdTimePickerComponent#close",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [12947, 12964],
+            "filename": "time-picker.js",
+            "lineno": 358,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001296",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdTimePickerComponent#open",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [options]\r\n     */",
+        "meta": {
+            "range": [13119, 13215],
+            "filename": "time-picker.js",
+            "lineno": 367,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001314",
+                "name": "MdTimePickerComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": ["options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "options"
+            }
+        ],
+        "name": "toggle",
+        "longname": "MdTimePickerComponent#toggle",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [13296, 13395],
+            "filename": "time-picker.js",
+            "lineno": 377,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001334",
+                "name": "MdTimePickerComponent#handleTimePickerLabelClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerLabelClick",
+        "longname": "MdTimePickerComponent#handleTimePickerLabelClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [13379, 13384],
+            "filename": "time-picker.js",
+            "lineno": 378,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001346",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [13476, 13807],
+            "filename": "time-picker.js",
+            "lineno": 386,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001348",
+                "name": "MdTimePickerComponent#handleTimePickerIconButtonPrevClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerIconButtonPrevClick",
+        "longname": "MdTimePickerComponent#handleTimePickerIconButtonPrevClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [13791, 13796],
+            "filename": "time-picker.js",
+            "lineno": 390,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001407",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [13888, 14219],
+            "filename": "time-picker.js",
+            "lineno": 398,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001409",
+                "name": "MdTimePickerComponent#handleTimePickerIconButtonNextClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerIconButtonNextClick",
+        "longname": "MdTimePickerComponent#handleTimePickerIconButtonNextClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14203, 14208],
+            "filename": "time-picker.js",
+            "lineno": 402,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001468",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [14300, 14640],
+            "filename": "time-picker.js",
+            "lineno": 410,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001470",
+                "name": "MdTimePickerComponent#handleTimePickerIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerIconButtonClick",
+        "longname": "MdTimePickerComponent#handleTimePickerIconButtonClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14356, 14387],
+            "filename": "time-picker.js",
+            "lineno": 411,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001476",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14624, 14629],
+            "filename": "time-picker.js",
+            "lineno": 414,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001514",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [14721, 14985],
+            "filename": "time-picker.js",
+            "lineno": 422,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001516",
+                "name": "MdTimePickerComponent#handleTimePickerHourItemClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerHourItemClick",
+        "longname": "MdTimePickerComponent#handleTimePickerHourItemClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14775, 14806],
+            "filename": "time-picker.js",
+            "lineno": 423,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001522",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14903, 14917],
+            "filename": "time-picker.js",
+            "lineno": 426,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001550",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 1,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdTimePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [14969, 14974],
+            "filename": "time-picker.js",
+            "lineno": 427,
+            "columnno": 49,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001562",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [15066, 15342],
+            "filename": "time-picker.js",
+            "lineno": 435,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001564",
+                "name": "MdTimePickerComponent#handleTimePickerMinuteItemClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerMinuteItemClick",
+        "longname": "MdTimePickerComponent#handleTimePickerMinuteItemClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15122, 15153],
+            "filename": "time-picker.js",
+            "lineno": 436,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001570",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15258, 15272],
+            "filename": "time-picker.js",
+            "lineno": 439,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001598",
+                "name": "this.index",
+                "type": "Literal",
+                "value": 0,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdTimePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15326, 15331],
+            "filename": "time-picker.js",
+            "lineno": 440,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001610",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [15423, 15683],
+            "filename": "time-picker.js",
+            "lineno": 448,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001612",
+                "name": "MdTimePickerComponent#handleTimePickerButtonCancelClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerButtonCancelClick",
+        "longname": "MdTimePickerComponent#handleTimePickerButtonCancelClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15667, 15672],
+            "filename": "time-picker.js",
+            "lineno": 452,
+            "columnno": 53,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001655",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [15764, 15962],
+            "filename": "time-picker.js",
+            "lineno": 460,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001657",
+                "name": "MdTimePickerComponent#handleTimePickerButtonOkClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerButtonOkClick",
+        "longname": "MdTimePickerComponent#handleTimePickerButtonOkClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15889, 15894],
+            "filename": "time-picker.js",
+            "lineno": 463,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001674",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [15909, 15941],
+            "filename": "time-picker.js",
+            "lineno": 464,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001676",
+                "name": "value",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [16043, 16266],
+            "filename": "time-picker.js",
+            "lineno": 473,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001682",
+                "name": "MdTimePickerComponent#handleTimePickerButtonLabelClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerButtonLabelClick",
+        "longname": "MdTimePickerComponent#handleTimePickerButtonLabelClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16100, 16156],
+            "filename": "time-picker.js",
+            "lineno": 474,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001688",
+                "name": "map",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":0}"
+            }
+        },
+        "undocumented": true,
+        "name": "map",
+        "longname": "<anonymous>~map",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16121, 16125],
+            "filename": "time-picker.js",
+            "lineno": 475,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001691",
+                "type": "Literal",
+                "value": 1
+            }
+        },
+        "undocumented": true,
+        "name": "0",
+        "longname": "<anonymous>~map.0",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16140, 16144],
+            "filename": "time-picker.js",
+            "lineno": 476,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001693",
+                "name": 1,
+                "type": "Literal",
+                "value": 0
+            }
+        },
+        "undocumented": true,
+        "name": "1",
+        "longname": "<anonymous>~map.1",
+        "kind": "member",
+        "memberof": "<anonymous>~map",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16167, 16195],
+            "filename": "time-picker.js",
+            "lineno": 478,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001696",
+                "name": "this.index",
+                "type": "MemberExpression",
+                "value": "map[undefined]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "index",
+        "longname": "MdTimePickerComponent#index",
+        "kind": "member",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16250, 16255],
+            "filename": "time-picker.js",
+            "lineno": 479,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001712",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [16347, 16763],
+            "filename": "time-picker.js",
+            "lineno": 487,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001714",
+                "name": "MdTimePickerComponent#handleTimePickerButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerButtonClick",
+        "longname": "MdTimePickerComponent#handleTimePickerButtonClick",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16399, 16430],
+            "filename": "time-picker.js",
+            "lineno": 488,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001720",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16747, 16752],
+            "filename": "time-picker.js",
+            "lineno": 492,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001770",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [16844, 16983],
+            "filename": "time-picker.js",
+            "lineno": 500,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001772",
+                "name": "MdTimePickerComponent#handleTimePickerScrimClosed",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTimePickerScrimClosed",
+        "longname": "MdTimePickerComponent#handleTimePickerScrimClosed",
+        "kind": "function",
+        "memberof": "MdTimePickerComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [16967, 16972],
+            "filename": "time-picker.js",
+            "lineno": 502,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001793",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [17062, 17083],
+            "filename": "time-picker.js",
+            "lineno": 506,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker",
+            "code": {
+                "id": "astnode100001803",
+                "name": "exports.MdTimePickerComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdTimePickerComponent",
+        "longname": "MdTimePickerComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker\\time-picker.js"]
+    }
+]

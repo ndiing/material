@@ -2,14 +2,13 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @element md-icon
  */
 class MdIconComponent extends MdComponent {
-
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {

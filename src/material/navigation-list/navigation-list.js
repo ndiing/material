@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown
@@ -15,8 +15,8 @@ import { Store } from "../store/store";
  */
 class MdNavigationListComponent extends MdComponent {
     /**
-     * @property {Array} [items] 
-     * @property {Object} [rippleOptions] 
+     * @property {Array} [items]
+     * @property {Object} [rippleOptions]
      */
     static properties = {
         items: { type: Array },
@@ -24,7 +24,7 @@ class MdNavigationListComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -34,7 +34,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -57,7 +57,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -65,7 +65,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -79,7 +79,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -89,7 +89,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -104,7 +104,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     requestUpdateStore() {
         const result = this.store.get({});
@@ -113,7 +113,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @async
      */
     async updateScroll() {
@@ -128,7 +128,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -146,7 +146,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [event]
@@ -165,7 +165,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -177,7 +177,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -191,7 +191,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

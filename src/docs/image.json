@@ -1,0 +1,554 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-image\r\n */",
+        "meta": {
+            "range": [273, 1722],
+            "filename": "image.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdImageComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-image",
+                "value": "md-image"
+            }
+        ],
+        "name": "MdImageComponent",
+        "longname": "MdImageComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {String} [src] \r\n     * @property {String} [alt] \r\n     * @property {String} [ratio] \r\n     * @property {Boolean} [circular] \r\n     */",
+        "meta": {
+            "range": [485, 650],
+            "filename": "image.js",
+            "lineno": 18,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "src"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "alt"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "ratio"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "circular"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdImageComponent#properties",
+        "kind": "member",
+        "memberof": "MdImageComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [516, 537],
+            "filename": "image.js",
+            "lineno": 19,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000026",
+                "name": "src",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "src",
+        "longname": "src",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [523, 535],
+            "filename": "image.js",
+            "lineno": 19,
+            "columnno": 15,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "src.type",
+        "kind": "member",
+        "memberof": "src",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [548, 569],
+            "filename": "image.js",
+            "lineno": 20,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000030",
+                "name": "alt",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "alt",
+        "longname": "alt",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [555, 567],
+            "filename": "image.js",
+            "lineno": 20,
+            "columnno": 15,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "alt.type",
+        "kind": "member",
+        "memberof": "alt",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [580, 603],
+            "filename": "image.js",
+            "lineno": 21,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000034",
+                "name": "ratio",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "ratio",
+        "longname": "ratio",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [589, 601],
+            "filename": "image.js",
+            "lineno": 21,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "ratio.type",
+        "kind": "member",
+        "memberof": "ratio",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [614, 641],
+            "filename": "image.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000038",
+                "name": "circular",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "circular",
+        "longname": "circular",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [626, 639],
+            "filename": "image.js",
+            "lineno": 22,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "circular.type",
+        "kind": "member",
+        "memberof": "circular",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [685, 725],
+            "filename": "image.js",
+            "lineno": 28,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000042",
+                "name": "MdImageComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdImageComponent",
+        "longname": "MdImageComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-image\r\n */",
+        "meta": {
+            "range": [273, 1722],
+            "filename": "image.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdImageComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdImageComponent",
+        "longname": "MdImageComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-image",
+                "value": "md-image"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [778, 1229],
+            "filename": "image.js",
+            "lineno": 36,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000049",
+                "name": "MdImageComponent#styleImageNative",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "styleImageNative",
+        "longname": "MdImageComponent#styleImageNative",
+        "kind": "member",
+        "memberof": "MdImageComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [818, 828],
+            "filename": "image.js",
+            "lineno": 37,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000054",
+                "name": "style",
+                "type": "ObjectExpression",
+                "value": "{}"
+            }
+        },
+        "undocumented": true,
+        "name": "style",
+        "longname": "<anonymous>~style",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [855, 889],
+            "filename": "image.js",
+            "lineno": 38,
+            "columnno": 24,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000062",
+                "name": "style[\"aspect-ratio\"]",
+                "type": "MemberExpression",
+                "funcscope": "<anonymous>",
+                "value": "this.ratio",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "\"aspect-ratio\"]",
+        "longname": "<anonymous>~style.\"aspect-ratio\"]",
+        "kind": "member",
+        "memberof": "<anonymous>~style",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1022, 1035],
+            "filename": "image.js",
+            "lineno": 42,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000090",
+                "name": "x",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "x",
+        "longname": "<anonymous>~x",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1054, 1067],
+            "filename": "image.js",
+            "lineno": 43,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000096",
+                "name": "y",
+                "type": "CallExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "y",
+        "longname": "<anonymous>~y",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1086, 1135],
+            "filename": "image.js",
+            "lineno": 44,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000102",
+                "name": "style[\"border-radius\"]",
+                "type": "TemplateLiteral",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "\"border-radius\"]",
+        "longname": "<anonymous>~style.\"border-radius\"]",
+        "kind": "member",
+        "memberof": "<anonymous>~style",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1157, 1187],
+            "filename": "image.js",
+            "lineno": 45,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000115",
+                "name": "style[\"border-radius\"]",
+                "type": "Literal",
+                "funcscope": "<anonymous>",
+                "value": "50%",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "\"border-radius\"]",
+        "longname": "<anonymous>~style.\"border-radius\"]",
+        "kind": "member",
+        "memberof": "<anonymous>~style",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [1281, 1562],
+            "filename": "image.js",
+            "lineno": 54,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000122",
+                "name": "MdImageComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdImageComponent#render",
+        "kind": "function",
+        "memberof": "MdImageComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [1614, 1719],
+            "filename": "image.js",
+            "lineno": 69,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000149",
+                "name": "MdImageComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdImageComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdImageComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1787, 1803],
+            "filename": "image.js",
+            "lineno": 75,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image",
+            "code": {
+                "id": "astnode100000174",
+                "name": "exports.MdImageComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdImageComponent",
+        "longname": "MdImageComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image\\image.js"]
+    }
+]

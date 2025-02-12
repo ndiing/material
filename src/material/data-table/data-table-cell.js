@@ -4,20 +4,20 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @element md-data-table-cell
  */
 class MdDataTableCellComponent extends MdComponent {
     /**
-     * @property {Boolean} [checkbox] 
-     * @property {String} [avatar] 
-     * @property {String} [icon] 
-     * @property {String} [label] 
-     * @property {String} [sublabel] 
-     * @property {String} [action] 
-     * @property {Boolean} [indeterminate] 
-     * @property {Boolean} [checked] 
+     * @property {Boolean} [checkbox]
+     * @property {String} [avatar]
+     * @property {String} [icon]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {String} [action]
+     * @property {Boolean} [indeterminate]
+     * @property {Boolean} [checked]
      */
     static properties = {
         checkbox: { type: Boolean },
@@ -31,14 +31,14 @@ class MdDataTableCellComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -62,7 +62,7 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -81,7 +81,7 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]

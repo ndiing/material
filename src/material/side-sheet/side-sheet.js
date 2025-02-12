@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdSideSheetComponent#onSideSheetShown
  * @fires MdSideSheetComponent#onSideSheetClosed
@@ -15,13 +15,13 @@ import { choose } from "lit/directives/choose.js";
  */
 class MdSideSheetComponent extends MdComponent {
     /**
-     * @property {Array} [icons] 
-     * @property {Array} [actions] 
-     * @property {String} [label] 
-     * @property {String} [sublabel] 
-     * @property {Array} [buttons] 
-     * @property {Boolean} [open] 
-     * @property {Boolean} [modal] 
+     * @property {Array} [icons]
+     * @property {Array} [actions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [buttons]
+     * @property {Boolean} [open]
+     * @property {Boolean} [modal]
      */
     static properties = {
         icons: { type: Array },
@@ -34,7 +34,7 @@ class MdSideSheetComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -42,7 +42,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -51,7 +51,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -71,7 +71,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -91,7 +91,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -100,7 +100,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -119,7 +119,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -127,7 +127,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -146,7 +146,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -158,7 +158,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -170,7 +170,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -180,7 +180,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -190,7 +190,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -198,7 +198,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -207,7 +207,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -216,7 +216,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

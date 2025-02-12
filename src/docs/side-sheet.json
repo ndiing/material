@@ -1,0 +1,1175 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdSideSheetComponent#onSideSheetShown\r\n * @fires MdSideSheetComponent#onSideSheetClosed\r\n * @fires MdSideSheetComponent#onSideSheetIconButtonClick\r\n * @fires MdSideSheetComponent#onSideSheetButtonClick\r\n * @fires MdSideSheetComponent#onSideSheetScrimClosed\r\n * @element md-side-sheet\r\n */",
+        "meta": {
+            "range": [541, 7403],
+            "filename": "side-sheet.js",
+            "lineno": 16,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdSideSheetComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdSideSheetComponent#event:onSideSheetShown", "MdSideSheetComponent#event:onSideSheetClosed", "MdSideSheetComponent#event:onSideSheetIconButtonClick", "MdSideSheetComponent#event:onSideSheetButtonClick", "MdSideSheetComponent#event:onSideSheetScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-side-sheet",
+                "value": "md-side-sheet"
+            }
+        ],
+        "name": "MdSideSheetComponent",
+        "longname": "MdSideSheetComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [icons] \r\n     * @property {Array} [actions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [buttons] \r\n     * @property {Boolean} [open] \r\n     * @property {Boolean} [modal] \r\n     */",
+        "meta": {
+            "range": [870, 1172],
+            "filename": "side-sheet.js",
+            "lineno": 26,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "buttons"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "open"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "modal"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdSideSheetComponent#properties",
+        "kind": "member",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [901, 923],
+            "filename": "side-sheet.js",
+            "lineno": 27,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000026",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [910, 921],
+            "filename": "side-sheet.js",
+            "lineno": 27,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [934, 958],
+            "filename": "side-sheet.js",
+            "lineno": 28,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000030",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [945, 956],
+            "filename": "side-sheet.js",
+            "lineno": 28,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [969, 992],
+            "filename": "side-sheet.js",
+            "lineno": 29,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000034",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [978, 990],
+            "filename": "side-sheet.js",
+            "lineno": 29,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1003, 1029],
+            "filename": "side-sheet.js",
+            "lineno": 30,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000038",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1015, 1027],
+            "filename": "side-sheet.js",
+            "lineno": 30,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1040, 1064],
+            "filename": "side-sheet.js",
+            "lineno": 31,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000042",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1051, 1062],
+            "filename": "side-sheet.js",
+            "lineno": 31,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1075, 1113],
+            "filename": "side-sheet.js",
+            "lineno": 32,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000046",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1083, 1096],
+            "filename": "side-sheet.js",
+            "lineno": 32,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1098, 1111],
+            "filename": "side-sheet.js",
+            "lineno": 32,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000050",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1124, 1163],
+            "filename": "side-sheet.js",
+            "lineno": 33,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000052",
+                "name": "modal",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "modal",
+        "longname": "modal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1133, 1146],
+            "filename": "side-sheet.js",
+            "lineno": 33,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000054",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "modal.type",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1148, 1161],
+            "filename": "side-sheet.js",
+            "lineno": 33,
+            "columnno": 32,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000056",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "modal.reflect",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [1207, 1297],
+            "filename": "side-sheet.js",
+            "lineno": 39,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000058",
+                "name": "MdSideSheetComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdSideSheetComponent",
+        "longname": "MdSideSheetComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdSideSheetComponent#onSideSheetShown\r\n * @fires MdSideSheetComponent#onSideSheetClosed\r\n * @fires MdSideSheetComponent#onSideSheetIconButtonClick\r\n * @fires MdSideSheetComponent#onSideSheetButtonClick\r\n * @fires MdSideSheetComponent#onSideSheetScrimClosed\r\n * @element md-side-sheet\r\n */",
+        "meta": {
+            "range": [541, 7403],
+            "filename": "side-sheet.js",
+            "lineno": 16,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdSideSheetComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdSideSheetComponent",
+        "longname": "MdSideSheetComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdSideSheetComponent#event:onSideSheetShown", "MdSideSheetComponent#event:onSideSheetClosed", "MdSideSheetComponent#event:onSideSheetIconButtonClick", "MdSideSheetComponent#event:onSideSheetButtonClick", "MdSideSheetComponent#event:onSideSheetScrimClosed"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-side-sheet",
+                "value": "md-side-sheet"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1250, 1289],
+            "filename": "side-sheet.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000066",
+                "name": "this.body",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "body",
+        "longname": "MdSideSheetComponent#body",
+        "kind": "member",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1377, 1475],
+            "filename": "side-sheet.js",
+            "lineno": 49,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000077",
+                "name": "MdSideSheetComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdSideSheetComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1555, 2099],
+            "filename": "side-sheet.js",
+            "lineno": 58,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000093",
+                "name": "MdSideSheetComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdSideSheetComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [2179, 2703],
+            "filename": "side-sheet.js",
+            "lineno": 78,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000145",
+                "name": "MdSideSheetComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdSideSheetComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [2783, 2877],
+            "filename": "side-sheet.js",
+            "lineno": 98,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000197",
+                "name": "MdSideSheetComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdSideSheetComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [2997, 3424],
+            "filename": "side-sheet.js",
+            "lineno": 108,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000207",
+                "name": "MdSideSheetComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "component"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdSideSheetComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [3476, 4664],
+            "filename": "side-sheet.js",
+            "lineno": 125,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000258",
+                "name": "MdSideSheetComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdSideSheetComponent#render",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [4731, 5526],
+            "filename": "side-sheet.js",
+            "lineno": 134,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000426",
+                "name": "MdSideSheetComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdSideSheetComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4804, 4860],
+            "filename": "side-sheet.js",
+            "lineno": 136,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000436",
+                "name": "this.sideSheetScrim",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "sideSheetScrim",
+        "longname": "MdSideSheetComponent#sideSheetScrim",
+        "kind": "member",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4959, 5035],
+            "filename": "side-sheet.js",
+            "lineno": 138,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000459",
+                "name": "this.handleSideSheetScrimClosed",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleSideSheetScrimClosed",
+        "longname": "MdSideSheetComponent#handleSideSheetScrimClosed",
+        "kind": "member",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [5578, 5906],
+            "filename": "side-sheet.js",
+            "lineno": 152,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000544",
+                "name": "MdSideSheetComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "disconnectedCallback",
+        "longname": "MdSideSheetComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [5999, 6209],
+            "filename": "side-sheet.js",
+            "lineno": 165,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000588",
+                "name": "MdSideSheetComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdSideSheetComponent#updated",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [6244, 6444],
+            "filename": "side-sheet.js",
+            "lineno": 175,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000620",
+                "name": "MdSideSheetComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "show",
+        "longname": "MdSideSheetComponent#show",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6380, 6396],
+            "filename": "side-sheet.js",
+            "lineno": 178,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000644",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdSideSheetComponent#open",
+        "kind": "member",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [6479, 6697],
+            "filename": "side-sheet.js",
+            "lineno": 185,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000655",
+                "name": "MdSideSheetComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdSideSheetComponent#close",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6563, 6580],
+            "filename": "side-sheet.js",
+            "lineno": 187,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000668",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdSideSheetComponent#open",
+        "kind": "member",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [6732, 6814],
+            "filename": "side-sheet.js",
+            "lineno": 195,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000692",
+                "name": "MdSideSheetComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "toggle",
+        "longname": "MdSideSheetComponent#toggle",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [6895, 7002],
+            "filename": "side-sheet.js",
+            "lineno": 205,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000710",
+                "name": "MdSideSheetComponent#handleSideSheetIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSideSheetIconButtonClick",
+        "longname": "MdSideSheetComponent#handleSideSheetIconButtonClick",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6986, 6991],
+            "filename": "side-sheet.js",
+            "lineno": 206,
+            "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000722",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [7083, 7182],
+            "filename": "side-sheet.js",
+            "lineno": 214,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000724",
+                "name": "MdSideSheetComponent#handleSideSheetButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSideSheetButtonClick",
+        "longname": "MdSideSheetComponent#handleSideSheetButtonClick",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7166, 7171],
+            "filename": "side-sheet.js",
+            "lineno": 215,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000736",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [7263, 7400],
+            "filename": "side-sheet.js",
+            "lineno": 223,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000738",
+                "name": "MdSideSheetComponent#handleSideSheetScrimClosed",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSideSheetScrimClosed",
+        "longname": "MdSideSheetComponent#handleSideSheetScrimClosed",
+        "kind": "function",
+        "memberof": "MdSideSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7384, 7389],
+            "filename": "side-sheet.js",
+            "lineno": 225,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000759",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7477, 7497],
+            "filename": "side-sheet.js",
+            "lineno": 229,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet",
+            "code": {
+                "id": "astnode100000769",
+                "name": "exports.MdSideSheetComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdSideSheetComponent",
+        "longname": "MdSideSheetComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet\\side-sheet.js"]
+    }
+]

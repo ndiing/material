@@ -1,0 +1,2023 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdTextFieldComponent#onTextFieldFocus\r\n * @fires MdTextFieldComponent#onTextFieldBlur\r\n * @fires MdTextFieldComponent#onTextFieldInput\r\n * @fires MdTextFieldComponent#onTextFieldInvalid\r\n * @fires MdTextFieldComponent#onTextFieldReset\r\n * @fires MdTextFieldComponent#onTextFieldIconButtonClick\r\n * @element md-text-field\r\n */",
+        "meta": {
+            "range": [635, 9524],
+            "filename": "text-field.js",
+            "lineno": 18,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000024",
+                "name": "MdTextFieldComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdTextFieldComponent#event:onTextFieldFocus", "MdTextFieldComponent#event:onTextFieldBlur", "MdTextFieldComponent#event:onTextFieldInput", "MdTextFieldComponent#event:onTextFieldInvalid", "MdTextFieldComponent#event:onTextFieldReset", "MdTextFieldComponent#event:onTextFieldIconButtonClick"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-text-field",
+                "value": "md-text-field"
+            }
+        ],
+        "name": "MdTextFieldComponent",
+        "longname": "MdTextFieldComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {String} [label] \r\n     * @property {Boolean} [separateLabel] \r\n     * @property {Array} [icons] \r\n     * @property {String} [prefix] \r\n     * @property {String} [suffix] \r\n     * @property {Array} [actions] \r\n     * @property {String} [text] \r\n     * @property {String} [error] \r\n     * @property {String} [counter] \r\n     * @property {String} [name] \r\n     * @property {String} [type] \r\n     * @property {String} [value] \r\n     * @property {String} [placeholder] \r\n     * @property {String} [title] \r\n     * @property {String} [autocomplete] \r\n     * @property {Boolean} [required] \r\n     * @property {Boolean} [readOnly] \r\n     * @property {String} [variant] - [\"outlined\",\"filled\"]\r\n     * @property {Boolean} [disabled] \r\n     */",
+        "meta": {
+            "range": [1451, 2178],
+            "filename": "text-field.js",
+            "lineno": 40,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000028",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "separateLabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "prefix"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "suffix"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "text"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "error"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "counter"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "type"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "value"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "placeholder"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "title"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "autocomplete"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "required"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "readOnly"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "description": "[\"outlined\",\"filled\"]",
+                "name": "variant"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "disabled"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdTextFieldComponent#properties",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1482, 1505],
+            "filename": "text-field.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000030",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1491, 1503],
+            "filename": "text-field.js",
+            "lineno": 41,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1516, 1548],
+            "filename": "text-field.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000034",
+                "name": "separateLabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "separateLabel",
+        "longname": "separateLabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1533, 1546],
+            "filename": "text-field.js",
+            "lineno": 42,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "separateLabel.type",
+        "kind": "member",
+        "memberof": "separateLabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1559, 1581],
+            "filename": "text-field.js",
+            "lineno": 43,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000038",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1568, 1579],
+            "filename": "text-field.js",
+            "lineno": 43,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1592, 1616],
+            "filename": "text-field.js",
+            "lineno": 44,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000042",
+                "name": "prefix",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "prefix",
+        "longname": "prefix",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1602, 1614],
+            "filename": "text-field.js",
+            "lineno": 44,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "prefix.type",
+        "kind": "member",
+        "memberof": "prefix",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1627, 1651],
+            "filename": "text-field.js",
+            "lineno": 45,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000046",
+                "name": "suffix",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "suffix",
+        "longname": "suffix",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1637, 1649],
+            "filename": "text-field.js",
+            "lineno": 45,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "suffix.type",
+        "kind": "member",
+        "memberof": "suffix",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1662, 1686],
+            "filename": "text-field.js",
+            "lineno": 46,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000050",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1673, 1684],
+            "filename": "text-field.js",
+            "lineno": 46,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000052",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1697, 1719],
+            "filename": "text-field.js",
+            "lineno": 47,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000054",
+                "name": "text",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "text",
+        "longname": "text",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1705, 1717],
+            "filename": "text-field.js",
+            "lineno": 47,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000056",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "text.type",
+        "kind": "member",
+        "memberof": "text",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1730, 1753],
+            "filename": "text-field.js",
+            "lineno": 48,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000058",
+                "name": "error",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "error",
+        "longname": "error",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1739, 1751],
+            "filename": "text-field.js",
+            "lineno": 48,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000060",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "error.type",
+        "kind": "member",
+        "memberof": "error",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1764, 1789],
+            "filename": "text-field.js",
+            "lineno": 49,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000062",
+                "name": "counter",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "counter",
+        "longname": "counter",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1775, 1787],
+            "filename": "text-field.js",
+            "lineno": 49,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000064",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "counter.type",
+        "kind": "member",
+        "memberof": "counter",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1800, 1822],
+            "filename": "text-field.js",
+            "lineno": 50,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000066",
+                "name": "name",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "name",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1808, 1820],
+            "filename": "text-field.js",
+            "lineno": 50,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000068",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "name.type",
+        "kind": "member",
+        "memberof": "name",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1833, 1855],
+            "filename": "text-field.js",
+            "lineno": 51,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000070",
+                "name": "type",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1841, 1853],
+            "filename": "text-field.js",
+            "lineno": 51,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000072",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type.type",
+        "kind": "member",
+        "memberof": "type",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1866, 1889],
+            "filename": "text-field.js",
+            "lineno": 52,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000074",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1875, 1887],
+            "filename": "text-field.js",
+            "lineno": 52,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000076",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "value.type",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1900, 1929],
+            "filename": "text-field.js",
+            "lineno": 53,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000078",
+                "name": "placeholder",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "placeholder",
+        "longname": "placeholder",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1915, 1927],
+            "filename": "text-field.js",
+            "lineno": 53,
+            "columnno": 23,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000080",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "placeholder.type",
+        "kind": "member",
+        "memberof": "placeholder",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1940, 1963],
+            "filename": "text-field.js",
+            "lineno": 54,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000082",
+                "name": "title",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "title",
+        "longname": "title",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1949, 1961],
+            "filename": "text-field.js",
+            "lineno": 54,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000084",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "title.type",
+        "kind": "member",
+        "memberof": "title",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1974, 2004],
+            "filename": "text-field.js",
+            "lineno": 55,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000086",
+                "name": "autocomplete",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "autocomplete",
+        "longname": "autocomplete",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1990, 2002],
+            "filename": "text-field.js",
+            "lineno": 55,
+            "columnno": 24,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000088",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "autocomplete.type",
+        "kind": "member",
+        "memberof": "autocomplete",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2015, 2042],
+            "filename": "text-field.js",
+            "lineno": 56,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000090",
+                "name": "required",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "required",
+        "longname": "required",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2027, 2040],
+            "filename": "text-field.js",
+            "lineno": 56,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000092",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "required.type",
+        "kind": "member",
+        "memberof": "required",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2053, 2080],
+            "filename": "text-field.js",
+            "lineno": 57,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000094",
+                "name": "readOnly",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "readOnly",
+        "longname": "readOnly",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2065, 2078],
+            "filename": "text-field.js",
+            "lineno": 57,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000096",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "readOnly.type",
+        "kind": "member",
+        "memberof": "readOnly",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2091, 2116],
+            "filename": "text-field.js",
+            "lineno": 58,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000098",
+                "name": "variant",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "variant",
+        "longname": "variant",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2102, 2114],
+            "filename": "text-field.js",
+            "lineno": 58,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000100",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "variant.type",
+        "kind": "member",
+        "memberof": "variant",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2127, 2169],
+            "filename": "text-field.js",
+            "lineno": 59,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000102",
+                "name": "disabled",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "disabled",
+        "longname": "disabled",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2139, 2152],
+            "filename": "text-field.js",
+            "lineno": 59,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000104",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "disabled.type",
+        "kind": "member",
+        "memberof": "disabled",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2154, 2167],
+            "filename": "text-field.js",
+            "lineno": 59,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000106",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "disabled.reflect",
+        "kind": "member",
+        "memberof": "disabled",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [2222, 2256],
+            "filename": "text-field.js",
+            "lineno": 65,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000108",
+                "name": "variants",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "variants",
+        "longname": "MdTextFieldComponent#variants",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [2309, 2721],
+            "filename": "text-field.js",
+            "lineno": 71,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000112",
+                "name": "MdTextFieldComponent#actionsAll",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "actionsAll",
+        "longname": "MdTextFieldComponent#actionsAll",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2456, 2473],
+            "filename": "text-field.js",
+            "lineno": 76,
+            "columnno": 24,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000132",
+                "name": "component",
+                "type": "Literal",
+                "value": "icon"
+            }
+        },
+        "undocumented": true,
+        "name": "component",
+        "longname": "component",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2500, 2513],
+            "filename": "text-field.js",
+            "lineno": 77,
+            "columnno": 24,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000134",
+                "name": "icon",
+                "type": "Literal",
+                "value": "error"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2540, 2588],
+            "filename": "text-field.js",
+            "lineno": 78,
+            "columnno": 24,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000136",
+                "name": "classMap",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "classMap",
+        "longname": "classMap",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2552, 2586],
+            "filename": "text-field.js",
+            "lineno": 78,
+            "columnno": 36,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000138",
+                "name": "\"md-text-field__icon--error\"",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "\"md-text-field__icon--error\"",
+        "longname": "classMap.\"md-text-field__icon--error\"",
+        "kind": "member",
+        "memberof": "classMap",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [2774, 2866],
+            "filename": "text-field.js",
+            "lineno": 90,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000145",
+                "name": "MdTextFieldComponent#textFieldNative",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "textFieldNative",
+        "longname": "MdTextFieldComponent#textFieldNative",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [2901, 3031],
+            "filename": "text-field.js",
+            "lineno": 97,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000155",
+                "name": "MdTextFieldComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdTextFieldComponent",
+        "longname": "MdTextFieldComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdTextFieldComponent#onTextFieldFocus\r\n * @fires MdTextFieldComponent#onTextFieldBlur\r\n * @fires MdTextFieldComponent#onTextFieldInput\r\n * @fires MdTextFieldComponent#onTextFieldInvalid\r\n * @fires MdTextFieldComponent#onTextFieldReset\r\n * @fires MdTextFieldComponent#onTextFieldIconButtonClick\r\n * @element md-text-field\r\n */",
+        "meta": {
+            "range": [635, 9524],
+            "filename": "text-field.js",
+            "lineno": 18,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000024",
+                "name": "MdTextFieldComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdTextFieldComponent",
+        "longname": "MdTextFieldComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdTextFieldComponent#event:onTextFieldFocus", "MdTextFieldComponent#event:onTextFieldBlur", "MdTextFieldComponent#event:onTextFieldInput", "MdTextFieldComponent#event:onTextFieldInvalid", "MdTextFieldComponent#event:onTextFieldReset", "MdTextFieldComponent#event:onTextFieldIconButtonClick"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-text-field",
+                "value": "md-text-field"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2944, 2959],
+            "filename": "text-field.js",
+            "lineno": 99,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000163",
+                "name": "this.title",
+                "type": "Literal",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "title",
+        "longname": "MdTextFieldComponent#title",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2970, 2995],
+            "filename": "text-field.js",
+            "lineno": 100,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000169",
+                "name": "this.autocomplete",
+                "type": "Literal",
+                "value": "off",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "autocomplete",
+        "longname": "MdTextFieldComponent#autocomplete",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3006, 3023],
+            "filename": "text-field.js",
+            "lineno": 101,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000175",
+                "name": "this.actions",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "MdTextFieldComponent#actions",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [3111, 3339],
+            "filename": "text-field.js",
+            "lineno": 109,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000180",
+                "name": "MdTextFieldComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdTextFieldComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [3419, 4022],
+            "filename": "text-field.js",
+            "lineno": 124,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000204",
+                "name": "MdTextFieldComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdTextFieldComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     * @param {Any} [component=\"icon\"]\r\n     */",
+        "meta": {
+            "range": [4142, 4449],
+            "filename": "text-field.js",
+            "lineno": 146,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000264",
+                "name": "MdTextFieldComponent#renderItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item", "component"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderItem",
+        "longname": "MdTextFieldComponent#renderItem",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [4501, 6496],
+            "filename": "text-field.js",
+            "lineno": 161,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000299",
+                "name": "MdTextFieldComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdTextFieldComponent#render",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [6563, 7040],
+            "filename": "text-field.js",
+            "lineno": 194,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000524",
+                "name": "MdTextFieldComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdTextFieldComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6636, 6666],
+            "filename": "text-field.js",
+            "lineno": 196,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000534",
+                "name": "this.defaultValue",
+                "type": "MemberExpression",
+                "value": "this.value",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdTextFieldComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [6833, 6923],
+            "filename": "text-field.js",
+            "lineno": 200,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000568",
+                "name": "this.textFieldOffset",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "textFieldOffset",
+        "longname": "MdTextFieldComponent#textFieldOffset",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [7133, 7727],
+            "filename": "text-field.js",
+            "lineno": 209,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000592",
+                "name": "MdTextFieldComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdTextFieldComponent#updated",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [7808, 7948],
+            "filename": "text-field.js",
+            "lineno": 229,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000678",
+                "name": "MdTextFieldComponent#handleTextFieldFocus",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTextFieldFocus",
+        "longname": "MdTextFieldComponent#handleTextFieldFocus",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [7932, 7937],
+            "filename": "text-field.js",
+            "lineno": 231,
+            "columnno": 40,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000698",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [8029, 8170],
+            "filename": "text-field.js",
+            "lineno": 239,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000700",
+                "name": "MdTextFieldComponent#handleTextFieldBlur",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTextFieldBlur",
+        "longname": "MdTextFieldComponent#handleTextFieldBlur",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [8154, 8159],
+            "filename": "text-field.js",
+            "lineno": 241,
+            "columnno": 39,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000720",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [8251, 8610],
+            "filename": "text-field.js",
+            "lineno": 249,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000722",
+                "name": "MdTextFieldComponent#handleTextFieldInput",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTextFieldInput",
+        "longname": "MdTextFieldComponent#handleTextFieldInput",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [8290, 8329],
+            "filename": "text-field.js",
+            "lineno": 250,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000728",
+                "name": "this.value",
+                "type": "MemberExpression",
+                "value": "this.textFieldNative.value",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdTextFieldComponent#value",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [8340, 8391],
+            "filename": "text-field.js",
+            "lineno": 251,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000738",
+                "name": "this.error",
+                "type": "MemberExpression",
+                "value": "this.textFieldNative.validationMessage",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "error",
+        "longname": "MdTextFieldComponent#error",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [8594, 8599],
+            "filename": "text-field.js",
+            "lineno": 254,
+            "columnno": 40,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000782",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [8691, 8947],
+            "filename": "text-field.js",
+            "lineno": 262,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000784",
+                "name": "MdTextFieldComponent#handleTextFieldInvalid",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTextFieldInvalid",
+        "longname": "MdTextFieldComponent#handleTextFieldInvalid",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [8765, 8816],
+            "filename": "text-field.js",
+            "lineno": 264,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000795",
+                "name": "this.error",
+                "type": "MemberExpression",
+                "value": "this.textFieldNative.validationMessage",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "error",
+        "longname": "MdTextFieldComponent#error",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [8931, 8936],
+            "filename": "text-field.js",
+            "lineno": 266,
+            "columnno": 42,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000824",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [9028, 9333],
+            "filename": "text-field.js",
+            "lineno": 274,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000826",
+                "name": "MdTextFieldComponent#handleTextFieldReset",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTextFieldReset",
+        "longname": "MdTextFieldComponent#handleTextFieldReset",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [9067, 9097],
+            "filename": "text-field.js",
+            "lineno": 275,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000832",
+                "name": "this.value",
+                "type": "MemberExpression",
+                "value": "this.defaultValue",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdTextFieldComponent#value",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [9108, 9130],
+            "filename": "text-field.js",
+            "lineno": 276,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000840",
+                "name": "this.error",
+                "type": "Identifier",
+                "value": "undefined",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "error",
+        "longname": "MdTextFieldComponent#error",
+        "kind": "member",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [9317, 9322],
+            "filename": "text-field.js",
+            "lineno": 279,
+            "columnno": 40,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000878",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [9414, 9521],
+            "filename": "text-field.js",
+            "lineno": 287,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000880",
+                "name": "MdTextFieldComponent#handleTextFieldIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTextFieldIconButtonClick",
+        "longname": "MdTextFieldComponent#handleTextFieldIconButtonClick",
+        "kind": "function",
+        "memberof": "MdTextFieldComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [9505, 9510],
+            "filename": "text-field.js",
+            "lineno": 288,
+            "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000892",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [9598, 9618],
+            "filename": "text-field.js",
+            "lineno": 292,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
+            "code": {
+                "id": "astnode100000902",
+                "name": "exports.MdTextFieldComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdTextFieldComponent",
+        "longname": "MdTextFieldComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field\\text-field.js"]
+    }
+]

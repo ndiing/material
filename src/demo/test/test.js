@@ -1,54 +1,111 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-import { VirtualScroll } from "../../material/virtual-scroll/virtual-scroll";
-import { Store } from "../../material/store/store";
 
+/**
+ * @extends MdComponent
+ */
 class DemoTest extends MdComponent {
+    constructor() {
+        super();
+        this.data = {};
+    }
+    /**
+     * @private
+     */
     render() {
         return html`
-            <div class="md-layout">
-                <div class="md-layout__grid">
-                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <div
-                            class="md-virtual-scroll"
-                            style="height:256px;"
-                        >
-                            <div class="md-virtual-scroll__track"></div>
-                            <div class="md-virtual-scroll__container">
-                                ${this.data?.map(
-                                    (item) => html`
-                                        <div
-                                            class="md-virtual-scroll__item"
-                                            style="height:56px;line-height:56px;"
-                                        >
-                                            ${item.label}
-                                        </div>
-                                    `,
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="md-layout docs">
+                ${this.data.class?.map(
+                    (item) => html`
+                        <div class="md-typescale--display-large">${item.name}</div>
+                        ${item.tags?.length ? html` <div>${item.tags?.map((tag) => html` <div>${tag.value}</div> `)}</div> ` : ``}
+                    `,
+                )}
+                <br />
+
+                <div class="md-typescale--headline-large">Instance properties</div>
+                ${this.data.member?.map(
+                    (item) => html`
+                        <div>${item.name}</div>
+                        ${item.properties?.length
+                            ? html`
+                                  <table>
+                                      <tr>
+                                          <th>name</th>
+                                          <th>type</th>
+                                          <th>description</th>
+                                      </tr>
+                                      ${item.properties?.map(
+                                          (property) => html`
+                                              <tr>
+                                                  <td>${property.name}</td>
+                                                  <td>${property.type.names}</td>
+                                                  <td>${property.description}</td>
+                                              </tr>
+                                          `,
+                                      )}
+                                  </table>
+                              `
+                            : ``}
+                    `,
+                )}
+                <br />
+
+                <div class="md-typescale--headline-large">Instance methods</div>
+                ${this.data.function
+                    ?.filter((item) => item.access !== "private")
+                    .map(
+                        (item) => html`
+                            <div>${item.name}</div>
+                            ${item.params?.length
+                                ? html`
+                                      <table>
+                                          <tr>
+                                              <th>name</th>
+                                              <th>type</th>
+                                              <th>description</th>
+                                          </tr>
+                                          ${item.params?.map(
+                                              (param) => html`
+                                                  <tr>
+                                                      <td>${param.name}</td>
+                                                      <td>${param.type.names}</td>
+                                                      <td>${param.description}</td>
+                                                  </tr>
+                                              `,
+                                          )}
+                                      </table>
+                                      <br />
+                                  `
+                                : ``}
+                        `,
+                    )}
+                <br />
+
+                ${this.data.class?.map(
+                    (item) => html`
+                        <div class="md-typescale--headline-large">Events</div>
+                        ${item.fires?.length ? html` <div>${item.fires?.map((fire) => html` <div>${fire}</div> `)}</div> ` : ``}
+                        <br />
+
+                        <div class="md-typescale--headline-large">Inheritance</div>
+                        ${item.augments?.length ? html` <div>${item.augments?.map((augment) => html` <div>${augment}</div> `)}</div> ` : ``}
+                    `,
+                )}
             </div>
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-        await this.updateComplete;
-        this.store = new Store();
-        this.virtualScroll = new VirtualScroll(this.querySelector(".md-virtual-scroll"), {});
-        this.addEventListener("onVirtualScroll", async (event) => {
-            const { start: _start, end: _end } = event.detail;
-            this.data = await this.store.get({ _start, _end }).then((res) => res.data);
+        import("../../docs/tree.json").then((m) => {
+            const data = m.default;
+            this.data = Object.groupBy(
+                data.filter((item) => !item.undocumented),
+                (item) => item.kind,
+            );
             this.requestUpdate();
         });
-    }
-
-    async firstUpdated() {
-        await this.updateComplete;
-        this.store.load(Array.from({ length: 10000 }, (v, k) => ({ label: `Label ${k}` })));
-        this.virtualScroll.load({ total: this.store.data.length });
     }
 }
 customElements.define("demo-test", DemoTest);

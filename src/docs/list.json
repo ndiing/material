@@ -1,0 +1,1002 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdListComponent#onListItemClick\r\n * @fires MdListComponent#onListItemCheckboxNativeInput\r\n * @fires MdListComponent#onListItemRadioButtonNativeInput\r\n * @fires MdListComponent#onListItemSwitchNativeInput\r\n * @element md-list\r\n */",
+        "meta": {
+            "range": [430, 5158],
+            "filename": "list.js",
+            "lineno": 14,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdListComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdListComponent#event:onListItemClick", "MdListComponent#event:onListItemCheckboxNativeInput", "MdListComponent#event:onListItemRadioButtonNativeInput", "MdListComponent#event:onListItemSwitchNativeInput"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-list",
+                "value": "md-list"
+            }
+        ],
+        "name": "MdListComponent",
+        "longname": "MdListComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [items] \r\n     * @property {String} [type] - [\"single-select\",\"multi-select\"]\r\n     * @property {Object} [fieldMap] \r\n     * @property {Object} [rippleOptions] \r\n     */",
+        "meta": {
+            "range": [684, 858],
+            "filename": "list.js",
+            "lineno": 21,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000020",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "items"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "description": "[\"single-select\",\"multi-select\"]",
+                "name": "type"
+            },
+            {
+                "type": {
+                    "names": ["Object"]
+                },
+                "optional": true,
+                "name": "fieldMap"
+            },
+            {
+                "type": {
+                    "names": ["Object"]
+                },
+                "optional": true,
+                "name": "rippleOptions"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdListComponent#properties",
+        "kind": "member",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [715, 737],
+            "filename": "list.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000022",
+                "name": "items",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "items",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [724, 735],
+            "filename": "list.js",
+            "lineno": 22,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000024",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "items.type",
+        "kind": "member",
+        "memberof": "items",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [748, 770],
+            "filename": "list.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000026",
+                "name": "type",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [756, 768],
+            "filename": "list.js",
+            "lineno": 23,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type.type",
+        "kind": "member",
+        "memberof": "type",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [781, 807],
+            "filename": "list.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000030",
+                "name": "fieldMap",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "fieldMap",
+        "longname": "fieldMap",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [793, 805],
+            "filename": "list.js",
+            "lineno": 24,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Object"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "fieldMap.type",
+        "kind": "member",
+        "memberof": "fieldMap",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [818, 849],
+            "filename": "list.js",
+            "lineno": 25,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000034",
+                "name": "rippleOptions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "rippleOptions",
+        "longname": "rippleOptions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [835, 847],
+            "filename": "list.js",
+            "lineno": 25,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Object"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "rippleOptions.type",
+        "kind": "member",
+        "memberof": "rippleOptions",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * @readonly\r\n     */",
+        "meta": {
+            "range": [902, 944],
+            "filename": "list.js",
+            "lineno": 31,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000038",
+                "name": "types",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "types",
+        "longname": "MdListComponent#types",
+        "kind": "member",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [979, 1083],
+            "filename": "list.js",
+            "lineno": 36,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000042",
+                "name": "MdListComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdListComponent",
+        "longname": "MdListComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdListComponent#onListItemClick\r\n * @fires MdListComponent#onListItemCheckboxNativeInput\r\n * @fires MdListComponent#onListItemRadioButtonNativeInput\r\n * @fires MdListComponent#onListItemSwitchNativeInput\r\n * @element md-list\r\n */",
+        "meta": {
+            "range": [430, 5158],
+            "filename": "list.js",
+            "lineno": 14,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdListComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdListComponent",
+        "longname": "MdListComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdListComponent#event:onListItemClick", "MdListComponent#event:onListItemCheckboxNativeInput", "MdListComponent#event:onListItemRadioButtonNativeInput", "MdListComponent#event:onListItemSwitchNativeInput"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-list",
+                "value": "md-list"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1022, 1037],
+            "filename": "list.js",
+            "lineno": 38,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000050",
+                "name": "this.items",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "MdListComponent#items",
+        "kind": "member",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1048, 1075],
+            "filename": "list.js",
+            "lineno": 39,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000056",
+                "name": "this.type",
+                "type": "Literal",
+                "value": "single-select",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "MdListComponent#type",
+        "kind": "member",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1163, 3091],
+            "filename": "list.js",
+            "lineno": 47,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000061",
+                "name": "MdListComponent#renderListItem",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderListItem",
+        "longname": "MdListComponent#renderListItem",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1240, 1244],
+            "filename": "list.js",
+            "lineno": 49,
+            "columnno": 23,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000073",
+                "name": "name"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "<anonymous>~name",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1288, 1315],
+            "filename": "list.js",
+            "lineno": 50,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000080",
+                "name": "value",
+                "type": "MemberExpression",
+                "value": "this.fieldMap[undefined]"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "<anonymous>~value",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1334, 1358],
+            "filename": "list.js",
+            "lineno": 51,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000088",
+                "name": "item[undefined]",
+                "type": "MemberExpression",
+                "value": "item[undefined]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "item[undefined]",
+        "longname": "item[undefined]",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [3143, 3229],
+            "filename": "list.js",
+            "lineno": 89,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000230",
+                "name": "MdListComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdListComponent#render",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [3281, 3385],
+            "filename": "list.js",
+            "lineno": 97,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000248",
+                "name": "MdListComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdListComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [data]\r\n     */",
+        "meta": {
+            "range": [3448, 3515],
+            "filename": "list.js",
+            "lineno": 106,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000265",
+                "name": "MdListComponent#multiSelect",
+                "type": "MethodDefinition",
+                "paramnames": ["data"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            }
+        ],
+        "name": "multiSelect",
+        "longname": "MdListComponent#multiSelect",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3477, 3507],
+            "filename": "list.js",
+            "lineno": 107,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000271",
+                "name": "data.selected",
+                "type": "UnaryExpression",
+                "value": "!data.selected",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "data.selected",
+        "kind": "member",
+        "memberof": "data",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @param {Any} [data]\r\n     */",
+        "meta": {
+            "range": [3578, 3702],
+            "filename": "list.js",
+            "lineno": 114,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000279",
+                "name": "MdListComponent#singleSelect",
+                "type": "MethodDefinition",
+                "paramnames": ["data"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "data"
+            }
+        ],
+        "name": "singleSelect",
+        "longname": "MdListComponent#singleSelect",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3652, 3681],
+            "filename": "list.js",
+            "lineno": 116,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000295",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [3783, 4234],
+            "filename": "list.js",
+            "lineno": 125,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000302",
+                "name": "MdListComponent#handleListItemClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleListItemClick",
+        "longname": "MdListComponent#handleListItemClick",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3827, 3918],
+            "filename": "list.js",
+            "lineno": 126,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000308",
+                "name": "action",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "action",
+        "longname": "<anonymous>~action",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3964, 3995],
+            "filename": "list.js",
+            "lineno": 128,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000321",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4218, 4223],
+            "filename": "list.js",
+            "lineno": 135,
+            "columnno": 39,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000360",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [4315, 4540],
+            "filename": "list.js",
+            "lineno": 143,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000362",
+                "name": "MdListComponent#handleListItemCheckboxNativeInput",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleListItemCheckboxNativeInput",
+        "longname": "MdListComponent#handleListItemCheckboxNativeInput",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4373, 4404],
+            "filename": "list.js",
+            "lineno": 144,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000368",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4524, 4529],
+            "filename": "list.js",
+            "lineno": 147,
+            "columnno": 53,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000393",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [4621, 4853],
+            "filename": "list.js",
+            "lineno": 155,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000395",
+                "name": "MdListComponent#handleListItemRadioButtonNativeInput",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleListItemRadioButtonNativeInput",
+        "longname": "MdListComponent#handleListItemRadioButtonNativeInput",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4682, 4713],
+            "filename": "list.js",
+            "lineno": 156,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000401",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4837, 4842],
+            "filename": "list.js",
+            "lineno": 159,
+            "columnno": 56,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000426",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [4934, 5155],
+            "filename": "list.js",
+            "lineno": 167,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000428",
+                "name": "MdListComponent#handleListItemSwitchNativeInput",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleListItemSwitchNativeInput",
+        "longname": "MdListComponent#handleListItemSwitchNativeInput",
+        "kind": "function",
+        "memberof": "MdListComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4990, 5021],
+            "filename": "list.js",
+            "lineno": 168,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000434",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5139, 5144],
+            "filename": "list.js",
+            "lineno": 171,
+            "columnno": 51,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000459",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [5221, 5236],
+            "filename": "list.js",
+            "lineno": 175,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000469",
+                "name": "exports.MdListComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdListComponent",
+        "longname": "MdListComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list.js"]
+    }
+]

@@ -1,0 +1,730 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdTopAppBarComponent#onTopAppBarShown\r\n * @fires MdTopAppBarComponent#onTopAppBarClosed\r\n * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick\r\n * @element md-top-app-bar\r\n */",
+        "meta": {
+            "range": [432, 3883],
+            "filename": "top-app-bar.js",
+            "lineno": 14,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdTopAppBarComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "fires": ["MdTopAppBarComponent#event:onTopAppBarShown", "MdTopAppBarComponent#event:onTopAppBarClosed", "MdTopAppBarComponent#event:onTopAppBarIconButtonClick"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-top-app-bar",
+                "value": "md-top-app-bar"
+            }
+        ],
+        "name": "MdTopAppBarComponent",
+        "longname": "MdTopAppBarComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n     * @property {Array} [leadingActions] \r\n     * @property {String} [label] \r\n     * @property {String} [sublabel] \r\n     * @property {Array} [trailingActions] \r\n     * @property {Boolean} [open] \r\n     */",
+        "meta": {
+            "range": [704, 938],
+            "filename": "top-app-bar.js",
+            "lineno": 22,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "leadingActions"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": ["String"]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "name": "trailingActions"
+            },
+            {
+                "type": {
+                    "names": ["Boolean"]
+                },
+                "optional": true,
+                "name": "open"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdTopAppBarComponent#properties",
+        "kind": "member",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [735, 766],
+            "filename": "top-app-bar.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000026",
+                "name": "leadingActions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "leadingActions",
+        "longname": "leadingActions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [753, 764],
+            "filename": "top-app-bar.js",
+            "lineno": 23,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "leadingActions.type",
+        "kind": "member",
+        "memberof": "leadingActions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [777, 800],
+            "filename": "top-app-bar.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000030",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [786, 798],
+            "filename": "top-app-bar.js",
+            "lineno": 24,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [811, 837],
+            "filename": "top-app-bar.js",
+            "lineno": 25,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000034",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [823, 835],
+            "filename": "top-app-bar.js",
+            "lineno": 25,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [848, 880],
+            "filename": "top-app-bar.js",
+            "lineno": 26,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000038",
+                "name": "trailingActions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "trailingActions",
+        "longname": "trailingActions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [867, 878],
+            "filename": "top-app-bar.js",
+            "lineno": 26,
+            "columnno": 27,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "trailingActions.type",
+        "kind": "member",
+        "memberof": "trailingActions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [891, 929],
+            "filename": "top-app-bar.js",
+            "lineno": 27,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000042",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [899, 912],
+            "filename": "top-app-bar.js",
+            "lineno": 27,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [914, 927],
+            "filename": "top-app-bar.js",
+            "lineno": 27,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000046",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [973, 1013],
+            "filename": "top-app-bar.js",
+            "lineno": 33,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000048",
+                "name": "MdTopAppBarComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdTopAppBarComponent",
+        "longname": "MdTopAppBarComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @fires MdTopAppBarComponent#onTopAppBarShown\r\n * @fires MdTopAppBarComponent#onTopAppBarClosed\r\n * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick\r\n * @element md-top-app-bar\r\n */",
+        "meta": {
+            "range": [432, 3883],
+            "filename": "top-app-bar.js",
+            "lineno": 14,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdTopAppBarComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdTopAppBarComponent",
+        "longname": "MdTopAppBarComponent",
+        "kind": "class",
+        "augments": ["MdComponent"],
+        "fires": ["MdTopAppBarComponent#event:onTopAppBarShown", "MdTopAppBarComponent#event:onTopAppBarClosed", "MdTopAppBarComponent#event:onTopAppBarIconButtonClick"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-top-app-bar",
+                "value": "md-top-app-bar"
+            }
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [item]\r\n     */",
+        "meta": {
+            "range": [1093, 1637],
+            "filename": "top-app-bar.js",
+            "lineno": 42,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000055",
+                "name": "MdTopAppBarComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": ["item"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdTopAppBarComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [1689, 2337],
+            "filename": "top-app-bar.js",
+            "lineno": 61,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000107",
+                "name": "MdTopAppBarComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "render",
+        "longname": "MdTopAppBarComponent#render",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @async\r\n     */",
+        "meta": {
+            "range": [2404, 2795],
+            "filename": "top-app-bar.js",
+            "lineno": 70,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000202",
+                "name": "MdTopAppBarComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdTopAppBarComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [2847, 3037],
+            "filename": "top-app-bar.js",
+            "lineno": 83,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000259",
+                "name": "MdTopAppBarComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "disconnectedCallback",
+        "longname": "MdTopAppBarComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [changedProperties]\r\n     */",
+        "meta": {
+            "range": [3130, 3208],
+            "filename": "top-app-bar.js",
+            "lineno": 94,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000285",
+                "name": "MdTopAppBarComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": ["changedProperties"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdTopAppBarComponent#updated",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [3243, 3390],
+            "filename": "top-app-bar.js",
+            "lineno": 101,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000296",
+                "name": "MdTopAppBarComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "show",
+        "longname": "MdTopAppBarComponent#show",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3326, 3342],
+            "filename": "top-app-bar.js",
+            "lineno": 103,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000309",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdTopAppBarComponent#open",
+        "kind": "member",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [3425, 3575],
+            "filename": "top-app-bar.js",
+            "lineno": 110,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000320",
+                "name": "MdTopAppBarComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdTopAppBarComponent#close",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3509, 3526],
+            "filename": "top-app-bar.js",
+            "lineno": 112,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000333",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdTopAppBarComponent#open",
+        "kind": "member",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     */",
+        "meta": {
+            "range": [3610, 3692],
+            "filename": "top-app-bar.js",
+            "lineno": 119,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000344",
+                "name": "MdTopAppBarComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "toggle",
+        "longname": "MdTopAppBarComponent#toggle",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     * @param {Any} [event]\r\n     */",
+        "meta": {
+            "range": [3773, 3880],
+            "filename": "top-app-bar.js",
+            "lineno": 129,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000362",
+                "name": "MdTopAppBarComponent#handleTopAppBarIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTopAppBarIconButtonClick",
+        "longname": "MdTopAppBarComponent#handleTopAppBarIconButtonClick",
+        "kind": "function",
+        "memberof": "MdTopAppBarComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3864, 3869],
+            "filename": "top-app-bar.js",
+            "lineno": 130,
+            "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000374",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3958, 3978],
+            "filename": "top-app-bar.js",
+            "lineno": 134,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar",
+            "code": {
+                "id": "astnode100000384",
+                "name": "exports.MdTopAppBarComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdTopAppBarComponent",
+        "longname": "MdTopAppBarComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar\\top-app-bar.js"]
+    }
+]

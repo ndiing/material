@@ -4,21 +4,21 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdNavigationListItemComponent#onNavigationListItemSelected
  * @element md-navigation-list-item
  */
 class MdNavigationListItemComponent extends MdComponent {
     /**
-     * @property {String} [icon] 
-     * @property {String} [label] 
-     * @property {String} [sublabel] 
-     * @property {Boolean} [selected] 
-     * @property {Boolean} [disabled] 
-     * @property {String} [routerLink] 
-     * @property {Object} [rippleOptions] 
-     * @property {Number} [badge] 
+     * @property {String} [icon]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Boolean} [selected]
+     * @property {Boolean} [disabled]
+     * @property {String} [routerLink]
+     * @property {Object} [rippleOptions]
+     * @property {Number} [badge]
      */
     static properties = {
         icon: { type: String },
@@ -32,7 +32,7 @@ class MdNavigationListItemComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -40,7 +40,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -56,7 +56,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -68,7 +68,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -78,7 +78,7 @@ class MdNavigationListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]

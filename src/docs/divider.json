@@ -1,0 +1,82 @@
+[
+    {
+        "comment": "/**\r\n * \r\n * @extends MdComponent\r\n * @element md-divider\r\n */",
+        "meta": {
+            "range": [159, 367],
+            "filename": "divider.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\divider",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdDividerComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": ["MdComponent"],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-divider",
+                "value": "md-divider"
+            }
+        ],
+        "name": "MdDividerComponent",
+        "longname": "MdDividerComponent",
+        "kind": "class",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\r\n     * \r\n     * @private\r\n     */",
+        "meta": {
+            "range": [257, 364],
+            "filename": "divider.js",
+            "lineno": 15,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\divider",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdDividerComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "name": "connectedCallback",
+        "longname": "MdDividerComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdDividerComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [436, 454],
+            "filename": "divider.js",
+            "lineno": 21,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\divider",
+            "code": {
+                "id": "astnode100000041",
+                "name": "exports.MdDividerComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdDividerComponent",
+        "longname": "MdDividerComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\divider\\divider.js"]
+    }
+]

@@ -4,31 +4,31 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdListItemComponent#onListItemSelected
  * @element md-list-item
  */
 class MdListItemComponent extends MdComponent {
     /**
-     * @property {Boolean} [leadingCheckbox] 
-     * @property {Boolean} [leadingRadioButton] 
-     * @property {Boolean} [leadingSwitch] 
-     * @property {String} [avatar] 
-     * @property {String} [image] 
-     * @property {String} [video] 
-     * @property {String} [icon] 
-     * @property {String} [label] 
-     * @property {String} [sublabel] 
-     * @property {String} [text] 
-     * @property {Boolean} [trailingCheckbox] 
-     * @property {Boolean} [trailingRadioButton] 
-     * @property {Boolean} [trailingSwitch] 
-     * @property {Boolean} [selected] 
-     * @property {Boolean} [disabled] 
-     * @property {String} [routerLink] 
-     * @property {Object} [rippleOptions] 
-     * @property {Number} [badge] 
+     * @property {Boolean} [leadingCheckbox]
+     * @property {Boolean} [leadingRadioButton]
+     * @property {Boolean} [leadingSwitch]
+     * @property {String} [avatar]
+     * @property {String} [image]
+     * @property {String} [video]
+     * @property {String} [icon]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {String} [text]
+     * @property {Boolean} [trailingCheckbox]
+     * @property {Boolean} [trailingRadioButton]
+     * @property {Boolean} [trailingSwitch]
+     * @property {Boolean} [selected]
+     * @property {Boolean} [disabled]
+     * @property {String} [routerLink]
+     * @property {Object} [rippleOptions]
+     * @property {Number} [badge]
      */
     static properties = {
         leadingCheckbox: { type: Boolean },
@@ -52,7 +52,7 @@ class MdListItemComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -60,7 +60,7 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -132,7 +132,7 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -152,7 +152,7 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -162,7 +162,7 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]

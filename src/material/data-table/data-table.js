@@ -5,7 +5,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdDataTableComponent#onDataTableKeydown
  * @fires MdDataTableComponent#onDataTableHeaderCellClick
@@ -17,11 +17,11 @@ import { Store } from "../store/store";
  */
 class MdDataTableComponent extends MdComponent {
     /**
-     * @property {Array} [headers] 
-     * @property {Array} [bodies] 
-     * @property {Array} [footers] 
-     * @property {Array} [data] 
-     * @property {Boolean} [checkbox] 
+     * @property {Array} [headers]
+     * @property {Array} [bodies]
+     * @property {Array} [footers]
+     * @property {Array} [data]
+     * @property {Boolean} [checkbox]
      */
     static properties = {
         headers: { type: Array },
@@ -32,7 +32,7 @@ class MdDataTableComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -45,7 +45,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [th]
      */
     styleDataTableHeaderCell(th) {
@@ -62,7 +62,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @param {Any} [td]
      */
     styleDataTableBodyCell(td) {
@@ -76,7 +76,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get checkboxData() {
@@ -87,7 +87,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -172,7 +172,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     connectedCallback() {
@@ -183,7 +183,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -192,7 +192,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -207,7 +207,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     requestUpdateStore() {
         const result = this.store.get({
@@ -224,7 +224,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get selected() {
@@ -232,7 +232,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get indeterminate() {
@@ -240,7 +240,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get checked() {
@@ -248,7 +248,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -266,7 +266,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -291,7 +291,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -300,7 +300,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -316,7 +316,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -353,7 +353,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

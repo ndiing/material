@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdTopAppBarComponent#onTopAppBarShown
  * @fires MdTopAppBarComponent#onTopAppBarClosed
@@ -13,11 +13,11 @@ import { choose } from "lit/directives/choose.js";
  */
 class MdTopAppBarComponent extends MdComponent {
     /**
-     * @property {Array} [leadingActions] 
-     * @property {String} [label] 
-     * @property {String} [sublabel] 
-     * @property {Array} [trailingActions] 
-     * @property {Boolean} [open] 
+     * @property {Array} [leadingActions]
+     * @property {String} [label]
+     * @property {String} [sublabel]
+     * @property {Array} [trailingActions]
+     * @property {Boolean} [open]
      */
     static properties = {
         leadingActions: { type: Array },
@@ -28,14 +28,14 @@ class MdTopAppBarComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -55,7 +55,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -63,7 +63,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -77,7 +77,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     disconnectedCallback() {
@@ -87,7 +87,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -96,7 +96,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -105,7 +105,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -114,7 +114,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     toggle() {
         if (this.open) this.close();
@@ -122,7 +122,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

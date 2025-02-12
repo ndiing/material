@@ -3,19 +3,19 @@ import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdChipComponent#onChipActionClick
  * @element md-chip
  */
 class MdChipComponent extends MdComponent {
     /**
-     * @property {String} [icon] 
-     * @property {String} [avatar] 
-     * @property {String} [label] 
-     * @property {String} [action] 
-     * @property {Boolean} [selected] 
-     * @property {Boolean} [disabled] 
+     * @property {String} [icon]
+     * @property {String} [avatar]
+     * @property {String} [label]
+     * @property {String} [action]
+     * @property {Boolean} [selected]
+     * @property {Boolean} [disabled]
      */
     static properties = {
         icon: { type: String },
@@ -27,14 +27,14 @@ class MdChipComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -60,7 +60,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -72,7 +72,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -82,7 +82,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

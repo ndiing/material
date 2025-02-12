@@ -1,0 +1,1246 @@
+[
+    {
+        "comment": "/**\n *\n * @fires onMovablePointerdown\n * @fires onMovablePointermove\n * @fires onMovablePointerup\n */",
+        "meta": {
+            "range": [102, 4830],
+            "filename": "movable.js",
+            "lineno": 7,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000002",
+                "name": "Movable",
+                "type": "ClassDeclaration",
+                "paramnames": ["host", "options"]
+            }
+        },
+        "fires": ["event:onMovablePointerdown", "event:onMovablePointermove", "event:onMovablePointerup"],
+        "name": "Movable",
+        "longname": "Movable",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @typedef {Object} MovableOptions\n     * @property {Array} [axis=[\"x\", \"y\"]]\n     * @property {Array} [handles=[\"n\", \"e\", \"s\", \"w\", \"nw\", \"ne\", \"sw\", \"se\"]]\n     */",
+        "meta": {
+            "filename": "movable.js",
+            "lineno": 8,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "MovableOptions",
+        "type": {
+            "names": ["Object"]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "defaultvalue": "[\"x\", \"y\"]",
+                "name": "axis"
+            },
+            {
+                "type": {
+                    "names": ["Array"]
+                },
+                "optional": true,
+                "defaultvalue": "[\"n\", \"e\", \"s\", \"w\", \"nw\", \"ne\", \"sw\", \"se\"]",
+                "name": "handles"
+            }
+        ],
+        "longname": "MovableOptions",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     *\n     * @param {HTMLElement} [host]\n     * @param {MovableOptions} [options={}]\n     */",
+        "meta": {
+            "range": [404, 647],
+            "filename": "movable.js",
+            "lineno": 19,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000005",
+                "name": "Movable",
+                "type": "MethodDefinition",
+                "paramnames": ["host", "options"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": ["HTMLElement"]
+                },
+                "optional": true,
+                "name": "host"
+            },
+            {
+                "type": {
+                    "names": ["MovableOptions"]
+                },
+                "optional": true,
+                "defaultvalue": "{}",
+                "name": "options"
+            }
+        ],
+        "name": "Movable",
+        "longname": "Movable",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n *\n * @fires onMovablePointerdown\n * @fires onMovablePointermove\n * @fires onMovablePointerup\n */",
+        "meta": {
+            "range": [102, 4830],
+            "filename": "movable.js",
+            "lineno": 7,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000002",
+                "name": "Movable",
+                "type": "ClassDeclaration",
+                "paramnames": ["host", "options"]
+            }
+        },
+        "name": "Movable",
+        "longname": "Movable",
+        "kind": "class",
+        "fires": ["event:onMovablePointerdown", "event:onMovablePointermove", "event:onMovablePointerup"],
+        "scope": "global",
+        "params": [
+            {
+                "type": {
+                    "names": ["HTMLElement"]
+                },
+                "optional": true,
+                "name": "host"
+            },
+            {
+                "type": {
+                    "names": ["MovableOptions"]
+                },
+                "optional": true,
+                "defaultvalue": "{}",
+                "name": "options"
+            }
+        ]
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [446, 462],
+            "filename": "movable.js",
+            "lineno": 20,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000014",
+                "name": "this.host",
+                "type": "Identifier",
+                "value": "host",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "host",
+        "longname": "Movable#host",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [472, 619],
+            "filename": "movable.js",
+            "lineno": 21,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000020",
+                "name": "this.options",
+                "type": "ObjectExpression",
+                "value": "{\"axis\":\"\",\"handles\":\"\"}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "options",
+        "longname": "Movable#options",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [501, 517],
+            "filename": "movable.js",
+            "lineno": 22,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000025",
+                "name": "axis",
+                "type": "ArrayExpression",
+                "value": "[\"x\",\"y\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "axis",
+        "longname": "Movable#options.axis",
+        "kind": "member",
+        "memberof": "Movable#options",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [531, 584],
+            "filename": "movable.js",
+            "lineno": 23,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000029",
+                "name": "handles",
+                "type": "ArrayExpression",
+                "value": "[\"n\",\"e\",\"s\",\"w\",\"nw\",\"ne\",\"sw\",\"se\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "handles",
+        "longname": "Movable#options.handles",
+        "kind": "member",
+        "memberof": "Movable#options",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     *\n     * @private\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [720, 1381],
+            "filename": "movable.js",
+            "lineno": 34,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000046",
+                "name": "Movable#handlePointerdown",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handlePointerdown",
+        "longname": "Movable#handlePointerdown",
+        "kind": "function",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [755, 860],
+            "filename": "movable.js",
+            "lineno": 35,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000052",
+                "name": "this.handle",
+                "type": "LogicalExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handle",
+        "longname": "Movable#handle",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1071, 1097],
+            "filename": "movable.js",
+            "lineno": 39,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000104",
+                "name": "this.endX",
+                "type": "LogicalExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "endX",
+        "longname": "Movable#endX",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1107, 1133],
+            "filename": "movable.js",
+            "lineno": 40,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000114",
+                "name": "this.endY",
+                "type": "LogicalExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "endY",
+        "longname": "Movable#endY",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1143, 1182],
+            "filename": "movable.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000124",
+                "name": "this.startX",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "startX",
+        "longname": "Movable#startX",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1192, 1231],
+            "filename": "movable.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000136",
+                "name": "this.startY",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "startY",
+        "longname": "Movable#startY",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1241, 1280],
+            "filename": "movable.js",
+            "lineno": 43,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000148",
+                "name": "this.startWidth",
+                "type": "MemberExpression",
+                "value": "this.host.clientWidth",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "startWidth",
+        "longname": "Movable#startWidth",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1290, 1331],
+            "filename": "movable.js",
+            "lineno": 44,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000158",
+                "name": "this.startHeight",
+                "type": "MemberExpression",
+                "value": "this.host.clientHeight",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "startHeight",
+        "longname": "Movable#startHeight",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @private\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [1454, 3098],
+            "filename": "movable.js",
+            "lineno": 53,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000173",
+                "name": "Movable#handlePointermove",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handlePointermove",
+        "longname": "Movable#handlePointermove",
+        "kind": "function",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1495, 1533],
+            "filename": "movable.js",
+            "lineno": 54,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000179",
+                "name": "currentX",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "currentX",
+        "longname": "<anonymous>~currentX",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1549, 1587],
+            "filename": "movable.js",
+            "lineno": 55,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000189",
+                "name": "currentY",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "currentY",
+        "longname": "<anonymous>~currentY",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1719, 1777],
+            "filename": "movable.js",
+            "lineno": 58,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000223",
+                "name": "this.currentWidth",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentWidth",
+        "longname": "Movable#currentWidth",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1896, 1920],
+            "filename": "movable.js",
+            "lineno": 61,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000256",
+                "name": "this.currentX",
+                "type": "Identifier",
+                "value": "currentX",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentX",
+        "longname": "Movable#currentX",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [1938, 1996],
+            "filename": "movable.js",
+            "lineno": 62,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000262",
+                "name": "this.currentWidth",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentWidth",
+        "longname": "Movable#currentWidth",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2115, 2175],
+            "filename": "movable.js",
+            "lineno": 65,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000295",
+                "name": "this.currentHeight",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentHeight",
+        "longname": "Movable#currentHeight",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2294, 2318],
+            "filename": "movable.js",
+            "lineno": 68,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000328",
+                "name": "this.currentY",
+                "type": "Identifier",
+                "value": "currentY",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentY",
+        "longname": "Movable#currentY",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2336, 2396],
+            "filename": "movable.js",
+            "lineno": 69,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000334",
+                "name": "this.currentHeight",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentHeight",
+        "longname": "Movable#currentHeight",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2496, 2520],
+            "filename": "movable.js",
+            "lineno": 73,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000360",
+                "name": "this.currentX",
+                "type": "Identifier",
+                "value": "currentX",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentX",
+        "longname": "Movable#currentX",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [2603, 2627],
+            "filename": "movable.js",
+            "lineno": 76,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000377",
+                "name": "this.currentY",
+                "type": "Identifier",
+                "value": "currentY",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentY",
+        "longname": "Movable#currentY",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @private\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [3171, 3522],
+            "filename": "movable.js",
+            "lineno": 92,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000471",
+                "name": "Movable#handlePointerup",
+                "type": "MethodDefinition",
+                "paramnames": ["event"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handlePointerup",
+        "longname": "Movable#handlePointerup",
+        "kind": "function",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3204, 3229],
+            "filename": "movable.js",
+            "lineno": 93,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000477",
+                "name": "this.endX",
+                "type": "MemberExpression",
+                "value": "this.currentX",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "endX",
+        "longname": "Movable#endX",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3239, 3264],
+            "filename": "movable.js",
+            "lineno": 94,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000485",
+                "name": "this.endY",
+                "type": "MemberExpression",
+                "value": "this.currentY",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "endY",
+        "longname": "Movable#endY",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     * @private\n     * @param {Any} [type]\n     * @param {Any} [detail]\n     */",
+        "meta": {
+            "range": [3623, 3824],
+            "filename": "movable.js",
+            "lineno": 107,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000526",
+                "name": "Movable#emit",
+                "type": "MethodDefinition",
+                "paramnames": ["type", "detail"]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "access": "private",
+        "params": [
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "type"
+            },
+            {
+                "type": {
+                    "names": ["Any"]
+                },
+                "optional": true,
+                "name": "detail"
+            }
+        ],
+        "name": "emit",
+        "longname": "Movable#emit",
+        "kind": "function",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3658, 3777],
+            "filename": "movable.js",
+            "lineno": 108,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000533",
+                "name": "event",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "<anonymous>~event",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3702, 3715],
+            "filename": "movable.js",
+            "lineno": 109,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000539",
+                "name": "bubbles",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "bubbles",
+        "longname": "bubbles",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3729, 3745],
+            "filename": "movable.js",
+            "lineno": 110,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000541",
+                "name": "cancelable",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "cancelable",
+        "longname": "cancelable",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3759, 3765],
+            "filename": "movable.js",
+            "lineno": 111,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000543",
+                "name": "detail",
+                "type": "Identifier",
+                "value": "detail"
+            }
+        },
+        "undocumented": true,
+        "name": "detail",
+        "longname": "detail",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     *\n     */",
+        "meta": {
+            "range": [3853, 4454],
+            "filename": "movable.js",
+            "lineno": 119,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000553",
+                "name": "Movable#init",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "init",
+        "longname": "Movable#init",
+        "kind": "function",
+        "memberof": "Movable",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3874, 3883],
+            "filename": "movable.js",
+            "lineno": 120,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000558",
+                "name": "text",
+                "type": "Literal",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "text",
+        "longname": "<anonymous>~text",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3893, 3929],
+            "filename": "movable.js",
+            "lineno": 121,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000562",
+                "name": "text",
+                "type": "TemplateLiteral",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "text",
+        "longname": "<anonymous>~text",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3950, 3956],
+            "filename": "movable.js",
+            "lineno": 122,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000568",
+                "name": "handle"
+            }
+        },
+        "undocumented": true,
+        "name": "handle",
+        "longname": "<anonymous>~handle",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [3996, 4078],
+            "filename": "movable.js",
+            "lineno": 123,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000577",
+                "name": "text",
+                "type": "TemplateLiteral",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "text",
+        "longname": "<anonymous>~text",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4098, 4114],
+            "filename": "movable.js",
+            "lineno": 125,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000584",
+                "name": "text",
+                "type": "Literal",
+                "funcscope": "<anonymous>",
+                "value": "</div>",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "text",
+        "longname": "<anonymous>~text",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4182, 4240],
+            "filename": "movable.js",
+            "lineno": 127,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000597",
+                "name": "this.handlePointerdown",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handlePointerdown",
+        "longname": "Movable#handlePointerdown",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4250, 4308],
+            "filename": "movable.js",
+            "lineno": 128,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000609",
+                "name": "this.handlePointermove",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handlePointermove",
+        "longname": "Movable#handlePointermove",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4318, 4372],
+            "filename": "movable.js",
+            "lineno": 129,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000621",
+                "name": "this.handlePointerup",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handlePointerup",
+        "longname": "Movable#handlePointerup",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     *\n     */",
+        "meta": {
+            "range": [4483, 4828],
+            "filename": "movable.js",
+            "lineno": 136,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000643",
+                "name": "Movable#destroy",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "destroy",
+        "longname": "Movable#destroy",
+        "kind": "function",
+        "memberof": "Movable",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4509, 4561],
+            "filename": "movable.js",
+            "lineno": 137,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000648",
+                "name": "resizable",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "resizable",
+        "longname": "<anonymous>~resizable",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4716, 4745],
+            "filename": "movable.js",
+            "lineno": 142,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000677",
+                "name": "this.handlePointerdown",
+                "type": "Literal",
+                "value": null,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handlePointerdown",
+        "longname": "Movable#handlePointerdown",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4755, 4784],
+            "filename": "movable.js",
+            "lineno": 143,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000683",
+                "name": "this.handlePointermove",
+                "type": "Literal",
+                "value": null,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handlePointermove",
+        "longname": "Movable#handlePointermove",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4794, 4821],
+            "filename": "movable.js",
+            "lineno": 144,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000689",
+                "name": "this.handlePointerup",
+                "type": "Literal",
+                "value": null,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handlePointerup",
+        "longname": "Movable#handlePointerup",
+        "kind": "member",
+        "memberof": "Movable",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [4840, 4847],
+            "filename": "movable.js",
+            "lineno": 147,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
+            "code": {
+                "id": "astnode100000695",
+                "name": "exports.Movable",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "Movable",
+        "longname": "Movable",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable\\movable.js"]
+    }
+]

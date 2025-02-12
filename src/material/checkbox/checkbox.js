@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdCheckboxComponent#onCheckboxNativeInput
  * @fires MdCheckboxComponent#onCheckboxNativeReset
@@ -12,10 +12,10 @@ import { Ripple } from "../ripple/ripple";
  */
 class MdCheckboxComponent extends MdComponent {
     /**
-     * @property {String} [name] 
-     * @property {String} [value] 
-     * @property {Boolean} [indeterminate] 
-     * @property {Boolean} [checked] 
+     * @property {String} [name]
+     * @property {String} [value]
+     * @property {Boolean} [indeterminate]
+     * @property {Boolean} [checked]
      */
     static properties = {
         name: { type: String },
@@ -25,14 +25,14 @@ class MdCheckboxComponent extends MdComponent {
     };
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -57,7 +57,7 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -77,7 +77,7 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -87,7 +87,7 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -99,7 +99,7 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */

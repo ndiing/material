@@ -21,7 +21,6 @@
     overflow: auto;
 
     thead {
-
         .md-data-table__cell {
             user-select: none;
             -webkit-tap-highlight-color: transparent;
@@ -29,35 +28,30 @@
     }
 
     tbody {
-
         .md-data-table__cell {
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
 
         &:focus {
-
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary10);
             }
         }
 
         &:active {
-
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary10);
             }
         }
 
         &:hover {
-
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary8);
             }
         }
 
         &[selected] {
-
             .md-data-table__cell {
                 background-color: var(--md-sys-color-secondary-container);
                 color: var(--md-sys-color-on-secondary-container);
