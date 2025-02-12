@@ -7,7 +7,7 @@ import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onDatePickerShown
  * @fires onDatePickerClosed
@@ -27,15 +27,15 @@ import { classMap } from "lit/directives/class-map.js";
  */
 class MdDatePickerComponent extends MdComponent {
     /**
-     * @property {Array} [icons]
-     * @property {Array} [actions]
-     * @property {String} [label]
-     * @property {String} [sublabel]
-     * @property {Array} [buttons]
-     * @property {Boolean} [open]
-     * @property {Boolean} [modal]
-     * @property {Number} [index]
-     * @property {Any} [value]
+     * @property {Array} [icons] 
+     * @property {Array} [actions] 
+     * @property {String} [label] 
+     * @property {String} [sublabel] 
+     * @property {Array} [buttons] 
+     * @property {Boolean} [open] 
+     * @property {Boolean} [modal] 
+     * @property {Number} [index] 
+     * @property {Any} [value] 
      */
     static properties = {
         icons: { type: Array },
@@ -59,7 +59,7 @@ class MdDatePickerComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      * @readonly
      */
     get startOfDay() {
@@ -67,7 +67,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get years() {
@@ -85,7 +85,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get months() {
@@ -102,7 +102,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get weekdays() {
@@ -115,7 +115,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get days() {
@@ -137,7 +137,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get icons() {
@@ -150,7 +150,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -178,7 +178,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -187,7 +187,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -207,7 +207,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -227,7 +227,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -236,7 +236,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -255,7 +255,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     renderDatePickerYear() {
@@ -279,7 +279,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     renderDatePickerMonth() {
@@ -303,7 +303,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     renderDatePickerDay() {
@@ -342,7 +342,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -369,7 +369,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -391,7 +391,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -402,7 +402,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */
@@ -417,7 +417,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [options]
      */
     show(options) {
@@ -436,7 +436,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     close() {
         this.style.removeProperty("--md-comp-date-picker-animation");
@@ -446,7 +446,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [options]
      */
     toggle(options) {
@@ -455,7 +455,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -464,7 +464,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -477,7 +477,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -490,7 +490,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -502,7 +502,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -514,7 +514,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -527,7 +527,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -544,7 +544,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -557,7 +557,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -570,7 +570,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -585,7 +585,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -598,7 +598,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

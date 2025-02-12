@@ -1,6 +1,7 @@
 @use "../mixins/mixins.scss";
 
 @include mixins.layout-compact() {
+
     .md-layout__grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -8,6 +9,7 @@
     }
 
     @for $i from 1 through 4 {
+
         .md-layout__column--compact#{ $i} {
             grid-column-end: span $i;
         }
@@ -15,6 +17,7 @@
 }
 
 @include mixins.layout-medium() {
+
     .md-layout__grid {
         display: grid;
         grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -22,6 +25,7 @@
     }
 
     @for $i from 1 through 8 {
+
         .md-layout__column--medium#{ $i} {
             grid-column-end: span $i;
         }
@@ -29,6 +33,7 @@
 }
 
 @include mixins.layout-expanded() {
+
     .md-layout__grid {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -36,6 +41,7 @@
     }
 
     @for $i from 1 through 12 {
+
         .md-layout__column--expanded#{ $i} {
             grid-column-end: span $i;
         }

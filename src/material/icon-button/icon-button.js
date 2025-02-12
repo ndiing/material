@@ -4,19 +4,19 @@ import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onIconButtonClick
  * @element md-icon-button
  */
 class MdIconButtonComponent extends MdComponent {
     /**
-     * @property {String} [icon]
-     * @property {String} [variant]
-     * @property {String} [type]
-     * @property {Boolean} [toggle]
-     * @property {Boolean} [selected]
-     * @property {Boolean} [disabled]
+     * @property {String} [icon] 
+     * @property {String} [variant] - ["filled","filled-tonal","outlined"]
+     * @property {String} [type] 
+     * @property {Boolean} [toggle] 
+     * @property {Boolean} [selected] 
+     * @property {Boolean} [disabled] 
      */
     static properties = {
         icon: { type: String },
@@ -26,10 +26,14 @@ class MdIconButtonComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
+    /**
+     * @readonly
+     */
     variants = ["filled", "filled-tonal", "outlined"];
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -37,7 +41,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -53,7 +57,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -72,7 +76,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -83,7 +87,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */
@@ -97,7 +101,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

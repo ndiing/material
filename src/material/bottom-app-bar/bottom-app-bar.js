@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onBottomAppBarShown
  * @fires onBottomAppBarClosed
@@ -14,9 +14,9 @@ import { choose } from "lit/directives/choose.js";
  */
 class MdBottomAppBarComponent extends MdComponent {
     /**
-     * @property {Array} [actions]
-     * @property {String} [fab]
-     * @property {Boolean} [open]
+     * @property {Array} [actions] 
+     * @property {String} [fab] 
+     * @property {Boolean} [open] 
      */
     static properties = {
         actions: { type: Array },
@@ -25,14 +25,14 @@ class MdBottomAppBarComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -53,7 +53,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -73,7 +73,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -81,7 +81,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -95,7 +95,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -105,7 +105,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */
@@ -114,7 +114,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -123,7 +123,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -132,7 +132,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) this.close();
@@ -140,7 +140,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -149,7 +149,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

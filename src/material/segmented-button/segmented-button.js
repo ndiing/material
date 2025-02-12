@@ -3,24 +3,28 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onSegmentedButtonItemClick
  * @element md-segmented-button
  */
 class MdSegmentedButtonComponent extends MdComponent {
     /**
-     * @property {Array} [items]
-     * @property {String} [type]
+     * @property {Array} [items] 
+     * @property {String} [type] - ["single-select","multi-select"]
      */
     static properties = {
         items: { type: Array },
         type: { type: String },
     };
+
+    /**
+     * @readonly
+     */
     types = ["single-select", "multi-select"];
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -29,7 +33,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -50,7 +54,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -58,7 +62,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -67,7 +71,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

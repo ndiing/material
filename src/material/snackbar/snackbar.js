@@ -15,7 +15,7 @@ const task = (() => {
 })();
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onSnackbarShown
  * @fires onSnackbarClosed
@@ -25,10 +25,10 @@ const task = (() => {
  */
 class MdSnackbarComponent extends MdComponent {
     /**
-     * @property {Array} [icons]
-     * @property {Array} [actions]
-     * @property {Array} [buttons]
-     * @property {Boolean} [open]
+     * @property {Array} [icons] 
+     * @property {Array} [actions] 
+     * @property {Array} [buttons] 
+     * @property {Boolean} [open] 
      */
     static properties = {
         icons: { type: Array },
@@ -38,7 +38,7 @@ class MdSnackbarComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -46,7 +46,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -55,7 +55,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -75,7 +75,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -95,7 +95,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -104,7 +104,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -123,7 +123,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -131,7 +131,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -145,7 +145,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -154,7 +154,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     show() {
         task(() => {
@@ -177,7 +177,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     close() {
         const handleAnimationend = (event) => {
@@ -192,7 +192,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) this.close();
@@ -200,7 +200,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -209,7 +209,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

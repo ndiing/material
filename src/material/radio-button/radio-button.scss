@@ -1,3 +1,5 @@
+
+
 .md-radio-button {
     display: inline-flex;
     align-items: center;
@@ -18,6 +20,7 @@
     z-index: 1;
 
     &:checked {
+
         + .md-radio-button__track {
             border-color: var(--md-sys-color-primary);
 

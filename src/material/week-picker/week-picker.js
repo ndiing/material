@@ -7,7 +7,7 @@ import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onWeekPickerShown
  * @fires onWeekPickerClosed
@@ -27,15 +27,15 @@ import { classMap } from "lit/directives/class-map.js";
  */
 class MdWeekPickerComponent extends MdComponent {
     /**
-     * @property {Array} [icons]
-     * @property {Array} [actions]
-     * @property {String} [label]
-     * @property {String} [sublabel]
-     * @property {Array} [buttons]
-     * @property {Boolean} [open]
-     * @property {Boolean} [modal]
-     * @property {Number} [index]
-     * @property {Any} [value]
+     * @property {Array} [icons] 
+     * @property {Array} [actions] 
+     * @property {String} [label] 
+     * @property {String} [sublabel] 
+     * @property {Array} [buttons] 
+     * @property {Boolean} [open] 
+     * @property {Boolean} [modal] 
+     * @property {Number} [index] 
+     * @property {Any} [value] 
      */
     static properties = {
         icons: { type: Array },
@@ -59,7 +59,7 @@ class MdWeekPickerComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      * @readonly
      */
     get startOfDay() {
@@ -67,7 +67,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get years() {
@@ -85,7 +85,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get months() {
@@ -102,7 +102,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get weekdays() {
@@ -115,7 +115,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get days() {
@@ -141,7 +141,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @readonly
      */
     get icons() {
@@ -154,7 +154,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -182,7 +182,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -191,7 +191,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -211,7 +211,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -231,7 +231,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -240,7 +240,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -259,7 +259,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     renderWeekPickerYear() {
@@ -283,7 +283,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     renderWeekPickerMonth() {
@@ -307,7 +307,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     renderWeekPickerDay() {
@@ -348,7 +348,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -375,7 +375,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -397,7 +397,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -408,7 +408,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */
@@ -423,7 +423,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [options]
      */
     show(options) {
@@ -442,7 +442,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     close() {
         this.style.removeProperty("--md-comp-week-picker-animation");
@@ -452,7 +452,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [options]
      */
     toggle(options) {
@@ -461,7 +461,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -470,7 +470,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -483,7 +483,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -496,7 +496,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -508,7 +508,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -520,7 +520,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -533,7 +533,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -550,7 +550,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -563,7 +563,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -576,7 +576,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -591,7 +591,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -604,7 +604,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

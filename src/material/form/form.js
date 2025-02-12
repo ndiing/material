@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onFormNativeFormdata
  * @fires onFormNativeReset
@@ -13,13 +13,13 @@ import { createRef, ref } from "lit/directives/ref.js";
  */
 class MdFormComponent extends MdComponent {
     /**
-     * @property {String} [acceptCharset]
-     * @property {String} [action]
-     * @property {String} [autocomplete]
-     * @property {String} [enctype]
-     * @property {String} [method]
-     * @property {String} [name]
-     * @property {Boolean} [noValidate]
+     * @property {String} [acceptCharset] 
+     * @property {String} [action] 
+     * @property {String} [autocomplete] 
+     * @property {String} [enctype] 
+     * @property {String} [method] 
+     * @property {String} [name] 
+     * @property {Boolean} [noValidate] 
      */
     static properties = {
         acceptCharset: { type: String },
@@ -32,7 +32,7 @@ class MdFormComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      * @readonly
      */
     get formNative() {
@@ -40,7 +40,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -48,7 +48,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -72,7 +72,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -81,7 +81,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -90,7 +90,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -106,7 +106,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -117,14 +117,14 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     reset() {
         this.formNative.reset();
     }
 
     /**
-     *
+     * 
      * @param {Any} [submitButton]
      */
     submit(submitButton) {

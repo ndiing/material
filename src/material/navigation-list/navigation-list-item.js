@@ -11,14 +11,14 @@ import { Ripple } from "../ripple/ripple";
  */
 class MdNavigationListItemComponent extends MdComponent {
     /**
-     * @property {String} [icon]
-     * @property {String} [label]
-     * @property {String} [sublabel]
-     * @property {Boolean} [selected]
-     * @property {Boolean} [disabled]
-     * @property {String} [routerLink]
-     * @property {Object} [rippleOptions]
-     * @property {Number} [badge]
+     * @property {String} [icon] 
+     * @property {String} [label] 
+     * @property {String} [sublabel] 
+     * @property {Boolean} [selected] 
+     * @property {Boolean} [disabled] 
+     * @property {String} [routerLink] 
+     * @property {Object} [rippleOptions] 
+     * @property {Number} [badge] 
      */
     static properties = {
         icon: { type: String },

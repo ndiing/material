@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onNavigationDrawerShown
  * @fires onNavigationDrawerClosed
@@ -15,14 +15,14 @@ import { choose } from "lit/directives/choose.js";
  */
 class MdNavigationDrawerComponent extends MdComponent {
     /**
-     * @property {Array} [icons]
-     * @property {Array} [actions]
-     * @property {String} [label]
-     * @property {String} [sublabel]
-     * @property {Array} [items]
-     * @property {Boolean} [open]
-     * @property {Boolean} [modal]
-     * @property {String} [type]
+     * @property {Array} [icons] 
+     * @property {Array} [actions] 
+     * @property {String} [label] 
+     * @property {String} [sublabel] 
+     * @property {Array} [items] 
+     * @property {Boolean} [open] 
+     * @property {Boolean} [modal] 
+     * @property {String} [type] - ["flat","tree"]
      */
     static properties = {
         icons: { type: Array },
@@ -34,10 +34,14 @@ class MdNavigationDrawerComponent extends MdComponent {
         modal: { type: Boolean, reflect: true },
         type: { type: String },
     };
+
+    /**
+     * @readonly
+     */
     types = ["flat", "tree"];
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -45,7 +49,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -54,7 +58,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -74,7 +78,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -91,7 +95,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -118,7 +122,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -137,7 +141,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     disconnectedCallback() {
@@ -149,7 +153,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */
@@ -166,7 +170,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -176,7 +180,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -186,7 +190,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) this.close();
@@ -194,7 +198,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -203,7 +207,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -213,7 +217,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

@@ -7,6 +7,7 @@
     font: inherit;
     &,
     &::before,
+
     &::after {
         box-sizing: border-box;
     }
@@ -16,6 +17,7 @@
     }
 }
 html,
+
 body {
     width: 100%;
     height: 100%;
@@ -38,16 +40,21 @@ body {
 }
 
 @include mixins.layout-compact(){
+
     .md-layout{
         padding: 8px;
     }
 }
+
 @include mixins.layout-medium(){
+
     .md-layout{
         padding: 16px;
     }
 }
+
 @include mixins.layout-expanded(){
+
     .md-layout{
         padding: 24px;
     }

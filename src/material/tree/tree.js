@@ -5,12 +5,12 @@ import { Store } from "../store/store";
 import { closestScrollableElement } from "../util/util";
 
 /**
- *
+ * 
  * @extends MdComponent
- * @fires onTreeKeydownArrowLeft
+ * @fires onTreeKeydownArrowDown
  * @fires onTreeKeydownArrowUp
  * @fires onTreeKeydownArrowRight
- * @fires onTreeKeydownArrowDown
+ * @fires onTreeKeydownArrowLeft
  * @fires onTreeKeydownEnter
  * @fires onTreeKeydown
  * @fires onTreeItemClick
@@ -18,14 +18,14 @@ import { closestScrollableElement } from "../util/util";
  */
 class MdTreeComponent extends MdComponent {
     /**
-     * @property {Array} [items]
+     * @property {Array} [items] 
      */
     static properties = {
         items: { type: Array },
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -36,7 +36,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -60,7 +60,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -68,7 +68,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -79,7 +79,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      * @param {Any} [changedProperties]
@@ -97,7 +97,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [items]
      * @param {Any} [parent]
      * @param {Any} [indent=0]
@@ -125,7 +125,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      */
     updateItemVisibility(data) {
@@ -137,7 +137,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @async
      * @param {Any} [arg]
      */
@@ -153,7 +153,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -172,7 +172,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -191,7 +191,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -215,7 +215,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -238,7 +238,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -250,7 +250,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -266,7 +266,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

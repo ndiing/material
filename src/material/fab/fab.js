@@ -4,17 +4,17 @@ import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @element md-fab
  */
 class MdFabComponent extends MdComponent {
     /**
-     * @property {String} [icon]
-     * @property {String} [label]
-     * @property {String} [type]
-     * @property {String} [size]
-     * @property {String} [variant]
+     * @property {String} [icon] 
+     * @property {String} [label] 
+     * @property {String} [type] 
+     * @property {String} [size] - ["small","large"]
+     * @property {String} [variant] 
      */
     static properties = {
         icon: { type: String },
@@ -23,19 +23,23 @@ class MdFabComponent extends MdComponent {
         size: { type: String },
         variant: { type: String },
     };
+
+    /**
+     * @readonly
+     */
     sizes = ["small", "large"];
     types = ["extended"];
     variants = ["unelevated"];
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -43,7 +47,7 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -55,7 +59,7 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -65,7 +69,7 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */

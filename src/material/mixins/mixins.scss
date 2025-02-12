@@ -156,6 +156,7 @@
 }
 
 @mixin ripple-focus() {
+
     &::after {
         opacity: 10%;
         animation-name: ripple-out;
@@ -165,6 +166,7 @@
 }
 
 @mixin ripple-press() {
+
     &::after {
         opacity: 10%;
         animation-name: none;
@@ -172,12 +174,14 @@
 }
 
 @mixin ripple-hover() {
+
     &::after {
         opacity: 8%;
     }
 }
 
 @mixin ripple-drag() {
+
     &::after {
         opacity: 16%;
     }
@@ -189,18 +193,21 @@
 /* layout */
 
 @mixin layout-compact() {
+
     @media (max-width: 599px) {
         @content;
     }
 }
 
 @mixin layout-medium() {
+
     @media (min-width: 600px) and (max-width: 839px) {
         @content;
     }
 }
 
 @mixin layout-expanded() {
+
     @media (min-width: 840px) {
         @content;
     }

@@ -1,6 +1,7 @@
 @use "sass:color";
 
 @media (prefers-color-scheme: light) {
+
     :root {
         --md-sys-color-primary: #6750a4;
         --md-sys-color-primary8: #f2eaf8;
@@ -65,6 +66,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
     :root {
         --md-sys-color-primary: #d0bcff;
 

@@ -22,6 +22,7 @@
 }
 
 .md-navigation-bar {
+
     .md-navigation-list {
         flex: 1;
         flex-direction: row;
@@ -78,7 +79,9 @@
         }
 
         .md-navigation-list__icon {
+
             ~ .md-navigation-list__labels {
+
                 ~ .md-navigation-list__badge {
                     margin-top: -20px;
                 }

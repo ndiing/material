@@ -4,7 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onSwitchNativeInput
  * @fires onSwitchNativeReset
@@ -12,11 +12,11 @@ import { Ripple } from "../ripple/ripple";
  */
 class MdSwitchComponent extends MdComponent {
     /**
-     * @property {String} [name]
-     * @property {String} [value]
-     * @property {Boolean} [indeterminate]
-     * @property {Boolean} [checked]
-     * @property {Array} [icons]
+     * @property {String} [name] 
+     * @property {String} [value] 
+     * @property {Boolean} [indeterminate] 
+     * @property {Boolean} [checked] 
+     * @property {Array} [icons] 
      */
     static properties = {
         name: { type: String },
@@ -27,14 +27,14 @@ class MdSwitchComponent extends MdComponent {
     };
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -59,7 +59,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -81,7 +81,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      */
@@ -91,7 +91,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -104,7 +104,7 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */

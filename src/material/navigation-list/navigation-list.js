@@ -15,8 +15,8 @@ import { Store } from "../store/store";
  */
 class MdNavigationListComponent extends MdComponent {
     /**
-     * @property {Array} [items]
-     * @property {Object} [rippleOptions]
+     * @property {Array} [items] 
+     * @property {Object} [rippleOptions] 
      */
     static properties = {
         items: { type: Array },

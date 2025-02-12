@@ -76,7 +76,9 @@
 }
 
 .md-navigation-drawer {
+
     .md-navigation-list {
+
         .md-navigation-list__row {
             margin: 0 12px;
         }
@@ -115,6 +117,7 @@
 }
 
 @include mixins.layout-compact() {
+
     .md-navigation-drawer {
         width: calc(100% - 40px);
     }

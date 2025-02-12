@@ -1,5 +1,7 @@
+
+
 /**
- *
+ * 
  * @param {Any} [week]
  */
 Date.prototype.setWeek = function (week) {
@@ -12,7 +14,7 @@ Date.prototype.setWeek = function (week) {
 };
 
 /**
- *
+ * 
  */
 Date.prototype.getWeek = function () {
     const target = new Date(this.valueOf());

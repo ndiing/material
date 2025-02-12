@@ -3,26 +3,30 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
+ * 
  * @extends MdComponent
  * @fires onTabClick
  * @element md-tabs
  */
 class MdTabsComponent extends MdComponent {
     /**
-     * @property {Array} [items]
-     * @property {Object} [rippleOptions]
-     * @property {String} [variant]
+     * @property {Array} [items] 
+     * @property {Object} [rippleOptions] 
+     * @property {String} [variant] - ["primary","secondary"]
      */
     static properties = {
         items: { type: Array },
         rippleOptions: { type: Object },
         variant: { type: String },
     };
+
+    /**
+     * @readonly
+     */
     variants = ["primary", "secondary"];
 
     /**
-     *
+     * 
      */
     constructor() {
         super();
@@ -31,7 +35,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [item]
      */
@@ -53,7 +57,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     render() {
@@ -61,7 +65,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      */
     connectedCallback() {
@@ -71,7 +75,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [changedProperties]
      */
@@ -85,7 +89,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @param {Any} [data]
      */
     singleSelect(data) {
@@ -95,7 +99,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @param {Any} [event]
      */
@@ -108,7 +112,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
+     * 
      * @private
      * @async
      * @param {Any} [event]

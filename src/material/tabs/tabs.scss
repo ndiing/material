@@ -108,7 +108,9 @@
         }
 
         .md-tab__icon {
+
             ~ .md-tab__labels {
+
                 ~ .md-tab__badge {
                     margin-top: -20px;
                 }
