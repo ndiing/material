@@ -6,7 +6,7 @@ import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
 /**
  *
  * @extends MdTextFieldComponent
- * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonTodayClick
+ * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonPickerClick
  * @element md-datetime-field
  */
 class MdDatetimeFieldComponent extends MdTextFieldComponent {
@@ -48,7 +48,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      * @async
      * @param {Any} [event]
      */
-    async handleDatetimeFieldIconButtonTodayClick(event) {
+    async handleDatetimeFieldIconButtonPickerClick(event) {
         if (!this.datetimePicker) {
             this.datetimePicker = document.createElement("md-datetime-picker");
             if (this.textFieldNative.value) this.datetimePicker.value = parseDatetimeLocal(this.textFieldNative.value);
@@ -76,7 +76,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             if (this.text) offset = 4 + 16 + 4;
             this.datetimePicker.show({ trigger: this.textFieldContainer, offset });
         }
-        this.emit("onDatetimeFieldIconButtonTodayClick", { event });
+        this.emit("onDatetimeFieldIconButtonPickerClick", { event });
     }
 
     /**
@@ -86,7 +86,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "today") return this.handleDatetimeFieldIconButtonTodayClick(event);
+        if (data.id === "today") return this.handleDatetimeFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
 }

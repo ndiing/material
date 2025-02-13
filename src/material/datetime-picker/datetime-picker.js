@@ -444,6 +444,10 @@ class MdDatetimePickerComponent extends MdComponent {
         `;
     }
 
+    /**
+     *
+     * @private
+     */
     renderDatetimePickerView() {
         return cache([this.renderDatetimePickerYear.bind(this), this.renderDatetimePickerMonth.bind(this), this.renderDatetimePickerDay.bind(this), this.renderDatetimePickerHour.bind(this), this.renderDatetimePickerMinute.bind(this)][this.index]());
     }
