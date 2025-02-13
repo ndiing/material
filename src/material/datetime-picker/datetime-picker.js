@@ -678,7 +678,7 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     handleDatetimePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
-        this.close();
+        // this.close();
         this.emit("onDatetimePickerButtonCancelClick", { event });
     }
 
@@ -688,7 +688,7 @@ class MdDatetimePickerComponent extends MdComponent {
      * @param {Any} [event]
      */
     handleDatetimePickerButtonOkClick(event) {
-        this.close();
+        // this.close();
         this.emit("onDatetimePickerButtonOkClick", { event });
     }
 

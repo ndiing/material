@@ -1,0 +1,92 @@
+import { html, nothing } from "lit";
+import { MdComponent } from "../component/component";
+import { MdTextFieldComponent } from "../text-field/text-field";
+import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
+
+/**
+ *
+ * @extends MdTextFieldComponent
+ * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonTodayClick
+ * @element md-datetime-field
+ */
+class MdDatetimeFieldComponent extends MdTextFieldComponent {
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.type = "datetime-local";
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get trailingActions() {
+        let actions = [
+            {
+                id: "today",
+                component: "icon-button",
+                icon: "today",
+            },
+        ];
+        return actions;
+    }
+
+    /**
+     *
+     * @private
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-datetime-field");
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     * @param {Any} [event]
+     */
+    async handleDatetimeFieldIconButtonTodayClick(event) {
+        if (!this.datetimePicker) {
+            this.datetimePicker = document.createElement("md-datetime-picker");
+            if (this.textFieldNative.value) this.datetimePicker.value = parseDatetimeLocal(this.textFieldNative.value);
+            this.parentElement.insertBefore(this.datetimePicker, this.nextElementSibling);
+            const handleDatetimePickerClosed = () => {
+                this.datetimePicker.removeEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
+                this.datetimePicker.removeEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
+                this.datetimePicker.removeEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
+                this.datetimePicker.remove();
+                this.datetimePicker = undefined;
+            };
+            const handleDatetimePickerButtonCancelClick = () => {
+                this.datetimePicker.close();
+            };
+            const handleDatetimePickerButtonOkClick = () => {
+                this.textFieldNative.value = stringifyDatetimeLocal(this.datetimePicker.value);
+                this.setValue();
+                this.datetimePicker.close();
+            };
+            this.datetimePicker.addEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
+            this.datetimePicker.addEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
+            this.datetimePicker.addEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
+            await this.updateComplete;
+            this.datetimePicker.show({ trigger: this.textFieldContainer, offset: 4 + 16 + 4 });
+        }
+        this.emit("onDatetimeFieldIconButtonTodayClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldIconButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "today") return this.handleDatetimeFieldIconButtonTodayClick(event);
+        super.handleTextFieldIconButtonClick(event);
+    }
+}
+customElements.define("md-datetime-field", MdDatetimeFieldComponent);
+export { MdDatetimeFieldComponent };

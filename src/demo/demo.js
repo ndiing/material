@@ -91,6 +91,7 @@ import DemoTabsSecondary from "./tabs/tabs-secondary.js";
 import DemoTextField from "./text-field/text-field.js";
 import DemoTextFieldOutlined from "./text-field/text-field-outlined.js";
 import DemoTextFieldFilled from "./text-field/text-field-filled.js";
+import DemoDatetimeField from "./datetime-field/datetime-field.js";
 import DemoTooltip from "./tooltip/tooltip.js";
 import DemoTopAppBar from "./top-app-bar/top-app-bar.js";
 import DemoTreeItem from "./tree/tree-item.js";
@@ -224,6 +225,8 @@ const routes = [
             { path: "text-field", component: DemoTextField },
             { path: "text-field-outlined", component: DemoTextFieldOutlined },
             { path: "text-field-filled", component: DemoTextFieldFilled },
+
+            { path: "datetime-field", component: DemoDatetimeField },
 
             { path: "tooltip", component: DemoTooltip },
 

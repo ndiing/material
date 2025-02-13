@@ -5,67 +5,67 @@ class Popper {
     methods = {
         "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.right - containerRect.width,
-            top: triggerRect.top - containerRect.height - offset,
+            top: triggerRect.top - containerRect.height - offset.bottom,
         }),
         top: ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.left - (containerRect.width - triggerRect.width) / 2,
-            top: triggerRect.top - containerRect.height - offset,
+            top: triggerRect.top - containerRect.height - offset.bottom,
         }),
         "top-start": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.left,
-            top: triggerRect.top - containerRect.height - offset,
+            top: triggerRect.top - containerRect.height - offset.bottom,
         }),
         "top-right": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.right + offset,
-            top: triggerRect.top - containerRect.height - offset,
+            left: triggerRect.right + offset.left,
+            top: triggerRect.top - containerRect.height - offset.bottom,
         }),
         "right-end": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.right + offset,
+            left: triggerRect.right + offset.left,
             top: triggerRect.bottom - containerRect.height,
         }),
         right: ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.right + offset,
+            left: triggerRect.right + offset.left,
             top: triggerRect.top - (containerRect.height - triggerRect.height) / 2,
         }),
         "right-start": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.right + offset,
+            left: triggerRect.right + offset.left,
             top: triggerRect.top,
         }),
         "bottom-right": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.right + offset,
-            top: triggerRect.bottom + offset,
+            left: triggerRect.right + offset.left,
+            top: triggerRect.bottom + offset.top,
         }),
         "bottom-start": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.left,
-            top: triggerRect.bottom + offset,
+            top: triggerRect.bottom + offset.top,
         }),
         bottom: ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.left - (containerRect.width - triggerRect.width) / 2,
-            top: triggerRect.bottom + offset,
+            top: triggerRect.bottom + offset.top,
         }),
         "bottom-end": ({ containerRect, triggerRect, offset } = {}) => ({
             left: triggerRect.right - containerRect.width,
-            top: triggerRect.bottom + offset,
+            top: triggerRect.bottom + offset.top,
         }),
         "bottom-left": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.left - containerRect.width - offset,
-            top: triggerRect.bottom + offset,
+            left: triggerRect.left - containerRect.width - offset.right,
+            top: triggerRect.bottom + offset.top,
         }),
         "left-start": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.left - containerRect.width - offset,
+            left: triggerRect.left - containerRect.width - offset.right,
             top: triggerRect.top,
         }),
         left: ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.left - containerRect.width - offset,
+            left: triggerRect.left - containerRect.width - offset.right,
             top: triggerRect.top - (containerRect.height - triggerRect.height) / 2,
         }),
         "left-end": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.left - containerRect.width - offset,
+            left: triggerRect.left - containerRect.width - offset.right,
             top: triggerRect.bottom - containerRect.height,
         }),
         "top-left": ({ containerRect, triggerRect, offset } = {}) => ({
-            left: triggerRect.left - containerRect.width - offset,
-            top: triggerRect.top - containerRect.height - offset,
+            left: triggerRect.left - containerRect.width - offset.right,
+            top: triggerRect.top - containerRect.height - offset.bottom,
         }),
     };
 
@@ -84,7 +84,7 @@ class Popper {
      * @property {HTMLElement} [container]
      * @property {HTMLElement} [trigger]
      * @property {HTMLElement} [boundary=this.closestScrollableElement(container)]
-     * @property {Number} [offset=0]
+     * @property {String} [offset='0']
      * @property {Array} [placements=["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"]]
      */
 
@@ -93,8 +93,16 @@ class Popper {
      * @param {PopperShowOptions} [options={}]
      */
     show(options = {}) {
-        let { container = undefined, trigger = undefined, boundary, offset = 0, placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
+        let { container = undefined, trigger = undefined, boundary, offset = "0", placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
         boundary = boundary || this.closestScrollableElement(container);
+
+        function parseOffset(offset) {
+            let [top = 0, right = 0, bottom = 0, left = 0] = String(offset).split(" ").map(Number);
+            return { top, right, bottom, left };
+        }
+
+        offset = parseOffset(offset);
+
         let left;
         let top;
         for (let i = 0; i < placements.length; i++) {
@@ -120,7 +128,8 @@ class Popper {
         let current = element;
         while (current) {
             const style = window.getComputedStyle(current);
-            const isScrollable = style.overflow === "auto" || style.overflow === "scroll" || style.overflowY === "auto" || style.overflowY === "scroll" || current.scrollHeight > current.clientHeight;
+            const isScrollable = style.overflow === "auto" || style.overflow === "scroll" || style.overflowY === "auto" || style.overflowY === "scroll";
+            // || current.scrollHeight > current.clientHeight;
             if (isScrollable) {
                 return current;
             }

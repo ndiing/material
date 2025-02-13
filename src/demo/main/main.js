@@ -184,6 +184,7 @@ class DemoMain extends MdComponent {
                     { label: "Text Field Filled", routerLink: "/text-field-filled" },
                 ],
             },
+            { label: "Datetime Field", routerLink: "/datetime-field" },
             { label: "Tooltip", routerLink: "/tooltip" },
             { label: "Top App Bar", routerLink: "/top-app-bar" },
             // { label: "Tree Item", routerLink: "/tree-item" },

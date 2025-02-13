@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: MdRadioButtonComponent</title>
+    <title>JSDoc: Source: datetime-field/datetime-field.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,368 +17,110 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: MdRadioButtonComponent</h1>
+    <h1 class="page-title">Source: datetime-field/datetime-field.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>MdRadioButtonComponent<span class="signature">()</span><span class="type-signature"></span></h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-
-    
-    <h4 class="name" id="MdRadioButtonComponent"><span class="type-signature"></span>new MdRadioButtonComponent<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="radio-button_radio-button.js.html">radio-button/radio-button.js</a>, <a href="radio-button_radio-button.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<h5>Fires:</h5>
-<ul>
-    <li>MdRadioButtonComponent#event:onRadioButtonNativeInput</li>
-
-    <li>MdRadioButtonComponent#event:onRadioButtonNativeReset</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="MdComponent.html">MdComponent</a></li>
-    </ul>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="properties"><span class="type-signature"></span>properties<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>indeterminate</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>checked</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="radio-button_radio-button.js.html">radio-button/radio-button.js</a>, <a href="radio-button_radio-button.js.html#line20">line 20</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { html, nothing } from "lit";
+import { MdComponent } from "../component/component";
+import { MdTextFieldComponent } from "../text-field/text-field";
+import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
+
+/**
+ *
+ * @extends MdTextFieldComponent
+ * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonTodayClick
+ * @element md-datetime-field
+ */
+class MdDatetimeFieldComponent extends MdTextFieldComponent {
+    /**
+     *
+     */
+    constructor() {
+        super();
+        this.type = "datetime-local";
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get trailingActions() {
+        let actions = [
+            {
+                id: "today",
+                component: "icon-button",
+                icon: "today",
+            },
+        ];
+        return actions;
+    }
+
+    /**
+     *
+     * @private
+     */
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-datetime-field");
+    }
+
+    /**
+     *
+     * @private
+     * @async
+     * @param {Any} [event]
+     */
+    async handleDatetimeFieldIconButtonTodayClick(event) {
+        if (!this.datetimePicker) {
+            this.datetimePicker = document.createElement("md-datetime-picker");
+            if (this.textFieldNative.value) this.datetimePicker.value = parseDatetimeLocal(this.textFieldNative.value);
+            this.parentElement.insertBefore(this.datetimePicker, this.nextElementSibling);
+            const handleDatetimePickerClosed = () => {
+                this.datetimePicker.removeEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
+                this.datetimePicker.removeEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
+                this.datetimePicker.removeEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
+                this.datetimePicker.remove();
+                this.datetimePicker = undefined;
+            };
+            const handleDatetimePickerButtonCancelClick = () => {
+                this.datetimePicker.close();
+            };
+            const handleDatetimePickerButtonOkClick = () => {
+                this.textFieldNative.value = stringifyDatetimeLocal(this.datetimePicker.value);
+                this.setValue();
+                this.datetimePicker.close();
+            };
+            this.datetimePicker.addEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
+            this.datetimePicker.addEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
+            this.datetimePicker.addEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
+            await this.updateComplete;
+            this.datetimePicker.show({ trigger: this.textFieldContainer, offset: 4 + 16 + 4 });
+        }
+        this.emit("onDatetimeFieldIconButtonTodayClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldIconButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "today") return this.handleDatetimeFieldIconButtonTodayClick(event);
+        super.handleTextFieldIconButtonClick(event);
+    }
+}
+customElements.define("md-datetime-field", MdDatetimeFieldComponent);
+export { MdDatetimeFieldComponent };
+</code></pre>
+        </article>
+    </section>
 
 
 

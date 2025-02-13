@@ -59,6 +59,7 @@ import "./checkbox/checkbox.js";
 import "./radio-button/radio-button.js";
 import "./switch/switch.js";
 import "./text-field/text-field.js";
+import "./datetime-field/datetime-field.js";
 import "./slider/slider.js";
 // import "./carousel/carousel.js";
 // import "./search/search.js";

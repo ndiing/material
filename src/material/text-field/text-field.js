@@ -125,6 +125,14 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      *
+     * @readonly
+     */
+    get textFieldContainer() {
+        return this.querySelector(".md-text-field__container");
+    }
+
+    /**
+     *
      */
     constructor() {
         super();
@@ -333,11 +341,18 @@ class MdTextFieldComponent extends MdComponent {
      * @param {Any} [event]
      */
     handleTextFieldInput(event) {
+        this.setValue();
+        this.emit("onTextFieldInput", { event });
+    }
+
+    /**
+     *
+     */
+    setValue() {
         this.value = this.textFieldNative.value;
         this.error = this.textFieldNative.validationMessage;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.classList.toggle("md-text-field--error", !!this.error);
-        this.emit("onTextFieldInput", { event });
     }
 
     /**
