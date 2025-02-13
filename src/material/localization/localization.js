@@ -3,13 +3,13 @@ import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
 /**
  * @typedef {Function} ConfigureLocalizationConfigLocale
- * @param {String} locale
+ * @param {string} locale
  */
 
 /**
  * @typedef {Object} ConfigureLocalizationConfig
- * @property {Array} sourceLocale
- * @property {Array} targetLocales
+ * @property {string} sourceLocale
+ * @property {string[]} targetLocales
  * @property {ConfigureLocalizationConfigLocale} loadLocale
  */
 
@@ -23,25 +23,24 @@ import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
  * @module Localization
  */
 
-/**
- * @memberof module:Localization
- * @function getLocale
- */
-
-/**
- * @memberof module:Localization
- * @function setLocale
- * @param {String} newLocale
- */
-
-/**
- * @private
- * @function configureLocalization
- * @param {ConfigureLocalizationConfig} config
- * @returns {ConfigureLocalizationReturn}
- */
-export const { getLocale, setLocale } = configureLocalization({
+const localization = configureLocalization({
     sourceLocale,
     targetLocales,
     loadLocale: (locale) => import(`../../generated/locales/${locale}.js`),
 });
+
+/**
+ * Mendapatkan locale saat ini.
+ * @function getLocale
+ * @memberof module:Localization
+ * @returns {string}
+ */
+export const getLocale = localization.getLocale;
+
+/**
+ * Mengatur locale baru.
+ * @function setLocale
+ * @memberof module:Localization
+ * @param {string} newLocale - Locale baru yang akan diatur.
+ */
+export const setLocale = localization.setLocale;
