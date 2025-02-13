@@ -84,16 +84,16 @@ class Progress {
 }
 export { Progress };
 
-/**
- *
- */
-function run() {
-    const progress = new Progress();
-    const observer = new PerformanceObserver((entries) => {
-        entries.getEntries().forEach((entry) => progress.start(entry.duration));
-    });
-    observer.observe({
-        entryTypes: PerformanceObserver.supportedEntryTypes,
-    });
-}
-run();
+// /**
+//  *
+//  */
+// function run() {
+//     const progress = new Progress();
+//     const observer = new PerformanceObserver((entries) => {
+//         entries.getEntries().forEach((entry) => progress.start(entry.duration));
+//     });
+//     observer.observe({
+//         entryTypes: PerformanceObserver.supportedEntryTypes,
+//     });
+// }
+// run();
