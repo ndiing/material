@@ -74,13 +74,12 @@ const methods = {
 
 /**
  * @memberof module:Popper
- * @param {String} offset 
+ * @param {String} offset
  */
 function parseOffset(offset) {
     let [top = 0, right = 0, bottom = 0, left = 0] = String(offset).split(" ").map(Number);
     return { top, right, bottom, left };
 }
-
 
 /**
  * @typedef {Object} PopperShowOptions
@@ -136,4 +135,4 @@ function closestScrollableElement(element) {
     return null;
 }
 
-export { methods, setPosition, parseOffset,closestScrollableElement };
+export { methods, setPosition, parseOffset, closestScrollableElement };
