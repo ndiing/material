@@ -2,7 +2,7 @@
 // import "./store/store.js";
 // import "./router/router.js";
 // import "./ripple/ripple.js";
-// import "./popper/popper.js";
+import "./popper/popper.js";
 // import "./movable/movable.js";
 // import "./layout/layout.js";
 // import "./virtual-scroll/virtual-scroll.js";

@@ -3,7 +3,7 @@
  */
 
 /**
- *
+ * @memberof module:Popper
  */
 const methods = {
     "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
@@ -73,6 +73,16 @@ const methods = {
 };
 
 /**
+ * @memberof module:Popper
+ * @param {String} offset 
+ */
+function parseOffset(offset) {
+    let [top = 0, right = 0, bottom = 0, left = 0] = String(offset).split(" ").map(Number);
+    return { top, right, bottom, left };
+}
+
+
+/**
  * @typedef {Object} PopperShowOptions
  * @property {HTMLElement} [container]
  * @property {HTMLElement} [trigger]
@@ -88,11 +98,6 @@ const methods = {
 function setPosition(options = {}) {
     let { container = undefined, trigger = undefined, boundary, offset = "0", placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
     boundary = boundary || closestScrollableElement(container);
-
-    function parseOffset(offset) {
-        let [top = 0, right = 0, bottom = 0, left = 0] = String(offset).split(" ").map(Number);
-        return { top, right, bottom, left };
-    }
 
     offset = parseOffset(offset);
 
@@ -131,4 +136,4 @@ function closestScrollableElement(element) {
     return null;
 }
 
-export { methods, setPosition, closestScrollableElement };
+export { methods, setPosition, parseOffset,closestScrollableElement };
