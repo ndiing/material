@@ -5,6 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
 import { Popper } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
+import { cache } from "lit/directives/cache.js";
 
 /**
  *
@@ -443,6 +444,10 @@ class MdDatetimePickerComponent extends MdComponent {
         `;
     }
 
+    renderDatetimePickerView() {
+        return cache([this.renderDatetimePickerYear.bind(this), this.renderDatetimePickerMonth.bind(this), this.renderDatetimePickerDay.bind(this), this.renderDatetimePickerHour.bind(this), this.renderDatetimePickerMinute.bind(this)][this.index]());
+    }
+
     /**
      *
      * @private
@@ -460,11 +465,7 @@ class MdDatetimePickerComponent extends MdComponent {
             <div class="md-datetime-picker__wrapper">
                 <div class="md-datetime-picker__body">
                     <div class="md-datetime-picker__items">
-                        <div class="md-datetime-picker__item">${this.renderDatetimePickerYear()}</div>
-                        <div class="md-datetime-picker__item">${this.renderDatetimePickerMonth()}</div>
-                        <div class="md-datetime-picker__item">${this.renderDatetimePickerDay()}</div>
-                        <div class="md-datetime-picker__item">${this.renderDatetimePickerHour()}</div>
-                        <div class="md-datetime-picker__item">${this.renderDatetimePickerMinute()}</div>
+                        <div class="md-datetime-picker__item">${this.renderDatetimePickerView()}</div>
                     </div>
                 </div>
                 ${this.buttons?.length ? html` <div class="md-datetime-picker__footer">${this.buttons?.length ? html` <div class="md-datetime-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}

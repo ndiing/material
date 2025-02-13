@@ -72,7 +72,9 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             this.datetimePicker.addEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
             this.datetimePicker.addEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
             await this.updateComplete;
-            this.datetimePicker.show({ trigger: this.textFieldContainer, offset: 4 + 16 + 4 });
+            let offset = 4 + 4;
+            if (this.text) offset = 4 + 16 + 4;
+            this.datetimePicker.show({ trigger: this.textFieldContainer, offset });
         }
         this.emit("onDatetimeFieldIconButtonTodayClick", { event });
     }
