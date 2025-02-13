@@ -1,6 +1,6 @@
 /**
  * @module Util
-*/
+ */
 
 /**
  * @memberof module:Util

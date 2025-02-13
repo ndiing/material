@@ -1,4 +1,8 @@
 import { Router } from "../material/router/router";
+import { setTheme } from "../material/color/color.js";
+
+setTheme("#a47764");
+
 import DemoMain from "./main/main.js";
 import DemoError from "./error/error.js";
 

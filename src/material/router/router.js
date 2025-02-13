@@ -236,7 +236,7 @@ class Router {
     static options = {};
 
     /**
-     * @typedef {Object} RouterUseRoutes
+     * @typedef {Array} RouterUseRoutes
      * @property {String} [path]
      * @property {HTMLElement} [component]
      * @property {Function} [load]
