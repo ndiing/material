@@ -145,26 +145,41 @@ class DemoForm extends MdComponent {
                             ></md-text-field>
                         </div>
 
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-checkbox name="checkbox"></md-checkbox>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-checkbox
                                 name="checkbox"
                                 indeterminate
                             ></md-checkbox>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-checkbox
                                 name="checkbox"
                                 checked
                             ></md-checkbox>
                         </div>
 
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-radio-button name="radio-button"></md-radio-button>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-radio-button
                                 name="radio-button"
                                 checked
@@ -172,23 +187,35 @@ class DemoForm extends MdComponent {
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
 
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-switch name="switch"></md-switch>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-switch
                                 name="switch"
                                 checked
                             ></md-switch>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-switch
                                 name="switch"
                                 .icons="${["close", "check"]}"
                             ></md-switch>
                         </div>
-                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        <div
+                            class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"
+                            style="padding:0 16px;"
+                        >
                             <md-switch
                                 name="switch"
                                 .icons="${["close", "check"]}"

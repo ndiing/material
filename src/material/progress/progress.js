@@ -77,4 +77,3 @@ class Progress {
     }
 }
 export { Progress };
-

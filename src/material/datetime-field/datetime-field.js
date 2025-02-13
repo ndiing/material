@@ -65,7 +65,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             };
             const handleDatetimePickerButtonOkClick = () => {
                 this.textFieldNative.value = stringifyDatetimeLocal(this.datetimePicker.value);
-                this.setValue();
+                this.updateValue();
                 this.datetimePicker.close();
             };
             this.datetimePicker.addEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);

@@ -9,8 +9,8 @@ class DemoSliderCentered extends MdComponent {
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-slider
                             variant="centered"
-                            min="-50"
-                            max="50"
+                            min="-5000000000"
+                            max="5000000000"
                             name="slider"
                             value="0"
                             @onSliderNativeInput="${console.log}"

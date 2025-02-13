@@ -66,6 +66,14 @@ class MdSliderComponent extends MdComponent {
 
     /**
      *
+     * @readonly
+     */
+    get sliderValueAll() {
+        return this.querySelectorAll(".md-slider__value");
+    }
+
+    /**
+     *
      */
     constructor() {
         super();
@@ -133,7 +141,7 @@ class MdSliderComponent extends MdComponent {
      *
      * @private
      */
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
         if (this.value === undefined) {
@@ -144,6 +152,7 @@ class MdSliderComponent extends MdComponent {
         else if (this.step > 1) this.variant = "discrete";
         else if (this.value.length > 1) this.variant = "range-selection";
         else this.variant = "continuous";
+        await this.updateComplete;
         this.updateValue();
     }
 
@@ -167,6 +176,7 @@ class MdSliderComponent extends MdComponent {
     updateValue() {
         this.value.forEach((value, index) => {
             this.style.setProperty(`--md-comp-slider-value${index}`, this.percentage(value));
+            this.style.setProperty(`--md-comp-slider-value-width${index}`, this.sliderValueAll[index].clientWidth + "px");
         });
     }
 

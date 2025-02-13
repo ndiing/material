@@ -341,14 +341,14 @@ class MdTextFieldComponent extends MdComponent {
      * @param {Any} [event]
      */
     handleTextFieldInput(event) {
-        this.setValue();
+        this.updateValue();
         this.emit("onTextFieldInput", { event });
     }
 
     /**
      *
      */
-    setValue() {
+    updateValue() {
         this.value = this.textFieldNative.value;
         this.error = this.textFieldNative.validationMessage;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
