@@ -37,6 +37,7 @@
     background: transparent;
     color: inherit;
     width: 100%;
+    min-width: 0;
     padding: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
     &::placeholder,

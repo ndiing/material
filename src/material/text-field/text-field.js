@@ -58,6 +58,11 @@ class MdTextFieldComponent extends MdComponent {
         autocomplete: { type: String },
         required: { type: Boolean },
         readOnly: { type: Boolean },
+        min: { type: Number },
+        max: { type: Number },
+        minLength: { type: Number },
+        maxLength: { type: Number },
+        pattern: { type: String },
         variant: { type: String },
         disabled: { type: Boolean, reflect: true },
         errorIcon: { type: Boolean },
@@ -171,10 +176,20 @@ class MdTextFieldComponent extends MdComponent {
      * @private
      */
     render() {
+        /* prettier-ignore */
         return html`
             ${this.label ? html`<label class="md-text-field__label">${this.label}</label>` : nothing}
             <div class="md-text-field__container">
-                ${this.icons?.length ? html` <div class="md-text-field__icons">${this.icons.map((item) => this.renderItem(item, "icon"))}</div> ` : nothing} ${this.prefix ? html`<div class="md-text-field__prefix">${this.prefix}</div>` : nothing}
+                ${this.icons?.length
+                    ? html`
+                          <div
+                            class="md-text-field__icons"
+                          >
+                              ${this.icons.map((item) => this.renderItem(item, "icon"))}
+                          </div>
+                      `
+                    : nothing}
+                ${this.prefix ? html`<div class="md-text-field__prefix">${this.prefix}</div>` : nothing}
                 <input
                     .name="${ifDefined(this.name)}"
                     .type="${ifDefined(this.type)}"
@@ -185,6 +200,11 @@ class MdTextFieldComponent extends MdComponent {
                     .title="${ifDefined(this.title)}"
                     .autocomplete="${ifDefined(this.autocomplete)}"
                     .defaultValue="${ifDefined(this.defaultValue)}"
+                    .min="${ifDefined(this.min)}"
+                    .max="${ifDefined(this.max)}"
+                    .minLength="${ifDefined(this.minLength)}"
+                    .maxLength="${ifDefined(this.maxLength)}"
+                    .pattern="${ifDefined(this.pattern)}"
                     @focus="${this.handleTextFieldFocus}"
                     @blur="${this.handleTextFieldBlur}"
                     @input="${this.handleTextFieldInput}"
@@ -192,9 +212,45 @@ class MdTextFieldComponent extends MdComponent {
                     @reset="${this.handleTextFieldReset}"
                     class="md-text-field__native"
                 />
-                ${this.suffix ? html`<div class="md-text-field__suffix">${this.suffix}</div>` : nothing} ${this.computedActions.concat(this.actions)?.length ? html` <div class="md-text-field__actions">${this.computedActions.concat(this.actions).map((item) => this.renderItem(item, "icon-button"))}</div> ` : nothing}
+                ${this.suffix
+                    ? html`<div
+                          class="md-text-field__suffix"
+                      >
+                          ${this.suffix}
+                      </div>`
+                    : nothing}
+                ${this.computedActions.concat(this.actions)?.length
+                    ? html`
+                          <div
+                              class="md-text-field__actions"
+                          >
+                              ${this.computedActions.concat(this.actions).map((item) => this.renderItem(item, "icon-button"))}
+                          </div>
+                      `
+                    : nothing}
             </div>
-            ${this.text || this.error || this.counter ? html` <div class="md-text-field__wrapper">${this.text || this.error ? html`<div class="md-text-field__text">${this.error || this.text}</div>` : nothing} ${this.counter ? html`<div class="md-text-field__counter">${this.counter}</div>` : nothing}</div> ` : nothing}
+            ${this.text || this.error || this.counter
+                ? html`
+                      <div
+                          class="md-text-field__wrapper"
+                      >
+                          ${this.text || this.error
+                              ? html`<div
+                                    class="md-text-field__text"
+                                >
+                                    ${this.error || this.text}
+                                </div>`
+                              : nothing}
+                          ${this.counter
+                              ? html`<div
+                                    class="md-text-field__counter"
+                                >
+                                    ${this.counter}
+                                </div>`
+                              : nothing}
+                      </div>
+                  `
+                : nothing}
         `;
     }
 
@@ -299,7 +355,7 @@ class MdTextFieldComponent extends MdComponent {
     handleTextFieldIconButtonCancelClick(event) {
         this.textFieldNative.value = "";
         this.value = this.textFieldNative.value;
-        this.error = this.textFieldNative.validationMessage;
+        this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.classList.toggle("md-text-field--error", !!this.error);
         this.emit("onTextFieldIconButtonCancelClick", { event });

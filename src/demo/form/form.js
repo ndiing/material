@@ -18,6 +18,7 @@ class DemoForm extends MdComponent {
                                 name="date"
                                 required
                                 value="1990-10-17"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -27,6 +28,7 @@ class DemoForm extends MdComponent {
                                 name="datetime-local"
                                 required
                                 value="1990-10-17T20:30"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -36,6 +38,7 @@ class DemoForm extends MdComponent {
                                 name="email"
                                 required
                                 value="ndiing.inc@gmail.com"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -45,6 +48,7 @@ class DemoForm extends MdComponent {
                                 name="month"
                                 required
                                 value="1990-10"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -54,6 +58,7 @@ class DemoForm extends MdComponent {
                                 name="number"
                                 required
                                 value="123"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -63,6 +68,7 @@ class DemoForm extends MdComponent {
                                 name="password"
                                 required
                                 value="password"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -72,6 +78,7 @@ class DemoForm extends MdComponent {
                                 name="search"
                                 required
                                 value="search"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -81,6 +88,7 @@ class DemoForm extends MdComponent {
                                 name="tel"
                                 required
                                 value="6281935155404"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -90,6 +98,7 @@ class DemoForm extends MdComponent {
                                 name="text"
                                 required
                                 value="text"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -99,6 +108,7 @@ class DemoForm extends MdComponent {
                                 name="time"
                                 required
                                 value="20:30"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -108,6 +118,7 @@ class DemoForm extends MdComponent {
                                 name="url"
                                 required
                                 value="https://github.com/ndiing/material"
+                                cancelAction
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
@@ -117,18 +128,109 @@ class DemoForm extends MdComponent {
                                 name="week"
                                 required
                                 value="1990-W42"
+                                cancelAction
                             ></md-text-field>
+                        </div>
+
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-checkbox
+                                name="checkbox"
+                            ></md-checkbox>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-checkbox
+                                name="checkbox"
+                                indeterminate
+                            ></md-checkbox>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-checkbox
+                                name="checkbox"
+                                checked
+                            ></md-checkbox>
+                        </div>
+
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-radio-button
+                                name="radio-button"
+                            ></md-radio-button>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-radio-button
+                                name="radio-button"
+                                checked
+                            ></md-radio-button>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        </div>
+
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-switch
+                                name="switch"
+                            ></md-switch>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-switch
+                                name="switch"
+                                checked
+                            ></md-switch>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-switch
+                                name="switch"
+                                .icons="${["close","check"]}"
+                            ></md-switch>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-switch
+                                name="switch"
+                                .icons="${["close","check"]}"
+                                checked
+                            ></md-switch>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        </div>
+
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-slider
+                                name="slider"
+                                min="-50"
+                                max="50"
+                            ></md-slider>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-slider
+                                name="slider"
+                            ></md-slider>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-slider
+                                name="slider"
+                                step="10"
+                            ></md-slider>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
+                            <md-slider
+                                name="slider"
+                                value="[25,75]"
+                            ></md-slider>
+                        </div>
+                        <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-button
                                 variant="filled-tonal"
-                                label="reset"
+                                label="Reset"
                                 type="reset"
                             ></md-button>
                             <md-button
                                 variant="filled-tonal"
-                                label="submit"
+                                label="Submit"
                                 type="submit"
                             ></md-button>
                         </div>
