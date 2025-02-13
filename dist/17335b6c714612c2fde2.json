@@ -2,7 +2,7 @@
     "id": "/",
     "scope": "/",
     "name": "ndiing-material",
-    "display": "standalone",
+    "display": "fullscreen",
     "start_url": "/",
     "short_name": "starter",
     "theme_color": "#E1477E",

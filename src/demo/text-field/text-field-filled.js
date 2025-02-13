@@ -10,6 +10,7 @@ class DemoTextFieldFilled extends MdComponent {
                         <md-text-field
                             variant="filled"
                             label="Label text"
+                            text="Supporting text"
                         ></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
@@ -17,6 +18,7 @@ class DemoTextFieldFilled extends MdComponent {
                             variant="filled"
                             label="Label text"
                             value="Input text"
+                            text="Supporting text"
                         ></md-text-field>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">

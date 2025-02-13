@@ -34,7 +34,6 @@ class MdScrimComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.removeEventListener("click", this.handleScrimClick);
     }
 

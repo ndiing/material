@@ -12,6 +12,7 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdTextFieldComponent#onTextFieldInput
  * @fires MdTextFieldComponent#onTextFieldInvalid
  * @fires MdTextFieldComponent#onTextFieldReset
+ * @fires MdTextFieldComponent#onTextFieldIconButtonCancelClick
  * @fires MdTextFieldComponent#onTextFieldIconButtonClick
  * @element md-text-field
  */
@@ -36,6 +37,8 @@ class MdTextFieldComponent extends MdComponent {
      * @property {Boolean} [readOnly]
      * @property {String} [variant] - ["outlined","filled"]
      * @property {Boolean} [disabled]
+     * @property {Boolean} [errorIcon]
+     * @property {Boolean} [cancelAction]
      */
     static properties = {
         label: { type: String },
@@ -57,6 +60,8 @@ class MdTextFieldComponent extends MdComponent {
         readOnly: { type: Boolean },
         variant: { type: String },
         disabled: { type: Boolean, reflect: true },
+        errorIcon: { type: Boolean },
+        cancelAction: { type: Boolean },
     };
 
     /**
@@ -68,19 +73,26 @@ class MdTextFieldComponent extends MdComponent {
      *
      * @readonly
      */
-    get actionsAll() {
-        return []
-            .concat([
-                ...((this.error && [
-                    {
-                        component: "icon",
-                        icon: "error",
-                        classMap: { "md-text-field__icon--error": true },
-                    },
-                ]) ||
-                    []),
-            ])
-            .concat(this.actions);
+    get computedActions() {
+        let actions = [];
+        if (this.errorIcon && this.error)
+            actions = actions.concat([
+                {
+                    id: "error",
+                    component: "icon",
+                    icon: "error",
+                    classMap: { "md-text-field__icon--error": true },
+                },
+            ]);
+        if (this.cancelAction && this.value)
+            actions = actions.concat([
+                {
+                    id: "cancel",
+                    component: "icon-button",
+                    icon: "cancel",
+                },
+            ]);
+        return actions;
     }
 
     /**
@@ -180,7 +192,7 @@ class MdTextFieldComponent extends MdComponent {
                     @reset="${this.handleTextFieldReset}"
                     class="md-text-field__native"
                 />
-                ${this.suffix ? html`<div class="md-text-field__suffix">${this.suffix}</div>` : nothing} ${this.actionsAll?.length ? html` <div class="md-text-field__actions">${this.actionsAll.map((item) => this.renderItem(item, "icon-button"))}</div> ` : nothing}
+                ${this.suffix ? html`<div class="md-text-field__suffix">${this.suffix}</div>` : nothing} ${this.computedActions.concat(this.actions)?.length ? html` <div class="md-text-field__actions">${this.computedActions.concat(this.actions).map((item) => this.renderItem(item, "icon-button"))}</div> ` : nothing}
             </div>
             ${this.text || this.error || this.counter ? html` <div class="md-text-field__wrapper">${this.text || this.error ? html`<div class="md-text-field__text">${this.error || this.text}</div>` : nothing} ${this.counter ? html`<div class="md-text-field__counter">${this.counter}</div>` : nothing}</div> ` : nothing}
         `;
@@ -284,7 +296,23 @@ class MdTextFieldComponent extends MdComponent {
      * @private
      * @param {Any} [event]
      */
+    handleTextFieldIconButtonCancelClick(event) {
+        this.textFieldNative.value = "";
+        this.value = this.textFieldNative.value;
+        this.error = this.textFieldNative.validationMessage;
+        this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
+        this.classList.toggle("md-text-field--error", !!this.error);
+        this.emit("onTextFieldIconButtonCancelClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
     handleTextFieldIconButtonClick(event) {
+        const data = event.currentTarget.data;
+        if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
         this.emit("onTextFieldIconButtonClick", { event });
     }
 }
