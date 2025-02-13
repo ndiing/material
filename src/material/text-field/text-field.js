@@ -14,6 +14,7 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdTextFieldComponent#onTextFieldReset
  * @fires MdTextFieldComponent#onTextFieldIconButtonCancelClick
  * @fires MdTextFieldComponent#onTextFieldIconButtonClick
+ * @fires MdTextFieldComponent#onTextFieldClick
  * @element md-text-field
  */
 class MdTextFieldComponent extends MdComponent {
@@ -226,6 +227,7 @@ class MdTextFieldComponent extends MdComponent {
                     @input="${this.handleTextFieldInput}"
                     @invalid="${this.handleTextFieldInvalid}"
                     @reset="${this.handleTextFieldReset}"
+                    @click="${this.handleTextFieldClick}"
                     class="md-text-field__native"
                 />
                 ${this.suffix
@@ -386,6 +388,16 @@ class MdTextFieldComponent extends MdComponent {
         const data = event.currentTarget.data;
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
         this.emit("onTextFieldIconButtonClick", { event });
+    }
+
+    /**
+     *
+     * @private
+     * @param {Any} [event]
+     */
+    handleTextFieldClick(event) {
+        event.preventDefault();
+        this.emit("onTextFieldClick", { event });
     }
 }
 customElements.define("md-text-field", MdTextFieldComponent);

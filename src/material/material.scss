@@ -16,13 +16,6 @@
 @use "./icon-button/icon-button.scss";
 @use "./segmented-button/segmented-button.scss";
 @use "./chips/chips.scss";
-@use "./checkbox/checkbox.scss";
-@use "./radio-button/radio-button.scss";
-@use "./switch/switch.scss";
-@use "./progress-indicator/progress-indicator.scss";
-@use "./slider/slider.scss";
-@use "./text-field/text-field.scss";
-@use "./form/form.scss";
 @use "./list/list.scss";
 @use "./tree/tree.scss";
 @use "./navigation-list/navigation-list.scss";
@@ -47,3 +40,10 @@
 @use "./time-picker/time-picker.scss";
 @use "./week-picker/week-picker.scss";
 @use "./month-picker/month-picker.scss";
+@use "./form/form.scss";
+@use "./text-field/text-field.scss";
+@use "./checkbox/checkbox.scss";
+@use "./radio-button/radio-button.scss";
+@use "./switch/switch.scss";
+@use "./slider/slider.scss";
+@use "./progress-indicator/progress-indicator.scss";
