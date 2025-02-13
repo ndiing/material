@@ -7,8 +7,8 @@
 // import "./layout/layout.js";
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./component/component.js";
-import "./polyfill/polyfill.js";
 // import "./localization/localization.js";
+import "./polyfill/polyfill.js";
 import "./progress/progress.js";
 import "./icon/icon.js";
 import "./image/image.js";

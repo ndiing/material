@@ -20,10 +20,16 @@ import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
  */
 
 /**
+ * @module Localization
+*/
+
+/**
+ * @memberof module:Localization
  * @function getLocale
 */
 
 /**
+ * @memberof module:Localization
  * @function setLocale
  * @param {String} newLocale
 */

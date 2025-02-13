@@ -1,5 +1,21 @@
 @use "sass:color";
 
+/* 
+
+fix this later
+
+--md-sys-color-error38: #{rgba(#b3261e, 38%)};
+--md-sys-color-on-surface12: #{rgba(#1d1b20, 12%)};
+--md-sys-color-on-surface38: #{rgba(#1d1b20, 38%)};
+--md-sys-color-primary8: #{rgba(#d0bcff, 8%)};
+--md-sys-color-primary10: #{rgba(#d0bcff, 10%)};
+--md-sys-color-primary16: #{rgba(#d0bcff, 16%)};
+--md-sys-color-error38: #{rgba(#f2b8b5, 38%)};
+--md-sys-color-on-surface12: #{rgba(#e6e0e9, 12%)};
+--md-sys-color-on-surface38: #{rgba(#e6e0e9, 38%)};
+
+*/
+
 @media (prefers-color-scheme: light) {
     :root {
         --md-sys-color-primary: #6750a4;

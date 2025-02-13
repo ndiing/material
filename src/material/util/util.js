@@ -1,5 +1,9 @@
 /**
- *
+ * @module Util
+*/
+
+/**
+ * @memberof module:Util
  * @param {Any} [string]
  */
 function parseDate(string) {
@@ -7,7 +11,7 @@ function parseDate(string) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [string]
  */
 function parseDatetimeLocal(string) {
@@ -15,7 +19,7 @@ function parseDatetimeLocal(string) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [string]
  */
 function parseMonth(string) {
@@ -23,7 +27,7 @@ function parseMonth(string) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [string]
  */
 function parseTime(string) {
@@ -34,7 +38,7 @@ function parseTime(string) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [string]
  */
 function parseWeek(string) {
@@ -46,7 +50,7 @@ function parseWeek(string) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [date]
  */
 function stringifyDate(date) {
@@ -54,7 +58,7 @@ function stringifyDate(date) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [date]
  */
 function stringifyDatetimeLocal(date) {
@@ -67,7 +71,7 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [date]
  */
 function stringifyMonth(date) {
@@ -75,7 +79,7 @@ function stringifyMonth(date) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [date]
  */
 function stringifyTime(date) {
@@ -83,7 +87,7 @@ function stringifyTime(date) {
 }
 
 /**
- *
+ * @memberof module:Util
  * @param {Any} [date]
  */
 function stringifyWeek(date) {
