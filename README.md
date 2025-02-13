@@ -4,16 +4,16 @@ Material adalah framework berbasis Material Design yang memudahkan pembuatan ant
 
 ---
 
-## 📌 Fitur Utama
-✅ **Desain Modern**: Menggunakan prinsip Material Design untuk tampilan yang estetis.
-✅ **Responsif**: Komponen otomatis menyesuaikan dengan berbagai ukuran layar.
-✅ **Sistem Routing**: Mempermudah navigasi antar halaman dalam aplikasi.
-✅ **Komponen Fleksibel**: Mudah digunakan dan dapat disesuaikan sesuai kebutuhan.
+## Fitur Utama
+- **Desain Modern**: Menggunakan prinsip Material Design untuk tampilan yang estetis.
+- **Responsif**: Komponen otomatis menyesuaikan dengan berbagai ukuran layar.
+- **Sistem Routing**: Mempermudah navigasi antar halaman dalam aplikasi.
+- **Komponen Fleksibel**: Mudah digunakan dan dapat disesuaikan sesuai kebutuhan.
 
 ---
 
-## 🚀 Instalasi
-Untuk mulai menggunakan Material, ikuti langkah-langkah berikut:
+## Instalasi
+Ikuti langkah-langkah berikut untuk mulai menggunakan Material:
 
 ```bash
 # Clone repository
@@ -26,7 +26,7 @@ npm install
 
 ---
 
-## 🎨 Menggunakan Material
+## Penggunaan Material
 Tambahkan file berikut ke proyek Anda untuk memuat semua komponen Material:
 
 ```js
@@ -36,7 +36,7 @@ import "./material/material.js";
 
 ---
 
-## 🔀 Routing Dasar
+## Routing Dasar
 Material memiliki sistem routing bawaan untuk mengelola navigasi antar halaman. Berikut contoh penggunaannya:
 
 ```js
@@ -53,7 +53,7 @@ Router.use(routes);
 
 ---
 
-## 📄 Membuat Halaman
+## Membuat Halaman
 Contoh pembuatan halaman dasar menggunakan komponen Material:
 
 ```js
@@ -99,7 +99,7 @@ export default document.createElement("demo-main");
 
 ---
 
-## 🏗 Struktur Dasar HTML
+## Struktur Dasar HTML
 Berikut contoh file HTML dasar untuk menggunakan Material:
 
 ```html
@@ -119,12 +119,14 @@ Berikut contoh file HTML dasar untuk menggunakan Material:
 
 ---
 
-## 📚 Dokumentasi & Demo
-🔗 **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/docs/)
-🔗 **Demo**: [Material Demo](https://ndiing.github.io/material/dist/)
+## Dokumentasi & Demo
+- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/docs/)
+- **Demo**: [Material Demo](https://ndiing.github.io/material/dist/)
 
-## 🎯 Kesimpulan
+---
+
+## Kesimpulan
 Material adalah framework yang mempermudah pembuatan antarmuka berbasis Material Design. Dengan sistem routing bawaan dan komponen yang fleksibel, Anda bisa dengan mudah membangun aplikasi web yang modern dan responsif.
 
-Selamat mencoba! 🚀
+Selamat mencoba!
 
