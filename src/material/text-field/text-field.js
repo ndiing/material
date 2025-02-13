@@ -35,6 +35,11 @@ class MdTextFieldComponent extends MdComponent {
      * @property {String} [autocomplete]
      * @property {Boolean} [required]
      * @property {Boolean} [readOnly]
+     * @property {Number} [min]
+     * @property {Number} [max]
+     * @property {Number} [minLength]
+     * @property {Number} [maxLength]
+     * @property {String} [pattern]
      * @property {String} [variant] - ["outlined","filled"]
      * @property {Boolean} [disabled]
      * @property {Boolean} [errorIcon]
@@ -122,6 +127,7 @@ class MdTextFieldComponent extends MdComponent {
      */
     constructor() {
         super();
+        this.type = "text";
         this.title = "";
         this.autocomplete = "off";
         this.actions = [];
@@ -185,11 +191,7 @@ class MdTextFieldComponent extends MdComponent {
      * @private
      */
     render() {
-        const actions=
-        this.leadingActions
-        .concat(this.actions)
-        .concat(this.trailingActions)
-        
+        const actions = this.leadingActions.concat(this.actions).concat(this.trailingActions);
         /* prettier-ignore */
         return html`
             ${this.label ? html`<label class="md-text-field__label">${this.label}</label>` : nothing}
