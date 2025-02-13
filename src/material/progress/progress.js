@@ -19,8 +19,8 @@ class Progress {
     render() {
         if (!this.progressIndicator) {
             this.progressIndicator = document.createElement("md-progress-indicator");
-            this.progressIndicator.classList.add('md-progress')
-            document.body.insertBefore(this.progressIndicator,document.body.nextElementSibling)
+            this.progressIndicator.classList.add("md-progress");
+            document.body.insertBefore(this.progressIndicator, document.body.nextElementSibling);
         }
     }
 
@@ -79,7 +79,7 @@ class Progress {
 export { Progress };
 
 /**
- *
+ * @private
  */
 function run() {
     const progress = new Progress();

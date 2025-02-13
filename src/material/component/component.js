@@ -1,10 +1,16 @@
 import { LitElement } from "lit";
+import { updateWhenLocaleChanges } from "@lit/localize";
 
 /**
  *
  * @extends LitElement
  */
 class MdComponent extends LitElement {
+    constructor() {
+        super();
+        updateWhenLocaleChanges(this);
+    }
+
     /**
      *
      * @private

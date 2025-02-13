@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: MdIconComponent</title>
+    <title>JSDoc: Source: localization/localization.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,144 +17,59 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: MdIconComponent</h1>
+    <h1 class="page-title">Source: localization/localization.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>MdIconComponent<span class="signature">()</span><span class="type-signature"></span></h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-
-    
-    <h4 class="name" id="MdIconComponent"><span class="type-signature"></span>new MdIconComponent<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="icon_icon.js.html">icon/icon.js</a>, <a href="icon_icon.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="MdComponent.html">MdComponent</a></li>
-    </ul>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { configureLocalization } from "@lit/localize";
+import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
+
+/**
+ * @typedef {Function} ConfigureLocalizationConfigLocale
+ * @param {String} locale
+ */
+
+/**
+ * @typedef {Object} ConfigureLocalizationConfig
+ * @property {Array} sourceLocale
+ * @property {Array} targetLocales
+ * @property {ConfigureLocalizationConfigLocale} loadLocale
+ */
+
+/**
+ * @typedef {Object} ConfigureLocalizationReturn
+ * @property {Function} getLocale
+ * @property {Function} setLocale
+ */
+
+/**
+ * @function getLocale
+*/
+
+/**
+ * @function setLocale
+ * @param {String} newLocale
+*/
+
+/**
+ * @private
+ * @function configureLocalization
+ * @param {ConfigureLocalizationConfig} config
+ * @returns {ConfigureLocalizationReturn}
+ */
+export const { getLocale, setLocale } = configureLocalization({
+    sourceLocale,
+    targetLocales,
+    loadLocale: (locale) => import(`../../generated/locales/${locale}.js`),
+});
+</code></pre>
+        </article>
+    </section>
 
 
 
