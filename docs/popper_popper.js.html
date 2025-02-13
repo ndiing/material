@@ -31,139 +31,120 @@
  */
 
 /**
+ * Menghitung posisi elemen berdasarkan placement
  * @memberof module:Popper
+ * @param {String} placement - Posisi yang diinginkan
+ * @param {Object} param - Data posisi
+ * @returns {Object} { left, top }
  */
-const methods = {
-    "top-end": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right - containerRect.width,
-        top: triggerRect.top - containerRect.height - offset.bottom,
-    }),
-    top: ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - (containerRect.width - triggerRect.width) / 2,
-        top: triggerRect.top - containerRect.height - offset.bottom,
-    }),
-    "top-start": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left,
-        top: triggerRect.top - containerRect.height - offset.bottom,
-    }),
-    "top-right": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right + offset.left,
-        top: triggerRect.top - containerRect.height - offset.bottom,
-    }),
-    "right-end": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right + offset.left,
-        top: triggerRect.bottom - containerRect.height,
-    }),
-    right: ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right + offset.left,
-        top: triggerRect.top - (containerRect.height - triggerRect.height) / 2,
-    }),
-    "right-start": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right + offset.left,
-        top: triggerRect.top,
-    }),
-    "bottom-right": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right + offset.left,
-        top: triggerRect.bottom + offset.top,
-    }),
-    "bottom-start": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left,
-        top: triggerRect.bottom + offset.top,
-    }),
-    bottom: ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - (containerRect.width - triggerRect.width) / 2,
-        top: triggerRect.bottom + offset.top,
-    }),
-    "bottom-end": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.right - containerRect.width,
-        top: triggerRect.bottom + offset.top,
-    }),
-    "bottom-left": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - containerRect.width - offset.right,
-        top: triggerRect.bottom + offset.top,
-    }),
-    "left-start": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - containerRect.width - offset.right,
-        top: triggerRect.top,
-    }),
-    left: ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - containerRect.width - offset.right,
-        top: triggerRect.top - (containerRect.height - triggerRect.height) / 2,
-    }),
-    "left-end": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - containerRect.width - offset.right,
-        top: triggerRect.bottom - containerRect.height,
-    }),
-    "top-left": ({ containerRect, triggerRect, offset } = {}) => ({
-        left: triggerRect.left - containerRect.width - offset.right,
-        top: triggerRect.top - containerRect.height - offset.bottom,
-    }),
-};
+function calculatePosition(placement, { containerRect, triggerRect, offset }) {
+    const { left, top, right, bottom, width, height } = triggerRect;
+    const cWidth = containerRect.width;
+    const cHeight = containerRect.height;
+
+    const positions = {
+        "top-end": () => ({ left: right - cWidth, top: top - cHeight - offset.bottom }),
+        top: () => ({ left: left - (cWidth - width) / 2, top: top - cHeight - offset.bottom }),
+        "top-start": () => ({ left, top: top - cHeight - offset.bottom }),
+        "top-right": () => ({ left: right + offset.left, top: top - cHeight - offset.bottom }),
+
+        "right-end": () => ({ left: right + offset.left, top: bottom - cHeight }),
+        right: () => ({ left: right + offset.left, top: top - (cHeight - height) / 2 }),
+        "right-start": () => ({ left: right + offset.left, top }),
+
+        "bottom-right": () => ({ left: right + offset.left, top: bottom + offset.top }),
+        "bottom-start": () => ({ left, top: bottom + offset.top }),
+        bottom: () => ({ left: left - (cWidth - width) / 2, top: bottom + offset.top }),
+        "bottom-end": () => ({ left: right - cWidth, top: bottom + offset.top }),
+        "bottom-left": () => ({ left: left - cWidth - offset.right, top: bottom + offset.top }),
+
+        "left-start": () => ({ left: left - cWidth - offset.right, top }),
+        left: () => ({ left: left - cWidth - offset.right, top: top - (cHeight - height) / 2 }),
+        "left-end": () => ({ left: left - cWidth - offset.right, top: bottom - cHeight }),
+
+        "top-left": () => ({ left: left - cWidth - offset.right, top: top - cHeight - offset.bottom }),
+    };
+
+    return (positions[placement] || positions.top)();
+}
 
 /**
+ * Mengonversi string offset menjadi objek numerik
  * @memberof module:Popper
- * @param {String} offset
+ * @param {String} offset - Format: "top right bottom left"
+ * @returns {Object} { top, right, bottom, left }
  */
 function parseOffset(offset) {
-    let [top = 0, right = 0, bottom = 0, left = 0] = String(offset).split(" ").map(Number);
+    let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);
+    right = right ?? top;
+    bottom = bottom ?? top;
+    left = left ?? right;
     return { top, right, bottom, left };
 }
 
 /**
- * @typedef {Object} PopperShowOptions
- * @property {HTMLElement} [container]
- * @property {HTMLElement} [trigger]
- * @property {HTMLElement} [boundary=closestScrollableElement(container)]
- * @property {String} [offset='0']
- * @property {Array} [placements=["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"]]
- */
-
-/**
+ * Menentukan posisi terbaik elemen dalam boundary
  * @memberof module:Popper
- * @param {PopperShowOptions} [options={}]
+ * @param {Object} options
  */
 function setPosition(options = {}) {
-    let { container = undefined, trigger = undefined, boundary, offset = "0", placements = ["top-end", "top", "top-start", "top-right", "right-end", "right", "right-start", "bottom-right", "bottom-start", "bottom", "bottom-end", "bottom-left", "left-start", "left", "left-end", "top-left"] } = options;
-    boundary = boundary || closestScrollableElement(container);
+    const { container, trigger, boundary, offset = "0", placements } = options;
 
-    offset = parseOffset(offset);
+    const boundaryEl = boundary || closestScrollableElement(container);
+    const parsedOffset = parseOffset(offset);
 
-    let left;
-    let top;
-    for (let i = 0; i &lt; placements.length; i++) {
-        const method = methods[placements[i]];
-        const containerRect = container.getBoundingClientRect();
-        const triggerRect = trigger.getBoundingClientRect();
-        const boundaryRect = boundary.getBoundingClientRect();
-        ({ left, top } = method({ triggerRect, containerRect, offset }));
+    const containerRect = container.getBoundingClientRect();
+    const triggerRect = trigger.getBoundingClientRect();
+    const boundaryRect = boundaryEl.getBoundingClientRect();
+
+    let bestLeft = null,
+        bestTop = null,
+        minOverflow = Infinity;
+
+    for (const placement of placements) {
+        const { left, top } = calculatePosition(placement, { triggerRect, containerRect, offset: parsedOffset });
+
         const right = left + containerRect.width;
         const bottom = top + containerRect.height;
+
         const exceed = left &lt; boundaryRect.left || top &lt; boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
-        if (!exceed) break;
+        const totalOverflow = Math.max(boundaryRect.left - left, 0) + Math.max(top - boundaryRect.top, 0) + Math.max(right - boundaryRect.right, 0) + Math.max(bottom - boundaryRect.bottom, 0);
+
+        if (!exceed) {
+            bestLeft = left;
+            bestTop = top;
+            break;
+        } else if (totalOverflow &lt; minOverflow) {
+            minOverflow = totalOverflow;
+            bestLeft = left;
+            bestTop = top;
+        }
     }
-    container.style.setProperty("left", left + "px");
-    container.style.setProperty("top", top + "px");
+
+    bestLeft = Math.max(boundaryRect.left, Math.min(bestLeft, boundaryRect.right - containerRect.width));
+    bestTop = Math.max(boundaryRect.top, Math.min(bestTop, boundaryRect.bottom - containerRect.height));
+
+    container.style.left = `${bestLeft}px`;
+    container.style.top = `${bestTop}px`;
 }
 
 /**
+ * Mencari elemen scrollable terdekat
  * @memberof module:Popper
- * @param {Any} [element]
+ * @param {Element} element
+ * @returns {Element}
  */
 function closestScrollableElement(element) {
     let current = element;
     while (current) {
         const style = window.getComputedStyle(current);
-        const isScrollable = style.overflow === "auto" || style.overflow === "scroll" || style.overflowY === "auto" || style.overflowY === "scroll";
-        // || current.scrollHeight > current.clientHeight;
-        if (isScrollable) {
-            return current;
-        }
+        if (/(auto|scroll)/.test(style.overflow + style.overflowY)) return current;
         current = current.parentElement;
     }
-    return null;
+    return document.documentElement || document.body;
 }
 
-export { methods, setPosition, parseOffset, closestScrollableElement };
+export { calculatePosition, setPosition, parseOffset, closestScrollableElement };
 </code></pre>
         </article>
     </section>
@@ -180,7 +161,7 @@ export { methods, setPosition, parseOffset, closestScrollableElement };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 05:39:23 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 06:12:53 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>
