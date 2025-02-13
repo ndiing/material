@@ -2,7 +2,7 @@ import { Hct } from "@material/material-color-utilities";
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
- * @module Color
+ * @namespace Color
  */
 /**
  * @typedef {Array} SetThemeCustomColor
@@ -11,7 +11,7 @@ import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@
  * @property {Boolean} blend
  */
 /**
- * @memberof module:Color
+ * @memberof Color
  * @async
  * @param {String|HTMLImageElement} input
  * @param {SetThemeCustomColor} customColors

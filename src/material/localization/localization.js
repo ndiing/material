@@ -20,7 +20,7 @@ import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
  */
 
 /**
- * @module Localization
+ * @namespace Localization
  */
 
 const localization = configureLocalization({
@@ -32,7 +32,7 @@ const localization = configureLocalization({
 /**
  * Mendapatkan locale saat ini.
  * @function getLocale
- * @memberof module:Localization
+ * @memberof Localization
  * @returns {string}
  */
 export const getLocale = localization.getLocale;
@@ -40,7 +40,7 @@ export const getLocale = localization.getLocale;
 /**
  * Mengatur locale baru.
  * @function setLocale
- * @memberof module:Localization
+ * @memberof Localization
  * @param {string} newLocale - Locale baru yang akan diatur.
  */
 export const setLocale = localization.setLocale;

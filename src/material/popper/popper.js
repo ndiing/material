@@ -1,10 +1,10 @@
 /**
- * @module Popper
+ * @namespace Popper
  */
 
 /**
  * Menghitung posisi elemen berdasarkan placement
- * @memberof module:Popper
+ * @memberof Popper
  * @param {String} placement - Posisi yang diinginkan
  * @param {Object} param - Data posisi
  * @returns {Object} { left, top }
@@ -42,7 +42,7 @@ function calculatePosition(placement, { containerRect, triggerRect, offset }) {
 
 /**
  * Mengonversi string offset menjadi objek numerik
- * @memberof module:Popper
+ * @memberof Popper
  * @param {String} offset - Format: "top right bottom left"
  * @returns {Object} { top, right, bottom, left }
  */
@@ -56,7 +56,7 @@ function parseOffset(offset) {
 
 /**
  * Menentukan posisi terbaik elemen dalam boundary
- * @memberof module:Popper
+ * @memberof Popper
  * @param {Object} options
  */
 function setPosition(options = {}) {
@@ -102,7 +102,7 @@ function setPosition(options = {}) {
 
 /**
  * Mencari elemen scrollable terdekat
- * @memberof module:Popper
+ * @memberof Popper
  * @param {Element} element
  * @returns {Element}
  */
