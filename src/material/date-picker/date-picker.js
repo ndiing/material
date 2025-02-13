@@ -34,8 +34,9 @@ class MdDatePickerComponent extends MdComponent {
      * @property {Array} [buttons]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {Number} [index]
-     * @property {Any} [value]
+     * @property {String} [value]
+     * @property {Any} [index]
+     * @property {Any} [selection]
      */
     static properties = {
         icons: { type: Array },
@@ -46,8 +47,8 @@ class MdDatePickerComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean },
         value: {
-            type:String,
-            reflect:true,
+            type: String,
+            reflect: true,
             converter: {
                 fromAttribute: (value, type) => {
                     return parseDate(value);
@@ -57,8 +58,8 @@ class MdDatePickerComponent extends MdComponent {
                 },
             },
         },
-        index: { state:true },
-        selection: { state:true },
+        index: { state: true },
+        selection: { state: true },
     };
 
     /**
@@ -378,7 +379,6 @@ class MdDatePickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        // this.selection = new Date(this.value.valueOf());
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-date-picker");
@@ -406,6 +406,7 @@ class MdDatePickerComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
@@ -417,8 +418,8 @@ class MdDatePickerComponent extends MdComponent {
             this.classList.toggle(`md-date-picker--modal`, !!this.modal);
         }
         if (changedProperties.has("value")) {
-            await this.updateComplete
-            this.selection = new Date(this.value.valueOf())
+            await this.updateComplete;
+            this.selection = new Date(this.value.valueOf());
         }
     }
 

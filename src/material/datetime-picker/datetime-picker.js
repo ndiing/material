@@ -11,7 +11,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @extends MdComponent
  * @fires MdDatetimePickerComponent#onDatetimePickerShown
  * @fires MdDatetimePickerComponent#onDatetimePickerClosed
- * @fires MdDatetimePickerComponent#onDatetimePickerLabelClick
  * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick
  * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonNextClick
  * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonClick
@@ -36,8 +35,9 @@ class MdDatetimePickerComponent extends MdComponent {
      * @property {Array} [buttons]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {Number} [index]
-     * @property {Any} [value]
+     * @property {String} [value]
+     * @property {Any} [index]
+     * @property {Any} [selection]
      */
     static properties = {
         icons: { type: Array },
@@ -48,8 +48,8 @@ class MdDatetimePickerComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean },
         value: {
-            type:String,
-            reflect:true,
+            type: String,
+            reflect: true,
             converter: {
                 fromAttribute: (value, type) => {
                     return parseDatetimeLocal(value);
@@ -479,7 +479,6 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        // this.selection = new Date(this.value.valueOf());
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-datetime-picker");
@@ -507,6 +506,7 @@ class MdDatetimePickerComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {

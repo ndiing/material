@@ -45,12 +45,10 @@
 
                 .md-navigation-list__icon {
                     background-color: var(--md-sys-color-secondary-container);
-                    // color: var(--md-sys-color-on-secondary-container);
                     color: var(--md-sys-color-primary);
                     animation-name: var(--md-comp-navigation-list-icon-animation);
                     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
                     animation-duration: var(--md-sys-motion-duration-short3);
-
                 }
             }
         }

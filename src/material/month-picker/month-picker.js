@@ -33,8 +33,9 @@ class MdMonthPickerComponent extends MdComponent {
      * @property {Array} [buttons]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {Number} [index]
-     * @property {Any} [value]
+     * @property {String} [value]
+     * @property {Any} [index]
+     * @property {Any} [selection]
      */
     static properties = {
         icons: { type: Array },
@@ -45,8 +46,8 @@ class MdMonthPickerComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean },
         value: {
-            type:String,
-            reflect:true,
+            type: String,
+            reflect: true,
             converter: {
                 fromAttribute: (value, type) => {
                     return parseMonth(value);
@@ -56,8 +57,8 @@ class MdMonthPickerComponent extends MdComponent {
                 },
             },
         },
-        index: { state:true },
-        selection: { state:true },
+        index: { state: true },
+        selection: { state: true },
     };
 
     /**
@@ -287,7 +288,6 @@ class MdMonthPickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        // this.selection = new Date(this.value.valueOf());
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-month-picker");
@@ -315,6 +315,7 @@ class MdMonthPickerComponent extends MdComponent {
     /**
      *
      * @private
+     * @async
      * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
@@ -326,8 +327,8 @@ class MdMonthPickerComponent extends MdComponent {
             this.classList.toggle(`md-month-picker--modal`, !!this.modal);
         }
         if (changedProperties.has("value")) {
-            await this.updateComplete
-            this.selection=new Date(this.value.valueOf())
+            await this.updateComplete;
+            this.selection = new Date(this.value.valueOf());
         }
     }
 
