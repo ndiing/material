@@ -44,8 +44,9 @@ class MdTimePickerComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean },
-        index: { type: Number },
         value: {
+            type:String,
+            reflect:true,
             converter: {
                 fromAttribute: (value, type) => {
                     return parseTime(value);
@@ -55,6 +56,8 @@ class MdTimePickerComponent extends MdComponent {
                 },
             },
         },
+        index: { state:true },
+        selection: { state:true },
     };
 
     /**
@@ -290,7 +293,7 @@ class MdTimePickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.selection = new Date(this.value.valueOf());
+        // this.selection = new Date(this.value.valueOf());
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-time-picker");
@@ -320,13 +323,17 @@ class MdTimePickerComponent extends MdComponent {
      * @private
      * @param {Any} [changedProperties]
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-time-picker-index", this.index);
         }
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-time-picker--modal`, !!this.modal);
+        }
+        if (changedProperties.has("value")) {
+            await this.updateComplete
+            this.selection=new Date(this.value.valueOf())
         }
     }
 

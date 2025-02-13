@@ -45,8 +45,9 @@ class MdWeekPickerComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean },
-        index: { type: Number },
         value: {
+            type:String,
+            reflect:true,
             converter: {
                 fromAttribute: (value, type) => {
                     return parseWeek(value);
@@ -56,6 +57,8 @@ class MdWeekPickerComponent extends MdComponent {
                 },
             },
         },
+        index: { state:true },
+        selection: { state:true },
     };
 
     /**
@@ -381,7 +384,7 @@ class MdWeekPickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.selection = new Date(this.value.valueOf());
+        // this.selection = new Date(this.value.valueOf());
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-week-picker");
@@ -411,13 +414,17 @@ class MdWeekPickerComponent extends MdComponent {
      * @private
      * @param {Any} [changedProperties]
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-week-picker-index", this.index);
         }
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-week-picker--modal`, !!this.modal);
+        }
+        if (changedProperties.has("value")) {
+            await this.updateComplete
+            this.selection=new Date(this.value.valueOf())
         }
     }
 

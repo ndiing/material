@@ -44,8 +44,9 @@ class MdMonthPickerComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean },
-        index: { type: Number },
         value: {
+            type:String,
+            reflect:true,
             converter: {
                 fromAttribute: (value, type) => {
                     return parseMonth(value);
@@ -55,6 +56,8 @@ class MdMonthPickerComponent extends MdComponent {
                 },
             },
         },
+        index: { state:true },
+        selection: { state:true },
     };
 
     /**
@@ -284,7 +287,7 @@ class MdMonthPickerComponent extends MdComponent {
      */
     async connectedCallback() {
         super.connectedCallback();
-        this.selection = new Date(this.value.valueOf());
+        // this.selection = new Date(this.value.valueOf());
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-month-picker");
@@ -314,13 +317,17 @@ class MdMonthPickerComponent extends MdComponent {
      * @private
      * @param {Any} [changedProperties]
      */
-    updated(changedProperties) {
+    async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-month-picker-index", this.index);
         }
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-month-picker--modal`, !!this.modal);
+        }
+        if (changedProperties.has("value")) {
+            await this.updateComplete
+            this.selection=new Date(this.value.valueOf())
         }
     }
 
