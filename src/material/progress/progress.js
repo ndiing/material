@@ -19,14 +19,8 @@ class Progress {
     render() {
         if (!this.progressIndicator) {
             this.progressIndicator = document.createElement("md-progress-indicator");
-            Object.assign(this.progressIndicator.style, {
-                position: "absolute",
-                left: "0",
-                top: "0",
-                right: "0",
-                zIndex: "1000",
-            });
-            document.body.append(this.progressIndicator);
+            this.progressIndicator.classList.add('md-progress')
+            document.body.insertBefore(this.progressIndicator,document.body.nextElementSibling)
         }
     }
 
@@ -84,16 +78,16 @@ class Progress {
 }
 export { Progress };
 
-// /**
-//  *
-//  */
-// function run() {
-//     const progress = new Progress();
-//     const observer = new PerformanceObserver((entries) => {
-//         entries.getEntries().forEach((entry) => progress.start(entry.duration));
-//     });
-//     observer.observe({
-//         entryTypes: PerformanceObserver.supportedEntryTypes,
-//     });
-// }
-// run();
+/**
+ *
+ */
+function run() {
+    const progress = new Progress();
+    const observer = new PerformanceObserver((entries) => {
+        entries.getEntries().forEach((entry) => progress.start(entry.duration));
+    });
+    observer.observe({
+        entryTypes: PerformanceObserver.supportedEntryTypes,
+    });
+}
+run();
