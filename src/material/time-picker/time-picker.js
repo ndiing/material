@@ -3,7 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { parseTime, stringifyTime } from "../util/util";
-import { Popper } from "../popper/popper";
+import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
@@ -352,8 +352,7 @@ class MdTimePickerComponent extends MdComponent {
             placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
         };
-        this.popper = new Popper();
-        this.popper.show(options);
+        setPosition(options);
         this.emit("onTimePickerShown");
     }
 

@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-import { Popper } from "../popper/popper";
+import { setPosition } from "../popper/popper";
 
 /**
  *
@@ -63,8 +63,7 @@ class MdMenuComponent extends MdComponent {
             ...options,
         };
         this.open = true;
-        this.popper = new Popper();
-        this.popper.show(options);
+        setPosition(options);
         this.emit("onMenuShown");
     }
 
