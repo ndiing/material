@@ -1,11 +1,6 @@
 import { Router } from "../material/router/router";
-import { setTheme } from "../material/color/color.js";
-
-// function getRandomHexColor() {
-//     return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
-// }
-
-// setTheme(getRandomHexColor());
+import { Progress } from "../material/progress/progress.js";
+// import { setTheme } from "../material/color/color.js";
 
 import DemoMain from "./main/main.js";
 import DemoError from "./error/error.js";
@@ -107,6 +102,21 @@ import DemoWeekPicker from "./week-picker/week-picker.js";
 import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
 import DemoMonthPicker from "./month-picker/month-picker.js";
 import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
+
+const progress = new Progress();
+const observer = new PerformanceObserver((entries) => {
+    entries.getEntries().forEach((entry) => progress.start(entry.duration));
+});
+observer.observe({
+    entryTypes: PerformanceObserver.supportedEntryTypes,
+});
+
+// function getRandomHexColor() {
+//     return `#${Math.floor(Math.random() * 16777215)
+//         .toString(16)
+//         .padStart(6, "0")}`;
+// }
+// setTheme(getRandomHexColor());
 
 const routes = [
     {

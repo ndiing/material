@@ -58,6 +58,10 @@ class Router {
      * @param {Any} [event]
      */
     static async handleNavigation(event) {
+    
+        performance.mark('mark-1')
+
+    
         this.emit("onRouterCurrentEntryChange");
         this.setController();
         const routes = this.get();
@@ -77,6 +81,14 @@ class Router {
             this.renderComponent(route, outlet);
             this.removeComponent(routes);
         }
+
+        performance.mark('mark-2')
+        performance.measure('measure-1','mark-1','mark-2')
+        
+        performance.clearMarks('mark-1')
+        performance.clearMarks('mark-2')
+        performance.clearMeasures('measure-1')
+
         this.emit("onRouterNavigateSuccess");
     }
 
