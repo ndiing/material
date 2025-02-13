@@ -1,3 +1,87 @@
-# material
- - [demo](https://ndiing.github.io/material/dist/)
- - [docs](https://ndiing.github.io/material/docs/)
+# Material
+
+Material adalah framework berbasis Material Design yang memudahkan pembuatan antarmuka pengguna yang modern dan responsif.
+
+## 🚀 Instalasi
+Untuk mulai menggunakan Material, ikuti langkah-langkah berikut:
+
+```bash
+# Clone repository
+git clone https://github.com/ndiing/material.git
+cd material
+
+# Install dependensi
+npm i
+```
+
+## 🎨 Menggunakan Material
+Tambahkan file berikut untuk memuat semua komponen Material:
+
+```js
+import "./material/material.scss";
+import "./material/material.js";
+```
+
+## 🔀 Routing Dasar
+Material memiliki sistem routing bawaan untuk mengelola navigasi antar halaman. Berikut contoh penggunaannya:
+
+```js
+import { Router } from "../material/router/router";
+import DemoMain from "./main/main.js";
+import DemoError from "./error/error.js";
+
+const routes = [
+    { path: "", component: DemoMain },
+    { path: "*", component: DemoError },
+];
+Router.use(routes);
+```
+
+## 📄 Membuat Halaman
+Contoh pembuatan halaman dasar menggunakan komponen Material:
+
+```js
+import { html } from "lit";
+import { MdComponent } from "../../material/component/component";
+
+class DemoMain extends MdComponent {
+    constructor() {
+        super();
+        this.items = [
+            { label: "page1", routerLink: "/page1" },
+            { label: "page2", routerLink: "/page2" },
+            { label: "page3", routerLink: "/page3" },
+            { label: "page4", routerLink: "/page4" },
+        ];
+    }
+
+    render() {
+        return html`
+            <div class="md-layout__border">
+                <md-top-app-bar
+                    label="Main Page"
+                    .leadingActions="${[{ icon: "menu" }]}"
+                    open
+                    @onTopAppBarIconButtonClick="${() => mainNavigationDrawer.toggle()}"
+                ></md-top-app-bar>
+                <md-navigation-drawer
+                    id="mainNavigationDrawer"
+                    type="tree"
+                    .items="${this.items}"
+                    open
+                ></md-navigation-drawer>
+                <md-sheet region="center">
+                    <md-outlet></md-outlet>
+                </md-sheet>
+            </div>
+        `;
+    }
+}
+customElements.define("demo-main", DemoMain);
+export default document.createElement("demo-main");
+```
+
+## 📌 Kesimpulan
+Material adalah framework yang mempermudah pembuatan antarmuka berbasis Material Design. Dengan sistem routing bawaan dan komponen yang fleksibel, Anda bisa dengan mudah membangun aplikasi web yang modern dan responsif.
+
+Selamat mencoba! 🚀

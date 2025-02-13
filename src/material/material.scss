@@ -40,10 +40,10 @@
 @use "./time-picker/time-picker.scss";
 @use "./week-picker/week-picker.scss";
 @use "./month-picker/month-picker.scss";
+@use "./progress-indicator/progress-indicator.scss";
 @use "./form/form.scss";
-@use "./text-field/text-field.scss";
 @use "./checkbox/checkbox.scss";
 @use "./radio-button/radio-button.scss";
 @use "./switch/switch.scss";
+@use "./text-field/text-field.scss";
 @use "./slider/slider.scss";
-@use "./progress-indicator/progress-indicator.scss";
