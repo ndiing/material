@@ -78,7 +78,7 @@ class MdTextFieldComponent extends MdComponent {
      *
      * @readonly
      */
-    get computedActions() {
+    get leadingActions() {
         let actions = [];
         if (this.errorIcon && this.error)
             actions = actions.concat([
@@ -97,6 +97,15 @@ class MdTextFieldComponent extends MdComponent {
                     icon: "cancel",
                 },
             ]);
+        return actions;
+    }
+
+    /**
+     *
+     * @readonly
+     */
+    get trailingActions() {
+        let actions = [];
         return actions;
     }
 
@@ -176,6 +185,11 @@ class MdTextFieldComponent extends MdComponent {
      * @private
      */
     render() {
+        const actions=
+        this.leadingActions
+        .concat(this.actions)
+        .concat(this.trailingActions)
+        
         /* prettier-ignore */
         return html`
             ${this.label ? html`<label class="md-text-field__label">${this.label}</label>` : nothing}
@@ -219,12 +233,12 @@ class MdTextFieldComponent extends MdComponent {
                           ${this.suffix}
                       </div>`
                     : nothing}
-                ${this.computedActions.concat(this.actions)?.length
+                ${actions?.length
                     ? html`
                           <div
                               class="md-text-field__actions"
                           >
-                              ${this.computedActions.concat(this.actions).map((item) => this.renderItem(item, "icon-button"))}
+                              ${actions.map((item) => this.renderItem(item, "icon-button"))}
                           </div>
                       `
                     : nothing}
