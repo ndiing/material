@@ -33,7 +33,7 @@ import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- * 
+ *
  * @extends MdComponent
  * @fires MdTextFieldComponent#onTextFieldFocus
  * @fires MdTextFieldComponent#onTextFieldBlur
@@ -47,32 +47,32 @@ import { classMap } from "lit/directives/class-map.js";
  */
 class MdTextFieldComponent extends MdComponent {
     /**
-     * @property {String} [label] 
-     * @property {Boolean} [separateLabel] 
-     * @property {Array} [icons] 
-     * @property {String} [prefix] 
-     * @property {String} [suffix] 
-     * @property {Array} [actions] 
-     * @property {String} [text] 
-     * @property {String} [error] 
-     * @property {String} [counter] 
-     * @property {String} [name] 
-     * @property {String} [type] 
-     * @property {String} [value] 
-     * @property {String} [placeholder] 
-     * @property {String} [title] 
-     * @property {String} [autocomplete] 
-     * @property {Boolean} [required] 
-     * @property {Boolean} [readOnly] 
-     * @property {Number} [min] 
-     * @property {Number} [max] 
-     * @property {Number} [minLength] 
-     * @property {Number} [maxLength] 
-     * @property {String} [pattern] 
+     * @property {String} [label]
+     * @property {Boolean} [separateLabel]
+     * @property {Array} [icons]
+     * @property {String} [prefix]
+     * @property {String} [suffix]
+     * @property {Array} [actions]
+     * @property {String} [text]
+     * @property {String} [error]
+     * @property {String} [counter]
+     * @property {String} [name]
+     * @property {String} [type]
+     * @property {String} [value]
+     * @property {String} [placeholder]
+     * @property {String} [title]
+     * @property {String} [autocomplete]
+     * @property {Boolean} [required]
+     * @property {Boolean} [readOnly]
+     * @property {Number} [min]
+     * @property {Number} [max]
+     * @property {Number} [minLength]
+     * @property {Number} [maxLength]
+     * @property {String} [pattern]
      * @property {String} [variant] - ["outlined","filled"]
-     * @property {Boolean} [disabled] 
-     * @property {Boolean} [errorIcon] 
-     * @property {Boolean} [cancelAction] 
+     * @property {Boolean} [disabled]
+     * @property {Boolean} [errorIcon]
+     * @property {Boolean} [cancelAction]
      */
     static properties = {
         label: { type: String },
@@ -109,7 +109,7 @@ class MdTextFieldComponent extends MdComponent {
     variants = ["outlined", "filled"];
 
     /**
-     * 
+     *
      * @readonly
      */
     get leadingActions() {
@@ -135,7 +135,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get trailingActions() {
@@ -144,7 +144,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @readonly
      */
     get textFieldNative() {
@@ -152,7 +152,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      */
     constructor() {
         super();
@@ -163,7 +163,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -178,7 +178,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      */
@@ -199,7 +199,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [item]
      * @param {Any} [component="icon"]
@@ -216,7 +216,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      */
     render() {
@@ -301,7 +301,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @async
      */
@@ -316,7 +316,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [changedProperties]
      */
@@ -336,7 +336,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -346,7 +346,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -356,7 +356,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -369,7 +369,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -381,7 +381,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -394,7 +394,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -408,7 +408,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
@@ -419,12 +419,12 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * 
+     *
      * @private
      * @param {Any} [event]
      */
     handleTextFieldClick(event) {
-        event.preventDefault()
+        event.preventDefault();
         this.emit("onTextFieldClick", { event });
     }
 }
@@ -446,7 +446,7 @@ export { MdTextFieldComponent };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Feb 13 2025 18:45:06 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Feb 13 2025 19:28:48 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

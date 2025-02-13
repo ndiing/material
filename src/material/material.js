@@ -7,6 +7,7 @@
 // import "./layout/layout.js";
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./component/component.js";
+import "./progress/progress.js";
 import "./polyfill/polyfill.js";
 import "./icon/icon.js";
 import "./image/image.js";
