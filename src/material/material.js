@@ -8,8 +8,7 @@
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./component/component.js";
 // import "./localization/localization.js";
-import "./color/color.js";
-
+// import "./color/color.js";
 import "./polyfill/polyfill.js";
 import "./icon/icon.js";
 import "./image/image.js";
