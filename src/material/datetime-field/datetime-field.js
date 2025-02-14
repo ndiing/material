@@ -71,7 +71,8 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
                 this.datetimePicker.close();
             };
             const handleClick = (event) => {
-                if (!buttonIcon.contains(event.target) && !this.datetimePicker.contains(event.target)) this.datetimePicker.close();
+                const target = document.elementFromPoint(event.clientX, event.clientY);
+                if (!buttonIcon.contains(target) && !this.datetimePicker.contains(target)) this.datetimePicker.close();
             };
             window.addEventListener("click", handleClick);
             this.datetimePicker.addEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);

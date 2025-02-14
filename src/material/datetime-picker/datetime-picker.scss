@@ -126,7 +126,7 @@
 .md-datetime-picker__item {
     flex: 1 0 100%;
     overflow: auto;
-    transform: translate3d(calc((0 - var(--md-comp-datetime-picker-index)) * 100%), 0, 0);
+    // transform: translate3d(calc((0 - var(--md-comp-datetime-picker-index)) * 100%), 0, 0);
 }
 
 .md-datetime-picker__list {
