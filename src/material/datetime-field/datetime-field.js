@@ -49,6 +49,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      * @param {Any} [event]
      */
     async handleDatetimeFieldIconButtonPickerClick(event) {
+        const buttonIcon = event.currentTarget;
         if (!this.datetimePicker) {
             this.datetimePicker = document.createElement("md-datetime-picker");
             if (this.textFieldNative.value) this.datetimePicker.value = parseDatetimeLocal(this.textFieldNative.value);
@@ -57,6 +58,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
                 this.datetimePicker.removeEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
                 this.datetimePicker.removeEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
                 this.datetimePicker.removeEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
+                window.removeEventListener("click", handleClick);
                 this.datetimePicker.remove();
                 this.datetimePicker = undefined;
             };
@@ -68,13 +70,19 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
                 this.updateValue();
                 this.datetimePicker.close();
             };
+            const handleClick = (event) => {
+                if (!buttonIcon.contains(event.target) && !this.datetimePicker.contains(event.target)) this.datetimePicker.close();
+            };
             this.datetimePicker.addEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
             this.datetimePicker.addEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
             this.datetimePicker.addEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
+            window.addEventListener("click", handleClick);
             await this.updateComplete;
             let offset = 4 + 4;
             if (this.text) offset = 4 + 16 + 4;
             this.datetimePicker.show({ trigger: this.textFieldContainer, offset });
+        } else if (this.datetimePicker) {
+            this.datetimePicker.close();
         }
         this.emit("onDatetimeFieldIconButtonPickerClick", { event });
     }
