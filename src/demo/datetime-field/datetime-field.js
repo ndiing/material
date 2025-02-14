@@ -11,23 +11,22 @@ class DemoDatetimeField extends MdComponent {
             >
                 <div class="md-layout">
                     <div class="md-layout__grid">
+                        
+
                         <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                             <md-datetime-field
-                                label="datetime"
-                                name="datetime"
+                                label="datetime-local"
+                                name="datetime-local"
                                 required
-                                value=""
-                                text="YYYY-MM-DD"
                                 cancelAction
                             ></md-datetime-field>
                         </div>
                         <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                             <md-datetime-field
-                                label="datetime"
-                                name="datetime"
+                                label="datetime-local"
+                                name="datetime-local"
                                 required
                                 value="1990-10-17T20:30"
-                                text="YYYY-MM-DD"
                                 cancelAction
                             ></md-datetime-field>
                         </div>
@@ -44,6 +43,10 @@ class DemoDatetimeField extends MdComponent {
                                 type="submit"
                             ></md-button>
                         </div>
+                        
+                        <div style="height:100vh;"></div>
+                        
+
                     </div>
                 </div>
             </md-form>

@@ -97,21 +97,14 @@ class DemoForm extends MdComponent {
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <!-- <md-text-field
+                            <md-text-field
                                 type="datetime-local"
                                 label="datetime-local"
                                 name="datetime-local"
                                 required
                                 value="1990-10-17T20:30"
                                 cancelAction
-                            ></md-text-field> -->
-                            <md-datetime-field
-                                label="datetime-local"
-                                name="datetime-local"
-                                required
-                                value="1990-10-17T20:30"
-                                cancelAction
-                            ></md-datetime-field>
+                            ></md-text-field>
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">

@@ -34,11 +34,13 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-side-sheet
+ * @fires MdSideSheetComponent#onSideSheetShow
+ * @fires MdSideSheetComponent#onSideSheetClose
  * @fires MdSideSheetComponent#onSideSheetShown
  * @fires MdSideSheetComponent#onSideSheetClosed
+ * @fires MdSideSheetComponent#onSideSheetScrimClose
  * @fires MdSideSheetComponent#onSideSheetIconButtonClick
  * @fires MdSideSheetComponent#onSideSheetButtonClick
- * @fires MdSideSheetComponent#onSideSheetScrimClosed
  */
 class MdSideSheetComponent extends MdComponent {
     /**
@@ -127,16 +129,13 @@ class MdSideSheetComponent extends MdComponent {
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
-        return choose(
-            item.component || component,
-            [
-                ["icon", () => this.renderIcon(item)],
-                ["icon-button", () => this.renderIconButton(item)],
-                ["button", () => this.renderButton(item)],
-                ["spacer", () => this.renderSpacer(item)],
-            ],
-            () => nothing,
-        );
+        const components = [
+            ["icon", () => this.renderIcon(item)],
+            ["icon-button", () => this.renderIconButton(item)],
+            ["button", () => this.renderButton(item)],
+            ["spacer", () => this.renderSpacer(item)],
+        ];
+        return choose(item.component || component, components, () => nothing);
     }
 
     /**
@@ -153,15 +152,15 @@ class MdSideSheetComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-side-sheet");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
+        this.style.setProperty("--md-comp-side-sheet-animation", "none");
         this.sideSheetScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.sideSheetScrim, this.nextElementSibling);
-        this.handleSideSheetScrimClosed = this.handleSideSheetScrimClosed.bind(this);
-        this.sideSheetScrim.addEventListener("onScrimClosed", this.handleSideSheetScrimClosed);
+        this.handleSideSheetScrimClose = this.handleSideSheetScrimClose.bind(this);
+        this.sideSheetScrim.addEventListener("onScrimClose", this.handleSideSheetScrimClose);
         if (this.modal &amp;&amp; this.open) this.sideSheetScrim.show();
         await this.updateComplete;
-        this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-side-sheet-width", this.clientWidth + "px");
+        this.style.setProperty("--md-comp-side-sheet-height", this.clientHeight + "px");
     }
 
     /**
@@ -169,7 +168,7 @@ class MdSideSheetComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.sideSheetScrim.removeEventListener("onScrimClosed", this.handleSideSheetScrimClosed);
+        this.sideSheetScrim.removeEventListener("onScrimClose", this.handleSideSheetScrimClose);
         this.sideSheetScrim.remove();
     }
 
@@ -187,19 +186,23 @@ class MdSideSheetComponent extends MdComponent {
     /**
      */
     show() {
-        this.style.removeProperty("--md-comp-sheet-animation");
-        if (this.modal) this.sideSheetScrim.show();
+        this.style.removeProperty("--md-comp-side-sheet-animation");
+        this.handleSideSheetShown = this.handleSideSheetShown.bind(this);
+        this.addEventListener("animationend", this.handleSideSheetShown);
         this.open = true;
-        this.emit("onSideSheetShown");
+        if (this.modal) this.sideSheetScrim.show();
+        this.emit("onSideSheetShow");
     }
 
     /**
      */
     close() {
-        this.style.removeProperty("--md-comp-sheet-animation");
+        this.style.removeProperty("--md-comp-side-sheet-animation");
+        this.handleSideSheetClosed = this.handleSideSheetClosed.bind(this);
+        this.addEventListener("animationend", this.handleSideSheetClosed);
         this.open = false;
         if (this.sideSheetScrim.open) this.sideSheetScrim.close();
-        this.emit("onSideSheetClosed");
+        this.emit("onSideSheetClose");
     }
 
     /**
@@ -207,6 +210,37 @@ class MdSideSheetComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSideSheetShown(event) {
+        if (event.animationName === "side-sheet-modal-out" || event.animationName === "side-sheet-out") {
+            this.removeEventListener("animationend", this.handleSideSheetShown);
+            this.emit("onSideSheetShown");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSideSheetClosed(event) {
+        if (event.animationName === "side-sheet-modal-in" || event.animationName === "side-sheet-in") {
+            this.removeEventListener("animationend", this.handleSideSheetClosed);
+            this.emit("onSideSheetClosed");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSideSheetScrimClose(event) {
+        if (this.open) this.close();
+        this.emit("onSideSheetScrimClose", { event });
     }
 
     /**
@@ -223,15 +257,6 @@ class MdSideSheetComponent extends MdComponent {
      */
     handleSideSheetButtonClick(event) {
         this.emit("onSideSheetButtonClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleSideSheetScrimClosed(event) {
-        if (this.open) this.close();
-        this.emit("onSideSheetScrimClosed", { event });
     }
 }
 customElements.define("md-side-sheet", MdSideSheetComponent);
@@ -252,7 +277,7 @@ export { MdSideSheetComponent };
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Feb 15 2025 00:46:01 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Feb 15 2025 04:57:30 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

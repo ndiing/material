@@ -108,8 +108,7 @@ class MdTextFieldComponent extends MdComponent {
      * @readonly
      */
     get trailingActions() {
-        let actions = [];
-        return actions;
+        return [];
     }
 
     /**
