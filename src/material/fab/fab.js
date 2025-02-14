@@ -27,7 +27,15 @@ class MdFabComponent extends MdComponent {
      * @readonly
      */
     sizes = ["small", "large"];
+
+    /**
+     * @readonly
+     */
     types = ["extended"];
+
+    /**
+     * @readonly
+     */
     variants = ["unelevated"];
 
     /**

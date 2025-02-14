@@ -37,13 +37,13 @@ class MdNavigationDrawerComponent extends MdComponent {
     /**
      * @readonly
      */
-    types = ["flat", "tree"];
+    types = ["navigation-list", "tree"];
 
     /**
      */
     constructor() {
         super();
-        this.type = "flat";
+        this.type = "navigation-list";
     }
 
     /**
@@ -97,7 +97,7 @@ class MdNavigationDrawerComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
             <div class="md-navigation-drawer__wrapper">
                 <div class="md-navigation-drawer__body">
-                    ${this.type === "flat"
+                    ${this.type === "navigation-list"
                         ? html`
                               <md-navigation-list
                                   .items="${this.items}"

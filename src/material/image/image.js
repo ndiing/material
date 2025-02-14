@@ -33,14 +33,16 @@ class MdImageComponent extends MdComponent {
      */
     get styleImageNative() {
         const style = {};
-        if (this.ratio) style["aspect-ratio"] = this.ratio;
+        if (this.ratio) {
+            style["aspect-ratio"] = this.ratio;
+        }
         if (this.circular) {
             if (this.ratio) {
-                let [x, y] = this.ratio.split("/");
-                x = Number(x);
-                y = Number(y);
+                const [x, y] = this.ratio.split("/").map(Number);
                 style["border-radius"] = `50% / ${(50 * x) / y}%`;
-            } else style["border-radius"] = "50%";
+            } else {
+                style["border-radius"] = "50%";
+            }
         }
         return style;
     }

@@ -202,10 +202,8 @@ class MdSheetComponent extends MdComponent {
      * @param {Undefined} [event]
      */
     handleSheetShown(event) {
-        if (event.animationName === "sheet-north-modal-out" || event.animationName === "sheet-north-out") {
             this.removeEventListener("animationend", this.handleSheetShown);
             this.emit("onSheetShown");
-        }
     }
 
     /**
@@ -213,10 +211,8 @@ class MdSheetComponent extends MdComponent {
      * @param {Undefined} [event]
      */
     handleSheetClosed(event) {
-        if (event.animationName === "sheet-north-modal-in" || event.animationName === "sheet-north-in") {
             this.removeEventListener("animationend", this.handleSheetClosed);
             this.emit("onSheetClosed");
-        }
     }
 
     /**

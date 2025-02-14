@@ -8,9 +8,11 @@ import { choose } from "lit/directives/choose.js";
  * @element md-bottom-sheet
  * @fires MdBottomSheetComponent#onBottomSheetShow
  * @fires MdBottomSheetComponent#onBottomSheetClose
+ * @fires MdBottomSheetComponent#onBottomSheetShown
+ * @fires MdBottomSheetComponent#onBottomSheetClosed
+ * @fires MdBottomSheetComponent#onBottomSheetScrimClose
  * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick
  * @fires MdBottomSheetComponent#onBottomSheetButtonClick
- * @fires MdBottomSheetComponent#onBottomSheetScrimClosed
  */
 class MdBottomSheetComponent extends MdComponent {
     /**
@@ -31,6 +33,7 @@ class MdBottomSheetComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean, reflect: true },
     };
+
 
     /**
      */
@@ -122,15 +125,15 @@ class MdBottomSheetComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-bottom-sheet");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
+        this.style.setProperty("--md-comp-bottom-sheet-animation", "none");
         this.bottomSheetScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.bottomSheetScrim, this.nextElementSibling);
-        this.handleBottomSheetScrimClosed = this.handleBottomSheetScrimClosed.bind(this);
-        this.bottomSheetScrim.addEventListener("onScrimClosed", this.handleBottomSheetScrimClosed);
+        this.handleBottomSheetScrimClose = this.handleBottomSheetScrimClose.bind(this);
+        this.bottomSheetScrim.addEventListener("onScrimClose", this.handleBottomSheetScrimClose);
         if (this.modal && this.open) this.bottomSheetScrim.show();
         await this.updateComplete;
-        this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-bottom-sheet-width", this.clientWidth + "px");
+        this.style.setProperty("--md-comp-bottom-sheet-height", this.clientHeight + "px");
     }
 
     /**
@@ -138,7 +141,7 @@ class MdBottomSheetComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.bottomSheetScrim.removeEventListener("onScrimClosed", this.handleBottomSheetScrimClosed);
+        this.bottomSheetScrim.removeEventListener("onScrimClose", this.handleBottomSheetScrimClose);
         this.bottomSheetScrim.remove();
     }
 
@@ -156,16 +159,20 @@ class MdBottomSheetComponent extends MdComponent {
     /**
      */
     show() {
-        this.style.removeProperty("--md-comp-sheet-animation");
-        if (this.modal) this.bottomSheetScrim.show();
+        this.style.removeProperty("--md-comp-bottom-sheet-animation");
+        this.handleBottomSheetShown = this.handleBottomSheetShown.bind(this);
+        this.addEventListener("animationend", this.handleBottomSheetShown);
         this.open = true;
+        if (this.modal) this.bottomSheetScrim.show();
         this.emit("onBottomSheetShow");
     }
 
     /**
      */
     close() {
-        this.style.removeProperty("--md-comp-sheet-animation");
+        this.style.removeProperty("--md-comp-bottom-sheet-animation");
+        this.handleBottomSheetClosed = this.handleBottomSheetClosed.bind(this);
+        this.addEventListener("animationend", this.handleBottomSheetClosed);
         this.open = false;
         if (this.bottomSheetScrim.open) this.bottomSheetScrim.close();
         this.emit("onBottomSheetClose");
@@ -182,6 +189,37 @@ class MdBottomSheetComponent extends MdComponent {
      * @private
      * @param {Undefined} [event]
      */
+    handleBottomSheetShown(event) {
+        if (event.animationName === "bottom-sheet-modal-out" || event.animationName === "bottom-sheet-out") {
+            this.removeEventListener("animationend", this.handleBottomSheetShown);
+            this.emit("onBottomSheetShown");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleBottomSheetClosed(event) {
+        if (event.animationName === "bottom-sheet-modal-in" || event.animationName === "bottom-sheet-in") {
+            this.removeEventListener("animationend", this.handleBottomSheetClosed);
+            this.emit("onBottomSheetClosed");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleBottomSheetScrimClose(event) {
+        if (this.open) this.close();
+        this.emit("onBottomSheetScrimClose", { event });
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
     handleBottomSheetIconButtonClick(event) {
         this.emit("onBottomSheetIconButtonClick", { event });
     }
@@ -192,15 +230,6 @@ class MdBottomSheetComponent extends MdComponent {
      */
     handleBottomSheetButtonClick(event) {
         this.emit("onBottomSheetButtonClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleBottomSheetScrimClosed(event) {
-        if (this.open) this.close();
-        this.emit("onBottomSheetScrimClosed", { event });
     }
 }
 customElements.define("md-bottom-sheet", MdBottomSheetComponent);
