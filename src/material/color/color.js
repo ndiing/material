@@ -1,7 +1,11 @@
-import { Hct } from "@material/material-color-utilities";
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
+ * @module Color
+ */
+
+/**
+ * @memberof module:Color
  * @param {Undefined} [input]
  * @param {Undefined} [customColors]
  */
