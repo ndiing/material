@@ -94,4 +94,8 @@ src\material\navigation-rail\navigation-rail.scss:
 src\material\top-app-bar\top-app-bar.js:
 src\material\top-app-bar\top-app-bar.scss:
 
+password-field
+search-field
+number-field
+
 */

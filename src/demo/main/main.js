@@ -248,8 +248,7 @@ class DemoMain extends MdComponent {
             <div class="md-layout__border">
                 <md-top-app-bar
                     id="mainTopAppBar"
-                    label="Material Design"
-                    sublabel="Version 0.62.0"
+                    label="Material Design (0.67.0)"
                     .leadingActions="${this.leadingActions}"
                     @onTopAppBarIconButtonClick="${() => mainNavigationDrawer.toggle()}"
                 ></md-top-app-bar>
