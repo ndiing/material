@@ -1,20 +1,18 @@
 /**
+ * Kelas Movable memungkinkan elemen HTML untuk dipindahkan dan diubah ukurannya
+ * dengan interaksi pointer (drag dan resize).
  *
- * @fires onMovablePointerdown
- * @fires onMovablePointermove
- * @fires onMovablePointerup
+ * @fires Movable#onMovablePointerdown - Dipicu saat pointer mulai melakukan interaksi.
+ * @fires Movable#onMovablePointermove - Dipicu saat pointer bergerak selama interaksi.
+ * @fires Movable#onMovablePointerup - Dipicu saat pointer dilepaskan setelah interaksi.
  */
 class Movable {
     /**
-     * @typedef {Object} MovableOptions
-     * @property {Array} [axis=["x", "y"]]
-     * @property {Array} [handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]]
-     */
-
-    /**
-     *
-     * @param {HTMLElement} [host]
-     * @param {MovableOptions} [options={}]
+     * Membuat instance Movable.
+     * @param {HTMLElement} host - Elemen yang akan dibuat dapat dipindahkan dan diubah ukurannya.
+     * @param {Object} [options={}] - Opsi konfigurasi.
+     * @param {string[]} [options.axis=["x", "y"]] - Sumbu yang diizinkan untuk pergerakan.
+     * @param {string[]} [options.handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]] - Handle untuk resize.
      */
     constructor(host, options = {}) {
         this.host = host;
@@ -27,9 +25,9 @@ class Movable {
     }
 
     /**
-     *
+     * Menangani event pointerdown saat interaksi dimulai.
      * @private
-     * @param {Any} [event]
+     * @param {PointerEvent} event - Event pointerdown.
      */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
@@ -46,9 +44,9 @@ class Movable {
     }
 
     /**
-     *
+     * Menangani event pointermove saat elemen dipindahkan atau diubah ukurannya.
      * @private
-     * @param {Any} [event]
+     * @param {PointerEvent} event - Event pointermove.
      */
     handlePointermove(event) {
         const currentX = event.clientX - this.startX;
@@ -85,9 +83,9 @@ class Movable {
     }
 
     /**
-     *
+     * Menangani event pointerup saat interaksi selesai.
      * @private
-     * @param {Any} [event]
+     * @param {PointerEvent} event - Event pointerup.
      */
     handlePointerup(event) {
         this.endX = this.currentX;
@@ -99,10 +97,10 @@ class Movable {
     }
 
     /**
-     *
+     * Memicu event kustom untuk elemen host.
      * @private
-     * @param {Any} [type]
-     * @param {Any} [detail]
+     * @param {string} type - Nama event yang akan dipicu.
+     * @param {Object} [detail] - Detail tambahan yang dikirimkan dalam event.
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -114,7 +112,7 @@ class Movable {
     }
 
     /**
-     *
+     * Menginisialisasi elemen dengan menambahkan handle untuk resize dan event listener.
      */
     init() {
         let text = "";
@@ -131,7 +129,7 @@ class Movable {
     }
 
     /**
-     *
+     * Menghapus event listener dan elemen handle saat instance Movable dihancurkan.
      */
     destroy() {
         const resizable = this.host.querySelector(".md-resizable");

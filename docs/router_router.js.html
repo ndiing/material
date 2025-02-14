@@ -27,22 +27,22 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- *
- * @fires onRouterCurrentEntryChange
- * @fires onRouterNavigate
- * @fires onRouterNavigateError
- * @fires onRouterNavigateSuccess
+ * Router untuk mengelola navigasi aplikasi.
+ * @fires Router#onRouterCurrentEntryChange Saat entri rute berubah.
+ * @fires Router#onRouterNavigate Saat navigasi dimulai.
+ * @fires Router#onRouterNavigateError Jika navigasi gagal.
+ * @fires Router#onRouterNavigateSuccess Jika navigasi berhasil.
  */
 class Router {
     static params = {};
 
     /**
-     *
-     * @static
-     * @param {Any} [pathname=this.pathname]
-     * @param {Any} [routes=this.routes]
-     * @param {Any} [parent=null]
-     * @param {Any} [result=[]]
+     * Mendapatkan rute yang cocok berdasarkan pathname.
+     * @param {string} [pathname=this.pathname] Path yang akan dicocokkan.
+     * @param {Array} [routes=this.routes] Daftar rute.
+     * @param {Object|null} [parent=null] Rute induk (jika ada).
+     * @param {Array} [result=[]] Hasil pencarian rute.
+     * @returns {Array|undefined} Rute yang cocok atau undefined jika tidak ditemukan.
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -65,11 +65,7 @@ class Router {
         }
     }
 
-    /**
-     *
-     * @static
-     * @readonly
-     */
+    /** @returns {string} Pathname saat ini. */
     static get pathname() {
         if (this.options.historyApiFallback) {
             return window.location.pathname;
@@ -78,16 +74,9 @@ class Router {
         }
     }
 
-    /**
-     *
-     * @private
-     * @static
-     * @async
-     * @param {Any} [event]
-     */
+    /** Menangani navigasi dan memproses rute. */
     static async handleNavigation(event) {
         performance.mark("mark-1");
-
         this.emit("onRouterCurrentEntryChange");
         this.setController();
         const routes = this.get();
@@ -107,22 +96,15 @@ class Router {
             this.renderComponent(route, outlet);
             this.removeComponent(routes);
         }
-
         performance.mark("mark-2");
         performance.measure("measure-1", "mark-1", "mark-2");
-
         performance.clearMarks("mark-1");
         performance.clearMarks("mark-2");
         performance.clearMeasures("measure-1");
-
         this.emit("onRouterNavigateSuccess");
     }
 
-    /**
-     *
-     * @static
-     * @param {Any} [routes]
-     */
+    /** Menghapus komponen yang tidak digunakan. */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
         for (const outlet of outlets) {
@@ -136,24 +118,12 @@ class Router {
         }
     }
 
-    /**
-     *
-     * @private
-     * @static
-     * @param {Any} [route]
-     * @param {Any} [outlet]
-     */
+    /** Merender komponen pada outlet yang sesuai. */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
-    /**
-     *
-     * @static
-     * @async
-     * @param {Any} [container]
-     * @param {Any} [route]
-     */
+    /** Mendapatkan outlet untuk rute tertentu. */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
             let observer;
@@ -180,34 +150,19 @@ class Router {
         });
     }
 
-    /**
-     *
-     * @static
-     * @param {Any} [route]
-     */
+    /** Menentukan container untuk komponen rute. */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
-    /**
-     *
-     * @static
-     * @async
-     * @param {Any} [route]
-     */
+    /** Memuat komponen rute jika belum ada. */
     static async loadComponent(route) {
         if (!route.component) {
             route.component = await route.load();
         }
     }
 
-    /**
-     *
-     * @private
-     * @static
-     * @async
-     * @param {Any} [route]
-     */
+    /** Menjalankan hook beforeLoad sebelum memuat rute. */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
             const callback = (error) => {
@@ -219,20 +174,13 @@ class Router {
         });
     }
 
-    /**
-     *
-     * @static
-     */
+    /** Mengatur AbortController untuk menangani navigasi. */
     static setController() {
         if (this.controller &amp;&amp; !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller &amp;&amp; this.controller.signal.aborted)) this.controller = new AbortController();
     }
 
-    /**
-     *
-     * @static
-     * @param {Any} [url]
-     */
+    /** Menavigasi ke URL yang diberikan. */
     static navigate(url) {
         if (this.options.historyApiFallback) {
             window.history.pushState({}, "", url);
@@ -241,12 +189,7 @@ class Router {
         }
     }
 
-    /**
-     *
-     * @private
-     * @static
-     * @param {Any} [event]
-     */
+    /** Menangani event klik untuk navigasi. */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
         if (element) {
@@ -255,13 +198,7 @@ class Router {
         }
     }
 
-    /**
-     *
-     * @private
-     * @static
-     * @param {Any} [type]
-     * @param {Any} [detail]
-     */
+    /** Memicu event kustom. */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -274,24 +211,9 @@ class Router {
     static options = {};
 
     /**
-     * @typedef {Array} RouterUseRoutes
-     * @property {String} [path]
-     * @property {HTMLElement} [component]
-     * @property {Function} [load]
-     * @property {Function} [beforeLoad]
-     * @property {RouterUseRoutes} [children]
-     */
-
-    /**
-     * @typedef {Object} RouterUseOptions
-     * @property {Boolean} [historyApiFallback=false]
-     */
-
-    /**
-     *
-     * @static
-     * @param {RouterUseRoutes} [routes=[]]
-     * @param {RouterUseOptions} [options={}]
+     * Menginisialisasi router dengan daftar rute dan opsi.
+     * @param {Array} [routes=[]] Daftar rute yang digunakan.
+     * @param {Object} [options={}] Opsi tambahan untuk router.
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
@@ -304,9 +226,6 @@ class Router {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
 
-            /**
-             *
-             */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");
@@ -328,13 +247,13 @@ export { Router };
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#loadLocale">loadLocale</a></li><li><a href="global.html#localization">localization</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setLocale">setLocale</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 06:24:58 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 07:01:49 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

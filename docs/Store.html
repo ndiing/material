@@ -30,6 +30,8 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>Store<span class="signature">(data<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
         
+            <div class="class-description">Kelas Store untuk mengelola, menyortir, mencari, memfilter, dan melakukan paginasi data.</div>
+        
     
 </header>
 
@@ -39,6 +41,8 @@
         
 
     
+    <h2>Constructor</h2>
+    
 
     
     <h4 class="name" id="Store"><span class="type-signature"></span>new Store<span class="signature">(data<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
@@ -47,6 +51,10 @@
     
 
 
+
+<div class="description">
+    Membuat instance Store.
+</div>
 
 
 
@@ -91,7 +99,7 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
@@ -117,7 +125,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Data awal dalam bentuk array objek.</td>
         </tr>
 
     
@@ -130,7 +138,7 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Object</span>
 
 
             
@@ -156,7 +164,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Opsi tambahan untuk konfigurasi.</td>
         </tr>
 
     
@@ -197,7 +205,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line4">line 4</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line5">line 5</a>
     </li></ul></dd>
     
 
@@ -253,12 +261,16 @@
     
 
     
-    <h4 class="name" id="deepSearch"><span class="type-signature"></span>deepSearch<span class="signature">(item<span class="signature-attributes">opt</span>, q<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="deepSearch"><span class="type-signature"></span>deepSearch<span class="signature">(item, q)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Melakukan pencarian rekursif dalam suatu item.
+</div>
 
 
 
@@ -280,8 +292,6 @@
 
         <th>Type</th>
 
-        
-        <th>Attributes</th>
         
 
         
@@ -301,27 +311,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">any</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Item yang akan dicari.</td>
         </tr>
 
     
@@ -334,27 +334,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">string</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Kata kunci pencarian.</td>
         </tr>
 
     
@@ -395,7 +385,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line47">line 47</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -420,6 +410,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    True jika item cocok dengan pencarian, false jika tidak.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -431,12 +443,16 @@
     
 
     
-    <h4 class="name" id="filter"><span class="type-signature"></span>filter<span class="signature">(data<span class="signature-attributes">opt</span>, filters<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="filter"><span class="type-signature"></span>filter<span class="signature">(data, filters)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Memfilter data berdasarkan kondisi tertentu.
+</div>
 
 
 
@@ -459,8 +475,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -479,27 +493,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Data yang akan difilter.</td>
         </tr>
 
     
@@ -512,27 +516,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;{name: string, value: any, operator: string}></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Kriteria filter.</td>
         </tr>
 
     
@@ -573,7 +567,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line85">line 85</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -598,6 +592,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Data yang telah difilter.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -609,12 +625,16 @@
     
 
     
-    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Mengambil data dengan opsi pemrosesan seperti sortir, filter, pencarian, dan paginasi.
+</div>
 
 
 
@@ -659,7 +679,7 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Object</span>
 
 
             
@@ -685,7 +705,266 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Opsi pemrosesan data.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sorters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;{name: string, order: ('asc'|'desc')}></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Opsi penyortiran.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>q</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Kata kunci pencarian.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;{name: string, value: any, operator: string}></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Opsi filter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>_start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Indeks awal rentang data.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>_end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Indeks akhir rentang data.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>_page</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Nomor halaman untuk paginasi.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>_limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Jumlah item per halaman.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -726,7 +1005,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line143">line 143</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -751,6 +1030,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek yang berisi data hasil pemrosesan dan jumlah total data.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -762,12 +1063,16 @@
     
 
     
-    <h4 class="name" id="getNestedValue"><span class="type-signature"></span>getNestedValue<span class="signature">(item<span class="signature-attributes">opt</span>, name<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getNestedValue"><span class="type-signature"></span>getNestedValue<span class="signature">(item, name)</span><span class="type-signature"> &rarr; {any}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Mengambil nilai dari properti bertingkat dalam objek.
+</div>
 
 
 
@@ -789,8 +1094,6 @@
 
         <th>Type</th>
 
-        
-        <th>Attributes</th>
         
 
         
@@ -810,27 +1113,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Object</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Objek sumber.</td>
         </tr>
 
     
@@ -843,27 +1136,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">string</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Path ke properti (contoh: 'user.address.city').</td>
         </tr>
 
     
@@ -904,7 +1187,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line76">line 76</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -929,6 +1212,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Nilai properti jika ada, undefined jika tidak ditemukan.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">any</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -940,12 +1245,16 @@
     
 
     
-    <h4 class="name" id="load"><span class="type-signature"></span>load<span class="signature">(data<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="load"><span class="type-signature"></span>load<span class="signature">(data)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    Memuat data baru ke dalam store.
+</div>
 
 
 
@@ -968,11 +1277,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -990,33 +1295,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    []
-                
-                </td>
-            
 
-            <td class="description last"></td>
+            <td class="description last">Data yang akan dimuat ke dalam store.</td>
         </tr>
 
     
@@ -1057,7 +1346,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line19">line 19</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -1093,12 +1382,16 @@
     
 
     
-    <h4 class="name" id="paginate"><span class="type-signature"></span>paginate<span class="signature">(data<span class="signature-attributes">opt</span>, _page<span class="signature-attributes">opt</span>, _limit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="paginate"><span class="type-signature"></span>paginate<span class="signature">(data, _page, _limit)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Memisahkan data menjadi halaman-paginasi.
+</div>
 
 
 
@@ -1121,8 +1414,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -1141,27 +1432,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Data yang akan dipaginasi.</td>
         </tr>
 
     
@@ -1174,27 +1455,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Nomor halaman.</td>
         </tr>
 
     
@@ -1207,27 +1478,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Jumlah item per halaman.</td>
         </tr>
 
     
@@ -1268,7 +1529,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line133">line 133</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line150">line 150</a>
     </li></ul></dd>
     
 
@@ -1293,6 +1554,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Data pada halaman tertentu.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1304,12 +1587,16 @@
     
 
     
-    <h4 class="name" id="range"><span class="type-signature"></span>range<span class="signature">(data<span class="signature-attributes">opt</span>, _start<span class="signature-attributes">opt</span>, _end<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="range"><span class="type-signature"></span>range<span class="signature">(data, _start, _end)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Mengambil data dalam rentang indeks tertentu.
+</div>
 
 
 
@@ -1332,8 +1619,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -1352,27 +1637,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Data yang akan dipotong.</td>
         </tr>
 
     
@@ -1385,27 +1660,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Indeks awal.</td>
         </tr>
 
     
@@ -1418,27 +1683,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Indeks akhir.</td>
         </tr>
 
     
@@ -1479,7 +1734,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line123">line 123</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line138">line 138</a>
     </li></ul></dd>
     
 
@@ -1504,6 +1759,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Data yang berada dalam rentang indeks.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1515,12 +1792,16 @@
     
 
     
-    <h4 class="name" id="search"><span class="type-signature"></span>search<span class="signature">(data<span class="signature-attributes">opt</span>, q<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="search"><span class="type-signature"></span>search<span class="signature">(data, q)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Mencari data berdasarkan kata kunci tertentu.
+</div>
 
 
 
@@ -1543,8 +1824,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -1563,27 +1842,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Data yang akan dicari.</td>
         </tr>
 
     
@@ -1596,27 +1865,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">string</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Kata kunci pencarian.</td>
         </tr>
 
     
@@ -1657,7 +1916,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line66">line 66</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
@@ -1682,6 +1941,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Data yang sesuai dengan pencarian.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1693,12 +1974,16 @@
     
 
     
-    <h4 class="name" id="sort"><span class="type-signature"></span>sort<span class="signature">(data<span class="signature-attributes">opt</span>, sorters<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="sort"><span class="type-signature"></span>sort<span class="signature">(data, sorters)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Menyortir data berdasarkan kriteria yang diberikan.
+</div>
 
 
 
@@ -1721,8 +2006,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -1741,27 +2024,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;Object></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Data yang akan disortir.</td>
         </tr>
 
     
@@ -1774,27 +2047,17 @@
             <td class="type">
             
                 
-<span class="param-type">Any</span>
+<span class="param-type">Array.&lt;{name: string, order: ('asc'|'desc')}></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Kriteria penyortiran.</td>
         </tr>
 
     
@@ -1835,7 +2098,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line28">line 28</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -1860,6 +2123,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Data yang telah disortir.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1881,13 +2166,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#loadLocale">loadLocale</a></li><li><a href="global.html#localization">localization</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setLocale">setLocale</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 06:24:59 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 07:01:50 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

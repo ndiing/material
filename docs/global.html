@@ -94,129 +94,21 @@
     
 
     
-
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
+        <h3 class="subsection-title">Members</h3>
 
         
-                
-<h4 class="name" id="ConfigureLocalizationConfig">ConfigureLocalizationConfig</h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
             
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
+<h4 class="name" id="getLocale"><span class="type-signature">(constant) </span>getLocale<span class="type-signature"></span></h4>
 
 
 
 
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>sourceLocale</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
+<div class="description">
+    Mendapatkan locale (bahasa) saat ini.
+</div>
 
 
-            
-            </td>
 
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>targetLocales</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>loadLocale</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#ConfigureLocalizationConfigLocale">ConfigureLocalizationConfigLocale</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -250,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="localization_localization.js.html">localization/localization.js</a>, <a href="localization_localization.js.html#line9">line 9</a>
+        <a href="localization_localization.js.html">localization/localization.js</a>, <a href="localization_localization.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -266,18 +158,588 @@
 
 
 
+        
+            
+<h4 class="name" id="localization"><span class="type-signature">(constant) </span>localization<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Konfigurasi sistem lokalisasi menggunakan Lit Localize.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="localization_localization.js.html">localization/localization.js</a>, <a href="localization_localization.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="setLocale"><span class="type-signature">(constant) </span>setLocale<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Mengatur locale (bahasa) aplikasi.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="localization_localization.js.html">localization/localization.js</a>, <a href="localization_localization.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="calculatePosition"><span class="type-signature"></span>calculatePosition<span class="signature">(placement, options)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Menghitung posisi elemen berdasarkan peletakan (placement) yang diberikan.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>placement</code></td>
+            
+
+            <td class="type">
             
                 
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Peletakan elemen relatif terhadap elemen pemicu (trigger).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Opsi posisi elemen.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>containerRect</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMRect</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Dimensi elemen kontainer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>triggerRect</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMRect</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Dimensi elemen pemicu (trigger).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Jarak offset dalam bentuk objek { top, right, bottom, left }.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
 
     
 
     
-    <h4 class="name" id="ConfigureLocalizationConfigLocale"><span class="type-signature"></span>ConfigureLocalizationConfigLocale<span class="signature">(locale)</span><span class="type-signature"></span></h4>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Posisi { left, top } dari elemen.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="closestScrollableElement"><span class="type-signature"></span>closestScrollableElement<span class="signature">(element)</span><span class="type-signature"> &rarr; {HTMLElement}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    Menemukan elemen terdekat yang memiliki overflow dapat discroll.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Elemen awal untuk pencarian.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Elemen yang memiliki overflow scroll, atau <html> / <body> jika tidak ditemukan.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">HTMLElement</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="loadLocale"><span class="type-signature"></span>loadLocale<span class="signature">(locale)</span><span class="type-signature"> &rarr; {Promise.&lt;Module>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Memuat file lokal yang sesuai dengan bahasa yang dipilih.
+</div>
 
 
 
@@ -328,7 +790,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Kode bahasa yang akan dimuat (misal: "en", "id").</td>
         </tr>
 
     
@@ -336,163 +798,6 @@
 </table>
 
 
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="localization_localization.js.html">localization/localization.js</a>, <a href="localization_localization.js.html#line4">line 4</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="ConfigureLocalizationReturn">ConfigureLocalizationReturn</h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>getLocale</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>setLocale</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -542,34 +847,71 @@
 
 
 
-            
-                
-<h4 class="name" id="MovableOptions">MovableOptions</h4>
 
 
 
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - Modul yang berisi terjemahan bahasa yang dimuat.
+</div>
 
 
-    <h5 class="subsection-title">Properties:</h5>
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Module></span>
+
+
+    </dd>
+</dl>
 
     
 
-<table class="props">
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseDate"><span class="type-signature"></span>parseDate<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi string menjadi objek Date.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -579,11 +921,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -595,79 +933,36 @@
 
         <tr>
             
-                <td class="name"><code>axis</code></td>
+                <td class="name"><code>input</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+|
+
+<span class="param-type"><a href="Date.html">Date</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    ["x", "y"]
-                
-                </td>
-            
 
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>handles</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    ["n", "e", "s", "w", "nw", "ne", "sw", "se"]
-                
-                </td>
-            
-
-            <td class="description last"></td>
+            <td class="description last">Tanggal dalam format string, timestamp, atau objek Date.</td>
         </tr>
 
     
     </tbody>
 </table>
+
+
 
 
 
@@ -701,7 +996,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="movable_movable.js.html">movable/movable.js</a>, <a href="movable_movable.js.html#line8">line 8</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -717,34 +1012,911 @@
 
 
 
-            
-                
-<h4 class="name" id="RippleOptions">RippleOptions</h4>
 
 
 
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek Date yang sesuai.
+</div>
 
 
-    <h5 class="subsection-title">Properties:</h5>
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
 
     
 
-<table class="props">
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseDatetimeLocal"><span class="type-signature"></span>parseDatetimeLocal<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi string ke objek Date sesuai format datetime-local.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String dalam format datetime-local (YYYY-MM-DDTHH:MM).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek Date yang sesuai.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseMonth"><span class="type-signature"></span>parseMonth<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi string bulan menjadi objek Date.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String dalam format YYYY-MM.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek Date dengan tanggal pertama bulan tersebut.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseOffset"><span class="type-signature"></span>parseOffset<span class="signature">(offset)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Menguraikan string offset menjadi objek dengan nilai { top, right, bottom, left }.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nilai offset dalam format CSS (misal: "10 15 5 20").</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek offset dalam bentuk { top, right, bottom, left }.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseTime"><span class="type-signature"></span>parseTime<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi string waktu menjadi objek Date dengan tanggal hari ini.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String dalam format HH:MM.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek Date dengan waktu yang ditentukan.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseWeek"><span class="type-signature"></span>parseWeek<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi string minggu ke objek Date.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String dalam format YYYY-W##.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Objek Date untuk awal minggu yang dimaksud.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setPosition"><span class="type-signature"></span>setPosition<span class="signature">(options)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Menetapkan posisi elemen berdasarkan berbagai opsi dan batasan.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Konfigurasi posisi.
+                <h6>Properties</h6>
+                
+
+<table class="params">
     <thead>
     <tr>
         
@@ -770,13 +1942,13 @@
 
         <tr>
             
-                <td class="name"><code>centered</code></td>
+                <td class="name"><code>container</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Boolean</span>
+<span class="param-type">HTMLElement</span>
 
 
             
@@ -785,44 +1957,7 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
-                
 
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>radius</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
                 
 
                 
@@ -835,7 +1970,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Elemen yang akan diposisikan.</td>
         </tr>
 
     
@@ -848,7 +1983,7 @@
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">HTMLElement</span>
 
 
             
@@ -857,7 +1992,7 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
+
                 
 
                 
@@ -870,354 +2005,14 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Elemen pemicu untuk posisi elemen.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>unbounded</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>container</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ripple_ripple.js.html">ripple/ripple.js</a>, <a href="ripple_ripple.js.html#line5">line 5</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="RouterUseOptions">RouterUseOptions</h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>historyApiFallback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="router_router.js.html">router/router.js</a>, <a href="router_router.js.html#line257">line 257</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="RouterUseRoutes">RouterUseRoutes</h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>component</code></td>
+                <td class="name"><code>boundary</code></td>
             
 
             <td class="type">
@@ -1236,25 +2031,34 @@
                 
 
                 
+
+                
                 </td>
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
-            <td class="description last"></td>
+            <td class="description last">Elemen batas untuk membatasi posisi.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>load</code></td>
+                <td class="name"><code>offset</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
 
 
             
@@ -1267,25 +2071,33 @@
                 
 
                 
+
+                
                 </td>
             
 
             
+                <td class="default">
+                
+                    "0"
+                
+                </td>
+            
 
-            <td class="description last"></td>
+            <td class="description last">Offset dalam format CSS.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>beforeLoad</code></td>
+                <td class="name"><code>placements</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">Array.&lt;string></span>
 
 
             
@@ -1294,38 +2106,7 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
-                
 
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>children</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#RouterUseRoutes">RouterUseRoutes</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
                 
 
                 
@@ -1333,13 +2114,26 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
-            <td class="description last"></td>
+            <td class="description last">Daftar kemungkinan peletakan (misalnya: ["top", "bottom"]).</td>
         </tr>
 
     
     </tbody>
 </table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
 
 
 
@@ -1373,7 +2167,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="router_router.js.html">router/router.js</a>, <a href="router_router.js.html#line248">line 248</a>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -1389,200 +2183,49 @@
 
 
 
-            
-                
-<h4 class="name" id="SetThemeCustomColor">SetThemeCustomColor</h4>
 
 
 
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array</span>
-
-
-        </li>
-    </ul>
 
 
 
 
 
-    <h5 class="subsection-title">Properties:</h5>
 
-    
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
 
         
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
     
 
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
     
-
-        <tr>
-            
-                <td class="name"><code>blend</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
+    <h4 class="name" id="setTheme"><span class="type-signature">(async) </span>setTheme<span class="signature">(input, customColors<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
     
 
     
 
+
+
+<div class="description">
+    Mengatur tema Material berdasarkan warna sumber atau gambar.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="color_color.js.html">color/color.js</a>, <a href="color_color.js.html#line7">line 7</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="VirtualScrollOptions">VirtualScrollOptions</h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
+<table class="params">
     <thead>
     <tr>
         
@@ -1596,8 +2239,6 @@
         
 
         
-        <th>Default</th>
-        
 
         <th class="last">Description</th>
     </tr>
@@ -1608,13 +2249,16 @@
 
         <tr>
             
-                <td class="name"><code>total</code></td>
+                <td class="name"><code>input</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">HTMLImageElement</span>
 
 
             
@@ -1623,7 +2267,7 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
+
                 
 
                 
@@ -1631,25 +2275,21 @@
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last"></td>
+            <td class="description last">Warna dalam format HEX (misal: `#ff5733`) atau elemen gambar.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>rowHeight</code></td>
+                <td class="name"><code>customColors</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">Object</span>
 
 
             
@@ -1662,169 +2302,21 @@
                 
 
                 
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    56
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>nodePadding</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
                 
                 </td>
             
 
             
-                <td class="default">
-                
-                    2
-                
-                </td>
-            
 
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>viewportHeight</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>track</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    .md-virtual-scroll__track
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>item</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    .md-virtual-scroll__item
-                
-                </td>
-            
-
-            <td class="description last"></td>
+            <td class="description last">Opsi warna khusus yang dapat diterapkan ke tema.</td>
         </tr>
 
     
     </tbody>
 </table>
+
+
 
 
 
@@ -1858,7 +2350,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="virtual-scroll_virtual-scroll.js.html">virtual-scroll/virtual-scroll.js</a>, <a href="virtual-scroll_virtual-scroll.js.html#line6">line 6</a>
+        <a href="color_color.js.html">color/color.js</a>, <a href="color_color.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -1874,7 +2366,840 @@
 
 
 
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - Promise yang selesai setelah tema diterapkan.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
             
+
+    
+
+    
+    <h4 class="name" id="stringifyDate"><span class="type-signature"></span>stringifyDate<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi objek Date menjadi string dalam format YYYY-MM-DD.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objek Date yang akan dikonversi.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    String dalam format YYYY-MM-DD.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="stringifyDatetimeLocal"><span class="type-signature"></span>stringifyDatetimeLocal<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi objek Date menjadi string dalam format datetime-local.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objek Date yang akan dikonversi.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    String dalam format YYYY-MM-DDTHH:MM.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="stringifyMonth"><span class="type-signature"></span>stringifyMonth<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi objek Date menjadi string dalam format YYYY-MM.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objek Date yang akan dikonversi.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    String dalam format YYYY-MM.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="stringifyTime"><span class="type-signature"></span>stringifyTime<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi objek Date menjadi string dalam format HH:MM.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objek Date yang akan dikonversi.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line90">line 90</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    String dalam format HH:MM.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="stringifyWeek"><span class="type-signature"></span>stringifyWeek<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mengonversi objek Date menjadi string dalam format YYYY-W##.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objek Date yang akan dikonversi.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    String dalam format YYYY-W##.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
     
 
     
@@ -1888,13 +3213,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#loadLocale">loadLocale</a></li><li><a href="global.html#localization">localization</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setLocale">setLocale</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 06:24:59 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 07:01:49 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

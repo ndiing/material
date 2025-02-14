@@ -2,45 +2,31 @@ import { configureLocalization } from "@lit/localize";
 import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
 /**
- * @typedef {Function} ConfigureLocalizationConfigLocale
- * @param {string} locale
+ * Konfigurasi sistem lokalisasi menggunakan Lit Localize.
  */
-
-/**
- * @typedef {Object} ConfigureLocalizationConfig
- * @property {string} sourceLocale
- * @property {string[]} targetLocales
- * @property {ConfigureLocalizationConfigLocale} loadLocale
- */
-
-/**
- * @typedef {Object} ConfigureLocalizationReturn
- * @property {Function} getLocale
- * @property {Function} setLocale
- */
-
-/**
- * @namespace Localization
- */
-
 const localization = configureLocalization({
     sourceLocale,
     targetLocales,
+    /**
+     * Memuat file lokal yang sesuai dengan bahasa yang dipilih.
+     *
+     * @param {string} locale - Kode bahasa yang akan dimuat (misal: "en", "id").
+     * @returns {Promise<Module>} - Modul yang berisi terjemahan bahasa yang dimuat.
+     */
     loadLocale: (locale) => import(`../../generated/locales/${locale}.js`),
 });
 
 /**
- * Mendapatkan locale saat ini.
- * @function getLocale
- * @memberof Localization
- * @returns {string}
+ * Mendapatkan locale (bahasa) saat ini.
+ *
+ * @returns {string} - Kode bahasa saat ini (misal: "en", "id").
  */
 export const getLocale = localization.getLocale;
 
 /**
- * Mengatur locale baru.
- * @function setLocale
- * @memberof Localization
- * @param {string} newLocale - Locale baru yang akan diatur.
+ * Mengatur locale (bahasa) aplikasi.
+ *
+ * @param {string} locale - Kode bahasa yang akan digunakan (misal: "en", "id").
+ * @returns {Promise<void>} - Promise yang selesai setelah bahasa diubah.
  */
 export const setLocale = localization.setLocale;

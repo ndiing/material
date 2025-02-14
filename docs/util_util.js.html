@@ -27,36 +27,36 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @namespace Util
- */
-
-/**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string menjadi objek Date.
+ * @param {string | number | Date} input - Tanggal dalam format string, timestamp, atau objek Date.
+ * @returns {Date} Objek Date yang sesuai.
  */
 function parseDate(string) {
     return new Date(string);
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string ke objek Date sesuai format datetime-local.
+ * @param {string} input - String dalam format datetime-local (YYYY-MM-DDTHH:MM).
+ * @returns {Date} Objek Date yang sesuai.
  */
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string bulan menjadi objek Date.
+ * @param {string} input - String dalam format YYYY-MM.
+ * @returns {Date} Objek Date dengan tanggal pertama bulan tersebut.
  */
 function parseMonth(string) {
     return new Date(string + "-01");
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string waktu menjadi objek Date dengan tanggal hari ini.
+ * @param {string} input - String dalam format HH:MM.
+ * @returns {Date} Objek Date dengan waktu yang ditentukan.
  */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
@@ -66,8 +66,9 @@ function parseTime(string) {
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string minggu ke objek Date.
+ * @param {string} input - String dalam format YYYY-W##.
+ * @returns {Date} Objek Date untuk awal minggu yang dimaksud.
  */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
@@ -78,16 +79,18 @@ function parseWeek(string) {
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format YYYY-MM-DD.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-MM-DD.
  */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format datetime-local.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-MM-DDTHH:MM.
  */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
@@ -99,24 +102,27 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format YYYY-MM.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-MM.
  */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format HH:MM.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format HH:MM.
  */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format YYYY-W##.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-W##.
  */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
@@ -124,7 +130,6 @@ function stringifyWeek(date) {
     const weekNumber = Math.ceil((days + 1) / 7);
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
-
 export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
 </code></pre>
         </article>
@@ -136,13 +141,13 @@ export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, string
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#loadLocale">loadLocale</a></li><li><a href="global.html#localization">localization</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setLocale">setLocale</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 06:24:58 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 07:01:49 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

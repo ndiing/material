@@ -1,10 +1,8 @@
 /**
- * @namespace Date
- */
-
-/**
- * @memberof Date
- * @param {Any} [week]
+ * Mengatur tanggal berdasarkan nomor minggu dalam setahun.
+ *
+ * @param {number} week - Nomor minggu yang ingin diatur (1-53).
+ * @returns {Date} - Objek `Date` yang diperbarui ke minggu yang diinginkan.
  */
 Date.prototype.setWeek = function (week) {
     const year = this.getFullYear();
@@ -16,7 +14,9 @@ Date.prototype.setWeek = function (week) {
 };
 
 /**
- * @memberof Date
+ * Mendapatkan nomor minggu dalam setahun berdasarkan standar ISO 8601.
+ *
+ * @returns {number} - Nomor minggu dalam setahun (1-53).
  */
 Date.prototype.getWeek = function () {
     const target = new Date(this.valueOf());

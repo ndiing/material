@@ -1,21 +1,21 @@
 /**
+ * Kelas VirtualScroll digunakan untuk menangani scrolling virtual,
+ * mengoptimalkan rendering elemen dalam daftar panjang dengan hanya menampilkan elemen yang terlihat.
  *
- * @fires onVirtualScroll
+ * @fires VirtualScroll#onVirtualScroll - Dipicu saat daftar bergulir, memberikan informasi tentang item yang terlihat.
  */
 class VirtualScroll {
     /**
-     * @typedef {Object} VirtualScrollOptions
-     * @property {Number} [total]
-     * @property {Number} [rowHeight=56]
-     * @property {Number} [nodePadding=2]
-     * @property {Number} [viewportHeight]
-     * @property {String} [track=.md-virtual-scroll__track]
-     * @property {String} [item=.md-virtual-scroll__item]
-     */
-    /**
+     * Membuat instance VirtualScroll.
      *
-     * @param {HTMLElement} [host]
-     * @param {VirtualScrollOptions} [options]
+     * @param {HTMLElement} host - Elemen utama yang berisi daftar scroll.
+     * @param {Object} [options] - Opsi konfigurasi.
+     * @param {number} [options.total] - Jumlah total item dalam daftar.
+     * @param {number} [options.rowHeight=56] - Tinggi setiap baris dalam daftar (default: 56px).
+     * @param {number} [options.nodePadding=2] - Jumlah padding node di luar viewport (default: 2).
+     * @param {number} [options.viewportHeight] - Tinggi viewport jika ditentukan, default ke `clientHeight` host.
+     * @param {string} [options.track=".md-virtual-scroll__track"] - Selector elemen track (default: `.md-virtual-scroll__track`).
+     * @param {string} [options.item=".md-virtual-scroll__item"] - Selector item dalam daftar (default: `.md-virtual-scroll__item`).
      */
     constructor(host, options) {
         this.host = host;
@@ -32,8 +32,9 @@ class VirtualScroll {
     }
 
     /**
+     * Memperbarui opsi VirtualScroll dan memperbarui tampilan daftar.
      *
-     * @param {Any} [options={}]
+     * @param {Object} [options={}] - Opsi baru untuk diperbarui.
      */
     load(options = {}) {
         for (const name in options) {
@@ -44,9 +45,10 @@ class VirtualScroll {
     }
 
     /**
+     * Menangani event scroll dan memperbarui tampilan item yang terlihat.
      *
      * @private
-     * @param {Any} [event]
+     * @param {Event} [event] - Event scroll (opsional).
      */
     handleScroll(event) {
         const total = this.options.total;
@@ -72,10 +74,11 @@ class VirtualScroll {
     }
 
     /**
+     * Memicu event kustom.
      *
      * @private
-     * @param {Any} [type]
-     * @param {Any} [detail]
+     * @param {string} type - Nama event yang akan dipicu.
+     * @param {Object} detail - Detail tambahan yang akan dikirim dalam event.
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -87,7 +90,7 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * Menginisialisasi VirtualScroll dengan menambahkan event listener dan memulai perhitungan awal.
      */
     init() {
         this.host.classList.add("md-virtual-scroll");
@@ -98,7 +101,7 @@ class VirtualScroll {
     }
 
     /**
-     *
+     * Menghapus VirtualScroll dengan membersihkan event listener dan referensi elemen.
      */
     destroy() {
         this.host.classList.remove("md-virtual-scroll");

@@ -1,34 +1,34 @@
 /**
- * @namespace Util
- */
-
-/**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string menjadi objek Date.
+ * @param {string | number | Date} input - Tanggal dalam format string, timestamp, atau objek Date.
+ * @returns {Date} Objek Date yang sesuai.
  */
 function parseDate(string) {
     return new Date(string);
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string ke objek Date sesuai format datetime-local.
+ * @param {string} input - String dalam format datetime-local (YYYY-MM-DDTHH:MM).
+ * @returns {Date} Objek Date yang sesuai.
  */
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string bulan menjadi objek Date.
+ * @param {string} input - String dalam format YYYY-MM.
+ * @returns {Date} Objek Date dengan tanggal pertama bulan tersebut.
  */
 function parseMonth(string) {
     return new Date(string + "-01");
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string waktu menjadi objek Date dengan tanggal hari ini.
+ * @param {string} input - String dalam format HH:MM.
+ * @returns {Date} Objek Date dengan waktu yang ditentukan.
  */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
@@ -38,8 +38,9 @@ function parseTime(string) {
 }
 
 /**
- * @memberof Util
- * @param {Any} [string]
+ * Mengonversi string minggu ke objek Date.
+ * @param {string} input - String dalam format YYYY-W##.
+ * @returns {Date} Objek Date untuk awal minggu yang dimaksud.
  */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
@@ -50,16 +51,18 @@ function parseWeek(string) {
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format YYYY-MM-DD.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-MM-DD.
  */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format datetime-local.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-MM-DDTHH:MM.
  */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
@@ -71,24 +74,27 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format YYYY-MM.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-MM.
  */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format HH:MM.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format HH:MM.
  */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
 
 /**
- * @memberof Util
- * @param {Any} [date]
+ * Mengonversi objek Date menjadi string dalam format YYYY-W##.
+ * @param {Date} date - Objek Date yang akan dikonversi.
+ * @returns {string} String dalam format YYYY-W##.
  */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
@@ -96,5 +102,4 @@ function stringifyWeek(date) {
     const weekNumber = Math.ceil((days + 1) / 7);
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
-
 export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
