@@ -1,10 +1,8 @@
 import { Router } from "../material/router/router";
 import { Progress } from "../material/progress/progress.js";
 import { setTheme } from "../material/color/color.js";
-
 import DemoMain from "./main/main.js";
 import DemoError from "./error/error.js";
-
 import DemoBadge from "./badge/badge.js";
 import DemoBottomAppBar from "./bottom-app-bar/bottom-app-bar.js";
 import DemoBottomAppBarNoFab from "./bottom-app-bar/bottom-app-bar-no-fab.js";
