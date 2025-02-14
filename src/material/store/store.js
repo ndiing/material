@@ -2,8 +2,8 @@
  */
 class Store {
     /**
-     * @param {Array} [data=[]]
-     * @param {Object} [options={}]
+     * @param {Array} [data=[]] - The initial data array
+     * @param {Object} [options={}] - Configuration options
      */
     constructor(data = [], options = {}) {
         this.data = data;
@@ -11,15 +11,16 @@ class Store {
     }
 
     /**
-     * @param {Array} [data=[]]
+     * @param {Array} [data=[]] - The data array to load
      */
     load(data = []) {
         this.data = data;
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [sorters]
+     * @param {Array} [data] - The data array to sort
+     * @param {Array} [sorters] - The array of sorter objects
+     * @returns {Array} - The sorted data array
      */
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
@@ -36,8 +37,9 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [item]
-     * @param {Undefined} [q]
+     * @param {any} [item] - The item to search
+     * @param {String} [q] - The query string
+     * @returns {Boolean} - Whether the item matches the query
      */
     deepSearch(item, q) {
         if (!item) return false;
@@ -54,8 +56,9 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [q]
+     * @param {Array} [data] - The data array to search
+     * @param {String} [q] - The query string
+     * @returns {Array} - The filtered data array
      */
     search(data, q) {
         if (!q) return data;
@@ -63,16 +66,18 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [item]
-     * @param {Undefined} [name]
+     * @param {Object} [item] - The item to get the value from
+     * @param {String} [name] - The name of the property
+     * @returns {any} - The nested value
      */
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [filters]
+     * @param {Array} [data] - The data array to filter
+     * @param {Array} [filters] - The array of filter objects
+     * @returns {Array} - The filtered data array
      */
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
@@ -107,18 +112,20 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [_start]
-     * @param {Undefined} [_end]
+     * @param {Array} [data] - The data array to slice
+     * @param {Number} [_start] - The start index
+     * @param {Number} [_end] - The end index
+     * @returns {Array} - The sliced data array
      */
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [_page]
-     * @param {Undefined} [_limit]
+     * @param {Array} [data] - The data array to paginate
+     * @param {Number} [_page] - The page number
+     * @param {Number} [_limit] - The number of items per page
+     * @returns {Array} - The paginated data array
      */
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;
@@ -127,7 +134,8 @@ class Store {
     }
 
     /**
-     * @param {Object} [options={}]
+     * @param {Object} [options={}] - Configuration options
+     * @returns {Object} - The filtered, sorted, searched, paginated data and total count
      */
     get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;

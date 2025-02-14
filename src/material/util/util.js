@@ -4,7 +4,8 @@
 
 /**
  * @memberof module:Util
- * @param {Undefined} [string]
+ * @param {String} [string] - The date string to parse
+ * @returns {Date} The parsed date
  */
 function parseDate(string) {
     return new Date(string);
@@ -12,7 +13,8 @@ function parseDate(string) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [string]
+ * @param {String} [string] - The datetime-local string to parse
+ * @returns {Date} The parsed datetime-local
  */
 function parseDatetimeLocal(string) {
     return new Date(string);
@@ -20,7 +22,8 @@ function parseDatetimeLocal(string) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [string]
+ * @param {String} [string] - The month string to parse
+ * @returns {Date} The parsed month
  */
 function parseMonth(string) {
     return new Date(string + "-01");
@@ -28,7 +31,8 @@ function parseMonth(string) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [string]
+ * @param {String} [string] - The time string to parse
+ * @returns {Date} The parsed time
  */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
@@ -39,7 +43,8 @@ function parseTime(string) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [string]
+ * @param {String} [string] - The week string to parse
+ * @returns {Date} The parsed week
  */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
@@ -51,7 +56,8 @@ function parseWeek(string) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [date]
+ * @param {Date} [date] - The date to stringify
+ * @returns {String} The stringified date
  */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
@@ -59,7 +65,8 @@ function stringifyDate(date) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [date]
+ * @param {Date} [date] - The datetime-local to stringify
+ * @returns {String} The stringified datetime-local
  */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
@@ -72,7 +79,8 @@ function stringifyDatetimeLocal(date) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [date]
+ * @param {Date} [date] - The month to stringify
+ * @returns {String} The stringified month
  */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
@@ -80,7 +88,8 @@ function stringifyMonth(date) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [date]
+ * @param {Date} [date] - The time to stringify
+ * @returns {String} The stringified time
  */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
@@ -88,7 +97,8 @@ function stringifyTime(date) {
 
 /**
  * @memberof module:Util
- * @param {Undefined} [date]
+ * @param {Date} [date] - The week to stringify
+ * @returns {String} The stringified week
  */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);

@@ -117,7 +117,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">The initial data array</td>
         </tr>
 
     
@@ -156,7 +156,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Configuration options</td>
         </tr>
 
     
@@ -253,7 +253,7 @@
     
 
     
-    <h4 class="name" id="deepSearch"><span class="type-signature"></span>deepSearch<span class="signature">(item<span class="signature-attributes">opt</span>, q<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="deepSearch"><span class="type-signature"></span>deepSearch<span class="signature">(item<span class="signature-attributes">opt</span>, q<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
     
 
     
@@ -301,7 +301,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">any</span>
 
 
             
@@ -321,7 +321,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The item to search</td>
         </tr>
 
     
@@ -334,7 +334,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">String</span>
 
 
             
@@ -354,7 +354,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The query string</td>
         </tr>
 
     
@@ -395,7 +395,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line42">line 42</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -420,6 +420,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - Whether the item matches the query
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -431,7 +453,7 @@
     
 
     
-    <h4 class="name" id="filter"><span class="type-signature"></span>filter<span class="signature">(data<span class="signature-attributes">opt</span>, filters<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="filter"><span class="type-signature"></span>filter<span class="signature">(data<span class="signature-attributes">opt</span>, filters<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -479,7 +501,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -499,7 +521,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The data array to filter</td>
         </tr>
 
     
@@ -512,7 +534,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -532,7 +554,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The array of filter objects</td>
         </tr>
 
     
@@ -573,7 +595,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line77">line 77</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -598,6 +620,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The filtered data array
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -609,7 +653,7 @@
     
 
     
-    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -685,7 +729,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">Configuration options</td>
         </tr>
 
     
@@ -726,7 +770,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line132">line 132</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -751,6 +795,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The filtered, sorted, searched, paginated data and total count
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -762,7 +828,7 @@
     
 
     
-    <h4 class="name" id="getNestedValue"><span class="type-signature"></span>getNestedValue<span class="signature">(item<span class="signature-attributes">opt</span>, name<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getNestedValue"><span class="type-signature"></span>getNestedValue<span class="signature">(item<span class="signature-attributes">opt</span>, name<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {any}</span></h4>
     
 
     
@@ -810,7 +876,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Object</span>
 
 
             
@@ -830,7 +896,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The item to get the value from</td>
         </tr>
 
     
@@ -843,7 +909,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">String</span>
 
 
             
@@ -863,7 +929,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The name of the property</td>
         </tr>
 
     
@@ -904,7 +970,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line69">line 69</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -929,6 +995,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The nested value
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">any</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1016,7 +1104,7 @@
                 </td>
             
 
-            <td class="description last"></td>
+            <td class="description last">The data array to load</td>
         </tr>
 
     
@@ -1093,7 +1181,7 @@
     
 
     
-    <h4 class="name" id="paginate"><span class="type-signature"></span>paginate<span class="signature">(data<span class="signature-attributes">opt</span>, _page<span class="signature-attributes">opt</span>, _limit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="paginate"><span class="type-signature"></span>paginate<span class="signature">(data<span class="signature-attributes">opt</span>, _page<span class="signature-attributes">opt</span>, _limit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1141,7 +1229,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -1161,7 +1249,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The data array to paginate</td>
         </tr>
 
     
@@ -1174,7 +1262,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Number</span>
 
 
             
@@ -1194,7 +1282,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The page number</td>
         </tr>
 
     
@@ -1207,7 +1295,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Number</span>
 
 
             
@@ -1227,7 +1315,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The number of items per page</td>
         </tr>
 
     
@@ -1268,7 +1356,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line123">line 123</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -1293,6 +1381,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The paginated data array
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1304,7 +1414,7 @@
     
 
     
-    <h4 class="name" id="range"><span class="type-signature"></span>range<span class="signature">(data<span class="signature-attributes">opt</span>, _start<span class="signature-attributes">opt</span>, _end<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="range"><span class="type-signature"></span>range<span class="signature">(data<span class="signature-attributes">opt</span>, _start<span class="signature-attributes">opt</span>, _end<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1352,7 +1462,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -1372,7 +1482,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The data array to slice</td>
         </tr>
 
     
@@ -1385,7 +1495,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Number</span>
 
 
             
@@ -1405,7 +1515,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The start index</td>
         </tr>
 
     
@@ -1418,7 +1528,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Number</span>
 
 
             
@@ -1438,7 +1548,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The end index</td>
         </tr>
 
     
@@ -1479,7 +1589,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line114">line 114</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line120">line 120</a>
     </li></ul></dd>
     
 
@@ -1504,6 +1614,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The sliced data array
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1515,7 +1647,7 @@
     
 
     
-    <h4 class="name" id="search"><span class="type-signature"></span>search<span class="signature">(data<span class="signature-attributes">opt</span>, q<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="search"><span class="type-signature"></span>search<span class="signature">(data<span class="signature-attributes">opt</span>, q<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1563,7 +1695,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -1583,7 +1715,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The data array to search</td>
         </tr>
 
     
@@ -1596,7 +1728,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">String</span>
 
 
             
@@ -1616,7 +1748,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The query string</td>
         </tr>
 
     
@@ -1657,7 +1789,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line60">line 60</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -1682,6 +1814,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The filtered data array
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1693,7 +1847,7 @@
     
 
     
-    <h4 class="name" id="sort"><span class="type-signature"></span>sort<span class="signature">(data<span class="signature-attributes">opt</span>, sorters<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="sort"><span class="type-signature"></span>sort<span class="signature">(data<span class="signature-attributes">opt</span>, sorters<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1741,7 +1895,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -1761,7 +1915,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The data array to sort</td>
         </tr>
 
     
@@ -1774,7 +1928,7 @@
             <td class="type">
             
                 
-<span class="param-type">Undefined</span>
+<span class="param-type">Array</span>
 
 
             
@@ -1794,7 +1948,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The array of sorter objects</td>
         </tr>
 
     
@@ -1835,7 +1989,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line24">line 24</a>
+        <a href="store_store.js.html">store/store.js</a>, <a href="store_store.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
@@ -1860,6 +2014,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The sorted data array
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1881,13 +2057,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Color.html">Color</a></li><li><a href="module-Localization.html">Localization</a></li><li><a href="module-Popper.html">Popper</a></li><li><a href="module-Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Color.html">Color</a></li><li><a href="module-Localization.html">Localization</a></li><li><a href="module-Popper.html">Popper</a></li><li><a href="module-Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 20:23:09 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 20:47:06 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>
