@@ -14,7 +14,7 @@ import { cache } from "lit/directives/cache.js";
  * @fires MdWeekPickerComponent#onWeekPickerClose
  * @fires MdWeekPickerComponent#onWeekPickerYearItemClick
  * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick
- * @fires MdWeekPickerComponent#onWeekPickerDayItemClick
+ * @fires MdWeekPickerComponent#onWeekPickerWeekItemClick
  * @fires MdWeekPickerComponent#onWeekPickerScrimClose
  * @fires MdWeekPickerComponent#onWeekPickerShown
  * @fires MdWeekPickerComponent#onWeekPickerClosed
@@ -326,7 +326,7 @@ class MdWeekPickerComponent extends MdComponent {
                             .data="${row}"
                             ?selected="${row.selected}"
                             ?activated="${row.activated}"
-                            @click="${this.handleWeekPickerDayItemClick}"
+                            @click="${this.handleWeekPickerWeekItemClick}"
                         >
                             ${row.children.map((item) => html`
                                 <div
@@ -496,7 +496,7 @@ class MdWeekPickerComponent extends MdComponent {
      * @private
      * @param {Object} [event]
      */
-    handleWeekPickerDayItemClick(event) {
+    handleWeekPickerWeekItemClick(event) {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.selection.setMonth(data.month);
@@ -505,7 +505,7 @@ class MdWeekPickerComponent extends MdComponent {
         this.value.setMonth(data.month);
         this.value.setWeek(data.week);
         this.requestUpdate();
-        this.emit("onWeekPickerDayItemClick", { event });
+        this.emit("onWeekPickerWeekItemClick", { event });
     }
 
     /**
