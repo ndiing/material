@@ -223,8 +223,7 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         /* prettier-ignore */
@@ -236,8 +235,7 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         /* prettier-ignore */
@@ -256,8 +254,7 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         /* prettier-ignore */
@@ -276,8 +273,7 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         /* prettier-ignore */
@@ -289,8 +285,7 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -304,7 +299,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderDatetimePickerYear() {
         /* prettier-ignore */
@@ -324,7 +318,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderDatetimePickerMonth() {
         /* prettier-ignore */
@@ -344,7 +337,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderDatetimePickerDay() {
         /* prettier-ignore */
@@ -381,7 +373,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderDatetimePickerHour() {
         /* prettier-ignore */
@@ -401,7 +392,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderDatetimePickerMinute() {
         /* prettier-ignore */
@@ -421,7 +411,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         /* prettier-ignore */
@@ -456,7 +445,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -476,7 +464,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -485,9 +472,8 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -548,7 +534,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerYearItemClick(event) {
@@ -559,7 +544,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerMonthItemClick(event) {
@@ -571,7 +555,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerDayItemClick(event) {
@@ -587,7 +570,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerHourItemClick(event) {
@@ -599,7 +581,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerMinuteItemClick(event) {
@@ -611,7 +592,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerScrimClose(event) {
@@ -620,7 +600,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerShown(event) {
@@ -629,7 +608,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerClosed(event) {
@@ -638,7 +616,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerIconButtonPrevClick(event) {
@@ -655,7 +632,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerIconButtonNextClick(event) {
@@ -672,7 +648,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerIconButtonClick(event) {
@@ -687,7 +662,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerButtonCancelClick(event) {
@@ -697,7 +671,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerButtonOkClick(event) {
@@ -706,7 +679,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerButtonLabelClick(event) {
@@ -722,7 +694,6 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDatetimePickerButtonClick(event) {

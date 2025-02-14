@@ -30,7 +30,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -54,7 +53,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -73,7 +71,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -82,7 +79,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRadioButtonNativeInput(event) {
@@ -93,7 +89,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRadioButtonNativeReset(event) {

@@ -30,8 +30,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -50,8 +49,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderFab(item) {
         return html`
@@ -69,14 +67,12 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${this.actions?.length ? html` <div class="md-bottom-app-bar__actions">${this.actions.map((action) => this.renderIconButton(action))}</div> ` : nothing} ${this.fab ? this.renderFab(this.fab) : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -89,8 +85,7 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -120,7 +115,6 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleBottomAppBarIconButtonClick(event) {
@@ -128,7 +122,6 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleBottomAppBarFabClick(event) {

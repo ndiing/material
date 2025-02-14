@@ -78,9 +78,8 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [value]
-     * @param {Undefined} [index]
+     * @param {String} [value]
+     * @param {String} [index]
      */
     renderSliderWrapper(value, index) {
         return html`
@@ -116,7 +115,6 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -131,7 +129,6 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -150,8 +147,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -172,7 +168,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [value]
+     * @param {String} [value]
      * @param {String} [min=this.min]
      * @param {String} [max=this.max]
      */
@@ -181,7 +177,6 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSliderNativeInput(event) {
@@ -199,7 +194,6 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSliderNativeReset(event) {

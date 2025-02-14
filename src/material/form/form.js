@@ -45,7 +45,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -68,7 +67,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -82,7 +80,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [submitButton]
+     * @param {String} [submitButton]
      */
     submit(submitButton) {
         if (this.formNative.requestSubmit) {
@@ -97,7 +95,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleFormNativeFormdata(event) {
@@ -105,7 +102,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleFormNativeReset(event) {
@@ -120,7 +116,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleFormNativeSubmit(event) {

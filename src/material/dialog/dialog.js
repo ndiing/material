@@ -40,16 +40,14 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -67,8 +65,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         return html`
@@ -86,16 +83,14 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-dialog__spacer"></div> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -112,14 +107,12 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-dialog__header">${this.icons?.length ? html` <div class="md-dialog__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-dialog__labels">${this.label ? html`<div class="md-dialog__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-dialog__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-dialog__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-dialog__wrapper">${this.body?.length ? html`<div class="md-dialog__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-dialog__footer">${this.buttons?.length ? html` <div class="md-dialog__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -137,7 +130,6 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -175,7 +167,6 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDialogScrimClose(event) {
@@ -184,7 +175,6 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDialogShown(event) {
@@ -195,7 +185,6 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDialogClosed(event) {
@@ -206,7 +195,6 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDialogIconButtonClick(event) {
@@ -214,7 +202,6 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDialogButtonClick(event) {

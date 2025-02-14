@@ -28,14 +28,12 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` <md-navigation-list .items="${this.items}"></md-navigation-list> `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {

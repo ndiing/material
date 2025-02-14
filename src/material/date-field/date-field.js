@@ -30,7 +30,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -38,7 +37,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -107,7 +105,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDateFieldWindowClick(event) {
@@ -118,7 +115,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDateFieldWindowScroll(event) {
@@ -126,7 +122,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDateFieldPickerButtonCancelClick(event) {
@@ -134,7 +129,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDateFieldPickerButtonOkClick(event) {
@@ -144,7 +138,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @async
      * @param {Object} [event]
      */
@@ -155,7 +148,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldIconButtonClick(event) {

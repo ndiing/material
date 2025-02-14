@@ -58,14 +58,12 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -76,7 +74,6 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -85,9 +82,8 @@ class MdTreeItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

@@ -50,16 +50,14 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -77,8 +75,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         return html`
@@ -96,16 +93,14 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-snackbar__spacer"></div> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -119,14 +114,12 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${this.body?.length ? html`<div class="md-snackbar__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-snackbar__footer">${this.buttons?.length ? html` <div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -181,7 +174,6 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSnackbarShown(event) {
@@ -192,7 +184,6 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSnackbarClosed(event) {
@@ -203,7 +194,6 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSnackbarIconButtonClick(event) {
@@ -211,7 +201,6 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSnackbarButtonClick(event) {

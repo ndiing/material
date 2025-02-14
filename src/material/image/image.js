@@ -28,7 +28,6 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @readonly
      */
     get styleImageNative() {
@@ -48,7 +47,6 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -62,7 +60,6 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();

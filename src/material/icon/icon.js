@@ -7,7 +7,6 @@ import { MdComponent } from "../component/component";
  */
 class MdIconComponent extends MdComponent {
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();

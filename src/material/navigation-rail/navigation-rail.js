@@ -37,16 +37,14 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -64,8 +62,7 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -80,7 +77,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -97,7 +93,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -110,8 +105,7 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -141,7 +135,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationRailIconButtonClick(event) {

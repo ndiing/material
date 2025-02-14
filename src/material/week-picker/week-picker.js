@@ -62,6 +62,7 @@ class MdWeekPickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
     weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
@@ -185,8 +186,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         /* prettier-ignore */
@@ -198,8 +198,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {Object} [item]
      */
     renderIconButton(item) {
         /* prettier-ignore */
@@ -218,8 +217,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         /* prettier-ignore */
@@ -238,8 +236,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         /* prettier-ignore */
@@ -251,8 +248,7 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -266,7 +262,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderWeekPickerYear() {
         /* prettier-ignore */
@@ -286,7 +281,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderWeekPickerMonth() {
         /* prettier-ignore */
@@ -306,7 +300,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderWeekPickerDay() {
         /* prettier-ignore */
@@ -345,7 +338,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         /* prettier-ignore */
@@ -378,7 +370,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -398,7 +389,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -407,9 +397,8 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -470,7 +459,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerYearItemClick(event) {
@@ -481,7 +469,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerMonthItemClick(event) {
@@ -493,7 +480,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerWeekItemClick(event) {
@@ -509,7 +495,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerScrimClose(event) {
@@ -518,7 +503,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerShown(event) {
@@ -527,7 +511,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerClosed(event) {
@@ -536,7 +519,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerIconButtonPrevClick(event) {
@@ -551,7 +533,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerIconButtonNextClick(event) {
@@ -566,7 +547,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerIconButtonClick(event) {
@@ -581,7 +561,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerButtonCancelClick(event) {
@@ -591,7 +570,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerButtonOkClick(event) {
@@ -600,7 +578,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerButtonLabelClick(event) {
@@ -614,7 +591,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekPickerButtonClick(event) {

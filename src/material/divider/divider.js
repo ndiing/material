@@ -7,7 +7,6 @@ import { MdComponent } from "../component/component";
  */
 class MdDividerComponent extends MdComponent {
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();

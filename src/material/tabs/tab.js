@@ -38,7 +38,6 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -53,7 +52,6 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -64,7 +62,6 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -73,9 +70,8 @@ class MdTabComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

@@ -140,8 +140,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         /* prettier-ignore */
@@ -153,8 +152,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         /* prettier-ignore */
@@ -173,8 +171,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         /* prettier-ignore */
@@ -193,8 +190,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         /* prettier-ignore */
@@ -206,8 +202,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -221,7 +216,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderTimePickerHour() {
         /* prettier-ignore */
@@ -241,7 +235,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderTimePickerMinute() {
         /* prettier-ignore */
@@ -261,7 +254,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         /* prettier-ignore */
@@ -293,7 +285,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -313,7 +304,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -322,9 +312,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -385,7 +374,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerHourItemClick(event) {
@@ -397,7 +385,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerMinuteItemClick(event) {
@@ -409,7 +396,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerScrimClose(event) {
@@ -418,7 +404,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerShown(event) {
@@ -427,7 +412,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerClosed(event) {
@@ -436,7 +420,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerIconButtonPrevClick(event) {
@@ -450,7 +433,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerIconButtonNextClick(event) {
@@ -464,7 +446,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerIconButtonClick(event) {
@@ -479,7 +460,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerButtonCancelClick(event) {
@@ -489,7 +469,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerButtonOkClick(event) {
@@ -498,7 +477,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerButtonLabelClick(event) {
@@ -511,7 +489,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTimePickerButtonClick(event) {

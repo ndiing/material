@@ -31,8 +31,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderChip(item) {
         return html`
@@ -50,14 +49,12 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return this.items.map((item) => this.renderChip(item));
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -65,7 +62,6 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleChipClick(event) {

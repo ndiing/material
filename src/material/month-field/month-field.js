@@ -30,7 +30,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -38,7 +37,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -107,7 +105,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthFieldWindowClick(event) {
@@ -118,7 +115,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthFieldWindowScroll(event) {
@@ -126,7 +122,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthFieldPickerButtonCancelClick(event) {
@@ -134,7 +129,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthFieldPickerButtonOkClick(event) {
@@ -144,7 +138,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @async
      * @param {Object} [event]
      */
@@ -155,7 +148,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldIconButtonClick(event) {

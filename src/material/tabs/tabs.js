@@ -33,8 +33,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderTab(item) {
         return html`
@@ -54,14 +53,12 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return this.items.map((item) => this.renderTab(item));
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -70,8 +67,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -83,7 +79,6 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTabClick(event) {
@@ -97,7 +92,6 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      * @param {Object} [event]
      */

@@ -31,7 +31,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderProgressIndicatorNative() {
         return html`
@@ -44,7 +43,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderProgressIndicatorCircular() {
         this.r = ((36 / 40) * 100) / 2;
@@ -92,7 +90,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         if (this.variant === "circular") return this.renderProgressIndicatorCircular();
@@ -100,7 +97,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -108,8 +104,7 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

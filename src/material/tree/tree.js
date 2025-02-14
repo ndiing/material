@@ -33,8 +33,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderTreeItem(item) {
         return html`
@@ -56,14 +55,12 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return this.storeItems.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -73,9 +70,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -90,8 +86,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [items]
-     * @param {Undefined} [parent]
+     * @param {String} [items]
+     * @param {String} [parent]
      * @param {String} [indent=0]
      */
     flatten(items, parent, indent = 0) {
@@ -117,7 +113,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [data]
+     * @param {String} [data]
      */
     updateVisibility(data) {
         data.children.forEach((item) => {
@@ -129,7 +125,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @async
-     * @param {Undefined} [arg]
+     * @param {String} [arg]
      */
     async updateScroll(arg) {
         await this.updateComplete;
@@ -143,7 +139,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeKeydownArrowDown(event) {
@@ -161,7 +156,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeKeydownArrowUp(event) {
@@ -179,7 +173,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeKeydownArrowRight(event) {
@@ -202,7 +195,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeKeydownArrowLeft(event) {
@@ -224,7 +216,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeKeydownEnter(event) {
@@ -235,7 +226,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeKeydown(event) {
@@ -250,7 +240,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTreeItemClick(event) {

@@ -32,7 +32,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -56,7 +55,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -77,7 +75,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -86,7 +83,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSwitchNativeInput(event) {
@@ -98,7 +94,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSwitchNativeReset(event) {

@@ -42,16 +42,14 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -69,8 +67,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         return html`
@@ -88,16 +85,14 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-side-sheet__spacer"></div> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -111,14 +106,12 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-side-sheet__header">${this.icons?.length ? html` <div class="md-side-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-side-sheet__labels">${this.label ? html`<div class="md-side-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-side-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-side-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-side-sheet__wrapper">${this.body?.length ? html`<div class="md-side-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-side-sheet__footer">${this.buttons?.length ? html` <div class="md-side-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -136,7 +129,6 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -145,8 +137,7 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -185,7 +176,6 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSideSheetShown(event) {
@@ -196,7 +186,6 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSideSheetClosed(event) {
@@ -207,7 +196,6 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSideSheetScrimClose(event) {
@@ -216,7 +204,6 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSideSheetIconButtonClick(event) {
@@ -224,7 +211,6 @@ class MdSideSheetComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSideSheetButtonClick(event) {

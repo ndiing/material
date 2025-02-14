@@ -48,7 +48,6 @@ class Router {
     }
 
     /**
-     * @private
      * @static
      * @async
      * @param {Object} [event]
@@ -84,7 +83,7 @@ class Router {
 
     /**
      * @static
-     * @param {Undefined} [routes]
+     * @param {String} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -100,10 +99,9 @@ class Router {
     }
 
     /**
-     * @private
      * @static
-     * @param {Undefined} [route]
-     * @param {Undefined} [outlet]
+     * @param {String} [route]
+     * @param {String} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
@@ -112,8 +110,8 @@ class Router {
     /**
      * @static
      * @async
-     * @param {Undefined} [container]
-     * @param {Undefined} [route]
+     * @param {String} [container]
+     * @param {String} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -143,7 +141,7 @@ class Router {
 
     /**
      * @static
-     * @param {Undefined} [route]
+     * @param {String} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
@@ -152,7 +150,7 @@ class Router {
     /**
      * @static
      * @async
-     * @param {Undefined} [route]
+     * @param {String} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -161,10 +159,9 @@ class Router {
     }
 
     /**
-     * @private
      * @static
      * @async
-     * @param {Undefined} [route]
+     * @param {String} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -187,7 +184,7 @@ class Router {
 
     /**
      * @static
-     * @param {Undefined} [url]
+     * @param {String} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -198,7 +195,6 @@ class Router {
     }
 
     /**
-     * @private
      * @static
      * @param {Object} [event]
      */
@@ -211,10 +207,9 @@ class Router {
     }
 
     /**
-     * @private
      * @static
-     * @param {Undefined} [type]
-     * @param {Undefined} [detail]
+     * @param {String} [type]
+     * @param {String} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {

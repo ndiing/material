@@ -39,7 +39,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -54,7 +53,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -72,7 +70,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -81,8 +78,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -94,7 +90,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleIconButtonClick(event) {

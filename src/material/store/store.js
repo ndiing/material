@@ -18,8 +18,8 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [sorters]
+     * @param {String} [data]
+     * @param {String} [sorters]
      */
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
@@ -36,8 +36,8 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [item]
-     * @param {Undefined} [q]
+     * @param {String} [item]
+     * @param {String} [q]
      */
     deepSearch(item, q) {
         if (!item) return false;
@@ -54,8 +54,8 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [q]
+     * @param {String} [data]
+     * @param {String} [q]
      */
     search(data, q) {
         if (!q) return data;
@@ -63,16 +63,16 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [item]
-     * @param {Undefined} [name]
+     * @param {String} [item]
+     * @param {String} [name]
      */
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [filters]
+     * @param {String} [data]
+     * @param {String} [filters]
      */
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
@@ -107,18 +107,18 @@ class Store {
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [_start]
-     * @param {Undefined} [_end]
+     * @param {String} [data]
+     * @param {String} [_start]
+     * @param {String} [_end]
      */
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
 
     /**
-     * @param {Undefined} [data]
-     * @param {Undefined} [_page]
-     * @param {Undefined} [_limit]
+     * @param {String} [data]
+     * @param {String} [_page]
+     * @param {String} [_limit]
      */
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;

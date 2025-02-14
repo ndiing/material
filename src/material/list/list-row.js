@@ -7,7 +7,6 @@ import { MdComponent } from "../component/component";
  */
 class MdListRowComponent extends MdComponent {
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();

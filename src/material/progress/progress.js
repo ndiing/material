@@ -11,7 +11,6 @@ class Progress {
     }
 
     /**
-     * @private
      */
     render() {
         if (!this.progressIndicator) {
@@ -22,7 +21,7 @@ class Progress {
     }
 
     /**
-     * @param {Undefined} [newDuration]
+     * @param {String} [newDuration]
      */
     start(newDuration) {
         this.duration += newDuration;
@@ -36,7 +35,7 @@ class Progress {
     }
 
     /**
-     * @param {Undefined} [currentTime]
+     * @param {String} [currentTime]
      */
     step(currentTime) {
         if (!this.progressIndicator) return;

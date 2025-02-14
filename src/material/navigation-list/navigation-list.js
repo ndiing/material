@@ -32,8 +32,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderNavigationListItem(item) {
         return html`
@@ -54,14 +53,12 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return this.items.map((item) => this.renderNavigationListItem(item));
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -73,7 +70,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -82,9 +78,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -118,7 +113,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationListKeydownArrowUp(event) {
@@ -135,7 +129,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      * @param {Object} [event]
      */
@@ -153,7 +146,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationListKeydownEnter(event) {
@@ -164,7 +156,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationListKeydown(event) {
@@ -177,7 +168,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationListItemClick(event) {

@@ -1,5 +1,5 @@
 /**
- * @param {Undefined} [week]
+ * @param {Number} [week]
  */
 Date.prototype.setWeek = function (week) {
     const year = this.getFullYear();

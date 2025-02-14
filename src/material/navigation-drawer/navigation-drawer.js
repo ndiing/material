@@ -47,16 +47,14 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -74,8 +72,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -90,7 +87,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -116,7 +112,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -134,7 +129,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -143,8 +137,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -184,7 +177,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationDrawerIconButtonClick(event) {
@@ -192,7 +184,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationDrawerScrimClose(event) {
@@ -201,7 +192,6 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleNavigationDrawerItemClick(event) {

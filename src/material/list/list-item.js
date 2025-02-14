@@ -58,7 +58,6 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -129,7 +128,6 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -148,7 +146,6 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -157,9 +154,8 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

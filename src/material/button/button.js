@@ -38,7 +38,6 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -53,7 +52,6 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -66,7 +64,6 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -75,8 +72,7 @@ class MdButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

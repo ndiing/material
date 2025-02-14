@@ -33,8 +33,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -52,14 +51,12 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${this.leadingActions?.length ? html` <div class="md-top-app-bar__actions">${this.leadingActions.map((action) => this.renderIconButton(action))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-top-app-bar__labels">${this.label ? html`<div class="md-top-app-bar__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-top-app-bar__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.trailingActions?.length ? html` <div class="md-top-app-bar__actions">${this.trailingActions.map((action) => this.renderIconButton(action))}</div> ` : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -72,8 +69,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -103,7 +99,6 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTopAppBarIconButtonClick(event) {

@@ -136,8 +136,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         /* prettier-ignore */
@@ -149,8 +148,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         /* prettier-ignore */
@@ -169,8 +167,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         /* prettier-ignore */
@@ -189,8 +186,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderSpacer(item) {
         /* prettier-ignore */
@@ -202,8 +198,7 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -217,7 +212,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderMonthPickerYear() {
         /* prettier-ignore */
@@ -237,7 +231,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     renderMonthPickerMonth() {
         /* prettier-ignore */
@@ -257,7 +250,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         /* prettier-ignore */
@@ -289,7 +281,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -309,7 +300,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -318,9 +308,8 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -381,7 +370,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerYearItemClick(event) {
@@ -392,7 +380,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerMonthItemClick(event) {
@@ -407,7 +394,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerScrimClose(event) {
@@ -416,7 +402,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerShown(event) {
@@ -425,7 +410,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerClosed(event) {
@@ -434,7 +418,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerIconButtonPrevClick(event) {
@@ -448,7 +431,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerIconButtonNextClick(event) {
@@ -462,7 +444,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerIconButtonClick(event) {
@@ -477,7 +458,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerButtonCancelClick(event) {
@@ -487,7 +467,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerButtonOkClick(event) {
@@ -496,7 +475,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerButtonLabelClick(event) {
@@ -509,7 +487,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleMonthPickerButtonClick(event) {

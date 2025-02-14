@@ -13,16 +13,14 @@ class MdComponent extends LitElement {
     }
 
     /**
-     * @private
      */
     createRenderRoot() {
         return this;
     }
 
     /**
-     * @private
-     * @param {Undefined} [type]
-     * @param {Undefined} [detail]
+     * @param {String} [type]
+     * @param {Object} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

@@ -11,7 +11,7 @@ class Layout {
     ];
 
     /**
-     * @param {Undefined} [callback]
+     * @param {String} [callback]
      */
     constructor(callback) {
         this.callback = callback.bind(this);
@@ -19,7 +19,6 @@ class Layout {
     }
 
     /**
-     * @private
      */
     handleChange() {
         this.destroy();

@@ -28,7 +28,6 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -40,7 +39,6 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -53,8 +51,7 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

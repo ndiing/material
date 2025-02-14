@@ -38,8 +38,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderListItem(item) {
         if (this.fieldMap) {
@@ -80,14 +79,12 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return this.items.map((item) => this.renderListItem(item));
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -95,7 +92,6 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleListItemClick(event) {
@@ -114,7 +110,6 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleListItemCheckboxNativeInput(event) {
@@ -125,7 +120,6 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleListItemRadioButtonNativeInput(event) {
@@ -138,7 +132,6 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleListItemSwitchNativeInput(event) {

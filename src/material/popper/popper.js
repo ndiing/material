@@ -1,7 +1,7 @@
 import { closestScrollableElement } from "../util/util";
 
 /**
- * @param {Undefined} [placement]
+ * @param {String} [placement]
  * @param {Object} [options={}]
  */
 function calculatePosition(placement, options = {}) {
@@ -31,7 +31,7 @@ function calculatePosition(placement, options = {}) {
 }
 
 /**
- * @param {Undefined} [offset]
+ * @param {String} [offset]
  */
 function parseOffset(offset) {
     let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);

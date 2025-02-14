@@ -2,7 +2,7 @@
  */
 class Ripple {
     /**
-     * @param {Undefined} [host]
+     * @param {String} [host]
      * @param {Object} [options]
      */
     constructor(host, options) {
@@ -83,7 +83,6 @@ class Ripple {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRippleHoverIn(event) {
@@ -91,7 +90,6 @@ class Ripple {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRippleHoverOut(event) {
@@ -99,7 +97,6 @@ class Ripple {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRipplePressIn(event) {
@@ -121,7 +118,6 @@ class Ripple {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRipplePressOut(event) {
@@ -131,7 +127,6 @@ class Ripple {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRippleFocusIn(event) {
@@ -139,7 +134,6 @@ class Ripple {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleRippleFocusOut(event) {

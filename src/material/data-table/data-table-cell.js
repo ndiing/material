@@ -36,7 +36,6 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -59,7 +58,6 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -77,9 +75,8 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

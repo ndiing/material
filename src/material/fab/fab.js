@@ -45,14 +45,12 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html` ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing} `;
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -63,7 +61,6 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -72,8 +69,7 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

@@ -30,7 +30,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -38,7 +37,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -107,7 +105,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekFieldWindowClick(event) {
@@ -118,7 +115,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekFieldWindowScroll(event) {
@@ -126,7 +122,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekFieldPickerButtonCancelClick(event) {
@@ -134,7 +129,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleWeekFieldPickerButtonOkClick(event) {
@@ -144,7 +138,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @async
      * @param {Object} [event]
      */
@@ -155,7 +148,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldIconButtonClick(event) {

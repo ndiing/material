@@ -31,8 +31,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderButton(item) {
         return html`
@@ -51,14 +50,12 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return this.items.map((item) => this.renderButton(item));
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -66,7 +63,6 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleSegmentedButtonItemClick(event) {

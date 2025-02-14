@@ -32,7 +32,6 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -57,7 +56,6 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -68,7 +66,6 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async disconnectedCallback() {
@@ -77,7 +74,6 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleChipActionClick(event) {

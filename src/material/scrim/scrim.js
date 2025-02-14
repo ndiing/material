@@ -19,7 +19,6 @@ class MdScrimComponent extends MdComponent {
     };
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -29,7 +28,6 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -62,7 +60,6 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleScrimClick(event) {
@@ -71,7 +68,6 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleScrimShown(event) {
@@ -82,7 +78,6 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleScrimClosed(event) {

@@ -43,8 +43,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [th]
+     * @param {String} [th]
      */
     styleDataTableHeaderCell(th) {
         return {
@@ -60,8 +59,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [td]
+     * @param {String} [td]
      */
     styleDataTableBodyCell(td) {
         return {
@@ -84,7 +82,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         return html`
@@ -168,7 +165,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     connectedCallback() {
         super.connectedCallback();
@@ -178,7 +174,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -186,9 +181,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -231,7 +225,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDataTableKeydown(event) {
@@ -246,7 +239,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDataTableHeaderCellClick(event) {
@@ -270,7 +262,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDataTableBodyCellClick(event) {
@@ -278,7 +269,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDataTableHeaderCheckboxClick(event) {
@@ -292,7 +282,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDataTableBodyClick(event) {
@@ -325,7 +314,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleDataTableBodyCheckboxClick(event) {

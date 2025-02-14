@@ -3,7 +3,7 @@
  */
 class VirtualScroll {
     /**
-     * @param {Undefined} [host]
+     * @param {String} [host]
      * @param {Object} [options]
      */
     constructor(host, options) {
@@ -32,7 +32,6 @@ class VirtualScroll {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleScroll(event) {
@@ -59,9 +58,8 @@ class VirtualScroll {
     }
 
     /**
-     * @private
-     * @param {Undefined} [type]
-     * @param {Undefined} [detail]
+     * @param {String} [type]
+     * @param {String} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

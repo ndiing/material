@@ -136,8 +136,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIcon(item) {
         return html`
@@ -150,8 +149,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      */
     renderIconButton(item) {
         return html`
@@ -170,8 +168,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [item]
+     * @param {String} [item]
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
@@ -186,7 +183,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      */
     render() {
         const actions = this.leadingActions.concat(this.actions).concat(this.trailingActions);
@@ -270,7 +266,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @async
      */
     async connectedCallback() {
@@ -284,8 +279,7 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
-     * @param {Undefined} [changedProperties]
+     * @param {String} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -303,7 +297,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldFocus(event) {
@@ -312,7 +305,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldBlur(event) {
@@ -321,7 +313,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldInput(event) {
@@ -339,7 +330,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldInvalid(event) {
@@ -350,7 +340,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldReset(event) {
@@ -362,7 +351,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldIconButtonCancelClick(event) {
@@ -375,7 +363,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldIconButtonClick(event) {
@@ -385,7 +372,6 @@ class MdTextFieldComponent extends MdComponent {
     }
 
     /**
-     * @private
      * @param {Object} [event]
      */
     handleTextFieldClick(event) {
