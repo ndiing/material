@@ -1,11 +1,9 @@
 /**
- * Kelas Layout digunakan untuk mendeteksi dan merespons perubahan ukuran layar
- * berdasarkan media query yang telah ditentukan.
+ *
  */
 class Layout {
     /**
-     * Daftar kondisi media query untuk menentukan mode tata letak.
-     * @type {Array<{ name: string, media: MediaQueryList }>}
+     * @readonly
      */
     items = [
         { name: "expanded", media: window.matchMedia("(min-width: 840px)") },
@@ -14,8 +12,8 @@ class Layout {
     ];
 
     /**
-     * Membuat instance Layout.
-     * @param {Function} callback - Fungsi yang akan dipanggil saat perubahan tata letak terjadi.
+     *
+     * @param {Any} [callback]
      */
     constructor(callback) {
         this.callback = callback.bind(this);
@@ -23,7 +21,7 @@ class Layout {
     }
 
     /**
-     * Menangani perubahan media query.
+     *
      * @private
      */
     handleChange() {
@@ -32,7 +30,7 @@ class Layout {
     }
 
     /**
-     * Menginisialisasi listener untuk mendeteksi perubahan media query.
+     *
      */
     init() {
         this.item = this.items.find((item) => item.media.matches);
@@ -41,7 +39,7 @@ class Layout {
     }
 
     /**
-     * Menghapus listener media query yang sedang aktif.
+     *
      */
     destroy() {
         this.item.media.removeEventListener("change", this.handleChange);

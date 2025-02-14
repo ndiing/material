@@ -12,7 +12,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MdIconButtonComponent extends MdComponent {
     /**
      * @property {String} [icon]
-     * @property {String} [variant] - ["filled","filled-tonal","outlined"]
+     * @property {String} [variant]
      * @property {String} [type]
      * @property {Boolean} [toggle]
      * @property {Boolean} [selected]

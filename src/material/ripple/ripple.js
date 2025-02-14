@@ -1,16 +1,11 @@
 /**
- * Efek ripple interaktif untuk elemen UI.
+ *
  */
 class Ripple {
     /**
-     * Membuat efek ripple pada elemen host.
-     * @param {HTMLElement} host Elemen yang akan memiliki efek ripple.
-     * @param {Object} [options] Opsi konfigurasi ripple.
-     * @param {boolean} [options.centered=false] Jika true, ripple akan dimulai dari tengah elemen.
-     * @param {number} [options.radius] Radius ripple dalam pixel.
-     * @param {string|HTMLElement} [options.trigger] Elemen pemicu ripple.
-     * @param {boolean} [options.unbounded=false] Jika true, ripple tidak akan dibatasi oleh elemen host.
-     * @param {string|HTMLElement} [options.container] Elemen tempat ripple akan dirender.
+     *
+     * @param {Any} [host]
+     * @param {Any} [options]
      */
     constructor(host, options) {
         this.host = host;
@@ -26,7 +21,8 @@ class Ripple {
     }
 
     /**
-     * Inisialisasi efek ripple.
+     *
+     * @async
      */
     async init() {
         this.container = this.host;
@@ -68,7 +64,8 @@ class Ripple {
     }
 
     /**
-     * Menghancurkan efek ripple dan membersihkan event listener.
+     *
+     * @async
      */
     async destroy() {
         if (this.container) {
@@ -90,24 +87,27 @@ class Ripple {
     }
 
     /**
-     * Menangani event pointer enter.
+     *
      * @private
+     * @param {Any} [event]
      */
     handlePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
     /**
-     * Menangani event pointer leave.
+     *
      * @private
+     * @param {Any} [event]
      */
     handlePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
     /**
-     * Menangani event pointer down.
+     *
      * @private
+     * @param {Any} [event]
      */
     handlePointerdown(event) {
         window.addEventListener("pointerup", this.handlePointerup, { passive: true });
@@ -128,8 +128,9 @@ class Ripple {
     }
 
     /**
-     * Menangani event pointer up.
+     *
      * @private
+     * @param {Any} [event]
      */
     handlePointerup(event) {
         this.container.classList.remove("md-ripple--press");
@@ -138,16 +139,18 @@ class Ripple {
     }
 
     /**
-     * Menangani event focus.
+     *
      * @private
+     * @param {Any} [event]
      */
     handleFocus(event) {
         this.container.classList.add("md-ripple--focus");
     }
 
     /**
-     * Menangani event blur.
+     *
      * @private
+     * @param {Any} [event]
      */
     handleBlur(event) {
         this.container.classList.remove("md-ripple--focus");

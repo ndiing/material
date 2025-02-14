@@ -15,7 +15,7 @@ class MdSliderComponent extends MdComponent {
      * @property {Number} [min]
      * @property {Number} [max]
      * @property {Number} [step]
-     * @property {String} [variant] - ["centered","continuous","discrete","range-selection"]
+     * @property {String} [variant]
      * @property {String} [name]
      * @property {Any} [value]
      */

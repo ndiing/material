@@ -1,9 +1,9 @@
 /**
- * Class untuk mengelola indikator progres berbasis animasi.
+ *
  */
 class Progress {
     /**
-     * Inisialisasi properti untuk progres.
+     *
      */
     constructor() {
         this.startTime = null;
@@ -13,7 +13,7 @@ class Progress {
     }
 
     /**
-     * Membuat dan menampilkan elemen indikator progres jika belum ada.
+     *
      * @private
      */
     render() {
@@ -25,9 +25,8 @@ class Progress {
     }
 
     /**
-     * Memulai atau menambahkan durasi ke animasi progres.
      *
-     * @param {number} newDuration - Durasi tambahan dalam milidetik.
+     * @param {Any} [newDuration]
      */
     start(newDuration) {
         this.duration += newDuration;
@@ -41,10 +40,8 @@ class Progress {
     }
 
     /**
-     * Mengupdate progres berdasarkan waktu yang telah berlalu.
      *
-     * @private
-     * @param {DOMHighResTimeStamp} currentTime - Waktu saat ini dalam milidetik.
+     * @param {Any} [currentTime]
      */
     step(currentTime) {
         if (!this.progressIndicator) return;
@@ -60,8 +57,7 @@ class Progress {
     }
 
     /**
-     * Menghapus elemen indikator progres dari DOM.
-     * @private
+     *
      */
     remove() {
         if (this.progressIndicator) {
@@ -71,8 +67,7 @@ class Progress {
     }
 
     /**
-     * Mengatur ulang progres dan menghapus indikator.
-     * @private
+     *
      */
     reset() {
         this.startTime = null;

@@ -1,35 +1,30 @@
 /**
- * Kelas Store untuk mengelola, menyortir, mencari, memfilter, dan melakukan paginasi data.
+ *
  */
-
 class Store {
     /**
-     * Membuat instance Store.
-     * @param {Array<Object>} [data=[]] - Data awal dalam bentuk array objek.
-     * @param {Object} [options={}] - Opsi tambahan untuk konfigurasi.
+     *
+     * @param {Any} [data=[]]
+     * @param {Any} [options={}]
      */
-
     constructor(data = [], options = {}) {
         this.data = data;
         this.options = options;
     }
 
     /**
-     * Memuat data baru ke dalam store.
-     * @param {Array<Object>} data - Data yang akan dimuat ke dalam store.
+     *
+     * @param {Any} [data=[]]
      */
-
     load(data = []) {
         this.data = data;
     }
 
     /**
-     * Menyortir data berdasarkan kriteria yang diberikan.
-     * @param {Array<Object>} data - Data yang akan disortir.
-     * @param {Array<{ name: string, order: 'asc' | 'desc' }>} sorters - Kriteria penyortiran.
-     * @returns {Array<Object>} Data yang telah disortir.
+     *
+     * @param {Any} [data]
+     * @param {Any} [sorters]
      */
-
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
         return data.sort((a, b) => {
@@ -45,13 +40,10 @@ class Store {
     }
 
     /**
-     * Melakukan pencarian rekursif dalam suatu item.
-     * @private
-     * @param {any} item - Item yang akan dicari.
-     * @param {string} q - Kata kunci pencarian.
-     * @returns {boolean} True jika item cocok dengan pencarian, false jika tidak.
+     *
+     * @param {Any} [item]
+     * @param {Any} [q]
      */
-
     deepSearch(item, q) {
         if (!item) return false;
         if (typeof item === "string" || typeof item === "number") {
@@ -67,36 +59,29 @@ class Store {
     }
 
     /**
-     * Mencari data berdasarkan kata kunci tertentu.
-     * @param {Array<Object>} data - Data yang akan dicari.
-     * @param {string} q - Kata kunci pencarian.
-     * @returns {Array<Object>} Data yang sesuai dengan pencarian.
+     *
+     * @param {Any} [data]
+     * @param {Any} [q]
      */
-
     search(data, q) {
         if (!q) return data;
         return data.filter((item) => this.deepSearch(item, q));
     }
 
     /**
-     * Mengambil nilai dari properti bertingkat dalam objek.
-     * @private
-     * @param {Object} item - Objek sumber.
-     * @param {string} name - Path ke properti (contoh: 'user.address.city').
-     * @returns {any} Nilai properti jika ada, undefined jika tidak ditemukan.
+     *
+     * @param {Any} [item]
+     * @param {Any} [name]
      */
-
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
 
     /**
-     * Memfilter data berdasarkan kondisi tertentu.
-     * @param {Array<Object>} data - Data yang akan difilter.
-     * @param {Array<{ name: string, value: any, operator: string }>} filters - Kriteria filter.
-     * @returns {Array<Object>} Data yang telah difilter.
+     *
+     * @param {Any} [data]
+     * @param {Any} [filters]
      */
-
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
         return data.filter((item) => {
@@ -130,25 +115,21 @@ class Store {
     }
 
     /**
-     * Mengambil data dalam rentang indeks tertentu.
-     * @param {Array<Object>} data - Data yang akan dipotong.
-     * @param {number} _start - Indeks awal.
-     * @param {number} _end - Indeks akhir.
-     * @returns {Array<Object>} Data yang berada dalam rentang indeks.
+     *
+     * @param {Any} [data]
+     * @param {Any} [_start]
+     * @param {Any} [_end]
      */
-
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
 
     /**
-     * Memisahkan data menjadi halaman-paginasi.
-     * @param {Array<Object>} data - Data yang akan dipaginasi.
-     * @param {number} _page - Nomor halaman.
-     * @param {number} _limit - Jumlah item per halaman.
-     * @returns {Array<Object>} Data pada halaman tertentu.
+     *
+     * @param {Any} [data]
+     * @param {Any} [_page]
+     * @param {Any} [_limit]
      */
-
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;
         let end = start + _limit;
@@ -156,18 +137,9 @@ class Store {
     }
 
     /**
-     * Mengambil data dengan opsi pemrosesan seperti sortir, filter, pencarian, dan paginasi.
-     * @param {Object} [options={}] - Opsi pemrosesan data.
-     * @param {Array<{ name: string, order: 'asc' | 'desc' }>} [options.sorters] - Opsi penyortiran.
-     * @param {string} [options.q] - Kata kunci pencarian.
-     * @param {Array<{ name: string, value: any, operator: string }>} [options.filters] - Opsi filter.
-     * @param {number} [options._start] - Indeks awal rentang data.
-     * @param {number} [options._end] - Indeks akhir rentang data.
-     * @param {number} [options._page] - Nomor halaman untuk paginasi.
-     * @param {number} [options._limit] - Jumlah item per halaman.
-     * @returns {{ data: Array<Object>, total: number }} Objek yang berisi data hasil pemrosesan dan jumlah total data.
+     *
+     * @param {Any} [options={}]
      */
-
     get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;
         let data = this.data.slice();

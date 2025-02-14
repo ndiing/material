@@ -22,7 +22,7 @@ class MdNavigationDrawerComponent extends MdComponent {
      * @property {Array} [items]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {String} [type] - ["flat","tree"]
+     * @property {String} [type]
      */
     static properties = {
         icons: { type: Array },

@@ -13,7 +13,7 @@ class MdFabComponent extends MdComponent {
      * @property {String} [icon]
      * @property {String} [label]
      * @property {String} [type]
-     * @property {String} [size] - ["small","large"]
+     * @property {String} [size]
      * @property {String} [variant]
      */
     static properties = {

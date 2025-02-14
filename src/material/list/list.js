@@ -14,7 +14,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MdListComponent extends MdComponent {
     /**
      * @property {Array} [items]
-     * @property {String} [type] - ["single-select","multi-select"]
+     * @property {String} [type]
      * @property {Object} [fieldMap]
      * @property {Object} [rippleOptions]
      */

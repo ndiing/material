@@ -21,7 +21,7 @@ class MdSheetComponent extends MdComponent {
      * @property {String} [sublabel]
      * @property {Array} [buttons]
      * @property {Boolean} [open]
-     * @property {String} [region] - ["north","east","south","west","center"]
+     * @property {String} [region]
      * @property {Boolean} [modal]
      */
     static properties = {

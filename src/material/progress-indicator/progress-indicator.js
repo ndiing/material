@@ -8,7 +8,7 @@ import { MdComponent } from "../component/component";
  */
 class MdProgressIndicatorComponent extends MdComponent {
     /**
-     * @property {String} [variant] - ["circular"]
+     * @property {String} [variant]
      * @property {Number} [max]
      * @property {Number} [value]
      */

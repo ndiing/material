@@ -1,21 +1,20 @@
 /**
- * Router untuk mengelola navigasi aplikasi.
- * @fires Router#onRouterCurrentEntryChange Saat entri rute berubah.
- * @fires Router#onRouterNavigate Saat navigasi dimulai.
- * @fires Router#onRouterNavigateError Jika navigasi gagal.
- * @fires Router#onRouterNavigateSuccess Jika navigasi berhasil.
+ *
+ * @fires Router#onRouterCurrentEntryChange
+ * @fires Router#onRouterNavigate
+ * @fires Router#onRouterNavigateError
+ * @fires Router#onRouterNavigateSuccess
  */
 class Router {
     static params = {};
 
     /**
-     * Mendapatkan rute yang cocok berdasarkan pathname.
-     * @private
-     * @param {string} [pathname=this.pathname] Path yang akan dicocokkan.
-     * @param {Array} [routes=this.routes] Daftar rute.
-     * @param {Object|null} [parent=null] Rute induk (jika ada).
-     * @param {Array} [result=[]] Hasil pencarian rute.
-     * @returns {Array|undefined} Rute yang cocok atau undefined jika tidak ditemukan.
+     *
+     * @static
+     * @param {Any} [pathname=this.pathname]
+     * @param {Any} [routes=this.routes]
+     * @param {Any} [parent=null]
+     * @param {Any} [result=[]]
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -38,7 +37,11 @@ class Router {
         }
     }
 
-    /** @returns {string} Pathname saat ini. */
+    /**
+     *
+     * @static
+     * @readonly
+     */
     static get pathname() {
         if (this.options.historyApiFallback) {
             return window.location.pathname;
@@ -48,8 +51,11 @@ class Router {
     }
 
     /**
-     * Menangani navigasi dan memproses rute.
+     *
      * @private
+     * @static
+     * @async
+     * @param {Any} [event]
      */
     static async handleNavigation(event) {
         performance.mark("mark-1");
@@ -81,8 +87,9 @@ class Router {
     }
 
     /**
-     * Menghapus komponen yang tidak digunakan.
-     * @private
+     *
+     * @static
+     * @param {Any} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -98,16 +105,22 @@ class Router {
     }
 
     /**
-     * Merender komponen pada outlet yang sesuai.
+     *
      * @private
+     * @static
+     * @param {Any} [route]
+     * @param {Any} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
     /**
-     * Mendapatkan outlet untuk rute tertentu.
-     * @private
+     *
+     * @static
+     * @async
+     * @param {Any} [container]
+     * @param {Any} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -136,16 +149,19 @@ class Router {
     }
 
     /**
-     * Menentukan container untuk komponen rute.
-     * @private
+     *
+     * @static
+     * @param {Any} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
     /**
-     * Memuat komponen rute jika belum ada.
-     * @private
+     *
+     * @static
+     * @async
+     * @param {Any} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -154,8 +170,11 @@ class Router {
     }
 
     /**
-     * Menjalankan hook beforeLoad sebelum memuat rute.
+     *
      * @private
+     * @static
+     * @async
+     * @param {Any} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -169,8 +188,8 @@ class Router {
     }
 
     /**
-     * Mengatur AbortController untuk menangani navigasi.
-     * @private
+     *
+     * @static
      */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
@@ -178,8 +197,9 @@ class Router {
     }
 
     /**
-     * Menavigasi ke URL yang diberikan.
-     * @param {String} url
+     *
+     * @static
+     * @param {Any} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -190,8 +210,10 @@ class Router {
     }
 
     /**
-     * Menangani event klik untuk navigasi.
+     *
      * @private
+     * @static
+     * @param {Any} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -202,8 +224,11 @@ class Router {
     }
 
     /**
-     * Memicu event kustom.
+     *
      * @private
+     * @static
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -217,9 +242,10 @@ class Router {
     static options = {};
 
     /**
-     * Menginisialisasi router dengan daftar rute dan opsi.
-     * @param {Array} [routes=[]] Daftar rute yang digunakan.
-     * @param {Object} [options={}] Opsi tambahan untuk router.
+     *
+     * @static
+     * @param {Any} [routes=[]]
+     * @param {Any} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
@@ -232,6 +258,9 @@ class Router {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
 
+            /**
+             *
+             */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");

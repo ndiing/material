@@ -1,17 +1,9 @@
 /**
- * @namespace Popper
- */
-
-/**
- * Menghitung posisi elemen berdasarkan peletakan (placement) yang diberikan.
- * @private
- * @memberof Popper
- * @param {string} placement - Peletakan elemen relatif terhadap elemen pemicu (trigger).
- * @param {Object} options - Opsi posisi elemen.
- * @param {DOMRect} options.containerRect - Dimensi elemen kontainer.
- * @param {DOMRect} options.triggerRect - Dimensi elemen pemicu (trigger).
- * @param {Object} options.offset - Jarak offset dalam bentuk objek { top, right, bottom, left }.
- * @returns {Object} Posisi { left, top } dari elemen.
+ *
+ * @param {Any} [placement]
+ * @param {Any} [{ containerRect]
+ * @param {Any} [triggerRect]
+ * @param {Any} [offset }]
  */
 function calculatePosition(placement, { containerRect, triggerRect, offset }) {
     const { left, top, right, bottom, width, height } = triggerRect;
@@ -39,11 +31,8 @@ function calculatePosition(placement, { containerRect, triggerRect, offset }) {
 }
 
 /**
- * Menguraikan string offset menjadi objek dengan nilai { top, right, bottom, left }.
- * @private
- * @memberof Popper
- * @param {string|number} offset - Nilai offset dalam format CSS (misal: "10 15 5 20").
- * @returns {Object} Objek offset dalam bentuk { top, right, bottom, left }.
+ *
+ * @param {Any} [offset]
  */
 function parseOffset(offset) {
     let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);
@@ -54,14 +43,8 @@ function parseOffset(offset) {
 }
 
 /**
- * Menetapkan posisi elemen berdasarkan berbagai opsi dan batasan.
- * @memberof Popper
- * @param {Object} options - Konfigurasi posisi.
- * @param {HTMLElement} options.container - Elemen yang akan diposisikan.
- * @param {HTMLElement} options.trigger - Elemen pemicu untuk posisi elemen.
- * @param {HTMLElement} [options.boundary] - Elemen batas untuk membatasi posisi.
- * @param {string|number} [options.offset="0"] - Offset dalam format CSS.
- * @param {string[]} options.placements - Daftar kemungkinan peletakan (misalnya: ["top", "bottom"]).
+ *
+ * @param {Any} [options={}]
  */
 function setPosition(options = {}) {
     const { container, trigger, boundary, offset = "0", placements } = options;
@@ -96,11 +79,8 @@ function setPosition(options = {}) {
 }
 
 /**
- * Menemukan elemen terdekat yang memiliki overflow dapat discroll.
- * @private
- * @memberof Popper
- * @param {HTMLElement} element - Elemen awal untuk pencarian.
- * @returns {HTMLElement} Elemen yang memiliki overflow scroll, atau <html> / <body> jika tidak ditemukan.
+ *
+ * @param {Any} [element]
  */
 function closestScrollableElement(element) {
     let current = element;

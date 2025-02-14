@@ -11,7 +11,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MdSegmentedButtonComponent extends MdComponent {
     /**
      * @property {Array} [items]
-     * @property {String} [type] - ["single-select","multi-select"]
+     * @property {String} [type]
      */
     static properties = {
         items: { type: Array },

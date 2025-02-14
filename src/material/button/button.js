@@ -12,7 +12,7 @@ class MdButtonComponent extends MdComponent {
     /**
      * @property {String} [icon]
      * @property {String} [label]
-     * @property {String} [variant] - ["elevated","filled","filled-tonal","outlined"]
+     * @property {String} [variant]
      * @property {String} [type]
      * @property {Boolean} [disabled]
      * @property {Boolean} [selected]
