@@ -97,7 +97,10 @@ class Router {
         }
     }
 
-    /** Merender komponen pada outlet yang sesuai. */
+    /**
+     * Merender komponen pada outlet yang sesuai.
+     * @private
+     */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
