@@ -182,9 +182,15 @@ class DemoMain extends MdComponent {
                     { label: "Text Field", routerLink: "/text-field" },
                     { label: "Text Field Outlined", routerLink: "/text-field-outlined" },
                     { label: "Text Field Filled", routerLink: "/text-field-filled" },
+
+                    { label: "Datetime Field", routerLink: "/datetime-field" },
+                    { label: "Date Field", routerLink: "/date-field" },
+                    { label: "Time Field", routerLink: "/time-field" },
+                    { label: "Month Field", routerLink: "/month-field" },
+                    { label: "Week Field", routerLink: "/week-field" },
                 ],
             },
-            { label: "Datetime Field", routerLink: "/datetime-field" },
+            
             { label: "Tooltip", routerLink: "/tooltip" },
             { label: "Top App Bar", routerLink: "/top-app-bar" },
             // { label: "Tree Item", routerLink: "/tree-item" },
@@ -213,6 +219,7 @@ class DemoMain extends MdComponent {
                     { label: "Month Picker", routerLink: "/month-picker" },
                     { label: "Month Picker Modal", routerLink: "/month-picker-modal" },
                     // ] },
+                    
                 ],
             },
         ];

@@ -86,56 +86,56 @@ class DemoForm extends MdComponent {
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
+                            <md-date-field
                                 type="date"
                                 label="date"
                                 name="date"
                                 required
                                 value="1990-10-17"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-date-field>
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
+                            <md-datetime-field
                                 type="datetime-local"
                                 label="datetime-local"
                                 name="datetime-local"
                                 required
                                 value="1990-10-17T20:30"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-datetime-field>
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
+                            <md-month-field
                                 type="month"
                                 label="month"
                                 name="month"
                                 required
                                 value="1990-10"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-month-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
+                            <md-time-field
                                 type="time"
                                 label="time"
                                 name="time"
                                 required
                                 value="20:30"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-time-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
+                            <md-week-field
                                 type="week"
                                 label="week"
                                 name="week"
                                 required
                                 value="1990-W42"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-week-field>
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">

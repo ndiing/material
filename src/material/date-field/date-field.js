@@ -1,19 +1,19 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
-import { closestScrollableElement, parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
+import { closestScrollableElement, parseDate, stringifyDate } from "../util/util";
 
 /**
  * @extends MdTextFieldComponent
- * @element md-datetime-field
+ * @element md-date-field
  */
-class MdDatetimeFieldComponent extends MdTextFieldComponent {
+class MdDateFieldComponent extends MdTextFieldComponent {
 
     /**
      */
     constructor() {
         super();
-        this.type = "datetime-local";
+        this.type = "date";
     }
 
     /**
@@ -22,9 +22,9 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     get trailingActions() {
         let actions = [
             {
-                id: "calendar_clock",
+                id: "calendar_today",
                 component: "icon-button",
-                icon: "calendar_clock",
+                icon: "calendar_today",
             },
         ];
         return actions;
@@ -35,7 +35,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      */
     connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-datetime-field");
+        this.classList.add("md-date-field");
     }
 
     /**
@@ -51,12 +51,12 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      */
     async createPicker() {
         if (!this.picker) {
-            this.picker = document.createElement("md-datetime-picker");
+            this.picker = document.createElement("md-date-picker");
             this.parentElement.insertBefore(this.picker, this.nextElementSibling);
-            this.handleDatetimeFieldPickerButtonCancelClick = this.handleDatetimeFieldPickerButtonCancelClick.bind(this);
-            this.handleDatetimeFieldPickerButtonOkClick = this.handleDatetimeFieldPickerButtonOkClick.bind(this);
-            this.picker.addEventListener("onDatetimePickerButtonCancelClick", this.handleDatetimeFieldPickerButtonCancelClick);
-            this.picker.addEventListener("onDatetimePickerButtonOkClick", this.handleDatetimeFieldPickerButtonOkClick);
+            this.handleDateFieldPickerButtonCancelClick = this.handleDateFieldPickerButtonCancelClick.bind(this);
+            this.handleDateFieldPickerButtonOkClick = this.handleDateFieldPickerButtonOkClick.bind(this);
+            this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
+            this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
             await this.picker.updateComplete
         }
     }
@@ -66,8 +66,8 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      */
     removePicker() {
         if (this.picker) {
-            this.picker.removeEventListener("onDatetimePickerButtonCancelClick", this.handleDatetimeFieldPickerButtonCancelClick);
-            this.picker.removeEventListener("onDatetimePickerButtonOkClick", this.handleDatetimeFieldPickerButtonOkClick);
+            this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
+            this.picker.removeEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
             this.picker.remove();
             this.picker = undefined;
         }
@@ -79,12 +79,12 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     showPicker(options = {}) {
         if (this.picker) {
             this.pickerContainer = closestScrollableElement(this);
-            this.handleDatetimeFieldWindowClick = this.handleDatetimeFieldWindowClick.bind(this);
-            this.handleDatetimeFieldWindowScroll = this.handleDatetimeFieldWindowScroll.bind(this);
-            window.addEventListener("click", this.handleDatetimeFieldWindowClick);
-            this.pickerContainer.addEventListener("scroll", this.handleDatetimeFieldWindowScroll);
+            this.handleDateFieldWindowClick = this.handleDateFieldWindowClick.bind(this);
+            this.handleDateFieldWindowScroll = this.handleDateFieldWindowScroll.bind(this);
+            window.addEventListener("click", this.handleDateFieldWindowClick);
+            this.pickerContainer.addEventListener("scroll", this.handleDateFieldWindowScroll);
             if (this.textFieldNative.value) 
-                this.picker.value = parseDatetimeLocal(this.textFieldNative.value);
+                this.picker.value = parseDate(this.textFieldNative.value);
             this.picker.show(options);
         }
     }
@@ -93,8 +93,8 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      */
     closePicker() {
         if (this.picker) {
-            window.removeEventListener("click", this.handleDatetimeFieldWindowClick);
-            this.pickerContainer.removeEventListener("scroll", this.handleDatetimeFieldWindowScroll);
+            window.removeEventListener("click", this.handleDateFieldWindowClick);
+            this.pickerContainer.removeEventListener("scroll", this.handleDateFieldWindowScroll);
             this.picker.close();
         }
     }
@@ -113,7 +113,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      * @private
      * @param {Object} [event]
      */
-    handleDatetimeFieldWindowClick(event) {
+    handleDateFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
             this.closePicker();
@@ -124,7 +124,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      * @private
      * @param {Object} [event]
      */
-    handleDatetimeFieldWindowScroll(event) {
+    handleDateFieldWindowScroll(event) {
         this.closePicker();
     }
 
@@ -132,7 +132,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      * @private
      * @param {Object} [event]
      */
-    handleDatetimeFieldPickerButtonCancelClick(event) {
+    handleDateFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
@@ -140,8 +140,8 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      * @private
      * @param {Object} [event]
      */
-    handleDatetimeFieldPickerButtonOkClick(event) {
-        this.textFieldNative.value = stringifyDatetimeLocal(this.picker.value);
+    handleDateFieldPickerButtonOkClick(event) {
+        this.textFieldNative.value = stringifyDate(this.picker.value);
         this.updateValue();
         this.closePicker();
     }
@@ -163,9 +163,9 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "calendar_clock") return this.handleTextFieldIconButtonPickerClick(event);
+        if (data.id === "calendar_today") return this.handleTextFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
 }
-customElements.define("md-datetime-field", MdDatetimeFieldComponent);
-export { MdDatetimeFieldComponent };
+customElements.define("md-date-field", MdDateFieldComponent);
+export { MdDateFieldComponent };

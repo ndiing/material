@@ -116,8 +116,6 @@ import DemoTextField from "./text-field/text-field.js";
 import DemoTextFieldOutlined from "./text-field/text-field-outlined.js";
 import DemoTextFieldFilled from "./text-field/text-field-filled.js";
 
-import DemoDatetimeField from "./datetime-field/datetime-field.js";
-
 import DemoTooltip from "./tooltip/tooltip.js";
 
 import DemoTopAppBar from "./top-app-bar/top-app-bar.js";
@@ -135,11 +133,17 @@ import DemoDatePickerModal from "./date-picker/date-picker-modal.js";
 import DemoTimePicker from "./time-picker/time-picker.js";
 import DemoTimePickerModal from "./time-picker/time-picker-modal.js";
 
+import DemoMonthPicker from "./month-picker/month-picker.js";
+import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
+
 import DemoWeekPicker from "./week-picker/week-picker.js";
 import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
 
-import DemoMonthPicker from "./month-picker/month-picker.js";
-import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
+import DemoDatetimeField from "./datetime-field/datetime-field.js";
+import DemoDateField from "./date-field/date-field.js";
+import DemoTimeField from "./time-field/time-field.js";
+import DemoMonthField from "./month-field/month-field.js";
+import DemoWeekField from "./week-field/week-field.js";
 
 const routes = [
     {
@@ -259,8 +263,6 @@ const routes = [
             { path: "text-field-outlined", component: DemoTextFieldOutlined },
             { path: "text-field-filled", component: DemoTextFieldFilled },
 
-            { path: "datetime-field", component: DemoDatetimeField },
-
             { path: "tooltip", component: DemoTooltip },
 
             { path: "top-app-bar", component: DemoTopAppBar },
@@ -283,6 +285,14 @@ const routes = [
 
             { path: "month-picker", component: DemoMonthPicker },
             { path: "month-picker-modal", component: DemoMonthPickerModal },
+
+            
+            { path: "datetime-field", component: DemoDatetimeField },
+            { path: "date-field", component: DemoDateField },
+            { path: "time-field", component: DemoTimeField },
+            { path: "month-field", component: DemoMonthField },
+            { path: "week-field", component: DemoWeekField },
+
         ],
     },
     {
