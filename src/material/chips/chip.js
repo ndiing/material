@@ -74,7 +74,7 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", { event });

@@ -33,14 +33,14 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -58,7 +58,7 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -76,15 +76,15 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-card__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         const components = [
@@ -110,14 +110,14 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleCardIconButtonClick(event) {
         this.emit("onCardIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleCardButtonClick(event) {
         this.emit("onCardButtonClick", { event });

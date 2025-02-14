@@ -69,7 +69,7 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

@@ -11,8 +11,6 @@ class DemoWeekField extends MdComponent {
             >
                 <div class="md-layout">
                     <div class="md-layout__grid">
-                        
-
                         <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                             <md-week-field
                                 label="week"
@@ -43,10 +41,8 @@ class DemoWeekField extends MdComponent {
                                 type="submit"
                             ></md-button>
                         </div>
-                        
-                        <div style="height:100vh;"></div>
-                        
 
+                        <div style="height:100vh;"></div>
                     </div>
                 </div>
             </md-form>

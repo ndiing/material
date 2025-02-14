@@ -38,16 +38,14 @@ var Progress = /** @class */ (function () {
      * @param {String} [currentTime]
      */
     Progress.prototype.step = function (currentTime) {
-        if (!this.progressIndicator)
-            return;
+        if (!this.progressIndicator) return;
         var elapsed = currentTime - this.startTime;
         var progress = Math.min(elapsed / this.duration, 1);
         this.progressIndicator.max = this.duration;
         this.progressIndicator.value = elapsed;
         if (progress < 1) {
             this.requestId = requestAnimationFrame(this.step.bind(this));
-        }
-        else {
+        } else {
             this.reset();
         }
     };
@@ -68,5 +66,5 @@ var Progress = /** @class */ (function () {
         this.remove();
     };
     return Progress;
-}());
+})();
 exports.Progress = Progress;

@@ -19,8 +19,8 @@ class MdComponent extends LitElement {
     }
 
     /**
-     * @param {String} [type]
-     * @param {Object} [detail]
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

@@ -79,7 +79,7 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleCheckboxNativeInput(event) {
         const native = event.currentTarget;
@@ -89,7 +89,7 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleCheckboxNativeReset(event) {
         this.value = this.defaultValue;

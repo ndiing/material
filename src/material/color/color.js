@@ -1,8 +1,8 @@
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
- * @param {String} [input]
- * @param {String} [customColors]
+ * @param {Any} [input]
+ * @param {Any} [customColors]
  */
 async function setTheme(input, customColors) {
     let theme;

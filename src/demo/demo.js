@@ -286,13 +286,11 @@ const routes = [
             { path: "month-picker", component: DemoMonthPicker },
             { path: "month-picker-modal", component: DemoMonthPickerModal },
 
-            
             { path: "datetime-field", component: DemoDatetimeField },
             { path: "date-field", component: DemoDateField },
             { path: "time-field", component: DemoTimeField },
             { path: "month-field", component: DemoMonthField },
             { path: "week-field", component: DemoWeekField },
-
         ],
     },
     {

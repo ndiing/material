@@ -83,7 +83,7 @@ class MdTreeItemComponent extends MdComponent {
 
     /**
      * @async
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

@@ -70,7 +70,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [options={}]
+     * @param {Any} [options={}]
      */
     showPicker(options = {}) {
         if (this.picker) {
@@ -95,7 +95,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     togglePicker(options) {
         if (this.picker) {
@@ -105,7 +105,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDateFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
@@ -115,21 +115,21 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDateFieldWindowScroll(event) {
         this.closePicker();
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDateFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDateFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyDate(this.picker.value);
@@ -139,7 +139,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
 
     /**
      * @async
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
@@ -148,7 +148,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;

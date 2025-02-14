@@ -1,15 +1,18 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
+var __assign =
+    (this && this.__assign) ||
+    function () {
+        __assign =
+            Object.assign ||
+            function (t) {
+                for (var s, i = 1, n = arguments.length; i < n; i++) {
+                    s = arguments[i];
+                    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                }
+                return t;
+            };
+        return __assign.apply(this, arguments);
     };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VirtualScroll = void 0;
 /**
@@ -29,7 +32,9 @@ var VirtualScroll = /** @class */ (function () {
      * @param {Object} [options={}]
      */
     VirtualScroll.prototype.load = function (options) {
-        if (options === void 0) { options = {}; }
+        if (options === void 0) {
+            options = {};
+        }
         for (var name_1 in options) {
             var value = options[name_1];
             this.options[name_1] = value;
@@ -92,5 +97,5 @@ var VirtualScroll = /** @class */ (function () {
         this.handleScroll = null;
     };
     return VirtualScroll;
-}());
+})();
 exports.VirtualScroll = VirtualScroll;

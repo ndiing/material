@@ -31,7 +31,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -63,7 +63,7 @@ class MdSegmentedButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSegmentedButtonItemClick(event) {
         const data = event.currentTarget.data;

@@ -78,7 +78,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -90,7 +90,7 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleIconButtonClick(event) {
         if (this.toggle) {

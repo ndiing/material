@@ -21,7 +21,7 @@ class Progress {
     }
 
     /**
-     * @param {String} [newDuration]
+     * @param {Any} [newDuration]
      */
     start(newDuration) {
         this.duration += newDuration;
@@ -35,7 +35,7 @@ class Progress {
     }
 
     /**
-     * @param {String} [currentTime]
+     * @param {Any} [currentTime]
      */
     step(currentTime) {
         if (!this.progressIndicator) return;

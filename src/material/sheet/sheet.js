@@ -50,14 +50,14 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -75,7 +75,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -93,15 +93,15 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-sheet__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         const components = [
@@ -145,7 +145,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -189,7 +189,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSheetShown(event) {
         this.removeEventListener("animationend", this.handleSheetShown);
@@ -197,7 +197,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSheetClosed(event) {
         this.removeEventListener("animationend", this.handleSheetClosed);
@@ -205,7 +205,7 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSheetScrimClose(event) {
         if (this.open) this.close();
@@ -213,14 +213,14 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSheetIconButtonClick(event) {
         this.emit("onSheetIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSheetButtonClick(event) {
         this.emit("onSheetButtonClick", { event });

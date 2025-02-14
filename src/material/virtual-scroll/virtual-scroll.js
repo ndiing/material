@@ -3,8 +3,8 @@
  */
 class VirtualScroll {
     /**
-     * @param {String} [host]
-     * @param {Object} [options]
+     * @param {Any} [host]
+     * @param {Any} [options]
      */
     constructor(host, options) {
         this.host = host;
@@ -21,7 +21,7 @@ class VirtualScroll {
     }
 
     /**
-     * @param {Object} [options={}]
+     * @param {Any} [options={}]
      */
     load(options = {}) {
         for (const name in options) {
@@ -32,7 +32,7 @@ class VirtualScroll {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleScroll(event) {
         const total = this.options.total;
@@ -58,8 +58,8 @@ class VirtualScroll {
     }
 
     /**
-     * @param {String} [type]
-     * @param {String} [detail]
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

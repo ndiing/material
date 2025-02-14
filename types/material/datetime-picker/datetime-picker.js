@@ -1,70 +1,169 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
+var __extends =
+    (this && this.__extends) ||
+    (function () {
+        var extendStatics = function (d, b) {
+            extendStatics =
+                Object.setPrototypeOf ||
+                ({ __proto__: [] } instanceof Array &&
+                    function (d, b) {
+                        d.__proto__ = b;
+                    }) ||
+                function (d, b) {
+                    for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+                };
+            return extendStatics(d, b);
+        };
+        return function (d, b) {
+            if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+            extendStatics(d, b);
+            function __() {
+                this.constructor = d;
             }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
+            d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+        };
+    })();
+var __makeTemplateObject =
+    (this && this.__makeTemplateObject) ||
+    function (cooked, raw) {
+        if (Object.defineProperty) {
+            Object.defineProperty(cooked, "raw", { value: raw });
+        } else {
+            cooked.raw = raw;
+        }
+        return cooked;
+    };
+var __assign =
+    (this && this.__assign) ||
+    function () {
+        __assign =
+            Object.assign ||
+            function (t) {
+                for (var s, i = 1, n = arguments.length; i < n; i++) {
+                    s = arguments[i];
+                    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                }
+                return t;
+            };
+        return __assign.apply(this, arguments);
+    };
+var __awaiter =
+    (this && this.__awaiter) ||
+    function (thisArg, _arguments, P, generator) {
+        function adopt(value) {
+            return value instanceof P
+                ? value
+                : new P(function (resolve) {
+                      resolve(value);
+                  });
+        }
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+            function step(result) {
+                result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+            }
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+var __generator =
+    (this && this.__generator) ||
+    function (thisArg, body) {
+        var _ = {
+                label: 0,
+                sent: function () {
+                    if (t[0] & 1) throw t[1];
+                    return t[1];
+                },
+                trys: [],
+                ops: [],
+            },
+            f,
+            y,
+            t,
+            g;
+        return (
+            (g = { next: verb(0), throw: verb(1), return: verb(2) }),
+            typeof Symbol === "function" &&
+                (g[Symbol.iterator] = function () {
+                    return this;
+                }),
+            g
+        );
+        function verb(n) {
+            return function (v) {
+                return step([n, v]);
+            };
+        }
+        function step(op) {
+            if (f) throw new TypeError("Generator is already executing.");
+            while ((g && ((g = 0), op[0] && (_ = 0)), _))
+                try {
+                    if (((f = 1), y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)) return t;
+                    if (((y = 0), t)) op = [op[0] & 2, t.value];
+                    switch (op[0]) {
+                        case 0:
+                        case 1:
+                            t = op;
+                            break;
+                        case 4:
+                            _.label++;
+                            return { value: op[1], done: false };
+                        case 5:
+                            _.label++;
+                            y = op[1];
+                            op = [0];
+                            continue;
+                        case 7:
+                            op = _.ops.pop();
+                            _.trys.pop();
+                            continue;
+                        default:
+                            if (!((t = _.trys), (t = t.length > 0 && t[t.length - 1])) && (op[0] === 6 || op[0] === 2)) {
+                                _ = 0;
+                                continue;
+                            }
+                            if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                                _.label = op[1];
+                                break;
+                            }
+                            if (op[0] === 6 && _.label < t[1]) {
+                                _.label = t[1];
+                                t = op;
+                                break;
+                            }
+                            if (t && _.label < t[2]) {
+                                _.label = t[2];
+                                _.ops.push(op);
+                                break;
+                            }
+                            if (t[2]) _.ops.pop();
+                            _.trys.pop();
+                            continue;
+                    }
+                    op = body.call(thisArg, _);
+                } catch (e) {
+                    op = [6, e];
+                    y = 0;
+                } finally {
+                    f = t = 0;
+                }
+            if (op[0] & 5) throw op[1];
+            return { value: op[0] ? op[1] : void 0, done: true };
+        }
+    };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MdDatetimePickerComponent = void 0;
 var lit_1 = require("lit");
@@ -122,7 +221,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             return new Date(this.selection.getFullYear(), this.selection.getMonth()).getDay();
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "years", {
         /**
@@ -143,7 +242,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "months", {
         /**
@@ -163,7 +262,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "weekdays", {
         /**
@@ -179,7 +278,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "days", {
         /**
@@ -204,7 +303,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "hours", {
         /**
@@ -226,7 +325,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "minutes", {
         /**
@@ -249,7 +348,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "icons", {
         /**
@@ -258,16 +357,26 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
         get: function () {
             var _this = this;
             var map = {
-                0: function () { return [_this.years[0].label, _this.years[_this.years.length - 1].label].join(" - "); },
-                1: function () { return _this.selection.getFullYear(); },
-                2: function () { return (0, util_1.stringifyDatetimeLocal)(_this.selection); },
-                3: function () { return (0, util_1.stringifyDatetimeLocal)(_this.selection); },
-                4: function () { return (0, util_1.stringifyDatetimeLocal)(_this.selection); },
+                0: function () {
+                    return [_this.years[0].label, _this.years[_this.years.length - 1].label].join(" - ");
+                },
+                1: function () {
+                    return _this.selection.getFullYear();
+                },
+                2: function () {
+                    return (0, util_1.stringifyDatetimeLocal)(_this.selection);
+                },
+                3: function () {
+                    return (0, util_1.stringifyDatetimeLocal)(_this.selection);
+                },
+                4: function () {
+                    return (0, util_1.stringifyDatetimeLocal)(_this.selection);
+                },
             };
             return [{ component: "button", id: "label", label: map[this.index]() }];
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "actions", {
         /**
@@ -280,7 +389,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             ];
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     Object.defineProperty(MdDatetimePickerComponent.prototype, "buttons", {
         /**
@@ -290,7 +399,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             return [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
         },
         enumerable: false,
-        configurable: true
+        configurable: true,
     });
     /**
      * @param {String} [item]
@@ -326,14 +435,38 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
      */
     MdDatetimePickerComponent.prototype.renderComponent = function (item, component) {
         var _this = this;
-        if (component === void 0) { component = "icon"; }
+        if (component === void 0) {
+            component = "icon";
+        }
         var components = [
-            ["icon", function () { return _this.renderIcon(item); }],
-            ["icon-button", function () { return _this.renderIconButton(item); }],
-            ["button", function () { return _this.renderButton(item); }],
-            ["spacer", function () { return _this.renderSpacer(item); }],
+            [
+                "icon",
+                function () {
+                    return _this.renderIcon(item);
+                },
+            ],
+            [
+                "icon-button",
+                function () {
+                    return _this.renderIconButton(item);
+                },
+            ],
+            [
+                "button",
+                function () {
+                    return _this.renderButton(item);
+                },
+            ],
+            [
+                "spacer",
+                function () {
+                    return _this.renderSpacer(item);
+                },
+            ],
         ];
-        return (0, choose_js_1.choose)(item.component || component, components, function () { return lit_1.nothing; });
+        return (0, choose_js_1.choose)(item.component || component, components, function () {
+            return lit_1.nothing;
+        });
     };
     /**
      */
@@ -405,8 +538,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
                         this.parentElement.insertBefore(this.datetimePickerScrim, this.nextElementSibling);
                         this.handleDatetimePickerScrimClose = this.handleDatetimePickerScrimClose.bind(this);
                         this.datetimePickerScrim.addEventListener("onScrimClose", this.handleDatetimePickerScrimClose);
-                        if (this.modal && this.open)
-                            this.datetimePickerScrim.show();
+                        if (this.modal && this.open) this.datetimePickerScrim.show();
                         return [4 /*yield*/, this.updateComplete];
                     case 1:
                         _a.sent();
@@ -446,7 +578,8 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
                         _a.sent();
                         this.selection = new Date(this.value.valueOf());
                         _a.label = 2;
-                    case 2: return [2 /*return*/];
+                    case 2:
+                        return [2 /*return*/];
                 }
             });
         });
@@ -459,17 +592,24 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
         this.handleDatetimePickerShown = this.handleDatetimePickerShown.bind(this);
         this.addEventListener("animationend", this.handleDatetimePickerShown);
         this.style.removeProperty("--md-comp-datetime-picker-animation");
-        (0, popper_1.setPosition)(__assign({ container: this, offset: 4 + 4, 
-            /* prettier-ignore */
-            placements: [
+        (0, popper_1.setPosition)(
+            __assign(
+                {
+                    container: this,
+                    offset: 4 + 4,
+                    /* prettier-ignore */
+                    placements: [
                 "bottom-start", "bottom-end", "bottom",
                 "top-start", "top-end", "top",
                 "right-start", "right-end", "right",
                 "left-start", "left-end", "left"
-            ] }, options));
+            ],
+                },
+                options,
+            ),
+        );
         this.open = true;
-        if (this.modal)
-            this.datetimePickerScrim.show();
+        if (this.modal) this.datetimePickerScrim.show();
         this.emit("onDatetimePickerShow");
     };
     /**
@@ -479,18 +619,15 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
         this.addEventListener("animationend", this.handleDatetimePickerClosed);
         this.style.removeProperty("--md-comp-datetime-picker-animation");
         this.open = false;
-        if (this.modal)
-            this.datetimePickerScrim.close();
+        if (this.modal) this.datetimePickerScrim.close();
         this.emit("onDatetimePickerClose");
     };
     /**
      * @param {Object} [options]
      */
     MdDatetimePickerComponent.prototype.toggle = function (options) {
-        if (this.open)
-            this.close();
-        else
-            this.show(options);
+        if (this.open) this.close();
+        else this.show(options);
     };
     /**
      * @param {Object} [event]
@@ -549,8 +686,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
      * @param {Object} [event]
      */
     MdDatetimePickerComponent.prototype.handleDatetimePickerScrimClose = function (event) {
-        if (this.open)
-            this.close();
+        if (this.open) this.close();
         this.emit("onDatetimePickerScrimClose", { event: event });
     };
     /**
@@ -573,11 +709,21 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
     MdDatetimePickerComponent.prototype.handleDatetimePickerIconButtonPrevClick = function (event) {
         var _this = this;
         var map = {
-            0: function () { return _this.selection.setFullYear(_this.selection.getFullYear() - 10); },
-            1: function () { return _this.selection.setFullYear(_this.selection.getFullYear() - 1); },
-            2: function () { return _this.selection.setMonth(_this.selection.getMonth() - 1); },
-            3: function () { return _this.selection.setHours(_this.selection.getHours() - 1); },
-            4: function () { return _this.selection.setMinutes(_this.selection.getMinutes() - 1); },
+            0: function () {
+                return _this.selection.setFullYear(_this.selection.getFullYear() - 10);
+            },
+            1: function () {
+                return _this.selection.setFullYear(_this.selection.getFullYear() - 1);
+            },
+            2: function () {
+                return _this.selection.setMonth(_this.selection.getMonth() - 1);
+            },
+            3: function () {
+                return _this.selection.setHours(_this.selection.getHours() - 1);
+            },
+            4: function () {
+                return _this.selection.setMinutes(_this.selection.getMinutes() - 1);
+            },
         };
         map[this.index]();
         this.requestUpdate();
@@ -589,11 +735,21 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
     MdDatetimePickerComponent.prototype.handleDatetimePickerIconButtonNextClick = function (event) {
         var _this = this;
         var map = {
-            0: function () { return _this.selection.setFullYear(_this.selection.getFullYear() + 10); },
-            1: function () { return _this.selection.setFullYear(_this.selection.getFullYear() + 1); },
-            2: function () { return _this.selection.setMonth(_this.selection.getMonth() + 1); },
-            3: function () { return _this.selection.setHours(_this.selection.getHours() + 1); },
-            4: function () { return _this.selection.setMinutes(_this.selection.getMinutes() + 1); },
+            0: function () {
+                return _this.selection.setFullYear(_this.selection.getFullYear() + 10);
+            },
+            1: function () {
+                return _this.selection.setFullYear(_this.selection.getFullYear() + 1);
+            },
+            2: function () {
+                return _this.selection.setMonth(_this.selection.getMonth() + 1);
+            },
+            3: function () {
+                return _this.selection.setHours(_this.selection.getHours() + 1);
+            },
+            4: function () {
+                return _this.selection.setMinutes(_this.selection.getMinutes() + 1);
+            },
         };
         map[this.index]();
         this.requestUpdate();
@@ -609,8 +765,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             next: this.handleDatetimePickerIconButtonNextClick.bind(this),
         };
         var fn = map[data.id];
-        if (fn)
-            return fn(event);
+        if (fn) return fn(event);
         this.emit("onDatetimePickerIconButtonClick", { event: event });
     };
     /**
@@ -653,8 +808,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
             label: this.handleDatetimePickerButtonLabelClick.bind(this),
         };
         var fn = map[data.id];
-        if (fn)
-            return fn(event);
+        if (fn) return fn(event);
         this.emit("onDatetimePickerButtonClick", { event: event });
     };
     /**
@@ -693,7 +847,7 @@ var MdDatetimePickerComponent = /** @class */ (function (_super) {
         selection: { state: true },
     };
     return MdDatetimePickerComponent;
-}(component_1.MdComponent));
+})(component_1.MdComponent);
 exports.MdDatetimePickerComponent = MdDatetimePickerComponent;
 customElements.define("md-datetime-picker", MdDatetimePickerComponent);
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21;

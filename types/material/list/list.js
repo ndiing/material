@@ -1,23 +1,38 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
+var __extends =
+    (this && this.__extends) ||
+    (function () {
+        var extendStatics = function (d, b) {
+            extendStatics =
+                Object.setPrototypeOf ||
+                ({ __proto__: [] } instanceof Array &&
+                    function (d, b) {
+                        d.__proto__ = b;
+                    }) ||
+                function (d, b) {
+                    for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+                };
+            return extendStatics(d, b);
+        };
+        return function (d, b) {
+            if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+            extendStatics(d, b);
+            function __() {
+                this.constructor = d;
+            }
+            d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+        };
+    })();
+var __makeTemplateObject =
+    (this && this.__makeTemplateObject) ||
+    function (cooked, raw) {
+        if (Object.defineProperty) {
+            Object.defineProperty(cooked, "raw", { value: raw });
+        } else {
+            cooked.raw = raw;
+        }
+        return cooked;
     };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MdListComponent = void 0;
 var lit_1 = require("lit");
@@ -55,13 +70,15 @@ var MdListComponent = /** @class */ (function (_super) {
                 item[name_1] = item[value];
             }
         }
-        return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n            <md-list-row>\n                <md-list-item\n                    .data=\"", "\"\n                    .avatar=\"", "\"\n                    .image=\"", "\"\n                    .video=\"", "\"\n                    .icon=\"", "\"\n                    .label=\"", "\"\n                    .sublabel=\"", "\"\n                    .text=\"", "\"\n                    .leadingCheckbox=\"", "\"\n                    .leadingRadioButton=\"", "\"\n                    .leadingSwitch=\"", "\"\n                    .trailingCheckbox=\"", "\"\n                    .trailingRadioButton=\"", "\"\n                    .trailingSwitch=\"", "\"\n                    .selected=\"", "\"\n                    .disabled=\"", "\"\n                    .routerLink=\"", "\"\n                    .rippleOptions=\"", "\"\n                    .badge=\"", "\"\n                    @click=\"", "\"\n                    @onCheckboxNativeInput=\"", "\"\n                    @onRadioButtonNativeInput=\"", "\"\n                    @onSwitchNativeInput=\"", "\"\n                ></md-list-item>\n            </md-list-row>\n        "], ["\n            <md-list-row>\n                <md-list-item\n                    .data=\"", "\"\n                    .avatar=\"", "\"\n                    .image=\"", "\"\n                    .video=\"", "\"\n                    .icon=\"", "\"\n                    .label=\"", "\"\n                    .sublabel=\"", "\"\n                    .text=\"", "\"\n                    .leadingCheckbox=\"", "\"\n                    .leadingRadioButton=\"", "\"\n                    .leadingSwitch=\"", "\"\n                    .trailingCheckbox=\"", "\"\n                    .trailingRadioButton=\"", "\"\n                    .trailingSwitch=\"", "\"\n                    .selected=\"", "\"\n                    .disabled=\"", "\"\n                    .routerLink=\"", "\"\n                    .rippleOptions=\"", "\"\n                    .badge=\"", "\"\n                    @click=\"", "\"\n                    @onCheckboxNativeInput=\"", "\"\n                    @onRadioButtonNativeInput=\"", "\"\n                    @onSwitchNativeInput=\"", "\"\n                ></md-list-item>\n            </md-list-row>\n        "])), item, (0, if_defined_js_1.ifDefined)(item.avatar), (0, if_defined_js_1.ifDefined)(item.image), (0, if_defined_js_1.ifDefined)(item.video), (0, if_defined_js_1.ifDefined)(item.icon), (0, if_defined_js_1.ifDefined)(item.label), (0, if_defined_js_1.ifDefined)(item.sublabel), (0, if_defined_js_1.ifDefined)(item.text), (0, if_defined_js_1.ifDefined)(item.leadingCheckbox), (0, if_defined_js_1.ifDefined)(item.leadingRadioButton), (0, if_defined_js_1.ifDefined)(item.leadingSwitch), (0, if_defined_js_1.ifDefined)(item.trailingCheckbox), (0, if_defined_js_1.ifDefined)(item.trailingRadioButton), (0, if_defined_js_1.ifDefined)(item.trailingSwitch), (0, if_defined_js_1.ifDefined)(item.selected), (0, if_defined_js_1.ifDefined)(item.disabled), (0, if_defined_js_1.ifDefined)(item.routerLink), (0, if_defined_js_1.ifDefined)(item.rippleOptions || this.rippleOptions), (0, if_defined_js_1.ifDefined)(item.badge), this.handleListItemClick, this.handleListItemCheckboxNativeInput, this.handleListItemRadioButtonNativeInput, this.handleListItemSwitchNativeInput);
+        return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(['\n            <md-list-row>\n                <md-list-item\n                    .data="', '"\n                    .avatar="', '"\n                    .image="', '"\n                    .video="', '"\n                    .icon="', '"\n                    .label="', '"\n                    .sublabel="', '"\n                    .text="', '"\n                    .leadingCheckbox="', '"\n                    .leadingRadioButton="', '"\n                    .leadingSwitch="', '"\n                    .trailingCheckbox="', '"\n                    .trailingRadioButton="', '"\n                    .trailingSwitch="', '"\n                    .selected="', '"\n                    .disabled="', '"\n                    .routerLink="', '"\n                    .rippleOptions="', '"\n                    .badge="', '"\n                    @click="', '"\n                    @onCheckboxNativeInput="', '"\n                    @onRadioButtonNativeInput="', '"\n                    @onSwitchNativeInput="', '"\n                ></md-list-item>\n            </md-list-row>\n        '], ['\n            <md-list-row>\n                <md-list-item\n                    .data="', '"\n                    .avatar="', '"\n                    .image="', '"\n                    .video="', '"\n                    .icon="', '"\n                    .label="', '"\n                    .sublabel="', '"\n                    .text="', '"\n                    .leadingCheckbox="', '"\n                    .leadingRadioButton="', '"\n                    .leadingSwitch="', '"\n                    .trailingCheckbox="', '"\n                    .trailingRadioButton="', '"\n                    .trailingSwitch="', '"\n                    .selected="', '"\n                    .disabled="', '"\n                    .routerLink="', '"\n                    .rippleOptions="', '"\n                    .badge="', '"\n                    @click="', '"\n                    @onCheckboxNativeInput="', '"\n                    @onRadioButtonNativeInput="', '"\n                    @onSwitchNativeInput="', '"\n                ></md-list-item>\n            </md-list-row>\n        '])), item, (0, if_defined_js_1.ifDefined)(item.avatar), (0, if_defined_js_1.ifDefined)(item.image), (0, if_defined_js_1.ifDefined)(item.video), (0, if_defined_js_1.ifDefined)(item.icon), (0, if_defined_js_1.ifDefined)(item.label), (0, if_defined_js_1.ifDefined)(item.sublabel), (0, if_defined_js_1.ifDefined)(item.text), (0, if_defined_js_1.ifDefined)(item.leadingCheckbox), (0, if_defined_js_1.ifDefined)(item.leadingRadioButton), (0, if_defined_js_1.ifDefined)(item.leadingSwitch), (0, if_defined_js_1.ifDefined)(item.trailingCheckbox), (0, if_defined_js_1.ifDefined)(item.trailingRadioButton), (0, if_defined_js_1.ifDefined)(item.trailingSwitch), (0, if_defined_js_1.ifDefined)(item.selected), (0, if_defined_js_1.ifDefined)(item.disabled), (0, if_defined_js_1.ifDefined)(item.routerLink), (0, if_defined_js_1.ifDefined)(item.rippleOptions || this.rippleOptions), (0, if_defined_js_1.ifDefined)(item.badge), this.handleListItemClick, this.handleListItemCheckboxNativeInput, this.handleListItemRadioButtonNativeInput, this.handleListItemSwitchNativeInput);
     };
     /**
      */
     MdListComponent.prototype.render = function () {
         var _this = this;
-        return this.items.map(function (item) { return _this.renderListItem(item); });
+        return this.items.map(function (item) {
+            return _this.renderListItem(item);
+        });
     };
     /**
      */
@@ -74,15 +91,13 @@ var MdListComponent = /** @class */ (function (_super) {
      */
     MdListComponent.prototype.handleListItemClick = function (event) {
         var action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
-        if (action)
-            return;
+        if (action) return;
         var data = event.currentTarget.data;
         if (this.type === "single-select") {
             this.items.forEach(function (item) {
                 item.selected = item === data;
             });
-        }
-        else {
+        } else {
             data.selected = !data.selected;
         }
         this.requestUpdate();
@@ -130,7 +145,7 @@ var MdListComponent = /** @class */ (function (_super) {
         rippleOptions: { type: Object },
     };
     return MdListComponent;
-}(component_1.MdComponent));
+})(component_1.MdComponent);
 exports.MdListComponent = MdListComponent;
 customElements.define("md-list", MdListComponent);
 var templateObject_1;

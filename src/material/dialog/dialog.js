@@ -40,14 +40,14 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -65,7 +65,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -83,15 +83,15 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-dialog__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -167,7 +167,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDialogScrimClose(event) {
         if (this.open) this.close();
@@ -175,7 +175,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDialogShown(event) {
         if (event.animationName === "dialog-body-out") {
@@ -185,7 +185,7 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDialogClosed(event) {
         if (event.animationName === "dialog-body-in") {
@@ -195,14 +195,14 @@ class MdDialogComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDialogIconButtonClick(event) {
         this.emit("onDialogIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDialogButtonClick(event) {
         this.emit("onDialogButtonClick", { event });

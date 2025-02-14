@@ -80,7 +80,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [submitButton]
+     * @param {Any} [submitButton]
      */
     submit(submitButton) {
         if (this.formNative.requestSubmit) {
@@ -95,14 +95,14 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.elements) {
@@ -116,7 +116,7 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();

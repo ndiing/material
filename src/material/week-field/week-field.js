@@ -70,7 +70,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [options={}]
+     * @param {Any} [options={}]
      */
     showPicker(options = {}) {
         if (this.picker) {
@@ -95,7 +95,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     togglePicker(options) {
         if (this.picker) {
@@ -105,7 +105,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleWeekFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
@@ -115,21 +115,21 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleWeekFieldWindowScroll(event) {
         this.closePicker();
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleWeekFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleWeekFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyWeek(this.picker.value);
@@ -139,7 +139,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
 
     /**
      * @async
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
@@ -148,7 +148,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;

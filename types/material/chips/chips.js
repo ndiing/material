@@ -1,23 +1,38 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
+var __extends =
+    (this && this.__extends) ||
+    (function () {
+        var extendStatics = function (d, b) {
+            extendStatics =
+                Object.setPrototypeOf ||
+                ({ __proto__: [] } instanceof Array &&
+                    function (d, b) {
+                        d.__proto__ = b;
+                    }) ||
+                function (d, b) {
+                    for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+                };
+            return extendStatics(d, b);
+        };
+        return function (d, b) {
+            if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+            extendStatics(d, b);
+            function __() {
+                this.constructor = d;
+            }
+            d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+        };
+    })();
+var __makeTemplateObject =
+    (this && this.__makeTemplateObject) ||
+    function (cooked, raw) {
+        if (Object.defineProperty) {
+            Object.defineProperty(cooked, "raw", { value: raw });
+        } else {
+            cooked.raw = raw;
+        }
+        return cooked;
     };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MdChipsComponent = void 0;
 var lit_1 = require("lit");
@@ -46,13 +61,15 @@ var MdChipsComponent = /** @class */ (function (_super) {
      * @param {String} [item]
      */
     MdChipsComponent.prototype.renderChip = function (item) {
-        return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n            <md-chip\n                .data=\"", "\"\n                .icon=\"", "\"\n                .avatar=\"", "\"\n                .label=\"", "\"\n                .action=\"", "\"\n                .selected=\"", "\"\n                .disabled=\"", "\"\n                @click=\"", "\"\n            ></md-chip>\n        "], ["\n            <md-chip\n                .data=\"", "\"\n                .icon=\"", "\"\n                .avatar=\"", "\"\n                .label=\"", "\"\n                .action=\"", "\"\n                .selected=\"", "\"\n                .disabled=\"", "\"\n                @click=\"", "\"\n            ></md-chip>\n        "])), item, (0, if_defined_js_1.ifDefined)(item.icon), (0, if_defined_js_1.ifDefined)(item.avatar), (0, if_defined_js_1.ifDefined)(item.label), (0, if_defined_js_1.ifDefined)(item.action), (0, if_defined_js_1.ifDefined)(item.selected), (0, if_defined_js_1.ifDefined)(item.disabled), this.handleChipClick);
+        return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(['\n            <md-chip\n                .data="', '"\n                .icon="', '"\n                .avatar="', '"\n                .label="', '"\n                .action="', '"\n                .selected="', '"\n                .disabled="', '"\n                @click="', '"\n            ></md-chip>\n        '], ['\n            <md-chip\n                .data="', '"\n                .icon="', '"\n                .avatar="', '"\n                .label="', '"\n                .action="', '"\n                .selected="', '"\n                .disabled="', '"\n                @click="', '"\n            ></md-chip>\n        '])), item, (0, if_defined_js_1.ifDefined)(item.icon), (0, if_defined_js_1.ifDefined)(item.avatar), (0, if_defined_js_1.ifDefined)(item.label), (0, if_defined_js_1.ifDefined)(item.action), (0, if_defined_js_1.ifDefined)(item.selected), (0, if_defined_js_1.ifDefined)(item.disabled), this.handleChipClick);
     };
     /**
      */
     MdChipsComponent.prototype.render = function () {
         var _this = this;
-        return this.items.map(function (item) { return _this.renderChip(item); });
+        return this.items.map(function (item) {
+            return _this.renderChip(item);
+        });
     };
     /**
      */
@@ -69,8 +86,7 @@ var MdChipsComponent = /** @class */ (function (_super) {
             this.items.forEach(function (item) {
                 item.selected = data === item;
             });
-        }
-        else {
+        } else {
             data.selected = !data.selected;
         }
         this.requestUpdate();
@@ -85,7 +101,7 @@ var MdChipsComponent = /** @class */ (function (_super) {
         type: { type: String },
     };
     return MdChipsComponent;
-}(component_1.MdComponent));
+})(component_1.MdComponent);
 exports.MdChipsComponent = MdChipsComponent;
 customElements.define("md-chips", MdChipsComponent);
 var templateObject_1;

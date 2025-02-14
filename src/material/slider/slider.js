@@ -78,8 +78,8 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [value]
-     * @param {String} [index]
+     * @param {Any} [value]
+     * @param {Any} [index]
      */
     renderSliderWrapper(value, index) {
         return html`
@@ -147,7 +147,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -168,16 +168,16 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [value]
-     * @param {String} [min=this.min]
-     * @param {String} [max=this.max]
+     * @param {Any} [value]
+     * @param {Any} [min=this.min]
+     * @param {Any} [max=this.max]
      */
     percentage(value, min = this.min, max = this.max) {
         return (value - min) / (max - min);
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSliderNativeInput(event) {
         const native = event.currentTarget;
@@ -194,7 +194,7 @@ class MdSliderComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSliderNativeReset(event) {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));

@@ -180,7 +180,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIcon(item) {
         /* prettier-ignore */
@@ -192,7 +192,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         /* prettier-ignore */
@@ -211,7 +211,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         /* prettier-ignore */
@@ -230,7 +230,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         /* prettier-ignore */
@@ -242,8 +242,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         const components = [
@@ -390,7 +390,7 @@ class MdDatePickerComponent extends MdComponent {
 
     /**
      * @async
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -407,7 +407,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     show(options) {
         this.index = this.defaultIndex;
@@ -443,7 +443,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -451,7 +451,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -461,7 +461,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -472,7 +472,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -487,7 +487,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerScrimClose(event) {
         if (this.open) this.close();
@@ -495,7 +495,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerShown(event) {
         this.removeEventListener("animationend", this.handleDatePickerShown);
@@ -503,7 +503,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerClosed(event) {
         this.removeEventListener("animationend", this.handleDatePickerClosed);
@@ -511,7 +511,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerIconButtonPrevClick(event) {
         const map = {
@@ -525,7 +525,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerIconButtonNextClick(event) {
         const map = {
@@ -539,7 +539,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerIconButtonClick(event) {
         const data = event.currentTarget.data;
@@ -553,7 +553,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
@@ -562,7 +562,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerButtonOkClick(event) {
         // this.close();
@@ -570,7 +570,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerButtonLabelClick(event) {
         const map = {
@@ -583,7 +583,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDatePickerButtonClick(event) {
         const data = event.currentTarget.data;

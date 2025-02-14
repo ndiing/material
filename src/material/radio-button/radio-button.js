@@ -79,7 +79,7 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRadioButtonNativeInput(event) {
         const native = event.currentTarget;
@@ -89,7 +89,7 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRadioButtonNativeReset(event) {
         this.value = this.defaultValue;

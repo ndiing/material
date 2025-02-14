@@ -38,7 +38,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderListItem(item) {
         if (this.fieldMap) {
@@ -92,7 +92,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
@@ -110,7 +110,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -120,7 +120,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
@@ -132,7 +132,7 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;

@@ -50,14 +50,14 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -75,7 +75,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -93,15 +93,15 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-snackbar__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         const components = [
@@ -174,7 +174,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSnackbarShown(event) {
         if (event.animationName === "snackbar-out") {
@@ -184,7 +184,7 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSnackbarClosed(event) {
         if (event.animationName === "snackbar-in") {
@@ -194,14 +194,14 @@ class MdSnackbarComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSnackbarIconButtonClick(event) {
         this.emit("onSnackbarIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleSnackbarButtonClick(event) {
         this.emit("onSnackbarButtonClick", { event });

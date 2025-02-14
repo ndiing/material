@@ -38,14 +38,14 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -63,7 +63,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderButton(item) {
         return html`
@@ -81,15 +81,15 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-tooltip__spacer"></div> `;
     }
 
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         const components = [
@@ -115,7 +115,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     show(options) {
         setPosition({
@@ -136,7 +136,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -144,14 +144,14 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTooltipIconButtonClick(event) {
         this.emit("onTooltipIconButtonClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTooltipButtonClick(event) {
         this.emit("onTooltipButtonClick", { event });

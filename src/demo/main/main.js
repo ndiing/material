@@ -190,7 +190,7 @@ class DemoMain extends MdComponent {
                     { label: "Week Field", routerLink: "/week-field" },
                 ],
             },
-            
+
             { label: "Tooltip", routerLink: "/tooltip" },
             { label: "Top App Bar", routerLink: "/top-app-bar" },
             // { label: "Tree Item", routerLink: "/tree-item" },
@@ -219,7 +219,6 @@ class DemoMain extends MdComponent {
                     { label: "Month Picker", routerLink: "/month-picker" },
                     { label: "Month Picker Modal", routerLink: "/month-picker-modal" },
                     // ] },
-                    
                 ],
             },
         ];

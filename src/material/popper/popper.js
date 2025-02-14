@@ -1,8 +1,8 @@
 import { closestScrollableElement } from "../util/util";
 
 /**
- * @param {String} [placement]
- * @param {Object} [options={}]
+ * @param {Any} [placement]
+ * @param {Any} [options={}]
  */
 function calculatePosition(placement, options = {}) {
     const { containerRect, triggerRect, offset } = options;
@@ -31,7 +31,7 @@ function calculatePosition(placement, options = {}) {
 }
 
 /**
- * @param {String} [offset]
+ * @param {Any} [offset]
  */
 function parseOffset(offset) {
     let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);
@@ -42,7 +42,7 @@ function parseOffset(offset) {
 }
 
 /**
- * @param {Object} [options={}]
+ * @param {Any} [options={}]
  */
 function setPosition(options = {}) {
     const { container, trigger, boundary, offset = "0", placements } = options;

@@ -33,7 +33,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderTab(item) {
         return html`
@@ -67,7 +67,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -79,7 +79,7 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
@@ -93,7 +93,7 @@ class MdTabsComponent extends MdComponent {
 
     /**
      * @async
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     async handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {

@@ -70,7 +70,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [options={}]
+     * @param {Any} [options={}]
      */
     showPicker(options = {}) {
         if (this.picker) {
@@ -95,7 +95,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     togglePicker(options) {
         if (this.picker) {
@@ -105,7 +105,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleMonthFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
@@ -115,21 +115,21 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleMonthFieldWindowScroll(event) {
         this.closePicker();
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleMonthFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleMonthFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyMonth(this.picker.value);
@@ -139,7 +139,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
 
     /**
      * @async
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
@@ -148,7 +148,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;

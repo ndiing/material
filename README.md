@@ -5,6 +5,7 @@ Material adalah framework berbasis Material Design yang memudahkan pembuatan ant
 ---
 
 ## Fitur Utama
+
 - **Desain Modern**: Menggunakan prinsip Material Design untuk tampilan yang estetis.
 - **Responsif**: Komponen otomatis menyesuaikan dengan berbagai ukuran layar.
 - **Sistem Routing**: Mempermudah navigasi antar halaman dalam aplikasi.
@@ -13,6 +14,7 @@ Material adalah framework berbasis Material Design yang memudahkan pembuatan ant
 ---
 
 ## Instalasi
+
 Ikuti langkah-langkah berikut untuk mulai menggunakan Material:
 
 ```bash
@@ -27,6 +29,7 @@ npm install
 ---
 
 ## Penggunaan Material
+
 Tambahkan file berikut ke proyek Anda untuk memuat semua komponen Material:
 
 ```js
@@ -37,6 +40,7 @@ import "./material/material.js";
 ---
 
 ## Routing Dasar
+
 Material memiliki sistem routing bawaan untuk mengelola navigasi antar halaman. Berikut contoh penggunaannya:
 
 ```js
@@ -54,6 +58,7 @@ Router.use(routes);
 ---
 
 ## Membuat Halaman
+
 Contoh pembuatan halaman dasar menggunakan komponen Material:
 
 ```js
@@ -100,6 +105,7 @@ export default document.createElement("demo-main");
 ---
 
 ## Struktur Dasar HTML
+
 Berikut contoh file HTML dasar untuk menggunakan Material:
 
 ```html
@@ -107,7 +113,10 @@ Berikut contoh file HTML dasar untuk menggunakan Material:
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta
+            name="viewport"
+            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
         <title>Material App</title>
         <base href="./" />
     </head>
@@ -120,13 +129,14 @@ Berikut contoh file HTML dasar untuk menggunakan Material:
 ---
 
 ## Dokumentasi & Demo
+
 - **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/docs/)
 - **Demo**: [Material Demo](https://ndiing.github.io/material/dist/)
 
 ---
 
 ## Kesimpulan
+
 Material adalah framework yang mempermudah pembuatan antarmuka berbasis Material Design. Dengan sistem routing bawaan dan komponen yang fleksibel, Anda bisa dengan mudah membangun aplikasi web yang modern dan responsif.
 
 Selamat mencoba!
-

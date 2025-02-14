@@ -31,7 +31,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderChip(item) {
         return html`
@@ -62,7 +62,7 @@ class MdChipsComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleChipClick(event) {
         const data = event.currentTarget.data;

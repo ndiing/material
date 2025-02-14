@@ -32,7 +32,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderNavigationListItem(item) {
         return html`
@@ -79,7 +79,7 @@ class MdNavigationListComponent extends MdComponent {
 
     /**
      * @async
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -113,7 +113,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
@@ -130,7 +130,7 @@ class MdNavigationListComponent extends MdComponent {
 
     /**
      * @async
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
@@ -146,7 +146,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleNavigationListKeydownEnter(event) {
         event.preventDefault();
@@ -156,7 +156,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleNavigationListKeydown(event) {
         if (this.contains(document.activeElement)) {
@@ -168,7 +168,7 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");

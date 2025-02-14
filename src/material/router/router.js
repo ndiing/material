@@ -9,10 +9,10 @@ class Router {
 
     /**
      * @static
-     * @param {String} [pathname=this.pathname]
-     * @param {String} [routes=this.routes]
-     * @param {String} [parent=null]
-     * @param {Array} [result=[]]
+     * @param {Any} [pathname=this.pathname]
+     * @param {Any} [routes=this.routes]
+     * @param {Any} [parent=null]
+     * @param {Any} [result=[]]
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -50,7 +50,7 @@ class Router {
     /**
      * @static
      * @async
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     static async handleNavigation(event) {
         performance.mark("mark-1");
@@ -83,7 +83,7 @@ class Router {
 
     /**
      * @static
-     * @param {String} [routes]
+     * @param {Any} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -100,8 +100,8 @@ class Router {
 
     /**
      * @static
-     * @param {String} [route]
-     * @param {String} [outlet]
+     * @param {Any} [route]
+     * @param {Any} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
@@ -110,8 +110,8 @@ class Router {
     /**
      * @static
      * @async
-     * @param {String} [container]
-     * @param {String} [route]
+     * @param {Any} [container]
+     * @param {Any} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -141,7 +141,7 @@ class Router {
 
     /**
      * @static
-     * @param {String} [route]
+     * @param {Any} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
@@ -150,7 +150,7 @@ class Router {
     /**
      * @static
      * @async
-     * @param {String} [route]
+     * @param {Any} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -161,7 +161,7 @@ class Router {
     /**
      * @static
      * @async
-     * @param {String} [route]
+     * @param {Any} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -184,7 +184,7 @@ class Router {
 
     /**
      * @static
-     * @param {String} [url]
+     * @param {Any} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -196,7 +196,7 @@ class Router {
 
     /**
      * @static
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -208,8 +208,8 @@ class Router {
 
     /**
      * @static
-     * @param {String} [type]
-     * @param {String} [detail]
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -224,8 +224,8 @@ class Router {
 
     /**
      * @static
-     * @param {Array} [routes=[]]
-     * @param {Object} [options={}]
+     * @param {Any} [routes=[]]
+     * @param {Any} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;

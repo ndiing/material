@@ -43,7 +43,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [th]
+     * @param {Any} [th]
      */
     styleDataTableHeaderCell(th) {
         return {
@@ -59,7 +59,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [td]
+     * @param {Any} [td]
      */
     styleDataTableBodyCell(td) {
         return {
@@ -182,7 +182,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @async
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -225,7 +225,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDataTableKeydown(event) {
         if (event.ctrlKey && event.key === "a") {
@@ -239,7 +239,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDataTableHeaderCellClick(event) {
         const data = event.currentTarget.data;
@@ -262,14 +262,14 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDataTableBodyCellClick(event) {
         this.emit("onDataTableBodyCellClick", { event });
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDataTableHeaderCheckboxClick(event) {
         const data = event.currentTarget.data;
@@ -282,7 +282,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDataTableBodyClick(event) {
         const bodyData = event.target.closest("td")?.data;
@@ -314,7 +314,7 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleDataTableBodyCheckboxClick(event) {
         const data = event.currentTarget.data;

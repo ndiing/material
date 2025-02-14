@@ -1,15 +1,18 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
+var __assign =
+    (this && this.__assign) ||
+    function () {
+        __assign =
+            Object.assign ||
+            function (t) {
+                for (var s, i = 1, n = arguments.length; i < n; i++) {
+                    s = arguments[i];
+                    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                }
+                return t;
+            };
+        return __assign.apply(this, arguments);
     };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Movable = void 0;
 /**
@@ -23,7 +26,9 @@ var Movable = /** @class */ (function () {
      * @param {Object} [options={}]
      */
     function Movable(host, options) {
-        if (options === void 0) { options = {}; }
+        if (options === void 0) {
+            options = {};
+        }
         this.host = host;
         this.options = __assign({ axis: ["x", "y"], handles: ["n", "e", "s", "w", "nw", "ne", "sw", "se"] }, options);
         this.init();
@@ -67,8 +72,7 @@ var Movable = /** @class */ (function () {
                 this.currentY = currentY;
                 this.currentHeight = this.startHeight - currentY + this.endY;
             }
-        }
-        else {
+        } else {
             if (this.options.axis.includes("x")) {
                 this.currentX = currentX;
             }
@@ -110,10 +114,10 @@ var Movable = /** @class */ (function () {
      */
     Movable.prototype.init = function () {
         var text = "";
-        text += "<div class=\"md-resizable\">";
+        text += '<div class="md-resizable">';
         for (var _i = 0, _a = this.options.handles; _i < _a.length; _i++) {
             var handle = _a[_i];
-            text += "<div class=\"md-resizable__handle md-resizable__handle--".concat(handle, "\"></div>");
+            text += '<div class="md-resizable__handle md-resizable__handle--'.concat(handle, '"></div>');
         }
         text += "</div>";
         this.host.insertAdjacentHTML("afterbegin", text);
@@ -135,5 +139,5 @@ var Movable = /** @class */ (function () {
         this.handlePointerup = null;
     };
     return Movable;
-}());
+})();
 exports.Movable = Movable;

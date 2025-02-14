@@ -46,7 +46,7 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options={}]
+     * @param {Any} [options={}]
      */
     show(options = {}) {
         this.style.removeProperty("--md-comp-menu-animation");
@@ -68,7 +68,7 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     toggle(options) {
         if (this.open) this.close();

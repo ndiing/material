@@ -2,8 +2,8 @@
  */
 class Ripple {
     /**
-     * @param {String} [host]
-     * @param {Object} [options]
+     * @param {Any} [host]
+     * @param {Any} [options]
      */
     constructor(host, options) {
         this.host = host;
@@ -83,21 +83,21 @@ class Ripple {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRippleHoverIn(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRippleHoverOut(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRipplePressIn(event) {
         window.addEventListener("pointerup", this.handleRipplePressOut, { passive: true });
@@ -118,7 +118,7 @@ class Ripple {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRipplePressOut(event) {
         window.removeEventListener("pointerup", this.handleRipplePressOut);
@@ -127,14 +127,14 @@ class Ripple {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRippleFocusIn(event) {
         this.container.classList.add("md-ripple--focus");
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleRippleFocusOut(event) {
         this.container.classList.remove("md-ripple--focus");

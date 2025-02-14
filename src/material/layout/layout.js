@@ -11,7 +11,7 @@ class Layout {
     ];
 
     /**
-     * @param {String} [callback]
+     * @param {Any} [callback]
      */
     constructor(callback) {
         this.callback = callback.bind(this);

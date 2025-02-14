@@ -33,7 +33,9 @@ function parseMonth(string) {
  * @param {String} [string]
  */
 function parseTime(string) {
-    var _a = string.split(":"), hours = _a[0], minutes = _a[1];
+    var _a = string.split(":"),
+        hours = _a[0],
+        minutes = _a[1];
     var date = new Date();
     date.setHours(hours, minutes, 0, 0);
     return date;
@@ -42,7 +44,9 @@ function parseTime(string) {
  * @param {String} [string]
  */
 function parseWeek(string) {
-    var _a = string.split("-W"), year = _a[0], week = _a[1];
+    var _a = string.split("-W"),
+        year = _a[0],
+        week = _a[1];
     var d = new Date(year, 0, 1);
     var days = (week - 1) * 7;
     d.setDate(d.getDate() + days);
@@ -93,8 +97,7 @@ function closestScrollableElement(element) {
     var current = element;
     while (current) {
         var style = window.getComputedStyle(current);
-        if (/(auto|scroll)/.test(style.overflow + style.overflowY))
-            return current;
+        if (/(auto|scroll)/.test(style.overflow + style.overflowY)) return current;
         current = current.parentElement;
     }
     return document.documentElement || document.body;

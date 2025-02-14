@@ -33,7 +33,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     renderIconButton(item) {
         return html`
@@ -69,7 +69,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -99,7 +99,7 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     handleTopAppBarIconButtonClick(event) {
         this.emit("onTopAppBarIconButtonClick", { event });
