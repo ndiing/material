@@ -2,12 +2,10 @@ import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
 
 /**
- *
  * @extends LitElement
  */
 class MdComponent extends LitElement {
     /**
-     *
      */
     constructor() {
         super();
@@ -15,7 +13,6 @@ class MdComponent extends LitElement {
     }
 
     /**
-     *
      * @private
      */
     createRenderRoot() {
@@ -23,10 +20,9 @@ class MdComponent extends LitElement {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [type]
-     * @param {Any} [detail]
+     * @param {Undefined} [type]
+     * @param {Undefined} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

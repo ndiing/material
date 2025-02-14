@@ -1,12 +1,10 @@
 /**
- *
  * @fires VirtualScroll#onVirtualScroll
  */
 class VirtualScroll {
     /**
-     *
-     * @param {Any} [host]
-     * @param {Any} [options]
+     * @param {Undefined} [host]
+     * @param {Undefined} [options]
      */
     constructor(host, options) {
         this.host = host;
@@ -23,8 +21,7 @@ class VirtualScroll {
     }
 
     /**
-     *
-     * @param {Any} [options={}]
+     * @param {Object} [options={}]
      */
     load(options = {}) {
         for (const name in options) {
@@ -35,9 +32,8 @@ class VirtualScroll {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleScroll(event) {
         const total = this.options.total;
@@ -63,10 +59,9 @@ class VirtualScroll {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [type]
-     * @param {Any} [detail]
+     * @param {Undefined} [type]
+     * @param {Undefined} [detail]
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -78,7 +73,6 @@ class VirtualScroll {
     }
 
     /**
-     *
      */
     init() {
         this.host.classList.add("md-virtual-scroll");
@@ -89,7 +83,6 @@ class VirtualScroll {
     }
 
     /**
-     *
      */
     destroy() {
         this.host.classList.remove("md-virtual-scroll");

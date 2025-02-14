@@ -35,8 +35,8 @@ import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-date-picker
  * @fires MdDatePickerComponent#onDatePickerShown
  * @fires MdDatePickerComponent#onDatePickerClosed
  * @fires MdDatePickerComponent#onDatePickerLabelClick
@@ -91,7 +91,6 @@ class MdDatePickerComponent extends MdComponent {
     };
 
     /**
-     *
      * @readonly
      */
     get startOfDay() {
@@ -99,7 +98,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get years() {
@@ -117,7 +115,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get months() {
@@ -134,7 +131,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get weekdays() {
@@ -147,7 +143,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get days() {
@@ -169,7 +164,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get icons() {
@@ -182,7 +176,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      */
     constructor() {
         super();
@@ -210,18 +203,16 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` &lt;md-icon .data="${item}">${item.icon}&lt;/md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -239,9 +230,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderButton(item) {
         return html`
@@ -259,21 +249,19 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderSpacer(item) {
         return html` &lt;div class="md-date-picker__spacer">&lt;/div> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
-    renderItem(item, component = "icon") {
+    renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
             [
@@ -287,7 +275,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderDatePickerYear() {
@@ -311,7 +298,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderDatePickerMonth() {
@@ -335,7 +321,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderDatePickerDay() {
@@ -374,7 +359,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -382,8 +366,8 @@ class MdDatePickerComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length
                 ? html`
                       &lt;div class="md-date-picker__header">
-                          &lt;div class="md-date-picker__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}&lt;/div>
-                          ${this.actions?.length ? html` &lt;div class="md-date-picker__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}&lt;/div> ` : nothing}
+                          &lt;div class="md-date-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}&lt;/div>
+                          ${this.actions?.length ? html` &lt;div class="md-date-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}&lt;/div> ` : nothing}
                       &lt;/div>
                   `
                 : nothing}
@@ -395,13 +379,12 @@ class MdDatePickerComponent extends MdComponent {
                         &lt;div class="md-date-picker__item">${this.renderDatePickerDay()}&lt;/div>
                     &lt;/div>
                 &lt;/div>
-                ${this.buttons?.length ? html` &lt;div class="md-date-picker__footer">${this.buttons?.length ? html` &lt;div class="md-date-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}&lt;/div> ` : nothing}&lt;/div> ` : nothing}
+                ${this.buttons?.length ? html` &lt;div class="md-date-picker__footer">${this.buttons?.length ? html` &lt;div class="md-date-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}&lt;/div> ` : nothing}&lt;/div> ` : nothing}
             &lt;/div>
         `;
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -422,7 +405,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -432,10 +414,9 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -452,8 +433,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     show(options) {
         this.style.removeProperty("--md-comp-date-picker-animation");
@@ -470,7 +450,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-date-picker-animation");
@@ -480,8 +459,7 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -489,18 +467,16 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerLabelClick(event) {
         this.emit("onDatePickerLabelClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerIconButtonPrevClick(event) {
         if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() - 10);
@@ -511,9 +487,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerIconButtonNextClick(event) {
         if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() + 10);
@@ -524,9 +499,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerIconButtonClick(event) {
         const data = event.currentTarget.data;
@@ -536,9 +510,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -548,9 +521,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
@@ -561,9 +533,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerDayItemClick(event) {
         const data = event.currentTarget.data;
@@ -578,9 +549,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerButtonCancelClick(event) {
         this.close();
@@ -591,9 +561,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerButtonOkClick(event) {
         this.close();
@@ -604,9 +573,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerButtonLabelClick(event) {
         const map = {
@@ -619,9 +587,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerButtonClick(event) {
         const data = event.currentTarget.data;
@@ -632,9 +599,8 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDatePickerScrimClosed(event) {
         if (this.open) this.close();
@@ -653,13 +619,13 @@ export { MdDatePickerComponent };
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 12:58:31 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 20:16:13 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

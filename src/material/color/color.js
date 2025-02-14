@@ -2,9 +2,8 @@ import { Hct } from "@material/material-color-utilities";
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
- *
- * @param {Any} [input]
- * @param {Any} [customColors]
+ * @param {Undefined} [input]
+ * @param {Undefined} [customColors]
  */
 async function setTheme(input, customColors) {
     let theme;

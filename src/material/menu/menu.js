@@ -5,8 +5,8 @@ import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
 
 /**
- *
  * @extends MdComponent
+ * @element md-menu
  * @fires MdMenuComponent#onMenuShown
  * @fires MdMenuComponent#onMenuClosed
  * @element md-menu
@@ -22,7 +22,6 @@ class MdMenuComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -30,7 +29,6 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -38,7 +36,6 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -52,8 +49,7 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options={}]
+     * @param {Object} [options={}]
      */
     show(options = {}) {
         this.style.removeProperty("--md-comp-menu-animation");
@@ -68,7 +64,6 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-menu-animation");
@@ -77,8 +72,7 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     toggle(options) {
         if (this.open) this.close();

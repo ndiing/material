@@ -4,14 +4,13 @@ import { MdTextFieldComponent } from "../text-field/text-field";
 import { findClosestElement, parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
 
 /**
- *
  * @extends MdTextFieldComponent
+ * @element md-datetime-field
  * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonPickerClick
  * @element md-datetime-field
  */
 class MdDatetimeFieldComponent extends MdTextFieldComponent {
     /**
-     *
      */
     constructor() {
         super();
@@ -19,7 +18,6 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get trailingActions() {
@@ -34,7 +32,6 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -43,10 +40,9 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     async handleDatetimeFieldIconButtonPickerClick(event) {
         const buttonIcon = event.currentTarget;
@@ -89,9 +85,8 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;

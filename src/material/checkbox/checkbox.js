@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
  * @extends MdComponent
+ * @element md-checkbox
  * @fires MdCheckboxComponent#onCheckboxNativeInput
  * @fires MdCheckboxComponent#onCheckboxNativeReset
  * @element md-checkbox
@@ -25,14 +25,12 @@ class MdCheckboxComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -57,7 +55,6 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -77,7 +74,6 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -87,9 +83,8 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleCheckboxNativeInput(event) {
         const native = event.currentTarget;
@@ -99,9 +94,8 @@ class MdCheckboxComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleCheckboxNativeReset(event) {
         this.value = this.defaultValue;

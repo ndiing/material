@@ -1,5 +1,4 @@
 /**
- *
  */
 class Layout {
     /**
@@ -12,8 +11,7 @@ class Layout {
     ];
 
     /**
-     *
-     * @param {Any} [callback]
+     * @param {Undefined} [callback]
      */
     constructor(callback) {
         this.callback = callback.bind(this);
@@ -21,7 +19,6 @@ class Layout {
     }
 
     /**
-     *
      * @private
      */
     handleChange() {
@@ -30,7 +27,6 @@ class Layout {
     }
 
     /**
-     *
      */
     init() {
         this.item = this.items.find((item) => item.media.matches);
@@ -39,7 +35,6 @@ class Layout {
     }
 
     /**
-     *
      */
     destroy() {
         this.item.media.removeEventListener("change", this.handleChange);

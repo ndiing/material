@@ -2,8 +2,8 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- *
  * @extends MdComponent
+ * @element md-progress-indicator
  * @element md-progress-indicator
  */
 class MdProgressIndicatorComponent extends MdComponent {
@@ -24,7 +24,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     variants = ["circular"];
 
     /**
-     *
      */
     constructor() {
         super();
@@ -33,7 +32,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderProgressIndicatorNative() {
@@ -47,7 +45,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderProgressIndicatorCircular() {
@@ -96,7 +93,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -105,7 +101,6 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -114,9 +109,8 @@ class MdProgressIndicatorComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

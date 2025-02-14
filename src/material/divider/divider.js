@@ -2,13 +2,12 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- *
  * @extends MdComponent
+ * @element md-divider
  * @element md-divider
  */
 class MdDividerComponent extends MdComponent {
     /**
-     *
      * @private
      */
     connectedCallback() {

@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 
 /**
- *
  * @extends MdComponent
+ * @element md-tree
  * @fires MdTreeComponent#onTreeKeydownArrowDown
  * @fires MdTreeComponent#onTreeKeydownArrowUp
  * @fires MdTreeComponent#onTreeKeydownArrowRight
@@ -24,7 +24,6 @@ class MdTreeComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -35,9 +34,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderTreeItem(item) {
         return html`
@@ -59,7 +57,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -67,7 +64,6 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -78,10 +74,9 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -96,10 +91,9 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [items]
-     * @param {Any} [parent]
-     * @param {Any} [indent=0]
+     * @param {Undefined} [items]
+     * @param {Undefined} [parent]
+     * @param {String} [indent=0]
      */
     flatten(items, parent, indent = 0) {
         let expanded;
@@ -124,8 +118,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [data]
+     * @param {Undefined} [data]
      */
     updateVisibility(data) {
         data.children.forEach((item) => {
@@ -136,9 +129,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @async
-     * @param {Any} [arg]
+     * @param {Undefined} [arg]
      */
     async updateScroll(arg) {
         await this.updateComplete;
@@ -152,9 +144,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeKeydownArrowDown(event) {
         event.preventDefault();
@@ -171,9 +162,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeKeydownArrowUp(event) {
         event.preventDefault();
@@ -190,9 +180,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeKeydownArrowRight(event) {
         event.preventDefault();
@@ -214,9 +203,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeKeydownArrowLeft(event) {
         event.preventDefault();
@@ -237,9 +225,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeKeydownEnter(event) {
         event.preventDefault();
@@ -249,9 +236,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeKeydown(event) {
         if (this.contains(document.activeElement)) {
@@ -265,9 +251,8 @@ class MdTreeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTreeItemClick(event) {
         const action = event.target.closest(".md-tree__action");

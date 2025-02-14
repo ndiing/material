@@ -4,8 +4,8 @@ import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-fab
  * @element md-fab
  */
 class MdFabComponent extends MdComponent {
@@ -32,14 +32,12 @@ class MdFabComponent extends MdComponent {
     variants = ["unelevated"];
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -47,7 +45,6 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -59,7 +56,6 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -69,9 +65,8 @@ class MdFabComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);

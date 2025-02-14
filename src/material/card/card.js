@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-card
  * @fires MdCardComponent#onCardIconButtonClick
  * @fires MdCardComponent#onCardButtonClick
  * @element md-card
@@ -27,7 +27,6 @@ class MdCardComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -35,18 +34,16 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -64,9 +61,8 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderButton(item) {
         return html`
@@ -84,19 +80,17 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-card__spacer"></div> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -112,7 +106,6 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -120,7 +113,6 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -129,18 +121,16 @@ class MdCardComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleCardIconButtonClick(event) {
         this.emit("onCardIconButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleCardButtonClick(event) {
         this.emit("onCardButtonClick", { event });

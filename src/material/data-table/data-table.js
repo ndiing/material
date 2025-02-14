@@ -5,8 +5,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 
 /**
- *
  * @extends MdComponent
+ * @element md-data-table
  * @fires MdDataTableComponent#onDataTableKeydown
  * @fires MdDataTableComponent#onDataTableHeaderCellClick
  * @fires MdDataTableComponent#onDataTableBodyCellClick
@@ -32,7 +32,6 @@ class MdDataTableComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -45,8 +44,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [th]
+     * @private
+     * @param {Undefined} [th]
      */
     styleDataTableHeaderCell(th) {
         return {
@@ -62,8 +61,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [td]
+     * @private
+     * @param {Undefined} [td]
      */
     styleDataTableBodyCell(td) {
         return {
@@ -76,7 +75,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get checkboxData() {
@@ -87,7 +85,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -172,7 +169,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -183,7 +179,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -192,24 +187,22 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("data")) {
             await this.updateComplete;
             this.store.load(this.data);
-            this.requestUpdateStore();
+            this.updateStore();
         }
     }
 
     /**
-     *
      */
-    requestUpdateStore() {
+    updateStore() {
         const result = this.store.get({
             sorters: this.headers.flat().filter((item) => item.order),
         });
@@ -218,7 +211,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get selected() {
@@ -226,7 +218,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get indeterminate() {
@@ -234,7 +225,6 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get checked() {
@@ -242,9 +232,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDataTableKeydown(event) {
         if (event.ctrlKey && event.key === "a") {
@@ -258,9 +247,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDataTableHeaderCellClick(event) {
         const data = event.currentTarget.data;
@@ -277,24 +265,22 @@ class MdDataTableComponent extends MdComponent {
                 desc: undefined,
             };
             data.order = orders[data.order];
-            this.requestUpdateStore();
+            this.updateStore();
         }
         this.emit("onDataTableHeaderCellClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDataTableBodyCellClick(event) {
         this.emit("onDataTableBodyCellClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDataTableHeaderCheckboxClick(event) {
         const data = event.currentTarget.data;
@@ -307,9 +293,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDataTableBodyClick(event) {
         const bodyData = event.target.closest("td")?.data;
@@ -341,9 +326,8 @@ class MdDataTableComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleDataTableBodyCheckboxClick(event) {
         const data = event.currentTarget.data;

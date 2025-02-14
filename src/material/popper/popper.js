@@ -1,11 +1,9 @@
 /**
- *
- * @param {Any} [placement]
- * @param {Any} [{ containerRect]
- * @param {Any} [triggerRect]
- * @param {Any} [offset }]
+ * @param {Undefined} [placement]
+ * @param {Object} [options={}]
  */
-function calculatePosition(placement, { containerRect, triggerRect, offset }) {
+function calculatePosition(placement, options = {}) {
+    const { containerRect, triggerRect, offset } = options;
     const { left, top, right, bottom, width, height } = triggerRect;
     const cWidth = containerRect.width;
     const cHeight = containerRect.height;
@@ -31,8 +29,7 @@ function calculatePosition(placement, { containerRect, triggerRect, offset }) {
 }
 
 /**
- *
- * @param {Any} [offset]
+ * @param {Undefined} [offset]
  */
 function parseOffset(offset) {
     let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);
@@ -43,8 +40,7 @@ function parseOffset(offset) {
 }
 
 /**
- *
- * @param {Any} [options={}]
+ * @param {Object} [options={}]
  */
 function setPosition(options = {}) {
     const { container, trigger, boundary, offset = "0", placements } = options;
@@ -79,8 +75,7 @@ function setPosition(options = {}) {
 }
 
 /**
- *
- * @param {Any} [element]
+ * @param {Undefined} [element]
  */
 function closestScrollableElement(element) {
     let current = element;

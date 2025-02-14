@@ -1,9 +1,7 @@
 /**
- *
  */
 class Progress {
     /**
-     *
      */
     constructor() {
         this.startTime = null;
@@ -13,7 +11,6 @@ class Progress {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -25,8 +22,7 @@ class Progress {
     }
 
     /**
-     *
-     * @param {Any} [newDuration]
+     * @param {Undefined} [newDuration]
      */
     start(newDuration) {
         this.duration += newDuration;
@@ -40,8 +36,7 @@ class Progress {
     }
 
     /**
-     *
-     * @param {Any} [currentTime]
+     * @param {Undefined} [currentTime]
      */
     step(currentTime) {
         if (!this.progressIndicator) return;
@@ -57,7 +52,6 @@ class Progress {
     }
 
     /**
-     *
      */
     remove() {
         if (this.progressIndicator) {
@@ -67,7 +61,6 @@ class Progress {
     }
 
     /**
-     *
      */
     reset() {
         this.startTime = null;

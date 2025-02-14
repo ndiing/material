@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
  * @extends MdComponent
+ * @element md-switch
  * @fires MdSwitchComponent#onSwitchNativeInput
  * @fires MdSwitchComponent#onSwitchNativeReset
  * @element md-switch
@@ -27,14 +27,12 @@ class MdSwitchComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -59,7 +57,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -81,7 +78,6 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -91,9 +87,8 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleSwitchNativeInput(event) {
         this.style.removeProperty("--md-comp-switch-thumb-transition-property");
@@ -104,9 +99,8 @@ class MdSwitchComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleSwitchNativeReset(event) {
         this.value = this.defaultValue;

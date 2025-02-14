@@ -1,30 +1,26 @@
 /**
- *
- * @param {Any} [string]
+ * @param {Undefined} [string]
  */
 function parseDate(string) {
     return new Date(string);
 }
 
 /**
- *
- * @param {Any} [string]
+ * @param {Undefined} [string]
  */
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
 
 /**
- *
- * @param {Any} [string]
+ * @param {Undefined} [string]
  */
 function parseMonth(string) {
     return new Date(string + "-01");
 }
 
 /**
- *
- * @param {Any} [string]
+ * @param {Undefined} [string]
  */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
@@ -34,8 +30,7 @@ function parseTime(string) {
 }
 
 /**
- *
- * @param {Any} [string]
+ * @param {Undefined} [string]
  */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
@@ -46,16 +41,14 @@ function parseWeek(string) {
 }
 
 /**
- *
- * @param {Any} [date]
+ * @param {Undefined} [date]
  */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
 
 /**
- *
- * @param {Any} [date]
+ * @param {Undefined} [date]
  */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
@@ -67,24 +60,21 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- *
- * @param {Any} [date]
+ * @param {Undefined} [date]
  */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
 
 /**
- *
- * @param {Any} [date]
+ * @param {Undefined} [date]
  */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
 
 /**
- *
- * @param {Any} [date]
+ * @param {Undefined} [date]
  */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);

@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 
 /**
- *
  * @extends MdComponent
+ * @element md-navigation-list
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown
  * @fires MdNavigationListComponent#onNavigationListKeydownEnter
@@ -24,7 +24,6 @@ class MdNavigationListComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -34,9 +33,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderNavigationListItem(item) {
         return html`
@@ -57,7 +55,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -65,7 +62,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -78,7 +74,6 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -88,31 +83,28 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
             await this.updateComplete;
             this.store.load(this.items);
-            this.requestUpdateStore();
+            this.updateStore();
         }
     }
 
     /**
-     *
      */
-    requestUpdateStore() {
+    updateStore() {
         const result = this.store.get({});
         this.storeItems = result.data;
         this.requestUpdate();
     }
 
     /**
-     *
      * @async
      */
     async updateScroll() {
@@ -127,9 +119,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
@@ -145,10 +136,9 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
@@ -164,9 +154,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleNavigationListKeydownEnter(event) {
         event.preventDefault();
@@ -176,9 +165,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleNavigationListKeydown(event) {
         if (this.contains(document.activeElement)) {
@@ -190,9 +178,8 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");

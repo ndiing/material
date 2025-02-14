@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-form
  * @fires MdFormComponent#onFormNativeFormdata
  * @fires MdFormComponent#onFormNativeReset
  * @fires MdFormComponent#onFormNativeSubmit
@@ -32,7 +32,6 @@ class MdFormComponent extends MdComponent {
     };
 
     /**
-     *
      * @readonly
      */
     get formNative() {
@@ -40,7 +39,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
      */
     constructor() {
         super();
@@ -48,7 +46,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -72,7 +69,6 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -81,15 +77,13 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
      */
     reset() {
         this.formNative.reset();
     }
 
     /**
-     *
-     * @param {Any} [submitButton]
+     * @param {Undefined} [submitButton]
      */
     submit(submitButton) {
         if (this.formNative.requestSubmit) {
@@ -104,18 +98,16 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.elements) {
@@ -129,9 +121,8 @@ class MdFormComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();

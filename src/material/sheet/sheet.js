@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-sheet
  * @fires MdSheetComponent#onSheetShown
  * @fires MdSheetComponent#onSheetClosed
  * @fires MdSheetComponent#onSheetIconButtonClick
@@ -41,7 +41,6 @@ class MdSheetComponent extends MdComponent {
     regions = ["north", "east", "south", "west", "center"];
 
     /**
-     *
      */
     constructor() {
         super();
@@ -50,18 +49,16 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -79,9 +76,8 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderButton(item) {
         return html`
@@ -99,19 +95,17 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-sheet__spacer"></div> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -127,7 +121,6 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -135,7 +128,6 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -154,7 +146,6 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -164,9 +155,8 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -181,7 +171,6 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -191,7 +180,6 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -201,7 +189,6 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();
@@ -209,27 +196,24 @@ class MdSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleSheetIconButtonClick(event) {
         this.emit("onSheetIconButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleSheetButtonClick(event) {
         this.emit("onSheetButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleSheetScrimClosed(event) {
         if (this.open) this.close();

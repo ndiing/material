@@ -1,5 +1,4 @@
 /**
- *
  * @fires Router#onRouterCurrentEntryChange
  * @fires Router#onRouterNavigate
  * @fires Router#onRouterNavigateError
@@ -9,12 +8,11 @@ class Router {
     static params = {};
 
     /**
-     *
      * @static
-     * @param {Any} [pathname=this.pathname]
-     * @param {Any} [routes=this.routes]
-     * @param {Any} [parent=null]
-     * @param {Any} [result=[]]
+     * @param {String} [pathname=this.pathname]
+     * @param {String} [routes=this.routes]
+     * @param {String} [parent=null]
+     * @param {Array} [result=[]]
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -38,7 +36,6 @@ class Router {
     }
 
     /**
-     *
      * @static
      * @readonly
      */
@@ -51,11 +48,10 @@ class Router {
     }
 
     /**
-     *
      * @private
      * @static
      * @async
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     static async handleNavigation(event) {
         performance.mark("mark-1");
@@ -87,9 +83,8 @@ class Router {
     }
 
     /**
-     *
      * @static
-     * @param {Any} [routes]
+     * @param {Undefined} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -105,22 +100,20 @@ class Router {
     }
 
     /**
-     *
      * @private
      * @static
-     * @param {Any} [route]
-     * @param {Any} [outlet]
+     * @param {Undefined} [route]
+     * @param {Undefined} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
     /**
-     *
      * @static
      * @async
-     * @param {Any} [container]
-     * @param {Any} [route]
+     * @param {Undefined} [container]
+     * @param {Undefined} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -149,19 +142,17 @@ class Router {
     }
 
     /**
-     *
      * @static
-     * @param {Any} [route]
+     * @param {Undefined} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
     /**
-     *
      * @static
      * @async
-     * @param {Any} [route]
+     * @param {Undefined} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -170,11 +161,10 @@ class Router {
     }
 
     /**
-     *
      * @private
      * @static
      * @async
-     * @param {Any} [route]
+     * @param {Undefined} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -188,7 +178,6 @@ class Router {
     }
 
     /**
-     *
      * @static
      */
     static setController() {
@@ -197,9 +186,8 @@ class Router {
     }
 
     /**
-     *
      * @static
-     * @param {Any} [url]
+     * @param {Undefined} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -210,10 +198,9 @@ class Router {
     }
 
     /**
-     *
      * @private
      * @static
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -224,11 +211,10 @@ class Router {
     }
 
     /**
-     *
      * @private
      * @static
-     * @param {Any} [type]
-     * @param {Any} [detail]
+     * @param {Undefined} [type]
+     * @param {Undefined} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -242,10 +228,9 @@ class Router {
     static options = {};
 
     /**
-     *
      * @static
-     * @param {Any} [routes=[]]
-     * @param {Any} [options={}]
+     * @param {Array} [routes=[]]
+     * @param {Object} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
@@ -259,7 +244,6 @@ class Router {
             const pushState = window.history.pushState;
 
             /**
-             *
              */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);

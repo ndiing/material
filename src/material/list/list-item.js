@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
  * @extends MdComponent
+ * @element md-list-item
  * @fires MdListItemComponent#onListItemSelected
  * @element md-list-item
  */
@@ -52,7 +52,6 @@ class MdListItemComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -60,7 +59,6 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -132,7 +130,6 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -152,7 +149,6 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -162,10 +158,9 @@ class MdListItemComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

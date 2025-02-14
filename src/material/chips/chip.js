@@ -3,8 +3,8 @@ import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
  * @extends MdComponent
+ * @element md-chip
  * @fires MdChipComponent#onChipActionClick
  * @element md-chip
  */
@@ -27,14 +27,12 @@ class MdChipComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -60,7 +58,6 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -72,7 +69,6 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -82,9 +78,8 @@ class MdChipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", { event });

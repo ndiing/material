@@ -1,11 +1,9 @@
 /**
- *
  */
 class Store {
     /**
-     *
-     * @param {Any} [data=[]]
-     * @param {Any} [options={}]
+     * @param {Array} [data=[]]
+     * @param {Object} [options={}]
      */
     constructor(data = [], options = {}) {
         this.data = data;
@@ -13,17 +11,15 @@ class Store {
     }
 
     /**
-     *
-     * @param {Any} [data=[]]
+     * @param {Array} [data=[]]
      */
     load(data = []) {
         this.data = data;
     }
 
     /**
-     *
-     * @param {Any} [data]
-     * @param {Any} [sorters]
+     * @param {Undefined} [data]
+     * @param {Undefined} [sorters]
      */
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
@@ -40,9 +36,8 @@ class Store {
     }
 
     /**
-     *
-     * @param {Any} [item]
-     * @param {Any} [q]
+     * @param {Undefined} [item]
+     * @param {Undefined} [q]
      */
     deepSearch(item, q) {
         if (!item) return false;
@@ -59,9 +54,8 @@ class Store {
     }
 
     /**
-     *
-     * @param {Any} [data]
-     * @param {Any} [q]
+     * @param {Undefined} [data]
+     * @param {Undefined} [q]
      */
     search(data, q) {
         if (!q) return data;
@@ -69,18 +63,16 @@ class Store {
     }
 
     /**
-     *
-     * @param {Any} [item]
-     * @param {Any} [name]
+     * @param {Undefined} [item]
+     * @param {Undefined} [name]
      */
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }
 
     /**
-     *
-     * @param {Any} [data]
-     * @param {Any} [filters]
+     * @param {Undefined} [data]
+     * @param {Undefined} [filters]
      */
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
@@ -115,20 +107,18 @@ class Store {
     }
 
     /**
-     *
-     * @param {Any} [data]
-     * @param {Any} [_start]
-     * @param {Any} [_end]
+     * @param {Undefined} [data]
+     * @param {Undefined} [_start]
+     * @param {Undefined} [_end]
      */
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
 
     /**
-     *
-     * @param {Any} [data]
-     * @param {Any} [_page]
-     * @param {Any} [_limit]
+     * @param {Undefined} [data]
+     * @param {Undefined} [_page]
+     * @param {Undefined} [_limit]
      */
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;
@@ -137,8 +127,7 @@ class Store {
     }
 
     /**
-     *
-     * @param {Any} [options={}]
+     * @param {Object} [options={}]
      */
     get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;

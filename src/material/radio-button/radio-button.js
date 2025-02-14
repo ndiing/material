@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
  * @extends MdComponent
+ * @element md-radio-button
  * @fires MdRadioButtonComponent#onRadioButtonNativeInput
  * @fires MdRadioButtonComponent#onRadioButtonNativeReset
  * @element md-radio-button
@@ -25,14 +25,12 @@ class MdRadioButtonComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -57,7 +55,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -77,7 +74,6 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -87,9 +83,8 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleRadioButtonNativeInput(event) {
         const native = event.currentTarget;
@@ -99,9 +94,8 @@ class MdRadioButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleRadioButtonNativeReset(event) {
         this.value = this.defaultValue;

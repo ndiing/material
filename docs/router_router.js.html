@@ -27,23 +27,20 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Router untuk mengelola navigasi aplikasi.
- * @fires Router#onRouterCurrentEntryChange Saat entri rute berubah.
- * @fires Router#onRouterNavigate Saat navigasi dimulai.
- * @fires Router#onRouterNavigateError Jika navigasi gagal.
- * @fires Router#onRouterNavigateSuccess Jika navigasi berhasil.
+ * @fires Router#onRouterCurrentEntryChange
+ * @fires Router#onRouterNavigate
+ * @fires Router#onRouterNavigateError
+ * @fires Router#onRouterNavigateSuccess
  */
 class Router {
     static params = {};
 
     /**
-     * Mendapatkan rute yang cocok berdasarkan pathname.
-     * @private
-     * @param {string} [pathname=this.pathname] Path yang akan dicocokkan.
-     * @param {Array} [routes=this.routes] Daftar rute.
-     * @param {Object|null} [parent=null] Rute induk (jika ada).
-     * @param {Array} [result=[]] Hasil pencarian rute.
-     * @returns {Array|undefined} Rute yang cocok atau undefined jika tidak ditemukan.
+     * @static
+     * @param {String} [pathname=this.pathname]
+     * @param {String} [routes=this.routes]
+     * @param {String} [parent=null]
+     * @param {Array} [result=[]]
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -66,7 +63,10 @@ class Router {
         }
     }
 
-    /** @returns {string} Pathname saat ini. */
+    /**
+     * @static
+     * @readonly
+     */
     static get pathname() {
         if (this.options.historyApiFallback) {
             return window.location.pathname;
@@ -76,8 +76,10 @@ class Router {
     }
 
     /**
-     * Menangani navigasi dan memproses rute.
      * @private
+     * @static
+     * @async
+     * @param {Undefined} [event]
      */
     static async handleNavigation(event) {
         performance.mark("mark-1");
@@ -109,8 +111,8 @@ class Router {
     }
 
     /**
-     * Menghapus komponen yang tidak digunakan.
-     * @private
+     * @static
+     * @param {Undefined} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -126,16 +128,20 @@ class Router {
     }
 
     /**
-     * Merender komponen pada outlet yang sesuai.
      * @private
+     * @static
+     * @param {Undefined} [route]
+     * @param {Undefined} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
     /**
-     * Mendapatkan outlet untuk rute tertentu.
-     * @private
+     * @static
+     * @async
+     * @param {Undefined} [container]
+     * @param {Undefined} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -164,16 +170,17 @@ class Router {
     }
 
     /**
-     * Menentukan container untuk komponen rute.
-     * @private
+     * @static
+     * @param {Undefined} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
     /**
-     * Memuat komponen rute jika belum ada.
-     * @private
+     * @static
+     * @async
+     * @param {Undefined} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -182,8 +189,10 @@ class Router {
     }
 
     /**
-     * Menjalankan hook beforeLoad sebelum memuat rute.
      * @private
+     * @static
+     * @async
+     * @param {Undefined} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -197,8 +206,7 @@ class Router {
     }
 
     /**
-     * Mengatur AbortController untuk menangani navigasi.
-     * @private
+     * @static
      */
     static setController() {
         if (this.controller &amp;&amp; !this.controller.signal.aborted) this.controller.abort();
@@ -206,8 +214,8 @@ class Router {
     }
 
     /**
-     * Menavigasi ke URL yang diberikan.
-     * @param {String} url
+     * @static
+     * @param {Undefined} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -218,8 +226,9 @@ class Router {
     }
 
     /**
-     * Menangani event klik untuk navigasi.
      * @private
+     * @static
+     * @param {Undefined} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -230,8 +239,10 @@ class Router {
     }
 
     /**
-     * Memicu event kustom.
      * @private
+     * @static
+     * @param {Undefined} [type]
+     * @param {Undefined} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -245,9 +256,9 @@ class Router {
     static options = {};
 
     /**
-     * Menginisialisasi router dengan daftar rute dan opsi.
-     * @param {Array} [routes=[]] Daftar rute yang digunakan.
-     * @param {Object} [options={}] Opsi tambahan untuk router.
+     * @static
+     * @param {Array} [routes=[]]
+     * @param {Object} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
@@ -260,6 +271,8 @@ class Router {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
 
+            /**
+             */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");
@@ -281,13 +294,13 @@ export { Router };
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 12:58:31 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 20:16:13 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

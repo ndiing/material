@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
 
 /**
- *
  * @extends MdComponent
+ * @element md-data-table-cell
  * @element md-data-table-cell
  */
 class MdDataTableCellComponent extends MdComponent {
@@ -31,14 +31,12 @@ class MdDataTableCellComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -62,7 +60,6 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -81,10 +78,9 @@ class MdDataTableCellComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);

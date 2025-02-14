@@ -2,13 +2,12 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- *
  * @extends MdComponent
+ * @element md-list-row
  * @element md-list-row
  */
 class MdListRowComponent extends MdComponent {
     /**
-     *
      * @private
      */
     connectedCallback() {

@@ -4,8 +4,8 @@ import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-icon-button
  * @fires MdIconButtonComponent#onIconButtonClick
  * @element md-icon-button
  */
@@ -33,7 +33,6 @@ class MdIconButtonComponent extends MdComponent {
     variants = ["filled", "filled-tonal", "outlined"];
 
     /**
-     *
      */
     constructor() {
         super();
@@ -41,7 +40,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -57,7 +55,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -76,7 +73,6 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -86,9 +82,8 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -100,9 +95,8 @@ class MdIconButtonComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleIconButtonClick(event) {
         if (this.toggle) {

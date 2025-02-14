@@ -5,8 +5,8 @@ import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
 
 /**
- *
  * @extends MdComponent
+ * @element md-tooltip
  * @fires MdTooltipComponent#onTooltipShown
  * @fires MdTooltipComponent#onTooltipClosed
  * @fires MdTooltipComponent#onTooltipIconButtonClick
@@ -32,7 +32,6 @@ class MdTooltipComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -40,18 +39,16 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -69,9 +66,8 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderButton(item) {
         return html`
@@ -89,19 +85,17 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-tooltip__spacer"></div> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -117,7 +111,6 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -125,7 +118,6 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -134,8 +126,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     show(options) {
         options = {
@@ -150,7 +141,6 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.open = false;
@@ -158,8 +148,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -167,18 +156,16 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTooltipIconButtonClick(event) {
         this.emit("onTooltipIconButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTooltipButtonClick(event) {
         this.emit("onTooltipButtonClick", { event });

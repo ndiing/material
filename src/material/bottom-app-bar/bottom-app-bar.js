@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-bottom-app-bar
  * @fires MdBottomAppBarComponent#onBottomAppBarShown
  * @fires MdBottomAppBarComponent#onBottomAppBarClosed
  * @fires MdBottomAppBarComponent#onBottomAppBarIconButtonClick
@@ -25,16 +25,14 @@ class MdBottomAppBarComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -53,9 +51,8 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderFab(item) {
         return html`
@@ -73,7 +70,6 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -81,7 +77,6 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -95,16 +90,14 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -113,7 +106,6 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -122,7 +114,6 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();
@@ -130,18 +121,16 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleBottomAppBarIconButtonClick(event) {
         this.emit("onBottomAppBarIconButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleBottomAppBarFabClick(event) {
         this.emit("onBottomAppBarFabClick", { event });

@@ -2,11 +2,13 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- *
  * @extends MdComponent
+ * @element md-scrim
+ * @fires MdScrimComponent#onScrimShow
+ * @fires MdScrimComponent#onScrimClose
+ * @fires MdScrimComponent#onScrimClick
  * @fires MdScrimComponent#onScrimShown
  * @fires MdScrimComponent#onScrimClosed
- * @fires MdScrimComponent#onScrimClick
  * @element md-scrim
  */
 class MdScrimComponent extends MdComponent {
@@ -18,18 +20,16 @@ class MdScrimComponent extends MdComponent {
     };
 
     /**
-     *
      * @private
      */
     connectedCallback() {
         super.connectedCallback();
+        this.classList.add("md-scrim");
         this.handleScrimClick = this.handleScrimClick.bind(this);
         this.addEventListener("click", this.handleScrimClick);
-        this.classList.add("md-scrim");
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -38,25 +38,24 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
      */
     show() {
         this.handleScrimShown = this.handleScrimShown.bind(this);
         this.addEventListener("animationend", this.handleScrimShown);
         this.open = true;
+        this.emit("onScrimShow");
     }
 
     /**
-     *
      */
     close() {
         this.handleScrimClosed = this.handleScrimClosed.bind(this);
         this.addEventListener("animationend", this.handleScrimClosed);
         this.open = false;
+        this.emit("onScrimClose");
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();
@@ -64,9 +63,17 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
+     */
+    handleScrimClick(event) {
+        this.close();
+        this.emit("onScrimClick", { event });
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
      */
     handleScrimShown(event) {
         if (event.animationName === "scrim-out") {
@@ -76,25 +83,14 @@ class MdScrimComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleScrimClosed(event) {
         if (event.animationName === "scrim-in") {
             this.removeEventListener("animationend", this.handleScrimClosed);
             this.emit("onScrimClosed", { event });
         }
-    }
-
-    /**
-     *
-     * @private
-     * @param {Any} [event]
-     */
-    handleScrimClick(event) {
-        this.close();
-        this.emit("onScrimClick", { event });
     }
 }
 customElements.define("md-scrim", MdScrimComponent);

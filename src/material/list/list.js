@@ -3,8 +3,8 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-list
  * @fires MdListComponent#onListItemClick
  * @fires MdListComponent#onListItemCheckboxNativeInput
  * @fires MdListComponent#onListItemRadioButtonNativeInput
@@ -31,7 +31,6 @@ class MdListComponent extends MdComponent {
     types = ["single-select", "multi-select"];
 
     /**
-     *
      */
     constructor() {
         super();
@@ -40,9 +39,8 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderListItem(item) {
         if (this.fieldMap) {
@@ -83,7 +81,6 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -91,7 +88,6 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -100,9 +96,8 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
@@ -120,9 +115,8 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
@@ -132,9 +126,8 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
@@ -146,9 +139,8 @@ class MdListComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;

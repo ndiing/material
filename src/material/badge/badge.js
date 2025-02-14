@@ -2,8 +2,8 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 
 /**
- *
  * @extends MdComponent
+ * @element md-badge
  * @element md-badge
  */
 class MdBadgeComponent extends MdComponent {
@@ -17,7 +17,6 @@ class MdBadgeComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -25,7 +24,6 @@ class MdBadgeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -33,7 +31,6 @@ class MdBadgeComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {

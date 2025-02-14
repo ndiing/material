@@ -7,8 +7,8 @@ import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-time-picker
  * @fires MdTimePickerComponent#onTimePickerShown
  * @fires MdTimePickerComponent#onTimePickerClosed
  * @fires MdTimePickerComponent#onTimePickerLabelClick
@@ -62,7 +62,6 @@ class MdTimePickerComponent extends MdComponent {
     };
 
     /**
-     *
      * @readonly
      */
     get hours() {
@@ -81,7 +80,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get minutes() {
@@ -101,7 +99,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @readonly
      */
     get icons() {
@@ -113,7 +110,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      */
     constructor() {
         super();
@@ -137,18 +133,16 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -166,9 +160,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderButton(item) {
         return html`
@@ -186,19 +179,17 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-time-picker__spacer"></div> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -214,7 +205,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderTimePickerHour() {
@@ -238,7 +228,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     renderTimePickerMinute() {
@@ -262,7 +251,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -288,7 +276,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -309,7 +296,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -319,10 +305,9 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     async updated(changedProperties) {
         super.updated(changedProperties);
@@ -339,8 +324,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     show(options) {
         this.style.removeProperty("--md-comp-time-picker-animation");
@@ -357,7 +341,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-time-picker-animation");
@@ -367,8 +350,7 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
-     * @param {Any} [options]
+     * @param {Undefined} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -376,18 +358,16 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerLabelClick(event) {
         this.emit("onTimePickerLabelClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerIconButtonPrevClick(event) {
         if (this.index === 0) this.selection.setHours(this.selection.getHours() - 1);
@@ -397,9 +377,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerIconButtonNextClick(event) {
         if (this.index === 0) this.selection.setHours(this.selection.getHours() + 1);
@@ -409,9 +388,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerIconButtonClick(event) {
         const data = event.currentTarget.data;
@@ -421,9 +399,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerHourItemClick(event) {
         const data = event.currentTarget.data;
@@ -434,9 +411,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerMinuteItemClick(event) {
         const data = event.currentTarget.data;
@@ -447,9 +423,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerButtonCancelClick(event) {
         this.close();
@@ -459,9 +434,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerButtonOkClick(event) {
         this.close();
@@ -472,9 +446,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerButtonLabelClick(event) {
         const map = {
@@ -486,9 +459,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerButtonClick(event) {
         const data = event.currentTarget.data;
@@ -499,9 +471,8 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTimePickerScrimClosed(event) {
         if (this.open) this.close();

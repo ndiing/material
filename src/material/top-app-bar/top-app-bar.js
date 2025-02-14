@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-top-app-bar
  * @fires MdTopAppBarComponent#onTopAppBarShown
  * @fires MdTopAppBarComponent#onTopAppBarClosed
  * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick
@@ -28,16 +28,14 @@ class MdTopAppBarComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -55,7 +53,6 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -63,7 +60,6 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -77,16 +73,14 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -95,7 +89,6 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -104,7 +97,6 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();
@@ -112,9 +104,8 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTopAppBarIconButtonClick(event) {
         this.emit("onTopAppBarIconButtonClick", { event });

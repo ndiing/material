@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-navigation-rail
  * @fires MdNavigationRailComponent#onNavigationRailShown
  * @fires MdNavigationRailComponent#onNavigationRailClosed
  * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick
@@ -30,7 +30,6 @@ class MdNavigationRailComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -39,18 +38,16 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -68,10 +65,9 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -85,7 +81,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -103,7 +98,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -117,16 +111,14 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -135,7 +127,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -144,7 +135,6 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();
@@ -152,9 +142,8 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleNavigationRailIconButtonClick(event) {
         this.emit("onNavigationRailIconButtonClick", { event });

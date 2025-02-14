@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-navigation-bar
  * @fires MdNavigationBarComponent#onNavigationBarShown
  * @fires MdNavigationBarComponent#onNavigationBarClosed
  * @element md-navigation-bar
@@ -21,7 +21,6 @@ class MdNavigationBarComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -30,7 +29,6 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -43,7 +41,6 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -57,16 +54,14 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
 
     /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -75,7 +70,6 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -84,7 +78,6 @@ class MdNavigationBarComponent extends MdComponent {
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();

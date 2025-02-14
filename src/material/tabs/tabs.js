@@ -3,8 +3,8 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-tabs
  * @fires MdTabsComponent#onTabClick
  * @element md-tabs
  */
@@ -26,7 +26,6 @@ class MdTabsComponent extends MdComponent {
     variants = ["primary", "secondary"];
 
     /**
-     *
      */
     constructor() {
         super();
@@ -35,9 +34,8 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderTab(item) {
         return html`
@@ -57,7 +55,6 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -65,7 +62,6 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {
@@ -75,9 +71,8 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -89,9 +84,8 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
@@ -104,10 +98,9 @@ class MdTabsComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     async handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {

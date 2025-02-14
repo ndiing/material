@@ -27,37 +27,28 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Kelas Store untuk mengelola, menyortir, mencari, memfilter, dan melakukan paginasi data.
  */
-
 class Store {
     /**
-     * Membuat instance Store.
-     * @param {Array&lt;Object>} [data=[]] - Data awal dalam bentuk array objek.
-     * @param {Object} [options={}] - Opsi tambahan untuk konfigurasi.
+     * @param {Array} [data=[]]
+     * @param {Object} [options={}]
      */
-
     constructor(data = [], options = {}) {
         this.data = data;
         this.options = options;
     }
 
     /**
-     * Memuat data baru ke dalam store.
-     * @param {Array&lt;Object>} data - Data yang akan dimuat ke dalam store.
+     * @param {Array} [data=[]]
      */
-
     load(data = []) {
         this.data = data;
     }
 
     /**
-     * Menyortir data berdasarkan kriteria yang diberikan.
-     * @param {Array&lt;Object>} data - Data yang akan disortir.
-     * @param {Array&lt;{ name: string, order: 'asc' | 'desc' }>} sorters - Kriteria penyortiran.
-     * @returns {Array&lt;Object>} Data yang telah disortir.
+     * @param {Undefined} [data]
+     * @param {Undefined} [sorters]
      */
-
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
         return data.sort((a, b) => {
@@ -73,13 +64,9 @@ class Store {
     }
 
     /**
-     * Melakukan pencarian rekursif dalam suatu item.
-     * @private
-     * @param {any} item - Item yang akan dicari.
-     * @param {string} q - Kata kunci pencarian.
-     * @returns {boolean} True jika item cocok dengan pencarian, false jika tidak.
+     * @param {Undefined} [item]
+     * @param {Undefined} [q]
      */
-
     deepSearch(item, q) {
         if (!item) return false;
         if (typeof item === "string" || typeof item === "number") {
@@ -95,36 +82,26 @@ class Store {
     }
 
     /**
-     * Mencari data berdasarkan kata kunci tertentu.
-     * @param {Array&lt;Object>} data - Data yang akan dicari.
-     * @param {string} q - Kata kunci pencarian.
-     * @returns {Array&lt;Object>} Data yang sesuai dengan pencarian.
+     * @param {Undefined} [data]
+     * @param {Undefined} [q]
      */
-
     search(data, q) {
         if (!q) return data;
         return data.filter((item) => this.deepSearch(item, q));
     }
 
     /**
-     * Mengambil nilai dari properti bertingkat dalam objek.
-     * @private
-     * @param {Object} item - Objek sumber.
-     * @param {string} name - Path ke properti (contoh: 'user.address.city').
-     * @returns {any} Nilai properti jika ada, undefined jika tidak ditemukan.
+     * @param {Undefined} [item]
+     * @param {Undefined} [name]
      */
-
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc &amp;&amp; acc[key] !== undefined ? acc[key] : undefined), item);
     }
 
     /**
-     * Memfilter data berdasarkan kondisi tertentu.
-     * @param {Array&lt;Object>} data - Data yang akan difilter.
-     * @param {Array&lt;{ name: string, value: any, operator: string }>} filters - Kriteria filter.
-     * @returns {Array&lt;Object>} Data yang telah difilter.
+     * @param {Undefined} [data]
+     * @param {Undefined} [filters]
      */
-
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
         return data.filter((item) => {
@@ -158,25 +135,19 @@ class Store {
     }
 
     /**
-     * Mengambil data dalam rentang indeks tertentu.
-     * @param {Array&lt;Object>} data - Data yang akan dipotong.
-     * @param {number} _start - Indeks awal.
-     * @param {number} _end - Indeks akhir.
-     * @returns {Array&lt;Object>} Data yang berada dalam rentang indeks.
+     * @param {Undefined} [data]
+     * @param {Undefined} [_start]
+     * @param {Undefined} [_end]
      */
-
     range(data, _start, _end) {
         return data.slice(_start, _end);
     }
 
     /**
-     * Memisahkan data menjadi halaman-paginasi.
-     * @param {Array&lt;Object>} data - Data yang akan dipaginasi.
-     * @param {number} _page - Nomor halaman.
-     * @param {number} _limit - Jumlah item per halaman.
-     * @returns {Array&lt;Object>} Data pada halaman tertentu.
+     * @param {Undefined} [data]
+     * @param {Undefined} [_page]
+     * @param {Undefined} [_limit]
      */
-
     paginate(data, _page, _limit) {
         let start = (_page - 1) * _limit;
         let end = start + _limit;
@@ -184,18 +155,8 @@ class Store {
     }
 
     /**
-     * Mengambil data dengan opsi pemrosesan seperti sortir, filter, pencarian, dan paginasi.
-     * @param {Object} [options={}] - Opsi pemrosesan data.
-     * @param {Array&lt;{ name: string, order: 'asc' | 'desc' }>} [options.sorters] - Opsi penyortiran.
-     * @param {string} [options.q] - Kata kunci pencarian.
-     * @param {Array&lt;{ name: string, value: any, operator: string }>} [options.filters] - Opsi filter.
-     * @param {number} [options._start] - Indeks awal rentang data.
-     * @param {number} [options._end] - Indeks akhir rentang data.
-     * @param {number} [options._page] - Nomor halaman untuk paginasi.
-     * @param {number} [options._limit] - Jumlah item per halaman.
-     * @returns {{ data: Array&lt;Object>, total: number }} Objek yang berisi data hasil pemrosesan dan jumlah total data.
+     * @param {Object} [options={}]
      */
-
     get(options = {}) {
         let { sorters, q, filters, _start, _end, _page, _limit } = options;
         let data = this.data.slice();
@@ -222,13 +183,13 @@ export { Store };
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculatePosition">calculatePosition</a></li><li><a href="global.html#closestScrollableElement">closestScrollableElement</a></li><li><a href="global.html#parseDate">parseDate</a></li><li><a href="global.html#parseDatetimeLocal">parseDatetimeLocal</a></li><li><a href="global.html#parseMonth">parseMonth</a></li><li><a href="global.html#parseOffset">parseOffset</a></li><li><a href="global.html#parseTime">parseTime</a></li><li><a href="global.html#parseWeek">parseWeek</a></li><li><a href="global.html#setPosition">setPosition</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#stringifyDate">stringifyDate</a></li><li><a href="global.html#stringifyDatetimeLocal">stringifyDatetimeLocal</a></li><li><a href="global.html#stringifyMonth">stringifyMonth</a></li><li><a href="global.html#stringifyTime">stringifyTime</a></li><li><a href="global.html#stringifyWeek">stringifyWeek</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 12:58:31 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 20:16:13 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

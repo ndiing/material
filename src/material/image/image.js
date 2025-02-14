@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-image
  * @element md-image
  */
 class MdImageComponent extends MdComponent {
@@ -23,14 +23,13 @@ class MdImageComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
     }
 
     /**
-     *
+     * @private
      * @readonly
      */
     get styleImageNative() {
@@ -48,7 +47,6 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -63,7 +61,6 @@ class MdImageComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     connectedCallback() {

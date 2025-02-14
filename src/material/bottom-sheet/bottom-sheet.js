@@ -4,8 +4,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 
 /**
- *
  * @extends MdComponent
+ * @element md-bottom-sheet
  * @fires MdBottomSheetComponent#onBottomSheetShown
  * @fires MdBottomSheetComponent#onBottomSheetClosed
  * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick
@@ -34,7 +34,6 @@ class MdBottomSheetComponent extends MdComponent {
     };
 
     /**
-     *
      */
     constructor() {
         super();
@@ -42,18 +41,16 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderIconButton(item) {
         return html`
@@ -71,9 +68,8 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderButton(item) {
         return html`
@@ -91,19 +87,17 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
+     * @param {Undefined} [item]
      */
     renderSpacer(item) {
         return html` <div class="md-bottom-sheet__spacer"></div> `;
     }
 
     /**
-     *
      * @private
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
+     * @param {Undefined} [item]
+     * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
         return choose(
@@ -119,7 +113,6 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     render() {
@@ -127,7 +120,6 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      * @async
      */
@@ -146,7 +138,6 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
      */
     disconnectedCallback() {
@@ -156,9 +147,8 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [changedProperties]
+     * @param {Undefined} [changedProperties]
      */
     updated(changedProperties) {
         super.updated(changedProperties);
@@ -168,7 +158,6 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -178,7 +167,6 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
@@ -188,7 +176,6 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      */
     toggle() {
         if (this.open) this.close();
@@ -196,27 +183,24 @@ class MdBottomSheetComponent extends MdComponent {
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleBottomSheetIconButtonClick(event) {
         this.emit("onBottomSheetIconButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleBottomSheetButtonClick(event) {
         this.emit("onBottomSheetButtonClick", { event });
     }
 
     /**
-     *
      * @private
-     * @param {Any} [event]
+     * @param {Undefined} [event]
      */
     handleBottomSheetScrimClosed(event) {
         if (this.open) this.close();
