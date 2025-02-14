@@ -9,7 +9,6 @@ import { cache } from "lit/directives/cache.js";
 
 /**
  * @extends MdComponent
- * @element md-datetime-picker
  * @fires MdDatetimePickerComponent#onDatetimePickerShown
  * @fires MdDatetimePickerComponent#onDatetimePickerClosed
  * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick
@@ -24,7 +23,7 @@ import { cache } from "lit/directives/cache.js";
  * @fires MdDatetimePickerComponent#onDatetimePickerButtonOkClick
  * @fires MdDatetimePickerComponent#onDatetimePickerButtonLabelClick
  * @fires MdDatetimePickerComponent#onDatetimePickerButtonClick
- * @fires MdDatetimePickerComponent#onDatetimePickerScrimClosed
+ * @fires MdDatetimePickerComponent#onDatetimePickerScrimClose
  * @element md-datetime-picker
  */
 class MdDatetimePickerComponent extends MdComponent {
@@ -461,8 +460,8 @@ class MdDatetimePickerComponent extends MdComponent {
         this.style.setProperty("--md-comp-datetime-picker-animation", "none");
         this.datetimePickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.datetimePickerScrim, this.nextElementSibling);
-        this.handleDatetimePickerScrimClosed = this.handleDatetimePickerScrimClosed.bind(this);
-        this.datetimePickerScrim.addEventListener("onScrimClosed", this.handleDatetimePickerScrimClosed);
+        this.handleDatetimePickerScrimClose = this.handleDatetimePickerScrimClose.bind(this);
+        this.datetimePickerScrim.addEventListener("onScrimClose", this.handleDatetimePickerScrimClose);
         if (this.modal && this.open) this.datetimePickerScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
@@ -474,7 +473,7 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.datetimePickerScrim.removeEventListener("onScrimClosed", this.handleDatetimePickerScrimClosed);
+        this.datetimePickerScrim.removeEventListener("onScrimClose", this.handleDatetimePickerScrimClose);
         this.datetimePickerScrim.remove();
     }
 
@@ -684,9 +683,9 @@ class MdDatetimePickerComponent extends MdComponent {
      * @private
      * @param {Undefined} [event]
      */
-    handleDatetimePickerScrimClosed(event) {
+    handleDatetimePickerScrimClose(event) {
         if (this.open) this.close();
-        this.emit("onDatetimePickerScrimClosed", { event });
+        this.emit("onDatetimePickerScrimClose", { event });
     }
 }
 customElements.define("md-datetime-picker", MdDatetimePickerComponent);

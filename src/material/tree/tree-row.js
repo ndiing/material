@@ -4,7 +4,6 @@ import { MdComponent } from "../component/component";
 /**
  * @extends MdComponent
  * @element md-tree-row
- * @element md-tree-row
  */
 class MdTreeRowComponent extends MdComponent {
     /**

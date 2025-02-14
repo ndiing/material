@@ -5,10 +5,9 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
- * @element md-dialog
  * @fires MdDialogComponent#onDialogShow
  * @fires MdDialogComponent#onDialogClose
- * @fires MdDialogComponent#onDialogScrimClosed
+ * @fires MdDialogComponent#onDialogScrimClose
  * @fires MdDialogComponent#onDialogShown
  * @fires MdDialogComponent#onDialogClosed
  * @fires MdDialogComponent#onDialogIconButtonClick
@@ -129,8 +128,8 @@ class MdDialogComponent extends MdComponent {
         this.style.setProperty("--md-comp-dialog-animation", "none");
         this.dialogScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.dialogScrim, this.nextElementSibling);
-        this.handleDialogScrimClosed = this.handleDialogScrimClosed.bind(this);
-        this.dialogScrim.addEventListener("onScrimClosed", this.handleDialogScrimClosed);
+        this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
+        this.dialogScrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
         if (this.open) this.dialogScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");
@@ -142,7 +141,7 @@ class MdDialogComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.dialogScrim.removeEventListener("onScrimClosed", this.handleDialogScrimClosed);
+        this.dialogScrim.removeEventListener("onScrimClose", this.handleDialogScrimClose);
         this.dialogScrim.remove();
     }
 
@@ -179,9 +178,9 @@ class MdDialogComponent extends MdComponent {
      * @private
      * @param {Undefined} [event]
      */
-    handleDialogScrimClosed(event) {
+    handleDialogScrimClose(event) {
         if (this.open) this.close();
-        this.emit("onDialogScrimClosed", { event });
+        this.emit("onDialogScrimClose", { event });
     }
 
     /**

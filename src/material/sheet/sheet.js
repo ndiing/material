@@ -5,7 +5,6 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
- * @element md-sheet
  * @fires MdSheetComponent#onSheetShown
  * @fires MdSheetComponent#onSheetClosed
  * @fires MdSheetComponent#onSheetIconButtonClick

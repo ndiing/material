@@ -6,7 +6,6 @@ import { setPosition } from "../popper/popper";
 
 /**
  * @extends MdComponent
- * @element md-menu
  * @fires MdMenuComponent#onMenuShown
  * @fires MdMenuComponent#onMenuClosed
  * @element md-menu

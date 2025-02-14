@@ -8,7 +8,6 @@ import { classMap } from "lit/directives/class-map.js";
 
 /**
  * @extends MdComponent
- * @element md-time-picker
  * @fires MdTimePickerComponent#onTimePickerShown
  * @fires MdTimePickerComponent#onTimePickerClosed
  * @fires MdTimePickerComponent#onTimePickerLabelClick

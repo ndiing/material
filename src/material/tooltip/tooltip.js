@@ -6,7 +6,6 @@ import { setPosition } from "../popper/popper";
 
 /**
  * @extends MdComponent
- * @element md-tooltip
  * @fires MdTooltipComponent#onTooltipShown
  * @fires MdTooltipComponent#onTooltipClosed
  * @fires MdTooltipComponent#onTooltipIconButtonClick

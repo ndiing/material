@@ -5,7 +5,6 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
- * @element md-navigation-rail
  * @fires MdNavigationRailComponent#onNavigationRailShown
  * @fires MdNavigationRailComponent#onNavigationRailClosed
  * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick

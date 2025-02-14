@@ -8,7 +8,6 @@ import { classMap } from "lit/directives/class-map.js";
 
 /**
  * @extends MdComponent
- * @element md-date-picker
  * @fires MdDatePickerComponent#onDatePickerShown
  * @fires MdDatePickerComponent#onDatePickerClosed
  * @fires MdDatePickerComponent#onDatePickerLabelClick

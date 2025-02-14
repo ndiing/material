@@ -6,7 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-data-table-cell
- * @element md-data-table-cell
  */
 class MdDataTableCellComponent extends MdComponent {
     /**

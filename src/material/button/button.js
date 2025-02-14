@@ -6,7 +6,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * @extends MdComponent
  * @element md-button
- * @element md-button
  */
 class MdButtonComponent extends MdComponent {
     /**

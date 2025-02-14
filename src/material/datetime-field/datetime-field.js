@@ -5,7 +5,6 @@ import { findClosestElement, parseDatetimeLocal, stringifyDatetimeLocal } from "
 
 /**
  * @extends MdTextFieldComponent
- * @element md-datetime-field
  * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonPickerClick
  * @element md-datetime-field
  */

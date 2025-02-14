@@ -5,7 +5,6 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
- * @element md-navigation-bar
  * @fires MdNavigationBarComponent#onNavigationBarShown
  * @fires MdNavigationBarComponent#onNavigationBarClosed
  * @element md-navigation-bar

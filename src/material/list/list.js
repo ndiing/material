@@ -4,7 +4,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
  * @extends MdComponent
- * @element md-list
  * @fires MdListComponent#onListItemClick
  * @fires MdListComponent#onListItemCheckboxNativeInput
  * @fires MdListComponent#onListItemRadioButtonNativeInput

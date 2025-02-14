@@ -4,7 +4,6 @@ import { MdComponent } from "../component/component";
 /**
  * @extends MdComponent
  * @element md-badge
- * @element md-badge
  */
 class MdBadgeComponent extends MdComponent {
     /**

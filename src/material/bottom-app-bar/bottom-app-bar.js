@@ -5,7 +5,6 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
- * @element md-bottom-app-bar
  * @fires MdBottomAppBarComponent#onBottomAppBarShown
  * @fires MdBottomAppBarComponent#onBottomAppBarClosed
  * @fires MdBottomAppBarComponent#onBottomAppBarIconButtonClick

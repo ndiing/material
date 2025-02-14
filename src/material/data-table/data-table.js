@@ -6,7 +6,6 @@ import { Store } from "../store/store";
 
 /**
  * @extends MdComponent
- * @element md-data-table
  * @fires MdDataTableComponent#onDataTableKeydown
  * @fires MdDataTableComponent#onDataTableHeaderCellClick
  * @fires MdDataTableComponent#onDataTableBodyCellClick

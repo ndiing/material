@@ -16,7 +16,6 @@ const task = (() => {
 
 /**
  * @extends MdComponent
- * @element md-snackbar
  * @fires MdSnackbarComponent#onSnackbarShown
  * @fires MdSnackbarComponent#onSnackbarClosed
  * @fires MdSnackbarComponent#onSnackbarIconButtonClick

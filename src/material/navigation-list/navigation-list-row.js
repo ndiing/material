@@ -4,7 +4,6 @@ import { MdComponent } from "../component/component";
 /**
  * @extends MdComponent
  * @element md-navigation-list-row
- * @element md-navigation-list-row
  */
 class MdNavigationListRowComponent extends MdComponent {
     /**

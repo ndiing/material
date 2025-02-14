@@ -6,7 +6,6 @@ import { styleMap } from "lit/directives/style-map.js";
 /**
  * @extends MdComponent
  * @element md-image
- * @element md-image
  */
 class MdImageComponent extends MdComponent {
     /**

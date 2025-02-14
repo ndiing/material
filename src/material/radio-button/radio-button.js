@@ -5,7 +5,6 @@ import { Ripple } from "../ripple/ripple";
 
 /**
  * @extends MdComponent
- * @element md-radio-button
  * @fires MdRadioButtonComponent#onRadioButtonNativeInput
  * @fires MdRadioButtonComponent#onRadioButtonNativeReset
  * @element md-radio-button

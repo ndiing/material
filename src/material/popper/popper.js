@@ -1,6 +1,6 @@
 /**
  * @module Popper
-*/
+ */
 
 /**
  * @memberof module:Popper

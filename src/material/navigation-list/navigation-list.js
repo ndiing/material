@@ -5,7 +5,6 @@ import { Store } from "../store/store";
 
 /**
  * @extends MdComponent
- * @element md-navigation-list
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown
  * @fires MdNavigationListComponent#onNavigationListKeydownEnter

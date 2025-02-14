@@ -5,7 +5,6 @@ import { Store } from "../store/store";
 
 /**
  * @extends MdComponent
- * @element md-tree
  * @fires MdTreeComponent#onTreeKeydownArrowDown
  * @fires MdTreeComponent#onTreeKeydownArrowUp
  * @fires MdTreeComponent#onTreeKeydownArrowRight

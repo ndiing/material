@@ -5,7 +5,6 @@ import { classMap } from "lit/directives/class-map.js";
 
 /**
  * @extends MdComponent
- * @element md-slider
  * @fires MdSliderComponent#onSliderNativeInput
  * @fires MdSliderComponent#onSliderNativeReset
  * @element md-slider
