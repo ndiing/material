@@ -9,10 +9,8 @@
 // import "./component/component.js";
 // import "./localization/localization.js";
 // import "./color/color.js";
-
 import "./polyfill/polyfill.js";
 import "./progress/progress.js";
-
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";

@@ -444,9 +444,6 @@ class MdDatetimePickerComponent extends MdComponent {
         `;
     }
 
- 
-    
-
     /**
      *
      * @private
@@ -464,13 +461,7 @@ class MdDatetimePickerComponent extends MdComponent {
             <div class="md-datetime-picker__wrapper">
                 <div class="md-datetime-picker__body">
                     <div class="md-datetime-picker__items">
-                        <div class="md-datetime-picker__item">${cache(([
-                            this.renderDatetimePickerYear.bind(this),
-                            this.renderDatetimePickerMonth.bind(this),
-                            this.renderDatetimePickerDay.bind(this),
-                            this.renderDatetimePickerHour.bind(this),
-                            this.renderDatetimePickerMinute.bind(this),
-                        ][this.index])())}</div>
+                        <div class="md-datetime-picker__item">${cache([this.renderDatetimePickerYear.bind(this), this.renderDatetimePickerMonth.bind(this), this.renderDatetimePickerDay.bind(this), this.renderDatetimePickerHour.bind(this), this.renderDatetimePickerMinute.bind(this)][this.index]())}</div>
                     </div>
                 </div>
                 ${this.buttons?.length ? html` <div class="md-datetime-picker__footer">${this.buttons?.length ? html` <div class="md-datetime-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}

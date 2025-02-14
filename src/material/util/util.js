@@ -117,5 +117,4 @@ function stringifyWeek(date) {
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
 
-
 export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
