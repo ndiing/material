@@ -15,8 +15,6 @@ import { cache } from "lit/directives/cache.js";
  * @fires MdDatePickerComponent#onDatePickerYearItemClick
  * @fires MdDatePickerComponent#onDatePickerMonthItemClick
  * @fires MdDatePickerComponent#onDatePickerDayItemClick
- * @fires MdDatePickerComponent#onDatePickerHourItemClick
- * @fires MdDatePickerComponent#onDatePickerMinuteItemClick
  * @fires MdDatePickerComponent#onDatePickerScrimClose
  * @fires MdDatePickerComponent#onDatePickerShown
  * @fires MdDatePickerComponent#onDatePickerClosed
