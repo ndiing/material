@@ -324,12 +324,11 @@ class MdMonthPickerComponent extends MdComponent {
         this.index = this.defaultIndex;
         if (this.modal) this.monthPickerScrim.show();
         this.open = true;
-        options = {
+        setPosition({
             container: this,
             placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
-        };
-        setPosition(options);
+        });
         this.emit("onMonthPickerShown");
     }
 

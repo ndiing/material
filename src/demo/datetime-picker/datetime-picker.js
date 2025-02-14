@@ -14,7 +14,10 @@ class DemoDatetimePicker extends MdComponent {
                         ></md-button>
                         <md-datetime-picker
                             id="datetimePicker"
-                            @onDatetimePickerLabelClick="${console.log}"
+                            @onDatetimePickerShow="${console.log}"
+                            @onDatetimePickerClose="${console.log}"
+                            @onDatetimePickerShown="${console.log}"
+                            @onDatetimePickerClosed="${console.log}"
                             @onDatetimePickerIconButtonPrevClick="${console.log}"
                             @onDatetimePickerIconButtonNextClick="${console.log}"
                             @onDatetimePickerIconButtonClick="${console.log}"
@@ -23,13 +26,11 @@ class DemoDatetimePicker extends MdComponent {
                             @onDatetimePickerDayItemClick="${console.log}"
                             @onDatetimePickerHourItemClick="${console.log}"
                             @onDatetimePickerMinuteItemClick="${console.log}"
-                            @onDatetimePickerButtonCancelClick="${console.log}"
-                            @onDatetimePickerButtonOkClick="${(event) => console.log(event.detail.value)}"
+                            @onDatetimePickerButtonCancelClick="${() => datetimePicker.close()}"
+                            @onDatetimePickerButtonOkClick="${() => datetimePicker.close()}"
                             @onDatetimePickerButtonLabelClick="${console.log}"
                             @onDatetimePickerButtonClick="${console.log}"
-                            @onDatetimePickerScrimClosed="${console.log}"
-                            @onDatetimePickerShown="${console.log}"
-                            @onDatetimePickerClosed="${console.log}"
+                            @onDatetimePickerScrimClose="${console.log}"
                         ></md-datetime-picker>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -41,7 +42,10 @@ class DemoDatetimePicker extends MdComponent {
                         <md-datetime-picker
                             id="datetimePicker2"
                             value="1990-10-17T20:30"
-                            @onDatetimePickerLabelClick="${console.log}"
+                            @onDatetimePickerShow="${console.log}"
+                            @onDatetimePickerClose="${console.log}"
+                            @onDatetimePickerShown="${console.log}"
+                            @onDatetimePickerClosed="${console.log}"
                             @onDatetimePickerIconButtonPrevClick="${console.log}"
                             @onDatetimePickerIconButtonNextClick="${console.log}"
                             @onDatetimePickerIconButtonClick="${console.log}"
@@ -50,13 +54,11 @@ class DemoDatetimePicker extends MdComponent {
                             @onDatetimePickerDayItemClick="${console.log}"
                             @onDatetimePickerHourItemClick="${console.log}"
                             @onDatetimePickerMinuteItemClick="${console.log}"
-                            @onDatetimePickerButtonCancelClick="${console.log}"
-                            @onDatetimePickerButtonOkClick="${(event) => console.log(event.detail.value)}"
+                            @onDatetimePickerButtonCancelClick="${() => datetimePicker2.close()}"
+                            @onDatetimePickerButtonOkClick="${() => datetimePicker2.close()}"
                             @onDatetimePickerButtonLabelClick="${console.log}"
                             @onDatetimePickerButtonClick="${console.log}"
-                            @onDatetimePickerScrimClosed="${console.log}"
-                            @onDatetimePickerShown="${console.log}"
-                            @onDatetimePickerClosed="${console.log}"
+                            @onDatetimePickerScrimClose="${console.log}"
                         ></md-datetime-picker>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+import { closestScrollableElement } from "../util/util";
+
 /**
  * @param {Undefined} [placement]
  * @param {Object} [options={}]
@@ -74,16 +76,4 @@ function setPosition(options = {}) {
     container.style.top = `${bestTop}px`;
 }
 
-/**
- * @param {Undefined} [element]
- */
-function closestScrollableElement(element) {
-    let current = element;
-    while (current) {
-        const style = window.getComputedStyle(current);
-        if (/(auto|scroll)/.test(style.overflow + style.overflowY)) return current;
-        current = current.parentElement;
-    }
-    return document.documentElement || document.body;
-}
-export { calculatePosition, setPosition, parseOffset, closestScrollableElement };
+export { calculatePosition, setPosition, parseOffset,  };

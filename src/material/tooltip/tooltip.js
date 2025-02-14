@@ -125,13 +125,12 @@ class MdTooltipComponent extends MdComponent {
      * @param {Undefined} [options]
      */
     show(options) {
-        options = {
+        setPosition({
             container: this,
             placements: ["bottom", "top", "right", "left", "top-right", "bottom-right", "top-left", "bottom-left"],
             offset: 8,
             ...options,
-        };
-        setPosition(options);
+        });
         this.open = true;
         this.emit("onTooltipShow");
     }

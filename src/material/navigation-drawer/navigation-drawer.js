@@ -6,10 +6,10 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-navigation-drawer
- * @fires MdNavigationDrawerComponent#onNavigationDrawerShown
- * @fires MdNavigationDrawerComponent#onNavigationDrawerClosed
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerShow
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerClose
  * @fires MdNavigationDrawerComponent#onNavigationDrawerIconButtonClick
- * @fires MdNavigationDrawerComponent#onNavigationDrawerScrimClosed
+ * @fires MdNavigationDrawerComponent#onNavigationDrawerScrimClose
  * @fires MdNavigationDrawerComponent#onNavigationDrawerItemClick
  */
 class MdNavigationDrawerComponent extends MdComponent {
@@ -125,8 +125,8 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-animation", "none");
         this.navigationDrawerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.navigationDrawerScrim, this.nextElementSibling);
-        this.handleNavigationDrawerScrimClosed = this.handleNavigationDrawerScrimClosed.bind(this);
-        this.navigationDrawerScrim.addEventListener("onScrimClosed", this.handleNavigationDrawerScrimClosed);
+        this.handleNavigationDrawerScrimClose = this.handleNavigationDrawerScrimClose.bind(this);
+        this.navigationDrawerScrim.addEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
         if (this.modal && this.open) this.navigationDrawerScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
@@ -138,7 +138,7 @@ class MdNavigationDrawerComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.navigationDrawerScrim.removeEventListener("onScrimClosed", this.handleNavigationDrawerScrimClosed);
+        this.navigationDrawerScrim.removeEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
         this.navigationDrawerScrim.remove();
     }
 
@@ -164,7 +164,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         if (this.modal) this.navigationDrawerScrim.show();
         this.open = true;
-        this.emit("onNavigationDrawerShown");
+        this.emit("onNavigationDrawerShow");
     }
 
     /**
@@ -173,7 +173,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
-        this.emit("onNavigationDrawerClosed");
+        this.emit("onNavigationDrawerClose");
     }
 
     /**
@@ -195,9 +195,9 @@ class MdNavigationDrawerComponent extends MdComponent {
      * @private
      * @param {Undefined} [event]
      */
-    handleNavigationDrawerScrimClosed(event) {
+    handleNavigationDrawerScrimClose(event) {
         if (this.open) this.close();
-        this.emit("onNavigationDrawerScrimClosed", { event });
+        this.emit("onNavigationDrawerScrimClose", { event });
     }
 
     /**

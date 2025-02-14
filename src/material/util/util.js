@@ -82,4 +82,17 @@ function stringifyWeek(date) {
     const weekNumber = Math.ceil((days + 1) / 7);
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
-export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek };
+
+/**
+ * @param {Undefined} [element]
+ */
+function closestScrollableElement(element) {
+    let current = element;
+    while (current) {
+        const style = window.getComputedStyle(current);
+        if (/(auto|scroll)/.test(style.overflow + style.overflowY)) return current;
+        current = current.parentElement;
+    }
+    return document.documentElement || document.body;
+}
+export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek ,closestScrollableElement};

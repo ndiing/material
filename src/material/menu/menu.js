@@ -52,13 +52,12 @@ class MdMenuComponent extends MdComponent {
      */
     show(options = {}) {
         this.style.removeProperty("--md-comp-menu-animation");
-        options = {
+        this.open = true;
+        setPosition({
             container: this,
             placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
-        };
-        this.open = true;
-        setPosition(options);
+        });
         this.emit("onMenuShown");
     }
 
