@@ -8,7 +8,6 @@ import { closestScrollableElement, parseDatetimeLocal, stringifyDatetimeLocal } 
  * @element md-datetime-field
  */
 class MdDatetimeFieldComponent extends MdTextFieldComponent {
-
     /**
      */
     constructor() {
@@ -47,7 +46,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
+     * @async
      */
     async createPicker() {
         if (!this.picker) {
@@ -57,12 +56,11 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             this.handleDatetimeFieldPickerButtonOkClick = this.handleDatetimeFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onDatetimePickerButtonCancelClick", this.handleDatetimeFieldPickerButtonCancelClick);
             this.picker.addEventListener("onDatetimePickerButtonOkClick", this.handleDatetimeFieldPickerButtonOkClick);
-            await this.picker.updateComplete
+            await this.picker.updateComplete;
         }
     }
 
     /**
-     * @private
      */
     removePicker() {
         if (this.picker) {
@@ -83,8 +81,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             this.handleDatetimeFieldWindowScroll = this.handleDatetimeFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleDatetimeFieldWindowClick);
             this.pickerContainer.addEventListener("scroll", this.handleDatetimeFieldWindowScroll);
-            if (this.textFieldNative.value) 
-                this.picker.value = parseDatetimeLocal(this.textFieldNative.value);
+            if (this.textFieldNative.value) this.picker.value = parseDatetimeLocal(this.textFieldNative.value);
             this.picker.show(options);
         }
     }

@@ -199,7 +199,7 @@ class MdSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSheetShown(event) {
         this.removeEventListener("animationend", this.handleSheetShown);
@@ -208,7 +208,7 @@ class MdSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSheetClosed(event) {
         this.removeEventListener("animationend", this.handleSheetClosed);
@@ -217,7 +217,7 @@ class MdSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSheetScrimClose(event) {
         if (this.open) this.close();
@@ -226,7 +226,7 @@ class MdSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSheetIconButtonClick(event) {
         this.emit("onSheetIconButtonClick", { event });
@@ -234,7 +234,7 @@ class MdSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSheetButtonClick(event) {
         this.emit("onSheetButtonClick", { event });

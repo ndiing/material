@@ -20,7 +20,7 @@ class Movable {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
@@ -38,7 +38,7 @@ class Movable {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handlePointermove(event) {
         const currentX = event.clientX - this.startX;
@@ -76,7 +76,7 @@ class Movable {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handlePointerup(event) {
         this.endX = this.currentX;

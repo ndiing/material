@@ -63,7 +63,7 @@ class MdScrimComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleScrimClick(event) {
         this.close();
@@ -72,7 +72,7 @@ class MdScrimComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleScrimShown(event) {
         if (event.animationName === "scrim-out") {
@@ -83,7 +83,7 @@ class MdScrimComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleScrimClosed(event) {
         if (event.animationName === "scrim-in") {

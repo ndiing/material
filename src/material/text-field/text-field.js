@@ -304,7 +304,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
@@ -313,7 +313,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
@@ -322,7 +322,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldInput(event) {
         this.updateValue();
@@ -340,7 +340,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldInvalid(event) {
         event.preventDefault();
@@ -351,7 +351,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldReset(event) {
         this.value = this.defaultValue;
@@ -363,7 +363,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldIconButtonCancelClick(event) {
         this.textFieldNative.value = "";
@@ -376,7 +376,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
@@ -386,7 +386,7 @@ class MdTextFieldComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTextFieldClick(event) {
         event.preventDefault();

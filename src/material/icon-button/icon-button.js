@@ -95,7 +95,7 @@ class MdIconButtonComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleIconButtonClick(event) {
         if (this.toggle) {

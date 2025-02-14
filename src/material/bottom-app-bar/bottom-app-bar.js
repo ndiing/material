@@ -121,7 +121,7 @@ class MdBottomAppBarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomAppBarIconButtonClick(event) {
         this.emit("onBottomAppBarIconButtonClick", { event });
@@ -129,7 +129,7 @@ class MdBottomAppBarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomAppBarFabClick(event) {
         this.emit("onBottomAppBarFabClick", { event });

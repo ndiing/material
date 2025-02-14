@@ -70,7 +70,7 @@ class MdMenuComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [options]
+     * @param {Object} [options]
      */
     toggle(options) {
         if (this.open) this.close();

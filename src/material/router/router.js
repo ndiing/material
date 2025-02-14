@@ -51,7 +51,7 @@ class Router {
      * @private
      * @static
      * @async
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     static async handleNavigation(event) {
         performance.mark("mark-1");
@@ -200,7 +200,7 @@ class Router {
     /**
      * @private
      * @static
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");

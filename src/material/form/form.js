@@ -98,7 +98,7 @@ class MdFormComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event });
@@ -106,7 +106,7 @@ class MdFormComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleFormNativeReset(event) {
         for (const element of this.formNative.elements) {
@@ -121,7 +121,7 @@ class MdFormComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleFormNativeSubmit(event) {
         event.preventDefault();

@@ -185,7 +185,7 @@ class MdNavigationDrawerComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationDrawerIconButtonClick(event) {
         this.emit("onNavigationDrawerIconButtonClick", { event });
@@ -193,7 +193,7 @@ class MdNavigationDrawerComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationDrawerScrimClose(event) {
         if (this.open) this.close();
@@ -202,7 +202,7 @@ class MdNavigationDrawerComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationDrawerItemClick(event) {
         this.emit("onNavigationDrawerItemClick", { event: event.detail.event });

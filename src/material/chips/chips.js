@@ -66,7 +66,7 @@ class MdChipsComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleChipClick(event) {
         const data = event.currentTarget.data;

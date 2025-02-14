@@ -176,7 +176,7 @@ class MdDialogComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDialogScrimClose(event) {
         if (this.open) this.close();
@@ -185,7 +185,7 @@ class MdDialogComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDialogShown(event) {
         if (event.animationName === "dialog-body-out") {
@@ -196,7 +196,7 @@ class MdDialogComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDialogClosed(event) {
         if (event.animationName === "dialog-body-in") {
@@ -207,7 +207,7 @@ class MdDialogComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDialogIconButtonClick(event) {
         this.emit("onDialogIconButtonClick", { event });
@@ -215,7 +215,7 @@ class MdDialogComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDialogButtonClick(event) {
         this.emit("onDialogButtonClick", { event });

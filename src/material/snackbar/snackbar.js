@@ -182,7 +182,7 @@ class MdSnackbarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSnackbarShown(event) {
         if (event.animationName === "snackbar-out") {
@@ -193,7 +193,7 @@ class MdSnackbarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSnackbarClosed(event) {
         if (event.animationName === "snackbar-in") {
@@ -204,7 +204,7 @@ class MdSnackbarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSnackbarIconButtonClick(event) {
         this.emit("onSnackbarIconButtonClick", { event });
@@ -212,7 +212,7 @@ class MdSnackbarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSnackbarButtonClick(event) {
         this.emit("onSnackbarButtonClick", { event });

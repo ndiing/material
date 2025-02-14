@@ -142,7 +142,7 @@ class MdNavigationRailComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationRailIconButtonClick(event) {
         this.emit("onNavigationRailIconButtonClick", { event });

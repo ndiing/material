@@ -232,7 +232,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDataTableKeydown(event) {
         if (event.ctrlKey && event.key === "a") {
@@ -247,7 +247,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDataTableHeaderCellClick(event) {
         const data = event.currentTarget.data;
@@ -271,7 +271,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDataTableBodyCellClick(event) {
         this.emit("onDataTableBodyCellClick", { event });
@@ -279,7 +279,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDataTableHeaderCheckboxClick(event) {
         const data = event.currentTarget.data;
@@ -293,7 +293,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDataTableBodyClick(event) {
         const bodyData = event.target.closest("td")?.data;
@@ -326,7 +326,7 @@ class MdDataTableComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleDataTableBodyCheckboxClick(event) {
         const data = event.currentTarget.data;

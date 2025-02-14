@@ -104,7 +104,7 @@ class MdTopAppBarComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTopAppBarIconButtonClick(event) {
         this.emit("onTopAppBarIconButtonClick", { event });

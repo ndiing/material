@@ -119,7 +119,7 @@ class MdNavigationListComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
@@ -137,7 +137,7 @@ class MdNavigationListComponent extends MdComponent {
     /**
      * @private
      * @async
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
@@ -154,7 +154,7 @@ class MdNavigationListComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationListKeydownEnter(event) {
         event.preventDefault();
@@ -165,7 +165,7 @@ class MdNavigationListComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationListKeydown(event) {
         if (this.contains(document.activeElement)) {
@@ -178,7 +178,7 @@ class MdNavigationListComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");

@@ -144,7 +144,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeKeydownArrowDown(event) {
         event.preventDefault();
@@ -162,7 +162,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeKeydownArrowUp(event) {
         event.preventDefault();
@@ -180,7 +180,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeKeydownArrowRight(event) {
         event.preventDefault();
@@ -203,7 +203,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeKeydownArrowLeft(event) {
         event.preventDefault();
@@ -225,7 +225,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeKeydownEnter(event) {
         event.preventDefault();
@@ -236,7 +236,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeKeydown(event) {
         if (this.contains(document.activeElement)) {
@@ -251,7 +251,7 @@ class MdTreeComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTreeItemClick(event) {
         const action = event.target.closest(".md-tree__action");

@@ -186,7 +186,7 @@ class MdBottomSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomSheetShown(event) {
         if (event.animationName === "bottom-sheet-modal-out" || event.animationName === "bottom-sheet-out") {
@@ -197,7 +197,7 @@ class MdBottomSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomSheetClosed(event) {
         if (event.animationName === "bottom-sheet-modal-in" || event.animationName === "bottom-sheet-in") {
@@ -208,7 +208,7 @@ class MdBottomSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomSheetScrimClose(event) {
         if (this.open) this.close();
@@ -217,7 +217,7 @@ class MdBottomSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomSheetIconButtonClick(event) {
         this.emit("onBottomSheetIconButtonClick", { event });
@@ -225,7 +225,7 @@ class MdBottomSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleBottomSheetButtonClick(event) {
         this.emit("onBottomSheetButtonClick", { event });

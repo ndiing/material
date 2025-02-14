@@ -95,5 +95,4 @@ function closestScrollableElement(element) {
     }
     return document.documentElement || document.body;
 }
-
 export { parseDate, parseDatetimeLocal, parseMonth, parseTime, parseWeek, stringifyDate, stringifyDatetimeLocal, stringifyMonth, stringifyTime, stringifyWeek, closestScrollableElement };

@@ -8,7 +8,6 @@ import { closestScrollableElement, parseDate, stringifyDate } from "../util/util
  * @element md-date-field
  */
 class MdDateFieldComponent extends MdTextFieldComponent {
-
     /**
      */
     constructor() {
@@ -47,7 +46,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
+     * @async
      */
     async createPicker() {
         if (!this.picker) {
@@ -57,12 +56,11 @@ class MdDateFieldComponent extends MdTextFieldComponent {
             this.handleDateFieldPickerButtonOkClick = this.handleDateFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
             this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
-            await this.picker.updateComplete
+            await this.picker.updateComplete;
         }
     }
 
     /**
-     * @private
      */
     removePicker() {
         if (this.picker) {
@@ -83,8 +81,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
             this.handleDateFieldWindowScroll = this.handleDateFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleDateFieldWindowClick);
             this.pickerContainer.addEventListener("scroll", this.handleDateFieldWindowScroll);
-            if (this.textFieldNative.value) 
-                this.picker.value = parseDate(this.textFieldNative.value);
+            if (this.textFieldNative.value) this.picker.value = parseDate(this.textFieldNative.value);
             this.picker.show(options);
         }
     }

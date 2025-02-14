@@ -122,7 +122,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [options]
+     * @param {Object} [options]
      */
     show(options) {
         setPosition({
@@ -143,7 +143,7 @@ class MdTooltipComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [options]
+     * @param {Object} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -152,7 +152,7 @@ class MdTooltipComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTooltipIconButtonClick(event) {
         this.emit("onTooltipIconButtonClick", { event });
@@ -160,7 +160,7 @@ class MdTooltipComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleTooltipButtonClick(event) {
         this.emit("onTooltipButtonClick", { event });

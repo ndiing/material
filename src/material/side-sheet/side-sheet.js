@@ -186,7 +186,7 @@ class MdSideSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSideSheetShown(event) {
         if (event.animationName === "side-sheet-modal-out" || event.animationName === "side-sheet-out") {
@@ -197,7 +197,7 @@ class MdSideSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSideSheetClosed(event) {
         if (event.animationName === "side-sheet-modal-in" || event.animationName === "side-sheet-in") {
@@ -208,7 +208,7 @@ class MdSideSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSideSheetScrimClose(event) {
         if (this.open) this.close();
@@ -217,7 +217,7 @@ class MdSideSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSideSheetIconButtonClick(event) {
         this.emit("onSideSheetIconButtonClick", { event });
@@ -225,7 +225,7 @@ class MdSideSheetComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSideSheetButtonClick(event) {
         this.emit("onSideSheetButtonClick", { event });

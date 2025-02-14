@@ -8,7 +8,6 @@ import { closestScrollableElement, parseTime, stringifyTime } from "../util/util
  * @element md-time-field
  */
 class MdTimeFieldComponent extends MdTextFieldComponent {
-
     /**
      */
     constructor() {
@@ -47,7 +46,7 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
+     * @async
      */
     async createPicker() {
         if (!this.picker) {
@@ -57,12 +56,11 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
             this.handleTimeFieldPickerButtonOkClick = this.handleTimeFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
             this.picker.addEventListener("onTimePickerButtonOkClick", this.handleTimeFieldPickerButtonOkClick);
-            await this.picker.updateComplete
+            await this.picker.updateComplete;
         }
     }
 
     /**
-     * @private
      */
     removePicker() {
         if (this.picker) {
@@ -83,8 +81,7 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
             this.handleTimeFieldWindowScroll = this.handleTimeFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleTimeFieldWindowClick);
             this.pickerContainer.addEventListener("scroll", this.handleTimeFieldWindowScroll);
-            if (this.textFieldNative.value) 
-                this.picker.value = parseTime(this.textFieldNative.value);
+            if (this.textFieldNative.value) this.picker.value = parseTime(this.textFieldNative.value);
             this.picker.show(options);
         }
     }

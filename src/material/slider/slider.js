@@ -182,7 +182,7 @@ class MdSliderComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSliderNativeInput(event) {
         const native = event.currentTarget;
@@ -200,7 +200,7 @@ class MdSliderComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSliderNativeReset(event) {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));

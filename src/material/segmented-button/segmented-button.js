@@ -67,7 +67,7 @@ class MdSegmentedButtonComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSegmentedButtonItemClick(event) {
         const data = event.currentTarget.data;

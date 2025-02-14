@@ -4,7 +4,7 @@
 class VirtualScroll {
     /**
      * @param {Undefined} [host]
-     * @param {Undefined} [options]
+     * @param {Object} [options]
      */
     constructor(host, options) {
         this.host = host;
@@ -33,7 +33,7 @@ class VirtualScroll {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleScroll(event) {
         const total = this.options.total;

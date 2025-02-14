@@ -118,7 +118,7 @@ class MdCardComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleCardIconButtonClick(event) {
         this.emit("onCardIconButtonClick", { event });
@@ -126,7 +126,7 @@ class MdCardComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleCardButtonClick(event) {
         this.emit("onCardButtonClick", { event });

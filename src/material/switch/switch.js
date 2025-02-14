@@ -87,7 +87,7 @@ class MdSwitchComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSwitchNativeInput(event) {
         this.style.removeProperty("--md-comp-switch-thumb-transition-property");
@@ -99,7 +99,7 @@ class MdSwitchComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleSwitchNativeReset(event) {
         this.value = this.defaultValue;

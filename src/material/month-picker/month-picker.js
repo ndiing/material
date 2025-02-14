@@ -401,7 +401,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.selection.setMonth(data.month);
         this.value.setFullYear(data.year);
         this.value.setMonth(data.month);
-        console.log(data)
+        console.log(data);
         this.requestUpdate();
         this.emit("onMonthPickerMonthItemClick", { event });
     }

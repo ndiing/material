@@ -8,7 +8,6 @@ import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/ut
  * @element md-month-field
  */
 class MdMonthFieldComponent extends MdTextFieldComponent {
-
     /**
      */
     constructor() {
@@ -47,7 +46,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     /**
-     * @private
+     * @async
      */
     async createPicker() {
         if (!this.picker) {
@@ -57,12 +56,11 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
             this.handleMonthFieldPickerButtonOkClick = this.handleMonthFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
-            await this.picker.updateComplete
+            await this.picker.updateComplete;
         }
     }
 
     /**
-     * @private
      */
     removePicker() {
         if (this.picker) {
@@ -83,8 +81,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
             this.handleMonthFieldWindowScroll = this.handleMonthFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleMonthFieldWindowClick);
             this.pickerContainer.addEventListener("scroll", this.handleMonthFieldWindowScroll);
-            if (this.textFieldNative.value) 
-                this.picker.value = parseMonth(this.textFieldNative.value);
+            if (this.textFieldNative.value) this.picker.value = parseMonth(this.textFieldNative.value);
             this.picker.show(options);
         }
     }
