@@ -1,5 +1,10 @@
 /**
+ * @namespace Util
+*/
+
+/**
  * Mengonversi string menjadi objek Date.
+ * @memberof Util
  * @param {string | number | Date} input - Tanggal dalam format string, timestamp, atau objek Date.
  * @returns {Date} Objek Date yang sesuai.
  */
@@ -9,6 +14,7 @@ function parseDate(string) {
 
 /**
  * Mengonversi string ke objek Date sesuai format datetime-local.
+ * @memberof Util
  * @param {string} input - String dalam format datetime-local (YYYY-MM-DDTHH:MM).
  * @returns {Date} Objek Date yang sesuai.
  */
@@ -18,6 +24,7 @@ function parseDatetimeLocal(string) {
 
 /**
  * Mengonversi string bulan menjadi objek Date.
+ * @memberof Util
  * @param {string} input - String dalam format YYYY-MM.
  * @returns {Date} Objek Date dengan tanggal pertama bulan tersebut.
  */
@@ -27,6 +34,7 @@ function parseMonth(string) {
 
 /**
  * Mengonversi string waktu menjadi objek Date dengan tanggal hari ini.
+ * @memberof Util
  * @param {string} input - String dalam format HH:MM.
  * @returns {Date} Objek Date dengan waktu yang ditentukan.
  */
@@ -39,6 +47,7 @@ function parseTime(string) {
 
 /**
  * Mengonversi string minggu ke objek Date.
+ * @memberof Util
  * @param {string} input - String dalam format YYYY-W##.
  * @returns {Date} Objek Date untuk awal minggu yang dimaksud.
  */
@@ -52,6 +61,7 @@ function parseWeek(string) {
 
 /**
  * Mengonversi objek Date menjadi string dalam format YYYY-MM-DD.
+ * @memberof Util
  * @param {Date} date - Objek Date yang akan dikonversi.
  * @returns {string} String dalam format YYYY-MM-DD.
  */
@@ -61,6 +71,7 @@ function stringifyDate(date) {
 
 /**
  * Mengonversi objek Date menjadi string dalam format datetime-local.
+ * @memberof Util
  * @param {Date} date - Objek Date yang akan dikonversi.
  * @returns {string} String dalam format YYYY-MM-DDTHH:MM.
  */
@@ -75,6 +86,7 @@ function stringifyDatetimeLocal(date) {
 
 /**
  * Mengonversi objek Date menjadi string dalam format YYYY-MM.
+ * @memberof Util
  * @param {Date} date - Objek Date yang akan dikonversi.
  * @returns {string} String dalam format YYYY-MM.
  */
@@ -84,6 +96,7 @@ function stringifyMonth(date) {
 
 /**
  * Mengonversi objek Date menjadi string dalam format HH:MM.
+ * @memberof Util
  * @param {Date} date - Objek Date yang akan dikonversi.
  * @returns {string} String dalam format HH:MM.
  */
@@ -93,6 +106,7 @@ function stringifyTime(date) {
 
 /**
  * Mengonversi objek Date menjadi string dalam format YYYY-W##.
+ * @memberof Util
  * @param {Date} date - Objek Date yang akan dikonversi.
  * @returns {string} String dalam format YYYY-W##.
  */

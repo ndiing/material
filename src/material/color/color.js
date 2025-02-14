@@ -2,8 +2,13 @@ import { Hct } from "@material/material-color-utilities";
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
+ * @namespace Color
+*/
+
+/**
  * Mengatur tema Material berdasarkan warna sumber atau gambar.
  *
+ * @memberof Color
  * @param {string | HTMLImageElement} input - Warna dalam format HEX (misal: `#ff5733`) atau elemen gambar.
  * @param {Object} [customColors] - Opsi warna khusus yang dapat diterapkan ke tema.
  * @returns {Promise<void>} - Promise yang selesai setelah tema diterapkan.

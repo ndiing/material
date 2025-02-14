@@ -2,7 +2,12 @@ import { configureLocalization } from "@lit/localize";
 import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
 /**
+ * @namespace Localization
+*/
+
+/**
  * Konfigurasi sistem lokalisasi menggunakan Lit Localize.
+ * @memberof Localization
  */
 const localization = configureLocalization({
     sourceLocale,
@@ -19,6 +24,7 @@ const localization = configureLocalization({
 /**
  * Mendapatkan locale (bahasa) saat ini.
  *
+ * @memberof Localization
  * @returns {string} - Kode bahasa saat ini (misal: "en", "id").
  */
 export const getLocale = localization.getLocale;
@@ -26,6 +32,7 @@ export const getLocale = localization.getLocale;
 /**
  * Mengatur locale (bahasa) aplikasi.
  *
+ * @memberof Localization
  * @param {string} locale - Kode bahasa yang akan digunakan (misal: "en", "id").
  * @returns {Promise<void>} - Promise yang selesai setelah bahasa diubah.
  */

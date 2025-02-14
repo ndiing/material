@@ -109,7 +109,7 @@
     
 
     
-    <h4 class="name" id=".calculatePosition"><span class="type-signature">(static) </span>calculatePosition<span class="signature">(placement, param)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id=".calculatePosition"><span class="type-signature">(static) </span>calculatePosition<span class="signature">(placement, options)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -117,7 +117,7 @@
 
 
 <div class="description">
-    Menghitung posisi elemen berdasarkan placement
+    Menghitung posisi elemen berdasarkan peletakan (placement) yang diberikan.
 </div>
 
 
@@ -159,7 +159,7 @@
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">string</span>
 
 
             
@@ -169,14 +169,14 @@
 
             
 
-            <td class="description last">Posisi yang diinginkan</td>
+            <td class="description last">Peletakan elemen relatif terhadap elemen pemicu (trigger).</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>param</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
@@ -192,7 +192,102 @@
 
             
 
-            <td class="description last">Data posisi</td>
+            <td class="description last">Opsi posisi elemen.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>containerRect</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMRect</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Dimensi elemen kontainer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>triggerRect</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMRect</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Dimensi elemen pemicu (trigger).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Jarak offset dalam bentuk objek { top, right, bottom, left }.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -233,7 +328,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line12">line 12</a>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -262,7 +357,7 @@
 
         
 <div class="param-desc">
-    { left, top }
+    Posisi { left, top } dari elemen.
 </div>
 
 
@@ -291,7 +386,7 @@
     
 
     
-    <h4 class="name" id=".closestScrollableElement"><span class="type-signature">(static) </span>closestScrollableElement<span class="signature">(element)</span><span class="type-signature"> &rarr; {Element}</span></h4>
+    <h4 class="name" id=".closestScrollableElement"><span class="type-signature">(static) </span>closestScrollableElement<span class="signature">(element)</span><span class="type-signature"> &rarr; {HTMLElement}</span></h4>
     
 
     
@@ -299,7 +394,7 @@
 
 
 <div class="description">
-    Mencari elemen scrollable terdekat
+    Menemukan elemen terdekat yang memiliki overflow dapat discroll.
 </div>
 
 
@@ -341,7 +436,7 @@
             <td class="type">
             
                 
-<span class="param-type">Element</span>
+<span class="param-type">HTMLElement</span>
 
 
             
@@ -351,7 +446,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Elemen awal untuk pencarian.</td>
         </tr>
 
     
@@ -392,7 +487,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line109">line 109</a>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line102">line 102</a>
     </li></ul></dd>
     
 
@@ -420,6 +515,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    Elemen yang memiliki overflow scroll, atau <html> / <body> jika tidak ditemukan.
+</div>
+
 
 
 <dl>
@@ -428,7 +527,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Element</span>
+<span class="param-type">HTMLElement</span>
 
 
     </dd>
@@ -454,7 +553,7 @@
 
 
 <div class="description">
-    Mengonversi string offset menjadi objek numerik
+    Menguraikan string offset menjadi objek dengan nilai { top, right, bottom, left }.
 </div>
 
 
@@ -496,7 +595,10 @@
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
 
 
             
@@ -506,7 +608,7 @@
 
             
 
-            <td class="description last">Format: "top right bottom left"</td>
+            <td class="description last">Nilai offset dalam format CSS (misal: "10 15 5 20").</td>
         </tr>
 
     
@@ -547,7 +649,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line49">line 49</a>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -576,7 +678,7 @@
 
         
 <div class="param-desc">
-    { top, right, bottom, left }
+    Objek offset dalam bentuk { top, right, bottom, left }.
 </div>
 
 
@@ -613,7 +715,7 @@
 
 
 <div class="description">
-    Menentukan posisi terbaik elemen dalam boundary
+    Menetapkan posisi elemen berdasarkan berbagai opsi dan batasan.
 </div>
 
 
@@ -665,7 +767,221 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Konfigurasi posisi.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>container</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Elemen yang akan diposisikan.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trigger</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Elemen pemicu untuk posisi elemen.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>boundary</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Elemen batas untuk membatasi posisi.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "0"
+                
+                </td>
+            
+
+            <td class="description last">Offset dalam format CSS.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>placements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Daftar kemungkinan peletakan (misalnya: ["top", "bottom"]).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -706,7 +1022,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line62">line 62</a>
+        <a href="popper_popper.js.html">popper/popper.js</a>, <a href="popper_popper.js.html#line64">line 64</a>
     </li></ul></dd>
     
 
@@ -752,13 +1068,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3>Global</h3><ul><li><a href="global.html#loadLocale">loadLocale</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 06:24:59 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 07:05:46 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,5 +1,10 @@
 /**
+ * @namespace Popper
+*/
+
+/**
  * Menghitung posisi elemen berdasarkan peletakan (placement) yang diberikan.
+ * @memberof Popper
  * @param {string} placement - Peletakan elemen relatif terhadap elemen pemicu (trigger).
  * @param {Object} options - Opsi posisi elemen.
  * @param {DOMRect} options.containerRect - Dimensi elemen kontainer.
@@ -34,6 +39,7 @@ function calculatePosition(placement, { containerRect, triggerRect, offset }) {
 
 /**
  * Menguraikan string offset menjadi objek dengan nilai { top, right, bottom, left }.
+ * @memberof Popper
  * @param {string|number} offset - Nilai offset dalam format CSS (misal: "10 15 5 20").
  * @returns {Object} Objek offset dalam bentuk { top, right, bottom, left }.
  */
@@ -47,6 +53,7 @@ function parseOffset(offset) {
 
 /**
  * Menetapkan posisi elemen berdasarkan berbagai opsi dan batasan.
+ * @memberof Popper
  * @param {Object} options - Konfigurasi posisi.
  * @param {HTMLElement} options.container - Elemen yang akan diposisikan.
  * @param {HTMLElement} options.trigger - Elemen pemicu untuk posisi elemen.
@@ -88,6 +95,7 @@ function setPosition(options = {}) {
 
 /**
  * Menemukan elemen terdekat yang memiliki overflow dapat discroll.
+ * @memberof Popper
  * @param {HTMLElement} element - Elemen awal untuk pencarian.
  * @returns {HTMLElement} Elemen yang memiliki overflow scroll, atau <html> / <body> jika tidak ditemukan.
  */
