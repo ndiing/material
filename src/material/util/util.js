@@ -1,9 +1,9 @@
 /**
- * @module Util
+ * @namespace Util
  */
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {String} [string] - The date string to parse
  * @returns {Date} The parsed date
  */
@@ -12,7 +12,7 @@ function parseDate(string) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {String} [string] - The datetime-local string to parse
  * @returns {Date} The parsed datetime-local
  */
@@ -21,7 +21,7 @@ function parseDatetimeLocal(string) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {String} [string] - The month string to parse
  * @returns {Date} The parsed month
  */
@@ -30,7 +30,7 @@ function parseMonth(string) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {String} [string] - The time string to parse
  * @returns {Date} The parsed time
  */
@@ -42,7 +42,7 @@ function parseTime(string) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {String} [string] - The week string to parse
  * @returns {Date} The parsed week
  */
@@ -55,7 +55,7 @@ function parseWeek(string) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {Date} [date] - The date to stringify
  * @returns {String} The stringified date
  */
@@ -64,7 +64,7 @@ function stringifyDate(date) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {Date} [date] - The datetime-local to stringify
  * @returns {String} The stringified datetime-local
  */
@@ -78,7 +78,7 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {Date} [date] - The month to stringify
  * @returns {String} The stringified month
  */
@@ -87,7 +87,7 @@ function stringifyMonth(date) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {Date} [date] - The time to stringify
  * @returns {String} The stringified time
  */
@@ -96,7 +96,7 @@ function stringifyTime(date) {
 }
 
 /**
- * @memberof module:Util
+ * @memberof Util
  * @param {Date} [date] - The week to stringify
  * @returns {String} The stringified week
  */

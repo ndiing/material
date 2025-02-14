@@ -109,16 +109,12 @@
     
 
     
-    <h4 class="name" id=".parseDate"><span class="type-signature">(static) </span>parseDate<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    <h4 class="name" id=".parseDate"><span class="type-signature">(static) </span>parseDate<span class="signature">(string<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi string menjadi objek Date.
-</div>
 
 
 
@@ -141,6 +137,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -153,29 +151,33 @@
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>string</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
-|
-
-<span class="param-type">number</span>
-|
-
-<span class="param-type"><a href="Date.html">Date</a></span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">Tanggal dalam format string, timestamp, atau objek Date.</td>
+            <td class="description last">The date string to parse</td>
         </tr>
 
     
@@ -216,7 +218,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line11">line 11</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -245,7 +247,7 @@
 
         
 <div class="param-desc">
-    Objek Date yang sesuai.
+    The parsed date
 </div>
 
 
@@ -274,16 +276,12 @@
     
 
     
-    <h4 class="name" id=".parseDatetimeLocal"><span class="type-signature">(static) </span>parseDatetimeLocal<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    <h4 class="name" id=".parseDatetimeLocal"><span class="type-signature">(static) </span>parseDatetimeLocal<span class="signature">(string<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi string ke objek Date sesuai format datetime-local.
-</div>
 
 
 
@@ -306,6 +304,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -318,23 +318,33 @@
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>string</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">String dalam format datetime-local (YYYY-MM-DDTHH:MM).</td>
+            <td class="description last">The datetime-local string to parse</td>
         </tr>
 
     
@@ -375,7 +385,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line21">line 21</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -404,7 +414,7 @@
 
         
 <div class="param-desc">
-    Objek Date yang sesuai.
+    The parsed datetime-local
 </div>
 
 
@@ -433,16 +443,12 @@
     
 
     
-    <h4 class="name" id=".parseMonth"><span class="type-signature">(static) </span>parseMonth<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    <h4 class="name" id=".parseMonth"><span class="type-signature">(static) </span>parseMonth<span class="signature">(string<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi string bulan menjadi objek Date.
-</div>
 
 
 
@@ -465,6 +471,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -477,23 +485,33 @@
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>string</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">String dalam format YYYY-MM.</td>
+            <td class="description last">The month string to parse</td>
         </tr>
 
     
@@ -534,7 +552,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line31">line 31</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -563,7 +581,7 @@
 
         
 <div class="param-desc">
-    Objek Date dengan tanggal pertama bulan tersebut.
+    The parsed month
 </div>
 
 
@@ -592,16 +610,12 @@
     
 
     
-    <h4 class="name" id=".parseTime"><span class="type-signature">(static) </span>parseTime<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    <h4 class="name" id=".parseTime"><span class="type-signature">(static) </span>parseTime<span class="signature">(string<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi string waktu menjadi objek Date dengan tanggal hari ini.
-</div>
 
 
 
@@ -624,6 +638,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -636,23 +652,33 @@
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>string</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">String dalam format HH:MM.</td>
+            <td class="description last">The time string to parse</td>
         </tr>
 
     
@@ -693,7 +719,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line41">line 41</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -722,7 +748,7 @@
 
         
 <div class="param-desc">
-    Objek Date dengan waktu yang ditentukan.
+    The parsed time
 </div>
 
 
@@ -751,16 +777,12 @@
     
 
     
-    <h4 class="name" id=".parseWeek"><span class="type-signature">(static) </span>parseWeek<span class="signature">(input)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
+    <h4 class="name" id=".parseWeek"><span class="type-signature">(static) </span>parseWeek<span class="signature">(string<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi string minggu ke objek Date.
-</div>
 
 
 
@@ -783,6 +805,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -795,23 +819,33 @@
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>string</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">String dalam format YYYY-W##.</td>
+            <td class="description last">The week string to parse</td>
         </tr>
 
     
@@ -852,7 +886,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line54">line 54</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -881,7 +915,7 @@
 
         
 <div class="param-desc">
-    Objek Date untuk awal minggu yang dimaksud.
+    The parsed week
 </div>
 
 
@@ -910,16 +944,12 @@
     
 
     
-    <h4 class="name" id=".stringifyDate"><span class="type-signature">(static) </span>stringifyDate<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".stringifyDate"><span class="type-signature">(static) </span>stringifyDate<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi objek Date menjadi string dalam format YYYY-MM-DD.
-</div>
 
 
 
@@ -941,6 +971,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -967,10 +999,20 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">Objek Date yang akan dikonversi.</td>
+            <td class="description last">The date to stringify</td>
         </tr>
 
     
@@ -1011,7 +1053,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line68">line 68</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line62">line 62</a>
     </li></ul></dd>
     
 
@@ -1040,7 +1082,7 @@
 
         
 <div class="param-desc">
-    String dalam format YYYY-MM-DD.
+    The stringified date
 </div>
 
 
@@ -1051,7 +1093,7 @@
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
     </dd>
@@ -1069,16 +1111,12 @@
     
 
     
-    <h4 class="name" id=".stringifyDatetimeLocal"><span class="type-signature">(static) </span>stringifyDatetimeLocal<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".stringifyDatetimeLocal"><span class="type-signature">(static) </span>stringifyDatetimeLocal<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi objek Date menjadi string dalam format datetime-local.
-</div>
 
 
 
@@ -1100,6 +1138,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1126,10 +1166,20 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">Objek Date yang akan dikonversi.</td>
+            <td class="description last">The datetime-local to stringify</td>
         </tr>
 
     
@@ -1170,7 +1220,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line78">line 78</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -1199,7 +1249,7 @@
 
         
 <div class="param-desc">
-    String dalam format YYYY-MM-DDTHH:MM.
+    The stringified datetime-local
 </div>
 
 
@@ -1210,7 +1260,7 @@
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
     </dd>
@@ -1228,16 +1278,12 @@
     
 
     
-    <h4 class="name" id=".stringifyMonth"><span class="type-signature">(static) </span>stringifyMonth<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".stringifyMonth"><span class="type-signature">(static) </span>stringifyMonth<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi objek Date menjadi string dalam format YYYY-MM.
-</div>
 
 
 
@@ -1259,6 +1305,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1285,10 +1333,20 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">Objek Date yang akan dikonversi.</td>
+            <td class="description last">The month to stringify</td>
         </tr>
 
     
@@ -1329,7 +1387,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line93">line 93</a>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -1358,7 +1416,7 @@
 
         
 <div class="param-desc">
-    String dalam format YYYY-MM.
+    The stringified month
 </div>
 
 
@@ -1369,7 +1427,7 @@
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
     </dd>
@@ -1387,16 +1445,12 @@
     
 
     
-    <h4 class="name" id=".stringifyTime"><span class="type-signature">(static) </span>stringifyTime<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".stringifyTime"><span class="type-signature">(static) </span>stringifyTime<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
 
     
 
 
-
-<div class="description">
-    Mengonversi objek Date menjadi string dalam format HH:MM.
-</div>
 
 
 
@@ -1418,6 +1472,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1444,10 +1500,187 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">Objek Date yang akan dikonversi.</td>
+            <td class="description last">The time to stringify</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The stringified time
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".stringifyWeek"><span class="type-signature">(static) </span>stringifyWeek<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The week to stringify</td>
         </tr>
 
     
@@ -1517,7 +1750,7 @@
 
         
 <div class="param-desc">
-    String dalam format HH:MM.
+    The stringified week
 </div>
 
 
@@ -1528,166 +1761,7 @@
     </dt>
     <dd>
         
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".stringifyWeek"><span class="type-signature">(static) </span>stringifyWeek<span class="signature">(date)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Mengonversi objek Date menjadi string dalam format YYYY-W##.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>date</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Date.html">Date</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Objek Date yang akan dikonversi.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_util.js.html">util/util.js</a>, <a href="util_util.js.html#line113">line 113</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    String dalam format YYYY-W##.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
     </dd>
@@ -1715,13 +1789,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Date.html">Date</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Color.html">Color</a></li><li><a href="Localization.html">Localization</a></li><li><a href="Popper.html">Popper</a></li><li><a href="Util.html">Util</a></li></ul><h3>Classes</h3><ul><li><a href="Layout.html">Layout</a></li><li><a href="MdBadgeComponent.html">MdBadgeComponent</a></li><li><a href="MdBottomAppBarComponent.html">MdBottomAppBarComponent</a></li><li><a href="MdBottomSheetComponent.html">MdBottomSheetComponent</a></li><li><a href="MdButtonComponent.html">MdButtonComponent</a></li><li><a href="MdCardComponent.html">MdCardComponent</a></li><li><a href="MdCheckboxComponent.html">MdCheckboxComponent</a></li><li><a href="MdChipComponent.html">MdChipComponent</a></li><li><a href="MdChipsComponent.html">MdChipsComponent</a></li><li><a href="MdComponent.html">MdComponent</a></li><li><a href="MdDataTableCellComponent.html">MdDataTableCellComponent</a></li><li><a href="MdDataTableComponent.html">MdDataTableComponent</a></li><li><a href="MdDatePickerComponent.html">MdDatePickerComponent</a></li><li><a href="MdDatetimeFieldComponent.html">MdDatetimeFieldComponent</a></li><li><a href="MdDatetimePickerComponent.html">MdDatetimePickerComponent</a></li><li><a href="MdDialogComponent.html">MdDialogComponent</a></li><li><a href="MdDividerComponent.html">MdDividerComponent</a></li><li><a href="MdFabComponent.html">MdFabComponent</a></li><li><a href="MdFormComponent.html">MdFormComponent</a></li><li><a href="MdIconButtonComponent.html">MdIconButtonComponent</a></li><li><a href="MdIconComponent.html">MdIconComponent</a></li><li><a href="MdImageComponent.html">MdImageComponent</a></li><li><a href="MdListComponent.html">MdListComponent</a></li><li><a href="MdListItemComponent.html">MdListItemComponent</a></li><li><a href="MdListRowComponent.html">MdListRowComponent</a></li><li><a href="MdMenuComponent.html">MdMenuComponent</a></li><li><a href="MdMonthPickerComponent.html">MdMonthPickerComponent</a></li><li><a href="MdNavigationBarComponent.html">MdNavigationBarComponent</a></li><li><a href="MdNavigationDrawerComponent.html">MdNavigationDrawerComponent</a></li><li><a href="MdNavigationListComponent.html">MdNavigationListComponent</a></li><li><a href="MdNavigationListItemComponent.html">MdNavigationListItemComponent</a></li><li><a href="MdNavigationListRowComponent.html">MdNavigationListRowComponent</a></li><li><a href="MdNavigationRailComponent.html">MdNavigationRailComponent</a></li><li><a href="MdProgressIndicatorComponent.html">MdProgressIndicatorComponent</a></li><li><a href="MdRadioButtonComponent.html">MdRadioButtonComponent</a></li><li><a href="MdScrimComponent.html">MdScrimComponent</a></li><li><a href="MdSegmentedButtonComponent.html">MdSegmentedButtonComponent</a></li><li><a href="MdSheetComponent.html">MdSheetComponent</a></li><li><a href="MdSideSheetComponent.html">MdSideSheetComponent</a></li><li><a href="MdSliderComponent.html">MdSliderComponent</a></li><li><a href="MdSnackbarComponent.html">MdSnackbarComponent</a></li><li><a href="MdSwitchComponent.html">MdSwitchComponent</a></li><li><a href="MdTabComponent.html">MdTabComponent</a></li><li><a href="MdTabsComponent.html">MdTabsComponent</a></li><li><a href="MdTextFieldComponent.html">MdTextFieldComponent</a></li><li><a href="MdTimePickerComponent.html">MdTimePickerComponent</a></li><li><a href="MdTooltipComponent.html">MdTooltipComponent</a></li><li><a href="MdTopAppBarComponent.html">MdTopAppBarComponent</a></li><li><a href="MdTreeComponent.html">MdTreeComponent</a></li><li><a href="MdTreeItemComponent.html">MdTreeItemComponent</a></li><li><a href="MdTreeRowComponent.html">MdTreeRowComponent</a></li><li><a href="MdWeekPickerComponent.html">MdWeekPickerComponent</a></li><li><a href="Movable.html">Movable</a></li><li><a href="Progress.html">Progress</a></li><li><a href="Ripple.html">Ripple</a></li><li><a href="Router.html">Router</a></li><li><a href="Store.html">Store</a></li><li><a href="VirtualScroll.html">VirtualScroll</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 12:58:31 GMT+0700 (Indochina Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Feb 14 2025 22:28:35 GMT+0700 (Indochina Time)
 </footer>
 
 <script> prettyPrint(); </script>

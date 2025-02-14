@@ -2,7 +2,7 @@ import { configureLocalization } from "@lit/localize";
 import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
 /**
- * @module Localization
+ * @namespace Localization
  */
 
 const localization = configureLocalization({
@@ -12,13 +12,13 @@ const localization = configureLocalization({
 });
 
 /**
- * @memberof module:Localization
+ * @memberof Localization
  * @function getLocale
  */
 export const getLocale = localization.getLocale;
 
 /**
- * @memberof module:Localization
+ * @memberof Localization
  * @function setLocale
  * @param {String} locale
  */

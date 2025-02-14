@@ -1,9 +1,9 @@
 /**
- * @module Popper
+ * @namespace Popper
  */
 
 /**
- * @memberof module:Popper
+ * @memberof Popper
  * @param {Undefined} [placement]
  * @param {Object} [options={}]
  */
@@ -34,7 +34,7 @@ function calculatePosition(placement, options = {}) {
 }
 
 /**
- * @memberof module:Popper
+ * @memberof Popper
  * @param {Undefined} [offset]
  */
 function parseOffset(offset) {
@@ -46,7 +46,7 @@ function parseOffset(offset) {
 }
 
 /**
- * @memberof module:Popper
+ * @memberof Popper
  * @param {Object} [options={}]
  */
 function setPosition(options = {}) {
@@ -82,7 +82,7 @@ function setPosition(options = {}) {
 }
 
 /**
- * @memberof module:Popper
+ * @memberof Popper
  * @param {Undefined} [element]
  */
 function closestScrollableElement(element) {

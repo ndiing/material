@@ -1,11 +1,11 @@
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
- * @module Color
+ * @namespace Color
  */
 
 /**
- * @memberof module:Color
+ * @memberof Color
  * @param {Undefined} [input]
  * @param {Undefined} [customColors]
  */
