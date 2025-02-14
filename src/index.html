@@ -1,81 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-
-        <meta
-            name="viewport"
-            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-        />
-        <meta
-            name="description"
-            content="This is a ndiing-material app"
-        />
-
-        <meta
-            name="theme-color"
-            media="(prefers-color-scheme: dark)"
-            content="#181818"
-        />
-        <meta
-            name="theme-color"
-            media="(prefers-color-scheme: light)"
-            content="#f3f3f3"
-        />
-
-        <meta
-            name="mobile-web-app-capable"
-            content="yes"
-        />
-        <meta
-            name="apple-mobile-web-app-title"
-            content="ndiing-material"
-        />
-        <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black"
-        />
-
-        <title>Document</title>
-        <base href="./" />
-
-        <link
-            rel="icon"
-            href="/public/assets/icons/icon_24.png"
-            type="image/png"
-        />
-
-        <link
-            rel="manifest"
-            href="/public/manifest.json"
-        />
-
-        <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com"
-        />
-        <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
-    </head>
-    <body>
-        <md-outlet></md-outlet>
-        <script>
-            if ("serviceWorker" in navigator) {
-                window.onload = () => {
-                    navigator.serviceWorker.register("/public/sw.js");
-                };
-            }
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <meta
+        name="description"
+        content="This is a ndiing-material app"
+    />
+    <title>Document</title>
+    <base href="./" />
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+</head>
+<body>
+    <md-outlet></md-outlet>
+</body>
 </html>
