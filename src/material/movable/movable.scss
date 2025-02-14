@@ -55,12 +55,3 @@
     grid-area: 1 / 1 / 2 / 2;
     cursor: nw-resize;
 }
-
-.md-user-select--none {
-    &,
-    & *,
-    &::before,
-    &::after {
-        user-select: none;
-    }
-}

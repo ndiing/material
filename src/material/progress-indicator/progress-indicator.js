@@ -4,7 +4,6 @@ import { MdComponent } from "../component/component";
 /**
  * @extends MdComponent
  * @element md-progress-indicator
- * @element md-progress-indicator
  */
 class MdProgressIndicatorComponent extends MdComponent {
     /**
@@ -51,7 +50,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         this.r = ((36 / 40) * 100) / 2;
         this.strokeWidth = (4 / 40) * 100;
         this.strokeDasharray = 2 * Math.PI * this.r;
-        this.strokeDashoffset = this.strokeDasharray * (1 - this.value / 100);
+        this.strokeDashoffset = this.strokeDasharray * (1 - this.value / this.max);
         return html`
             <div class="md-progress-indicator__wrapper">
                 <svg

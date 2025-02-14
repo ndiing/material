@@ -10,7 +10,6 @@
 // import "./localization/localization.js";
 // import "./color/color.js";
 import "./polyfill/polyfill.js";
-import "./progress/progress.js";
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";
@@ -61,3 +60,4 @@ import "./switch/switch.js";
 import "./text-field/text-field.js";
 import "./datetime-field/datetime-field.js";
 import "./slider/slider.js";
+import "./progress/progress.js";

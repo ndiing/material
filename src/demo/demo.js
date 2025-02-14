@@ -1,6 +1,6 @@
 import { Router } from "../material/router/router";
 import { Progress } from "../material/progress/progress.js";
-// import { setTheme } from "../material/color/color.js";
+import { setTheme } from "../material/color/color.js";
 
 import DemoMain from "./main/main.js";
 import DemoError from "./error/error.js";
@@ -102,21 +102,6 @@ import DemoWeekPicker from "./week-picker/week-picker.js";
 import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
 import DemoMonthPicker from "./month-picker/month-picker.js";
 import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
-
-const progress = new Progress();
-const observer = new PerformanceObserver((entries) => {
-    entries.getEntries().forEach((entry) => progress.start(entry.duration));
-});
-observer.observe({
-    entryTypes: PerformanceObserver.supportedEntryTypes,
-});
-
-// function getRandomHexColor() {
-//     return `#${Math.floor(Math.random() * 16777215)
-//         .toString(16)
-//         .padStart(6, "0")}`;
-// }
-// setTheme(getRandomHexColor());
 
 const routes = [
     {
@@ -268,3 +253,31 @@ const routes = [
     },
 ];
 Router.use(routes);
+
+const progress = new Progress();
+
+const fetch = window.fetch
+window.fetch = async function(){
+    performance.mark("mark-fetch-1");
+    const res= await fetch(arguments)
+    performance.mark("mark-fetch-2");
+    performance.measure("measure-fetch-1", "mark-fetch-1", "mark-fetch-2");
+    performance.clearMarks("mark-fetch-1");
+    performance.clearMarks("mark-fetch-2");
+    performance.clearMeasures("measure-fetch-1");
+    return res
+}
+
+const observer = new PerformanceObserver((entries) => {
+    entries.getEntries().forEach((entry) => progress.start(entry.duration));
+});
+observer.observe({
+    entryTypes: PerformanceObserver.supportedEntryTypes,
+});
+
+// function getRandomHexColor() {
+//     return `#${Math.floor(Math.random() * 16777215)
+//         .toString(16)
+//         .padStart(6, "0")}`;
+// }
+// setTheme(getRandomHexColor());

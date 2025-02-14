@@ -31,21 +31,4 @@
 .md-ripple[disabled] {
     @include mixins.ripple-disabled();
 }
-/*
 
-& {@include mixins.ripple();}
-
-& {@include mixins.ripple-bounded();}
-
-& {@include mixins.ripple-trigger();}
-
-&:focus {@include mixins.ripple-focus();}
-
-&:active {@include mixins.ripple-press()}
-
-&:hover {@include mixins.ripple-hover()}
-
-&:-moz-drag-over {@include mixins.ripple-drag()}
-
-&:disabled {@include mixins.ripple-disabled()}
-*/
