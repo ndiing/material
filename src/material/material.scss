@@ -3,12 +3,12 @@
 @use "./styles/styles.scss";
 @use "./animation/animation.scss";
 
+@use "./layout-grid/layout-grid.scss";
+@use "./layout-border/layout-border.scss";
+
 @use "./ripple/ripple.scss";
 @use "./movable/movable.scss";
 @use "./virtual-scroll/virtual-scroll.scss";
-
-@use "./layout-grid/layout-grid.scss";
-@use "./layout-border/layout-border.scss";
 
 @use "./icon/icon.scss";
 @use "./image/image.scss";
