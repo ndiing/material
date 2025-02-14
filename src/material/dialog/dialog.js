@@ -5,6 +5,7 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
+ * @element md-dialog
  * @fires MdDialogComponent#onDialogShow
  * @fires MdDialogComponent#onDialogClose
  * @fires MdDialogComponent#onDialogScrimClose
@@ -12,7 +13,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MdDialogComponent#onDialogClosed
  * @fires MdDialogComponent#onDialogIconButtonClick
  * @fires MdDialogComponent#onDialogButtonClick
- * @element md-dialog
  */
 class MdDialogComponent extends MdComponent {
     /**

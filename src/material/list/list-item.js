@@ -5,8 +5,8 @@ import { Ripple } from "../ripple/ripple";
 
 /**
  * @extends MdComponent
- * @fires MdListItemComponent#onListItemSelected
  * @element md-list-item
+ * @fires MdListItemComponent#onListItemSelected
  */
 class MdListItemComponent extends MdComponent {
     /**

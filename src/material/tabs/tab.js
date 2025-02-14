@@ -5,8 +5,8 @@ import { Ripple } from "../ripple/ripple";
 
 /**
  * @extends MdComponent
- * @fires MdTabComponent#onTabSelected
  * @element md-tab
+ * @fires MdTabComponent#onTabSelected
  */
 class MdTabComponent extends MdComponent {
     /**

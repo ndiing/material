@@ -5,8 +5,8 @@ import { findClosestElement, parseDatetimeLocal, stringifyDatetimeLocal } from "
 
 /**
  * @extends MdTextFieldComponent
- * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonPickerClick
  * @element md-datetime-field
+ * @fires MdDatetimeFieldComponent#onDatetimeFieldIconButtonPickerClick
  */
 class MdDatetimeFieldComponent extends MdTextFieldComponent {
     /**

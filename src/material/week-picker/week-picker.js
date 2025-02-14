@@ -8,6 +8,7 @@ import { classMap } from "lit/directives/class-map.js";
 
 /**
  * @extends MdComponent
+ * @element md-week-picker
  * @fires MdWeekPickerComponent#onWeekPickerShown
  * @fires MdWeekPickerComponent#onWeekPickerClosed
  * @fires MdWeekPickerComponent#onWeekPickerLabelClick
@@ -22,7 +23,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick
  * @fires MdWeekPickerComponent#onWeekPickerButtonClick
  * @fires MdWeekPickerComponent#onWeekPickerScrimClosed
- * @element md-week-picker
  */
 class MdWeekPickerComponent extends MdComponent {
     /**

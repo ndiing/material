@@ -3,12 +3,12 @@ import { MdComponent } from "../component/component";
 
 /**
  * @extends MdComponent
+ * @element md-scrim
  * @fires MdScrimComponent#onScrimShow
  * @fires MdScrimComponent#onScrimClose
  * @fires MdScrimComponent#onScrimClick
  * @fires MdScrimComponent#onScrimShown
  * @fires MdScrimComponent#onScrimClosed
- * @element md-scrim
  */
 class MdScrimComponent extends MdComponent {
     /**

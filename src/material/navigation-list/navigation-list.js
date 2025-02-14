@@ -5,12 +5,12 @@ import { Store } from "../store/store";
 
 /**
  * @extends MdComponent
+ * @element md-navigation-list
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp
  * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown
  * @fires MdNavigationListComponent#onNavigationListKeydownEnter
  * @fires MdNavigationListComponent#onNavigationListKeydown
  * @fires MdNavigationListComponent#onNavigationListItemClick
- * @element md-navigation-list
  */
 class MdNavigationListComponent extends MdComponent {
     /**

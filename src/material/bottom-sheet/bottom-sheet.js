@@ -5,12 +5,12 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
+ * @element md-bottom-sheet
  * @fires MdBottomSheetComponent#onBottomSheetShown
  * @fires MdBottomSheetComponent#onBottomSheetClosed
  * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick
  * @fires MdBottomSheetComponent#onBottomSheetButtonClick
  * @fires MdBottomSheetComponent#onBottomSheetScrimClosed
- * @element md-bottom-sheet
  */
 class MdBottomSheetComponent extends MdComponent {
     /**

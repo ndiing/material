@@ -5,12 +5,14 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
+ * @element md-sheet
+ * @fires MdSheetComponent#onSheetShow
+ * @fires MdSheetComponent#onSheetClose
  * @fires MdSheetComponent#onSheetShown
  * @fires MdSheetComponent#onSheetClosed
+ * @fires MdSheetComponent#onSheetScrimClose
  * @fires MdSheetComponent#onSheetIconButtonClick
  * @fires MdSheetComponent#onSheetButtonClick
- * @fires MdSheetComponent#onSheetScrimClosed
- * @element md-sheet
  */
 class MdSheetComponent extends MdComponent {
     /**
@@ -136,8 +138,8 @@ class MdSheetComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-animation", "none");
         this.sheetScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.sheetScrim, this.nextElementSibling);
-        this.handleSheetScrimClosed = this.handleSheetScrimClosed.bind(this);
-        this.sheetScrim.addEventListener("onScrimClosed", this.handleSheetScrimClosed);
+        this.handleSheetScrimClose = this.handleSheetScrimClose.bind(this);
+        this.sheetScrim.addEventListener("onScrimClose", this.handleSheetScrimClose);
         if (this.modal && this.open) this.sheetScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
@@ -149,7 +151,7 @@ class MdSheetComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.sheetScrim.removeEventListener("onScrimClosed", this.handleSheetScrimClosed);
+        this.sheetScrim.removeEventListener("onScrimClose", this.handleSheetScrimClose);
         this.sheetScrim.remove();
     }
 
@@ -173,18 +175,22 @@ class MdSheetComponent extends MdComponent {
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
-        if (this.modal) this.sheetScrim.show();
+        this.handleSheetShown = this.handleSheetShown.bind(this);
+        this.addEventListener("animationend", this.handleSheetShown);
         this.open = true;
-        this.emit("onSheetShown");
+        if (this.modal) this.sheetScrim.show();
+        this.emit("onSheetShow");
     }
 
     /**
      */
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
+        this.handleSheetClosed = this.handleSheetClosed.bind(this);
+        this.addEventListener("animationend", this.handleSheetClosed);
         this.open = false;
         if (this.sheetScrim.open) this.sheetScrim.close();
-        this.emit("onSheetClosed");
+        this.emit("onSheetClose");
     }
 
     /**
@@ -192,6 +198,37 @@ class MdSheetComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSheetShown(event) {
+        if (event.animationName === "sheet-north-modal-out" || event.animationName === "sheet-north-out") {
+            this.removeEventListener("animationend", this.handleSheetShown);
+            this.emit("onSheetShown");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSheetClosed(event) {
+        if (event.animationName === "sheet-north-modal-in" || event.animationName === "sheet-north-in") {
+            this.removeEventListener("animationend", this.handleSheetClosed);
+            this.emit("onSheetClosed");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSheetScrimClose(event) {
+        if (this.open) this.close();
+        this.emit("onSheetScrimClose", { event });
     }
 
     /**
@@ -208,15 +245,6 @@ class MdSheetComponent extends MdComponent {
      */
     handleSheetButtonClick(event) {
         this.emit("onSheetButtonClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleSheetScrimClosed(event) {
-        if (this.open) this.close();
-        this.emit("onSheetScrimClosed", { event });
     }
 }
 customElements.define("md-sheet", MdSheetComponent);

@@ -5,9 +5,9 @@ import { Ripple } from "../ripple/ripple";
 
 /**
  * @extends MdComponent
+ * @element md-switch
  * @fires MdSwitchComponent#onSwitchNativeInput
  * @fires MdSwitchComponent#onSwitchNativeReset
- * @element md-switch
  */
 class MdSwitchComponent extends MdComponent {
     /**

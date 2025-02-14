@@ -6,6 +6,7 @@ import { classMap } from "lit/directives/class-map.js";
 
 /**
  * @extends MdComponent
+ * @element md-text-field
  * @fires MdTextFieldComponent#onTextFieldFocus
  * @fires MdTextFieldComponent#onTextFieldBlur
  * @fires MdTextFieldComponent#onTextFieldInput
@@ -14,7 +15,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdTextFieldComponent#onTextFieldIconButtonCancelClick
  * @fires MdTextFieldComponent#onTextFieldIconButtonClick
  * @fires MdTextFieldComponent#onTextFieldClick
- * @element md-text-field
  */
 class MdTextFieldComponent extends MdComponent {
     /**

@@ -5,8 +5,8 @@ import { Ripple } from "../ripple/ripple";
 
 /**
  * @extends MdComponent
- * @fires MdTreeItemComponent#onTreeItemSelected
  * @element md-tree-item
+ * @fires MdTreeItemComponent#onTreeItemSelected
  */
 class MdTreeItemComponent extends MdComponent {
     /**

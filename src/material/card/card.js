@@ -5,9 +5,9 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
+ * @element md-card
  * @fires MdCardComponent#onCardIconButtonClick
  * @fires MdCardComponent#onCardButtonClick
- * @element md-card
  */
 class MdCardComponent extends MdComponent {
     /**

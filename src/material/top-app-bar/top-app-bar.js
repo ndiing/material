@@ -5,10 +5,10 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
+ * @element md-top-app-bar
  * @fires MdTopAppBarComponent#onTopAppBarShown
  * @fires MdTopAppBarComponent#onTopAppBarClosed
  * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick
- * @element md-top-app-bar
  */
 class MdTopAppBarComponent extends MdComponent {
     /**

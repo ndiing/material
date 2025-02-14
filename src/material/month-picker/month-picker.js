@@ -8,6 +8,7 @@ import { classMap } from "lit/directives/class-map.js";
 
 /**
  * @extends MdComponent
+ * @element md-month-picker
  * @fires MdMonthPickerComponent#onMonthPickerShown
  * @fires MdMonthPickerComponent#onMonthPickerClosed
  * @fires MdMonthPickerComponent#onMonthPickerLabelClick
@@ -21,7 +22,6 @@ import { classMap } from "lit/directives/class-map.js";
  * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick
  * @fires MdMonthPickerComponent#onMonthPickerButtonClick
  * @fires MdMonthPickerComponent#onMonthPickerScrimClosed
- * @element md-month-picker
  */
 class MdMonthPickerComponent extends MdComponent {
     /**

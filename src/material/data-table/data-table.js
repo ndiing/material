@@ -6,13 +6,13 @@ import { Store } from "../store/store";
 
 /**
  * @extends MdComponent
+ * @element md-data-table
  * @fires MdDataTableComponent#onDataTableKeydown
  * @fires MdDataTableComponent#onDataTableHeaderCellClick
  * @fires MdDataTableComponent#onDataTableBodyCellClick
  * @fires MdDataTableComponent#onDataTableHeaderCheckboxClick
  * @fires MdDataTableComponent#onDataTableBodyClick
  * @fires MdDataTableComponent#onDataTableBodyCheckboxClick
- * @element md-data-table
  */
 class MdDataTableComponent extends MdComponent {
     /**

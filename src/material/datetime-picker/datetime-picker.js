@@ -9,6 +9,7 @@ import { cache } from "lit/directives/cache.js";
 
 /**
  * @extends MdComponent
+ * @element md-datetime-picker
  * @fires MdDatetimePickerComponent#onDatetimePickerShown
  * @fires MdDatetimePickerComponent#onDatetimePickerClosed
  * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick
@@ -24,7 +25,6 @@ import { cache } from "lit/directives/cache.js";
  * @fires MdDatetimePickerComponent#onDatetimePickerButtonLabelClick
  * @fires MdDatetimePickerComponent#onDatetimePickerButtonClick
  * @fires MdDatetimePickerComponent#onDatetimePickerScrimClose
- * @element md-datetime-picker
  */
 class MdDatetimePickerComponent extends MdComponent {
     /**

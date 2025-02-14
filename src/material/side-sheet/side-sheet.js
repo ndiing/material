@@ -5,12 +5,12 @@ import { choose } from "lit/directives/choose.js";
 
 /**
  * @extends MdComponent
+ * @element md-side-sheet
  * @fires MdSideSheetComponent#onSideSheetShown
  * @fires MdSideSheetComponent#onSideSheetClosed
  * @fires MdSideSheetComponent#onSideSheetIconButtonClick
  * @fires MdSideSheetComponent#onSideSheetButtonClick
  * @fires MdSideSheetComponent#onSideSheetScrimClosed
- * @element md-side-sheet
  */
 class MdSideSheetComponent extends MdComponent {
     /**
