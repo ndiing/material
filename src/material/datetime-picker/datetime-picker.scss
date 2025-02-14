@@ -333,11 +333,8 @@
 }
 
 .md-datetime-picker__circle--hours {
-
     .md-datetime-picker__circle-item {
-
         @for $i from 1 through 12 {
-
             &:nth-child(#{$i}) {
                 left: calc(var(--md-comp-datetime-picker-circle-item-radius) * cos((($i - 4) / 12) * 2 * pi) + var(--md-comp-datetime-picker-circle-item-offset));
                 top: calc(var(--md-comp-datetime-picker-circle-item-radius) * sin((($i - 4) / 12) * 2 * pi) + var(--md-comp-datetime-picker-circle-item-offset));
@@ -362,11 +359,8 @@
 }
 
 .md-datetime-picker__circle--minutes {
-
     .md-datetime-picker__circle-item {
-
         @for $i from 1 through 60 {
-
             &:nth-child(#{$i}) {
                 left: calc(var(--md-comp-datetime-picker-circle-item-radius) * cos((($i - 16) / 60) * 2 * pi) + var(--md-comp-datetime-picker-circle-item-offset));
                 top: calc(var(--md-comp-datetime-picker-circle-item-radius) * sin((($i - 16) / 60) * 2 * pi) + var(--md-comp-datetime-picker-circle-item-offset));
@@ -378,7 +372,6 @@
             }
 
             &:nth-child(#{$i}) {
-
                 @if ((($i - 16) % 5) != 0) {
                     height: var(--md-comp-datetime-picker-circle-item-height2);
                     width: var(--md-comp-datetime-picker-circle-item-height2);

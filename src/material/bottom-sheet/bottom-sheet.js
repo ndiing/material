@@ -34,7 +34,6 @@ class MdBottomSheetComponent extends MdComponent {
         modal: { type: Boolean, reflect: true },
     };
 
-
     /**
      */
     constructor() {

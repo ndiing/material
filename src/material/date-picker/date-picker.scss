@@ -126,7 +126,7 @@
 .md-date-picker__item {
     flex: 1 0 100%;
     overflow: auto;
-    transform: translate3d(calc((0 - var(--md-comp-date-picker-index)) * 100%), 0, 0);
+    // transform: translate3d(calc((0 - var(--md-comp-date-picker-index)) * 100%), 0, 0);
 }
 
 .md-date-picker__list {
@@ -247,3 +247,4 @@
         }
     }
 }
+

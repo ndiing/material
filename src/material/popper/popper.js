@@ -76,4 +76,4 @@ function setPosition(options = {}) {
     container.style.top = `${bestTop}px`;
 }
 
-export { calculatePosition, setPosition, parseOffset,  };
+export { calculatePosition, setPosition, parseOffset };

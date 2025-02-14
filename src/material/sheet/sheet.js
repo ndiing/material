@@ -202,8 +202,8 @@ class MdSheetComponent extends MdComponent {
      * @param {Undefined} [event]
      */
     handleSheetShown(event) {
-            this.removeEventListener("animationend", this.handleSheetShown);
-            this.emit("onSheetShown");
+        this.removeEventListener("animationend", this.handleSheetShown);
+        this.emit("onSheetShown");
     }
 
     /**
@@ -211,8 +211,8 @@ class MdSheetComponent extends MdComponent {
      * @param {Undefined} [event]
      */
     handleSheetClosed(event) {
-            this.removeEventListener("animationend", this.handleSheetClosed);
-            this.emit("onSheetClosed");
+        this.removeEventListener("animationend", this.handleSheetClosed);
+        this.emit("onSheetClosed");
     }
 
     /**

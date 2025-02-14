@@ -14,7 +14,10 @@ class DemoDatePicker extends MdComponent {
                         ></md-button>
                         <md-date-picker
                             id="datePicker"
-                            @onDatePickerLabelClick="${console.log}"
+                            @onDatePickerShow="${console.log}"
+                            @onDatePickerClose="${console.log}"
+                            @onDatePickerShown="${console.log}"
+                            @onDatePickerClosed="${console.log}"
                             @onDatePickerIconButtonPrevClick="${console.log}"
                             @onDatePickerIconButtonNextClick="${console.log}"
                             @onDatePickerIconButtonClick="${console.log}"
@@ -23,13 +26,11 @@ class DemoDatePicker extends MdComponent {
                             @onDatePickerDayItemClick="${console.log}"
                             @onDatePickerHourItemClick="${console.log}"
                             @onDatePickerMinuteItemClick="${console.log}"
-                            @onDatePickerButtonCancelClick="${console.log}"
-                            @onDatePickerButtonOkClick="${(event) => console.log(event.detail.value)}"
+                            @onDatePickerButtonCancelClick="${() => datePicker.close()}"
+                            @onDatePickerButtonOkClick="${() => datePicker.close()}"
                             @onDatePickerButtonLabelClick="${console.log}"
                             @onDatePickerButtonClick="${console.log}"
-                            @onDatePickerScrimClosed="${console.log}"
-                            @onDatePickerShown="${console.log}"
-                            @onDatePickerClosed="${console.log}"
+                            @onDatePickerScrimClose="${console.log}"
                         ></md-date-picker>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -41,7 +42,10 @@ class DemoDatePicker extends MdComponent {
                         <md-date-picker
                             id="datePicker2"
                             value="1990-10-17"
-                            @onDatePickerLabelClick="${console.log}"
+                            @onDatePickerShow="${console.log}"
+                            @onDatePickerClose="${console.log}"
+                            @onDatePickerShown="${console.log}"
+                            @onDatePickerClosed="${console.log}"
                             @onDatePickerIconButtonPrevClick="${console.log}"
                             @onDatePickerIconButtonNextClick="${console.log}"
                             @onDatePickerIconButtonClick="${console.log}"
@@ -50,13 +54,11 @@ class DemoDatePicker extends MdComponent {
                             @onDatePickerDayItemClick="${console.log}"
                             @onDatePickerHourItemClick="${console.log}"
                             @onDatePickerMinuteItemClick="${console.log}"
-                            @onDatePickerButtonCancelClick="${console.log}"
-                            @onDatePickerButtonOkClick="${(event) => console.log(event.detail.value)}"
+                            @onDatePickerButtonCancelClick="${() => datePicker2.close()}"
+                            @onDatePickerButtonOkClick="${() => datePicker2.close()}"
                             @onDatePickerButtonLabelClick="${console.log}"
                             @onDatePickerButtonClick="${console.log}"
-                            @onDatePickerScrimClosed="${console.log}"
-                            @onDatePickerShown="${console.log}"
-                            @onDatePickerClosed="${console.log}"
+                            @onDatePickerScrimClose="${console.log}"
                         ></md-date-picker>
                     </div>
                 </div>
