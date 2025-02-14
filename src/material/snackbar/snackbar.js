@@ -109,7 +109,7 @@ class MdSnackbarComponent extends MdComponent {
      * @param {Any} [item]
      * @param {Any} [component="icon"]
      */
-    renderItem(item, component = "icon") {
+    renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
             [
@@ -127,7 +127,7 @@ class MdSnackbarComponent extends MdComponent {
      * @private
      */
     render() {
-        return html` ${this.body?.length ? html`<div class="md-snackbar__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-snackbar__footer">${this.buttons?.length ? html` <div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing} `;
+        return html` ${this.body?.length ? html`<div class="md-snackbar__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-snackbar__footer">${this.buttons?.length ? html` <div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**

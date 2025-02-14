@@ -184,7 +184,7 @@ class MdTextFieldComponent extends MdComponent {
      * @param {Any} [item]
      * @param {Any} [component="icon"]
      */
-    renderItem(item, component = "icon") {
+    renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
             [
@@ -210,7 +210,7 @@ class MdTextFieldComponent extends MdComponent {
                           <div
                             class="md-text-field__icons"
                           >
-                              ${this.icons.map((item) => this.renderItem(item, "icon"))}
+                              ${this.icons.map((item) => this.renderComponent(item, "icon"))}
                           </div>
                       `
                     : nothing}
@@ -250,7 +250,7 @@ class MdTextFieldComponent extends MdComponent {
                           <div
                               class="md-text-field__actions"
                           >
-                              ${actions.map((item) => this.renderItem(item, "icon-button"))}
+                              ${actions.map((item) => this.renderComponent(item, "icon-button"))}
                           </div>
                       `
                     : nothing}

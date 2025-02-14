@@ -103,7 +103,7 @@ class MdDialogComponent extends MdComponent {
      * @param {Any} [item]
      * @param {Any} [component="icon"]
      */
-    renderItem(item, component = "icon") {
+    renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
             [
@@ -121,7 +121,7 @@ class MdDialogComponent extends MdComponent {
      * @private
      */
     render() {
-        return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-dialog__header">${this.icons?.length ? html` <div class="md-dialog__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-dialog__labels">${this.label ? html`<div class="md-dialog__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-dialog__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-dialog__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-dialog__wrapper">${this.body?.length ? html`<div class="md-dialog__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-dialog__footer">${this.buttons?.length ? html` <div class="md-dialog__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
+        return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-dialog__header">${this.icons?.length ? html` <div class="md-dialog__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-dialog__labels">${this.label ? html`<div class="md-dialog__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-dialog__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-dialog__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-dialog__wrapper">${this.body?.length ? html`<div class="md-dialog__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-dialog__footer">${this.buttons?.length ? html` <div class="md-dialog__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
     /**

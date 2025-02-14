@@ -245,7 +245,7 @@ class MdDatePickerComponent extends MdComponent {
      * @param {Any} [item]
      * @param {Any} [component="icon"]
      */
-    renderItem(item, component = "icon") {
+    renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
             [
@@ -354,8 +354,8 @@ class MdDatePickerComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length
                 ? html`
                       <div class="md-date-picker__header">
-                          <div class="md-date-picker__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div>
-                          ${this.actions?.length ? html` <div class="md-date-picker__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}
+                          <div class="md-date-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+                          ${this.actions?.length ? html` <div class="md-date-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
                       </div>
                   `
                 : nothing}
@@ -367,7 +367,7 @@ class MdDatePickerComponent extends MdComponent {
                         <div class="md-date-picker__item">${this.renderDatePickerDay()}</div>
                     </div>
                 </div>
-                ${this.buttons?.length ? html` <div class="md-date-picker__footer">${this.buttons?.length ? html` <div class="md-date-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}
+                ${this.buttons?.length ? html` <div class="md-date-picker__footer">${this.buttons?.length ? html` <div class="md-date-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}
             </div>
         `;
     }

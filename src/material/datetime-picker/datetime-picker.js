@@ -296,7 +296,7 @@ class MdDatetimePickerComponent extends MdComponent {
      * @param {Any} [item]
      * @param {Any} [component="icon"]
      */
-    renderItem(item, component = "icon") {
+    renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
             [
@@ -453,8 +453,8 @@ class MdDatetimePickerComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length
                 ? html`
                       <div class="md-datetime-picker__header">
-                          <div class="md-datetime-picker__icons">${this.icons.map((icon) => this.renderItem(icon, "icon"))}</div>
-                          ${this.actions?.length ? html` <div class="md-datetime-picker__actions">${this.actions.map((action) => this.renderItem(action, "icon-button"))}</div> ` : nothing}
+                          <div class="md-datetime-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+                          ${this.actions?.length ? html` <div class="md-datetime-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
                       </div>
                   `
                 : nothing}
@@ -464,7 +464,7 @@ class MdDatetimePickerComponent extends MdComponent {
                         <div class="md-datetime-picker__item">${cache([this.renderDatetimePickerYear.bind(this), this.renderDatetimePickerMonth.bind(this), this.renderDatetimePickerDay.bind(this), this.renderDatetimePickerHour.bind(this), this.renderDatetimePickerMinute.bind(this)][this.index]())}</div>
                     </div>
                 </div>
-                ${this.buttons?.length ? html` <div class="md-datetime-picker__footer">${this.buttons?.length ? html` <div class="md-datetime-picker__buttons">${this.buttons.map((button) => this.renderItem(button, "button"))}</div> ` : nothing}</div> ` : nothing}
+                ${this.buttons?.length ? html` <div class="md-datetime-picker__footer">${this.buttons?.length ? html` <div class="md-datetime-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}
             </div>
         `;
     }
