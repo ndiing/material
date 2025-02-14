@@ -3,7 +3,7 @@ import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@
 
 /**
  * @namespace Color
-*/
+ */
 
 /**
  * Mengatur tema Material berdasarkan warna sumber atau gambar.

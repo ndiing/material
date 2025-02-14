@@ -25,8 +25,8 @@ class Ripple {
         this.init();
     }
 
-    /** 
-     * Inisialisasi efek ripple. 
+    /**
+     * Inisialisasi efek ripple.
      */
     async init() {
         this.container = this.host;
@@ -67,8 +67,8 @@ class Ripple {
         this.trigger.addEventListener("blur", this.handleBlur);
     }
 
-    /** 
-     * Menghancurkan efek ripple dan membersihkan event listener. 
+    /**
+     * Menghancurkan efek ripple dan membersihkan event listener.
      */
     async destroy() {
         if (this.container) {
@@ -89,25 +89,25 @@ class Ripple {
         this.trigger = null;
     }
 
-    /** 
-     * Menangani event pointer enter. 
-     * @private 
+    /**
+     * Menangani event pointer enter.
+     * @private
      */
     handlePointerenter(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
-    /** 
-     * Menangani event pointer leave. 
-     * @private 
+    /**
+     * Menangani event pointer leave.
+     * @private
      */
     handlePointerleave(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
-    /** 
-     * Menangani event pointer down. 
-     * @private 
+    /**
+     * Menangani event pointer down.
+     * @private
      */
     handlePointerdown(event) {
         window.addEventListener("pointerup", this.handlePointerup, { passive: true });
@@ -127,9 +127,9 @@ class Ripple {
         }
     }
 
-    /** 
-     * Menangani event pointer up. 
-     * @private 
+    /**
+     * Menangani event pointer up.
+     * @private
      */
     handlePointerup(event) {
         this.container.classList.remove("md-ripple--press");
@@ -137,17 +137,17 @@ class Ripple {
         window.removeEventListener("touchend", this.handlePointerup);
     }
 
-    /** 
-     * Menangani event focus. 
-     * @private 
+    /**
+     * Menangani event focus.
+     * @private
      */
     handleFocus(event) {
         this.container.classList.add("md-ripple--focus");
     }
 
-    /** 
-     * Menangani event blur. 
-     * @private 
+    /**
+     * Menangani event blur.
+     * @private
      */
     handleBlur(event) {
         this.container.classList.remove("md-ripple--focus");

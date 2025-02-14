@@ -10,6 +10,7 @@ class Router {
 
     /**
      * Mendapatkan rute yang cocok berdasarkan pathname.
+     * @private
      * @param {string} [pathname=this.pathname] Path yang akan dicocokkan.
      * @param {Array} [routes=this.routes] Daftar rute.
      * @param {Object|null} [parent=null] Rute induk (jika ada).
@@ -46,7 +47,10 @@ class Router {
         }
     }
 
-    /** Menangani navigasi dan memproses rute. */
+    /**
+     * Menangani navigasi dan memproses rute.
+     * @private
+     */
     static async handleNavigation(event) {
         performance.mark("mark-1");
         this.emit("onRouterCurrentEntryChange");
@@ -76,7 +80,10 @@ class Router {
         this.emit("onRouterNavigateSuccess");
     }
 
-    /** Menghapus komponen yang tidak digunakan. */
+    /**
+     * Menghapus komponen yang tidak digunakan.
+     * @private
+     */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
         for (const outlet of outlets) {
@@ -95,7 +102,10 @@ class Router {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
-    /** Mendapatkan outlet untuk rute tertentu. */
+    /**
+     * Mendapatkan outlet untuk rute tertentu.
+     * @private
+     */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
             let observer;
@@ -122,19 +132,28 @@ class Router {
         });
     }
 
-    /** Menentukan container untuk komponen rute. */
+    /**
+     * Menentukan container untuk komponen rute.
+     * @private
+     */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
-    /** Memuat komponen rute jika belum ada. */
+    /**
+     * Memuat komponen rute jika belum ada.
+     * @private
+     */
     static async loadComponent(route) {
         if (!route.component) {
             route.component = await route.load();
         }
     }
 
-    /** Menjalankan hook beforeLoad sebelum memuat rute. */
+    /**
+     * Menjalankan hook beforeLoad sebelum memuat rute.
+     * @private
+     */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
             const callback = (error) => {
@@ -146,13 +165,19 @@ class Router {
         });
     }
 
-    /** Mengatur AbortController untuk menangani navigasi. */
+    /**
+     * Mengatur AbortController untuk menangani navigasi.
+     * @private
+     */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
     }
 
-    /** Menavigasi ke URL yang diberikan. */
+    /**
+     * Menavigasi ke URL yang diberikan.
+     * @param {String} url
+     */
     static navigate(url) {
         if (this.options.historyApiFallback) {
             window.history.pushState({}, "", url);
@@ -161,7 +186,10 @@ class Router {
         }
     }
 
-    /** Menangani event klik untuk navigasi. */
+    /**
+     * Menangani event klik untuk navigasi.
+     * @private
+     */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
         if (element) {
@@ -170,7 +198,10 @@ class Router {
         }
     }
 
-    /** Memicu event kustom. */
+    /**
+     * Memicu event kustom.
+     * @private
+     */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

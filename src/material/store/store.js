@@ -46,6 +46,7 @@ class Store {
 
     /**
      * Melakukan pencarian rekursif dalam suatu item.
+     * @private
      * @param {any} item - Item yang akan dicari.
      * @param {string} q - Kata kunci pencarian.
      * @returns {boolean} True jika item cocok dengan pencarian, false jika tidak.
@@ -79,6 +80,7 @@ class Store {
 
     /**
      * Mengambil nilai dari properti bertingkat dalam objek.
+     * @private
      * @param {Object} item - Objek sumber.
      * @param {string} name - Path ke properti (contoh: 'user.address.city').
      * @returns {any} Nilai properti jika ada, undefined jika tidak ditemukan.

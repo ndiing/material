@@ -1,6 +1,6 @@
 /**
  * @namespace Util
-*/
+ */
 
 /**
  * Mengonversi string menjadi objek Date.

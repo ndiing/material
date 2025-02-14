@@ -3,7 +3,7 @@ import { sourceLocale, targetLocales } from "../../generated/locale-codes.js";
 
 /**
  * @namespace Localization
-*/
+ */
 
 /**
  * Konfigurasi sistem lokalisasi menggunakan Lit Localize.
@@ -15,6 +15,8 @@ const localization = configureLocalization({
     /**
      * Memuat file lokal yang sesuai dengan bahasa yang dipilih.
      *
+     * @private
+     * @memberof Localization
      * @param {string} locale - Kode bahasa yang akan dimuat (misal: "en", "id").
      * @returns {Promise<Module>} - Modul yang berisi terjemahan bahasa yang dimuat.
      */

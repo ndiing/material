@@ -61,6 +61,7 @@ class Progress {
 
     /**
      * Menghapus elemen indikator progres dari DOM.
+     * @private
      */
     remove() {
         if (this.progressIndicator) {
@@ -71,6 +72,7 @@ class Progress {
 
     /**
      * Mengatur ulang progres dan menghapus indikator.
+     * @private
      */
     reset() {
         this.startTime = null;
