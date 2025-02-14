@@ -5,23 +5,25 @@ import { choose } from "lit/directives/choose.js";
 import { parseMonth, stringifyMonth } from "../util/util";
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
+import { cache } from "lit/directives/cache.js";
 
 /**
  * @extends MdComponent
  * @element md-month-picker
+ * @fires MdMonthPickerComponent#onMonthPickerShow
+ * @fires MdMonthPickerComponent#onMonthPickerClose
+ * @fires MdMonthPickerComponent#onMonthPickerYearItemClick
+ * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick
+ * @fires MdMonthPickerComponent#onMonthPickerScrimClose
  * @fires MdMonthPickerComponent#onMonthPickerShown
  * @fires MdMonthPickerComponent#onMonthPickerClosed
- * @fires MdMonthPickerComponent#onMonthPickerLabelClick
  * @fires MdMonthPickerComponent#onMonthPickerIconButtonPrevClick
  * @fires MdMonthPickerComponent#onMonthPickerIconButtonNextClick
  * @fires MdMonthPickerComponent#onMonthPickerIconButtonClick
- * @fires MdMonthPickerComponent#onMonthPickerYearItemClick
- * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick
  * @fires MdMonthPickerComponent#onMonthPickerButtonCancelClick
  * @fires MdMonthPickerComponent#onMonthPickerButtonOkClick
  * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick
  * @fires MdMonthPickerComponent#onMonthPickerButtonClick
- * @fires MdMonthPickerComponent#onMonthPickerScrimClosed
  */
 class MdMonthPickerComponent extends MdComponent {
     /**
@@ -59,6 +61,8 @@ class MdMonthPickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+    yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+    monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
 
     /**
      * @readonly
@@ -105,6 +109,23 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
+     * @readonly
+     */
+    get actions() {
+        return [
+            { id: "prev", icon: "keyboard_arrow_left" },
+            { id: "next", icon: "keyboard_arrow_right" },
+        ];
+    }
+
+    /**
+     * @readonly
+     */
+    get buttons() {
+        return [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
+    }
+
+    /**
      */
     constructor() {
         super();
@@ -112,17 +133,6 @@ class MdMonthPickerComponent extends MdComponent {
         this.value = new Date();
         this.selection = new Date();
         this.index = 1;
-        this.yearFormat = new Intl.DateTimeFormat(undefined, {
-            year: "numeric",
-        }).format;
-        this.monthFormat = new Intl.DateTimeFormat(undefined, {
-            month: "long",
-        }).format;
-        this.actions = [
-            { id: "prev", icon: "keyboard_arrow_left" },
-            { id: "next", icon: "keyboard_arrow_right" },
-        ];
-        this.buttons = [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
     }
 
     /**
@@ -130,7 +140,12 @@ class MdMonthPickerComponent extends MdComponent {
      * @param {Undefined} [item]
      */
     renderIcon(item) {
-        return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
+        /* prettier-ignore */
+        return html`
+            <md-icon
+                .data="${item}"
+            >${item.icon}</md-icon>
+        `;
     }
 
     /**
@@ -138,6 +153,7 @@ class MdMonthPickerComponent extends MdComponent {
      * @param {Undefined} [item]
      */
     renderIconButton(item) {
+        /* prettier-ignore */
         return html`
             <md-icon-button
                 .data="${item}"
@@ -157,6 +173,7 @@ class MdMonthPickerComponent extends MdComponent {
      * @param {Undefined} [item]
      */
     renderButton(item) {
+        /* prettier-ignore */
         return html`
             <md-button
                 .data="${item}"
@@ -176,7 +193,12 @@ class MdMonthPickerComponent extends MdComponent {
      * @param {Undefined} [item]
      */
     renderSpacer(item) {
-        return html` <div class="md-month-picker__spacer"></div> `;
+        /* prettier-ignore */
+        return html`
+            <div 
+                class="md-month-picker__spacer"
+            ></div>
+        `;
     }
 
     /**
@@ -185,37 +207,31 @@ class MdMonthPickerComponent extends MdComponent {
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
-        return choose(
-            item.component || component,
-            [
-                ["icon", () => this.renderIcon(item)],
-                ["icon-button", () => this.renderIconButton(item)],
-                ["button", () => this.renderButton(item)],
-                ["spacer", () => this.renderSpacer(item)],
-            ],
-            () => nothing,
-        );
+        const components = [
+            ["icon", () => this.renderIcon(item)],
+            ["icon-button", () => this.renderIconButton(item)],
+            ["button", () => this.renderButton(item)],
+            ["spacer", () => this.renderSpacer(item)],
+        ];
+        return choose(item.component || component, components, () => nothing);
     }
 
     /**
      * @private
      */
     renderMonthPickerYear() {
+        /* prettier-ignore */
         return html`
             <div class="md-month-picker__list">
-                ${this.years.map(
-                    (item) => html`
-                        <div
-                            .data="${item}"
-                            ?selected="${item.selected}"
-                            ?activated="${item.activated}"
-                            @click="${this.handleMonthPickerYearItemClick}"
-                            class="md-month-picker__list-item"
-                        >
-                            ${item.label}
-                        </div>
-                    `,
-                )}
+                ${this.years.map((item) => html`
+                    <div
+                        .data="${item}"
+                        ?selected="${item.selected}"
+                        ?activated="${item.activated}"
+                        @click="${this.handleMonthPickerYearItemClick}"
+                        class="md-month-picker__list-item"
+                    >${item.label}</div>
+                `)}
             </div>
         `;
     }
@@ -224,21 +240,18 @@ class MdMonthPickerComponent extends MdComponent {
      * @private
      */
     renderMonthPickerMonth() {
+        /* prettier-ignore */
         return html`
             <div class="md-month-picker__list">
-                ${this.months.map(
-                    (item) => html`
-                        <div
-                            .data="${item}"
-                            ?selected="${item.selected}"
-                            ?activated="${item.activated}"
-                            @click="${this.handleMonthPickerMonthItemClick}"
-                            class="md-month-picker__list-item"
-                        >
-                            ${item.label}
-                        </div>
-                    `,
-                )}
+                ${this.months.map((item) => html`
+                    <div
+                        .data="${item}"
+                        ?selected="${item.selected}"
+                        ?activated="${item.activated}"
+                        @click="${this.handleMonthPickerMonthItemClick}"
+                        class="md-month-picker__list-item"
+                    >${item.label}</div>
+                `)}
             </div>
         `;
     }
@@ -247,23 +260,30 @@ class MdMonthPickerComponent extends MdComponent {
      * @private
      */
     render() {
+        /* prettier-ignore */
         return html`
-            ${this.icons?.length || this.label || this.sublabel || this.actions?.length
-                ? html`
-                      <div class="md-month-picker__header">
-                          <div class="md-month-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
-                          ${this.actions?.length ? html` <div class="md-month-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
-                      </div>
-                  `
-                : nothing}
+            ${this.icons?.length || this.label || this.sublabel || this.actions?.length? html`
+                <div class="md-month-picker__header">
+                    <div class="md-month-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+                    ${this.actions?.length ? html` <div class="md-month-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
+                </div>
+            `: nothing}
             <div class="md-month-picker__wrapper">
                 <div class="md-month-picker__body">
                     <div class="md-month-picker__items">
-                        <div class="md-month-picker__item">${this.renderMonthPickerYear()}</div>
-                        <div class="md-month-picker__item">${this.renderMonthPickerMonth()}</div>
+                        <div class="md-month-picker__item">${cache([
+                            this.renderMonthPickerYear.bind(this), 
+                            this.renderMonthPickerMonth.bind(this), 
+                        ][this.index]())}</div>
                     </div>
                 </div>
-                ${this.buttons?.length ? html` <div class="md-month-picker__footer">${this.buttons?.length ? html` <div class="md-month-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}
+                ${this.buttons?.length ? html`
+                    <div class="md-month-picker__footer">
+                        ${this.buttons?.length ? html`
+                            <div class="md-month-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div>
+                        ` : nothing}
+                    </div>    
+                ` : nothing}
             </div>
         `;
     }
@@ -280,8 +300,8 @@ class MdMonthPickerComponent extends MdComponent {
         this.style.setProperty("--md-comp-month-picker-animation", "none");
         this.monthPickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.monthPickerScrim, this.nextElementSibling);
-        this.handleMonthPickerScrimClosed = this.handleMonthPickerScrimClosed.bind(this);
-        this.monthPickerScrim.addEventListener("onScrimClosed", this.handleMonthPickerScrimClosed);
+        this.handleMonthPickerScrimClose = this.handleMonthPickerScrimClose.bind(this);
+        this.monthPickerScrim.addEventListener("onScrimClose", this.handleMonthPickerScrimClose);
         if (this.modal && this.open) this.monthPickerScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
@@ -293,7 +313,7 @@ class MdMonthPickerComponent extends MdComponent {
      */
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.monthPickerScrim.removeEventListener("onScrimClosed", this.handleMonthPickerScrimClosed);
+        this.monthPickerScrim.removeEventListener("onScrimClose", this.handleMonthPickerScrimClose);
         this.monthPickerScrim.remove();
     }
 
@@ -317,32 +337,43 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Undefined} [options]
+     * @param {Object} [options]
      */
     show(options) {
-        this.style.removeProperty("--md-comp-month-picker-animation");
         this.index = this.defaultIndex;
-        if (this.modal) this.monthPickerScrim.show();
-        this.open = true;
+        this.handleMonthPickerShown = this.handleMonthPickerShown.bind(this);
+        this.addEventListener("animationend", this.handleMonthPickerShown);
+        this.style.removeProperty("--md-comp-month-picker-animation");
         setPosition({
             container: this,
-            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            offset: 4 + 4,
+            /* prettier-ignore */
+            placements: [
+                "bottom-start", "bottom-end", "bottom", 
+                "top-start", "top-end", "top", 
+                "right-start", "right-end", "right", 
+                "left-start", "left-end", "left"
+            ],
             ...options,
         });
-        this.emit("onMonthPickerShown");
+        this.open = true;
+        if (this.modal) this.monthPickerScrim.show();
+        this.emit("onMonthPickerShow");
     }
 
     /**
      */
     close() {
+        this.handleMonthPickerClosed = this.handleMonthPickerClosed.bind(this);
+        this.addEventListener("animationend", this.handleMonthPickerClosed);
         this.style.removeProperty("--md-comp-month-picker-animation");
         this.open = false;
-        this.monthPickerScrim.close();
-        this.emit("onMonthPickerClosed");
+        if (this.modal) this.monthPickerScrim.close();
+        this.emit("onMonthPickerClose");
     }
 
     /**
-     * @param {Undefined} [options]
+     * @param {Object} [options]
      */
     toggle(options) {
         if (this.open) this.close();
@@ -351,48 +382,7 @@ class MdMonthPickerComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
-     */
-    handleMonthPickerLabelClick(event) {
-        this.emit("onMonthPickerLabelClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleMonthPickerIconButtonPrevClick(event) {
-        if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() - 10);
-        else if (this.index === 1) this.selection.setFullYear(this.selection.getFullYear() - 1);
-        this.requestUpdate();
-        this.emit("onMonthPickerIconButtonPrevClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleMonthPickerIconButtonNextClick(event) {
-        if (this.index === 0) this.selection.setFullYear(this.selection.getFullYear() + 10);
-        else if (this.index === 1) this.selection.setFullYear(this.selection.getFullYear() + 1);
-        this.requestUpdate();
-        this.emit("onMonthPickerIconButtonNextClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleMonthPickerIconButtonClick(event) {
-        const data = event.currentTarget.data;
-        if (data.id === "prev") return this.handleMonthPickerIconButtonPrevClick(event);
-        else if (data.id === "next") return this.handleMonthPickerIconButtonNextClick(event);
-        this.emit("onMonthPickerIconButtonClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleMonthPickerYearItemClick(event) {
         const data = event.currentTarget.data;
@@ -403,44 +393,108 @@ class MdMonthPickerComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleMonthPickerMonthItemClick(event) {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.selection.setMonth(data.month);
-        this.value.setFullYear(data.year);
-        this.value.setMonth(data.month);
         this.requestUpdate();
         this.emit("onMonthPickerMonthItemClick", { event });
     }
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
+     */
+    handleMonthPickerScrimClose(event) {
+        if (this.open) this.close();
+        this.emit("onMonthPickerScrimClose", { event });
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleMonthPickerShown(event) {
+        this.removeEventListener("animationend", this.handleMonthPickerShown);
+        this.emit("onMonthPickerShown");
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleMonthPickerClosed(event) {
+        this.removeEventListener("animationend", this.handleMonthPickerClosed);
+        this.emit("onMonthPickerClosed");
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleMonthPickerIconButtonPrevClick(event) {
+        const map = {
+            0: () => this.selection.setFullYear(this.selection.getFullYear() - 10),
+            1: () => this.selection.setFullYear(this.selection.getFullYear() - 1),
+        };
+        map[this.index]();
+        this.requestUpdate();
+        this.emit("onMonthPickerIconButtonPrevClick", { event });
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleMonthPickerIconButtonNextClick(event) {
+        const map = {
+            0: () => this.selection.setFullYear(this.selection.getFullYear() + 10),
+            1: () => this.selection.setFullYear(this.selection.getFullYear() + 1),
+        };
+        map[this.index]();
+        this.requestUpdate();
+        this.emit("onMonthPickerIconButtonNextClick", { event });
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
+     */
+    handleMonthPickerIconButtonClick(event) {
+        const data = event.currentTarget.data;
+        const map = {
+            prev: this.handleMonthPickerIconButtonPrevClick.bind(this),
+            next: this.handleMonthPickerIconButtonNextClick.bind(this),
+        };
+        const fn = map[data.id];
+        if (fn) return fn(event);
+        this.emit("onMonthPickerIconButtonClick", { event });
+    }
+
+    /**
+     * @private
+     * @param {Object} [event]
      */
     handleMonthPickerButtonCancelClick(event) {
-        this.close();
-        this.value.setFullYear(this.defaultValue.getFullYear());
-        this.value.setMonth(this.defaultValue.getMonth());
+        this.value = new Date(this.defaultValue.valueOf());
+        // this.close();
         this.emit("onMonthPickerButtonCancelClick", { event });
     }
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleMonthPickerButtonOkClick(event) {
-        this.close();
-        this.emit("onMonthPickerButtonOkClick", {
-            event,
-            value: stringifyMonth(this.value),
-        });
+        // this.close();
+        this.emit("onMonthPickerButtonOkClick", { event });
     }
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleMonthPickerButtonLabelClick(event) {
         const map = {
@@ -453,23 +507,18 @@ class MdMonthPickerComponent extends MdComponent {
 
     /**
      * @private
-     * @param {Undefined} [event]
+     * @param {Object} [event]
      */
     handleMonthPickerButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "cancel") return this.handleMonthPickerButtonCancelClick(event);
-        else if (data.id === "ok") return this.handleMonthPickerButtonOkClick(event);
-        else if (data.id === "label") return this.handleMonthPickerButtonLabelClick(event);
+        const map = {
+            cancel: this.handleMonthPickerButtonCancelClick.bind(this),
+            ok: this.handleMonthPickerButtonOkClick.bind(this),
+            label: this.handleMonthPickerButtonLabelClick.bind(this),
+        };
+        const fn = map[data.id];
+        if (fn) return fn(event);
         this.emit("onMonthPickerButtonClick", { event });
-    }
-
-    /**
-     * @private
-     * @param {Undefined} [event]
-     */
-    handleMonthPickerScrimClosed(event) {
-        if (this.open) this.close();
-        this.emit("onMonthPickerScrimClosed", { event });
     }
 }
 customElements.define("md-month-picker", MdMonthPickerComponent);

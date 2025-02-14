@@ -340,46 +340,6 @@ class MdDatePickerComponent extends MdComponent {
     /**
      * @private
      */
-    renderDatePickerHour() {
-        /* prettier-ignore */
-        return html`
-            <div class="md-date-picker__circle md-date-picker__circle--hours">
-                ${this.hours.map((item) => html`
-                    <div
-                        .data="${item}"
-                        ?selected="${item.selected}"
-                        ?activated="${item.activated}"
-                        @click="${this.handleDatePickerHourItemClick}"
-                        class="md-date-picker__circle-item"
-                    >${item.label}</div>
-                `)}
-            </div>
-        `;
-    }
-
-    /**
-     * @private
-     */
-    renderDatePickerMinute() {
-        /* prettier-ignore */
-        return html`
-            <div class="md-date-picker__circle md-date-picker__circle--minutes">
-                ${this.minutes.map((item) => html`
-                    <div
-                        .data="${item}"
-                        ?selected="${item.selected}"
-                        ?activated="${item.activated}"
-                        @click="${this.handleDatePickerMinuteItemClick}"
-                        class="md-date-picker__circle-item"
-                    >${item.label}</div>
-                `)}
-            </div>
-        `;
-    }
-
-    /**
-     * @private
-     */
     render() {
         /* prettier-ignore */
         return html`
@@ -537,7 +497,7 @@ class MdDatePickerComponent extends MdComponent {
         this.value.setFullYear(data.year);
         this.value.setMonth(data.month);
         this.value.setDate(data.day);
-        this.requestUpdate()
+        this.requestUpdate();
         this.emit("onDatePickerDayItemClick", { event });
     }
 

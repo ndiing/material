@@ -126,7 +126,7 @@
 .md-week-picker__item {
     flex: 1 0 100%;
     overflow: auto;
-    transform: translate3d(calc((0 - var(--md-comp-week-picker-index)) * 100%), 0, 0);
+    // transform: translate3d(calc((0 - var(--md-comp-week-picker-index)) * 100%), 0, 0);
 }
 
 .md-week-picker__list {
@@ -195,7 +195,6 @@
     display: flex;
     align-items: center;
     gap: 0 8px;
-    border-radius: calc(var(--md-comp-week-picker-table-item-height) / 2);
 }
 
 .md-week-picker__table-cell {
@@ -214,6 +213,7 @@
     gap: 8px 0;
 
     .md-week-picker__table-row {
+        border-radius: calc(var(--md-comp-week-picker-table-item-height) / 2);
         @include mixins.ripple();
         @include mixins.ripple-bounded();
         @include mixins.ripple-trigger();
@@ -235,13 +235,16 @@
         }
 
         &[activated] {
-            background-color: var(--md-sys-color-secondary-container);
-            color: var(--md-sys-color-on-secondary-container);
+            border: 1px solid var(--md-sys-color-outline);
         }
 
         &[selected] {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
         }
+
+        // &:not(.md-week-picker__table-cell--same-month) {
+        //     color: var(--md-sys-color-on-surface38);
+        // }
     }
 }
