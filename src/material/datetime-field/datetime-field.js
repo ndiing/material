@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
-import { parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
+import { findClosestElement, parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
 
 /**
  *
@@ -55,10 +55,10 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             if (this.textFieldNative.value) this.datetimePicker.value = parseDatetimeLocal(this.textFieldNative.value);
             this.parentElement.insertBefore(this.datetimePicker, this.nextElementSibling);
             const handleDatetimePickerClosed = () => {
+                window.removeEventListener("click", handleClick);
                 this.datetimePicker.removeEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
                 this.datetimePicker.removeEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
                 this.datetimePicker.removeEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
-                window.removeEventListener("click", handleClick);
                 this.datetimePicker.remove();
                 this.datetimePicker = undefined;
             };
@@ -73,10 +73,10 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             const handleClick = (event) => {
                 if (!buttonIcon.contains(event.target) && !this.datetimePicker.contains(event.target)) this.datetimePicker.close();
             };
+            window.addEventListener("click", handleClick);
             this.datetimePicker.addEventListener("onDatetimePickerClosed", handleDatetimePickerClosed);
             this.datetimePicker.addEventListener("onDatetimePickerButtonCancelClick", handleDatetimePickerButtonCancelClick);
             this.datetimePicker.addEventListener("onDatetimePickerButtonOkClick", handleDatetimePickerButtonOkClick);
-            window.addEventListener("click", handleClick);
             await this.updateComplete;
             let offset = 4 + 4;
             if (this.text) offset = 4 + 16 + 4;
