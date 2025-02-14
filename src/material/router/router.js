@@ -5,20 +5,14 @@
  * @fires Router#onRouterNavigateSuccess
  */
 class Router {
-    /**
-     * @static
-     * @readonly
-     */
     static params = {};
 
     /**
-     * @private
      * @static
-     * @param {String} [pathname=this.pathname] - The current pathname
-     * @param {Array} [routes=this.routes] - The available routes
-     * @param {String} [parent=null] - The parent route
-     * @param {Array} [result=[]] - The accumulated result
-     * @returns {Array|undefined} The matching routes
+     * @param {String} [pathname=this.pathname]
+     * @param {String} [routes=this.routes]
+     * @param {String} [parent=null]
+     * @param {Array} [result=[]]
      */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
@@ -44,7 +38,6 @@ class Router {
     /**
      * @static
      * @readonly
-     * @returns {String} The current pathname
      */
     static get pathname() {
         if (this.options.historyApiFallback) {
@@ -58,8 +51,7 @@ class Router {
      * @private
      * @static
      * @async
-     * @param {Event} [event] - The navigation event
-     * @returns {Promise<void>}
+     * @param {Undefined} [event]
      */
     static async handleNavigation(event) {
         performance.mark("mark-1");
@@ -91,10 +83,8 @@ class Router {
     }
 
     /**
-     * @private
      * @static
-     * @param {Array} [routes] - The available routes
-     * @returns {void}
+     * @param {Undefined} [routes]
      */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
@@ -112,21 +102,18 @@ class Router {
     /**
      * @private
      * @static
-     * @param {Object} [route] - The route object
-     * @param {HTMLElement} [outlet] - The outlet element
-     * @returns {void}
+     * @param {Undefined} [route]
+     * @param {Undefined} [outlet]
      */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
     /**
-     * @private
      * @static
      * @async
-     * @param {HTMLElement} [container] - The container element
-     * @param {Object} [route] - The route object
-     * @returns {Promise<HTMLElement>} The outlet element
+     * @param {Undefined} [container]
+     * @param {Undefined} [route]
      */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
@@ -155,21 +142,17 @@ class Router {
     }
 
     /**
-     * @private
      * @static
-     * @param {Object} [route] - The route object
-     * @returns {HTMLElement} The container element
+     * @param {Undefined} [route]
      */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
     /**
-     * @private
      * @static
      * @async
-     * @param {Object} [route] - The route object
-     * @returns {Promise<void>}
+     * @param {Undefined} [route]
      */
     static async loadComponent(route) {
         if (!route.component) {
@@ -181,8 +164,7 @@ class Router {
      * @private
      * @static
      * @async
-     * @param {Object} [route] - The route object
-     * @returns {Promise<void>}
+     * @param {Undefined} [route]
      */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
@@ -196,9 +178,7 @@ class Router {
     }
 
     /**
-     * @private
      * @static
-     * @returns {void}
      */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
@@ -207,8 +187,7 @@ class Router {
 
     /**
      * @static
-     * @param {String} [url] - The URL to navigate to
-     * @returns {void}
+     * @param {Undefined} [url]
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -221,8 +200,7 @@ class Router {
     /**
      * @private
      * @static
-     * @param {Event} [event] - The navigate event
-     * @returns {void}
+     * @param {Undefined} [event]
      */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
@@ -235,9 +213,8 @@ class Router {
     /**
      * @private
      * @static
-     * @param {String} [type] - The event type
-     * @param {Object} [detail] - The event details
-     * @returns {void}
+     * @param {Undefined} [type]
+     * @param {Undefined} [detail]
      */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -251,24 +228,9 @@ class Router {
     static options = {};
 
     /**
-     * @typedef {Object} RouterUseRoutes
-     * @property {String} path - The path of the route
-     * @property {HTMLElement} component - The component to load
-     * @property {Function} load - The function to load the component
-     * @property {Function} beforeLoad - The function to execute before loading the component
-     * @property {RouterUseRoutes[]} [children] - The child routes
-     */
-
-    /**
-     * @typedef {Object} RouterUseOptions
-     * @property {Boolean} [historyApiFallback=false] - Whether to use history API fallback
-     */
-
-    /**
      * @static
-     * @param {RouterUseRoutes[]} [routes=[]] - An array of route objects
-     * @param {RouterUseOptions} [options={}] - Options for configuring the router
-     * @returns {void}
+     * @param {Array} [routes=[]]
+     * @param {Object} [options={}]
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
@@ -281,6 +243,8 @@ class Router {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
 
+            /**
+             */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");

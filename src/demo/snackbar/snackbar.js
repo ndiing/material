@@ -47,8 +47,8 @@ class DemoSnackbar extends MdComponent {
                         <md-snackbar
                             id="snackbar3"
                             @onSnackbarIconButtonClick="${console.log}"
-                            @onSnackbarButtonClick="${console.log}"
-                            @onSnackbarShown="${() => snackbar3.toggle()}"
+                            @onSnackbarButtonClick="${() => snackbar3.toggle()}"
+                            @onSnackbarShown="${console.log}"
                             @onSnackbarClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body</md-snackbar
                         >

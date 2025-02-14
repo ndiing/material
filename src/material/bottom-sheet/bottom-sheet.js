@@ -6,8 +6,8 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-bottom-sheet
- * @fires MdBottomSheetComponent#onBottomSheetShown
- * @fires MdBottomSheetComponent#onBottomSheetClosed
+ * @fires MdBottomSheetComponent#onBottomSheetShow
+ * @fires MdBottomSheetComponent#onBottomSheetClose
  * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick
  * @fires MdBottomSheetComponent#onBottomSheetButtonClick
  * @fires MdBottomSheetComponent#onBottomSheetScrimClosed
@@ -99,16 +99,13 @@ class MdBottomSheetComponent extends MdComponent {
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
-        return choose(
-            item.component || component,
-            [
-                ["icon", () => this.renderIcon(item)],
-                ["icon-button", () => this.renderIconButton(item)],
-                ["button", () => this.renderButton(item)],
-                ["spacer", () => this.renderSpacer(item)],
-            ],
-            () => nothing,
-        );
+        const components = [
+            ["icon", () => this.renderIcon(item)],
+            ["icon-button", () => this.renderIconButton(item)],
+            ["button", () => this.renderButton(item)],
+            ["spacer", () => this.renderSpacer(item)],
+        ];
+        return choose(item.component || component, components, () => nothing);
     }
 
     /**
@@ -162,7 +159,7 @@ class MdBottomSheetComponent extends MdComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         if (this.modal) this.bottomSheetScrim.show();
         this.open = true;
-        this.emit("onBottomSheetShown");
+        this.emit("onBottomSheetShow");
     }
 
     /**
@@ -171,7 +168,7 @@ class MdBottomSheetComponent extends MdComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
         if (this.bottomSheetScrim.open) this.bottomSheetScrim.close();
-        this.emit("onBottomSheetClosed");
+        this.emit("onBottomSheetClose");
     }
 
     /**

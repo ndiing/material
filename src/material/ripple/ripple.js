@@ -30,7 +30,6 @@ class Ripple {
                 this.container = this.options.container;
             }
         }
-
         this.trigger = this.host;
         if (this.options.trigger) {
             if (typeof this.options.trigger === "string") {
@@ -39,27 +38,21 @@ class Ripple {
                 this.trigger = this.options.trigger;
             }
         }
-
         this.container.classList.add("md-ripple");
         this.container.classList.toggle("md-ripple--bounded", !this.options.unbounded);
         this.container.setAttribute("tabIndex", 0);
-
         this.trigger.classList.add("md-ripple--trigger");
-
         this.radius = 141.4213562373095;
         if (this.options.radius) {
             this.radius = (this.options.radius / this.container.clientWidth) * 100;
         }
-        
         this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
-
         this.handleRippleHoverIn = this.handleRippleHoverIn.bind(this);
         this.handleRippleHoverOut = this.handleRippleHoverOut.bind(this);
         this.handleRipplePressIn = this.handleRipplePressIn.bind(this);
         this.handleRipplePressOut = this.handleRipplePressOut.bind(this);
         this.handleRippleFocusIn = this.handleRippleFocusIn.bind(this);
         this.handleRippleFocusOut = this.handleRippleFocusOut.bind(this);
-
         this.trigger.addEventListener("pointerenter", this.handleRippleHoverIn);
         this.trigger.addEventListener("pointerleave", this.handleRippleHoverOut);
         this.trigger.addEventListener("pointerdown", this.handleRipplePressIn);
@@ -77,7 +70,6 @@ class Ripple {
             this.container.removeAttribute("tabIndex");
             this.container.style.removeProperty("--md-comp-ripple-radius");
         }
-
         if (this.trigger) {
             this.trigger.classList.remove("md-ripple--trigger");
             this.trigger.removeEventListener("pointerenter", this.handleRippleHoverIn);
@@ -86,7 +78,6 @@ class Ripple {
             this.trigger.removeEventListener("focus", this.handleRippleFocusIn);
             this.trigger.removeEventListener("blur", this.handleRippleFocusOut);
         }
-
         this.container = null;
         this.trigger = null;
     }
@@ -114,17 +105,13 @@ class Ripple {
     handleRipplePressIn(event) {
         window.addEventListener("pointerup", this.handleRipplePressOut, { passive: true });
         window.addEventListener("touchend", this.handleRipplePressOut, { passive: true });
-
         this.container.classList.add("md-ripple--press");
-
         const rect = this.container.getBoundingClientRect();
-
         if (!this.options.centered) {
             const left = (event.clientX - rect.left) / rect.width;
             const top = (event.clientY - rect.top) / rect.height;
             const x = (0.5 - left) * (100 / this.radius);
             const y = (0.5 - top) * ((100 / this.radius) * (rect.height / rect.width));
-
             this.container.style.setProperty("--md-comp-ripple-radius", this.radius + "%");
             this.container.style.setProperty("--md-comp-ripple-left", left * 100 + "%");
             this.container.style.setProperty("--md-comp-ripple-top", top * 100 + "%");
@@ -140,7 +127,6 @@ class Ripple {
     handleRipplePressOut(event) {
         window.removeEventListener("pointerup", this.handleRipplePressOut);
         window.removeEventListener("touchend", this.handleRipplePressOut);
-        
         this.container.classList.remove("md-ripple--press");
     }
 

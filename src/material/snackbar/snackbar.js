@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-const task = (() => {
+const queue = () => {
     let pending = Promise.resolve();
     let execute = async (callback) => {
         try {
@@ -12,11 +12,14 @@ const task = (() => {
         }
     };
     return (callback) => (pending = execute(callback));
-})();
+};
+const task = queue();
 
 /**
  * @extends MdComponent
  * @element md-snackbar
+ * @fires MdSnackbarComponent#onSnackbarShow
+ * @fires MdSnackbarComponent#onSnackbarClose
  * @fires MdSnackbarComponent#onSnackbarShown
  * @fires MdSnackbarComponent#onSnackbarClosed
  * @fires MdSnackbarComponent#onSnackbarIconButtonClick
@@ -28,12 +31,14 @@ class MdSnackbarComponent extends MdComponent {
      * @property {Array} [actions]
      * @property {Array} [buttons]
      * @property {Boolean} [open]
+     * @property {Number} [autoDismiss]
      */
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
+        autoDismiss: { type: Number },
     };
 
     /**
@@ -41,6 +46,7 @@ class MdSnackbarComponent extends MdComponent {
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
+        this.autoDismiss = 1000 * 4;
     }
 
     /**
@@ -103,16 +109,13 @@ class MdSnackbarComponent extends MdComponent {
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
-        return choose(
-            item.component || component,
-            [
-                ["icon", () => this.renderIcon(item)],
-                ["icon-button", () => this.renderIconButton(item)],
-                ["button", () => this.renderButton(item)],
-                ["spacer", () => this.renderSpacer(item)],
-            ],
-            () => nothing,
-        );
+        const components = [
+            ["icon", () => this.renderIcon(item)],
+            ["icon-button", () => this.renderIconButton(item)],
+            ["button", () => this.renderButton(item)],
+            ["spacer", () => this.renderSpacer(item)],
+        ];
+        return choose(item.component || component, components, () => nothing);
     }
 
     /**
@@ -138,37 +141,36 @@ class MdSnackbarComponent extends MdComponent {
     /**
      */
     show() {
-        task(() => {
-            return new Promise((resolve) => {
-                const handleTimeout = () => {
-                    this.close();
-                };
-                const timeout = setTimeout(handleTimeout, 1000 * 4);
-                const handleSnackbarClosed = () => {
-                    clearTimeout(timeout);
-                    this.removeEventListener("onSnackbarClosed", handleSnackbarClosed);
-                    resolve();
-                };
-                this.addEventListener("onSnackbarClosed", handleSnackbarClosed);
-                this.style.removeProperty("--md-comp-snackbar-animation");
-                this.open = true;
-                this.emit("onSnackbarShown");
-            });
-        });
+        task(
+            () =>
+                new Promise((resolve) => {
+                    const handleSnackbarAutoDismiss = () => {
+                        this.close();
+                    };
+                    const timeout = setTimeout(handleSnackbarAutoDismiss, this.autoDismiss);
+                    const handleSnackbarDismissed = () => {
+                        clearTimeout(timeout);
+                        this.removeEventListener("onSnackbarClosed", handleSnackbarDismissed);
+                        resolve();
+                    };
+                    this.addEventListener("onSnackbarClosed", handleSnackbarDismissed);
+                    this.handleSnackbarShown = this.handleSnackbarShown.bind(this);
+                    this.addEventListener("animationend", this.handleSnackbarShown);
+                    this.style.removeProperty("--md-comp-snackbar-animation");
+                    this.open = true;
+                    this.emit("onSnackbarShow");
+                }),
+        );
     }
 
     /**
      */
     close() {
-        const handleAnimationend = (event) => {
-            if (event.animationName === "snackbar-in") {
-                this.removeEventListener("animationend", handleAnimationend);
-                this.emit("onSnackbarClosed");
-            }
-        };
-        this.addEventListener("animationend", handleAnimationend);
+        this.handleSnackbarClosed = this.handleSnackbarClosed.bind(this);
+        this.addEventListener("animationend", this.handleSnackbarClosed);
         this.style.removeProperty("--md-comp-snackbar-animation");
         this.open = false;
+        this.emit("onSnackbarClose");
     }
 
     /**
@@ -176,6 +178,28 @@ class MdSnackbarComponent extends MdComponent {
     toggle() {
         if (this.open) this.close();
         else this.show();
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSnackbarShown(event) {
+        if (event.animationName === "snackbar-out") {
+            this.removeEventListener("animationend", this.handleSnackbarShown);
+            this.emit("onSnackbarShown");
+        }
+    }
+
+    /**
+     * @private
+     * @param {Undefined} [event]
+     */
+    handleSnackbarClosed(event) {
+        if (event.animationName === "snackbar-in") {
+            this.removeEventListener("animationend", this.handleSnackbarClosed);
+            this.emit("onSnackbarClosed");
+        }
     }
 
     /**

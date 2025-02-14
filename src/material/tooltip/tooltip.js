@@ -7,8 +7,8 @@ import { setPosition } from "../popper/popper";
 /**
  * @extends MdComponent
  * @element md-tooltip
- * @fires MdTooltipComponent#onTooltipShown
- * @fires MdTooltipComponent#onTooltipClosed
+ * @fires MdTooltipComponent#onTooltipShow
+ * @fires MdTooltipComponent#onTooltipClose
  * @fires MdTooltipComponent#onTooltipIconButtonClick
  * @fires MdTooltipComponent#onTooltipButtonClick
  */
@@ -97,16 +97,13 @@ class MdTooltipComponent extends MdComponent {
      * @param {String} [component="icon"]
      */
     renderComponent(item, component = "icon") {
-        return choose(
-            item.component || component,
-            [
-                ["icon", () => this.renderIcon(item)],
-                ["icon-button", () => this.renderIconButton(item)],
-                ["button", () => this.renderButton(item)],
-                ["spacer", () => this.renderSpacer(item)],
-            ],
-            () => nothing,
-        );
+        const components = [
+            ["icon", () => this.renderIcon(item)],
+            ["icon-button", () => this.renderIconButton(item)],
+            ["button", () => this.renderButton(item)],
+            ["spacer", () => this.renderSpacer(item)],
+        ];
+        return choose(item.component || component, components, () => nothing);
     }
 
     /**
@@ -134,16 +131,16 @@ class MdTooltipComponent extends MdComponent {
             offset: 8,
             ...options,
         };
-        this.open = true;
         setPosition(options);
-        this.emit("onTooltipShown");
+        this.open = true;
+        this.emit("onTooltipShow");
     }
 
     /**
      */
     close() {
         this.open = false;
-        this.emit("onTooltipClosed");
+        this.emit("onTooltipClose");
     }
 
     /**
