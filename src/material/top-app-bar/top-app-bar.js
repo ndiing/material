@@ -6,9 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-top-app-bar
- * @fires MdTopAppBarComponent#onTopAppBarShow
- * @fires MdTopAppBarComponent#onTopAppBarClose
- * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick
  */
 class MdTopAppBarComponent extends MdComponent {
     /**
@@ -67,6 +64,10 @@ class MdTopAppBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+        /**
+         * @event onTopAppBarShow
+         * @type \{Object\}
+         */
         this.emit("onTopAppBarShow");
     }
 
@@ -75,6 +76,10 @@ class MdTopAppBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+        /**
+         * @event onTopAppBarClose
+         * @type \{Object\}
+         */
         this.emit("onTopAppBarClose");
     }
 
@@ -86,6 +91,10 @@ class MdTopAppBarComponent extends MdComponent {
     }
 
     handleTopAppBarIconButtonClick(event) {
+        /**
+         * @event onTopAppBarIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onTopAppBarIconButtonClick", { event });
     }
 }

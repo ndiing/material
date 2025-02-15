@@ -6,7 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-list-item
- * @fires MdListItemComponent#onListItemSelected
  */
 class MdListItemComponent extends MdComponent {
     /**
@@ -149,6 +148,10 @@ class MdListItemComponent extends MdComponent {
             this.classList.toggle("md-list__item--with-icon", !!this.icon);
         }
         if (changedProperties.has("selected") && this.selected) {
+            /**
+             * @event onListItemSelected
+             * @type \{Object\}
+             */
             this.emit("onListItemSelected", { listItem: this });
         }
     }

@@ -7,10 +7,6 @@ import { setPosition } from "../popper/popper";
 /**
  * @extends MdComponent
  * @element md-tooltip
- * @fires MdTooltipComponent#onTooltipShow
- * @fires MdTooltipComponent#onTooltipClose
- * @fires MdTooltipComponent#onTooltipIconButtonClick
- * @fires MdTooltipComponent#onTooltipButtonClick
  */
 class MdTooltipComponent extends MdComponent {
     /**
@@ -103,6 +99,10 @@ class MdTooltipComponent extends MdComponent {
             ...options,
         });
         this.open = true;
+        /**
+         * @event onTooltipShow
+         * @type \{Object\}
+         */
         this.emit("onTooltipShow");
     }
 
@@ -110,6 +110,10 @@ class MdTooltipComponent extends MdComponent {
      */
     close() {
         this.open = false;
+        /**
+         * @event onTooltipClose
+         * @type \{Object\}
+         */
         this.emit("onTooltipClose");
     }
 
@@ -122,10 +126,18 @@ class MdTooltipComponent extends MdComponent {
     }
 
     handleTooltipIconButtonClick(event) {
+        /**
+         * @event onTooltipIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onTooltipIconButtonClick", { event });
     }
 
     handleTooltipButtonClick(event) {
+        /**
+         * @event onTooltipButtonClick
+         * @type \{Object\}
+         */
         this.emit("onTooltipButtonClick", { event });
     }
 }

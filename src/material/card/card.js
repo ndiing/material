@@ -6,8 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-card
- * @fires MdCardComponent#onCardIconButtonClick
- * @fires MdCardComponent#onCardButtonClick
  */
 class MdCardComponent extends MdComponent {
     /**
@@ -88,10 +86,18 @@ class MdCardComponent extends MdComponent {
     }
 
     handleCardIconButtonClick(event) {
+        /**
+         * @event onCardIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onCardIconButtonClick", { event });
     }
 
     handleCardButtonClick(event) {
+        /**
+         * @event onCardButtonClick
+         * @type \{Object\}
+         */
         this.emit("onCardButtonClick", { event });
     }
 }

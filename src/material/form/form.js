@@ -6,9 +6,6 @@ import { createRef, ref } from "lit/directives/ref.js";
 /**
  * @extends MdComponent
  * @element md-form
- * @fires MdFormComponent#onFormNativeFormdata
- * @fires MdFormComponent#onFormNativeReset
- * @fires MdFormComponent#onFormNativeSubmit
  */
 class MdFormComponent extends MdComponent {
     /**
@@ -86,6 +83,10 @@ class MdFormComponent extends MdComponent {
     }
 
     handleFormNativeFormdata(event) {
+        /**
+         * @event onFormNativeFormdata
+         * @type \{Object\}
+         */
         this.emit("onFormNativeFormdata", { event });
     }
 
@@ -97,12 +98,20 @@ class MdFormComponent extends MdComponent {
             });
             element.dispatchEvent(event);
         }
+        /**
+         * @event onFormNativeReset
+         * @type \{Object\}
+         */
         this.emit("onFormNativeReset", { event });
     }
 
     handleFormNativeSubmit(event) {
         event.preventDefault();
         new FormData(this.formNative);
+        /**
+         * @event onFormNativeSubmit
+         * @type \{Object\}
+         */
         this.emit("onFormNativeSubmit", { event });
     }
 }

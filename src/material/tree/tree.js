@@ -6,13 +6,6 @@ import { Store } from "../store/store";
 /**
  * @extends MdComponent
  * @element md-tree
- * @fires MdTreeComponent#onTreeKeydownArrowDown
- * @fires MdTreeComponent#onTreeKeydownArrowUp
- * @fires MdTreeComponent#onTreeKeydownArrowRight
- * @fires MdTreeComponent#onTreeKeydownArrowLeft
- * @fires MdTreeComponent#onTreeKeydownEnter
- * @fires MdTreeComponent#onTreeKeydown
- * @fires MdTreeComponent#onTreeItemClick
  */
 class MdTreeComponent extends MdComponent {
     /**
@@ -124,6 +117,10 @@ class MdTreeComponent extends MdComponent {
         });
         this.requestUpdate();
         this.updateScroll();
+        /**
+         * @event onTreeKeydownArrowDown
+         * @type \{Object\}
+         */
         this.emit("onTreeKeydownArrowDown", { event });
     }
 
@@ -138,6 +135,10 @@ class MdTreeComponent extends MdComponent {
         });
         this.requestUpdate();
         this.updateScroll();
+        /**
+         * @event onTreeKeydownArrowUp
+         * @type \{Object\}
+         */
         this.emit("onTreeKeydownArrowUp", { event });
     }
 
@@ -157,6 +158,10 @@ class MdTreeComponent extends MdComponent {
             this.requestUpdate();
             this.updateScroll();
         }
+        /**
+         * @event onTreeKeydownArrowRight
+         * @type \{Object\}
+         */
         this.emit("onTreeKeydownArrowRight", { event });
     }
 
@@ -175,6 +180,10 @@ class MdTreeComponent extends MdComponent {
             this.requestUpdate();
             this.updateScroll();
         }
+        /**
+         * @event onTreeKeydownArrowLeft
+         * @type \{Object\}
+         */
         this.emit("onTreeKeydownArrowLeft", { event });
     }
 
@@ -182,6 +191,10 @@ class MdTreeComponent extends MdComponent {
         event.preventDefault();
         // const treeItemSelected = this.querySelector("md-tree-item[selected]");
         // if (treeItemSelected) treeItemSelected.click();
+        /**
+         * @event onTreeKeydownEnter
+         * @type \{Object\}
+         */
         this.emit("onTreeKeydownEnter", { event });
     }
 
@@ -193,6 +206,10 @@ class MdTreeComponent extends MdComponent {
             else if (event.key === "ArrowDown") return this.handleTreeKeydownArrowDown(event);
             else if (event.key === "Enter") return this.handleTreeKeydownEnter(event);
         }
+        /**
+         * @event onTreeKeydown
+         * @type \{Object\}
+         */
         this.emit("onTreeKeydown", { event });
     }
 
@@ -207,6 +224,10 @@ class MdTreeComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
+        /**
+         * @event onTreeItemClick
+         * @type \{Object\}
+         */
         this.emit("onTreeItemClick", { event });
     }
 }

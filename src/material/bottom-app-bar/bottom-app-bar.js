@@ -6,10 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-bottom-app-bar
- * @fires MdBottomAppBarComponent#onBottomAppBarShow
- * @fires MdBottomAppBarComponent#onBottomAppBarClose
- * @fires MdBottomAppBarComponent#onBottomAppBarIconButtonClick
- * @fires MdBottomAppBarComponent#onBottomAppBarFabClick
  */
 class MdBottomAppBarComponent extends MdComponent {
     /**
@@ -80,6 +76,10 @@ class MdBottomAppBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+        /**
+         * @event onBottomAppBarShow
+         * @type \{Object\}
+         */
         this.emit("onBottomAppBarShow");
     }
 
@@ -88,6 +88,10 @@ class MdBottomAppBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+        /**
+         * @event onBottomAppBarClose
+         * @type \{Object\}
+         */
         this.emit("onBottomAppBarClose");
     }
 
@@ -99,10 +103,18 @@ class MdBottomAppBarComponent extends MdComponent {
     }
 
     handleBottomAppBarIconButtonClick(event) {
+        /**
+         * @event onBottomAppBarIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onBottomAppBarIconButtonClick", { event });
     }
 
     handleBottomAppBarFabClick(event) {
+        /**
+         * @event onBottomAppBarFabClick
+         * @type \{Object\}
+         */
         this.emit("onBottomAppBarFabClick", { event });
     }
 }

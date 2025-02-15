@@ -10,21 +10,6 @@ import { cache } from "lit/directives/cache.js";
 /**
  * @extends MdComponent
  * @element md-week-picker
- * @fires MdWeekPickerComponent#onWeekPickerShow
- * @fires MdWeekPickerComponent#onWeekPickerClose
- * @fires MdWeekPickerComponent#onWeekPickerYearItemClick
- * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick
- * @fires MdWeekPickerComponent#onWeekPickerWeekItemClick
- * @fires MdWeekPickerComponent#onWeekPickerScrimClose
- * @fires MdWeekPickerComponent#onWeekPickerShown
- * @fires MdWeekPickerComponent#onWeekPickerClosed
- * @fires MdWeekPickerComponent#onWeekPickerIconButtonPrevClick
- * @fires MdWeekPickerComponent#onWeekPickerIconButtonNextClick
- * @fires MdWeekPickerComponent#onWeekPickerIconButtonClick
- * @fires MdWeekPickerComponent#onWeekPickerButtonCancelClick
- * @fires MdWeekPickerComponent#onWeekPickerButtonOkClick
- * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick
- * @fires MdWeekPickerComponent#onWeekPickerButtonClick
  */
 class MdWeekPickerComponent extends MdComponent {
     /**
@@ -376,6 +361,10 @@ class MdWeekPickerComponent extends MdComponent {
         });
         this.open = true;
         if (this.modal) this.weekPickerScrim.show();
+        /**
+         * @event onWeekPickerShow
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerShow");
     }
 
@@ -387,6 +376,10 @@ class MdWeekPickerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-week-picker-animation");
         this.open = false;
         if (this.modal) this.weekPickerScrim.close();
+        /**
+         * @event onWeekPickerClose
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerClose");
     }
 
@@ -402,6 +395,10 @@ class MdWeekPickerComponent extends MdComponent {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.index = 1;
+        /**
+         * @event onWeekPickerYearItemClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerYearItemClick", { event });
     }
 
@@ -410,6 +407,10 @@ class MdWeekPickerComponent extends MdComponent {
         this.selection.setFullYear(data.year);
         this.selection.setMonth(data.month);
         this.index = 2;
+        /**
+         * @event onWeekPickerMonthItemClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerMonthItemClick", { event });
     }
 
@@ -422,21 +423,37 @@ class MdWeekPickerComponent extends MdComponent {
         this.value.setMonth(data.month);
         this.value.setWeek(data.week);
         this.requestUpdate();
+        /**
+         * @event onWeekPickerWeekItemClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerWeekItemClick", { event });
     }
 
     handleWeekPickerScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onWeekPickerScrimClose
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerScrimClose", { event });
     }
 
     handleWeekPickerShown(event) {
         this.removeEventListener("animationend", this.handleWeekPickerShown);
+        /**
+         * @event onWeekPickerShown
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerShown");
     }
 
     handleWeekPickerClosed(event) {
         this.removeEventListener("animationend", this.handleWeekPickerClosed);
+        /**
+         * @event onWeekPickerClosed
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerClosed");
     }
 
@@ -448,6 +465,10 @@ class MdWeekPickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onWeekPickerIconButtonPrevClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerIconButtonPrevClick", { event });
     }
 
@@ -459,6 +480,10 @@ class MdWeekPickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onWeekPickerIconButtonNextClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerIconButtonNextClick", { event });
     }
 
@@ -470,17 +495,29 @@ class MdWeekPickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onWeekPickerIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerIconButtonClick", { event });
     }
 
     handleWeekPickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
         // this.close();
+        /**
+         * @event onWeekPickerButtonCancelClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerButtonCancelClick", { event });
     }
 
     handleWeekPickerButtonOkClick(event) {
         // this.close();
+        /**
+         * @event onWeekPickerButtonOkClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerButtonOkClick", { event });
     }
 
@@ -491,6 +528,10 @@ class MdWeekPickerComponent extends MdComponent {
             2: 0,
         };
         this.index = map[this.index];
+        /**
+         * @event onWeekPickerButtonLabelClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerButtonLabelClick", { event });
     }
 
@@ -503,6 +544,10 @@ class MdWeekPickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onWeekPickerButtonClick
+         * @type \{Object\}
+         */
         this.emit("onWeekPickerButtonClick", { event });
     }
 }

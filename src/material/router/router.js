@@ -1,9 +1,5 @@
 /**
  * Router class responsible for managing client-side routing.
- * @fires Router#onRouterCurrentEntryChange
- * @fires Router#onRouterNavigate
- * @fires Router#onRouterNavigateError
- * @fires Router#onRouterNavigateSuccess
  */
 class Router {
     /**
@@ -63,16 +59,28 @@ class Router {
     //  */
     static async handleNavigation(event) {
         performance.mark("mark-1");
-        this.emit("onRouterCurrentEntryChange",{});
+        /**
+         * @event onRouterCurrentEntryChange
+         * @type \{Object\}
+         */
+        this.emit("onRouterCurrentEntryChange", {});
         this.setController();
         const routes = this.get();
-        this.emit("onRouterNavigate",{});
+        /**
+         * @event onRouterNavigate
+         * @type \{Object\}
+         */
+        this.emit("onRouterNavigate", {});
         for (const route of routes ?? []) {
             if (route.beforeLoad) {
                 try {
                     await this.handleBeforeLoad(route);
                 } catch (error) {
-                    this.emit("onRouterNavigateError",{});
+                    /**
+                     * @event onRouterNavigateError
+                     * @type \{Object\}
+                     */
+                    this.emit("onRouterNavigateError", {});
                     break;
                 }
             }
@@ -87,7 +95,11 @@ class Router {
         performance.clearMarks("mark-1");
         performance.clearMarks("mark-2");
         performance.clearMeasures("measure-1");
-        this.emit("onRouterNavigateSuccess",{});
+        /**
+         * @event onRouterNavigateSuccess
+         * @type \{Object\}
+         */
+        this.emit("onRouterNavigateSuccess", {});
     }
 
     // /**

@@ -6,7 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-tab
- * @fires MdTabComponent#onTabSelected
  */
 class MdTabComponent extends MdComponent {
     /**
@@ -65,6 +64,10 @@ class MdTabComponent extends MdComponent {
             this.classList.toggle("md-tab--with-icon", !!this.icon);
         }
         if (changedProperties.has("selected") && this.selected) {
+            /**
+             * @event onTabSelected
+             * @type \{Object\}
+             */
             this.emit("onTabSelected", { tab: this });
         }
     }

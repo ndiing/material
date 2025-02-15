@@ -1,16 +1,16 @@
-// This example code is intended for demonstration purposes only. 
-// It may not follow best coding practices. 
+// This example code is intended for demonstration purposes only.
+// It may not follow best coding practices.
 // It is recommended to use better coding approaches for production use.
 
-import "./material/material.scss"; 
+import "./material/material.scss";
 import "./app/app.scss";
 import "./demo/demo.scss";
 import "./docs/docs.scss";
 
-import "./material/material.js"; 
-import { Router } from "./material/router/router"; 
-import { Progress } from "./material/progress/progress.js"; 
-import { setTheme } from "./material/color/color.js"; 
+import "./material/material.js";
+import { Router } from "./material/router/router";
+import { Progress } from "./material/progress/progress.js";
+import { setTheme } from "./material/color/color.js";
 import AppRoutes from "./app/app.js";
 
 const routes = [AppRoutes];

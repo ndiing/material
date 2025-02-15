@@ -6,13 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-sheet
- * @fires MdSheetComponent#onSheetShow
- * @fires MdSheetComponent#onSheetClose
- * @fires MdSheetComponent#onSheetShown
- * @fires MdSheetComponent#onSheetClosed
- * @fires MdSheetComponent#onSheetScrimClose
- * @fires MdSheetComponent#onSheetIconButtonClick
- * @fires MdSheetComponent#onSheetButtonClick
  */
 class MdSheetComponent extends MdComponent {
     /**
@@ -136,6 +129,10 @@ class MdSheetComponent extends MdComponent {
         this.addEventListener("animationend", this.handleSheetShown);
         this.open = true;
         if (this.modal) this.sheetScrim.show();
+        /**
+         * @event onSheetShow
+         * @type \{Object\}
+         */
         this.emit("onSheetShow");
     }
 
@@ -147,6 +144,10 @@ class MdSheetComponent extends MdComponent {
         this.addEventListener("animationend", this.handleSheetClosed);
         this.open = false;
         if (this.sheetScrim.open) this.sheetScrim.close();
+        /**
+         * @event onSheetClose
+         * @type \{Object\}
+         */
         this.emit("onSheetClose");
     }
 
@@ -159,24 +160,44 @@ class MdSheetComponent extends MdComponent {
 
     handleSheetShown(event) {
         this.removeEventListener("animationend", this.handleSheetShown);
+        /**
+         * @event onSheetShown
+         * @type \{Object\}
+         */
         this.emit("onSheetShown");
     }
 
     handleSheetClosed(event) {
         this.removeEventListener("animationend", this.handleSheetClosed);
+        /**
+         * @event onSheetClosed
+         * @type \{Object\}
+         */
         this.emit("onSheetClosed");
     }
 
     handleSheetScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onSheetScrimClose
+         * @type \{Object\}
+         */
         this.emit("onSheetScrimClose", { event });
     }
 
     handleSheetIconButtonClick(event) {
+        /**
+         * @event onSheetIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onSheetIconButtonClick", { event });
     }
 
     handleSheetButtonClick(event) {
+        /**
+         * @event onSheetButtonClick
+         * @type \{Object\}
+         */
         this.emit("onSheetButtonClick", { event });
     }
 }

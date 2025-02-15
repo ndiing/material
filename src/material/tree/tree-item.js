@@ -6,7 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-tree-item
- * @fires MdTreeItemComponent#onTreeItemSelected
  */
 class MdTreeItemComponent extends MdComponent {
     /**
@@ -68,6 +67,10 @@ class MdTreeItemComponent extends MdComponent {
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("selected") && this.selected) {
+            /**
+             * @event onTreeItemSelected
+             * @type \{Object\}
+             */
             this.emit("onTreeItemSelected", { treeItem: this });
         }
     }

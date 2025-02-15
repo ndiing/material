@@ -6,10 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-navigation-drawer
- * @fires MdNavigationDrawerComponent#onNavigationDrawerShow
- * @fires MdNavigationDrawerComponent#onNavigationDrawerClose
- * @fires MdNavigationDrawerComponent#onNavigationDrawerIconButtonClick
- * @fires MdNavigationDrawerComponent#onNavigationDrawerScrimClose
  */
 class MdNavigationDrawerComponent extends MdComponent {
     /**
@@ -117,6 +113,10 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         if (this.modal) this.navigationDrawerScrim.show();
         this.open = true;
+        /**
+         * @event onNavigationDrawerShow
+         * @type \{Object\}
+         */
         this.emit("onNavigationDrawerShow");
     }
 
@@ -126,6 +126,10 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
+        /**
+         * @event onNavigationDrawerClose
+         * @type \{Object\}
+         */
         this.emit("onNavigationDrawerClose");
     }
 
@@ -137,11 +141,19 @@ class MdNavigationDrawerComponent extends MdComponent {
     }
 
     handleNavigationDrawerIconButtonClick(event) {
+        /**
+         * @event onNavigationDrawerIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onNavigationDrawerIconButtonClick", { event });
     }
 
     handleNavigationDrawerScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onNavigationDrawerScrimClose
+         * @type \{Object\}
+         */
         this.emit("onNavigationDrawerScrimClose", { event });
     }
 }

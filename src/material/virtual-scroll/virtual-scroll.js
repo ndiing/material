@@ -1,5 +1,4 @@
 /**
- * @fires VirtualScroll#onVirtualScroll
  */
 class VirtualScroll {
     /**

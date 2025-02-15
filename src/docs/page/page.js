@@ -33,7 +33,7 @@ class DocsPage extends MdComponent {
             <br>
             ${item.params?.length?html`
                 <div>${this.renderTable([
-                    {name:'name',label:'Label'},
+                    {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
                     {name:'description',label:'Description'},
                 ],item.params.map(prop=>({
@@ -56,16 +56,20 @@ class DocsPage extends MdComponent {
         `)
     }
 
-    renderFires(data) {
+    renderEvent(data) {
         /* prettier-ignore */
-        return data?.map(item=>html`
-        
-            ${item.fires?.length?html`
-                <div>${this.renderTable([{name:'name',label:'Name'}],item.fires.map(name=>({name:name.replace(/.*event\:/,'')})))}</div>
-                <br>
-            `:nothing}
-            
-        `)
+        return html`
+            <div>${this.renderTable([
+                {name:'name',label:'Name'},
+                {name:'type',label:'Type'},
+                {name:'description',label:'Description'},
+            ],data.map(prop=>({
+                name:prop.name,
+                type:prop.type?.names.join('|'),
+                description:prop.description,
+            })))}</div>
+            <br>
+        `
     }
 
     renderAugments(data) {
@@ -88,7 +92,7 @@ class DocsPage extends MdComponent {
             `:nothing}
             ${item.properties?.length?html`
                 <div>${this.renderTable([
-                    {name:'name',label:'Label'},
+                    {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
                     {name:'description',label:'Description'},
                 ],item.properties.map(prop=>({
@@ -110,7 +114,7 @@ class DocsPage extends MdComponent {
             <br>
             ${item.params?.length?html`
                 <div>${this.renderTable([
-                    {name:'name',label:'Label'},
+                    {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
                     {name:'description',label:'Description'},
                 ],item.params.map(prop=>({
@@ -129,7 +133,7 @@ class DocsPage extends MdComponent {
             <br>
             ${item.properties?.length?html`
                 <div>${this.renderTable([
-                    {name:'name',label:'Label'},
+                    {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
                     {name:'description',label:'Description'},
                 ],item.properties.map(prop=>({
@@ -190,10 +194,10 @@ class DocsPage extends MdComponent {
                     ${this.renderTypedef(this.data.typedef)}
                 `:nothing}
 
-                ${this.data.class?.filter(item=>item.fires)?.length?html`
+                ${this.data.event?.length?html`
                     <h2>Events</h2>
                     <br>
-                    ${this.renderFires(this.data.class)}
+                    ${this.renderEvent(this.data.event)}
                 `:nothing}
 
                 ${this.data.class?.filter(item=>item.augments)?.length?html`
@@ -221,7 +225,7 @@ class DocsPage extends MdComponent {
     async handleDocsPageRouterNavigateSuccess(event) {
         const index = keys.findIndex((key) => key.routerLink === Router.pathname);
         this.data = values[index];
-        console.log(this.data)
+        console.log(this.data);
         this.requestUpdate();
     }
 }

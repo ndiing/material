@@ -6,8 +6,6 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * @extends MdComponent
  * @element md-slider
- * @fires MdSliderComponent#onSliderNativeInput
- * @fires MdSliderComponent#onSliderNativeReset
  */
 class MdSliderComponent extends MdComponent {
     /**
@@ -154,6 +152,10 @@ class MdSliderComponent extends MdComponent {
         native.value = this.value[data.index];
         this.updateValue();
         this.requestUpdate();
+        /**
+         * @event onSliderNativeInput
+         * @type \{Object\}
+         */
         this.emit("onSliderNativeInput", { event });
     }
 
@@ -161,6 +163,10 @@ class MdSliderComponent extends MdComponent {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));
         this.updateValue();
         this.requestUpdate();
+        /**
+         * @event onSliderNativeReset
+         * @type \{Object\}
+         */
         this.emit("onSliderNativeReset", { event });
     }
 }

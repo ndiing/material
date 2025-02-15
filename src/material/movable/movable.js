@@ -1,7 +1,4 @@
 /**
- * @fires Movable#onMovablePointerdown
- * @fires Movable#onMovablePointermove
- * @fires Movable#onMovablePointerup
  */
 class Movable {
     /**
@@ -29,6 +26,10 @@ class Movable {
         this.startY = event.clientY - this.endY;
         this.startWidth = this.host.clientWidth;
         this.startHeight = this.host.clientHeight;
+        /**
+         * @event onMovablePointerdown
+         * @type \{Object\}
+         */
         this.emit("onMovablePointerdown");
     }
 
@@ -63,6 +64,10 @@ class Movable {
         this.host.style.setProperty("top", (this.currentY ?? 0) + "px");
         this.host.style.setProperty("width", (this.currentWidth ?? this.startWidth) + "px");
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
+        /**
+         * @event onMovablePointermove
+         * @type \{Object\}
+         */
         this.emit("onMovablePointermove");
     }
 
@@ -72,6 +77,10 @@ class Movable {
         document.body.classList.remove("md-user-select--none");
         window.removeEventListener("pointermove", this.handlePointermove);
         window.removeEventListener("pointerup", this.handlePointerup);
+        /**
+         * @event onMovablePointerup
+         * @type \{Object\}
+         */
         this.emit("onMovablePointerup");
     }
 

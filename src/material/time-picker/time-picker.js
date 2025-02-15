@@ -10,20 +10,6 @@ import { cache } from "lit/directives/cache.js";
 /**
  * @extends MdComponent
  * @element md-time-picker
- * @fires MdTimePickerComponent#onTimePickerShow
- * @fires MdTimePickerComponent#onTimePickerClose
- * @fires MdTimePickerComponent#onTimePickerHourItemClick
- * @fires MdTimePickerComponent#onTimePickerMinuteItemClick
- * @fires MdTimePickerComponent#onTimePickerScrimClose
- * @fires MdTimePickerComponent#onTimePickerShown
- * @fires MdTimePickerComponent#onTimePickerClosed
- * @fires MdTimePickerComponent#onTimePickerIconButtonPrevClick
- * @fires MdTimePickerComponent#onTimePickerIconButtonNextClick
- * @fires MdTimePickerComponent#onTimePickerIconButtonClick
- * @fires MdTimePickerComponent#onTimePickerButtonCancelClick
- * @fires MdTimePickerComponent#onTimePickerButtonOkClick
- * @fires MdTimePickerComponent#onTimePickerButtonLabelClick
- * @fires MdTimePickerComponent#onTimePickerButtonClick
  */
 class MdTimePickerComponent extends MdComponent {
     /**
@@ -303,6 +289,10 @@ class MdTimePickerComponent extends MdComponent {
         });
         this.open = true;
         if (this.modal) this.timePickerScrim.show();
+        /**
+         * @event onTimePickerShow
+         * @type \{Object\}
+         */
         this.emit("onTimePickerShow");
     }
 
@@ -314,6 +304,10 @@ class MdTimePickerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-time-picker-animation");
         this.open = false;
         if (this.modal) this.timePickerScrim.close();
+        /**
+         * @event onTimePickerClose
+         * @type \{Object\}
+         */
         this.emit("onTimePickerClose");
     }
 
@@ -330,6 +324,10 @@ class MdTimePickerComponent extends MdComponent {
         this.selection.setHours(data.hour);
         this.value.setHours(data.hour);
         this.index = 1;
+        /**
+         * @event onTimePickerHourItemClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerHourItemClick", { event });
     }
 
@@ -338,21 +336,37 @@ class MdTimePickerComponent extends MdComponent {
         this.selection.setMinutes(data.minute);
         this.value.setMinutes(data.minute);
         this.index = 0;
+        /**
+         * @event onTimePickerMinuteItemClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerMinuteItemClick", { event });
     }
 
     handleTimePickerScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onTimePickerScrimClose
+         * @type \{Object\}
+         */
         this.emit("onTimePickerScrimClose", { event });
     }
 
     handleTimePickerShown(event) {
         this.removeEventListener("animationend", this.handleTimePickerShown);
+        /**
+         * @event onTimePickerShown
+         * @type \{Object\}
+         */
         this.emit("onTimePickerShown");
     }
 
     handleTimePickerClosed(event) {
         this.removeEventListener("animationend", this.handleTimePickerClosed);
+        /**
+         * @event onTimePickerClosed
+         * @type \{Object\}
+         */
         this.emit("onTimePickerClosed");
     }
 
@@ -363,6 +377,10 @@ class MdTimePickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onTimePickerIconButtonPrevClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerIconButtonPrevClick", { event });
     }
 
@@ -373,6 +391,10 @@ class MdTimePickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onTimePickerIconButtonNextClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerIconButtonNextClick", { event });
     }
 
@@ -384,17 +406,29 @@ class MdTimePickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onTimePickerIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerIconButtonClick", { event });
     }
 
     handleTimePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
         // this.close();
+        /**
+         * @event onTimePickerButtonCancelClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerButtonCancelClick", { event });
     }
 
     handleTimePickerButtonOkClick(event) {
         // this.close();
+        /**
+         * @event onTimePickerButtonOkClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerButtonOkClick", { event });
     }
 
@@ -404,6 +438,10 @@ class MdTimePickerComponent extends MdComponent {
             1: 0,
         };
         this.index = map[this.index];
+        /**
+         * @event onTimePickerButtonLabelClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerButtonLabelClick", { event });
     }
 
@@ -416,6 +454,10 @@ class MdTimePickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onTimePickerButtonClick
+         * @type \{Object\}
+         */
         this.emit("onTimePickerButtonClick", { event });
     }
 }

@@ -5,7 +5,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * @extends MdComponent
  * @element md-tabs
- * @fires MdTabsComponent#onTabClick
  */
 class MdTabsComponent extends MdComponent {
     /**
@@ -70,6 +69,10 @@ class MdTabsComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
+        /**
+         * @event onTabClick
+         * @type \{Object\}
+         */
         this.emit("onTabClick", { event });
     }
 

@@ -6,8 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-navigation-bar
- * @fires MdNavigationBarComponent#onNavigationBarShow
- * @fires MdNavigationBarComponent#onNavigationBarClose
  */
 class MdNavigationBarComponent extends MdComponent {
     /**
@@ -52,6 +50,10 @@ class MdNavigationBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+        /**
+         * @event onNavigationBarShow
+         * @type \{Object\}
+         */
         this.emit("onNavigationBarShow");
     }
 
@@ -60,6 +62,10 @@ class MdNavigationBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+        /**
+         * @event onNavigationBarClose
+         * @type \{Object\}
+         */
         this.emit("onNavigationBarClose");
     }
 

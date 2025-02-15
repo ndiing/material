@@ -4,11 +4,6 @@ import { MdComponent } from "../component/component";
 /**
  * @extends MdComponent
  * @element md-scrim
- * @fires MdScrimComponent#onScrimShow
- * @fires MdScrimComponent#onScrimClose
- * @fires MdScrimComponent#onScrimClick
- * @fires MdScrimComponent#onScrimShown
- * @fires MdScrimComponent#onScrimClosed
  */
 class MdScrimComponent extends MdComponent {
     /**
@@ -36,6 +31,10 @@ class MdScrimComponent extends MdComponent {
         this.handleScrimShown = this.handleScrimShown.bind(this);
         this.addEventListener("animationend", this.handleScrimShown);
         this.open = true;
+        /**
+         * @event onScrimShow
+         * @type \{Object\}
+         */
         this.emit("onScrimShow");
     }
 
@@ -45,6 +44,10 @@ class MdScrimComponent extends MdComponent {
         this.handleScrimClosed = this.handleScrimClosed.bind(this);
         this.addEventListener("animationend", this.handleScrimClosed);
         this.open = false;
+        /**
+         * @event onScrimClose
+         * @type \{Object\}
+         */
         this.emit("onScrimClose");
     }
 
@@ -57,12 +60,20 @@ class MdScrimComponent extends MdComponent {
 
     handleScrimClick(event) {
         this.close();
+        /**
+         * @event onScrimClick
+         * @type \{Object\}
+         */
         this.emit("onScrimClick", { event });
     }
 
     handleScrimShown(event) {
         if (event.animationName === "scrim-out") {
             this.removeEventListener("animationend", this.handleScrimShown);
+            /**
+             * @event onScrimShown
+             * @type \{Object\}
+             */
             this.emit("onScrimShown", { event });
         }
     }
@@ -70,6 +81,10 @@ class MdScrimComponent extends MdComponent {
     handleScrimClosed(event) {
         if (event.animationName === "scrim-in") {
             this.removeEventListener("animationend", this.handleScrimClosed);
+            /**
+             * @event onScrimClosed
+             * @type \{Object\}
+             */
             this.emit("onScrimClosed", { event });
         }
     }

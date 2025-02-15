@@ -8,12 +8,6 @@ import { closestScrollableElement } from "../util/util";
 /**
  * @extends MdComponent
  * @element md-menu
- * @fires MdMenuComponent#onMenuShow
- * @fires MdMenuComponent#onMenuClose
- * @fires MdMenuComponent#onMenuWindowClick
- * @fires MdMenuComponent#onMenuWindowScroll
- * @fires MdMenuComponent#onMenuShown
- * @fires MdMenuComponent#onMenuClosed
  */
 class MdMenuComponent extends MdComponent {
     /**
@@ -72,6 +66,10 @@ class MdMenuComponent extends MdComponent {
             ...options,
         });
         this.open = true;
+        /**
+         * @event onMenuShow
+         * @type \{Object\}
+         */
         this.emit("onMenuShow");
     }
 
@@ -84,6 +82,10 @@ class MdMenuComponent extends MdComponent {
         this.menuWindow.removeEventListener("scroll", this.handleMenuWindowScroll);
         window.removeEventListener("click", this.handleMenuWindowClick);
         this.open = false;
+        /**
+         * @event onMenuClose
+         * @type \{Object\}
+         */
         this.emit("onMenuClose");
     }
 
@@ -97,20 +99,36 @@ class MdMenuComponent extends MdComponent {
 
     handleMenuWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
+        /**
+         * @event onMenuWindowClick
+         * @type \{Object\}
+         */
         this.emit("onMenuWindowClick", { event, target });
     }
 
     handleMenuWindowScroll(event) {
+        /**
+         * @event onMenuWindowScroll
+         * @type \{Object\}
+         */
         this.emit("onMenuWindowScroll", { event });
     }
 
     handleMenuShown(event) {
         this.removeEventListener("animationend", this.handleMenuShown);
+        /**
+         * @event onMenuShown
+         * @type \{Object\}
+         */
         this.emit("onMenuShown", { event });
     }
 
     handleMenuClosed(event) {
         this.removeEventListener("animationend", this.handleMenuClosed);
+        /**
+         * @event onMenuClosed
+         * @type \{Object\}
+         */
         this.emit("onMenuClosed", { event });
     }
 }

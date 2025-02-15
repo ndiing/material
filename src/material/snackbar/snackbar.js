@@ -18,12 +18,6 @@ const task = queue();
 /**
  * @extends MdComponent
  * @element md-snackbar
- * @fires MdSnackbarComponent#onSnackbarShow
- * @fires MdSnackbarComponent#onSnackbarClose
- * @fires MdSnackbarComponent#onSnackbarShown
- * @fires MdSnackbarComponent#onSnackbarClosed
- * @fires MdSnackbarComponent#onSnackbarIconButtonClick
- * @fires MdSnackbarComponent#onSnackbarButtonClick
  */
 class MdSnackbarComponent extends MdComponent {
     /**
@@ -128,6 +122,10 @@ class MdSnackbarComponent extends MdComponent {
                     this.addEventListener("animationend", this.handleSnackbarShown);
                     this.style.removeProperty("--md-comp-snackbar-animation");
                     this.open = true;
+                    /**
+                     * @event onSnackbarShow
+                     * @type \{Object\}
+                     */
                     this.emit("onSnackbarShow");
                 }),
         );
@@ -140,6 +138,10 @@ class MdSnackbarComponent extends MdComponent {
         this.addEventListener("animationend", this.handleSnackbarClosed);
         this.style.removeProperty("--md-comp-snackbar-animation");
         this.open = false;
+        /**
+         * @event onSnackbarClose
+         * @type \{Object\}
+         */
         this.emit("onSnackbarClose");
     }
 
@@ -153,6 +155,10 @@ class MdSnackbarComponent extends MdComponent {
     handleSnackbarShown(event) {
         if (event.animationName === "snackbar-out") {
             this.removeEventListener("animationend", this.handleSnackbarShown);
+            /**
+             * @event onSnackbarShown
+             * @type \{Object\}
+             */
             this.emit("onSnackbarShown");
         }
     }
@@ -160,15 +166,27 @@ class MdSnackbarComponent extends MdComponent {
     handleSnackbarClosed(event) {
         if (event.animationName === "snackbar-in") {
             this.removeEventListener("animationend", this.handleSnackbarClosed);
+            /**
+             * @event onSnackbarClosed
+             * @type \{Object\}
+             */
             this.emit("onSnackbarClosed");
         }
     }
 
     handleSnackbarIconButtonClick(event) {
+        /**
+         * @event onSnackbarIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onSnackbarIconButtonClick", { event });
     }
 
     handleSnackbarButtonClick(event) {
+        /**
+         * @event onSnackbarButtonClick
+         * @type \{Object\}
+         */
         this.emit("onSnackbarButtonClick", { event });
     }
 }

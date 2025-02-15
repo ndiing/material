@@ -6,8 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-radio-button
- * @fires MdRadioButtonComponent#onRadioButtonNativeInput
- * @fires MdRadioButtonComponent#onRadioButtonNativeReset
  */
 class MdRadioButtonComponent extends MdComponent {
     /**
@@ -72,6 +70,10 @@ class MdRadioButtonComponent extends MdComponent {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
+        /**
+         * @event onRadioButtonNativeInput
+         * @type \{Object\}
+         */
         this.emit("onRadioButtonNativeInput", { event });
     }
 
@@ -79,6 +81,10 @@ class MdRadioButtonComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
+        /**
+         * @event onRadioButtonNativeReset
+         * @type \{Object\}
+         */
         this.emit("onRadioButtonNativeReset", { event });
     }
 }

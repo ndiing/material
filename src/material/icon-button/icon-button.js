@@ -6,7 +6,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * @extends MdComponent
  * @element md-icon-button
- * @fires MdIconButtonComponent#onIconButtonClick
  */
 class MdIconButtonComponent extends MdComponent {
     /**
@@ -78,6 +77,10 @@ class MdIconButtonComponent extends MdComponent {
         if (this.toggle) {
             this.selected = !this.selected;
         }
+        /**
+         * @event onIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onIconButtonClick", { event });
     }
 }

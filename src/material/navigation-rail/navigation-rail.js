@@ -6,9 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-navigation-rail
- * @fires MdNavigationRailComponent#onNavigationRailShow
- * @fires MdNavigationRailComponent#onNavigationRailClose
- * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick
  */
 class MdNavigationRailComponent extends MdComponent {
     /**
@@ -96,6 +93,10 @@ class MdNavigationRailComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+        /**
+         * @event onNavigationRailShow
+         * @type \{Object\}
+         */
         this.emit("onNavigationRailShow");
     }
 
@@ -104,6 +105,10 @@ class MdNavigationRailComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+        /**
+         * @event onNavigationRailClose
+         * @type \{Object\}
+         */
         this.emit("onNavigationRailClose");
     }
 
@@ -115,6 +120,10 @@ class MdNavigationRailComponent extends MdComponent {
     }
 
     handleNavigationRailIconButtonClick(event) {
+        /**
+         * @event onNavigationRailIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onNavigationRailIconButtonClick", { event });
     }
 }

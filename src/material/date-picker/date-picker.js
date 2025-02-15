@@ -10,21 +10,6 @@ import { cache } from "lit/directives/cache.js";
 /**
  * @extends MdComponent
  * @element md-date-picker
- * @fires MdDatePickerComponent#onDatePickerShow
- * @fires MdDatePickerComponent#onDatePickerClose
- * @fires MdDatePickerComponent#onDatePickerYearItemClick
- * @fires MdDatePickerComponent#onDatePickerMonthItemClick
- * @fires MdDatePickerComponent#onDatePickerDayItemClick
- * @fires MdDatePickerComponent#onDatePickerScrimClose
- * @fires MdDatePickerComponent#onDatePickerShown
- * @fires MdDatePickerComponent#onDatePickerClosed
- * @fires MdDatePickerComponent#onDatePickerIconButtonPrevClick
- * @fires MdDatePickerComponent#onDatePickerIconButtonNextClick
- * @fires MdDatePickerComponent#onDatePickerIconButtonClick
- * @fires MdDatePickerComponent#onDatePickerButtonCancelClick
- * @fires MdDatePickerComponent#onDatePickerButtonOkClick
- * @fires MdDatePickerComponent#onDatePickerButtonLabelClick
- * @fires MdDatePickerComponent#onDatePickerButtonClick
  */
 class MdDatePickerComponent extends MdComponent {
     /**
@@ -369,6 +354,10 @@ class MdDatePickerComponent extends MdComponent {
         });
         this.open = true;
         if (this.modal) this.datePickerScrim.show();
+        /**
+         * @event onDatePickerShow
+         * @type \{Object\}
+         */
         this.emit("onDatePickerShow");
     }
 
@@ -380,6 +369,10 @@ class MdDatePickerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-date-picker-animation");
         this.open = false;
         if (this.modal) this.datePickerScrim.close();
+        /**
+         * @event onDatePickerClose
+         * @type \{Object\}
+         */
         this.emit("onDatePickerClose");
     }
 
@@ -395,6 +388,10 @@ class MdDatePickerComponent extends MdComponent {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.index = 1;
+        /**
+         * @event onDatePickerYearItemClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerYearItemClick", { event });
     }
 
@@ -403,6 +400,10 @@ class MdDatePickerComponent extends MdComponent {
         this.selection.setFullYear(data.year);
         this.selection.setMonth(data.month);
         this.index = 2;
+        /**
+         * @event onDatePickerMonthItemClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerMonthItemClick", { event });
     }
 
@@ -415,21 +416,37 @@ class MdDatePickerComponent extends MdComponent {
         this.value.setMonth(data.month);
         this.value.setDate(data.day);
         this.requestUpdate();
+        /**
+         * @event onDatePickerDayItemClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerDayItemClick", { event });
     }
 
     handleDatePickerScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onDatePickerScrimClose
+         * @type \{Object\}
+         */
         this.emit("onDatePickerScrimClose", { event });
     }
 
     handleDatePickerShown(event) {
         this.removeEventListener("animationend", this.handleDatePickerShown);
+        /**
+         * @event onDatePickerShown
+         * @type \{Object\}
+         */
         this.emit("onDatePickerShown");
     }
 
     handleDatePickerClosed(event) {
         this.removeEventListener("animationend", this.handleDatePickerClosed);
+        /**
+         * @event onDatePickerClosed
+         * @type \{Object\}
+         */
         this.emit("onDatePickerClosed");
     }
 
@@ -441,6 +458,10 @@ class MdDatePickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onDatePickerIconButtonPrevClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerIconButtonPrevClick", { event });
     }
 
@@ -452,6 +473,10 @@ class MdDatePickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onDatePickerIconButtonNextClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerIconButtonNextClick", { event });
     }
 
@@ -463,17 +488,29 @@ class MdDatePickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onDatePickerIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerIconButtonClick", { event });
     }
 
     handleDatePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
         // this.close();
+        /**
+         * @event onDatePickerButtonCancelClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerButtonCancelClick", { event });
     }
 
     handleDatePickerButtonOkClick(event) {
         // this.close();
+        /**
+         * @event onDatePickerButtonOkClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerButtonOkClick", { event });
     }
 
@@ -484,6 +521,10 @@ class MdDatePickerComponent extends MdComponent {
             2: 0,
         };
         this.index = map[this.index];
+        /**
+         * @event onDatePickerButtonLabelClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerButtonLabelClick", { event });
     }
 
@@ -496,6 +537,10 @@ class MdDatePickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onDatePickerButtonClick
+         * @type \{Object\}
+         */
         this.emit("onDatePickerButtonClick", { event });
     }
 }

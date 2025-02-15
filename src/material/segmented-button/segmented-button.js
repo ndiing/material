@@ -5,7 +5,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * @extends MdComponent
  * @element md-segmented-button
- * @fires MdSegmentedButtonComponent#onSegmentedButtonItemClick
  */
 class MdSegmentedButtonComponent extends MdComponent {
     /**
@@ -60,6 +59,10 @@ class MdSegmentedButtonComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
+        /**
+         * @event onSegmentedButtonItemClick
+         * @type \{Object\}
+         */
         this.emit("onSegmentedButtonItemClick", { event });
     }
 }

@@ -6,13 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-bottom-sheet
- * @fires MdBottomSheetComponent#onBottomSheetShow
- * @fires MdBottomSheetComponent#onBottomSheetClose
- * @fires MdBottomSheetComponent#onBottomSheetShown
- * @fires MdBottomSheetComponent#onBottomSheetClosed
- * @fires MdBottomSheetComponent#onBottomSheetScrimClose
- * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick
- * @fires MdBottomSheetComponent#onBottomSheetButtonClick
  */
 class MdBottomSheetComponent extends MdComponent {
     /**
@@ -126,6 +119,10 @@ class MdBottomSheetComponent extends MdComponent {
         this.addEventListener("animationend", this.handleBottomSheetShown);
         this.open = true;
         if (this.modal) this.bottomSheetScrim.show();
+        /**
+         * @event onBottomSheetShow
+         * @type \{Object\}
+         */
         this.emit("onBottomSheetShow");
     }
 
@@ -137,6 +134,10 @@ class MdBottomSheetComponent extends MdComponent {
         this.addEventListener("animationend", this.handleBottomSheetClosed);
         this.open = false;
         if (this.bottomSheetScrim.open) this.bottomSheetScrim.close();
+        /**
+         * @event onBottomSheetClose
+         * @type \{Object\}
+         */
         this.emit("onBottomSheetClose");
     }
 
@@ -150,6 +151,10 @@ class MdBottomSheetComponent extends MdComponent {
     handleBottomSheetShown(event) {
         if (event.animationName === "bottom-sheet-modal-out" || event.animationName === "bottom-sheet-out") {
             this.removeEventListener("animationend", this.handleBottomSheetShown);
+            /**
+             * @event onBottomSheetShown
+             * @type \{Object\}
+             */
             this.emit("onBottomSheetShown");
         }
     }
@@ -157,20 +162,36 @@ class MdBottomSheetComponent extends MdComponent {
     handleBottomSheetClosed(event) {
         if (event.animationName === "bottom-sheet-modal-in" || event.animationName === "bottom-sheet-in") {
             this.removeEventListener("animationend", this.handleBottomSheetClosed);
+            /**
+             * @event onBottomSheetClosed
+             * @type \{Object\}
+             */
             this.emit("onBottomSheetClosed");
         }
     }
 
     handleBottomSheetScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onBottomSheetScrimClose
+         * @type \{Object\}
+         */
         this.emit("onBottomSheetScrimClose", { event });
     }
 
     handleBottomSheetIconButtonClick(event) {
+        /**
+         * @event onBottomSheetIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onBottomSheetIconButtonClick", { event });
     }
 
     handleBottomSheetButtonClick(event) {
+        /**
+         * @event onBottomSheetButtonClick
+         * @type \{Object\}
+         */
         this.emit("onBottomSheetButtonClick", { event });
     }
 }

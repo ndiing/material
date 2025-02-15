@@ -5,10 +5,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 /**
  * @extends MdComponent
  * @element md-list
- * @fires MdListComponent#onListItemClick
- * @fires MdListComponent#onListItemCheckboxNativeInput
- * @fires MdListComponent#onListItemRadioButtonNativeInput
- * @fires MdListComponent#onListItemSwitchNativeInput
  */
 class MdListComponent extends MdComponent {
     /**
@@ -91,6 +87,10 @@ class MdListComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
+        /**
+         * @event onListItemClick
+         * @type \{Object\}
+         */
         this.emit("onListItemClick", { event });
     }
 
@@ -98,6 +98,10 @@ class MdListComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
+        /**
+         * @event onListItemCheckboxNativeInput
+         * @type \{Object\}
+         */
         this.emit("onListItemCheckboxNativeInput", { event });
     }
 
@@ -107,6 +111,10 @@ class MdListComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
+        /**
+         * @event onListItemRadioButtonNativeInput
+         * @type \{Object\}
+         */
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
 
@@ -114,6 +122,10 @@ class MdListComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
+        /**
+         * @event onListItemSwitchNativeInput
+         * @type \{Object\}
+         */
         this.emit("onListItemSwitchNativeInput", { event });
     }
 }

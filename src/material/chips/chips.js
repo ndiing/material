@@ -6,7 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-chips
- * @fires MdChipsComponent#onChipClick
  */
 class MdChipsComponent extends MdComponent {
     /**
@@ -59,6 +58,10 @@ class MdChipsComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
+        /**
+         * @event onChipClick
+         * @type \{Object\}
+         */
         this.emit("onChipClick", { event });
     }
 }

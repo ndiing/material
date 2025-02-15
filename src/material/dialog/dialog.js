@@ -6,13 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-dialog
- * @fires MdDialogComponent#onDialogShow
- * @fires MdDialogComponent#onDialogClose
- * @fires MdDialogComponent#onDialogScrimClose
- * @fires MdDialogComponent#onDialogShown
- * @fires MdDialogComponent#onDialogClosed
- * @fires MdDialogComponent#onDialogIconButtonClick
- * @fires MdDialogComponent#onDialogButtonClick
  */
 class MdDialogComponent extends MdComponent {
     /**
@@ -120,6 +113,10 @@ class MdDialogComponent extends MdComponent {
         this.style.removeProperty("--md-comp-dialog-animation");
         this.dialogScrim.show();
         this.open = true;
+        /**
+         * @event onDialogShow
+         * @type \{Object\}
+         */
         this.emit("onDialogShow");
     }
 
@@ -131,6 +128,10 @@ class MdDialogComponent extends MdComponent {
         this.style.removeProperty("--md-comp-dialog-animation");
         this.dialogScrim.close();
         this.open = false;
+        /**
+         * @event onDialogClose
+         * @type \{Object\}
+         */
         this.emit("onDialogClose");
     }
 
@@ -143,12 +144,20 @@ class MdDialogComponent extends MdComponent {
 
     handleDialogScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onDialogScrimClose
+         * @type \{Object\}
+         */
         this.emit("onDialogScrimClose", { event });
     }
 
     handleDialogShown(event) {
         if (event.animationName === "dialog-body-out") {
             this.removeEventListener("animationend", this.handleDialogShown);
+            /**
+             * @event onDialogShown
+             * @type \{Object\}
+             */
             this.emit("onDialogShown");
         }
     }
@@ -156,15 +165,27 @@ class MdDialogComponent extends MdComponent {
     handleDialogClosed(event) {
         if (event.animationName === "dialog-body-in") {
             this.removeEventListener("animationend", this.handleDialogClosed);
+            /**
+             * @event onDialogClosed
+             * @type \{Object\}
+             */
             this.emit("onDialogClosed");
         }
     }
 
     handleDialogIconButtonClick(event) {
+        /**
+         * @event onDialogIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onDialogIconButtonClick", { event });
     }
 
     handleDialogButtonClick(event) {
+        /**
+         * @event onDialogButtonClick
+         * @type \{Object\}
+         */
         this.emit("onDialogButtonClick", { event });
     }
 }

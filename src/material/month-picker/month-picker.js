@@ -10,20 +10,6 @@ import { cache } from "lit/directives/cache.js";
 /**
  * @extends MdComponent
  * @element md-month-picker
- * @fires MdMonthPickerComponent#onMonthPickerShow
- * @fires MdMonthPickerComponent#onMonthPickerClose
- * @fires MdMonthPickerComponent#onMonthPickerYearItemClick
- * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick
- * @fires MdMonthPickerComponent#onMonthPickerScrimClose
- * @fires MdMonthPickerComponent#onMonthPickerShown
- * @fires MdMonthPickerComponent#onMonthPickerClosed
- * @fires MdMonthPickerComponent#onMonthPickerIconButtonPrevClick
- * @fires MdMonthPickerComponent#onMonthPickerIconButtonNextClick
- * @fires MdMonthPickerComponent#onMonthPickerIconButtonClick
- * @fires MdMonthPickerComponent#onMonthPickerButtonCancelClick
- * @fires MdMonthPickerComponent#onMonthPickerButtonOkClick
- * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick
- * @fires MdMonthPickerComponent#onMonthPickerButtonClick
  */
 class MdMonthPickerComponent extends MdComponent {
     /**
@@ -299,6 +285,10 @@ class MdMonthPickerComponent extends MdComponent {
         });
         this.open = true;
         if (this.modal) this.monthPickerScrim.show();
+        /**
+         * @event onMonthPickerShow
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerShow");
     }
 
@@ -310,6 +300,10 @@ class MdMonthPickerComponent extends MdComponent {
         this.style.removeProperty("--md-comp-month-picker-animation");
         this.open = false;
         if (this.modal) this.monthPickerScrim.close();
+        /**
+         * @event onMonthPickerClose
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerClose");
     }
 
@@ -325,6 +319,10 @@ class MdMonthPickerComponent extends MdComponent {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.index = 1;
+        /**
+         * @event onMonthPickerYearItemClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerYearItemClick", { event });
     }
 
@@ -336,21 +334,37 @@ class MdMonthPickerComponent extends MdComponent {
         this.value.setMonth(data.month);
         console.log(data);
         this.requestUpdate();
+        /**
+         * @event onMonthPickerMonthItemClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerMonthItemClick", { event });
     }
 
     handleMonthPickerScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onMonthPickerScrimClose
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerScrimClose", { event });
     }
 
     handleMonthPickerShown(event) {
         this.removeEventListener("animationend", this.handleMonthPickerShown);
+        /**
+         * @event onMonthPickerShown
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerShown");
     }
 
     handleMonthPickerClosed(event) {
         this.removeEventListener("animationend", this.handleMonthPickerClosed);
+        /**
+         * @event onMonthPickerClosed
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerClosed");
     }
 
@@ -361,6 +375,10 @@ class MdMonthPickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onMonthPickerIconButtonPrevClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerIconButtonPrevClick", { event });
     }
 
@@ -371,6 +389,10 @@ class MdMonthPickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+        /**
+         * @event onMonthPickerIconButtonNextClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerIconButtonNextClick", { event });
     }
 
@@ -382,17 +404,29 @@ class MdMonthPickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onMonthPickerIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerIconButtonClick", { event });
     }
 
     handleMonthPickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
         // this.close();
+        /**
+         * @event onMonthPickerButtonCancelClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerButtonCancelClick", { event });
     }
 
     handleMonthPickerButtonOkClick(event) {
         // this.close();
+        /**
+         * @event onMonthPickerButtonOkClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerButtonOkClick", { event });
     }
 
@@ -402,6 +436,10 @@ class MdMonthPickerComponent extends MdComponent {
             1: 0,
         };
         this.index = map[this.index];
+        /**
+         * @event onMonthPickerButtonLabelClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerButtonLabelClick", { event });
     }
 
@@ -414,6 +452,10 @@ class MdMonthPickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+        /**
+         * @event onMonthPickerButtonClick
+         * @type \{Object\}
+         */
         this.emit("onMonthPickerButtonClick", { event });
     }
 }

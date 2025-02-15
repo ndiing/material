@@ -7,14 +7,6 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * @extends MdComponent
  * @element md-text-field
- * @fires MdTextFieldComponent#onTextFieldFocus
- * @fires MdTextFieldComponent#onTextFieldBlur
- * @fires MdTextFieldComponent#onTextFieldInput
- * @fires MdTextFieldComponent#onTextFieldInvalid
- * @fires MdTextFieldComponent#onTextFieldReset
- * @fires MdTextFieldComponent#onTextFieldIconButtonCancelClick
- * @fires MdTextFieldComponent#onTextFieldIconButtonClick
- * @fires MdTextFieldComponent#onTextFieldClick
  */
 class MdTextFieldComponent extends MdComponent {
     /**
@@ -263,16 +255,28 @@ class MdTextFieldComponent extends MdComponent {
 
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
+        /**
+         * @event onTextFieldFocus
+         * @type \{Object\}
+         */
         this.emit("onTextFieldFocus", { event });
     }
 
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
+        /**
+         * @event onTextFieldBlur
+         * @type \{Object\}
+         */
         this.emit("onTextFieldBlur", { event });
     }
 
     handleTextFieldInput(event) {
         this.updateValue();
+        /**
+         * @event onTextFieldInput
+         * @type \{Object\}
+         */
         this.emit("onTextFieldInput", { event });
     }
 
@@ -289,6 +293,10 @@ class MdTextFieldComponent extends MdComponent {
         event.preventDefault();
         this.error = this.textFieldNative.validationMessage;
         this.classList.toggle("md-text-field--error", !!this.error);
+        /**
+         * @event onTextFieldInvalid
+         * @type \{Object\}
+         */
         this.emit("onTextFieldInvalid", { event });
     }
 
@@ -297,6 +305,10 @@ class MdTextFieldComponent extends MdComponent {
         this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.value);
         this.classList.toggle("md-text-field--error", !!this.error);
+        /**
+         * @event onTextFieldReset
+         * @type \{Object\}
+         */
         this.emit("onTextFieldReset", { event });
     }
 
@@ -306,17 +318,29 @@ class MdTextFieldComponent extends MdComponent {
         this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.classList.toggle("md-text-field--error", !!this.error);
+        /**
+         * @event onTextFieldIconButtonCancelClick
+         * @type \{Object\}
+         */
         this.emit("onTextFieldIconButtonCancelClick", { event });
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
+        /**
+         * @event onTextFieldIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onTextFieldIconButtonClick", { event });
     }
 
     handleTextFieldClick(event) {
         event.preventDefault();
+        /**
+         * @event onTextFieldClick
+         * @type \{Object\}
+         */
         this.emit("onTextFieldClick", { event });
     }
 }

@@ -6,8 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-checkbox
- * @fires MdCheckboxComponent#onCheckboxNativeInput
- * @fires MdCheckboxComponent#onCheckboxNativeReset
  */
 class MdCheckboxComponent extends MdComponent {
     /**
@@ -72,6 +70,10 @@ class MdCheckboxComponent extends MdComponent {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
+        /**
+         * @event onCheckboxNativeInput
+         * @type \{Object\}
+         */
         this.emit("onCheckboxNativeInput", { event });
     }
 
@@ -79,6 +81,10 @@ class MdCheckboxComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
+        /**
+         * @event onCheckboxNativeReset
+         * @type \{Object\}
+         */
         this.emit("onCheckboxNativeReset", { event });
     }
 }

@@ -6,8 +6,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-switch
- * @fires MdSwitchComponent#onSwitchNativeInput
- * @fires MdSwitchComponent#onSwitchNativeReset
  */
 class MdSwitchComponent extends MdComponent {
     /**
@@ -77,6 +75,10 @@ class MdSwitchComponent extends MdComponent {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
+        /**
+         * @event onSwitchNativeInput
+         * @type \{Object\}
+         */
         this.emit("onSwitchNativeInput", { event });
     }
 
@@ -84,6 +86,10 @@ class MdSwitchComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
+        /**
+         * @event onSwitchNativeReset
+         * @type \{Object\}
+         */
         this.emit("onSwitchNativeReset", { event });
     }
 }

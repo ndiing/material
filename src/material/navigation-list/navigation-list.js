@@ -6,11 +6,6 @@ import { Store } from "../store/store";
 /**
  * @extends MdComponent
  * @element md-navigation-list
- * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp
- * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown
- * @fires MdNavigationListComponent#onNavigationListKeydownEnter
- * @fires MdNavigationListComponent#onNavigationListKeydown
- * @fires MdNavigationListComponent#onNavigationListItemClick
  */
 class MdNavigationListComponent extends MdComponent {
     /**
@@ -100,6 +95,10 @@ class MdNavigationListComponent extends MdComponent {
         });
         this.requestUpdate();
         this.updateScroll();
+        /**
+         * @event onNavigationListKeydownArrowUp
+         * @type \{Object\}
+         */
         this.emit("onNavigationListKeydownArrowUp", { event });
     }
 
@@ -113,6 +112,10 @@ class MdNavigationListComponent extends MdComponent {
         });
         this.requestUpdate();
         this.updateScroll();
+        /**
+         * @event onNavigationListKeydownArrowDown
+         * @type \{Object\}
+         */
         this.emit("onNavigationListKeydownArrowDown", { event });
     }
 
@@ -120,6 +123,10 @@ class MdNavigationListComponent extends MdComponent {
         event.preventDefault();
         // const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
         // navigationListItemSelected.click();
+        /**
+         * @event onNavigationListKeydownEnter
+         * @type \{Object\}
+         */
         this.emit("onNavigationListKeydownEnter", { event });
     }
 
@@ -129,6 +136,10 @@ class MdNavigationListComponent extends MdComponent {
             else if (event.key === "ArrowDown") return this.handleNavigationListKeydownArrowDown(event);
             else if (event.key === "Enter") return this.handleNavigationListKeydownEnter(event);
         }
+        /**
+         * @event onNavigationListKeydown
+         * @type \{Object\}
+         */
         this.emit("onNavigationListKeydown", { event });
     }
 
@@ -139,6 +150,10 @@ class MdNavigationListComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
+        /**
+         * @event onNavigationListItemClick
+         * @type \{Object\}
+         */
         this.emit("onNavigationListItemClick", { event });
     }
 }

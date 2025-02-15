@@ -6,13 +6,6 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-side-sheet
- * @fires MdSideSheetComponent#onSideSheetShow
- * @fires MdSideSheetComponent#onSideSheetClose
- * @fires MdSideSheetComponent#onSideSheetShown
- * @fires MdSideSheetComponent#onSideSheetClosed
- * @fires MdSideSheetComponent#onSideSheetScrimClose
- * @fires MdSideSheetComponent#onSideSheetIconButtonClick
- * @fires MdSideSheetComponent#onSideSheetButtonClick
  */
 class MdSideSheetComponent extends MdComponent {
     /**
@@ -126,6 +119,10 @@ class MdSideSheetComponent extends MdComponent {
         this.addEventListener("animationend", this.handleSideSheetShown);
         this.open = true;
         if (this.modal) this.sideSheetScrim.show();
+        /**
+         * @event onSideSheetShow
+         * @type \{Object\}
+         */
         this.emit("onSideSheetShow");
     }
 
@@ -137,6 +134,10 @@ class MdSideSheetComponent extends MdComponent {
         this.addEventListener("animationend", this.handleSideSheetClosed);
         this.open = false;
         if (this.sideSheetScrim.open) this.sideSheetScrim.close();
+        /**
+         * @event onSideSheetClose
+         * @type \{Object\}
+         */
         this.emit("onSideSheetClose");
     }
 
@@ -150,6 +151,10 @@ class MdSideSheetComponent extends MdComponent {
     handleSideSheetShown(event) {
         if (event.animationName === "side-sheet-modal-out" || event.animationName === "side-sheet-out") {
             this.removeEventListener("animationend", this.handleSideSheetShown);
+            /**
+             * @event onSideSheetShown
+             * @type \{Object\}
+             */
             this.emit("onSideSheetShown");
         }
     }
@@ -157,20 +162,36 @@ class MdSideSheetComponent extends MdComponent {
     handleSideSheetClosed(event) {
         if (event.animationName === "side-sheet-modal-in" || event.animationName === "side-sheet-in") {
             this.removeEventListener("animationend", this.handleSideSheetClosed);
+            /**
+             * @event onSideSheetClosed
+             * @type \{Object\}
+             */
             this.emit("onSideSheetClosed");
         }
     }
 
     handleSideSheetScrimClose(event) {
         if (this.open) this.close();
+        /**
+         * @event onSideSheetScrimClose
+         * @type \{Object\}
+         */
         this.emit("onSideSheetScrimClose", { event });
     }
 
     handleSideSheetIconButtonClick(event) {
+        /**
+         * @event onSideSheetIconButtonClick
+         * @type \{Object\}
+         */
         this.emit("onSideSheetIconButtonClick", { event });
     }
 
     handleSideSheetButtonClick(event) {
+        /**
+         * @event onSideSheetButtonClick
+         * @type \{Object\}
+         */
         this.emit("onSideSheetButtonClick", { event });
     }
 }

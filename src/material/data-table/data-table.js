@@ -7,12 +7,6 @@ import { Store } from "../store/store";
 /**
  * @extends MdComponent
  * @element md-data-table
- * @fires MdDataTableComponent#onDataTableKeydown
- * @fires MdDataTableComponent#onDataTableHeaderCellClick
- * @fires MdDataTableComponent#onDataTableBodyCellClick
- * @fires MdDataTableComponent#onDataTableHeaderCellCheckboxClick
- * @fires MdDataTableComponent#onDataTableBodyClick
- * @fires MdDataTableComponent#onDataTableBodyCellCheckboxClick
  */
 class MdDataTableComponent extends MdComponent {
     /**
@@ -202,6 +196,10 @@ class MdDataTableComponent extends MdComponent {
             });
             this.requestUpdate();
         }
+        /**
+         * @event onDataTableKeydown
+         * @type \{Object\}
+         */
         this.emit("onDataTableKeydown", { event });
     }
 
@@ -222,10 +220,18 @@ class MdDataTableComponent extends MdComponent {
             data.order = orders[data.order];
             this.updateStore();
         }
+        /**
+         * @event onDataTableHeaderCellClick
+         * @type \{Object\}
+         */
         this.emit("onDataTableHeaderCellClick", { event });
     }
 
     handleDataTableBodyCellClick(event) {
+        /**
+         * @event onDataTableBodyCellClick
+         * @type \{Object\}
+         */
         this.emit("onDataTableBodyCellClick", { event });
     }
 
@@ -236,6 +242,10 @@ class MdDataTableComponent extends MdComponent {
             item.selected = selected;
         });
         this.requestUpdate();
+        /**
+         * @event onDataTableHeaderCellCheckboxClick
+         * @type \{Object\}
+         */
         this.emit("onDataTableHeaderCellCheckboxClick", { event });
     }
 
@@ -265,6 +275,10 @@ class MdDataTableComponent extends MdComponent {
             this.prevSelectedIndex = this.data.indexOf(data);
         }
         this.requestUpdate();
+        /**
+         * @event onDataTableBodyClick
+         * @type \{Object\}
+         */
         this.emit("onDataTableBodyClick", { event });
     }
 
@@ -273,6 +287,10 @@ class MdDataTableComponent extends MdComponent {
         const bodyData = event.target.closest("tbody").data;
         bodyData.selected = !bodyData.selected;
         this.requestUpdate();
+        /**
+         * @event onDataTableBodyCellCheckboxClick
+         * @type \{Object\}
+         */
         this.emit("onDataTableBodyCellCheckboxClick", { event });
     }
 }

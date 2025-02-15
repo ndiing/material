@@ -5,7 +5,6 @@ import { Ripple } from "../ripple/ripple";
 /**
  * @extends MdComponent
  * @element md-chip
- * @fires MdChipComponent#onChipActionClick
  */
 class MdChipComponent extends MdComponent {
     /**
@@ -64,6 +63,10 @@ class MdChipComponent extends MdComponent {
     }
 
     handleChipActionClick(event) {
+        /**
+         * @event onChipActionClick
+         * @type \{Object\}
+         */
         this.emit("onChipActionClick", { event });
     }
 }
