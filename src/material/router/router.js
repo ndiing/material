@@ -4,24 +4,6 @@
  * @fires Router#onRouterNavigate
  * @fires Router#onRouterNavigateError
  * @fires Router#onRouterNavigateSuccess
- * @example
- * import { Router } from "./material/router/router";
- * const sessionCheck = async (next) => {
- *     if(hasSession){
- *         next()
- *     }else{
- *         Router.navigate('/login')
- *     }
- * }
- * Router.use([
- *     {path:'',component:AppMain,children:[
- *         {path:'users',beforeLoad:sessionCheck,component:AppUsers,children:[
- *             {path:':id',component:AppUser,children:[]},
- *         ]},
- *         {path:'login',load:() => import('./login/login.js').then(module=>module.default),children:[]},
- *     ]},
- *     {path:'*',component:AppFallback},
- * ]);
  */
 class Router {
     /**
@@ -81,16 +63,16 @@ class Router {
     //  */
     static async handleNavigation(event) {
         performance.mark("mark-1");
-        this.emit("onRouterCurrentEntryChange");
+        this.emit("onRouterCurrentEntryChange",{});
         this.setController();
         const routes = this.get();
-        this.emit("onRouterNavigate");
+        this.emit("onRouterNavigate",{});
         for (const route of routes ?? []) {
             if (route.beforeLoad) {
                 try {
                     await this.handleBeforeLoad(route);
                 } catch (error) {
-                    this.emit("onRouterNavigateError");
+                    this.emit("onRouterNavigateError",{});
                     break;
                 }
             }
@@ -105,7 +87,7 @@ class Router {
         performance.clearMarks("mark-1");
         performance.clearMarks("mark-2");
         performance.clearMeasures("measure-1");
-        this.emit("onRouterNavigateSuccess");
+        this.emit("onRouterNavigateSuccess",{});
     }
 
     // /**

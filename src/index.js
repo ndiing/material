@@ -1,12 +1,16 @@
-import "./material/material.scss"; /* built-in module */
+// This example code is intended for demonstration purposes only. 
+// It may not follow best coding practices. 
+// It is recommended to use better coding approaches for production use.
+
+import "./material/material.scss"; 
 import "./app/app.scss";
 import "./demo/demo.scss";
 import "./docs/docs.scss";
 
-import "./material/material.js"; /* built-in module */
-import { Router } from "./material/router/router"; /* built-in module */
-import { Progress } from "./material/progress/progress.js"; /* built-in module */
-import { setTheme } from "./material/color/color.js"; /* built-in module */
+import "./material/material.js"; 
+import { Router } from "./material/router/router"; 
+import { Progress } from "./material/progress/progress.js"; 
+import { setTheme } from "./material/color/color.js"; 
 import AppRoutes from "./app/app.js";
 
 const routes = [AppRoutes];
@@ -44,5 +48,5 @@ function demoTheme() {
     setTheme(getRandomHexColor());
 }
 
-demoProgress();
-demoTheme();
+// demoProgress();
+// demoTheme();
