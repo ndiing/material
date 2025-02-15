@@ -1,18 +1,15 @@
 "use strict";
-var __assign =
-    (this && this.__assign) ||
-    function () {
-        __assign =
-            Object.assign ||
-            function (t) {
-                for (var s, i = 1, n = arguments.length; i < n; i++) {
-                    s = arguments[i];
-                    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-                }
-                return t;
-            };
-        return __assign.apply(this, arguments);
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
     };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VirtualScroll = void 0;
 /**
@@ -20,8 +17,8 @@ exports.VirtualScroll = void 0;
  */
 var VirtualScroll = /** @class */ (function () {
     /**
-     * @param {String} [host]
-     * @param {Object} [options]
+     * @param {Any} [host]
+     * @param {Any} [options]
      */
     function VirtualScroll(host, options) {
         this.host = host;
@@ -29,12 +26,10 @@ var VirtualScroll = /** @class */ (function () {
         this.init();
     }
     /**
-     * @param {Object} [options={}]
+     * @param {Any} [options={}]
      */
     VirtualScroll.prototype.load = function (options) {
-        if (options === void 0) {
-            options = {};
-        }
+        if (options === void 0) { options = {}; }
         for (var name_1 in options) {
             var value = options[name_1];
             this.options[name_1] = value;
@@ -42,7 +37,7 @@ var VirtualScroll = /** @class */ (function () {
         this.handleScroll();
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     VirtualScroll.prototype.handleScroll = function (event) {
         var _a;
@@ -68,8 +63,8 @@ var VirtualScroll = /** @class */ (function () {
         });
     };
     /**
-     * @param {String} [type]
-     * @param {String} [detail]
+     * @param {Any} [type]
+     * @param {Any} [detail]
      */
     VirtualScroll.prototype.emit = function (type, detail) {
         var event = new CustomEvent(type, {
@@ -97,5 +92,5 @@ var VirtualScroll = /** @class */ (function () {
         this.handleScroll = null;
     };
     return VirtualScroll;
-})();
+}());
 exports.VirtualScroll = VirtualScroll;

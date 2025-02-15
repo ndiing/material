@@ -5,7 +5,7 @@ exports.Layout = void 0;
  */
 var Layout = /** @class */ (function () {
     /**
-     * @param {String} [callback]
+     * @param {Any} [callback]
      */
     function Layout(callback) {
         /**
@@ -28,9 +28,7 @@ var Layout = /** @class */ (function () {
     /**
      */
     Layout.prototype.init = function () {
-        this.item = this.items.find(function (item) {
-            return item.media.matches;
-        });
+        this.item = this.items.find(function (item) { return item.media.matches; });
         this.callback(this.item);
         this.item.media.addEventListener("change", this.handleChange);
     };
@@ -41,5 +39,5 @@ var Layout = /** @class */ (function () {
         this.item = undefined;
     };
     return Layout;
-})();
+}());
 exports.Layout = Layout;

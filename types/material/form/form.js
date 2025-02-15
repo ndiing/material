@@ -1,38 +1,23 @@
 "use strict";
-var __extends =
-    (this && this.__extends) ||
-    (function () {
-        var extendStatics = function (d, b) {
-            extendStatics =
-                Object.setPrototypeOf ||
-                ({ __proto__: [] } instanceof Array &&
-                    function (d, b) {
-                        d.__proto__ = b;
-                    }) ||
-                function (d, b) {
-                    for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
-                };
-            return extendStatics(d, b);
-        };
-        return function (d, b) {
-            if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-            extendStatics(d, b);
-            function __() {
-                this.constructor = d;
-            }
-            d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
-        };
-    })();
-var __makeTemplateObject =
-    (this && this.__makeTemplateObject) ||
-    function (cooked, raw) {
-        if (Object.defineProperty) {
-            Object.defineProperty(cooked, "raw", { value: raw });
-        } else {
-            cooked.raw = raw;
-        }
-        return cooked;
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
     };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MdFormComponent = void 0;
 var lit_1 = require("lit");
@@ -63,12 +48,12 @@ var MdFormComponent = /** @class */ (function (_super) {
             return this.querySelector(".md-form__native");
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     /**
      */
     MdFormComponent.prototype.render = function () {
-        return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(['\n            <form\n                class="md-form__native"\n                .acceptCharset="', '"\n                .action="', '"\n                .autocomplete="', '"\n                .enctype="', '"\n                .method="', '"\n                .name="', '"\n                .noValidate="', '"\n                @formdata="', '"\n                @reset="', '"\n                @submit="', '"\n            >\n                ', "\n            </form>\n        "], ['\n            <form\n                class="md-form__native"\n                .acceptCharset="', '"\n                .action="', '"\n                .autocomplete="', '"\n                .enctype="', '"\n                .method="', '"\n                .name="', '"\n                .noValidate="', '"\n                @formdata="', '"\n                @reset="', '"\n                @submit="', '"\n            >\n                ', "\n            </form>\n        "])), (0, if_defined_js_1.ifDefined)(this.acceptCharset), (0, if_defined_js_1.ifDefined)(this.action), (0, if_defined_js_1.ifDefined)(this.autocomplete), (0, if_defined_js_1.ifDefined)(this.enctype), (0, if_defined_js_1.ifDefined)(this.method), (0, if_defined_js_1.ifDefined)(this.name), (0, if_defined_js_1.ifDefined)(this.noValidate), this.handleFormNativeFormdata, this.handleFormNativeReset, this.handleFormNativeSubmit, this.body);
+        return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n            <form\n                class=\"md-form__native\"\n                .acceptCharset=\"", "\"\n                .action=\"", "\"\n                .autocomplete=\"", "\"\n                .enctype=\"", "\"\n                .method=\"", "\"\n                .name=\"", "\"\n                .noValidate=\"", "\"\n                @formdata=\"", "\"\n                @reset=\"", "\"\n                @submit=\"", "\"\n            >\n                ", "\n            </form>\n        "], ["\n            <form\n                class=\"md-form__native\"\n                .acceptCharset=\"", "\"\n                .action=\"", "\"\n                .autocomplete=\"", "\"\n                .enctype=\"", "\"\n                .method=\"", "\"\n                .name=\"", "\"\n                .noValidate=\"", "\"\n                @formdata=\"", "\"\n                @reset=\"", "\"\n                @submit=\"", "\"\n            >\n                ", "\n            </form>\n        "])), (0, if_defined_js_1.ifDefined)(this.acceptCharset), (0, if_defined_js_1.ifDefined)(this.action), (0, if_defined_js_1.ifDefined)(this.autocomplete), (0, if_defined_js_1.ifDefined)(this.enctype), (0, if_defined_js_1.ifDefined)(this.method), (0, if_defined_js_1.ifDefined)(this.name), (0, if_defined_js_1.ifDefined)(this.noValidate), this.handleFormNativeFormdata, this.handleFormNativeReset, this.handleFormNativeSubmit, this.body);
     };
     /**
      */
@@ -82,27 +67,29 @@ var MdFormComponent = /** @class */ (function (_super) {
         this.formNative.reset();
     };
     /**
-     * @param {String} [submitButton]
+     * @param {Any} [submitButton]
      */
     MdFormComponent.prototype.submit = function (submitButton) {
         if (this.formNative.requestSubmit) {
             if (submitButton) {
                 this.formNative.requestSubmit(submitButton);
-            } else {
+            }
+            else {
                 this.formNative.requestSubmit();
             }
-        } else {
+        }
+        else {
             this.formNative.submit();
         }
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdFormComponent.prototype.handleFormNativeFormdata = function (event) {
         this.emit("onFormNativeFormdata", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdFormComponent.prototype.handleFormNativeReset = function (event) {
         for (var _i = 0, _a = this.formNative.elements; _i < _a.length; _i++) {
@@ -116,7 +103,7 @@ var MdFormComponent = /** @class */ (function (_super) {
         this.emit("onFormNativeReset", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdFormComponent.prototype.handleFormNativeSubmit = function (event) {
         event.preventDefault();
@@ -142,7 +129,7 @@ var MdFormComponent = /** @class */ (function (_super) {
         noValidate: { type: Boolean },
     };
     return MdFormComponent;
-})(component_1.MdComponent);
+}(component_1.MdComponent));
 exports.MdFormComponent = MdFormComponent;
 customElements.define("md-form", MdFormComponent);
 var templateObject_1;

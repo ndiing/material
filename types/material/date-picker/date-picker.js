@@ -1,169 +1,70 @@
 "use strict";
-var __extends =
-    (this && this.__extends) ||
-    (function () {
-        var extendStatics = function (d, b) {
-            extendStatics =
-                Object.setPrototypeOf ||
-                ({ __proto__: [] } instanceof Array &&
-                    function (d, b) {
-                        d.__proto__ = b;
-                    }) ||
-                function (d, b) {
-                    for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
-                };
-            return extendStatics(d, b);
-        };
-        return function (d, b) {
-            if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-            extendStatics(d, b);
-            function __() {
-                this.constructor = d;
-            }
-            d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
-        };
-    })();
-var __makeTemplateObject =
-    (this && this.__makeTemplateObject) ||
-    function (cooked, raw) {
-        if (Object.defineProperty) {
-            Object.defineProperty(cooked, "raw", { value: raw });
-        } else {
-            cooked.raw = raw;
-        }
-        return cooked;
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
     };
-var __assign =
-    (this && this.__assign) ||
-    function () {
-        __assign =
-            Object.assign ||
-            function (t) {
-                for (var s, i = 1, n = arguments.length; i < n; i++) {
-                    s = arguments[i];
-                    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-                }
-                return t;
-            };
-        return __assign.apply(this, arguments);
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-var __awaiter =
-    (this && this.__awaiter) ||
-    function (thisArg, _arguments, P, generator) {
-        function adopt(value) {
-            return value instanceof P
-                ? value
-                : new P(function (resolve) {
-                      resolve(value);
-                  });
+})();
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
         }
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) {
-                try {
-                    step(generator.next(value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-            function rejected(value) {
-                try {
-                    step(generator["throw"](value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-            function step(result) {
-                result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-            }
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
+        return t;
     };
-var __generator =
-    (this && this.__generator) ||
-    function (thisArg, body) {
-        var _ = {
-                label: 0,
-                sent: function () {
-                    if (t[0] & 1) throw t[1];
-                    return t[1];
-                },
-                trys: [],
-                ops: [],
-            },
-            f,
-            y,
-            t,
-            g;
-        return (
-            (g = { next: verb(0), throw: verb(1), return: verb(2) }),
-            typeof Symbol === "function" &&
-                (g[Symbol.iterator] = function () {
-                    return this;
-                }),
-            g
-        );
-        function verb(n) {
-            return function (v) {
-                return step([n, v]);
-            };
-        }
-        function step(op) {
-            if (f) throw new TypeError("Generator is already executing.");
-            while ((g && ((g = 0), op[0] && (_ = 0)), _))
-                try {
-                    if (((f = 1), y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)) return t;
-                    if (((y = 0), t)) op = [op[0] & 2, t.value];
-                    switch (op[0]) {
-                        case 0:
-                        case 1:
-                            t = op;
-                            break;
-                        case 4:
-                            _.label++;
-                            return { value: op[1], done: false };
-                        case 5:
-                            _.label++;
-                            y = op[1];
-                            op = [0];
-                            continue;
-                        case 7:
-                            op = _.ops.pop();
-                            _.trys.pop();
-                            continue;
-                        default:
-                            if (!((t = _.trys), (t = t.length > 0 && t[t.length - 1])) && (op[0] === 6 || op[0] === 2)) {
-                                _ = 0;
-                                continue;
-                            }
-                            if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
-                                _.label = op[1];
-                                break;
-                            }
-                            if (op[0] === 6 && _.label < t[1]) {
-                                _.label = t[1];
-                                t = op;
-                                break;
-                            }
-                            if (t && _.label < t[2]) {
-                                _.label = t[2];
-                                _.ops.push(op);
-                                break;
-                            }
-                            if (t[2]) _.ops.pop();
-                            _.trys.pop();
-                            continue;
-                    }
-                    op = body.call(thisArg, _);
-                } catch (e) {
-                    op = [6, e];
-                    y = 0;
-                } finally {
-                    f = t = 0;
-                }
-            if (op[0] & 5) throw op[1];
-            return { value: op[0] ? op[1] : void 0, done: true };
-        }
-    };
+    return __assign.apply(this, arguments);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MdDatePickerComponent = void 0;
 var lit_1 = require("lit");
@@ -217,7 +118,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             return new Date(this.selection.getFullYear(), this.selection.getMonth()).getDay();
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "years", {
         /**
@@ -238,7 +139,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "months", {
         /**
@@ -258,7 +159,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "weekdays", {
         /**
@@ -274,7 +175,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "days", {
         /**
@@ -299,7 +200,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             });
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "icons", {
         /**
@@ -308,20 +209,14 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         get: function () {
             var _this = this;
             var map = {
-                0: function () {
-                    return [_this.years[0].label, _this.years[_this.years.length - 1].label].join(" - ");
-                },
-                1: function () {
-                    return _this.selection.getFullYear();
-                },
-                2: function () {
-                    return (0, util_1.stringifyDate)(_this.selection);
-                },
+                0: function () { return [_this.years[0].label, _this.years[_this.years.length - 1].label].join(" - "); },
+                1: function () { return _this.selection.getFullYear(); },
+                2: function () { return (0, util_1.stringifyDate)(_this.selection); },
             };
             return [{ component: "button", id: "label", label: map[this.index]() }];
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "actions", {
         /**
@@ -334,7 +229,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             ];
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     Object.defineProperty(MdDatePickerComponent.prototype, "buttons", {
         /**
@@ -344,74 +239,50 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             return [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
         },
         enumerable: false,
-        configurable: true,
+        configurable: true
     });
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     MdDatePickerComponent.prototype.renderIcon = function (item) {
         /* prettier-ignore */
         return (0, lit_1.html)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n            <md-icon\n                .data=\"", "\"\n            >", "</md-icon>\n        "], ["\n            <md-icon\n                .data=\"", "\"\n            >", "</md-icon>\n        "])), item, item.icon);
     };
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     MdDatePickerComponent.prototype.renderIconButton = function (item) {
         /* prettier-ignore */
         return (0, lit_1.html)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n            <md-icon-button\n                .data=\"", "\"\n                .icon=\"", "\"\n                .variant=\"", "\"\n                .type=\"", "\"\n                .toggle=\"", "\"\n                .selected=\"", "\"\n                .disabled=\"", "\"\n                @click=\"", "\"\n            ></md-icon-button>\n        "], ["\n            <md-icon-button\n                .data=\"", "\"\n                .icon=\"", "\"\n                .variant=\"", "\"\n                .type=\"", "\"\n                .toggle=\"", "\"\n                .selected=\"", "\"\n                .disabled=\"", "\"\n                @click=\"", "\"\n            ></md-icon-button>\n        "])), item, (0, if_defined_js_1.ifDefined)(item.icon), (0, if_defined_js_1.ifDefined)(item.variant), (0, if_defined_js_1.ifDefined)(item.type), (0, if_defined_js_1.ifDefined)(item.toggle), (0, if_defined_js_1.ifDefined)(item.selected), (0, if_defined_js_1.ifDefined)(item.disabled), this.handleDatePickerIconButtonClick);
     };
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     MdDatePickerComponent.prototype.renderButton = function (item) {
         /* prettier-ignore */
         return (0, lit_1.html)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n            <md-button\n                .data=\"", "\"\n                .icon=\"", "\"\n                .label=\"", "\"\n                .variant=\"", "\"\n                .type=\"", "\"\n                .disabled=\"", "\"\n                .selected=\"", "\"\n                @click=\"", "\"\n            ></md-button>\n        "], ["\n            <md-button\n                .data=\"", "\"\n                .icon=\"", "\"\n                .label=\"", "\"\n                .variant=\"", "\"\n                .type=\"", "\"\n                .disabled=\"", "\"\n                .selected=\"", "\"\n                @click=\"", "\"\n            ></md-button>\n        "])), item, (0, if_defined_js_1.ifDefined)(item.icon), (0, if_defined_js_1.ifDefined)(item.label), (0, if_defined_js_1.ifDefined)(item.variant), (0, if_defined_js_1.ifDefined)(item.type), (0, if_defined_js_1.ifDefined)(item.disabled), (0, if_defined_js_1.ifDefined)(item.selected), this.handleDatePickerButtonClick);
     };
     /**
-     * @param {String} [item]
+     * @param {Any} [item]
      */
     MdDatePickerComponent.prototype.renderSpacer = function (item) {
         /* prettier-ignore */
         return (0, lit_1.html)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n            <div \n                class=\"md-date-picker__spacer\"\n            ></div>\n        "], ["\n            <div \n                class=\"md-date-picker__spacer\"\n            ></div>\n        "])));
     };
     /**
-     * @param {String} [item]
-     * @param {String} [component="icon"]
+     * @param {Any} [item]
+     * @param {Any} [component="icon"]
      */
     MdDatePickerComponent.prototype.renderComponent = function (item, component) {
         var _this = this;
-        if (component === void 0) {
-            component = "icon";
-        }
+        if (component === void 0) { component = "icon"; }
         var components = [
-            [
-                "icon",
-                function () {
-                    return _this.renderIcon(item);
-                },
-            ],
-            [
-                "icon-button",
-                function () {
-                    return _this.renderIconButton(item);
-                },
-            ],
-            [
-                "button",
-                function () {
-                    return _this.renderButton(item);
-                },
-            ],
-            [
-                "spacer",
-                function () {
-                    return _this.renderSpacer(item);
-                },
-            ],
+            ["icon", function () { return _this.renderIcon(item); }],
+            ["icon-button", function () { return _this.renderIconButton(item); }],
+            ["button", function () { return _this.renderButton(item); }],
+            ["spacer", function () { return _this.renderSpacer(item); }],
         ];
-        return (0, choose_js_1.choose)(item.component || component, components, function () {
-            return lit_1.nothing;
-        });
+        return (0, choose_js_1.choose)(item.component || component, components, function () { return lit_1.nothing; });
     };
     /**
      */
@@ -467,7 +338,8 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
                         this.parentElement.insertBefore(this.datePickerScrim, this.nextElementSibling);
                         this.handleDatePickerScrimClose = this.handleDatePickerScrimClose.bind(this);
                         this.datePickerScrim.addEventListener("onScrimClose", this.handleDatePickerScrimClose);
-                        if (this.modal && this.open) this.datePickerScrim.show();
+                        if (this.modal && this.open)
+                            this.datePickerScrim.show();
                         return [4 /*yield*/, this.updateComplete];
                     case 1:
                         _a.sent();
@@ -487,7 +359,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
     };
     /**
      * @async
-     * @param {String} [changedProperties]
+     * @param {Any} [changedProperties]
      */
     MdDatePickerComponent.prototype.updated = function (changedProperties) {
         return __awaiter(this, void 0, void 0, function () {
@@ -507,38 +379,30 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
                         _a.sent();
                         this.selection = new Date(this.value.valueOf());
                         _a.label = 2;
-                    case 2:
-                        return [2 /*return*/];
+                    case 2: return [2 /*return*/];
                 }
             });
         });
     };
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     MdDatePickerComponent.prototype.show = function (options) {
         this.index = this.defaultIndex;
         this.handleDatePickerShown = this.handleDatePickerShown.bind(this);
         this.addEventListener("animationend", this.handleDatePickerShown);
         this.style.removeProperty("--md-comp-date-picker-animation");
-        (0, popper_1.setPosition)(
-            __assign(
-                {
-                    container: this,
-                    offset: 4 + 4,
-                    /* prettier-ignore */
-                    placements: [
+        (0, popper_1.setPosition)(__assign({ container: this, offset: 4 + 4, 
+            /* prettier-ignore */
+            placements: [
                 "bottom-start", "bottom-end", "bottom",
                 "top-start", "top-end", "top",
                 "right-start", "right-end", "right",
                 "left-start", "left-end", "left"
-            ],
-                },
-                options,
-            ),
-        );
+            ] }, options));
         this.open = true;
-        if (this.modal) this.datePickerScrim.show();
+        if (this.modal)
+            this.datePickerScrim.show();
         this.emit("onDatePickerShow");
     };
     /**
@@ -548,18 +412,21 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         this.addEventListener("animationend", this.handleDatePickerClosed);
         this.style.removeProperty("--md-comp-date-picker-animation");
         this.open = false;
-        if (this.modal) this.datePickerScrim.close();
+        if (this.modal)
+            this.datePickerScrim.close();
         this.emit("onDatePickerClose");
     };
     /**
-     * @param {Object} [options]
+     * @param {Any} [options]
      */
     MdDatePickerComponent.prototype.toggle = function (options) {
-        if (this.open) this.close();
-        else this.show(options);
+        if (this.open)
+            this.close();
+        else
+            this.show(options);
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerYearItemClick = function (event) {
         var data = event.currentTarget.data;
@@ -568,7 +435,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         this.emit("onDatePickerYearItemClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerMonthItemClick = function (event) {
         var data = event.currentTarget.data;
@@ -578,7 +445,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         this.emit("onDatePickerMonthItemClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerDayItemClick = function (event) {
         var data = event.currentTarget.data;
@@ -592,68 +459,57 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         this.emit("onDatePickerDayItemClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerScrimClose = function (event) {
-        if (this.open) this.close();
+        if (this.open)
+            this.close();
         this.emit("onDatePickerScrimClose", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerShown = function (event) {
         this.removeEventListener("animationend", this.handleDatePickerShown);
         this.emit("onDatePickerShown");
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerClosed = function (event) {
         this.removeEventListener("animationend", this.handleDatePickerClosed);
         this.emit("onDatePickerClosed");
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerIconButtonPrevClick = function (event) {
         var _this = this;
         var map = {
-            0: function () {
-                return _this.selection.setFullYear(_this.selection.getFullYear() - 10);
-            },
-            1: function () {
-                return _this.selection.setFullYear(_this.selection.getFullYear() - 1);
-            },
-            2: function () {
-                return _this.selection.setMonth(_this.selection.getMonth() - 1);
-            },
+            0: function () { return _this.selection.setFullYear(_this.selection.getFullYear() - 10); },
+            1: function () { return _this.selection.setFullYear(_this.selection.getFullYear() - 1); },
+            2: function () { return _this.selection.setMonth(_this.selection.getMonth() - 1); },
         };
         map[this.index]();
         this.requestUpdate();
         this.emit("onDatePickerIconButtonPrevClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerIconButtonNextClick = function (event) {
         var _this = this;
         var map = {
-            0: function () {
-                return _this.selection.setFullYear(_this.selection.getFullYear() + 10);
-            },
-            1: function () {
-                return _this.selection.setFullYear(_this.selection.getFullYear() + 1);
-            },
-            2: function () {
-                return _this.selection.setMonth(_this.selection.getMonth() + 1);
-            },
+            0: function () { return _this.selection.setFullYear(_this.selection.getFullYear() + 10); },
+            1: function () { return _this.selection.setFullYear(_this.selection.getFullYear() + 1); },
+            2: function () { return _this.selection.setMonth(_this.selection.getMonth() + 1); },
         };
         map[this.index]();
         this.requestUpdate();
         this.emit("onDatePickerIconButtonNextClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerIconButtonClick = function (event) {
         var data = event.currentTarget.data;
@@ -662,11 +518,12 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             next: this.handleDatePickerIconButtonNextClick.bind(this),
         };
         var fn = map[data.id];
-        if (fn) return fn(event);
+        if (fn)
+            return fn(event);
         this.emit("onDatePickerIconButtonClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerButtonCancelClick = function (event) {
         this.value = new Date(this.defaultValue.valueOf());
@@ -674,14 +531,14 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         this.emit("onDatePickerButtonCancelClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerButtonOkClick = function (event) {
         // this.close();
         this.emit("onDatePickerButtonOkClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerButtonLabelClick = function (event) {
         var map = {
@@ -693,7 +550,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         this.emit("onDatePickerButtonLabelClick", { event: event });
     };
     /**
-     * @param {Object} [event]
+     * @param {Any} [event]
      */
     MdDatePickerComponent.prototype.handleDatePickerButtonClick = function (event) {
         var data = event.currentTarget.data;
@@ -703,7 +560,8 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
             label: this.handleDatePickerButtonLabelClick.bind(this),
         };
         var fn = map[data.id];
-        if (fn) return fn(event);
+        if (fn)
+            return fn(event);
         this.emit("onDatePickerButtonClick", { event: event });
     };
     /**
@@ -742,7 +600,7 @@ var MdDatePickerComponent = /** @class */ (function (_super) {
         selection: { state: true },
     };
     return MdDatePickerComponent;
-})(component_1.MdComponent);
+}(component_1.MdComponent));
 exports.MdDatePickerComponent = MdDatePickerComponent;
 customElements.define("md-date-picker", MdDatePickerComponent);
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;

@@ -1,5 +1,5 @@
 /**
- * @param {Number} [week]
+ * @param {Any} [week]
  */
 Date.prototype.setWeek = function (week) {
     var year = this.getFullYear();

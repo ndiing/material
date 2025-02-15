@@ -12,54 +12,50 @@ exports.stringifyTime = stringifyTime;
 exports.stringifyWeek = stringifyWeek;
 exports.closestScrollableElement = closestScrollableElement;
 /**
- * @param {String} [string]
+ * @param {Any} [string]
  */
 function parseDate(string) {
     return new Date(string);
 }
 /**
- * @param {String} [string]
+ * @param {Any} [string]
  */
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
 /**
- * @param {String} [string]
+ * @param {Any} [string]
  */
 function parseMonth(string) {
     return new Date(string + "-01");
 }
 /**
- * @param {String} [string]
+ * @param {Any} [string]
  */
 function parseTime(string) {
-    var _a = string.split(":"),
-        hours = _a[0],
-        minutes = _a[1];
+    var _a = string.split(":"), hours = _a[0], minutes = _a[1];
     var date = new Date();
     date.setHours(hours, minutes, 0, 0);
     return date;
 }
 /**
- * @param {String} [string]
+ * @param {Any} [string]
  */
 function parseWeek(string) {
-    var _a = string.split("-W"),
-        year = _a[0],
-        week = _a[1];
+    var _a = string.split("-W"), year = _a[0], week = _a[1];
     var d = new Date(year, 0, 1);
     var days = (week - 1) * 7;
     d.setDate(d.getDate() + days);
     return d;
 }
 /**
- * @param {String} [date]
+ * @param {Any} [date]
  */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
 /**
- * @param {String} [date]
+ * @param {Any} [date]
  */
 function stringifyDatetimeLocal(date) {
     var year = date.getFullYear();
@@ -70,19 +66,19 @@ function stringifyDatetimeLocal(date) {
     return "".concat(year, "-").concat(month, "-").concat(day, "T").concat(hours, ":").concat(minutes);
 }
 /**
- * @param {String} [date]
+ * @param {Any} [date]
  */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
 /**
- * @param {String} [date]
+ * @param {Any} [date]
  */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
 /**
- * @param {String} [date]
+ * @param {Any} [date]
  */
 function stringifyWeek(date) {
     var firstDayOfYear = new Date(date.getFullYear(), 0, 1);
@@ -91,13 +87,14 @@ function stringifyWeek(date) {
     return "".concat(date.getFullYear(), "-W").concat(String(weekNumber).padStart(2, "0"));
 }
 /**
- * @param {String} [element]
+ * @param {Any} [element]
  */
 function closestScrollableElement(element) {
     var current = element;
     while (current) {
         var style = window.getComputedStyle(current);
-        if (/(auto|scroll)/.test(style.overflow + style.overflowY)) return current;
+        if (/(auto|scroll)/.test(style.overflow + style.overflowY))
+            return current;
         current = current.parentElement;
     }
     return document.documentElement || document.body;
