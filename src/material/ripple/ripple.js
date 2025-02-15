@@ -1,9 +1,20 @@
 /**
+ * Ripple class responsible for managing ripple effects on elements.
  */
 class Ripple {
     /**
-     * @param {Any} [host]
-     * @param {Any} [options]
+     * @typedef {Object} RippleOptions
+     * @property {boolean} [centered=false] - Whether the ripple effect is centered.
+     * @property {number} [radius] - The radius of the ripple effect.
+     * @property {HTMLElement|string} [trigger] - The trigger element or selector for the ripple effect.
+     * @property {boolean} [unbounded=false] - Whether the ripple effect is unbounded.
+     * @property {HTMLElement|string} [container] - The container element or selector for the ripple effect.
+     */
+
+    /**
+     * Creates an instance of the Ripple class.
+     * @param {HTMLElement} host - The host element.
+     * @param {RippleOptions} [options] - Additional options for the ripple effect.
      */
     constructor(host, options) {
         this.host = host;
@@ -19,6 +30,7 @@ class Ripple {
     }
 
     /**
+     * Initializes the ripple effect.
      * @async
      */
     async init() {
@@ -61,6 +73,7 @@ class Ripple {
     }
 
     /**
+     * Destroys the ripple effect.
      * @async
      */
     async destroy() {
@@ -82,14 +95,26 @@ class Ripple {
         this.trigger = null;
     }
 
+    // /**
+    //  * Handles the ripple hover-in event.
+    //  * @param {Event} event - The hover-in event.
+    //  */
     handleRippleHoverIn(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
+    // /**
+    //  * Handles the ripple hover-out event.
+    //  * @param {Event} event - The hover-out event.
+    //  */
     handleRippleHoverOut(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
+    // /**
+    //  * Handles the ripple press-in event.
+    //  * @param {Event} event - The press-in event.
+    //  */
     handleRipplePressIn(event) {
         window.addEventListener("pointerup", this.handleRipplePressOut, { passive: true });
         window.addEventListener("touchend", this.handleRipplePressOut, { passive: true });
@@ -108,16 +133,28 @@ class Ripple {
         }
     }
 
+    // /**
+    //  * Handles the ripple press-out event.
+    //  * @param {Event} event - The press-out event.
+    //  */
     handleRipplePressOut(event) {
         window.removeEventListener("pointerup", this.handleRipplePressOut);
         window.removeEventListener("touchend", this.handleRipplePressOut);
         this.container.classList.remove("md-ripple--press");
     }
 
+    // /**
+    //  * Handles the ripple focus-in event.
+    //  * @param {Event} event - The focus-in event.
+    //  */
     handleRippleFocusIn(event) {
         this.container.classList.add("md-ripple--focus");
     }
 
+    // /**
+    //  * Handles the ripple focus-out event.
+    //  * @param {Event} event - The focus-out event.
+    //  */
     handleRippleFocusOut(event) {
         this.container.classList.remove("md-ripple--focus");
     }

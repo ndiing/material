@@ -48854,14 +48854,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Ripple class responsible for managing ripple effects on elements.\n */",
         "meta": {
             "range": [
-                8,
-                5118
+                77,
+                6626
             ],
             "filename": "ripple.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -48874,6 +48874,7 @@
                 ]
             }
         },
+        "classdesc": "Ripple class responsible for managing ripple effects on elements.",
         "name": "Ripple",
         "longname": "Ripple",
         "kind": "class",
@@ -48881,14 +48882,89 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @param {Any} [host]\n     * @param {Any} [options]\n     */",
+        "comment": "/**\n     * @typedef {Object} RippleOptions\n     * @property {boolean} [centered=false] - Whether the ripple effect is centered.\n     * @property {number} [radius] - The radius of the ripple effect.\n     * @property {HTMLElement|string} [trigger] - The trigger element or selector for the ripple effect.\n     * @property {boolean} [unbounded=false] - Whether the ripple effect is unbounded.\n     * @property {HTMLElement|string} [container] - The container element or selector for the ripple effect.\n     */",
+        "meta": {
+            "filename": "ripple.js",
+            "lineno": 5,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "RippleOptions",
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": false,
+                "description": "Whether the ripple effect is centered.",
+                "name": "centered"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The radius of the ripple effect.",
+                "name": "radius"
+            },
+            {
+                "type": {
+                    "names": [
+                        "HTMLElement",
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "description": "The trigger element or selector for the ripple effect.",
+                "name": "trigger"
+            },
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": false,
+                "description": "Whether the ripple effect is unbounded.",
+                "name": "unbounded"
+            },
+            {
+                "type": {
+                    "names": [
+                        "HTMLElement",
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "description": "The container element or selector for the ripple effect.",
+                "name": "container"
+            }
+        ],
+        "longname": "RippleOptions",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * Creates an instance of the Ripple class.\n     * @param {HTMLElement} host - The host element.\n     * @param {RippleOptions} [options] - Additional options for the ripple effect.\n     */",
         "meta": {
             "range": [
-                100,
-                397
+                809,
+                1106
             ],
             "filename": "ripple.js",
-            "lineno": 8,
+            "lineno": 19,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -48904,23 +48980,25 @@
                 "": null
             }
         },
+        "description": "Creates an instance of the Ripple class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
-                "optional": true,
+                "description": "The host element.",
                 "name": "host"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "RippleOptions"
                     ]
                 },
                 "optional": true,
+                "description": "Additional options for the ripple effect.",
                 "name": "options"
             }
         ],
@@ -48931,14 +49009,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Ripple class responsible for managing ripple effects on elements.\n */",
         "meta": {
             "range": [
-                8,
-                5118
+                77,
+                6626
             ],
             "filename": "ripple.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -48954,24 +49032,27 @@
         "name": "Ripple",
         "longname": "Ripple",
         "kind": "class",
+        "classdesc": "Ripple class responsible for managing ripple effects on elements.",
         "scope": "global",
+        "description": "Creates an instance of the Ripple class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
-                "optional": true,
+                "description": "The host element.",
                 "name": "host"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "RippleOptions"
                     ]
                 },
                 "optional": true,
+                "description": "Additional options for the ripple effect.",
                 "name": "options"
             }
         ]
@@ -48980,11 +49061,11 @@
         "comment": "",
         "meta": {
             "range": [
-                137,
-                153
+                846,
+                862
             ],
             "filename": "ripple.js",
-            "lineno": 9,
+            "lineno": 20,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49006,11 +49087,11 @@
         "comment": "",
         "meta": {
             "range": [
-                163,
-                369
+                872,
+                1078
             ],
             "filename": "ripple.js",
-            "lineno": 10,
+            "lineno": 21,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49032,11 +49113,11 @@
         "comment": "",
         "meta": {
             "range": [
-                192,
-                207
+                901,
+                916
             ],
             "filename": "ripple.js",
-            "lineno": 11,
+            "lineno": 22,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49057,11 +49138,11 @@
         "comment": "",
         "meta": {
             "range": [
-                221,
-                238
+                930,
+                947
             ],
             "filename": "ripple.js",
-            "lineno": 12,
+            "lineno": 23,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49082,11 +49163,11 @@
         "comment": "",
         "meta": {
             "range": [
-                252,
-                270
+                961,
+                979
             ],
             "filename": "ripple.js",
-            "lineno": 13,
+            "lineno": 24,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49107,11 +49188,11 @@
         "comment": "",
         "meta": {
             "range": [
-                284,
-                300
+                993,
+                1009
             ],
             "filename": "ripple.js",
-            "lineno": 14,
+            "lineno": 25,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49132,11 +49213,11 @@
         "comment": "",
         "meta": {
             "range": [
-                314,
-                334
+                1023,
+                1043
             ],
             "filename": "ripple.js",
-            "lineno": 15,
+            "lineno": 26,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49154,14 +49235,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n     * @async\n     */",
+        "comment": "/**\n     * Initializes the ripple effect.\n     * @async\n     */",
         "meta": {
             "range": [
-                433,
-                2415
+                1180,
+                3162
             ],
             "filename": "ripple.js",
-            "lineno": 24,
+            "lineno": 36,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49174,6 +49255,7 @@
                 "": null
             }
         },
+        "description": "Initializes the ripple effect.",
         "async": true,
         "name": "init",
         "longname": "Ripple#init",
@@ -49186,11 +49268,11 @@
         "comment": "",
         "meta": {
             "range": [
-                456,
-                482
+                1203,
+                1229
             ],
             "filename": "ripple.js",
-            "lineno": 25,
+            "lineno": 37,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49212,11 +49294,11 @@
         "comment": "",
         "meta": {
             "range": [
-                600,
-                664
+                1347,
+                1411
             ],
             "filename": "ripple.js",
-            "lineno": 28,
+            "lineno": 40,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49238,11 +49320,11 @@
         "comment": "",
         "meta": {
             "range": [
-                703,
-                742
+                1450,
+                1489
             ],
             "filename": "ripple.js",
-            "lineno": 30,
+            "lineno": 42,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49264,11 +49346,11 @@
         "comment": "",
         "meta": {
             "range": [
-                776,
-                800
+                1523,
+                1547
             ],
             "filename": "ripple.js",
-            "lineno": 33,
+            "lineno": 45,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49290,11 +49372,11 @@
         "comment": "",
         "meta": {
             "range": [
-                914,
-                974
+                1661,
+                1721
             ],
             "filename": "ripple.js",
-            "lineno": 36,
+            "lineno": 48,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49316,11 +49398,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1013,
-                1048
+                1760,
+                1795
             ],
             "filename": "ripple.js",
-            "lineno": 38,
+            "lineno": 50,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49342,11 +49424,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1331,
-                1362
+                2078,
+                2109
             ],
             "filename": "ripple.js",
-            "lineno": 45,
+            "lineno": 57,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49368,11 +49450,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1411,
-                1481
+                2158,
+                2228
             ],
             "filename": "ripple.js",
-            "lineno": 47,
+            "lineno": 59,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49394,11 +49476,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1589,
-                1651
+                2336,
+                2398
             ],
             "filename": "ripple.js",
-            "lineno": 50,
+            "lineno": 62,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49420,11 +49502,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1661,
-                1725
+                2408,
+                2472
             ],
             "filename": "ripple.js",
-            "lineno": 51,
+            "lineno": 63,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49446,11 +49528,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1735,
-                1797
+                2482,
+                2544
             ],
             "filename": "ripple.js",
-            "lineno": 52,
+            "lineno": 64,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49472,11 +49554,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1807,
-                1871
+                2554,
+                2618
             ],
             "filename": "ripple.js",
-            "lineno": 53,
+            "lineno": 65,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49498,11 +49580,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1881,
-                1943
+                2628,
+                2690
             ],
             "filename": "ripple.js",
-            "lineno": 54,
+            "lineno": 66,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49524,11 +49606,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1953,
-                2017
+                2700,
+                2764
             ],
             "filename": "ripple.js",
-            "lineno": 55,
+            "lineno": 67,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49547,14 +49629,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * @async\n     */",
+        "comment": "/**\n     * Destroys the ripple effect.\n     * @async\n     */",
         "meta": {
             "range": [
-                2451,
-                3360
+                3233,
+                4142
             ],
             "filename": "ripple.js",
-            "lineno": 66,
+            "lineno": 79,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49567,6 +49649,7 @@
                 "": null
             }
         },
+        "description": "Destroys the ripple effect.",
         "async": true,
         "name": "destroy",
         "longname": "Ripple#destroy",
@@ -49579,11 +49662,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3303,
-                3324
+                4085,
+                4106
             ],
             "filename": "ripple.js",
-            "lineno": 81,
+            "lineno": 94,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49605,11 +49688,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3334,
-                3353
+                4116,
+                4135
             ],
             "filename": "ripple.js",
-            "lineno": 82,
+            "lineno": 95,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49631,11 +49714,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3366,
-                3458
+                4268,
+                4360
             ],
             "filename": "ripple.js",
-            "lineno": 85,
+            "lineno": 102,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49662,11 +49745,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3464,
-                3560
+                4488,
+                4584
             ],
             "filename": "ripple.js",
-            "lineno": 89,
+            "lineno": 110,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49693,11 +49776,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3566,
-                4663
+                4710,
+                5807
             ],
             "filename": "ripple.js",
-            "lineno": 93,
+            "lineno": 118,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49724,11 +49807,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3669,
-                3682
+                4813,
+                4826
             ],
             "filename": "ripple.js",
-            "lineno": 94,
+            "lineno": 119,
             "columnno": 74,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49748,11 +49831,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3760,
-                3773
+                4904,
+                4917
             ],
             "filename": "ripple.js",
-            "lineno": 95,
+            "lineno": 120,
             "columnno": 73,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49772,11 +49855,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3850,
-                3895
+                4994,
+                5039
             ],
             "filename": "ripple.js",
-            "lineno": 97,
+            "lineno": 122,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49798,11 +49881,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3953,
-                4000
+                5097,
+                5144
             ],
             "filename": "ripple.js",
-            "lineno": 99,
+            "lineno": 124,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49824,11 +49907,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4020,
-                4066
+                5164,
+                5210
             ],
             "filename": "ripple.js",
-            "lineno": 100,
+            "lineno": 125,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49850,11 +49933,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4086,
-                4124
+                5230,
+                5268
             ],
             "filename": "ripple.js",
-            "lineno": 101,
+            "lineno": 126,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49876,11 +49959,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4144,
-                4212
+                5288,
+                5356
             ],
             "filename": "ripple.js",
-            "lineno": 102,
+            "lineno": 127,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49902,11 +49985,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4669,
-                4916
+                5935,
+                6182
             ],
             "filename": "ripple.js",
-            "lineno": 111,
+            "lineno": 140,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49933,11 +50016,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4922,
-                5014
+                6308,
+                6400
             ],
             "filename": "ripple.js",
-            "lineno": 117,
+            "lineno": 150,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49964,11 +50047,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5020,
-                5116
+                6528,
+                6624
             ],
             "filename": "ripple.js",
-            "lineno": 121,
+            "lineno": 158,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -49995,11 +50078,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5128,
-                5134
+                6636,
+                6642
             ],
             "filename": "ripple.js",
-            "lineno": 125,
+            "lineno": 162,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -58848,14 +58931,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Store class responsible for managing and manipulating data collections.\n */",
         "meta": {
             "range": [
-                8,
-                4293
+                83,
+                6695
             ],
             "filename": "store.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -58868,6 +58951,7 @@
                 ]
             }
         },
+        "classdesc": "Store class responsible for managing and manipulating data collections.",
         "name": "Store",
         "longname": "Store",
         "kind": "class",
@@ -58875,14 +58959,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @param {Any} [data=[]]\n     * @param {Any} [options={}]\n     */",
+        "comment": "/**\n     * Creates an instance of the Store class.\n     * @param {Array} [data=[]] - The initial data to store.\n     * @param {Object} [options={}] - Additional options for the store.\n     */",
         "meta": {
             "range": [
-                105,
-                207
+                297,
+                399
             ],
             "filename": "store.js",
-            "lineno": 8,
+            "lineno": 10,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -58898,25 +58982,28 @@
                 "": null
             }
         },
+        "description": "Creates an instance of the Store class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
+                "description": "The initial data to store.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
+                "description": "Additional options for the store.",
                 "name": "options"
             }
         ],
@@ -58927,14 +59014,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Store class responsible for managing and manipulating data collections.\n */",
         "meta": {
             "range": [
-                8,
-                4293
+                83,
+                6695
             ],
             "filename": "store.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -58950,26 +59037,30 @@
         "name": "Store",
         "longname": "Store",
         "kind": "class",
+        "classdesc": "Store class responsible for managing and manipulating data collections.",
         "scope": "global",
+        "description": "Creates an instance of the Store class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
+                "description": "The initial data to store.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
+                "description": "Additional options for the store.",
                 "name": "options"
             }
         ]
@@ -58978,11 +59069,11 @@
         "comment": "",
         "meta": {
             "range": [
-                152,
-                168
+                344,
+                360
             ],
             "filename": "store.js",
-            "lineno": 9,
+            "lineno": 11,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59004,11 +59095,11 @@
         "comment": "",
         "meta": {
             "range": [
-                178,
-                200
+                370,
+                392
             ],
             "filename": "store.js",
-            "lineno": 10,
+            "lineno": 12,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59027,14 +59118,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * @param {Any} [data=[]]\n     */",
+        "comment": "/**\n     * Loads the provided data into the store.\n     * @param {Array} [data=[]] - The data to load.\n     */",
         "meta": {
             "range": [
-                259,
-                308
+                520,
+                569
             ],
             "filename": "store.js",
-            "lineno": 16,
+            "lineno": 19,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59049,15 +59140,17 @@
                 "": null
             }
         },
+        "description": "Loads the provided data into the store.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
+                "description": "The data to load.",
                 "name": "data"
             }
         ],
@@ -59071,11 +59164,11 @@
         "comment": "",
         "meta": {
             "range": [
-                285,
-                301
+                546,
+                562
             ],
             "filename": "store.js",
-            "lineno": 17,
+            "lineno": 20,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59094,14 +59187,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [sorters]\n     */",
+        "comment": "/**\n     * Sorts the data based on the provided sorters.\n     * @param {Array} data - The data to sort.\n     * @param {Array} [sorters] - The sorters to use for sorting.\n     * @returns {Array} The sorted data.\n     */",
         "meta": {
             "range": [
-                387,
-                967
+                798,
+                1378
             ],
             "filename": "store.js",
-            "lineno": 24,
+            "lineno": 29,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59117,24 +59210,36 @@
                 "": null
             }
         },
+        "description": "Sorts the data based on the provided sorters.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
-                "optional": true,
+                "description": "The data to sort.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
                 "optional": true,
+                "description": "The sorters to use for sorting.",
                 "name": "sorters"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The sorted data."
             }
         ],
         "name": "sort",
@@ -59147,11 +59252,11 @@
         "comment": "",
         "meta": {
             "range": [
-                541,
-                547
+                952,
+                958
             ],
             "filename": "store.js",
-            "lineno": 27,
+            "lineno": 32,
             "columnno": 21,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59171,11 +59276,11 @@
         "comment": "",
         "meta": {
             "range": [
-                582,
-                626
+                993,
+                1037
             ],
             "filename": "store.js",
-            "lineno": 28,
+            "lineno": 33,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59197,11 +59302,11 @@
         "comment": "",
         "meta": {
             "range": [
-                648,
-                692
+                1059,
+                1103
             ],
             "filename": "store.js",
-            "lineno": 29,
+            "lineno": 34,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59223,11 +59328,11 @@
         "comment": "",
         "meta": {
             "range": [
-                973,
-                1442
+                1657,
+                2126
             ],
             "filename": "store.js",
-            "lineno": 38,
+            "lineno": 49,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59252,14 +59357,14 @@
         "params": []
     },
     {
-        "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [q]\n     */",
+        "comment": "/**\n     * Searches the data based on the query.\n     * @param {Array} data - The data to search.\n     * @param {string} q - The query string.\n     * @returns {Array} The filtered data.\n     */",
         "meta": {
             "range": [
-                1515,
-                1631
+                2330,
+                2446
             ],
             "filename": "store.js",
-            "lineno": 56,
+            "lineno": 69,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59275,24 +59380,35 @@
                 "": null
             }
         },
+        "description": "Searches the data based on the query.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
-                "optional": true,
+                "description": "The data to search.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
-                "optional": true,
+                "description": "The query string.",
                 "name": "q"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The filtered data."
             }
         ],
         "name": "search",
@@ -59305,11 +59421,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1637,
-                1786
+                2735,
+                2884
             ],
             "filename": "store.js",
-            "lineno": 61,
+            "lineno": 80,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59334,14 +59450,14 @@
         "params": []
     },
     {
-        "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [filters]\n     */",
+        "comment": "/**\n     * Filters the data based on the provided filters.\n     * @param {Array} data - The data to filter.\n     * @param {Array} [filters] - The filters to apply.\n     * @returns {Array} The filtered data.\n     */",
         "meta": {
             "range": [
-                1865,
-                3234
+                3109,
+                4478
             ],
             "filename": "store.js",
-            "lineno": 69,
+            "lineno": 90,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59357,24 +59473,36 @@
                 "": null
             }
         },
+        "description": "Filters the data based on the provided filters.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
-                "optional": true,
+                "description": "The data to filter.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
                 "optional": true,
+                "description": "The filters to apply.",
                 "name": "filters"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The filtered data."
             }
         ],
         "name": "filter",
@@ -59387,11 +59515,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2083,
-                2087
+                3327,
+                3331
             ],
             "filename": "store.js",
-            "lineno": 73,
+            "lineno": 94,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59411,11 +59539,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2089,
-                2094
+                3333,
+                3338
             ],
             "filename": "store.js",
-            "lineno": 73,
+            "lineno": 94,
             "columnno": 28,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59435,11 +59563,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2096,
-                2112
+                3340,
+                3356
             ],
             "filename": "store.js",
-            "lineno": 73,
+            "lineno": 94,
             "columnno": 35,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59459,11 +59587,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2145,
-                2189
+                3389,
+                3433
             ],
             "filename": "store.js",
-            "lineno": 74,
+            "lineno": 95,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59482,14 +59610,14 @@
         "params": []
     },
     {
-        "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [_start]\n     * @param {Any} [_end]\n     */",
+        "comment": "/**\n     * Retrieves a subset of the data within the specified range.\n     * @param {Array} data - The data to retrieve the range from.\n     * @param {number} _start - The start index of the range.\n     * @param {number} _end - The end index of the range.\n     * @returns {Array} The data within the specified range.\n     */",
         "meta": {
             "range": [
-                3339,
-                3413
+                4813,
+                4887
             ],
             "filename": "store.js",
-            "lineno": 106,
+            "lineno": 129,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59506,33 +59634,44 @@
                 "": null
             }
         },
+        "description": "Retrieves a subset of the data within the specified range.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
-                "optional": true,
+                "description": "The data to retrieve the range from.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "number"
                     ]
                 },
-                "optional": true,
+                "description": "The start index of the range.",
                 "name": "_start"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "number"
                     ]
                 },
-                "optional": true,
+                "description": "The end index of the range.",
                 "name": "_end"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The data within the specified range."
             }
         ],
         "name": "range",
@@ -59542,14 +59681,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [_page]\n     * @param {Any} [_limit]\n     */",
+        "comment": "/**\n     * Paginates the data based on the specified page and limit.\n     * @param {Array} data - The data to paginate.\n     * @param {number} _page - The page number.\n     * @param {number} _limit - The number of items per page.\n     * @returns {Array} The paginated data.\n     */",
         "meta": {
             "range": [
-                3519,
-                3671
+                5179,
+                5331
             ],
             "filename": "store.js",
-            "lineno": 115,
+            "lineno": 140,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59566,33 +59705,44 @@
                 "": null
             }
         },
+        "description": "Paginates the data based on the specified page and limit.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Array"
                     ]
                 },
-                "optional": true,
+                "description": "The data to paginate.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "number"
                     ]
                 },
-                "optional": true,
+                "description": "The page number.",
                 "name": "_page"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "number"
                     ]
                 },
-                "optional": true,
+                "description": "The number of items per page.",
                 "name": "_limit"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The paginated data."
             }
         ],
         "name": "paginate",
@@ -59605,11 +59755,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3563,
-                3591
+                5223,
+                5251
             ],
             "filename": "store.js",
-            "lineno": 116,
+            "lineno": 141,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59631,11 +59781,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3605,
-                3625
+                5265,
+                5285
             ],
             "filename": "store.js",
-            "lineno": 117,
+            "lineno": 142,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59654,14 +59804,14 @@
         "params": []
     },
     {
-        "comment": "/**\n     * @param {Any} [options={}]\n     */",
+        "comment": "/**\n     * Retrieves the processed data based on the provided options.\n     * @param {Object} [options={}] - The options for retrieving the data.\n     * @param {Array} [options.sorters] - The sorters to apply to the data.\n     * @param {string} [options.q] - The query string to search within the data.\n     * @param {Array} [options.filters] - The filters to apply to the data.\n     * @param {number} [options._start] - The start index for range retrieval.\n     * @param {number} [options._end] - The end index for range retrieval.\n     * @param {number} [options._page] - The page number for pagination.\n     * @param {number} [options._limit] - The number of items per page for pagination.\n     * @returns {Object} An object containing the processed data and the total count.\n     */",
         "meta": {
             "range": [
-                3726,
-                4291
+                6128,
+                6693
             ],
             "filename": "store.js",
-            "lineno": 124,
+            "lineno": 158,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59676,16 +59826,98 @@
                 "": null
             }
         },
+        "description": "Retrieves the processed data based on the provided options.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
+                "description": "The options for retrieving the data.",
                 "name": "options"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "description": "The sorters to apply to the data.",
+                "name": "options.sorters"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "description": "The query string to search within the data.",
+                "name": "options.q"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "description": "The filters to apply to the data.",
+                "name": "options.filters"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The start index for range retrieval.",
+                "name": "options._start"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The end index for range retrieval.",
+                "name": "options._end"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The page number for pagination.",
+                "name": "options._page"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The number of items per page for pagination.",
+                "name": "options._limit"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                },
+                "description": "An object containing the processed data and the total count."
             }
         ],
         "name": "get",
@@ -59698,11 +59930,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3760,
-                3767
+                6162,
+                6169
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59722,11 +59954,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3769,
-                3770
+                6171,
+                6172
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59746,11 +59978,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3772,
-                3779
+                6174,
+                6181
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 26,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59770,11 +60002,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3781,
-                3787
+                6183,
+                6189
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 35,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59794,11 +60026,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3789,
-                3793
+                6191,
+                6195
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 43,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59818,11 +60050,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3795,
-                3800
+                6197,
+                6202
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 49,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59842,11 +60074,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3802,
-                3808
+                6204,
+                6210
             ],
             "filename": "store.js",
-            "lineno": 125,
+            "lineno": 159,
             "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59866,11 +60098,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3834,
-                3858
+                6236,
+                6260
             ],
             "filename": "store.js",
-            "lineno": 126,
+            "lineno": 160,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59892,11 +60124,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3868,
-                3899
+                6270,
+                6301
             ],
             "filename": "store.js",
-            "lineno": 127,
+            "lineno": 161,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59919,11 +60151,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3909,
-                3936
+                6311,
+                6338
             ],
             "filename": "store.js",
-            "lineno": 128,
+            "lineno": 162,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59946,11 +60178,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3946,
-                3979
+                6348,
+                6381
             ],
             "filename": "store.js",
-            "lineno": 129,
+            "lineno": 163,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59973,11 +60205,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3993,
-                4012
+                6395,
+                6414
             ],
             "filename": "store.js",
-            "lineno": 130,
+            "lineno": 164,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -59999,11 +60231,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4084,
-                4121
+                6486,
+                6523
             ],
             "filename": "store.js",
-            "lineno": 132,
+            "lineno": 166,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -60026,11 +60258,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4201,
-                4242
+                6603,
+                6644
             ],
             "filename": "store.js",
-            "lineno": 134,
+            "lineno": 168,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -60053,11 +60285,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4271,
-                4275
+                6673,
+                6677
             ],
             "filename": "store.js",
-            "lineno": 136,
+            "lineno": 170,
             "columnno": 17,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -60077,11 +60309,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4277,
-                4282
+                6679,
+                6684
             ],
             "filename": "store.js",
-            "lineno": 136,
+            "lineno": 170,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -60101,11 +60333,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4303,
-                4308
+                6705,
+                6710
             ],
             "filename": "store.js",
-            "lineno": 139,
+            "lineno": 173,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -76443,14 +76675,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [string]\n */",
+        "comment": "/**\n * Parses a date string and returns a Date object.\n * @param {string} [string] - The date string to parse.\n * @returns {Date} The parsed Date object.\n */",
         "meta": {
             "range": [
-                33,
-                92
+                158,
+                217
             ],
             "filename": "util.js",
-            "lineno": 4,
+            "lineno": 6,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76462,15 +76694,27 @@
                 ]
             }
         },
+        "description": "Parses a date string and returns a Date object.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The date string to parse.",
                 "name": "string"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Date"
+                    ]
+                },
+                "description": "The parsed Date object."
             }
         ],
         "name": "parseDate",
@@ -76479,14 +76723,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [string]\n */",
+        "comment": "/**\n * Parses a datetime-local string and returns a Date object.\n * @param {string} [string] - The datetime-local string to parse.\n * @returns {Date} The parsed Date object.\n */",
         "meta": {
             "range": [
-                127,
-                195
+                397,
+                465
             ],
             "filename": "util.js",
-            "lineno": 11,
+            "lineno": 15,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76498,15 +76742,27 @@
                 ]
             }
         },
+        "description": "Parses a datetime-local string and returns a Date object.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The datetime-local string to parse.",
                 "name": "string"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Date"
+                    ]
+                },
+                "description": "The parsed Date object."
             }
         ],
         "name": "parseDatetimeLocal",
@@ -76515,14 +76771,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [string]\n */",
+        "comment": "/**\n * Parses a month string and returns a Date object set to the first day of the month.\n * @param {string} [string] - The month string to parse.\n * @returns {Date} The parsed Date object.\n */",
         "meta": {
             "range": [
-                230,
-                298
+                661,
+                729
             ],
             "filename": "util.js",
-            "lineno": 18,
+            "lineno": 24,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76534,15 +76790,27 @@
                 ]
             }
         },
+        "description": "Parses a month string and returns a Date object set to the first day of the month.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The month string to parse.",
                 "name": "string"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Date"
+                    ]
+                },
+                "description": "The parsed Date object."
             }
         ],
         "name": "parseMonth",
@@ -76551,14 +76819,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [string]\n */",
+        "comment": "/**\n * Parses a time string and returns a Date object with the time set.\n * @param {string} [string] - The time string to parse (HH:MM).\n * @returns {Date} The parsed Date object with the time set.\n */",
         "meta": {
             "range": [
-                333,
-                498
+                933,
+                1098
             ],
             "filename": "util.js",
-            "lineno": 25,
+            "lineno": 33,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76574,15 +76842,27 @@
                 "date": "parseTime~date"
             }
         },
+        "description": "Parses a time string and returns a Date object with the time set.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The time string to parse (HH:MM).",
                 "name": "string"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Date"
+                    ]
+                },
+                "description": "The parsed Date object with the time set."
             }
         ],
         "name": "parseTime",
@@ -76594,11 +76874,11 @@
         "comment": "",
         "meta": {
             "range": [
-                420,
-                437
+                1020,
+                1037
             ],
             "filename": "util.js",
-            "lineno": 27,
+            "lineno": 35,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76617,14 +76897,14 @@
         "params": []
     },
     {
-        "comment": "/**\n * @param {Any} [string]\n */",
+        "comment": "/**\n * Parses a week string and returns a Date object set to the first day of the week.\n * @param {string} [string] - The week string to parse (YYYY-W##).\n * @returns {Date} The parsed Date object set to the first day of the week.\n */",
         "meta": {
             "range": [
-                533,
-                726
+                1335,
+                1528
             ],
             "filename": "util.js",
-            "lineno": 35,
+            "lineno": 45,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76641,15 +76921,27 @@
                 "days": "parseWeek~days"
             }
         },
+        "description": "Parses a week string and returns a Date object set to the first day of the week.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The week string to parse (YYYY-W##).",
                 "name": "string"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Date"
+                    ]
+                },
+                "description": "The parsed Date object set to the first day of the week."
             }
         ],
         "name": "parseWeek",
@@ -76661,11 +76953,11 @@
         "comment": "",
         "meta": {
             "range": [
-                617,
-                641
+                1419,
+                1443
             ],
             "filename": "util.js",
-            "lineno": 37,
+            "lineno": 47,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76687,11 +76979,11 @@
         "comment": "",
         "meta": {
             "range": [
-                653,
-                674
+                1455,
+                1476
             ],
             "filename": "util.js",
-            "lineno": 38,
+            "lineno": 48,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76710,14 +77002,14 @@
         "params": []
     },
     {
-        "comment": "/**\n * @param {Any} [date]\n */",
+        "comment": "/**\n * Converts a Date object to a date string (YYYY-MM-DD).\n * @param {Date} [date] - The Date object to convert.\n * @returns {string} The date string.\n */",
         "meta": {
             "range": [
-                759,
-                836
+                1687,
+                1764
             ],
             "filename": "util.js",
-            "lineno": 46,
+            "lineno": 58,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76729,15 +77021,27 @@
                 ]
             }
         },
+        "description": "Converts a Date object to a date string (YYYY-MM-DD).",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Date"
                     ]
                 },
                 "optional": true,
+                "description": "The Date object to convert.",
                 "name": "date"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The date string."
             }
         ],
         "name": "stringifyDate",
@@ -76746,14 +77050,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [date]\n */",
+        "comment": "/**\n * Converts a Date object to a datetime-local string (YYYY-MM-DDTHH:MM).\n * @param {Date} [date] - The Date object to convert.\n * @returns {string} The datetime-local string.\n */",
         "meta": {
             "range": [
-                869,
-                1250
+                1949,
+                2330
             ],
             "filename": "util.js",
-            "lineno": 53,
+            "lineno": 67,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76772,15 +77076,27 @@
                 "minutes": "stringifyDatetimeLocal~minutes"
             }
         },
+        "description": "Converts a Date object to a datetime-local string (YYYY-MM-DDTHH:MM).",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Date"
                     ]
                 },
                 "optional": true,
+                "description": "The Date object to convert.",
                 "name": "date"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The datetime-local string."
             }
         ],
         "name": "stringifyDatetimeLocal",
@@ -76792,11 +77108,11 @@
         "comment": "",
         "meta": {
             "range": [
-                919,
-                944
+                1999,
+                2024
             ],
             "filename": "util.js",
-            "lineno": 54,
+            "lineno": 68,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76818,11 +77134,11 @@
         "comment": "",
         "meta": {
             "range": [
-                956,
-                1008
+                2036,
+                2088
             ],
             "filename": "util.js",
-            "lineno": 55,
+            "lineno": 69,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76844,11 +77160,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1020,
-                1065
+                2100,
+                2145
             ],
             "filename": "util.js",
-            "lineno": 56,
+            "lineno": 70,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76870,11 +77186,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1077,
-                1125
+                2157,
+                2205
             ],
             "filename": "util.js",
-            "lineno": 57,
+            "lineno": 71,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76896,11 +77212,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1137,
-                1189
+                2217,
+                2269
             ],
             "filename": "util.js",
-            "lineno": 58,
+            "lineno": 72,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76919,14 +77235,14 @@
         "params": []
     },
     {
-        "comment": "/**\n * @param {Any} [date]\n */",
+        "comment": "/**\n * Converts a Date object to a month string (YYYY-MM).\n * @param {Date} [date] - The Date object to convert.\n * @returns {string} The month string.\n */",
         "meta": {
             "range": [
-                1283,
-                1359
+                2488,
+                2564
             ],
             "filename": "util.js",
-            "lineno": 65,
+            "lineno": 81,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76938,15 +77254,27 @@
                 ]
             }
         },
+        "description": "Converts a Date object to a month string (YYYY-MM).",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Date"
                     ]
                 },
                 "optional": true,
+                "description": "The Date object to convert.",
                 "name": "date"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The month string."
             }
         ],
         "name": "stringifyMonth",
@@ -76955,14 +77283,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [date]\n */",
+        "comment": "/**\n * Converts a Date object to a time string (HH:MM).\n * @param {Date} [date] - The Date object to convert.\n * @returns {string} The time string.\n */",
         "meta": {
             "range": [
-                1392,
-                1468
+                2718,
+                2794
             ],
             "filename": "util.js",
-            "lineno": 72,
+            "lineno": 90,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -76974,15 +77302,27 @@
                 ]
             }
         },
+        "description": "Converts a Date object to a time string (HH:MM).",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Date"
                     ]
                 },
                 "optional": true,
+                "description": "The Date object to convert.",
                 "name": "date"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The time string."
             }
         ],
         "name": "stringifyTime",
@@ -76991,14 +77331,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [date]\n */",
+        "comment": "/**\n * Converts a Date object to a week string (YYYY-W##).\n * @param {Date} [date] - The Date object to convert.\n * @returns {string} The week string.\n */",
         "meta": {
             "range": [
-                1501,
-                1800
+                2951,
+                3250
             ],
             "filename": "util.js",
-            "lineno": 79,
+            "lineno": 99,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77015,15 +77355,27 @@
                 "weekNumber": "stringifyWeek~weekNumber"
             }
         },
+        "description": "Converts a Date object to a week string (YYYY-W##).",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Date"
                     ]
                 },
                 "optional": true,
+                "description": "The Date object to convert.",
                 "name": "date"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The week string."
             }
         ],
         "name": "stringifyWeek",
@@ -77035,11 +77387,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1542,
-                1593
+                2992,
+                3043
             ],
             "filename": "util.js",
-            "lineno": 80,
+            "lineno": 100,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77061,11 +77413,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1605,
-                1671
+                3055,
+                3121
             ],
             "filename": "util.js",
-            "lineno": 81,
+            "lineno": 101,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77087,11 +77439,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1683,
-                1721
+                3133,
+                3171
             ],
             "filename": "util.js",
-            "lineno": 82,
+            "lineno": 102,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77110,14 +77462,14 @@
         "params": []
     },
     {
-        "comment": "/**\n * @param {Any} [element]\n */",
+        "comment": "/**\n * Finds the closest scrollable ancestor element.\n * @param {HTMLElement} [element] - The element to start the search from.\n * @returns {HTMLElement} The closest scrollable ancestor element.\n */",
         "meta": {
             "range": [
-                1836,
-                2172
+                3451,
+                3787
             ],
             "filename": "util.js",
-            "lineno": 89,
+            "lineno": 111,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77133,15 +77485,27 @@
                 "style": "closestScrollableElement~style"
             }
         },
+        "description": "Finds the closest scrollable ancestor element.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
                 "optional": true,
+                "description": "The element to start the search from.",
                 "name": "element"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "HTMLElement"
+                    ]
+                },
+                "description": "The closest scrollable ancestor element."
             }
         ],
         "name": "closestScrollableElement",
@@ -77153,11 +77517,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1889,
-                1906
+                3504,
+                3521
             ],
             "filename": "util.js",
-            "lineno": 90,
+            "lineno": 112,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77179,11 +77543,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1944,
-                1984
+                3559,
+                3599
             ],
             "filename": "util.js",
-            "lineno": 92,
+            "lineno": 114,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77205,11 +77569,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2078,
-                2109
+                3693,
+                3724
             ],
             "filename": "util.js",
-            "lineno": 94,
+            "lineno": 116,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77232,11 +77596,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2182,
-                2191
+                3797,
+                3806
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77255,11 +77619,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2193,
-                2211
+                3808,
+                3826
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77278,11 +77642,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2213,
-                2223
+                3828,
+                3838
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 40,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77301,11 +77665,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2225,
-                2234
+                3840,
+                3849
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 52,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77324,11 +77688,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2236,
-                2245
+                3851,
+                3860
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 63,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77347,11 +77711,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2247,
-                2260
+                3862,
+                3875
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 74,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77370,11 +77734,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2262,
-                2284
+                3877,
+                3899
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 89,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77393,11 +77757,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2286,
-                2300
+                3901,
+                3915
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 113,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77416,11 +77780,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2302,
-                2315
+                3917,
+                3930
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 129,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77439,11 +77803,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2317,
-                2330
+                3932,
+                3945
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 144,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {
@@ -77462,11 +77826,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2332,
-                2356
+                3947,
+                3971
             ],
             "filename": "util.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 159,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
             "code": {

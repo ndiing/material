@@ -1,26 +1,34 @@
 /**
- * @param {Any} [string]
+ * Parses a date string and returns a Date object.
+ * @param {string} [string] - The date string to parse.
+ * @returns {Date} The parsed Date object.
  */
 function parseDate(string) {
     return new Date(string);
 }
 
 /**
- * @param {Any} [string]
+ * Parses a datetime-local string and returns a Date object.
+ * @param {string} [string] - The datetime-local string to parse.
+ * @returns {Date} The parsed Date object.
  */
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
 
 /**
- * @param {Any} [string]
+ * Parses a month string and returns a Date object set to the first day of the month.
+ * @param {string} [string] - The month string to parse.
+ * @returns {Date} The parsed Date object.
  */
 function parseMonth(string) {
     return new Date(string + "-01");
 }
 
 /**
- * @param {Any} [string]
+ * Parses a time string and returns a Date object with the time set.
+ * @param {string} [string] - The time string to parse (HH:MM).
+ * @returns {Date} The parsed Date object with the time set.
  */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
@@ -30,7 +38,9 @@ function parseTime(string) {
 }
 
 /**
- * @param {Any} [string]
+ * Parses a week string and returns a Date object set to the first day of the week.
+ * @param {string} [string] - The week string to parse (YYYY-W##).
+ * @returns {Date} The parsed Date object set to the first day of the week.
  */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
@@ -41,14 +51,18 @@ function parseWeek(string) {
 }
 
 /**
- * @param {Any} [date]
+ * Converts a Date object to a date string (YYYY-MM-DD).
+ * @param {Date} [date] - The Date object to convert.
+ * @returns {string} The date string.
  */
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
 
 /**
- * @param {Any} [date]
+ * Converts a Date object to a datetime-local string (YYYY-MM-DDTHH:MM).
+ * @param {Date} [date] - The Date object to convert.
+ * @returns {string} The datetime-local string.
  */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
@@ -60,21 +74,27 @@ function stringifyDatetimeLocal(date) {
 }
 
 /**
- * @param {Any} [date]
+ * Converts a Date object to a month string (YYYY-MM).
+ * @param {Date} [date] - The Date object to convert.
+ * @returns {string} The month string.
  */
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
 
 /**
- * @param {Any} [date]
+ * Converts a Date object to a time string (HH:MM).
+ * @param {Date} [date] - The Date object to convert.
+ * @returns {string} The time string.
  */
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
 
 /**
- * @param {Any} [date]
+ * Converts a Date object to a week string (YYYY-W##).
+ * @param {Date} [date] - The Date object to convert.
+ * @returns {string} The week string.
  */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
@@ -84,7 +104,9 @@ function stringifyWeek(date) {
 }
 
 /**
- * @param {Any} [element]
+ * Finds the closest scrollable ancestor element.
+ * @param {HTMLElement} [element] - The element to start the search from.
+ * @returns {HTMLElement} The closest scrollable ancestor element.
  */
 function closestScrollableElement(element) {
     let current = element;
