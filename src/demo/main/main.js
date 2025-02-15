@@ -7,6 +7,7 @@ import { Layout } from "../../material/layout/layout";
 function select(items) {
     items.forEach((item) => {
         item.selected = item.routerLink === Router.pathname;
+        
         if (item.children?.length) {
             select(item.children);
         }
@@ -33,6 +34,14 @@ function sortItems(items) {
  * @extends MdComponent
  */
 class DemoMain extends MdComponent {
+    get mainTopAppBar(){
+        return this.querySelector('#mainTopAppBar')
+    }
+
+    get mainNavigationDrawer(){
+        return this.querySelector('#mainNavigationDrawer')
+    }
+
     /**
      */
     constructor() {
@@ -70,12 +79,12 @@ class DemoMain extends MdComponent {
             {
                 label: "Chips",
                 children: [
-                    { label: "Chips", routerLink: "/chips" },
+                    // { label: "Chips", routerLink: "/chips" },
                     { label: "Chips Single Select", routerLink: "/chips-single-select" },
                     { label: "Chips Multi Select", routerLink: "/chips-multi-select" },
                 ],
             },
-            { label: "Data Table Cell", routerLink: "/data-table-cell" },
+            // { label: "Data Table Cell", routerLink: "/data-table-cell" },
             {
                 label: "Data Table",
                 children: [
@@ -109,8 +118,8 @@ class DemoMain extends MdComponent {
                 ],
             },
             { label: "Image", routerLink: "/image" },
-            { label: "List Item", routerLink: "/list-item" },
-            { label: "List Row", routerLink: "/list-row" },
+            // { label: "List Item", routerLink: "/list-item" },
+            // { label: "List Row", routerLink: "/list-row" },
             {
                 label: "List",
                 children: [
@@ -134,8 +143,8 @@ class DemoMain extends MdComponent {
                     { label: "Navigation Drawer Modal", routerLink: "/navigation-drawer-modal" },
                 ],
             },
-            { label: "Navigation List Item", routerLink: "/navigation-list-item" },
-            { label: "Navigation List Row", routerLink: "/navigation-list-row" },
+            // { label: "Navigation List Item", routerLink: "/navigation-list-item" },
+            // { label: "Navigation List Row", routerLink: "/navigation-list-row" },
             { label: "Navigation List", routerLink: "/navigation-list" },
             {
                 label: "Navigation Rail",
@@ -156,7 +165,7 @@ class DemoMain extends MdComponent {
             {
                 label: "Segmented Button",
                 children: [
-                    { label: "Segmented Button", routerLink: "/segmented-button" },
+                    // { label: "Segmented Button", routerLink: "/segmented-button" },
                     { label: "Segmented Button Single Select", routerLink: "/segmented-button-single-select" },
                     { label: "Segmented Button Multi Select", routerLink: "/segmented-button-multi-select" },
                 ],
@@ -164,7 +173,7 @@ class DemoMain extends MdComponent {
             {
                 label: "Sheet",
                 children: [
-                    { label: "Sheet", routerLink: "/sheet" },
+                    // { label: "Sheet", routerLink: "/sheet" },
                     { label: "Sheet North", routerLink: "/sheet-north" },
                     { label: "Sheet East", routerLink: "/sheet-east" },
                     { label: "Sheet South", routerLink: "/sheet-south" },
@@ -173,7 +182,7 @@ class DemoMain extends MdComponent {
                     { label: "Sheet East Modal", routerLink: "/sheet-east-modal" },
                     { label: "Sheet South Modal", routerLink: "/sheet-south-modal" },
                     { label: "Sheet West Modal", routerLink: "/sheet-west-modal" },
-                    { label: "Sheet Center", routerLink: "/sheet-center" },
+                    // { label: "Sheet Center", routerLink: "/sheet-center" },
                 ],
             },
             {
@@ -186,7 +195,7 @@ class DemoMain extends MdComponent {
             {
                 label: "Slider",
                 children: [
-                    { label: "Slider", routerLink: "/slider" },
+                    // { label: "Slider", routerLink: "/slider" },
                     { label: "Slider Centered", routerLink: "/slider-centered" },
                     { label: "Slider Continuous", routerLink: "/slider-continuous" },
                     { label: "Slider Discrete", routerLink: "/slider-discrete" },
@@ -195,11 +204,11 @@ class DemoMain extends MdComponent {
             },
             { label: "Snackbar", routerLink: "/snackbar" },
             { label: "Switch", routerLink: "/switch" },
-            { label: "Tab", routerLink: "/tab" },
+            // { label: "Tab", routerLink: "/tab" },
             {
                 label: "Tabs",
                 children: [
-                    { label: "Tabs", routerLink: "/tabs" },
+                    // { label: "Tabs", routerLink: "/tabs" },
                     { label: "Tabs Primary", routerLink: "/tabs-primary" },
                     { label: "Tabs Secondary", routerLink: "/tabs-secondary" },
                 ],
@@ -210,7 +219,6 @@ class DemoMain extends MdComponent {
                     { label: "Text Field", routerLink: "/text-field" },
                     { label: "Text Field Outlined", routerLink: "/text-field-outlined" },
                     { label: "Text Field Filled", routerLink: "/text-field-filled" },
-
                     { label: "Datetime Field", routerLink: "/datetime-field" },
                     { label: "Date Field", routerLink: "/date-field" },
                     { label: "Time Field", routerLink: "/time-field" },
@@ -218,50 +226,49 @@ class DemoMain extends MdComponent {
                     { label: "Week Field", routerLink: "/week-field" },
                 ],
             },
-
             { label: "Tooltip", routerLink: "/tooltip" },
             { label: "Top App Bar", routerLink: "/top-app-bar" },
-            { label: "Tree Item", routerLink: "/tree-item" },
-            { label: "Tree Row", routerLink: "/tree-row" },
+            // { label: "Tree Item", routerLink: "/tree-item" },
+            // { label: "Tree Row", routerLink: "/tree-row" },
             { label: "Tree", routerLink: "/tree" },
             {
                 label: "Picker",
                 children: [
-                    {
-                        label: "Datetime Picker",
-                        children: [
+                    // {
+                    //     label: "Datetime Picker",
+                    //     children: [
                             { label: "Datetime Picker", routerLink: "/datetime-picker" },
                             { label: "Datetime Picker Modal", routerLink: "/datetime-picker-modal" },
-                        ],
-                    },
-                    {
-                        label: "Date Picker",
-                        children: [
+                        // ],
+                    // },
+                    // {
+                    //     label: "Date Picker",
+                    //     children: [
                             { label: "Date Picker", routerLink: "/date-picker" },
                             { label: "Date Picker Modal", routerLink: "/date-picker-modal" },
-                        ],
-                    },
-                    {
-                        label: "Time Picker",
-                        children: [
+                        // ],
+                    // },
+                    // {
+                    //     label: "Time Picker",
+                    //     children: [
                             { label: "Time Picker", routerLink: "/time-picker" },
                             { label: "Time Picker Modal", routerLink: "/time-picker-modal" },
-                        ],
-                    },
-                    {
-                        label: "Week Picker",
-                        children: [
+                        // ],
+                    // },
+                    // {
+                    //     label: "Week Picker",
+                    //     children: [
                             { label: "Week Picker", routerLink: "/week-picker" },
                             { label: "Week Picker Modal", routerLink: "/week-picker-modal" },
-                        ],
-                    },
-                    {
-                        label: "Month Picker",
-                        children: [
+                        // ],
+                    // },
+                    // {
+                    //     label: "Month Picker",
+                    //     children: [
                             { label: "Month Picker", routerLink: "/month-picker" },
                             { label: "Month Picker Modal", routerLink: "/month-picker-modal" },
-                        ],
-                    },
+                        // ],
+                    // },
                 ],
             },
         ];
@@ -280,12 +287,14 @@ class DemoMain extends MdComponent {
     render() {
         return html`
             <div class="md-layout__border">
+
                 <md-top-app-bar
                     id="mainTopAppBar"
                     label="Material Design (0.67.0)"
                     .leadingActions="${this.mainTopAppBarLeadingActions}"
                     @onTopAppBarIconButtonClick="${this.handleMainTopAppBarIconButtonClick}"
                 ></md-top-app-bar>
+
                 <md-navigation-drawer
                     id="mainNavigationDrawer"
                     type="tree"
@@ -293,9 +302,9 @@ class DemoMain extends MdComponent {
                     @onTreeItemClick="${this.handleMainNavigationDrawerTreeItemClick}"
                     @onTreeKeydownEnter="${this.handleMainNavitaionDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
-                <md-sheet region="center">
-                    <md-outlet></md-outlet>
-                </md-sheet>
+
+                <md-sheet region="center"><md-outlet></md-outlet></md-sheet>
+
             </div>
         `;
     }
@@ -322,36 +331,40 @@ class DemoMain extends MdComponent {
     handleMainLayoutCallback(item) {
         if (item.name === "expanded") {
             // Pengaturan untuk desktop
-            mainTopAppBar.open = false;
-            mainNavigationDrawer.modal = false;
-            mainNavigationDrawer.open = true;
-            mainNavigationDrawer.navigationDrawerScrim.open = false;
+            this.mainTopAppBar.open = false;
+
+            this.mainNavigationDrawer.modal = false;
+            this.mainNavigationDrawer.open = true;
+            this.mainNavigationDrawer.navigationDrawerScrim.open = false;
         } else {
             // Pengaturan untuk tablet/mobile
-            mainTopAppBar.open = true;
-            mainNavigationDrawer.modal = true;
-            mainNavigationDrawer.open = false;
-            mainNavigationDrawer.navigationDrawerScrim.open = false;
+            this.mainTopAppBar.open = true;
+
+            this.mainNavigationDrawer.modal = true;
+            this.mainNavigationDrawer.open = false;
+            this.mainNavigationDrawer.navigationDrawerScrim.open = false;
         }
     }
 
     // Menangani klik tombol ikon pada Top App Bar.
     handleMainTopAppBarIconButtonClick(event) {
-        mainNavigationDrawer.toggle();
+        this.mainNavigationDrawer.toggle();
     }
 
     // Menangani klik pada item navigasi dalam Navigation Drawer.
     handleMainNavigationDrawerTreeItemClick(event) {
-        if (mainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) {
-            mainNavigationDrawer.toggle();
+        if (this.mainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) {
+            this.mainNavigationDrawer.toggle();
         }
     }
 
     // Menangani navigasi menggunakan tombol Enter pada Navigation Drawer.
     handleMainNavitaionDrawerTreeKeydownEnter(event) {
-        const treeItemSelected = mainNavigationDrawer.querySelector("md-tree-item[selected]");
+        const treeItemSelected = this.mainNavigationDrawer.querySelector("md-tree-item[selected]");
         treeItemSelected.click();
     }
 }
+
 customElements.define("demo-main", DemoMain);
+
 export default document.createElement("demo-main");
