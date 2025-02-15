@@ -1,3 +1,4 @@
+md-layout-border,
 .md-layout__border {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -11,27 +12,34 @@
     overflow: hidden;
 }
 
-.md-layout__north {
-    grid-area: north;
+md-layout-border-item,
+.md-layout__north,
+.md-layout__east,
+.md-layout__south,
+.md-layout__west,
+.md-layout__center{
     overflow: auto;
 }
+    
+md-layout-border-item[region=north],
+.md-layout__north {grid-area: north;}
 
-.md-layout__east {
-    grid-area: east;
-    overflow: auto;
-}
+md-layout-border-item[region=east],
+.md-layout__east {grid-area: east;}
 
-.md-layout__south {
-    grid-area: south;
-    overflow: auto;
-}
+md-layout-border-item[region=south],
+.md-layout__south {grid-area: south;}
 
-.md-layout__west {
-    grid-area: west;
-    overflow: auto;
-}
+md-layout-border-item[region=west],
+.md-layout__west {grid-area: west;}
 
-.md-layout__center {
-    grid-area: center;
-    overflow: auto;
-}
+md-layout-border-item[region=center],
+.md-layout__center {grid-area: center;}
+
+
+// md-layout-border
+// md-layout-border-item[region=north]
+// md-layout-border-item[region=east]
+// md-layout-border-item[region=south]
+// md-layout-border-item[region=west]
+// md-layout-border-item[region=center]

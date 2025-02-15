@@ -41,7 +41,7 @@ class DocsMain extends MdComponent {
 
     render() {
         return html`
-            <div class="md-layout__border">
+            <md-layout-border>
                 <md-navigation-drawer
                     id="docsMainNavigationDrawer"
                     type="tree"
@@ -50,8 +50,10 @@ class DocsMain extends MdComponent {
                     @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
 
-                <md-sheet region="center"><md-outlet></md-outlet></md-sheet>
-            </div>
+                <md-layout-border-item region="center">
+                    <md-outlet></md-outlet>
+                </md-layout-border-item>
+            </md-layout-border>
         `;
     }
 

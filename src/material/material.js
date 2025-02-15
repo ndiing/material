@@ -1,4 +1,5 @@
 import "./polyfill/polyfill.js";
+
 // import "./util/util.js";
 // import "./localization/localization.js";
 // import "./color/color.js";
@@ -10,6 +11,7 @@ import "./polyfill/polyfill.js";
 // import "./movable/movable.js";
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./component/component.js";
+
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";

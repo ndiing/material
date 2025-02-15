@@ -278,7 +278,7 @@ class DemoMain extends MdComponent {
 
     render() {
         return html`
-            <div class="md-layout__border">
+            <md-layout-border>
                 <md-top-app-bar
                     id="demoMainTopAppBar"
                     label="Material Design (0.67.0)"
@@ -294,8 +294,10 @@ class DemoMain extends MdComponent {
                     @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
 
-                <md-sheet region="center"><md-outlet></md-outlet></md-sheet>
-            </div>
+                <md-layout-border-item region="center">
+                    <md-outlet></md-outlet>
+                </md-layout-border-item>
+            </md-layout-border>
         `;
     }
 

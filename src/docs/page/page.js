@@ -24,12 +24,13 @@ class DocsPage extends MdComponent {
                 <br>
             `:nothing}
 
-            <div><code>new ${item.name}(${item.params?.map(param=>param.name).join(', ')})</code></div>
+            <h2>Constructor</h2>
             <br>
+            <div><code>new ${item.name}(${item.params?.map(param=>param.name).join(', ')})</code></div>
             ${item.description?html`
                 <div>${item.description}</div>
-                <br>
             `:nothing}
+            <br>
             ${item.params?.length?html`
                 <div>${this.renderTable([
                     {name:'name',label:'Label'},
@@ -71,10 +72,9 @@ class DocsPage extends MdComponent {
         return data?.map(item=>html`
             ${item.name?html`
                 <div><code>${item.name}</code></div>
-                <br>
-            `:nothing}
-            ${item.description?html`
-                <div>${item.description}</div>
+                ${item.description?html`
+                    <div>${item.description}</div>
+                `:nothing}
                 <br>
             `:nothing}
             ${item.properties?.length?html`
@@ -95,11 +95,10 @@ class DocsPage extends MdComponent {
         /* prettier-ignore */
         return data?.map(item=>html`
             <div><code>${item.name}(${item.params?.map(param=>param.name).join(', ')})</code></div>
-            <br>
             ${item.description?html`
                 <div>${item.description}</div>
-                <br>
             `:nothing}
+            <br>
             ${item.params?.length?html`
                 <div>${this.renderTable([
                     {name:'name',label:'Label'},
@@ -211,10 +210,10 @@ class DocsPage extends MdComponent {
     }
 
     async handleDocsPageRouterNavigateSuccess(event) {
-        const name = Router.pathname.split("/").slice(2).join("/");
-        const index = keys.findIndex((key) => key === name + ".js");
+        const index = keys.findIndex((key) => key.routerLink === Router.pathname);
         this.data = values[index];
-        console.log(this.data)
+        console.log(name,
+            index,this.data)
         this.requestUpdate();
     }
 }
