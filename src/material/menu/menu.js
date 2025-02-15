@@ -3,10 +3,14 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
+import { closestScrollableElement } from "../util/util";
 
 /**
  * @extends MdComponent
+ * @requires MdNavigationList
  * @element md-menu
+ * @fires MdMenuComponent#onMenuShow
+ * @fires MdMenuComponent#onMenuClose
  * @fires MdMenuComponent#onMenuShown
  * @fires MdMenuComponent#onMenuClosed
  */
@@ -30,7 +34,12 @@ class MdMenuComponent extends MdComponent {
     /**
      */
     render() {
-        return html` <md-navigation-list .items="${this.items}"></md-navigation-list> `;
+        /* prettier-ignore */
+        return html`
+            <md-navigation-list 
+                .items="${this.items}"
+            ></md-navigation-list>
+        `;
     }
 
     /**
@@ -50,21 +59,39 @@ class MdMenuComponent extends MdComponent {
      */
     show(options = {}) {
         this.style.removeProperty("--md-comp-menu-animation");
-        this.open = true;
+        this.menuWindow = closestScrollableElement(this);
+        this.menuTrigger = options.trigger;
+        this.handleMenuShown = this.handleMenuShown.bind(this);
+        this.addEventListener("animationend", this.handleMenuShown);
+        this.handleMenuWindowScroll = this.handleMenuWindowScroll.bind(this);
+        this.menuWindow.addEventListener("scroll", this.handleMenuWindowScroll);
+        this.handleMenuWindowClick = this.handleMenuWindowClick.bind(this);
+        window.addEventListener("click", this.handleMenuWindowClick);
         setPosition({
             container: this,
-            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
+            /* prettier-ignore */
+            placements: [
+                "bottom-start", "bottom-end", "bottom", 
+                "top-start", "top-end", "top", 
+                "right-start", "right-end", "right", 
+                "left-start", "left-end", "left"
+            ],
             ...options,
         });
-        this.emit("onMenuShown");
+        this.open = true;
+        this.emit("onMenuShow");
     }
 
     /**
      */
     close() {
         this.style.removeProperty("--md-comp-menu-animation");
+        this.handleMenuClosed = this.handleMenuClosed.bind(this);
+        this.addEventListener("animationend", this.handleMenuClosed);
+        this.menuWindow.removeEventListener("scroll", this.handleMenuWindowScroll);
+        window.removeEventListener("click", this.handleMenuWindowClick);
         this.open = false;
-        this.emit("onMenuClosed");
+        this.emit("onMenuClose");
     }
 
     /**
@@ -73,6 +100,39 @@ class MdMenuComponent extends MdComponent {
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);
+    }
+
+    /**
+     * @param {Any} [event]
+     */
+    handleMenuWindowScroll(event) {
+        this.close();
+    }
+
+    /**
+     * @param {Any} [event]
+     */
+    handleMenuWindowClick(event) {
+        const target = document.elementFromPoint(event.clientX, event.clientY);
+        if (!this.contains(target) && !this.menuTrigger.contains(target)) {
+            this.close();
+        }
+    }
+
+    /**
+     * @param {Any} [event]
+     */
+    handleMenuShown(event) {
+        this.removeEventListener("animationend", this.handleMenuShown);
+        this.emit("onMenuShown", { event });
+    }
+
+    /**
+     * @param {Any} [event]
+     */
+    handleMenuClosed(event) {
+        this.removeEventListener("animationend", this.handleMenuClosed);
+        this.emit("onMenuClosed", { event });
     }
 }
 customElements.define("md-menu", MdMenuComponent);

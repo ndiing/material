@@ -74,11 +74,11 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            this.pickerContainer = closestScrollableElement(this);
+            this.pickerWindow = closestScrollableElement(this);
             this.handleWeekFieldWindowClick = this.handleWeekFieldWindowClick.bind(this);
             this.handleWeekFieldWindowScroll = this.handleWeekFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleWeekFieldWindowClick);
-            this.pickerContainer.addEventListener("scroll", this.handleWeekFieldWindowScroll);
+            this.pickerWindow.addEventListener("scroll", this.handleWeekFieldWindowScroll);
             if (this.textFieldNative.value) this.picker.value = parseWeek(this.textFieldNative.value);
             this.picker.show(options);
         }
@@ -89,7 +89,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     closePicker() {
         if (this.picker) {
             window.removeEventListener("click", this.handleWeekFieldWindowClick);
-            this.pickerContainer.removeEventListener("scroll", this.handleWeekFieldWindowScroll);
+            this.pickerWindow.removeEventListener("scroll", this.handleWeekFieldWindowScroll);
             this.picker.close();
         }
     }

@@ -6,6 +6,7 @@ class DemoMenu extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
+
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
@@ -14,11 +15,22 @@ class DemoMenu extends MdComponent {
                         ></md-button>
                         <md-menu
                             id="menu"
-                            .items="${[{ label: "Label", selected: true }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
+                            .items="${[
+                                { label: "Label", selected: true }, 
+                                { label: "Label" }, 
+                                { label: "Label" }, 
+                                { label: "Label" }
+                            ]}"
+                            @onNavigationListItemClick="${console.log}"
+                            @onMenuShow="${console.log}"
+                            @onMenuClose="${console.log}"
                             @onMenuShown="${console.log}"
                             @onMenuClosed="${console.log}"
                         ></md-menu>
                     </div>
+
+                    <div style="height:100vh"></div>
+
                 </div>
             </div>
         `;

@@ -74,11 +74,11 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            this.pickerContainer = closestScrollableElement(this);
+            this.pickerWindow = closestScrollableElement(this);
             this.handleTimeFieldWindowClick = this.handleTimeFieldWindowClick.bind(this);
             this.handleTimeFieldWindowScroll = this.handleTimeFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleTimeFieldWindowClick);
-            this.pickerContainer.addEventListener("scroll", this.handleTimeFieldWindowScroll);
+            this.pickerWindow.addEventListener("scroll", this.handleTimeFieldWindowScroll);
             if (this.textFieldNative.value) this.picker.value = parseTime(this.textFieldNative.value);
             this.picker.show(options);
         }
@@ -89,7 +89,7 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
     closePicker() {
         if (this.picker) {
             window.removeEventListener("click", this.handleTimeFieldWindowClick);
-            this.pickerContainer.removeEventListener("scroll", this.handleTimeFieldWindowScroll);
+            this.pickerWindow.removeEventListener("scroll", this.handleTimeFieldWindowScroll);
             this.picker.close();
         }
     }

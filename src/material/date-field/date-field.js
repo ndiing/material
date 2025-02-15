@@ -74,11 +74,11 @@ class MdDateFieldComponent extends MdTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            this.pickerContainer = closestScrollableElement(this);
+            this.pickerWindow = closestScrollableElement(this);
             this.handleDateFieldWindowClick = this.handleDateFieldWindowClick.bind(this);
             this.handleDateFieldWindowScroll = this.handleDateFieldWindowScroll.bind(this);
             window.addEventListener("click", this.handleDateFieldWindowClick);
-            this.pickerContainer.addEventListener("scroll", this.handleDateFieldWindowScroll);
+            this.pickerWindow.addEventListener("scroll", this.handleDateFieldWindowScroll);
             if (this.textFieldNative.value) this.picker.value = parseDate(this.textFieldNative.value);
             this.picker.show(options);
         }
@@ -89,7 +89,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
     closePicker() {
         if (this.picker) {
             window.removeEventListener("click", this.handleDateFieldWindowClick);
-            this.pickerContainer.removeEventListener("scroll", this.handleDateFieldWindowScroll);
+            this.pickerWindow.removeEventListener("scroll", this.handleDateFieldWindowScroll);
             this.picker.close();
         }
     }
