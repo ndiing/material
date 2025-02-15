@@ -2,7 +2,10 @@
     {
         "comment": "",
         "meta": {
-            "range": [140, 294],
+            "range": [
+                142,
+                300
+            ],
             "filename": "localization.js",
             "lineno": 3,
             "columnno": 6,
@@ -24,7 +27,10 @@
     {
         "comment": "",
         "meta": {
-            "range": [183, 195],
+            "range": [
+                186,
+                198
+            ],
             "filename": "localization.js",
             "lineno": 4,
             "columnno": 4,
@@ -45,7 +51,10 @@
     {
         "comment": "",
         "meta": {
-            "range": [201, 214],
+            "range": [
+                205,
+                218
+            ],
             "filename": "localization.js",
             "lineno": 5,
             "columnno": 4,
@@ -66,7 +75,10 @@
     {
         "comment": "",
         "meta": {
-            "range": [220, 290],
+            "range": [
+                225,
+                295
+            ],
             "filename": "localization.js",
             "lineno": 6,
             "columnno": 4,
@@ -84,92 +96,116 @@
         "scope": "global"
     },
     {
-        "comment": "",
+        "comment": "/**\r\n */",
         "meta": {
-            "range": [296, 344],
+            "range": [
+                315,
+                387
+            ],
             "filename": "localization.js",
-            "lineno": 8,
+            "lineno": 11,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
             "code": {
                 "id": "astnode100000026",
-                "name": "exports.getLocale",
-                "type": "VariableDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "getLocale",
-        "longname": "getLocale",
-        "kind": "constant",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [309, 343],
-            "filename": "localization.js",
-            "lineno": 8,
-            "columnno": 13,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
-            "code": {
-                "id": "astnode100000028",
                 "name": "getLocale",
-                "type": "MemberExpression",
-                "value": "localization.getLocale"
+                "type": "FunctionDeclaration",
+                "paramnames": []
             }
         },
-        "undocumented": true,
         "name": "getLocale",
         "longname": "getLocale",
-        "kind": "constant",
+        "kind": "function",
         "scope": "global",
         "params": []
     },
     {
-        "comment": "",
+        "comment": "/**\r\n * @param {Any} [locale]\r\n */",
         "meta": {
-            "range": [345, 393],
+            "range": [
+                427,
+                502
+            ],
             "filename": "localization.js",
-            "lineno": 9,
+            "lineno": 18,
             "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
-            "code": {
-                "id": "astnode100000033",
-                "name": "exports.setLocale",
-                "type": "VariableDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "setLocale",
-        "longname": "setLocale",
-        "kind": "constant",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [358, 392],
-            "filename": "localization.js",
-            "lineno": 9,
-            "columnno": 13,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
             "code": {
                 "id": "astnode100000035",
                 "name": "setLocale",
-                "type": "MemberExpression",
-                "value": "localization.setLocale"
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "locale"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "locale"
+            }
+        ],
+        "name": "setLocale",
+        "longname": "setLocale",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                513,
+                522
+            ],
+            "filename": "localization.js",
+            "lineno": 21,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
+            "code": {
+                "id": "astnode100000046",
+                "name": "exports.getLocale",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "getLocale",
+        "longname": "getLocale",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                524,
+                533
+            ],
+            "filename": "localization.js",
+            "lineno": 21,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
+            "code": {
+                "id": "astnode100000049",
+                "name": "exports.setLocale",
+                "type": "Identifier"
             }
         },
         "undocumented": true,
         "name": "setLocale",
         "longname": "setLocale",
-        "kind": "constant",
-        "scope": "global",
-        "params": []
+        "kind": "member",
+        "scope": "global"
     },
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization\\localization.js"]
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization\\localization.js"
+        ]
     }
 ]

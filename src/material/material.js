@@ -1,6 +1,6 @@
 import "./polyfill/polyfill.js";
 // import "./util/util.js";
-// import "./localization/localization.js";
+import "./localization/localization.js";
 // import "./color/color.js";
 // import "./store/store.js";
 // import "./layout/layout.js";
