@@ -67,6 +67,10 @@ class MdMenuComponent extends MdComponent {
         this.menuWindow.addEventListener("scroll", this.handleMenuWindowScroll);
         this.handleMenuWindowClick = this.handleMenuWindowClick.bind(this);
         window.addEventListener("click", this.handleMenuWindowClick);
+        this.navigationListItem=this.querySelector('md-navigation-list-item[selected]')
+        if(!this.navigationListItem)
+        this.navigationListItem=this.querySelector('md-navigation-list-item')
+        this.navigationListItem.focus()
         setPosition({
             container: this,
             /* prettier-ignore */
