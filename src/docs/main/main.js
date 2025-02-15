@@ -42,7 +42,7 @@ class DocsMain extends MdComponent {
 
         this.items = keys;
 
-        sortItems(this.items);
+        // sortItems(this.items);
         select(this.items);
     }
 
