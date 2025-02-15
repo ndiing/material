@@ -20,7 +20,7 @@ class DocsPage extends MdComponent {
                 <br>
             `:nothing}
             ${item.tags?.length?html`
-                <div><code>&lt;${item.tags?.map(tag=>tag.value)}&gt;</code></div>
+                <div>The <code>${item.name}</code> interface represents a <code>&lt;${item.tags?.map(tag=>tag.value)}&gt;</code> element in the DOM.</div>
                 <br>
             `:nothing}
 
@@ -179,11 +179,15 @@ class DocsPage extends MdComponent {
                 ${this.data.member?.length?html`
                     <h2>Instance properties</h2>
                     <br>
+                    <div>This interface also inherits properties from its parent, <code>HTMLElement</code>.</div>
+                    <br>
                     ${this.renderMember(this.data.member)}
                 `:nothing}
 
                 ${this.data.function?.length?html`
                     <h2>Instance methods</h2>
+                    <br>
+                    <div>This interface also inherits methods from its parent, <code>HTMLElement</code>.</div>
                     <br>
                     ${this.renderFunction(this.data.function)}
                 `:nothing}
@@ -196,6 +200,8 @@ class DocsPage extends MdComponent {
 
                 ${this.data.event?.length?html`
                     <h2>Events</h2>
+                    <br>
+                    <div>Listen to these events using <code>addEventListener()</code>, or by assigning an event listener to the <code>onventname</code> property of this interface.</div>
                     <br>
                     ${this.renderEvent(this.data.event)}
                 `:nothing}

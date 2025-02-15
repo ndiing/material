@@ -12,8 +12,10 @@ docs-page {
     table {
         border-collapse: separate;
         border-spacing: 0;
+        // display: block;
+        // max-height: 360px;
         width: 100%;
-        overflow: hidden;
+        // overflow: auto;
         border-radius: var(--md-sys-shape-corner-large);
         border: 1px solid var(--md-sys-color-outline-variant);
         tbody {
@@ -27,15 +29,20 @@ docs-page {
         }
         th {
             text-align: left;
+            // width: 1%;
             padding: 16px 16px;
             background-color: var(--md-sys-color-surface-container-highest);
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
+            // position: sticky;
+            // top: 0;
+            // z-index: 1;
             &:last-child {
                 border-right: 0;
             }
         }
         td {
+            // max-width: 0;
             padding: 16px 16px;
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
@@ -51,11 +58,11 @@ docs-page {
         border-radius: var(--md-sys-shape-corner-extra-small);
         background-color: var(--md-sys-color-surface-container-highest);
         font-family: "Noto Sans Mono", serif;
+        white-space: pre-wrap;
+        word-break: break-word;
     }
 
     pre {
         padding: 16px;
-        white-space: pre-wrap;
-        word-break: break-word;
     }
 }
