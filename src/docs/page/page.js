@@ -10,6 +10,8 @@ class DocsPage extends MdComponent {
 
     render() {
         return html`
+        
+        
             <div class="md-layout">
                 ${this.data.class?.map(
                     (item) => html`
@@ -17,7 +19,7 @@ class DocsPage extends MdComponent {
                         <br />
                         ${item.tags?.length
                             ? html`
-                                  <div>&lt;${item.tags?.[0].value}&gt;</div>
+                                  <div><code>&lt;${item.tags?.[0].value}&gt;</code></div>
                                   <br />
                               `
                             : nothing}
@@ -44,7 +46,7 @@ class DocsPage extends MdComponent {
                                               ${item.fires?.map(
                                                   (fire) => html`
                                                       <tr>
-                                                          <td>${fire.replace(/.*?event\:/, "")}</td>
+                                                          <td><code>${fire.replace(/.*?event\:/, "")}</code></td>
                                                       </tr>
                                                   `,
                                               )}
@@ -66,7 +68,7 @@ class DocsPage extends MdComponent {
                     : nothing}
                 ${this.data.member?.map(
                     (item) => html`
-                        <div>${item.name}</div>
+                        <div><code>${item.name}</code></div>
                         <br />
                         ${item.properties?.length
                             ? html`
@@ -82,7 +84,7 @@ class DocsPage extends MdComponent {
                                               ${item.properties?.map(
                                                   (property) => html`
                                                       <tr>
-                                                          <td>${property.name}</td>
+                                                          <td><code>${property.name}</code></td>
                                                           <td>${property.type?.names}</td>
                                                       </tr>
                                                   `,
@@ -104,7 +106,7 @@ class DocsPage extends MdComponent {
                     : nothing}
                 ${this.data.function?.map(
                     (item) => html`
-                        <div>${item.name}(${item.params?.map((param) => param.name)})</div>
+                        <div><code>${item.name}(${item.params?.map((param) => param.name).join(', ')})</code></div>
                         <br />
                         ${item.params?.length
                             ? html`
@@ -120,7 +122,7 @@ class DocsPage extends MdComponent {
                                               ${item.params?.map(
                                                   (param) => html`
                                                       <tr>
-                                                          <td>${param.name}</td>
+                                                          <td><code>${param.name}</code></td>
                                                           <td>${param.type?.names}</td>
                                                       </tr>
                                                   `,
