@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 git add .
 git commit -m "Commit"
 
-npm version patch --no-git-tag-version
+npm version patch
 git add .
 git commit -m "Bump version"
 
