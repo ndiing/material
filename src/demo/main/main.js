@@ -7,7 +7,7 @@ import { Layout } from "../../material/layout/layout";
 function select(items) {
     items.forEach((item) => {
         item.selected = item.routerLink === Router.pathname;
-        
+
         if (item.children?.length) {
             select(item.children);
         }
@@ -353,7 +353,10 @@ class DemoMain extends MdComponent {
 
     // Menangani klik pada item navigasi dalam Navigation Drawer.
     handleMainNavigationDrawerTreeItemClick(event) {
-        if (this.mainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) {
+        if (
+            this.mainNavigationDrawer.modal 
+            && event.detail.event.currentTarget.data.routerLink
+        ) {
             this.mainNavigationDrawer.toggle();
         }
     }
