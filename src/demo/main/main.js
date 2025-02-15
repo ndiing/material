@@ -160,8 +160,8 @@ class DemoMain extends MdComponent {
             {
                 label: "Segmented Button",
                 children: [
-                    // { label: "Segmented Button", routerLink: "/demo/segmented-button" },
-                    { label: "Segmented Button Single Select", routerLink: "/demo/segmented-button-single-select" },
+                    { label: "Segmented Button", routerLink: "/demo/segmented-button" },
+                    // { label: "Segmented Button Single Select", routerLink: "/demo/segmented-button-single-select" },
                     { label: "Segmented Button Multi Select", routerLink: "/demo/segmented-button-multi-select" },
                 ],
             },
