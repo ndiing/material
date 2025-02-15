@@ -16,6 +16,7 @@ docs-page {
         // max-height: 360px;
         width: 100%;
         // overflow: auto;
+        overflow: hidden;
         border-radius: var(--md-sys-shape-corner-large);
         border: 1px solid var(--md-sys-color-outline-variant);
         tbody {

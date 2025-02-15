@@ -1,4 +1,4 @@
-const items = [
+const defaultItems = [
     { name: "expanded", media: window.matchMedia("(min-width: 840px)") },
     { name: "medium", media: window.matchMedia("(min-width: 600px) and (max-width: 839px)") },
     { name: "compact", media: window.matchMedia("(max-width: 599px)") },
@@ -29,7 +29,7 @@ class Layout {
      * Initializes the layout by finding the matching media query and executing the callback.
      * @param {Array<Object>} [items] - An array of layout items, each containing a name and a media query.
      */
-    init(items) {
+    init(items = defaultItems) {
         if (!this.items) this.items = items;
         this.item = this.items.find((item) => item.media.matches);
         this.callback(this.item);
