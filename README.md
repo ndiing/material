@@ -6,7 +6,7 @@ Material adalah framework berbasis Material Design yang memudahkan pembuatan ant
 
 ## Dokumentasi & Demo
 
-- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/dist/#/docs)
+- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/dist/#/docs/badge)
 - **Demo**: [Material Demo](https://ndiing.github.io/material/dist/#/demo)
 
 ---
