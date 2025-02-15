@@ -33,13 +33,7 @@ class DocsMain extends MdComponent {
     constructor() {
         super();
 
-        this.items = keys.map((key) => {
-            const name = key.replace(/\.js$/, "");
-            return {
-                label: name,
-                routerLink: `/docs/${name}`,
-            };
-        });
+        this.items = keys;
 
         sortItems(this.items);
         select(this.items);
