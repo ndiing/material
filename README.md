@@ -4,6 +4,13 @@ Material adalah framework berbasis Material Design yang memudahkan pembuatan ant
 
 ---
 
+## Dokumentasi & Demo
+
+- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/dist/#/docs)
+- **Demo**: [Material Demo](https://ndiing.github.io/material/dist/#/demo)
+
+---
+
 ## Fitur Utama
 
 - **Desain Modern**: Menggunakan prinsip Material Design untuk tampilan yang estetis.
@@ -125,13 +132,6 @@ Berikut contoh file HTML dasar untuk menggunakan Material:
     </body>
 </html>
 ```
-
----
-
-## Dokumentasi & Demo
-
-- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/dist/#/docs)
-- **Demo**: [Material Demo](https://ndiing.github.io/material/dist/#/demo)
 
 ---
 
