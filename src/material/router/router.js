@@ -1,10 +1,16 @@
 /**
+ * Router class responsible for managing client-side routing.
  * @fires Router#onRouterCurrentEntryChange
  * @fires Router#onRouterNavigate
  * @fires Router#onRouterNavigateError
  * @fires Router#onRouterNavigateSuccess
  */
 class Router {
+    /**
+     * Parameters extracted from the current route.
+     * @static
+     * @type {Object}
+     */
     static params = {};
 
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
@@ -29,8 +35,10 @@ class Router {
     }
 
     /**
+     * Retrieves the current pathname.
      * @static
      * @readonly
+     * @returns {string} The current pathname.
      */
     static get pathname() {
         if (this.options.historyApiFallback) {
@@ -139,8 +147,9 @@ class Router {
     }
 
     /**
+     * Navigates to the specified URL.
      * @static
-     * @param {Any} [url]
+     * @param {string} [url] - The URL to navigate to.
      */
     static navigate(url) {
         if (this.options.historyApiFallback) {
@@ -170,9 +179,24 @@ class Router {
     static options = {};
 
     /**
+     * @typedef {Object} RouterUseRoutes
+     * @property {string} path - The path of the route.
+     * @property {HTMLElement} [component] - The component to render for the route.
+     * @property {Function} [load] - The function to load the component.
+     * @property {Function} [beforeLoad] - The function to call before loading the component.
+     * @property {RouterUseRoutes.<Array>} [children] - The child routes.
+     */
+
+    /**
+     * @typedef {Object} RouterUseOptions
+     * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.
+     */
+
+    /**
+     * Initializes the router with the specified routes and options.
      * @static
-     * @param {Any} [routes=[]]
-     * @param {Any} [options={}]
+     * @param {RouterUseRoutes.<Array>} [routes=[]] - The array of routes.
+     * @param {RouterUseOptions} [options={}] - The router options.
      */
     static use(routes = [], options = {}) {
         this.routes = routes;
